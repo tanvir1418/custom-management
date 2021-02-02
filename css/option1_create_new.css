@@ -1,0 +1,1154 @@
+@font-face {
+    font-family: gilroy-regular;
+    src: url(../fonts/Gilroy-Regular.ttf);
+}
+
+@font-face {
+    font-family: gilroy-medium;
+    src: url(../fonts/Gilroy-Medium.ttf);
+}
+
+@font-face {
+    font-family: gilroy-bold;
+    src: url(../fonts/Gilroy-SemiBold.ttf);
+}
+
+/* ============ TANVIR single yellow list style starts ============ */
+.op1-single-list-item-design {
+    margin: 30px 0px 30px 0px;
+}
+
+.op1-single-list-item-wrapper {
+    display: flex;
+    height: 150px;
+    background-color: #fff500;
+}
+
+.op1-single-list-item-name {
+    width: 25%;
+    align-self: center;
+    margin-left: 40px;
+}
+
+.op1-single-list-item-selection {
+    width: 35%;
+    align-self: center;
+}
+
+.op1-single-list-item-help {
+    width: 30%;
+    text-align: end;
+    padding: 15px 15px;
+}
+
+.op1-single-list-item-file {
+    width: 10%;
+    text-align: center;
+}
+
+.op1-single-list-item-file-container {
+    background-color: #359f01;
+    height: 90px;
+    width: 90px;
+    margin: 28px auto;
+}
+
+.op1-single-list-item-file-container img {
+    width: 50%;
+    margin: 15px;
+}
+
+.op1-single-list-item-wrapper .op1-single-list-item-name p {
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    color: #565656;
+    font-size: 24px;
+    margin: 0;
+}
+
+.op1-single-list-item-wrapper .op1-single-list-item-selection p {
+    font-family: gilroy-regular, sans-serif;
+    font-weight: 600;
+    color: #565656;
+    font-size: 22px !important;
+    margin: 0;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.op1-single-list-item-wrapper .op1-single-list-item-selection p.op1-selected-text-danger {
+    font-family: gilroy-regular, sans-serif;
+    font-weight: 600;
+    color: #ff0005;
+    font-size: 18px;
+}
+
+.op1-text_container_textarea {
+    padding: 10px 15px;
+    height: 120px;
+    width: 280px;
+    background-color: #f7f7f7;
+    color: #565656;
+    font-family: gilroy-regular, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border: 0;
+    outline: 0;
+    line-height: 20px;
+}
+
+@media screen and (max-width: 1370px) {
+    .op1-single-list-item-wrapper {
+        height: 120px;
+    }
+
+    .op1-single-list-item-help {
+        padding: 10px;
+    }
+
+    .op1-single-list-item-file-container {
+        height: 80px;
+        width: 80px;
+        margin: 20px auto;
+    }
+
+    .op1-single-list-item-file-container img {
+        width: 45%;
+    }
+
+    .single-list-item-wrapper .op1-single-list-item-name p {
+        font-size: 26px;
+    }
+
+    .op1-single-list-item-wrapper .op1-single-list-item-selection p {
+        font-size: 26px;
+    }
+
+    .op1-single-list-item-wrapper .op1-single-list-item-selection p.op1-selected-text-danger {
+        font-size: 20px;
+    }
+
+    .op1-text_container_textarea {
+        padding: 10px;
+        height: 100px;
+        width: 260px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .op1-single-list-item-name {
+        width: 20%;
+    }
+
+    .op1-single-list-item-selection {
+        width: 40%;
+    }
+
+    .op1-single-list-item-wrapper {
+        height: 100px;
+    }
+
+    .op1-single-list-item-file-container {
+        height: 68px;
+        width: 68px;
+        margin: 15px auto;
+    }
+
+    .op1-single-list-item-wrapper .op1-single-list-item-name p {
+        font-size: 22px;
+    }
+
+    .op1-single-list-item-wrapper .op1-single-list-item-selection p {
+        font-size: 22px;
+    }
+
+    .op1-single-list-item-wrapper .op1-single-list-item-selection p.op1-selected-text-danger {
+        font-size: 16px;
+    }
+
+    .op1-text_container_textarea {
+        padding: 5px;
+        height: 80px;
+        width: 180px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+/* XXXXXXXXXXXXXX single yellow list style ends XXXXXXXXXXXXXX */
+
+.side-box {
+    text-align: center;
+    background-color: #fff500;
+    padding: 40px 0px;
+    color: #000000;
+    position: relative;
+}
+
+.side-box h1 {
+    font-family: gilroy-bold, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.side-box .leftside-tri {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 97%;
+    border-top: 15px solid #fff500;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+}
+
+.padding-remove {
+    padding: 0;
+}
+
+.margin-left {
+    margin-left: 8px;
+}
+
+.margin-right {
+    margin-right: 8px;
+}
+
+.side-bottom-box {
+    background-color: #fffde2;
+}
+
+.side-bottom-box .table-heading {
+    text-align: center;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #858581;
+    padding-top: 50px;
+}
+
+.side-bottom-box table {
+    /* float: right; */
+    /* border-spacing: 0px; */
+    table-layout: fixed;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    background-color: #ffffff;
+}
+
+.side-bottom-box table td {
+    word-wrap: break-word;
+    padding: 6px 0px 6px 20px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #534848;
+}
+
+.side-bottom-box table tbody tr td .fas {
+    opacity: 0.2;
+}
+
+.side-bottom-box .table-wrapper {
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.side-bottom-box .tablebxbr{
+    height: 200px;
+    width: 400px;
+    margin: 0px auto;
+    border: 1px solid grey;
+    border-radius: 4px;
+    background-color: #ffffff
+}
+
+.side-bottom-box .table-scroll {
+    width: 99%;
+    height: 100%;
+    overflow-y: auto;
+    border-radius: 4px;
+}
+
+.side-bottom-box .table-wrapper table {
+    width: 100%;
+}
+
+.side-bottom-box .table-scroll tr:nth-child(even) {
+    background-color: #ffffff !important;
+}
+
+.side-bottom-box .table-scroll tr:nth-child(odd) {
+    background-color: #fbfbfb !important;
+}
+
+/* ........................... */
+/* Custom ScrollBar  Start*/
+.side-bottom-box .table-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.side-bottom-box .table-scroll::-webkit-scrollbar-track {
+    box-shadow: transparent;
+    border-radius: 10px;
+}
+
+/* Handle */
+.side-bottom-box .table-scroll::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.side-bottom-box .table-scroll::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
+
+/* Custom ScrollBar Ends  */
+/* ........................... */
+.option-selection .toggle__text {
+    color: #000000;
+    font-family: gilroy-regular, sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+/* ........................... */
+/*  Select box styling Starts  */
+.option-selection .custome-select {
+    background: #e6e6e6;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    z-index: 3;
+    border-radius: 6px;
+}
+
+.option-selection .custome-select select {
+    background: #ffffff !important;
+    color: #acacac !important;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    outline: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    padding: 0 10px;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+}
+
+.option-selection .custome-select select:hover,
+.option-selection .custome-select select:focus {
+    cursor: pointer;
+    outline: 0;
+}
+
+.option-selection .custome-select:after {
+    content: "\25bc";
+    font-size: 10px;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    background-color: white;
+    color: #818181;
+    z-index: 2;
+    right: 8px;
+    top: 13px;
+    text-align: center;
+    border-radius: 4px;
+    opacity: 0.8;
+}
+
+.option-selection .custome-select select option {
+    background: #ffffff;
+}
+
+/*  Select box styling Ends  */
+/* ........................... */
+
+/* ........................... */
+/*  Custom Input styling Starts  */
+.option-selection .custom-input-success {
+    background: #e6e6e6;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    z-index: 3;
+    border-radius: 6px;
+}
+
+.option-selection .custom-input-success input {
+    /* background: #ddd; */
+    background: #e6e6e6;
+    color: #2e2c2c;
+    outline: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 2;
+    padding: 5px 10px;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #41e167;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.option-selection .custom-input-success input:hover,
+.option-selection .custom-input-success input:focus {
+    box-shadow: chartreuse;
+    /* cursor: pointer;
+      outline: 0;
+      border: 0;
+      border-radius: 0; */
+}
+
+.option-selection .custom-input-success:after {
+    content: "\2714";
+    font-size: 11px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    background-color: #e8ffed;
+    color: green;
+    z-index: 2;
+    right: 8px;
+    top: 13px;
+    text-align: center;
+    border-radius: 4px;
+    /* opacity: 0.8; */
+}
+
+.option-selection .custom-input-success input {
+    background: #ffffff;
+}
+
+/* Custom Input Danger */
+.option-selection .custom-input-danger {
+    background: #e6e6e6;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    z-index: 3;
+    border-radius: 6px;
+}
+
+.option-selection .custom-input-danger input {
+    /* background: #ddd; */
+    background: #e6e6e6;
+    color: #2e2c2c;
+    outline: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 2;
+    padding: 5px 10px;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #fe7e7e;
+    border-radius: 4px;
+}
+
+.option-selection .custom-input-danger input:hover,
+.option-selection .custom-input-danger input:focus {
+    box-shadow: red;
+    /* cursor: pointer;
+      outline: 0;
+      border: 0;
+      border-radius: 0; */
+}
+
+.option-selection .custom-input-danger:after {
+    content: "\2716";
+    font-size: 11px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    background-color: #fffde2;
+    color: red;
+    z-index: 2;
+    right: 8px;
+    top: 13px;
+    text-align: center;
+    border-radius: 4px;
+    /* opacity: 0.8; */
+}
+
+.option-selection .custom-input-danger input {
+    background: #ffffff;
+}
+
+/*  Custom Input styling Ends  */
+/* ============================ */
+
+/* ============================ */
+/*  Custom Input styling Ends  */
+
+.option-selection .width-5 {
+    width: 3%;
+    height: 60px;
+    text-align: left;
+    /* padding-top: 10px; */
+}
+
+.option-selection .width-5 .threebar {
+    padding-top: 4px;
+    font-size: 20px;
+    text-align: end;
+}
+
+.option-selection .width-5 .icon-container {
+    padding-top: 10px;
+}
+
+.option-selection .width-22 {
+    width: 23%;
+    height: 60px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.option-selection .width-22 .error-message p {
+    font-size: 12px;
+    color: red;
+    padding-left: 2px;
+}
+
+.option-selection .width-26 {
+    width: 25%;
+    height: 60px;
+    text-align: left;
+    padding-top: 6px;
+}
+
+/* ========================= */
+/* Check box Styles Starts */
+/* .page__toggle {
+      margin: 0 10px;
+    } */
+.option-selection .toggle {
+    display: inline-flex;
+    position: relative;
+    margin-bottom: 0;
+}
+
+/* this hides the main checkbox */
+.option-selection .toggle__input {
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+}
+
+.option-selection .toggle__label {
+    display: inline-flex;
+    min-height: 32px;
+    font-size: 20px;
+    padding-left: 35px;
+}
+
+.option-selection .toggle__input:not(:disabled)~.toggle__label {
+    cursor: pointer;
+}
+
+/* this is for box */
+.option-selection .toggle__label::after {
+    content: "";
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    font-size: 20px;
+
+    background-color: #d0d0d0;
+    /* border: 2px solid #690e90; */
+
+    position: absolute;
+    left: 5px;
+    top: 4px;
+    z-index: 2;
+}
+
+.option-selection .toggle__input:checked~.toggle__label::after {
+    background-color: #25d34f;
+    box-shadow: 5px 5px 5px 4px rgba(140, 245, 80, 0.2);
+}
+
+/* .toggle__text {
+      margin-top: auto;
+      margin-bottom: auto;
+    } */
+/* this is for tik sign */
+.option-selection .toggle__label::before {
+    content: "";
+    width: 0;
+    height: 0;
+    font-size: 24px;
+
+    border-left-width: 0;
+    border-bottom-width: 0;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-color: #fff;
+
+    position: absolute;
+    top: 16px;
+    left: 10px;
+    z-index: 3;
+
+    transform-origin: left top;
+    transform: rotate(-40deg) skew(10deg);
+}
+
+.option-selection .toggle__input:checked~.toggle__label::before {
+    width: 10px;
+    height: 6px;
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.option-selection .toggle__label::after {
+    border-radius: 4px;
+}
+
+.option-selection .icon-container .fas {
+    opacity: 0.2;
+    font-size: 20px;
+}
+
+.option-selection .icon-container .fas:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* ============================ */
+/* control section style starts */
+
+.control-section {
+    margin: 50px 0;
+}
+
+.control-section .back-button {
+    height: 80px;
+    width: 15%;
+    padding-right: 20px;
+}
+
+.control-section .reset-button {
+    height: 80px;
+    width: 15%;
+    padding-left: 20px;
+}
+
+.control-section .save-result-input {
+    height: 80px;
+    /* width: 55%; */
+    /* max-width: 100%; */
+    flex-grow: 1;
+    padding-right: 40px;
+    padding-left: 50px;
+}
+
+.control-section .generate-button {
+    height: 80px;
+    width: 15%;
+    padding-left: 20px;
+}
+
+.control-section input {
+    font-family: gilroy-regular, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px 25px;
+    background: #ffffff;
+    border: 2px solid #000000;
+    color: #7b7b7b;
+    border-radius: 0;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.control-section .save-result-input input {
+    border-radius: 3px;
+}
+
+.control-section input:focus {
+    outline: 0;
+    border-color: #000000;
+}
+
+.control-section .button {
+    border: 0;
+    outline: none;
+    border-radius: 4px;
+    padding: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    background: #e9e9e9;
+    color: #7b7b7b;
+    transition: all.5s ease;
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+}
+
+.control-section .btn-generate {
+    background: #000000;
+    color: #e6e6e6;
+}
+
+.control-section .button:hover,
+.control-section .button:focus {
+    background: #000000;
+    color: #e6e6e6;
+}
+
+.control-section .btn-generate:hover,
+.control-section .btn-generate:focus {
+    background: #e9e9e9;
+    color: #7b7b7b;
+    border: solid 1px #000000;
+}
+
+/* control section style ends */
+/* ========================== */
+
+/* ========================== */
+/* text-edition-form starts */
+.text-edition-form .text-edition-box {
+    position: relative;
+    height: 85px;
+    width: 400px;
+    margin: 0 auto;
+    background-color: #fff011;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.text-edition-form .text-edition-box::after {
+    position: absolute;
+    content: "";
+    font-size: 36px;
+    height: 60px;
+    width: 60px;
+    color: white;
+    background-color: black;
+    border-radius: 2px;
+    top: 12px;
+    right: 12px;
+}
+
+.text-edition-form .text-edition-box input {
+    height: 100%;
+    width: 100%;
+    background-color: inherit;
+    color: inherit;
+    border: 0;
+    outline: 0;
+    text-align: left;
+    padding-left: 30px;
+    text-transform: uppercase;
+    font-family: gilroy-bold, sans-serif;
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.text-edition-form .text-edition-box p {
+    padding: 28px 32px;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: gilroy-bold, sans-serif;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.text-edition-form #arrow-icon {
+    position: absolute;
+    color: #e9e9e9;
+    font-size: 40px;
+    top: 22px;
+    right: 25px;
+    transform: rotate(-45deg);
+    z-index: 5;
+}
+
+.text-edition-form .text-edition-box:hover,
+.text-edition-form .text-edition-box:hover::after,
+.text-edition-form #arrow-icon:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+/* text-edition-form ends */
+/* ========================== */
+
+@media screen and (max-width: 1600px) {
+    .side-box {
+        padding: 35px 0px;
+    }
+
+    .option-selection .width-5 .threebar {
+        padding-top: 4px;
+        font-size: 16px;
+    }
+
+    .option-selection .width-5 .icon-container {
+        padding-top: 6px;
+    }
+
+    /* .page__toggle {
+        padding-top: 2px;
+      } */
+    .option-selection .toggle__text {
+        font-size: 16px;
+    }
+
+    .option-selection .toggle__label {
+        padding-left: 30px;
+    }
+
+    /* this is for box */
+    .option-selection .toggle__label::after {
+        width: 20px;
+        height: 20px;
+
+        left: 7px;
+        top: 2px;
+    }
+
+    /* this is for tik sign */
+    .option-selection .toggle__label::before {
+        top: 13px;
+        left: 10px;
+    }
+
+    .option-selection .icon-container .fas {
+        font-size: 16px;
+    }
+
+    .option-selection .custome-select {
+        height: 35px;
+    }
+
+    .option-selection .custome-select select {
+        font-size: 16px;
+        padding: 0 8px;
+    }
+
+    .option-selection .custome-select:after {
+        width: 12px;
+        height: 12px;
+        font-size: 9px;
+        right: 8px;
+        top: 10px;
+        border-radius: 3px;
+    }
+
+    /*  Custom Input styling Starts  */
+    .option-selection .custom-input-success {
+        height: 35px;
+    }
+
+    .option-selection .custom-input-success input {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+
+    .option-selection .custom-input-success:after {
+        width: 12px;
+        height: 12px;
+        font-size: 9px;
+        right: 8px;
+        top: 10px;
+        border-radius: 3px;
+    }
+
+    .option-selection .custom-input-danger {
+        height: 35px;
+    }
+
+    .option-selection .custom-input-danger input {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+
+    .option-selection .custom-input-danger:after {
+        width: 12px;
+        height: 12px;
+        font-size: 9px;
+        right: 8px;
+        top: 10px;
+        border-radius: 3px;
+    }
+
+    /* ============================ */
+    /* control section style starts */
+
+    .control-section {
+        margin: 40px 0;
+    }
+
+    .control-section .back-button {
+        height: 60px;
+        width: 15%;
+        padding-right: 30px;
+    }
+
+    .control-section .reset-button {
+        height: 60px;
+        width: 15%;
+        padding-left: 30px;
+    }
+
+    .control-section .save-result-input {
+        height: 60px;
+        flex-grow: 1;
+        padding-right: 40px;
+        padding-left: 60px;
+    }
+
+    .control-section .generate-button {
+        height: 60px;
+        width: 15%;
+        padding-left: 30px;
+    }
+
+    .control-section input {
+        font-size: 22px;
+    }
+
+    .control-section .button {
+        font-size: 26px;
+    }
+
+    .control-section .btn-generate {
+        background: #000000;
+        color: #e6e6e6;
+    }
+
+    .control-section .btn-generate:hover,
+    .control-section .btn-generate:focus {
+        background: #e9e9e9;
+        color: #7b7b7b;
+    }
+
+    /* control section style ends */
+    /* ========================== */
+
+    /* ========================== */
+    /* text-edition-form starts */
+    .text-edition-form .text-edition-box {
+        height: 70px;
+        width: 340px;
+    }
+
+    .text-edition-form .text-edition-box::after {
+        height: 50px;
+        width: 50px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .text-edition-form .text-edition-box p {
+        padding: 28px 32px;
+        font-size: 20px;
+    }
+
+    .text-edition-form #arrow-icon {
+        font-size: 32px;
+        top: 17px;
+        right: 18px;
+    }
+
+    /* text-edition-form ends */
+    /* ========================== */
+}
+
+@media screen and (max-width: 1368px) {
+    .side-box {
+        padding: 30px 0px;
+    }
+
+    .option-selection .width-5 .threebar {
+        padding-top: 8px;
+        font-size: 14px;
+    }
+
+    .option-selection .width-5 .icon-container {
+        padding-top: 6px;
+    }
+
+    /* .page__toggle {
+        padding-top: 3px;
+      } */
+    .option-selection .toggle__text {
+        font-size: 14px;
+    }
+
+    .option-selection .toggle__label {
+        padding-left: 30px;
+    }
+
+    /* this is for box */
+    .option-selection .toggle__label::after {
+        width: 18px;
+        height: 18px;
+
+        left: 8px;
+        top: 3px;
+    }
+
+    /* this is for tik sign */
+    .option-selection .toggle__label::before {
+        top: 12px;
+        left: 10px;
+    }
+
+    .option-selection .width-22 .error-message p {
+        font-size: 10px;
+        padding-left: 0px;
+    }
+
+    .option-selection .icon-container .fas {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .control-section .generate-button {
+        padding-left: 10px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .side-box {
+        padding: 25px 0px;
+    }
+
+    .side-bottom-box .table-scroll {
+        height: 250px;
+        width: 450px;
+    }
+
+    .margin-right {
+        margin-right: 0;
+    }
+
+    .margin-left {
+        margin-left: 0;
+    }
+
+    /* ============================ */
+    /* control section style starts */
+
+    .control-section {
+        margin: 40px 0;
+    }
+
+    .control-section .back-button {
+        height: 50px;
+        width: 15%;
+        padding-right: 20px;
+    }
+
+    .control-section .reset-button {
+        height: 50px;
+        width: 15%;
+        padding-left: 20px;
+    }
+
+    .control-section .save-result-input {
+        height: 50px;
+        flex-grow: 1;
+        padding-right: 20px;
+        padding-left: 30px;
+    }
+
+    .control-section .generate-button {
+        height: 50px;
+        width: 15%;
+        padding-left: 10px;
+    }
+
+    .control-section input {
+        font-size: 18px;
+    }
+
+    .control-section .button {
+        font-size: 18px;
+    }
+
+    .control-section .btn-generate {
+        background: #000000;
+        color: #e6e6e6;
+    }
+
+    .control-section .btn-generate:hover,
+    .control-section .btn-generate:focus {
+        background: #e9e9e9;
+        color: #7b7b7b;
+    }
+
+    /* control section style ends */
+    /* ========================== */
+
+    /* ========================== */
+    /* text-edition-form starts */
+    .text-edition-form .text-edition-box {
+        height: 60px;
+        width: 280px;
+        border-radius: 5px;
+    }
+
+    .text-edition-form .text-edition-box::after {
+        height: 40px;
+        width: 40px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .text-edition-form .text-edition-box p {
+        padding: 14px 14px;
+        font-size: 20px;
+    }
+
+    .text-edition-form .text-edition-box input {
+        padding-left: 25px;
+        font-size: 18px;
+    }
+
+    .text-edition-form #arrow-icon {
+        font-size: 28px;
+        top: 15px;
+        right: 16px;
+    }
+
+    /* text-edition-form ends */
+    /* ========================== */
+}

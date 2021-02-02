@@ -1,0 +1,885 @@
+/* ========= DISPLAY 1 SPEEDOMETER START ========= */
+
+#Display1 {
+    padding: 20px 8px 20px 36px;
+    overflow: hidden;
+}
+
+.meter_outer_box {
+    width: 100%;
+    height: 100%;
+    background: #fbfbfd;
+}
+
+.circleWrapper {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    overflow: hidden;
+    border-radius: 50%;
+    border-bottom: 0;
+    z-index: 0;
+    margin-top: 50px;
+}
+
+.speedometer1 {
+    margin-left: 50px;
+}
+
+.speedometer2 {
+    margin-left: 24px;
+}
+
+.speedometer3 {
+    margin-left: 0px;
+}
+
+.sector-3O {
+    position: absolute;
+    width: 168px;
+    height: 168px;
+    left: 0;
+    top: 0;
+    border: none;
+    transform-origin: 100% 100%
+}
+
+.sector0 {
+    background-color: #E94747;
+    transform: rotate(0deg) skew(86deg)
+}
+
+.sector10 {
+    background: linear-gradient(to top, #E94846 0%, #EA4D45 30%);
+    transform: rotate(6deg) skew(75deg)
+}
+
+.sector20 {
+    background: linear-gradient(to top, #EA4D45 0%, #EB603F 30%);
+    transform: rotate(23deg) skew(75deg)
+}
+
+.sector30 {
+    background: linear-gradient(to top, #EB603F 0%, #EE8533 30%);
+    transform: rotate(40deg) skew(75deg)
+}
+
+.sector40 {
+    background: linear-gradient(to top, #EF8E30 0%, #F1B124 30%);
+    transform: rotate(57deg) skew(75deg)
+}
+
+.sector50 {
+    background: linear-gradient(to top, #F2BC21 0%, #F5D917 30%);
+    transform: rotate(74deg) skew(75deg)
+}
+
+.sector60 {
+    background: linear-gradient(to top, #F5E015 0%, #F6EC11 30%);
+    transform: rotate(91deg) skew(75deg)
+}
+
+.sector70 {
+    background: linear-gradient(to top, #F5EC11 0%, #D4E117 30%);
+    transform: rotate(108deg) skew(75deg)
+}
+
+.sector80 {
+    background: linear-gradient(to top, #C3DC1B 0%, #87C926 30%);
+    transform: rotate(125deg) skew(75deg)
+}
+
+.sector90 {
+    background: linear-gradient(to top, #71C32A 0%, #42B432 30%);
+    transform: rotate(142deg) skew(75deg)
+}
+
+.sector100 {
+    background: linear-gradient(to top, #36B035 0%, #1FA939 30%);
+    transform: rotate(159deg) skew(75deg)
+}
+
+.sector111 {
+    background: #1FA939;
+    transform: rotate(176deg) skew(86deg)
+}
+
+/* INNER DIV WITH TEXT START */
+.background-half-round {
+    width: 300px;
+    height: 150px;
+    background: #fbfbfd;
+    top: 18px;
+    left: 20px;
+    border-radius: 300px 300px 0 0;
+    border: none;
+    box-shadow: inset 0 2px 5px #ffffff;
+    position: absolute;
+}
+
+.speed-number-wapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.speed-number {
+    color: #747474;
+    font-family: gilroy-bold, sans-serif;
+    font-size: 12px;
+}
+
+.speed-0,
+.speed-10,
+.speed-20,
+.speed-30,
+.speed-40,
+.speed-50,
+.speed-60,
+.speed-70,
+.speed-80,
+.speed-90,
+.speed-100 {
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+}
+
+.speed-0 span {
+    padding: 0px 15px;
+}
+
+.speed-10 {
+    transform: rotate(16deg);
+    transform-origin: 100% 0%;
+}
+
+.speed-10 span {
+    transform: rotate(-16deg);
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.speed-20 {
+    transform: rotate(34deg);
+    transform-origin: 100% 0%;
+}
+
+.speed-20 span {
+    transform: rotate(-34deg);
+    display: inline-block;
+    padding: 0 24px;
+}
+
+.speed-30 {
+    transform: rotate(52deg);
+    transform-origin: 100% 0%;
+}
+
+.speed-30 span {
+    transform: rotate(-52deg);
+    display: inline-block;
+    padding: 0px 25px;
+}
+
+.speed-40 {
+    transform: rotate(70deg);
+    transform-origin: 100% 0%;
+}
+
+.speed-40 span {
+    transform: rotate(-70deg);
+    display: inline-block;
+    padding: 0px 26px;
+}
+
+.speed-50 {
+    transform: rotate(90deg);
+    transform-origin: 100% 0%;
+}
+
+.speed-50 span {
+    transform: rotate(-90deg);
+    display: inline-block;
+    padding: 0px 26px;
+}
+
+.speed-60 {
+    transform: rotate(110deg);
+    transform-origin: 100% 0%;
+}
+
+.speed-60 span {
+    transform: rotate(-110deg);
+    display: inline-block;
+    padding: 0px 26px;
+}
+
+.speed-70 {
+    transform: rotate(130deg);
+    transform-origin: 100% 0%;
+}
+
+.speed-70 span {
+    transform: rotate(-130deg);
+    display: inline-block;
+    padding: 0px 24px;
+}
+
+.speed-80 {
+    transform: rotate(150deg);
+    transform-origin: 100% 0%;
+}
+
+.speed-80 span {
+    transform: rotate(-150deg);
+    display: inline-block;
+    padding: 0px 22px;
+}
+
+.speed-90 {
+    transform: rotate(170deg);
+    transform-origin: 100% 0%;
+}
+
+.speed-90 span {
+    transform: rotate(-170deg);
+    display: inline-block;
+    padding: 0px 18px;
+}
+
+.speed-100 {
+    transform: rotate(183deg);
+    transform-origin: 100% 25%;
+}
+
+.speed-100 span {
+    transform: rotate(-183deg);
+    display: inline-block;
+    padding: 0px 10px;
+}
+
+/* TICK */
+
+#scorer-1-inner-div-5 {
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #000000;
+    z-index: 2;
+}
+
+.scorer-1-tick {
+    position: absolute;
+    top: 40%;
+    left: -547%;
+    width: 120px;
+    height: 5px;
+    background-color: #E7251C;
+    animation: ticker-mover-1 5s alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+}
+
+@keyframes ticker-mover-1 {
+    0% {
+        transform-origin: right center;
+        transform: rotate(0deg);
+    }
+
+    33% {
+        transform-origin: right center;
+        transform: rotate(60deg);
+    }
+
+    66% {
+        transform-origin: right center;
+        transform: rotate(120deg);
+    }
+
+    100% {
+        transform-origin: right center;
+        transform: rotate(180deg);
+    }
+}
+
+.circleWrapper .speed-value {
+    position: absolute;
+    z-index: 1000;
+    left: 53%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+}
+
+.circleWrapper .speed-value p {
+    margin: 0;
+    text-align: center;
+    font-family: gilroy-bold, sans-serif;
+}
+
+.circleWrapper .speed-value p:first-child {
+    font-size: 28px;
+    font-weight: 700;
+    color: #9F9F9F;
+    letter-spacing: 2px;
+}
+
+.circleWrapper .speed-value p:last-child {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1d1d1d;
+}
+
+/* INNER DIV WITH TEXT END */
+
+/* ========= DISPLAY 1 SPEEDOMETER END ========= */
+
+
+
+/* ========= DISPLAY 2 SPEEDOMETER START ========= */
+
+#Display2 {
+    padding: 20px 8px 20px 36px;
+    overflow: hidden;
+}
+
+.gauge_outer_box {
+    width: 100%;
+    height: 100%;
+    background: #fbfbfd;
+}
+
+.progressmeter {
+    position: relative;
+    margin: 4px;
+    float: left;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.progressmeter1 {
+    margin-left: 50px;
+}
+
+.progressmeter2 {
+    margin-left: 24px;
+}
+
+.progressmeter3 {
+    margin-left: 0px;
+}
+
+.progressmeter .barOverflow {
+    position: relative;
+    overflow: hidden;
+    width: 340px;
+    height: 170px;
+    margin-bottom: -52px;
+}
+
+.progressmeter .barOverflow .bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 60px solid #FFFF01;
+    /* border-bottom-color: #00B903; */
+    /* border-right-color: #00B903; */
+}
+
+.progressmeter1 .bar {
+    border-bottom-color: #00B903 !important;
+    border-right-color: #00B903 !important;
+}
+
+.progressmeter2 .bar {
+    border-bottom-color: #FD0000 !important;
+    border-right-color: #FD0000 !important;
+}
+
+.progressmeter3 .bar {
+    border-bottom-color: #D1D1D1 !important;
+    border-right-color: #D1D1D1 !important;
+}
+
+.progressmeter .barOverflow .dashed {
+    width: 4px;
+    background: #ffffff;
+    z-index: 50;
+    position: absolute;
+}
+
+.progressmeter .barOverflow .dashed:nth-child(odd) {
+    height: 20px;
+}
+
+.progressmeter .barOverflow .dashed:nth-child(even) {
+    height: 14px;
+}
+
+.progressmeter .barOverflow .dashed-1 {
+    top: 88%;
+    left: 3%;
+    transform: rotate(95deg);
+}
+
+.progressmeter .barOverflow .dashed-2 {
+    top: 70%;
+    left: 6%;
+    transform: rotate(104deg);
+}
+
+.progressmeter .barOverflow .dashed-3 {
+    top: 54%;
+    left: 8%;
+    transform: rotate(115deg);
+}
+
+.progressmeter .barOverflow .dashed-4 {
+    top: 34%;
+    left: 15%;
+    transform: rotate(130deg);
+}
+
+.progressmeter .barOverflow .dashed-5 {
+    top: 21%;
+    left: 22%;
+    transform: rotate(146deg);
+}
+
+.progressmeter .barOverflow .dashed-6 {
+    top: 11%;
+    left: 31%;
+    transform: rotate(155deg);
+}
+
+
+.progressmeter .barOverflow .dashed-7 {
+    top: 5%;
+    left: 40%;
+    transform: rotate(166deg);
+}
+
+.progressmeter .barOverflow .dashed-8 {
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: rotate(0deg);
+}
+
+.progressmeter .barOverflow .dashed-9 {
+    top: 5%;
+    left: 61%;
+    transform: rotate(190deg);
+}
+
+.progressmeter .barOverflow .dashed-10 {
+    top: 11%;
+    left: 70%;
+    transform: rotate(210deg);
+}
+
+.progressmeter .barOverflow .dashed-11 {
+    top: 21%;
+    left: 78%;
+    transform: rotate(219deg);
+}
+
+.progressmeter .barOverflow .dashed-12 {
+    top: 34%;
+    left: 84%;
+    transform: rotate(230deg);
+}
+
+.progressmeter .barOverflow .dashed-13 {
+    top: 54%;
+    left: 91%;
+    transform: rotate(240deg);
+}
+
+.progressmeter .barOverflow .dashed-14 {
+    top: 70%;
+    left: 94%;
+    transform: rotate(252deg);
+}
+
+.progressmeter .barOverflow .dashed-15 {
+    top: 88%;
+    left: 96%;
+    transform: rotate(86deg);
+}
+
+.progressmeter .progress-value,
+.progressmeter {
+    font-size: 28px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 700;
+    color: #1b1b1b;
+    letter-spacing: 2px;
+}
+
+.progressmeter .min-value,
+.progressmeter .max-value,
+.progressmeter .meter-name {
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #1d1d1d;
+    position: absolute;
+}
+
+.progressmeter .min-value {
+    top: 126%;
+    left: 7%;
+}
+
+.progressmeter .max-value {
+    top: 126%;
+    left: 87%;
+}
+
+.progressmeter .meter-name {
+    left: 50%;
+    top: 150%;
+    transform: translate(-50%, -50%);
+}
+
+/* ========= DISPLAY 2 SPEEDOMETER END ========= */
+
+
+/* ========= DISPLAY 3 WAVES START ========= */
+
+#Display3 .chart_outer_box {
+    width: 100%;
+    height: 100%;
+    padding: 66px 20px 20px;
+}
+
+#Display3 .chart_main_box {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    background: #FBFBFD;
+    /* background: red; */
+    margin: auto;
+    padding: 20px;
+    position: relative;
+}
+
+#Display3 .chart_compare_box {
+    width: 100%;
+    height: 100%;
+}
+
+#Display3 .chart_compare_box form{
+    width: 100%;
+    height: 100%;
+}
+
+#Display3 .chart_compare_box label {
+    font-family: gilroy-medium, sans-serif;
+    font-size: 18px;
+    font-weight: 500px;
+    color: #000000;
+}
+
+#Display3 .chart_compare_box input {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    height: 40px;
+    font-family: gilroy-medium, sans-serif;
+    font-size: 18px;
+    font-weight: 500px;
+    color: #1a1a1a;
+    padding: 0 5px;
+    margin-left: 5px;
+}
+
+#Display3 .chart_compare_box input.input3031 {
+    width: 210px;
+}
+
+#Display3 .chart_compare_box input.input3032 {
+    width: 170px;
+}
+
+#Display3 .chart_compare_box input.input3033 {
+    width: 170px;
+    margin-left: 25px;
+}
+
+#Display3 .main_chart_container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#Display3 .chart5-container {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ========= DISPLAY 3 WAVES END ========= */
+
+/* ========= DISPLAY 4 DATA TABLE START ========= */
+
+#Display4 .data-table-box {
+    width: 100%;
+    height: 100%;
+    /* padding: 80px 80px 60px; */
+    padding: 66px 20px 20px;
+}
+
+#Display4 .inner_table_box {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    background: #FBFBFD;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+}
+
+#Display4 .data-table-wrapper {
+    position: relative;
+    overflow: auto;
+    height: 100%;
+}
+
+#Display4 .data-table-box table {
+    width: 100%;
+    height: 1000px;
+    position: relative;
+}
+
+#Display4 table th {
+    position: sticky;
+    top: -1px;
+}
+
+#Display4 table th,
+#Display4 table td {
+    font-size: 16px;
+    table-layout: fixed;
+    padding: 0;
+    margin: 0;
+    font-family: gilroy-medium, sans-serif;
+    width: 80px !important;
+    height: 32px !important;
+    border: 1px solid #FBFBFD !important;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#Display4 table th,
+#Display4 table td:first-child {
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    color: #000000;
+    background: #FBFBFD;
+}
+
+#Display4 table td {
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* scrollbar customize start */
+#Display4 .data-table-wrapper::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Handle */
+#Display4 .data-table-wrapper::-webkit-scrollbar-thumb {
+    background: #919191;
+    border-radius: 15px;
+}
+
+/* Handle on hover */
+#Display4 .data-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #424242;
+}
+
+/* scrollbar customize end */
+
+/* ========= DISPLAY 4 DATA TABLE END ========= */
+
+
+
+
+/* ========= DISPLAY 5 PROGRESS RANGE START ========= */
+
+#Display5 .sectiondisplay001 {
+    width: 100%;
+    height: 100%;
+    padding: 68px 20px 22px;
+}
+
+#Display5 .progress-range-box {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    background: #FBFBFD;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+}
+
+#Display5 table {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+
+#Display5 table td {
+    border: 1px solid #cacaca !important;
+    height: 273px;
+    min-width: 200px;
+    margin: 0;
+    padding: 5px 3px;
+}
+
+#Display5 table td .display_date_time {
+    display: flex;
+}
+
+#Display5 table td .from_to {
+    width: 12%;
+    position: relative;
+}
+
+#Display5 table td .separation {
+    width: 10%;
+    position: relative;
+}
+
+#Display5 table td .from_to span,
+#Display5 table td .separation span {
+    color: #89898A;
+    margin: 0;
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#Display5 table td .value_time {
+    margin-left: 5px;
+}
+
+#Display5 table td .value_date span,
+#Display5 table td .value_time span {
+    font-size: 14px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 500;
+    color: #000000;
+}
+
+/* PROGRESS BAR START */
+
+.dis5_progress {
+    width: 90%;
+    height: 75%;
+    margin: 10px auto;
+    position: relative;
+}
+
+.dis5_progress_upbox,
+.dis5_progress_downbox {
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+
+/* .dis5_progress_pos */
+.dis5_progress_upbox .allprogress_pos {
+    width: 100%;
+    background: #00A803;
+    position: absolute;
+    bottom: 0;
+}
+
+/* .dis5_progress_neg */
+.dis5_progress_downbox .allprogress_neg {
+    width: 100%;
+    background: #FD0000;
+}
+
+/* dis5_pos_value dis5_neg_value */
+.dis5_progress_upbox .allpos_value,
+.dis5_progress_downbox .allneg_value {
+    font-size: 16px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 500;
+    color: #000000;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 10px 0;
+}
+
+/* PROGRESS BAR END */
+
+#Display5 .right-slider5,
+#Display5 .left-slider5 {
+    width: 32px;
+    height: 32px;
+    background: #D0D0D0;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+}
+
+#Display5 .right-slider5:hover,
+#Display5 .left-slider5:hover {
+    background: #000000;
+}
+
+#Display5 .right-slider5 i,
+#Display5 .left-slider5 i {
+    color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    z-index: 100;
+}
+
+#Display5 .right-slider5 {
+    top: 42%;
+    right: -15px;
+}
+
+#Display5 .left-slider5 {
+    top: 42%;
+    left: -15px;
+}
+
+/* scrollbar customize start */
+#Display5 table::-webkit-scrollbar {
+    display: none;
+}
+
+/* scrollbar customize end */
+
+
+/* ========= DISPLAY 5 PROGRESS RANGE END ========= */

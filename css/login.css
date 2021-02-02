@@ -1,0 +1,122 @@
+@font-face {
+    font-family: gilroy-regular;
+    src: url(../fonts/Gilroy-Regular.ttf);
+}
+
+@font-face {
+    font-family: gilroy-medium;
+    src: url(../fonts/Gilroy-Medium.ttf);
+}
+
+@font-face {
+    font-family: gilroy-bold;
+    src: url(../fonts/Gilroy-SemiBold.ttf);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    background: #ffffff;
+    font-family: gilroy-regular, sans-serif;
+    overflow: hidden;
+}
+
+#login-section {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+#login-section .login-form {
+    position: absolute;
+    width: 600px;
+    height: 315px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: #f0f0f0;
+}
+
+.login-form .login-title {
+    background: #000000;
+}
+
+.login-title p {
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: gilroy, sans-serif;
+    margin: auto;
+    text-transform: uppercase;
+    padding: 10px 0;
+    letter-spacing: 2px;
+}
+
+.login-form .login-input form {
+    padding-top: 25px;
+}
+
+.login-input form .myinput {
+    width: 500px;
+    height: 50px;
+    margin-bottom: 25px;
+    background-color: #f0f0f0;
+    border: 2px solid #000000;
+    border-radius: 3px;
+    padding-left: 20px;
+    font-size: 20px;
+    color: #7d7c7c;
+    font-weight: 600;
+    font-family: gilroy-regular, sans-serif;
+}
+
+.login-input form input:focus {
+    outline: none;
+}
+
+.login-input .button-box a, .login-input .button-box .login {
+    font-size: 22px;
+    font-weight: 600;
+    font-family: gilroy-medium, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 2px;
+}
+
+.login-input .button-box .reset {
+    background-color: #dddddd;
+    color: #7d7c7c;
+    padding: 12px 35px;
+}
+
+.login-input .button-box .login{
+    padding: 14px 30px;
+    background-color: #fff011;
+    color: #272727;
+    border: none;
+}
+
+.login-input .button-box .reset:hover{
+    background-color: #cfcdcd;
+    color: #4e4e4e;
+}
+
+.login-input .button-box .login:hover{
+    background-color: #ffee00;
+    color: #000000;
+}
+
+a:link,
+a:visited {
+    text-align: center;
+    text-decoration: none;
+
+}

@@ -1,0 +1,116 @@
+
+/* ===/// TEMPLATE SLIDER START ///=== */
+#load_temp_slider {
+    width: 100%;
+    background: #ffffff;
+    position: relative;
+}
+
+/* box design */
+.tab_3 #load_temp_slider .load_temp_row{
+    margin: 36px 200px 62px;
+}
+.tab_3 .mycolmn {
+    width: 25%;
+    margin-top: 42px;
+}
+
+.tab_3 .template_box,
+.tab_3 .create_new_temp {
+    display: table;
+    width: 200px;
+    height: 250px;
+    border-radius: 2px;
+    background: #F9F9F9;
+    border: 1px solid #959595;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    margin: auto;
+}
+
+.tab_3 .create_new_temp{
+    background: #FFF001;
+    border: none;
+}
+
+.tab_3 .template_box .template-content-box {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.tab_3 .template_box img {
+    width: 70px;
+}
+
+.tab_3 .create_new_temp .plus_box{
+    height: 62px;
+    width: 62px;
+    border-radius: 50%;
+    background: #FFF996;
+    position: relative;
+    margin: 0 auto;
+}
+.tab_3 .create_new_temp .plus_box i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #868139;
+    font-size: 36px;
+}
+
+.tab_3 .template_box p {
+    font-size: 24px;
+    color: #1D1D1D;
+    font-weight: bold;
+    font-family: gilroy-bold, sans-serif;
+    /* letter-spacing: 2px; */
+    margin: 0;
+}
+.tab_3 .create_new_temp p{
+    font-family: gilroy-regular, sans-serif;
+    font-size: 22px;
+    color: #000000;
+}
+
+.tab_3 .template_box .load-txt {
+    margin-top: 32px;
+}
+
+.tab_3 .template_box .temp-txt {
+    margin-top: 16px;
+}
+.tab_3 .create_new_temp .temp-txt {
+    margin-top: 10px;
+}
+
+/* carousel control */
+#load_temp_slider .slider_arrow_box{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #474747;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+#load_temp_slider .slider_arrow_box:hover{
+    background: #000000;
+}
+#load_temp_slider .slider_arrow_box.left00a{
+    left: 100px;
+}
+#load_temp_slider .slider_arrow_box.right00a{
+    right: 50px;
+}
+
+#load_temp_slider .slider_arrow_box i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #ffffff;
+    font-size: 28px;
+}
+/* ===/// TEMPLATE SLIDER END ///=== */

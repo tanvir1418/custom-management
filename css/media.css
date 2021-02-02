@@ -1,0 +1,311 @@
+/*  992px to 1400px  */
+@media screen and (max-width: 1400px) and (min-width: 992px) {
+
+    /*-- ======== TAB MENU NAVIGATION START ======== --*/
+    .wrapper .tabs ul li {
+        padding: 0px;
+        margin-right: 50px;
+    }
+}
+
+/*  768px to 991px  */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+
+    /*-- ======== TAB MENU NAVIGATION ======== --*/
+    .wrapper .tabs ul li {
+        padding: 0px;
+        margin-right: 0px;
+    }
+
+    /* SVG / ICON and TEXT BOX SETTINGS START */
+
+    .tab-box .svg-box {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+    }
+
+    .tab-box .svg-box svg {
+        max-height: 24px;
+    }
+
+    .tab-box .title-box {
+        margin-top: 12px;
+    }
+
+    .tab-box .title-box p {
+        letter-spacing: 0px;
+        font-size: 20px;
+    }
+
+    /* SVG / ICON and TEXT BOX SETTINGS END */
+}
+
+/*  0px to 992px  */
+@media only screen and (max-width:992px) {
+
+
+    /* ============================= TAB CONTENT START ============================= */
+
+    .content .tab_content .title p {
+        font-size: 28px;
+    }
+
+    /* ====----=-=-=-=-=-=-=-=-=- MANAGE DATA SECTION START ====----=-=-=-=-=-=-=-=-=-*/
+    .content .tab_2 .option_box {
+        width: 126px;
+        height: 158px;
+    }
+
+    /* ====----=-=-=-=-=-=-=-=-=- MANAGE DATA SECTION END ====----=-=-=-=-=-=-=-=-=-*/
+
+    /* ============================= TAB CONTENT END ============================= */
+}
+
+
+/*  0px to 768px  */
+@media only screen and (max-width:768px) {
+
+    /* =============== Navbar Start =================== */
+    .marquee {
+        width: 55%;
+    }
+
+    .marquee p {
+        /* Apply animation to this element */
+        -moz-animation: scroll-left 15s linear infinite;
+        -webkit-animation: scroll-left 15s linear infinite;
+        animation: scroll-left 15s linear infinite;
+    }
+
+    /* =============== Navbar End =================== */
+
+    /*-- ======== TAB MENU NAVIGATION ======== --*/
+    .wrapper .tabs ul li {
+        padding: 0px;
+        margin-right: 0px;
+    }
+
+    /* SVG / ICON and TEXT BOX SETTINGS START */
+
+    .tab-box {
+        padding-bottom: 10px;
+    }
+
+    .tab-box .svg-box {
+        width: 44px;
+        height: 44px;
+        border-radius: 22px;
+    }
+
+    .tab-box .svg-box svg {
+        max-height: 22px;
+    }
+
+    .tab-box .title-box {
+        margin-top: 12px;
+    }
+
+    .tab-box .title-box p {
+        letter-spacing: 0px;
+        font-size: 18px;
+    }
+
+    /* SVG / ICON and TEXT BOX SETTINGS END */
+
+
+    /* ============================= TAB CONTENT START ============================= */
+
+    .content .tab_content .title p {
+        font-size: 24px;
+    }
+
+    /* ====----=-=-=-=-=-=-=-=-=- MANAGE DATA SECTION START ====----=-=-=-=-=-=-=-=-=-*/
+    .content .tab_2 .option_box {
+        width: 100px;
+        height: 126px;
+    }
+
+    .content .tab_2 .option_box img {
+        width: 35px;
+    }
+
+    .content .tab_2 .option_box p {
+        font-size: 14px;
+        color: #1d1d1d;
+        font-weight: bold;
+        font-family: gilroy-bold, sans-serif;
+        letter-spacing: 2px;
+        margin: 0;
+        margin-top: 14px;
+    }
+
+    /* ====----=-=-=-=-=-=-=-=-=- MANAGE DATA SECTION END ====----=-=-=-=-=-=-=-=-=-*/
+
+    /* ============================= TAB CONTENT END ============================= */
+
+}
+
+/*  0px to 575px  */
+@media only screen and (max-width:575px) {
+
+    /* =============== Navbar Start =================== */
+    .mynav .toggle-btn {
+        height: 40px;
+        width: 40px;
+        border-radius: 20px;
+    }
+
+    .mynav .toggle-btn .hambugrer {
+        height: 3px;
+        width: 16px;
+        border-radius: 20%;
+    }
+
+    .mynav .toggle-btn .hambugrer3 {
+        top: 33%;
+    }
+
+    #triangle {
+        left: 22px;
+        top: 73px;
+    }
+
+    .marquee {
+        width: 40%;
+    }
+
+    .marquee p {
+        /* Apply animation to this element */
+        -moz-animation: scroll-left 10s linear infinite;
+        -webkit-animation: scroll-left 10s linear infinite;
+        animation: scroll-left 10s linear infinite;
+    }
+
+    /* =============== Navbar End =================== */
+
+
+    /* SVG / ICON and TEXT BOX SETTINGS START */
+
+    .tab-box .title-box p {
+        font-size: 14px;
+    }
+
+    /* SVG / ICON and TEXT BOX SETTINGS END */
+
+
+    /* ============================= TAB CONTENT START ============================= */
+
+    .content .tab_content .title p {
+        font-size: 20px;
+    }
+
+    /* ====----=-=-=-=-=-=-=-=-=- MANAGE DATA SECTION START ====----=-=-=-=-=-=-=-=-=-*/
+    .content .tab_2 .option_box {
+        width: 75px;
+        height: 94px;
+    }
+
+    .content .tab_2 .option_box img {
+        width: 26px;
+    }
+
+    .content .tab_2 .option_box p {
+        font-size: 11px;
+        color: #1d1d1d;
+        font-weight: bold;
+        font-family: gilroy-bold, sans-serif;
+        letter-spacing: 2px;
+        margin: 0;
+        margin-top: 5px;
+    }
+
+    /* ====----=-=-=-=-=-=-=-=-=- MANAGE DATA SECTION END ====----=-=-=-=-=-=-=-=-=-*/
+
+    /* ============================= TAB CONTENT END ============================= */
+
+
+    /* =========== FOOTERT SECTION START =========== */
+
+    #footer .footer-link {
+        display: block;
+    }
+
+    #footer .footer-link .services {
+        margin-top: 14px;
+    }
+
+    #footer .footer-link .services p {
+        font-size: 12px;
+    }
+
+    #footer a {
+        font-size: 12px;
+    }
+    /* =========== FOOTERT SECTION END =========== */
+
+}
+
+/*  0px to 575px  */
+@media only screen and (max-width:380px) {
+
+    /* ============================= TAB CONTENT START ============================= */
+    /* ====----=-=-=-=-=-=-=-=-=- MANAGE DATA SECTION START ====----=-=-=-=-=-=-=-=-=-*/
+    .content .tab_2 .option_box {
+        width: 65px;
+        height: 82px;
+    }
+
+    .content .tab_2 .option_box img {
+        width: 24px;
+    }
+
+    .content .tab_2 .option_box p {
+        font-size: 10px;
+    }
+
+    /* ====----=-=-=-=-=-=-=-=-=- MANAGE DATA SECTION END ====----=-=-=-=-=-=-=-=-=-*/
+    /* ============================= TAB CONTENT END ============================= */
+
+}
+
+/*  1800px to max  */
+@media only screen and (min-width:1800px) {
+
+    /*-- ======== TAB MENU NAVIGATION START ======== --*/
+    .wrapper .tabs ul {
+        padding-top: 28px;
+    }
+
+
+    /* SVG / ICON and TEXT BOX SETTINGS START */
+
+    .tab-box {
+        padding-bottom: 28px;
+    }
+
+    .tab-box .svg-box {
+        width: 72px;
+        height: 72px;
+        border-radius: 36px;
+    }
+
+    .tab-box .svg-box svg {
+        max-height: 36px;
+    }
+
+    .tab-box .title-box {
+        margin-top: 30px;
+    }
+
+    .tab-box .title-box p {
+        line-height: 32px;
+        letter-spacing: 3px;
+        font-size: 28px;
+    }
+
+    /* SVG / ICON and TEXT BOX SETTINGS END */
+
+    /*-- ======== TAB MENU NAVIGATION END ======== --*/
+
+}

@@ -1,0 +1,1904 @@
+@font-face {
+    font-family: gilroy-regular;
+    src: url(../fonts/Gilroy-Regular.ttf);
+}
+
+@font-face {
+    font-family: gilroy-medium;
+    src: url(../fonts/Gilroy-Medium.ttf);
+}
+
+@font-face {
+    font-family: gilroy-bold;
+    src: url(../fonts/Gilroy-SemiBold.ttf);
+}
+
+/* ========-= TAB 4 LIST TABLE START ========-= */
+
+.select-item-table {
+    padding-top: 50px;
+    margin: 0 5%;
+}
+
+.select-item-table .title4 {
+    font-family: gilroy-bold, sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    text-align: center;
+    color: #312D4F;
+    letter-spacing: 2px;
+    margin: 0;
+    padding-bottom: 48px;
+}
+
+
+#table-box-404 {
+    position: relative;
+    width: 100%;
+    height: 670px;
+}
+
+#table-box-404 .table-scroll-404 {
+    height: 565px;
+    width: 99%;
+    overflow: auto;
+    /* overflow: hidden; */
+    position: relative;
+}
+
+/* main list */
+#table-box-404 .table-scroll-404 .left-list-404 {
+    width: 250px;
+    background: #F6F6F6;
+    padding: 8px;
+    margin-left: 12px;
+}
+
+#table-box-404 .table-scroll-404 .left-list-404 li {
+    position: relative;
+    display: flex;
+    height: 32px;
+    cursor: pointer;
+}
+
+#table-box-404 .table-scroll-404 .left-list-404 li p {
+    font-family: gilroy-bold, sans-serif;
+    font-size: 14px;
+    color: #000000;
+    margin: auto auto auto 8px;
+}
+
+.table-scroll-404 .left-list-404 li .tik-box {
+    height: 16px;
+    width: 16px;
+    background: #06e791;
+    position: relative;
+    margin: auto -58px auto auto;
+    border-radius: 50%;
+    /* display: none; */
+}
+
+/* Edit by Ashiq */
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
+}
+
+/* Edit End by Ashiq */
+
+.table-scroll-404 .left-list-404 li .tik-box i {
+    position: absolute;
+    margin: auto;
+    top: 3px;
+    bottom: 0;
+    left: 3px;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+
+.table-scroll-404 .left-list-404 li .arrow-404 {
+    height: 18px;
+    width: 18px;
+    /* background: #ffffff; */
+    position: relative;
+    margin: auto 8px auto auto;
+}
+
+/* Edit by Ashiq */
+.arrow-404-background-color-1 {
+    background: #ffffff;
+}
+
+.arrow-404-background-color-2 {
+    background: #f6f6f6;
+}
+
+/* Edit End by Ashiq */
+
+.table-scroll-404 .left-list-404 li .arrow-404 i {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 6px;
+    font-size: 16px;
+    /* color: #8f8f8f; */
+}
+
+/* Edit by Ashiq */
+.arrow-404-i-color-1 {
+    color: #8f8f8f;
+}
+
+.arrow-404-i-color-2 {
+    color: #000000;
+}
+
+/* Edit End by Ashiq */
+
+
+.table-scroll-404 .left-list-404 li:hover .arrow-404,
+.table-scroll-404 .left-list-404 li:hover .arrow-404 i {
+    background: #F6F6F6;
+    color: #000000;
+}
+
+.table-scroll-404 .left-list-404 .highlight_404 {
+    border: 1px solid #000000;
+    border-radius: 3px;
+    background: #ffffff;
+}
+
+/* sublist */
+#table-box-404 .table-scroll-404 .right-list-404 {
+    width: 250px;
+    background: #ffffff;
+    padding: 8px;
+    margin-left: 12px;
+    position: absolute;
+    top: 0;
+}
+
+#table-box-404 .table-scroll-404 .right-list-404 li {
+    border: 1px solid #a1a1a1;
+    border-radius: 3px;
+    background: #ffffff;
+    position: relative;
+    display: flex;
+    height: 25px;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+
+#table-box-404 .table-scroll-404 .right-list-404 li p {
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000;
+    margin: auto auto auto 8px;
+}
+
+.table-scroll-404 .right-list-404 li .sublist-check-box-404 {
+    position: relative;
+    margin: auto 8px auto auto;
+    height: 16px;
+    width: 16px;
+    background: #06e791;
+    border-radius: 50%;
+    display: none;
+}
+
+.table-scroll-404 .right-list-404 li .sublist-check-box-404 i {
+    position: absolute;
+    margin: auto;
+    top: 3px;
+    bottom: 0;
+    left: 3px;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.table-scroll-404 .right-list-404 li .sublist-cancel-box-404 {
+    position: relative;
+    margin: auto 8px auto auto;
+    height: 18px;
+    width: 18px;
+    background: #d3d3d3;
+    border-radius: 50%;
+    /* display: none; */
+}
+
+.table-scroll-404 .right-list-404 li .sublist-cancel-box-404 i {
+    position: absolute;
+    margin: auto;
+    top: 3px;
+    bottom: 0;
+    left: 5px;
+    font-size: 11px;
+    color: #ffffff;
+}
+
+#table-box-404 .results-scroll-down {
+    margin-left: 12px;
+    margin-top: 0px;
+    width: 250px;
+    height: 20px;
+    background: #000000;
+    cursor: pointer;
+}
+
+#table-box-404 .results-scroll-down i {
+    margin-left: 115px;
+    color: #ffffff;
+    font-size: 22px;
+}
+
+/* scrollbar customize start */
+.table-scroll-404::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.table-scroll-404::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #919191;
+    border-radius: 10px;
+}
+
+/* Handle */
+.table-scroll-404::-webkit-scrollbar-thumb {
+    background: #919191;
+    border-radius: 15px;
+}
+
+/* Handle on hover */
+.table-scroll-404::-webkit-scrollbar-thumb:hover {
+    background: #424242;
+}
+
+/* scrollbar customize end */
+
+/* ====XXX====-= TAB 4 LIST TABLE END =====XXXX===-= */
+
+/* ====---------====== CHART PAGE START =====----------==== */
+
+#chartPage {
+    -webkit-transition: opacity 1000ms, visibility 1000ms;
+    transition: opacity 1000ms, visibility 1000ms;
+    padding: 0 5%;
+    background: #f2f2f2;
+}
+
+#chartPage .chart-title {
+    padding: 50px 0;
+}
+
+#chartPage .chart-title p {
+    font-family: gilroy-bold, sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    text-align: center;
+    color: #312D4F;
+}
+
+/* ======= TABS START ====== */
+
+#chartPage .chart-page-tab {
+    margin: 0;
+    margin-bottom: 36px !important;
+}
+
+#chartPage .tablink {
+    width: 8.8%;
+    margin-right: .32%;
+    background-color: #EEEEEE;
+    color: #33394B;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 7px 0px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+    text-align: center;
+    font-size: 18px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#chartPage .active-tab-81 {
+    background-color: #1D1D1D;
+    color: #ffffff;
+}
+
+#chartPage .tablink:last-child {
+    margin-right: 0;
+    float: left;
+}
+
+/* ======= TABS END ====== */
+
+/* ======= TABS CONTENT START ====== */
+
+#chartPage .tab-disable {
+    pointer-events: none;
+}
+
+#chartPage .tabcontent {
+    color: #000000;
+    display: none;
+}
+
+/* INNER TAB CONTENT START */
+#chartPage .inner-tablink {
+    width: 20%;
+    background-color: #FFFE5F;
+    color: #6A6A56;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 0px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+    text-align: center;
+    font-size: 16px;
+    border-right: 1px solid #EBEA51;
+    position: relative;
+}
+
+#chartPage .inner-tablink:last-child {
+    border: none;
+}
+
+#chartPage .inner-tablink::after {
+    padding: 0;
+    margin: 0;
+    display: block;
+    content: "";
+    width: 1px;
+    height: 10px;
+    background-color: #FFFE5F;
+    position: absolute;
+    right: -1px;
+    top: 0;
+}
+
+#chartPage .inner-tablink::before {
+    padding: 0;
+    margin: 0;
+    display: block;
+    content: "";
+    width: 1px;
+    height: 10px;
+    background-color: #FFFE5F;
+    position: absolute;
+    right: -1px;
+    bottom: 0;
+}
+
+#chartPage .inner-tablink:last-child::after,
+#chartPage .inner-tablink:last-child::before {
+    display: none;
+}
+
+#chartPage .inner-active-tab-81 {
+    background-color: #FFFF00;
+    color: #000000;
+    font-weight: 600;
+    border: none;
+}
+
+#chartPage .inner-tabcontent {
+    color: #000000;
+    display: none;
+    width: 100%;
+    height: 420px;
+    background: #ffffff;
+}
+
+
+/* INNER TAB CONTENT END */
+
+/* ======= TABS CONTENT END ====== */
+
+/* //// DOUBLE CLICK COLUMN START //// */
+
+#double_click {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+#double_click .double_click_box {
+    width: 360px;
+    height: 280px;
+    margin: auto;
+    margin-top: 60px;
+}
+
+#double_click .double_click_box.mar559 {
+    margin-left: 170px;
+}
+
+#double_click .double_click_box.mar560 {
+    margin-left: 60px;
+}
+
+#double_click .double_click_box p {
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 600;
+    color: #534848;
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+#double_click .outer_scroll_doubleclick {
+    margin-top: 5px;
+    width: 100%;
+    height: 180px;
+    border: 1px solid #1D1D1D;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 3px 5px 15px 0px #b0bcd4;
+}
+
+#double_click .double_click_selection_box {
+    border-radius: 5px;
+    width: 99%;
+    height: 100%;
+    background: #ffffff;
+    position: relative;
+    overflow: auto;
+}
+
+#double_click .double_click_selection_box table {
+    width: 100%;
+    position: relative;
+}
+
+#double_click table tr:nth-child(even) {
+    background: #FBFBFB;
+}
+
+#double_click table tr td {
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 600;
+    color: #534848;
+    margin: 0;
+    padding: 4px 26px;
+    font-size: 14px;
+}
+
+/* scrollbar customize start */
+#double_click .double_click_selection_box::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Handle */
+#double_click .double_click_selection_box::-webkit-scrollbar-thumb {
+    background: #919191;
+    border-radius: 15px;
+}
+
+/* Handle on hover */
+#double_click .double_click_selection_box::-webkit-scrollbar-thumb:hover {
+    background: #424242;
+}
+
+/* scrollbar customize end */
+
+
+#double_click .double_arrow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#double_click .double_arrow .upper_arrow,
+#double_click .double_arrow .down_arrow {
+    width: 40px;
+    height: 40px;
+    background: #D1D1D1;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#double_click .double_arrow .upper_arrow:hover,
+#double_click .double_arrow .down_arrow:hover {
+    background: #1D1D1D;
+}
+
+#double_click .double_arrow .upper_arrow:hover i,
+#double_click .double_arrow .down_arrow:hover i {
+    color: #1D1D1D;
+}
+
+#double_click .double_arrow .upper_arrow {
+    margin-bottom: 26px;
+}
+
+#double_click .double_arrow .inner_arrow {
+    width: 35px;
+    height: 35px;
+    background: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#double_click .double_arrow i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #D1D1D1;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+#double_click .double_arrow.mpnp551 {
+    left: 89%;
+}
+
+#double_click .double_arrow.mpnp551 .upper_arrow,
+#double_click .double_arrow.mpnp551 .down_arrow {
+    background: #1D1D1D;
+}
+
+#double_click .double_arrow.mpnp551 .upper_arrow i {
+    color: #1D1D1D;
+    top: 60%;
+}
+
+#double_click .double_arrow.mpnp551 .down_arrow i {
+    color: #1D1D1D;
+    top: 40%;
+}
+
+/* //// DOUBLE CLICK COLUMN END //// */
+
+/* -----========= STYLE 1 STYLE 2 START -----========= */
+
+#syle12_section {
+    width: 100%;
+}
+
+#syle12_section .box-style12 {
+    width: 100%;
+    /* height: 600px; */
+    background: #ffffff;
+    /* background: red; */
+    padding: 32px 32px 80px 32px;
+}
+
+/* STYLE 1 STYLE 2 BUTTON WITH FILTERING START */
+#syle12_section .tab_filter-style12 {
+    padding: 40px 16px;
+    display: flex;
+}
+
+#syle12_section .tab_filter-style12 .style1-box {
+    width: 150px;
+    height: 40px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.clickstylebg {
+    background: #FFFF00;
+    border: none;
+}
+
+.clickstylebrdr {
+    background: #ffffff;
+    border: 1px solid #919191;
+    border-radius: 3px;
+}
+
+#syle12_section .tab_filter-style12 .style2-box {
+    width: 150px;
+    height: 40px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.tab_filter-style12 .style1-box img,
+.tab_filter-style12 .style2-box img {
+    width: 40%;
+    height: 80%;
+    margin: 5px;
+}
+
+.tab_filter-style12 .style1-box span {
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    color: #393939;
+}
+
+.tab_filter-style12 .style2-box span {
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    color: #898977;
+}
+
+.tab_filter-style12 .style12btn-3 {
+    width: 150px;
+    height: 40px;
+    border: 1px solid #9C9C9C;
+    border-radius: 3px;
+    position: relative;
+    margin-right: 5px;
+}
+
+.tab_filter-style12 .style12btn-3 p {
+    font-family: gilroy-regular, sans-serif;
+    font-weight: 600;
+    color: #393939;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.tab_filter-style12 .filtering-style12,
+.tab_filter-style12 .editing-style12 {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    position: relative;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.tab_filter-style12 .filtering-style12 {
+    background: #F94747;
+}
+
+.tab_filter-style12 .editing-style12 {
+    background: #000000;
+}
+
+.tab_filter-style12 .filtering-style12 i,
+.tab_filter-style12 .editing-style12 i {
+    position: absolute;
+    left: 30%;
+    top: 35%;
+    color: #ffffff;
+}
+
+.tab_filter-style12 .progress-style12 {
+    width: 150px;
+    height: 40px;
+    border-radius: 3px;
+    background: #1BCE1E;
+    position: relative;
+}
+
+.tab_filter-style12 .inner-progress-style12 {
+    width: 75%;
+    height: 40px;
+    border-radius: 3px;
+    background: #00A703;
+}
+
+.tab_filter-style12 .progress-style12 p {
+    position: absolute;
+    font-family: gilroy-regular, sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-left: 24px;
+    top: 0;
+    left: 0;
+}
+
+/* STYLE 1 STYLE 2 BUTTON WITH FILTERING END */
+
+/* RECORDS STYLE 1 STYLE 2 START */
+#syle12_section .records_style12 {
+    display: flex;
+    padding: 60px 16px 10px;
+}
+
+.records_style12 .page-number12 {
+    display: flex;
+}
+
+.records_style12 .page-number12 p:first-child {
+    font-family: gilroy-medium, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.page-number12 p:first-child span {
+    margin: 0px 5px;
+}
+
+.records_style12 .page-number12 p:last-child {
+    font-family: gilroy-regular, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.page-number12 p:last-child span {
+    margin: 0px 5px;
+}
+
+.page-number12 p:last-child span:last-child {
+    margin: 0;
+    margin-left: 5px;
+}
+
+.records_style12 .pdf_box54 {
+    margin-left: auto;
+}
+
+.records_style12 .pdf_box54,
+.records_style12 .csv_box54 {
+    width: 40px;
+    height: 20px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.records_style12 .pdf_box54 {
+    background: #FA4747;
+}
+
+.records_style12 .csv_box54 {
+    background: #6C00FF;
+    margin-left: 8px;
+    margin-right: 16px;
+}
+
+.records_style12 .pdf_box54 span,
+.records_style12 .csv_box54 span {
+    font-family: gilroy-bold, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-left: 6px;
+}
+
+.records_style12 .style_date_time {
+    display: flex;
+}
+
+.records_style12 .from_to22 span,
+.records_style12 .separation22 span,
+.records_style12 .value_date22 span,
+.records_style12 .value_time22 span {
+    font-family: gilroy-regular, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #393939;
+    margin-left: 5px;
+}
+
+/* RECORDS STYLE 1 STYLE 2 END */
+
+/* ===///=== STYLE 1 TABLE START ===///=== */
+#style1Table {
+    width: 100%;
+    position: relative;
+}
+
+#style1Table table {
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+#style1Table .mytablesty12 {
+    border: 2px solid #EFF1F7 !important;
+}
+
+#style1Table .mytablesty12 thead {
+    border-bottom: 2px solid #EFF1F7 !important;
+}
+
+#style1Table th,
+td {
+    border: none !important;
+}
+
+#style1Table .mytablesty12 td,
+#style1Table .mytablesty12 th {
+    border-right: 2px solid #EFF1F7 !important;
+}
+
+.mytablesty12 thead #column-header-1 {
+    min-width: 50px;
+}
+
+.mytablesty12 thead #column-header-2 {
+    min-width: 154px;
+}
+
+.mytablesty12 thead #column-header-3 {
+    min-width: 77px;
+}
+
+.mytablesty12 thead #column-header-4 {
+    min-width: 77px;
+}
+
+.mytablesty12 thead #column-header-5 {
+    min-width: 130px;
+}
+
+.mytablesty12 thead #column-header-6 {
+    min-width: 120px;
+}
+
+.mytablesty12 thead #column-header-7 {
+    min-width: 70px;
+}
+
+.mytablesty12 thead #column-header-8 {
+    min-width: 210px;
+}
+
+.mytablesty12 thead #column-header-9 {
+    min-width: 165px;
+}
+
+.mytablesty12 thead #column-header-10 {
+    min-width: 77px;
+}
+
+.mytablesty12 thead #column-header-11{
+    min-width: 77px;
+}
+
+/* /////////// */
+.mytablesty12 thead #column-header-12 {
+    min-width: 154px;
+}
+
+.mytablesty12 thead #column-header-13{
+    min-width: 77px;
+}
+
+.mytablesty12 thead #column-header-14 {
+    min-width: 77px;
+}
+
+.mytablesty12 thead #column-header-15 {
+    min-width: 130px;
+}
+
+.mytablesty12 thead #column-header-16 {
+    min-width: 120px;
+}
+
+.mytablesty12 thead #column-header-17 {
+    min-width: 70px;
+}
+
+.mytablesty12 thead #column-header-18 {
+    min-width: 210px;
+}
+
+.mytablesty12 thead #column-header-19 {
+    min-width: 165px;
+}
+
+/* TABLE HEAD START */
+.mytablesty12 .containerst12 {
+    display: block;
+    position: relative;
+    margin-left: 5px;
+    margin-top: -15px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.mytablesty12 .containerst12 input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.containerst12 .checkmark {
+    position: absolute;
+    left: -2px;
+    top: -4px;
+    height: 20px;
+    width: 22px;
+    border: 1px solid #F1F3F7;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+/* On mouse-over, add a grey background color */
+.containerst12:hover input~.checkmark {
+    background-color: #c6ece4;
+}
+
+/* When the checkbox is checked, add a blue background */
+.containerst12 input:checked~.checkmark {
+    background-color: #c6ece4;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.containerst12 .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.containerst12 input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.containerst12 .checkmark:after {
+    left: 8px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.mytablesty12 thead th {
+    font-size: 12px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 600;
+    color: #9F9F9F;
+    background: #FAFAFC;
+    text-align: center;
+}
+
+.mytablesty12 thead th {
+    position: relative;
+}
+
+.mytablesty12 thead th .head-filter {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background: #ffffff;
+    top: 2px;
+    right: 2px;
+    cursor: pointer;
+}
+
+.mytablesty12 thead th .head-filter i {
+    color: #9f9f9f;
+    font-size: 12px;
+    position: absolute;
+    left: 3px;
+    top: 2px;
+}
+
+.mytablesty12 thead th .drop-filter {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background: #ffffff;
+    top: 20px;
+    right: 2px;
+    cursor: pointer;
+}
+
+.mytablesty12 thead th .drop-filter i {
+    color: #9f9f9f;
+    font-size: 14px;
+}
+
+/* TABLE HEAD END */
+
+/* table data start */
+.mytablesty12 tbody {
+    font-size: 14px;
+    font-family: gilroy-bold, sans-serif;
+    text-align: center;
+}
+
+.mytablesty12 tbody td {
+    height: 180px;
+}
+
+.mytablesty12 tbody tr {
+    border-bottom: 2px solid #EFF1F7 !important;
+}
+
+.mytablesty12 tbody tr:last-child {
+    border-bottom: none !important;
+}
+
+/* 1ST COLUMN CHECK BOX */
+tbody td .containerst12 .checkmark {
+    top: 80px;
+}
+
+.mytablesty12 td .icon-box22 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 26px;
+}
+
+/* 2ND COLUMN ICON BOX */
+.mytablesty12 td .icon-box22 .circle2box {
+    background: #F5F5F5;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    position: relative;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.mytablesty12 td .icon-box22 .circle2box:hover {
+    background: #e0e0e0;
+}
+
+.mytablesty12 td .icon-box22 .circle2box i {
+    color: #828282;
+    position: absolute;
+    font-size: 13px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mytablesty12 td .icon-box22 .circle2box svg {
+    position: absolute;
+    max-height: 14px;
+    fill: #828282;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease;
+}
+
+.mytablesty12 td .icon-box22 .circle2box svg.svg2 {
+    max-height: 16px;
+    left: 4px;
+}
+
+.mytablesty12 td .icon-box22 .circle2box svg.svg4 {
+    max-height: 12px;
+}
+
+/* 3RD|4TH COLUMN COL2,COL4 */
+.mytablesty12 .column-time .centerauto {
+    margin-top: 64px;
+}
+
+.mytablesty12 .column-time span {
+    color: #454545;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+/* 5TH STATUS COLUMN */
+.mytablesty12 .status22 {
+    margin: 0px;
+    padding: 1px;
+}
+
+.mytablesty12 .status22 .inner_con {
+    background: #18A733;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.mytablesty12 .status22.status-start .inner_con {
+    background: #FFFF33;
+}
+
+.mytablesty12 .status22 .status22-centerize {
+    width: 100%;
+}
+
+.mytablesty12 .status22 .inner_con p {
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    font-size: 14px;
+    width: 100%;
+}
+
+.mytablesty12 .status22.status-start .inner_con p {
+    color: #000000;
+}
+
+.mytablesty12 .status22 .inner_con p:first-child {
+    color: #62CA75;
+}
+
+.mytablesty12 .status22.status-start .inner_con p:first-child {
+    color: #000000;
+}
+
+.mytablesty12 .status22 .inner_con p:last-child {
+    margin-top: 8px;
+    font-size: 12px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 500;
+}
+
+/* 6TH VAL_DATE COLUMN */
+.mytablesty12 .vall11_datel {
+    margin: 0px;
+    padding: 1px;
+}
+
+.mytablesty12 .vall11_datel .val11 {
+    width: 100%;
+    height: 50%;
+    background: #18A733;
+    position: relative;
+}
+
+.mytablesty12 .vall11_datel .val11 p {
+    font-size: 12px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.mytablesty12 .vall11_datel .date_reco {
+    width: 100%;
+    height: 50%;
+    background: #ffffff;
+    position: relative;
+}
+
+.mytablesty12 .vall11_datel .date_reco .date_reco_center {
+    text-align: center;
+}
+
+.mytablesty12 .vall11_datel .date_reco span {
+    font-size: 12px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 500;
+    color: #454545;
+}
+
+/* 7TH COL9 COLUMN */
+.mytablesty12 .col_00 {
+    position: relative;
+}
+
+.mytablesty12 .col_00 p {
+    font-size: 14px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 500;
+    color: #454545;
+}
+
+/* 8TH CHART1 COLUMN */
+.mytablesty12 .dchart_1 {
+    margin: 0;
+    padding: 1px;
+}
+
+.mytablesty12 .dchart_1 .upper_part_22 {
+    display: flex;
+    height: 50%;
+    padding: 1px;
+}
+
+.mytablesty12 .dchart_1 .uddleft {
+    height: 100%;
+    width: 63%;
+    background: #18A733;
+    position: relative;
+}
+
+.mytablesty12 .dchart_1 .dwnlong .uddleft {
+    background: #FF4141;
+}
+
+.mytablesty12 .dchart_1 .uddright {
+    height: 100%;
+    width: 37%;
+    position: relative;
+}
+
+.mytablesty12 .dchart_1 .upper_part_22 p {
+    margin: 0;
+    width: 100%;
+    font-size: 12px;
+    font-family: gilroy-bold, sans-serif;
+    text-align: center;
+}
+
+.mytablesty12 .dchart_1 .uddleft p {
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.mytablesty12 .dchart_1 .uddright p {
+    font-weight: 600;
+    color: #19A734;
+}
+
+.mytablesty12 .dchart_1 .dwnlong .uddright p {
+    color: #FF4949;
+}
+
+.mytablesty12 .dchart_1 .arrow_bx8 {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    background: #A7FFCE;
+    left: 100%;
+}
+
+.mytablesty12 .dchart_1 .dwnlong .arrow_bx8 {
+    background: #FFA5A5;
+}
+
+.mytablesty12 .dchart_1 .arrow_bx8 i {
+    color: #1AA834;
+}
+
+.mytablesty12 .dchart_1 .dwnlong .arrow_bx8 i {
+    color: #FF4949;
+}
+
+/* 9TH CHART2 COLUMN */
+.mytablesty12 .pentagon {
+    margin: 0;
+    padding: 0;
+}
+
+.mytablesty12 .pentagon .upper-penta-box {
+    width: 100%;
+    height: 50%;
+    border-bottom: 1px solid #dedede;
+    position: relative;
+}
+
+.mytablesty12 .pentagon .lower-penta-box {
+    width: 100%;
+    height: 50%;
+    border-top: 1px solid #dedede;
+    position: relative;
+}
+
+.mytablesty12 .shape_penagon {
+    background: #19A733;
+    display: inline-block;
+    height: 45px;
+    position: relative;
+    width: 62px;
+    position: absolute;
+    bottom: 0;
+    left: 55%;
+}
+
+.mytablesty12 .penta2 .shape_penagon {
+    left: 5%;
+}
+
+.mytablesty12 .penta3 .shape_penagon {
+    left: 35%;
+}
+
+.mytablesty12 .penta5 .shape_penagon {
+    left: 5%;
+}
+
+.mytablesty12 .penta6 .shape_penagon {
+    left: 35%;
+}
+
+.mytablesty12 .upper-penta-box .shape_penagon::after {
+    border-bottom: 20px solid #19A733;
+    border-left: 31px solid transparent;
+    border-right: 31px solid transparent;
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: -20px;
+    width: 0;
+}
+
+.mytablesty12 .lower-penta-box .shape_penagon {
+    background: #FF4141;
+    top: 0;
+    left: 5%;
+    position: relative;
+}
+
+.mytablesty12 .penta2 .lower-penta-box .shape_penagon {
+    left: 55%;
+}
+
+.mytablesty12 .penta3 .lower-penta-box .shape_penagon {
+    left: 45%;
+}
+
+.mytablesty12 .penta5 .lower-penta-box .shape_penagon {
+    left: 55%;
+}
+
+.mytablesty12 .penta6 .lower-penta-box .shape_penagon {
+    left: 45%;
+}
+
+.mytablesty12 .lower-penta-box .shape_penagon::after {
+    border-top: 20px solid #FF4141;
+    border-left: 31px solid transparent;
+    border-right: 31px solid transparent;
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 45px;
+    width: 0;
+}
+
+.mytablesty12 .shape_penagon .top-num p {
+    font-size: 10px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 500;
+    color: #454545;
+    margin-top: -38px;
+    text-align: center;
+}
+
+.mytablesty12 .lower-penta-box .shape_penagon .top-num {
+    position: absolute;
+    bottom: -118%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mytablesty12 .shape_penagon .penta-count p {
+    margin: 0;
+    width: 100%;
+    font-size: 12px;
+    font-family: gilroy-bold, sans-serif;
+    text-align: center;
+    color: #ffffff;
+    line-height: 12px;
+}
+
+.mytablesty12 .lower-penta-box .penta-count p {
+    margin-top: 3px;
+}
+
+/* table data end */
+
+/* SLIDER ARROW START */
+#style1Table .right-slider5,
+#style1Table .left-slider5 {
+    width: 32px;
+    height: 32px;
+    background: #D0D0D0;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+}
+
+#style1Table .right-slider5:hover,
+#style1Table .left-slider5:hover {
+    background: #000000;
+}
+
+#style1Table .right-slider5 i,
+#style1Table .left-slider5 i {
+    color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    z-index: 100;
+}
+
+#style1Table .right-slider5 {
+    top: 42%;
+    right: -38px;
+}
+
+#style1Table .left-slider5 {
+    top: 42%;
+    left: -38px;
+}
+
+/* X CLICK TO REMOVE COLUMN START */
+
+.th-dis-none,
+.displayNone {
+    display: none;
+}
+
+/* SLIDER ARROW END */
+/* ----------- table css by ASHIQ ----------- */
+th[draggable] a,
+th[draggable] {cursor: move;}
+th[draggable] a:hover,
+th[draggable] a {display: block; text-decoration: none; color: #333333;}
+.drag {background-color: rgba(0, 0, 0, 0.25); opacity: 0.25}
+.dnd-drag {opacity: 0.25}
+.over {background-color: rgba(0, 0, 255, 0.35);}
+/* ----------- END Here ----------- */
+
+
+/* scrollbar customize start */
+.mytablesty12::-webkit-scrollbar {
+    display: none;
+}
+
+/* scrollbar customize end */
+/* ===///=== STYLE 1 TABLE END ===///=== */
+
+
+/* ===///=== STYLE 2 TABLE START ===///=== */
+
+#style2Con {
+    padding: 0 16px;
+    position: relative;
+}
+
+/* lorem description */
+#style2Con .description-text {
+    padding: 20px 65px;
+    background: #ffff00;
+    border-radius: 3px;
+}
+
+#style2Con .description-text p {
+    margin: 0;
+    font-family: gilroy-regular, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: #3B3B2E;
+}
+
+/* table top icons */
+#style2Con .icon-box55 {
+    display: flex;
+    padding: 38px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+#style2Con .icon-box55 .circle2box {
+    background: #F5F5F5;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    position: relative;
+    margin: 2px 14px 2px 2px;
+    cursor: pointer;
+}
+
+#style2Con .icon-box55 .circle2box:hover {
+    background: #e0e0e0;
+}
+
+#style2Con .icon-box55 .circle2box i {
+    color: #828282;
+    position: absolute;
+    font-size: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#style2Con .icon-box55 .circle2box svg {
+    position: absolute;
+    max-height: 22px;
+    fill: #828282;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease;
+}
+
+#style2Con .icon-box55 .circle2box svg.svg2 {
+    max-height: 25px;
+    left: 4px;
+}
+
+#style2Con .icon-box55 .circle2box svg.svg4 {
+    max-height: 20px;
+}
+
+/* table width and table head style */
+#style2Con table {
+    width: 92%;
+    border: 2px solid #EFF1F7 !important;
+    margin: 0px;
+    margin: 0 auto;
+}
+
+#style2Con table thead {
+    border-bottom: 2px solid #EFF1F7 !important;
+}
+
+#style2Con table th,
+#style2Con table td {
+    border: none !important;
+}
+
+#style2Con table td,
+#style2Con table th {
+    border-right: 2px solid #EFF1F7 !important;
+}
+#style2Con table td{
+    height:80px;
+}
+/* TABLE HEAD START */
+#style2Con table thead th {
+    font-size: 12px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 600;
+    color: #9F9F9F;
+    background: #FAFAFC;
+    text-align: center;
+}
+
+#style2Con table thead th {
+    position: relative;
+}
+
+#style2Con table thead th .head-filter {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background: #ffffff;
+    top: 2px;
+    right: 2px;
+    cursor: pointer;
+}
+
+#style2Con table thead th .head-filter i {
+    color: #9f9f9f;
+    font-size: 12px;
+    position: absolute;
+    left: 3px;
+    top: 2px;
+}
+
+#style2Con table thead th .drop-filter {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background: #ffffff;
+    top: 20px;
+    right: 2px;
+    cursor: pointer;
+}
+
+#style2Con table thead th .drop-filter i {
+    color: #9f9f9f;
+    font-size: 14px;
+}
+
+
+/* table body style START */
+/* TIME */
+#style2Con table .column-time .centerauto {
+    padding: 16px 0;
+}
+
+#style2Con table .column-time span {
+    color: #454545;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
+
+/* STATUS */
+#style2Con table .status22 {
+    margin: 0px;
+    padding: 0px;
+}
+
+#style2Con table .status22 .inner_con {
+    background: #18A733;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 28px 0;
+}
+
+#style2Con table .status22 .status22-centerize {
+    width: 100%;
+}
+
+#style2Con table .status22 .inner_con p {
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+/* T1163*10 */
+#style2Con table .col_00 {
+    position: relative;
+}
+
+#style2Con table .col_00 p {
+    font-size: 16px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 500;
+    color: #454545;
+}
+
+/* CHART 1 */
+#style2Con table .dchart_1 {
+    height: 193px;
+    margin: 0;
+    padding: 8px;
+}
+
+#style2Con table .dchart_1 .upper_part_22 {
+    display: flex;
+    height: 50%;
+    padding: 2px;
+}
+
+#style2Con table .dchart_1 .uddleft {
+    height: 100%;
+    width: 63%;
+    background: #18A733;
+    position: relative;
+}
+
+#style2Con table .dchart_1 .dwnlong .uddleft {
+    background: #FF4141;
+}
+
+#style2Con table .dchart_1 .uddright {
+    height: 100%;
+    width: 37%;
+    position: relative;
+}
+
+#style2Con table .dchart_1 .upper_part_22 p {
+    margin: 0;
+    width: 100%;
+    font-size: 16px;
+    font-family: gilroy-bold, sans-serif;
+    text-align: center;
+}
+
+#style2Con table .dchart_1 .uddleft p {
+    font-weight: 500;
+    color: #ffffff;
+}
+
+#style2Con table .dchart_1 .uddright p {
+    font-weight: 500;
+    color: #19A734;
+}
+
+#style2Con table .dchart_1 .dwnlong .uddright p {
+    color: #FF4949;
+}
+
+#style2Con table .dchart_1 .arrow_bx8 {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    background: #A7FFCE;
+    left: 100%;
+}
+
+#style2Con table .dchart_1 .dwnlong .arrow_bx8 {
+    background: #FFA5A5;
+}
+
+#style2Con table .dchart_1 .arrow_bx8 i {
+    color: #1AA834;
+}
+
+#style2Con table .dchart_1 .dwnlong .arrow_bx8 i {
+    color: #FF4949;
+}
+
+/* 9TH CHART2 COLUMN */
+#style2Con table .pentagon {
+    margin: 0;
+    padding: 0;
+}
+
+#style2Con table .pentagon .upper-penta-box {
+    width: 100%;
+    height: 50%;
+    border-bottom: 1px solid #dedede;
+    position: relative;
+}
+
+#style2Con table .pentagon .lower-penta-box {
+    width: 100%;
+    height: 50%;
+    border-top: 1px solid #dedede;
+    position: relative;
+}
+
+#style2Con table .shape_penagon {
+    background: #19A733;
+    display: inline-block;
+    height: 45px;
+    position: relative;
+    width: 62px;
+    position: absolute;
+    bottom: 0;
+    left: 55%;
+}
+
+#style2Con table .upper-penta-box .shape_penagon::after {
+    border-bottom: 20px solid #19A733;
+    border-left: 31px solid transparent;
+    border-right: 31px solid transparent;
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: -20px;
+    width: 0;
+}
+
+#style2Con table .lower-penta-box .shape_penagon {
+    background: #FF4141;
+    top: 0;
+    left: 25%;
+    position: relative;
+}
+
+#style2Con table .lower-penta-box .shape_penagon::after {
+    border-top: 20px solid #FF4141;
+    border-left: 31px solid transparent;
+    border-right: 31px solid transparent;
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 45px;
+    width: 0;
+}
+
+#style2Con table .shape_penagon .top-num p {
+    font-size: 12px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 500;
+    color: #454545;
+    margin-top: -40px;
+    text-align: center;
+}
+
+#style2Con table .lower-penta-box .shape_penagon .top-num {
+    position: absolute;
+    bottom: -130%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#style2Con table .shape_penagon .penta-count p {
+    margin: 0;
+    width: 100%;
+    font-size: 12px;
+    font-family: gilroy-bold, sans-serif;
+    text-align: center;
+    color: #ffffff;
+    line-height: 12px;
+}
+
+#style2Con table .lower-penta-box .penta-count p {
+    margin-top: 3px;
+}
+
+/*VAL_DATE COLUMN */
+#style2Con table .vall11_datel {
+    margin: 0px;
+    padding: 1px;
+}
+
+#style2Con table .vall11_datel .val11 {
+    width: 100%;
+    height: 50%;
+    background: #18A733;
+    position: relative;
+}
+
+#style2Con table .vall11_datel .val11 p {
+    font-size: 16px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+#style2Con table .vall11_datel .date_reco {
+    width: 100%;
+    height: 50%;
+    background: #ffffff;
+    position: relative;
+}
+
+#style2Con table .vall11_datel .date_reco .date_reco_center {
+    text-align: center;
+}
+
+#style2Con table .vall11_datel .date_reco span {
+    display:block;
+    font-size: 16px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 500;
+    color: #454545;
+    margin-bottom: 5px;
+}
+#style2Con table .vall11_datel .date_reco span:first-child{
+    margin-bottom: 10px;
+}
+#style2Con table .vall11_datel .date_reco span:last-child{
+    margin-top: 10px;
+}
+/* col1 */
+#style2Con table .vall11_datel .date_reco.col1table {
+    height: 100%;
+}
+
+/* table UPPER BORDER REMOVE */
+#style2Con #sty2table2,
+#style2Con #sty2table3,
+#style2Con #sty2table4{
+    border-top: none !important;
+}
+
+/* SEPARATION LOREM START */
+.mts-80{
+    margin-top: 80px;
+}
+
+/* ===///=== STYLE 2 TABLE END ===///=== */
+
+/* ====----=== PEGINATION START ====----=== */
+
+#syle12_section .container-fluid {
+    padding: 28px 50px 32px;
+}
+
+/* ====----=== PEGINATION END ====----=== */
+
+/* -----========= STYLE 1 STYLE 2 END -----========= */
+/* ====---------====== CHART PAGE END ======------------=== */

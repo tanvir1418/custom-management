@@ -1,0 +1,85 @@
+.inputGroup {
+    background-color: #ffffff;
+    border: 1px solid #a1a1a1;
+    border-radius: 3px;
+    margin-bottom: 3px;
+    position: relative
+}
+
+.inputGroup label {
+    width: 100%;
+    padding: 0px 7px;
+    margin: 0;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000;
+    display: block;
+    text-align: left;
+    color: #3c454c;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    overflow: hidden
+}
+
+.inputGroup label:before {
+    width: 18px;
+    height: 18px;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    z-index: -1
+}
+
+.inputGroup label:after {
+    width: 18px;
+    height: 18px;
+    content: "";
+    border: 2px solid #d1d7dc;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 23 23' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: -2px -2px;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer
+}
+
+.inputGroup input:checked~label:before {
+    -webkit-transform: translate(-50%, -50%) scale3d(56, 56, 1);
+    transform: translate(-50%, -50%) scale3d(56, 56, 1);
+    opacity: 1
+}
+
+.inputGroup input:checked~label:after {
+    background-color: #54e0c7;
+    border-color: #54e0c7
+}
+
+.inputGroup input {
+    width: 18px;
+    height: 18px;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden
+}
+
+.level-item-form {
+    max-height: 26px;
+    line-height: 23px
+}
