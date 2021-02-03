@@ -7563,16 +7563,11 @@
                 <div id="Main" class="tabcontent">
                     <!-- //////////  DISPLAY CHART STYLE START ////////// -->
                     <div class="chart-page-inner-tab">
-                        <button class="inner-tablink" onclick="openPage('Display1', this)" id="firstOpen">Display Chart
-                            Style 1</button>
-                        <button class="inner-tablink" onclick="openPage('Display2', this)">Display Chart Style
-                            2</button>
-                        <button class="inner-tablink" onclick="openPage('Display3', this)">Display Chart Style
-                            3</button>
-                        <button class="inner-tablink" onclick="openPage('Display4', this)">Display Chart Style
-                            4</button>
-                        <button class="inner-tablink" onclick="openPage('Display5', this)">Display Chart Style
-                            5</button>
+                        <button class="inner-tablink" onclick="openPage('Display1', this); gotoChartPage();" id="firstOpen">Display Chart Style 1</button>
+                        <button class="inner-tablink" onclick="openPage('Display2', this)">Display Chart Style 2</button>
+                        <button class="inner-tablink" onclick="openPage('Display3', this)">Display Chart Style 3</button>
+                        <button class="inner-tablink" onclick="openPage('Display4', this)">Display Chart Style 4</button>
+                        <button class="inner-tablink" onclick="openPage('Display5', this)">Display Chart Style 5</button>
                     </div>
                     <div id="Display1" class="inner-tabcontent">
                         <div class="row meter_outer_box">
@@ -7628,7 +7623,7 @@
                                         </div>
                                     </div>
                                     <div id="scorer-1-inner-div-5">
-                                        <div class="scorer-1-tick" id="scorer-meter-1">
+                                        <div class="scorer-1-tick scorer-1-tick-animation" id="scorer-meter-1">
                                             <!-- Add id by ashiq -->
                                         </div>
                                     </div>
@@ -7691,14 +7686,14 @@
                                         </div>
                                     </div>
                                     <div id="scorer-1-inner-div-5">
-                                        <div class="scorer-1-tick" id="scorer-meter-2">
+                                        <div class="scorer-1-tick scorer-1-tick-animation" id="scorer-meter-2">
                                             <!-- Add id by ashiq -->
                                         </div>
                                     </div>
                                     <div class="speed-value">
                                         <!-- Add id by ashiq -->
                                         <p id="value-of-scorer-meter-2">00.00%</p>
-                                        <p>Meter 1</p>
+                                        <p>Meter 2</p>
                                     </div>
                                 </div>
                             </div>
@@ -7754,14 +7749,14 @@
                                         </div>
                                     </div>
                                     <div id="scorer-1-inner-div-5">
-                                        <div class="scorer-1-tick" id="scorer-meter-3">
+                                        <div class="scorer-1-tick scorer-1-tick-animation" id="scorer-meter-3">
                                             <!-- Add id by ashiq -->
                                         </div>
                                     </div>
                                     <div class="speed-value">
                                         <!-- Add id by ashiq -->
                                         <p id="value-of-scorer-meter-3">00.00%</p>
-                                        <p>Meter 1</p>
+                                        <p>Meter 3</p>
                                     </div>
                                 </div>
                             </div>
@@ -7868,8 +7863,12 @@
                                                 <input class="input3033" type="text">
                                             </div>
                                         </div>
-                                        <!-- WAVE START -->
-                                        <!-- WAVE END -->
+                                        <div class="chartWrapper">
+                                            <div class="chartAreaWrapper">
+                                                <canvas id="lineChart" height="300" width="2200"></canvas>
+                                            </div>
+                                            <canvas id="axisY-lineChart" height="300" width="0"></canvas>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
