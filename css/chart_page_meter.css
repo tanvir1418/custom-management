@@ -280,13 +280,16 @@
     width: 120px;
     height: 5px;
     background-color: #E7251C;
-    animation: ticker-mover-1 5s alternate;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
     border-top-right-radius: 5%;
     border-bottom-right-radius: 5%;
+}
+
+.scorer-1-tick-animation{
+    animation: ticker-mover-1 5s alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 @keyframes ticker-mover-1 {
@@ -295,7 +298,7 @@
         transform: rotate(0deg);
     }
 
-    33% {
+    /* 33% {
         transform-origin: right center;
         transform: rotate(60deg);
     }
@@ -303,7 +306,7 @@
     66% {
         transform-origin: right center;
         transform: rotate(120deg);
-    }
+    } */
 
     100% {
         transform-origin: right center;
@@ -638,7 +641,25 @@
     height: 100%;
 }
 
+.chartWrapper {
+    position: relative;
+}
 
+.chartWrapper > canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+.chartAreaWrapper {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+#axisY-lineChart{
+    background: #FBFBFD;
+}
 /* ========= DISPLAY 3 WAVES END ========= */
 
 /* ========= DISPLAY 4 DATA TABLE START ========= */

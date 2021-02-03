@@ -42,10 +42,10 @@ listItemData404.forEach((item, index) => {
     let htmllist = `<li class="list-item-404-${index + 1}">
     <p>${item}</p>
     <div class="tik-box display-none">
-      <i class="fas fa-check"></i>
+        <i class="fas fa-check"></i>
     </div>
     <div class="arrow-404 arrow-404-background-color-1">
-      <i class="fas fa-caret-right arrow-404-i-color-1"></i>
+        <i class="fas fa-caret-right arrow-404-i-color-1"></i>
     </div>
     </li>`;
     left_list_404.innerHTML += htmllist;
@@ -295,54 +295,88 @@ $("#div-sub-ul-li-list").click(function (e) {
     }
     // console.log(target.childNodes[1].innerHTML);
     let dataList = target.childNodes[1].innerHTML;
-    gotoChartPage(dataList, left_list_data);
+    document.querySelector("#chartPage .chart-title .left-item").innerHTML = left_list_data;
+    document.querySelector("#chartPage .chart-title .right-item").innerHTML = dataList;
+    document.getElementById("firstOpen").click();
+    gotoChartPage();
 });
 
-// result_list_1.onclick = () => { ASHIQ
-function gotoChartPage(dataList,left_data) {
+// ----------- ASHIQ -------------- 
+function calAngle(obj) {
+    let matrix = getComputedStyle(obj).getPropertyValue("transform");
+    let values = matrix.split("(")[1].split(")")[0].split(",");
+    let angle = Math.round(Math.atan2(values[1], values[0]) * (180 / Math.PI));
+    return angle;
+}
+function gotoChartPage() {
     select_table.style.display = "none";
     chartPage.style.display = "block";
     chartPage.style.opacity = "1";
-
-    document.querySelector("#chartPage .chart-title .left-item").innerHTML=left_data;
-    document.querySelector("#chartPage .chart-title .right-item").innerHTML=dataList;
+    let interval = 50;
 
     /*============----------ASHIQ----------=============*/
-    // let obj1 = document.getElementById("scorer-meter-1");
-    // let p_element1 = document.getElementById("value-of-scorer-meter-1");
-    // window.setInterval(function () {
-    //     let matrix = getComputedStyle(obj1).getPropertyValue("transform");
-    //     let values = matrix.split("(")[1].split(")")[0].split(",");
-    //     let angle = Math.round(
-    //         Math.atan2(values[1], values[0]) * (180 / Math.PI)
-    //     );
-    //     p_element1.innerHTML = `${parseFloat(angle / 1.8).toFixed(2)}%`;
-    //     // console.log(angle);
-    // }, 100);
+    let meter1_input = 34;
+    let obj1 = document.getElementById("scorer-meter-1");
+    obj1.classList.add("scorer-1-tick-animation");
+    let p_element1 = document.getElementById("value-of-scorer-meter-1");
+    let intervalId1 = window.setInterval(function () {
+        try {
+            let angle = calAngle(obj1);
+            let percent = parseFloat(angle / 1.8).toFixed(2);
+            p_element1.innerHTML = `${percent}%`;
+            if (percent >= meter1_input) {
+                obj1.classList.remove("scorer-1-tick-animation");
+                obj1.style.transformOrigin = "right center";
+                obj1.style.transform = `rotate(${angle}deg)`;
+                p_element1.innerHTML = `${meter1_input}%`;
+                clearInterval(intervalId1);
+            }
+        } catch (err) {
+            clearInterval(intervalId1);
+        }
+    }, interval);
 
-    // let obj2 = document.getElementById("scorer-meter-2");
-    // let p_element2 = document.getElementById("value-of-scorer-meter-2");
-    // window.setInterval(function () {
-    //     let matrix = getComputedStyle(obj2).getPropertyValue("transform");
-    //     let values = matrix.split("(")[1].split(")")[0].split(",");
-    //     let angle = Math.round(
-    //         Math.atan2(values[1], values[0]) * (180 / Math.PI)
-    //     );
-    //     p_element2.innerHTML = `${parseFloat(angle / 1.8).toFixed(2)}%`;
-    //     // console.log(angle);
-    // }, 100);
+    let meter2_input = 55;
+    let obj2 = document.getElementById("scorer-meter-2");
+    obj2.classList.add("scorer-1-tick-animation");
+    let p_element2 = document.getElementById("value-of-scorer-meter-2");
+    let intervalId2 = window.setInterval(function () {
+        try {
+            let angle = calAngle(obj2);
+            let percent = parseFloat(angle / 1.8).toFixed(2);
+            p_element2.innerHTML = `${percent}%`;
+            if (percent >= meter2_input) {
+                obj2.classList.remove("scorer-1-tick-animation");
+                obj2.style.transformOrigin = "right center";
+                obj2.style.transform = `rotate(${angle}deg)`;
+                p_element2.innerHTML = `${meter2_input}%`;
+                clearInterval(intervalId2);
+            }
+        } catch (err) {
+            clearInterval(intervalId2);
+        }
+    }, interval);
 
-    // let obj3 = document.getElementById("scorer-meter-3");
-    // let p_element3 = document.getElementById("value-of-scorer-meter-3");
-    // window.setInterval(function () {
-    //     let matrix = getComputedStyle(obj3).getPropertyValue("transform");
-    //     let values = matrix.split("(")[1].split(")")[0].split(",");
-    //     let angle = Math.round(
-    //         Math.atan2(values[1], values[0]) * (180 / Math.PI)
-    //     );
-    //     p_element3.innerHTML = `${parseFloat(angle / 1.8).toFixed(2)}%`;
-    //     // console.log(angle);
-    // }, 100);
+    let meter3_input = 73;
+    let obj3 = document.getElementById("scorer-meter-3");
+    obj3.classList.add("scorer-1-tick-animation");
+    let p_element3 = document.getElementById("value-of-scorer-meter-3");
+    let intervalId3 = window.setInterval(function () {
+        try {
+            let angle = calAngle(obj3);
+            let percent = parseFloat(angle / 1.8).toFixed(2);
+            p_element3.innerHTML = `${percent}%`;
+            if (percent >= meter3_input) {
+                obj3.classList.remove("scorer-1-tick-animation");
+                obj3.style.transformOrigin = "right center";
+                obj3.style.transform = `rotate(${angle}deg)`;
+                p_element3.innerHTML = `${meter3_input}%`;
+                clearInterval(intervalId3);
+            }
+        } catch (err) {
+            clearInterval(intervalId3);
+        }
+    }, interval);
     /* --------- END ----------- */
 };
 // ====== LIST ITEM TO CHART PAGE END ============
@@ -389,8 +423,6 @@ function openPage(innerpageName, elmnt) {
     document.getElementById(innerpageName).style.display = "block";
 
 }
-
-document.getElementById("firstOpen").click();
 
 $("#firstOpen").addClass("inner-active-tab-81");
 $(".inner-tablink").click(function () {
