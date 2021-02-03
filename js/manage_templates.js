@@ -1,18 +1,18 @@
 $('.carousel').carousel({
-    interval: false,
+  interval: false,
 });
 
 // CLICK LOAD TEMPLATE TO OPEN SAMPLE START
 $(document).ready(function () {
+  $(".template_box").click(function () {
+    let abc = document.querySelector(".sample_options");
+    abc.classList.remove("dispaly_hide");
 
-    $('.template_box').click(function () {
-      $('#create_new_option_four').style.
-    });
-
-    $('.pas').click(function () {
-      $('#my998').addClass('manageGreen');
-      $('#my567').removeClass('createGreen');
-    });
-
+    $("#load_temp_slider").addClass("dispaly_hide");
   });
+});
 // CLICK LOAD TEMPLATE TO OPEN SAMPLE START
+
+// ROW DETAILS WINDOWO DROPDOWN START
+
+// ROW DETAILS WINDOWO DROPDOWN END

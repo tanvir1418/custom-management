@@ -858,7 +858,7 @@ td {
     min-width: 77px;
 }
 
-.mytablesty12 thead #column-header-11{
+.mytablesty12 thead #column-header-11 {
     min-width: 77px;
 }
 
@@ -867,7 +867,7 @@ td {
     min-width: 154px;
 }
 
-.mytablesty12 thead #column-header-13{
+.mytablesty12 thead #column-header-13 {
     min-width: 77px;
 }
 
@@ -1442,12 +1442,30 @@ tbody td .containerst12 .checkmark {
 /* SLIDER ARROW END */
 /* ----------- table css by ASHIQ ----------- */
 th[draggable] a,
-th[draggable] {cursor: move;}
+th[draggable] {
+    cursor: move;
+}
+
 th[draggable] a:hover,
-th[draggable] a {display: block; text-decoration: none; color: #333333;}
-.drag {background-color: rgba(0, 0, 0, 0.25); opacity: 0.25}
-.dnd-drag {opacity: 0.25}
-.over {background-color: rgba(0, 0, 255, 0.35);}
+th[draggable] a {
+    display: block;
+    text-decoration: none;
+    color: #333333;
+}
+
+.drag {
+    background-color: rgba(0, 0, 0, 0.25);
+    opacity: 0.25
+}
+
+.dnd-drag {
+    opacity: 0.25
+}
+
+.over {
+    background-color: rgba(0, 0, 255, 0.35);
+}
+
 /* ----------- END Here ----------- */
 
 
@@ -1502,7 +1520,7 @@ th[draggable] a {display: block; text-decoration: none; color: #333333;}
 }
 
 #style2Con .icon-box55 .circle2box:hover {
-    background: #e0e0e0;
+    background: #000000;
 }
 
 #style2Con .icon-box55 .circle2box i {
@@ -1512,6 +1530,10 @@ th[draggable] a {display: block; text-decoration: none; color: #333333;}
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+#style2Con .icon-box55 .circle2box:hover i {
+    color: #ffffff;
 }
 
 #style2Con .icon-box55 .circle2box svg {
@@ -1524,6 +1546,10 @@ th[draggable] a {display: block; text-decoration: none; color: #333333;}
     right: 0;
     bottom: 0;
     transition: all 0.3s ease;
+}
+
+#style2Con .icon-box55 .circle2box:hover svg {
+    fill: #ffffff;
 }
 
 #style2Con .icon-box55 .circle2box svg.svg2 {
@@ -1556,9 +1582,11 @@ th[draggable] a {display: block; text-decoration: none; color: #333333;}
 #style2Con table th {
     border-right: 2px solid #EFF1F7 !important;
 }
-#style2Con table td{
-    height:80px;
+
+#style2Con table td {
+    height: 80px;
 }
+
 /* TABLE HEAD START */
 #style2Con table thead th {
     font-size: 12px;
@@ -1860,19 +1888,22 @@ th[draggable] a {display: block; text-decoration: none; color: #333333;}
 }
 
 #style2Con table .vall11_datel .date_reco span {
-    display:block;
+    display: block;
     font-size: 16px;
     font-family: gilroy-bold, sans-serif;
     font-weight: 500;
     color: #454545;
     margin-bottom: 5px;
 }
-#style2Con table .vall11_datel .date_reco span:first-child{
+
+#style2Con table .vall11_datel .date_reco span:first-child {
     margin-bottom: 10px;
 }
-#style2Con table .vall11_datel .date_reco span:last-child{
+
+#style2Con table .vall11_datel .date_reco span:last-child {
     margin-top: 10px;
 }
+
 /* col1 */
 #style2Con table .vall11_datel .date_reco.col1table {
     height: 100%;
@@ -1881,12 +1912,12 @@ th[draggable] a {display: block; text-decoration: none; color: #333333;}
 /* table UPPER BORDER REMOVE */
 #style2Con #sty2table2,
 #style2Con #sty2table3,
-#style2Con #sty2table4{
+#style2Con #sty2table4 {
     border-top: none !important;
 }
 
 /* SEPARATION LOREM START */
-.mts-80{
+.mts-80 {
     margin-top: 80px;
 }
 
@@ -1899,6 +1930,134 @@ th[draggable] a {display: block; text-decoration: none; color: #333333;}
 }
 
 /* ====----=== PEGINATION END ====----=== */
-
 /* -----========= STYLE 1 STYLE 2 END -----========= */
 /* ====---------====== CHART PAGE END ======------------=== */
+
+
+
+
+
+
+/* ====/////=== MANAGE RESULT POPUP START ====////=== */
+#tab_4 .modal#rowdetails .modal-dialog,
+#tab_4 .modal#noteswindow .modal-dialog {
+    max-width: 320px;
+}
+
+#tab_4 .modal .modal-content {
+    border: none;
+    border-radius: 3px;
+    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+}
+
+#tab_4 .modal .modal-header {
+    background: #000000;
+    border-radius: 3px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 20px 16px;
+    position: relative;
+}
+
+#tab_4 .modal .modal-title {
+    color: #ffffff;
+    text-align: center;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+#tab_4 .modal .close {
+    position: absolute;
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+    top: 5px;
+    right: 10px;
+    opacity: 1;
+}
+
+#tab_4 .modal .close span {
+    color: #ffffff;
+    font-size: 26px;
+    text-shadow: none;
+}
+
+#tab_4 .modal .modal-body {
+    padding: 0px;
+}
+
+#tab_4 .modal .modal-bodywrap {
+    width: 100%;
+    height: 190px;
+    background: #ffffff;
+    padding: 10px 10px 10px 10px;
+}
+
+#tab_4 .modal #scrollmodal {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    border: 1px solid #EEEFF0;
+}
+
+#tab_4 .modal #scrollmodal .tablemodal {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: none !important;
+}
+
+#tab_4 .modal .tablemodal td {
+    margin: 0;
+    padding: 0;
+    height: 24px;
+    border: none !important;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+    color: #1D1D1D;
+    font-size: 13px;
+    padding-left: 12px;
+}
+
+#tab_4 .modal .tablemodal tr:nth-child(odd) {
+    background: #F8F9FA;
+}
+
+/* scrollbar customize start */
+#tab_4 .modal #scrollmodal::-webkit-scrollbar {
+    width: 4px;
+}
+
+#tab_4 .modal #scrollmodal::-webkit-scrollbar-thumb {
+    background: #d4d3d3;
+    border-radius: 15px;
+}
+
+/* scrollbar customize end */
+
+#tab_4 .modal .submit-notes{
+    padding: 0px 10px 20px;
+}
+
+#tab_4 .modal .submit-notes input[type="text"]{
+    display: block;
+    width: 100%;
+    height: 36px;
+}
+
+
+
+
+/* NOTES WINDOW START */
+
+
+
+
+
+/* NOTES WINDOW END */
+
+/* ====/////=== MANAGE RESULT POPUP END ====///=== */
