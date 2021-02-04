@@ -1945,6 +1945,10 @@ th[draggable] a {
     max-width: 320px;
 }
 
+#tab_4 .modal#alertswindow .modal-dialog {
+    max-width: 1200px;
+}
+
 #tab_4 .modal .modal-content {
     border: none;
     border-radius: 3px;
@@ -1962,6 +1966,10 @@ th[draggable] a {
     position: relative;
 }
 
+#tab_4 .modal#alertswindow .modal-header {
+    padding: 22px 16px;
+}
+
 #tab_4 .modal .modal-title {
     color: #ffffff;
     text-align: center;
@@ -1969,6 +1977,12 @@ th[draggable] a {
     font-weight: 600;
     font-size: 14px;
     margin: 0 auto;
+}
+
+#tab_4 .modal#alertswindow .modal-title {
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 #tab_4 .modal .close {
@@ -2032,10 +2046,12 @@ th[draggable] a {
 #tab_4 .modal #scrollmodal::-webkit-scrollbar {
     width: 4px;
 }
+
 #tab_4 .modal #scrollmodal::-webkit-scrollbar-thumb {
     background: #d4d3d3;
     border-radius: 15px;
 }
+
 /* scrollbar customize end */
 
 /* NOTES WINDOW START */
@@ -2102,6 +2118,238 @@ th[draggable] a {
 #tab_4 .modal .submit-notes input[type="submit"]:hover {
     background: #dddddd;
 }
+
 /* NOTES WINDOW END */
+
+
+/* ALERTS WINDOW START */
+#tab_4 .modal .alertwinbox {
+    padding: 32px;
+}
+
+#tab_4 .modal .alertwinbox .alert_text_box {
+    padding: 16px;
+}
+
+#tab_4 .modal .alertwinbox .alert_text_box p {
+    text-align: center;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0;
+    line-height: 32px;
+}
+
+
+#tab_4 .modal .alertwinbox .alert-table {
+    width: 100%;
+    margin-top: 36px;
+}
+
+#tab_4 .modal .alertwinbox .alert-table,
+#tab_4 .modal .alertwinbox .alert-table thead,
+#tab_4 .modal .alertwinbox .alert-table th,
+#tab_4 .modal .alertwinbox .alert-table td {
+    border: none !important;
+    font-family: gilroy-bold, sans-serif;
+    text-align: center;
+}
+
+#tab_4 .modal .alertwinbox .alert-table th.rowrow4 {
+    width: 8%;
+}
+
+#tab_4 .modal .alertwinbox .alert-table th.alerttype4 {
+    width: 25%;
+}
+
+#tab_4 .modal .alertwinbox .alert-table th.alertvalue4 {
+    width: 17%;
+}
+
+#tab_4 .modal .alertwinbox .alert-table th.alertfreq4 {
+    width: 17%;
+}
+
+#tab_4 .modal .alertwinbox .alert-table th.alertmethod4 {
+    width: 25%;
+}
+
+#tab_4 .modal .alertwinbox .alert-table th.alertnull4 {
+    width: 8%;
+}
+
+#tab_4 .modal .alertwinbox .alert-table th {
+    background: #ffffff;
+    color: #222222;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0 0 20px;
+}
+
+#tab_4 .modal .alertwinbox .alert-table tr:nth-child(odd) {
+    background: #F5F5F5;
+}
+
+#tab_4 .modal .alertwinbox .alert-table td {
+    height: 50px !important;
+    padding: 0 16px;
+}
+
+#tab_4 .modal .alertwinbox .alert-table td:first-child {
+    color: #222222;
+    font-size: 18px;
+}
+#tab_4 .modal .alert-table .selectaltype,
+#tab_4 .modal .alert-table .selectalfreq{
+    position: relative;
+}
+
+#tab_4 .modal .alert-table .selectaltype select,
+#tab_4 .modal .alert-table .selectalfreq select{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #8c8c8c;
+    background: #ffffff;
+    border-radius: 3px;
+    padding-left: 8px;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+}
+#tab_4 .modal .alert-table .selectarrow{
+    background: #F5F5F5;
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    border-radius: 2px;
+    top: 18px;
+    right: 24px;
+}
+#tab_4 .modal .alert-table .selectarrow i{
+    color: #818181;
+    position: absolute;
+    left: 54%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#tab_4 .modal .alert-table .inpalertval input{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #8c8c8c;
+    background: #ffffff;
+    border-radius: 3px;
+    padding-left: 8px;
+    outline: none;
+}
+
+#tab_4 .modal .alert-table .inpumail .mail_enter{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #8c8c8c;
+    background: #ffffff;
+    border-radius: 3px;
+    display: flex;
+}
+#tab_4 .modal .alert-table .inpumail .mail_icons{
+    width: 30%;
+    height: 100%;
+    padding: 4px;
+    background: #888888;
+}
+#tab_4 .modal .alert-table .mail_icons i.fa-envelope{
+    margin-right: 3px;
+    color: #9BFF00;
+}
+#tab_4 .modal .alert-table .mail_icons i.fa-phone-alt{
+    color: #E1E1E1;
+    text-align: center;
+}
+#tab_4 .modal .alert-table .mail_icons i.fa-comment-alt{
+    margin-left: 3px;
+    color: #E1E1E1;
+}
+#tab_4 .modal .alert-table .mail_enter input{
+    width: 70%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 12px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 3px;
+}
+#tab_4 .modal .alert-table .mail_enter input::placeholder{
+    color: #D1D1D1;
+}
+#tab_4 .modal .alert-table .removenull{
+    width: 100%;
+    height: 30px;
+    display: flex;
+}
+#tab_4 .modal .alert-table .removenull .circle_550{
+    margin: auto;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #FFCDCD;
+    position: relative;
+}
+#tab_4 .modal .alert-table .removenull .circle_550:first-child{
+    margin-right: 8px;
+    background: #E5E5E5;
+}
+
+#tab_4 .modal .alert-table .removenull .circle_550 i{
+    position: absolute;
+    color: #FF3535;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#tab_4 .modal .alert-table .removenull .circle_550:first-child i{
+    color: #878787;
+}
+
+#tab_4 .alertwinbox .reset-save-btn{
+    margin-top: 42px;
+    width: 100%;
+    text-align: center;
+}
+#tab_4 .alertwinbox .reset-save-btn button{
+    padding: 8px 34px;
+    border-radius: 3px;
+    border: 1px solid #BBBBBB;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #1D1D1D;
+    letter-spacing: 1px;
+    background: #F1F3F5;
+    transition: 0.3s ease all;
+}
+#tab_4 .alertwinbox .reset-save-btn .reset4:hover{
+    background: #b3b3b3;
+}
+#tab_4 .alertwinbox .reset-save-btn .save4{
+    border: 1px solid #000000;
+    color: #ffffff;
+    background: #000000;
+    margin-left: 16px;
+}
+#tab_4 .alertwinbox .reset-save-btn .save4:hover{
+    background: #131313;
+}
+
+
+
+/* ALERTS WINDOW END */
 
 /* ====/////=== MANAGE RESULT POPUP END ====///=== */
