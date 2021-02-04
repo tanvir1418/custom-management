@@ -7,7 +7,7 @@ $(document).ready(function () {
     data5 = [];
     data6 = [];
     data7 = [];
-    for (let i = 1; i <= 30; i++) {
+    for (let i = 1; i <= 100; i++) {
         labels.push(i);
         data1.push(rand());
         data2.push(rand());
@@ -77,9 +77,11 @@ $(document).ready(function () {
                             },
                             ticks: {
                                 suggestedMin: 1,
-                                suggestedMax: 31,
-                                fontStyle: "bold",
-                                fontFamily: "Verdana",
+                                suggestedMax: 100,
+                                fontStyle: "600",
+                                fontFamily: "gilroy-medium",
+                                fontColor:"#000000",
+                                fontSize:14
                             },
                         },
                     ],
@@ -92,8 +94,10 @@ $(document).ready(function () {
                                 suggestedMin: -100,
                                 suggestedMax: 100,
                                 stepSize: 25,
-                                fontStyle: "bold",
-                                fontFamily: "Verdana",
+                                fontStyle: "600",
+                                fontFamily: "gilroy-medium",
+                                fontColor:"#000000",
+                                fontSize:14
                             },
                         },
                     ],

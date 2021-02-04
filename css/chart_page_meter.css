@@ -660,6 +660,50 @@
 #axisY-lineChart{
     background: #FBFBFD;
 }
+
+/* ARROW STYLE START */
+#Display3 .right-slider5,
+#Display3 .left-slider5 {
+    width: 32px;
+    height: 32px;
+    background: #D0D0D0;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+}
+
+#Display3 .right-slider5:hover,
+#Display3 .left-slider5:hover {
+    background: #000000;
+}
+
+#Display3 .right-slider5 i,
+#Display3 .left-slider5 i {
+    color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    z-index: 100;
+}
+
+#Display3 .right-slider5 {
+    top: 48%;
+    right: -15px;
+}
+
+#Display3 .left-slider5 {
+    top: 48%;
+    left: -15px;
+}
+/* ARROW STYLE END */
+
+/* scrollbar customize start */
+#Display3 .chartAreaWrapper::-webkit-scrollbar {
+    display: none;
+}
+
 /* ========= DISPLAY 3 WAVES END ========= */
 
 /* ========= DISPLAY 4 DATA TABLE START ========= */
@@ -892,12 +936,12 @@
 }
 
 #Display5 .right-slider5 {
-    top: 42%;
+    top: 48%;
     right: -15px;
 }
 
 #Display5 .left-slider5 {
-    top: 42%;
+    top: 48%;
     left: -15px;
 }
 
