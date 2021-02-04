@@ -395,7 +395,6 @@ function openPage(pageName, elmnt) {
         tablinks[i].style.backgroundColor = "";
     }
     document.getElementById(pageName).style.display = "block";
-
 }
 
 document.getElementById("defaultOpen").click();
