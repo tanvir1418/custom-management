@@ -19,7 +19,7 @@
     border-radius: 50%;
     border-bottom: 0;
     z-index: 0;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 .speedometer1 {
@@ -366,7 +366,7 @@
     margin: 4px;
     float: left;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 73px;
 }
 
 .progressmeter1 {
@@ -398,8 +398,6 @@
     border-radius: 50%;
     box-sizing: border-box;
     border: 60px solid #FFFF01;
-    /* border-bottom-color: #00B903; */
-    /* border-right-color: #00B903; */
 }
 
 .progressmeter1 .bar {
@@ -566,6 +564,12 @@
 #Display3.inner-tabcontent{
     height:466px !important;
 }
+#Display4.inner-tabcontent{
+    height:466px !important;
+}
+#Display5.inner-tabcontent{
+    height:466px !important;
+}
 
 #Display3 .chart_outer_box {
     width: 100%;
@@ -578,7 +582,6 @@
     width: 100%;
     height: 100%;
     background: #FBFBFD;
-    /* background: red; */
     margin: auto;
     padding: 20px;
     position: relative;
@@ -657,6 +660,50 @@
 #axisY-lineChart{
     background: #FBFBFD;
 }
+
+/* ARROW STYLE START */
+#Display3 .right-slider5,
+#Display3 .left-slider5 {
+    width: 32px;
+    height: 32px;
+    background: #D0D0D0;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+}
+
+#Display3 .right-slider5:hover,
+#Display3 .left-slider5:hover {
+    background: #000000;
+}
+
+#Display3 .right-slider5 i,
+#Display3 .left-slider5 i {
+    color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    z-index: 100;
+}
+
+#Display3 .right-slider5 {
+    top: 48%;
+    right: -15px;
+}
+
+#Display3 .left-slider5 {
+    top: 48%;
+    left: -15px;
+}
+/* ARROW STYLE END */
+
+/* scrollbar customize start */
+#Display3 .chartAreaWrapper::-webkit-scrollbar {
+    display: none;
+}
+
 /* ========= DISPLAY 3 WAVES END ========= */
 
 /* ========= DISPLAY 4 DATA TABLE START ========= */
@@ -773,7 +820,7 @@
 
 #Display5 table td {
     border: 1px solid #cacaca !important;
-    height: 273px;
+    height: 330px;
     min-width: 200px;
     margin: 0;
     padding: 5px 3px;
@@ -889,12 +936,12 @@
 }
 
 #Display5 .right-slider5 {
-    top: 42%;
+    top: 48%;
     right: -15px;
 }
 
 #Display5 .left-slider5 {
-    top: 42%;
+    top: 48%;
     left: -15px;
 }
 
@@ -904,6 +951,4 @@
 }
 
 /* scrollbar customize end */
-
-
 /* ========= DISPLAY 5 PROGRESS RANGE END ========= */

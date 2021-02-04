@@ -290,7 +290,7 @@ $("#div-sub-ul-li-list").click(function (e) {
         target = target.parentNode;
     } else if (target.tagName === "I") {
         target = target.parentNode.parentNode;
-    } else if(target.tagName!=="LI"){
+    } else if (target.tagName !== "LI") {
         return;
     }
     // console.log(target.childNodes[1].innerHTML);
@@ -308,6 +308,7 @@ function calAngle(obj) {
     let angle = Math.round(Math.atan2(values[1], values[0]) * (180 / Math.PI));
     return angle;
 }
+
 function gotoChartPage() {
     select_table.style.display = "none";
     chartPage.style.display = "block";
@@ -573,7 +574,7 @@ cell.each(function () {
 // ================ DISPLAY 4 TABLE DATA END ================
 
 
-// ================ DISPLAY 5 SCROLL BAR START ================
+// ================ ARROW SCROLL BAR START ================
 
 $(document).ready(function () {
     const table001122 = document.querySelector("#table001122");
@@ -592,6 +593,27 @@ $(document).ready(function () {
         );
     });
 });
+
+// ///////////////////////////////////////////
+$(document).ready(function () {
+    const chartAreaWrapper = document.querySelector(".chartAreaWrapper");
+    $(".chart_main_box .right-slider5").click(function () {
+        $(".chartAreaWrapper").animate({
+                scrollLeft: chartAreaWrapper.scrollLeft + 250,
+            },
+            250
+        );
+    });
+    $(".chart_main_box .left-slider5").click(function () {
+        $(".chartAreaWrapper").animate({
+                scrollLeft: chartAreaWrapper.scrollLeft - 250,
+            },
+            250
+        );
+    });
+});
+
+
 // ///////////////////////////////////////////
 $(document).ready(function () {
     const mytablesty12 = document.querySelector(".mytablesty12");
@@ -611,7 +633,7 @@ $(document).ready(function () {
     });
 });
 
-// ================ DISPLAY 5 SCROLL BAR END ================
+// ================ ARROW SCROLL BAR END ================
 
 // ============== DISPLAY 5 SHOW DATE/TIME START =========
 
@@ -1057,7 +1079,7 @@ $("#cross19").click(function () {
 // X CLICK TO REMOVE COLUMN END ==============
 
 // TABLE RESIZEABLE START ===////////////////===
-$(document).ready(function() {
+$(document).ready(function () {
     var thHeight = $("table#resizable554 th:first").height();
     $("table#resizable554 th").resizable({
         handles: "e",
