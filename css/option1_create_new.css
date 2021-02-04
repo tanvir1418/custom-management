@@ -1,3 +1,4 @@
+/* =======Added by TANVIR (Copy Paste full file)====== */
 @font-face {
     font-family: gilroy-regular;
     src: url(../fonts/Gilroy-Regular.ttf);
@@ -311,17 +312,56 @@
 
 /* Custom ScrollBar Ends  */
 /* ........................... */
-.option-selection .toggle__text {
+
+
+.op1-option-selection .width-5 {
+    width: 3%;
+    height: 60px;
+    text-align: left;
+    /* padding-top: 10px; */
+}
+
+.op1-option-selection .width-5 .threebar {
+    padding-top: 4px;
+    font-size: 20px;
+    text-align: end;
+}
+
+.op1-option-selection .width-5 .icon-container {
+    padding-top: 10px;
+}
+
+.op1-option-selection .width-22 {
+    width: 23%;
+    height: 60px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.op1-option-selection .width-22 .error-message p {
+    font-size: 12px;
+    color: red;
+    padding-left: 2px;
+}
+
+.op1-option-selection .width-26 {
+    width: 25%;
+    height: 60px;
+    text-align: left;
+    padding-top: 6px;
+}
+
+.op1-option-selection .toggle__text {
     color: #000000;
     font-family: gilroy-regular, sans-serif;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 16px;
     margin-left: 5px;
 }
 
 /* ........................... */
 /*  Select box styling Starts  */
-.option-selection .custome-select {
+.op1-option-selection .custome-select {
     background: #e6e6e6;
     position: relative;
     width: 100%;
@@ -330,7 +370,7 @@
     border-radius: 6px;
 }
 
-.option-selection .custome-select select {
+.op1-option-selection .custome-select select {
     background: #ffffff !important;
     color: #acacac !important;
     font-family: gilroy-medium, sans-serif;
@@ -346,23 +386,25 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border: 1px solid #d5d5d5;
+    border: 2px solid #d5d5d5;
     border-radius: 4px;
 }
 
-.option-selection .custome-select select:hover,
-.option-selection .custome-select select:focus {
+.op1-option-selection .custome-select select:hover,
+.op1-option-selection .custome-select select:focus {
     cursor: pointer;
     outline: 0;
+    border: 2px solid #d5d5d5;
+    border-radius: 4px;
 }
 
-.option-selection .custome-select:after {
+.op1-option-selection .custome-select:after {
     content: "\25bc";
     font-size: 10px;
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     position: absolute;
-    background-color: white;
+    background-color: #f5f5f5;
     color: #818181;
     z-index: 2;
     right: 8px;
@@ -372,7 +414,7 @@
     opacity: 0.8;
 }
 
-.option-selection .custome-select select option {
+.op1-option-selection .custome-select select option {
     background: #ffffff;
 }
 
@@ -381,7 +423,7 @@
 
 /* ........................... */
 /*  Custom Input styling Starts  */
-.option-selection .custom-input-success {
+.op1-option-selection .custom-input-success {
     background: #e6e6e6;
     position: relative;
     width: 100%;
@@ -390,7 +432,7 @@
     border-radius: 6px;
 }
 
-.option-selection .custom-input-success input {
+.op1-option-selection .custom-input-success input {
     /* background: #ddd; */
     background: #e6e6e6;
     color: #2e2c2c;
@@ -411,8 +453,8 @@
     overflow: hidden;
 }
 
-.option-selection .custom-input-success input:hover,
-.option-selection .custom-input-success input:focus {
+.op1-option-selection .custom-input-success input:hover,
+.op1-option-selection .custom-input-success input:focus {
     box-shadow: chartreuse;
     /* cursor: pointer;
       outline: 0;
@@ -420,7 +462,7 @@
       border-radius: 0; */
 }
 
-.option-selection .custom-input-success:after {
+.op1-option-selection .custom-input-success:after {
     content: "\2714";
     font-size: 11px;
     width: 16px;
@@ -436,12 +478,12 @@
     /* opacity: 0.8; */
 }
 
-.option-selection .custom-input-success input {
+.op1-option-selection .custom-input-success input {
     background: #ffffff;
 }
 
 /* Custom Input Danger */
-.option-selection .custom-input-danger {
+.op1-option-selection .custom-input-danger {
     background: #e6e6e6;
     position: relative;
     width: 100%;
@@ -450,7 +492,7 @@
     border-radius: 6px;
 }
 
-.option-selection .custom-input-danger input {
+.op1-option-selection .custom-input-danger input {
     /* background: #ddd; */
     background: #e6e6e6;
     color: #2e2c2c;
@@ -470,8 +512,8 @@
     border-radius: 4px;
 }
 
-.option-selection .custom-input-danger input:hover,
-.option-selection .custom-input-danger input:focus {
+.op1-option-selection .custom-input-danger input:hover,
+.op1-option-selection .custom-input-danger input:focus {
     box-shadow: red;
     /* cursor: pointer;
       outline: 0;
@@ -479,7 +521,7 @@
       border-radius: 0; */
 }
 
-.option-selection .custom-input-danger:after {
+.op1-option-selection .custom-input-danger:after {
     content: "\2716";
     font-size: 11px;
     width: 16px;
@@ -495,7 +537,7 @@
     /* opacity: 0.8; */
 }
 
-.option-selection .custom-input-danger input {
+.op1-option-selection .custom-input-danger input {
     background: #ffffff;
 }
 
@@ -505,56 +547,19 @@
 /* ============================ */
 /*  Custom Input styling Ends  */
 
-.option-selection .width-5 {
-    width: 3%;
-    height: 60px;
-    text-align: left;
-    /* padding-top: 10px; */
-}
-
-.option-selection .width-5 .threebar {
-    padding-top: 4px;
-    font-size: 20px;
-    text-align: end;
-}
-
-.option-selection .width-5 .icon-container {
-    padding-top: 10px;
-}
-
-.option-selection .width-22 {
-    width: 23%;
-    height: 60px;
-    padding-right: 5px;
-    padding-left: 5px;
-}
-
-.option-selection .width-22 .error-message p {
-    font-size: 12px;
-    color: red;
-    padding-left: 2px;
-}
-
-.option-selection .width-26 {
-    width: 25%;
-    height: 60px;
-    text-align: left;
-    padding-top: 6px;
-}
-
 /* ========================= */
 /* Check box Styles Starts */
 /* .page__toggle {
       margin: 0 10px;
     } */
-.option-selection .toggle {
+.op1-option-selection .toggle {
     display: inline-flex;
     position: relative;
     margin-bottom: 0;
 }
 
 /* this hides the main checkbox */
-.option-selection .toggle__input {
+.op1-option-selection .toggle__input {
     width: 20px;
     height: 20px;
     opacity: 0;
@@ -564,26 +569,27 @@
     margin: 0;
 }
 
-.option-selection .toggle__label {
+.op1-option-selection .toggle__label {
     display: inline-flex;
     min-height: 32px;
     font-size: 20px;
     padding-left: 35px;
 }
 
-.option-selection .toggle__input:not(:disabled)~.toggle__label {
+.op1-option-selection .toggle__input:not(:disabled)~.toggle__label {
     cursor: pointer;
 }
 
 /* this is for box */
-.option-selection .toggle__label::after {
+.op1-option-selection .toggle__label::after {
     content: "";
     box-sizing: border-box;
     width: 24px;
     height: 24px;
     font-size: 20px;
 
-    background-color: #d0d0d0;
+    /* background-color: #d0d0d0; */
+    background-color: #ffffff;
     /* border: 2px solid #690e90; */
 
     position: absolute;
@@ -592,7 +598,7 @@
     z-index: 2;
 }
 
-.option-selection .toggle__input:checked~.toggle__label::after {
+.op1-option-selection .toggle__input:checked~.toggle__label::after {
     background-color: #25d34f;
     box-shadow: 5px 5px 5px 4px rgba(140, 245, 80, 0.2);
 }
@@ -602,7 +608,7 @@
       margin-bottom: auto;
     } */
 /* this is for tik sign */
-.option-selection .toggle__label::before {
+.op1-option-selection .toggle__label::before {
     content: "";
     width: 0;
     height: 0;
@@ -623,23 +629,23 @@
     transform: rotate(-40deg) skew(10deg);
 }
 
-.option-selection .toggle__input:checked~.toggle__label::before {
+.op1-option-selection .toggle__input:checked~.toggle__label::before {
     width: 10px;
     height: 6px;
     border-left-width: 2px;
     border-bottom-width: 2px;
 }
 
-.option-selection .toggle__label::after {
+.op1-option-selection .toggle__label::after {
     border-radius: 4px;
 }
 
-.option-selection .icon-container .fas {
+.op1-option-selection .icon-container .fas {
     opacity: 0.2;
     font-size: 20px;
 }
 
-.option-selection .icon-container .fas:hover {
+.op1-option-selection .icon-container .fas:hover {
     opacity: 1;
     cursor: pointer;
 }
@@ -707,7 +713,7 @@
     outline: none;
     border-radius: 4px;
     padding: 15px;
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bold;
     background: #e9e9e9;
     color: #7b7b7b;
@@ -715,6 +721,7 @@
     -webkit-appearance: none;
     display: block;
     width: 100%;
+    height: 100%;
 }
 
 .control-section .btn-generate {
@@ -732,7 +739,7 @@
 .control-section .btn-generate:focus {
     background: #e9e9e9;
     color: #7b7b7b;
-    border: solid 1px #000000;
+    /* border: solid 1px #000000; */
 }
 
 /* control section style ends */
@@ -813,28 +820,28 @@
         padding: 35px 0px;
     }
 
-    .option-selection .width-5 .threebar {
-        padding-top: 4px;
+    .op1-option-selection .width-5 .threebar {
+        padding-top: 2px;
         font-size: 16px;
     }
 
-    .option-selection .width-5 .icon-container {
-        padding-top: 6px;
+    .op1-option-selection .width-5 .icon-container {
+        padding-top: 4px;
     }
 
     /* .page__toggle {
         padding-top: 2px;
       } */
-    .option-selection .toggle__text {
-        font-size: 16px;
+    .op1-option-selection .toggle__text {
+        font-size: 14px;
     }
 
-    .option-selection .toggle__label {
+    .op1-option-selection .toggle__label {
         padding-left: 30px;
     }
 
     /* this is for box */
-    .option-selection .toggle__label::after {
+    .op1-option-selection .toggle__label::after {
         width: 20px;
         height: 20px;
 
@@ -843,25 +850,25 @@
     }
 
     /* this is for tik sign */
-    .option-selection .toggle__label::before {
+    .op1-option-selection .toggle__label::before {
         top: 13px;
         left: 10px;
     }
 
-    .option-selection .icon-container .fas {
+    .op1-option-selection .icon-container .fas {
         font-size: 16px;
     }
 
-    .option-selection .custome-select {
+    .op1-option-selection .custome-select {
         height: 35px;
     }
 
-    .option-selection .custome-select select {
+    .op1-option-selection .custome-select select {
         font-size: 16px;
         padding: 0 8px;
     }
 
-    .option-selection .custome-select:after {
+    .op1-option-selection .custome-select:after {
         width: 12px;
         height: 12px;
         font-size: 9px;
@@ -871,16 +878,16 @@
     }
 
     /*  Custom Input styling Starts  */
-    .option-selection .custom-input-success {
+    .op1-option-selection .custom-input-success {
         height: 35px;
     }
 
-    .option-selection .custom-input-success input {
+    .op1-option-selection .custom-input-success input {
         font-size: 16px;
         padding: 5px 10px;
     }
 
-    .option-selection .custom-input-success:after {
+    .op1-option-selection .custom-input-success:after {
         width: 12px;
         height: 12px;
         font-size: 9px;
@@ -889,16 +896,16 @@
         border-radius: 3px;
     }
 
-    .option-selection .custom-input-danger {
+    .op1-option-selection .custom-input-danger {
         height: 35px;
     }
 
-    .option-selection .custom-input-danger input {
+    .op1-option-selection .custom-input-danger input {
         font-size: 16px;
         padding: 5px 10px;
     }
 
-    .option-selection .custom-input-danger:after {
+    .op1-option-selection .custom-input-danger:after {
         width: 12px;
         height: 12px;
         font-size: 9px;
@@ -917,26 +924,26 @@
     .control-section .back-button {
         height: 60px;
         width: 15%;
-        padding-right: 30px;
+        padding-right: 15px;
     }
 
     .control-section .reset-button {
         height: 60px;
         width: 15%;
-        padding-left: 30px;
+        padding-left: 15px;
     }
 
     .control-section .save-result-input {
         height: 60px;
         flex-grow: 1;
-        padding-right: 40px;
-        padding-left: 60px;
+        padding-right: 30px;
+        padding-left: 30px;
     }
 
     .control-section .generate-button {
         height: 60px;
         width: 15%;
-        padding-left: 30px;
+        padding-left: 15px;
     }
 
     .control-section input {
@@ -990,52 +997,154 @@
     /* ========================== */
 }
 
-@media screen and (max-width: 1368px) {
+@media screen and (max-width: 1450px) {
     .side-box {
         padding: 30px 0px;
     }
 
-    .option-selection .width-5 .threebar {
-        padding-top: 8px;
+    .op1-option-selection .width-5 .threebar {
+        padding-top: 4px;
         font-size: 14px;
     }
 
-    .option-selection .width-5 .icon-container {
+    .op1-option-selection .width-5 .icon-container {
         padding-top: 6px;
     }
 
-    /* .page__toggle {
-        padding-top: 3px;
-      } */
-    .option-selection .toggle__text {
-        font-size: 14px;
-    }
+    /*  ........Select box styling Starts........  */
+  .op1-option-selection .custome-select {
+    height: 30px;
+  }
 
-    .option-selection .toggle__label {
-        padding-left: 30px;
-    }
+  .op1-option-selection .custome-select select {
+    height: 30px;
+    font-size: 14px;
+    padding: 0 5px;
+  }
 
-    /* this is for box */
-    .option-selection .toggle__label::after {
-        width: 18px;
-        height: 18px;
+  .op1-option-selection .custome-select:after {
+    content: "";
+    font-size: 8px;
+    width: 12px;
+    height: 12px;
+    z-index: 2;
+    right: 6px;
+    top: 8px;
+  }
 
-        left: 8px;
-        top: 3px;
-    }
+  .op1-option-selection .custome-select:before {
+    content: "\25bc";
+    font-size: 8px;
+    position: absolute;
+    color: #818181;
+    z-index: 10;
+    right: 9px;
+    top: 4px;
+  }
+  /* xxxxxxxx Select box styling Ends xxxxxx  */
+    /*  ======Custom Input styling Starts=======  */
+  .op1-option-selection .custom-input-success {
+    height: 30px;
+  }
 
-    /* this is for tik sign */
-    .option-selection .toggle__label::before {
-        top: 12px;
-        left: 10px;
-    }
+  .op1-option-selection .custom-input-success input {
+    height: 30px;
+    font-size: 14px;
+  }
 
-    .option-selection .width-22 .error-message p {
-        font-size: 10px;
+  .op1-option-selection .custom-input-success:after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    right: 8px;
+    top: 7px;
+  }
+
+  .op1-option-selection .custom-input-success:before {
+    content: "\2714";
+    font-size: 10px;
+    position: absolute;
+    color: green;
+    z-index: 3;
+    right: 12px;
+    top: 3px;
+  }
+
+  /* -------Custom Input Danger-------- */
+  .op1-option-selection .custom-input-danger {
+    height: 30px;
+  }
+
+  .op1-option-selection .custom-input-danger input {
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .op1-option-selection .custom-input-danger:after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    right: 8px;
+    top: 7px;
+  }
+
+  .op1-option-selection .custom-input-danger:before {
+    content: "\2716";
+    font-size: 10px;
+    position: absolute;
+    color: red;
+    z-index: 3;
+    right: 12px;
+    top: 3px;
+  }
+
+  /* xxxxxxx Custom Input styling Ends xxxxxxxx  */
+
+    /*======  Custom Input styling starts ====== */
+  .op1-option-selection .page__toggle {
+    margin-left: 4px;
+  }
+  
+  .op1-option-selection .toggle__label {
+    font-size: 20px;
+    padding-left: 20px;
+  }
+
+  /* this is for box */
+  .op1-option-selection .toggle__label::after {
+    width: 18px;
+    height: 18px;
+    font-size: 20px;
+
+    left: 0px;
+    top: 1px;
+  }
+
+  .op1-option-selection .toggle__text {
+    font-size: 13px;
+}
+  /* .toggle__text {
+      margin-top: auto;
+      margin-bottom: auto;
+    } */
+  /* this is for tik sign */
+  .op1-option-selection .toggle__label::before {
+    font-size: 14px;
+    top: 10px;
+    left: 3px;
+  }
+
+  .op1-option-selection .toggle__input:checked~.toggle__label::before {
+    width: 10px;
+    height: 6px;
+  }
+
+    .op1-option-selection .width-22 .error-message p {
+        font-size: 9px;
         padding-left: 0px;
     }
 
-    .option-selection .icon-container .fas {
+    .op1-option-selection .icon-container .fas {
         font-size: 14px;
     }
 }

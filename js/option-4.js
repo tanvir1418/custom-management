@@ -1,3 +1,5 @@
+/* =======Added by TANVIR (Copy Paste full file)====== */
+
 $(".multistep-container .form-box .button-row .next").click(function () {
   //$(this).parents(".form-box").fadeOut('fast');
   //$(this).parents(".form-box").next().fadeIn('fast');
@@ -41,6 +43,24 @@ for (let i = 0; i < listSingle.length; i++) {
     listSingleImg[i].classList.toggle("imageVisibilityHide");
   });
 }
+
+//code below working fine
+$(document).ready(function () {
+  $('#my42567').addClass('createGreen');
+
+  $('.zas').click(function () {
+    $('#my42567').addClass('createGreen');
+    $('#my42998').removeClass('manageGreen');
+
+
+  });
+
+  $('.pas').click(function () {
+    $('#my42998').addClass('manageGreen');
+    $('#my42567').removeClass('createGreen');
+
+  });
+});
 
 
 

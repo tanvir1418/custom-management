@@ -2,8 +2,9 @@
     background-color: #ffffff;
     border: 1px solid #a1a1a1;
     border-radius: 3px;
-    margin-bottom: 3px;
-    position: relative
+    margin-bottom: 8px;
+    position: relative;
+    padding: 4px;
 }
 
 .inputGroup label {
@@ -16,11 +17,10 @@
     color: #000000;
     display: block;
     text-align: left;
-    color: #3c454c;
     cursor: pointer;
     position: relative;
     z-index: 2;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .inputGroup label:before {
