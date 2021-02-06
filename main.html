@@ -4956,11 +4956,8 @@
                                                                 <p>Time 1</p>
                                                             </div>
                                                             <div class="input-section input-time">
-                                                                <input class=" date-pick-style" type="text"
-                                                                    id="timepicker_mnTemp1"><i
-                                                                    class="far fa-calendar-alt time-pick-icon"
-                                                                    data-toggle="modal"
-                                                                    data-target="#mnTemp_timePicker"></i>
+                                                                <input class=" date-pick-style" type="text" id="timepicker_mnTemp1">
+                                                                <i class="far fa-calendar-alt time-pick-icon" data-toggle="modal" id="TP_time1" data-target="#mnTemp_timePicker"></i>
                                                             </div>
                                                         </div>
                                                         <div class="horizontal-input-group">
@@ -4968,11 +4965,8 @@
                                                                 <p>Time 2</p>
                                                             </div>
                                                             <div class="input-section input-time">
-                                                                <input class=" date-pick-style" type="text"
-                                                                    id="timepicker_mnTemp2"><i
-                                                                    class="far fa-calendar-alt time-pick-icon"
-                                                                    data-toggle="modal"
-                                                                    data-target="#mnTemp_timePicker"></i>
+                                                                <input class=" date-pick-style" type="text" id="timepicker_mnTemp2">
+                                                                <i class="far fa-calendar-alt time-pick-icon" data-toggle="modal" id="TP_time2" data-target="#mnTemp_timePicker"></i>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -10986,16 +10980,16 @@
                                     </div>
                                 </div>
                                 <div class="time-picker-am-pm">
-                                    <label class="ampm-switch">
-                                        <input type="checkbox" id="" name="" value="" checked="">
-                                        <div class="toggle-button"></div>
-                                    </label>
+                                    <!-- added by Tanvir (6-2-21)  -->
+                                    <div class="ampm-picker picker1">
+                                        <input type="hidden" value="AM" id="ampmInputValue" />
+                                        <div class="period am chosen-period">AM</div>
+                                        <div class="period pm">PM</div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="time-picker-popup-button-row">
-                                <input type="button" value="Back" class="time-picker-done-btn"
-                                    style="visibility: hidden;">
-                                <input type="button" value="Done" class="time-picker-cancel-btn">
+                                <button class="time-picker-cancel-btn" id="timeButton">Done</button>
                             </div>
                         </div>
                     </div>
