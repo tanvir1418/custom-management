@@ -1,11 +1,14 @@
 /* ======================================= */
 /* Form by text editor pop-up style starts */
+
 .text-editor-click-popup {
   width: 400px;
   height: 460px;
   -webkit-box-shadow: 5px 5px 22px 0px #bababa;
   box-shadow: 5px 5px 22px 0px #bababa;
+  /* position: relative; */
 }
+
 .text-editor-popup-header-title {
   background-color: #000;
   color: #fff;
@@ -14,25 +17,29 @@
   width: 100%;
   line-height: 80px;
 }
+
 .text-editor-popup-header-title p {
   margin: 0;
   text-transform: uppercase;
   font-size: 20px;
   font-weight: 500;
 }
+
 .text-editor-popup-body {
   width: 100%;
   padding: 15px;
 }
+
 .text-editor-popup-footer .text-editor-button-row {
   display: table;
   margin: auto;
   /* margin-top: 10px; */
   /* margin: auto 10px; */
   /* display: flex;
-    align-items: center;
-    justify-content: center; */
+  align-items: center;
+  justify-content: center; */
 }
+
 .text-editor-popup-footer .text-editor-button-row .window-form,
 .text-editor-popup-footer .text-editor-button-row .form-window {
   width: 180px;
@@ -48,12 +55,15 @@
   padding: 8px 10px;
   /* margin: 7px 0px; */
 }
+
 .text-editor-popup-footer .text-editor-button-row .window-form {
   margin-right: 5px;
 }
+
 .text-editor-popup-footer .text-editor-button-row .form-window {
   margin-left: 5px;
 }
+
 .text-editor-popup-footer .text-editor-button-row .window-form:hover,
 .text-editor-popup-footer .text-editor-button-row .window-form:focus,
 .text-editor-popup-footer .text-editor-button-row .form-window:hover,
@@ -61,8 +71,9 @@
   background: #000000;
   color: #e6e6e6;
 }
+
 /* =================================== */
-/* checkbox wrapper table style starts  */
+/* checkbox wraper table style starts  */
 .text-editor-content-wrapper {
   /* margin-top: 20px; */
   width: 100%;
@@ -70,13 +81,18 @@
   border: 1px solid rgb(219, 218, 218);
   border-radius: 5px;
   padding: 1px;
+  position: relative;
 }
+
+/* .text-editor-table-wrapper {
+  position: absolute;
+} */
 table#text-editor-table {
   /* float: right;
-    border-spacing: 0px; */
+  border-spacing: 0px; */
   /* table-layout: fixed; */
   /* margin-left: auto;
-    margin-right: auto; */
+  margin-right: auto; */
   background-color: #ffffff;
   width: 100%;
 }
@@ -87,19 +103,23 @@ table#text-editor-table {
   width: 150px;
   padding: 6px 0px 6px 10px;
 }
+
 #text-editor-table td.second {
   padding-left: 0px;
 }
+
 #text-editor-table td.second input {
   border: 0;
   outline: 0;
+  width: 100%;
   padding: 2px 5px 2px 5px;
   background-color: inherit;
 }
+
 /* .checkbox-table-wrapper {
-    position: relative;
-    padding-bottom: 40px;
-  } */
+  position: relative;
+  padding-bottom: 40px;
+} */
 .text-editor-table-scroll {
   /* height: 200px; */
   height: 276px;
@@ -109,9 +129,11 @@ table#text-editor-table {
   border-radius: 4px;
   overflow-y: auto;
 }
+
 .text-editor-table-wrapper table {
   width: 100%;
 }
+
 .text-editor-table-wrapper table * {
   /* background: white; */
   color: black;
@@ -120,76 +142,227 @@ table#text-editor-table {
 .text-editor-table-scroll tr:nth-child(even) {
   background-color: #ffffff !important;
 }
+
 .text-editor-table-scroll tr:nth-child(odd) {
   background-color: #fbfbfb !important;
 }
-/* ......Custom ScrollBar Start..... */
+
+/* ........................... */
+/* Custom ScrollBar  Start*/
 .text-editor-table-scroll::-webkit-scrollbar {
   width: 5px;
 }
+
 /* Track */
 .text-editor-table-scroll::-webkit-scrollbar-track {
   box-shadow: transparent;
   border-radius: 10px;
 }
+
 /* Handle */
 .text-editor-table-scroll::-webkit-scrollbar-thumb {
   background: grey;
   border-radius: 10px;
 }
+
 /* Handle on hover */
 .text-editor-table-scroll::-webkit-scrollbar-thumb:hover {
   background: black;
 }
-/* .....Custom ScrollBar Ends..... */
-#op1FormEditModal .modal-content,
-#op3FormEditModal .modal-content {
-  width: 400px;
-  border: 0;
-  border-radius: 0 !important;
-  left: 10%;
-}
-#op1FormEditModal .modal-content .modal-body,
-#op3FormEditModal .modal-content .modal-body {
-  padding: 0;
-  border-radius: 0 !important;
-}
 
-#optionFour1FormEditModal .modal-content,
-#optionFour2FormEditModal .modal-content,
-#optionFour3FormEditModal .modal-content,
-#optionFour4FormEditModal .modal-content {
-  width: 400px;
-  border: 0;
-  border-radius: 0 !important;
-  left: 10%;
-}
-#optionFour1FormEditModal .modal-content .modal-body,
-#optionFour2FormEditModal .modal-content .modal-body,
-#optionFour3FormEditModal .modal-content .modal-body,
-#optionFour4FormEditModal .modal-content .modal-body {
-  padding: 0;
-  border-radius: 0 !important;
-}
+/* Custom ScrollBar Ends  */
+/* ........................... */
 
-#manageTemp1FormEditModal .modal-content,
-#manageTemp2FormEditModal .modal-content,
-#manageTemp3FormEditModal .modal-content,
-#manageTemp4FormEditModal .modal-content {
-  width: 400px;
-  border: 0;
-  border-radius: 0 !important;
-  left: 10%;
-}
-#manageTemp1FormEditModal .modal-content .modal-body,
-#manageTemp2FormEditModal .modal-content .modal-body,
-#manageTemp3FormEditModal .modal-content .modal-body,
-#manageTemp4FormEditModal .modal-content .modal-body {
-  padding: 0;
-  border-radius: 0 !important;
-}
 /* Form by text editor pop-up style ends */
 /* ==============XXXXXXXXXXX============= */
+
+/* =======sub table style starts=======  */
+.sub-table-wrapper {
+  width: 90px;
+  height: 110px;
+  position: absolute;
+  top: 180px;
+  left: 130px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+table#sub-editor-table {
+  /* float: right;
+  border-spacing: 0px; */
+  /* table-layout: fixed; */
+  /* margin-left: auto;
+  margin-right: auto; */
+  background-color: #ffffff;
+  width: 100%;
+}
+
+#sub-editor-table td {
+  white-space: normal;
+  /* width: 150px; */
+  padding: 2px 0px 2px 10px;
+  font-size: 14px;
+}
+
+#sub-editor-table td.second {
+  padding-left: 0px;
+}
+
+#sub-editor-table td.second input {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  padding: 2px 5px 2px 5px;
+  background-color: inherit;
+}
+
+.sub-table-scroll {
+  height: 106px;
+  width: 99%;
+  margin: 2px auto;
+  border-radius: 4px;
+  overflow-y: auto;
+}
+
+.sub-table-wrapper table {
+  width: 100%;
+}
+
+.sub-table-wrapper table * {
+  color: black;
+}
+
+.sub-table-scroll tr:nth-child(even) {
+  background-color: #ffffff !important;
+}
+
+.sub-table-scroll tr:nth-child(odd) {
+  background-color: #fbfbfb !important;
+}
+
+.sub-table-scroll::-webkit-scrollbar {
+  width: 2px;
+}
+
+.sub-table-scroll::-webkit-scrollbar-track {
+  box-shadow: transparent;
+  border-radius: 10px;
+}
+
+.sub-table-scroll::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
+.sub-table-scroll::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
+/* ====x===sub table style ends===x===  */
+
+/* =======sub2 table style starts=======  */
+.sub2-table-wrapper {
+  width: 80px;
+  height: 85px;
+  position: absolute;
+  top: 180px;
+  left: 222px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+table#sub2-editor-table {
+  /* float: right;
+  border-spacing: 0px; */
+  /* table-layout: fixed; */
+  /* margin-left: auto;
+  margin-right: auto; */
+  background-color: #ffffff;
+  width: 100%;
+}
+
+#sub2-editor-table td {
+  white-space: normal;
+  /* width: 150px; */
+  padding: 2px 0px 2px 10px;
+  font-size: 14px;
+}
+
+#sub2-editor-table td.second {
+  padding-left: 0px;
+}
+
+#sub2-editor-table td.second input {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  padding: 2px 5px 2px 5px;
+  background-color: inherit;
+}
+
+.sub2-table-scroll {
+  height: 83px;
+  width: 99%;
+  margin: 2px auto;
+  border-radius: 4px;
+  overflow-y: auto;
+}
+
+.sub2-table-wrapper table {
+  width: 100%;
+}
+
+.sub2-table-wrapper table * {
+  color: black;
+}
+
+.sub2-table-scroll tr:nth-child(even) {
+  background-color: #ffffff !important;
+}
+
+.sub2-table-scroll tr:nth-child(odd) {
+  background-color: #fbfbfb !important;
+}
+
+.sub2-table-scroll::-webkit-scrollbar {
+  width: 2px;
+}
+
+.sub2-table-scroll::-webkit-scrollbar-track {
+  box-shadow: transparent;
+  border-radius: 10px;
+}
+
+.sub2-table-scroll::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
+.sub2-table-scroll::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
+.dispHideShow {
+  display: none;
+}
+
+#op1FormEditModal .modal-content {
+  width: 400px;
+  border: 0;
+  border-radius: 0 !important;
+  left: 10%;
+}
+
+#op1FormEditModal .modal-content .modal-body {
+  padding: 0;
+  border-radius: 0 !important;
+}
+
+/* ====x===sub2 table style ends===x===  */
+/* Form by text editor pop-up style ends */
+/* ======================================= */
 
 /* ================================================ */
 /* thank you pop-up-for-generate button style starts */
@@ -199,6 +372,7 @@ table#text-editor-table {
   -webkit-box-shadow: 5px 5px 22px 0px #bababa;
   box-shadow: 5px 5px 22px 0px #bababa;
 }
+
 .generate-button-popup-header-title {
   background-color: #000;
   color: #fff;
@@ -207,6 +381,7 @@ table#text-editor-table {
   width: 100%;
   line-height: 80px;
 }
+
 .generate-button-popup-header-title p {
   padding-bottom: 0;
   text-transform: uppercase;
@@ -214,6 +389,7 @@ table#text-editor-table {
   font-weight: 500;
   margin: 0;
 }
+
 .generate-button-popup-body-content {
   margin: 15px 25px;
   text-align: center;
@@ -221,6 +397,7 @@ table#text-editor-table {
   border: 1px solid grey;
   background-color: #f9f9fb;
 }
+
 .generate-button-popup-body-content p {
   margin: 0;
   padding: 20px 40px;
@@ -228,11 +405,13 @@ table#text-editor-table {
   font-weight: 500;
   color: #787878;
 }
+
 .generate-button-click-popup-wrapper .generate-popup {
   margin-top: 15px;
   margin-right: 25px;
   float: right;
 }
+
 .generate-button-click-popup-wrapper .generate-popup .gn-close-btn {
   width: 120px;
   font-size: 18px;
@@ -252,12 +431,14 @@ table#text-editor-table {
   background: #000000;
   color: #e6e6e6;
 }
+
 #op3GenerateBtnModal .modal-content {
   width: 360px;
   border: 0;
   border-radius: 0 !important;
   left: 20%;
 }
+
 #op3GenerateBtnModal .modal-content .modal-body {
   padding: 0;
   border-radius: 0 !important;
@@ -269,10 +450,12 @@ table#text-editor-table {
   border-radius: 0 !important;
   left: 20%;
 }
+
 #doneBtnModal .modal-content .modal-body {
   padding: 0;
   border-radius: 0 !important;
 }
+
 /* thank you pop-up-for-generate button style ends */
 /* ===================XXXXXXXXXXX================= */
 
@@ -284,6 +467,7 @@ table#text-editor-table {
   -webkit-box-shadow: 5px 5px 22px 0px #bababa;
   box-shadow: 5px 5px 22px 0px #bababa;
 }
+
 .plus-button-popup-header-title {
   background-color: #000;
   color: #fff;
@@ -292,6 +476,7 @@ table#text-editor-table {
   width: 100%;
   line-height: 80px;
 }
+
 .plus-button-popup-header-title p {
   padding-bottom: 0;
   text-transform: uppercase;
@@ -299,6 +484,7 @@ table#text-editor-table {
   font-weight: 500;
   margin: 0;
 }
+
 .plus-button-popup-body-content {
   margin: 25px;
   /* text-align: center; */
@@ -306,6 +492,7 @@ table#text-editor-table {
   /* border: 1px solid grey; */
   background-color: #f9f9fb;
 }
+
 .plus-button-popup-body-content input {
   padding: 12px 15px;
   border: 1px solid grey;
@@ -341,21 +528,26 @@ table#text-editor-table {
   cursor: pointer;
   padding: 8px 0px;
 }
+
 .plus-button-click-popup-wrapper .plus-popup-button-row .plus-cancel-btn {
   background: #000000;
   color: #e6e6e6;
 }
+
 .plus-popup-button-row .plus-done-btn {
   margin-right: 10px;
 }
+
 .plus-popup-button-row .plus-cancel-btn {
   margin-left: 10px;
 }
+
 .plus-button-click-popup-wrapper .plus-popup-button-row .plus-done-btn:hover,
 .plus-button-click-popup-wrapper .plus-popup-button-row .plus-done-btn:focus {
   background: #000000;
   color: #e6e6e6;
 }
+
 .plus-button-click-popup-wrapper .plus-popup-button-row .plus-cancel-btn:hover,
 .plus-button-click-popup-wrapper .plus-popup-button-row .plus-cancel-btn:focus {
   background: #e9e9e9;
@@ -368,10 +560,12 @@ table#text-editor-table {
   border-radius: 0 !important;
   left: 20%;
 }
+
 #plusBtnModal .modal-content .modal-body {
   padding: 0;
   border-radius: 0 !important;
 }
+
 /* plus pop-up-for-generate button style ends */
 /* ===================XXXXXXXXXXX================= */
 
@@ -383,6 +577,7 @@ table#text-editor-table {
   -webkit-box-shadow: 5px 5px 22px 0px #bababa;
   box-shadow: 5px 5px 22px 0px #bababa;
 }
+
 .table-header-popup-header-title {
   background-color: #000;
   color: #fff;
@@ -391,21 +586,25 @@ table#text-editor-table {
   width: 100%;
   line-height: 60px;
 }
+
 .table-header-popup-header-title p {
   padding-bottom: 0;
   text-transform: uppercase;
   font-size: 18px;
   font-weight: 500;
 }
+
 .table-header-popup-body {
   width: 100%;
   padding: 10px;
 }
+
 .find-sort-wrapper {
   width: 100%;
   height: 45px;
   display: flex;
 }
+
 .find-wrapper {
   width: 75%;
   height: 45px;
@@ -413,10 +612,12 @@ table#text-editor-table {
   border-radius: 5px;
   padding: 1px;
 }
+
 .find-wrapper-inner {
   padding-top: 2px;
   padding-right: 2px;
 }
+
 .sort-wrapper {
   width: 25%;
   /* height: 45px; */
@@ -424,6 +625,7 @@ table#text-editor-table {
   margin: auto 0;
   padding-left: 6px;
 }
+
 .find-wrapper input[type="text"] {
   width: 100%;
   height: 38px;
@@ -480,6 +682,7 @@ table#text-editor-table {
   align-items: center;
   justify-content: center; */
 }
+
 .table-header-popup-footer .button-row .close-btn,
 .table-header-popup-footer .button-row .select-btn {
   width: 100px;
@@ -495,12 +698,15 @@ table#text-editor-table {
   padding: 5px 20px;
   /* margin: 7px 0px; */
 }
+
 .table-header-popup-footer .button-row .close-btn {
   margin-right: 5px;
 }
+
 .table-header-popup-footer .button-row .select-btn {
   margin-left: 5px;
 }
+
 .table-header-popup-footer .button-row .close-btn:hover,
 .table-header-popup-footer .button-row .close-btn:focus,
 .table-header-popup-footer .button-row .select-btn:hover,
@@ -508,6 +714,7 @@ table#text-editor-table {
   background: #000000;
   color: #e6e6e6;
 }
+
 /* =================================== */
 /* checkbox wraper table style starts  */
 .checkbox-content-wrapper {
@@ -518,6 +725,7 @@ table#text-editor-table {
   border-radius: 5px;
   padding: 1px;
 }
+
 /* table#checkbox-table-first {
   float: right;
   border-spacing: 0px;
@@ -545,9 +753,11 @@ table#text-editor-table {
   border-radius: 4px;
   overflow-y: auto;
 }
+
 .checkbox-table-wrapper table {
   width: 100%;
 }
+
 .checkbox-table-wrapper table * {
   /* background: white; */
   color: black;
@@ -556,28 +766,34 @@ table#text-editor-table {
 .checkbox-table-scroll tr:nth-child(even) {
   background-color: #ffffff !important;
 }
+
 .checkbox-table-scroll tr:nth-child(odd) {
   background-color: #fbfbfb !important;
 }
+
 /* ........................... */
 /* Custom ScrollBar  Start*/
 .checkbox-table-scroll::-webkit-scrollbar {
   width: 5px;
 }
+
 /* Track */
 .checkbox-table-scroll::-webkit-scrollbar-track {
   box-shadow: transparent;
   border-radius: 10px;
 }
+
 /* Handle */
 .checkbox-table-scroll::-webkit-scrollbar-thumb {
   background: grey;
   border-radius: 10px;
 }
+
 /* Handle on hover */
 .checkbox-table-scroll::-webkit-scrollbar-thumb:hover {
   background: black;
 }
+
 /* Custom ScrollBar Ends  */
 /* ........................... */
 
@@ -591,6 +807,7 @@ table#text-editor-table {
   position: relative;
   margin-bottom: 0;
 }
+
 /* this hides the main checkbox */
 .popup__checkbox__toggle__input {
   width: 20px;
@@ -601,6 +818,7 @@ table#text-editor-table {
   left: 0;
   margin: 0;
 }
+
 .popup__checkbox__toggle__label {
   display: inline-flex;
   min-height: 28px;
@@ -608,10 +826,11 @@ table#text-editor-table {
   /* font-size: 14px; */
   padding-left: 36px;
 }
-.popup__checkbox__toggle__input:not(:disabled)
-  ~ .popup__checkbox__toggle__label {
+
+.popup__checkbox__toggle__input:not(:disabled)~.popup__checkbox__toggle__label {
   cursor: pointer;
 }
+
 /* this is for box */
 .popup__checkbox__toggle__label::after {
   content: "";
@@ -628,12 +847,13 @@ table#text-editor-table {
   left: 5px;
   z-index: 2;
 }
-.popup__checkbox__toggle__input:checked
-  ~ .popup__checkbox__toggle__label::after {
+
+.popup__checkbox__toggle__input:checked~.popup__checkbox__toggle__label::after {
   background-color: #25d34f;
   border: 0;
   box-shadow: 5px 5px 5px 4px rgba(140, 245, 80, 0.2);
 }
+
 .popup__checkbox__toggle__text {
   /* margin-top: auto;
   margin-bottom: auto; */
@@ -641,6 +861,7 @@ table#text-editor-table {
   font-weight: 500;
   color: #080808;
 }
+
 /* this is for tik sign */
 .popup__checkbox__toggle__label::before {
   content: "";
@@ -662,16 +883,18 @@ table#text-editor-table {
   transform-origin: left top;
   transform: rotate(-40deg) skew(10deg);
 }
-.popup__checkbox__toggle__input:checked
-  ~ .popup__checkbox__toggle__label::before {
+
+.popup__checkbox__toggle__input:checked~.popup__checkbox__toggle__label::before {
   width: 12px;
   height: 6px;
   border-left-width: 2px;
   border-bottom-width: 2px;
 }
+
 .popup__checkbox__toggle__label::after {
   border-radius: 4px;
 }
+
 /* .popup__checkbox__toggle__input:not(:disabled):checked ~ .popup__checkbox__toggle__label::before {
   opacity: 1;
 } */
@@ -690,6 +913,7 @@ table#text-editor-table {
   border-radius: 0 !important;
   left: 20%;
 }
+
 #dropBtnModal .modal-content .modal-body,
 #dropBtnModal2 .modal-content .modal-body,
 #dropBtnModal3 .modal-content .modal-body,
@@ -709,6 +933,7 @@ table#text-editor-table {
   -webkit-box-shadow: 5px 5px 22px 0px #bababa;
   box-shadow: 5px 5px 22px 0px #bababa;
 }
+
 .hyper-text-popup-header-title {
   background-color: #000;
   color: #fff;
@@ -717,12 +942,14 @@ table#text-editor-table {
   width: 100%;
   line-height: 60px;
 }
+
 .hyper-text-popup-header-title p {
   padding-bottom: 0;
   text-transform: uppercase;
   font-size: 18px;
   font-weight: 500;
 }
+
 .hyper-text-popup-body {
   width: 100%;
   padding: 15px;
@@ -737,6 +964,7 @@ table#text-editor-table {
   border-radius: 5px;
   padding: 1px;
 }
+
 #hypertext-table-first td {
   word-wrap: break-word;
   padding: 6px 0px 6px 15px;
@@ -758,9 +986,11 @@ table#text-editor-table {
   border-radius: 4px;
   overflow-y: auto;
 }
+
 .hyper-text-table-wrapper table {
   width: 100%;
 }
+
 .hyper-text-table-wrapper table * {
   /* background: white; */
   color: black;
@@ -769,28 +999,34 @@ table#text-editor-table {
 .hyper-text-table-scroll tr:nth-child(even) {
   background-color: #ffffff !important;
 }
+
 .hyper-text-table-scroll tr:nth-child(odd) {
   background-color: #fbfbfb !important;
 }
+
 /* ........................... */
 /* Custom ScrollBar  Start*/
 .hyper-text-table-scroll::-webkit-scrollbar {
   width: 5px;
 }
+
 /* Track */
 .hyper-text-table-scroll::-webkit-scrollbar-track {
   box-shadow: transparent;
   border-radius: 10px;
 }
+
 /* Handle */
 .hyper-text-table-scroll::-webkit-scrollbar-thumb {
   background: grey;
   border-radius: 10px;
 }
+
 /* Handle on hover */
 .hyper-text-table-scroll::-webkit-scrollbar-thumb:hover {
   background: black;
 }
+
 /* Custom ScrollBar Ends  */
 /* ........................... */
 
@@ -800,9 +1036,540 @@ table#text-editor-table {
   border-radius: 0 !important;
   left: 20%;
 }
+
 #hyperTextModal1 .modal-content .modal-body {
   padding: 0;
   border-radius: 0 !important;
 }
+
 /*xxxxxx hyper text click pop-up ends xxxxxxxxxx*/
 /* ====================XXXXXXX================== */
+
+/* ============================= */
+Bottom codes are added by Tanvir
+/* ============================= */
+
+/* ============================================= */
+/* ======= Manage Template pop-up starts ======= */
+
+/* ====save draft button popup style starts===== */
+#mnTemp_saveDraft .generate-button-click-popup {
+  height: 290px !important;
+}
+
+#mnTemp_saveDraft .modal-content {
+  width: 360px;
+  border: 0;
+  border-radius: 0 !important;
+  /* left: 20%; */
+}
+
+#mnTemp_saveDraft .modal-content .modal-body {
+  padding: 0;
+  border-radius: 0 !important;
+}
+
+/* xxxxxx save draft button popup style ends xxxxxxx  */
+
+/* ====== Save Start button popups style starts ==== */
+.save-start-button-click-popup {
+  width: 420px;
+  height: 420px;
+  -webkit-box-shadow: 5px 5px 22px 0px #bababa;
+  box-shadow: 5px 5px 22px 0px #bababa;
+}
+
+.save-start-button-popup-header-title {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  height: 90px;
+  width: 100%;
+  line-height: 90px;
+  position: relative;
+}
+
+.save-start-button-popup-header-title p {
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "gilroy-regular", sans-serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+.save-start-button-popup-header-title .save-start-button-cross {
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  font-size: 20px;
+  top: 0;
+  right: 0;
+}
+
+.save-start-button-popup-header-title i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.save-start-button-cross:hover,
+.save-start-button-cross:focus {
+  cursor: pointer;
+}
+
+.save-start-button-popup-body-wrapper {
+  margin: 25px;
+  /* text-align: center; */
+  /* border-radius: 4px; */
+  /* border: 1px solid grey; */
+  /* background-color: #f9f9fb; */
+  background-color: white;
+}
+
+.save-start-button-popup-category-title-wrap {
+  position: relative;
+  height: 50px;
+}
+
+.save-start-button-popup-category-title-wrap p,
+.save-start-button-popup-name-title-wrap p {
+  margin: 0;
+  font-family: "gilroy-regular", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.save-start-button-popup-category-title-wrap p {
+  padding-top: 2px;
+}
+
+.save-start-button-popup-name-title-wrap p {
+  padding-bottom: 10px;
+}
+
+.save-start-button-popup-category-title-wrap .save-start-button-round-plus {
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  font-size: 20px;
+  top: 0;
+  right: 0;
+  background-color: #f7f600;
+  border: 1px solid #eede04;
+  border-radius: 50%;
+}
+
+.save-start-button-popup-category-title-wrap i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.save-start-button-round-plus:hover,
+.save-start-button-round-plus:focus {
+  cursor: pointer;
+}
+
+.save-start-custom-select-box {
+  background: #e6e6e6;
+  position: relative;
+  width: 100%;
+  height: 45px;
+  z-index: 3;
+}
+
+.save-start-custom-select-box select {
+  outline: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-family: "gilroy-regular", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #787878;
+  background-color: #f2f2f2;
+  z-index: 2;
+  padding: 0 10px;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.save-start-custom-select-box select:hover,
+.save-start-custom-select-box select:focus {
+  cursor: pointer;
+  outline: 0;
+}
+
+.save-start-custom-select-box:after {
+  content: "\25bc";
+  font-size: 10px;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  background-color: white;
+  z-index: 2;
+  right: 12px;
+  top: 14px;
+  text-align: center;
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.save-start-custom-select-box select option {
+  background: #e6e6e6;
+}
+
+.save-start-button-popup-body-content input {
+  padding: 0px 10px;
+  border-radius: 4px;
+  outline: 0;
+  border: 1px solid black;
+  font-family: "gilroy-regular", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #787878;
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 45px;
+}
+
+.save-start-button-click-popup-wrapper .save-start-popup-button-row {
+  /* display: table; */
+  /* margin: auto; */
+  display: flex;
+  margin: 30px 25px 20px 25px;
+  /* margin-top: 30px;
+  margin-bottom: 20px; */
+  /* margin: auto 10px; */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.save-start-button-click-popup-wrapper .save-start-popup-button-row .save-start-done-btn,
+.save-start-button-click-popup-wrapper .save-start-popup-button-row .save-start-cancel-btn {
+  width: 130px;
+  font-size: 18px;
+  background: #e9e9e9;
+  color: black;
+  font-weight: bold;
+  transition: 150ms;
+  outline: none;
+  border: 0 none;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 8px 0px;
+}
+
+.save-start-button-click-popup-wrapper .save-start-popup-button-row .save-start-cancel-btn {
+  background: #000000;
+  color: #e6e6e6;
+}
+
+.save-start-popup-button-row .save-start-done-btn {
+  /* margin-right: 10px; */
+}
+
+.save-start-popup-button-row .save-start-cancel-btn {
+  /* margin-left: 10px; */
+  margin-left: auto;
+}
+
+.save-start-button-click-popup-wrapper .save-start-popup-button-row .save-start-done-btn:hover,
+.save-start-button-click-popup-wrapper .save-start-popup-button-row .save-start-done-btn:focus {
+  background: #000000;
+  color: #e6e6e6;
+}
+
+.save-start-button-click-popup-wrapper .save-start-popup-button-row .save-start-cancel-btn:hover,
+.save-start-button-click-popup-wrapper .save-start-popup-button-row .save-start-cancel-btn:focus {
+  background: #e9e9e9;
+  color: black;
+}
+
+#mnTemp_saveStart .modal-content {
+  width: 420px;
+  border: 0;
+  border-radius: 0 !important;
+  /* left: 20%; */
+}
+
+#mnTemp_saveStart .modal-content .modal-body {
+  padding: 0;
+  border-radius: 0 !important;
+}
+
+/* xxxxx Save Start button popups style ends xxxxx */
+
+/* ===========Time Picker pop-up button style starts=========== */
+.time-picker-button-click-popup {
+  width: 420px;
+  height: 335px;
+  -webkit-box-shadow: 5px 5px 22px 0px #bababa;
+  box-shadow: 5px 5px 22px 0px #bababa;
+}
+
+.time-picker-button-popup-header-title {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  height: 80px;
+  width: 100%;
+  line-height: 80px;
+  position: relative;
+}
+
+.time-picker-button-popup-header-title p {
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "gilroy-regular", sans-serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+.time-picker-button-popup-header-title .time-picker-button-cross {
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  font-size: 20px;
+  top: 0;
+  right: 0;
+}
+
+.time-picker-button-popup-header-title i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.time-picker-button-cross:hover,
+.time-picker-button-cross:focus {
+  cursor: pointer;
+}
+
+.time-picker-button-time-picker-wrapper {
+  display: flex;
+  width: 100%;
+  padding: 0px 40px 0px 30px;
+  margin-bottom: 50px;
+}
+
+.time-picker-input-up-down {
+  width: 70%;
+}
+
+.time-picker-am-pm {
+  width: 30%;
+}
+
+.time-picker-input-up-down-inner {
+  display: flex;
+  width: 100%;
+  text-align: center;
+}
+
+.input-up-down-inner {
+  width: 40%;
+}
+
+.dual-dot-inner {
+  width: 20%;
+}
+
+.time-picker-input-up-down-inner .input-up-down-inner .time-picker-input input {
+  border-radius: 2px;
+  outline: 0;
+  border: 1px solid rgb(172, 170, 170);
+  text-align: center;
+  font-family: "gilroy-bold", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #000000;
+  background-color: #eaecf0;
+  /* width: 100%; */
+  height: 80px;
+  width: 80px;
+}
+
+.input-up-down-inner .time-picker-up,
+.input-up-down-inner .time-picker-down {
+  font-size: 40px;
+}
+
+.time-picker-up {
+  height: 52px;
+}
+
+.time-picker-down {
+  position: relative;
+}
+
+.time-picker-down i {
+  position: absolute;
+  top: 0px;
+  left: 36px;
+}
+
+.time-picker-up i,
+.time-picker-down i {
+  cursor: pointer;
+}
+
+.dual-dot-inner {
+  padding-top: 65px;
+}
+
+.dual-dot-inner i {
+  font-size: 10px;
+}
+
+.time-picker-button-click-popup-wrapper .time-picker-popup-button-row {
+  display: flex;
+  margin: 30px 25px 20px 25px;
+}
+
+.time-picker-button-click-popup-wrapper .time-picker-popup-button-row .time-picker-done-btn,
+.time-picker-button-click-popup-wrapper .time-picker-popup-button-row .time-picker-cancel-btn {
+  width: 140px;
+  font-size: 20px;
+  background: #e9e9e9;
+  color: black;
+  font-family: "gilroy-bold", sans-serif;
+  font-weight: 600;
+  transition: 150ms;
+  outline: none;
+  border: 0 none;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 8px 0px;
+}
+
+.time-picker-popup-button-row .time-picker-cancel-btn {
+  margin-left: auto;
+}
+
+.time-picker-button-click-popup-wrapper .time-picker-popup-button-row .time-picker-cancel-btn:hover,
+.time-picker-button-click-popup-wrapper .time-picker-popup-button-row .time-picker-cancel-btn:focus {
+  background: #000000;
+  color: #e6e6e6;
+}
+
+.time-picker-am-pm {
+  padding: 52px 0px 0px 25px;
+}
+
+.time-picker-am-pm label.ampm-switch {
+  z-index: 1;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 3px;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+  margin: 0;
+  cursor: pointer;
+  background-color: #000000;
+}
+
+.time-picker-am-pm label.ampm-switch:before,
+.time-picker-am-pm label.ampm-switch:after {
+  box-sizing: border-box;
+  display: block;
+  width: 80px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+}
+
+.time-picker-am-pm label.ampm-switch:before {
+  content: "AM";
+}
+
+.time-picker-am-pm label.ampm-switch:after {
+  content: "PM";
+}
+
+.time-picker-am-pm label.ampm-switch input {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.time-picker-am-pm label.ampm-switch .toggle-button {
+  z-index: 2;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  width: 80px;
+  height: 40px;
+  background: transparent;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  white-space: nowrap;
+  transition: top 0.05s ease-in-out;
+
+  border: 1px solid rgb(172, 170, 170);
+  color: #000000;
+  background-color: #eaecf0;
+}
+
+.time-picker-am-pm label.ampm-switch input:checked+.toggle-button {
+  top: 40px;
+}
+
+.time-picker-am-pm label.ampm-switch .toggle-button:before {
+  box-sizing: border-box;
+  display: block;
+  width: 80px;
+  height: 40px;
+  font-size: 20px;
+  font-family: "gilroy-bold", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  line-height: 40px;
+  color: #000000;
+}
+
+.time-picker-am-pm label.ampm-switch .toggle-button:before {
+  content: "AM";
+}
+
+.time-picker-am-pm label.ampm-switch input:checked+.toggle-button:before {
+  content: "PM";
+}
+
+#mnTemp_timePicker .modal-content {
+  width: 420px;
+  border: 0;
+  border-radius: 0 !important;
+  /* left: 20%; */
+}
+
+#mnTemp_timePicker .modal-content .modal-body {
+  padding: 0;
+  border-radius: 0 !important;
+}
+
+/* ====xxxxx===Time Picker pop-up button style ends===xxxxx==== */
+
+/* xxxxxxx Manage Template pop-up ends xxxxxxxx */
+/* ===============XXXXXXXXXXXXXX============== */
