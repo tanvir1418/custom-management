@@ -235,7 +235,7 @@ const currentUser = localStorage.getItem("currentUser");
 const user_div = document.getElementById("username_div");
 if (currentUser != null && currentUser != "") {
 	user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
-} else {}
+} else { }
 // LOGIN DATA PASS END
 
 
@@ -295,7 +295,7 @@ listItemData.forEach((item, index) => {
 		list_data2 = "",
 		list_data3 = "",
 		length = 72;
-		// modal ashiq
+	// modal ashiq
 	for (let i = 1; i <= length; i++) {
 		let elementHtml = `<li class="option-list-${index + 1}-${i}">
 		<p>Level ${index + 1} - Item ${i}</p>
@@ -419,12 +419,10 @@ main_list.addEventListener("click", function (e) {
 	target.childNodes[5].classList.add("arrow-li-box-background-color-2");
 	target.childNodes[5].childNodes[1].classList.remove("arrow-li-box-i-color-1");
 	target.childNodes[5].childNodes[1].classList.add("arrow-li-box-i-color-2");
-	
-	opt2_left_list = target.childNodes[1].innerHTML;
-	item_click_handle(target.classList[0]); // update
-});
 
-const list_item_1 = document.querySelector(".list-item-1");
+	opt2_left_list = target.childNodes[1].innerHTML;
+	item_click_handle(target.classList[0]);
+});
 // End here by ASHIQ
 
 
@@ -434,30 +432,6 @@ const sublist_cancel_box = document.querySelector(".sub-list .sublist-cancel-box
 const sub_list_1 = document.querySelector(".sub-list-1");
 const arrow_right_box = document.querySelector(".main-list li .arrow-li-box");
 const arrow_right = document.querySelector(".main-list li .arrow-li-box i");
-
-// sub_ul_list_1.style.display = "none";
-// sub_ul_list_2.style.display = "none";
-// sub_ul_list_3.style.display = "none";
-
-// $(list_item_1).click(function () {
-
-//   $(sub_ul_list_1).toggle();
-//   sub_ul_list_1.style.marginLeft = "300px";
-
-//   $(sub_ul_list_2).toggle();
-//   sub_ul_list_2.style.marginLeft = "580px";
-
-//   $(sub_ul_list_3).toggle();
-//   sub_ul_list_3.style.marginLeft = "860px";
-
-// });
-
-// sub_list_1.onclick = () => {
-//   sublist_cancel_box.style.display = "none";
-//   sublist_check_box.style.display = "block";
-//   $(sublist_cancel_box).toggle();
-//   $(sublist_check_box).toggle();
-// };
 
 // option 2 list item end
 
@@ -613,25 +587,15 @@ const sub_ul_list = document.querySelector("#sub-ul-list");
 sub_ul_list.addEventListener("click", function (e) {
 	let target = e.target;
 	if (target.tagName === "DIV") {
-		if (target.className === "sublist-cancel-box") {
-			console.log("cross click");
-			return;
-		}
+		if (target.className === "sublist-cancel-box") return;
 		target = target.parentNode;
 	} else if (target.tagName === "P") {
 		target = target.parentNode;
 	} else if (target.tagName === "I") {
 		target = target.parentNode;
-		if (target.className === "sublist-cancel-box") {
-			console.log("cross click");
-			return;
-		}
-		else {
-			target = target.parentNode;
-		}
-	} else if (target.tagName !== "LI") {
-		return;
-	}
+		if (target.className === "sublist-cancel-box") return;
+		else target = target.parentNode;
+	} else if (target.tagName !== "LI") return;
 
 	if (oldLIClassname !== "" && oldLIClassname !== target.classList[0]) {
 		let oldElement = document.querySelector(`.${oldLIClassname}`);
