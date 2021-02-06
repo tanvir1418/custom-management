@@ -1,123 +1,130 @@
-
 /* ===/// TEMPLATE SLIDER START ///=== */
 #load_temp_slider {
-    width: 100%;
-    background: #ffffff;
-    position: relative;
+  width: 100%;
+  background: #ffffff;
+  position: relative;
 }
 
 /* box design */
-.tab_3 #load_temp_slider .load_temp_row{
-    margin: 36px 200px 62px;
+.tab_3 #load_temp_slider .load_temp_row {
+  margin: 36px 200px 62px;
 }
+
 .tab_3 .mycolmn {
-    width: 25%;
-    margin-top: 42px;
+  width: 25%;
+  margin-top: 42px;
 }
 
 .tab_3 .template_box,
 .tab_3 .create_new_temp {
-    display: table;
-    width: 200px;
-    height: 250px;
-    border-radius: 2px;
-    background: #F9F9F9;
-    border: 1px solid #959595;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.3s ease;
-    margin: auto;
+  display: table;
+  width: 200px;
+  height: 250px;
+  border-radius: 2px;
+  background: #F9F9F9;
+  border: 1px solid #959595;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  margin: auto;
 }
 
-.tab_3 .create_new_temp{
-    background: #FFF001;
-    border: none;
+.tab_3 .create_new_temp {
+  background: #FFF001;
+  border: none;
 }
 
 .tab_3 .template_box .template-content-box {
-    display: table-cell;
-    vertical-align: middle;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .tab_3 .template_box img {
-    width: 70px;
+  width: 70px;
 }
 
-.tab_3 .create_new_temp .plus_box{
-    height: 62px;
-    width: 62px;
-    border-radius: 50%;
-    background: #FFF996;
-    position: relative;
-    margin: 0 auto;
+.tab_3 .create_new_temp .plus_box {
+  height: 62px;
+  width: 62px;
+  border-radius: 50%;
+  background: #FFF996;
+  position: relative;
+  margin: 0 auto;
 }
-.tab_3 .create_new_temp .plus_box i{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: #868139;
-    font-size: 36px;
+
+.tab_3 .create_new_temp .plus_box i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #868139;
+  font-size: 36px;
 }
 
 .tab_3 .template_box p {
-    font-size: 24px;
-    color: #1D1D1D;
-    font-weight: bold;
-    font-family: gilroy-bold, sans-serif;
-    /* letter-spacing: 2px; */
-    margin: 0;
+  font-size: 24px;
+  color: #1D1D1D;
+  font-weight: bold;
+  font-family: gilroy-bold, sans-serif;
+  /* letter-spacing: 2px; */
+  margin: 0;
 }
-.tab_3 .create_new_temp p{
-    font-family: gilroy-regular, sans-serif;
-    font-size: 22px;
-    color: #000000;
+
+.tab_3 .create_new_temp p {
+  font-family: gilroy-regular, sans-serif;
+  font-size: 22px;
+  color: #000000;
 }
 
 .tab_3 .template_box .load-txt {
-    margin-top: 32px;
+  margin-top: 32px;
 }
 
 .tab_3 .template_box .temp-txt {
-    margin-top: 16px;
+  margin-top: 16px;
 }
+
 .tab_3 .create_new_temp .temp-txt {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 /* carousel control */
-#load_temp_slider .slider_arrow_box{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #474747;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%,-50%);
-}
-#load_temp_slider .slider_arrow_box:hover{
-    background: #000000;
-}
-#load_temp_slider .slider_arrow_box.left00a{
-    left: 100px;
-}
-#load_temp_slider .slider_arrow_box.right00a{
-    right: 50px;
+#load_temp_slider .slider_arrow_box {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #474747;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-#load_temp_slider .slider_arrow_box i{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: #ffffff;
-    font-size: 28px;
+#load_temp_slider .slider_arrow_box:hover {
+  background: #000000;
 }
+
+#load_temp_slider .slider_arrow_box.left00a {
+  left: 100px;
+}
+
+#load_temp_slider .slider_arrow_box.right00a {
+  right: 50px;
+}
+
+#load_temp_slider .slider_arrow_box i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 28px;
+}
+
 /* ===/// TEMPLATE SLIDER END ///=== */
 
 /* ====-----==== SAMPLE SECTION START ====-----==== */
-.dispaly_hide{
-    display: none;
+.dispaly_hide {
+  display: none;
 }
 
 
@@ -426,7 +433,7 @@
   padding-left: 35px;
 }
 
-.mn-temp-option-selection .toggle__input:not(:disabled) ~ .toggle__label {
+.mn-temp-option-selection .toggle__input:not(:disabled)~.toggle__label {
   cursor: pointer;
 }
 
@@ -448,7 +455,7 @@
   z-index: 2;
 }
 
-.mn-temp-option-selection .toggle__input:checked ~ .toggle__label::after {
+.mn-temp-option-selection .toggle__input:checked~.toggle__label::after {
   background-color: #25d34f;
   box-shadow: 5px 5px 5px 4px rgba(140, 245, 80, 0.2);
 }
@@ -479,7 +486,7 @@
   transform: rotate(-40deg) skew(10deg);
 }
 
-.mn-temp-option-selection .toggle__input:checked ~ .toggle__label::before {
+.mn-temp-option-selection .toggle__input:checked~.toggle__label::before {
   width: 13px;
   height: 7px;
   border-left-width: 2px;
@@ -626,6 +633,7 @@
     padding-right: 2px;
     padding-left: 2px;
   }
+
   .mn-temp-option-selection .width-22 .error-message p {
     font-size: 9px;
   }
@@ -660,6 +668,7 @@
     right: 9px;
     top: 4px;
   }
+
   /* xxxxxxxx Select box styling Ends xxxxxx  */
 
   /*  ======Custom Input styling Starts=======  */
@@ -751,14 +760,13 @@
     left: 3px;
   }
 
-  .mn-temp-option-selection .toggle__input:checked ~ .toggle__label::before {
+  .mn-temp-option-selection .toggle__input:checked~.toggle__label::before {
     width: 10px;
     height: 6px;
   }
 }
 
-@media screen and (max-width: 1080px) {
-}
+@media screen and (max-width: 1080px) {}
 
 @media screen and (max-width: 992px) {
   .side-box {
@@ -785,7 +793,32 @@
 .tab_3 .margin-right {
   margin-bottom: 50px;
 }
+
 .tab_3 .margin-left {
   margin-bottom: 50px;
 }
 
+/* Manage Template Time Picker Icon styles  */
+.input-time input.date-pick-style {
+  width: 95%;
+}
+
+.time-pick-icon {
+  /* margin-left: -20px;
+  margin-top: -20px; */
+  position: relative;
+  color: black;
+  font-size: 14px;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.time-pick-icon:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.op1-option-selection .threebar:hover,
+.mn-temp-option-selection .threebar:hover {
+  cursor: grab;
+}
