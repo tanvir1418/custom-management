@@ -392,7 +392,7 @@ function item_click_handle(listClassName) {
 	}
 }
 /* New Function End */
-
+var opt2_left_list = "";
 main_list.addEventListener("click", function (e) {
 	let target = e.target;
 	const elementName = ["DIV", "P"];
@@ -419,7 +419,8 @@ main_list.addEventListener("click", function (e) {
 	target.childNodes[5].classList.add("arrow-li-box-background-color-2");
 	target.childNodes[5].childNodes[1].classList.remove("arrow-li-box-i-color-1");
 	target.childNodes[5].childNodes[1].classList.add("arrow-li-box-i-color-2");
-	// console.log(target);
+	
+	opt2_left_list = target.childNodes[1].innerHTML;
 	item_click_handle(target.classList[0]); // update
 });
 
@@ -606,7 +607,8 @@ $(function () {
 	$("#datepicker-4").datepicker("setDate", "12w+1");
 });
 // OPTION 4 DATE PICKER END
-let oldLIClassname = ""
+var opt2_right_list = "";
+let oldLIClassname = "";
 const sub_ul_list = document.querySelector("#sub-ul-list");
 sub_ul_list.addEventListener("click", function (e) {
 	let target = e.target;
@@ -654,4 +656,11 @@ sub_ul_list.addEventListener("click", function (e) {
 	});
 
 	oldLIClassname = target.classList[0];
+	if (opt2_right_list == target.childNodes[1].innerHTML) {
+		opt2_right_list = "";
+	} else {
+		opt2_right_list = target.childNodes[1].innerHTML;
+	}
+	$("#opt2-left").html(opt2_left_list);
+	$("#opt2-right").html(opt2_right_list);
 });
