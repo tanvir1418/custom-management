@@ -2200,13 +2200,14 @@ th[draggable] a {
     color: #222222;
     font-size: 18px;
 }
+
 #tab_4 .modal .alert-table .selectaltype,
-#tab_4 .modal .alert-table .selectalfreq{
+#tab_4 .modal .alert-table .selectalfreq {
     position: relative;
 }
 
 #tab_4 .modal .alert-table .selectaltype select,
-#tab_4 .modal .alert-table .selectalfreq select{
+#tab_4 .modal .alert-table .selectalfreq select {
     width: 100%;
     height: 30px;
     border: 1px solid #8c8c8c;
@@ -2222,7 +2223,8 @@ th[draggable] a {
     font-weight: 500;
     font-size: 14px;
 }
-#tab_4 .modal .alert-table .selectarrow{
+
+#tab_4 .modal .alert-table .selectarrow {
     background: #F5F5F5;
     height: 14px;
     width: 14px;
@@ -2231,15 +2233,16 @@ th[draggable] a {
     top: 18px;
     right: 24px;
 }
-#tab_4 .modal .alert-table .selectarrow i{
+
+#tab_4 .modal .alert-table .selectarrow i {
     color: #818181;
     position: absolute;
     left: 54%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
-#tab_4 .modal .alert-table .inpalertval input{
+#tab_4 .modal .alert-table .inpalertval input {
     width: 100%;
     height: 30px;
     border: 1px solid #8c8c8c;
@@ -2249,7 +2252,7 @@ th[draggable] a {
     outline: none;
 }
 
-#tab_4 .modal .alert-table .inpumail .mail_enter{
+#tab_4 .modal .alert-table .inpumail .mail_enter {
     width: 100%;
     height: 30px;
     border: 1px solid #8c8c8c;
@@ -2257,25 +2260,30 @@ th[draggable] a {
     border-radius: 3px;
     display: flex;
 }
-#tab_4 .modal .alert-table .inpumail .mail_icons{
+
+#tab_4 .modal .alert-table .inpumail .mail_icons {
     width: 30%;
     height: 100%;
     padding: 4px;
     background: #888888;
 }
-#tab_4 .modal .alert-table .mail_icons i.fa-envelope{
+
+#tab_4 .modal .alert-table .mail_icons i.fa-envelope {
     margin-right: 3px;
     color: #9BFF00;
 }
-#tab_4 .modal .alert-table .mail_icons i.fa-phone-alt{
+
+#tab_4 .modal .alert-table .mail_icons i.fa-phone-alt {
     color: #E1E1E1;
     text-align: center;
 }
-#tab_4 .modal .alert-table .mail_icons i.fa-comment-alt{
+
+#tab_4 .modal .alert-table .mail_icons i.fa-comment-alt {
     margin-left: 3px;
     color: #E1E1E1;
 }
-#tab_4 .modal .alert-table .mail_enter input{
+
+#tab_4 .modal .alert-table .mail_enter input {
     width: 70%;
     height: 100%;
     border: none;
@@ -2286,44 +2294,51 @@ th[draggable] a {
     font-size: 14px;
     border-radius: 3px;
 }
-#tab_4 .modal .alert-table .mail_enter input::placeholder{
+
+#tab_4 .modal .alert-table .mail_enter input::placeholder {
     color: #D1D1D1;
 }
-#tab_4 .modal .alert-table .removenull{
+
+#tab_4 .modal .alert-table .removenull {
     width: 100%;
     height: 30px;
     display: flex;
 }
-#tab_4 .modal .alert-table .removenull .circle_550{
+
+#tab_4 .modal .alert-table .removenull .circle_550 {
     margin: auto;
     height: 30px;
     width: 30px;
     border-radius: 50%;
     background: #FFCDCD;
     position: relative;
+    cursor: pointer;
 }
-#tab_4 .modal .alert-table .removenull .circle_550:first-child{
+
+#tab_4 .modal .alert-table .removenull .circle_550:first-child {
     margin-right: 8px;
     background: #E5E5E5;
 }
 
-#tab_4 .modal .alert-table .removenull .circle_550 i{
+#tab_4 .modal .alert-table .removenull .circle_550 i {
     position: absolute;
     color: #FF3535;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
-#tab_4 .modal .alert-table .removenull .circle_550:first-child i{
+
+#tab_4 .modal .alert-table .removenull .circle_550:first-child i {
     color: #878787;
 }
 
-#tab_4 .alertwinbox .reset-save-btn{
+#tab_4 .modal .reset-save-btn {
     margin-top: 42px;
     width: 100%;
     text-align: center;
 }
-#tab_4 .alertwinbox .reset-save-btn button{
+
+#tab_4 .modal .reset-save-btn button {
     padding: 8px 34px;
     border-radius: 3px;
     border: 1px solid #BBBBBB;
@@ -2335,21 +2350,160 @@ th[draggable] a {
     background: #F1F3F5;
     transition: 0.3s ease all;
 }
-#tab_4 .alertwinbox .reset-save-btn .reset4:hover{
+
+#tab_4 .modal .reset-save-btn .reset4:hover {
     background: #b3b3b3;
 }
-#tab_4 .alertwinbox .reset-save-btn .save4{
+
+#tab_4 .modal .reset-save-btn .save4 {
     border: 1px solid #000000;
     color: #ffffff;
     background: #000000;
     margin-left: 16px;
 }
-#tab_4 .alertwinbox .reset-save-btn .save4:hover{
+
+#tab_4 .modal .reset-save-btn .save4:hover {
     background: #131313;
 }
 
-
-
 /* ALERTS WINDOW END */
+
+/* =====//////// FILTER MODAL START ////////===== */
+#tab_4 .modal#filter-modal .modal-dialog {
+    max-width: 930px;
+}
+
+#tab_4 .modal .filter7-modal-con {
+    display: flex;
+    padding: 12px;
+}
+
+#tab_4 .modal .filter7-modal-con .con-box-filter {
+    width: 50%;
+    border: 1px solid #7A7A7A;
+}
+
+#tab_4 .modal .filter7-modal-con .con-box-filter.filter-input {
+    margin-right: 5px;
+}
+
+#tab_4 .modal .filter7-modal-con .con-box-filter.drag-column {
+    margin-left: 5px;
+}
+
+/* header */
+#tab_4 .modal .con-box-filter .heading-filter {
+    background: #000000;
+    padding: 22px 0;
+    position: relative;
+}
+
+#tab_4 .modal .con-box-filter .heading-filter p {
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+/* inner content */
+#tab_4 .modal .outer-data7{
+    padding-right: 5px;
+}
+
+#tab_4 .modal .my-val-data{
+    height: 370px;
+    background: #FBFBFB;
+    overflow-y: scroll;
+}
+
+#tab_4 .modal .val-container{
+    padding: 20px;
+}
+#tab_4 .modal .val-container .valdata-box{
+    margin-bottom: 20px;
+}
+#tab_4 .modal .val-container .valdata-box p{
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #1D1D1D;
+    margin: 0;
+    margin-bottom: 10px;
+}
+#tab_4 .modal .valdata-box .valinput{
+    display: flex;
+}
+#tab_4 .modal .valdata-box .valinput .arrow-equal{
+    border: 1px solid #969696;
+    border-radius: 3px;
+    display: flex;
+    padding: 18px 26px;
+    position: relative;
+    margin-right: 8px;
+    cursor: pointer;
+}
+#tab_4 .modal .valinput .arrow-equal span{
+    color: #1D1D1D;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+#tab_4 .modal .valinput .arrow-equal .arrow7-right{
+    font-size: 42px;
+    top: 88%;
+    left: 30%;
+}
+#tab_4 .modal .valinput .arrow-equal .equal7data{
+    font-size: 28px;
+    top: 50%;
+    left: 68%;
+}
+#tab_4 .modal .valinput .arrow-equal .middle7{
+    left: 50%;
+}
+#tab_4 .modal .valinput input{
+    width: 100%;
+    border: 1px solid #969696;
+    outline: none;
+    border-radius: 3px;
+    padding-left: 5px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+#tab_4 .modal .valinput .delete-mydata{
+    margin: 4px 5px 4px 16px;
+    background: #E9E9E9;
+    padding: 15px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+#tab_4 .modal .valinput .delete-mydata i{
+    position: absolute;
+    color: #876E6E;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#tab_4 .modal .con-box-filter .reset-save-btn{
+    margin: 36px 0px 24px;
+}
+/* scrollbar customize start */
+#tab_4 .modal .my-val-data::-webkit-scrollbar {
+    width: 4px;
+}
+
+#tab_4 .modal .my-val-data::-webkit-scrollbar-thumb {
+    background: #d4d3d3;
+    border-radius: 15px;
+}
+/* scrollbar customize end */
+
+/* FILTER DRAG COLUMN */
+
+/* =====//////// FILTER MODAL END ////////===== */
 
 /* ====/////=== MANAGE RESULT POPUP END ====///=== */

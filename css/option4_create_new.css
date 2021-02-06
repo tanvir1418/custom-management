@@ -679,10 +679,12 @@
 .form-box form {
   padding-bottom: 30px;
 }
+
 .mn-temp-sample1-wrapper {
   padding-top: 140px;
   margin: 0 30px;
 }
+
 .mn-temp-sample1-wrapper .create-manage {
   margin: 0px;
 }
@@ -951,6 +953,7 @@
 .main-side-container {
   padding-top: 160px;
 }
+
 .op4-left-right-container {
   /* display: inline-flex;
   width: 100%; */
@@ -966,6 +969,7 @@
   .main-side-container {
     padding-top: 160px;
   }
+
   .op4-left-right-container {
     /* padding-top: 170px; */
     display: block;
@@ -1256,7 +1260,7 @@
   padding-left: 35px;
 }
 
-.op4-option-selection .toggle__input:not(:disabled) ~ .toggle__label {
+.op4-option-selection .toggle__input:not(:disabled)~.toggle__label {
   cursor: pointer;
 }
 
@@ -1278,7 +1282,7 @@
   z-index: 2;
 }
 
-.op4-option-selection .toggle__input:checked ~ .toggle__label::after {
+.op4-option-selection .toggle__input:checked~.toggle__label::after {
   background-color: #25d34f;
   box-shadow: 5px 5px 5px 4px rgba(140, 245, 80, 0.2);
 }
@@ -1288,6 +1292,7 @@
   font-size: 20px;
   font-weight: 700;
 }
+
 /* this is for tik sign*/
 .op4-option-selection .toggle__label::before {
   content: "";
@@ -1310,7 +1315,7 @@
   transform: rotate(-40deg) skew(10deg);
 }
 
-.op4-option-selection .toggle__input:checked ~ .toggle__label::before {
+.op4-option-selection .toggle__input:checked~.toggle__label::before {
   width: 13px;
   height: 7px;
   border-left-width: 2px;
@@ -1453,6 +1458,7 @@
     padding-right: 2px;
     padding-left: 2px;
   }
+
   .op4-option-selection .width-22 .error-message p {
     font-size: 9px;
   }
@@ -1487,6 +1493,7 @@
     right: 9px;
     top: 4px;
   }
+
   /* xxxxxxxx Select box styling Ends xxxxxx  */
 
   /*  ======Custom Input styling Starts=======  */
@@ -1578,14 +1585,13 @@
     left: 3px;
   }
 
-  .op4-option-selection .toggle__input:checked ~ .toggle__label::before {
+  .op4-option-selection .toggle__input:checked~.toggle__label::before {
     width: 10px;
     height: 6px;
   }
 }
 
-@media screen and (max-width: 1080px) {
-}
+@media screen and (max-width: 1080px) {}
 
 @media screen and (max-width: 992px) {
   .op4-side-box {
@@ -1615,6 +1621,7 @@
   padding-top: 140px;
   width: 100%;
 }
+
 .checkbox-container-inner {
   background-color: white;
   padding: 20px;
@@ -1678,7 +1685,7 @@ legend {
   padding-left: 36px;
 }
 
-.toggle__input:not(:disabled) ~ .toggle__label {
+.toggle__input:not(:disabled)~.toggle__label {
   cursor: pointer;
 }
 
@@ -1699,7 +1706,7 @@ legend {
   z-index: 2;
 }
 
-.toggle__input:checked ~ .toggle__label::after {
+.toggle__input:checked~.toggle__label::after {
   background-color: #25d34f;
   border: 0;
   box-shadow: 5px 5px 5px 4px rgba(140, 245, 80, 0.2);
@@ -1737,7 +1744,7 @@ legend {
   transform: rotate(-40deg) skew(10deg);
 }
 
-.toggle__input:checked ~ .toggle__label::before {
+.toggle__input:checked~.toggle__label::before {
   width: 12px;
   height: 6px;
   border-left-width: 2px;
@@ -1979,6 +1986,7 @@ input.pop-up-button:hover {
   padding-top: 140px;
   width: 100%;
 }
+
 .sample-4-wrapper-inner {
   background-color: white;
   padding: 20px;
