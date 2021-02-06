@@ -285,15 +285,17 @@ chartPage.style.opacity = "0";
 
 $("#div-sub-ul-li-list").click(function (e) {
     let target = e.target;
-    const elementName = ["DIV", "P"];
-    if (elementName.includes(target.tagName)) {
-        target = target.parentNode;
-    } else if (target.tagName === "I") {
-        target = target.parentNode.parentNode;
-    } else if (target.tagName !== "LI") {
-        return;
-    }
-    // console.log(target.childNodes[1].innerHTML);
+    if (target.tagName === "DIV") {
+		if (target.className === "sublist-cancel-box-404") return;
+		target = target.parentNode;
+	} else if (target.tagName === "P") {
+		target = target.parentNode;
+	} else if (target.tagName === "I") {
+		target = target.parentNode;
+		if (target.className === "sublist-cancel-box-404") return;
+		else target = target.parentNode;
+    } else if (target.tagName !== "LI") return;
+    
     let dataList = target.childNodes[1].innerHTML;
     document.querySelector("#chartPage .chart-title .left-item").innerHTML = left_list_data;
     document.querySelector("#chartPage .chart-title .right-item").innerHTML = dataList;
@@ -1106,3 +1108,22 @@ $(function () {
     $("#my-drag-list").sortable();
     $("#my-drag-list").disableSelection();
 });
+
+//----------====== Manage result filter modal ======--------------------
+let dataFilterModal = [];
+for (let i = 1; i <= 100; i++){
+    dataFilterModal.push(`Column ${i}`);
+}
+let my_drag_list = document.querySelector("#my-drag-list");
+dataFilterModal.forEach((modalData) => {
+    let modalElement = `<li>
+    <div class="cursor-box">
+        <span>|||</span>
+    </div>
+    <div class="name-box">
+        <span>${modalData}</span>
+    </div>
+    </li>`;
+    my_drag_list.innerHTML += modalElement;
+})
+//----------====== Manage result filter modal End ======----------------

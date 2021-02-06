@@ -587,24 +587,15 @@ const sub_ul_list = document.querySelector("#sub-ul-list");
 sub_ul_list.addEventListener("click", function (e) {
 	let target = e.target;
 	if (target.tagName === "DIV") {
-		if (target.className === "sublist-cancel-box") {
-			return;
-		}
+		if (target.className === "sublist-cancel-box") return;
 		target = target.parentNode;
 	} else if (target.tagName === "P") {
 		target = target.parentNode;
 	} else if (target.tagName === "I") {
 		target = target.parentNode;
-		if (target.className === "sublist-cancel-box") {
-			console.log("cross click");
-			return;
-		}
-		else {
-			target = target.parentNode;
-		}
-	} else if (target.tagName !== "LI") {
-		return;
-	}
+		if (target.className === "sublist-cancel-box") return;
+		else target = target.parentNode;
+	} else if (target.tagName !== "LI") return;
 
 	if (oldLIClassname !== "" && oldLIClassname !== target.classList[0]) {
 		let oldElement = document.querySelector(`.${oldLIClassname}`);
