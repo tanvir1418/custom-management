@@ -827,8 +827,7 @@ table#sub2-editor-table {
     padding-left: 36px;
 }
 
-.popup__checkbox__toggle__input:not(:disabled)
-    ~ .popup__checkbox__toggle__label {
+.popup__checkbox__toggle__input:not(:disabled)~.popup__checkbox__toggle__label {
     cursor: pointer;
 }
 
@@ -849,8 +848,7 @@ table#sub2-editor-table {
     z-index: 2;
 }
 
-.popup__checkbox__toggle__input:checked
-    ~ .popup__checkbox__toggle__label::after {
+.popup__checkbox__toggle__input:checked~.popup__checkbox__toggle__label::after {
     background-color: #25d34f;
     border: 0;
     box-shadow: 5px 5px 5px 4px rgba(140, 245, 80, 0.2);
@@ -886,8 +884,7 @@ table#sub2-editor-table {
     transform: rotate(-40deg) skew(10deg);
 }
 
-.popup__checkbox__toggle__input:checked
-    ~ .popup__checkbox__toggle__label::before {
+.popup__checkbox__toggle__input:checked~.popup__checkbox__toggle__label::before {
     width: 12px;
     height: 6px;
     border-left-width: 2px;
@@ -908,17 +905,17 @@ table#sub2-editor-table {
 /* Custom Check Box Ends  */
 
 #dropBtnModal .modal-content,
-#col8Filter  .modal-content{
-  width: 320px;
-  border: 0;
-  border-radius: 0 !important;
-  left: 20%;
+#col8Filter .modal-content {
+    width: 320px;
+    border: 0;
+    border-radius: 0 !important;
+    left: 20%;
 }
 
 #dropBtnModal .modal-content .modal-body,
 #col8Filter .modal-content .modal-body {
-  padding: 0;
-  border-radius: 0 !important;
+    padding: 0;
+    border-radius: 0 !important;
 }
 
 /* pop-up-for-table-header-click style ends */
@@ -1252,12 +1249,8 @@ Bottom codes are added by Tanvir
   justify-content: center; */
 }
 
-.save-start-button-click-popup-wrapper
-    .save-start-popup-button-row
-    .save-start-done-btn,
-.save-start-button-click-popup-wrapper
-    .save-start-popup-button-row
-    .save-start-cancel-btn {
+.save-start-button-click-popup-wrapper .save-start-popup-button-row .save-start-done-btn,
+.save-start-button-click-popup-wrapper .save-start-popup-button-row .save-start-cancel-btn {
     width: 130px;
     font-size: 18px;
     background: #e9e9e9;
@@ -1271,9 +1264,7 @@ Bottom codes are added by Tanvir
     padding: 8px 0px;
 }
 
-.save-start-button-click-popup-wrapper
-    .save-start-popup-button-row
-    .save-start-cancel-btn {
+.save-start-button-click-popup-wrapper .save-start-popup-button-row .save-start-cancel-btn {
     background: #000000;
     color: #e6e6e6;
 }
@@ -1283,22 +1274,14 @@ Bottom codes are added by Tanvir
     margin-left: auto;
 }
 
-.save-start-button-click-popup-wrapper
-    .save-start-popup-button-row
-    .save-start-done-btn:hover,
-.save-start-button-click-popup-wrapper
-    .save-start-popup-button-row
-    .save-start-done-btn:focus {
+.save-start-button-click-popup-wrapper .save-start-popup-button-row .save-start-done-btn:hover,
+.save-start-button-click-popup-wrapper .save-start-popup-button-row .save-start-done-btn:focus {
     background: #000000;
     color: #e6e6e6;
 }
 
-.save-start-button-click-popup-wrapper
-    .save-start-popup-button-row
-    .save-start-cancel-btn:hover,
-.save-start-button-click-popup-wrapper
-    .save-start-popup-button-row
-    .save-start-cancel-btn:focus {
+.save-start-button-click-popup-wrapper .save-start-popup-button-row .save-start-cancel-btn:hover,
+.save-start-button-click-popup-wrapper .save-start-popup-button-row .save-start-cancel-btn:focus {
     background: #e9e9e9;
     color: black;
 }
@@ -1447,12 +1430,8 @@ Bottom codes are added by Tanvir
     margin: 30px 25px 20px 25px;
 }
 
-.time-picker-button-click-popup-wrapper
-    .time-picker-popup-button-row
-    .time-picker-done-btn,
-.time-picker-button-click-popup-wrapper
-    .time-picker-popup-button-row
-    .time-picker-cancel-btn {
+.time-picker-button-click-popup-wrapper .time-picker-popup-button-row .time-picker-done-btn,
+.time-picker-button-click-popup-wrapper .time-picker-popup-button-row .time-picker-cancel-btn {
     width: 140px;
     font-size: 20px;
     background: #e9e9e9;
@@ -1471,12 +1450,8 @@ Bottom codes are added by Tanvir
     margin-left: auto;
 }
 
-.time-picker-button-click-popup-wrapper
-    .time-picker-popup-button-row
-    .time-picker-cancel-btn:hover,
-.time-picker-button-click-popup-wrapper
-    .time-picker-popup-button-row
-    .time-picker-cancel-btn:focus {
+.time-picker-button-click-popup-wrapper .time-picker-popup-button-row .time-picker-cancel-btn:hover,
+.time-picker-button-click-popup-wrapper .time-picker-popup-button-row .time-picker-cancel-btn:focus {
     background: #000000;
     color: #e6e6e6;
 }
@@ -1549,7 +1524,7 @@ Bottom codes are added by Tanvir
     background-color: #eaecf0;
 }
 
-.time-picker-am-pm label.ampm-switch input:checked + .toggle-button {
+.time-picker-am-pm label.ampm-switch input:checked+.toggle-button {
     top: 40px;
 }
 
@@ -1570,9 +1545,10 @@ Bottom codes are added by Tanvir
     content: "AM";
 }
 
-.time-picker-am-pm label.ampm-switch input:checked + .toggle-button:before {
+.time-picker-am-pm label.ampm-switch input:checked+.toggle-button:before {
     content: "PM";
 }
+
 /* added by Tanvir (6-2-21)  */
 .ampm-picker {
     font-size: 20px;
@@ -1581,6 +1557,7 @@ Bottom codes are added by Tanvir
     height: 85px;
     background: white;
 }
+
 .ampm-picker .pm {
     margin-top: 5px;
     width: 80px;
@@ -1592,6 +1569,7 @@ Bottom codes are added by Tanvir
     border: 1px solid rgb(172, 170, 170);
     border-radius: 1px;
 }
+
 .ampm-picker .am {
     margin-top: 5px;
     width: 80px;
@@ -1603,6 +1581,7 @@ Bottom codes are added by Tanvir
     border: 1px solid rgb(12, 12, 12);
     border-radius: 1px;
 }
+
 .ampm-picker .period {
     cursor: pointer;
 }
@@ -1613,6 +1592,7 @@ Bottom codes are added by Tanvir
     /* color: white;
   background-color: black; */
 }
+
 #mnTemp_timePicker .modal-content {
     width: 420px;
     border: 0;
@@ -1631,131 +1611,142 @@ Bottom codes are added by Tanvir
 /* ===============XXXXXXXXXXXXXX============== */
 
 /* OPTION 1 LIST POPUP START */
-.modal#myopt1listData .modal-dialog {
-  max-width: 1200px;
+#myopt1listData .modal-dialog {
+    max-width: 1200px;
+}
+
+#myopt1listData.modal-content {
+    border: none;
+    border-radius: 3px;
+    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+}
+
+#myopt1listData .modal-body {
+    padding: 0px;
 }
 
 .wrapper-modal-list {
-  position: relative;
-  width: 100%;
-  height: 670px;
-  border: 2px solid #000000;
+    position: relative;
+    width: 100%;
+    height: 670px;
 }
 
 .wrapper-modal-list .weapper-list-title {
-  padding: 20px;
-  background: #000000;
-  margin-bottom: 12px;
+    padding: 20px;
+    background: #000000;
+    margin-bottom: 12px;
 }
 
 .wrapper-modal-list .weapper-list-title p {
-  margin: 0;
-  color: #ffffff;
-  text-align: center;
-  font-family: gilroy-bold, sans-serif;
-  font-weight: 700;
-  letter-spacing: 2x;
-  font-size: 20px;
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 700;
+    letter-spacing: 2x;
+    font-size: 20px;
 }
 
 .wrapper-modal-list .scrollable-list-op1 {
-  height: 565px;
-  width: 99%;
-  overflow: auto;
-  /* overflow: hidden; */
-  position: relative;
+    height: 565px;
+    width: 99%;
+    overflow: auto;
+    /* overflow: hidden; */
+    position: relative;
 }
 
 /* main list */
 .wrapper-modal-list .scrollable-list-op1 .select-item-main {
-  width: 250px;
-  background: #F6F6F6;
-  padding: 8px;
-  margin-left: 12px;
+    width: 250px;
+    background: #F6F6F6;
+    padding: 8px;
+    margin-left: 12px;
 }
 
 .wrapper-modal-list .scrollable-list-op1 .select-item-main li {
-  position: relative;
-  display: flex;
-  height: 32px;
-  cursor: pointer;
+    position: relative;
+    display: flex;
+    height: 32px;
+    cursor: pointer;
 }
 
 .wrapper-modal-list .scrollable-list-op1 .select-item-main li p {
-  font-family: gilroy-bold, sans-serif;
-  font-size: 14px;
-  color: #000000;
-  margin: auto auto auto 8px;
+    font-family: gilroy-bold, sans-serif;
+    font-size: 14px;
+    color: #000000;
+    margin: auto auto auto 8px;
 }
 
 .scrollable-list-op1 .select-item-main li .green-check-box {
-  height: 16px;
-  width: 16px;
-  background: #06e791;
-  position: relative;
-  margin: auto -58px auto auto;
-  border-radius: 50%;
-  /* display: none; */
+    height: 16px;
+    width: 16px;
+    background: #06e791;
+    position: relative;
+    margin: auto -58px auto auto;
+    border-radius: 50%;
+    /* display: none; */
 }
 
 /* Edit by Ashiq */
 .display-none {
-  display: none;
+    display: none;
 }
 
 .display-block {
-  display: block;
+    display: block;
 }
 
 /* Edit End by Ashiq */
 
 .scrollable-list-op1 .select-item-main li .green-check-box i {
-  position: absolute;
-  margin: auto;
-  top: 3px;
-  bottom: 0;
-  left: 3px;
-  font-size: 10px;
-  color: #ffffff;
+    position: absolute;
+    margin: auto;
+    top: 3px;
+    bottom: 0;
+    left: 3px;
+    font-size: 10px;
+    color: #ffffff;
 }
 
 
 .scrollable-list-op1 .select-item-main li .arrow-li-box {
-  height: 18px;
-  width: 18px;
-  /* background: #ffffff; */
-  position: relative;
-  margin: auto 8px auto auto;
+    height: 18px;
+    width: 18px;
+    /* background: #ffffff; */
+    position: relative;
+    margin: auto 8px auto auto;
 }
 
 /* Edit by Ashiq */
 .arrow-li-box-background-color-1 {
-  background: #ffffff;
+    background: #ffffff;
 }
 
 .arrow-li-box-background-color-2 {
-  background: #f6f6f6;
+    background: #f6f6f6;
 }
 
 /* Edit End by Ashiq */
 
 .scrollable-list-op1 .select-item-main li .arrow-li-box i {
-  position: absolute;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 6px;
-  font-size: 16px;
-  /* color: #8f8f8f; */
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 6px;
+    font-size: 16px;
+    /* color: #8f8f8f; */
 }
 
 /* Edit by Ashiq */
 .arrow-li-box-i-color-1 {
-  color: #8f8f8f;
+    color: #8f8f8f;
 }
 
 .arrow-li-box-i-color-2 {
-  color: #000000;
+    color: #000000;
 }
 
 /* Edit End by Ashiq */
@@ -1763,120 +1754,152 @@ Bottom codes are added by Tanvir
 
 .scrollable-list-op1 .select-item-main li:hover .arrow-li-box,
 .scrollable-list-op1 .select-item-main li:hover .arrow-li-box i {
-  background: #F6F6F6;
-  color: #000000;
+    background: #F6F6F6;
+    color: #000000;
 }
 
 .scrollable-list-op1 .select-item-main .highlight_li {
-  border: 1px solid #000000;
-  border-radius: 3px;
-  background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    background: #ffffff;
 }
 
 /* sublist */
 .wrapper-modal-list .scrollable-list-op1 .submodal-list {
-  width: 250px;
-  background: #ffffff;
-  padding: 8px;
-  margin-left: 12px;
-  position: absolute;
-  top: 0;
+    width: 250px;
+    background: #ffffff;
+    padding: 8px;
+    margin-left: 12px;
+    position: absolute;
+    top: 0;
 }
 
 .wrapper-modal-list .scrollable-list-op1 .submodal-list li {
-  border: 1px solid #a1a1a1;
-  border-radius: 3px;
-  background: #ffffff;
-  position: relative;
-  display: flex;
-  height: 25px;
-  margin-bottom: 3px;
-  cursor: pointer;
+    border: 1px solid #a1a1a1;
+    border-radius: 3px;
+    background: #ffffff;
+    position: relative;
+    display: flex;
+    height: 25px;
+    margin-bottom: 3px;
+    cursor: pointer;
 }
 
 .wrapper-modal-list .scrollable-list-op1 .submodal-list li p {
-  font-family: gilroy-bold, sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  color: #000000;
-  margin: auto auto auto 8px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000;
+    margin: auto auto auto 8px;
 }
 
 .scrollable-list-op1 .submodal-list li .sublist-check-box {
-  position: relative;
-  margin: auto 8px auto auto;
-  height: 16px;
-  width: 16px;
-  background: #06e791;
-  border-radius: 50%;
-  display: none;
+    position: relative;
+    margin: auto 8px auto auto;
+    height: 16px;
+    width: 16px;
+    background: #06e791;
+    border-radius: 50%;
+    display: none;
 }
 
 .scrollable-list-op1 .submodal-list li .sublist-check-box i {
-  position: absolute;
-  margin: auto;
-  top: 3px;
-  bottom: 0;
-  left: 3px;
-  font-size: 10px;
-  color: #ffffff;
+    position: absolute;
+    margin: auto;
+    top: 3px;
+    bottom: 0;
+    left: 3px;
+    font-size: 10px;
+    color: #ffffff;
 }
 
 .scrollable-list-op1 .submodal-list li .sublist-cancel-box {
-  position: relative;
-  margin: auto 8px auto auto;
-  height: 18px;
-  width: 18px;
-  background: #d3d3d3;
-  border-radius: 50%;
-  /* display: none; */
+    position: relative;
+    margin: auto 8px auto auto;
+    height: 18px;
+    width: 18px;
+    background: #d3d3d3;
+    border-radius: 50%;
+    /* display: none; */
 }
 
 .scrollable-list-op1 .submodal-list li .sublist-cancel-box i {
-  position: absolute;
-  margin: auto;
-  top: 3px;
-  bottom: 0;
-  left: 5px;
-  font-size: 11px;
-  color: #ffffff;
+    position: absolute;
+    margin: auto;
+    top: 3px;
+    bottom: 0;
+    left: 5px;
+    font-size: 11px;
+    color: #ffffff;
 }
 
 .wrapper-modal-list .scroll-down {
-  margin-left: 12px;
-  margin-top: 0px;
-  width: 250px;
-  height: 20px;
-  background: #000000;
-  cursor: pointer;
+    margin-left: 12px;
+    margin-top: 0px;
+    width: 250px;
+    height: 20px;
+    background: #000000;
+    cursor: pointer;
 }
 
 .wrapper-modal-list .scroll-down i {
-  margin-left: 115px;
-  color: #ffffff;
-  font-size: 22px;
+    margin-left: 115px;
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.modal .btn-myfo{
+    padding: 16px 32px 32px;
+}
+
+.modal .btn-myfo button {
+    border: none;
+    border-radius: 2px;
+    padding: 5px 22px;
+    color: #1D1D1D;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.modal .btn-myfo .reset-myfo{
+    background: #FFF000;
+    float: right;
+}
+
+.modal .btn-myfo .reset-myfo:hover {
+    background: #fccf07;
+}
+
+.modal .btn-myfo .done-myfo {
+    background: #EAECF0;
+    float: right;
+}
+
+.modal .btn-myfo .done-myfo:hover {
+    background: #c6cdd8;
 }
 
 /* scrollbar customize start */
 .scrollable-list-op1::-webkit-scrollbar {
-  width: 5px;
+    width: 5px;
 }
 
 /* Track */
 .scrollable-list-op1::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #919191;
-  border-radius: 10px;
+    box-shadow: inset 0 0 5px #919191;
+    border-radius: 10px;
 }
 
 /* Handle */
 .scrollable-list-op1::-webkit-scrollbar-thumb {
-  background: #919191;
-  border-radius: 15px;
+    background: #919191;
+    border-radius: 15px;
 }
 
 /* Handle on hover */
 .scrollable-list-op1::-webkit-scrollbar-thumb:hover {
-  background: #424242;
+    background: #424242;
 }
 
 /* scrollbar customize end */
@@ -1886,95 +1909,103 @@ Bottom codes are added by Tanvir
 
 /* REMOVE LIST ITEM MODAL START */
 #deletlistopt2 .modal-dialog {
-  max-width: 330px !important;
+    max-width: 330px !important;
 }
 
 #deletlistopt2 .modal-content {
-  border: none;
-  border-radius: 3px;
-  -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-  -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-  box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    border: none;
+    border-radius: 3px;
+    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
 }
 
 #deletlistopt2 .modal-header {
-  background: #000000;
-  border-radius: 3px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-  position: relative;
+    background: #000000;
+    border-radius: 3px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    position: relative;
 }
+
 #deletlistopt2 .modal-title {
-  color: #ffffff;
-  text-align: center;
-  font-family: gilroy-medium, sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  margin: 0 auto;
+    color: #ffffff;
+    text-align: center;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0 auto;
 }
 
 #deletlistopt2 .close {
-  position: absolute;
-  color: #ffffff;
-  padding: 0;
-  margin: 0;
-  top: 5px;
-  right: 10px;
-  opacity: 1;
+    position: absolute;
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+    top: 5px;
+    right: 10px;
+    opacity: 1;
 }
 
 #deletlistopt2 .close span {
-  color: #ffffff;
-  font-size: 26px;
-  text-shadow: none;
+    color: #ffffff;
+    font-size: 26px;
+    text-shadow: none;
 }
 
 #deletlistopt2 .modal-body {
-  padding: 0px;
+    padding: 0px;
 }
 
-#deletlistopt2 .remove-box{
-  padding: 8px 16px 16px;
-}
-#deletlistopt2 .remove-box .question-delete{
-  border: 1px solid #969696;
-  border-radius: 3px;
-  background: #F9F9FB;
-  padding: 24px 0px;
-}
-#deletlistopt2 .remove-box .question-delete p{
-  color: #787878;
-  text-align: center;
-  font-family: gilroy-medium, sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  margin: 0;
+#deletlistopt2 .remove-box {
+    padding: 8px 16px 16px;
 }
 
-#deletlistopt2 .remove-box .comfirm-btn-bx{
-  margin-top: 20px;
+#deletlistopt2 .remove-box .question-delete {
+    border: 1px solid #969696;
+    border-radius: 3px;
+    background: #F9F9FB;
+    padding: 24px 0px;
 }
-#deletlistopt2 .comfirm-btn-bx button{
-  border: none;
-  border-radius: 2px;
-  padding: 5px 22px;
-  color: #1D1D1D;
-  font-family: gilroy-medium, sans-serif;
-  font-weight: 600;
-  font-size: 14px;
+
+#deletlistopt2 .remove-box .question-delete p {
+    color: #787878;
+    text-align: center;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
 }
-#deletlistopt2 .comfirm-btn-bx .cancel-list-data{
-  background: #FFF000;
+
+#deletlistopt2 .remove-box .comfirm-btn-bx {
+    margin-top: 20px;
 }
-#deletlistopt2 .comfirm-btn-bx .cancel-list-data:hover{
-  background: #fccf07;
+
+#deletlistopt2 .comfirm-btn-bx button {
+    border: none;
+    border-radius: 2px;
+    padding: 5px 22px;
+    color: #1D1D1D;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
 }
-#deletlistopt2 .comfirm-btn-bx .confirm-list-data{
-  background: #EAECF0;
-  float: right;
+
+#deletlistopt2 .comfirm-btn-bx .cancel-list-data {
+    background: #FFF000;
 }
-#deletlistopt2 .comfirm-btn-bx .confirm-list-data:hover{
-  background: #c6cdd8;
+
+#deletlistopt2 .comfirm-btn-bx .cancel-list-data:hover {
+    background: #fccf07;
+}
+
+#deletlistopt2 .comfirm-btn-bx .confirm-list-data {
+    background: #EAECF0;
+    float: right;
+}
+
+#deletlistopt2 .comfirm-btn-bx .confirm-list-data:hover {
+    background: #c6cdd8;
 }
 
 
