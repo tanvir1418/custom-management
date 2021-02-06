@@ -325,11 +325,75 @@ document.querySelector("#min_down").addEventListener("click", function () {
   inputMinute(-1)
 });
 
+let inputId = "#timepicker_mnTemp1";
+function setTimeValue() {
+  let timeButton = document.querySelector("#timeButton");
+  timeButton.addEventListener("click", function () {
+    let formatTime = formatAMPM(new Date());
+    let hours = document.querySelector("#hour_input").value === "" ? formatTime.hours : document.querySelector("#hour_input").value;
+    let mins = document.querySelector("#min_input").value === "" ? formatTime.minutes : document.querySelector("#min_input").value;
+    let ampm_check = document.querySelector("#ampmInputValue").value;
+    document.querySelector(inputId).value = `${hours}:${mins} ${ampm_check.toLowerCase()}`;
+    $('#mnTemp_timePicker').modal('hide');
+  });
+}
 
+$("#TP_time1").click(function () {
+  inputId = "#timepicker_mnTemp1";
+  let currentTime = new Date();
+  let formatTime = formatAMPM(currentTime);
+  document.querySelector("#hour_input").value = formatTime.hours;
+  document.querySelector("#min_input").value = formatTime.minutes;
+  document.querySelector("#ampmInputValue").value = formatTime.ampm;
+  setTimeValue();
+  $('.ampm-picker .period').click();
+});
+$("#TP_time2").click(function () {
+  inputId = "#timepicker_mnTemp2";
+  let currentTime = new Date();
+  let formatTime = formatAMPM(currentTime);
+  document.querySelector("#hour_input").value = formatTime.hours;
+  document.querySelector("#min_input").value = formatTime.minutes;
+  setTimeValue();
+  $('.ampm-picker .period').click();
+});
+
+function formatAMPM(date) {
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  hours %= 12;
+  hours = hours || 12;
+  hours = hours < 10 ? `0${hours}` : hours;
+  minutes = minutes < 10 ? `0${minutes}` : minutes;
+  const strTime = {
+    hours, minutes, ampm
+  };
+  return strTime;
+};
+
+
+// added by Tanvir (6-2-21) 
+$('.ampm-picker .period').click(function (e) {
+  let clicked = e.target.innerHTML;
+  let selected = document.querySelector(".chosen-period").innerHTML;
+  if (clicked !== selected) {
+    // highlight the choice (de-highlight any previous choice)
+    $('.chosen-period').removeClass('chosen-period');
+    $(this).addClass('chosen-period');
+
+    let period_am = document.querySelector(".am");
+    let period_pm = document.querySelector(".pm");
+    period_am.classList.add("pm");
+    period_am.classList.remove("am");
+    period_pm.classList.add("am");
+    period_pm.classList.remove("pm");
+    let ampmInputValue = document.querySelector("#ampmInputValue");
+    ampmInputValue.value = clicked;
+  }
+});
 
 // Form By Text Edit Pop Up Script
-
-
 $("td input").click(function (event) {
   $("#sub__table").css({
     top: ((event.offsetY) + 160),
