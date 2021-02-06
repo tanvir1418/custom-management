@@ -57,7 +57,7 @@ listItemDatamodal.forEach((item, index) => {
 		<div class="sublist-check-box">
 			<i class="fas fa-check"></i>
 		</div>
-		<div class="sublist-cancel-box" data-toggle="modal" data-target="#popupModal">
+		<div class="sublist-cancel-box" data-toggle="modal" data-target="#deletlistopt2">
 			<i class="fas fa-times"></i>
 		</div>
 		</li>`;
@@ -184,7 +184,7 @@ sub_ul_modallist.addEventListener("click", function (e) {
 	let target = e.target;
 	if (target.tagName === "DIV") {
 		if (target.className === "sublist-cancel-box") {
-			console.log("cross click");
+			deleteOpt1Modal(target.parentNode.classList[0]);
 			return;
 		}
 		target = target.parentNode;
@@ -192,7 +192,10 @@ sub_ul_modallist.addEventListener("click", function (e) {
 		target = target.parentNode;
 	} else if (target.tagName === "I") {
 		target = target.parentNode;
-		if (target.className === "sublist-cancel-box") return;
+		if (target.className === "sublist-cancel-box") {
+			deleteOpt1Modal(target.parentNode.classList[0]);
+			return;
+		}
 		else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
 
@@ -227,5 +230,11 @@ sub_ul_modallist.addEventListener("click", function (e) {
 	// $("#opt1-left").html(opt1_left_list);
 	// $("#opt1-right").html(opt1_right_list);
 });
-
 // option 1 MODAL list item end
+function deleteOpt1Modal(className) {
+	let mng_opt2_delete = document.querySelector("#mng-opt2-delete");
+	mng_opt2_delete.addEventListener("click", function () {
+		let delObj = document.querySelector(`.${className}`);
+		delObj.remove();
+	});
+}

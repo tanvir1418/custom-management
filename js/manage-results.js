@@ -55,71 +55,32 @@ listItemData404.forEach((item, index) => {
         list_data3 = "",
         length = 60;
     for (let i = 1; i <= length; i++) {
+        let elementHtml = `<li class="result-list-${index + 1}-${i}">
+        <p>Level ${index + 1} - Item ${i}</p>
+        <div class="sublist-check-box-404">
+            <i class="fas fa-check"></i>
+        </div>
+        <div class="sublist-cancel-box-404" data-toggle="modal" data-target="#deletlistopt2">
+            <i class="fas fa-times"></i>
+        </div>
+        </li>`;
         if (length < 61) {
             if (i <= 20) {
-                list_data1 += `<li class="result-list-1-${i}">
-                    <p>Level ${index + 1} - Item ${i}</p>
-                    <div class="sublist-check-box-404">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="sublist-cancel-box-404">
-                        <i class="fas fa-times"></i>
-                    </div>
-                </li>`;
+                list_data1 += elementHtml;
             } else if (i >= 21 && i <= 40) {
-                list_data2 += `<li class="result-list-2-${i}">
-                    <p>Level ${index + 1} - Item ${i}</p>
-                    <div class="sublist-check-box-404">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="sublist-cancel-box-404">
-                        <i class="fas fa-times"></i>
-                    </div>
-                </li>`;
+                list_data2 += elementHtml;
             } else {
-                list_data3 += `<li class="result-list-3-${i}">
-                    <p>Level ${index + 1} - Item ${i}</p>
-                    <div class="sublist-check-box-404">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="sublist-cancel-box-404">
-                        <i class="fas fa-times"></i>
-                    </div>
-                </li>`;
+                list_data3 += elementHtml;
             }
         } else {
             let divide = Math.floor(length / 3);
             let len = divide + (length % 3);
             if (i <= len) {
-                list_data1 += `<li class="result-list-1-${i}">
-                    <p>Level ${index + 1} - Item ${i}</p>
-                    <div class="sublist-check-box-404">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="sublist-cancel-box-404">
-                        <i class="fas fa-times"></i>
-                    </div>
-                </li>`;
+                list_data1 += elementHtml;
             } else if (i > len && i <= len + divide) {
-                list_data2 += `<li class="result-list-2-${i}">
-                    <p>Level ${index + 1} - Item ${i}</p>
-                    <div class="sublist-check-box-404">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="sublist-cancel-box-404">
-                        <i class="fas fa-times"></i>
-                    </div>
-                </li>`;
+                list_data2 += elementHtml;
             } else {
-                list_data3 += `<li class="result-list-3-${i}">
-                    <p>Level ${index + 1} - Item ${i}</p>
-                    <div class="sublist-check-box-404">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="sublist-cancel-box-404">
-                        <i class="fas fa-times"></i>
-                    </div>
-                </li>`;
+                list_data3 += elementHtml;
             }
         }
     }
@@ -286,13 +247,19 @@ chartPage.style.opacity = "0";
 $("#div-sub-ul-li-list").click(function (e) {
     let target = e.target;
     if (target.tagName === "DIV") {
-		if (target.className === "sublist-cancel-box-404") return;
+        if (target.className === "sublist-cancel-box-404") {
+            deleteManageModal(target.parentNode.classList[0]);
+            return;
+        }
 		target = target.parentNode;
 	} else if (target.tagName === "P") {
 		target = target.parentNode;
 	} else if (target.tagName === "I") {
 		target = target.parentNode;
-		if (target.className === "sublist-cancel-box-404") return;
+        if (target.className === "sublist-cancel-box-404") {
+            deleteManageModal(target.parentNode.classList[0]);
+            return;
+        }
 		else target = target.parentNode;
     } else if (target.tagName !== "LI") return;
     
@@ -303,6 +270,13 @@ $("#div-sub-ul-li-list").click(function (e) {
     gotoChartPage();
 });
 
+function deleteManageModal(className) {
+	let mng_opt2_delete = document.querySelector("#mng-opt2-delete");
+	mng_opt2_delete.addEventListener("click", function () {
+		let delObj = document.querySelector(`.${className}`);
+		delObj.remove();
+	});
+}
 // ----------- ASHIQ -------------- 
 function calAngle(obj) {
     let matrix = getComputedStyle(obj).getPropertyValue("transform");
