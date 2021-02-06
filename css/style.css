@@ -903,7 +903,7 @@ td {
 
 /* ==----=-=-=-=-=-=-=-=-=-=- OPTION TWO START ==----=-=--==-=-=-=-=-=-=- */
 
-#option_2 .listing {
+.listing {
   background: #ffffff;
   padding: 20px;
   margin: 0 3%;

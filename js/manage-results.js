@@ -1098,3 +1098,11 @@ $(document).ready(function () {
     $("table#resizable554").dragableColumns();
 });
 // Drag and Drop END
+
+
+// DRAG AND DROP START FILTER
+//Left side drag
+$(function () {
+    $("#my-drag-list").sortable();
+    $("#my-drag-list").disableSelection();
+});

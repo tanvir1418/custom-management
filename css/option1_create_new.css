@@ -52,6 +52,7 @@
     height: 90px;
     width: 90px;
     margin: 28px auto;
+    cursor: pointer;
 }
 
 .op1-single-list-item-file-container img {

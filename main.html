@@ -313,7 +313,7 @@
                                         <p class="op1-selected-text-danger">0 Items Selected</p>
                                     </div>
                                     <div class="op1-single-list-item-file">
-                                        <div class="op1-single-list-item-file-container">
+                                        <div class="op1-single-list-item-file-container" data-toggle="modal" data-target="#myopt1listData">
                                             <img src="./images/paper.png">
                                         </div>
                                     </div>
@@ -6867,24 +6867,56 @@
                                                             <div class="my-val-data">
                                                                 <div class="val-container">
                                                                     <div class="drag-box-col">
-                                                                        <!-- drag 1 -->
-                                                                        <div class="my-drag">
-                                                                            <div class="cursor-box">
-                                                                                <span>|||</span>
-                                                                            </div>
-                                                                            <div class="name-box">
-                                                                                <span>Column 1</span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- drag 2 -->
-                                                                        <div class="my-drag">
-                                                                            <div class="cursor-box">
-                                                                                <span>|||</span>
-                                                                            </div>
-                                                                            <div class="name-box">
-                                                                                <span>Column 2</span>
-                                                                            </div>
-                                                                        </div>
+                                                                        <ul id="my-drag-list">
+                                                                            <li>
+                                                                                <div class="cursor-box">
+                                                                                     <span>|||</span>
+                                                                                </div>
+                                                                                <div class="name-box">
+                                                                                     <span>Column 1</span>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="cursor-box">
+                                                                                    <span>|||</span>
+                                                                                </div>
+                                                                                <div class="name-box">
+                                                                                    <span>Column 2</span>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="cursor-box">
+                                                                                     <span>|||</span>
+                                                                                </div>
+                                                                                <div class="name-box">
+                                                                                     <span>Column 3</span>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="cursor-box">
+                                                                                    <span>|||</span>
+                                                                                </div>
+                                                                                <div class="name-box">
+                                                                                    <span>Column 4</span>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="cursor-box">
+                                                                                     <span>|||</span>
+                                                                                </div>
+                                                                                <div class="name-box">
+                                                                                     <span>Column 5</span>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="cursor-box">
+                                                                                    <span>|||</span>
+                                                                                </div>
+                                                                                <div class="name-box">
+                                                                                    <span>Column 6</span>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -9942,7 +9974,7 @@
                                                 <div id="cross3" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
@@ -11133,6 +11165,84 @@
     </div>
     <!-- =========Option 5 Plus Button Modal Ends========= -->
 
+    <!-- ========= manage template table head arrow Modal Starts========= -->
+    <div class="modal fade" id="col8Filter">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!-- ==================================== -->
+                    <!-- pop-up-for-table-header-click starts -->
+                    <div class="table-header-click-popup">
+                        <div class="table-header-click-popup-wrapper">
+                            <div class="table-header-popup-header-title">
+                                <p>COL 8 FILTERS</p>
+                            </div>
+                            <div class="table-header-popup-body">
+                                <div class="find-sort-wrapper">
+                                    <div class="find-wrapper">
+                                        <div class="find-wrapper-inner">
+                                            <input type="text"><input type="submit" value="Find">
+                                        </div>
+                                    </div>
+                                    <div class="sort-wrapper">
+                                        <input type="submit" value="Sort">
+                                    </div>
+                                </div>
+                                <div class="checkbox-content-wrapper">
+                                    <div class="checkbox-table-wrapper">
+                                        <div class="checkbox-table-scroll">
+                                            <table id="checkbox-table-first">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="popup__checkbox__page__toggle">
+                                                                <label class="popup__checkbox__toggle">
+                                                                    <input class="popup__checkbox__toggle__input"
+                                                                        type="checkbox">
+                                                                    <span class="popup__checkbox__toggle__label">
+                                                                        <span
+                                                                            class="popup__checkbox__toggle__text">1923.73</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="popup__checkbox__page__toggle">
+                                                                <label class="popup__checkbox__toggle">
+                                                                    <input class="popup__checkbox__toggle__input"
+                                                                        type="checkbox">
+                                                                    <span class="popup__checkbox__toggle__label">
+                                                                        <span
+                                                                            class="popup__checkbox__toggle__text">130.73</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-header-popup-footer">
+                                <div class="button-row">
+                                    <input type="button" value="Close" class="close-btn">
+                                    <input type="button" value="Select" class="select-btn">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- pop-up-for-table-header-click ends -->
+                    <!-- ==============XXXXXXXXXXX============= -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========= manage template table head arrow Modal Ends========= -->
+
     <!-- =========Option 1 Form Edit Modal Starts========= -->
     <div class="modal fade" id="op1FormEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -11258,6 +11368,36 @@
     </div>
     <!-- =====X====Option 1 Form Edit Modal Ends=====X==== -->
 
+    <!-- ========== option 1 select items modal START =============== -->
+    <div class="modal fade" id="myopt1listData">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="listing">
+                        <div class="wrapper-modal-list">
+                            <div class="weapper-list-title">
+                                <p>LIST 1</p>
+                            </div>
+                            <div class="scrollable-list-op1">
+                                <ul class="select-item-main">
+                                    <!-- get <li>data</li> from main.JS by ASHIQ... -->
+                                </ul>
+
+                                <div id="sub-ul-modallist">
+                                    <!-- get checkbox data from main.JS by ASHIQ... -->
+                                </div>
+                            </div>
+                            <div class="scroll-down">
+                                <i class="fas fa-caret-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========== option 1 select items modal END =============== -->
+
     <!-- JS FILES -->
     <script src="./js/jquery.min.js"></script>
     <script src="./js/popper.min.js"></script>
@@ -11267,6 +11407,7 @@
     <script src="./js/option-4.js"></script>
     <script src="./js/jquery-asRange.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/opt1-list-modal.js"></script>
     <script src="./js/drag-drop.js"></script>
     <script src="./js/chart.js"></script>
     <script src="./js/chartCode.js"></script>
