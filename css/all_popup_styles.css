@@ -1902,27 +1902,15 @@ Bottom codes are added by Tanvir
   border-radius: 3px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
-  padding: 20px 16px;
   position: relative;
 }
-
-#deletlistopt2 .modal-header {
-  padding: 22px 16px;
-}
-
 #deletlistopt2 .modal-title {
   color: #ffffff;
   text-align: center;
   font-family: gilroy-medium, sans-serif;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   margin: 0 auto;
-}
-
-#deletlistopt2 .modal-title {
-  font-family: gilroy-bold, sans-serif;
-  font-weight: 600;
-  font-size: 20px;
 }
 
 #deletlistopt2 .close {
@@ -1944,4 +1932,50 @@ Bottom codes are added by Tanvir
 #deletlistopt2 .modal-body {
   padding: 0px;
 }
+
+#deletlistopt2 .remove-box{
+  padding: 8px 16px 16px;
+}
+#deletlistopt2 .remove-box .question-delete{
+  border: 1px solid #969696;
+  border-radius: 3px;
+  background: #F9F9FB;
+  padding: 24px 0px;
+}
+#deletlistopt2 .remove-box .question-delete p{
+  color: #787878;
+  text-align: center;
+  font-family: gilroy-medium, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+}
+
+#deletlistopt2 .remove-box .comfirm-btn-bx{
+  margin-top: 20px;
+}
+#deletlistopt2 .comfirm-btn-bx button{
+  border: none;
+  border-radius: 2px;
+  padding: 5px 22px;
+  color: #1D1D1D;
+  font-family: gilroy-medium, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+#deletlistopt2 .comfirm-btn-bx .cancel-list-data{
+  background: #FFF000;
+}
+#deletlistopt2 .comfirm-btn-bx .cancel-list-data:hover{
+  background: #fccf07;
+}
+#deletlistopt2 .comfirm-btn-bx .confirm-list-data{
+  background: #EAECF0;
+  float: right;
+}
+#deletlistopt2 .comfirm-btn-bx .confirm-list-data:hover{
+  background: #c6cdd8;
+}
+
+
 /* REMOVE LIST ITEM MODAL END */
