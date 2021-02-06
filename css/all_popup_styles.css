@@ -1882,3 +1882,66 @@ Bottom codes are added by Tanvir
 /* scrollbar customize end */
 
 /* OPTION 1 LIST POPUP END */
+
+
+/* REMOVE LIST ITEM MODAL START */
+#deletlistopt2 .modal-dialog {
+  max-width: 330px !important;
+}
+
+#deletlistopt2 .modal-content {
+  border: none;
+  border-radius: 3px;
+  -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+  -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+  box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+}
+
+#deletlistopt2 .modal-header {
+  background: #000000;
+  border-radius: 3px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 20px 16px;
+  position: relative;
+}
+
+#deletlistopt2 .modal-header {
+  padding: 22px 16px;
+}
+
+#deletlistopt2 .modal-title {
+  color: #ffffff;
+  text-align: center;
+  font-family: gilroy-medium, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0 auto;
+}
+
+#deletlistopt2 .modal-title {
+  font-family: gilroy-bold, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+#deletlistopt2 .close {
+  position: absolute;
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
+  top: 5px;
+  right: 10px;
+  opacity: 1;
+}
+
+#deletlistopt2 .close span {
+  color: #ffffff;
+  font-size: 26px;
+  text-shadow: none;
+}
+
+#deletlistopt2 .modal-body {
+  padding: 0px;
+}
+/* REMOVE LIST ITEM MODAL END */
