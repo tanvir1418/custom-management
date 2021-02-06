@@ -1949,6 +1949,10 @@ th[draggable] a {
     max-width: 1200px;
 }
 
+#tab_4 .modal#col8Filter .modal-dialog {
+    max-width: 200px !important;
+}
+
 #tab_4 .modal .modal-content {
     border: none;
     border-radius: 3px;
@@ -2503,6 +2507,47 @@ th[draggable] a {
 /* scrollbar customize end */
 
 /* FILTER DRAG COLUMN */
+#tab_4 .modal .drag-column .val-container{
+    padding: 20px 0px 20px 8px;
+}
+
+#tab_4 .modal .drag-box-col #my-drag-list{
+    -moz-column-count: 2;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 10px;
+    column-count: 2;
+    column-gap: 10px;
+}
+#tab_4 .modal #my-drag-list li{
+    border: 1px solid #969696;
+    border-radius: 3px;
+    display: flex;
+}
+#tab_4 .modal #my-drag-list li .cursor-box{
+    background: #EBEBEB;
+    padding: 5px 8px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    cursor: grab;
+}
+#tab_4 .modal #my-drag-list li .cursor-box span{
+    font-size: 24px;
+    font-family: gilroy-regular, sans-serif;
+    font-weight: 500;
+    color: #515151;
+    letter-spacing: -2px;
+}
+#tab_4 .modal #my-drag-list li .name-box{
+    margin: auto;
+}
+
+#tab_4 .modal #my-drag-list li .name-box span{
+    font-size: 18px;
+    font-family: gilroy-regular, sans-serif;
+    font-weight: 600;
+    color: #1D1D1D;
+}
 
 /* =====//////// FILTER MODAL END ////////===== */
 
