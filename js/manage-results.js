@@ -62,9 +62,9 @@ listItemData404.forEach((item, index) => {
                     <div class="sublist-check-box-404">
                         <i class="fas fa-check"></i>
                     </div>
-                    <div class="sublist-cancel-box-404">
-                        <i class="fas fa-times"></i>
-                    </div>
+                    <div class="sublist-cancel-box-404" data-toggle="modal" data-target="#deletlistopt2">
+		            	<i class="fas fa-times"></i>
+		            </div>
                 </li>`;
             } else if (i >= 21 && i <= 40) {
                 list_data2 += `<li class="result-list-2-${i}">

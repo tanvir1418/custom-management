@@ -57,7 +57,7 @@ listItemDatamodal.forEach((item, index) => {
 		<div class="sublist-check-box">
 			<i class="fas fa-check"></i>
 		</div>
-		<div class="sublist-cancel-box" data-toggle="modal" data-target="#popupModal">
+		<div class="sublist-cancel-box" data-toggle="modal" data-target="#deletlistopt2">
 			<i class="fas fa-times"></i>
 		</div>
 		</li>`;
