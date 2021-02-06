@@ -581,19 +581,25 @@ $(function () {
 	$("#datepicker-4").datepicker("setDate", "12w+1");
 });
 // OPTION 4 DATE PICKER END
-var opt2_right_list = "";
-let oldLIClassname = "";
+let opt2_right_list = "",
+	oldLIClassname = "";
 const sub_ul_list = document.querySelector("#sub-ul-list");
 sub_ul_list.addEventListener("click", function (e) {
 	let target = e.target;
 	if (target.tagName === "DIV") {
-		if (target.className === "sublist-cancel-box") return;
+		if (target.className === "sublist-cancel-box") {
+			deleteOpt2Modal(target.parentNode.classList[0]);
+			return;
+		}
 		target = target.parentNode;
 	} else if (target.tagName === "P") {
 		target = target.parentNode;
 	} else if (target.tagName === "I") {
 		target = target.parentNode;
-		if (target.className === "sublist-cancel-box") return;
+		if (target.className === "sublist-cancel-box") {
+			deleteOpt2Modal(target.parentNode.classList[0]);
+			return;
+		}
 		else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
 
@@ -628,3 +634,11 @@ sub_ul_list.addEventListener("click", function (e) {
 	$("#opt2-left").html(opt2_left_list);
 	$("#opt2-right").html(opt2_right_list);
 });
+
+function deleteOpt2Modal(className) {
+	let mng_opt2_delete = document.querySelector("#mng-opt2-delete");
+	mng_opt2_delete.addEventListener("click", function () {
+		let delObj = document.querySelector(`.${className}`);
+		delObj.remove();
+	});
+}
