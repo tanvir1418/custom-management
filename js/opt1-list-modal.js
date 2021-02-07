@@ -99,11 +99,11 @@ listItemDatamodal.forEach((item, index) => {
 
 	let submodal_div_list_id2 = document.getElementById("submodal-div-list-2-" + (index + 1));
 	submodal_div_list_id2.style.display = "none";
-	submodal_div_list_id2.style.marginLeft = "580px";
+	submodal_div_list_id2.style.marginLeft = "600px";
 
 	let sub_div_list_id3 = document.getElementById("submodal-div-list-3-" + (index + 1));
 	sub_div_list_id3.style.display = "none";
-	sub_div_list_id3.style.marginLeft = "860px";
+	sub_div_list_id3.style.marginLeft = "900px";
 	/* Update End By Ashiq */
 });
 
@@ -238,3 +238,17 @@ function deleteOpt1Modal(className) {
 		delObj.remove();
 	});
 }
+
+/* ================ Scroll Down START ============== */
+$(document).ready(function () {
+	$(".scroll-down").click(function () {
+		const scrollable_list_op1 = document.querySelector(".scrollable-list-op1");
+		$(".scrollable-list-op1").animate({
+			scrollTop: scrollable_list_op1.scrollTop + 100,
+		},
+			250
+		);
+	});
+});
+
+/* ================ Scroll Down END ============== */

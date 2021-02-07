@@ -152,6 +152,7 @@
     border: 1px solid grey;
     border-radius: 4px;
     overflow-y: auto;
+    box-shadow: 3px 5px 15px 0px #b0bcd4 !important;
   }
   
   .table-options .table-wrapper table {
@@ -271,6 +272,9 @@
   }
   
   /* ========custom date picker design overriding jQuery-UI starts======== */
+  .ui-datepicker-div{
+    
+  }
   .ui-datepicker .ui-corner-all {
     border-radius: 0 !important;
     /* margin-top: 10px !important; */
@@ -287,6 +291,7 @@
     border: none !important;
     background: #ffffff !important;
     color: #848484 !important;
+    box-shadow: 3px 5px 15px 0px #b0bcd4 !important;
   }
   .ui-datepicker .ui-datepicker-title {
     height: 42px !important;

@@ -1,40 +1,40 @@
-// document.addEventListener('keydown', function() {
-//   if (event.keyCode == 123) {
-//     // alert("This function has been disabled to prevent you from stealing my code!");
-//     return false;
-//   } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
-//     // alert("This function has been disabled to prevent you from stealing my code!");
-//     return false;
-//   } else if (event.ctrlKey && event.keyCode == 85) {
-//     // alert("This function has been disabled to prevent you from stealing my code!");
-//     return false;
-//   }
-// }, false);
+document.addEventListener('keydown', function() {
+  if (event.keyCode == 123) {
+    // alert("This function has been disabled to prevent you from stealing my code!");
+    return false;
+  } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+    // alert("This function has been disabled to prevent you from stealing my code!");
+    return false;
+  } else if (event.ctrlKey && event.keyCode == 85) {
+    // alert("This function has been disabled to prevent you from stealing my code!");
+    return false;
+  }
+}, false);
 
-// if (document.addEventListener) {
-//   document.addEventListener('contextmenu', function(e) {
-//     // alert("This function has been disabled to prevent you from stealing my code!");
-//     e.preventDefault();
-//   }, false);
-// } else {
-//   document.attachEvent('oncontextmenu', function() {
-//     // alert("This function has been disabled to prevent you from stealing my code!");
-//     window.event.returnValue = false;
-//   });
-// }
+if (document.addEventListener) {
+  document.addEventListener('contextmenu', function(e) {
+    // alert("This function has been disabled to prevent you from stealing my code!");
+    e.preventDefault();
+  }, false);
+} else {
+  document.attachEvent('oncontextmenu', function() {
+    // alert("This function has been disabled to prevent you from stealing my code!");
+    window.event.returnValue = false;
+  });
+}
 
-// document.onkeydown = function (e) {
-//   if (e.ctrlKey &&
-//     (e.keyCode === 67 ||
-//       e.keyCode === 86 ||
-//       e.keyCode === 85 ||
-//       e.keyCode === 117)) {
-//     return false;
-//   }
-//    else {
-//     return true;
-//   }
-// };
+document.onkeydown = function (e) {
+  if (e.ctrlKey &&
+    (e.keyCode === 67 ||
+      e.keyCode === 86 ||
+      e.keyCode === 85 ||
+      e.keyCode === 117)) {
+    return false;
+  }
+   else {
+    return true;
+  }
+};
 // //////////////////===========================================================
 
 // TOGGLE TRIANGLE
@@ -113,6 +113,9 @@ function openOption(evt, optionName) {
 		tablinks[i].className = tablinks[i].className.replace(" active", "");
 	}
 	document.getElementById(optionName).style.display = "block";
+	document.getElementById("hide559").style.display = "none";
+	document.getElementById("tab_2").style.paddingTop="0px";
+	document.getElementById("opt-content").style.marginTop="0px";
 	evt.currentTarget.className += " active";
 }
 // CHOOSE OPTION SECTION END
@@ -344,11 +347,11 @@ listItemData.forEach((item, index) => {
 
 	let sub_div_list_id2 = document.getElementById("sub-div-list-2-" + (index + 1));
 	sub_div_list_id2.style.display = "none";
-	sub_div_list_id2.style.marginLeft = "580px";
+	sub_div_list_id2.style.marginLeft = "600px";
 
 	let sub_div_list_id3 = document.getElementById("sub-div-list-3-" + (index + 1));
 	sub_div_list_id3.style.display = "none";
-	sub_div_list_id3.style.marginLeft = "860px";
+	sub_div_list_id3.style.marginLeft = "900px";
 	/* Update End By Ashiq */
 });
 
@@ -569,17 +572,8 @@ $(function () {
 	//$("#datepicker-2").datepicker("setDate", "10w+1");
 	$("#datepicker-2").datepicker("option", "dateFormat", "DD, MM d, yy");
 });
-
 // OPTION 3 DATE PICKER END
 
-// OPTION 4 DATE PICKER START
-$(function () {
-	$("#datepicker-3").datepicker();
-	$("#datepicker-3").datepicker("setDate", "10w+1");
-
-	$("#datepicker-4").datepicker();
-	$("#datepicker-4").datepicker("setDate", "12w+1");
-});
 // OPTION 4 DATE PICKER END
 let opt2_right_list = "",
 	oldLIClassname = "";

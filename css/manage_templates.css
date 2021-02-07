@@ -142,6 +142,7 @@
 
 .width-fifty-persent {
   width: 50%;
+  background-color: white;
 }
 
 @media screen and (max-width: 1200px) {
