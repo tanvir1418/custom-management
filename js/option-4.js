@@ -1,21 +1,13 @@
 /* =======Added by TANVIR (Copy Paste full file)====== */
 
 $(".multistep-container .form-box .button-row .next").click(function () {
-  //$(this).parents(".form-box").fadeOut('fast');
-  //$(this).parents(".form-box").next().fadeIn('fast');
   $(this).parents(".form-box").hide();
   $(this).parents(".form-box").next().show();
 });
 $(".multistep-container .form-box .button-row .previous").click(function () {
-  //$(this).parents(".form-box").fadeOut('fast');
-  //$(this).parents(".form-box").prev().fadeIn('fast');
   $(this).parents(".form-box").hide();
   $(this).parents(".form-box").prev().show();
 });
-// $("#datepicker-3").click(function () {
-//     $("#datepicker-3").datepicker();
-//     $("#datepicker-3").datepicker("setDate", "10w+1");
-// });
 
 const listSingle = document.querySelectorAll(".single-list-item-design");
 const listSingleImg = document.querySelectorAll(".single-list-item-help");
@@ -249,11 +241,9 @@ $("#close-btn").on("click", function () {
 $(function () {
 
   $("#datepicker_mnTemp1").datepicker();
-  //$("#datepicker-1").datepicker("setDate", "10w+1");
   $("#datepicker_mnTemp1").datepicker("option", "dateFormat", "DD, MM d, yy");
 
   $("#datepicker_mnTemp2").datepicker();
-  //$("#datepicker-2").datepicker("setDate", "10w+1");
   $("#datepicker_mnTemp2").datepicker("option", "dateFormat", "DD, MM d, yy");
 });
 

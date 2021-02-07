@@ -192,9 +192,11 @@
     font-family: gilroy-bold, sans-serif;
     font-size: 28px;
     font-weight: bold;
+    margin: 0;
 }
 
-.side-box .leftside-tri {
+.side-box .leftside-tri,
+.op4-side-box .leftside-tri {
     display: block;
     position: absolute;
     z-index: 1;
@@ -266,7 +268,8 @@
     margin: 0px auto;
     border: 1px solid grey;
     border-radius: 4px;
-    background-color: #ffffff
+    background-color: #ffffff;
+    box-shadow: 3px 5px 15px 0px #b0bcd4;
 }
 
 .side-bottom-box .table-scroll {
@@ -402,16 +405,16 @@
 .op1-option-selection .custome-select:after {
     content: "\25bc";
     font-size: 10px;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     position: absolute;
-    background-color: #f5f5f5;
+    background-color: #F5F5F5;
     color: #818181;
     z-index: 2;
     right: 8px;
     top: 13px;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 2px;
     opacity: 0.8;
 }
 
@@ -466,16 +469,16 @@
 .op1-option-selection .custom-input-success:after {
     content: "\2714";
     font-size: 11px;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     position: absolute;
-    background-color: #e8ffed;
+    background-color: #E8FFED;
     color: green;
     z-index: 2;
     right: 8px;
     top: 13px;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 2px;
     /* opacity: 0.8; */
 }
 
@@ -525,16 +528,16 @@
 .op1-option-selection .custom-input-danger:after {
     content: "\2716";
     font-size: 11px;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     position: absolute;
-    background-color: #fffde2;
+    background-color: #FFE9E9;
     color: red;
     z-index: 2;
     right: 8px;
     top: 13px;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 2px;
     /* opacity: 0.8; */
 }
 
@@ -756,6 +759,7 @@
     background-color: #fff011;
     border-radius: 4px;
     overflow: hidden;
+    filter: drop-shadow(19px 32.909px 16px rgba(210,206,142,0.26));
 }
 
 .text-edition-form .text-edition-box::after {
@@ -870,8 +874,8 @@
     }
 
     .op1-option-selection .custome-select:after {
-        width: 12px;
-        height: 12px;
+        width: 16px;
+        height: 16px;
         font-size: 9px;
         right: 8px;
         top: 10px;
@@ -889,12 +893,12 @@
     }
 
     .op1-option-selection .custom-input-success:after {
-        width: 12px;
-        height: 12px;
+        width: 16px;
+        height: 16px;
         font-size: 9px;
         right: 8px;
-        top: 10px;
-        border-radius: 3px;
+        top: 9px;
+        border-radius: 2px;
     }
 
     .op1-option-selection .custom-input-danger {
@@ -907,12 +911,12 @@
     }
 
     .op1-option-selection .custom-input-danger:after {
-        width: 12px;
-        height: 12px;
+        width: 16px;
+        height: 16px;
         font-size: 9px;
         right: 8px;
-        top: 10px;
-        border-radius: 3px;
+        top: 9px;
+        border-radius: 2px;
     }
 
     /* ============================ */
@@ -944,7 +948,7 @@
     .control-section .generate-button {
         height: 60px;
         width: 15%;
-        padding-left: 15px;
+        padding-left: 5px;
     }
 
     .control-section input {
@@ -1011,7 +1015,10 @@
     .op1-option-selection .width-5 .icon-container {
         padding-top: 6px;
     }
-
+    
+    .op1-option-selection .mb-2{
+        margin-bottom: 0px !important;
+    }
     /*  ........Select box styling Starts........  */
   .op1-option-selection .custome-select {
     height: 30px;
@@ -1026,11 +1033,11 @@
   .op1-option-selection .custome-select:after {
     content: "";
     font-size: 8px;
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     z-index: 2;
     right: 6px;
-    top: 8px;
+    top: 7px;
   }
 
   .op1-option-selection .custome-select:before {
@@ -1055,10 +1062,10 @@
 
   .op1-option-selection .custom-input-success:after {
     content: "";
-    width: 14px;
-    height: 14px;
-    right: 8px;
-    top: 7px;
+    width: 16px;
+    height: 16px;
+    right: 7px;
+    top: 6px;
   }
 
   .op1-option-selection .custom-input-success:before {
@@ -1083,9 +1090,9 @@
 
   .op1-option-selection .custom-input-danger:after {
     content: "";
-    width: 14px;
-    height: 14px;
-    right: 8px;
+    width: 16px;
+    height: 16px;
+    right: 7px;
     top: 7px;
   }
 
