@@ -272,17 +272,17 @@ button:active {
   margin: 0;
   font-family: gilroy-bold, sans-serif;
   font-weight: bold;
-  line-height: 21px;
+  line-height: 32px;
   letter-spacing: 2px;
   color: #6E6D4E;
-  font-size: 24px;
+  font-size: 26px;
   transition: all 0.3s ease;
 }
 
 /* SVG / ICON and TEXT BOX SETTINGS END */
 
 .wrapper .tabs ul li.active {
-  border-bottom: 5px solid #000000;
+  border-bottom: 6px solid #000000;
 }
 
 .wrapper .tabs ul li.active .tab-box .title-box p {
@@ -318,19 +318,23 @@ button:active {
 }
 
 .content .tab_content .title p {
-  font-size: 32px;
+  font-size: 40px;
   font-family: gilroy-bold, sans-serif;
   font-weight: 900;
   color: #312D4E;
   letter-spacing: 2px;
-  margin-bottom: 36px;
+  margin-bottom: 60px;
   text-align: center;
 }
 
 /* ====----=-=-=-=-=-=-=-=-=- MANAGE DATA SECTION START ====----=-=-=-=-=-=-=-=-=-*/
 
 .content .tab_2{
-  padding-top: 50px;
+  padding-top: 60px;
+}
+
+.container{
+  max-width: 1220px;
 }
 
 .content .tab_2 .column {
@@ -339,14 +343,15 @@ button:active {
 
 .content .tab_2 .option_box {
   display: table;
-  width: 140px;
-  height: 176px;
+  width: 210px;
+  height: 260px;
   border-radius: 2px;
   border: 1px solid #959595;
   cursor: pointer;
   text-align: center;
   transition: all 0.3s ease;
   margin: auto;
+  background: #F9F9F9;
 }
 
 .content .tab_2 .option_box .option-content-box {
@@ -355,11 +360,11 @@ button:active {
 }
 
 .content .tab_2 .option_box img {
-  width: 45px;
+  width: 70px;
 }
 
 .content .tab_2 .option_box p {
-  font-size: 16px;
+  font-size: 22px;
   color: #6b6b6b;
   font-weight: bold;
   font-family: gilroy-bold, sans-serif;
@@ -411,8 +416,8 @@ button:active {
 }
 
 .option .hero-title .title-icon {
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: #000000;
   position: relative;
@@ -421,8 +426,8 @@ button:active {
 
 .option .hero-title .title-icon img {
   position: absolute;
-  width: 20px;
-  height: 25px;
+  width: 22px;
+  height: 28px;
   margin: auto;
   top: 0;
   bottom: 0;
@@ -435,7 +440,7 @@ button:active {
 }
 
 .option .hero-title .mytitle p {
-  font-size: 28px;
+  font-size: 36px;
   letter-spacing: 2px;
   margin: 0;
   line-height: normal;
@@ -773,7 +778,7 @@ td {
 
 .pagination-table input#row-no,
 .pagination-table input#goto-page {
-  width: 43px;
+  width: 60px;
   height: 43px;
   border-radius: 2px;
   text-align: center;
@@ -882,7 +887,7 @@ td {
 
   .pagination-table input#row-no,
   .pagination-table input#goto-page {
-    width: 35px;
+    width: 48px;
     height: 35px;
     margin-right: 5px;
   }
@@ -1051,7 +1056,7 @@ td {
 
 /* sublist */
 #wrapper-list .scrollable-list .sub-list {
-  width: 250px;
+  width: 264px;
   background: #ffffff;
   padding: 8px;
   margin-left: 12px;
@@ -1419,13 +1424,14 @@ td {
   position: absolute;
   background-color: #ffffff;
   z-index: 2;
-  right: 12px;
-  top: 9px;
+  right: 5px;
+  top: 4px;
   text-align: center;
   justify-content: center;
   border-radius: 2px;
   color: #818181;
   opacity: 1;
+  z-index: 500;
 }
 
 .select-plus .custome-select select option {

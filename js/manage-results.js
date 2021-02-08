@@ -102,11 +102,11 @@ listItemData404.forEach((item, index) => {
 
     let sub_ul_list_id2 = document.getElementById("sub-ul-list-2-" + (index + 1));
     sub_ul_list_id2.style.display = "none";
-    sub_ul_list_id2.style.marginLeft = "580px";
+    sub_ul_list_id2.style.marginLeft = "600px";
 
     let sub_ul_list_id3 = document.getElementById("sub-ul-list-3-" + (index + 1));
     sub_ul_list_id3.style.display = "none";
-    sub_ul_list_id3.style.marginLeft = "860px";
+    sub_ul_list_id3.style.marginLeft = "900px";
     /* Update End By Ashiq */
 });
 /* New Function Start */

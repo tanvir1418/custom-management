@@ -4,9 +4,13 @@
 .text-editor-click-popup {
     width: 400px;
     height: 460px;
-    -webkit-box-shadow: 5px 5px 22px 0px #bababa;
-    box-shadow: 5px 5px 22px 0px #bababa;
+    /* -webkit-box-shadow: 5px 5px 22px 0px #bababa; */
+    /* box-shadow: 5px 5px 22px 0px #bababa; */
+    /* box-shadow: 3px 5px 15px 0px #b0bcd4; */
     /* position: relative; */
+    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
 }
 
 .text-editor-popup-header-title {
@@ -369,8 +373,9 @@ table#sub2-editor-table {
 .generate-button-click-popup {
     width: 360px;
     height: 275px;
-    -webkit-box-shadow: 5px 5px 22px 0px #bababa;
-    box-shadow: 5px 5px 22px 0px #bababa;
+    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
 }
 
 .generate-button-popup-header-title {
@@ -464,8 +469,12 @@ table#sub2-editor-table {
 .plus-button-click-popup {
     width: 360px;
     height: 270px;
-    -webkit-box-shadow: 5px 5px 22px 0px #bababa;
-    box-shadow: 5px 5px 22px 0px #bababa;
+    /* -webkit-box-shadow: 5px 5px 22px 0px #bababa;
+    box-shadow: 5px 5px 22px 0px #bababa; */
+    /* box-shadow: 3px 5px 15px 0px #b0bcd4; */
+    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
 }
 
 .plus-button-popup-header-title {
@@ -574,8 +583,12 @@ table#sub2-editor-table {
 .table-header-click-popup {
     width: 320px;
     height: 490px;
-    -webkit-box-shadow: 5px 5px 22px 0px #bababa;
-    box-shadow: 5px 5px 22px 0px #bababa;
+    /* -webkit-box-shadow: 5px 5px 22px 0px #bababa;
+    box-shadow: 5px 5px 22px 0px #bababa; */
+    /* box-shadow: 3px 5px 15px 0px #b0bcd4; */
+    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
 }
 
 .table-header-popup-header-title {
@@ -926,8 +939,12 @@ table#sub2-editor-table {
 .hyper-text-click-popup {
     width: 360px;
     height: 400px;
-    -webkit-box-shadow: 5px 5px 22px 0px #bababa;
-    box-shadow: 5px 5px 22px 0px #bababa;
+    /* -webkit-box-shadow: 5px 5px 22px 0px #bababa;
+    box-shadow: 5px 5px 22px 0px #bababa; */
+    /* box-shadow: 3px 5px 15px 0px #b0bcd4; */
+    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
 }
 
 .hyper-text-popup-header-title {
@@ -1071,8 +1088,12 @@ Bottom codes are added by Tanvir
 .save-start-button-click-popup {
     width: 420px;
     height: 420px;
-    -webkit-box-shadow: 5px 5px 22px 0px #bababa;
-    box-shadow: 5px 5px 22px 0px #bababa;
+    /* -webkit-box-shadow: 5px 5px 22px 0px #bababa;
+    box-shadow: 5px 5px 22px 0px #bababa; */
+    /* box-shadow: 3px 5px 15px 0px #b0bcd4; */
+    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
 }
 
 .save-start-button-popup-header-title {
@@ -1304,8 +1325,12 @@ Bottom codes are added by Tanvir
 .time-picker-button-click-popup {
     width: 420px;
     height: 335px;
-    -webkit-box-shadow: 5px 5px 22px 0px #bababa;
-    box-shadow: 5px 5px 22px 0px #bababa;
+    /* -webkit-box-shadow: 5px 5px 22px 0px #bababa;
+    box-shadow: 5px 5px 22px 0px #bababa; */
+    /* box-shadow: 3px 5px 15px 0px #b0bcd4; */
+    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
 }
 
 .time-picker-button-popup-header-title {
@@ -1766,10 +1791,10 @@ Bottom codes are added by Tanvir
 
 /* sublist */
 .wrapper-modal-list .scrollable-list-op1 .submodal-list {
-    width: 250px;
+    width: 264px;
     background: #ffffff;
     padding: 8px;
-    margin-left: 12px;
+    margin-left: 32px;
     position: absolute;
     top: 0;
 }
@@ -1848,36 +1873,42 @@ Bottom codes are added by Tanvir
     font-size: 22px;
 }
 
-.modal .btn-myfo{
+.modal .myvote{
+    display: inline;
+    float: right;
     padding: 16px 32px 32px;
 }
 
 .modal .btn-myfo button {
-    border: none;
     border-radius: 2px;
-    padding: 5px 22px;
+    padding: 10px 54px;
     color: #1D1D1D;
-    font-family: gilroy-medium, sans-serif;
+    font-family: gilroy-bold, sans-serif;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 26px;
+    transition: 0.3s all ease;
 }
-
 .modal .btn-myfo .reset-myfo{
+    border: 1px solid #FFF000;
     background: #FFF000;
-    float: right;
+    margin-right: 10px;
 }
 
 .modal .btn-myfo .reset-myfo:hover {
+    border: 1px solid #fccf07;
     background: #fccf07;
 }
 
 .modal .btn-myfo .done-myfo {
-    background: #EAECF0;
-    float: right;
+    border: 1px solid #000000;
+    background: #000000;
+    color: #ffffff;
 }
 
 .modal .btn-myfo .done-myfo:hover {
-    background: #c6cdd8;
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
 }
 
 /* scrollbar customize start */
