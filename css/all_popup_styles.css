@@ -580,9 +580,15 @@ table#sub2-editor-table {
 
 /* ========================================== */
 /* pop-up-for-table-header-click style starts */
+#dropBtnModal .modal-content{
+    width: 250px;
+    border: 0;
+    border-radius: 0 !important;
+    left: 20%;
+}
 .table-header-click-popup {
-    width: 320px;
-    height: 490px;
+    width: 250px;
+    height: 370px;
     /* -webkit-box-shadow: 5px 5px 22px 0px #bababa;
     box-shadow: 5px 5px 22px 0px #bababa; */
     /* box-shadow: 3px 5px 15px 0px #b0bcd4; */
@@ -593,7 +599,6 @@ table#sub2-editor-table {
 
 .table-header-popup-header-title {
     background-color: #000;
-    color: #fff;
     text-align: center;
     height: 60px;
     width: 100%;
@@ -603,60 +608,56 @@ table#sub2-editor-table {
 .table-header-popup-header-title p {
     padding-bottom: 0;
     text-transform: uppercase;
-    font-size: 18px;
-    font-weight: 500;
+    font-family: gilroy-medium;
+    font-weight: 600;
+    font-size: 14px;
+    color: #ffffff;
 }
 
 .table-header-popup-body {
     width: 100%;
-    padding: 10px;
+    height: 100%;
+    padding: 10px 14px;
 }
 
 .find-sort-wrapper {
     width: 100%;
-    height: 45px;
     display: flex;
+    padding: 0px;
 }
 
 .find-wrapper {
-    width: 75%;
-    height: 45px;
+    display: flex;
+    width: 80%;
     border: 1px solid rgb(219, 218, 218);
-    border-radius: 5px;
-    padding: 1px;
-}
-
-.find-wrapper-inner {
-    padding-top: 2px;
-    padding-right: 2px;
+    border-radius: 3px;
+    margin-right: 3px;
+    padding: 3px;
 }
 
 .sort-wrapper {
     width: 25%;
-    /* height: 45px; */
     text-align: center;
-    margin: auto 0;
-    padding-left: 6px;
+    padding: 3px;
 }
 
 .find-wrapper input[type="text"] {
-    width: 100%;
-    height: 38px;
-    padding-right: 50px;
-    padding-left: 10px;
-    border: 0;
+    width: 75%;
+    height: 100%;
     outline: 0;
     border-radius: 0;
+    border: none;
 }
-
-.find-wrapper input[type="submit"] {
-    margin-left: -70px;
-    height: 36px;
-    width: 70px;
-    font-size: 18px;
-    font-weight: 700;
+.find-wrapper input[type="submit"], 
+.sort-wrapper input[type="submit"]  {
+    float: right;
+    width: 25%;
+    height: 100%;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
     background: #f2f3f6;
-    color: black;
+    color: #000000;
     transition: 150ms;
     outline: 0;
     border: 0;
@@ -665,23 +666,11 @@ table#sub2-editor-table {
 }
 
 .sort-wrapper input[type="submit"] {
-    height: 36px;
-    width: 70px;
-    background: #f2f3f6;
-    color: black;
-    transition: 150ms;
-    font-size: 18px;
-    font-weight: 700;
-    outline: 0;
-    border: 0;
-    border-radius: 2px;
-    -webkit-appearance: none;
+    width: 100%;
 }
 
 .find-wrapper input[type="submit"]:hover,
-.find-wrapper input[type="submit"]:focus,
-.sort-wrapper input[type="submit"]:hover,
-.sort-wrapper input[type="submit"]:focus {
+.sort-wrapper input[type="submit"]:hover{
     background: #000000;
     color: #e6e6e6;
 }
@@ -689,27 +678,22 @@ table#sub2-editor-table {
 .table-header-popup-footer .button-row {
     display: table;
     margin: auto;
-    margin-top: 10px;
-    /* margin: auto 10px; */
-    /* display: flex;
-  align-items: center;
-  justify-content: center; */
+    margin-top: 4px;
 }
 
 .table-header-popup-footer .button-row .close-btn,
 .table-header-popup-footer .button-row .select-btn {
-    width: 100px;
-    font-size: 18px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
     background: #e9e9e9;
-    color: #7b7b7b;
-    font-weight: bold;
+    color: #3d3d3d;
     transition: 150ms;
     outline: none;
     border: 0 none;
     border-radius: 4px;
     cursor: pointer;
-    padding: 5px 20px;
-    /* margin: 7px 0px; */
+    padding: 5px 16px;
 }
 
 .table-header-popup-footer .button-row .close-btn {
@@ -731,40 +715,22 @@ table#sub2-editor-table {
 /* =================================== */
 /* checkbox wraper table style starts  */
 .checkbox-content-wrapper {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
-    height: 280px;
+    height: 200px;
+    border-radius: 3px;
+    overflow-y: scroll;
     border: 1px solid rgb(219, 218, 218);
-    border-radius: 5px;
-    padding: 1px;
 }
-
-/* table#checkbox-table-first {
-  float: right;
-  border-spacing: 0px;
-  table-layout: fixed;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #ffffff;
-} */
 
 #checkbox-table-first td {
     word-wrap: break-word;
-    padding: 6px 0px 6px 10px;
+    padding: 6px 0px 0px 10px;
 }
-
-/* .checkbox-table-wrapper {
-  position: relative;
-  padding-bottom: 40px;
-} */
 .checkbox-table-scroll {
-    /* height: 200px; */
-    height: 276px;
+    /* height: 276px; */
     width: 100%;
     margin: 0px auto;
-    /* border: 2px solid grey; */
-    border-radius: 4px;
-    overflow-y: auto;
 }
 
 .checkbox-table-wrapper table {
@@ -786,25 +752,19 @@ table#sub2-editor-table {
 
 /* ........................... */
 /* Custom ScrollBar  Start*/
-.checkbox-table-scroll::-webkit-scrollbar {
+.checkbox-content-wrapper::-webkit-scrollbar {
     width: 5px;
 }
 
 /* Track */
-.checkbox-table-scroll::-webkit-scrollbar-track {
+.checkbox-content-wrapper::-webkit-scrollbar-track {
     box-shadow: transparent;
     border-radius: 10px;
 }
-
 /* Handle */
-.checkbox-table-scroll::-webkit-scrollbar-thumb {
-    background: grey;
+.checkbox-content-wrapper::-webkit-scrollbar-thumb {
+    background: #dfd9d9;
     border-radius: 10px;
-}
-
-/* Handle on hover */
-.checkbox-table-scroll::-webkit-scrollbar-thumb:hover {
-    background: black;
 }
 
 /* Custom ScrollBar Ends  */
@@ -868,11 +828,12 @@ table#sub2-editor-table {
 }
 
 .popup__checkbox__toggle__text {
-    /* margin-top: auto;
-  margin-bottom: auto; */
-    font-size: 16px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
     font-weight: 500;
     color: #080808;
+    margin: auto 0;
 }
 
 /* this is for tik sign */
@@ -908,18 +869,12 @@ table#sub2-editor-table {
     border-radius: 4px;
 }
 
-/* .popup__checkbox__toggle__input:not(:disabled):checked ~ .popup__checkbox__toggle__label::before {
-  opacity: 1;
-} */
-/* .popup__checkbox__toggle__input:not(:disabled) ~ .popup__checkbox__toggle__label::after {
-  will-change: background-color;
-} */
 
 /* Custom Check Box Ends  */
 
-#dropBtnModal .modal-content,
+
 #col8Filter .modal-content {
-    width: 320px;
+    width: 250px;
     border: 0;
     border-radius: 0 !important;
     left: 20%;
@@ -1635,12 +1590,12 @@ Bottom codes are added by Tanvir
 /* xxxxxxx Manage Template pop-up ends xxxxxxxx */
 /* ===============XXXXXXXXXXXXXX============== */
 
-/* OPTION 1 LIST POPUP START */
-#myopt1listData .modal-dialog {
+/* ALL LIST POPUP START */
+.listData-modal .modal-dialog {
     max-width: 1200px;
 }
 
-#myopt1listData.modal-content {
+.listData-modal.modal-content {
     border: none;
     border-radius: 3px;
     -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
@@ -1648,7 +1603,7 @@ Bottom codes are added by Tanvir
     box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
 }
 
-#myopt1listData .modal-body {
+.listData-modal .modal-body {
     padding: 0px;
 }
 
@@ -1673,8 +1628,11 @@ Bottom codes are added by Tanvir
     letter-spacing: 2x;
     font-size: 20px;
 }
+#copyrowlist .wrapper-modal-list .weapper-list-title p{
+    font-size: 18px;
+}
 
-.wrapper-modal-list .scrollable-list-op1 {
+.wrapper-modal-list .scroll-list-box {
     height: 565px;
     width: 99%;
     overflow: auto;
@@ -1683,28 +1641,28 @@ Bottom codes are added by Tanvir
 }
 
 /* main list */
-.wrapper-modal-list .scrollable-list-op1 .select-item-main {
+.wrapper-modal-list .scroll-list-box .left-list-box {
     width: 250px;
     background: #F6F6F6;
     padding: 8px;
     margin-left: 12px;
 }
 
-.wrapper-modal-list .scrollable-list-op1 .select-item-main li {
+.wrapper-modal-list .scroll-list-box .left-list-box li {
     position: relative;
     display: flex;
     height: 32px;
     cursor: pointer;
 }
 
-.wrapper-modal-list .scrollable-list-op1 .select-item-main li p {
+.wrapper-modal-list .scroll-list-box .left-list-box li p {
     font-family: gilroy-bold, sans-serif;
     font-size: 14px;
     color: #000000;
     margin: auto auto auto 8px;
 }
 
-.scrollable-list-op1 .select-item-main li .green-check-box {
+.scroll-list-box .left-list-box li .green-check-box {
     height: 16px;
     width: 16px;
     background: #06e791;
@@ -1725,7 +1683,7 @@ Bottom codes are added by Tanvir
 
 /* Edit End by Ashiq */
 
-.scrollable-list-op1 .select-item-main li .green-check-box i {
+.scroll-list-box .left-list-box li .green-check-box i {
     position: absolute;
     margin: auto;
     top: 3px;
@@ -1736,7 +1694,7 @@ Bottom codes are added by Tanvir
 }
 
 
-.scrollable-list-op1 .select-item-main li .arrow-li-box {
+.scroll-list-box .left-list-box li .arrow-li-box {
     height: 18px;
     width: 18px;
     /* background: #ffffff; */
@@ -1755,7 +1713,7 @@ Bottom codes are added by Tanvir
 
 /* Edit End by Ashiq */
 
-.scrollable-list-op1 .select-item-main li .arrow-li-box i {
+.scroll-list-box .left-list-box li .arrow-li-box i {
     position: absolute;
     margin: auto;
     top: 0;
@@ -1777,20 +1735,20 @@ Bottom codes are added by Tanvir
 /* Edit End by Ashiq */
 
 
-.scrollable-list-op1 .select-item-main li:hover .arrow-li-box,
-.scrollable-list-op1 .select-item-main li:hover .arrow-li-box i {
+.scroll-list-box .left-list-box li:hover .arrow-li-box,
+.scroll-list-box .left-list-box li:hover .arrow-li-box i {
     background: #F6F6F6;
     color: #000000;
 }
 
-.scrollable-list-op1 .select-item-main .highlight_li {
+.scroll-list-box .left-list-box .highlight_li {
     border: 1px solid #000000;
     border-radius: 3px;
     background: #ffffff;
 }
 
 /* sublist */
-.wrapper-modal-list .scrollable-list-op1 .submodal-list {
+.wrapper-modal-list .scroll-list-box .submodal-list {
     width: 264px;
     background: #ffffff;
     padding: 8px;
@@ -1799,7 +1757,7 @@ Bottom codes are added by Tanvir
     top: 0;
 }
 
-.wrapper-modal-list .scrollable-list-op1 .submodal-list li {
+.wrapper-modal-list .scroll-list-box .submodal-list li {
     border: 1px solid #a1a1a1;
     border-radius: 3px;
     background: #ffffff;
@@ -1810,7 +1768,7 @@ Bottom codes are added by Tanvir
     cursor: pointer;
 }
 
-.wrapper-modal-list .scrollable-list-op1 .submodal-list li p {
+.wrapper-modal-list .scroll-list-box .submodal-list li p {
     font-family: gilroy-bold, sans-serif;
     font-weight: 500;
     font-size: 14px;
@@ -1818,7 +1776,7 @@ Bottom codes are added by Tanvir
     margin: auto auto auto 8px;
 }
 
-.scrollable-list-op1 .submodal-list li .sublist-check-box {
+.scroll-list-box .submodal-list li .sublist-check-box {
     position: relative;
     margin: auto 8px auto auto;
     height: 16px;
@@ -1828,7 +1786,7 @@ Bottom codes are added by Tanvir
     display: none;
 }
 
-.scrollable-list-op1 .submodal-list li .sublist-check-box i {
+.scroll-list-box .submodal-list li .sublist-check-box i {
     position: absolute;
     margin: auto;
     top: 3px;
@@ -1838,7 +1796,7 @@ Bottom codes are added by Tanvir
     color: #ffffff;
 }
 
-.scrollable-list-op1 .submodal-list li .sublist-cancel-box {
+.scroll-list-box .submodal-list li .sublist-cancel-box {
     position: relative;
     margin: auto 8px auto auto;
     height: 18px;
@@ -1848,7 +1806,7 @@ Bottom codes are added by Tanvir
     /* display: none; */
 }
 
-.scrollable-list-op1 .submodal-list li .sublist-cancel-box i {
+.scroll-list-box .submodal-list li .sublist-cancel-box i {
     position: absolute;
     margin: auto;
     top: 3px;
@@ -1911,39 +1869,87 @@ Bottom codes are added by Tanvir
     border: 1px solid #000000;
 }
 
+/* manage temp list popup customize */
+#manage-tempa-list-modal .modal-body,
+#manage-tempb-list-modal .modal-body,
+#manage-tempc-list-modal .modal-body,
+#manage-tempd-list-modal .modal-body{
+    padding: 10px;
+}
+
+#manage-tempa-list-modal .close,
+#manage-tempb-list-modal .close,
+#manage-tempc-list-modal .close,
+#manage-tempd-list-modal .close{
+    opacity: 1;
+    margin-top: -16px;
+    margin-right: -10px;
+}
+
+#manage-tempa-list-modal .close span,
+#manage-tempb-list-modal .close span,
+#manage-tempc-list-modal .close span,
+#manage-tempd-list-modal .close span{
+    color: #ffffff;
+    font-size: 28px;
+}
+#manage-tempa-list-modal .modal-body,
+#manage-tempb-list-modal .modal-body,
+#manage-tempc-list-modal .modal-body,
+#manage-tempd-list-modal .modal-body{
+    padding: 10px;
+}
+#manage-tempa-list-modal .wrapper-modal-list,
+#manage-tempb-list-modal .wrapper-modal-list,
+#manage-tempc-list-modal .wrapper-modal-list,
+#manage-tempd-list-modal .wrapper-modal-list{
+    border: 2px solid #1b1b1b;
+    height: 680px;
+}
+#manage-tempa-list-modal .scroll-list-box,
+#manage-tempb-list-modal .scroll-list-box,
+#manage-tempc-list-modal .scroll-list-box,
+#manage-tempd-list-modal .scroll-list-box{
+    overflow-x: hidden;
+}
+
+.modal .managetemp-btn {
+    padding: 0 20px 20px;
+}
+
 /* scrollbar customize start */
-.scrollable-list-op1::-webkit-scrollbar {
+.scroll-list-box::-webkit-scrollbar {
     width: 5px;
 }
 
 /* Track */
-.scrollable-list-op1::-webkit-scrollbar-track {
+.scroll-list-box::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px #919191;
     border-radius: 10px;
 }
 
 /* Handle */
-.scrollable-list-op1::-webkit-scrollbar-thumb {
+.scroll-list-box::-webkit-scrollbar-thumb {
     background: #919191;
     border-radius: 15px;
 }
 
 /* Handle on hover */
-.scrollable-list-op1::-webkit-scrollbar-thumb:hover {
+.scroll-list-box::-webkit-scrollbar-thumb:hover {
     background: #424242;
 }
 
 /* scrollbar customize end */
 
-/* OPTION 1 LIST POPUP END */
+/* ALL LIST POPUP END */
 
 
 /* REMOVE LIST ITEM MODAL START */
-#deletlistopt2 .modal-dialog {
+.delete-list-item .modal-dialog {
     max-width: 330px !important;
 }
 
-#deletlistopt2 .modal-content {
+.delete-list-item .modal-content {
     border: none;
     border-radius: 3px;
     -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
@@ -1951,7 +1957,7 @@ Bottom codes are added by Tanvir
     box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
 }
 
-#deletlistopt2 .modal-header {
+.delete-list-item .modal-header {
     background: #000000;
     border-radius: 3px;
     border-bottom-left-radius: 0px;
@@ -1959,7 +1965,7 @@ Bottom codes are added by Tanvir
     position: relative;
 }
 
-#deletlistopt2 .modal-title {
+.delete-list-item .modal-title {
     color: #ffffff;
     text-align: center;
     font-family: gilroy-medium, sans-serif;
@@ -1968,7 +1974,7 @@ Bottom codes are added by Tanvir
     margin: 0 auto;
 }
 
-#deletlistopt2 .close {
+.delete-list-item .close {
     position: absolute;
     color: #ffffff;
     padding: 0;
@@ -1978,28 +1984,28 @@ Bottom codes are added by Tanvir
     opacity: 1;
 }
 
-#deletlistopt2 .close span {
+.delete-list-item .close span {
     color: #ffffff;
     font-size: 26px;
     text-shadow: none;
 }
 
-#deletlistopt2 .modal-body {
+.delete-list-item .modal-body {
     padding: 0px;
 }
 
-#deletlistopt2 .remove-box {
+.delete-list-item .remove-box {
     padding: 8px 16px 16px;
 }
 
-#deletlistopt2 .remove-box .question-delete {
+.delete-list-item .remove-box .question-delete {
     border: 1px solid #969696;
     border-radius: 3px;
     background: #F9F9FB;
     padding: 24px 0px;
 }
 
-#deletlistopt2 .remove-box .question-delete p {
+.delete-list-item .remove-box .question-delete p {
     color: #787878;
     text-align: center;
     font-family: gilroy-medium, sans-serif;
@@ -2008,11 +2014,11 @@ Bottom codes are added by Tanvir
     margin: 0;
 }
 
-#deletlistopt2 .remove-box .comfirm-btn-bx {
+.delete-list-item .remove-box .comfirm-btn-bx {
     margin-top: 20px;
 }
 
-#deletlistopt2 .comfirm-btn-bx button {
+.delete-list-item .comfirm-btn-bx button {
     border: none;
     border-radius: 2px;
     padding: 5px 22px;
@@ -2022,20 +2028,20 @@ Bottom codes are added by Tanvir
     font-size: 14px;
 }
 
-#deletlistopt2 .comfirm-btn-bx .cancel-list-data {
+.delete-list-item .comfirm-btn-bx .cancel-list-data {
     background: #FFF000;
 }
 
-#deletlistopt2 .comfirm-btn-bx .cancel-list-data:hover {
+.delete-list-item .comfirm-btn-bx .cancel-list-data:hover {
     background: #fccf07;
 }
 
-#deletlistopt2 .comfirm-btn-bx .confirm-list-data {
+.delete-list-item .comfirm-btn-bx .confirm-list-data {
     background: #EAECF0;
     float: right;
 }
 
-#deletlistopt2 .comfirm-btn-bx .confirm-list-data:hover {
+.delete-list-item .comfirm-btn-bx .confirm-list-data:hover {
     background: #c6cdd8;
 }
 
