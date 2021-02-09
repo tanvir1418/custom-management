@@ -1209,12 +1209,12 @@ td {
 
 .btn39 .back-btn:hover,
 .btn39 .reset-btn:hover {
-  background: #dddddd;
+  background: #b6b6b6;
 }
 
 .btn39 a:hover .back-btn p,
 .btn39 a:hover .reset-btn p {
-  color: #686868;
+  color: #333333;
 }
 
 .btn39 .submit-btn:hover {

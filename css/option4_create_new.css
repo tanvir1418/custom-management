@@ -740,11 +740,15 @@
   height: 100px;
   width: 100px;
   margin: 25px auto;
+  cursor: pointer;
 }
 
 .single-list-item-file-container img {
   width: 60%;
   margin: 10px;
+}
+.single-list-item-wrapper{
+  cursor: pointer;
 }
 
 .single-list-item-wrapper .single-list-item-name p {
