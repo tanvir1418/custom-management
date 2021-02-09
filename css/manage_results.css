@@ -2116,7 +2116,7 @@ th[draggable] a {
     margin: auto;
     outline: none;
     padding: 5px 16px;
-    transition: .3s ease all;
+    transition: all 0.3s ease;
 }
 
 #tab_4 .modal .submit-notes input[type="submit"]:hover {
@@ -2352,7 +2352,7 @@ th[draggable] a {
     color: #1D1D1D;
     letter-spacing: 1px;
     background: #F1F3F5;
-    transition: 0.3s ease all;
+    transition: all 0.3s ease;
 }
 
 #tab_4 .modal .reset-save-btn .reset4:hover {
@@ -2367,7 +2367,8 @@ th[draggable] a {
 }
 
 #tab_4 .modal .reset-save-btn .save4:hover {
-    background: #131313;
+    background: #F1F3F5;
+    color: #1D1D1D;
 }
 
 /* ALERTS WINDOW END */
@@ -2422,6 +2423,9 @@ th[draggable] a {
     background: #FBFBFB;
     overflow-y: scroll;
 }
+#tab_4 .modal .drag-column .my-val-data{
+    height: 440px;
+}
 
 #tab_4 .modal .val-container{
     padding: 20px;
@@ -2453,14 +2457,16 @@ th[draggable] a {
     color: #1D1D1D;
     position: absolute;
     transform: translate(-50%,-50%);
+    font-family: gilroy-regular, sans-serif;
+    font-weight: 600;
 }
 #tab_4 .modal .valinput .arrow-equal .arrow7-right{
-    font-size: 42px;
-    top: 88%;
+    font-size: 24px;
+    top: 50%;
     left: 30%;
 }
 #tab_4 .modal .valinput .arrow-equal .equal7data{
-    font-size: 28px;
+    font-size: 24px;
     top: 50%;
     left: 68%;
 }
@@ -2484,6 +2490,10 @@ th[draggable] a {
     border-radius: 50%;
     position: relative;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+#tab_4 .modal .valinput .delete-mydata:hover{
+    background: #d1d0d0;
 }
 #tab_4 .modal .valinput .delete-mydata i{
     position: absolute;
@@ -2508,7 +2518,7 @@ th[draggable] a {
 
 /* FILTER DRAG COLUMN */
 #tab_4 .modal .drag-column .val-container{
-    padding: 20px 0px 20px 8px;
+    padding: 10px 0px 20px 8px;
 }
 
 #tab_4 .modal .drag-box-col #my-drag-list{
@@ -2518,11 +2528,13 @@ th[draggable] a {
     -webkit-column-gap: 10px;
     column-count: 2;
     column-gap: 10px;
+    margin-right: 8px;
 }
 #tab_4 .modal #my-drag-list li{
     border: 1px solid #969696;
     border-radius: 3px;
     display: flex;
+    margin-bottom: 10px;
 }
 #tab_4 .modal #my-drag-list li .cursor-box{
     background: #EBEBEB;

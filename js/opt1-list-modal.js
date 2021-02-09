@@ -172,7 +172,7 @@ select_item_main.addEventListener("click", function (e) {
 	target.childNodes[5].classList.add("arrow-li-box-background-color-2");
 	target.childNodes[5].childNodes[1].classList.remove("arrow-li-box-i-color-1");
 	target.childNodes[5].childNodes[1].classList.add("arrow-li-box-i-color-2");
-	
+
 	opt1_left_list = target.childNodes[1].innerHTML;
 	modalitem_click_handle(target.classList[0]);
 });
@@ -195,8 +195,7 @@ sub_ul_modallist.addEventListener("click", function (e) {
 		if (target.className === "sublist-cancel-box") {
 			deleteOpt1Modal(target.parentNode.classList[0]);
 			return;
-		}
-		else target = target.parentNode;
+		} else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
 
 	// if (oldLIClassnameModal !== "" && oldLIClassnameModal !== target.classList[0]) {
@@ -230,7 +229,7 @@ sub_ul_modallist.addEventListener("click", function (e) {
 	// $("#opt1-left").html(opt1_left_list);
 	// $("#opt1-right").html(opt1_right_list);
 });
-// option 1 MODAL list item end
+
 function deleteOpt1Modal(className) {
 	let mng_opt2_delete = document.querySelector("#mng-opt2-delete");
 	mng_opt2_delete.addEventListener("click", function () {
@@ -241,14 +240,525 @@ function deleteOpt1Modal(className) {
 
 /* ================ Scroll Down START ============== */
 $(document).ready(function () {
-	$(".scroll-down").click(function () {
-		const scrollable_list_op1 = document.querySelector(".scrollable-list-op1");
-		$(".scrollable-list-op1").animate({
-			scrollTop: scrollable_list_op1.scrollTop + 100,
-		},
+	$(".myscrollbtn-op1").click(function () {
+		const scroll5564windrow = document.querySelector(".scroll5564windrow");
+		$(".scroll5564windrow").animate({
+				scrollTop: scroll5564windrow.scrollTop + 100,
+			},
 			250
 		);
 	});
 });
 
 /* ================ Scroll Down END ============== */
+// ===/////=== option 1 MODAL list item end ===/////===
+
+
+// ===/////=== STYLE 2 COPY TO ROW select items modal START ===/////===
+
+const copytorow_list = document.querySelector(".copytorow-list");
+// Added by ASHIQ
+const copytolistmodal = [
+	"Item 1",
+	"Item 2",
+	"Item 3",
+	"Item 4",
+	"Item 5",
+	"Item 6",
+	"Item 7",
+	"Item 8",
+	"Item 9",
+	"Item 10",
+	"Item 11",
+	"Item 12",
+	"Item 13",
+	"Item 14",
+	"Item 15",
+	"Item 16",
+	"Item 17",
+	"Item 18",
+	"Item 19",
+	"Item 20",
+	"Item 21",
+	"Item 22",
+	"Item 23",
+	"Item 24",
+	"Item 25",
+	"Item 26",
+	"Item 27",
+	"Item 28",
+	"Item 29",
+];
+
+copytolistmodal.forEach((item, index) => {
+	let htmlcopytolistmodal = `<li class="modalcopytolist-item-${index + 1}">
+	<p>${item}</p>
+	<div class="green-check-box display-none">
+		<i class="fas fa-check"></i>
+	</div>
+	<div class="arrow-li-box arrow-li-box-background-color-1">
+		<i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
+	</div>
+	</li>`;
+	copytorow_list.innerHTML += htmlcopytolistmodal;
+	/* Update this function By Ashiq */
+	let modallistcopyto_data1 = "",
+		modallistcopyto_data2 = "",
+		modallistcopyto_data3 = "",
+		length = 72;
+	for (let i = 1; i <= length; i++) {
+		let elementHtml = `<li class="option-copytomodallist-${index + 1}-${i}">
+		<p>Level ${index + 1} - Item ${i}</p>
+		<div class="sublist-check-box">
+			<i class="fas fa-check"></i>
+		</div>
+		<div class="sublist-cancel-box" data-toggle="modal" data-target="#delet-copytolistopt2">
+			<i class="fas fa-times"></i>
+		</div>
+		</li>`;
+		if (length < 61) {
+			if (i <= 20) {
+				modallistcopyto_data1 += elementHtml;
+			} else if (i >= 21 && i <= 40) {
+				modallistcopyto_data2 += elementHtml;
+			} else {
+				modallistcopyto_data3 += elementHtml;
+			}
+		} else {
+			let divide = Math.floor(length / 3),
+				len = divide + (length % 3);
+			if (i <= len) {
+				modallistcopyto_data1 += elementHtml;
+			} else if (i > len && i <= len + divide) {
+				modallistcopyto_data2 += elementHtml;
+			} else {
+				modallistcopyto_data3 += elementHtml;
+			}
+		}
+	}
+	const sub_ul_copytomodallist = document.querySelector("#sub-ul-copyto-modallist");
+	sub_ul_copytomodallist.innerHTML += `
+		<ul class="submodal-list" id="copyto-submodal-div-list-1-${index + 1}">
+			${modallistcopyto_data1}
+		</ul>
+		<ul class="submodal-list" id="copyto-submodal-div-list-2-${index + 1}">
+			${modallistcopyto_data2}
+		</ul>
+		<ul class="submodal-list" id="copyto-submodal-div-list-3-${index + 1}">
+			${modallistcopyto_data3}
+		</ul>`;
+
+	let copyto_submodal_div_list_id1 = document.getElementById("copyto-submodal-div-list-1-" + (index + 1));
+	copyto_submodal_div_list_id1.style.display = "none";
+	copyto_submodal_div_list_id1.style.marginLeft = "300px";
+
+	let copyto_submodal_div_list_id2 = document.getElementById("copyto-submodal-div-list-2-" + (index + 1));
+	copyto_submodal_div_list_id2.style.display = "none";
+	copyto_submodal_div_list_id2.style.marginLeft = "600px";
+
+	let copyto_sub_div_list_id3 = document.getElementById("copyto-submodal-div-list-3-" + (index + 1));
+	copyto_sub_div_list_id3.style.display = "none";
+	copyto_sub_div_list_id3.style.marginLeft = "900px";
+	/* Update End By Ashiq */
+});
+
+/* New Function Start */
+let copyto_submodal_div_list_id1_old = "",
+	copyto_submodal_div_list_id2_old = "",
+	copyto_submodal_div_list_id3_old = "";
+
+function copyto_modalitem_click_handle(listClassName) {
+	let level_no = listClassName.match(/\d+/g);
+	if (level_no != null) {
+		const copyto_submodal_div_list_id1 = "#copyto-submodal-div-list-1-" + level_no,
+			copyto_submodal_div_list_id2 = "#copyto-submodal-div-list-2-" + level_no,
+			copyto_submodal_div_list_id3 = "#copyto-submodal-div-list-3-" + level_no;
+		if (copyto_submodal_div_list_id1 !== copyto_submodal_div_list_id1_old) {
+			$(copyto_submodal_div_list_id1_old).toggle();
+			$(copyto_submodal_div_list_id1).toggle();
+			copyto_submodal_div_list_id1_old = copyto_submodal_div_list_id1;
+		} else {
+			$(copyto_submodal_div_list_id1_old).toggle();
+			copyto_submodal_div_list_id1_old = "";
+		}
+
+		if (copyto_submodal_div_list_id2 !== copyto_submodal_div_list_id2_old) {
+			$(copyto_submodal_div_list_id2_old).toggle();
+			$(copyto_submodal_div_list_id2).toggle();
+			copyto_submodal_div_list_id2_old = copyto_submodal_div_list_id2;
+		} else {
+			$(copyto_submodal_div_list_id2_old).toggle();
+			copyto_submodal_div_list_id2_old = "";
+		}
+
+		if (copyto_submodal_div_list_id3 !== copyto_submodal_div_list_id3_old) {
+			$(copyto_submodal_div_list_id3_old).toggle();
+			$(copyto_submodal_div_list_id3).toggle();
+			copyto_submodal_div_list_id3_old = copyto_submodal_div_list_id3;
+		} else {
+			$(copyto_submodal_div_list_id3_old).toggle();
+			copyto_submodal_div_list_id3_old = "";
+		}
+	}
+}
+/* New Function End */
+let opt_copyto_left_list = "";
+copytorow_list.addEventListener("click", function (e) {
+	let target = e.target;
+	const elementName = ["DIV", "P"];
+	if (elementName.includes(target.tagName)) {
+		target = target.parentNode;
+	} else if (target.tagName === "I") {
+		target = target.parentNode.parentNode;
+	}
+
+	$(".highlight_li .arrow-li-box-i-color-2").addClass("arrow-li-box-i-color-1");
+	$(".highlight_li .arrow-li-box-i-color-2").removeClass("arrow-li-box-i-color-2");
+	$(".highlight_li .display-block").addClass("display-none");
+	$(".highlight_li .display-block").removeClass("display-block");
+	$(".highlight_li .arrow-li-box-background-color-2").addClass("arrow-li-box-background-color-1");
+	$(".highlight_li .arrow-li-box-background-color-2").removeClass("arrow-li-box-background-color-2");
+	$(".highlight_li").removeClass("highlight_li");
+
+	target.classList.add("highlight_li");
+	target.childNodes[3].classList.remove("display-none");
+	target.childNodes[3].classList.add("display-block");
+	target.childNodes[5].classList.remove("arrow-li-box-background-color-1");
+	target.childNodes[5].classList.add("arrow-li-box-background-color-2");
+	target.childNodes[5].childNodes[1].classList.remove("arrow-li-box-i-color-1");
+	target.childNodes[5].childNodes[1].classList.add("arrow-li-box-i-color-2");
+
+	opt_copyto_left_list = target.childNodes[1].innerHTML;
+	copyto_modalitem_click_handle(target.classList[0]);
+});
+
+let opt1_copyto_right_list = "";
+let copyto_oldLIClassnameModal = "";
+const sub_ul_copytomodallist = document.querySelector("#sub-ul-copyto-modallist");
+sub_ul_copytomodallist.addEventListener("click", function (e) {
+	let target = e.target;
+	if (target.tagName === "DIV") {
+		if (target.className === "sublist-cancel-box") {
+			copyto_deleteOpt1Modal(target.parentNode.classList[0]);
+			return;
+		}
+		target = target.parentNode;
+	} else if (target.tagName === "P") {
+		target = target.parentNode;
+	} else if (target.tagName === "I") {
+		target = target.parentNode;
+		if (target.className === "sublist-cancel-box") {
+			copyto_deleteOpt1Modal(target.parentNode.classList[0]);
+			return;
+		} else target = target.parentNode;
+	} else if (target.tagName !== "LI") return;
+
+	// if (copyto_oldLIClassnameModal !== "" && copyto_oldLIClassnameModal !== target.classList[0]) {
+	// 	let oldElement = document.querySelector(`.${copyto_oldLIClassnameModal}`);
+	// 	console.log(oldElement);
+	// 	oldElement.childNodes.forEach((element) => {
+	// 		if (element.className === "sublist-check-box") {
+	// 			element.style.display = "none";
+	// 		}
+	// 		if (element.className === "sublist-cancel-box") {
+	// 			element.style.display = "block";
+	// 		}
+	// 	});
+	// }
+
+	target.childNodes.forEach((element) => {
+		if (element.className === "sublist-check-box") {
+			$(element).toggle();
+		}
+		if (element.className === "sublist-cancel-box") {
+			$(element).toggle();
+		}
+	});
+
+	copyto_oldLIClassnameModal = target.classList[0];
+	if (opt1_copyto_right_list == target.childNodes[1].innerHTML) {
+		opt1_copyto_right_list = "";
+	} else {
+		opt1_copyto_right_list = target.childNodes[1].innerHTML;
+	}
+	// $("#opt1-left").html(opt1_left_list);
+	// $("#opt1-right").html(opt1_copyto_right_list);
+});
+
+function copyto_deleteOpt1Modal(className) {
+	let copyto_mng_opt2_delete = document.querySelector("#copyto-mng-opt2-delete");
+	copyto_mng_opt2_delete.addEventListener("click", function () {
+		let copyto_delObj = document.querySelector(`.${className}`);
+		copyto_delObj.remove();
+	});
+}
+
+/* ================ Scroll Down START ============== */
+$(document).ready(function () {
+	$(".copytoscrollbtn").click(function () {
+		const copytoscrollwindow = document.querySelector(".copytoscrollwindow");
+		$(".copytoscrollwindow").animate({
+				scrollTop: copytoscrollwindow.scrollTop + 100,
+			},
+			250
+		);
+	});
+});
+/* ================ Scroll Down END ============== */
+
+// ===/////=== STYLE 2 COPY TO ROW select items modal START ===/////===
+
+
+// ===/////=== STYLE 2 MOVE TO ROW select items modal START ===/////===
+
+const movetorow_list = document.querySelector(".movetorow-list");
+// Added by ASHIQ
+const movetolistmodal = [
+	"Item 1",
+	"Item 2",
+	"Item 3",
+	"Item 4",
+	"Item 5",
+	"Item 6",
+	"Item 7",
+	"Item 8",
+	"Item 9",
+	"Item 10",
+	"Item 11",
+	"Item 12",
+	"Item 13",
+	"Item 14",
+	"Item 15",
+	"Item 16",
+	"Item 17",
+	"Item 18",
+	"Item 19",
+	"Item 20",
+	"Item 21",
+	"Item 22",
+	"Item 23",
+	"Item 24",
+	"Item 25",
+	"Item 26",
+	"Item 27",
+	"Item 28",
+	"Item 29",
+];
+
+movetolistmodal.forEach((item, index) => {
+	let htmlmovetolistmodal = `<li class="modalmovetolist-item-${index + 1}">
+	<p>${item}</p>
+	<div class="green-check-box display-none">
+		<i class="fas fa-check"></i>
+	</div>
+	<div class="arrow-li-box arrow-li-box-background-color-1">
+		<i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
+	</div>
+	</li>`;
+	movetorow_list.innerHTML += htmlmovetolistmodal;
+	/* Update this function By Ashiq */
+	let modallistmoveto_data1 = "",
+		modallistmoveto_data2 = "",
+		modallistmoveto_data3 = "",
+		length = 72;
+	for (let i = 1; i <= length; i++) {
+		let elementHtml = `<li class="option-movetomodallist-${index + 1}-${i}">
+		<p>Level ${index + 1} - Item ${i}</p>
+		<div class="sublist-check-box">
+			<i class="fas fa-check"></i>
+		</div>
+		<div class="sublist-cancel-box" data-toggle="modal" data-target="#delet-movetolistopt2">
+			<i class="fas fa-times"></i>
+		</div>
+		</li>`;
+		if (length < 61) {
+			if (i <= 20) {
+				modallistmoveto_data1 += elementHtml;
+			} else if (i >= 21 && i <= 40) {
+				modallistmoveto_data2 += elementHtml;
+			} else {
+				modallistmoveto_data3 += elementHtml;
+			}
+		} else {
+			let divide = Math.floor(length / 3),
+				len = divide + (length % 3);
+			if (i <= len) {
+				modallistmoveto_data1 += elementHtml;
+			} else if (i > len && i <= len + divide) {
+				modallistmoveto_data2 += elementHtml;
+			} else {
+				modallistmoveto_data3 += elementHtml;
+			}
+		}
+	}
+	const sub_ul_movetomodallist = document.querySelector("#sub-ul-moveto-modallist");
+	sub_ul_movetomodallist.innerHTML += `
+		<ul class="submodal-list" id="moveto-submodal-div-list-1-${index + 1}">
+			${modallistmoveto_data1}
+		</ul>
+		<ul class="submodal-list" id="moveto-submodal-div-list-2-${index + 1}">
+			${modallistmoveto_data2}
+		</ul>
+		<ul class="submodal-list" id="moveto-submodal-div-list-3-${index + 1}">
+			${modallistmoveto_data3}
+		</ul>`;
+
+	let moveto_submodal_div_list_id1 = document.getElementById("moveto-submodal-div-list-1-" + (index + 1));
+	moveto_submodal_div_list_id1.style.display = "none";
+	moveto_submodal_div_list_id1.style.marginLeft = "300px";
+
+	let moveto_submodal_div_list_id2 = document.getElementById("moveto-submodal-div-list-2-" + (index + 1));
+	moveto_submodal_div_list_id2.style.display = "none";
+	moveto_submodal_div_list_id2.style.marginLeft = "600px";
+
+	let moveto_sub_div_list_id3 = document.getElementById("moveto-submodal-div-list-3-" + (index + 1));
+	moveto_sub_div_list_id3.style.display = "none";
+	moveto_sub_div_list_id3.style.marginLeft = "900px";
+	/* Update End By Ashiq */
+});
+
+/* New Function Start */
+let moveto_submodal_div_list_id1_old = "",
+	moveto_submodal_div_list_id2_old = "",
+	moveto_submodal_div_list_id3_old = "";
+
+function moveto_modalitem_click_handle(listClassName) {
+	let level_no = listClassName.match(/\d+/g);
+	if (level_no != null) {
+		const moveto_submodal_div_list_id1 = "#moveto-submodal-div-list-1-" + level_no,
+			moveto_submodal_div_list_id2 = "#moveto-submodal-div-list-2-" + level_no,
+			moveto_submodal_div_list_id3 = "#moveto-submodal-div-list-3-" + level_no;
+		if (moveto_submodal_div_list_id1 !== moveto_submodal_div_list_id1_old) {
+			$(moveto_submodal_div_list_id1_old).toggle();
+			$(moveto_submodal_div_list_id1).toggle();
+			moveto_submodal_div_list_id1_old = moveto_submodal_div_list_id1;
+		} else {
+			$(moveto_submodal_div_list_id1_old).toggle();
+			moveto_submodal_div_list_id1_old = "";
+		}
+
+		if (moveto_submodal_div_list_id2 !== moveto_submodal_div_list_id2_old) {
+			$(moveto_submodal_div_list_id2_old).toggle();
+			$(moveto_submodal_div_list_id2).toggle();
+			moveto_submodal_div_list_id2_old = moveto_submodal_div_list_id2;
+		} else {
+			$(moveto_submodal_div_list_id2_old).toggle();
+			moveto_submodal_div_list_id2_old = "";
+		}
+
+		if (moveto_submodal_div_list_id3 !== moveto_submodal_div_list_id3_old) {
+			$(moveto_submodal_div_list_id3_old).toggle();
+			$(moveto_submodal_div_list_id3).toggle();
+			moveto_submodal_div_list_id3_old = moveto_submodal_div_list_id3;
+		} else {
+			$(moveto_submodal_div_list_id3_old).toggle();
+			moveto_submodal_div_list_id3_old = "";
+		}
+	}
+}
+/* New Function End */
+let opt_moveto_left_list = "";
+movetorow_list.addEventListener("click", function (e) {
+	let target = e.target;
+	const elementName = ["DIV", "P"];
+	if (elementName.includes(target.tagName)) {
+		target = target.parentNode;
+	} else if (target.tagName === "I") {
+		target = target.parentNode.parentNode;
+	}
+
+	$(".highlight_li .arrow-li-box-i-color-2").addClass("arrow-li-box-i-color-1");
+	$(".highlight_li .arrow-li-box-i-color-2").removeClass("arrow-li-box-i-color-2");
+	$(".highlight_li .display-block").addClass("display-none");
+	$(".highlight_li .display-block").removeClass("display-block");
+	$(".highlight_li .arrow-li-box-background-color-2").addClass("arrow-li-box-background-color-1");
+	$(".highlight_li .arrow-li-box-background-color-2").removeClass("arrow-li-box-background-color-2");
+	$(".highlight_li").removeClass("highlight_li");
+
+	target.classList.add("highlight_li");
+	target.childNodes[3].classList.remove("display-none");
+	target.childNodes[3].classList.add("display-block");
+	target.childNodes[5].classList.remove("arrow-li-box-background-color-1");
+	target.childNodes[5].classList.add("arrow-li-box-background-color-2");
+	target.childNodes[5].childNodes[1].classList.remove("arrow-li-box-i-color-1");
+	target.childNodes[5].childNodes[1].classList.add("arrow-li-box-i-color-2");
+
+	opt_moveto_left_list = target.childNodes[1].innerHTML;
+	moveto_modalitem_click_handle(target.classList[0]);
+});
+
+let opt1_moveto_right_list = "";
+let moveto_oldLIClassnameModal = "";
+const sub_ul_movetomodallist = document.querySelector("#sub-ul-moveto-modallist");
+sub_ul_movetomodallist.addEventListener("click", function (e) {
+	let target = e.target;
+	if (target.tagName === "DIV") {
+		if (target.className === "sublist-cancel-box") {
+			moveto_deleteOpt1Modal(target.parentNode.classList[0]);
+			return;
+		}
+		target = target.parentNode;
+	} else if (target.tagName === "P") {
+		target = target.parentNode;
+	} else if (target.tagName === "I") {
+		target = target.parentNode;
+		if (target.className === "sublist-cancel-box") {
+			moveto_deleteOpt1Modal(target.parentNode.classList[0]);
+			return;
+		} else target = target.parentNode;
+	} else if (target.tagName !== "LI") return;
+
+	// if (moveto_oldLIClassnameModal !== "" && moveto_oldLIClassnameModal !== target.classList[0]) {
+	// 	let oldElement = document.querySelector(`.${moveto_oldLIClassnameModal}`);
+	// 	console.log(oldElement);
+	// 	oldElement.childNodes.forEach((element) => {
+	// 		if (element.className === "sublist-check-box") {
+	// 			element.style.display = "none";
+	// 		}
+	// 		if (element.className === "sublist-cancel-box") {
+	// 			element.style.display = "block";
+	// 		}
+	// 	});
+	// }
+
+	target.childNodes.forEach((element) => {
+		if (element.className === "sublist-check-box") {
+			$(element).toggle();
+		}
+		if (element.className === "sublist-cancel-box") {
+			$(element).toggle();
+		}
+	});
+
+	moveto_oldLIClassnameModal = target.classList[0];
+	if (opt1_moveto_right_list == target.childNodes[1].innerHTML) {
+		opt1_moveto_right_list = "";
+	} else {
+		opt1_moveto_right_list = target.childNodes[1].innerHTML;
+	}
+	// $("#opt1-left").html(opt1_left_list);
+	// $("#opt1-right").html(opt1_moveto_right_list);
+});
+
+function moveto_deleteOpt1Modal(className) {
+	let moveto_mng_opt2_delete = document.querySelector("#moveto-mng-opt2-delete");
+	moveto_mng_opt2_delete.addEventListener("click", function () {
+		let moveto_delObj = document.querySelector(`.${className}`);
+		moveto_delObj.remove();
+	});
+}
+
+/* ================ Scroll Down START ============== */
+$(document).ready(function () {
+	$(".movetoscrollbtn").click(function () {
+		const movetoscrollwindow = document.querySelector(".movetoscrollwindow");
+		$(".movetoscrollwindow").animate({
+				scrollTop: movetoscrollwindow.scrollTop + 100,
+			},
+			250
+		);
+	});
+});
+/* ================ Scroll Down END ============== */
+
+// ===/////=== STYLE 2 MOVE TO ROW select items modal START ===/////===
