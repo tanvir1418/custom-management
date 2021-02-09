@@ -1,6 +1,7 @@
 var seqList = []; // this is for storing sequence of rows (sequence list work)
 var seqListR = []; // this is for storing sequence of rows (sequence list work)
 let newRowsList = []; // if some rows removed then that row number is added here as an empty slot
+let mapSeqList = {};
 
 function resetValue(e) {
   let pid = $(e).parent().parent().parent().parent().attr("id");
@@ -25,6 +26,7 @@ function resetValue(e) {
     }
   } else {
     let inW = inWords(seqList.length + 1).toUpperCase();
+    mapSeqList[inW] = seqList.length + 1;
     seqList.forEach(function (val, index) {
       $(`#${val} #sequence`).append(
         `<option value="${(seqList.length + 1)}">${inW}</option>`
@@ -40,11 +42,6 @@ function resetValue(e) {
     }
     $(`#${pid} #sequence`).val(seqList.length);
   }
-  // again required for range slider
-  $("input[type='range']").each(function () {
-    let _t = $(this)[0];
-    _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value);
-  });
 }
 
 function resetValueR(e) {
@@ -84,23 +81,26 @@ function resetValueR(e) {
       $(`#${pid} #sequence`).html($(`#${seqListR[0]} #sequence`).html());
     }
     $(`#${pid} #sequence`).val(seqListR.length);
+    autoCheckLeftForRight(pid);
   }
-  // again required for range slider
-  $("input[type='range']").each(function () {
-    let _t = $(this)[0];
-    _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value);
-  });
-  autoCheckLeftForRight(pid);
 }
 
 function autoCheckLeftForRight(_id) {
-  let result = leftSideArray.reduce((filtered, leftdata) => {
-    if (leftdata.rightData) {
-      filtered.push(leftdata.id);
+  let left_id = leftSideArray.reduce((filtered, leftdata) => {
+    let abc = leftdata.rightData;
+    if (abc) {
+      abc.forEach((vdata) => {
+        if(vdata.id==_id)
+        filtered.push(leftdata.id);
+      });
     }
     return filtered;
-  }, []);
-  console.log(result);
+  }, [])[0];
+  
+  let checkbox = $(`#${left_id} input[type='checkbox'].toggle__input`)[0];
+  if (checkbox.checked == false) {
+    checkbox.click();
+  }
 }
 
 function swapSeq(e) {
@@ -231,14 +231,6 @@ function inWords(num) {
   return str;
 }
 
-// required for input range slider
-addEventListener("input", (e) => {
-  let _t = e.target;
-  _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value);
-},
-  false
-);
-
 function onFocus(e) {
   let pid = $(e).parent().parent().parent().attr("id");
   let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
@@ -268,51 +260,103 @@ function checkEmpty(e) {
 let leftSideArray = [
   {
     "id": "lsa1",
-    "name": "Any text 123456",
+    "name": "Any text lsa1",
     "rightData": [
       {
         "id": "lsa1-1",
-        "name": "Any text 3535",
+        "name": "Sub text lsa1-1",
       },
       {
         "id": "lsa1-2",
-        "name": "Any text 96553",
+        "name": "Sub text lsa1-2",
       }
     ],
   },
   {
     "id": "lsa2",
-    "name": "Any text 25636",
+    "name": "Any text lsa2",
     "rightData": [
       {
         "id": "lsa2-1",
-        "name": "Any text 123456",
+        "name": "Sub text lsa2-1",
       }
     ],
   },
   {
     "id": "lsa3",
-    "name": "Any text 2456464"
+    "name": "Any text lsa3",
+    "rightData": [
+      {
+        "id": "lsa3-1",
+        "name": "Sub text lsa3-1",
+      },
+      {
+        "id": "lsa3-2",
+        "name": "Sub text lsa3-2",
+      },
+      {
+        "id": "lsa3-3",
+        "name": "Sub text lsa3-3",
+      }
+    ],
   },
   {
     "id": "lsa4",
-    "name": "Any text 797543"
+    "name": "Any text lsa4",
+    "rightData": [
+      {
+        "id": "lsa4-1",
+        "name": "Sub text lsa4-1",
+      }
+    ],
   },
   {
     "id": "lsa5",
-    "name": "Any text 5685432"
+    "name": "Any text lsa5",
+    "rightData": [
+      {
+        "id": "lsa5-1",
+        "name": "Sub text lsa5-1",
+      }
+    ],
   },
   {
     "id": "lsa6",
-    "name": "Any text 9785534"
+    "name": "Any text lsa6",
+    "rightData": [
+      {
+        "id": "lsa6-1",
+        "name": "Sub text lsa6-1",
+      },
+      {
+        "id": "lsa6-2",
+        "name": "Sub text lsa6-2",
+      }
+    ],
   },
   {
     "id": "lsa7",
-    "name": "Any text 324657"
+    "name": "Any text lsa7",
+    "rightData": [
+      {
+        "id": "lsa7-1",
+        "name": "Sub text lsa7-1",
+      }
+    ],
   },
   {
     "id": "lsa8",
-    "name": "Any text 68553"
+    "name": "Any text lsa8",
+    "rightData": [
+      {
+        "id": "lsa8-1",
+        "name": "Sub text lsa8-1",
+      },
+      {
+        "id": "lsa8-2",
+        "name": "Sub text lsa8-2",
+      }
+    ],
   },
 ]
 
@@ -374,7 +418,7 @@ function addNewRowL(e) {
   let _id = element.id;
   let title = element.innerText;
   if ($(`#leftSideDrag_op1 #${_id}`).length == 0) {
-    let swapSeq = `swapSeq(this)`, resetValue = `resetValue(this,seqList)`;
+    let swapSeq = `swapSeq(this)`, resetValue = `resetValue(this)`;
     $("#leftSideDrag_op1").append(renderListInputHtml(_id, title, resetValue, swapSeq));
     let aData = leftSideArray.filter((rData) => rData.id == _id);
     if (aData[0].rightData) {
@@ -391,7 +435,66 @@ function addNewRowR(e) {
   let _id = element.id;
   let title = element.innerText;
   if ($(`#rightSideDrag_op1 #${_id}`).length == 0) {
-    let swapSeq = `swapSeqR(this)`, resetValue = `resetValueR(this,seqList)`;
+    let swapSeq = `swapSeqR(this)`, resetValue = `resetValueR(this)`;
     $("#rightSideDrag_op1").append(renderListInputHtml(_id, title, resetValue, swapSeq));
   }
+}
+
+function formToWindow(e) {
+  let tBody = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#text-editor-table tbody");
+  let renHtml = "";
+  seqList.forEach((pid) => {
+    let title = $(`#${pid} span.toggle__text`).html();
+    let seqVal = $(`#${pid} #sequence`).val();
+    let seqTitle = $(`#${pid} #sequence`).find(":selected").text();
+    let inpText = $(`#${pid} input[type="text"]`).val();
+    renHtml += `<tr>
+      <td style="width:30%">${title}</td>
+      <td class="second"><input type="text" value="Set : Set"></td>
+    </tr>
+    <tr>
+      <td style="width:30%">${title}</td>
+      <td class="second"><input type="text" value="Sequence : ${seqTitle}"></td>
+    </tr>
+    <tr>
+      <td style="width:30%">${title}</td>
+      <td class="second"><input type="text" value="${inpText}"></td>
+    </tr>`
+  });
+  tBody.html(renHtml);
+}
+
+function findInputId(title) {
+  let res = leftSideArray.filter((a) => a.name == title).map((b) => b.id);
+  if (res.length) return res[0];
+  else return false;
+}
+
+function windowToForm(e) {
+  let tRow = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#text-editor-table tbody tr");
+  let len = tRow.length;
+  for (let i = 0; i < len; i++){
+    let title = $(tRow[i]).children(`td:first-child`)[0].innerText;
+    let pid = findInputId(title);
+    let setVal = $(tRow[i++]).children(`td`).children(`input`)[0].value.split(":")[1].trim();
+    let seqName = $(tRow[i++]).children(`td`).children(`input`)[0].value.split(":")[1].trim();
+    let seqVal = mapSeqList[seqName];
+    let inpVal = $(tRow[i++]).children(`td`).children(`input`)[0].value;
+    // console.log(title, pid, setVal, seqName, seqVal, inpVal);
+
+    let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
+    if (checkbox.checked == false && setVal=="Set") {
+      checkbox.click();
+    }
+    else if (checkbox.checked == true && setVal != "Set") {
+      checkbox.click();
+    }
+    $(`#${pid} #sequence`).val(seqVal);
+    $(`#${pid} input[type="text"]`).val(inpVal);
+  }
+
 }

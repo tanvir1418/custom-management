@@ -10721,55 +10721,12 @@
                                         <div class="text-editor-table-scroll">
                                             <table id="text-editor-table">
                                                 <tbody>
-                                                    <tr>
-                                                        <td style="width:30%">L - Option 1</td>
-                                                        <td class="second">Set : Set</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">L - Option 1</td>
-                                                        <td class="second">Sequence : FIRST</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">L - Option 1</td>
-                                                        <td class="second">12345 : 05</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">L - Option 1</td>
-                                                        <td class="second">Sequence : FIRST</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">L - Option 1</td>
-                                                        <td class="second">12345 : 05</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">L - Option 1</td>
-                                                        <td class="second">
-                                                            <input type="text">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">L - Option 1</td>
-                                                        <td class="second">
-                                                            <input type="text">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">L - Option 1</td>
-                                                        <td class="second">
-                                                            <input type="text">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:30%">L - Option 1</td>
-                                                        <td class="second">
-                                                            <input type="text">
-                                                        </td>
-                                                    </tr>
+                                                    <!-- tr and td from JS -->
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
-                                    <div class="sub-table-wrapper dispHideShow" id="sub__table">
+                                    <!-- <div class="sub-table-wrapper dispHideShow" id="sub__table">
                                         <div class="sub-table-scroll">
                                             <table id="sub-editor-table">
                                                 <tbody>
@@ -10808,13 +10765,13 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <div class="text-editor-popup-footer">
                                 <div class="text-editor-button-row">
-                                    <input type="button" value="Window to Form" class="window-form">
-                                    <input type="button" value="Form to Window" class="form-window">
+                                    <input type="button" value="Window to Form" class="window-form" onclick="windowToForm(this)">
+                                    <input type="button" value="Form to Window" class="form-window" onclick="formToWindow(this)">
                                 </div>
                             </div>
                         </div>
