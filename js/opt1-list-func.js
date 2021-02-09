@@ -483,7 +483,7 @@ function windowToForm(e) {
     let setVal = $(tRow[i++]).children(`td`).children(`input`)[0].value.split(":")[1].trim();
     let seqName = $(tRow[i++]).children(`td`).children(`input`)[0].value.split(":")[1].trim();
     let seqVal = mapSeqList[seqName];
-    let inpVal = $(tRow[i++]).children(`td`).children(`input`)[0].value;
+    let inpVal = $(tRow[i]).children(`td`).children(`input`)[0].value;
     // console.log(title, pid, setVal, seqName, seqVal, inpVal);
 
     let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
@@ -496,5 +496,4 @@ function windowToForm(e) {
     $(`#${pid} #sequence`).val(seqVal);
     $(`#${pid} input[type="text"]`).val(inpVal);
   }
-
 }
