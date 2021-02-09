@@ -1,40 +1,40 @@
-document.addEventListener('keydown', function() {
-  if (event.keyCode == 123) {
-    // alert("This function has been disabled to prevent you from stealing my code!");
-    return false;
-  } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
-    // alert("This function has been disabled to prevent you from stealing my code!");
-    return false;
-  } else if (event.ctrlKey && event.keyCode == 85) {
-    // alert("This function has been disabled to prevent you from stealing my code!");
-    return false;
-  }
-}, false);
+// document.addEventListener('keydown', function() {
+//   if (event.keyCode == 123) {
+//     // alert("This function has been disabled to prevent you from stealing my code!");
+//     return false;
+//   } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+//     // alert("This function has been disabled to prevent you from stealing my code!");
+//     return false;
+//   } else if (event.ctrlKey && event.keyCode == 85) {
+//     // alert("This function has been disabled to prevent you from stealing my code!");
+//     return false;
+//   }
+// }, false);
 
-if (document.addEventListener) {
-  document.addEventListener('contextmenu', function(e) {
-    // alert("This function has been disabled to prevent you from stealing my code!");
-    e.preventDefault();
-  }, false);
-} else {
-  document.attachEvent('oncontextmenu', function() {
-    // alert("This function has been disabled to prevent you from stealing my code!");
-    window.event.returnValue = false;
-  });
-}
+// if (document.addEventListener) {
+//   document.addEventListener('contextmenu', function(e) {
+//     // alert("This function has been disabled to prevent you from stealing my code!");
+//     e.preventDefault();
+//   }, false);
+// } else {
+//   document.attachEvent('oncontextmenu', function() {
+//     // alert("This function has been disabled to prevent you from stealing my code!");
+//     window.event.returnValue = false;
+//   });
+// }
 
-document.onkeydown = function (e) {
-  if (e.ctrlKey &&
-    (e.keyCode === 67 ||
-      e.keyCode === 86 ||
-      e.keyCode === 85 ||
-      e.keyCode === 117)) {
-    return false;
-  }
-   else {
-    return true;
-  }
-};
+// document.onkeydown = function (e) {
+//   if (e.ctrlKey &&
+//     (e.keyCode === 67 ||
+//       e.keyCode === 86 ||
+//       e.keyCode === 85 ||
+//       e.keyCode === 117)) {
+//     return false;
+//   }
+//   else {
+//     return true;
+//   }
+// };
 // //////////////////===========================================================
 
 // TOGGLE TRIANGLE
@@ -114,8 +114,8 @@ function openOption(evt, optionName) {
 	}
 	document.getElementById(optionName).style.display = "block";
 	document.getElementById("hide559").style.display = "none";
-	document.getElementById("tab_2").style.paddingTop="0px";
-	document.getElementById("opt-content").style.marginTop="0px";
+	document.getElementById("tab_2").style.paddingTop = "0px";
+	document.getElementById("opt-content").style.marginTop = "0px";
 	evt.currentTarget.className += " active";
 }
 // CHOOSE OPTION SECTION END
