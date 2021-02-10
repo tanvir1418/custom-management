@@ -120,6 +120,14 @@ function openOption(evt, optionName) {
 }
 // CHOOSE OPTION SECTION END
 
+// BACK BTN
+$("#back-manage").click(function () {
+	document.getElementById("option_1").style.display = "none";
+	document.getElementById("hide559").style.display = "block";
+	document.getElementById("tab_2").style.paddingTop="60px";
+	document.getElementById("opt-content").style.marginTop="50px";
+});
+
 
 // CREATE & MANAGE TAB START
 
