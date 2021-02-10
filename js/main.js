@@ -114,8 +114,8 @@ function openOption(evt, optionName) {
 	}
 	document.getElementById(optionName).style.display = "block";
 	document.getElementById("hide559").style.display = "none";
-	document.getElementById("tab_2").style.paddingTop="0px";
-	document.getElementById("opt-content").style.marginTop="0px";
+	document.getElementById("tab_2").style.paddingTop = "0px";
+	document.getElementById("opt-content").style.marginTop = "0px";
 	evt.currentTarget.className += " active";
 }
 // CHOOSE OPTION SECTION END
