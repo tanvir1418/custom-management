@@ -2047,3 +2047,64 @@ Bottom codes are added by Tanvir
 
 
 /* REMOVE LIST ITEM MODAL END */
+
+/* Cottected from another file (Tanvir) */
+#text_editor_p
+{
+	height:278px;
+	/* border:1px solid black; */
+    border-radius: 4px;
+	padding:5px;
+	font-size: 15px;
+	overflow-y:scroll;
+	position: relative;
+}
+#text_editor
+{
+	border:none;
+	outline: none;
+}
+#text_editor:hover, #text_eiditor:focus, #text_editor:active
+{
+	border:none;
+	outline: none;
+}
+
+/* ........................... */
+/* Custom ScrollBar  Start*/
+#text_editor_p::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+#text_editor_p::-webkit-scrollbar-track {
+    box-shadow: transparent;
+    border-radius: 10px;
+}
+
+/* Handle */
+#text_editor_p::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+#text_editor_p::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
+
+#text_editor div:nth-child(even) {
+    background-color: #ffffff !important;
+}
+
+#text_editor div:nth-child(odd) {
+    background-color: #fbfbfb !important;
+}
+
+.form-text-design{
+    color: black;
+    font-family: gilroy-bold;
+    font-weight: 500;
+    font-size: 14px;
+}
+/* Custom ScrollBar Ends  */

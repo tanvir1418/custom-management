@@ -1,7 +1,7 @@
 var seqList = []; // this is for storing sequence of rows (sequence list work)
 var seqListR = []; // this is for storing sequence of rows (sequence list work)
 let newRowsList = []; // if some rows removed then that row number is added here as an empty slot
-let mapSeqList = {};
+var clicked = false;
 
 function resetValue(e) {
   let pid = $(e).parent().parent().parent().parent().attr("id");
@@ -26,7 +26,6 @@ function resetValue(e) {
     }
   } else {
     let inW = inWords(seqList.length + 1).toUpperCase();
-    mapSeqList[inW] = seqList.length + 1;
     seqList.forEach(function (val, index) {
       $(`#${val} #sequence`).append(
         `<option value="${(seqList.length + 1)}">${inW}</option>`
@@ -81,25 +80,6 @@ function resetValueR(e) {
       $(`#${pid} #sequence`).html($(`#${seqListR[0]} #sequence`).html());
     }
     $(`#${pid} #sequence`).val(seqListR.length);
-    autoCheckLeftForRight(pid);
-  }
-}
-
-function autoCheckLeftForRight(_id) {
-  let left_id = leftSideArray.reduce((filtered, leftdata) => {
-    let abc = leftdata.rightData;
-    if (abc) {
-      abc.forEach((vdata) => {
-        if(vdata.id==_id)
-        filtered.push(leftdata.id);
-      });
-    }
-    return filtered;
-  }, [])[0];
-  
-  let checkbox = $(`#${left_id} input[type='checkbox'].toggle__input`)[0];
-  if (checkbox.checked == false) {
-    checkbox.click();
   }
 }
 
@@ -257,111 +237,94 @@ function checkEmpty(e) {
   }
 }
 
+let rightSideData = [
+  {
+    "id": "lsa1-1",
+    "name": "Sub text lsa1-1",
+    "count": 1,
+  },
+  {
+    "id": "lsa1-2",
+    "name": "Sub text lsa1-2",
+    "count": 2,
+  },
+  {
+    "id": "lsa2-1",
+    "name": "Sub text lsa2-1",
+    "count": 1,
+  },
+  {
+    "id": "lsa3-1",
+    "name": "Sub text lsa3-1",
+    "count": 0,
+  },
+  {
+    "id": "lsa3-2",
+    "name": "Sub text lsa3-2",
+    "count": 1,
+  },
+  {
+    "id": "lsa3-3",
+    "name": "Sub text lsa3-3",
+    "count": 3,
+  },
+  {
+    "id": "lsa6-1",
+    "name": "Sub text lsa6-1",
+    "count": 1,
+  },
+  {
+    "id": "lsa6-2",
+    "name": "Sub text lsa6-2",
+    "count": 0,
+  }
+]
+
 let leftSideArray = [
   {
     "id": "lsa1",
     "name": "Any text lsa1",
-    "rightData": [
-      {
-        "id": "lsa1-1",
-        "name": "Sub text lsa1-1",
-      },
-      {
-        "id": "lsa1-2",
-        "name": "Sub text lsa1-2",
-      }
-    ],
+    "count": 1,
   },
   {
     "id": "lsa2",
     "name": "Any text lsa2",
-    "rightData": [
-      {
-        "id": "lsa2-1",
-        "name": "Sub text lsa2-1",
-      }
-    ],
+    "count": 2,
   },
   {
     "id": "lsa3",
     "name": "Any text lsa3",
-    "rightData": [
-      {
-        "id": "lsa3-1",
-        "name": "Sub text lsa3-1",
-      },
-      {
-        "id": "lsa3-2",
-        "name": "Sub text lsa3-2",
-      },
-      {
-        "id": "lsa3-3",
-        "name": "Sub text lsa3-3",
-      }
-    ],
+    "count": 0,
   },
   {
     "id": "lsa4",
     "name": "Any text lsa4",
-    "rightData": [
-      {
-        "id": "lsa4-1",
-        "name": "Sub text lsa4-1",
-      }
-    ],
+    "count": 3,
   },
   {
     "id": "lsa5",
     "name": "Any text lsa5",
-    "rightData": [
-      {
-        "id": "lsa5-1",
-        "name": "Sub text lsa5-1",
-      }
-    ],
+    "count": 2,
   },
   {
     "id": "lsa6",
     "name": "Any text lsa6",
-    "rightData": [
-      {
-        "id": "lsa6-1",
-        "name": "Sub text lsa6-1",
-      },
-      {
-        "id": "lsa6-2",
-        "name": "Sub text lsa6-2",
-      }
-    ],
+    "count": 1,
   },
   {
     "id": "lsa7",
     "name": "Any text lsa7",
-    "rightData": [
-      {
-        "id": "lsa7-1",
-        "name": "Sub text lsa7-1",
-      }
-    ],
+    "count": 1,
   },
   {
     "id": "lsa8",
     "name": "Any text lsa8",
-    "rightData": [
-      {
-        "id": "lsa8-1",
-        "name": "Sub text lsa8-1",
-      },
-      {
-        "id": "lsa8-2",
-        "name": "Sub text lsa8-2",
-      }
-    ],
+    "count": 2,
   },
 ]
 
 function listRender(id, name, addNewRow) {
-  let ele = `<tr ondblclick="${addNewRow}" >
+  let ele = `<tr ondblclick="${addNewRow}" class="cursor-pointer">
     <td colspan="2" id="${id}">${name}</td>
     <td><i class="fas fa-question-circle"></i></td>
     <td></td>
@@ -374,7 +337,21 @@ leftSideArray.forEach(({ id, name }) => {
   $("#opt1-table-left-list").append(listRender(id, name, addNewRowL));
 });
 
-function renderListInputHtml(_id, title, resetValue, swapSeq) {
+rightSideData.forEach(({ id, name }) => {
+  let addNewRowR = `addNewRowR(this)`;
+  $("#opt1-table-right-list").append(listRender(id, name, addNewRowR));
+});
+
+function renderListInputHtml(_id, iCount, title, resetValue, swapSeq) {
+  let inpHtml = "";
+  for (let i = 0; i < iCount; i++){
+    inpHtml += `<div class="width-22">
+      <div class="custom-input-success">
+        <input type="text" onfocus="onFocus(this)" onfocusout="checkEmpty(this)" oninput="checkEmpty(this)">
+      </div>
+    </div>`;
+  }
+
   let htmlData = `<div class="d-flex mb-2" id="${_id}">
     <div class="width-5 align-items-baseline">
       <div class="threebar">
@@ -403,11 +380,7 @@ function renderListInputHtml(_id, title, resetValue, swapSeq) {
         </select>
       </div>
     </div>
-    <div class="width-22">
-      <div class="custom-input-success">
-        <input type="text" onfocus="onFocus(this)" onfocusout="checkEmpty(this)" oninput="checkEmpty(this)">
-      </div>
-    </div>
+    ${inpHtml}
   </div>`;
   
   return htmlData;
@@ -416,52 +389,50 @@ function renderListInputHtml(_id, title, resetValue, swapSeq) {
 function addNewRowL(e) {
   let element = $(e).children()[0];
   let _id = element.id;
+  let iCount = leftSideArray.filter((a) => a.id == _id).map((b) => b.count)[0];
   let title = element.innerText;
   if ($(`#leftSideDrag_op1 #${_id}`).length == 0) {
     let swapSeq = `swapSeq(this)`, resetValue = `resetValue(this)`;
-    $("#leftSideDrag_op1").append(renderListInputHtml(_id, title, resetValue, swapSeq));
-    let aData = leftSideArray.filter((rData) => rData.id == _id);
-    if (aData[0].rightData) {
-      aData[0].rightData.forEach(({ id, name }) => {
-        let addNewRowR = `addNewRowR(this)`;
-        $("#opt1-table-right-list").append(listRender(id, name, addNewRowR));
-      });
-    }
+    $("#leftSideDrag_op1").append(renderListInputHtml(_id, iCount, title, resetValue, swapSeq));
   }
+  $(e).remove();
 }
 
 function addNewRowR(e) {
   let element = $(e).children()[0];
   let _id = element.id;
+  let iCount = rightSideData.filter((a) => a.id == _id).map((b) => b.count)[0];
   let title = element.innerText;
   if ($(`#rightSideDrag_op1 #${_id}`).length == 0) {
     let swapSeq = `swapSeqR(this)`, resetValue = `resetValueR(this)`;
-    $("#rightSideDrag_op1").append(renderListInputHtml(_id, title, resetValue, swapSeq));
+    $("#rightSideDrag_op1").append(renderListInputHtml(_id, iCount, title, resetValue, swapSeq));
   }
+  $(e).remove();
 }
 
 function formToWindow(e) {
   let tBody = $(e).parent().parent().parent()
     .children(".text-editor-popup-body")
-    .find("#text-editor-table tbody");
+    .find("#text_editor");
   let renHtml = "";
   seqList.forEach((pid) => {
     let title = $(`#${pid} span.toggle__text`).html();
     let seqVal = $(`#${pid} #sequence`).val();
     let seqTitle = $(`#${pid} #sequence`).find(":selected").text();
-    let inpText = $(`#${pid} input[type="text"]`).val();
-    renHtml += `<tr>
-      <td style="width:30%">${title}</td>
-      <td class="second"><input type="text" value="Set : Set"></td>
-    </tr>
-    <tr>
-      <td style="width:30%">${title}</td>
-      <td class="second"><input type="text" value="Sequence : ${seqTitle}"></td>
-    </tr>
-    <tr>
-      <td style="width:30%">${title}</td>
-      <td class="second"><input type="text" value="${inpText}"></td>
-    </tr>`
+    let inpObj = $(`#${pid} input[type="text"]`), inpDiv = "";
+    for (let i = 0; i < inpObj.length; i++){
+      let inpText = inpObj[i].value;
+      inpDiv += `<div class="form-text-design">
+        ${title}:${inpText}
+      </div>`;
+    }
+    renHtml += `<div class="form-text-design">
+      ${title}: Set: Set
+    </div>
+    <div class="form-text-design">
+      ${title}: Sequence: ${seqTitle}
+    </div>
+    ${inpDiv}`;
   });
   tBody.html(renHtml);
 }
@@ -475,25 +446,338 @@ function findInputId(title) {
 function windowToForm(e) {
   let tRow = $(e).parent().parent().parent()
     .children(".text-editor-popup-body")
-    .find("#text-editor-table tbody tr");
+    .find("#text_editor div");
   let len = tRow.length;
   for (let i = 0; i < len; i++){
-    let title = $(tRow[i]).children(`td:first-child`)[0].innerText;
+    let divData = $(tRow[i++])[0].innerText.split(":");
+    let title = divData[0].trim();
     let pid = findInputId(title);
-    let setVal = $(tRow[i++]).children(`td`).children(`input`)[0].value.split(":")[1].trim();
-    let seqName = $(tRow[i++]).children(`td`).children(`input`)[0].value.split(":")[1].trim();
-    let seqVal = mapSeqList[seqName];
-    let inpVal = $(tRow[i]).children(`td`).children(`input`)[0].value;
-    // console.log(title, pid, setVal, seqName, seqVal, inpVal);
+    let setVal = divData[divData.length - 1].trim();
+    divData = $(tRow[i++])[0].innerText.split(":");
+    let seqName = divData[divData.length - 1].trim();
+    let seqVal = 0;
+    for (let k = 1; k < 50; k++){
+      if (seqName == inWords(k).toUpperCase()) {
+        seqVal = k;
+      }
+    }
+    let iCount = leftSideArray.filter((a) => a.id == pid).map((b) => b.count)[0];
 
-    let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
-    if (checkbox.checked == false && setVal=="Set") {
-      checkbox.click();
+    if (pid) {
+      let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
+      if (checkbox.checked == false && setVal == "Set") {
+        checkbox.click();
+      }
+      else if (checkbox.checked == true && setVal != "Set") {
+        checkbox.click();
+      }
+
+      if (checkbox.checked == true && setVal == "Set") {
+        $(`#${pid} #sequence`).val(seqVal);
+      }
+
+      for (let j = 0; j < iCount; j++) {
+        divData = $(tRow[i++])[0].innerText.split(":");
+        let inpVal = divData[divData.length - 1].trim();
+        $(`#${pid} input[type="text"]`)[j].value = inpVal;
+      }
     }
-    else if (checkbox.checked == true && setVal != "Set") {
-      checkbox.click();
-    }
-    $(`#${pid} #sequence`).val(seqVal);
-    $(`#${pid} input[type="text"]`).val(inpVal);
+    i--;
   }
+}
+
+// getting cursor position it returns the node
+function getCaretPosition() {
+  if (window.getSelection && window.getSelection().getRangeAt) {
+    let range = window.getSelection().getRangeAt(0);
+    let selectedObj = window.getSelection();
+    let rangeCount = 0;
+    let childNodes = selectedObj.anchorNode.parentNode.childNodes;
+    let fack;
+    for (let i = 0; i < childNodes.length; i++) {
+      if (childNodes[i] == selectedObj.anchorNode) {
+        fack = i;
+        break;
+      }
+      if (childNodes[i].outerHTML) {
+        rangeCount += childNodes[i].outerHTML.length;
+        fack = i;
+      } else if (childNodes[i].nodeType == 3) {
+        fack = i;
+        rangeCount += childNodes[i].textContent.length;
+      }
+    }
+    return childNodes[fack];
+  }
+  return -1;
+}
+
+// getting cursor position... it returns column number in that node
+function getCaretPosition2(editableDiv) {
+  let caretPos = 0,
+    sel,
+    range;
+  if (window.getSelection) {
+    sel = window.getSelection();
+    if (sel.rangeCount) {
+      range = sel.getRangeAt(0);
+      if (range.commonAncestorContainer.parentNode == editableDiv) {
+        caretPos = range.endOffset;
+      }
+    }
+  } else if (document.selection && document.selection.createRange) {
+    range = document.selection.createRange();
+    if (range.parentElement() == editableDiv) {
+      let tempEl = document.createElement("span");
+      editableDiv.insertBefore(tempEl, editableDiv.firstChild);
+      let tempRange = range.duplicate();
+      tempRange.moveToElementText(tempEl);
+      tempRange.setEndPoint("EndToEnd", range);
+      caretPos = tempRange.text.length;
+    }
+  }
+  return caretPos;
+}
+
+// it will send cursor to the start
+function setCaret(el) {
+  var range = document.createRange();
+  var sel = window.getSelection();
+
+  range.setStart(el, 0);
+  range.collapse(true);
+
+  sel.removeAllRanges();
+  sel.addRange(range);
+}
+
+// this function check for valid input in text editor
+function checking(e) {
+  var editor = document.getElementById("text_editor");
+  $("#adder").remove(); // adder contains our auto correct select box
+  // if key is enter key
+  var nd = getCaretPosition();
+  var nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+  var extra = getCaretPosition2(nd2);
+  if (e.keyCode == 13) {
+    // same algorithm as we see in updateActualForm() function
+    var nd = getCaretPosition();
+    $("#temp").attr("id", "");
+    if (nd.nodeType != 3 && nd.getAttribute("id") == "text_editor") return false;
+    if (
+      nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
+      nd.textContent != ""
+    ) {
+      var nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+      var extra = getCaretPosition2(nd2);
+      var starting = nd.textContent.substr(0, extra);
+      var ending = nd.textContent.substr(extra);
+      // addition of check for allowing lines to split on enter key in between
+
+      if (
+        starting != "" &&
+        (!findInputId(starting.substr(0, starting.indexOf(":"))) ||
+          (
+            starting.split(":")[1].trim() != "Set" &&
+            starting.split(":")[1].trim() != "Sequence" &&
+            nd.split(":").length != 2
+          )
+        )
+      ) {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div style="color:red">${nd.textContent}</div><br id="temp">`
+          );
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div style="color:red">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+            ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      } else {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design">
+            ${nd.textContent}
+            </div>
+            <br id="temp">`
+          );
+          //setEndOfContenteditable(document.getElementById("temp"));
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+              `<div id="temp">
+              ${nd.textContent.substr(extra)}
+              "</div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      }
+    }
+    return false;
+  }
+  // this will add autocorrect box
+  setTimeout(autoCorrect, 100);
+}
+
+function autoCorrect() {
+  // getting current line... so that we place auto correct after it
+  var pos = getCaretPosition();
+  if ($(pos).find("#adder").length == 1) $("#adder").remove();
+  // i mark current line as temp... to make auto correct work
+  while (document.getElementById("temp")) {
+    document.getElementById("temp").removeAttribute("id");
+  }
+  if (pos.textContent.indexOf(":") == -1) x = pos.textContent;
+  else return;
+  var editor = document.getElementById("text_editor_p");
+  $(pos).replaceWith(
+    `<div id = "temp">${pos.textContent}</div>
+    <div id = "adder"></div>`
+  );
+  
+  var m = "";
+  var first = 1;
+  leftSideArray.forEach((sData) => {
+    if (sData.name.toLowerCase().indexOf(x.toLowerCase()) == 0 && x.indexOf(":")==-1) {
+      if (first) {
+        m += `<option selected value="${sData.name}">${sData.name}</option><br>`;
+      }
+      else {
+        m += `<option value="${sData.name}">${sData.name}</option><br>`;
+      }
+      first = 0;
+    } else if ((x.split(":").length - 1)==1) {
+      m += `<option selected value="Sequence">Sequence</option>
+      <option selected value="Set">Set</option>
+      <option selected value="Form">Form</option>
+      <option selected value="To">To</option>
+      <br>`;
+    }
+  });
+  var y =
+    `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
+    ${m}
+    </select>`;
+  // add auto correct ... only if there is atleast one match
+  if (m != "") {
+    document.getElementById("adder").innerHTML = y;
+    document.getElementById("adder").style.display = "block";
+    $("#adder select").focus();
+  } else {
+    $("#adder").remove();
+    setEndOfContenteditable(document.getElementById("temp"));
+    document.getElementById("temp").removeAttribute("id");
+  }
+}
+
+function addField(key) {
+  x = document.getElementById("temp");
+  clicked = false;
+  $("#adder").remove();
+  x.textContent = key + ": \r";
+  setTimeout(setEndOfContenteditable, 100, x);
+}
+
+function keyHandler(e, x) {
+  e.stopPropagation();
+  if (e.keyCode == 13) addField(x.value);
+  else if (e.keyCode != 40 && e.keyCode != 38) {
+    setEndOfContenteditable(document.getElementById("temp"));
+  }
+}
+
+function setEndOfContenteditable(contentEditableElement) {
+  var range, selection;
+  if (document.createRange) {
+    //Firefox, Chrome, Opera, Safari, IE 9+
+    range = document.createRange(); //Create a range (a range is a like the selection but invisible)
+    range.selectNodeContents(contentEditableElement); //Select the entire contents of the element with the range
+    range.setStart(
+      contentEditableElement.childNodes[
+      contentEditableElement.childNodes.length - 1
+      ],
+      contentEditableElement.childNodes[
+        contentEditableElement.childNodes.length - 1
+      ].length
+    );
+    range.collapse(true); //collapse the range to the end point. false means collapse to end rather than the start
+    selection = window.getSelection(); //get the selection object (allows you to change selection)
+    selection.removeAllRanges(); //remove any selections already made
+    selection.addRange(range); //make the range you have just created the visible selection
+  } else if (document.selection) {
+    //IE 8 and lower
+    range = document.body.createTextRange(); //Create a range (a range is a like the selection but invisible)
+    range.moveToElementText(contentEditableElement); //Select the entire contents of the element with the range
+    range.setStart(
+      contentEditableElement.childNodes[
+      contentEditableElement.childNodes.length - 1
+      ],
+      contentEditableElement.childNodes[
+        contentEditableElement.childNodes.length - 1
+      ].length
+    );
+    range.collapse(true); //collapse the range to the end point. false means collapse to end rather than the start
+    range.select(); //Select the range (make it the visible selection
+  }
+}
+
+
+// paste work... checks are same as in checking function or in updateActualForm
+function pasteEvent(e) {
+  var editor = document.getElementById("text_editor");
+  let clipboardData = e.clipboardData || window.clipboardData;
+  let pD = clipboardData.getData("Text").split("\n");
+  for (var i = 0; i < pD.length; i++) {
+    let nbe = pD[i];
+    if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
+      var x;
+      if (
+        !findInputId(nbe.substr(0, nbe.indexOf(":"))) ||
+        (
+          nbe.split(":")[1].trim() != "Set" &&
+          nbe.split(":")[1].trim() != "Sequence" &&
+          nbe.split(":").length != 2
+        )
+      ) {
+        x = document.createElement("div");
+        x.setAttribute("style", "color:red");
+        x.textContent = nbe;
+      } else {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design");
+        x.textContent = nbe;
+      }
+      editor.append(x);
+    }
+  }
+  removeExtraLines(editor);
+  editor.append(document.createElement("br"));
+  setEndOfContenteditable(editor);
+  return false;
+}
+
+// removing empty lines from text editor
+function removeExtraLines(e) {
+  $(e)
+    .find("*")
+    .each(function () {
+      if ($(this).text().trim() == "") $(this).remove();
+    });
+  $(e).append("<br>");
 }
