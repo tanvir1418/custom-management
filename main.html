@@ -402,19 +402,10 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- text-edition-form -->
-                                <!-- <div class="text-edition-form mb-4">
-                                    <div class="text-edition-box">
-                                        <p>Form By Text Edition</p>
-                                        <i class="fas fa-arrow-right" id="arrow-icon"></i>
-                                    </div>
-                                </div> -->
-
                                 <!-- text-edition-form -->
                                 <div class="text-edition-form mb-4">
                                     <div class="text-edition-box">
-                                        <input type="button" value="Form By Text Edition" data-toggle="modal"
+                                        <input type="button" value="Form By Text Editor" data-toggle="modal"
                                             data-target="#op1FormEditModal">
                                         <i class="fas fa-arrow-right" id="arrow-icon"></i>
                                     </div>
@@ -1131,10 +1122,8 @@
                                     <!-- text-edition-form -->
                                     <div class="text-edition-form mb-4">
                                         <div class="text-edition-box">
-                                            <input type="button" value="Form By Text Edition" data-toggle="modal"
+                                            <input type="button" value="Form By Text Editor" data-toggle="modal"
                                                 data-target="#op1FormEditModal">
-
-                                            <!-- <p>Form By Text Edition</p> -->
                                             <i class="fas fa-arrow-right" id="arrow-icon"></i>
                                         </div>
                                     </div>
@@ -10784,54 +10773,10 @@
                             <div class="text-editor-popup-body">
                                 <div class="text-editor-content-wrapper">
                                     <div class="text-editor-table-wrapper">
-                                        <div class="text-editor-table-scroll">
-                                            <table id="text-editor-table">
-                                                <tbody>
-                                                    <!-- tr and td from JS -->
-                                                </tbody>
-                                            </table>
+                                        <div id="text_editor_p" onclick="document.getElementById('text_editor').focus()">
+                                            <div onkeypress="return checking(event)" contenteditable="true" id="text_editor" onpaste="return pasteEvent(event)"></div>
                                         </div>
                                     </div>
-                                    <!-- <div class="sub-table-wrapper dispHideShow" id="sub__table">
-                                        <div class="sub-table-scroll">
-                                            <table id="sub-editor-table">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Sequence</td>
-                                                    </tr>
-                                                    <tr class="set_select">
-                                                        <td>Set</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Form</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>To</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Others</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="sub2-table-wrapper dispHideShow" id="sub2__table">
-                                        <div class="sub2-table-scroll">
-                                            <table id="sub2-editor-table">
-                                                <tbody>
-                                                    <tr>
-                                                        <td id="set-id">Set</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td id="add-id">Add</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td id="None-id">None</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div> -->
                                 </div>
                             </div>
                             <div class="text-editor-popup-footer">
