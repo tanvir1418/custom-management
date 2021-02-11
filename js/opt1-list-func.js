@@ -332,15 +332,23 @@ function listRender(id, name, addNewRow) {
   return ele;
 }
 
-leftSideArray.forEach(({ id, name }) => {
-  let addNewRowL = `addNewRowL(this)`;
-  $("#opt1-table-left-list").append(listRender(id, name, addNewRowL));
-});
+(function leftSideTable() {
+  let leftTable = "";
+  leftSideArray.forEach(({ id, name }) => {
+    let addNewRowL = `addNewRowL(this)`;
+    leftTable += listRender(id, name, addNewRowL);
+  });
+  $("#opt1-table-left-list").append(leftTable);
+})();
 
-rightSideData.forEach(({ id, name }) => {
-  let addNewRowR = `addNewRowR(this)`;
-  $("#opt1-table-right-list").append(listRender(id, name, addNewRowR));
-});
+(function rightSideTable() {
+  let rightTable = "";
+  rightSideData.forEach(({ id, name }) => {
+    let addNewRowR = `addNewRowR(this)`;
+    rightTable += listRender(id, name, addNewRowR);
+  });
+  $("#opt1-table-right-list").append(rightTable);
+})();
 
 function renderListInputHtml(_id, iCount, title, resetValue, swapSeq) {
   let inpHtml = "";
@@ -362,7 +370,6 @@ function renderListInputHtml(_id, iCount, title, resetValue, swapSeq) {
     </div>`;
     }
   }
-  
 
   let htmlData = `<div class="d-flex mb-2" id="${_id}">
     <div class="width-5 align-items-baseline">
@@ -434,11 +441,11 @@ function formToWindow(e) {
     let inpObj = $(`#${pid} input[type="text"]`), inpDiv = "";
     for (let i = 0; i < inpObj.length; i++){
       let inpText = inpObj[i].value;
-      inpDiv += `<div class="form-text-design">
+      inpDiv += `<div class="form-text-design data-div">
         ${title}:${inpText}
       </div>`;
     }
-    renHtml += `<div class="form-text-design">
+    renHtml += `<div class="form-text-design data-div">
       ${title}: Set: Set
     </div>
     <div class="form-text-design">
@@ -458,7 +465,7 @@ function findInputId(title) {
 function windowToForm(e) {
   let tRow = $(e).parent().parent().parent()
     .children(".text-editor-popup-body")
-    .find("#text_editor div");
+    .find("#text_editor div.data-div");
   let len = tRow.length;
   for (let i = 0; i < len; i++){
     let divData = $(tRow[i++])[0].innerText.split(":");
@@ -600,13 +607,13 @@ function checking(e) {
       ) {
         if (extra == nd.textContent.length) {
           $(nd).replaceWith(
-            `<div class="form-text-design-invalid">${nd.textContent}</div><br id="temp">`
+            `<div class="form-text-design-invalid data-div">${nd.textContent}</div><br id="temp">`
           );
           setCaret($("#temp")[0]);
         } else {
           $(nd).replaceWith(
             (extra != 0
-              ? `<div class="form-text-design-invalid">
+              ? `<div class="form-text-design-invalid data-div">
               ${nd.textContent.substr(0, extra)}
               </div>`
               : "<br>") +
@@ -620,7 +627,7 @@ function checking(e) {
       } else {
         if (extra == nd.textContent.length) {
           $(nd).replaceWith(
-            `<div class="form-text-design">
+            `<div class="form-text-design data-div">
             ${nd.textContent}
             </div>
             <br id="temp">`
@@ -630,7 +637,7 @@ function checking(e) {
         } else {
           $(nd).replaceWith(
             (extra != 0
-              ? `<div class="form-text-design">
+              ? `<div class="form-text-design data-div">
               ${nd.textContent.substr(0, extra)}
               </div>`
               : "<br>") +
@@ -766,7 +773,6 @@ function setEndOfContenteditable(contentEditableElement) {
   }
 }
 
-
 // paste work... checks are same as in checking function or in updateActualForm
 function pasteEvent(e) {
   var editor = document.getElementById("text_editor");
@@ -787,11 +793,11 @@ function pasteEvent(e) {
         )
       ) {
         x = document.createElement("div");
-        x.setAttribute("style", "color:red");
+        x.setAttribute("class", "form-text-design-invalid data-div");
         x.textContent = nbe;
       } else {
         x = document.createElement("div");
-        x.setAttribute("class", "form-text-design");
+        x.setAttribute("class", "form-text-design data-div");
         x.textContent = nbe;
       }
       editor.append(x);
