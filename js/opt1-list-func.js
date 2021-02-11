@@ -344,13 +344,25 @@ rightSideData.forEach(({ id, name }) => {
 
 function renderListInputHtml(_id, iCount, title, resetValue, swapSeq) {
   let inpHtml = "";
-  for (let i = 0; i < iCount; i++){
-    inpHtml += `<div class="width-22">
+  if (iCount == 3) {
+    for (let i = 0; i < iCount; i++) {
+      inpHtml += `<div class="width-22 width-15-tripple">
       <div class="custom-input-success">
         <input type="text" onfocus="onFocus(this)" onfocusout="checkEmpty(this)" oninput="checkEmpty(this)">
       </div>
     </div>`;
+    }
   }
+  else {
+    for (let i = 0; i < iCount; i++) {
+      inpHtml += `<div class="width-22">
+      <div class="custom-input-success">
+        <input type="text" onfocus="onFocus(this)" onfocusout="checkEmpty(this)" oninput="checkEmpty(this)">
+      </div>
+    </div>`;
+    }
+  }
+  
 
   let htmlData = `<div class="d-flex mb-2" id="${_id}">
     <div class="width-5 align-items-baseline">
@@ -580,19 +592,21 @@ function checking(e) {
           (
             starting.split(":")[1].trim() != "Set" &&
             starting.split(":")[1].trim() != "Sequence" &&
-            nd.split(":").length != 2
+            starting.split(":")[1].trim() != "Form" &&
+            starting.split(":")[1].trim() != "To"
+            // starting.split(":").length != 2
           )
         )
       ) {
         if (extra == nd.textContent.length) {
           $(nd).replaceWith(
-            `<div style="color:red">${nd.textContent}</div><br id="temp">`
+            `<div class="form-text-design-invalid">${nd.textContent}</div><br id="temp">`
           );
           setCaret($("#temp")[0]);
         } else {
           $(nd).replaceWith(
             (extra != 0
-              ? `<div style="color:red">
+              ? `<div class="form-text-design-invalid">
               ${nd.textContent.substr(0, extra)}
               </div>`
               : "<br>") +
@@ -644,32 +658,39 @@ function autoCorrect() {
     document.getElementById("temp").removeAttribute("id");
   }
   if (pos.textContent.indexOf(":") == -1) x = pos.textContent;
-  else return;
+  else x = pos.textContent;
   var editor = document.getElementById("text_editor_p");
   $(pos).replaceWith(
-    `<div id = "temp">${pos.textContent}</div>
-    <div id = "adder"></div>`
+    `<div id="temp">${pos.textContent}</div>
+    <div id="adder"></div>`
   );
   
   var m = "";
   var first = 1;
-  leftSideArray.forEach((sData) => {
-    if (sData.name.toLowerCase().indexOf(x.toLowerCase()) == 0 && x.indexOf(":")==-1) {
-      if (first) {
-        m += `<option selected value="${sData.name}">${sData.name}</option><br>`;
+  if (x.indexOf(":") == -1) {
+    $("#adder").addClass("set-name");
+    leftSideArray.forEach((sData) => {
+      if (sData.name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
+        if (first) {
+          m += `<option selected value="${sData.name}">${sData.name}</option><br>`;
+        }
+        else {
+          m += `<option value="${sData.name}">${sData.name}</option><br>`;
+        }
+        first = 0;
       }
-      else {
-        m += `<option value="${sData.name}">${sData.name}</option><br>`;
-      }
-      first = 0;
-    } else if ((x.split(":").length - 1)==1) {
-      m += `<option selected value="Sequence">Sequence</option>
-      <option selected value="Set">Set</option>
-      <option selected value="Form">Form</option>
-      <option selected value="To">To</option>
-      <br>`;
-    }
-  });
+    });
+  }
+  else if ((x.split(":").length - 1) == 1) {
+    $("#adder").addClass("set-sug");
+    m += `<option selected value="Sequence">Sequence</option><br>
+      <option value="Set">Set</option><br>
+      <option value="Form">Form</option><br>
+      <option value="To">To</option><br>`;
+  } else if ((x.split(":").length - 1) == 2) {
+
+  }
+
   var y =
     `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
     ${m}
@@ -690,7 +711,15 @@ function addField(key) {
   x = document.getElementById("temp");
   clicked = false;
   $("#adder").remove();
-  x.textContent = key + ": \r";
+  if (x.textContent.indexOf(":") == -1) {
+    x.textContent = `${key}: \r`;
+  }
+  else if ((x.textContent.split(":").length - 1) == 1) {
+    x.textContent = `${x.textContent.split(":")[0]}: ${key}: \r`;
+  }
+  else if ((x.textContent.split(":").length - 1) == 2) {
+    x.textContent = `${x.textContent.split(":")[1]}: ${key}: \r`;
+  }
   setTimeout(setEndOfContenteditable, 100, x);
 }
 
@@ -752,7 +781,9 @@ function pasteEvent(e) {
         (
           nbe.split(":")[1].trim() != "Set" &&
           nbe.split(":")[1].trim() != "Sequence" &&
-          nbe.split(":").length != 2
+          nbe.split(":")[1].trim() != "Form" &&
+          nbe.split(":")[1].trim() != "To"
+          // nbe.split(":").length != 2
         )
       ) {
         x = document.createElement("div");

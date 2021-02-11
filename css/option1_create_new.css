@@ -422,7 +422,9 @@
     border-radius: 2px;
     opacity: 0.8;
 }
-
+.op1-option-selection .custome-select::before {
+    content: "";
+}
 .op1-option-selection .custome-select select option {
     background: #ffffff;
 }
