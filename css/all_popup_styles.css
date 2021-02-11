@@ -2047,3 +2047,130 @@ Bottom codes are added by Tanvir
 
 
 /* REMOVE LIST ITEM MODAL END */
+
+/* Cottected from another file (Tanvir) */
+#text_editor_p
+{
+	height:278px;
+	/* border:1px solid black; */
+    border-radius: 4px;
+	padding:5px;
+	font-size: 15px;
+	overflow-y:scroll;
+	position: relative;
+}
+#text_editor
+{
+	border:none;
+	outline: none;
+}
+#text_editor:hover, #text_eiditor:focus, #text_editor:active
+{
+	border:none;
+	outline: none;
+}
+
+/* ........................... */
+/* Custom ScrollBar  Start*/
+#text_editor_p::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+#text_editor_p::-webkit-scrollbar-track {
+    box-shadow: transparent;
+    border-radius: 10px;
+}
+
+/* Handle */
+#text_editor_p::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+#text_editor_p::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
+
+#text_editor div:nth-child(even) {
+    background-color: #ffffff !important;
+}
+
+#text_editor div:nth-child(odd) {
+    background-color: #fbfbfb !important;
+}
+
+.form-text-design{
+    color: black;
+    font-family: gilroy-bold;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-text-design-invalid{
+    color: red;
+    font-family: gilroy-bold;
+    font-weight: 500;
+    font-size: 14px;
+}
+/* Custom ScrollBar Ends  */
+
+/* ============Added by Tanvir (11-02-20)=========== */
+/* Suggestion Box Design */
+#adder select{
+    padding: 5px;
+}
+#adder select::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+#adder select::-webkit-scrollbar-track {
+    box-shadow: transparent;
+    border-radius: 10px;
+}
+
+/* Handle */
+#adder select::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+#adder select::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
+
+#adder select option{
+    padding: 5px;
+}
+#adder select option:nth-child(even) {
+    background-color: #ffffff !important;
+}
+
+#adder select option:nth-child(odd) {
+    background-color: #fbfbfb !important;
+}
+
+#adder{
+    position: absolute;
+}
+#adder.set-name {
+    left: 30px;
+}
+#adder.set-sug {
+    left: 100px;
+}
+
+
+/* Added by Tanvir */
+/* Style for 3 input field Option 1 Name  */
+.op1-option-selection .width-15-tripple{
+    width: 15.3% !important;
+}
+.op1-option-selection .width-15-tripple .error-message p {
+    font-size: 8px;
+    color: red;
+    padding-left: 0px;
+}
