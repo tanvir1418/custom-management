@@ -1,350 +1,360 @@
+/* @font-face {
+  font-family: gilroy-regular;
+  src: url(../fonts/Gilroy-Regular.ttf);
+}
+
 @font-face {
-    font-family: gilroy-regular;
-    src: url(../fonts/Gilroy-Regular.ttf);
-  }
-  
-  @font-face {
-    font-family: gilroy-medium;
-    src: url(../fonts/Gilroy-Medium.ttf);
-  }
-  
-  @font-face {
-    font-family: gilroy-bold;
-    src: url(../fonts/Gilroy-SemiBold.ttf);
-  }
-  
-  .heading-for-create-new {
-    width: 100%;
-    height: 80px;
-    background: #000000;
-    color: #f9f9f9;
-    text-align: center;
-    margin-bottom: 50px;
-    position: relative;
-  }
-  
-  .heading-for-create-new p {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-family: gilroy-medium, sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-  }
-  
-  .content-43 {
-    padding: 0 50px;
-  }
-  
-  .content-43 .padding-right {
-    padding-right: 40px;
-  }
-  
-  .content-43 .padding-left {
-    padding-left: 40px;
-  }
-  
-  .radio-selection-option {
-    margin-bottom: 20px;
-  }
-  
-  .heading-for-create-new-content-section p {
-    font-family: gilroy-medium, sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: #565656;
-    margin-bottom: 60px;
-  }
-  
-  .heading-for-create-new-content-section p.step2 {
-    color: #9a9a9a;
-  }
-  
-  /* ========================== */
-  /* custom radio button starts */
-  .radio-selection-option input[type="radio"] + label {
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-    padding-left: 45px;
-    font-family: gilroy-medium, sans-serif;
-    font-size: 20px;
-    color: #282929;
-    /* font-weight: 500; */
-  }
-  
-  .radio-selection-option input[type="radio"] + label:before {
-    content: "";
-    display: block;
-    width: 26px;
-    height: 26px;
-    /* margin-right: 40px; */
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border: 1px solid #969696;
-    background-color: #f9f9f9;
-    /* background-color: #e3e3e3; */
-    border-radius: 50%;
-    opacity: 0.5;
-  }
-  
-  .radio-selection-option input[type="radio"] {
-    display: none !important;
-    *display: inline;
-  }
-  
-  .radio-selection-option input[type="radio"] + label:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #969696;
-    opacity: 0.5;
-  }
-  
-  .radio-selection-option input[type="radio"]:checked + label:before {
-    border: 1px solid #359f01;
-    background-color: #fff;
-    opacity: 1;
-  }
-  
-  .radio-selection-option input[type="radio"]:checked + label:after {
-    background: #359f01;
-    opacity: 1;
-  }
-  
-  /* custom radio button ends */
-  /* ========XXXXXXXX======== */
-  
-  .table-options table {
-    table-layout: fixed;
-    background-color: #ffffff;
-  }
-  
-  .table-options td {
-    word-wrap: break-word;
-    padding: 6px 0px 6px 20px;
-    font-weight: 600;
-    font-family: gilroy-medium, sans-serif;
-    font-size: 14px;
-    color: #534848 !important;
-  }
-  
-  .table-options tbody tr td .fas {
-    opacity: 0.2;
-  }
-  
-  .table-options .table-wrapper {
-    position: relative;
-    padding-bottom: 40px;
-  }
-  
-  .table-options .table-scroll {
-    height: 310px;
-    width: 100%;
-    margin: 16px auto;
-    border: 1px solid grey;
-    border-radius: 4px;
-    overflow-y: auto;
-    box-shadow: 3px 5px 15px 0px #b0bcd4 !important;
-  }
-  
-  .table-options .table-wrapper table {
-    width: 100%;
-  }
-  
-  .table-options .table-wrapper table * {
-    /* background: white; */
-    color: black;
-  }
-  
-  .table-options .table-scroll tr:nth-child(even) {
-    background-color: #ffffff !important;
-  }
-  
-  .table-options .table-scroll tr:nth-child(odd) {
-    background-color: #fbfbfb !important;
-  }
-  
-  /* ........................... */
-  /* Custom ScrollBar  Start*/
-  .table-options .table-scroll::-webkit-scrollbar {
-    width: 5px;
-  }
-  
-  /* Track */
-  .table-options .table-scroll::-webkit-scrollbar-track {
-    box-shadow: transparent;
-    border-radius: 10px;
-  }
-  
-  /* Handle */
-  .table-options .table-scroll::-webkit-scrollbar-thumb {
-    background: grey;
-    border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  .table-options .table-scroll::-webkit-scrollbar-thumb:hover {
-    background: black;
-  }
-  
-  /* Custom ScrollBar Ends  */
-  /* ........................... */
-  .sub-heading-section {
-    margin-bottom: 28px;
-  }
-  
-  .sub-heading-section p {
-    font-size: 20px;
-  }
-  
-  .sub-heading-section p span {
-    /* font-size: 24px; */
-    font-weight: bold;
-  }
-  
-  .date-selection-containe .date-heading {
-    margin-bottom: 28px;
-  }
-  
-  .date-selection-container .date-heading p {
-    font-size: 20px;
-  }
-  
-  .date-heading p span {
-    /* font-size: 24px; */
-    font-weight: bold;
-  }
-  
-  .textarea-container textarea {
-    width: 100%;
-    height: 175px;
-    border-radius: 4px;
-  }
-  
-  .textarea-container {
-    margin-bottom: 28px;
-  }
-  
-  .date-selection-container .destination-heading {
-    font-family: gilroy-medium, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0;
-  }
-  
-  /* ========================= */
-  /* custom date picker start */
-  
-  .date-selection-container input.date-pick-style {
-    width: 100%;
-    height: 40px;
-    font-family: gilroy-medium, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0;
-    border-radius: 4px;
-    padding: 0px 10px;
-    background: #ffffff;
-    border: 1px solid grey;
-    color: #000000;
-    border-radius: 4px;
-  }
-  
-  .date-selection-container input.date-pick-style:focus {
-    outline: 0;
-    border-color: grey;
-  }
-  
-  .date-selection-container .icon-op3-date {
-    position: absolute;
-    right: 26px;
-    top: 32px;
-    color: black;
-    font-size: 18px;
-  }
-  
-  /* ========custom date picker design overriding jQuery-UI starts======== */
-  .ui-datepicker-div{
-    
-  }
-  .ui-datepicker .ui-corner-all {
-    border-radius: 0 !important;
-    /* margin-top: 10px !important; */
-  }
-  .ui-datepicker {
-    z-index: 10 !important;
-    border-radius: 0 !important;
-  }
-  .ui-widget {
-    font-family: gilroy-medium, sans-serif !important;
-    padding: 0 !important;
-  }
-  .ui-widget-content {
-    border: none !important;
-    background: #ffffff !important;
-    color: #848484 !important;
-    box-shadow: 3px 5px 15px 0px #b0bcd4 !important;
-  }
-  .ui-datepicker .ui-datepicker-title {
-    height: 42px !important;
-    margin: 0 !important;
-    line-height: 40px !important;
-  }
-  .ui-datepicker .ui-widget-header {
-    border: 0 !important;
-    background: #000000 !important;
-    color: #ffffff !important;
-    height: 50px !important;
-  }
-  .ui-datepicker .ui-datepicker-prev,
-  .ui-datepicker .ui-datepicker-next {
-    top: 8px !important;
-    width: 36px !important;
-    height: 36px !important;
-  }
-  
-  .ui-state-hover,
-  .ui-state-focus {
-    border: none !important;
-    background: inherit !important;
-  }
-  .ui-datepicker td span,
-  .ui-datepicker td a {
-    text-align: center !important;
-  }
-  .ui-state-default,
-  .ui-widget-content .ui-state-default,
-  .ui-widget-header .ui-state-default {
-    font-weight: 500 !important;
-    color: #848484 !important;
-  }
-  .ui-widget-content .ui-state-active,
-  .ui-widget-header .ui-state-active {
-    border: none !important;
-    background: #2de182 !important;
-    font-weight: bold !important;
-    color: #ffffff !important;
-    border-radius: 50% !important;
-  }
-  .ui-state-default {
-    border: none !important;
-    background: inherit !important;
-  }
-  /* .ui-datepicker .records-data-table table th td {
+  font-family: gilroy-medium;
+  src: url(../fonts/Gilroy-Medium.ttf);
+}
+
+@font-face {
+  font-family: gilroy-bold;
+  src: url(../fonts/Gilroy-SemiBold.ttf);
+} */
+
+.heading-for-create-new {
+  width: 100%;
+  height: 80px;
+  background: #000000;
+  color: #f9f9f9;
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.heading-for-create-new p {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: gilroy-medium, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.content-43 {
+  padding: 0 50px;
+}
+
+.content-43 .padding-right {
+  padding-right: 40px;
+}
+
+.content-43 .padding-left {
+  padding-left: 40px;
+}
+
+.radio-selection-option {
+  margin-bottom: 20px;
+}
+
+.heading-for-create-new-content-section p {
+  font-family: gilroy-medium, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #565656;
+  margin-bottom: 60px;
+}
+
+.heading-for-create-new-content-section p.step2 {
+  color: #9a9a9a;
+}
+
+/* ========================== */
+/* custom radio button starts */
+.radio-selection-option input[type="radio"]+label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 45px;
+  font-family: gilroy-medium, sans-serif;
+  font-size: 20px;
+  color: #282929;
+  /* font-weight: 500; */
+}
+
+.radio-selection-option input[type="radio"]+label:before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 26px;
+  /* margin-right: 40px; */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 1px solid #969696;
+  background-color: #f9f9f9;
+  /* background-color: #e3e3e3; */
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.radio-selection-option input[type="radio"] {
+  display: none !important;
+  *display: inline;
+}
+
+.radio-selection-option input[type="radio"]+label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #969696;
+  opacity: 0.5;
+}
+
+.radio-selection-option input[type="radio"]:checked+label:before {
+  border: 1px solid #359f01;
+  background-color: #fff;
+  opacity: 1;
+}
+
+.radio-selection-option input[type="radio"]:checked+label:after {
+  background: #359f01;
+  opacity: 1;
+}
+
+/* custom radio button ends */
+/* ========XXXXXXXX======== */
+
+.table-options table {
+  table-layout: fixed;
+  background-color: #ffffff;
+}
+
+.table-options td {
+  word-wrap: break-word;
+  padding: 6px 0px 6px 20px;
+  font-weight: 600;
+  font-family: gilroy-medium, sans-serif;
+  font-size: 14px;
+  color: #534848 !important;
+}
+
+.table-options tbody tr td .fas {
+  opacity: 0.2;
+}
+
+.table-options .table-wrapper {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.table-options .table-scroll {
+  height: 310px;
+  width: 100%;
+  margin: 16px auto;
+  border: 1px solid grey;
+  border-radius: 4px;
+  overflow-y: auto;
+  box-shadow: 3px 5px 15px 0px #b0bcd4 !important;
+}
+
+.table-options .table-wrapper table {
+  width: 100%;
+}
+
+.table-options .table-wrapper table * {
+  /* background: white; */
+  color: black;
+}
+
+.table-options .table-scroll tr:nth-child(even) {
+  background-color: #ffffff !important;
+}
+
+.table-options .table-scroll tr:nth-child(odd) {
+  background-color: #fbfbfb !important;
+}
+
+/* ........................... */
+/* Custom ScrollBar  Start*/
+.table-options .table-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.table-options .table-scroll::-webkit-scrollbar-track {
+  box-shadow: transparent;
+  border-radius: 10px;
+}
+
+/* Handle */
+.table-options .table-scroll::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.table-options .table-scroll::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
+/* Custom ScrollBar Ends  */
+/* ........................... */
+.sub-heading-section {
+  margin-bottom: 28px;
+}
+
+.sub-heading-section p {
+  font-size: 20px;
+}
+
+.sub-heading-section p span {
+  /* font-size: 24px; */
+  font-weight: bold;
+}
+
+.date-selection-containe .date-heading {
+  margin-bottom: 28px;
+}
+
+.date-selection-container .date-heading p {
+  font-size: 20px;
+}
+
+.date-heading p span {
+  /* font-size: 24px; */
+  font-weight: bold;
+}
+
+.textarea-container textarea {
+  width: 100%;
+  height: 175px;
+  border-radius: 4px;
+}
+
+.textarea-container {
+  margin-bottom: 28px;
+}
+
+.date-selection-container .destination-heading {
+  font-family: gilroy-medium, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ========================= */
+/* custom date picker start */
+
+.date-selection-container input.date-pick-style {
+  width: 100%;
+  height: 40px;
+  font-family: gilroy-medium, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  border-radius: 4px;
+  padding: 0px 10px;
+  background: #ffffff;
+  border: 1px solid grey;
+  color: #000000;
+  border-radius: 4px;
+}
+
+.date-selection-container input.date-pick-style:focus {
+  outline: 0;
+  border-color: grey;
+}
+
+.date-selection-container .icon-op3-date {
+  position: absolute;
+  right: 26px;
+  top: 32px;
+  color: black;
+  font-size: 18px;
+}
+
+/* ========custom date picker design overriding jQuery-UI starts======== */
+.ui-datepicker-div {}
+
+.ui-datepicker .ui-corner-all {
+  border-radius: 0 !important;
+  /* margin-top: 10px !important; */
+}
+
+.ui-datepicker {
+  z-index: 10 !important;
+  border-radius: 0 !important;
+}
+
+.ui-widget {
+  font-family: gilroy-medium, sans-serif !important;
+  padding: 0 !important;
+}
+
+.ui-widget-content {
+  border: none !important;
+  background: #ffffff !important;
+  color: #848484 !important;
+  box-shadow: 3px 5px 15px 0px #b0bcd4 !important;
+}
+
+.ui-datepicker .ui-datepicker-title {
+  height: 42px !important;
+  margin: 0 !important;
+  line-height: 40px !important;
+}
+
+.ui-datepicker .ui-widget-header {
+  border: 0 !important;
+  background: #000000 !important;
+  color: #ffffff !important;
+  height: 50px !important;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  top: 8px !important;
+  width: 36px !important;
+  height: 36px !important;
+}
+
+.ui-state-hover,
+.ui-state-focus {
+  border: none !important;
+  background: inherit !important;
+}
+
+.ui-datepicker td span,
+.ui-datepicker td a {
+  text-align: center !important;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+  font-weight: 500 !important;
+  color: #848484 !important;
+}
+
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+  border: none !important;
+  background: #2de182 !important;
+  font-weight: bold !important;
+  color: #ffffff !important;
+  border-radius: 50% !important;
+}
+
+.ui-state-default {
+  border: none !important;
+  background: inherit !important;
+}
+
+/* .ui-datepicker .records-data-table table th td {
     height: 28px !important;
     width: 28px !important;
     padding: 12px !important;
   } */
-  .ui-datepicker td {
-    padding: 1px 8px !important;
-  }
-  /* xxxxxxx==custom date picker design overriding jQuery-UI ends==xxxxx */
-  
+.ui-datepicker td {
+  padding: 1px 8px !important;
+}
+
+/* xxxxxxx==custom date picker design overriding jQuery-UI ends==xxxxx */
