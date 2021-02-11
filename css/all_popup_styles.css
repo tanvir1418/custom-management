@@ -1756,6 +1756,13 @@ Bottom codes are added by Tanvir
     position: absolute;
     top: 0;
 }
+.checkbox_show{
+    display: block;
+}
+
+.checkbox_hide{
+    display: none;
+}
 
 .wrapper-modal-list .scroll-list-box .submodal-list li {
     border: 1px solid #a1a1a1;
@@ -1783,7 +1790,7 @@ Bottom codes are added by Tanvir
     width: 16px;
     background: #06e791;
     border-radius: 50%;
-    display: none;
+    /* display: none; */
 }
 
 .scroll-list-box .submodal-list li .sublist-check-box i {
