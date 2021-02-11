@@ -35,54 +35,55 @@ const listItemDatamodal = [
 	"Item 29",
 ];
 
-listItemDatamodal.forEach((item, index) => {
-	let htmllistmodal = `<li class="modallist-item-${index + 1}">
-	<p>${item}</p>
-	<div class="green-check-box display-none">
-		<i class="fas fa-check"></i>
-	</div>
-	<div class="arrow-li-box arrow-li-box-background-color-1">
-		<i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
-	</div>
-	</li>`;
-	select_item_main.innerHTML += htmllistmodal;
-	/* Update this function By Ashiq */
-	let modallist_data1 = "",
-		modallist_data2 = "",
-		modallist_data3 = "",
-		length = 72;
-	for (let i = 1; i <= length; i++) {
-		let elementHtml = `<li class="option-modallist-${index + 1}-${i}">
-		<p>Level ${index + 1} - Item ${i}</p>
-		<div class="sublist-check-box">
+(function modalListWithCount() {
+	let htmllistmodal = "";
+	listItemDatamodal.forEach((item, index) => {
+		htmllistmodal += `<li class="modallist-item-${index + 1}">
+		<p>${item}</p>
+		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
 		</div>
-		<div class="sublist-cancel-box" data-toggle="modal" data-target="#deletlistopt2">
-			<i class="fas fa-times"></i>
+		<div class="arrow-li-box arrow-li-box-background-color-1">
+			<i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
 		</div>
 		</li>`;
-		if (length < 61) {
-			if (i <= 20) {
-				modallist_data1 += elementHtml;
-			} else if (i >= 21 && i <= 40) {
-				modallist_data2 += elementHtml;
+		/* Update this function By Ashiq */
+		let modallist_data1 = "",
+			modallist_data2 = "",
+			modallist_data3 = "",
+			length = 72;
+		for (let i = 1; i <= length; i++) {
+			let elementHtml = `<li class="option-modallist-${index + 1}-${i}">
+			<p>Level ${index + 1} - Item ${i}</p>
+			<div class="sublist-check-box">
+				<i class="fas fa-check"></i>
+			</div>
+			<div class="sublist-cancel-box" data-toggle="modal" data-target="#deletlistopt2">
+				<i class="fas fa-times"></i>
+			</div>
+			</li>`;
+			if (length < 61) {
+				if (i <= 20) {
+					modallist_data1 += elementHtml;
+				} else if (i >= 21 && i <= 40) {
+					modallist_data2 += elementHtml;
+				} else {
+					modallist_data3 += elementHtml;
+				}
 			} else {
-				modallist_data3 += elementHtml;
-			}
-		} else {
-			let divide = Math.floor(length / 3),
-				len = divide + (length % 3);
-			if (i <= len) {
-				modallist_data1 += elementHtml;
-			} else if (i > len && i <= len + divide) {
-				modallist_data2 += elementHtml;
-			} else {
-				modallist_data3 += elementHtml;
+				let divide = Math.floor(length / 3),
+					len = divide + (length % 3);
+				if (i <= len) {
+					modallist_data1 += elementHtml;
+				} else if (i > len && i <= len + divide) {
+					modallist_data2 += elementHtml;
+				} else {
+					modallist_data3 += elementHtml;
+				}
 			}
 		}
-	}
-	const sub_ul_modallist = document.querySelector("#sub-ul-modallist");
-	sub_ul_modallist.innerHTML += `
+		const sub_ul_modallist = document.querySelector("#sub-ul-modallist");
+		sub_ul_modallist.innerHTML += `
 		<ul class="submodal-list" id="submodal-div-list-1-${index + 1}">
 			${modallist_data1}
 		</ul>
@@ -93,19 +94,22 @@ listItemDatamodal.forEach((item, index) => {
 			${modallist_data3}
 		</ul>`;
 
-	let submodal_div_list_id1 = document.getElementById("submodal-div-list-1-" + (index + 1));
-	submodal_div_list_id1.style.display = "none";
-	submodal_div_list_id1.style.marginLeft = "300px";
+		let submodal_div_list_id1 = document.getElementById("submodal-div-list-1-" + (index + 1));
+		submodal_div_list_id1.style.display = "none";
+		submodal_div_list_id1.style.marginLeft = "300px";
 
-	let submodal_div_list_id2 = document.getElementById("submodal-div-list-2-" + (index + 1));
-	submodal_div_list_id2.style.display = "none";
-	submodal_div_list_id2.style.marginLeft = "600px";
+		let submodal_div_list_id2 = document.getElementById("submodal-div-list-2-" + (index + 1));
+		submodal_div_list_id2.style.display = "none";
+		submodal_div_list_id2.style.marginLeft = "600px";
 
-	let sub_div_list_id3 = document.getElementById("submodal-div-list-3-" + (index + 1));
-	sub_div_list_id3.style.display = "none";
-	sub_div_list_id3.style.marginLeft = "900px";
+		let sub_div_list_id3 = document.getElementById("submodal-div-list-3-" + (index + 1));
+		sub_div_list_id3.style.display = "none";
+		sub_div_list_id3.style.marginLeft = "900px";
+	});
+	
+	select_item_main.innerHTML = htmllistmodal;
 	/* Update End By Ashiq */
-});
+})();
 
 /* New Function Start */
 let submodal_div_list_id1_old = "",

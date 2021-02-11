@@ -465,7 +465,7 @@ function findInputId(title) {
 function windowToForm(e) {
   let tRow = $(e).parent().parent().parent()
     .children(".text-editor-popup-body")
-    .find("#text_editor div.data-div");
+    .find("#text_editor div.form-text-design.data-div");
   let len = tRow.length;
   for (let i = 0; i < len; i++){
     let divData = $(tRow[i++])[0].innerText.split(":");
@@ -593,15 +593,17 @@ function checking(e) {
       var ending = nd.textContent.substr(extra);
       // addition of check for allowing lines to split on enter key in between
 
+      let inpData = starting.split(":");
       if (
         starting != "" &&
         (!findInputId(starting.substr(0, starting.indexOf(":"))) ||
+          (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
           (
-            starting.split(":")[1].trim() != "Set" &&
-            starting.split(":")[1].trim() != "Sequence" &&
-            starting.split(":")[1].trim() != "Form" &&
-            starting.split(":")[1].trim() != "To"
-            // starting.split(":").length != 2
+            inpData.length == 3 &&
+            inpData[1].trim() != "Set" &&
+            inpData[1].trim() != "Sequence" &&
+            inpData[1].trim() != "Form" &&
+            inpData[1].trim() != "To"
           )
         )
       ) {
@@ -656,6 +658,8 @@ function checking(e) {
   setTimeout(autoCorrect, 100);
 }
 
+let setSugArray = ["Sequence", "Set", "Form", "To"];
+
 function autoCorrect() {
   // getting current line... so that we place auto correct after it
   var pos = getCaretPosition();
@@ -690,10 +694,18 @@ function autoCorrect() {
   }
   else if ((x.split(":").length - 1) == 1) {
     $("#adder").addClass("set-sug");
-    m += `<option selected value="Sequence">Sequence</option><br>
-      <option value="Set">Set</option><br>
-      <option value="Form">Form</option><br>
-      <option value="To">To</option><br>`;
+    setSugArray.forEach((set) => {
+      let inp = x.split(":")[1].trim().toLowerCase();
+      if (inp != "" && set.toLowerCase().indexOf(inp) == 0) {
+        if (first) {
+          m += `<option selected value="${set}">${set}</option><br>`;
+        }
+        else {
+          m += `<option value="${set}">${set}</option><br>`;
+        }
+        first = 0;
+      }
+    });
   } else if ((x.split(":").length - 1) == 2) {
 
   }
@@ -780,16 +792,18 @@ function pasteEvent(e) {
   let pD = clipboardData.getData("Text").split("\n");
   for (var i = 0; i < pD.length; i++) {
     let nbe = pD[i];
+    let inpData = nbe.split(":");
     if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
       var x;
       if (
         !findInputId(nbe.substr(0, nbe.indexOf(":"))) ||
+        (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
         (
-          nbe.split(":")[1].trim() != "Set" &&
-          nbe.split(":")[1].trim() != "Sequence" &&
-          nbe.split(":")[1].trim() != "Form" &&
-          nbe.split(":")[1].trim() != "To"
-          // nbe.split(":").length != 2
+          inpData.length == 3 &&
+          inpData[1].trim() != "Set" &&
+          inpData[1].trim() != "Sequence" &&
+          inpData[1].trim() != "Form" &&
+          inpData[1].trim() != "To"
         )
       ) {
         x = document.createElement("div");
