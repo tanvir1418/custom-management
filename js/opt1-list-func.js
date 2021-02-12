@@ -228,7 +228,7 @@ function checkEmpty(e) {
     $(e).parent().addClass("custom-input-danger");
     $(e).parent().removeClass("custom-input-success");
     let errorMessage = `<div class="error-message">
-      <p>A value must be entered.</p>
+      <p>A value must be entered</p>
     </div>`;
     let errPos = $(e).parent().parent();
     if (!errPos.children("div.error-message").length) {
