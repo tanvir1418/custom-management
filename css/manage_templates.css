@@ -918,6 +918,12 @@
   cursor: grab;
 }
 
+
+.save-start-class-hide-show-mnTemp{
+  display: none;
+}
+
+
 /* 
 .updown-handler{
   position: absolute;
