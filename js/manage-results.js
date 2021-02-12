@@ -150,40 +150,36 @@ function item_li_click_handle(listClassName) {
 }
 /* New Function End */
 var left_list_data = "";
+(function resultLeftListControl() {
+    let oldTarget = "";
+    left_list_404.addEventListener("click", function (e) {
+        let target = e.target;
+        const elementName = ["DIV", "P"];
+        if (elementName.includes(target.tagName)) {
+            target = target.parentNode;
+        } else if (target.tagName === "I") {
+            target = target.parentNode.parentNode;
+        }
 
-left_list_404.addEventListener("click", function (e) {
-    let target = e.target;
-    const elementName = ["DIV", "P"];
-    if (elementName.includes(target.tagName)) {
-        target = target.parentNode;
-    } else if (target.tagName === "I") {
-        target = target.parentNode.parentNode;
-    }
+        if (oldTarget != "" && oldTarget !== target) {
+            $(oldTarget).removeClass("highlight_404");
+            $(oldTarget).children(".tik-box").removeClass("display-block");
+            $(oldTarget).children(".tik-box").addClass("display-none");
+            $(oldTarget).children(".arrow-404").removeClass("arrow-404-background-color-2");
+            $(oldTarget).children(".arrow-404").addClass("arrow-404-background-color-1");
+            $(oldTarget).children(".arrow-404").children(".fa-caret-right").removeClass("arrow-404-i-color-2");
+            $(oldTarget).children(".arrow-404").children(".fa-caret-right").addClass("arrow-404-i-color-1");
+        }
+        $(target).toggleClass("highlight_404");
+        $(target).children(".tik-box").toggleClass("display-none display-block");
+        $(target).children(".arrow-404").toggleClass("arrow-404-background-color-1 arrow-404-background-color-2");
+        $(target).children(".arrow-404").children(".fa-caret-right").toggleClass("arrow-404-i-color-1 arrow-404-i-color-2");
+        oldTarget = target;
 
-    $(".highlight_404 .arrow-404-i-color-2").addClass("arrow-404-i-color-1");
-    $(".highlight_404 .arrow-404-i-color-2").removeClass(
-        "arrow-404-i-color-2"
-    );
-    $(".highlight_404 .display-block").addClass("display-none");
-    $(".highlight_404 .display-block").removeClass("display-block");
-    $(".highlight_404 .arrow-404-background-color-2").addClass(
-        "arrow-404-background-color-1"
-    );
-    $(".highlight_404 .arrow-404-background-color-2").removeClass(
-        "arrow-404-background-color-2"
-    );
-    $(".highlight_404").removeClass("highlight_404");
-
-    target.classList.add("highlight_404");
-    target.childNodes[3].classList.remove("display-none");
-    target.childNodes[3].classList.add("display-block");
-    target.childNodes[5].classList.remove("arrow-404-background-color-1");
-    target.childNodes[5].classList.add("arrow-404-background-color-2");
-    target.childNodes[5].childNodes[1].classList.remove("arrow-404-i-color-1");
-    target.childNodes[5].childNodes[1].classList.add("arrow-404-i-color-2");
-    left_list_data = target.childNodes[1].innerHTML;
-    item_li_click_handle(target.classList[0]);
-});
+        left_list_data = target.childNodes[1].innerHTML;
+        item_li_click_handle(target.classList[0]);
+    });
+})();
 
 const list_left_item_1 = document.querySelector(".list-item-404-1");
 // End here by ASHIQ

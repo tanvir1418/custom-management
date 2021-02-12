@@ -37,6 +37,9 @@
 // };
 // //////////////////===========================================================
 
+// Global file for this Site
+var deleteListClassName = ""
+
 // TOGGLE TRIANGLE
 function myFunction() {
 	var x = document.getElementById("triangle");
@@ -289,79 +292,68 @@ const listItemData = [
 	"Item 28",
 	"Item 29",
 ];
-
-listItemData.forEach((item, index) => {
-	let htmllist = `<li class="list-item-${index + 1}">
-	<p>${item}</p>
-	<div class="green-check-box display-none">
-		<i class="fas fa-check"></i>
-	</div>
-	<div class="arrow-li-box arrow-li-box-background-color-1">
-		<i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
-	</div>
-	</li>`;
-	main_list.innerHTML += htmllist;
-	/* Update this function By Ashiq */
-	let list_data1 = "",
-		list_data2 = "",
-		list_data3 = "",
-		length = 72;
-	// modal ashiq
-	for (let i = 1; i <= length; i++) {
-		let elementHtml = `<li class="option-list-${index + 1}-${i}">
-		<p>Level ${index + 1} - Item ${i}</p>
-		<div class="sublist-check-box">
+(function listDataOptTwo() {
+	let htmllist = "", htmlDataModal = "";
+	listItemData.forEach((item, index) => {
+		htmllist += `<li class="list-item-${index + 1}">
+		<p>${item}</p>
+		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
 		</div>
-		<div class="sublist-cancel-box" data-toggle="modal" data-target="#deletlistopt2">
-			<i class="fas fa-times"></i>
+		<div class="arrow-li-box arrow-li-box-background-color-1">
+			<i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
 		</div>
 		</li>`;
-		if (length < 61) {
-			if (i <= 20) {
-				list_data1 += elementHtml;
-			} else if (i >= 21 && i <= 40) {
-				list_data2 += elementHtml;
+		/* Update this function By Ashiq */
+		let list_data1 = "",
+			list_data2 = "",
+			list_data3 = "",
+			length = 72;
+		for (let i = 1; i <= length; i++) {
+			let elementHtml = `<li class="option-list-${index + 1}-${i}">
+			<p>Level ${index + 1} - Item ${i}</p>
+			<div class="sublist-check-box checkbox_hide">
+				<i class="fas fa-check"></i>
+			</div>
+			<div class="sublist-cancel-box checkbox_show" data-toggle="modal" data-target="#deletlistopt2">
+				<i class="fas fa-times"></i>
+			</div>
+			</li>`;
+			if (length < 61) {
+				if (i <= 20) {
+					list_data1 += elementHtml;
+				} else if (i >= 21 && i <= 40) {
+					list_data2 += elementHtml;
+				} else {
+					list_data3 += elementHtml;
+				}
 			} else {
-				list_data3 += elementHtml;
-			}
-		} else {
-			let divide = Math.floor(length / 3),
-				len = divide + (length % 3);
-			if (i <= len) {
-				list_data1 += elementHtml;
-			} else if (i > len && i <= len + divide) {
-				list_data2 += elementHtml;
-			} else {
-				list_data3 += elementHtml;
+				let divide = Math.floor(length / 3),
+					len = divide + (length % 3);
+				if (i <= len) {
+					list_data1 += elementHtml;
+				} else if (i > len && i <= len + divide) {
+					list_data2 += elementHtml;
+				} else {
+					list_data3 += elementHtml;
+				}
 			}
 		}
-	}
-	const sub_ul_list = document.querySelector("#sub-ul-list");
-	sub_ul_list.innerHTML += `
-		<ul class="sub-list" id="sub-div-list-1-${index + 1}">
+		htmlDataModal += 
+		`<ul class="sub-list checkbox_hide" style="margin-left: 300px;" id="sub-div-list-1-${index + 1}">
 			${list_data1}
 		</ul>
-		<ul class="sub-list" id="sub-div-list-2-${index + 1}">
+		<ul class="sub-list checkbox_hide" style="margin-left: 600px;" id="sub-div-list-2-${index + 1}">
 			${list_data2}
 		</ul>
-		<ul class="sub-list" id="sub-div-list-3-${index + 1}">
+		<ul class="sub-list checkbox_hide" style="margin-left: 900px;" id="sub-div-list-3-${index + 1}">
 			${list_data3}
 		</ul>`;
-
-	let sub_div_list_id1 = document.getElementById("sub-div-list-1-" + (index + 1));
-	sub_div_list_id1.style.display = "none";
-	sub_div_list_id1.style.marginLeft = "300px";
-
-	let sub_div_list_id2 = document.getElementById("sub-div-list-2-" + (index + 1));
-	sub_div_list_id2.style.display = "none";
-	sub_div_list_id2.style.marginLeft = "600px";
-
-	let sub_div_list_id3 = document.getElementById("sub-div-list-3-" + (index + 1));
-	sub_div_list_id3.style.display = "none";
-	sub_div_list_id3.style.marginLeft = "900px";
-	/* Update End By Ashiq */
-});
+		/* Update End By Ashiq */
+	});
+	main_list.innerHTML += htmllist;
+	document.querySelector("#sub-ul-list").innerHTML = htmlDataModal;
+})();
 
 /* New Function Start */
 let sub_div_list_id1_old = "",
@@ -375,66 +367,65 @@ function item_click_handle(listClassName) {
 			sub_div_list_id2 = "#sub-div-list-2-" + level_no,
 			sub_div_list_id3 = "#sub-div-list-3-" + level_no;
 		if (sub_div_list_id1 !== sub_div_list_id1_old) {
-			$(sub_div_list_id1_old).toggle();
-			$(sub_div_list_id1).toggle();
+			$(sub_div_list_id1_old).toggleClass("checkbox_hide checkbox_show");
+			$(sub_div_list_id1).toggleClass("checkbox_hide checkbox_show");
 			sub_div_list_id1_old = sub_div_list_id1;
 		} else {
-			$(sub_div_list_id1_old).toggle();
+			$(sub_div_list_id1_old).toggleClass("checkbox_hide checkbox_show");
 			sub_div_list_id1_old = "";
 		}
 
 		if (sub_div_list_id2 !== sub_div_list_id2_old) {
-			$(sub_div_list_id2_old).toggle();
-			$(sub_div_list_id2).toggle();
+			$(sub_div_list_id2_old).toggleClass("checkbox_hide checkbox_show");
+			$(sub_div_list_id2).toggleClass("checkbox_hide checkbox_show");
 			sub_div_list_id2_old = sub_div_list_id2;
 		} else {
-			$(sub_div_list_id2_old).toggle();
+			$(sub_div_list_id2_old).toggleClass("checkbox_hide checkbox_show");
 			sub_div_list_id2_old = "";
 		}
 
 		if (sub_div_list_id3 !== sub_div_list_id3_old) {
-			$(sub_div_list_id3_old).toggle();
-			$(sub_div_list_id3).toggle();
+			$(sub_div_list_id3_old).toggleClass("checkbox_hide checkbox_show");
+			$(sub_div_list_id3).toggleClass("checkbox_hide checkbox_show");
 			sub_div_list_id3_old = sub_div_list_id3;
 		} else {
-			$(sub_div_list_id3_old).toggle();
+			$(sub_div_list_id3_old).toggleClass("checkbox_hide checkbox_show");
 			sub_div_list_id3_old = "";
 		}
 	}
 }
 /* New Function End */
 var opt2_left_list = "";
-main_list.addEventListener("click", function (e) {
-	let target = e.target;
-	const elementName = ["DIV", "P"];
-	if (elementName.includes(target.tagName)) {
-		target = target.parentNode;
-	} else if (target.tagName === "I") {
-		target = target.parentNode.parentNode;
-	}
+(function opt2LeftListControl() {
+	let oldTarget = "";
+	main_list.addEventListener("click", function (e) {
+		let target = e.target;
+		const elementName = ["DIV", "P"];
+		if (elementName.includes(target.tagName)) {
+			target = target.parentNode;
+		} else if (target.tagName === "I") {
+			target = target.parentNode.parentNode;
+		}
+	
+		if (oldTarget != "" && oldTarget !== target) {
+			$(oldTarget).removeClass("highlight_li");
+			$(oldTarget).children(".green-check-box").removeClass("display-block");
+			$(oldTarget).children(".green-check-box").addClass("display-none");
+			$(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
+			$(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
+			$(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
+			$(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
+		}
+		$(target).toggleClass("highlight_li");
+		$(target).children(".green-check-box").toggleClass("display-none display-block");
+		$(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
+		$(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
+		oldTarget = target;
 
-	$(".highlight_li .arrow-li-box-i-color-2").addClass("arrow-li-box-i-color-1");
-	$(".highlight_li .arrow-li-box-i-color-2").removeClass(
-		"arrow-li-box-i-color-2"
-	);
-	$(".highlight_li .display-block").addClass("display-none");
-	$(".highlight_li .display-block").removeClass("display-block");
-	$(".highlight_li .arrow-li-box-background-color-2").addClass("arrow-li-box-background-color-1");
-	$(".highlight_li .arrow-li-box-background-color-2").removeClass("arrow-li-box-background-color-2");
-	$(".highlight_li").removeClass("highlight_li");
-
-	target.classList.add("highlight_li");
-	target.childNodes[3].classList.remove("display-none");
-	target.childNodes[3].classList.add("display-block");
-	target.childNodes[5].classList.remove("arrow-li-box-background-color-1");
-	target.childNodes[5].classList.add("arrow-li-box-background-color-2");
-	target.childNodes[5].childNodes[1].classList.remove("arrow-li-box-i-color-1");
-	target.childNodes[5].childNodes[1].classList.add("arrow-li-box-i-color-2");
-
-	opt2_left_list = target.childNodes[1].innerHTML;
-	item_click_handle(target.classList[0]);
-});
-// End here by ASHIQ
+		opt2_left_list = target.childNodes[1].innerHTML;
+		item_click_handle(target.classList[0]);
+	});
+})();
 
 
 const main_check_box = document.querySelector(".green-check-box");
@@ -589,8 +580,8 @@ const sub_ul_list = document.querySelector("#sub-ul-list");
 sub_ul_list.addEventListener("click", function (e) {
 	let target = e.target;
 	if (target.tagName === "DIV") {
-		if (target.className === "sublist-cancel-box") {
-			deleteOpt2Modal(target.parentNode.classList[0]);
+		if (target.className.indexOf("sublist-cancel-box")!=-1) {
+			deleteListClassName = target.parentNode.classList[0];
 			return;
 		}
 		target = target.parentNode;
@@ -598,34 +589,22 @@ sub_ul_list.addEventListener("click", function (e) {
 		target = target.parentNode;
 	} else if (target.tagName === "I") {
 		target = target.parentNode;
-		if (target.className === "sublist-cancel-box") {
-			deleteOpt2Modal(target.parentNode.classList[0]);
+		if (target.className.indexOf("sublist-cancel-box") != -1) {
+			deleteListClassName = target.parentNode.classList[0];
 			return;
 		}
 		else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
 
 	if (oldLIClassname !== "" && oldLIClassname !== target.classList[0]) {
-		let oldElement = document.querySelector(`.${oldLIClassname}`);
-		oldElement.childNodes.forEach((element) => {
-			if (element.className === "sublist-check-box") {
-				element.style.display = "none";
-			}
-			if (element.className === "sublist-cancel-box") {
-				element.style.display = "block";
-			}
-		});
+		$(`.${oldLIClassname}`).children(".sublist-check-box").addClass("checkbox_hide");
+		$(`.${oldLIClassname}`).children(".sublist-check-box").removeClass("checkbox_show");
+		$(`.${oldLIClassname}`).children(".sublist-cancel-box").removeClass("checkbox_hide");
+		$(`.${oldLIClassname}`).children(".sublist-cancel-box").addClass("checkbox_show");
 	}
 
-
-	target.childNodes.forEach((element) => {
-		if (element.className === "sublist-check-box") {
-			$(element).toggle();
-		}
-		if (element.className === "sublist-cancel-box") {
-			$(element).toggle();
-		}
-	});
+	$(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
+	$(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
 
 	oldLIClassname = target.classList[0];
 	if (opt2_right_list == target.childNodes[1].innerHTML) {
@@ -637,10 +616,8 @@ sub_ul_list.addEventListener("click", function (e) {
 	$("#opt2-right").html(opt2_right_list);
 });
 
-function deleteOpt2Modal(className) {
-	let mng_opt2_delete = document.querySelector("#mng-opt2-delete");
-	mng_opt2_delete.addEventListener("click", function () {
-		let delObj = document.querySelector(`.${className}`);
-		delObj.remove();
-	});
-}
+
+$("#mng-opt2-delete").click(function () {
+	let delObj = document.querySelector(`.${deleteListClassName}`);
+	delObj.remove();
+});
