@@ -431,3 +431,12 @@ $(document).click(function (e) {
 // $("#sub2-editor-table td").click(function() {
 //   alert(this.id); // or alert($(this).attr('id'));
 // });
+
+// manage template hide show save start button 
+$("#next-show-save-start-mnTemp").click(function(){
+  $('#saveStartTarget-mnTemp').removeClass('save-start-class-hide-show-mnTemp');
+});
+
+$("#prev-hide-save-start-mnTemp").click(function(){
+  $('#saveStartTarget-mnTemp').addClass('save-start-class-hide-show-mnTemp');
+});
