@@ -84,7 +84,7 @@ const listItemDatamodal = [
 		}
 
 		htmlDataModal +=
-			`<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="submodal-div-list-1-${index + 1}">
+		`<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="submodal-div-list-1-${index + 1}">
 			${modallist_data1}
 		</ul>
 		<ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="submodal-div-list-2-${index + 1}">
@@ -141,42 +141,44 @@ function modalitem_click_handle(listClassName) {
 }
 /* New Function End */
 let opt1_left_list = "";
-select_item_main.addEventListener("click", function (e) {
-	let target = e.target;
-	const elementName = ["DIV", "P"];
-	if (elementName.includes(target.tagName)) {
-		target = target.parentNode;
-	} else if (target.tagName === "I") {
-		target = target.parentNode.parentNode;
-	}
+(function opt1ModalLeftListControl() {
+	let oldTarget = ""
+	select_item_main.addEventListener("click", function (e) {
+		let target = e.target;
+		const elementName = ["DIV", "P"];
+		if (elementName.includes(target.tagName)) {
+			target = target.parentNode;
+		} else if (target.tagName === "I") {
+			target = target.parentNode.parentNode;
+		}
 
-	$(".highlight_li .arrow-li-box-i-color-2").addClass("arrow-li-box-i-color-1");
-	$(".highlight_li .arrow-li-box-i-color-2").removeClass("arrow-li-box-i-color-2");
-	$(".highlight_li .display-block").addClass("display-none");
-	$(".highlight_li .display-block").removeClass("display-block");
-	$(".highlight_li .arrow-li-box-background-color-2").addClass("arrow-li-box-background-color-1");
-	$(".highlight_li .arrow-li-box-background-color-2").removeClass("arrow-li-box-background-color-2");
-	$(".highlight_li").removeClass("highlight_li");
+		if (oldTarget != "" && oldTarget !== target) {
+			$(oldTarget).removeClass("highlight_li");
+			$(oldTarget).children(".green-check-box").removeClass("display-block");
+			$(oldTarget).children(".green-check-box").addClass("display-none");
+			$(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
+			$(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
+			$(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
+			$(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
+		}
+		$(target).toggleClass("highlight_li");
+		$(target).children(".green-check-box").toggleClass("display-none display-block");
+		$(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
+		$(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
+		oldTarget = target;
 
-	target.classList.add("highlight_li");
-	target.childNodes[3].classList.remove("display-none");
-	target.childNodes[3].classList.add("display-block");
-	target.childNodes[5].classList.remove("arrow-li-box-background-color-1");
-	target.childNodes[5].classList.add("arrow-li-box-background-color-2");
-	target.childNodes[5].childNodes[1].classList.remove("arrow-li-box-i-color-1");
-	target.childNodes[5].childNodes[1].classList.add("arrow-li-box-i-color-2");
-
-	opt1_left_list = target.childNodes[1].innerHTML;
-	modalitem_click_handle(target.classList[0]);
-});
+		opt1_left_list = target.childNodes[1].innerHTML;
+		modalitem_click_handle(target.classList[0]);
+	});
+})();
 
 let oldLIClassnameModal = "";
 const sub_ul_modallist = document.querySelector("#sub-ul-modallist");
 sub_ul_modallist.addEventListener("click", function (e) {
 	let target = e.target;
 	if (target.tagName === "DIV") {
-		if (target.className === "sublist-cancel-box") {
-			deleteOpt1Modal(target.parentNode.classList[0]);
+		if (target.className.indexOf("sublist-cancel-box")!=-1) {
+			deleteListClassName = target.parentNode.classList[0];
 			return;
 		}
 		target = target.parentNode;
@@ -184,24 +186,11 @@ sub_ul_modallist.addEventListener("click", function (e) {
 		target = target.parentNode;
 	} else if (target.tagName === "I") {
 		target = target.parentNode;
-		if (target.className === "sublist-cancel-box") {
-			deleteOpt1Modal(target.parentNode.classList[0]);
+		if (target.className.indexOf("sublist-cancel-box")!=-1) {
+			deleteListClassName = target.parentNode.classList[0];
 			return;
 		} else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
-
-	// if (oldLIClassnameModal !== "" && oldLIClassnameModal !== target.classList[0]) {
-	// 	let oldElement = document.querySelector(`.${oldLIClassnameModal}`);
-	// 	console.log(oldElement);
-	// 	oldElement.childNodes.forEach((element) => {
-	// 		if (element.className === "sublist-check-box") {
-	// 			element.style.display = "none";
-	// 		}
-	// 		if (element.className === "sublist-cancel-box") {
-	// 			element.style.display = "block";
-	// 		}
-	// 	});
-	// }
 
 	$(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
 	$(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
@@ -209,13 +198,10 @@ sub_ul_modallist.addEventListener("click", function (e) {
 	// oldLIClassnameModal = target.classList[0];
 });
 
-function deleteOpt1Modal(className) {
-	let mng_opt2_delete = document.querySelector("#mng-opt2-delete");
-	mng_opt2_delete.addEventListener("click", function () {
-		let delObj = document.querySelector(`.${className}`);
-		delObj.remove();
-	});
-}
+$("#mng-opt2-delete").click(function () {
+	let delObj = document.querySelector(`.${deleteListClassName}`);
+	delObj.remove();
+});
 
 function countOpt1ListModal(e) {
 	let countItem = $(e).parent().parent().parent().find("#sub-ul-modallist .sublist-check-box.checkbox_show").length;
@@ -385,42 +371,44 @@ function copyto_modalitem_click_handle(listClassName) {
 }
 /* New Function End */
 let opt_copyto_left_list = "";
-copytorow_list.addEventListener("click", function (e) {
-	let target = e.target;
-	const elementName = ["DIV", "P"];
-	if (elementName.includes(target.tagName)) {
-		target = target.parentNode;
-	} else if (target.tagName === "I") {
-		target = target.parentNode.parentNode;
-	}
+(function copyToLeftListControl() {
+	let oldTarget = ""
+	copytorow_list.addEventListener("click", function (e) {
+		let target = e.target;
+		const elementName = ["DIV", "P"];
+		if (elementName.includes(target.tagName)) {
+			target = target.parentNode;
+		} else if (target.tagName === "I") {
+			target = target.parentNode.parentNode;
+		}
 
-	$(".highlight_li .arrow-li-box-i-color-2").addClass("arrow-li-box-i-color-1");
-	$(".highlight_li .arrow-li-box-i-color-2").removeClass("arrow-li-box-i-color-2");
-	$(".highlight_li .display-block").addClass("display-none");
-	$(".highlight_li .display-block").removeClass("display-block");
-	$(".highlight_li .arrow-li-box-background-color-2").addClass("arrow-li-box-background-color-1");
-	$(".highlight_li .arrow-li-box-background-color-2").removeClass("arrow-li-box-background-color-2");
-	$(".highlight_li").removeClass("highlight_li");
+		if (oldTarget != "" && oldTarget !== target) {
+			$(oldTarget).removeClass("highlight_li");
+			$(oldTarget).children(".green-check-box").removeClass("display-block");
+			$(oldTarget).children(".green-check-box").addClass("display-none");
+			$(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
+			$(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
+			$(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
+			$(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
+		}
+		$(target).toggleClass("highlight_li");
+		$(target).children(".green-check-box").toggleClass("display-none display-block");
+		$(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
+		$(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
+		oldTarget = target;
 
-	target.classList.add("highlight_li");
-	target.childNodes[3].classList.remove("display-none");
-	target.childNodes[3].classList.add("display-block");
-	target.childNodes[5].classList.remove("arrow-li-box-background-color-1");
-	target.childNodes[5].classList.add("arrow-li-box-background-color-2");
-	target.childNodes[5].childNodes[1].classList.remove("arrow-li-box-i-color-1");
-	target.childNodes[5].childNodes[1].classList.add("arrow-li-box-i-color-2");
-
-	opt_copyto_left_list = target.childNodes[1].innerHTML;
-	copyto_modalitem_click_handle(target.classList[0]);
-});
+		opt_copyto_left_list = target.childNodes[1].innerHTML;
+		copyto_modalitem_click_handle(target.classList[0]);
+	});
+})();
 
 let copyto_oldLIClassnameModal = "";
 const sub_ul_copytomodallist = document.querySelector("#sub-ul-copyto-modallist");
 sub_ul_copytomodallist.addEventListener("click", function (e) {
 	let target = e.target;
 	if (target.tagName === "DIV") {
-		if (target.className === "sublist-cancel-box") {
-			copyto_deleteOpt1Modal(target.parentNode.classList[0]);
+		if (target.className.indexOf("sublist-cancel-box")!=-1) {
+			deleteListClassName = target.parentNode.classList[0];
 			return;
 		}
 		target = target.parentNode;
@@ -428,24 +416,11 @@ sub_ul_copytomodallist.addEventListener("click", function (e) {
 		target = target.parentNode;
 	} else if (target.tagName === "I") {
 		target = target.parentNode;
-		if (target.className === "sublist-cancel-box") {
-			copyto_deleteOpt1Modal(target.parentNode.classList[0]);
+		if (target.className.indexOf("sublist-cancel-box")!=-1) {
+			deleteListClassName = target.parentNode.classList[0];
 			return;
 		} else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
-
-	// if (copyto_oldLIClassnameModal !== "" && copyto_oldLIClassnameModal !== target.classList[0]) {
-	// 	let oldElement = document.querySelector(`.${copyto_oldLIClassnameModal}`);
-	// 	console.log(oldElement);
-	// 	oldElement.childNodes.forEach((element) => {
-	// 		if (element.className === "sublist-check-box") {
-	// 			element.style.display = "none";
-	// 		}
-	// 		if (element.className === "sublist-cancel-box") {
-	// 			element.style.display = "block";
-	// 		}
-	// 	});
-	// }
 
 	$(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
 	$(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
@@ -453,13 +428,10 @@ sub_ul_copytomodallist.addEventListener("click", function (e) {
 	copyto_oldLIClassnameModal = target.classList[0];
 });
 
-function copyto_deleteOpt1Modal(className) {
-	let copyto_mng_opt2_delete = document.querySelector("#copyto-mng-opt2-delete");
-	copyto_mng_opt2_delete.addEventListener("click", function () {
-		let copyto_delObj = document.querySelector(`.${className}`);
-		copyto_delObj.remove();
-	});
-}
+$("#copyto-mng-opt2-delete").click(function () {
+	let delObj = document.querySelector(`.${deleteListClassName}`);
+	delObj.remove();
+});
 
 /* ================ Scroll Down START ============== */
 $(document).ready(function () {
@@ -617,42 +589,44 @@ function moveto_modalitem_click_handle(listClassName) {
 }
 /* New Function End */
 let opt_moveto_left_list = "";
-movetorow_list.addEventListener("click", function (e) {
-	let target = e.target;
-	const elementName = ["DIV", "P"];
-	if (elementName.includes(target.tagName)) {
-		target = target.parentNode;
-	} else if (target.tagName === "I") {
-		target = target.parentNode.parentNode;
-	}
+(function moveToLeftListControl() {
+	let oldTarget = ""
+	movetorow_list.addEventListener("click", function (e) {
+		let target = e.target;
+		const elementName = ["DIV", "P"];
+		if (elementName.includes(target.tagName)) {
+			target = target.parentNode;
+		} else if (target.tagName === "I") {
+			target = target.parentNode.parentNode;
+		}
 
-	$(".highlight_li .arrow-li-box-i-color-2").addClass("arrow-li-box-i-color-1");
-	$(".highlight_li .arrow-li-box-i-color-2").removeClass("arrow-li-box-i-color-2");
-	$(".highlight_li .display-block").addClass("display-none");
-	$(".highlight_li .display-block").removeClass("display-block");
-	$(".highlight_li .arrow-li-box-background-color-2").addClass("arrow-li-box-background-color-1");
-	$(".highlight_li .arrow-li-box-background-color-2").removeClass("arrow-li-box-background-color-2");
-	$(".highlight_li").removeClass("highlight_li");
+		if (oldTarget != "" && oldTarget !== target) {
+			$(oldTarget).removeClass("highlight_li");
+			$(oldTarget).children(".green-check-box").removeClass("display-block");
+			$(oldTarget).children(".green-check-box").addClass("display-none");
+			$(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
+			$(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
+			$(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
+			$(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
+		}
+		$(target).toggleClass("highlight_li");
+		$(target).children(".green-check-box").toggleClass("display-none display-block");
+		$(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
+		$(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
+		oldTarget = target;
 
-	target.classList.add("highlight_li");
-	target.childNodes[3].classList.remove("display-none");
-	target.childNodes[3].classList.add("display-block");
-	target.childNodes[5].classList.remove("arrow-li-box-background-color-1");
-	target.childNodes[5].classList.add("arrow-li-box-background-color-2");
-	target.childNodes[5].childNodes[1].classList.remove("arrow-li-box-i-color-1");
-	target.childNodes[5].childNodes[1].classList.add("arrow-li-box-i-color-2");
-
-	opt_moveto_left_list = target.childNodes[1].innerHTML;
-	moveto_modalitem_click_handle(target.classList[0]);
-});
+		opt_moveto_left_list = target.childNodes[1].innerHTML;
+		moveto_modalitem_click_handle(target.classList[0]);
+	});
+})();
 
 let moveto_oldLIClassnameModal = "";
 const sub_ul_movetomodallist = document.querySelector("#sub-ul-moveto-modallist");
 sub_ul_movetomodallist.addEventListener("click", function (e) {
 	let target = e.target;
 	if (target.tagName === "DIV") {
-		if (target.className === "sublist-cancel-box") {
-			moveto_deleteOpt1Modal(target.parentNode.classList[0]);
+		if (target.className.indexOf("sublist-cancel-box")!=-1) {
+			deleteListClassName = target.parentNode.classList[0];
 			return;
 		}
 		target = target.parentNode;
@@ -660,24 +634,11 @@ sub_ul_movetomodallist.addEventListener("click", function (e) {
 		target = target.parentNode;
 	} else if (target.tagName === "I") {
 		target = target.parentNode;
-		if (target.className === "sublist-cancel-box") {
-			moveto_deleteOpt1Modal(target.parentNode.classList[0]);
+		if (target.className.indexOf("sublist-cancel-box")!=-1) {
+			deleteListClassName = target.parentNode.classList[0];
 			return;
 		} else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
-
-	// if (moveto_oldLIClassnameModal !== "" && moveto_oldLIClassnameModal !== target.classList[0]) {
-	// 	let oldElement = document.querySelector(`.${moveto_oldLIClassnameModal}`);
-	// 	console.log(oldElement);
-	// 	oldElement.childNodes.forEach((element) => {
-	// 		if (element.className === "sublist-check-box") {
-	// 			element.style.display = "none";
-	// 		}
-	// 		if (element.className === "sublist-cancel-box") {
-	// 			element.style.display = "block";
-	// 		}
-	// 	});
-	// }
 
 	$(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
 	$(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
@@ -685,13 +646,10 @@ sub_ul_movetomodallist.addEventListener("click", function (e) {
 	// moveto_oldLIClassnameModal = target.classList[0];
 });
 
-function moveto_deleteOpt1Modal(className) {
-	let moveto_mng_opt2_delete = document.querySelector("#moveto-mng-opt2-delete");
-	moveto_mng_opt2_delete.addEventListener("click", function () {
-		let moveto_delObj = document.querySelector(`.${className}`);
-		moveto_delObj.remove();
-	});
-}
+$("#moveto-mng-opt2-delete").click(function () {
+	let delObj = document.querySelector(`.${deleteListClassName}`);
+	delObj.remove();
+});
 
 /* ================ Scroll Down START ============== */
 $(document).ready(function () {
