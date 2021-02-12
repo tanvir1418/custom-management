@@ -311,7 +311,7 @@
                                     </div>
                                     <div class="op1-single-list-item-selection">
                                         <p>Select Item(s) from List 2</p>
-                                        <p class="op1-selected-text-danger">0 Items Selected</p>
+                                        <p class="op1-selected-text-danger" id="op1-list-item-count">0 Items Selected</p>
                                     </div>
                                     <div class="op1-single-list-item-file">
                                         <div class="op1-single-list-item-file-container" data-toggle="modal"
@@ -392,7 +392,7 @@
                                             <button id="back-manage" class="button btn-back">Back</button>
                                         </div>
                                         <div class="reset-button">
-                                            <button class="button btn-reset">Reset</button>
+                                            <button class="button btn-reset" onclick="resetLeftRightBox()">Reset</button>
                                         </div>
                                         <div class="save-result-input">
                                             <input type="text" placeholder="Enter A Name to Save Results"
@@ -1558,15 +1558,13 @@
                                                             <div class="single-list-item-design">
                                                                 <div class="single-list-item-wrapper">
                                                                     <div class="single-list-item-name">
-                                                                        <p>List 2 Options <span
-                                                                                class="pTopText"><sup>*Optional</sup></span>
+                                                                        <p>List 2 Options 
+                                                                        <span class="pTopText"><sup>*Optional</sup></span>
                                                                         </p>
                                                                     </div>
                                                                     <div class="single-list-item-selection">
                                                                         <p>Select Item(s) from List 2</p>
-                                                                        <p class="selected-text-danger hideListDiv">O
-                                                                            Items
-                                                                            Selected</p>
+                                                                        <p class="selected-text-danger hideListDiv">O Items Selected</p>
                                                                     </div>
                                                                     <div class="single-list-item-file">
                                                                         <div class="single-list-item-file-container">
@@ -3908,14 +3906,13 @@
                                             <div class="single-list-item-design">
                                                 <div class="single-list-item-wrapper">
                                                     <div class="single-list-item-name">
-                                                        <p>List 2 Options <span
-                                                                class="pTopText"><sup>*Optional</sup></span>
+                                                        <p>List 2 Options 
+                                                        <span class="pTopText"><sup>*Optional</sup></span>
                                                         </p>
                                                     </div>
                                                     <div class="single-list-item-selection">
                                                         <p>Select Item(s) from List 2</p>
-                                                        <p class="selected-text-danger hideListDiv">O Items
-                                                            Selected</p>
+                                                        <p class="selected-text-danger hideListDiv" id="managetempa-list-count">O Items Selected</p>
                                                     </div>
                                                     <div class="single-list-item-file">
                                                         <div class="single-list-item-file-container">
@@ -3942,14 +3939,13 @@
                                             <div class="single-list-item-design">
                                                 <div class="single-list-item-wrapper">
                                                     <div class="single-list-item-name">
-                                                        <p>List 2 Options <span
-                                                                class="pTopText"><sup>*Optional</sup></span>
+                                                        <p>List 2 Options 
+                                                            <span class="pTopText"><sup>*Optional</sup></span>
                                                         </p>
                                                     </div>
                                                     <div class="single-list-item-selection">
                                                         <p>Select Item(s) from List 2</p>
-                                                        <p class="selected-text-danger hideListDiv">O Items
-                                                            Selected</p>
+                                                        <p class="selected-text-danger hideListDiv" id="managetempb-list-count">O Items Selected</p>
                                                     </div>
                                                     <div class="single-list-item-file">
                                                         <div class="single-list-item-file-container" data-toggle="modal"
@@ -3975,14 +3971,13 @@
                                             <div class="single-list-item-design">
                                                 <div class="single-list-item-wrapper">
                                                     <div class="single-list-item-name">
-                                                        <p>List 2 Options <span
-                                                                class="pTopText"><sup>*Optional</sup></span>
+                                                        <p>List 2 Options 
+                                                            <span class="pTopText"><sup>*Optional</sup></span>
                                                         </p>
                                                     </div>
                                                     <div class="single-list-item-selection">
                                                         <p>Select Item(s) from List 2</p>
-                                                        <p class="selected-text-danger hideListDiv">O Items
-                                                            Selected</p>
+                                                        <p class="selected-text-danger hideListDiv" id="managetempc-list-count">O Items Selected</p>
                                                     </div>
                                                     <div class="single-list-item-file">
                                                         <div class="single-list-item-file-container" data-toggle="modal"
@@ -4008,14 +4003,13 @@
                                             <div class="single-list-item-design">
                                                 <div class="single-list-item-wrapper">
                                                     <div class="single-list-item-name">
-                                                        <p>List 2 Options <span
-                                                                class="pTopText"><sup>*Optional</sup></span>
+                                                        <p>List 2 Options 
+                                                            <span class="pTopText"><sup>*Optional</sup></span>
                                                         </p>
                                                     </div>
                                                     <div class="single-list-item-selection">
                                                         <p>Select Item(s) from List 2</p>
-                                                        <p class="selected-text-danger hideListDiv">O Items
-                                                            Selected</p>
+                                                        <p class="selected-text-danger hideListDiv" id="managetempd-list-count">O Items Selected</p>
                                                     </div>
                                                     <div class="single-list-item-file">
                                                         <div class="single-list-item-file-container" data-toggle="modal"
@@ -10825,8 +10819,8 @@
                     </div>
                     <div class="btn-myfo">
                         <div class="myvote">
-                            <button class="reset-myfo" type="button">Reset</button>
-                            <button class="done-myfo" type="button">Done</button>
+                            <button class="reset-myfo" type="button" onclick="resetOpt1ListModal(this)">Reset</button>
+                            <button class="done-myfo" type="button" onclick="countOpt1ListModal(this)">Done</button>
                         </div>
                     </div>
                 </div>
@@ -10998,12 +10992,12 @@
                         </div>
                     </div>
                     <div class="row btn39 managetemp-btn">
-                        <a href="#">
+                        <a onclick="resetTempAListModal(this)">
                             <div class="mybtns-39 reset-btn">
                                 <p>Reset</p>
                             </div>
                         </a>
-                        <a id="submit_list">
+                        <a id="submit_list" onclick="countTempAListModal(this)">
                             <div class="mybtns-39 submit-btn">
                                 <p>Next</p>
                             </div>
@@ -11068,12 +11062,12 @@
                         </div>
                     </div>
                     <div class="row btn39 managetemp-btn">
-                        <a href="#">
+                        <a onclick="resetTempBListModal(this)">
                             <div class="mybtns-39 reset-btn">
                                 <p>Reset</p>
                             </div>
                         </a>
-                        <a id="submit_list">
+                        <a id="submit_list" onclick="countTempBListModal(this)">
                             <div class="mybtns-39 submit-btn">
                                 <p>Next</p>
                             </div>
@@ -11138,12 +11132,12 @@
                         </div>
                     </div>
                     <div class="row btn39 managetemp-btn">
-                        <a href="#">
+                        <a onclick="resetTempCListModal(this)">
                             <div class="mybtns-39 reset-btn">
                                 <p>Reset</p>
                             </div>
                         </a>
-                        <a id="submit_list">
+                        <a id="submit_list" onclick="countTempCListModal(this)">
                             <div class="mybtns-39 submit-btn">
                                 <p>Next</p>
                             </div>
@@ -11208,12 +11202,12 @@
                         </div>
                     </div>
                     <div class="row btn39 managetemp-btn">
-                        <a href="#">
+                        <a onclick="resetTempDListModal(this)">
                             <div class="mybtns-39 reset-btn">
                                 <p>Reset</p>
                             </div>
                         </a>
-                        <a id="submit_list">
+                        <a id="submit_list" onclick="countTempDListModal(this)">
                             <div class="mybtns-39 submit-btn">
                                 <p>Next</p>
                             </div>

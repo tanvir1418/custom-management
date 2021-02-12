@@ -332,23 +332,32 @@ function listRender(id, name, addNewRow) {
   return ele;
 }
 
-(function leftSideTable() {
+function leftSideTable() {
   let leftTable = "";
   leftSideArray.forEach(({ id, name }) => {
     let addNewRowL = `addNewRowL(this)`;
     leftTable += listRender(id, name, addNewRowL);
   });
-  $("#opt1-table-left-list").append(leftTable);
-})();
+  $("#opt1-table-left-list").html(leftTable);
+}
+leftSideTable();
 
-(function rightSideTable() {
+function rightSideTable() {
   let rightTable = "";
   rightSideData.forEach(({ id, name }) => {
     let addNewRowR = `addNewRowR(this)`;
     rightTable += listRender(id, name, addNewRowR);
   });
-  $("#opt1-table-right-list").append(rightTable);
-})();
+  $("#opt1-table-right-list").html(rightTable);
+}
+rightSideTable();
+
+function resetLeftRightBox(){
+  leftSideTable();
+  rightSideTable();
+  $("#leftSideDrag_op1").html("");
+  $("#rightSideDrag_op1").html("");
+}
 
 function renderListInputHtml(_id, iCount, title, resetValue, swapSeq) {
   let inpHtml = "";
@@ -442,7 +451,7 @@ function formToWindow(e) {
     for (let i = 0; i < inpObj.length; i++){
       let inpText = inpObj[i].value;
       inpDiv += `<div class="form-text-design data-div">
-        ${title}:${inpText}
+        ${title}: ${inpText}
       </div>`;
     }
     renHtml += `<div class="form-text-design data-div">

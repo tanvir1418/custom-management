@@ -1756,10 +1756,10 @@ Bottom codes are added by Tanvir
     position: absolute;
     top: 0;
 }
+
 .checkbox_show{
     display: block;
 }
-
 .checkbox_hide{
     display: none;
 }
