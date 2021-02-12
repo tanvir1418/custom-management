@@ -37,78 +37,68 @@ const listItemData404 = [
     "Item 28",
     "Item 29",
 ];
-
-listItemData404.forEach((item, index) => {
-    let htmllist = `<li class="list-item-404-${index + 1}">
-    <p>${item}</p>
-    <div class="tik-box display-none">
-        <i class="fas fa-check"></i>
-    </div>
-    <div class="arrow-404 arrow-404-background-color-1">
-        <i class="fas fa-caret-right arrow-404-i-color-1"></i>
-    </div>
-    </li>`;
-    left_list_404.innerHTML += htmllist;
-    /* Update this function By Ashiq */
-    let list_data1 = "",
-        list_data2 = "",
-        list_data3 = "",
-        length = 60;
-    for (let i = 1; i <= length; i++) {
-        let elementHtml = `<li class="result-list-${index + 1}-${i}">
-        <p>Level ${index + 1} - Item ${i}</p>
-        <div class="sublist-check-box-404">
+(function listDataMan404() {
+    let htmllist = "", htmlDataModal = "";
+    listItemData404.forEach((item, index) => {
+        htmllist += `<li class="list-item-404-${index + 1}">
+        <p>${item}</p>
+        <div class="tik-box display-none">
             <i class="fas fa-check"></i>
         </div>
-        <div class="sublist-cancel-box-404" data-toggle="modal" data-target="#deletlistopt2">
-            <i class="fas fa-times"></i>
+        <div class="arrow-404 arrow-404-background-color-1">
+            <i class="fas fa-caret-right arrow-404-i-color-1"></i>
         </div>
         </li>`;
-        if (length < 61) {
-            if (i <= 20) {
-                list_data1 += elementHtml;
-            } else if (i >= 21 && i <= 40) {
-                list_data2 += elementHtml;
+        /* Update this function By Ashiq */
+        let list_data1 = "",
+            list_data2 = "",
+            list_data3 = "",
+            length = 60;
+        for (let i = 1; i <= length; i++) {
+            let elementHtml = `<li class="result-list-${index + 1}-${i}">
+            <p>Level ${index + 1} - Item ${i}</p>
+            <div class="sublist-check-box-404">
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="sublist-cancel-box-404" data-toggle="modal" data-target="#deletlistopt2">
+                <i class="fas fa-times"></i>
+            </div>
+            </li>`;
+            if (length < 61) {
+                if (i <= 20) {
+                    list_data1 += elementHtml;
+                } else if (i >= 21 && i <= 40) {
+                    list_data2 += elementHtml;
+                } else {
+                    list_data3 += elementHtml;
+                }
             } else {
-                list_data3 += elementHtml;
-            }
-        } else {
-            let divide = Math.floor(length / 3);
-            let len = divide + (length % 3);
-            if (i <= len) {
-                list_data1 += elementHtml;
-            } else if (i > len && i <= len + divide) {
-                list_data2 += elementHtml;
-            } else {
-                list_data3 += elementHtml;
+                let divide = Math.floor(length / 3);
+                let len = divide + (length % 3);
+                if (i <= len) {
+                    list_data1 += elementHtml;
+                } else if (i > len && i <= len + divide) {
+                    list_data2 += elementHtml;
+                } else {
+                    list_data3 += elementHtml;
+                }
             }
         }
-    }
-
-    const div_sub_ul_li_list = document.querySelector("#div-sub-ul-li-list");
-    div_sub_ul_li_list.innerHTML += `<ul class="right-list-404" id="sub-ul-list-1-${index + 1}">
+        htmlDataModal +=
+        `<ul class="right-list-404" style="margin-left: 300px; display: none" id="sub-ul-list-1-${index + 1}">
         ${list_data1}
-    </ul>
-    <ul class="right-list-404" id="sub-ul-list-2-${index + 1}">
-        ${list_data2}
-    </ul>
-    <ul class="right-list-404" id="sub-ul-list-3-${index + 1}">
-        ${list_data3}
-    </ul>`;
-
-    let sub_ul_list_id1 = document.getElementById("sub-ul-list-1-" + (index + 1));
-    sub_ul_list_id1.style.display = "none";
-    sub_ul_list_id1.style.marginLeft = "300px";
-
-    let sub_ul_list_id2 = document.getElementById("sub-ul-list-2-" + (index + 1));
-    sub_ul_list_id2.style.display = "none";
-    sub_ul_list_id2.style.marginLeft = "600px";
-
-    let sub_ul_list_id3 = document.getElementById("sub-ul-list-3-" + (index + 1));
-    sub_ul_list_id3.style.display = "none";
-    sub_ul_list_id3.style.marginLeft = "900px";
+        </ul>
+        <ul class="right-list-404" style="margin-left: 600px; display: none" id="sub-ul-list-2-${index + 1}">
+            ${list_data2}
+        </ul>
+        <ul class="right-list-404" style="margin-left: 900px; display: none" id="sub-ul-list-3-${index + 1}">
+            ${list_data3}
+        </ul>`;
+    });
+    left_list_404.innerHTML = htmllist;
+    document.querySelector("#div-sub-ul-li-list").innerHTML = htmlDataModal;
     /* Update End By Ashiq */
-});
+})();
 /* New Function Start */
 let sub_ul_list_id1_old = "",
     sub_ul_list_id2_old = "",
