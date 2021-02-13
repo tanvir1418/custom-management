@@ -19,10 +19,15 @@ function resetValue(e) {
     // remove error message
     let errP = $(`#${pid} .width-22 .error-message`);
     let errC = $(`#${pid} .width-22 .custom-input-danger`);
+    let errS = $(`#${pid} .width-22 .custom-input-success`);
     if (errP.length) errP.remove();
     if (errC.length) {
-      errC.addClass("custom-input-success");
+      errC.addClass("custom-input-only");
       errC.removeClass("custom-input-danger");
+    }
+    if (errS.length) {
+      errS.addClass("custom-input-only");
+      errS.removeClass("custom-input-success");
     }
   } else {
     let inW = inWords(seqList.length + 1).toUpperCase();
@@ -59,10 +64,15 @@ function resetValueR(e) {
     // remove error message
     let errP = $(`#${pid} .width-22 .error-message`);
     let errC = $(`#${pid} .width-22 .custom-input-danger`);
+    let errS = $(`#${pid} .width-22 .custom-input-success`);
     if (errP.length) errP.remove();
     if (errC.length) {
-      errC.addClass("custom-input-success");
+      errC.addClass("custom-input-only");
       errC.removeClass("custom-input-danger");
+    }
+    if (errS.length) {
+      errS.addClass("custom-input-only");
+      errS.removeClass("custom-input-success");
     }
   } else {
     let inW = inWords(seqListR.length + 1).toUpperCase();
@@ -364,7 +374,7 @@ function renderListInputHtml(_id, iCount, title, resetValue, swapSeq) {
   let divClass = iCount == 3 ? "width-22 width-15-tripple" : "width-22";
   for (let i = 0; i < iCount; i++) {
     inpHtml += `<div class="${divClass}">
-      <div class="custom-input-success">
+      <div class="custom-input-only">
         <input type="text" onfocus="onFocus(this)" onfocusout="checkEmpty(this)" oninput="checkEmpty(this)">
       </div>
     </div>`;
@@ -830,4 +840,23 @@ function removeExtraLines(e) {
       if ($(this).text().trim() == "") $(this).remove();
     });
   $(e).append("<br>");
+}
+
+function isGenerateDisable() {
+  let len = seqList.length;
+  if (!len) return false;
+  for (let i = 0; i < len; i++){
+    let abc = $(`#leftSideDrag_op1 #${seqList[i]} .custom-input-only input`);
+    for (let j = 0; j < abc.length; j++){
+      if (abc[j].value == "") return false;
+    }
+  }
+  return true;
+}
+
+function checkGenerateBtn() {
+  let flag = isGenerateDisable();
+  if (flag) {
+    $("#op1GenerateBtnModal").modal('toggle');
+  }
 }
