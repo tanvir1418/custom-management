@@ -404,7 +404,7 @@
                                                 autocomplete="off" required>
                                         </div>
                                         <div class="generate-button">
-                                            <button class="button btn-generate">Generate</button>
+                                            <button class="button btn-generate" onclick="checkGenerateBtn()">Generate</button>
                                         </div>
                                     </div>
                                 </div>
@@ -1102,10 +1102,8 @@
                                                                             <p>Thank You</p>
                                                                         </div>
                                                                         <div class="generate-button-popup-body-wrapper">
-                                                                            <div
-                                                                                class="generate-button-popup-body-content">
-                                                                                <p>Your Request has been Successfully
-                                                                                    Processed</p>
+                                                                            <div class="generate-button-popup-body-content">
+                                                                                <p>Your Request has been Successfully Processed</p>
                                                                             </div>
                                                                         </div>
                                                                         <div class="generate-popup">
@@ -11056,6 +11054,41 @@
         </div>
     </div>
     <!-- ======= MANAGE TEMPLATE LIST24 MODA delete modal END =========== -->
+    <!-- =========Option 1 Generate Btn Modal Starts========= -->
+    <div
+        class="modal fade"
+        id="op1GenerateBtnModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+    >
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+        <div class="modal-body">
+            <!-- =========================================== -->
+            <!-- thank you pop-up-for-generate button starts -->
+            <div class="generate-button-click-popup">
+            <div class="generate-button-click-popup-wrapper">
+                <div class="generate-button-popup-header-title">
+                <p>Thank You</p>
+                </div>
+                <div class="generate-button-popup-body-wrapper">
+                <div class="generate-button-popup-body-content">
+                    <p>Your Request has been Successfully Processed</p>
+                </div>
+                </div>
+                <div class="generate-popup">
+                <input type="button" value="Close" class="gn-close-btn" />
+                </div>
+            </div>
+            </div>
+            <!-- thank you pop-up-for-generate button ends -->
+            <!-- ================XXXXXXXXXXX============== -->
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- =========Option 1 Generate Btn Modal Ends========= -->
 
 
     <!-- JS FILES -->
