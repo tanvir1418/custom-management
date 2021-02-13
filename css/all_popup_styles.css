@@ -1756,10 +1756,10 @@ Bottom codes are added by Tanvir
     position: absolute;
     top: 0;
 }
+
 .checkbox_show{
     display: block;
 }
-
 .checkbox_hide{
     display: none;
 }
@@ -2177,7 +2177,34 @@ Bottom codes are added by Tanvir
     width: 15.3% !important;
 }
 .op1-option-selection .width-15-tripple .error-message p {
-    font-size: 8px;
+    font-size: 10px;
     color: red;
     padding-left: 0px;
+    line-height: 12px;
+}
+@media screen and (max-width: 1780px) {
+    .op1-option-selection .width-15-tripple .error-message p {
+        font-size: 8px;
+    }
+}
+@media screen and (max-width: 1450px) {
+    .op1-option-selection .width-15-tripple .error-message p {
+        font-size: 7px;
+        line-height: 10px;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .op1-option-selection .width-15-tripple .error-message p {
+        font-size: 6px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .op1-option-selection .width-15-tripple .error-message p {
+        font-size: 8px;
+    }
+}
+@media screen and (max-width: 820px) {
+    .op1-option-selection .width-15-tripple .error-message p {
+        font-size: 7px;
+    }
 }

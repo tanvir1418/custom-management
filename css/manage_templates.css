@@ -218,21 +218,25 @@
 }
 
 .mn-temp-option-selection .custome-select:after {
-  content: "\25bc";
-  font-size: 10px;
-  width: 14px;
-  height: 14px;
-  position: absolute;
-  background-color: white;
-  color: #818181;
-  z-index: 2;
-  right: 8px;
-  top: 13px;
-  text-align: center;
-  border-radius: 4px;
-  opacity: 0.8;
+  content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    background-color: #F5F5F5;
+    z-index: 2;
+    right: 10px;
+    top: 10px;
+    border-radius: 2px;
 }
-
+.mn-temp-option-selection .custome-select:before {
+  content: "\25bc";
+    position: absolute;
+    font-size: 11px;
+    color: #818181;
+    z-index: 3;
+    right: 14px;
+    top: 9px;
+}
 .mn-temp-option-selection .custome-select select option {
   background: #ffffff;
 }
@@ -282,21 +286,25 @@
 }
 
 .mn-temp-option-selection .custom-input-success:after {
-  content: "\2714";
-  font-size: 11px;
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  background-color: #e8ffed;
-  color: green;
-  z-index: 2;
-  right: 8px;
-  top: 13px;
-  text-align: center;
-  border-radius: 4px;
-  /* opacity: 0.8; */
+  content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    background-color: #E8FFED;
+    z-index: 2;
+    right: 10px;
+    top: 10px;
+    border-radius: 2px;
 }
-
+.mn-temp-option-selection .custom-input-success:before {
+  content: "\2714";
+  position: absolute;
+  font-size: 11px;
+  color: green;
+  z-index: 3;
+  right: 15px;
+  top: 9px;
+}
 .mn-temp-option-selection .custom-input-success input {
   background: #ffffff;
 }
@@ -341,6 +349,70 @@
 }
 
 .mn-temp-option-selection .custom-input-danger:after {
+  content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    background-color: #FFE9E9;
+    z-index: 2;
+    right: 10px;
+    top: 10px;
+    border-radius: 2px;
+  /* opacity: 0.8; */
+}
+.mn-temp-option-selection .custom-input-danger:before {
+  content: "\2716";
+    position: absolute;
+    font-size: 11px;
+    color: red;
+    z-index: 3;
+    right: 15px;
+    top: 9px;
+}
+.mn-temp-option-selection .custom-input-danger input {
+  background: #ffffff;
+}
+
+/* Custom Input Only */
+.mn-temp-option-selection .custom-input-only {
+  background: #e6e6e6;
+  position: relative;
+  width: 100%;
+  height: 40px;
+  z-index: 3;
+  border-radius: 6px;
+}
+
+.mn-temp-option-selection .custom-input-only input {
+  /* background: #ddd; */
+  background: #ffffff;
+  color: #2e2c2c;
+  outline: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 2;
+  padding: 5px 10px;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+}
+
+/* .mn-temp-option-selection .custom-input-only input:hover,
+.mn-temp-option-selection .custom-input-only input:focus {
+   box-shadow: red; 
+  cursor: pointer;
+        outline: 0;
+        border: 0;
+        border-radius: 0; 
+} */
+
+/* .mn-temp-option-selection .custom-input-only:after {
   content: "\2716";
   font-size: 11px;
   width: 16px;
@@ -353,12 +425,8 @@
   top: 13px;
   text-align: center;
   border-radius: 4px;
-  /* opacity: 0.8; */
-}
+} */
 
-.mn-temp-option-selection .custom-input-danger input {
-  background: #ffffff;
-}
 
 /*  Custom Input styling Ends  */
 /* ============================ */
@@ -374,7 +442,7 @@
 }
 
 .mn-temp-option-selection .width-5 .threebar {
-  padding-top: 4px;
+  padding-top: 7px;
   font-size: 20px;
   text-align: end;
 }
@@ -451,9 +519,9 @@
   /* border: 2px solid #690e90; */
 
   position: absolute;
-  left: 5px;
-  top: 4px;
-  z-index: 2;
+    left: 4px;
+    top: 2px;
+    z-index: 2;
 }
 
 .mn-temp-option-selection .toggle__input:checked~.toggle__label::after {
@@ -461,34 +529,38 @@
   box-shadow: 5px 5px 5px 4px rgba(140, 245, 80, 0.2);
 }
 
-/* .toggle__text {
-        margin-top: auto;
-        margin-bottom: auto;
-      } */
+.mn-temp-option-selection .toggle__text {
+  color: #000000;
+  font-family: gilroy-regular, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 5px;
+  padding-top: 3px;
+}
 /* this is for tik sign */
 .mn-temp-option-selection .toggle__label::before {
   content: "";
-  width: 0;
-  height: 0;
-  font-size: 24px;
+    width: 0;
+    height: 0;
+    font-size: 24px;
 
-  border-left-width: 0;
-  border-bottom-width: 0;
-  border-left-style: solid;
-  border-bottom-style: solid;
-  border-color: #fff;
+    border-left-width: 0;
+    border-bottom-width: 0;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-color: #fff;
 
-  position: absolute;
-  top: 16px;
-  left: 10px;
-  z-index: 3;
+    position: absolute;
+    top: 15px;
+    left: 8px;
+    z-index: 3;
 
-  transform-origin: left top;
-  transform: rotate(-40deg) skew(10deg);
+    transform-origin: left top;
+    transform: rotate(-40deg) skew(10deg);
 }
 
 .mn-temp-option-selection .toggle__input:checked~.toggle__label::before {
-  width: 13px;
+  width: 14px;
   height: 7px;
   border-left-width: 2px;
   border-bottom-width: 2px;
@@ -524,6 +596,7 @@
 
   .mn-temp-option-selection .toggle__text {
     font-size: 16px;
+    padding-top: 0;
   }
 
   .mn-temp-option-selection .toggle__label {
@@ -535,14 +608,14 @@
     width: 20px;
     height: 20px;
 
-    left: 7px;
-    top: 2px;
+    left: 5px;
+    top: 0px;
   }
 
   /* this is for tik sign */
   .mn-temp-option-selection .toggle__label::before {
-    top: 13px;
-    left: 10px;
+    top: 12px;
+    left: 6px;
   }
 
   .mn-temp-option-selection .icon-container .fas {
@@ -559,14 +632,18 @@
   }
 
   .mn-temp-option-selection .custome-select:after {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     font-size: 9px;
-    right: 8px;
-    top: 10px;
+    right: 9px;
+    top: 9px;
     border-radius: 3px;
   }
-
+  .mn-temp-option-selection .custome-select:before {
+    font-size: 10px;
+        right: 12px;
+        top: 6px;
+  }
   /*  Custom Input styling Starts  */
   .mn-temp-option-selection .custom-input-success {
     height: 35px;
@@ -578,14 +655,18 @@
   }
 
   .mn-temp-option-selection .custom-input-success:after {
-    width: 12px;
-    height: 12px;
-    font-size: 9px;
-    right: 8px;
-    top: 10px;
-    border-radius: 3px;
+    width: 16px;
+        height: 16px;
+        font-size: 9px;
+        right: 8px;
+        top: 9px;
+        border-radius: 2px;
   }
-
+  .mn-temp-option-selection .custom-input-success:before {
+    font-size: 10px;
+        right: 12px;
+        top: 6px;
+  }
   .mn-temp-option-selection .custom-input-danger {
     height: 35px;
   }
@@ -596,12 +677,26 @@
   }
 
   .mn-temp-option-selection .custom-input-danger:after {
-    width: 12px;
-    height: 12px;
-    font-size: 9px;
-    right: 8px;
-    top: 10px;
-    border-radius: 3px;
+    width: 16px;
+        height: 16px;
+        font-size: 9px;
+        right: 8px;
+        top: 9px;
+        border-radius: 2px;
+  }
+  .mn-temp-option-selection .custom-input-danger:before {
+    font-size: 10px;
+    right: 12px;
+    top: 6px;
+  }
+
+  .mn-temp-option-selection .custom-input-only {
+    height: 35px;
+  }
+
+  .mn-temp-option-selection .custom-input-only input {
+    font-size: 16px;
+    padding: 5px 10px;
   }
 }
 
@@ -613,7 +708,7 @@
 
   .mn-temp-option-selection .width-5 .threebar {
     padding-top: 4px;
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .mn-temp-option-selection .width-26 {
@@ -651,22 +746,17 @@
   }
 
   .mn-temp-option-selection .custome-select:after {
-    content: "";
+    border-radius: 1px;
     font-size: 8px;
-    width: 12px;
-    height: 12px;
-    z-index: 2;
-    right: 6px;
+    width: 14px;
+    height: 14px;
+    right: 8px;
     top: 8px;
   }
 
   .mn-temp-option-selection .custome-select:before {
-    content: "\25bc";
-    font-size: 8px;
-    position: absolute;
-    color: #818181;
-    z-index: 10;
-    right: 9px;
+    font-size: 9px;
+    right: 11px;
     top: 4px;
   }
 
@@ -683,21 +773,18 @@
   }
 
   .mn-temp-option-selection .custom-input-success:after {
-    content: "";
+    border-radius: 1px;
+    font-size: 8px;
     width: 14px;
     height: 14px;
     right: 8px;
-    top: 7px;
+    top: 8px;
   }
 
   .mn-temp-option-selection .custom-input-success:before {
-    content: "\2714";
-    font-size: 10px;
-    position: absolute;
-    color: green;
-    z-index: 3;
-    right: 12px;
-    top: 3px;
+    font-size: 9px;
+    right: 11px;
+    top: 4px;
   }
 
   /* -------Custom Input Danger-------- */
@@ -711,23 +798,28 @@
   }
 
   .mn-temp-option-selection .custom-input-danger:after {
-    content: "";
+    border-radius: 1px;
+    font-size: 8px;
     width: 14px;
     height: 14px;
     right: 8px;
-    top: 7px;
+    top: 8px;
   }
 
   .mn-temp-option-selection .custom-input-danger:before {
-    content: "\2716";
-    font-size: 10px;
-    position: absolute;
-    color: red;
-    z-index: 3;
-    right: 12px;
-    top: 3px;
+    font-size: 9px;
+    right: 11px;
+    top: 4px;
   }
 
+  .mn-temp-option-selection .custom-input-only {
+    height: 30px;
+  }
+
+  .mn-temp-option-selection .custom-input-only input {
+    height: 30px;
+    font-size: 14px;
+  }
   /* xxxxxxx Custom Input styling Ends xxxxxxxx  */
 
   /*======  Custom Input styling starts ====== */
@@ -737,7 +829,7 @@
 
   .mn-temp-option-selection .toggle__label {
     font-size: 20px;
-    padding-left: 25px;
+    padding-left: 20px;
   }
 
   /* this is for box */
@@ -749,7 +841,9 @@
     left: 0px;
     top: 1px;
   }
-
+  .mn-temp-option-selection .toggle__text {
+    font-size: 13px;
+}
   /* .toggle__text {
         margin-top: auto;
         margin-bottom: auto;
@@ -823,3 +917,46 @@
 .mn-temp-option-selection .threebar:hover {
   cursor: grab;
 }
+
+
+.save-start-class-hide-show-mnTemp{
+  display: none;
+}
+
+
+/* 
+.updown-handler{
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 15px;
+  background: #F5F5F5; 
+  right: 2px;
+  top: 8px;
+  z-index: 10;
+  text-align: center;
+}
+.updown-handler:before{
+  
+  content: "\25b2";
+    position: absolute;
+    height: 10px;
+  width: 20px;
+    font-size: 11px;
+    color: #818181;
+    z-index: 3;
+    right: 0px;
+    top: 0px;
+}
+.updown-handler:after{
+  
+  content: "\25bc";
+    position: absolute;
+    height: 10px;
+  width: 20px;
+    font-size: 11px;
+    color: #818181;
+    z-index: 3;
+    right: 0px;
+    top: 8px;
+} */
