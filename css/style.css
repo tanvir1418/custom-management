@@ -1111,7 +1111,7 @@ td {
   width: 16px;
   background: #06e791;
   border-radius: 50%;
-  display: none;
+  /* display: none; */
 }
 
 .scrollable-list .sub-list li .sublist-check-box i {

@@ -37,78 +37,68 @@ const listItemData404 = [
     "Item 28",
     "Item 29",
 ];
-
-listItemData404.forEach((item, index) => {
-    let htmllist = `<li class="list-item-404-${index + 1}">
-    <p>${item}</p>
-    <div class="tik-box display-none">
-        <i class="fas fa-check"></i>
-    </div>
-    <div class="arrow-404 arrow-404-background-color-1">
-        <i class="fas fa-caret-right arrow-404-i-color-1"></i>
-    </div>
-    </li>`;
-    left_list_404.innerHTML += htmllist;
-    /* Update this function By Ashiq */
-    let list_data1 = "",
-        list_data2 = "",
-        list_data3 = "",
-        length = 60;
-    for (let i = 1; i <= length; i++) {
-        let elementHtml = `<li class="result-list-${index + 1}-${i}">
-        <p>Level ${index + 1} - Item ${i}</p>
-        <div class="sublist-check-box-404">
+(function listDataMan404() {
+    let htmllist = "", htmlDataModal = "";
+    listItemData404.forEach((item, index) => {
+        htmllist += `<li class="list-item-404-${index + 1}">
+        <p>${item}</p>
+        <div class="tik-box display-none">
             <i class="fas fa-check"></i>
         </div>
-        <div class="sublist-cancel-box-404" data-toggle="modal" data-target="#deletlistopt2">
-            <i class="fas fa-times"></i>
+        <div class="arrow-404 arrow-404-background-color-1">
+            <i class="fas fa-caret-right arrow-404-i-color-1"></i>
         </div>
         </li>`;
-        if (length < 61) {
-            if (i <= 20) {
-                list_data1 += elementHtml;
-            } else if (i >= 21 && i <= 40) {
-                list_data2 += elementHtml;
+        /* Update this function By Ashiq */
+        let list_data1 = "",
+            list_data2 = "",
+            list_data3 = "",
+            length = 60;
+        for (let i = 1; i <= length; i++) {
+            let elementHtml = `<li class="result-list-${index + 1}-${i}">
+            <p>Level ${index + 1} - Item ${i}</p>
+            <div class="sublist-check-box-404">
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="sublist-cancel-box-404" data-toggle="modal" data-target="#deletlistopt2">
+                <i class="fas fa-times"></i>
+            </div>
+            </li>`;
+            if (length < 61) {
+                if (i <= 20) {
+                    list_data1 += elementHtml;
+                } else if (i >= 21 && i <= 40) {
+                    list_data2 += elementHtml;
+                } else {
+                    list_data3 += elementHtml;
+                }
             } else {
-                list_data3 += elementHtml;
-            }
-        } else {
-            let divide = Math.floor(length / 3);
-            let len = divide + (length % 3);
-            if (i <= len) {
-                list_data1 += elementHtml;
-            } else if (i > len && i <= len + divide) {
-                list_data2 += elementHtml;
-            } else {
-                list_data3 += elementHtml;
+                let divide = Math.floor(length / 3);
+                let len = divide + (length % 3);
+                if (i <= len) {
+                    list_data1 += elementHtml;
+                } else if (i > len && i <= len + divide) {
+                    list_data2 += elementHtml;
+                } else {
+                    list_data3 += elementHtml;
+                }
             }
         }
-    }
-
-    const div_sub_ul_li_list = document.querySelector("#div-sub-ul-li-list");
-    div_sub_ul_li_list.innerHTML += `<ul class="right-list-404" id="sub-ul-list-1-${index + 1}">
+        htmlDataModal +=
+        `<ul class="right-list-404" style="margin-left: 300px; display: none" id="sub-ul-list-1-${index + 1}">
         ${list_data1}
-    </ul>
-    <ul class="right-list-404" id="sub-ul-list-2-${index + 1}">
-        ${list_data2}
-    </ul>
-    <ul class="right-list-404" id="sub-ul-list-3-${index + 1}">
-        ${list_data3}
-    </ul>`;
-
-    let sub_ul_list_id1 = document.getElementById("sub-ul-list-1-" + (index + 1));
-    sub_ul_list_id1.style.display = "none";
-    sub_ul_list_id1.style.marginLeft = "300px";
-
-    let sub_ul_list_id2 = document.getElementById("sub-ul-list-2-" + (index + 1));
-    sub_ul_list_id2.style.display = "none";
-    sub_ul_list_id2.style.marginLeft = "600px";
-
-    let sub_ul_list_id3 = document.getElementById("sub-ul-list-3-" + (index + 1));
-    sub_ul_list_id3.style.display = "none";
-    sub_ul_list_id3.style.marginLeft = "900px";
+        </ul>
+        <ul class="right-list-404" style="margin-left: 600px; display: none" id="sub-ul-list-2-${index + 1}">
+            ${list_data2}
+        </ul>
+        <ul class="right-list-404" style="margin-left: 900px; display: none" id="sub-ul-list-3-${index + 1}">
+            ${list_data3}
+        </ul>`;
+    });
+    left_list_404.innerHTML = htmllist;
+    document.querySelector("#div-sub-ul-li-list").innerHTML = htmlDataModal;
     /* Update End By Ashiq */
-});
+})();
 /* New Function Start */
 let sub_ul_list_id1_old = "",
     sub_ul_list_id2_old = "",
@@ -150,40 +140,36 @@ function item_li_click_handle(listClassName) {
 }
 /* New Function End */
 var left_list_data = "";
+(function resultLeftListControl() {
+    let oldTarget = "";
+    left_list_404.addEventListener("click", function (e) {
+        let target = e.target;
+        const elementName = ["DIV", "P"];
+        if (elementName.includes(target.tagName)) {
+            target = target.parentNode;
+        } else if (target.tagName === "I") {
+            target = target.parentNode.parentNode;
+        }
 
-left_list_404.addEventListener("click", function (e) {
-    let target = e.target;
-    const elementName = ["DIV", "P"];
-    if (elementName.includes(target.tagName)) {
-        target = target.parentNode;
-    } else if (target.tagName === "I") {
-        target = target.parentNode.parentNode;
-    }
+        if (oldTarget != "" && oldTarget !== target) {
+            $(oldTarget).removeClass("highlight_404");
+            $(oldTarget).children(".tik-box").removeClass("display-block");
+            $(oldTarget).children(".tik-box").addClass("display-none");
+            $(oldTarget).children(".arrow-404").removeClass("arrow-404-background-color-2");
+            $(oldTarget).children(".arrow-404").addClass("arrow-404-background-color-1");
+            $(oldTarget).children(".arrow-404").children(".fa-caret-right").removeClass("arrow-404-i-color-2");
+            $(oldTarget).children(".arrow-404").children(".fa-caret-right").addClass("arrow-404-i-color-1");
+        }
+        $(target).toggleClass("highlight_404");
+        $(target).children(".tik-box").toggleClass("display-none display-block");
+        $(target).children(".arrow-404").toggleClass("arrow-404-background-color-1 arrow-404-background-color-2");
+        $(target).children(".arrow-404").children(".fa-caret-right").toggleClass("arrow-404-i-color-1 arrow-404-i-color-2");
+        oldTarget = target;
 
-    $(".highlight_404 .arrow-404-i-color-2").addClass("arrow-404-i-color-1");
-    $(".highlight_404 .arrow-404-i-color-2").removeClass(
-        "arrow-404-i-color-2"
-    );
-    $(".highlight_404 .display-block").addClass("display-none");
-    $(".highlight_404 .display-block").removeClass("display-block");
-    $(".highlight_404 .arrow-404-background-color-2").addClass(
-        "arrow-404-background-color-1"
-    );
-    $(".highlight_404 .arrow-404-background-color-2").removeClass(
-        "arrow-404-background-color-2"
-    );
-    $(".highlight_404").removeClass("highlight_404");
-
-    target.classList.add("highlight_404");
-    target.childNodes[3].classList.remove("display-none");
-    target.childNodes[3].classList.add("display-block");
-    target.childNodes[5].classList.remove("arrow-404-background-color-1");
-    target.childNodes[5].classList.add("arrow-404-background-color-2");
-    target.childNodes[5].childNodes[1].classList.remove("arrow-404-i-color-1");
-    target.childNodes[5].childNodes[1].classList.add("arrow-404-i-color-2");
-    left_list_data = target.childNodes[1].innerHTML;
-    item_li_click_handle(target.classList[0]);
-});
+        left_list_data = target.childNodes[1].innerHTML;
+        item_li_click_handle(target.classList[0]);
+    });
+})();
 
 const list_left_item_1 = document.querySelector(".list-item-404-1");
 // End here by ASHIQ
