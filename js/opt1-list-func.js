@@ -848,7 +848,18 @@ function isGenerateDisable() {
   for (let i = 0; i < len; i++){
     let abc = $(`#leftSideDrag_op1 #${seqList[i]} .custom-input-only input`);
     for (let j = 0; j < abc.length; j++){
-      if (abc[j].value == "") return false;
+      if (abc[j].value == "") {
+        $(abc[j]).parent().addClass("custom-input-danger");
+        $(abc[j]).parent().removeClass("custom-input-success");
+        let errorMessage = `<div class="error-message">
+          <p>A value must be entered</p>
+        </div>`;
+        let errPos = $(abc[j]).parent().parent();
+        if (!errPos.children("div.error-message").length) {
+          errPos.append(errorMessage);
+        }
+        return false;
+      }
     }
   }
   
@@ -857,7 +868,18 @@ function isGenerateDisable() {
   for (let i = 0; i < len2; i++){
     let abc = $(`#rightSideDrag_op1 #${seqListR[i]} .custom-input-only input`);
     for (let j = 0; j < abc.length; j++){
-      if (abc[j].value == "") return false;
+      if (abc[j].value == "") {
+        $(abc[j]).parent().addClass("custom-input-danger");
+        $(abc[j]).parent().removeClass("custom-input-success");
+        let errorMessage = `<div class="error-message">
+          <p>A value must be entered</p>
+        </div>`;
+        let errPos = $(abc[j]).parent().parent();
+        if (!errPos.children("div.error-message").length) {
+          errPos.append(errorMessage);
+        }
+        return false;
+      }
     }
   }
   return true;

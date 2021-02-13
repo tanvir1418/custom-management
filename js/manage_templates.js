@@ -1739,7 +1739,6 @@ function manTemSwapSeqR(e) {
     $(`#${pid} #sequence`).val(val);
   }
 }
-// Manage template Sample 2 End
 
 function manTemcheckEmpty(e) {
   if (e.value !== "") {
@@ -1776,3 +1775,78 @@ function manTemcheckNum(e) {
     }
   }
 }
+// Manage template Sample 2 End
+
+// Manage template Sample 3 Start
+let sam4DataArray = [
+  {
+    id: "sam-id-1",
+    name: "Option 1 - Text abc",
+    dataType: "inputText",
+  },
+  {
+    id: "sam-id-2",
+    name: "Option 2 - Text abd",
+    dataType: "range",
+  },
+  {
+    id: "sam-id-3",
+    name: "Option 3 - Text abef",
+    dataType: "date",
+  },
+  {
+    id: "sam-id-4",
+    name: "Option 4 - Text abc12",
+    dataType: "select",
+  },
+  {
+    id: "sam-id-5",
+    name: "Option 5 - Text abc12",
+    dataType: "inputText",
+  },
+  {
+    id: "sam-id-6",
+    name: "Option 6 - Text abd56",
+    dataType: "range",
+  },
+  {
+    id: "sam-id-7",
+    name: "Option 7 - Text abef67",
+    dataType: "date",
+  },
+  {
+    id: "sam-id-8",
+    name: "Option 8 - Text abc12fd",
+    dataType: "select",
+  },
+];
+
+(function temSam4firstTable() {
+  let htmlTable = "";
+  sam4DataArray.forEach(({id,name}) => {
+    htmlTable += `<tr id="${id}" ondblclick="" onclick="clickAddClass(this)">
+        <td>${name}</td>
+    </tr>`;
+  });
+
+  $("#tem-sample4-first tbody").html(htmlTable)
+})();
+
+let oldE = "";
+function clickAddClass(e) {
+  if (e !== oldE) {
+    $(e).parent().children("tr.mark-table-data").removeClass("mark-table-data");
+  }
+  $(e).toggleClass("mark-table-data");
+  oldE = e;
+}
+
+function moveLeftToRight() {
+  let tr = $("#tem-sample4-first tr.mark-table-data");
+  $("#tem-sample4-second tbody").append(tr);
+}
+function moveRightToLeft() {
+  let tr = $("#tem-sample4-second tr.mark-table-data");
+  $("#tem-sample4-first tbody").append(tr);
+}
+// Manage template Sample 4 End
