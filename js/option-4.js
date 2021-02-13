@@ -36,6 +36,19 @@ for (let i = 0; i < listSingle.length; i++) {
   });
 }
 
+// prevent from add/remove style (modal)
+const preventListStyle = document.querySelectorAll(".single-list-item-file-container img");
+// single-list-item-file-container
+for (let i = 0; i < preventListStyle.length; i++) {
+  preventListStyle[i].addEventListener("click", function () {
+    listSingleLink[i].classList.toggle("hideListDiv");
+    listSingleTick[i].classList.toggle("hideListDiv");
+    fileBackgroundColor[i].classList.toggle("fileContainerColor");
+    selectItemText[i].classList.toggle("hideListDiv");
+    pTopText[i].classList.toggle("hideListDiv");
+  });
+}
+
 //code below working fine
 $(document).ready(function () {
   $('#my42567').addClass('createGreen');
@@ -431,3 +444,12 @@ $(document).click(function (e) {
 // $("#sub2-editor-table td").click(function() {
 //   alert(this.id); // or alert($(this).attr('id'));
 // });
+
+// manage template hide show save start button 
+$("#next-show-save-start-mnTemp").click(function(){
+  $('#saveStartTarget-mnTemp').removeClass('save-start-class-hide-show-mnTemp');
+});
+
+$("#prev-hide-save-start-mnTemp").click(function(){
+  $('#saveStartTarget-mnTemp').addClass('save-start-class-hide-show-mnTemp');
+});
