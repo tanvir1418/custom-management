@@ -352,7 +352,7 @@ function rightSideTable() {
 }
 rightSideTable();
 
-function resetLeftRightBox(){
+function resetLeftRightBox() {
   leftSideTable();
   rightSideTable();
   $("#leftSideDrag_op1").html("");
@@ -361,23 +361,13 @@ function resetLeftRightBox(){
 
 function renderListInputHtml(_id, iCount, title, resetValue, swapSeq) {
   let inpHtml = "";
-  if (iCount == 3) {
-    for (let i = 0; i < iCount; i++) {
-      inpHtml += `<div class="width-22 width-15-tripple">
+  let divClass = iCount == 3 ? "width-22 width-15-tripple" : "width-22";
+  for (let i = 0; i < iCount; i++) {
+    inpHtml += `<div class="${divClass}">
       <div class="custom-input-success">
         <input type="text" onfocus="onFocus(this)" onfocusout="checkEmpty(this)" oninput="checkEmpty(this)">
       </div>
     </div>`;
-    }
-  }
-  else {
-    for (let i = 0; i < iCount; i++) {
-      inpHtml += `<div class="width-22">
-      <div class="custom-input-success">
-        <input type="text" onfocus="onFocus(this)" onfocusout="checkEmpty(this)" oninput="checkEmpty(this)">
-      </div>
-    </div>`;
-    }
   }
 
   let htmlData = `<div class="d-flex mb-2" id="${_id}">
@@ -389,7 +379,7 @@ function renderListInputHtml(_id, iCount, title, resetValue, swapSeq) {
     <div class="width-26">
       <div class="page__toggle">
         <label class="toggle">
-          <input class="toggle__input" type="checkbox" onchange="${resetValue}">
+          <input class="toggle__input" type="checkbox" onchange="${resetValue}"/>
           <span class="toggle__label">
             <span class="toggle__text">${title}</span>
           </span>
@@ -410,7 +400,7 @@ function renderListInputHtml(_id, iCount, title, resetValue, swapSeq) {
     </div>
     ${inpHtml}
   </div>`;
-  
+
   return htmlData;
 }
 
@@ -448,7 +438,7 @@ function formToWindow(e) {
     let seqVal = $(`#${pid} #sequence`).val();
     let seqTitle = $(`#${pid} #sequence`).find(":selected").text();
     let inpObj = $(`#${pid} input[type="text"]`), inpDiv = "";
-    for (let i = 0; i < inpObj.length; i++){
+    for (let i = 0; i < inpObj.length; i++) {
       let inpText = inpObj[i].value;
       inpDiv += `<div class="form-text-design data-div">
         ${title}: ${inpText}
@@ -476,7 +466,7 @@ function windowToForm(e) {
     .children(".text-editor-popup-body")
     .find("#text_editor div.form-text-design.data-div");
   let len = tRow.length;
-  for (let i = 0; i < len; i++){
+  for (let i = 0; i < len; i++) {
     let divData = $(tRow[i++])[0].innerText.split(":");
     let title = divData[0].trim();
     let pid = findInputId(title);
@@ -484,7 +474,7 @@ function windowToForm(e) {
     divData = $(tRow[i++])[0].innerText.split(":");
     let seqName = divData[divData.length - 1].trim();
     let seqVal = 0;
-    for (let k = 1; k < 50; k++){
+    for (let k = 1; k < 50; k++) {
       if (seqName == inWords(k).toUpperCase()) {
         seqVal = k;
       }
@@ -652,7 +642,7 @@ function checking(e) {
               ${nd.textContent.substr(0, extra)}
               </div>`
               : "<br>") +
-              `<div id="temp">
+            `<div id="temp">
               ${nd.textContent.substr(extra)}
               "</div>`
           );
@@ -684,7 +674,7 @@ function autoCorrect() {
     `<div id="temp">${pos.textContent}</div>
     <div id="adder"></div>`
   );
-  
+
   var m = "";
   var first = 1;
   if (x.indexOf(":") == -1) {
