@@ -403,14 +403,14 @@
   border-radius: 4px;
 }
 
-.mn-temp-option-selection .custom-input-only input:hover,
+/* .mn-temp-option-selection .custom-input-only input:hover,
 .mn-temp-option-selection .custom-input-only input:focus {
-  /* box-shadow: red; */
-  /* cursor: pointer;
+   box-shadow: red; 
+  cursor: pointer;
         outline: 0;
         border: 0;
-        border-radius: 0; */
-}
+        border-radius: 0; 
+} */
 
 /* .mn-temp-option-selection .custom-input-only:after {
   content: "\2716";
@@ -917,6 +917,12 @@
 .mn-temp-option-selection .threebar:hover {
   cursor: grab;
 }
+
+
+.save-start-class-hide-show-mnTemp{
+  display: none;
+}
+
 
 /* 
 .updown-handler{
