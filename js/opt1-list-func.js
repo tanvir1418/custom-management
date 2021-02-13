@@ -851,6 +851,15 @@ function isGenerateDisable() {
       if (abc[j].value == "") return false;
     }
   }
+  
+  let len2 = seqListR.length;
+  if (!len2) return false;
+  for (let i = 0; i < len2; i++){
+    let abc = $(`#rightSideDrag_op1 #${seqListR[i]} .custom-input-only input`);
+    for (let j = 0; j < abc.length; j++){
+      if (abc[j].value == "") return false;
+    }
+  }
   return true;
 }
 
