@@ -404,7 +404,7 @@
                                                 autocomplete="off" required>
                                         </div>
                                         <div class="generate-button">
-                                            <button class="button btn-generate">Generate</button>
+                                            <button class="button btn-generate" onclick="checkGenerateBtn()">Generate</button>
                                         </div>
                                     </div>
                                 </div>
@@ -1102,10 +1102,8 @@
                                                                             <p>Thank You</p>
                                                                         </div>
                                                                         <div class="generate-button-popup-body-wrapper">
-                                                                            <div
-                                                                                class="generate-button-popup-body-content">
-                                                                                <p>Your Request has been Successfully
-                                                                                    Processed</p>
+                                                                            <div class="generate-button-popup-body-content">
+                                                                                <p>Your Request has been Successfully Processed</p>
                                                                             </div>
                                                                         </div>
                                                                         <div class="generate-popup">
@@ -4124,306 +4122,7 @@
                                                 <!-- <div class="padding-bottom"></div> -->
                                                 <!-- added by Tanvir id="mnTemp_leftSideDrag" -->
                                                 <div class="mn-temp-option-selection" id="mnTemp_leftSideDrag">
-                                                    <div class="d-flex mb-2">
-                                                        <div class="width-5 align-items-baseline">
-                                                            <div class="threebar">
-                                                                <span>|||</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-26">
-                                                            <div class="page__toggle">
-                                                                <label class="toggle">
-                                                                    <input class="toggle__input" type="checkbox">
-                                                                    <span class="toggle__label">
-                                                                        <span class="toggle__text">L-Options
-                                                                            1</span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-12">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option>SET</option>
-                                                                    <option>ADD</option>
-                                                                    <option>Add/Set</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option>SEQUENCE</option>
-                                                                    <option>FIRST</option>
-                                                                    <option>SECOND</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custom-input-danger">
-                                                                <input type="text">
-                                                            </div>
-                                                            <div class="error-message">
-                                                                <p>A value must be entered</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custom-input-success">
-                                                                <input type="text">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex mb-2">
-                                                        <div class="width-5 align-items-baseline">
-                                                            <div class="threebar">
-                                                                <span>|||</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-26">
-                                                            <div class="page__toggle">
-                                                                <label class="toggle">
-                                                                    <input class="toggle__input" type="checkbox">
-                                                                    <span class="toggle__label">
-                                                                        <span class="toggle__text">L-Options
-                                                                            1</span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-12">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option>SET</option>
-                                                                    <option>ADD</option>
-                                                                    <option>Add/Set</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                    <select>
-                                                                        <option>SEQUENCE</option>
-                                                                        <option>FIRST</option>
-                                                                        <option>SECOND</option>
-                                                                    </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custom-input-danger">
-                                                                <input type="text">
-                                                            </div>
-                                                            <div class="error-message">
-                                                                <p>A value must be entered</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custom-input-success">
-                                                                <input type="text">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex mb-2">
-                                                        <div class="width-5 align-items-baseline">
-                                                            <div class="threebar">
-                                                                <span>|||</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-26">
-                                                            <div class="page__toggle">
-                                                                <label class="toggle">
-                                                                    <input class="toggle__input" type="checkbox">
-                                                                    <span class="toggle__label">
-                                                                        <span class="toggle__text">L-Options
-                                                                            1</span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-12">
-                                                            <!-- <div class="custome-select">
-                                                                <select>
-                                                                    <option>Add/Set</option>
-                                                                    <option>ADD</option>
-                                                                    <option>SET</option>
-                                                                </select>
-                                                            </div> -->
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option>SEQUENCE</option>
-                                                                    <option>FIRST</option>
-                                                                    <option>SECOND</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option></option>
-                                                                    <option></option>
-                                                                    <option></option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option></option>
-                                                                    <option></option>
-                                                                    <option></option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex mb-2">
-                                                        <div class="width-5 align-items-baseline">
-                                                            <div class="threebar">
-                                                                <span>|||</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-26">
-                                                            <div class="page__toggle">
-                                                                <label class="toggle">
-                                                                    <input class="toggle__input" type="checkbox">
-                                                                    <span class="toggle__label">
-                                                                        <span class="toggle__text">L-Options
-                                                                            1</span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-12">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option>Add/Set</option>
-                                                                    <option>ADD</option>
-                                                                    <option>SET</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option>SEQUENCE</option>
-                                                                    <option>FIRST</option>
-                                                                    <option>SECOND</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option></option>
-                                                                    <option></option>
-                                                                    <option></option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option></option>
-                                                                    <option></option>
-                                                                    <option></option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex mb-2">
-                                                        <div class="width-5 align-items-baseline">
-                                                            <div class="threebar">
-                                                                <span>|||</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-26">
-                                                            <div class="page__toggle">
-                                                                <label class="toggle">
-                                                                    <input class="toggle__input" type="checkbox">
-                                                                    <span class="toggle__label">
-                                                                        <span class="toggle__text">L-Options
-                                                                            1</span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-12">
-                                                            <!-- <div class="custome-select">
-                                                                <select>
-                                                                    <option>Add/Set</option>
-                                                                    <option>ADD</option>
-                                                                    <option>SET</option>
-                                                                </select>
-                                                            </div> -->
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option>SEQUENCE</option>
-                                                                    <option>FIRST</option>
-                                                                    <option>SECOND</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custom-input-only">
-                                                                <input type="text">
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custom-input-only">
-                                                                <input type="text">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex mb-2">
-                                                        <div class="width-5 align-items-baseline">
-                                                            <div class="threebar">
-                                                                <span>|||</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-26">
-                                                            <div class="page__toggle">
-                                                                <label class="toggle">
-                                                                    <input class="toggle__input" type="checkbox">
-                                                                    <span class="toggle__label">
-                                                                        <span class="toggle__text">L-Options
-                                                                            1</span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-12">
-                                                            <!-- <div class="custome-select">
-                                                                <select>
-                                                                    <option>Add/Set</option>
-                                                                    <option>ADD</option>
-                                                                    <option>SET</option>
-                                                                </select>
-                                                            </div> -->
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option>SEQUENCE</option>
-                                                                    <option>FIRST</option>
-                                                                    <option>SECOND</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custom-input-only">
-                                                                <input type="number">
-                                                                <!-- <span class="updown-handler"></span> -->
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custom-input-only">
-                                                                <input type="number">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
+                                                <!-- TODO: manage template sample 2 LEFT -->
                                                 </div>
                                             </div>
                                         </div>
@@ -4436,304 +4135,7 @@
                                             <div class="side-bottom-box mt-4 pt-3 margin-left">
                                                 <!-- added by Tanvir id="mnTemp_rightSideDrag" -->
                                                 <div class="mn-temp-option-selection" id="mnTemp_rightSideDrag">
-                                                    <div class="d-flex mb-2">
-                                                        <div class="width-5 align-items-baseline">
-                                                            <div class="threebar">
-                                                                <span>|||</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-26">
-                                                            <div class="page__toggle">
-                                                                <label class="toggle">
-                                                                    <input class="toggle__input" type="checkbox">
-                                                                    <span class="toggle__label">
-                                                                        <span class="toggle__text">L-Options
-                                                                            1</span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-12">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option>SET</option>
-                                                                    <option>ADD</option>
-                                                                    <option>Add/Set</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option>SEQUENCE</option>
-                                                                    <option>FIRST</option>
-                                                                    <option>SECOND</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custom-input-danger">
-                                                                <input type="text">
-                                                            </div>
-                                                            <div class="error-message">
-                                                                <p>A value must be entered</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custom-input-success">
-                                                                <input type="text">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex mb-2">
-                                                        <div class="width-5 align-items-baseline">
-                                                            <div class="threebar">
-                                                                <span>|||</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-26">
-                                                            <div class="page__toggle">
-                                                                <label class="toggle">
-                                                                    <input class="toggle__input" type="checkbox">
-                                                                    <span class="toggle__label">
-                                                                        <span class="toggle__text">L-Options
-                                                                            1</span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-12">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option>SET</option>
-                                                                    <option>ADD</option>
-                                                                    <option>Add/Set</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                    <select>
-                                                                        <option>SEQUENCE</option>
-                                                                        <option>FIRST</option>
-                                                                        <option>SECOND</option>
-                                                                    </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custom-input-danger">
-                                                                <input type="text">
-                                                            </div>
-                                                            <div class="error-message">
-                                                                <p>A value must be entered</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custom-input-success">
-                                                                <input type="text">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex mb-2">
-                                                        <div class="width-5 align-items-baseline">
-                                                            <div class="threebar">
-                                                                <span>|||</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-26">
-                                                            <div class="page__toggle">
-                                                                <label class="toggle">
-                                                                    <input class="toggle__input" type="checkbox">
-                                                                    <span class="toggle__label">
-                                                                        <span class="toggle__text">L-Options
-                                                                            1</span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-12">
-                                                            <!-- <div class="custome-select">
-                                                                <select>
-                                                                    <option>Add/Set</option>
-                                                                    <option>ADD</option>
-                                                                    <option>SET</option>
-                                                                </select>
-                                                            </div> -->
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option>SEQUENCE</option>
-                                                                    <option>FIRST</option>
-                                                                    <option>SECOND</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option></option>
-                                                                    <option></option>
-                                                                    <option></option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option></option>
-                                                                    <option></option>
-                                                                    <option></option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex mb-2">
-                                                        <div class="width-5 align-items-baseline">
-                                                            <div class="threebar">
-                                                                <span>|||</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-26">
-                                                            <div class="page__toggle">
-                                                                <label class="toggle">
-                                                                    <input class="toggle__input" type="checkbox">
-                                                                    <span class="toggle__label">
-                                                                        <span class="toggle__text">L-Options
-                                                                            1</span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-12">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option>Add/Set</option>
-                                                                    <option>ADD</option>
-                                                                    <option>SET</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option>SEQUENCE</option>
-                                                                    <option>FIRST</option>
-                                                                    <option>SECOND</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option></option>
-                                                                    <option></option>
-                                                                    <option></option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option></option>
-                                                                    <option></option>
-                                                                    <option></option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex mb-2">
-                                                        <div class="width-5 align-items-baseline">
-                                                            <div class="threebar">
-                                                                <span>|||</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-26">
-                                                            <div class="page__toggle">
-                                                                <label class="toggle">
-                                                                    <input class="toggle__input" type="checkbox">
-                                                                    <span class="toggle__label">
-                                                                        <span class="toggle__text">L-Options
-                                                                            1</span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-12">
-                                                            <!-- <div class="custome-select">
-                                                                <select>
-                                                                    <option>Add/Set</option>
-                                                                    <option>ADD</option>
-                                                                    <option>SET</option>
-                                                                </select>
-                                                            </div> -->
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option>SEQUENCE</option>
-                                                                    <option>FIRST</option>
-                                                                    <option>SECOND</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custom-input-only">
-                                                                <input type="text">
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custom-input-only">
-                                                                <input type="text">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex mb-2">
-                                                        <div class="width-5 align-items-baseline">
-                                                            <div class="threebar">
-                                                                <span>|||</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-26">
-                                                            <div class="page__toggle">
-                                                                <label class="toggle">
-                                                                    <input class="toggle__input" type="checkbox">
-                                                                    <span class="toggle__label">
-                                                                        <span class="toggle__text">L-Options
-                                                                            1</span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-12">
-                                                            <!-- <div class="custome-select">
-                                                                <select>
-                                                                    <option>Add/Set</option>
-                                                                    <option>ADD</option>
-                                                                    <option>SET</option>
-                                                                </select>
-                                                            </div> -->
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custome-select">
-                                                                <select>
-                                                                    <option>SEQUENCE</option>
-                                                                    <option>FIRST</option>
-                                                                    <option>SECOND</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custom-input-only">
-                                                                <input type="number">
-                                                            </div>
-                                                        </div>
-                                                        <div class="width-22">
-                                                            <div class="custom-input-only">
-                                                                <input type="number">
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <!-- TODO: manage template sample 2  Right-->
                                                 </div>
                                             </div>
                                         </div>
@@ -5572,15 +4974,26 @@
                     <!-- //////////  DISPLAY CHART STYLE START ////////// -->
                     <div class="chart-page-inner-tab">
                         <button class="inner-tablink" onclick="openPage('Display1', this); gotoChartPage();"
-                            id="firstOpen">Display Chart Style 1</button>
-                        <button class="inner-tablink" onclick="openPage('Display2', this)">Display Chart Style
-                            2</button>
-                        <button class="inner-tablink" onclick="openPage('Display3', this)">Display Chart Style
-                            3</button>
-                        <button class="inner-tablink" onclick="openPage('Display4', this)">Display Chart Style
-                            4</button>
-                        <button class="inner-tablink" onclick="openPage('Display5', this)">Display Chart Style
-                            5</button>
+                            id="firstOpen">
+                            Display Chart Style 1
+                            <i class="fas fa-caret-down"></i>
+                        </button>
+                        <button class="inner-tablink" onclick="openPage('Display2', this)">
+                            Display Chart Style 2
+                            <i class="fas fa-caret-down"></i>
+                        </button>
+                        <button class="inner-tablink" onclick="openPage('Display3', this)">
+                            Display Chart Style 3
+                            <i class="fas fa-caret-down"></i>
+                        </button>
+                        <button class="inner-tablink" onclick="openPage('Display4', this)">
+                            Display Chart Style 4
+                            <i class="fas fa-caret-down"></i>
+                        </button>
+                        <button class="inner-tablink" onclick="openPage('Display5', this)">
+                            Display Chart Style 5
+                            <i class="fas fa-caret-down"></i>
+                        </button>
                     </div>
                     <div id="Display1" class="inner-tabcontent">
                         <div class="row meter_outer_box">
@@ -6570,7 +5983,7 @@
                                     <div class="editing-style12">
                                         <i class="fas fa-pen"></i>
                                     </div>
-                                    <div class="progress-style12">
+                                    <div class="progress-style12" tooltip="Click to Resume" flow="down">
                                         <div class="inner-progress-style12">
                                         </div>
                                         <!-- comes from javasctript -->
@@ -6826,7 +6239,7 @@
                                                 <div id="cross2" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-2-sizer"></div>
@@ -6836,7 +6249,7 @@
                                                 <div id="cross3" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-3-sizer"></div>
@@ -6846,7 +6259,7 @@
                                                 <div id="cross4" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-4-sizer"></div>
@@ -6856,7 +6269,7 @@
                                                 <div id="cross5" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-5-sizer"></div>
@@ -6866,7 +6279,7 @@
                                                 <div id="cross6" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-6-sizer"></div>
@@ -6876,7 +6289,7 @@
                                                 <div id="cross7" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-7-sizer"></div>
@@ -6886,7 +6299,7 @@
                                                 <div id="cross8" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-8-sizer"></div>
@@ -6896,7 +6309,7 @@
                                                 <div id="cross9" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-9-sizer"></div>
@@ -6906,7 +6319,7 @@
                                                 <div id="cross10" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-10-sizer"></div>
@@ -6916,7 +6329,7 @@
                                                 <div id="cross11" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-11-sizer"></div>
@@ -6926,7 +6339,7 @@
                                                 <div id="cross12" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-12-sizer"></div>
@@ -6936,7 +6349,7 @@
                                                 <div id="cross13" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-13-sizer"></div>
@@ -6946,7 +6359,7 @@
                                                 <div id="cross14" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-14-sizer"></div>
@@ -6956,7 +6369,7 @@
                                                 <div id="cross15" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-15-sizer"></div>
@@ -6966,7 +6379,7 @@
                                                 <div id="cross16" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-16-sizer"></div>
@@ -6976,7 +6389,7 @@
                                                 <div id="cross17" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-17-sizer"></div>
@@ -6986,7 +6399,7 @@
                                                 <div id="cross18" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-18-sizer"></div>
@@ -6996,7 +6409,7 @@
                                                 <div id="cross19" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                                 <div id="column-header-19-sizer"></div>
@@ -9422,7 +8835,7 @@
                                                         <p>NOTE</p>
                                                         <input type="text">
                                                     </div>
-                                                    <div class="submit-box5">
+                                                    <div class="submit-box5" data-dismiss="modal">
                                                         <input type="submit">
                                                     </div>
                                                 </div>
@@ -9866,24 +9279,24 @@
 
 
                                 <!-- STYLE 2 TABLE 1ST START -->
-                                <table id="sty2table1" class="table">
+                                <table id="sty2table1" class="table cross-table-1">
                                     <thead>
                                         <tr>
-                                            <th scope="col" style="width: 50%;">
+                                            <th scope="col">
                                                 COL2
-                                                <div id="cross3" class="head-filter">
+                                                <div id="cross20" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
                                                 <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
-                                            <th scope="col" style="width: 50%;">
+                                            <th scope="col">
                                                 COL4
-                                                <div id="cross4" class="head-filter">
+                                                <div id="cross21" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
@@ -9910,24 +9323,24 @@
                                 </table>
                                 <!-- STYLE 2 TABLE 1ST END -->
                                 <!-- STYLE 2 TABLE 2ND START -->
-                                <table id="sty2table2" class="table">
+                                <table id="sty2table2" class="table cross-table-2">
                                     <thead>
                                         <tr>
-                                            <th scope="col" style="width: 64%;">
+                                            <th scope="col">
                                                 STATUS
-                                                <div id="cross15" class="head-filter">
+                                                <div id="cross22" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
-                                            <th scope="col" style="width: 36%;">
+                                            <th scope="col">
                                                 COL11
-                                                <div id="cross11" class="head-filter">
+                                                <div id="cross23" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
@@ -9950,33 +9363,33 @@
                                 </table>
                                 <!-- STYLE 2 TABLE 2nd END -->
                                 <!-- STYLE 3 TABLE 2ND START -->
-                                <table id="sty2table3" class="table">
+                                <table id="sty2table3" class="table cross-table-3">
                                     <thead>
                                         <tr>
-                                            <th scope="col" style="width: 32%;">
+                                            <th scope="col">
                                                 CHART 1
-                                                <div id="cross18" class="head-filter">
+                                                <div id="cross24" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
-                                            <th scope="col" style="width: 32%;">
+                                            <th scope="col">
                                                 CHART2
-                                                <div id="cross19" class="head-filter">
+                                                <div id="cross25" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
-                                            <th scope="col" style="width: 36%;">
+                                            <th scope="col">
                                                 VAL11+DATEL
-                                                <div id="cross16" class="head-filter">
+                                                <div id="cross26" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
@@ -10050,15 +9463,15 @@
                                 </table>
                                 <!-- STYLE 3 TABLE 2nd END -->
                                 <!-- STYLE 4 TABLE 2ND START -->
-                                <table id="sty2table4" class="table">
+                                <table id="sty2table4" class="table cross-table-4">
                                     <thead>
                                         <tr>
-                                            <th style="width:100%" scope="col">
+                                            <th scope="col">
                                                 COL1
-                                                <div id="cross13" class="head-filter">
+                                                <div id="cross27" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
@@ -10167,24 +9580,24 @@
                                 </div>
 
                                 <!-- STYLE 2 TABLE 1ST START -->
-                                <table id="sty2table1" class="table">
+                                <table id="sty2table1" class="table cross-table-5">
                                     <thead>
                                         <tr>
-                                            <th scope="col" style="width: 50%;">
+                                            <th scope="col">
                                                 COL2
-                                                <div id="cross3" class="head-filter">
+                                                <div id="cross28" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
-                                            <th scope="col" style="width: 50%;">
+                                            <th scope="col">
                                                 COL4
-                                                <div id="cross4" class="head-filter">
+                                                <div id="cross29" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
@@ -10211,24 +9624,24 @@
                                 </table>
                                 <!-- STYLE 2 TABLE 1ST END -->
                                 <!-- STYLE 2 TABLE 2ND START -->
-                                <table id="sty2table2" class="table">
+                                <table id="sty2table2" class="table cross-table-6">
                                     <thead>
                                         <tr>
-                                            <th scope="col" style="width: 64%;">
+                                            <th scope="col">
                                                 STATUS
-                                                <div id="cross15" class="head-filter">
+                                                <div id="cross30" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
-                                            <th scope="col" style="width: 36%;">
+                                            <th scope="col">
                                                 COL11
-                                                <div id="cross11" class="head-filter">
+                                                <div id="cross31" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
@@ -10251,33 +9664,33 @@
                                 </table>
                                 <!-- STYLE 2 TABLE 2nd END -->
                                 <!-- STYLE 3 TABLE 2ND START -->
-                                <table id="sty2table3" class="table">
+                                <table id="sty2table3" class="table cross-table-7">
                                     <thead>
                                         <tr>
-                                            <th scope="col" style="width: 32%;">
+                                            <th scope="col">
                                                 CHART 1
-                                                <div id="cross18" class="head-filter">
+                                                <div id="cross32" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
-                                            <th scope="col" style="width: 32%;">
+                                            <th scope="col">
                                                 CHART2
-                                                <div id="cross19" class="head-filter">
+                                                <div id="cross33" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
-                                            <th scope="col" style="width: 36%;">
+                                            <th scope="col">
                                                 VAL11+DATEL
-                                                <div id="cross16" class="head-filter">
+                                                <div id="cross34" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
@@ -10351,15 +9764,15 @@
                                 </table>
                                 <!-- STYLE 3 TABLE 2nd END -->
                                 <!-- STYLE 4 TABLE 2ND START -->
-                                <table id="sty2table4" class="table">
+                                <table id="sty2table4" class="table cross-table-8">
                                     <thead>
                                         <tr>
-                                            <th style="width:100%" scope="col">
+                                            <th scope="col">
                                                 COL1
-                                                <div id="cross13" class="head-filter">
+                                                <div id="cross35" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
@@ -10468,24 +9881,24 @@
                                 </div>
 
                                 <!-- STYLE 2 TABLE 1ST START -->
-                                <table id="sty2table1" class="table">
+                                <table id="sty2table1" class="table cross-table-9">
                                     <thead>
                                         <tr>
-                                            <th scope="col" style="width: 50%;">
+                                            <th scope="col">
                                                 COL2
-                                                <div id="cross3" class="head-filter">
+                                                <div id="cross36" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
-                                            <th scope="col" style="width: 50%;">
+                                            <th scope="col">
                                                 COL4
-                                                <div id="cross4" class="head-filter">
+                                                <div id="cross37" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
@@ -10512,24 +9925,24 @@
                                 </table>
                                 <!-- STYLE 2 TABLE 1ST END -->
                                 <!-- STYLE 2 TABLE 2ND START -->
-                                <table id="sty2table2" class="table">
+                                <table id="sty2table2" class="table cross-table-10">
                                     <thead>
                                         <tr>
-                                            <th scope="col" style="width: 64%;">
+                                            <th scope="col">
                                                 STATUS
-                                                <div id="cross15" class="head-filter">
+                                                <div id="cross38" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
-                                            <th scope="col" style="width: 36%;">
+                                            <th scope="col">
                                                 COL11
-                                                <div id="cross11" class="head-filter">
+                                                <div id="cross39" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
@@ -10552,33 +9965,33 @@
                                 </table>
                                 <!-- STYLE 2 TABLE 2nd END -->
                                 <!-- STYLE 3 TABLE 2ND START -->
-                                <table id="sty2table3" class="table">
+                                <table id="sty2table3" class="table cross-table-11">
                                     <thead>
                                         <tr>
-                                            <th scope="col" style="width: 32%;">
+                                            <th scope="col">
                                                 CHART 1
-                                                <div id="cross18" class="head-filter">
+                                                <div id="cross40" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
-                                            <th scope="col" style="width: 32%;">
+                                            <th scope="col">
                                                 CHART2
-                                                <div id="cross19" class="head-filter">
+                                                <div id="cross41" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
-                                            <th scope="col" style="width: 36%;">
+                                            <th scope="col">
                                                 VAL11+DATEL
-                                                <div id="cross16" class="head-filter">
+                                                <div id="cross42" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
@@ -10652,15 +10065,15 @@
                                 </table>
                                 <!-- STYLE 3 TABLE 2nd END -->
                                 <!-- STYLE 4 TABLE 2ND START -->
-                                <table id="sty2table4" class="table">
+                                <table id="sty2table4" class="table cross-table-12">
                                     <thead>
                                         <tr>
-                                            <th style="width:100%" scope="col">
+                                            <th scope="col">
                                                 COL1
-                                                <div id="cross13" class="head-filter">
+                                                <div id="cross43" class="head-filter">
                                                     <i class="fas fa-times"></i>
                                                 </div>
-                                                <div class="drop-filter">
+                                                <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
                                                     <i class="fas fa-caret-down"></i>
                                                 </div>
                                             </th>
@@ -11136,7 +10549,7 @@
                             <div class="table-header-popup-footer">
                                 <div class="button-row">
                                     <input type="button" value="Close" class="close-btn" data-dismiss="modal">
-                                    <input type="button" value="Select" class="select-btn">
+                                    <input type="button" value="Select" class="select-btn" data-dismiss="modal">
                                 </div>
                             </div>
                         </div>
@@ -11260,7 +10673,7 @@
                 <div class="modal-body">
                     <div class="wrapper-modal-list">
                         <div class="weapper-list-title">
-                            <p>MOVE THIS THIS ROW TO</p>
+                            <p>MOVE THIS ROW TO</p>
                         </div>
                         <div class="scroll-list-box scrollable-list-op1 movetoscrollwindow">
                             <ul class="movetorow-list left-list-box">
@@ -11641,6 +11054,41 @@
         </div>
     </div>
     <!-- ======= MANAGE TEMPLATE LIST24 MODA delete modal END =========== -->
+    <!-- =========Option 1 Generate Btn Modal Starts========= -->
+    <div
+        class="modal fade"
+        id="op1GenerateBtnModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+    >
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+        <div class="modal-body">
+            <!-- =========================================== -->
+            <!-- thank you pop-up-for-generate button starts -->
+            <div class="generate-button-click-popup">
+            <div class="generate-button-click-popup-wrapper">
+                <div class="generate-button-popup-header-title">
+                <p>Thank You</p>
+                </div>
+                <div class="generate-button-popup-body-wrapper">
+                <div class="generate-button-popup-body-content">
+                    <p>Your Request has been Successfully Processed</p>
+                </div>
+                </div>
+                <div class="generate-popup">
+                <input type="button" value="Close" class="gn-close-btn" />
+                </div>
+            </div>
+            </div>
+            <!-- thank you pop-up-for-generate button ends -->
+            <!-- ================XXXXXXXXXXX============== -->
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- =========Option 1 Generate Btn Modal Ends========= -->
 
 
     <!-- JS FILES -->
