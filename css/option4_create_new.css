@@ -370,7 +370,7 @@
   line-height: 44px;
   font-size: 28px;
   font-weight: 900;
-  left: 40%;
+  left: 43%;
   /* text-align: center; */
   /* margin: 0 auto 10px auto; */
   z-index: 5;
@@ -406,6 +406,62 @@
     background-color: green;
   } */
 
+  @media screen and (max-width: 1600px) {
+    .progressBar li:before {
+      border: 2px solid black;
+      font-size: 24px;
+      line-height: 46px;
+      left: 40%;
+    }
+    .progressBar {
+      margin: 0px 140px;
+    }
+    #create_new_mn_temp .progressBar li:before{
+      left: 42%;
+    }
+    .progressBar li div {
+      font-size: 25px;
+    }
+  } 
+  @media screen and (max-width: 1450px) {
+    .progressBar {
+      margin: 0px 120px;
+    }
+    #create_new_mn_temp .progressBar li:before{
+      left: 40%;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .progressBar {
+      margin: 0px 80px;
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    .progressBar li:before {
+      width: 45px;
+      height: 45px;
+      line-height: 40px;
+      font-size: 22px;
+    }
+    .progressBar li div {
+      margin-top: 50px;
+      font-size: 22px;
+    }
+    .progressBar li:after {
+      top: 22px;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .progressBar li {
+      height: 100px;
+    }
+    .progressBar {
+      margin: 0px 40px;
+    }
+    #create_new_mn_temp .progressBar li:before{
+      left: 38%;
+    }
+  }
 /* progressbar and round-indicator ends  */
 /* ===============XXXXXXXXX============== */
 
@@ -697,6 +753,11 @@
   margin: 0px;
 }
 
+@media screen and (max-width: 992px) {
+  .mn-temp-sample1-wrapper .create-manage {
+    margin: 0px 30px;
+  }
+}
 .single-list-item-wrapper {
   display: flex;
   height: 150px;
@@ -890,7 +951,7 @@
   }
 
   .single-list-item-file-container {
-    height: 68px;
+    height: 72px;
     width: 68px;
     margin: 15px auto;
   }
@@ -926,10 +987,78 @@
     height: 80px;
     width: 180px;
     font-size: 12px;
-    line-height: 16px;
+    line-height: 14px;
   }
 }
 
+@media screen and (max-width: 870px) {
+
+  .single-list-item-wrapper {
+    height: 90px;
+  }
+  .single-list-item-name {
+    width: 24%;
+    margin-left: 10px;
+  }
+
+  .single-list-item-selection {
+    width: 31%;
+  }
+
+.green-tik-and-skip-link {
+  width: 5%;
+}
+
+.single-list-item-help {
+  width: 30%;
+}
+
+.single-list-item-file-container img {
+  width: 50%;
+}
+
+  .single-list-item-file-container {
+    height: 58px;
+    width: 54px;
+  }
+
+  .single-list-item-wrapper .single-list-item-name p {
+    font-size: 16px;
+  }
+
+  .single-list-item-wrapper .single-list-item-selection p {
+    font-size: 16px;
+  }
+
+  .single-list-item-wrapper .single-list-item-selection p.selected-text-danger {
+    font-size: 12px;
+    margin-top: 0px;
+  }
+
+  .single-list-item-wrapper .green-tik-and-skip-link .green-tik-container span {
+    height: 30px;
+    width: 30px;
+  }
+
+  .single-list-item-wrapper .green-tik-and-skip-link .green-tik-container i {
+    font-size: 16px;
+  }
+
+  .single-list-item-wrapper .single-list-item-name sup {
+    font-size: 10px;
+  }
+
+  .single-list-item-wrapper .green-tik-and-skip-link .skip-link-container a {
+    font-size: 18px;
+  }
+  .text_container_textarea {
+    padding: 5px;
+    height: 70px;
+    width: 170px;
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
 /* js controller starts */
 .showListDiv {
   display: block;
