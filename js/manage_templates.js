@@ -1832,28 +1832,28 @@ let sam4DataArray = [
   $("#tem-sample4-first tbody").html(htmlTable)
 })();
 
-let oldE = "";
+// let oldE = "";
 function clickAddClass(e) {
-  if (e !== oldE) {
-    $(e).parent().children("tr.mark-table-data").removeClass("mark-table-data");
-  }
   $(e).toggleClass("mark-table-data");
-  oldE = e;
 }
 
 function moveLeftToRight() {
   let tr = $("#tem-sample4-first tr.mark-table-data");
   tr.removeClass("mark-table-data");
   $("#tem-sample4-second tbody").append(tr);
-  let _id = tr.attr("id");
-  manTemInpBuild(_id);
+  for (let i = 0; i < tr.length; i++){
+    let _id = $(tr[i]).attr("id");
+    manTemInpBuild(_id);
+  }
 }
 function moveRightToLeft() {
   let tr = $("#tem-sample4-second tr.mark-table-data");
   tr.removeClass("mark-table-data");
   $("#tem-sample4-first tbody").append(tr);
-  let _id = tr.attr("id");
-  removeElement(_id);
+  for (let i = 0; i < tr.length; i++) {
+    let _id = $(tr[i]).attr("id");
+    removeElement(_id);
+  }
 }
 
 function dblclickMove(e) {
@@ -1872,16 +1872,24 @@ function dblclickMove(e) {
 }
 
 function orderUp() {
-  let row = $("#tem-sample4-second tbody tr.mark-table-data:first");
-  row.insertBefore(row.prev());
-  let _id = row.attr("id");
-  elementMove(_id, "up");
+  let row = $("#tem-sample4-second tbody tr.mark-table-data");
+  row.each(function () {
+    let rw = $(this).closest("tr.mark-table-data");
+    rw.insertBefore(rw.prev());
+    let _id = rw.attr("id");
+    elementMove(_id, "up");
+  });
 }
 function orderDown() {
-  let row = $("#tem-sample4-second tbody tr.mark-table-data:first");
-  row.insertAfter(row.next());
-  let _id = row.attr("id");
-  elementMove(_id, "down");
+  let row = $("#tem-sample4-second tbody tr.mark-table-data");
+  row.each(function () {
+    let rw = $(this).closest("tr");
+    for (let i = 0; i < row.length; i++){
+      rw.insertAfter(rw.next());
+      let _id = rw.attr("id");
+      elementMove(_id, "down");
+    }
+  });
 }
 
 function manTemInpBuild(_id) {
@@ -1996,6 +2004,10 @@ function manTemInpBuild(_id) {
     }
     $("#man-tem-sam4-input-data").append(htmlData);
   }
+  $(".range-example-input-2").asRange({
+    range: true,
+    limit: false
+  });
 }
 
 function removeElement(_id) {
