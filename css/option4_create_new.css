@@ -2083,7 +2083,9 @@ input.pop-up-button:hover {
   padding-left: 20px;
 }
 
+table#tem-sample4-first td,
 table#sample4-first td,
+table#tem-sample4-second td,
 table#sample4-second td {
   word-wrap: break-word;
   padding: 6px 0px 6px 20px;
@@ -2112,11 +2114,15 @@ table#sample4-second td {
 }
 
 .section4-table-scroll tr:nth-child(even) {
-  background-color: #ffffff !important;
+  background-color: #ffffff;
 }
 
 .section4-table-scroll tr:nth-child(odd) {
-  background-color: #fbfbfb !important;
+  background-color: #fbfbfb;
+}
+
+.section4-table-scroll .mark-table-data {
+  background-color: yellow !important;
 }
 
 /* ........................... */

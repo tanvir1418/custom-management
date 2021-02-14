@@ -1739,7 +1739,6 @@ function manTemSwapSeqR(e) {
     $(`#${pid} #sequence`).val(val);
   }
 }
-// Manage template Sample 2 End
 
 function manTemcheckEmpty(e) {
   if (e.value !== "") {
@@ -1776,3 +1775,239 @@ function manTemcheckNum(e) {
     }
   }
 }
+// Manage template Sample 2 End
+
+// Manage template Sample 3 Start
+let sam4DataArray = [
+  {
+    id: "sam-id-1",
+    name: "Option 1 - Text abc",
+    dataType: "inputText",
+  },
+  {
+    id: "sam-id-2",
+    name: "Option 2 - Text abd",
+    dataType: "range",
+  },
+  {
+    id: "sam-id-3",
+    name: "Option 3 - Text abef",
+    dataType: "date",
+  },
+  {
+    id: "sam-id-4",
+    name: "Option 4 - Text abc12",
+    dataType: "select",
+  },
+  {
+    id: "sam-id-5",
+    name: "Option 5 - Text abc12",
+    dataType: "inputText",
+  },
+  {
+    id: "sam-id-6",
+    name: "Option 6 - Text abd56",
+    dataType: "range",
+  },
+  {
+    id: "sam-id-7",
+    name: "Option 7 - Text abef67",
+    dataType: "date",
+  },
+  {
+    id: "sam-id-8",
+    name: "Option 8 - Text abc12fd",
+    dataType: "select",
+  },
+];
+
+(function temSam4firstTable() {
+  let htmlTable = "";
+  sam4DataArray.forEach(({id,name}) => {
+    htmlTable += `<tr id="${id}" ondblclick="dblclickMove(this)" onclick="clickAddClass(this)">
+        <td>${name}</td>
+    </tr>`;
+  });
+
+  $("#tem-sample4-first tbody").html(htmlTable)
+})();
+
+let oldE = "";
+function clickAddClass(e) {
+  if (e !== oldE) {
+    $(e).parent().children("tr.mark-table-data").removeClass("mark-table-data");
+  }
+  $(e).toggleClass("mark-table-data");
+  oldE = e;
+}
+
+function moveLeftToRight() {
+  let tr = $("#tem-sample4-first tr.mark-table-data");
+  tr.removeClass("mark-table-data");
+  $("#tem-sample4-second tbody").append(tr);
+  let _id = tr.attr("id");
+  manTemInpBuild(_id);
+}
+function moveRightToLeft() {
+  let tr = $("#tem-sample4-second tr.mark-table-data");
+  tr.removeClass("mark-table-data");
+  $("#tem-sample4-first tbody").append(tr);
+  let _id = tr.attr("id");
+  removeElement(_id);
+}
+
+function dblclickMove(e) {
+  let _id = $(e).parent().parent().attr("id");
+  let id = $(e).attr("id");
+  if (_id == "tem-sample4-first") {
+    $(e).removeClass("mark-table-data");
+    $("#tem-sample4-second tbody").append(e);
+    manTemInpBuild(id);
+  }
+  else if (_id == "tem-sample4-second") {
+    $(e).removeClass("mark-table-data");
+    $("#tem-sample4-first tbody").append(e);
+    removeElement(id);
+  }
+}
+
+function orderUp() {
+  let row = $("#tem-sample4-second tbody tr.mark-table-data:first");
+  row.insertBefore(row.prev());
+  let _id = row.attr("id");
+  elementMove(_id, "up");
+}
+function orderDown() {
+  let row = $("#tem-sample4-second tbody tr.mark-table-data:first");
+  row.insertAfter(row.next());
+  let _id = row.attr("id");
+  elementMove(_id, "down");
+}
+
+function manTemInpBuild(_id) {
+  let {name,dataType} = sam4DataArray.filter(a => a.id == _id)[0];
+  let htmlData = "";
+  if (name && dataType) {
+    let nameArr = name.split("-");
+    let nameArr2 = nameArr.length > 1 ? nameArr[1] : "";
+    if (dataType == "inputText") {
+      htmlData = `<div class="input-group-wrap-s4 margin-bottom-for-group" id="${_id}">
+        <div class="width-option-15">
+          <div class="title-section-sample4">
+            <p>${nameArr[0]}</p>
+          </div>
+        </div>
+        <div class="width-title-15">
+          <div class="title-section-sample4">
+            <p>${nameArr2}</p>
+          </div>
+        </div>
+        <div class="width-input-group-35">
+          <div class="input-section-sample4 right-side-input">
+            <input type="text" width="100" />
+          </div>
+        </div>
+        <div class="width-input-group-35">
+          <div class="input-section-sample4 left-side-input">
+            <input type="text" width="100" />
+          </div>
+        </div>
+      </div>`;
+    } else if (dataType == "range") {
+      htmlData = `<div class="input-group-wrap-s4 margin-bottom-for-group" id="${_id}">
+        <div class="width-option-15">
+          <div class="title-section-sample4">
+            <p>${nameArr[0]}</p>
+          </div>
+        </div>
+        <div class="width-title-15">
+          <div class="title-section-sample4">
+            <p>${nameArr2}</p>
+          </div>
+        </div>
+        <div class="width-custom-range-70 d-flex">
+          <span class="min">0</span>
+            <div class="range-wrapper-sample-4">
+                <input class="range-example-input-2" type="text" min="0" max="100" value="10,40" name="points" step="1" width="100" />
+            </div>
+            <span class="max">100</span>
+        </div>
+      </div>`;
+    } else if (dataType == "date") {
+      htmlData = `<div class="input-group-wrap-s4 margin-bottom-for-group" id="${_id}">
+        <div class="width-option-15">
+          <div class="title-section-sample4">
+            <p>${nameArr[0]}</p>
+          </div>
+        </div>
+        <div class="width-title-15">
+          <div class="title-section-sample4">
+            <p>${nameArr2}</p>
+          </div>
+        </div>
+        <div class="width-input-group-35">
+          <div class="input-section-sample4 right-side-input">
+            <input class="date-pick-style-sample4" type="text" id="datepicker_mnTemp1"/>
+            <i class="far fa-calendar-alt icon-sample4"></i>
+          </div>
+        </div>
+        <div class="width-input-group-35">
+          <div class="input-section-sample4 left-side-input">
+            <input class="date-pick-style-sample4" type="text" id="datepicker_mnTemp2"/>
+            <i class="far fa-calendar-alt icon-sample4"></i>
+          </div>
+        </div>
+      </div>`;
+    } else if (dataType == "select") {
+      htmlData = `<div class="input-group-wrap-s4 margin-bottom-for-group" id="${_id}">
+        <div class="width-option-15">
+          <div class="title-section-sample4">
+            <p>${nameArr[0]}</p>
+          </div>
+        </div>
+        <div class="width-title-15">
+          <div class="title-section-sample4">
+            <p>${nameArr2}</p>
+          </div>
+        </div>
+        <div class="width-input-group-35">
+          <div class="input-section-sample4 right-side-input">
+            <div class="custom-select-sample4">
+              <select>
+                <option>Option Text 1</option>
+                <option>Option Text 2</option>
+                <option>Option Text 3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="width-input-group-35">
+          <div class="input-section-sample4 left-side-input">
+            <div class="custom-select-sample4">
+              <select>
+                <option>Option Text 1</option>
+                <option>Option Text 2</option>
+                <option>Option Text 3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>`;
+    }
+    $("#man-tem-sam4-input-data").append(htmlData);
+  }
+}
+
+function removeElement(_id) {
+  $(`#man-tem-sam4-input-data #${_id}`).remove();
+}
+
+function elementMove(_id, direc) {
+  let div = $(`#man-tem-sam4-input-data #${_id}`);
+  if (direc == "up") {
+    div.insertBefore(div.prev());
+  } else if (direc == "down") {
+    div.insertAfter(div.next());
+  }
+}
+// Manage template Sample 4 End

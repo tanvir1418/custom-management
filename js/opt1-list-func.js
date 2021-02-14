@@ -449,9 +449,10 @@ function formToWindow(e) {
     let seqTitle = $(`#${pid} #sequence`).find(":selected").text();
     let inpObj = $(`#${pid} input[type="text"]`), inpDiv = "";
     for (let i = 0; i < inpObj.length; i++) {
+      let uni_id = inpObj.length > 1 ? "_"+(i+1) : "";
       let inpText = inpObj[i].value;
       inpDiv += `<div class="form-text-design data-div">
-        ${title}: ${inpText}
+        ${title}${uni_id}: ${inpText}
       </div>`;
     }
     renHtml += `<div class="form-text-design data-div">
@@ -478,7 +479,7 @@ function windowToForm(e) {
   let len = tRow.length;
   for (let i = 0; i < len; i++) {
     let divData = $(tRow[i++])[0].innerText.split(":");
-    let title = divData[0].trim();
+    let title = divData[0].trim().split("_")[0];
     let pid = findInputId(title);
     let setVal = divData[divData.length - 1].trim();
     divData = $(tRow[i++])[0].innerText.split(":");
@@ -805,7 +806,7 @@ function pasteEvent(e) {
     if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
       var x;
       if (
-        !findInputId(nbe.substr(0, nbe.indexOf(":"))) ||
+        !findInputId(nbe.substr(0, nbe.indexOf(":")).split("_")[0].trim()) ||
         (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
         (
           inpData.length == 3 &&
@@ -848,7 +849,38 @@ function isGenerateDisable() {
   for (let i = 0; i < len; i++){
     let abc = $(`#leftSideDrag_op1 #${seqList[i]} .custom-input-only input`);
     for (let j = 0; j < abc.length; j++){
-      if (abc[j].value == "") return false;
+      if (abc[j].value == "") {
+        $(abc[j]).parent().addClass("custom-input-danger");
+        $(abc[j]).parent().removeClass("custom-input-success");
+        let errorMessage = `<div class="error-message">
+          <p>A value must be entered</p>
+        </div>`;
+        let errPos = $(abc[j]).parent().parent();
+        if (!errPos.children("div.error-message").length) {
+          errPos.append(errorMessage);
+        }
+        return false;
+      }
+    }
+  }
+  
+  let len2 = seqListR.length;
+  if (!len2) return false;
+  for (let i = 0; i < len2; i++){
+    let abc = $(`#rightSideDrag_op1 #${seqListR[i]} .custom-input-only input`);
+    for (let j = 0; j < abc.length; j++){
+      if (abc[j].value == "") {
+        $(abc[j]).parent().addClass("custom-input-danger");
+        $(abc[j]).parent().removeClass("custom-input-success");
+        let errorMessage = `<div class="error-message">
+          <p>A value must be entered</p>
+        </div>`;
+        let errPos = $(abc[j]).parent().parent();
+        if (!errPos.children("div.error-message").length) {
+          errPos.append(errorMessage);
+        }
+        return false;
+      }
     }
   }
   return true;
