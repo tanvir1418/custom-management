@@ -1880,14 +1880,22 @@ Bottom codes are added by Tanvir
 #manage-tempa-list-modal .modal-body,
 #manage-tempb-list-modal .modal-body,
 #manage-tempc-list-modal .modal-body,
-#manage-tempd-list-modal .modal-body{
+#manage-tempd-list-modal .modal-body,
+#opt4a-list-modal .modal-body,
+#opt4b-list-modal .modal-body,
+#opt4c-list-modal .modal-body,
+#opt4d-list-modal .modal-body{
     padding: 10px;
 }
 
 #manage-tempa-list-modal .close,
 #manage-tempb-list-modal .close,
 #manage-tempc-list-modal .close,
-#manage-tempd-list-modal .close{
+#manage-tempd-list-modal .close,
+#opt4a-list-modal .close,
+#opt4b-list-modal .close,
+#opt4c-list-modal .close,
+#opt4d-list-modal .close{
     opacity: 1;
     margin-top: -16px;
     margin-right: -10px;
@@ -1896,27 +1904,43 @@ Bottom codes are added by Tanvir
 #manage-tempa-list-modal .close span,
 #manage-tempb-list-modal .close span,
 #manage-tempc-list-modal .close span,
-#manage-tempd-list-modal .close span{
+#manage-tempd-list-modal .close span,
+#opt4a-list-modal .close span,
+#opt4b-list-modal .close span,
+#opt4c-list-modal .close span,
+#opt4d-list-modal .close span{
     color: #ffffff;
     font-size: 28px;
 }
 #manage-tempa-list-modal .modal-body,
 #manage-tempb-list-modal .modal-body,
 #manage-tempc-list-modal .modal-body,
-#manage-tempd-list-modal .modal-body{
+#manage-tempd-list-modal .modal-body,
+#opt4a-list-modal .modal-body,
+#opt4b-list-modal .modal-body,
+#opt4c-list-modal .modal-body,
+#opt4d-list-modal .modal-body{
     padding: 10px;
 }
 #manage-tempa-list-modal .wrapper-modal-list,
 #manage-tempb-list-modal .wrapper-modal-list,
 #manage-tempc-list-modal .wrapper-modal-list,
-#manage-tempd-list-modal .wrapper-modal-list{
+#manage-tempd-list-modal .wrapper-modal-list,
+#opt4a-list-modal .wrapper-modal-list,
+#opt4b-list-modal .wrapper-modal-list,
+#opt4c-list-modal .wrapper-modal-list,
+#opt4d-list-modal .wrapper-modal-list{
     border: 2px solid #1b1b1b;
     height: 680px;
 }
 #manage-tempa-list-modal .scroll-list-box,
 #manage-tempb-list-modal .scroll-list-box,
 #manage-tempc-list-modal .scroll-list-box,
-#manage-tempd-list-modal .scroll-list-box{
+#manage-tempd-list-modal .scroll-list-box,
+#opt4a-list-modal .scroll-list-box,
+#opt4b-list-modal .scroll-list-box,
+#opt4c-list-modal .scroll-list-box,
+#opt4d-list-modal .scroll-list-box{
     overflow-x: hidden;
 }
 
