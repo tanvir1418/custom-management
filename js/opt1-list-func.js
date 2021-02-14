@@ -449,9 +449,10 @@ function formToWindow(e) {
     let seqTitle = $(`#${pid} #sequence`).find(":selected").text();
     let inpObj = $(`#${pid} input[type="text"]`), inpDiv = "";
     for (let i = 0; i < inpObj.length; i++) {
+      let uni_id = inpObj.length > 1 ? "_"+(i+1) : "";
       let inpText = inpObj[i].value;
       inpDiv += `<div class="form-text-design data-div">
-        ${title}: ${inpText}
+        ${title}${uni_id}: ${inpText}
       </div>`;
     }
     renHtml += `<div class="form-text-design data-div">
@@ -478,7 +479,7 @@ function windowToForm(e) {
   let len = tRow.length;
   for (let i = 0; i < len; i++) {
     let divData = $(tRow[i++])[0].innerText.split(":");
-    let title = divData[0].trim();
+    let title = divData[0].trim().split("_")[0];
     let pid = findInputId(title);
     let setVal = divData[divData.length - 1].trim();
     divData = $(tRow[i++])[0].innerText.split(":");
@@ -805,7 +806,7 @@ function pasteEvent(e) {
     if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
       var x;
       if (
-        !findInputId(nbe.substr(0, nbe.indexOf(":"))) ||
+        !findInputId(nbe.substr(0, nbe.indexOf(":")).split("_")[0].trim()) ||
         (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
         (
           inpData.length == 3 &&
