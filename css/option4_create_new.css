@@ -2082,8 +2082,19 @@ input.pop-up-button:hover {
 .right-up-down-button-section {
   padding-left: 20px;
 }
+#create_new_mn_temp .table-heading,
+#create_new_option_four .table-heading {
+    text-align: center;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #858581;
+    padding-top: 50px;
+}
 
+table#tem-sample4-first td,
 table#sample4-first td,
+table#tem-sample4-second td,
 table#sample4-second td {
   word-wrap: break-word;
   padding: 6px 0px 6px 20px;
@@ -2112,11 +2123,19 @@ table#sample4-second td {
 }
 
 .section4-table-scroll tr:nth-child(even) {
-  background-color: #ffffff !important;
+  background-color: #ffffff;
 }
 
 .section4-table-scroll tr:nth-child(odd) {
-  background-color: #fbfbfb !important;
+  background-color: #fbfbfb;
+}
+
+.section4-table-scroll tr:hover {
+  cursor: pointer;
+}
+
+.section4-table-scroll .mark-table-data {
+  background-color: yellow !important;
 }
 
 /* ........................... */
@@ -2358,14 +2377,20 @@ input.date-pick-style-sample4:hover {
   /* border-color: grey; */
 }
 
-.icon-sample4 {
+/* .icon-sample4 {
   margin-left: -20px;
   margin-top: -20px;
   position: relative;
   color: black;
   font-size: 14px;
+} */
+.icon-sample4 {
+    margin-left: -20px;
+    margin-top: 7px;
+    position: absolute;
+    color: black;
+    font-size: 14px;
 }
-
 /* 
     .unstyled::-webkit-inner-spin-button,
     .unstyled::-webkit-calendar-picker-indicator {
@@ -2398,6 +2423,12 @@ span.max {
   font-size: 16px;
 }
 
+element.style {
+    left: 25%;
+}
+.asRange .asRange-pointer:hover {
+  cursor: pointer;
+}
 @media screen and (max-width: 1680px) {
   .table-wrapper-sample4-inner {
     /* margin: 0 10% 0 18%; */

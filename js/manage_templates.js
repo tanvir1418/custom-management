@@ -932,3 +932,1094 @@ $(document).ready(function () {
 /* ================ Scroll Down END ============== */
 
 // ===/////=== MANAGE TEMP LIST4 ITEM END ===/////===
+
+// Manage template Sample 2 Start
+(function manTemSamLeftSide() {
+  let lOptOne =
+  `<div class="width-12">
+    <div class="custome-select">
+      <select>
+        <option>SET</option>
+        <option>ADD</option>
+        <option>Add/Set</option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select id="sequence" onchange="manTemSwapSeqL(this)">
+        <option value="0">SEQUENCE</option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custom-input-only">
+      <input type="text" onfocus="onFocus(this)" onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custom-input-only">
+      <input type="text" onfocus="onFocus(this)" onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
+    </div>
+  </div>`;
+
+  let lOptTwo =
+  `<div class="width-12">
+  </div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select id="sequence" onchange="manTemSwapSeqL(this)">
+        <option value="0">SEQUENCE</option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select onfocus="onFocus(this)">
+        <option></option>
+        <option></option>
+        <option></option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select onfocus="onFocus(this)">
+        <option></option>
+        <option></option>
+        <option></option>
+      </select>
+    </div>
+  </div>`;
+
+  let lOptThree =
+  `<div class="width-12">
+    <div class="custome-select">
+      <select>
+        <option>Add/Set</option>
+        <option>ADD</option>
+        <option>SET</option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select id="sequence" onchange="manTemSwapSeqL(this)">
+        <option value="0">SEQUENCE</option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select onfocus="onFocus(this)">
+        <option></option>
+        <option></option>
+        <option></option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select onfocus="onFocus(this)">
+        <option></option>
+        <option></option>
+        <option></option>
+      </select>
+    </div>
+  </div>`;
+
+  let lOptFour =
+  `<div class="width-12"></div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select id="sequence" onchange="manTemSwapSeqL(this)">
+        <option value="0">SEQUENCE</option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custom-input-only">
+      <input type="text" onfocus="onFocus(this)"  onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custom-input-only">
+      <input type="text" onfocus="onFocus(this)"  onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
+    </div>
+  </div>`;
+
+  let lOptFive =
+  `<div class="width-12"></div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select id="sequence" onchange="manTemSwapSeqL(this)">
+        <option value="0">SEQUENCE</option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custom-input-only">
+      <input type="number" onfocus="onFocus(this)" onfocusout="manTemcheckNum(this)" oninput="manTemcheckNum(this)"/>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custom-input-only">
+      <input type="number" onfocus="onFocus(this)" onfocusout="manTemcheckNum(this)" oninput="manTemcheckNum(this)"/>
+    </div>
+  </div>`;
+
+  let renderLeftSite =
+  `<div class="d-flex mb-2" id="manTemL-1">
+    <div class="width-5 align-items-baseline">
+      <div class="threebar">
+        <span>|||</span>
+      </div>
+    </div>
+    <div class="width-26">
+      <div class="page__toggle">
+        <label class="toggle">
+          <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
+          <span class="toggle__label">
+            <span class="toggle__text">L-Options 1</span>
+          </span>
+        </label>
+      </div>
+    </div>
+  ${lOptOne}
+  </div>
+  <div class="d-flex mb-2" id="manTemL-2">
+    <div class="width-5 align-items-baseline">
+      <div class="threebar">
+        <span>|||</span>
+      </div>
+    </div>
+    <div class="width-26">
+      <div class="page__toggle">
+        <label class="toggle">
+          <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
+          <span class="toggle__label">
+            <span class="toggle__text">L-Options 2</span>
+          </span>
+        </label>
+      </div>
+    </div>
+  ${lOptOne}
+  </div>
+  <div class="d-flex mb-2" id="manTemL-3">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 3</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptTwo}
+  </div>
+  <div class="d-flex mb-2" id="manTemL-4">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 4</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptThree}
+  </div>
+  <div class="d-flex mb-2" id="manTemL-5">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 5</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptFour}
+  </div>
+  <div class="d-flex mb-2" id="manTemL-6">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 6</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptFour}
+  </div>
+  <div class="d-flex mb-2" id="manTemL-7">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 7</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptFour}
+  </div>
+  <div class="d-flex mb-2" id="manTemL-8">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 8</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptFour}
+  </div>
+  <div class="d-flex mb-2" id="manTemL-9">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 9</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptTwo}
+  </div>
+  <div class="d-flex mb-2" id="manTemL-10">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 10</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptFour}
+  </div>
+  <div class="d-flex mb-2" id="manTemL-11">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 11</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptFive}
+  </div>`;
+  // lOptOne + lOptOne + lOptTwo + lOptThree + lOptFour + lOptFour + lOptFour + lOptFour + lOptTwo + lOptFour + lOptFive;
+  $("#mnTemp_leftSideDrag").html(renderLeftSite);
+})();
+(function manTemSamRightSide() {
+  let lOptOne =
+  `<div class="width-12">
+    <div class="custome-select">
+      <select>
+        <option>SET</option>
+        <option>ADD</option>
+        <option>Add/Set</option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select id="sequence" onchange="manTemSwapSeqR(this)">
+        <option value="0">SEQUENCE</option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custom-input-only">
+      <input type="text" onfocus="onFocus(this)" onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custom-input-only">
+      <input type="text" onfocus="onFocus(this)" onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
+    </div>
+  </div>`;
+
+  let lOptTwo =
+  `<div class="width-12">
+  </div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select id="sequence" onchange="manTemSwapSeqR(this)">
+        <option value="0">SEQUENCE</option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select onfocus="onFocus(this)">
+        <option></option>
+        <option></option>
+        <option></option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select onfocus="onFocus(this)">
+        <option></option>
+        <option></option>
+        <option></option>
+      </select>
+    </div>
+  </div>`;
+
+  let lOptThree =
+  `<div class="width-12">
+    <div class="custome-select">
+      <select>
+        <option>Add/Set</option>
+        <option>ADD</option>
+        <option>SET</option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select id="sequence" onchange="manTemSwapSeqR(this)">
+        <option value="0">SEQUENCE</option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select onfocus="onFocus(this)">
+        <option></option>
+        <option></option>
+        <option></option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select onfocus="onFocus(this)">
+        <option></option>
+        <option></option>
+        <option></option>
+      </select>
+    </div>
+  </div>`;
+
+  let lOptFour =
+  `<div class="width-12"></div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select id="sequence" onchange="manTemSwapSeqR(this)">
+        <option value="0">SEQUENCE</option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custom-input-only">
+      <input type="text" onfocus="onFocus(this)"  onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custom-input-only">
+      <input type="text" onfocus="onFocus(this)"  onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
+    </div>
+  </div>`;
+
+  let lOptFive =
+  `<div class="width-12"></div>
+  <div class="width-22">
+    <div class="custome-select">
+      <select id="sequence" onchange="manTemSwapSeqR(this)">
+        <option value="0">SEQUENCE</option>
+      </select>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custom-input-only">
+      <input type="number" onfocus="onFocus(this)" onfocusout="manTemcheckNum(this)" oninput="manTemcheckNum(this)"/>
+    </div>
+  </div>
+  <div class="width-22">
+    <div class="custom-input-only">
+      <input type="number" onfocus="onFocus(this)" onfocusout="manTemcheckNum(this)" oninput="manTemcheckNum(this)"/>
+    </div>
+  </div>`;
+
+  let renderRightSite =
+  `<div class="d-flex mb-2" id="manTemR-1">
+    <div class="width-5 align-items-baseline">
+      <div class="threebar">
+        <span>|||</span>
+      </div>
+    </div>
+    <div class="width-26">
+      <div class="page__toggle">
+        <label class="toggle">
+          <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
+          <span class="toggle__label">
+            <span class="toggle__text">L-Options 1</span>
+          </span>
+        </label>
+      </div>
+    </div>
+  ${lOptOne}
+  </div>
+  <div class="d-flex mb-2" id="manTemR-2">
+    <div class="width-5 align-items-baseline">
+      <div class="threebar">
+        <span>|||</span>
+      </div>
+    </div>
+    <div class="width-26">
+      <div class="page__toggle">
+        <label class="toggle">
+          <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
+          <span class="toggle__label">
+            <span class="toggle__text">L-Options 2</span>
+          </span>
+        </label>
+      </div>
+    </div>
+  ${lOptOne}
+  </div>
+  <div class="d-flex mb-2" id="manTemR-3">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 3</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptTwo}
+  </div>
+  <div class="d-flex mb-2" id="manTemR-4">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 4</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptThree}
+  </div>
+  <div class="d-flex mb-2" id="manTemR-5">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 5</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptFour}
+  </div>
+  <div class="d-flex mb-2" id="manTemR-6">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 6</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptFour}
+  </div>
+  <div class="d-flex mb-2" id="manTemR-7">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 7</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptFour}
+  </div>
+  <div class="d-flex mb-2" id="manTemR-8">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 8</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptFour}
+  </div>
+  <div class="d-flex mb-2" id="manTemR-9">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 9</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptTwo}
+  </div>
+  <div class="d-flex mb-2" id="manTemR-10">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 10</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptFour}
+  </div>
+  <div class="d-flex mb-2" id="manTemR-11">
+  <div class="width-5 align-items-baseline">
+    <div class="threebar">
+      <span>|||</span>
+    </div>
+  </div>
+  <div class="width-26">
+    <div class="page__toggle">
+      <label class="toggle">
+        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
+        <span class="toggle__label">
+          <span class="toggle__text">L-Options 11</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  ${lOptFive}
+  </div>`;
+  // lOptOne + lOptOne + lOptTwo + lOptThree + lOptFour + lOptFour + lOptFour + lOptFour + lOptTwo + lOptFour + lOptFive;
+  $("#mnTemp_rightSideDrag").html(renderRightSite);
+})();
+
+var manTemSeqListL = [];
+var manTemSeqListR = [];
+
+function manTemResetValueL(e) {
+  let pid = $(e).parent().parent().parent().parent().attr("id");
+  if ($(`#${pid} #sequence`).length == 0) return true;
+  if (e.checked == false) {
+    $(`#${pid} input, #${pid} select`).val("");
+    manTemSeqListL = manTemSeqListL.filter(function (id) {
+      $(`#${id} #sequence`).children(`option:last-child`).remove();
+      return pid != id;
+    });
+    manTemSeqListL.forEach(function (val, index) {
+      $(`#${val} #sequence`).val(index + 1);
+    });
+    $(`#${pid} #sequence`).html(`<option value='0'>SEQUENCE</option>`);
+    // remove error message
+    let errP = $(`#${pid} .width-22 .error-message`);
+    let errC = $(`#${pid} .width-22 .custom-input-danger`);
+    let errS = $(`#${pid} .width-22 .custom-input-success`);
+    if (errP.length) errP.remove();
+    if (errC.length) {
+      errC.addClass("custom-input-only");
+      errC.removeClass("custom-input-danger");
+    }
+    if (errS.length) {
+      errS.addClass("custom-input-only");
+      errS.removeClass("custom-input-success");
+    }
+  } else {
+    let inW = inWords(manTemSeqListL.length + 1).toUpperCase();
+    manTemSeqListL.forEach(function (val, index) {
+      $(`#${val} #sequence`).append(
+        `<option value="${(manTemSeqListL.length + 1)}">${inW}</option>`
+      );
+      $(`#${val} #sequence`).val(index + 1);
+    });
+    manTemSeqListL.push(pid);
+    if (manTemSeqListL.length == 1) {
+      $(`#${pid} #sequence`).html(`<option value='1'>FIRST</option>`);
+    }
+    else {
+      $(`#${pid} #sequence`).html($(`#${manTemSeqListL[0]} #sequence`).html());
+    }
+    $(`#${pid} #sequence`).val(manTemSeqListL.length);
+  }
+}
+function manTemResetValueR(e) {
+  let pid = $(e).parent().parent().parent().parent().attr("id");
+  if ($(`#${pid} #sequence`).length == 0) return true;
+  if (e.checked == false) {
+    $(`#${pid} input, #${pid} select`).val("");
+    manTemSeqListR = manTemSeqListR.filter(function (id) {
+      $(`#${id} #sequence`).children(`option:last-child`).remove();
+      return pid != id;
+    });
+    manTemSeqListR.forEach(function (val, index) {
+      $(`#${val} #sequence`).val(index + 1);
+    });
+    $(`#${pid} #sequence`).html(`<option value='0'>SEQUENCE</option>`);
+    // remove error message
+    let errP = $(`#${pid} .width-22 .error-message`);
+    let errC = $(`#${pid} .width-22 .custom-input-danger`);
+    let errS = $(`#${pid} .width-22 .custom-input-success`);
+    if (errP.length) errP.remove();
+    if (errC.length) {
+      errC.addClass("custom-input-only");
+      errC.removeClass("custom-input-danger");
+    }
+    if (errS.length) {
+      errS.addClass("custom-input-only");
+      errS.removeClass("custom-input-success");
+    }
+  } else {
+    let inW = inWords(manTemSeqListR.length + 1).toUpperCase();
+    manTemSeqListR.forEach(function (val, index) {
+      $(`#${val} #sequence`).append(
+        `<option value="${(manTemSeqListR.length + 1)}">${inW}</option>`
+      );
+      $(`#${val} #sequence`).val(index + 1);
+    });
+    manTemSeqListR.push(pid);
+    if (manTemSeqListR.length == 1) {
+      $(`#${pid} #sequence`).html(`<option value='1'>FIRST</option>`);
+    }
+    else {
+      $(`#${pid} #sequence`).html($(`#${manTemSeqListR[0]} #sequence`).html());
+    }
+    $(`#${pid} #sequence`).val(manTemSeqListR.length);
+  }
+}
+
+function manTemSwapSeqL(e) {
+  let pid = $(e).parent().parent().parent().attr("id");
+  let val = $(e).val();
+  if (parseInt(val) > manTemSeqListL.length) val = (manTemSeqListL.length + 1).toString();
+  if (val == "0")
+    manTemSeqListL = manTemSeqListL.filter(function (id) {
+      return pid != id;
+    });
+  else {
+    let index = manTemSeqListL.indexOf(pid);
+    if (index == -1) {
+      manTemSeqListL[val - 1] = pid;
+    } else if (manTemSeqListL.length >= val) {
+      manTemSeqListL[index] = manTemSeqListL[val - 1];
+      manTemSeqListL[val - 1] = pid;
+    }
+    $(`#${manTemSeqListL[index]} #sequence`).val(index + 1);
+    $(`#${pid} #sequence`).val(val);
+  }
+}
+function manTemSwapSeqR(e) {
+  let pid = $(e).parent().parent().parent().attr("id");
+  let val = $(e).val();
+  if (parseInt(val) > manTemSeqListR.length) val = (manTemSeqListR.length + 1).toString();
+  if (val == "0")
+    manTemSeqListR = manTemSeqListR.filter(function (id) {
+      return pid != id;
+    });
+  else {
+    let index = manTemSeqListR.indexOf(pid);
+    if (index == -1) {
+      manTemSeqListR[val - 1] = pid;
+    } else if (manTemSeqListR.length >= val) {
+      manTemSeqListR[index] = manTemSeqListR[val - 1];
+      manTemSeqListR[val - 1] = pid;
+    }
+    $(`#${manTemSeqListR[index]} #sequence`).val(index + 1);
+    $(`#${pid} #sequence`).val(val);
+  }
+}
+
+function manTemcheckEmpty(e) {
+  if (e.value !== "") {
+    $(e).parent().addClass("custom-input-success");
+    $(e).parent().removeClass("custom-input-danger");
+    $(e).parent().parent().children(".error-message").remove();
+  } else {
+    $(e).parent().addClass("custom-input-danger");
+    $(e).parent().removeClass("custom-input-success");
+    let errorMessage = `<div class="error-message">
+      <p>A value must be entered</p>
+    </div>`;
+    let errPos = $(e).parent().parent();
+    if (!errPos.children("div.error-message").length) {
+      errPos.append(errorMessage);
+    }
+  }
+}
+
+function manTemcheckNum(e) {
+  if (e.value !== "") {
+    // $(e).parent().addClass("custom-input-success");
+    // $(e).parent().removeClass("custom-input-danger");
+    $(e).parent().parent().children(".error-message").remove();
+  } else {
+    // $(e).parent().addClass("custom-input-danger");
+    // $(e).parent().removeClass("custom-input-success");
+    let errorMessage = `<div class="error-message">
+      <p>A value must be entered</p>
+    </div>`;
+    let errPos = $(e).parent().parent();
+    if (!errPos.children("div.error-message").length) {
+      errPos.append(errorMessage);
+    }
+  }
+}
+// Manage template Sample 2 End
+
+// Manage template Sample 3 Start
+let sam4DataArray = [
+  {
+    id: "sam-id-1",
+    name: "Option 1 - Text abc",
+    dataType: "inputText",
+  },
+  {
+    id: "sam-id-2",
+    name: "Option 2 - Text abd",
+    dataType: "range",
+  },
+  {
+    id: "sam-id-3",
+    name: "Option 3 - Text abef",
+    dataType: "date",
+  },
+  {
+    id: "sam-id-4",
+    name: "Option 4 - Text abc12",
+    dataType: "select",
+  },
+  {
+    id: "sam-id-5",
+    name: "Option 5 - Text abc12",
+    dataType: "inputText",
+  },
+  {
+    id: "sam-id-6",
+    name: "Option 6 - Text abd56",
+    dataType: "range",
+  },
+  {
+    id: "sam-id-7",
+    name: "Option 7 - Text abef67",
+    dataType: "date",
+  },
+  {
+    id: "sam-id-8",
+    name: "Option 8 - Text abc12fd",
+    dataType: "select",
+  },
+];
+
+(function temSam4firstTable() {
+  let htmlTable = "";
+  sam4DataArray.forEach(({id,name}) => {
+    htmlTable += `<tr id="${id}" ondblclick="dblclickMove(this)" onclick="clickAddClass(this)">
+        <td>${name}</td>
+    </tr>`;
+  });
+
+  $("#tem-sample4-first tbody").html(htmlTable)
+})();
+
+// let oldE = "";
+function clickAddClass(e) {
+  $(e).toggleClass("mark-table-data");
+}
+
+function moveLeftToRight() {
+  let tr = $("#tem-sample4-first tr.mark-table-data");
+  tr.removeClass("mark-table-data");
+  $("#tem-sample4-second tbody").append(tr);
+  for (let i = 0; i < tr.length; i++){
+    let _id = $(tr[i]).attr("id");
+    manTemInpBuild(_id);
+  }
+}
+function moveRightToLeft() {
+  let tr = $("#tem-sample4-second tr.mark-table-data");
+  tr.removeClass("mark-table-data");
+  $("#tem-sample4-first tbody").append(tr);
+  for (let i = 0; i < tr.length; i++) {
+    let _id = $(tr[i]).attr("id");
+    removeElement(_id);
+  }
+}
+
+function dblclickMove(e) {
+  let _id = $(e).parent().parent().attr("id");
+  let id = $(e).attr("id");
+  if (_id == "tem-sample4-first") {
+    $(e).removeClass("mark-table-data");
+    $("#tem-sample4-second tbody").append(e);
+    manTemInpBuild(id);
+  }
+  else if (_id == "tem-sample4-second") {
+    $(e).removeClass("mark-table-data");
+    $("#tem-sample4-first tbody").append(e);
+    removeElement(id);
+  }
+}
+
+function orderUp() {
+  let row = $("#tem-sample4-second tbody tr.mark-table-data");
+  row.each(function () {
+    let rw = $(this).closest("tr.mark-table-data");
+    rw.insertBefore(rw.prev());
+    let _id = rw.attr("id");
+    elementMove(_id, "up");
+  });
+}
+function orderDown() {
+  let row = $("#tem-sample4-second tbody tr.mark-table-data");
+  row.each(function () {
+    let rw = $(this).closest("tr");
+    for (let i = 0; i < row.length; i++){
+      rw.insertAfter(rw.next());
+      let _id = rw.attr("id");
+      elementMove(_id, "down");
+    }
+  });
+}
+
+function manTemInpBuild(_id) {
+  let {name,dataType} = sam4DataArray.filter(a => a.id == _id)[0];
+  let htmlData = "";
+  if (name && dataType) {
+    let nameArr = name.split("-");
+    let nameArr2 = nameArr.length > 1 ? nameArr[1] : "";
+    if (dataType == "inputText") {
+      htmlData = `<div class="input-group-wrap-s4 margin-bottom-for-group" id="${_id}">
+        <div class="width-option-15">
+          <div class="title-section-sample4">
+            <p>${nameArr[0]}</p>
+          </div>
+        </div>
+        <div class="width-title-15">
+          <div class="title-section-sample4">
+            <p>${nameArr2}</p>
+          </div>
+        </div>
+        <div class="width-input-group-35">
+          <div class="input-section-sample4 right-side-input">
+            <input type="text" width="100" />
+          </div>
+        </div>
+        <div class="width-input-group-35">
+          <div class="input-section-sample4 left-side-input">
+            <input type="text" width="100" />
+          </div>
+        </div>
+      </div>`;
+    } else if (dataType == "range") {
+      htmlData = `<div class="input-group-wrap-s4 margin-bottom-for-group" id="${_id}">
+        <div class="width-option-15">
+          <div class="title-section-sample4">
+            <p>${nameArr[0]}</p>
+          </div>
+        </div>
+        <div class="width-title-15">
+          <div class="title-section-sample4">
+            <p>${nameArr2}</p>
+          </div>
+        </div>
+        <div class="width-custom-range-70 d-flex">
+          <span class="min">0</span>
+            <div class="range-wrapper-sample-4">
+                <input class="range-example-input-2" type="text" min="0" max="100" value="10,40" name="points" step="1" width="100" />
+            </div>
+            <span class="max">100</span>
+        </div>
+      </div>`;
+    } else if (dataType == "date") {
+      htmlData = `<div class="input-group-wrap-s4 margin-bottom-for-group" id="${_id}">
+        <div class="width-option-15">
+          <div class="title-section-sample4">
+            <p>${nameArr[0]}</p>
+          </div>
+        </div>
+        <div class="width-title-15">
+          <div class="title-section-sample4">
+            <p>${nameArr2}</p>
+          </div>
+        </div>
+        <div class="width-input-group-35">
+          <div class="input-section-sample4 right-side-input">
+            <input class="date-pick-style-sample4" type="text" id="datepicker_mnTemp1"/>
+            <i class="far fa-calendar-alt icon-sample4"></i>
+          </div>
+        </div>
+        <div class="width-input-group-35">
+          <div class="input-section-sample4 left-side-input">
+            <input class="date-pick-style-sample4" type="text" id="datepicker_mnTemp2"/>
+            <i class="far fa-calendar-alt icon-sample4"></i>
+          </div>
+        </div>
+      </div>`;
+    } else if (dataType == "select") {
+      htmlData = `<div class="input-group-wrap-s4 margin-bottom-for-group" id="${_id}">
+        <div class="width-option-15">
+          <div class="title-section-sample4">
+            <p>${nameArr[0]}</p>
+          </div>
+        </div>
+        <div class="width-title-15">
+          <div class="title-section-sample4">
+            <p>${nameArr2}</p>
+          </div>
+        </div>
+        <div class="width-input-group-35">
+          <div class="input-section-sample4 right-side-input">
+            <div class="custom-select-sample4">
+              <select>
+                <option>Option Text 1</option>
+                <option>Option Text 2</option>
+                <option>Option Text 3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="width-input-group-35">
+          <div class="input-section-sample4 left-side-input">
+            <div class="custom-select-sample4">
+              <select>
+                <option>Option Text 1</option>
+                <option>Option Text 2</option>
+                <option>Option Text 3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>`;
+    }
+    $("#man-tem-sam4-input-data").append(htmlData);
+  }
+  $(".range-example-input-2").asRange({
+    range: true,
+    limit: false
+  });
+}
+
+function removeElement(_id) {
+  $(`#man-tem-sam4-input-data #${_id}`).remove();
+}
+
+function elementMove(_id, direc) {
+  let div = $(`#man-tem-sam4-input-data #${_id}`);
+  if (direc == "up") {
+    div.insertBefore(div.prev());
+  } else if (direc == "down") {
+    div.insertAfter(div.next());
+  }
+}
+// Manage template Sample 4 End
