@@ -668,6 +668,35 @@
     background: #ffffff;
 }
 
+/* Custom Input Only */
+.op1-option-selection .custom-input-only {
+    background: #e6e6e6;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    z-index: 3;
+    border-radius: 6px;
+}
+
+.op1-option-selection .custom-input-only input {
+    background: #ffffff;
+    color: #2e2c2c;
+    outline: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 2;
+    padding: 5px 10px;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+}
+
+
 /*  Custom Input styling Ends  */
 /* ============================ */
 
@@ -1060,6 +1089,14 @@
         right: 12px;
         top: 6px;
       }
+      .op1-option-selection .custom-input-only {
+        height: 35px;
+      }
+    
+      .op1-option-selection .custom-input-only input {
+        font-size: 16px;
+        padding: 5px 10px;
+      }
 
     /* ============================ */
     /* control section style starts */
@@ -1218,6 +1255,14 @@
     top: 4px;
   }
 
+  .op1-option-selection .custom-input-only {
+    height: 30px;
+  }
+
+  .op1-option-selection .custom-input-only input {
+    height: 30px;
+    font-size: 14px;
+  }
   /* xxxxxxx Custom Input styling Ends xxxxxxxx  */
 
     /*======  Custom Input styling starts ====== */
@@ -1377,30 +1422,3 @@
     }
 }
 
-/* Custom Input Only */
-.op1-option-selection .custom-input-only {
-    background: #e6e6e6;
-    position: relative;
-    width: 100%;
-    height: 40px;
-    z-index: 3;
-    border-radius: 6px;
-}
-
-.op1-option-selection .custom-input-only input {
-    background: #ffffff;
-    color: #2e2c2c;
-    outline: 0;
-    width: 100%;
-    height: 100%;
-    font-size: 18px;
-    font-weight: bold;
-    z-index: 2;
-    padding: 5px 10px;
-    position: relative;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: 1px solid #d5d5d5;
-    border-radius: 4px;
-}
