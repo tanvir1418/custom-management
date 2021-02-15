@@ -621,3 +621,37 @@ $("#mng-opt2-delete").click(function () {
 	let delObj = document.querySelector(`.${deleteListClassName}`);
 	delObj.remove();
 });
+
+// Manage Data Option 3 Start
+function opt3Reset(e) {
+	let element = $(e).parent().parent().parent().children(".content-43");
+	element.find("#opt3-textarea-1").val("");
+	element.find(".datepicker #datepicker-1").val("");
+	element.find(".datepicker #datepicker-2").val("");
+}
+// Manage Data Option 3 End
+
+// Manage Data Option 5 Start
+function opt5ResetBtn(e){
+	let element = $(e).parent().parent().parent();
+	element.find(".select-plus .custome-select select").val("0");
+	element.find(".col-5").children("input[type=text]").val("");
+	element.find(".col-7 .drop-zone input.drop-zone__input").val("");
+	let fileDrop = element.find(".col-7 .drop-zone .drop-zone__thumb");
+	if (fileDrop.length > 0) {
+		let htmlData = `<p class="drop-zone__prompt">Drag and Drop File Here</p>
+    <p class="drop-zone__formats">Acceptable File Formats <span>txt & csv</span></p>`;
+		fileDrop.remove();
+		element.find(".col-7 .drop-zone .txt-box").html(htmlData);
+	}
+}
+
+function addCategory(e) {
+	let inpVal= $(e).parent().parent().find("input.plus-input").val();
+	if (inpVal != "") {
+		let selectCat = $("#opt5-select-category");
+		let opt = `<option value="${inpVal}">${inpVal}</option>`;
+		selectCat.append(opt);
+	}
+}
+// Manage Data Option 5 End
