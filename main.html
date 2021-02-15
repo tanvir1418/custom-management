@@ -1045,7 +1045,7 @@
                                                     <p>Keyword <span>*</span></p>
                                                 </div>
                                                 <div class="textarea-container">
-                                                    <textarea name="" id=""></textarea>
+                                                    <textarea name="" id="opt3-textarea-1"></textarea>
                                                 </div>
                                                 <div class="date-selection-container">
                                                     <div class="date-heading">
@@ -1079,7 +1079,7 @@
                                             <div class="back-button">
                                                 <button class="button btn-back">Back</button>
                                             </div>
-                                            <div class="reset-button">
+                                            <div class="reset-button" onclick="opt3Reset(this)">
                                                 <button class="button btn-reset">Reset</button>
                                             </div>
                                             <div class="save-result-input">
@@ -2667,7 +2667,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="center-direction-element">
-                                                                <div style="height: 80px;width: 100%;"></div>
+                                                                <div style="height: 30px;width: 100%;"></div>
                                                                 <div class="left-right-wrapper mb-4">
                                                                     <span class="left-right-button-style">
                                                                         <i
@@ -3207,14 +3207,13 @@
                                             <p>Select A Category</p>
                                             <div class="select-plus">
                                                 <div class="custome-select">
-                                                    <select>
-                                                        <option>--Select--</option>
+                                                    <select id="opt5-select-category">
+                                                        <option value="0">--Select--</option>
                                                         <option>Option 1</option>
                                                         <option>Option 2</option>
                                                     </select>
                                                 </div>
-                                                <a href="#" data-toggle="modal" data-target="#plusBtnModal"
-                                                    style="color: black">
+                                                <a href="#" data-toggle="modal" data-target="#plusBtnModal" style="color: black">
                                                     <div class="plus-box">
                                                         <i class="fas fa-plus"></i>
                                                     </div>
@@ -3234,16 +3233,12 @@
                                                                         </div>
                                                                         <div class="plus-button-popup-body-wrapper">
                                                                             <div class="plus-button-popup-body-content">
-                                                                                <input type="text"
-                                                                                    placeholder="New name"
-                                                                                    class="plus-input">
+                                                                                <input type="text" placeholder="New name" class="plus-input">
                                                                             </div>
                                                                         </div>
                                                                         <div class="plus-popup-button-row">
-                                                                            <input type="button" value="Done"
-                                                                                class="plus-done-btn">
-                                                                            <input type="button" value="Cancel"
-                                                                                class="plus-cancel-btn">
+                                                                            <input type="button" value="Done" class="plus-done-btn" onclick="addCategory(this)">
+                                                                            <input type="button" value="Cancel" class="plus-cancel-btn">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -3263,11 +3258,9 @@
                                             <div class="drop-zone">
                                                 <div class="txt-box">
                                                     <p class="drop-zone__prompt">Drag and Drop File Here</p>
-                                                    <p class="drop-zone__formats">Acceptable File Formats <span>txt &
-                                                            csv</span></p>
+                                                    <p class="drop-zone__formats">Acceptable File Formats <span>txt & csv</span></p>
                                                 </div>
-                                                <input type="file" name="myFile" class="drop-zone__input"
-                                                    accept=".csv,text/*">
+                                                <input type="file" name="myFile" class="drop-zone__input" accept=".csv,text/*">
                                             </div>
                                         </div>
                                     </div>
@@ -3277,8 +3270,8 @@
                                                 <p>Back</p>
                                             </div>
                                         </a>
-                                        <a href="#">
-                                            <div class="mybtns-39 reset-btn">
+                                        <a>
+                                            <div class="mybtns-39 reset-btn" onclick="opt5ResetBtn(this)">
                                                 <p>Reset</p>
                                             </div>
                                         </a>
@@ -3290,8 +3283,6 @@
                                             <div class="mybtns-39 submit-btn">
                                                 <p>Done</p>
                                             </div>
-
-
                                         </a>
                                     </div>
                                     <!-- =========Option 5 Done Button Modal Starts========= -->
@@ -4100,7 +4091,7 @@
                                 </div>
 
 
-                                <div class="button-row">
+                                <div class="button-row btn-row-list">
                                     <input type="button" value="Back" class="prev-disable">
                                     <!-- text-edition-form -->
                                     <div class="pop-up-yellow-button-wrap">
@@ -4170,7 +4161,7 @@
                                     </div>
                                 </div>
 
-                                <div class="button-row">
+                                <div class="button-row  btn-row-leftRight">
                                     <input type="button" value="Back" class="previous">
 
                                     <!-- text-edition-form -->
@@ -4228,20 +4219,20 @@
                                                     </legend>
                                                     <div class="data-form">
                                                         <div class="horizontal-input-group first-input-group">
-                                                            <div class="title-section">
+                                                            <div class="title-section custom-date-title">
                                                                 <p>Date 1</p>
                                                             </div>
-                                                            <div class="input-section">
+                                                            <div class="input-section custom-date-input">
                                                                 <input class=" date-pick-style" type="text"
                                                                     value="Friday, February 5, 2021"><i
                                                                     class="far fa-calendar-alt icon"></i>
                                                             </div>
                                                         </div>
                                                         <div class="horizontal-input-group">
-                                                            <div class="title-section">
+                                                            <div class="title-section custom-date-title">
                                                                 <!-- <p>Date 1</p> -->
                                                             </div>
-                                                            <div class="input-section">
+                                                            <div class="input-section custom-date-input">
                                                                 <input class=" date-pick-style" type="text"
                                                                     value="Friday, February 5, 2021"><i
                                                                     class="far fa-calendar-alt icon"></i>
@@ -4677,7 +4668,7 @@
                                 <!-- sample 3 checkbox style ends -->
                                 <!-- ============XXXXXXXX========== -->
 
-                                <div class="button-row">
+                                <div class="button-row btn-row-checkbox">
                                     <input type="button" value="Back" class="previous">
 
                                     <!-- text-edition-form -->
@@ -4714,7 +4705,7 @@
                             <!--  -->
 
                             <!-- ============= Option 4 Sample 4 starts =============== -->
-                            <div class="sample-4-wrapper">
+                            <div class="sample-4-wrapper" id="sample4-mn-temp">
                                 <div class="sample-4-wrapper-inner">
                                     <div class="table-wrapper-sample4">
                                         <div class="table-wrapper-sample4-inner">
@@ -4829,7 +4820,7 @@
                             </div>
                             <!-- XXXXXXXXXXXXX Option 4 Sample 4 ends XXXXXXXXXXXXX -->
 
-                            <div class="button-row">
+                            <div class="button-row btn-row-dualTable">
 
                                 <input type="button" value="Back" class="previous" id="prev-hide-save-start-mnTemp">
 
