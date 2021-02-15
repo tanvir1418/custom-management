@@ -1900,7 +1900,6 @@ let sam4DataArray = [
   $("#tem-sample4-first tbody").html(htmlTable)
 })();
 
-// let oldE = "";
 function clickAddClass(e) {
   $(e).toggleClass("mark-table-data");
 }
