@@ -84,7 +84,7 @@ const listItemDatamodal = [
 		}
 
 		htmlDataModal +=
-		`<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="submodal-div-list-1-${index + 1}">
+			`<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="submodal-div-list-1-${index + 1}">
 			${modallist_data1}
 		</ul>
 		<ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="submodal-div-list-2-${index + 1}">
@@ -154,15 +154,15 @@ let opt1_left_list = "";
 
 		if (oldTarget != "" && oldTarget !== target) {
 			$(oldTarget).removeClass("highlight_li");
-			$(oldTarget).children(".green-check-box").removeClass("display-block");
-			$(oldTarget).children(".green-check-box").addClass("display-none");
+			// $(oldTarget).children(".green-check-box").removeClass("display-block");
+			// $(oldTarget).children(".green-check-box").addClass("display-none");
 			$(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
 			$(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
 			$(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
 			$(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
 		}
 		$(target).toggleClass("highlight_li");
-		$(target).children(".green-check-box").toggleClass("display-none display-block");
+		// $(target).children(".green-check-box").toggleClass("display-none display-block");
 		$(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
 		$(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
 		oldTarget = target;
@@ -177,7 +177,7 @@ const sub_ul_modallist = document.querySelector("#sub-ul-modallist");
 sub_ul_modallist.addEventListener("click", function (e) {
 	let target = e.target;
 	if (target.tagName === "DIV") {
-		if (target.className.indexOf("sublist-cancel-box")!=-1) {
+		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
 			return;
 		}
@@ -186,7 +186,7 @@ sub_ul_modallist.addEventListener("click", function (e) {
 		target = target.parentNode;
 	} else if (target.tagName === "I") {
 		target = target.parentNode;
-		if (target.className.indexOf("sublist-cancel-box")!=-1) {
+		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
 			return;
 		} else target = target.parentNode;
@@ -196,6 +196,7 @@ sub_ul_modallist.addEventListener("click", function (e) {
 	$(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
 
 	// oldLIClassnameModal = target.classList[0];
+	markLeftOnRight(target);
 });
 
 $("#mng-opt2-delete").click(function () {
@@ -214,6 +215,23 @@ function resetOpt1ListModal(e) {
 	checkItem.toggleClass("checkbox_show checkbox_hide");
 	uncheckItem.toggleClass("checkbox_show checkbox_hide");
 	$("#op1-list-item-count").html(`0 Items Selected`);
+}
+
+function markLeftOnRight(target) {
+	let _id = $(target).parent().attr("id");
+	let pos = _id.length;
+	let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
+	if (len > 0) {
+		let markItem = $(`ul.select-item-main li.modallist-item-${_id[pos - 1]}`)
+			.children("div.green-check-box");
+		markItem.addClass("display-block");
+		markItem.removeClass("display-none");
+	} else {
+		let markItem = $(`ul.select-item-main li.modallist-item-${_id[pos - 1]}`)
+			.children("div.green-check-box");
+		markItem.addClass("display-none");
+		markItem.removeClass("display-block");
+	}
 }
 /* ================ Scroll Down START ============== */
 $(document).ready(function () {
@@ -407,7 +425,7 @@ const sub_ul_copytomodallist = document.querySelector("#sub-ul-copyto-modallist"
 sub_ul_copytomodallist.addEventListener("click", function (e) {
 	let target = e.target;
 	if (target.tagName === "DIV") {
-		if (target.className.indexOf("sublist-cancel-box")!=-1) {
+		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
 			return;
 		}
@@ -416,7 +434,7 @@ sub_ul_copytomodallist.addEventListener("click", function (e) {
 		target = target.parentNode;
 	} else if (target.tagName === "I") {
 		target = target.parentNode;
-		if (target.className.indexOf("sublist-cancel-box")!=-1) {
+		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
 			return;
 		} else target = target.parentNode;
@@ -625,7 +643,7 @@ const sub_ul_movetomodallist = document.querySelector("#sub-ul-moveto-modallist"
 sub_ul_movetomodallist.addEventListener("click", function (e) {
 	let target = e.target;
 	if (target.tagName === "DIV") {
-		if (target.className.indexOf("sublist-cancel-box")!=-1) {
+		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
 			return;
 		}
@@ -634,7 +652,7 @@ sub_ul_movetomodallist.addEventListener("click", function (e) {
 		target = target.parentNode;
 	} else if (target.tagName === "I") {
 		target = target.parentNode;
-		if (target.className.indexOf("sublist-cancel-box")!=-1) {
+		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
 			return;
 		} else target = target.parentNode;

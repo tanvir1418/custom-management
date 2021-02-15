@@ -168,15 +168,15 @@ let opt_managetempa_left_list = "";
 
     if (oldTarget != "" && oldTarget !== target) {
       $(oldTarget).removeClass("highlight_li");
-      $(oldTarget).children(".green-check-box").removeClass("display-block");
-      $(oldTarget).children(".green-check-box").addClass("display-none");
+      // $(oldTarget).children(".green-check-box").removeClass("display-block");
+      // $(oldTarget).children(".green-check-box").addClass("display-none");
       $(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
       $(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
     }
     $(target).toggleClass("highlight_li");
-    $(target).children(".green-check-box").toggleClass("display-none display-block");
+    // $(target).children(".green-check-box").toggleClass("display-none display-block");
     $(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
     $(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
     oldTarget = target;
@@ -210,6 +210,7 @@ sub_ul_managetempamodallist.addEventListener("click", function (e) {
   $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
 
   // managetempa_oldLIClassnameModal = target.classList[0];
+  manTemALeftOnRight(target);
 });
 
 $("#managetempa-mng-opt2-delete").click(function () {
@@ -228,6 +229,23 @@ function resetTempAListModal(e) {
   checkItem.toggleClass("checkbox_show checkbox_hide");
   uncheckItem.toggleClass("checkbox_show checkbox_hide");
   $("#managetempa-list-count").html(`0 Items Selected`);
+}
+
+function manTemALeftOnRight(target) {
+  let _id = $(target).parent().attr("id");
+  let pos = _id.length;
+  let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
+  if (len > 0) {
+    let markItem = $(`ul.managetempa-list li.modalmanagetempalist-item-${_id[pos - 1]}`)
+      .children("div.green-check-box");
+    markItem.addClass("display-block");
+    markItem.removeClass("display-none");
+  } else {
+    let markItem = $(`ul.managetempa-list li.modalmanagetempalist-item-${_id[pos - 1]}`)
+      .children("div.green-check-box");
+    markItem.addClass("display-none");
+    markItem.removeClass("display-block");
+  }
 }
 /* ================ Scroll Down START ============== */
 $(document).ready(function () {
@@ -398,15 +416,15 @@ let opt_managetempb_left_list = "";
 
     if (oldTarget != "" && oldTarget !== target) {
       $(oldTarget).removeClass("highlight_li");
-      $(oldTarget).children(".green-check-box").removeClass("display-block");
-      $(oldTarget).children(".green-check-box").addClass("display-none");
+      // $(oldTarget).children(".green-check-box").removeClass("display-block");
+      // $(oldTarget).children(".green-check-box").addClass("display-none");
       $(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
       $(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
     }
     $(target).toggleClass("highlight_li");
-    $(target).children(".green-check-box").toggleClass("display-none display-block");
+    // $(target).children(".green-check-box").toggleClass("display-none display-block");
     $(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
     $(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
     oldTarget = target;
@@ -440,6 +458,7 @@ sub_ul_managetempbmodallist.addEventListener("click", function (e) {
   $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
 
   // managetempb_oldLIClassnameModal = target.classList[0];
+  manTemBLeftOnRight(target);
 });
 
 $("#managetempb-mng-opt2-delete").click(function () {
@@ -458,6 +477,23 @@ function resetTempBListModal(e) {
   checkItem.toggleClass("checkbox_show checkbox_hide");
   uncheckItem.toggleClass("checkbox_show checkbox_hide");
   $("#managetempb-list-count").html(`0 Items Selected`);
+}
+
+function manTemBLeftOnRight(target) {
+  let _id = $(target).parent().attr("id");
+  let pos = _id.length;
+  let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
+  if (len > 0) {
+    let markItem = $(`ul.managetempb-list li.modalmanagetempblist-item-${_id[pos - 1]}`)
+      .children("div.green-check-box");
+    markItem.addClass("display-block");
+    markItem.removeClass("display-none");
+  } else {
+    let markItem = $(`ul.managetempb-list li.modalmanagetempblist-item-${_id[pos - 1]}`)
+      .children("div.green-check-box");
+    markItem.addClass("display-none");
+    markItem.removeClass("display-block");
+  }
 }
 /* ================ Scroll Down START ============== */
 $(document).ready(function () {
@@ -626,15 +662,15 @@ let opt_managetempc_left_list = "";
 
     if (oldTarget != "" && oldTarget !== target) {
       $(oldTarget).removeClass("highlight_li");
-      $(oldTarget).children(".green-check-box").removeClass("display-block");
-      $(oldTarget).children(".green-check-box").addClass("display-none");
+      // $(oldTarget).children(".green-check-box").removeClass("display-block");
+      // $(oldTarget).children(".green-check-box").addClass("display-none");
       $(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
       $(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
     }
     $(target).toggleClass("highlight_li");
-    $(target).children(".green-check-box").toggleClass("display-none display-block");
+    // $(target).children(".green-check-box").toggleClass("display-none display-block");
     $(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
     $(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
     oldTarget = target;
@@ -669,6 +705,7 @@ sub_ul_managetempcmodallist.addEventListener("click", function (e) {
   $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
 
   // managetempc_oldLIClassnameModal = target.classList[0];
+  manTemCLeftOnRight(target);
 });
 
 $("#managetempc-mng-opt2-delete").click(function () {
@@ -687,6 +724,23 @@ function resetTempCListModal(e) {
   checkItem.toggleClass("checkbox_show checkbox_hide");
   uncheckItem.toggleClass("checkbox_show checkbox_hide");
   $("#managetempc-list-count").html(`0 Items Selected`);
+}
+
+function manTemCLeftOnRight(target) {
+  let _id = $(target).parent().attr("id");
+  let pos = _id.length;
+  let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
+  if (len > 0) {
+    let markItem = $(`ul.managetempc-list li.modalmanagetempclist-item-${_id[pos - 1]}`)
+      .children("div.green-check-box");
+    markItem.addClass("display-block");
+    markItem.removeClass("display-none");
+  } else {
+    let markItem = $(`ul.managetempc-list li.modalmanagetempclist-item-${_id[pos - 1]}`)
+      .children("div.green-check-box");
+    markItem.addClass("display-none");
+    markItem.removeClass("display-block");
+  }
 }
 /* ================ Scroll Down START ============== */
 $(document).ready(function () {
@@ -857,15 +911,15 @@ let opt_managetempd_left_list = "";
 
     if (oldTarget != "" && oldTarget !== target) {
       $(oldTarget).removeClass("highlight_li");
-      $(oldTarget).children(".green-check-box").removeClass("display-block");
-      $(oldTarget).children(".green-check-box").addClass("display-none");
+      // $(oldTarget).children(".green-check-box").removeClass("display-block");
+      // $(oldTarget).children(".green-check-box").addClass("display-none");
       $(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
       $(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
     }
     $(target).toggleClass("highlight_li");
-    $(target).children(".green-check-box").toggleClass("display-none display-block");
+    // $(target).children(".green-check-box").toggleClass("display-none display-block");
     $(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
     $(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
     oldTarget = target;
@@ -899,6 +953,7 @@ sub_ul_managetempdmodallist.addEventListener("click", function (e) {
   $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
 
   // managetempd_oldLIClassnameModal = target.classList[0];
+  manTemDLeftOnRight(target);
 });
 
 $("#managetempd-mng-opt2-delete").click(function () {
@@ -917,6 +972,23 @@ function resetTempDListModal(e) {
   checkItem.toggleClass("checkbox_show checkbox_hide");
   uncheckItem.toggleClass("checkbox_show checkbox_hide");
   $("#managetempd-list-count").html(`0 Items Selected`);
+}
+
+function manTemDLeftOnRight(target) {
+  let _id = $(target).parent().attr("id");
+  let pos = _id.length;
+  let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
+  if (len > 0) {
+    let markItem = $(`ul.managetempd-list li.modalmanagetempdlist-item-${_id[pos - 1]}`)
+      .children("div.green-check-box");
+    markItem.addClass("display-block");
+    markItem.removeClass("display-none");
+  } else {
+    let markItem = $(`ul.managetempd-list li.modalmanagetempdlist-item-${_id[pos - 1]}`)
+      .children("div.green-check-box");
+    markItem.addClass("display-none");
+    markItem.removeClass("display-block");
+  }
 }
 /* ================ Scroll Down START ============== */
 $(document).ready(function () {
@@ -1760,12 +1832,8 @@ function manTemcheckEmpty(e) {
 
 function manTemcheckNum(e) {
   if (e.value !== "") {
-    // $(e).parent().addClass("custom-input-success");
-    // $(e).parent().removeClass("custom-input-danger");
     $(e).parent().parent().children(".error-message").remove();
   } else {
-    // $(e).parent().addClass("custom-input-danger");
-    // $(e).parent().removeClass("custom-input-success");
     let errorMessage = `<div class="error-message">
       <p>A value must be entered</p>
     </div>`;
