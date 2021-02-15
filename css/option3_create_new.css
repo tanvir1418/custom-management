@@ -63,7 +63,7 @@
 
 /* ========================== */
 /* custom radio button starts */
-.radio-selection-option input[type="radio"]+label {
+.radio-selection-option input[type="radio"] + label {
   display: inline-block;
   cursor: pointer;
   position: relative;
@@ -74,7 +74,7 @@
   /* font-weight: 500; */
 }
 
-.radio-selection-option input[type="radio"]+label:before {
+.radio-selection-option input[type="radio"] + label:before {
   content: "";
   display: block;
   width: 26px;
@@ -95,7 +95,7 @@
   *display: inline;
 }
 
-.radio-selection-option input[type="radio"]+label:after {
+.radio-selection-option input[type="radio"] + label:after {
   content: "";
   display: block;
   position: absolute;
@@ -108,13 +108,13 @@
   opacity: 0.5;
 }
 
-.radio-selection-option input[type="radio"]:checked+label:before {
+.radio-selection-option input[type="radio"]:checked + label:before {
   border: 1px solid #359f01;
   background-color: #fff;
   opacity: 1;
 }
 
-.radio-selection-option input[type="radio"]:checked+label:after {
+.radio-selection-option input[type="radio"]:checked + label:after {
   background: #359f01;
   opacity: 1;
 }
@@ -272,7 +272,8 @@
 }
 
 /* ========custom date picker design overriding jQuery-UI starts======== */
-.ui-datepicker-div {}
+/* .ui-datepicker-div {
+} */
 
 .ui-datepicker .ui-corner-all {
   border-radius: 0 !important;
@@ -358,3 +359,46 @@
 }
 
 /* xxxxxxx==custom date picker design overriding jQuery-UI ends==xxxxx */
+
+@media screen and (max-width: 1200px) {
+  .content-43 {
+    padding: 0 25px;
+  }
+  .sub-heading-section p {
+    font-size: 18px;
+  }
+  .radio-selection-option input[type="radio"] + label {
+    padding-left: 30px;
+    font-size: 18px;
+  }
+  .radio-selection-option input[type="radio"] + label:before {
+    width: 22px;
+    height: 22px;
+  }
+  .radio-selection-option input[type="radio"] + label:after {
+    top: 4px;
+    left: 4px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .content-43 {
+    padding: 0 15px;
+  }
+  .content-43 .padding-left {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .content-43 .padding-right {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .heading-for-create-new-content-section p {
+    margin-bottom: 30px;
+  }
+  .option-3-create-new .control-section {
+    margin: 40px 0px 30px 0px;
+  }
+}

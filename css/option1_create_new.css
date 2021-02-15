@@ -567,7 +567,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border: 1px solid #41e167;
+    border: 1px solid #41e167 !important;
     border-radius: 4px;
     overflow: hidden;
 }
@@ -631,7 +631,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border: 1px solid #fe7e7e;
+    border: 1px solid #fe7e7e !important;
     border-radius: 4px;
 }
 
@@ -1391,7 +1391,6 @@
     background: #ffffff;
     color: #2e2c2c;
     outline: 0;
-    border: 0;
     width: 100%;
     height: 100%;
     font-size: 18px;

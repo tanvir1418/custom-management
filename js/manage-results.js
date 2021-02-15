@@ -85,13 +85,13 @@ const listItemData404 = [
             }
         }
         htmlDataModal +=
-        `<ul class="right-list-404" style="margin-left: 300px; display: none" id="sub-ul-list-1-${index + 1}">
+        `<ul class="right-list-404 right-list-4041" style=" display: none" id="sub-ul-list-1-${index + 1}">
         ${list_data1}
         </ul>
-        <ul class="right-list-404" style="margin-left: 600px; display: none" id="sub-ul-list-2-${index + 1}">
+        <ul class="right-list-404 right-list-4042" style=" display: none" id="sub-ul-list-2-${index + 1}">
             ${list_data2}
         </ul>
-        <ul class="right-list-404" style="margin-left: 900px; display: none" id="sub-ul-list-3-${index + 1}">
+        <ul class="right-list-404 right-list-4043" style=" display: none" id="sub-ul-list-3-${index + 1}">
             ${list_data3}
         </ul>`;
     });
