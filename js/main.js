@@ -655,3 +655,6 @@ function addCategory(e) {
 	}
 }
 // Manage Data Option 5 End
+
+// Manage Data Option 1 Existing Pagination Start
+// Manage Data Option 1 Existing Pagination End
