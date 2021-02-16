@@ -996,7 +996,7 @@ function manTemInpBuildData(_id) {
         <div class="width-custom-range-70 d-flex">
           <span class="min">0</span>
             <div class="range-wrapper-sample-4">
-                <input class="range-example-input-2" type="text" min="0" max="100" value="10,40" name="points" step="1" width="100" />
+                <input class="range-example-input-1" type="text" min="0" max="100" value="10,40" name="points" step="1" width="100" />
             </div>
             <span class="max">100</span>
         </div>
@@ -1015,13 +1015,13 @@ function manTemInpBuildData(_id) {
         </div>
         <div class="width-input-group-35">
           <div class="input-section-sample4 right-side-input">
-            <input class="date-pick-style-sample4" type="text" id="datepicker_mnTemp1"/>
+            <input class="date-pick-style-sample4" type="text" id="datepicker_op41"/>
             <i class="far fa-calendar-alt icon-sample4"></i>
           </div>
         </div>
         <div class="width-input-group-35">
           <div class="input-section-sample4 left-side-input">
-            <input class="date-pick-style-sample4" type="text" id="datepicker_mnTemp2"/>
+            <input class="date-pick-style-sample4" type="text" id="datepicker_op42"/>
             <i class="far fa-calendar-alt icon-sample4"></i>
           </div>
         </div>
@@ -1064,9 +1064,18 @@ function manTemInpBuildData(_id) {
     }
     $("#man-data-sam4-input-data").append(htmlData);
   }
-  $(".range-example-input-2").asRange({
+  $(".range-example-input-1").asRange({
     range: true,
     limit: false
+  });
+
+  // Manage Data Option 4 Sample 4 DATE PICKER START
+  $(function () {
+    $("#datepicker_op41").datepicker();
+    $("#datepicker_op41").datepicker("option", "dateFormat", "DD, MM d, yy");
+
+    $("#datepicker_op42").datepicker();
+    $("#datepicker_op42").datepicker("option", "dateFormat", "DD, MM d, yy");
   });
 }
 

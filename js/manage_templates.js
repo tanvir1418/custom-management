@@ -2075,6 +2075,15 @@ function manTemInpBuild(_id) {
     range: true,
     limit: false
   });
+
+  // Manage Template Sample 4 DATE PICKER START
+  $(function () {
+    $("#datepicker_mnTemp1").datepicker();
+    $("#datepicker_mnTemp1").datepicker("option", "dateFormat", "DD, MM d, yy");
+
+    $("#datepicker_mnTemp2").datepicker();
+    $("#datepicker_mnTemp2").datepicker("option", "dateFormat", "DD, MM d, yy");
+  });
 }
 
 function removeElement(_id) {

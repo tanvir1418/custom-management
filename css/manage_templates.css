@@ -183,7 +183,6 @@
   background: white;
   color: #2e2c2c;
   outline: 0;
-  border: 0;
   width: 100%;
   height: 100%;
   font-size: 18px;
@@ -248,7 +247,6 @@
   background: #e6e6e6;
   color: #2e2c2c;
   outline: 0;
-  border: 0;
   width: 100%;
   height: 100%;
   font-size: 18px;
@@ -312,7 +310,6 @@
   background: #e6e6e6;
   color: #2e2c2c;
   outline: 0;
-  border: 0;
   width: 100%;
   height: 100%;
   font-size: 18px;
@@ -362,7 +359,8 @@
 }
 
 /* Custom Input Only */
-.mn-temp-option-selection .custom-input-only {
+.mn-temp-option-selection .custom-input-only,
+.op4-option-selection .custom-input-only {
   background: #e6e6e6;
   position: relative;
   width: 100%;
@@ -371,7 +369,8 @@
   border-radius: 6px;
 }
 
-.mn-temp-option-selection .custom-input-only input {
+.mn-temp-option-selection .custom-input-only input ,
+.op4-option-selection .custom-input-only input {
   background: #ffffff;
   color: #2e2c2c;
   outline: 0;
@@ -516,7 +515,7 @@
 
 .mn-temp-option-selection .toggle__text {
   color: #000000;
-  font-family: gilroy-regular, sans-serif;
+  font-family: "gilroy-regular", sans-serif;
   font-weight: 600;
   font-size: 18px;
   margin-left: 5px;
@@ -675,11 +674,13 @@
     top: 6px;
   }
 
-  .mn-temp-option-selection .custom-input-only {
+  .mn-temp-option-selection .custom-input-only,
+  .op4-option-selection .custom-input-only  {
     height: 35px;
   }
 
-  .mn-temp-option-selection .custom-input-only input {
+  .mn-temp-option-selection .custom-input-only input,
+  .op4-option-selection .custom-input-only input {
     font-size: 16px;
     padding: 5px 10px;
   }
@@ -797,11 +798,13 @@
     top: 4px;
   }
 
-  .mn-temp-option-selection .custom-input-only {
+  .mn-temp-option-selection .custom-input-only,
+  .op4-option-selection .custom-input-only  {
     height: 30px;
   }
 
-  .mn-temp-option-selection .custom-input-only input {
+  .mn-temp-option-selection .custom-input-only input,
+  .op4-option-selection .custom-input-only input {
     height: 30px;
     font-size: 14px;
   }
@@ -941,6 +944,7 @@
 }
 
 .op1-option-selection .threebar:hover,
+.op4-option-selection .threebar:hover,
 .mn-temp-option-selection .threebar:hover {
   cursor: grab;
 }
@@ -949,6 +953,10 @@
   display: none;
 }
 
+/* Manage Data Option 4 Hide Show control  */
+.save-start-class-hide-show-op4{
+  display: none;
+}
 /* 
 .updown-handler{
   position: absolute;
