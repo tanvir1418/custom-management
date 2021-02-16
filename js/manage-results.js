@@ -1449,7 +1449,6 @@ let manageResultTable = [
 
 function dblclickResMove(e) {
     let _id = $(e).parent().attr("id");
-    console.log(_id);
     if (_id == "man-res-opt-data-table-left") {
         $(e).removeClass("mark-table-data");
         $("#man-res-opt-data-table-right").append(e);
@@ -1489,3 +1488,12 @@ function ResorderDown() {
     });
 }
 // ---------- ======= Double Click to ADD or REMOVE End ======= -------------
+
+// ----------- Manage Result Filter Start ------------------
+function resetResFilter(e) {
+    let inpBox = $(e).parent().parent()
+        .children(".outer-data7")
+        .find("div.valdata-box div.valinput input.myzap-input");
+    inpBox.val("");
+}
+// ----------- Manage Result Filter End --------------------
