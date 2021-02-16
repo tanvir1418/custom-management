@@ -215,6 +215,7 @@
   top: 10px;
   border-radius: 2px;
 }
+
 .mn-temp-option-selection .custome-select:before {
   content: "\25bc";
   position: absolute;
@@ -224,6 +225,7 @@
   right: 14px;
   top: 9px;
 }
+
 .mn-temp-option-selection .custome-select select option {
   background: #ffffff;
 }
@@ -282,6 +284,7 @@
   top: 10px;
   border-radius: 2px;
 }
+
 .mn-temp-option-selection .custom-input-success:before {
   content: "\2714";
   position: absolute;
@@ -291,6 +294,7 @@
   right: 15px;
   top: 9px;
 }
+
 .mn-temp-option-selection .custom-input-success input {
   background: #ffffff;
 }
@@ -345,6 +349,7 @@
   border-radius: 2px;
   /* opacity: 0.8; */
 }
+
 .mn-temp-option-selection .custom-input-danger:before {
   content: "\2716";
   position: absolute;
@@ -354,6 +359,7 @@
   right: 15px;
   top: 9px;
 }
+
 .mn-temp-option-selection .custom-input-danger input {
   background: #ffffff;
 }
@@ -369,7 +375,7 @@
   border-radius: 6px;
 }
 
-.mn-temp-option-selection .custom-input-only input ,
+.mn-temp-option-selection .custom-input-only input,
 .op4-option-selection .custom-input-only input {
   background: #ffffff;
   color: #2e2c2c;
@@ -486,7 +492,7 @@
   padding-left: 35px;
 }
 
-.mn-temp-option-selection .toggle__input:not(:disabled) ~ .toggle__label {
+.mn-temp-option-selection .toggle__input:not(:disabled)~.toggle__label {
   cursor: pointer;
 }
 
@@ -508,7 +514,7 @@
   z-index: 2;
 }
 
-.mn-temp-option-selection .toggle__input:checked ~ .toggle__label::after {
+.mn-temp-option-selection .toggle__input:checked~.toggle__label::after {
   background-color: #25d34f;
   box-shadow: 5px 5px 5px 4px rgba(140, 245, 80, 0.2);
 }
@@ -521,6 +527,7 @@
   margin-left: 5px;
   padding-top: 3px;
 }
+
 /* this is for tik sign */
 .mn-temp-option-selection .toggle__label::before {
   content: "";
@@ -543,7 +550,7 @@
   transform: rotate(-40deg) skew(10deg);
 }
 
-.mn-temp-option-selection .toggle__input:checked ~ .toggle__label::before {
+.mn-temp-option-selection .toggle__input:checked~.toggle__label::before {
   width: 14px;
   height: 7px;
   border-left-width: 2px;
@@ -623,11 +630,13 @@
     top: 9px;
     border-radius: 3px;
   }
+
   .mn-temp-option-selection .custome-select:before {
     font-size: 10px;
     right: 12px;
     top: 6px;
   }
+
   /*  Custom Input styling Starts  */
   .mn-temp-option-selection .custom-input-success {
     height: 35px;
@@ -646,11 +655,13 @@
     top: 9px;
     border-radius: 2px;
   }
+
   .mn-temp-option-selection .custom-input-success:before {
     font-size: 10px;
     right: 12px;
     top: 6px;
   }
+
   .mn-temp-option-selection .custom-input-danger {
     height: 35px;
   }
@@ -668,6 +679,7 @@
     top: 9px;
     border-radius: 2px;
   }
+
   .mn-temp-option-selection .custom-input-danger:before {
     font-size: 10px;
     right: 12px;
@@ -675,7 +687,7 @@
   }
 
   .mn-temp-option-selection .custom-input-only,
-  .op4-option-selection .custom-input-only  {
+  .op4-option-selection .custom-input-only {
     height: 35px;
   }
 
@@ -799,7 +811,7 @@
   }
 
   .mn-temp-option-selection .custom-input-only,
-  .op4-option-selection .custom-input-only  {
+  .op4-option-selection .custom-input-only {
     height: 30px;
   }
 
@@ -808,6 +820,7 @@
     height: 30px;
     font-size: 14px;
   }
+
   /* xxxxxxx Custom Input styling Ends xxxxxxxx  */
 
   /*======  Custom Input styling starts ====== */
@@ -829,9 +842,11 @@
     left: 0px;
     top: 1px;
   }
+
   .mn-temp-option-selection .toggle__text {
     font-size: 13px;
   }
+
   /* .toggle__text {
         margin-top: auto;
         margin-bottom: auto;
@@ -843,7 +858,7 @@
     left: 3px;
   }
 
-  .mn-temp-option-selection .toggle__input:checked ~ .toggle__label::before {
+  .mn-temp-option-selection .toggle__input:checked~.toggle__label::before {
     width: 10px;
     height: 6px;
   }
@@ -854,24 +869,31 @@
     padding-top: 0px;
     display: block;
   }
+
   .width-fifty-persent {
     width: 100%;
   }
+
   .margin-right {
     margin-right: 0px;
   }
+
   .margin-left {
     margin-left: 0px;
   }
+
   .tab_3 .margin-right {
     margin-bottom: 0px !important;
   }
+
   .tab_3 .margin-left {
     margin-bottom: 0px !important;
   }
+
   .mn-temp-option-selection {
     margin: 0 80px 0 65px;
   }
+
   .multistep-container .mutistep-form-area .form-box .btn-row-leftRight {
     height: 110px;
     margin: 0px 30px;
@@ -880,6 +902,7 @@
     padding-top: 20px;
     margin-top: -10px;
   }
+
   .multistep-container .mutistep-form-area .form-box .btn-row-dualTable {
     margin-bottom: 30px;
   }
@@ -897,16 +920,19 @@
   .margin-left {
     margin-left: 0;
   }
+
   .multistep-container .mutistep-form-area .form-box .btn-row-leftRight {
     padding-right: 0;
     padding-left: 0;
   }
 }
+
 @media screen and (max-width: 820px) {
   .mn-temp-option-selection {
     margin: 0 40px 0 25px;
   }
 }
+
 /* sample 2 Left-Side Right-Side style ends  */
 /* ============XXXXXXXXXX=========== */
 
@@ -954,9 +980,10 @@
 }
 
 /* Manage Data Option 4 Hide Show control  */
-.save-start-class-hide-show-op4{
+.save-start-class-hide-show-op4 {
   display: none;
 }
+
 /* 
 .updown-handler{
   position: absolute;
@@ -997,18 +1024,23 @@
   .checkbox-container {
     padding-top: 110px;
   }
+
   .title-section {
     width: 25%;
   }
+
   .input-section {
     width: 75%;
   }
+
   .percent-input input {
     width: 93%;
   }
+
   .input-time input.date-pick-style {
     width: 91%;
   }
+
   .width-50-box {
     padding: 0px;
   }
@@ -1018,27 +1050,35 @@
   .field_set {
     padding: 25px 25px 30px 25px;
   }
+
   .title-section {
     width: 30%;
   }
+
   .input-section {
     width: 70%;
   }
+
   .percent-input input {
     width: 90%;
   }
+
   .input-time input.date-pick-style {
     width: 88%;
   }
+
   .box-input-text input {
     width: 80%;
   }
+
   .custom-title-section {
     width: 40%;
   }
+
   .custom-input-section {
     width: 60%;
   }
+
   /* 
 .custom-input-section .custome-select select {
 padding: 0 5px;
@@ -1049,38 +1089,145 @@ padding: 0 5px;
   .field_set {
     padding: 20px 20px 25px 20px;
   }
+
   .title-section {
     width: 35%;
   }
+
   .input-section {
     width: 65%;
   }
+
   .custom-title-section {
     font-size: 14px;
   }
+
   .percent-input input {
     width: 90%;
   }
+
   .custom-date-title {
     width: 25%;
   }
+
   .custom-date-input {
     width: 75%;
   }
+
   .input-section input.date-pick-style {
     /* width: 75%; */
     padding: 0px 0px 0px 5px;
   }
+
   .input-time input.date-pick-style {
     width: 85%;
   }
+
   .custom-input-section .custome-select select {
     padding: 0px 0px 0px 5px;
   }
+
   .box-input-text input {
     width: 75%;
   }
+
   .field_set_dual .first-input-group {
     margin-bottom: 5px;
   }
+}
+
+
+
+/* MADIA QUERY TEMP TAB */
+
+@media screen and (max-width: 1250px) {
+
+  /* ===/// TEMPLATE SLIDER START ///=== */
+  .tab_3 #load_temp_slider .load_temp_row {
+    margin: 36px 132px 62px;
+  }
+
+  .tab_3 .template_box,
+  .tab_3 .create_new_temp {
+    width: 180px;
+    height: 230px;
+  }
+
+  .tab_3 .template_box img {
+    width: 60px;
+  }
+
+  .tab_3 .template_box p {
+    font-size: 20px;
+  }
+
+  .tab_3 .create_new_temp p {
+    font-size: 20px;
+  }
+
+  .tab_3 .template_box .temp-txt {
+    margin-top: 10px;
+  }
+
+  .tab_3 .create_new_temp .temp-txt {
+    margin-top: 10px;
+  }
+
+  /* carousel control */
+  #load_temp_slider .slider_arrow_box {
+    width: 50px;
+    height: 50px;
+  }
+
+  #load_temp_slider .slider_arrow_box i {
+    font-size: 26px;
+  }
+
+  /* ===/// TEMPLATE SLIDER END ///=== */
+}
+@media screen and (max-width: 991px) {
+
+  /* ===/// TEMPLATE SLIDER START ///=== */
+  .tab_3 #load_temp_slider .load_temp_row {
+    margin: 36px 50px 62px;
+  }
+
+  .tab_3 .template_box,
+  .tab_3 .create_new_temp {
+    width: 150px;
+    height: 200px;
+  }
+
+  .tab_3 .template_box img {
+    width: 50px;
+  }
+
+  .tab_3 .create_new_temp .plus_box {
+    height: 50px;
+    width: 50px;
+  }
+
+  .tab_3 .create_new_temp .plus_box i {
+    font-size: 28px;
+  }
+
+  .tab_3 .template_box .load-txt {
+    margin-top: 20px;
+  }
+
+  /* carousel control */
+  #load_temp_slider .slider_arrow_box {
+    width: 44px;
+    height: 44px;
+  }
+
+  #load_temp_slider .slider_arrow_box.left00a {
+    left: 50px;
+  }
+
+  #load_temp_slider .slider_arrow_box.right00a {
+    right: 0px;
+  }
+
+  /* ===/// TEMPLATE SLIDER END ///=== */
 }
