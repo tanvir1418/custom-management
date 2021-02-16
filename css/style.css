@@ -1852,3 +1852,55 @@ td {
     line-height: 38px;
   }
 }
+
+/* Option Box Responsive  */
+@media screen and (max-width: 1300px) {
+  .option-box-row {
+    margin: 0 30px;
+  }
+  .content .tab_2 .option_box {
+    width: 180px;
+    height: 230px;
+  }
+}
+
+/* Option Box Responsive  */
+@media screen and (max-width: 1120px) {
+  .content .tab_2 .option_box {
+    width: 160px;
+    height: 200px;
+  }
+  .content .tab_2 .option_box img {
+    width: 60px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .option-box-row {
+    margin: 0 20px;
+  }
+  .content .tab_2 .option_box {
+    width: 140px;
+    height: 175px;
+  }
+  .content .tab_2 .option_box img {
+    width: 45px;
+  }
+  .content .tab_2 .option_box p {
+    font-size: 20px;
+    margin-top: 28px;
+  }
+}
+
+@media only screen and (max-width: 790px) {
+  .content .tab_2 .option_box {
+    width: 115px;
+    height: 135px;
+  }
+  .content .tab_2 .option_box img {
+    width: 38px;
+  }
+  .content .tab_2 .option_box p {
+    margin-top: 30px;
+  }
+}
