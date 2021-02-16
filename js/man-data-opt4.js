@@ -12,7 +12,7 @@
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence-opt4" onchange="manDataSwapSeqL(this)">
+      <select class="sequence-opt4" onchange="manDataSwapSeqL(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -33,7 +33,7 @@
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence-opt4" onchange="manDataSwapSeqL(this)">
+      <select class="sequence-opt4" onchange="manDataSwapSeqL(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -69,7 +69,7 @@
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence-opt4" onchange="manDataSwapSeqL(this)">
+      <select class="sequence-opt4" onchange="manDataSwapSeqL(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -97,7 +97,7 @@
     `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence-opt4" onchange="manDataSwapSeqL(this)">
+      <select class="sequence-opt4" onchange="manDataSwapSeqL(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -117,7 +117,7 @@
     `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence-opt4" onchange="manDataSwapSeqL(this)">
+      <select class="sequence-opt4" onchange="manDataSwapSeqL(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -348,7 +348,7 @@
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence-opt4" onchange="manDataSwapSeqR(this)">
+      <select class="sequence-opt4" onchange="manDataSwapSeqR(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -369,7 +369,7 @@
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence-opt4" onchange="manDataSwapSeqR(this)">
+      <select class="sequence-opt4" onchange="manDataSwapSeqR(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -405,7 +405,7 @@
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence-opt4" onchange="manDataSwapSeqR(this)">
+      <select class="sequence-opt4" onchange="manDataSwapSeqR(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -433,7 +433,7 @@
     `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence-opt4" onchange="manDataSwapSeqR(this)">
+      <select class="sequence-opt4" onchange="manDataSwapSeqR(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -453,7 +453,7 @@
     `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence-opt4" onchange="manDataSwapSeqR(this)">
+      <select class="sequence-opt4" onchange="manDataSwapSeqR(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -677,17 +677,17 @@ var manDataSeqListR = [];
 
 function manDataResetValueL(e) {
   let pid = $(e).parent().parent().parent().parent().attr("id");
-  if ($(`#${pid} #sequence-opt4`).length == 0) return true;
+  if ($(`#${pid} .sequence-opt4`).length == 0) return true;
   if (e.checked == false) {
     $(`#${pid} input, #${pid} select`).val("");
     manDataSeqListL = manDataSeqListL.filter(function (id) {
-      $(`#${id} #sequence-opt4`).children(`option:last-child`).remove();
+      $(`#${id} .sequence-opt4`).children(`option:last-child`).remove();
       return pid != id;
     });
     manDataSeqListL.forEach(function (val, index) {
-      $(`#${val} #sequence-opt4`).val(index + 1);
+      $(`#${val} .sequence-opt4`).val(index + 1);
     });
-    $(`#${pid} #sequence-opt4`).html(`<option value='0'>SEQUENCE</option>`);
+    $(`#${pid} .sequence-opt4`).html(`<option value='0'>SEQUENCE</option>`);
     // remove error message
     let errP = $(`#${pid} .width-22 .error-message`);
     let errC = $(`#${pid} .width-22 .custom-input-danger`);
@@ -704,34 +704,34 @@ function manDataResetValueL(e) {
   } else {
     let inW = inWords(manDataSeqListL.length + 1).toUpperCase();
     manDataSeqListL.forEach(function (val, index) {
-      $(`#${val} #sequence-opt4`).append(
+      $(`#${val} .sequence-opt4`).append(
         `<option value="${(manDataSeqListL.length + 1)}">${inW}</option>`
       );
-      $(`#${val} #sequence-opt4`).val(index + 1);
+      $(`#${val} .sequence-opt4`).val(index + 1);
     });
     manDataSeqListL.push(pid);
     if (manDataSeqListL.length == 1) {
-      $(`#${pid} #sequence-opt4`).html(`<option value='1'>FIRST</option>`);
+      $(`#${pid} .sequence-opt4`).html(`<option value='1'>FIRST</option>`);
     }
     else {
-      $(`#${pid} #sequence-opt4`).html($(`#${manDataSeqListL[0]} #sequence-opt4`).html());
+      $(`#${pid} .sequence-opt4`).html($(`#${manDataSeqListL[0]} .sequence-opt4`).html());
     }
-    $(`#${pid} #sequence-opt4`).val(manDataSeqListL.length);
+    $(`#${pid} .sequence-opt4`).val(manDataSeqListL.length);
   }
 }
 function manDataResetValueR(e) {
   let pid = $(e).parent().parent().parent().parent().attr("id");
-  if ($(`#${pid} #sequence-opt4`).length == 0) return true;
+  if ($(`#${pid} .sequence-opt4`).length == 0) return true;
   if (e.checked == false) {
     $(`#${pid} input, #${pid} select`).val("");
     manDataSeqListR = manDataSeqListR.filter(function (id) {
-      $(`#${id} #sequence-opt4`).children(`option:last-child`).remove();
+      $(`#${id} .sequence-opt4`).children(`option:last-child`).remove();
       return pid != id;
     });
     manDataSeqListR.forEach(function (val, index) {
-      $(`#${val} #sequence-opt4`).val(index + 1);
+      $(`#${val} .sequence-opt4`).val(index + 1);
     });
-    $(`#${pid} #sequence-opt4`).html(`<option value='0'>SEQUENCE</option>`);
+    $(`#${pid} .sequence-opt4`).html(`<option value='0'>SEQUENCE</option>`);
     // remove error message
     let errP = $(`#${pid} .width-22 .error-message`);
     let errC = $(`#${pid} .width-22 .custom-input-danger`);
@@ -748,19 +748,19 @@ function manDataResetValueR(e) {
   } else {
     let inW = inWords(manDataSeqListR.length + 1).toUpperCase();
     manDataSeqListR.forEach(function (val, index) {
-      $(`#${val} #sequence-opt4`).append(
+      $(`#${val} .sequence-opt4`).append(
         `<option value="${(manDataSeqListR.length + 1)}">${inW}</option>`
       );
-      $(`#${val} #sequence-opt4`).val(index + 1);
+      $(`#${val} .sequence-opt4`).val(index + 1);
     });
     manDataSeqListR.push(pid);
     if (manDataSeqListR.length == 1) {
-      $(`#${pid} #sequence-opt4`).html(`<option value='1'>FIRST</option>`);
+      $(`#${pid} .sequence-opt4`).html(`<option value='1'>FIRST</option>`);
     }
     else {
-      $(`#${pid} #sequence-opt4`).html($(`#${manDataSeqListR[0]} #sequence-opt4`).html());
+      $(`#${pid} .sequence-opt4`).html($(`#${manDataSeqListR[0]} .sequence-opt4`).html());
     }
-    $(`#${pid} #sequence-opt4`).val(manDataSeqListR.length);
+    $(`#${pid} .sequence-opt4`).val(manDataSeqListR.length);
   }
 }
 
@@ -780,8 +780,8 @@ function manDataSwapSeqL(e) {
       manDataSeqListL[index] = manDataSeqListL[val - 1];
       manDataSeqListL[val - 1] = pid;
     }
-    $(`#${manDataSeqListL[index]} #sequence-opt4`).val(index + 1);
-    $(`#${pid} #sequence-opt4`).val(val);
+    $(`#${manDataSeqListL[index]} .sequence-opt4`).val(index + 1);
+    $(`#${pid} .sequence-opt4`).val(val);
   }
 }
 function manDataSwapSeqR(e) {
@@ -800,8 +800,8 @@ function manDataSwapSeqR(e) {
       manDataSeqListR[index] = manDataSeqListR[val - 1];
       manDataSeqListR[val - 1] = pid;
     }
-    $(`#${manDataSeqListR[index]} #sequence-opt4`).val(index + 1);
-    $(`#${pid} #sequence-opt4`).val(val);
+    $(`#${manDataSeqListR[index]} .sequence-opt4`).val(index + 1);
+    $(`#${pid} .sequence-opt4`).val(val);
   }
 }
 
