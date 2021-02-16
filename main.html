@@ -209,7 +209,7 @@
                 </div>
 
                 <!-- ==----=-=-=-=-=-=-=-=-=- CHOOSE OPTIONS SECTION START ==----=-=-=-=-=-=-=-=-=-  -->
-                <div class="row">
+                <div class="row option-box-row">
                     <div class="column">
                         <div class="option_box" onclick="openOption(event, 'option_1')">
                             <div class="option-content-box">
@@ -431,41 +431,25 @@
                             </div>
                             <!-- MANAGE SECTION TABLE START -->
                             <table class="table mytable1 table-responsive-xl" id="man-data-opt1-exist">
-                                <!-- data from mainJS -->
+                                <thead>
+                                    <!-- data from mainJS -->
+                                </thead>
+                                <tbody>
+                                    <!-- data from mainJS -->
+                                </tbody>
                             </table>
                             <!-- MANAGE SECTION TABLE END -->
 
                             <!-- option 1 PAGINATION START -->
-                            <div class="container-fluid">
+                            <div class="pagination-container">
                                 <div class="pagination-table">
-                                    <div class="row">
+                                    <div class="width-pagination" id="pagination-op1-data">
                                         <div class="width-row-go">
                                             <div id="no-of-rows">
                                                 <div class="left-row-no">
-                                                    <input type="text" id="row-no1" name="rowNo" placeholder="10">
+                                                    <input type="number" id="row-no1" name="rowNo" value="7">
                                                     <label for="rowNo">rows per page</label>
                                                 </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="width-pagination">
-                                            <div class="pagination">
-                                                <a href="#" class="pagination-item prev"><i
-                                                        class="fas fa-angle-left"></i></a>
-                                                <a href="#" class="pagination-item page pagination-active">1</a>
-                                                <a href="#" class="pagination-item page ">2</a>
-                                                <a href="#" class="pagination-item page ">3</a>
-                                                <a href="#" class="pagination-item page ">4</a>
-                                                <a href="#" class="pagination-item page "><i
-                                                        class="fas fa-ellipsis-h"></i></a>
-                                                <a href="#" class="pagination-item next"><i
-                                                        class="fas fa-angle-right"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="width-row-go">
-                                            <div class="right-goto-page">
-                                                <input type="text" id="goto-page1" name="gotoPage">
-                                                <label for="gotoPage">GO</label>
                                             </div>
                                         </div>
                                     </div>
@@ -728,7 +712,6 @@
                                                                         <td><i class="fas fa-question-circle"></i></td>
                                                                         <td></td>
                                                                     </tr> -->
-
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -844,270 +827,28 @@
                                 <p>Manage Existing</p>
                             </div>
                             <!-- MANAGE SECTION TABLE OPTION THREE START -->
-                            <table class="table mytable1 table-responsive-xl">
+                            <table class="table mytable1 table-responsive-xl" id="man-data-opt3-exist">
                                 <thead>
-                                    <tr>
-                                        <th scope="col">
-                                            ROW
-                                            <div class="head-filter">
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                            <div class="drop-filter">
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-                                        </th>
-                                        <th scope="col">
-                                            RECORDS COUNT
-                                            <div class="head-filter">
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                            <div class="drop-filter">
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-                                        </th>
-                                        <th scope="col">
-                                            SAVED NAME
-                                            <div class="head-filter">
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                            <div class="drop-filter">
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-                                        </th>
-                                        <th scope="col">
-                                            CREATED DATE TIME
-                                            <div class="head-filter">
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                            <div class="drop-filter">
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-                                        </th>
-                                        <th scope="col">
-                                            LAST UPDATE DATE TIME
-                                            <div class="head-filter">
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                            <div class="drop-filter" data-toggle="modal" data-target="#dropBtnModal">
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-
-                                        </th>
-                                        <th scope="col">ACTIONS</th>
-                                    </tr>
+                                    <!-- data from mainJS -->
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th class="row-data" scope="row">1</th>
-                                        <td class="records-count">
-                                            <p>1234</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 1234" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="row-data" scope="row">2</th>
-                                        <td class="records-count">
-                                            <p>33</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 2345" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="row-data" scope="row">3</th>
-                                        <td class="records-count">
-                                            <p>465</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 3456" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="row-data" scope="row">4</th>
-                                        <td class="records-count">
-                                            <p>15.237</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 4" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="row-data" scope="row">5</th>
-                                        <td class="records-count">
-                                            <p>101.273</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 5678" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="row-data" scope="row">6</th>
-                                        <td class="records-count">
-                                            <p>82.338</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 67891" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    <!-- data from mainJS -->
                                 </tbody>
                             </table>
                             <!-- MANAGE SECTION TABLE OPTION THREE END -->
                             <!-- option 3 PAGINATION START -->
-                            <div class="container-fluid">
+                            <div class="pagination-container">
                                 <div class="pagination-table">
-                                    <div class="row">
-                                        <div class="width-row-go">
-                                            <div id="no-of-rows">
-                                                <div class="left-row-no">
-                                                    <input type="text" id="row-no2" name="rowNo" placeholder="10">
-                                                    <label for="rowNo">rows per page</label>
+                                        <div class="width-pagination" id="pagination-op3-data">
+                                            <div class="width-row-go">
+                                                <div id="no-of-rows">
+                                                    <div class="left-row-no">
+                                                        <input type="number" id="row-no3" name="rowNo" value="7">
+                                                        <label for="rowNo">rows per page</label>
+                                                    </div>
                                                 </div>
-
                                             </div>
                                         </div>
-                                        <div class="width-pagination">
-                                            <div class="pagination">
-                                                <a href="#" class="pagination-item prev"><i
-                                                        class="fas fa-angle-left"></i></a>
-                                                <a href="#" class="pagination-item page pagination-active">1</a>
-                                                <a href="#" class="pagination-item page ">2</a>
-                                                <a href="#" class="pagination-item page ">3</a>
-                                                <a href="#" class="pagination-item page ">4</a>
-                                                <a href="#" class="pagination-item page "><i
-                                                        class="fas fa-ellipsis-h"></i></a>
-                                                <a href="#" class="pagination-item next"><i
-                                                        class="fas fa-angle-right"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="width-row-go">
-                                            <div class="right-goto-page">
-                                                <input type="text" id="goto-page2" name="gotoPage">
-                                                <label for="gotoPage">GO</label>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <!-- option 3 PAGINATION END -->
@@ -2233,10 +1974,8 @@
                                                                         <div class="data-form">
                                                                             <div
                                                                                 class="horizontal-input-group first-input-group">
-
                                                                             </div>
                                                                             <div class="horizontal-input-group">
-
                                                                             </div>
                                                                         </div>
                                                                     </fieldset>
@@ -2316,12 +2055,10 @@
                                             <!-- ============= Option 4 Sample 4 starts =============== -->
                                             <div class="sample-4-wrapper">
                                                 <div class="sample-4-wrapper-inner">
-
                                                     <div class="table-wrapper-sample4">
                                                         <div class="table-wrapper-sample4-inner">
                                                             <div class="left-side-table">
-                                                                <h1 class="table-heading">Double Click to Display Below
-                                                                </h1>
+                                                                <h1 class="table-heading">Double Click to Display Below </h1>
                                                                 <div class="section4-table-wrapper">
                                                                     <div class="section4-table-scroll">
                                                                         <table id="sample4-first">
@@ -2346,8 +2083,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="right-side-table">
-                                                                <h1 class="table-heading">Double Click to Remove from
-                                                                    Below</h1>
+                                                                <h1 class="table-heading">Double Click to Remove from Below</h1>
                                                                 <div class="right-table-container-section">
                                                                     <div class="section4-table-wrapper">
                                                                         <div class="section4-table-scroll" id="table2">
@@ -2383,11 +2119,8 @@
                                                 </div>
                                             </div>
                                             <!-- XXXXXXXXXXXXX Option 4 Sample 4 ends XXXXXXXXXXXXX -->
-
                                             <div class="button-row btn-row-dualTable">
-
                                                 <input type="button" value="Back" class="previous" id="prev-hide-save-start-op4">
-
                                                 <!-- text-edition-form -->
                                                 <div class="pop-up-yellow-button-wrap">
                                                     <div class="text-edition-form">
@@ -2398,7 +2131,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                                 <input type="button" value="Next" class="next"
                                                     style="visibility: hidden;">
                                             </div>
@@ -2434,270 +2166,28 @@
                                 <p>Manage Existing</p>
                             </div>
                             <!-- MANAGE SECTION TABLE OPTION THREE START -->
-                            <table class="table mytable1 table-responsive-xl">
+                            <table class="table mytable1 table-responsive-xl" id="man-data-opt4-exist">
                                 <thead>
-                                    <tr>
-                                        <th scope="col">
-                                            ROW
-                                            <div class="head-filter">
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                            <div class="drop-filter">
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-                                        </th>
-                                        <th scope="col">
-                                            RECORDS COUNT
-                                            <div class="head-filter">
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                            <div class="drop-filter">
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-                                        </th>
-                                        <th scope="col">
-                                            SAVED NAME
-                                            <div class="head-filter">
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                            <div class="drop-filter">
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-                                        </th>
-                                        <th scope="col">
-                                            CREATED DATE TIME
-                                            <div class="head-filter">
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                            <div class="drop-filter">
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-                                        </th>
-                                        <th scope="col">
-                                            LAST UPDATE DATE TIME
-                                            <div class="head-filter">
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                            <div class="drop-filter" data-toggle="modal" data-target="#dropBtnModal">
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-
-                                        </th>
-                                        <th scope="col">ACTIONS</th>
-                                    </tr>
+                                    <!-- data from mainJS -->
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th class="row-data" scope="row">1</th>
-                                        <td class="records-count">
-                                            <p>1234</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 1234" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="row-data" scope="row">2</th>
-                                        <td class="records-count">
-                                            <p>33</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 2345" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="row-data" scope="row">3</th>
-                                        <td class="records-count">
-                                            <p>465</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 3456" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="row-data" scope="row">4</th>
-                                        <td class="records-count">
-                                            <p>15.237</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 4" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="row-data" scope="row">5</th>
-                                        <td class="records-count">
-                                            <p>101.273</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 5678" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="row-data" scope="row">6</th>
-                                        <td class="records-count">
-                                            <p>82.338</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 67891" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    <!-- data from mainJS -->
                                 </tbody>
                             </table>
                             <!-- MANAGE SECTION TABLE OPTION THREE END -->
                             <!-- option 4 PAGINATION START -->
-                            <div class="container-fluid">
+                            <div class="pagination-container">
                                 <div class="pagination-table">
-                                    <div class="row">
-                                        <div class="width-row-go">
-                                            <div id="no-of-rows">
-                                                <div class="left-row-no">
-                                                    <input type="text" id="row-no3" name="rowNo" placeholder="10">
-                                                    <label for="rowNo">rows per page</label>
+                                        <div class="width-pagination" id="pagination-op4-data">
+                                            <div class="width-row-go">
+                                                <div id="no-of-rows">
+                                                    <div class="left-row-no">
+                                                        <input type="number" id="row-no4" name="rowNo" value="7">
+                                                        <label for="rowNo">rows per page</label>
+                                                    </div>
                                                 </div>
-
                                             </div>
                                         </div>
-                                        <div class="width-pagination">
-                                            <div class="pagination">
-                                                <a href="#" class="pagination-item prev"><i
-                                                        class="fas fa-angle-left"></i></a>
-                                                <a href="#" class="pagination-item page pagination-active">1</a>
-                                                <a href="#" class="pagination-item page ">2</a>
-                                                <a href="#" class="pagination-item page ">3</a>
-                                                <a href="#" class="pagination-item page ">4</a>
-                                                <a href="#" class="pagination-item page "><i
-                                                        class="fas fa-ellipsis-h"></i></a>
-                                                <a href="#" class="pagination-item next"><i
-                                                        class="fas fa-angle-right"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="width-row-go">
-                                            <div class="right-goto-page">
-                                                <input type="text" id="goto-page3" name="gotoPage">
-                                                <label for="gotoPage">GO</label>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <!-- option 4 PAGINATION END -->
@@ -2885,271 +2375,29 @@
                                 <p>Manage Existing</p>
                             </div>
                             <!-- MANAGE SECTION TABLE START -->
-                            <table class="table mytable1 table-responsive-xl">
+                            <table class="table mytable1 table-responsive-xl" id="man-data-opt5-exist">
                                 <thead>
-                                    <tr>
-                                        <th scope="col">
-                                            ROW
-                                            <div class="head-filter">
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                            <div class="drop-filter">
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-                                        </th>
-                                        <th scope="col">
-                                            RECORDS COUNT
-                                            <div class="head-filter">
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                            <div class="drop-filter">
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-                                        </th>
-                                        <th scope="col">
-                                            SAVED NAME
-                                            <div class="head-filter">
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                            <div class="drop-filter">
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-                                        </th>
-                                        <th scope="col">
-                                            CREATED DATE TIME
-                                            <div class="head-filter">
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                            <div class="drop-filter">
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-                                        </th>
-                                        <th scope="col">
-                                            LAST UPDATE DATE TIME
-                                            <div class="head-filter">
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                            <div class="drop-filter" data-toggle="modal" data-target="#dropBtnModal">
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-
-                                        </th>
-                                        <th scope="col">ACTIONS</th>
-                                    </tr>
+                                    <!-- data from mainJS -->
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th class="row-data" scope="row">1</th>
-                                        <td class="records-count">
-                                            <p>1234</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 1234" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="row-data" scope="row">2</th>
-                                        <td class="records-count">
-                                            <p>33</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 2345" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="row-data" scope="row">3</th>
-                                        <td class="records-count">
-                                            <p>465</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 3456" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="row-data" scope="row">4</th>
-                                        <td class="records-count">
-                                            <p>15.237</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 4" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="row-data" scope="row">5</th>
-                                        <td class="records-count">
-                                            <p>101.273</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 5678" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="row-data" scope="row">6</th>
-                                        <td class="records-count">
-                                            <p>82.338</p>
-                                        </td>
-                                        <td>
-                                            <input class="save-name" placeholder="Sample 67891" type="text">
-                                        </td>
-                                        <td>
-                                            <div class="create-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="last-date-time date-time-39">
-                                                <p>01/01/2021</p>
-                                                <p>12:36 AM</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="actions39">
-                                                <a href="">Click To View/Update</a>
-                                                <div class="cancel-box">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    <!-- data from mainJS -->
                                 </tbody>
                             </table>
                             <!-- MANAGE SECTION TABLE END -->
 
                             <!-- option 15PAGINATION START -->
-                            <div class="container-fluid">
+                            <div class="pagination-container">
                                 <div class="pagination-table">
-                                    <div class="row">
-                                        <div class="width-row-go">
-                                            <div id="no-of-rows">
-                                                <div class="left-row-no">
-                                                    <input type="text" id="row-no4" name="rowNo" placeholder="10">
-                                                    <label for="rowNo">rows per page</label>
+                                        <div class="width-pagination" id="pagination-op5-data">
+                                            <div class="width-row-go">
+                                                <div id="no-of-rows">
+                                                    <div class="left-row-no">
+                                                        <input type="number" id="row-no5" name="rowNo" value="7">
+                                                        <label for="rowNo">rows per page</label>
+                                                    </div>
                                                 </div>
-
                                             </div>
                                         </div>
-                                        <div class="width-pagination">
-                                            <div class="pagination">
-                                                <a href="#" class="pagination-item prev"><i
-                                                        class="fas fa-angle-left"></i></a>
-                                                <a href="#" class="pagination-item page pagination-active">1</a>
-                                                <a href="#" class="pagination-item page ">2</a>
-                                                <a href="#" class="pagination-item page ">3</a>
-                                                <a href="#" class="pagination-item page ">4</a>
-                                                <a href="#" class="pagination-item page "><i
-                                                        class="fas fa-ellipsis-h"></i></a>
-                                                <a href="#" class="pagination-item next"><i
-                                                        class="fas fa-angle-right"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="width-row-go">
-                                            <div class="right-goto-page">
-                                                <input type="text" id="goto-page4" name="gotoPage">
-                                                <label for="gotoPage">GO</label>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <!-- option 5 PAGINATION END -->
@@ -9553,7 +8801,7 @@
                                     <div class="width-row-go">
                                         <div id="no-of-rows">
                                             <div class="left-row-no">
-                                                <input type="text" id="row-no5" name="rowNo" placeholder="10">
+                                                <input type="text" id="row-no6" name="rowNo" placeholder="10">
                                                 <label for="rowNo">rows per page</label>
                                             </div>
 
@@ -9575,7 +8823,7 @@
                                     </div>
                                     <div class="width-row-go">
                                         <div class="right-goto-page">
-                                            <input type="text" id="goto-page5" name="gotoPage">
+                                            <input type="text" id="goto-page6" name="gotoPage">
                                             <label for="gotoPage">GO</label>
                                         </div>
                                     </div>
@@ -10816,6 +10064,69 @@
     </div>
     <!-- ======= OPTION 4 LIST4 MODAL delete modal END =========== -->
 
+    <!-- =========hyper text click Modal Starts========= -->
+    <div class="modal fade" id="hyperTextModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!-- ============================== -->
+                    <!-- hyper text click pop-up starts -->
+                    <div class="hyper-text-click-popup">
+                        <div class="hyper-text-click-popup-wrapper">
+                            <div class="hyper-text-popup-header-title" style="color: #fff; text-align: center">
+                                <p style="color: #fff; text-align: center !important; text-decoration: none;">
+                                    Sample 1234 Data
+                                </p>
+                            </div>
+                            <div class="hyper-text-popup-body">
+                                <div class="hyper-text-content-wrapper">
+                                    <div class="hyper-text-table-wrapper">
+                                        <div class="hyper-text-table-scroll">
+                                            <table id="hypertext-table-first">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>12/12/2000 13:20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>12/12/2000 13:20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>12/12/2000 13:20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>12/12/2000 13:20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>12/12/2000 13:20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>12/12/2000 13:20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>12/12/2000 13:20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>12/12/2000 13:20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>12/12/2000 13:20</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- hyper text click pop-up ends -->
+                    <!-- ===========XXXXXXX========== -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =========hyper text click Modal Ends========= -->
+
     <!-- JS FILES -->
     <script src="./js/jquery_min.js"></script>
     <!-- <script src="./js/popper_min.js"></script> -->
@@ -10829,12 +10140,13 @@
     </script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="./js/option-4.js"></script>
+    <script src="./js/chart.js"></script>
+    <script src="./js/pagination.js"></script>
     <script src="./js/jquery-asRange.js"></script>
+    <script src="./js/drag-drop.js"></script>
+    <script src="./js/option-4.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/opt1-list-modal.js"></script>
-    <script src="./js/drag-drop.js"></script>
-    <script src="./js/chart.js"></script>
     <script src="./js/chartCode.js"></script>
     <script src="./js/manage-results.js"></script>
     <script src="./js/manage_templates.js"></script>
