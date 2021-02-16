@@ -1893,7 +1893,7 @@ let sam4DataArray = [
   let htmlTable = "";
   sam4DataArray.forEach(({id,name}) => {
     htmlTable += `<tr id="${id}" ondblclick="dblclickMove(this)" onclick="clickAddClass(this)">
-        <td>${name}</td>
+      <td>${name}</td>
     </tr>`;
   });
 

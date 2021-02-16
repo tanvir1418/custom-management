@@ -4518,52 +4518,8 @@
                                     <p>to Display In Table Below</p>
                                     <div class="outer_scroll_doubleclick">
                                         <div class="double_click_selection_box">
-                                            <table>
-                                                <tr>
-                                                    <td>Option 1</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 2</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 3</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 4</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 5</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 6</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 7</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 8</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 9</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 10</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 11</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 12</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 13</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 14</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 15</td>
-                                                </tr>
+                                            <table id="man-res-opt-data-table-left">
+                                                <!-- data from JS -->
                                             </table>
                                         </div>
                                     </div>
@@ -4575,52 +4531,8 @@
                                     <p>to Remove In Table Below</p>
                                     <div class="outer_scroll_doubleclick">
                                         <div class="double_click_selection_box">
-                                            <table>
-                                                <tr>
-                                                    <td>Option 1</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 2</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 3</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 4</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 5</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 6</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 7</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 8</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 9</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 10</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 11</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 12</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 13</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 14</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Option 15</td>
-                                                </tr>
+                                            <table id="man-res-opt-data-table-right">
+                                                <!-- data from JS -->
                                             </table>
                                         </div>
                                     </div>
@@ -4629,23 +4541,23 @@
                         </div>
                         <div class="double_arrow">
                             <div class="upper_arrow">
-                                <div class="inner_arrow">
+                                <div class="inner_arrow" onclick="moveResLeftToRight()">
                                     <i class="fas fa-long-arrow-alt-right"></i>
                                 </div>
                             </div>
                             <div class="down_arrow">
-                                <div class="inner_arrow">
+                                <div class="inner_arrow" onclick="moveResRightToLeft()">
                                     <i class="fas fa-long-arrow-alt-left"></i>
                                 </div>
                             </div>
                         </div>
                         <div class="double_arrow mpnp551">
-                            <div class="upper_arrow">
+                            <div class="upper_arrow" onclick="ResorderUp()">
                                 <div class="inner_arrow">
                                     <i class="fas fa-sort-up"></i>
                                 </div>
                             </div>
-                            <div class="down_arrow">
+                            <div class="down_arrow" onclick="ResorderDown()">
                                 <div class="inner_arrow">
                                     <i class="fas fa-sort-down"></i>
                                 </div>
