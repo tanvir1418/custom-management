@@ -13,7 +13,6 @@
   src: url(../fonts/Gilroy-SemiBold.ttf);
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -77,7 +76,7 @@ button:focus {
   height: 4px;
   width: 20px;
   border-radius: 25%;
-  background-color: #F6E802;
+  background-color: #f6e802;
   margin: auto;
   top: 0;
   left: 0;
@@ -111,10 +110,10 @@ button:focus {
   color: #787878;
 }
 
-.mynav .icon-box .icon:first-child{
+.mynav .icon-box .icon:first-child {
   padding-right: 32px;
 }
-.mynav .icon-box .icon:last-child{
+.mynav .icon-box .icon:last-child {
   padding-right: 22px;
 }
 
@@ -200,8 +199,6 @@ button:focus {
 
 /* =====x========= Navbar End =========x========= */
 
-
-
 /* COLLAPSE MENU BAR START */
 
 #collapsemenu {
@@ -211,7 +208,7 @@ button:focus {
 
 /* ========= MAIN TAB CONTAINER + ITEM SECTION START =========== */
 .wrapper {
-  background: #FFF001;
+  background: #fff001;
 }
 
 /*-- ======== TAB MENU NAVIGATION START ======== --*/
@@ -240,7 +237,6 @@ button:focus {
   margin-right: 0;
 }
 
-
 /* SVG / ICON and TEXT BOX SETTINGS START */
 
 .tab-box {
@@ -251,7 +247,7 @@ button:focus {
   width: 66px;
   height: 66px;
   border-radius: 33px;
-  background: #FFF997;
+  background: #fff997;
   position: relative;
   margin: auto;
 }
@@ -279,7 +275,7 @@ button:focus {
   font-weight: bold;
   line-height: 32px;
   letter-spacing: 2px;
-  color: #6E6D4E;
+  color: #6e6d4e;
   font-size: 26px;
   transition: all 0.3s ease;
 }
@@ -299,8 +295,6 @@ button:focus {
 }
 
 /*-- ======== TAB MENU NAVIGATION END ======== --*/
-
-
 
 /* ============================= TAB CONTENT START ============================= */
 .content {
@@ -326,7 +320,7 @@ button:focus {
   font-size: 40px;
   font-family: gilroy-bold, sans-serif;
   font-weight: 900;
-  color: #312D4E;
+  color: #312d4e;
   letter-spacing: 2px;
   margin-bottom: 60px;
   text-align: center;
@@ -334,11 +328,11 @@ button:focus {
 
 /* ====----=-=-=-=-=-=-=-=-=- MANAGE DATA SECTION START ====----=-=-=-=-=-=-=-=-=-*/
 
-.content .tab_2{
+.content .tab_2 {
   padding-top: 60px;
 }
 
-.container{
+.container {
   max-width: 1220px;
 }
 
@@ -356,7 +350,7 @@ button:focus {
   text-align: center;
   transition: all 0.3s ease;
   margin: auto;
-  background: #F9F9F9;
+  background: #f9f9f9;
 }
 
 .content .tab_2 .option_box .option-content-box {
@@ -378,8 +372,6 @@ button:focus {
   margin-top: 32px;
 }
 
-
-
 .content .tab_2 .option_box.active p {
   color: #1d1d1d;
 }
@@ -396,8 +388,6 @@ button:focus {
   color: #1d1d1d;
 }
 
-
-
 /* ================ OPTION CONTENT START ============= */
 
 .option-content {
@@ -409,7 +399,6 @@ button:focus {
   display: none;
   padding: 60px 0;
 }
-
 
 .option .hero-title {
   display: flex;
@@ -485,7 +474,7 @@ button:focus {
   height: 45px;
   border-radius: 50%;
   /* background: #359F01; */
-  background: #F5F5F5;
+  background: #f5f5f5;
   position: relative;
   margin-top: auto;
   margin-bottom: auto;
@@ -493,7 +482,7 @@ button:focus {
 
 .createGreen,
 .manageGreen {
-  background: #359F01 !important;
+  background: #359f01 !important;
 }
 
 .create-new-content .tik-box i {
@@ -538,7 +527,6 @@ button:focus {
   left: 0;
   bottom: 0;
   right: 0;
-
 }
 
 /* =======X======== OPTION ONE TAB END ==========X===== */
@@ -576,7 +564,6 @@ button:focus {
 .create-manage .tab-active-41 {
   display: block;
 }
-
 
 /* =========X======= OPTION ONE CREATE NEW END =========X======= */
 
@@ -679,7 +666,6 @@ td {
   color: #9f9f9f;
   font-size: 16px;
 }
-
 
 .mytable1 tbody {
   font-size: 14px;
@@ -905,11 +891,6 @@ td {
 
 /* ==----=-=-=-XX=-=-=-=-=-=- OPTION ONE END ==----=-=-XX=-=-=-=-=-=-=- */
 
-
-
-
-
-
 /* ==----=-=-=-=-=-=-=-=-=-=- OPTION TWO START ==----=-=--==-=-=-=-=-=-=- */
 
 .listing {
@@ -954,7 +935,7 @@ td {
 /* main list */
 #wrapper-list .scrollable-list .main-list {
   width: 250px;
-  background: #F6F6F6;
+  background: #f6f6f6;
   padding: 8px;
   margin-left: 12px;
 }
@@ -1004,7 +985,6 @@ td {
   color: #ffffff;
 }
 
-
 .scrollable-list .main-list li .arrow-li-box {
   height: 18px;
   width: 18px;
@@ -1045,10 +1025,9 @@ td {
 
 /* Edit End by Ashiq */
 
-
 .scrollable-list .main-list li:hover .arrow-li-box,
 .scrollable-list .main-list li:hover .arrow-li-box i {
-  background: #F6F6F6;
+  background: #f6f6f6;
   color: #000000;
 }
 
@@ -1326,20 +1305,13 @@ td {
 
 /* ==----=-=-=-XX=-=-=-=-=-=- OPTION TWO END ==----=-=-XX=-=-=-=-=-=-=- */
 
-
 /* ==----=-=-=-=-=-=-=-=-=- OPTION THREE END ==----=-=-=-=-=-=-=-=-=- */
-
-
 
 /* ==----=-=-=-XX=-=-=-=-=-=- OPTION THREE END ==----=-=-XX=-=-=-=-=-=-=- */
 
-
 /* ==----=-=-=-=-=-=-=-=-=- OPTION FOUR END ==----=-=-=-=-=-=-=-=-=- */
 
-
-
 /* ==----=-=-=-XX=-=-=-=-=-=- OPTION FOUR END ==----=-=-XX=-=-=-=-=-=-=- */
-
 
 /* ==----=-=-=-XX=-=-=-=-=-=- OPTION FIVE START ==----=-=-XX=-=-=-=-=-=-=- */
 
@@ -1443,7 +1415,7 @@ td {
 }
 
 .select-plus .plus-box {
-  background: #FDF103;
+  background: #fdf103;
   height: 32px;
   width: 32px;
   border-radius: 50%;
@@ -1556,7 +1528,6 @@ td {
   text-align: center;
 }
 
-
 /* DRAG AND DROP END */
 
 .detail-box .btn39 {
@@ -1578,7 +1549,6 @@ td {
   color: #ffffff;
 }
 
-
 /* ==----=-=-=-XX=-=-=-=-=-=- OPTION FIVE END ==----=-=-XX=-=-=-=-=-=-=- */
 
 /* ==========X====== OPTION CONTENT END =========X==== */
@@ -1590,7 +1560,6 @@ td {
 /* =====xxxxxx==== MAIN TAB CONTAINER + ITEM SECTION END =====xxxxx====== */
 
 /* ====x=xxxxxx====  COLLAPSE MENU BAR END =====xxxxxx==x==  */
-
 
 /* =========== FOOTERT SECTION START =========== */
 
@@ -1634,7 +1603,6 @@ td {
 }
 
 /* =========== FOOTERT SECTION END =========== */
-
 
 /* Edited By Tanvir for responsive design  */
 @media screen and (max-width: 1200px) {
@@ -1685,105 +1653,34 @@ td {
   }
 }
 
-
 /* custom pagination by Ashik  */
 /* PAGINATION START */
 
 .pagination-table {
   margin: 36px 0;
 }
-
-/* .pagination-table .width-row-go {
-  width: 15%;
-} */
-.pagination-table .width-row-go .no-of-rows{
+.pagination-table .width-row-go .no-of-rows {
   display: flex;
 }
-/* .pagination-table .width-pagination {
-  width: 70%;
-} */
 
-/* .pagination-table .right-goto-page {
-  float: right;
-}
-
-.pagination-table .left-row-no {
-  float: left;
-} */
-
-/* .pagination-table .left-row-no label,
-.pagination-table .right-goto-page label {
-  font-family: gilroy-medium, sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  color: #545d7a;
-}
-
-.pagination-table input#row-no1{
-  width: 60px;
-  height: 43px;
-  border-radius: 2px;
-  text-align: center;
-  margin-right: 10px;
-  filter: drop-shadow(8.5px 14.722px 17.5px rgba(95, 84, 233, 0.14));
-  background-color: #ffffff;
-  border: 1px solid #dde3f5;
-  font-family: gilroy-medium, sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  color: #545d7a;
-} 
-
-/* .pagination-table .right-goto-page {
-  padding-right: 5px;
-}
-
-.pagination-table .pagination {
+.width-pagination {
   display: flex;
+}
+.width-row-go {
+  display: flex;
+  width: 18%;
+}
+.pagination-table .paginationjs {
+  display: flex;
+  width: 82%;
+}
+.pagination-table .paginationjs .paginationjs-pages {
   width: 100%;
-  align-items: center;
-  justify-content: center;
 }
-
-.pagination-table .pagination .pagination-item {
-  text-decoration: none;
-  position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  border: 1px solid #dbe2f5;
-  display: flex;
-  font-size: 22px;
-  color: #545d7a;
-  font-weight: 500;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-} */
-
-.width-pagination{
-  display: flex;
-}
-.width-row-go{
-  display: flex;
-  width: 14%;
-}
-.pagination-table .paginationjs{
-  display: flex;
-  width: 86%;
-}
-.pagination-table .paginationjs .paginationjs-pages{
-  width: 100%;
-  /* align-items: center;
-  justify-items: center; */
-}
-.pagination-table .paginationjs .paginationjs-pages ul{
+.pagination-table .paginationjs .paginationjs-pages ul {
   display: flex;
   justify-content: center;
-  margin-right: 60px;
+  margin-right: 7%;
 }
 .pagination-table .paginationjs .paginationjs-page:not(:last-child) {
   margin: 0 10px;
@@ -1791,7 +1688,7 @@ td {
 .pagination-table .paginationjs .paginationjs-page,
 .pagination-table .paginationjs .paginationjs-prev,
 .pagination-table .paginationjs .paginationjs-next,
-.pagination-table .paginationjs .paginationjs-ellipsis{
+.pagination-table .paginationjs .paginationjs-ellipsis {
   text-decoration: none;
   position: relative;
   width: 40px;
@@ -1809,23 +1706,29 @@ td {
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
-.pagination-table .paginationjs .paginationjs-pages ul li a{
+.pagination-table .paginationjs .paginationjs-pages ul li a {
   color: #545d7a;
   text-decoration: none !important;
 }
-.pagination-table .paginationjs .paginationjs-pages ul li.active a{
+.pagination-table .paginationjs .paginationjs-pages ul li.active a {
   color: #fff !important;
 }
-.pagination-table .paginationjs .paginationjs-ellipsis{
+.pagination-table .paginationjs .paginationjs-ellipsis {
   line-height: 20px !important;
   font-size: 40px !important;
   font-weight: 900 !important;
+  margin: 0 10px;
 }
-.pagination-table .paginationjs .paginationjs-pages ul li.paginationjs-ellipsis a {
+.pagination-table
+  .paginationjs
+  .paginationjs-pages
+  ul
+  li.paginationjs-ellipsis
+  a {
   padding-bottom: 22px;
 }
 
-.pagination-table .paginationjs .paginationjs-prev{
+.pagination-table .paginationjs .paginationjs-prev {
   margin-right: 40px;
   font-size: 24px;
   color: #cccccc;
@@ -1860,7 +1763,7 @@ td {
   text-align: center;
 }
 
-.pagination-table .paginationjs .paginationjs-go-button input{
+.pagination-table .paginationjs .paginationjs-go-button input {
   font-family: "gilroy-medium", sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -1889,47 +1792,115 @@ td {
   color: #545d7a;
 }
 
-/* @media screen and (max-width: 992px) {
-  .pagination-table .width-row-go {
+@media screen and (max-width: 1250px) {
+  .pagination-table .paginationjs .paginationjs-pages ul {
+    margin-right: 3%;
+  }
+}
+@media screen and (max-width: 1120px) {
+  .width-row-go {
     width: 22%;
   }
-
-  .pagination-table .width-pagination {
-    width: 56%;
+  .pagination-table .paginationjs {
+    width: 78%;
   }
-
-  .pagination-table .pagination .pagination-item {
-    width: 35px;
-    height: 35px;
-    font-size: 18px;
+  .pagination-table .paginationjs .paginationjs-pages ul {
+    margin-right: 3%;
   }
-
-  .pagination-table .pagination .page:not(:last-child) {
-    margin: 0 5px;
-  }
-
-  .pagination-table .pagination .prev {
+  .pagination-table .paginationjs .paginationjs-prev {
     margin-right: 15px;
-    font-size: 18px;
   }
-
-  .pagination-table .pagination .next {
-    font-size: 18px;
+  .pagination-table .paginationjs .paginationjs-next {
     margin-left: 15px;
   }
+}
 
+@media screen and (max-width: 950px) {
+  .width-row-go {
+    display: flex;
+    width: 10%;
+  }
+  .pagination-table .paginationjs {
+    display: flex;
+    width: 90%;
+  }
+  .pagination-table .paginationjs .paginationjs-pages ul {
+    margin-right: 0px;
+  }
+  .pagination-table .paginationjs .paginationjs-page:not(:last-child) {
+    margin: 0 5px;
+  }
+  .pagination-table .paginationjs .paginationjs-ellipsis {
+    margin: 0 5px;
+  }
+  .pagination-table .paginationjs .paginationjs-prev {
+    margin-right: 10px;
+  }
+  .pagination-table .paginationjs .paginationjs-next {
+    margin-left: 10px;
+  }
   .pagination-table input#row-no1,
-  .pagination-table input#row-no2,
   .pagination-table input#row-no3,
   .pagination-table input#row-no4,
   .pagination-table input#row-no5,
-  .pagination-table input#goto-page1,
-  .pagination-table input#goto-page2,
-  .pagination-table input#goto-page3,
-  .pagination-table input#goto-page4,
-  .pagination-table input#goto-page5 {
-    width: 48px;
+  .pagination-table .paginationjs .paginationjs-go-input input {
+    width: 50px;
     height: 35px;
-    margin-right: 5px;
+    margin-right: 8px;
   }
-} */
+  .pagination-table .paginationjs .paginationjs-go-button {
+    line-height: 38px;
+  }
+}
+
+/* Option Box Responsive  */
+@media screen and (max-width: 1300px) {
+  .option-box-row {
+    margin: 0 30px;
+  }
+  .content .tab_2 .option_box {
+    width: 180px;
+    height: 230px;
+  }
+}
+
+/* Option Box Responsive  */
+@media screen and (max-width: 1120px) {
+  .content .tab_2 .option_box {
+    width: 160px;
+    height: 200px;
+  }
+  .content .tab_2 .option_box img {
+    width: 60px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .option-box-row {
+    margin: 0 20px;
+  }
+  .content .tab_2 .option_box {
+    width: 140px;
+    height: 175px;
+  }
+  .content .tab_2 .option_box img {
+    width: 45px;
+  }
+  .content .tab_2 .option_box p {
+    font-size: 20px;
+    margin-top: 28px;
+  }
+}
+
+@media only screen and (max-width: 790px) {
+  .content .tab_2 .option_box {
+    width: 115px;
+    height: 135px;
+  }
+  .content .tab_2 .option_box img {
+    width: 38px;
+  }
+  .content .tab_2 .option_box p {
+    margin-top: 30px;
+  }
+}
