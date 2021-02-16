@@ -209,7 +209,7 @@
                 </div>
 
                 <!-- ==----=-=-=-=-=-=-=-=-=- CHOOSE OPTIONS SECTION START ==----=-=-=-=-=-=-=-=-=-  -->
-                <div class="row">
+                <div class="row option-box-row">
                     <div class="column">
                         <div class="option_box" onclick="openOption(event, 'option_1')">
                             <div class="option-content-box">
@@ -791,7 +791,7 @@
                                                                                     Processed</p>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="generate-popup">
+                                                                        <div class="generate-popup" data-dismiss="modal">
                                                                             <input type="button" value="Close"
                                                                                 class="gn-close-btn">
                                                                         </div>
@@ -2285,8 +2285,8 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="plus-popup-button-row">
-                                                                            <input type="button" value="Done" class="plus-done-btn" onclick="addCategory(this)">
-                                                                            <input type="button" value="Cancel" class="plus-cancel-btn">
+                                                                            <input data-dismiss="modal" type="button" value="Done" class="plus-done-btn" onclick="addCategory(this)">
+                                                                            <input data-dismiss="modal" type="button" value="Cancel" class="plus-cancel-btn">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -2353,7 +2353,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="generate-popup">
-                                                                <input type="button" value="Close" class="gn-close-btn">
+                                                                <input data-dismiss="modal" type="button" value="Close" class="gn-close-btn">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4640,7 +4640,7 @@
                                                                         <div class="valinput">
                                                                             <div class="arrow-equal">
                                                                                 <span class="arrow7-right">
-                                                                                    << /span> <span class="equal7data">=
+                                                                                    <</span> <span class="equal7data">=
                                                                                 </span>
                                                                             </div>
                                                                             <input type="text" class="myzap-input">
@@ -4781,7 +4781,7 @@
                                                         <!-- buttons -->
                                                         <div class="reset-save-btn">
                                                             <button class="reset4" type="button">Reset</button>
-                                                            <button class="save4" type="button">Save</button>
+                                                            <button  data-dismiss="modal" class="save4" type="button">Save</button>
                                                         </div>
                                                     </div>
                                                     <div class="con-box-filter drag-column">
@@ -8849,8 +8849,8 @@
                                 </div>
                             </div>
                             <div class="save-start-popup-button-row">
-                                <input type="button" value="Back" class="save-start-done-btn">
-                                <input type="button" value="Done" class="save-start-cancel-btn">
+                                <input data-dismiss="modal" type="button" value="Back" class="save-start-done-btn">
+                                <input data-dismiss="modal" type="button" value="Done" class="save-start-cancel-btn">
                             </div>
                         </div>
                     </div>
@@ -9683,7 +9683,7 @@
                                     <p>Your Request has been Successfully Processed</p>
                                 </div>
                             </div>
-                            <div class="generate-popup">
+                            <div class="generate-popup" data-dismiss="modal">
                                 <input type="button" value="Close" class="gn-close-btn" />
                             </div>
                         </div>
