@@ -766,11 +766,6 @@
   margin: 0px;
 }
 
-@media screen and (max-width: 992px) {
-  .mn-temp-sample1-wrapper .create-manage {
-    margin: 0px 30px;
-  }
-}
 .single-list-item-wrapper {
   display: flex;
   height: 150px;
@@ -1162,21 +1157,6 @@
   background-color: white;
 }
 
-@media screen and (max-width: 1200px) {
-  .main-side-container {
-    padding-top: 160px;
-  }
-
-  .op4-left-right-container {
-    /* padding-top: 170px; */
-    display: block;
-  }
-
-  .op4-width-fifty-percent {
-    width: 100%;
-  }
-}
-
 .op4-side-box {
   text-align: center;
   background-color: #fff500;
@@ -1215,7 +1195,7 @@
 }
 
 .op4-option-selection .width-5 .threebar {
-  padding-top: 4px;
+  padding-top: 7px;
   font-size: 20px;
   text-align: end;
 }
@@ -1236,7 +1216,6 @@
   font-size: 12px;
   color: red;
   padding-left: 2px;
-  margin: 0;
 }
 
 .op4-option-selection .width-26 {
@@ -1262,7 +1241,6 @@
   background: white;
   color: #2e2c2c;
   outline: 0;
-  border: 0;
   width: 100%;
   height: 100%;
   font-size: 18px;
@@ -1285,19 +1263,24 @@
 }
 
 .op4-option-selection .custome-select:after {
-  content: "\25bc";
-  font-size: 10px;
-  width: 14px;
-  height: 14px;
+  content: "";
+  width: 18px;
+  height: 18px;
   position: absolute;
-  background-color: #f6f6f6;
-  color: #818181;
+  background-color: #f5f5f5;
   z-index: 2;
-  right: 8px;
-  top: 13px;
-  text-align: center;
-  border-radius: 4px;
-  opacity: 0.8;
+  right: 10px;
+  top: 10px;
+  border-radius: 2px;
+}
+.op4-option-selection .custome-select:before {
+  content: "\25bc";
+  position: absolute;
+  font-size: 11px;
+  color: #818181;
+  z-index: 3;
+  right: 14px;
+  top: 9px;
 }
 
 .op4-option-selection .custome-select select option {
@@ -1323,7 +1306,6 @@
   background: #e6e6e6;
   color: #2e2c2c;
   outline: 0;
-  border: 0;
   width: 100%;
   height: 100%;
   font-size: 18px;
@@ -1349,19 +1331,24 @@
 }
 
 .op4-option-selection .custom-input-success:after {
-  content: "\2714";
-  font-size: 11px;
-  width: 16px;
-  height: 16px;
+  content: "";
+  width: 18px;
+  height: 18px;
   position: absolute;
   background-color: #e8ffed;
-  color: green;
   z-index: 2;
-  right: 8px;
-  top: 13px;
-  text-align: center;
-  border-radius: 4px;
-  /* opacity: 0.8; */
+  right: 10px;
+  top: 10px;
+  border-radius: 2px;
+}
+.op4-option-selection .custom-input-success:before {
+  content: "\2714";
+  position: absolute;
+  font-size: 11px;
+  color: green;
+  z-index: 3;
+  right: 15px;
+  top: 9px;
 }
 
 .op4-option-selection .custom-input-success input {
@@ -1383,10 +1370,9 @@
   background: #e6e6e6;
   color: #2e2c2c;
   outline: 0;
-  border: 0;
   width: 100%;
   height: 100%;
-  font-size: 16px;
+  font-size: 18px;
   z-index: 2;
   padding: 5px 10px;
   position: relative;
@@ -1407,19 +1393,25 @@
 }
 
 .op4-option-selection .custom-input-danger:after {
-  content: "\2716";
-  font-size: 11px;
-  width: 16px;
-  height: 16px;
+  content: "";
+  width: 18px;
+  height: 18px;
   position: absolute;
-  background-color: #fffde2;
-  color: red;
+  background-color: #ffe9e9;
   z-index: 2;
-  right: 8px;
-  top: 13px;
-  text-align: center;
-  border-radius: 4px;
+  right: 10px;
+  top: 10px;
+  border-radius: 2px;
   /* opacity: 0.8; */
+}
+.op4-option-selection .custom-input-danger:before {
+  content: "\2716";
+  position: absolute;
+  font-size: 11px;
+  color: red;
+  z-index: 3;
+  right: 15px;
+  top: 9px;
 }
 
 .op4-option-selection .custom-input-danger input {
@@ -1479,8 +1471,8 @@
   /* border: 2px solid #690e90; */
 
   position: absolute;
-  left: 5px;
-  top: 4px;
+  left: 4px;
+  top: 2px;
   z-index: 2;
 }
 
@@ -1489,10 +1481,13 @@
   box-shadow: 5px 5px 5px 4px rgba(140, 245, 80, 0.2);
 }
 
-.toggle__text {
-  font-family: "gilroy-medium", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
+.op4-option-selection .toggle__text {
+  color: #000000;
+  font-family: "gilroy-regular", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 5px;
+  padding-top: 3px;
 }
 
 /* this is for tik sign*/
@@ -1509,8 +1504,8 @@
   border-color: #fff;
 
   position: absolute;
-  top: 16px;
-  left: 10px;
+  top: 15px;
+  left: 8px;
   z-index: 3;
 
   transform-origin: left top;
@@ -1518,7 +1513,7 @@
 }
 
 .op4-option-selection .toggle__input:checked ~ .toggle__label::before {
-  width: 13px;
+  width: 14px;
   height: 7px;
   border-left-width: 2px;
   border-bottom-width: 2px;
@@ -1550,6 +1545,7 @@
 
   .op4-option-selection .toggle__text {
     font-size: 16px;
+    padding-top: 0;
   }
 
   .op4-option-selection .toggle__label {
@@ -1561,14 +1557,14 @@
     width: 20px;
     height: 20px;
 
-    left: 7px;
-    top: 2px;
+    left: 5px;
+    top: 0px;
   }
 
   /* this is for tik sign */
   .op4-option-selection .toggle__label::before {
-    top: 13px;
-    left: 10px;
+    top: 11px;
+    left: 7px;
   }
 
   .op4-option-selection .icon-container .fas {
@@ -1585,14 +1581,18 @@
   }
 
   .op4-option-selection .custome-select:after {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     font-size: 9px;
-    right: 8px;
-    top: 10px;
+    right: 9px;
+    top: 9px;
     border-radius: 3px;
   }
-
+  .op4-option-selection .custome-select:before {
+    font-size: 10px;
+    right: 12px;
+    top: 6px;
+  }
   /*  Custom Input styling Starts  */
   .op4-option-selection .custom-input-success {
     height: 35px;
@@ -1604,30 +1604,40 @@
   }
 
   .op4-option-selection .custom-input-success:after {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     font-size: 9px;
     right: 8px;
-    top: 10px;
-    border-radius: 3px;
+    top: 9px;
+    border-radius: 2px;
   }
-
+  .op4-option-selection .custom-input-success:before {
+    font-size: 10px;
+    right: 12px;
+    top: 6px;
+  }
   .op4-option-selection .custom-input-danger {
     height: 35px;
   }
 
   .op4-option-selection .custom-input-danger input {
-    font-size: 14px;
+    font-size: 16px;
     padding: 5px 10px;
   }
 
   .op4-option-selection .custom-input-danger:after {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     font-size: 9px;
     right: 8px;
-    top: 10px;
-    border-radius: 3px;
+    top: 9px;
+    border-radius: 2px;
+  }
+
+  .op4-option-selection .custom-input-danger:before {
+    font-size: 10px;
+    right: 12px;
+    top: 6px;
   }
 }
 
@@ -1677,22 +1687,17 @@
   }
 
   .op4-option-selection .custome-select:after {
-    content: "";
+    border-radius: 1px;
     font-size: 8px;
-    width: 12px;
-    height: 12px;
-    z-index: 2;
-    right: 6px;
+    width: 14px;
+    height: 14px;
+    right: 8px;
     top: 8px;
   }
 
   .op4-option-selection .custome-select:before {
-    content: "\25bc";
-    font-size: 8px;
-    position: absolute;
-    color: #818181;
-    z-index: 10;
-    right: 9px;
+    font-size: 9px;
+    right: 11px;
     top: 4px;
   }
 
@@ -1709,21 +1714,18 @@
   }
 
   .op4-option-selection .custom-input-success:after {
-    content: "";
+    border-radius: 1px;
+    font-size: 8px;
     width: 14px;
     height: 14px;
     right: 8px;
-    top: 7px;
+    top: 8px;
   }
 
   .op4-option-selection .custom-input-success:before {
-    content: "\2714";
-    font-size: 10px;
-    position: absolute;
-    color: green;
-    z-index: 3;
-    right: 12px;
-    top: 3px;
+    font-size: 9px;
+    right: 11px;
+    top: 4px;
   }
 
   /* -------Custom Input Danger-------- */
@@ -1737,21 +1739,18 @@
   }
 
   .op4-option-selection .custom-input-danger:after {
-    content: "";
+    border-radius: 1px;
+    font-size: 8px;
     width: 14px;
     height: 14px;
     right: 8px;
-    top: 7px;
+    top: 8px;
   }
 
   .op4-option-selection .custom-input-danger:before {
-    content: "\2716";
-    font-size: 10px;
-    position: absolute;
-    color: red;
-    z-index: 3;
-    right: 12px;
-    top: 3px;
+    font-size: 9px;
+    right: 11px;
+    top: 4px;
   }
 
   /* xxxxxxx Custom Input styling Ends xxxxxxxx  */
@@ -1764,7 +1763,7 @@
 
   .op4-option-selection .toggle__label {
     font-size: 20px;
-    padding-left: 25px;
+    padding-left: 20px;
   }
 
   /* this is for box */
@@ -1776,7 +1775,10 @@
     left: 0px;
     top: 1px;
   }
-
+  
+  .op4-option-selection .toggle__text {
+    font-size: 13px;
+  }
   /* .toggle__text {
       margin-top: auto;
       margin-bottom: auto;
@@ -1794,9 +1796,36 @@
   }
 }
 
-@media screen and (max-width: 1080px) {
-}
+@media screen and (max-width: 1200px) {
+  .main-side-container {
+    padding-top: 160px;
+  }
+  .op4-width-fifty-percent {
+    width: 100%;
+  }
+  .op4-left-right-container {
+    padding-top: 0px;
+    display: block;
+  }
 
+  .op4-margin-right {
+    margin-right: 0px;
+    margin-bottom: 0;
+  }
+  .op4-margin-left {
+    margin-left: 0px;
+    margin-bottom: 0;
+  }
+  /* .tab_2 .margin-right {
+    margin-bottom: 0px !important;
+  }
+  .tab_2 .margin-left {
+    margin-bottom: 0px !important;
+  } */
+  /* .mn-temp-option-selection {
+    margin: 0 80px 0 65px;
+  } */
+}
 @media screen and (max-width: 992px) {
   .op4-side-box {
     padding: 20px 0px;
@@ -2863,6 +2892,54 @@ element.style {
     font-size: 16px;
     font-weight: 500;
   }
+
+  #create_new_option_four .sample-4-wrapper-inner {
+    margin: 30px 20px 0px 20px;
+  }
+
+  #create_new_option_four .checkbox-container-inner {
+    margin: 30px 20px 0px 20px;
+  }
+
+  #create_new_option_four .mn-temp-sample1-wrapper .create-manage {
+    margin: 0px 20px;
+  }
+
+  #create_new_option_four .op4-left-right-container {
+    margin: 0 20px;
+  }
+
+  #create_new_option_four .multistep-container .mutistep-form-area .form-box .button-row {
+    margin: 0px 20px;
+  }
+  #create_new_option_four .multistep-container .mutistep-form-area .form-box .btn-row-leftRight {
+    margin: 0px 20px;
+    margin-top: -10px;
+  }
 }
 
 /* xxxxxx option4-below-input-button-control-section style ends xxxxxx */
+
+@media screen and (max-width: 870px){
+  #create_new_option_four .mn-temp-sample1-wrapper .create-manage {
+      padding: 10px;
+  }
+  #create_new_option_four .single-list-item-wrapper .single-list-item-name sup {
+    font-size: 8px;
+  }
+  #create_new_option_four .single-list-item-help {
+    width: 28%;
+  }
+  #create_new_option_four .text_container_textarea {
+    margin-left: -20px;
+  }
+  #create_new_option_four .field_set {
+    padding: 10px 10px 15px 10px;
+  }
+   #create_new_option_four .field_set_dual {
+    padding: 11px 30px 10px 30px;
+  }
+  /* #create_new_option_four .custom-date-input {
+    width: 80%;
+  } */
+}
