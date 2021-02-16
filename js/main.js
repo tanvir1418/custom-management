@@ -150,14 +150,11 @@ $(document).ready(function () {
 	$('.zas').click(function () {
 		$('#my567').addClass('createGreen');
 		$('#my998').removeClass('manageGreen');
-
-
 	});
 
 	$('.pas').click(function () {
 		$('#my998').addClass('manageGreen');
 		$('#my567').removeClass('createGreen');
-
 	});
 });
 
@@ -655,3 +652,130 @@ function addCategory(e) {
 	}
 }
 // Manage Data Option 5 End
+
+// Manage Data Option 1 Existing Pagination Start
+let manExisTable = [];
+
+for (let i = 1; i <= 100; i++) {
+	manExisTable.push({
+		id: `md-ex-${i}`,
+		serial: i,
+		recordsCount: 1234 + i,
+		savedName: `Sample 1234${i}`,
+		CDateTime: {
+			date: "01/01/2021",
+			time: "12:36 AM"
+		},
+		LUDateTime: {
+			date: "03/01/2021",
+			time: "12:40 AM"
+		}
+	});
+}
+(function manDtOpt1Exist() {
+	let tableHead =
+	`<tr>
+		<th scope="col">
+			ROW
+			<div class="head-filter">
+				<i class="fas fa-times"></i>
+			</div>
+			<div class="drop-filter">
+				<i class="fas fa-caret-down"></i>
+			</div>
+		</th>
+		<th scope="col">
+			RECORDS COUNT
+			<div class="head-filter">
+				<i class="fas fa-times"></i>
+			</div>
+			<div class="drop-filter">
+				<i class="fas fa-caret-down"></i>
+			</div>
+		</th>
+		<th scope="col">
+			SAVED NAME
+			<div class="head-filter">
+				<i class="fas fa-times"></i>
+			</div>
+			<div class="drop-filter">
+				<i class="fas fa-caret-down"></i>
+			</div>
+		</th>
+		<th scope="col">
+			CREATED DATE TIME
+			<div class="head-filter">
+				<i class="fas fa-times"></i>
+			</div>
+			<div class="drop-filter">
+				<i class="fas fa-caret-down"></i>
+			</div>
+		</th>
+		<th scope="col">
+			LAST UPDATE DATE TIME
+			<div class="head-filter">
+				<i class="fas fa-times"></i>
+			</div>
+			<div class="drop-filter" data-toggle="modal" data-target="#dropBtnModal">
+				<i class="fas fa-caret-down"></i>
+			</div>
+		</th>
+		<th scope="col">ACTIONS</th>
+	</tr>`;
+	$("#man-data-opt1-exist thead").html(tableHead);
+	let options = {
+		dataSource: manExisTable,
+		pageSize: 7,
+		showGoInput: true,
+		showGoButton: true,
+		callback: function (data, pagination) {
+			let tableTr = "";
+			data.forEach(({ id, serial, recordsCount, savedName, CDateTime, LUDateTime}) => {
+				tableTr +=
+				`<tr id="${id}">
+					<th class="row-data" scope="row">${serial}</th>
+					<td class="records-count">
+						<a data-toggle="modal" data-target="#hyperTextModal1" style="color: black" >
+							<p>${recordsCount}</p>
+						</a>
+					</td>
+					<td>
+						<input class="save-name" value="${savedName}" type="text" />
+					</td>
+					<td>
+						<div class="create-date-time date-time-39">
+							<p>${CDateTime.date}</p>
+							<p>${CDateTime.time}</p>
+						</div>
+					</td>
+					<td>
+						<div class="last-date-time date-time-39">
+							<p>${LUDateTime.date}</p>
+							<p>${LUDateTime.time}</p>
+						</div>
+					</td>
+					<td>
+						<div class="actions39">
+							<a onclick="tabChange(this)">Click To View/Update</a>
+							<div class="cancel-box">
+								<i class="fas fa-times"></i>
+							</div>
+						</div>
+					</td>
+				</tr>`;
+			});
+			$("#man-data-opt1-exist tbody").html(tableTr);
+		}
+	}
+
+	let container = $("#pagination-op1-data");
+	container.pagination(options);
+})();
+
+function tabChange(e) {
+	let tabMain = $(e).parent().parent().parent().parent().parent().parent().parent();
+	let createNew = tabMain.find("div.create-manage-tab div.create-new-content.zas");
+	createNew.find("div.createpera p").html("View/Update");
+	createNew.click();
+}
+// Manage Data Option 1 Existing Pagination End

@@ -147,12 +147,15 @@
     position: absolute;
     top: 0;
 }
+
 #table-box-404 .right-list-404.right-list-4041 {
     margin-left: 300px;
 }
+
 #table-box-404 .right-list-404.right-list-4042 {
     margin-left: 600px;
 }
+
 #table-box-404 .right-list-404.right-list-4043 {
     margin-left: 900px;
 }
@@ -555,11 +558,6 @@
 #double_click .double_arrow.mpnp551 {
     left: 89%;
 }
-
-/* #double_click .double_arrow.mpnp551 .upper_arrow,
-#double_click .double_arrow.mpnp551 .down_arrow {
-    background: #1D1D1D;
-} */
 
 #double_click .double_arrow.mpnp551 .upper_arrow i {
     /* color: #1D1D1D; */
@@ -2748,8 +2746,132 @@ th[draggable] a {
 
 
 /* MEDIA QUERY OF MANAGE RESULT*/
+@media screen and (max-width: 1250px) {
+
+    /* DOUBLE CLICK BOX START */
+    #double_click .double_click_box {
+        /* width: 360px; */
+        /* height: 280px; */
+        width: 340px;
+        height: 280px;
+    }
+
+    #double_click .double_click_box.mar559 {
+        /* margin-left: 170px; */
+        margin-left: 80px;
+    }
+
+    #double_click .double_click_box.mar560 {
+        /* margin-left: 60px; */
+        margin-left: 10px;
+    }
+
+    #double_click .double_arrow {
+        /* left: 50%; */
+        left: 46%;
+    }
+
+    #double_click .double_arrow.mpnp551 {
+        /* left: 89%; */
+        left: 90%;
+    }
+
+    /* DOUBLE CLICK BOX END */
+
+    /* STYLE 1 STYLE 2 BUTTON WITH FILTERING START */
+    #syle12_section .tab_filter-style12 {
+        padding: 40px 0px;
+    }
+    #syle12_section .tab_filter-style12 .style1-box,
+    #syle12_section .tab_filter-style12 .style2-box,
+    .tab_filter-style12 .style12btn-3,
+    .tab_filter-style12 .progress-style12 {
+        width: 110px;
+    }
+    .tab_filter-style12 .progress-style12 p{
+        font-size: 13px !important;
+        margin-left: 8px;
+    }
+    /* STYLE 1 STYLE 2 BUTTON WITH FILTERING END */
+}
+
+@media screen and (max-width: 1100px) {
+
+    /* DOUBLE CLICK BOX START */
+    #double_click .double_click_box {
+        width: 320px;
+        height: 260px;
+    }
+
+    #double_click .double_click_box.mar559 {
+        margin-left: 0px;
+    }
+
+    #double_click .double_click_box.mar560 {
+        margin-left: 0px;
+    }
+
+    #double_click .double_arrow {
+        left: 44%;
+    }
+
+    #double_click .double_arrow.mpnp551 {
+        left: 96%;
+    }
+
+    /* DOUBLE CLICK BOX END */
+}
+
+@media screen and (max-width: 991px) {
+
+    /* display chart font */
+    #chartPage .inner-tablink {
+        padding: 12px 18px;
+    }
+
+    /* DOUBLE CLICK BOX START */
+    #double_click .double_click_box {
+        width: 320px;
+        height: 260px;
+    }
+
+    #double_click .double_click_box.mar559 {
+        margin-left: 0px;
+    }
+
+    #double_click .double_click_box.mar560 {
+        margin-left: 0px;
+    }
+
+    #double_click .double_arrow {
+        left: 44%;
+    }
+
+    #double_click .double_arrow.mpnp551 {
+        left: 96%;
+    }
+
+    /* DOUBLE CLICK BOX END */
+
+    /* STYLE 1 STYLE 2 BUTTON WITH FILTERING START */
+    .tab_filter-style12 span,
+    .tab_filter-style12 p{
+        font-size: 14px !important;
+    }
+    #syle12_section .tab_filter-style12 .style1-box,
+    #syle12_section .tab_filter-style12 .style2-box {
+        width: 100px;
+    }
+    .tab_filter-style12 .style12btn-3,
+    .tab_filter-style12 .progress-style12 {
+        width: 90px;
+    }
+    /* STYLE 1 STYLE 2 BUTTON WITH FILTERING END */
+}
+
 @media screen and (max-width: 767px) {
 
+    /* MANAGE RESULT MAIN LIST */
     .select-item-table .title4 {
         font-size: 30px;
         line-height: 32px;
@@ -2760,9 +2882,9 @@ th[draggable] a {
     }
 
     #table-box-404 .table-scroll-404 .right-list-404 {
-        /* width: 264px; */
         width: 210px;
     }
+
     #table-box-404 .results-scroll-down {
         width: 230px;
         height: 20px;
@@ -2780,66 +2902,26 @@ th[draggable] a {
         margin-left: 760px;
     }
 
-    /* CHART PAGE */
+    /* display chart font */
+    #chartPage .inner-tablink {
+        padding: 12px 5px;
+    }
+
+    /* DOUBLE CLICK BOX START */
     #double_click .double_click_box {
-        /* width: 360px; */
         width: 280px;
-        height: 280px;
+        height: 260px;
     }
-    
-    #double_click .double_click_box.mar559 {
-        margin-left: 0px;
+
+    #double_click .double_arrow {
+        left: 47%;
     }
-    
-    #double_click .double_click_box.mar560 {
-        margin-left: 60px;
+
+    #double_click .double_arrow.mpnp551 {
+        left: 99%;
     }
-    
-    #double_click .double_click_box p {
-        font-family: gilroy-bold, sans-serif;
-        font-weight: 600;
-        color: #534848;
-        margin: 0;
-        text-align: center;
-        font-size: 16px;
-    }
-    
-    #double_click .outer_scroll_doubleclick {
-        margin-top: 5px;
-        width: 100%;
-        height: 180px;
-        border: 1px solid #1D1D1D;
-        border-radius: 5px;
-        background: #ffffff;
-        box-shadow: 3px 5px 15px 0px #b0bcd4;
-    }
-    
-    #double_click .double_click_selection_box {
-        border-radius: 5px;
-        width: 99%;
-        height: 100%;
-        background: #ffffff;
-        position: relative;
-        overflow: auto;
-    }
-    
-    #double_click .double_click_selection_box table {
-        width: 100%;
-        position: relative;
-    }
-    
-    #double_click table tr:nth-child(even) {
-        background: #FBFBFB;
-    }
-    
-    #double_click table tr td {
-        font-family: gilroy-bold, sans-serif;
-        font-weight: 600;
-        color: #534848;
-        margin: 0;
-        padding: 4px 26px;
-        font-size: 14px;
-    }
+
+    /* DOUBLE CLICK BOX END */
 }
 
 @media screen and (max-width: 575px) {
@@ -2850,12 +2932,16 @@ th[draggable] a {
     }
 }
 
+
+
 /* min query */
 @media screen and (min-width: 1460px) {
 
+    /* MANAGE RESULT MAIN LIST */
     #table-box-404 .table-scroll-404 .right-list-404 {
         width: 280px;
     }
+
     #table-box-404 .table-scroll-404 .right-list-404 li {
         height: 32px;
         margin-bottom: 6px;
@@ -2872,11 +2958,66 @@ th[draggable] a {
     #table-box-404 .right-list-404.right-list-4043 {
         margin-left: 1020px;
     }
+
+    /* DOUBLE CLICK BOX START */
+    #double_click .double_click_box {
+        width: 360px;
+        height: 280px;
+    }
+
+    #double_click .double_click_box.mar559 {
+        margin-left: 210px;
+    }
+
+    #double_click .double_click_box.mar560 {
+        margin-left: 80px;
+    }
+
+    /* DOUBLE CLICK BOX END */
+}
+
+@media screen and (min-width: 1600px) {
+
+    /* display chart font */
+    #chartPage .tablink {
+        font-size: 20px;
+    }
+
+    #chartPage .inner-tablink {
+        font-size: 18px;
+    }
+
+    /* DOUBLE CLICK BOX START */
+    #double_click .double_click_box {
+        width: 380px;
+        height: 300px;
+    }
+
+    #double_click .double_click_box.mar559 {
+        margin-left: 220px;
+    }
+
+    #double_click .double_click_box.mar560 {
+        margin-left: 110px;
+    }
+
+    /* DOUBLE CLICK BOX END */
+}
+
+@media screen and (min-width: 1730px) {
+
+    /* DOUBLE CLICK BOX START */
+    #double_click .double_click_box.mar560 {
+        margin-left: 140px;
+    }
+
+    /* DOUBLE CLICK BOX END */
 }
 
 
 @media screen and (min-width: 1800px) {
 
+    /* MANAGE RESULT MAIN LIST */
     .select-item-table .title4 {
         font-size: 38px;
     }
@@ -2892,10 +3033,31 @@ th[draggable] a {
     #table-box-404 .right-list-404.right-list-4043 {
         margin-left: 1140px;
     }
+
+    /* display chart font */
+    #chartPage .tablink {
+        font-size: 24px;
+    }
+
+    #chartPage .inner-tablink {
+        font-size: 22px;
+    }
+
+    /* DOUBLE CLICK BOX START */
+    #double_click .double_click_box.mar559 {
+        margin-left: 250px;
+    }
+
+    #double_click .double_click_box.mar560 {
+        margin-left: 200px;
+    }
+
+    /* DOUBLE CLICK BOX END */
 }
 
 @media screen and (min-width: 2000px) {
 
+    /* MANAGE RESULT MAIN LIST */
     .select-item-table .title4 {
         font-size: 40px;
     }
@@ -2911,4 +3073,25 @@ th[draggable] a {
     #table-box-404 .right-list-404.right-list-4043 {
         margin-left: 1260px;
     }
+
+
+    /* display chart font */
+    #chartPage .tablink {
+        font-size: 26px;
+    }
+
+    #chartPage .inner-tablink {
+        font-size: 24px;
+    }
+
+    /* DOUBLE CLICK BOX START */
+    #double_click .double_click_box.mar559 {
+        margin-left: 290px;
+    }
+
+    #double_click .double_click_box.mar560 {
+        margin-left: 240px;
+    }
+
+    /* DOUBLE CLICK BOX END */
 }

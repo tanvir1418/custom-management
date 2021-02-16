@@ -24,14 +24,18 @@
 
 .speedometer1 {
     margin-left: 50px;
+    margin-right: auto;
 }
 
 .speedometer2 {
     margin-left: 24px;
+    /* margin-left: auto; */
+    margin-right: auto;
 }
 
 .speedometer3 {
-    margin-left: 0px;
+    margin-left: auto;
+    margin-right: 50px;
 }
 
 .sector-3O {
@@ -286,7 +290,7 @@
     border-bottom-right-radius: 5%;
 }
 
-.scorer-1-tick-animation{
+.scorer-1-tick-animation {
     animation: ticker-mover-1 5s alternate;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -371,14 +375,18 @@
 
 .progressmeter1 {
     margin-left: 50px;
+    margin-right: auto;
 }
 
 .progressmeter2 {
-    margin-left: 24px;
+    margin-left: 16px;
+    margin-right: auto;
 }
 
 .progressmeter3 {
-    margin-left: 0px;
+    float: right;
+    margin-left: auto;
+    margin-right: 50px;
 }
 
 .progressmeter .barOverflow {
@@ -561,14 +569,16 @@
 
 
 /* ========= DISPLAY 3 WAVES START ========= */
-#Display3.inner-tabcontent{
-    height:466px !important;
+#Display3.inner-tabcontent {
+    height: 466px !important;
 }
-#Display4.inner-tabcontent{
-    height:466px !important;
+
+#Display4.inner-tabcontent {
+    height: 466px !important;
 }
-#Display5.inner-tabcontent{
-    height:466px !important;
+
+#Display5.inner-tabcontent {
+    height: 466px !important;
 }
 
 #Display3 .chart_outer_box {
@@ -592,7 +602,7 @@
     height: 100%;
 }
 
-#Display3 .chart_compare_box form{
+#Display3 .chart_compare_box form {
     width: 100%;
     height: 100%;
 }
@@ -645,7 +655,7 @@
     position: relative;
 }
 
-.chartWrapper > canvas {
+.chartWrapper>canvas {
     position: absolute;
     left: 0;
     top: 0;
@@ -657,7 +667,7 @@
     overflow-x: scroll;
 }
 
-#axisY-lineChart{
+#axisY-lineChart {
     background: #FBFBFD;
 }
 
@@ -697,6 +707,7 @@
     top: 48%;
     left: -15px;
 }
+
 /* ARROW STYLE END */
 
 /* scrollbar customize start */
@@ -737,11 +748,6 @@
     position: relative;
 }
 
-#Display4 table th {
-    position: sticky;
-    top: -1px;
-}
-
 #Display4 table th,
 #Display4 table td {
     font-size: 16px;
@@ -754,6 +760,11 @@
     border: 1px solid #FBFBFD !important;
     vertical-align: middle;
     text-align: center;
+}
+
+#Display4 table th {
+    position: sticky;
+    top: -3px;
 }
 
 #Display4 table th,
@@ -952,3 +963,167 @@
 
 /* scrollbar customize end */
 /* ========= DISPLAY 5 PROGRESS RANGE END ========= */
+
+
+
+
+/* MEDIA QUERY OF MANAGE RESULT*/
+@media screen and (max-width: 1250px) {
+    /* DISPLAY 1 & 2 */
+    .meter_outer_box,
+    .gauge_outer_box {
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .meter_outer_box .speedometer2,
+    .gauge_outer_box .progressmeter2 {
+        margin-left: 100px;
+    }
+    .meter_outer_box .speedometer3 {
+        margin-left: 150px;
+    }
+    .gauge_outer_box .progressmeter3{
+        margin-left: 150px;
+        float: left;
+    }
+
+    /* DISPLAY 3 */
+    #Display3 .chart_compare_box label{
+        font-size: 16px;
+    }
+    #Display3 .chart_compare_box input.input3031 {
+        width: 175px;
+    }
+    
+    #Display3 .chart_compare_box input.input3032 {
+        width: 120px;
+    }
+    
+    #Display3 .chart_compare_box input.input3033 {
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    /* DISPLAY 1 & 2 */
+    .meter_outer_box .speedometer2,
+    .gauge_outer_box .progressmeter2{
+        margin-left: 140px;
+    }
+
+    .meter_outer_box .speedometer3,
+    .gauge_outer_box .progressmeter3{
+        margin-left: 230px;
+    }
+
+    /* DISPLAY 3 */
+    #Display3 .chart_compare_box input.input3031 {
+        width: 135px;
+    }
+    
+    #Display3 .chart_compare_box input.input3032 {
+        width: 80px;
+    }
+    
+    #Display3 .chart_compare_box input.input3033 {
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    /* DISPLAY 1 & 2 */
+    .meter_outer_box .speedometer2,
+    .gauge_outer_box .progressmeter2 {
+        margin-left: 180px;
+    }
+
+    .meter_outer_box .speedometer3,
+    .gauge_outer_box .progressmeter3 {
+        margin-left: 312px;
+    }
+
+    /* DISPLAY 3 */
+    #Display3 .chart_compare_box input {
+        margin-left: 0;
+    }
+    #Display3 .chart_compare_box input.input3033{
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .meter_outer_box .speedometer2,
+    .gauge_outer_box .progressmeter2{
+        margin-left: 250px;
+    }
+    .meter_outer_box .speedometer3,
+    .gauge_outer_box .progressmeter3{
+        margin-left: 450px;
+    }
+}
+
+
+
+
+/* min query */
+@media screen and (min-width: 1251px) {
+
+    /* DISPLAY 2 */
+    .gauge_outer_box .progressmeter1 {
+        margin-left: 10px;
+    }
+    .gauge_outer_box .progressmeter2 {
+        margin-left: 0px;
+    }
+    .gauge_outer_box .progressmeter3 {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 1460px) {
+    .meter_outer_box .speedometer2 {
+        margin-left: 32px;
+    }
+
+    .gauge_outer_box .progressmeter2 {
+        margin-left: 24px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .meter_outer_box .speedometer2 {
+        margin-left: 48px;
+    }
+    .gauge_outer_box .progressmeter2 {
+        margin-left: 42px;
+    }
+}
+
+@media screen and (min-width: 1730px) {
+    .meter_outer_box .speedometer2 {
+        margin-left: 60px;
+    }
+    .gauge_outer_box .progressmeter2 {
+        margin-left: 68px;
+    }
+}
+
+
+@media screen and (min-width: 1850px) {
+    .meter_outer_box .speedometer2 {
+        margin-left: 80px;
+    }
+    .gauge_outer_box .progressmeter2 {
+        margin-left: 85px;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .meter_outer_box .speedometer2 {
+        margin-left: 100px;
+    }
+    .gauge_outer_box .progressmeter2 {
+        margin-left: 105px;
+    }
+}
