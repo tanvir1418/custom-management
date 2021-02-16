@@ -1019,7 +1019,7 @@ $(document).ready(function () {
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence" onchange="manTemSwapSeqL(this)">
+      <select class="sequence" onchange="manTemSwapSeqL(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -1040,7 +1040,7 @@ $(document).ready(function () {
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence" onchange="manTemSwapSeqL(this)">
+      <select class="sequence" onchange="manTemSwapSeqL(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -1076,7 +1076,7 @@ $(document).ready(function () {
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence" onchange="manTemSwapSeqL(this)">
+      <select class="sequence" onchange="manTemSwapSeqL(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -1104,7 +1104,7 @@ $(document).ready(function () {
   `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence" onchange="manTemSwapSeqL(this)">
+      <select class="sequence" onchange="manTemSwapSeqL(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -1124,7 +1124,7 @@ $(document).ready(function () {
   `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence" onchange="manTemSwapSeqL(this)">
+      <select class="sequence" onchange="manTemSwapSeqL(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -1355,7 +1355,7 @@ $(document).ready(function () {
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence" onchange="manTemSwapSeqR(this)">
+      <select class="sequence" onchange="manTemSwapSeqR(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -1376,7 +1376,7 @@ $(document).ready(function () {
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence" onchange="manTemSwapSeqR(this)">
+      <select class="sequence" onchange="manTemSwapSeqR(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -1412,7 +1412,7 @@ $(document).ready(function () {
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence" onchange="manTemSwapSeqR(this)">
+      <select class="sequence" onchange="manTemSwapSeqR(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -1440,7 +1440,7 @@ $(document).ready(function () {
   `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence" onchange="manTemSwapSeqR(this)">
+      <select class="sequence" onchange="manTemSwapSeqR(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -1460,7 +1460,7 @@ $(document).ready(function () {
   `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
-      <select id="sequence" onchange="manTemSwapSeqR(this)">
+      <select class="sequence" onchange="manTemSwapSeqR(this)">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -1684,17 +1684,17 @@ var manTemSeqListR = [];
 
 function manTemResetValueL(e) {
   let pid = $(e).parent().parent().parent().parent().attr("id");
-  if ($(`#${pid} #sequence`).length == 0) return true;
+  if ($(`#${pid} .sequence`).length == 0) return true;
   if (e.checked == false) {
     $(`#${pid} input, #${pid} select`).val("");
     manTemSeqListL = manTemSeqListL.filter(function (id) {
-      $(`#${id} #sequence`).children(`option:last-child`).remove();
+      $(`#${id} .sequence`).children(`option:last-child`).remove();
       return pid != id;
     });
     manTemSeqListL.forEach(function (val, index) {
-      $(`#${val} #sequence`).val(index + 1);
+      $(`#${val} .sequence`).val(index + 1);
     });
-    $(`#${pid} #sequence`).html(`<option value='0'>SEQUENCE</option>`);
+    $(`#${pid} .sequence`).html(`<option value='0'>SEQUENCE</option>`);
     // remove error message
     let errP = $(`#${pid} .width-22 .error-message`);
     let errC = $(`#${pid} .width-22 .custom-input-danger`);
@@ -1711,34 +1711,34 @@ function manTemResetValueL(e) {
   } else {
     let inW = inWords(manTemSeqListL.length + 1).toUpperCase();
     manTemSeqListL.forEach(function (val, index) {
-      $(`#${val} #sequence`).append(
+      $(`#${val} .sequence`).append(
         `<option value="${(manTemSeqListL.length + 1)}">${inW}</option>`
       );
-      $(`#${val} #sequence`).val(index + 1);
+      $(`#${val} .sequence`).val(index + 1);
     });
     manTemSeqListL.push(pid);
     if (manTemSeqListL.length == 1) {
-      $(`#${pid} #sequence`).html(`<option value='1'>FIRST</option>`);
+      $(`#${pid} .sequence`).html(`<option value='1'>FIRST</option>`);
     }
     else {
-      $(`#${pid} #sequence`).html($(`#${manTemSeqListL[0]} #sequence`).html());
+      $(`#${pid} .sequence`).html($(`#${manTemSeqListL[0]} .sequence`).html());
     }
-    $(`#${pid} #sequence`).val(manTemSeqListL.length);
+    $(`#${pid} .sequence`).val(manTemSeqListL.length);
   }
 }
 function manTemResetValueR(e) {
   let pid = $(e).parent().parent().parent().parent().attr("id");
-  if ($(`#${pid} #sequence`).length == 0) return true;
+  if ($(`#${pid} .sequence`).length == 0) return true;
   if (e.checked == false) {
     $(`#${pid} input, #${pid} select`).val("");
     manTemSeqListR = manTemSeqListR.filter(function (id) {
-      $(`#${id} #sequence`).children(`option:last-child`).remove();
+      $(`#${id} .sequence`).children(`option:last-child`).remove();
       return pid != id;
     });
     manTemSeqListR.forEach(function (val, index) {
-      $(`#${val} #sequence`).val(index + 1);
+      $(`#${val} .sequence`).val(index + 1);
     });
-    $(`#${pid} #sequence`).html(`<option value='0'>SEQUENCE</option>`);
+    $(`#${pid} .sequence`).html(`<option value='0'>SEQUENCE</option>`);
     // remove error message
     let errP = $(`#${pid} .width-22 .error-message`);
     let errC = $(`#${pid} .width-22 .custom-input-danger`);
@@ -1755,19 +1755,19 @@ function manTemResetValueR(e) {
   } else {
     let inW = inWords(manTemSeqListR.length + 1).toUpperCase();
     manTemSeqListR.forEach(function (val, index) {
-      $(`#${val} #sequence`).append(
+      $(`#${val} .sequence`).append(
         `<option value="${(manTemSeqListR.length + 1)}">${inW}</option>`
       );
-      $(`#${val} #sequence`).val(index + 1);
+      $(`#${val} .sequence`).val(index + 1);
     });
     manTemSeqListR.push(pid);
     if (manTemSeqListR.length == 1) {
-      $(`#${pid} #sequence`).html(`<option value='1'>FIRST</option>`);
+      $(`#${pid} .sequence`).html(`<option value='1'>FIRST</option>`);
     }
     else {
-      $(`#${pid} #sequence`).html($(`#${manTemSeqListR[0]} #sequence`).html());
+      $(`#${pid} .sequence`).html($(`#${manTemSeqListR[0]} .sequence`).html());
     }
-    $(`#${pid} #sequence`).val(manTemSeqListR.length);
+    $(`#${pid} .sequence`).val(manTemSeqListR.length);
   }
 }
 
@@ -1787,8 +1787,8 @@ function manTemSwapSeqL(e) {
       manTemSeqListL[index] = manTemSeqListL[val - 1];
       manTemSeqListL[val - 1] = pid;
     }
-    $(`#${manTemSeqListL[index]} #sequence`).val(index + 1);
-    $(`#${pid} #sequence`).val(val);
+    $(`#${manTemSeqListL[index]} .sequence`).val(index + 1);
+    $(`#${pid} .sequence`).val(val);
   }
 }
 function manTemSwapSeqR(e) {
@@ -1807,8 +1807,8 @@ function manTemSwapSeqR(e) {
       manTemSeqListR[index] = manTemSeqListR[val - 1];
       manTemSeqListR[val - 1] = pid;
     }
-    $(`#${manTemSeqListR[index]} #sequence`).val(index + 1);
-    $(`#${pid} #sequence`).val(val);
+    $(`#${manTemSeqListR[index]} .sequence`).val(index + 1);
+    $(`#${pid} .sequence`).val(val);
   }
 }
 
@@ -2074,6 +2074,15 @@ function manTemInpBuild(_id) {
   $(".range-example-input-2").asRange({
     range: true,
     limit: false
+  });
+
+  // Manage Template Sample 4 DATE PICKER START
+  $(function () {
+    $("#datepicker_mnTemp1").datepicker();
+    $("#datepicker_mnTemp1").datepicker("option", "dateFormat", "DD, MM d, yy");
+
+    $("#datepicker_mnTemp2").datepicker();
+    $("#datepicker_mnTemp2").datepicker("option", "dateFormat", "DD, MM d, yy");
   });
 }
 

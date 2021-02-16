@@ -231,6 +231,18 @@ $(function () {
   $("#rightSideDrag_op1").disableSelection();
 });
 
+// Manage Data Sortable (drag drop) 
+//Left side drag
+$(function () {
+  $("#mnDt_LfSide").sortable();
+  $("#mnDt_LfSide").disableSelection();
+});
+//Right side drag
+$(function () {
+  $("#mnDt_RtSide").sortable();
+  $("#mnDt_RtSide").disableSelection();
+});
+
 // Manage Template Sortable (drag drop) 
 //Left side drag
 $(function () {
@@ -251,14 +263,14 @@ $("#close-btn").on("click", function () {
 });
 
 // Manage Template Sample 4 DATE PICKER START
-$(function () {
+// $(function () {
 
-  $("#datepicker_mnTemp1").datepicker();
-  $("#datepicker_mnTemp1").datepicker("option", "dateFormat", "DD, MM d, yy");
+//   $("#datepicker_mnTemp1").datepicker();
+//   $("#datepicker_mnTemp1").datepicker("option", "dateFormat", "DD, MM d, yy");
 
-  $("#datepicker_mnTemp2").datepicker();
-  $("#datepicker_mnTemp2").datepicker("option", "dateFormat", "DD, MM d, yy");
-});
+//   $("#datepicker_mnTemp2").datepicker();
+//   $("#datepicker_mnTemp2").datepicker("option", "dateFormat", "DD, MM d, yy");
+// });
 
 // Manage Template Time Picker Icon Click Operation Starts
 $("#time_picker_close-btn").on("click", function () {
@@ -452,4 +464,13 @@ $("#next-show-save-start-mnTemp").click(function(){
 
 $("#prev-hide-save-start-mnTemp").click(function(){
   $('#saveStartTarget-mnTemp').addClass('save-start-class-hide-show-mnTemp');
+});
+
+// Manage data Option 4 template hide show save start button 
+$("#next-show-save-start-op4").click(function(){
+  $('#saveStartTarget-op4').removeClass('save-start-class-hide-show-op4');
+});
+
+$("#prev-hide-save-start-op4").click(function(){
+  $('#saveStartTarget-op4').addClass('save-start-class-hide-show-op4');
 });
