@@ -735,7 +735,7 @@ for (let i = 1; i <= 100; i++) {
 				`<tr id="${id}">
 					<th class="row-data" scope="row">${serial}</th>
 					<td class="records-count">
-						<a data-toggle="modal" data-target="#hyperTextModal1" style="color: black" >
+						<a data-toggle="modal" data-target="#hyperTextModal1" style="color: black" onclick="showHyperTextModal1(this)">
 							<p>${recordsCount}</p>
 						</a>
 					</td>
@@ -771,6 +771,12 @@ for (let i = 1; i <= 100; i++) {
 	let container = $("#pagination-op1-data");
 	container.pagination(options);
 })();
+
+function showHyperTextModal1(e) {
+	let nameD = $(e).children("p").html();
+	let modalodal = $("#hyperTextModal1 .modal-body .hyper-text-popup-header-title p");
+	modalodal.html(`Sample ${nameD} Data`);
+}
 
 function tabChange(e) {
 	let tabMain = $(e).parent().parent().parent().parent().parent().parent().parent();
