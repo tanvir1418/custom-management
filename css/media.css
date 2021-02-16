@@ -44,6 +44,12 @@
 /*  0px to 992px  */
 @media only screen and (max-width:992px) {
 
+    .open.navbar-collapse{
+        height: 164px !important;
+    }
+    .tab-box .title-box p{
+        line-height: 24px;
+    }
 
     /* ============================= TAB CONTENT START ============================= */
 
