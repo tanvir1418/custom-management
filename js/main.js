@@ -680,7 +680,7 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 			<div class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter">
+			<div class="drop-filter" onclick="dropModalFilter(this)">
 				<i class="fas fa-caret-down"></i>
 			</div>
 		</th>
@@ -689,7 +689,7 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 			<div class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter">
+			<div class="drop-filter" onclick="dropModalFilter(this)">
 				<i class="fas fa-caret-down"></i>
 			</div>
 		</th>
@@ -698,7 +698,7 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 			<div class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter">
+			<div class="drop-filter" onclick="dropModalFilter(this)">
 				<i class="fas fa-caret-down"></i>
 			</div>
 		</th>
@@ -707,7 +707,7 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 			<div class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter">
+			<div class="drop-filter" onclick="dropModalFilter(this)">
 				<i class="fas fa-caret-down"></i>
 			</div>
 		</th>
@@ -716,7 +716,7 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 			<div class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#dropBtnModal">
+			<div class="drop-filter" onclick="dropModalFilter(this)">
 				<i class="fas fa-caret-down"></i>
 			</div>
 		</th>
@@ -807,4 +807,28 @@ manDtOpt1Exist("man-data-opt1-exist", 7, "pagination-op1-data", `tabChangeOpt1(t
 manDtOpt1Exist("man-data-opt3-exist", 7, "pagination-op3-data", `tabChangeOpt3(this)`);
 manDtOpt1Exist("man-data-opt4-exist", 7, "pagination-op4-data", `tabChangeOpt4(this)`);
 manDtOpt1Exist("man-data-opt5-exist", 7, "pagination-op5-data", `tabChangeOpt5(this)`);
+
+$("#row-no1").change(function (e) {
+	let noRow = e.target.value;
+	manDtOpt1Exist("man-data-opt1-exist", noRow, "pagination-op1-data", `tabChangeOpt1(this)`);
+});
+$("#row-no3").change(function (e) {
+	let noRow = e.target.value;
+	manDtOpt1Exist("man-data-opt3-exist", noRow, "pagination-op3-data", `tabChangeOpt3(this)`);
+});
+$("#row-no4").change(function (e) {
+	let noRow = e.target.value;
+	manDtOpt1Exist("man-data-opt4-exist", noRow, "pagination-op4-data", `tabChangeOpt4(this)`);
+});
+$("#row-no5").change(function (e) {
+	let noRow = e.target.value;
+	manDtOpt1Exist("man-data-opt5-exist", noRow, "pagination-op5-data", `tabChangeOpt5(this)`);
+});
+
+function dropModalFilter(e) {
+	$("#dropBtnModal").modal('toggle');
+	let headerName = $(e).parent()[0].innerText;
+	$("#dropBtnModal div.modal-body div.table-header-popup-header-title p").html(headerName);
+}
+
 // Manage Data Option 1 Existing Pagination End
