@@ -127,8 +127,8 @@ function openOption(evt, optionName) {
 $("#back-manage").click(function () {
 	document.getElementById("option_1").style.display = "none";
 	document.getElementById("hide559").style.display = "block";
-	document.getElementById("tab_2").style.paddingTop="60px";
-	document.getElementById("opt-content").style.marginTop="50px";
+	document.getElementById("tab_2").style.paddingTop = "60px";
+	document.getElementById("opt-content").style.marginTop = "50px";
 });
 
 
@@ -336,8 +336,8 @@ const listItemData = [
 				}
 			}
 		}
-		htmlDataModal += 
-		`<ul class="sub-list checkbox_hide" style="margin-left: 300px;" id="sub-div-list-1-${index + 1}">
+		htmlDataModal +=
+			`<ul class="sub-list checkbox_hide" style="margin-left: 300px;" id="sub-div-list-1-${index + 1}">
 			${list_data1}
 		</ul>
 		<ul class="sub-list checkbox_hide" style="margin-left: 600px;" id="sub-div-list-2-${index + 1}">
@@ -403,7 +403,7 @@ var opt2_left_list = "";
 		} else if (target.tagName === "I") {
 			target = target.parentNode.parentNode;
 		}
-	
+
 		if (oldTarget != "" && oldTarget !== target) {
 			$(oldTarget).removeClass("highlight_li");
 			$(oldTarget).children(".green-check-box").removeClass("display-block");
@@ -577,7 +577,7 @@ const sub_ul_list = document.querySelector("#sub-ul-list");
 sub_ul_list.addEventListener("click", function (e) {
 	let target = e.target;
 	if (target.tagName === "DIV") {
-		if (target.className.indexOf("sublist-cancel-box")!=-1) {
+		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
 			return;
 		}
@@ -629,7 +629,7 @@ function opt3Reset(e) {
 // Manage Data Option 3 End
 
 // Manage Data Option 5 Start
-function opt5ResetBtn(e){
+function opt5ResetBtn(e) {
 	let element = $(e).parent().parent().parent();
 	element.find(".select-plus .custome-select select").val("0");
 	element.find(".col-5").children("input[type=text]").val("");
@@ -644,7 +644,7 @@ function opt5ResetBtn(e){
 }
 
 function addCategory(e) {
-	let inpVal= $(e).parent().parent().find("input.plus-input").val();
+	let inpVal = $(e).parent().parent().find("input.plus-input").val();
 	if (inpVal != "") {
 		let selectCat = $("#opt5-select-category");
 		let opt = `<option value="${inpVal}">${inpVal}</option>`;
@@ -672,9 +672,9 @@ for (let i = 1; i <= 100; i++) {
 		}
 	});
 }
-(function manDtOpt1Exist() {
+function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 	let tableHead =
-	`<tr>
+		`<tr>
 		<th scope="col">
 			ROW
 			<div class="head-filter">
@@ -722,17 +722,17 @@ for (let i = 1; i <= 100; i++) {
 		</th>
 		<th scope="col">ACTIONS</th>
 	</tr>`;
-	$("#man-data-opt1-exist thead").html(tableHead);
+	$(`#${tableID} thead`).html(tableHead);
 	let options = {
 		dataSource: manExisTable,
-		pageSize: 7,
+		pageSize: noRow,
 		showGoInput: true,
 		showGoButton: true,
 		callback: function (data, pagination) {
 			let tableTr = "";
-			data.forEach(({ id, serial, recordsCount, savedName, CDateTime, LUDateTime}) => {
+			data.forEach(({ id, serial, recordsCount, savedName, CDateTime, LUDateTime }) => {
 				tableTr +=
-				`<tr id="${id}">
+					`<tr id="${id}">
 					<th class="row-data" scope="row">${serial}</th>
 					<td class="records-count">
 						<a data-toggle="modal" data-target="#hyperTextModal1" style="color: black" onclick="showHyperTextModal1(this)">
@@ -756,7 +756,7 @@ for (let i = 1; i <= 100; i++) {
 					</td>
 					<td>
 						<div class="actions39">
-							<a onclick="tabChange(this)">Click To View/Update</a>
+							<a onclick="${tabChange}">Click To View/Update</a>
 							<div class="cancel-box">
 								<i class="fas fa-times"></i>
 							</div>
@@ -764,13 +764,13 @@ for (let i = 1; i <= 100; i++) {
 					</td>
 				</tr>`;
 			});
-			$("#man-data-opt1-exist tbody").html(tableTr);
+			$(`#${tableID} tbody`).html(tableTr);
 		}
 	}
 
-	let container = $("#pagination-op1-data");
+	let container = $(`#${pagiId}`);
 	container.pagination(options);
-})();
+}
 
 function showHyperTextModal1(e) {
 	let nameD = $(e).children("p").html();
@@ -778,10 +778,33 @@ function showHyperTextModal1(e) {
 	modalodal.html(`Sample ${nameD} Data`);
 }
 
-function tabChange(e) {
+function tabChangeOpt1(e) {
 	let tabMain = $(e).parent().parent().parent().parent().parent().parent().parent();
 	let createNew = tabMain.find("div.create-manage-tab div.create-new-content.zas");
 	createNew.find("div.createpera p").html("View/Update");
 	createNew.click();
 }
+function tabChangeOpt3(e) {
+	let tabMain = $(e).parent().parent().parent().parent().parent().parent().parent();
+	let createNew = tabMain.find("div.create-manage-tab div.create-new-content.zas43");
+	createNew.find("div.createpera p").html("View/Update");
+	createNew.click();
+}
+function tabChangeOpt4(e) {
+	let tabMain = $(e).parent().parent().parent().parent().parent().parent().parent();
+	let createNew = tabMain.find("div.create-manage-tab div.create-new-content.zas45");
+	createNew.find("div.createpera p").html("View/Update");
+	createNew.click();
+}
+function tabChangeOpt5(e) {
+	let tabMain = $(e).parent().parent().parent().parent().parent().parent().parent();
+	let createNew = tabMain.find("div.create-manage-tab div.create-new-content.zas41");
+	createNew.find("div.createpera p").html("View/Update");
+	createNew.click();
+}
+
+manDtOpt1Exist("man-data-opt1-exist", 7, "pagination-op1-data", `tabChangeOpt1(this)`);
+manDtOpt1Exist("man-data-opt3-exist", 7, "pagination-op3-data", `tabChangeOpt3(this)`);
+manDtOpt1Exist("man-data-opt4-exist", 7, "pagination-op4-data", `tabChangeOpt4(this)`);
+manDtOpt1Exist("man-data-opt5-exist", 7, "pagination-op5-data", `tabChangeOpt5(this)`);
 // Manage Data Option 1 Existing Pagination End
