@@ -1651,3 +1651,53 @@ td {
 }
 
 /* =========== FOOTERT SECTION END =========== */
+
+
+/* Edited By Tanvir for responsive design  */
+@media screen and (max-width: 1200px) {
+  /* ======= OPTION ONE TAB STARTS ========*/
+  .create-manage-tab .create-new-content {
+    padding: 10px;
+  }
+  .create-new-content .tik-box {
+    width: 40px;
+    height: 40px;
+  }
+  .create-new-content .tik-box i {
+    top: 27%;
+    left: 28%;
+  }
+  .create-new-content .logo-img {
+    width: 70px;
+    height: 80px;
+  }
+  .create-new-content .logo-img img {
+    width: 38px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  /* ======= OPTION ONE TAB STARTS ========*/
+  .create-manage-tab .create-new-content {
+    padding: 10px;
+  }
+  .create-new-content .tik-box {
+    width: 35px;
+    height: 35px;
+  }
+  .create-new-content .tik-box i {
+    top: 25%;
+    left: 25%;
+  }
+  .create-new-content .createpera {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  .create-new-content .logo-img {
+    width: 50px;
+    height: 60px;
+  }
+  .create-new-content .logo-img img {
+    width: 30px;
+  }
+}

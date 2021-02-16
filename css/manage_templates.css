@@ -872,6 +872,9 @@
   .mn-temp-option-selection {
     margin: 0 80px 0 65px;
   }
+  .op4-option-selection{
+    margin: 0 65px 0 50px;
+  }
   .multistep-container .mutistep-form-area .form-box .btn-row-leftRight {
     height: 110px;
     margin: 0px 30px;
@@ -905,6 +908,9 @@
 @media screen and (max-width: 820px) {
   .mn-temp-option-selection {
     margin: 0 40px 0 25px;
+  }
+  .op4-option-selection{
+    margin: 0 35px 0 20px;
   }
 }
 /* sample 2 Left-Side Right-Side style ends  */
@@ -1082,5 +1088,10 @@ padding: 0 5px;
   }
   .field_set_dual .first-input-group {
     margin-bottom: 5px;
+  }
+}
+@media screen and (max-width: 1030px) {
+  #create_new_mn_temp .mn-temp-sample1-wrapper .create-manage {
+    margin: 0px 30px;
   }
 }
