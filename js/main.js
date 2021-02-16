@@ -150,14 +150,11 @@ $(document).ready(function () {
 	$('.zas').click(function () {
 		$('#my567').addClass('createGreen');
 		$('#my998').removeClass('manageGreen');
-
-
 	});
 
 	$('.pas').click(function () {
 		$('#my998').addClass('manageGreen');
 		$('#my567').removeClass('createGreen');
-
 	});
 });
 
@@ -657,4 +654,99 @@ function addCategory(e) {
 // Manage Data Option 5 End
 
 // Manage Data Option 1 Existing Pagination Start
+// let
+(function manDtOpt1Exist() {
+	let tableDes =
+	`<thead>
+		<tr>
+			<th scope="col">
+				ROW
+				<div class="head-filter">
+					<i class="fas fa-times"></i>
+				</div>
+				<div class="drop-filter">
+					<i class="fas fa-caret-down"></i>
+				</div>
+			</th>
+			<th scope="col">
+				RECORDS COUNT
+				<div class="head-filter">
+					<i class="fas fa-times"></i>
+				</div>
+				<div class="drop-filter">
+					<i class="fas fa-caret-down"></i>
+				</div>
+			</th>
+			<th scope="col">
+				SAVED NAME
+				<div class="head-filter">
+					<i class="fas fa-times"></i>
+				</div>
+				<div class="drop-filter">
+					<i class="fas fa-caret-down"></i>
+				</div>
+			</th>
+			<th scope="col">
+				CREATED DATE TIME
+				<div class="head-filter">
+					<i class="fas fa-times"></i>
+				</div>
+				<div class="drop-filter">
+					<i class="fas fa-caret-down"></i>
+				</div>
+			</th>
+			<th scope="col">
+				LAST UPDATE DATE TIME
+				<div class="head-filter">
+					<i class="fas fa-times"></i>
+				</div>
+				<div class="drop-filter" data-toggle="modal" data-target="#dropBtnModal">
+					<i class="fas fa-caret-down"></i>
+				</div>
+			</th>
+			<th scope="col">ACTIONS</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th class="row-data" scope="row">1</th>
+			<td class="records-count">
+				<a href="#" data-toggle="modal" data-target="#hyperTextModal1" style="color: black" >
+					<p>1234</p>
+				</a>
+			</td>
+			<td>
+				<input class="save-name" placeholder="Sample 1234" type="text" />
+			</td>
+			<td>
+				<div class="create-date-time date-time-39">
+					<p>01/01/2021</p>
+					<p>12:36 AM</p>
+				</div>
+			</td>
+			<td>
+				<div class="last-date-time date-time-39">
+					<p>01/01/2021</p>
+					<p>12:36 AM</p>
+				</div>
+			</td>
+			<td>
+				<div class="actions39">
+					<a onclick="tabChange(this)">Click To View/Update</a>
+					<div class="cancel-box">
+						<i class="fas fa-times"></i>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</tbody>`;
+	$("#man-data-opt1-exist").html(tableDes);
+})();
+
+function tabChange(e) {
+	let tabMain = $(e).parent().parent().parent().parent().parent().parent().parent();
+	let createNew = tabMain.find("div.create-manage-tab div.create-new-content.zas");
+	createNew.find("div.createpera p").html("View/Update");
+	createNew.click();
+}
 // Manage Data Option 1 Existing Pagination End
