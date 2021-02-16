@@ -2232,3 +2232,14 @@ Bottom codes are added by Tanvir
         font-size: 7px;
     }
 }
+
+/* Manage Data Option 1 THANK YOU Pop-Ups Customization */
+#op1GenerateBtnModal .modal-dialog{
+    max-width: 360px;
+}
+#op1GenerateBtnModal .modal-dialog .modal-body{
+    padding: 0px;
+}
+#op1GenerateBtnModal .modal-dialog .modal-body .generate-button-click-popup {
+    height: 295px;
+}
