@@ -1190,7 +1190,7 @@
                                                         <div class="text-edition-form">
                                                             <div class="text-edition-box">
                                                                 <input type="button" value="Form By Text Editor"
-                                                                    data-toggle="modal" data-target="#op1FormEditModal">
+                                                                    data-toggle="modal" data-target="#op4ListFormEditModal">
                                                                 <i class="fas fa-arrow-right" id="arrow-icon"></i>
                                                             </div>
                                                         </div>
@@ -1281,7 +1281,7 @@
                                                         <div class="text-edition-form">
                                                             <div class="text-edition-box">
                                                                 <input type="button" value="Form By Text Editor"
-                                                                    data-toggle="modal" data-target="#op1FormEditModal">
+                                                                    data-toggle="modal" data-target="#op4LeftRightFormEditModal">
                                                                 <i class="fas fa-arrow-right" id="arrow-icon"></i>
                                                             </div>
                                                         </div>
@@ -1842,7 +1842,7 @@
                                                         <div class="text-edition-form">
                                                             <div class="text-edition-box">
                                                                 <input type="button" value="Form By Text Editor"
-                                                                    data-toggle="modal" data-target="#op1FormEditModal">
+                                                                    data-toggle="modal" data-target="#op4CheckBoxFormEditModal">
                                                                 <i class="fas fa-arrow-right" id="arrow-icon"></i>
                                                             </div>
                                                         </div>
@@ -1944,7 +1944,7 @@
                                                     <div class="text-edition-form">
                                                         <div class="text-edition-box">
                                                             <input type="button" value="Form By Text Editor"
-                                                                data-toggle="modal" data-target="#op1FormEditModal">
+                                                                data-toggle="modal" data-target="#op4RangeCalenderFormEditModal">
                                                             <i class="fas fa-arrow-right" id="arrow-icon"></i>
                                                         </div>
                                                     </div>
@@ -2722,7 +2722,7 @@
                                         <div class="text-edition-form">
                                             <div class="text-edition-box">
                                                 <input type="button" value="Form By Text Editor" data-toggle="modal"
-                                                    data-target="#op1FormEditModal">
+                                                    data-target="#mnTempListFormEditModal">
                                                 <i class="fas fa-arrow-right" id="arrow-icon"></i>
                                             </div>
                                         </div>
@@ -2816,7 +2816,7 @@
                                         <div class="text-edition-form">
                                             <div class="text-edition-box">
                                                 <input type="button" value="Form By Text Editor" data-toggle="modal"
-                                                    data-target="#op1FormEditModal">
+                                                    data-target="#mnTempLeftRightFormEditModal">
                                                 <i class="fas fa-arrow-right" id="arrow-icon"></i>
                                             </div>
                                         </div>
@@ -3323,7 +3323,7 @@
                                         <div class="text-edition-form">
                                             <div class="text-edition-box">
                                                 <input type="button" value="Form By Text Editor" data-toggle="modal"
-                                                    data-target="#op1FormEditModal">
+                                                    data-target="#mnTempCheckBoxFormEditModal">
                                                 <i class="fas fa-arrow-right" id="arrow-icon"></i>
                                             </div>
                                         </div>
@@ -3431,7 +3431,7 @@
                                     <div class="text-edition-form">
                                         <div class="text-edition-box">
                                             <input type="button" value="Form By Text Editor" data-toggle="modal"
-                                                data-target="#op1FormEditModal">
+                                                data-target="#mnTempRangeCalenderFormEditModal">
                                             <i class="fas fa-arrow-right" id="arrow-icon"></i>
                                         </div>
                                     </div>
@@ -9091,6 +9091,314 @@
         </div>
     </div>
     <!-- =====X====Option 3 Form Edit Modal Ends=====X==== -->
+
+    <!-- =========Option 4 List Item Form Edit Modal Starts========= -->
+    <div class="modal fade" id="op4ListFormEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <!-- ======Form by text editor pop-up starts====== -->
+                    <div class="text-editor-click-popup">
+                        <div class="text-editor-click-popup-wrapper">
+                            <div class="text-editor-popup-header-title">
+                                <p>Form By Text Editor Window</p>
+                            </div>
+                            <div class="text-editor-popup-body">
+                                <div class="text-editor-content-wrapper">
+                                    <div class="text-editor-table-wrapper">
+                                        <div id="text_editor_p"
+                                            onclick="document.getElementById('op3_text_editor').focus()">
+                                            <div contenteditable="true" onkeypress="return checkingOp3(event)" onpaste="return pasteEventOp3(event)" id="op3_text_editor">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-editor-popup-footer">
+                                <div class="text-editor-button-row">
+                                    <input type="button" value="Window to Form" class="window-form" onclick="windowToFormOp3(this)">
+                                    <input type="button" value="Form to Window" class="form-window" onclick="formToWindowOp3(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===x===Form by text editor pop-up ends===x=== -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =====X====Option 4 List Item Form Edit Modal Ends=====X==== -->
+
+    <!-- =========Option 4 Left Right Form Edit Modal Starts========= -->
+    <div class="modal fade" id="op4LeftRightFormEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <!-- ======Form by text editor pop-up starts====== -->
+                    <div class="text-editor-click-popup">
+                        <div class="text-editor-click-popup-wrapper">
+                            <div class="text-editor-popup-header-title">
+                                <p>Form By Text Editor Window</p>
+                            </div>
+                            <div class="text-editor-popup-body">
+                                <div class="text-editor-content-wrapper">
+                                    <div class="text-editor-table-wrapper">
+                                        <div id="text_editor_p"
+                                            onclick="document.getElementById('op3_text_editor').focus()">
+                                            <div contenteditable="true" onkeypress="return checkingOp3(event)" onpaste="return pasteEventOp3(event)" id="op3_text_editor">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-editor-popup-footer">
+                                <div class="text-editor-button-row">
+                                    <input type="button" value="Window to Form" class="window-form" onclick="windowToFormOp3(this)">
+                                    <input type="button" value="Form to Window" class="form-window" onclick="formToWindowOp3(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===x===Form by text editor pop-up ends===x=== -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =====X====Option 4 Left Right Form Edit Modal Ends=====X==== -->
+
+    <!-- =========Option 4 CheckBox Form Edit Modal Starts========= -->
+    <div class="modal fade" id="op4CheckBoxFormEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <!-- ======Form by text editor pop-up starts====== -->
+                    <div class="text-editor-click-popup">
+                        <div class="text-editor-click-popup-wrapper">
+                            <div class="text-editor-popup-header-title">
+                                <p>Form By Text Editor Window</p>
+                            </div>
+                            <div class="text-editor-popup-body">
+                                <div class="text-editor-content-wrapper">
+                                    <div class="text-editor-table-wrapper">
+                                        <div id="text_editor_p"
+                                            onclick="document.getElementById('op3_text_editor').focus()">
+                                            <div contenteditable="true" onkeypress="return checkingOp3(event)" onpaste="return pasteEventOp3(event)" id="op3_text_editor">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-editor-popup-footer">
+                                <div class="text-editor-button-row">
+                                    <input type="button" value="Window to Form" class="window-form" onclick="windowToFormOp3(this)">
+                                    <input type="button" value="Form to Window" class="form-window" onclick="formToWindowOp3(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===x===Form by text editor pop-up ends===x=== -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =====X====Option 4 CheckBox Form Edit Modal Ends=====X==== -->
+
+    <!-- =========Option 4 Range Calander Form Edit Modal Starts========= -->
+    <div class="modal fade" id="op4RangeCalenderFormEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <!-- ======Form by text editor pop-up starts====== -->
+                    <div class="text-editor-click-popup">
+                        <div class="text-editor-click-popup-wrapper">
+                            <div class="text-editor-popup-header-title">
+                                <p>Form By Text Editor Window</p>
+                            </div>
+                            <div class="text-editor-popup-body">
+                                <div class="text-editor-content-wrapper">
+                                    <div class="text-editor-table-wrapper">
+                                        <div id="text_editor_p"
+                                            onclick="document.getElementById('op3_text_editor').focus()">
+                                            <div contenteditable="true" onkeypress="return checkingOp3(event)" onpaste="return pasteEventOp3(event)" id="op3_text_editor">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-editor-popup-footer">
+                                <div class="text-editor-button-row">
+                                    <input type="button" value="Window to Form" class="window-form" onclick="windowToFormOp3(this)">
+                                    <input type="button" value="Form to Window" class="form-window" onclick="formToWindowOp3(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===x===Form by text editor pop-up ends===x=== -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =====X====Option 4 Range Calander Form Edit Modal Ends=====X==== -->
+
+    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+    <!-- ============= Manage Template Modal Starts Here ============= -->
+    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+    <!-- =========Manage Template List Item Form Edit Modal Starts========= -->
+    <div class="modal fade" id="mnTempListFormEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <!-- ======Form by text editor pop-up starts====== -->
+                    <div class="text-editor-click-popup">
+                        <div class="text-editor-click-popup-wrapper">
+                            <div class="text-editor-popup-header-title">
+                                <p>Form By Text Editor Window</p>
+                            </div>
+                            <div class="text-editor-popup-body">
+                                <div class="text-editor-content-wrapper">
+                                    <div class="text-editor-table-wrapper">
+                                        <div id="text_editor_p"
+                                            onclick="document.getElementById('op3_text_editor').focus()">
+                                            <div contenteditable="true" onkeypress="return checkingOp3(event)" onpaste="return pasteEventOp3(event)" id="op3_text_editor">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-editor-popup-footer">
+                                <div class="text-editor-button-row">
+                                    <input type="button" value="Window to Form" class="window-form" onclick="windowToFormOp3(this)">
+                                    <input type="button" value="Form to Window" class="form-window" onclick="formToWindowOp3(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===x===Form by text editor pop-up ends===x=== -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =====X====Manage Template List Item Form Edit Modal Ends=====X==== -->
+
+    <!-- =========Manage Template Left Right Form Edit Modal Starts========= -->
+    <div class="modal fade" id="mnTempLeftRightFormEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <!-- ======Form by text editor pop-up starts====== -->
+                    <div class="text-editor-click-popup">
+                        <div class="text-editor-click-popup-wrapper">
+                            <div class="text-editor-popup-header-title">
+                                <p>Form By Text Editor Window</p>
+                            </div>
+                            <div class="text-editor-popup-body">
+                                <div class="text-editor-content-wrapper">
+                                    <div class="text-editor-table-wrapper">
+                                        <div id="text_editor_p"
+                                            onclick="document.getElementById('op3_text_editor').focus()">
+                                            <div contenteditable="true" onkeypress="return checkingOp3(event)" onpaste="return pasteEventOp3(event)" id="op3_text_editor">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-editor-popup-footer">
+                                <div class="text-editor-button-row">
+                                    <input type="button" value="Window to Form" class="window-form" onclick="windowToFormOp3(this)">
+                                    <input type="button" value="Form to Window" class="form-window" onclick="formToWindowOp3(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===x===Form by text editor pop-up ends===x=== -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =====X====Manage Template Left Right Form Edit Modal Ends=====X==== -->
+
+    <!-- =========Manage Template CheckBox Form Edit Modal Starts========= -->
+    <div class="modal fade" id="mnTempCheckBoxFormEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <!-- ======Form by text editor pop-up starts====== -->
+                    <div class="text-editor-click-popup">
+                        <div class="text-editor-click-popup-wrapper">
+                            <div class="text-editor-popup-header-title">
+                                <p>Form By Text Editor Window</p>
+                            </div>
+                            <div class="text-editor-popup-body">
+                                <div class="text-editor-content-wrapper">
+                                    <div class="text-editor-table-wrapper">
+                                        <div id="text_editor_p"
+                                            onclick="document.getElementById('op3_text_editor').focus()">
+                                            <div contenteditable="true" onkeypress="return checkingOp3(event)" onpaste="return pasteEventOp3(event)" id="op3_text_editor">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-editor-popup-footer">
+                                <div class="text-editor-button-row">
+                                    <input type="button" value="Window to Form" class="window-form" onclick="windowToFormOp3(this)">
+                                    <input type="button" value="Form to Window" class="form-window" onclick="formToWindowOp3(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===x===Form by text editor pop-up ends===x=== -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =====X====Manage Template CheckBox Form Edit Modal Ends=====X==== -->
+
+    <!-- =========Manage Template Range Calander Form Edit Modal Starts========= -->
+    <div class="modal fade" id="mnTempRangeCalenderFormEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <!-- ======Form by text editor pop-up starts====== -->
+                    <div class="text-editor-click-popup">
+                        <div class="text-editor-click-popup-wrapper">
+                            <div class="text-editor-popup-header-title">
+                                <p>Form By Text Editor Window</p>
+                            </div>
+                            <div class="text-editor-popup-body">
+                                <div class="text-editor-content-wrapper">
+                                    <div class="text-editor-table-wrapper">
+                                        <div id="text_editor_p"
+                                            onclick="document.getElementById('op3_text_editor').focus()">
+                                            <div contenteditable="true" onkeypress="return checkingOp3(event)" onpaste="return pasteEventOp3(event)" id="op3_text_editor">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-editor-popup-footer">
+                                <div class="text-editor-button-row">
+                                    <input type="button" value="Window to Form" class="window-form" onclick="windowToFormOp3(this)">
+                                    <input type="button" value="Form to Window" class="form-window" onclick="formToWindowOp3(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===x===Form by text editor pop-up ends===x=== -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =====X====Manage Template Range Calander Form Edit Modal Ends=====X==== -->
 
     <!-- ========== option 1 select items modal START =============== -->
     <div class="modal fade listData-modal" id="myopt1listData">
