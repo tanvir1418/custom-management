@@ -334,8 +334,8 @@ let leftSideArray = [
 ]
 
 function listRender(id, name, addNewRow) {
-  let ele = `<tr ondblclick="${addNewRow}" class="cursor-pointer">
-    <td colspan="2" id="${id}">${name}</td>
+  let ele = `<tr ondblclick="${addNewRow}" class="cursor-pointer" id="${id}">
+    <td colspan="2">${name}</td>
     <td><i class="fas fa-question-circle"></i></td>
     <td></td>
   </tr>`;
@@ -415,8 +415,8 @@ function renderListInputHtml(_id, iCount, title, resetValue, swapSeq) {
 }
 
 function addNewRowL(e) {
+  let _id = $(e).attr("id");
   let element = $(e).children()[0];
-  let _id = element.id;
   let iCount = leftSideArray.filter((a) => a.id == _id).map((b) => b.count)[0];
   let title = element.innerText;
   if ($(`#leftSideDrag_op1 #${_id}`).length == 0) {
@@ -427,8 +427,8 @@ function addNewRowL(e) {
 }
 
 function addNewRowR(e) {
+  let _id = $(e).attr("id");
   let element = $(e).children()[0];
-  let _id = element.id;
   let iCount = rightSideData.filter((a) => a.id == _id).map((b) => b.count)[0];
   let title = element.innerText;
   if ($(`#rightSideDrag_op1 #${_id}`).length == 0) {
