@@ -413,8 +413,7 @@
                                 <!-- text-edition-form -->
                                 <div class="text-edition-form mb-4">
                                     <div class="text-edition-box">
-                                        <input type="button" value="Form By Text Editor" data-toggle="modal"
-                                            data-target="#op1FormEditModal">
+                                        <input type="button" value="Form By Text Editor" data-toggle="modal" data-target="#op1FormEditModal">
                                         <i class="fas fa-arrow-right" id="arrow-icon"></i>
                                     </div>
                                 </div>
@@ -811,8 +810,7 @@
                                     <!-- text-edition-form -->
                                     <div class="text-edition-form mb-4">
                                         <div class="text-edition-box">
-                                            <input type="button" value="Form By Text Editor" data-toggle="modal"
-                                                data-target="#op1FormEditModal">
+                                            <input type="button" value="Form By Text Editor" data-toggle="modal" data-target="#op3FormEditModal">
                                             <i class="fas fa-arrow-right" id="arrow-icon"></i>
                                         </div>
                                     </div>
@@ -9056,6 +9054,43 @@
 
     </div>
     <!-- =====X====Option 1 Form Edit Modal Ends=====X==== -->
+    <!-- =========Option 3 Form Edit Modal Starts========= -->
+    <div class="modal fade" id="op3FormEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <!-- ======Form by text editor pop-up starts====== -->
+                    <div class="text-editor-click-popup">
+                        <div class="text-editor-click-popup-wrapper">
+                            <div class="text-editor-popup-header-title">
+                                <p>Form By Text Editor Window</p>
+                            </div>
+                            <div class="text-editor-popup-body">
+                                <div class="text-editor-content-wrapper">
+                                    <div class="text-editor-table-wrapper">
+                                        <div id="text_editor_p"
+                                            onclick="document.getElementById('op3_text_editor').focus()">
+                                            <div contenteditable="true" onkeypress="return checkingOp3(event)" onpaste="return pasteEventOp3(event)" id="op3_text_editor">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-editor-popup-footer">
+                                <div class="text-editor-button-row">
+                                    <input type="button" value="Window to Form" class="window-form" onclick="windowToFormOp3(this)">
+                                    <input type="button" value="Form to Window" class="form-window" onclick="formToWindowOp3(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===x===Form by text editor pop-up ends===x=== -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =====X====Option 3 Form Edit Modal Ends=====X==== -->
 
     <!-- ========== option 1 select items modal START =============== -->
     <div class="modal fade listData-modal" id="myopt1listData">

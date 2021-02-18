@@ -351,14 +351,14 @@ table#sub2-editor-table {
 .dispHideShow {
     display: none;
 }
-
+#op3FormEditModal .modal-content,
 #op1FormEditModal .modal-content {
     width: 400px;
     border: 0;
     border-radius: 0 !important;
     left: 10%;
 }
-
+#op3FormEditModal .modal-content .modal-body,
 #op1FormEditModal .modal-content .modal-body {
     padding: 0;
     border-radius: 0 !important;
