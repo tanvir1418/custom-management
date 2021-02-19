@@ -52,6 +52,10 @@ button:focus {
   transform: translate(-50%, -50%);
 }
 
+.modal-backdrop{
+  display: none;
+}
+
 /* =============== Navbar Start =================== */
 
 .mynav {

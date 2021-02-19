@@ -37,7 +37,7 @@ for (let i = 0; i < listSingle.length; i++) {
 }
 
 // prevent from add/remove style (modal)
-const preventListStyle = document.querySelectorAll(".single-list-item-file-container img");
+const preventListStyle = document.querySelectorAll(".single-list-item-file-container");
 // single-list-item-file-container
 for (let i = 0; i < preventListStyle.length; i++) {
   preventListStyle[i].addEventListener("click", function () {

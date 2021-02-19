@@ -4,13 +4,9 @@
 .text-editor-click-popup {
     width: 400px;
     height: 460px;
-    /* -webkit-box-shadow: 5px 5px 22px 0px #bababa; */
-    /* box-shadow: 5px 5px 22px 0px #bababa; */
-    /* box-shadow: 3px 5px 15px 0px #b0bcd4; */
-    /* position: relative; */
-    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
 }
 
 .text-editor-popup-header-title {
@@ -371,11 +367,11 @@ table#sub2-editor-table {
 /* ================================================ */
 /* thank you pop-up-for-generate button style starts */
 .generate-button-click-popup {
-    width: 360px;
+    width: 359px;
     height: 275px;
-    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
 }
 
 .generate-button-popup-header-title {
@@ -469,12 +465,9 @@ table#sub2-editor-table {
 .plus-button-click-popup {
     width: 360px;
     height: 270px;
-    /* -webkit-box-shadow: 5px 5px 22px 0px #bababa;
-    box-shadow: 5px 5px 22px 0px #bababa; */
-    /* box-shadow: 3px 5px 15px 0px #b0bcd4; */
-    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
 }
 
 .plus-button-popup-header-title {
@@ -580,21 +573,19 @@ table#sub2-editor-table {
 
 /* ========================================== */
 /* pop-up-for-table-header-click style starts */
-#dropBtnModal .modal-content{
+#dropBtnModal .modal-content {
     width: 250px;
     border: 0;
     border-radius: 0 !important;
     left: 20%;
 }
+
 .table-header-click-popup {
     width: 250px;
     height: 370px;
-    /* -webkit-box-shadow: 5px 5px 22px 0px #bababa;
-    box-shadow: 5px 5px 22px 0px #bababa; */
-    /* box-shadow: 3px 5px 15px 0px #b0bcd4; */
-    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
 }
 
 .table-header-popup-header-title {
@@ -648,8 +639,9 @@ table#sub2-editor-table {
     border-radius: 0;
     border: none;
 }
-.find-wrapper input[type="submit"], 
-.sort-wrapper input[type="submit"]  {
+
+.find-wrapper input[type="submit"],
+.sort-wrapper input[type="submit"] {
     float: right;
     width: 25%;
     height: 100%;
@@ -670,7 +662,7 @@ table#sub2-editor-table {
 }
 
 .find-wrapper input[type="submit"]:hover,
-.sort-wrapper input[type="submit"]:hover{
+.sort-wrapper input[type="submit"]:hover {
     background: #000000;
     color: #e6e6e6;
 }
@@ -727,6 +719,7 @@ table#sub2-editor-table {
     word-wrap: break-word;
     padding: 6px 0px 0px 10px;
 }
+
 .checkbox-table-scroll {
     /* height: 276px; */
     width: 100%;
@@ -761,6 +754,7 @@ table#sub2-editor-table {
     box-shadow: transparent;
     border-radius: 10px;
 }
+
 /* Handle */
 .checkbox-content-wrapper::-webkit-scrollbar-thumb {
     background: #dfd9d9;
@@ -894,12 +888,9 @@ table#sub2-editor-table {
 .hyper-text-click-popup {
     width: 360px;
     height: 400px;
-    /* -webkit-box-shadow: 5px 5px 22px 0px #bababa;
-    box-shadow: 5px 5px 22px 0px #bababa; */
-    /* box-shadow: 3px 5px 15px 0px #b0bcd4; */
-    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
 }
 
 .hyper-text-popup-header-title {
@@ -1043,12 +1034,9 @@ Bottom codes are added by Tanvir
 .save-start-button-click-popup {
     width: 420px;
     height: 420px;
-    /* -webkit-box-shadow: 5px 5px 22px 0px #bababa;
-    box-shadow: 5px 5px 22px 0px #bababa; */
-    /* box-shadow: 3px 5px 15px 0px #b0bcd4; */
-    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
 }
 
 .save-start-button-popup-header-title {
@@ -1280,12 +1268,9 @@ Bottom codes are added by Tanvir
 .time-picker-button-click-popup {
     width: 420px;
     height: 335px;
-    /* -webkit-box-shadow: 5px 5px 22px 0px #bababa;
-    box-shadow: 5px 5px 22px 0px #bababa; */
-    /* box-shadow: 3px 5px 15px 0px #b0bcd4; */
-    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
 }
 
 .time-picker-button-popup-header-title {
@@ -1605,6 +1590,9 @@ Bottom codes are added by Tanvir
 
 .listData-modal .modal-body {
     padding: 0px;
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
 }
 
 .wrapper-modal-list {
@@ -1628,7 +1616,8 @@ Bottom codes are added by Tanvir
     letter-spacing: 2x;
     font-size: 20px;
 }
-#copyrowlist .wrapper-modal-list .weapper-list-title p{
+
+#copyrowlist .wrapper-modal-list .weapper-list-title p {
     font-size: 18px;
 }
 
@@ -1757,10 +1746,11 @@ Bottom codes are added by Tanvir
     top: 0;
 }
 
-.checkbox_show{
+.checkbox_show {
     display: block;
 }
-.checkbox_hide{
+
+.checkbox_hide {
     display: none;
 }
 
@@ -1838,7 +1828,7 @@ Bottom codes are added by Tanvir
     font-size: 22px;
 }
 
-.modal .myvote{
+.modal .myvote {
     display: inline;
     float: right;
     padding: 16px 32px 32px;
@@ -1853,7 +1843,8 @@ Bottom codes are added by Tanvir
     font-size: 26px;
     transition: 0.3s all ease;
 }
-.modal .btn-myfo .reset-myfo{
+
+.modal .btn-myfo .reset-myfo {
     border: 1px solid #FFF000;
     background: #FFF000;
     margin-right: 10px;
@@ -1884,7 +1875,7 @@ Bottom codes are added by Tanvir
 #opt4a-list-modal .modal-body,
 #opt4b-list-modal .modal-body,
 #opt4c-list-modal .modal-body,
-#opt4d-list-modal .modal-body{
+#opt4d-list-modal .modal-body {
     padding: 10px;
 }
 
@@ -1895,7 +1886,7 @@ Bottom codes are added by Tanvir
 #opt4a-list-modal .close,
 #opt4b-list-modal .close,
 #opt4c-list-modal .close,
-#opt4d-list-modal .close{
+#opt4d-list-modal .close {
     opacity: 1;
     margin-top: -16px;
     margin-right: -10px;
@@ -1908,10 +1899,11 @@ Bottom codes are added by Tanvir
 #opt4a-list-modal .close span,
 #opt4b-list-modal .close span,
 #opt4c-list-modal .close span,
-#opt4d-list-modal .close span{
+#opt4d-list-modal .close span {
     color: #ffffff;
     font-size: 28px;
 }
+
 #manage-tempa-list-modal .modal-body,
 #manage-tempb-list-modal .modal-body,
 #manage-tempc-list-modal .modal-body,
@@ -1919,9 +1911,13 @@ Bottom codes are added by Tanvir
 #opt4a-list-modal .modal-body,
 #opt4b-list-modal .modal-body,
 #opt4c-list-modal .modal-body,
-#opt4d-list-modal .modal-body{
+#opt4d-list-modal .modal-body {
     padding: 10px;
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
 }
+
 #manage-tempa-list-modal .wrapper-modal-list,
 #manage-tempb-list-modal .wrapper-modal-list,
 #manage-tempc-list-modal .wrapper-modal-list,
@@ -1929,10 +1925,11 @@ Bottom codes are added by Tanvir
 #opt4a-list-modal .wrapper-modal-list,
 #opt4b-list-modal .wrapper-modal-list,
 #opt4c-list-modal .wrapper-modal-list,
-#opt4d-list-modal .wrapper-modal-list{
+#opt4d-list-modal .wrapper-modal-list {
     border: 2px solid #1b1b1b;
     height: 680px;
 }
+
 #manage-tempa-list-modal .scroll-list-box,
 #manage-tempb-list-modal .scroll-list-box,
 #manage-tempc-list-modal .scroll-list-box,
@@ -1940,7 +1937,7 @@ Bottom codes are added by Tanvir
 #opt4a-list-modal .scroll-list-box,
 #opt4b-list-modal .scroll-list-box,
 #opt4c-list-modal .scroll-list-box,
-#opt4d-list-modal .scroll-list-box{
+#opt4d-list-modal .scroll-list-box {
     overflow-x: hidden;
 }
 
@@ -1983,9 +1980,9 @@ Bottom codes are added by Tanvir
 .delete-list-item .modal-content {
     border: none;
     border-radius: 3px;
-    -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-    -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
-    box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
 }
 
 .delete-list-item .modal-header {
@@ -2080,25 +2077,26 @@ Bottom codes are added by Tanvir
 /* REMOVE LIST ITEM MODAL END */
 
 /* Cottected from another file (Tanvir) */
-#text_editor_p
-{
-	height:278px;
-	/* border:1px solid black; */
+#text_editor_p {
+    height: 278px;
+    /* border:1px solid black; */
     border-radius: 4px;
-	padding:5px;
-	font-size: 15px;
-	overflow-y:scroll;
-	position: relative;
+    padding: 5px;
+    font-size: 15px;
+    overflow-y: scroll;
+    position: relative;
 }
-#text_editor
-{
-	border:none;
-	outline: none;
+
+#text_editor {
+    border: none;
+    outline: none;
 }
-#text_editor:hover, #text_eiditor:focus, #text_editor:active
-{
-	border:none;
-	outline: none;
+
+#text_editor:hover,
+#text_eiditor:focus,
+#text_editor:active {
+    border: none;
+    outline: none;
 }
 
 /* ........................... */
@@ -2132,26 +2130,28 @@ Bottom codes are added by Tanvir
     background-color: #fbfbfb !important;
 }
 
-.form-text-design{
+.form-text-design {
     color: black;
     font-family: gilroy-bold;
     font-weight: 500;
     font-size: 14px;
 }
 
-.form-text-design-invalid{
+.form-text-design-invalid {
     color: red;
     font-family: gilroy-bold;
     font-weight: 500;
     font-size: 14px;
 }
+
 /* Custom ScrollBar Ends  */
 
 /* ============Added by Tanvir (11-02-20)=========== */
 /* Suggestion Box Design */
-#adder select{
+#adder select {
     padding: 5px;
 }
+
 #adder select::-webkit-scrollbar {
     width: 5px;
 }
@@ -2173,9 +2173,10 @@ Bottom codes are added by Tanvir
     background: black;
 }
 
-#adder select option{
+#adder select option {
     padding: 5px;
 }
+
 #adder select option:nth-child(even) {
     background-color: #ffffff !important;
 }
@@ -2184,12 +2185,14 @@ Bottom codes are added by Tanvir
     background-color: #fbfbfb !important;
 }
 
-#adder{
+#adder {
     position: absolute;
 }
+
 #adder.set-name {
     left: 30px;
 }
+
 #adder.set-sug {
     left: 100px;
 }
@@ -2197,36 +2200,42 @@ Bottom codes are added by Tanvir
 
 /* Added by Tanvir */
 /* Style for 3 input field Option 1 Name  */
-.op1-option-selection .width-15-tripple{
+.op1-option-selection .width-15-tripple {
     width: 15.3% !important;
 }
+
 .op1-option-selection .width-15-tripple .error-message p {
     font-size: 10px;
     color: red;
     padding-left: 0px;
     line-height: 12px;
 }
+
 @media screen and (max-width: 1780px) {
     .op1-option-selection .width-15-tripple .error-message p {
         font-size: 8px;
     }
 }
+
 @media screen and (max-width: 1450px) {
     .op1-option-selection .width-15-tripple .error-message p {
         font-size: 7px;
         line-height: 10px;
     }
 }
+
 @media screen and (max-width: 1300px) {
     .op1-option-selection .width-15-tripple .error-message p {
         font-size: 6px;
     }
 }
+
 @media screen and (max-width: 1200px) {
     .op1-option-selection .width-15-tripple .error-message p {
         font-size: 8px;
     }
 }
+
 @media screen and (max-width: 820px) {
     .op1-option-selection .width-15-tripple .error-message p {
         font-size: 7px;
@@ -2234,12 +2243,14 @@ Bottom codes are added by Tanvir
 }
 
 /* Manage Data Option 1 THANK YOU Pop-Ups Customization */
-#op1GenerateBtnModal .modal-dialog{
+#op1GenerateBtnModal .modal-dialog {
     max-width: 360px;
 }
-#op1GenerateBtnModal .modal-dialog .modal-body{
+
+#op1GenerateBtnModal .modal-dialog .modal-body {
     padding: 0px;
 }
+
 #op1GenerateBtnModal .modal-dialog .modal-body .generate-button-click-popup {
     height: 295px;
 }
