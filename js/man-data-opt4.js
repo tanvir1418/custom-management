@@ -1,5 +1,167 @@
 // Manage Data Opt 4 Sample 2 Start
-(function manDataSamLeftSide() {
+let opt4LeftData = [
+  {
+    id: "lsa-opt4-1",
+    name: "L-Options 1",
+    type: "one",
+  },
+  {
+    id: "lsa-opt4-2",
+    name: "L-Options 2",
+    type: "one",
+  },
+  {
+    id: "lsa-opt4-3",
+    name: "L-Options 3",
+    type: "two",
+  },
+  {
+    id: "lsa-opt4-4",
+    name: "L-Options 4",
+    type: "three",
+  },
+  {
+    id: "lsa-opt4-5",
+    name: "L-Options 5",
+    type: "four",
+  },
+  {
+    id: "lsa-opt4-6",
+    name: "L-Options 6",
+    type: "four",
+  },
+  {
+    id: "lsa-opt4-7",
+    name: "L-Options 7",
+    type: "four",
+  },
+  {
+    id: "lsa-opt4-8",
+    name: "L-Options 8",
+    type: "four",
+  },
+  {
+    id: "lsa-opt4-9",
+    name: "L-Options 9",
+    type: "two",
+  },
+  {
+    id: "lsa-opt4-10",
+    name: "L-Options 10",
+    type: "four",
+  },
+  {
+    id: "lsa-opt4-11",
+    name: "L-Options 11",
+    type: "five",
+  },
+];
+
+let opt4RightData = [
+  {
+    id: "rsa-opt4-1",
+    name: "R-Options 1",
+    type: "one",
+  },
+  {
+    id: "rsa-opt4-2",
+    name: "R-Options 2",
+    type: "one",
+  },
+  {
+    id: "rsa-opt4-3",
+    name: "R-Options 3",
+    type: "two",
+  },
+  {
+    id: "rsa-opt4-4",
+    name: "R-Options 4",
+    type: "three",
+  },
+  {
+    id: "rsa-opt4-5",
+    name: "R-Options 5",
+    type: "four",
+  },
+  {
+    id: "rsa-opt4-6",
+    name: "R-Options 6",
+    type: "four",
+  },
+  {
+    id: "rsa-opt4-7",
+    name: "R-Options 7",
+    type: "four",
+  },
+  {
+    id: "rsa-opt4-8",
+    name: "R-Options 8",
+    type: "four",
+  },
+  {
+    id: "rsa-opt4-9",
+    name: "R-Options 9",
+    type: "two",
+  },
+  {
+    id: "rsa-opt4-10",
+    name: "R-Options 10",
+    type: "four",
+  },
+  {
+    id: "rsa-opt4-11",
+    name: "R-Options 11",
+    type: "five",
+  }
+];
+  
+function listRenderOpt4(id, name, addNewRow) {
+  let ele = `<tr ondblclick="${addNewRow}" class="cursor-pointer" id="${id}">
+    <td colspan="2">${name}</td>
+    <td><i class="fas fa-question-circle"></i></td>
+    <td></td>
+  </tr>`;
+  return ele;
+}
+
+function leftSideTableOpt4() {
+  let leftTable = "";
+  opt4LeftData.forEach(({ id, name }) => {
+    let addNewRowL = `opt4Sam2Render(this,'mnDt_LfSide')`;
+    leftTable += listRenderOpt4(id, name, addNewRowL);
+  });
+  $("#opt4-table-left-list").html(leftTable);
+}
+leftSideTableOpt4();
+
+function rightSideTableOpt4() {
+  let rightTable = "";
+  opt4RightData.forEach(({ id, name }) => {
+    let addNewRowR = `opt4Sam2Render(this, 'mnDt_RtSide')`;
+    rightTable += listRenderOpt4(id, name, addNewRowR);
+  });
+  $("#opt4-table-right-list").html(rightTable);
+}
+rightSideTableOpt4();
+
+function opt4Sam2Render(e, divId) {
+  let _id = $(e).attr("id");
+  let title = "", dataType = "", manDataSwapSeq = "", manDataResetValue="";
+  if (divId == "mnDt_LfSide") {
+    let { name, type } = opt4LeftData.filter((a) => a.id == _id)[0];
+    title = name;
+    dataType = type;
+    manDataSwapSeq = "manDataSwapSeqL(this)";
+    manDataResetValue = "manDataResetValueL(this)";
+  }
+  else if (divId == "mnDt_RtSide") {
+    let { name, type } = opt4RightData.filter((a) => a.id == _id)[0];
+    title = name;
+    dataType = type;
+    manDataSwapSeq = "manDataSwapSeqR(this)";
+    manDataResetValue = "manDataResetValueR(this)";
+  }
+
   let lOptOne =
     `<div class="width-12">
     <div class="custome-select">
@@ -12,7 +174,7 @@
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select class="sequence-opt4" onchange="manDataSwapSeqL(this)">
+      <select class="sequence-opt4" onchange="${manDataSwapSeq}">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -33,7 +195,7 @@
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select class="sequence-opt4" onchange="manDataSwapSeqL(this)">
+      <select class="sequence-opt4" onchange="${manDataSwapSeq}">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -69,7 +231,7 @@
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select class="sequence-opt4" onchange="manDataSwapSeqL(this)">
+      <select class="sequence-opt4" onchange="${manDataSwapSeq}">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -97,7 +259,7 @@
     `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
-      <select class="sequence-opt4" onchange="manDataSwapSeqL(this)">
+      <select class="sequence-opt4" onchange="${manDataSwapSeq}">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -117,7 +279,7 @@
     `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
-      <select class="sequence-opt4" onchange="manDataSwapSeqL(this)">
+      <select class="sequence-opt4" onchange="${manDataSwapSeq}">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -132,9 +294,16 @@
       <input type="number" onfocus="onFocus(this)" onfocusout="manDatacheckNum(this)" oninput="manDatacheckNum(this)"/>
     </div>
   </div>`;
+
+  let opt4Type = "";
+  if (dataType == "one") opt4Type = lOptOne;
+  else if (dataType == "two") opt4Type = lOptTwo;
+  else if (dataType == "three") opt4Type = lOptThree;
+  else if (dataType == "four") opt4Type = lOptFour;
+  else if (dataType == "five") opt4Type = lOptFive;
 
   let renderLeftSite =
-    `<div class="d-flex mb-2" id="manDataL-1">
+  `<div class="d-flex mb-2" id="${_id}">
     <div class="width-5 align-items-baseline">
       <div class="threebar">
         <span>|||</span>
@@ -143,534 +312,18 @@
     <div class="width-26">
       <div class="page__toggle">
         <label class="toggle">
-          <input class="toggle__input" type="checkbox" onchange="manDataResetValueL(this)"/>
+          <input class="toggle__input" type="checkbox" onchange="${manDataResetValue}"/>
           <span class="toggle__label">
-            <span class="toggle__text">L-Options 1</span>
+            <span class="toggle__text">${title}</span>
           </span>
         </label>
       </div>
     </div>
-  ${lOptOne}
-  </div>
-  <div class="d-flex mb-2" id="manDataL-2">
-    <div class="width-5 align-items-baseline">
-      <div class="threebar">
-        <span>|||</span>
-      </div>
-    </div>
-    <div class="width-26">
-      <div class="page__toggle">
-        <label class="toggle">
-          <input class="toggle__input" type="checkbox" onchange="manDataResetValueL(this)"/>
-          <span class="toggle__label">
-            <span class="toggle__text">L-Options 2</span>
-          </span>
-        </label>
-      </div>
-    </div>
-  ${lOptOne}
-  </div>
-  <div class="d-flex mb-2" id="manDataL-3">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 3</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptTwo}
-  </div>
-  <div class="d-flex mb-2" id="manDataL-4">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 4</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptThree}
-  </div>
-  <div class="d-flex mb-2" id="manDataL-5">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 5</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manDataL-6">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 6</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manDataL-7">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 7</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manDataL-8">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 8</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manDataL-9">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 9</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptTwo}
-  </div>
-  <div class="d-flex mb-2" id="manDataL-10">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 10</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manDataL-11">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 11</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFive}
+    ${opt4Type}
   </div>`;
-  // lOptOne + lOptOne + lOptTwo + lOptThree + lOptFour + lOptFour + lOptFour + lOptFour + lOptTwo + lOptFour + lOptFive;
-  $("#mnDt_LfSide").html(renderLeftSite);
-})();
-(function manDataSamRightSide() {
-  let lOptOne =
-    `<div class="width-12">
-    <div class="custome-select">
-      <select>
-        <option>SET</option>
-        <option>ADD</option>
-        <option>Add/Set</option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select class="sequence-opt4" onchange="manDataSwapSeqR(this)">
-        <option value="0">SEQUENCE</option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)" onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)" onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
-    </div>
-  </div>`;
-
-  let lOptTwo =
-    `<div class="width-12">
-  </div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select class="sequence-opt4" onchange="manDataSwapSeqR(this)">
-        <option value="0">SEQUENCE</option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select onfocus="onFocus(this)">
-        <option></option>
-        <option></option>
-        <option></option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select onfocus="onFocus(this)">
-        <option></option>
-        <option></option>
-        <option></option>
-      </select>
-    </div>
-  </div>`;
-
-  let lOptThree =
-    `<div class="width-12">
-    <div class="custome-select">
-      <select>
-        <option>Add/Set</option>
-        <option>ADD</option>
-        <option>SET</option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select class="sequence-opt4" onchange="manDataSwapSeqR(this)">
-        <option value="0">SEQUENCE</option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select onfocus="onFocus(this)">
-        <option></option>
-        <option></option>
-        <option></option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select onfocus="onFocus(this)">
-        <option></option>
-        <option></option>
-        <option></option>
-      </select>
-    </div>
-  </div>`;
-
-  let lOptFour =
-    `<div class="width-12"></div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select class="sequence-opt4" onchange="manDataSwapSeqR(this)">
-        <option value="0">SEQUENCE</option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)"  onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)"  onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
-    </div>
-  </div>`;
-
-  let lOptFive =
-    `<div class="width-12"></div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select class="sequence-opt4" onchange="manDataSwapSeqR(this)">
-        <option value="0">SEQUENCE</option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custom-input-only">
-      <input type="number" onfocus="onFocus(this)" onfocusout="manDatacheckNum(this)" oninput="manDatacheckNum(this)"/>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custom-input-only">
-      <input type="number" onfocus="onFocus(this)" onfocusout="manDatacheckNum(this)" oninput="manDatacheckNum(this)"/>
-    </div>
-  </div>`;
-
-  let renderRightSite =
-    `<div class="d-flex mb-2" id="manDataR-1">
-    <div class="width-5 align-items-baseline">
-      <div class="threebar">
-        <span>|||</span>
-      </div>
-    </div>
-    <div class="width-26">
-      <div class="page__toggle">
-        <label class="toggle">
-          <input class="toggle__input" type="checkbox" onchange="manDataResetValueR(this)"/>
-          <span class="toggle__label">
-            <span class="toggle__text">L-Options 1</span>
-          </span>
-        </label>
-      </div>
-    </div>
-  ${lOptOne}
-  </div>
-  <div class="d-flex mb-2" id="manDataR-2">
-    <div class="width-5 align-items-baseline">
-      <div class="threebar">
-        <span>|||</span>
-      </div>
-    </div>
-    <div class="width-26">
-      <div class="page__toggle">
-        <label class="toggle">
-          <input class="toggle__input" type="checkbox" onchange="manDataResetValueR(this)"/>
-          <span class="toggle__label">
-            <span class="toggle__text">L-Options 2</span>
-          </span>
-        </label>
-      </div>
-    </div>
-  ${lOptOne}
-  </div>
-  <div class="d-flex mb-2" id="manDataR-3">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 3</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptTwo}
-  </div>
-  <div class="d-flex mb-2" id="manDataR-4">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 4</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptThree}
-  </div>
-  <div class="d-flex mb-2" id="manDataR-5">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 5</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manDataR-6">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 6</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manDataR-7">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 7</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manDataR-8">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 8</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manDataR-9">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 9</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptTwo}
-  </div>
-  <div class="d-flex mb-2" id="manDataR-10">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 10</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manDataR-11">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manDataResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 11</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFive}
-  </div>`;
-  // lOptOne + lOptOne + lOptTwo + lOptThree + lOptFour + lOptFour + lOptFour + lOptFour + lOptTwo + lOptFour + lOptFive;
-  $("#mnDt_RtSide").html(renderRightSite);
-})();
+  $(`#${divId}`).append(renderLeftSite);
+  $(e).remove();
+}
 
 var manDataSeqListL = [];
 var manDataSeqListR = [];

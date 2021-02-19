@@ -1357,3 +1357,143 @@ dataFilterModal.forEach((modalData) => {
     my_drag_list.innerHTML += modalElement;
 })
 //----------====== Manage result filter modal End ======----------------
+
+// ---------- ======= Double Click to ADD or REMOVE Start ======= -------------
+let manageResultTable = [
+    {
+        id: "res-id-1",
+        name: "Option 1",
+        dataType: "inputText",
+    },
+    {
+        id: "res-id-2",
+        name: "Option 2",
+        dataType: "range",
+    },
+    {
+        id: "res-id-3",
+        name: "Option 3",
+        dataType: "date",
+    },
+    {
+        id: "res-id-4",
+        name: "Option 4",
+        dataType: "select",
+    },
+    {
+        id: "res-id-5",
+        name: "Option 5",
+        dataType: "inputText",
+    },
+    {
+        id: "res-id-6",
+        name: "Option 6",
+        dataType: "range",
+    },
+    {
+        id: "res-id-7",
+        name: "Option 7",
+        dataType: "date",
+    },
+    {
+        id: "res-id-8",
+        name: "Option 8",
+        dataType: "select",
+    },
+    {
+        id: "res-id-9",
+        name: "Option 9",
+        dataType: "inputText",
+    },
+    {
+        id: "res-id-10",
+        name: "Option 10",
+        dataType: "range",
+    },
+    {
+        id: "res-id-11",
+        name: "Option 11",
+        dataType: "date",
+    },
+    {
+        id: "res-id-12",
+        name: "Option 12",
+        dataType: "select",
+    },
+    {
+        id: "res-id-13",
+        name: "Option 13",
+        dataType: "range",
+    },
+    {
+        id: "res-id-14",
+        name: "Option 14",
+        dataType: "date",
+    },
+    {
+        id: "res-id-15",
+        name: "Option 15",
+        dataType: "select",
+    },
+];
+
+(function manResTableRender() {
+    let htmlTable = "";
+    manageResultTable.forEach(({ id, name }) => {
+        htmlTable += `<tr id="${id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
+            <td>${name}</td>
+        </tr>`;
+    });
+    $("#man-res-opt-data-table-left").html(htmlTable);
+})();
+
+function dblclickResMove(e) {
+    let _id = $(e).parent().attr("id");
+    if (_id == "man-res-opt-data-table-left") {
+        $(e).removeClass("mark-table-data");
+        $("#man-res-opt-data-table-right").append(e);
+    }
+    else if (_id == "man-res-opt-data-table-right") {
+        $(e).removeClass("mark-table-data");
+        $("#man-res-opt-data-table-left").append(e);
+    }
+}
+
+function moveResLeftToRight() {
+    let tr = $("#man-res-opt-data-table-left tr.mark-table-data");
+    tr.removeClass("mark-table-data");
+    $("#man-res-opt-data-table-right").append(tr);
+}
+
+function moveResRightToLeft() {
+    let tr = $("#man-res-opt-data-table-right tr.mark-table-data");
+    tr.removeClass("mark-table-data");
+    $("#man-res-opt-data-table-left").append(tr);
+}
+
+function ResorderUp() {
+    let row = $("#man-res-opt-data-table-right tr.mark-table-data");
+    row.each(function () {
+        let rw = $(this).closest("tr.mark-table-data");
+        rw.insertBefore(rw.prev());
+    });
+}
+function ResorderDown() {
+    let row = $("#man-res-opt-data-table-right tr.mark-table-data");
+    row.each(function () {
+        let rw = $(this).closest("tr");
+        for (let i = 0; i < row.length; i++) {
+            rw.insertAfter(rw.next());
+        }
+    });
+}
+// ---------- ======= Double Click to ADD or REMOVE End ======= -------------
+
+// ----------- Manage Result Filter Start ------------------
+function resetResFilter(e) {
+    let inpBox = $(e).parent().parent()
+        .children(".outer-data7")
+        .find("div.valdata-box div.valinput input.myzap-input");
+    inpBox.val("");
+}
+// ----------- Manage Result Filter End --------------------
