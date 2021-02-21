@@ -548,25 +548,10 @@ function updateThumbnail(dropZoneElement, file) {
 // OPTION 3 DATE PICKER START
 
 $(function () {
-
-	// Set Datepicker
-	// $("#datepicker-1").datepicker({
-	//   beforeShow: function (input, inst) {
-	//       setTimeout(function () {
-	//           inst.dpDiv.css({
-	//               bottom: $(".datepicker").offset().top + 35,
-	//               left: $(".datepicker").offset().left
-	//           });
-	//       }, 0);
-	//   }
-	// });
 	$("#datepicker-1").datepicker();
-	//$("#datepicker-1").datepicker("setDate", "10w+1");
-	$("#datepicker-1").datepicker("option", "dateFormat", "DD, MM d, yy");
-
+	$("#datepicker-1").datepicker("option", "dateFormat", "DD - MM d, yy");
 	$("#datepicker-2").datepicker();
-	//$("#datepicker-2").datepicker("setDate", "10w+1");
-	$("#datepicker-2").datepicker("option", "dateFormat", "DD, MM d, yy");
+	$("#datepicker-2").datepicker("option", "dateFormat", "DD - MM d, yy");
 });
 // OPTION 3 DATE PICKER END
 

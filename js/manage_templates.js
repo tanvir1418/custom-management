@@ -1169,12 +1169,12 @@ function manTemSam2Rend(e, divId) {
     manTemResetValue = "manTemResetValueR(this)";
   }
   let lOptOne =
-    `<div class="width-12">
+  `<div class="width-12">
     <div class="custome-select">
-      <select>
-        <option>SET</option>
-        <option>ADD</option>
-        <option>Add/Set</option>
+      <select class="add-set">
+        <option value="add/set">Add/Set</option>
+        <option value="set">Set</option>
+        <option value="add">Add</option>
       </select>
     </div>
   </div>
@@ -1197,8 +1197,7 @@ function manTemSam2Rend(e, divId) {
   </div>`;
 
   let lOptTwo =
-    `<div class="width-12">
-  </div>
+  `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
       <select class="sequence" onchange="${manTemSwapSeq}">
@@ -1208,30 +1207,30 @@ function manTemSam2Rend(e, divId) {
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select onfocus="onFocus(this)">
-        <option></option>
-        <option></option>
-        <option></option>
+      <select class="user-inp" onfocus="onFocus(this)">
+        <option value="abc">abc</option>
+        <option value="cde">cde</option>
+        <option value="fgh">fgh</option>
       </select>
     </div>
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select onfocus="onFocus(this)">
-        <option></option>
-        <option></option>
-        <option></option>
+      <select class="user-inp" onfocus="onFocus(this)">
+        <option value="ijk">ijk</option>
+        <option value="lmn">lmn</option>
+        <option value="opq">opq</option>
       </select>
     </div>
   </div>`;
 
   let lOptThree =
-    `<div class="width-12">
+  `<div class="width-12">
     <div class="custome-select">
-      <select>
-        <option>Add/Set</option>
-        <option>ADD</option>
-        <option>SET</option>
+      <select class="add-set">
+        <option value="add/set">Add/Set</option>
+        <option value="set">Set</option>
+        <option value="add">Add</option>
       </select>
     </div>
   </div>
@@ -1244,25 +1243,25 @@ function manTemSam2Rend(e, divId) {
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select onfocus="onFocus(this)">
-        <option></option>
-        <option></option>
-        <option></option>
+      <select class="user-inp" onfocus="onFocus(this)">
+        <option value="abc">abc</option>
+        <option value="cde">cde</option>
+        <option value="fgh">fgh</option>
       </select>
     </div>
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select onfocus="onFocus(this)">
-        <option></option>
-        <option></option>
-        <option></option>
+      <select class="user-inp" onfocus="onFocus(this)">
+        <option value="ijk">ijk</option>
+        <option value="lmn">lmn</option>
+        <option value="opq">opq</option>
       </select>
     </div>
   </div>`;
 
   let lOptFour =
-    `<div class="width-12"></div>
+  `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
       <select class="sequence" onchange="${manTemSwapSeq}">
@@ -1282,7 +1281,7 @@ function manTemSam2Rend(e, divId) {
   </div>`;
 
   let lOptFive =
-    `<div class="width-12"></div>
+  `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
       <select class="sequence" onchange="${manTemSwapSeq}">
@@ -1309,7 +1308,7 @@ function manTemSam2Rend(e, divId) {
   else if (dataType == "five") manType = lOptFive;
 
   let renderLeftSite =
-    `<div class="d-flex mb-2" id="${_id}">
+  `<div class="d-flex mb-2" id="${_id}">
     <div class="width-5 align-items-baseline">
       <div class="threebar">
         <span>|||</span>
@@ -1348,6 +1347,7 @@ function manTemResetValueL(e) {
       $(`#${val} .sequence`).val(index + 1);
     });
     $(`#${pid} .sequence`).html(`<option value='0'>SEQUENCE</option>`);
+    $(`#${pid} .add-set`).val("Add/Set");
     // remove error message
     let errP = $(`#${pid} .width-22 .error-message`);
     let errC = $(`#${pid} .width-22 .custom-input-danger`);
@@ -1392,6 +1392,7 @@ function manTemResetValueR(e) {
       $(`#${val} .sequence`).val(index + 1);
     });
     $(`#${pid} .sequence`).html(`<option value='0'>SEQUENCE</option>`);
+    $(`#${pid} .add-set`).val("Add/Set");
     // remove error message
     let errP = $(`#${pid} .width-22 .error-message`);
     let errC = $(`#${pid} .width-22 .custom-input-danger`);
@@ -1496,6 +1497,286 @@ function manTemcheckNum(e) {
     }
   }
 }
+
+// Form by text editor start
+function findInputIdMS2(title) {
+  let res = manTemLeftData.filter((a) => a.name == title).map((b) => b.id);
+  if (res.length) return res[0];
+  else return false;
+}
+
+function formToWindowMS2(e) {
+  let tBody = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ms2_text_editor");
+  let renHtml = "";
+  manTemSeqListL.forEach((pid) => {
+    let title = $(`#${pid} span.toggle__text`).html();
+    let addSet = $(`#${pid} .add-set`).find(":selected").text();
+    let seqTitle = $(`#${pid} .sequence`).find(":selected").text();
+    let inpObj = $(`#${pid} .custom-input-only input`), inpDiv = "";
+    let inpSel = $(`#${pid} .user-inp`);
+    for (let i = 0; i < inpObj.length; i++) {
+      let uni_id = inpObj.length > 1 ? "_" + (i+1) : "";
+      let inpText = inpObj[i].value;
+      inpDiv += `<div class="form-text-design data-div">
+        ${title}${uni_id}: ${inpText}
+      </div>`;
+    }
+    for (let i = 0; i < inpSel.length; i++) {
+      let uni_id = inpSel.length > 1 ? "_" + (i+1) : "";
+      let inpText = $(inpSel[i]).find(":selected").text();
+      inpDiv += `<div class="form-text-design data-div">
+        ${title}${uni_id}: ${inpText}
+      </div>`;
+    }
+    if (addSet != "") {
+      renHtml += `<div class="form-text-design data-div">
+        ${title}: Set: ${addSet}
+      </div>`;
+    }
+    renHtml += `<div class="form-text-design data-div">
+      ${title}: Sequence: ${seqTitle}
+    </div>
+    ${inpDiv}`;
+  });
+  tBody.html(renHtml);
+}
+
+function windowToFormMS2(e) {
+  let tRow = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ms2_text_editor div.form-text-design.data-div");
+  let len = tRow.length;
+  for (let i = 0; i < len; i++) {
+    let divData = $(tRow[i])[0].innerText.split(":");
+    let [title,no] = divData[0].trim().split("_");
+    let pid = findInputIdMS2(title);
+    if (pid && divData.length == 3) {
+      let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
+      if (checkbox.checked == false ) checkbox.click();
+
+      if (divData[1].trim().toUpperCase() == "SET") {
+        $(`#${pid} .add-set`).val(divData[2].trim().toLowerCase());
+      } else if (divData[1].trim().toUpperCase() == "SEQUENCE") {
+        let seqVal = 0;
+        for (let k = 1; k <= manTemLeftData.length; k++) {
+          if (divData[2].trim().toUpperCase() == inWords(k).toUpperCase()) {
+            seqVal = k;
+          }
+        }
+        $(`#${pid} .sequence`).val(seqVal);
+      }
+    } else if (pid && divData.length == 2) {
+      let inp = $(`#${pid} .custom-input-only input`);
+      let inpSel = $(`#${pid} .user-inp`);
+      if (inp.length > 0) {
+        inp[no - 1].value = divData[1].trim();
+      }
+
+      if (inpSel.length > 0) {
+        inpSel[no - 1].value = divData[1].trim();
+      }
+    }
+  }
+}
+
+function checkingMS2(e) {
+  $("#adder").remove(); // adder contains our auto correct select box
+  // if key is enter key
+  let nd = getCaretPosition();
+  let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+  if (e.keyCode == 13) {
+    // same algorithm as we see in updateActualForm() function
+    let nd = getCaretPosition();
+    $("#temp").attr("id", "");
+    if (nd.nodeType != 3 && nd.getAttribute("id") == "ms2_text_editor") return false;
+    if (
+      nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
+      nd.textContent != ""
+    ) {
+      let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+      let extra = getCaretPosition2(nd2);
+      let starting = nd.textContent.substr(0, extra);
+      let inpData = starting.split(":");
+      if (
+        starting != "" &&
+        (!findInputIdMS2(inpData[0].trim().split("_")[0].trim()) ||
+          (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
+          (
+            inpData.length == 3 &&
+            inpData[1].trim() != "Set" &&
+            inpData[1].trim() != "Sequence" &&
+            inpData[1].trim() != "Form" &&
+            inpData[1].trim() != "To"
+          )
+        )
+      ) {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design-invalid data-div">${nd.textContent}</div><br id="temp">`
+          );
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design-invalid data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+            ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      } else {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design data-div">
+            ${nd.textContent}
+            </div>
+            <br id="temp">`
+          );
+          //setEndOfContenteditable(document.getElementById("temp"));
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+              ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      }
+    }
+    return false;
+  }
+  // this will add autocorrect box
+  setTimeout(autoCorrectMS2, 100);
+}
+
+function autoCorrectMS2() {
+  let pos = getCaretPosition();
+  if ($(pos).find("#adder").length == 1) $("#adder").remove();
+  while (document.getElementById("temp")) {
+    document.getElementById("temp").removeAttribute("id");
+  }
+  if (pos.textContent.indexOf(":") == -1) x = pos.textContent;
+  else x = pos.textContent;
+  let editor = document.getElementById("text_editor_p");
+  $(pos).replaceWith(
+    `<div id="temp">${pos.textContent}</div>
+    <div id="adder"></div>`
+  );
+
+  let m = "";
+  let first = 1;
+  if (x.indexOf(":") == -1) {
+    $("#adder").addClass("set-name");
+    manTemLeftData.forEach(({name}) => {
+      if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
+        if (first) {
+          m += `<option selected value="${name}">${name}</option><br>`;
+        }
+        else {
+          m += `<option value="${name}">${name}</option><br>`;
+        }
+        first = 0;
+      }
+    });
+  }
+  else if ((x.split(":").length - 1) == 1) {
+    $("#adder").addClass("set-sug");
+    setSugArray.forEach((set) => {
+      let inp = x.split(":")[1].trim().toLowerCase();
+      if (inp != "" && set.toLowerCase().indexOf(inp) == 0) {
+        if (first) {
+          m += `<option selected value="${set}">${set}</option><br>`;
+        }
+        else {
+          m += `<option value="${set}">${set}</option><br>`;
+        }
+        first = 0;
+      }
+    });
+  }
+  else if ((x.split(":").length - 1) == 2) {
+    $("#adder").addClass("set-sug");
+    setSugArray.forEach((set) => {
+      let inp = x.split(":")[2].trim().toLowerCase();
+      if (inp != "" && set.toLowerCase().indexOf(inp) == 0) {
+        if (first) {
+          m += `<option selected value="${set}">${set}</option><br>`;
+        }
+        else {
+          m += `<option value="${set}">${set}</option><br>`;
+        }
+        first = 0;
+      }
+    });
+  }
+
+  let y =
+    `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
+    ${m}
+    </select>`;
+  // add auto correct ... only if there is atleast one match
+  if (m != "") {
+    document.getElementById("adder").innerHTML = y;
+    document.getElementById("adder").style.display = "block";
+    $("#adder select").focus();
+  } else {
+    $("#adder").remove();
+    setEndOfContenteditable(document.getElementById("temp"));
+    document.getElementById("temp").removeAttribute("id");
+  }
+}
+
+function pasteEventMS2(e) {
+  let editor = document.getElementById("ms2_text_editor");
+  let clipboardData = e.clipboardData || window.clipboardData;
+  let pD = clipboardData.getData("Text").split("\n");
+  for (let i = 0; i < pD.length; i++) {
+    let nbe = pD[i];
+    let inpData = nbe.split(":");
+    if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
+      let x;
+      if (
+        !findInputIdMS2(inpData[0].trim().split("_")[0].trim()) ||
+        (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
+        (
+          inpData.length == 3 &&
+          inpData[1].trim() != "Set" &&
+          inpData[1].trim() != "Sequence" &&
+          inpData[1].trim() != "Form" &&
+          inpData[1].trim() != "To"
+        )
+      ) {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design-invalid data-div");
+        x.textContent = nbe;
+      } else {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design data-div");
+        x.textContent = nbe;
+      }
+      editor.append(x);
+    }
+  }
+  removeExtraLines(editor);
+  editor.append(document.createElement("br"));
+  setEndOfContenteditable(editor);
+  return false;
+}
+// Form by text editor End
 // Manage template Sample 2 End
 
 // Manage template Sample 4 Start
