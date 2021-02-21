@@ -2075,9 +2075,11 @@ Bottom codes are added by Tanvir
     position: relative;
 }
 #text_editor,
-#op3_text_editor
+#op3_text_editor,
+#ms2_text_editor,
+#ds2_text_editor
 {
-	border:none;
+	border: none;
 	outline: none;
 }
 
@@ -2111,6 +2113,7 @@ Bottom codes are added by Tanvir
     background: black;
 }
 
+/* TODO popup design  */
 #text_editor div:nth-child(even) {
     background-color: #ffffff !important;
 }
