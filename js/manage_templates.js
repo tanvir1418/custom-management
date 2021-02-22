@@ -2105,5 +2105,157 @@ function windowToFormMS4(e) {
     }
   }
 }
+
+function checkingMS4(e) {
+  $("#adder").remove();
+  // let nd = getCaretPosition();
+  // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+  if (e.keyCode == 13) {
+    let nd = getCaretPosition();
+    $("#temp").attr("id", "");
+    if (nd.nodeType != 3 && nd.getAttribute("id") == "ms4_text_editor") return false;
+    if (
+      nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
+      nd.textContent != ""
+    ) {
+      let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+      let extra = getCaretPosition2(nd2);
+      let starting = nd.textContent.substr(0, extra);
+      let inpData = starting.split(":");
+      if (
+        starting != "" &&
+        (!findInputIdMS4(inpData[0].trim().split("_")[0].trim()) ||
+          (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
+          (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
+        )
+      ) {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design-invalid data-div">${nd.textContent}</div><br id="temp">`
+          );
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design-invalid data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+            ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      } else {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design data-div">
+            ${nd.textContent}
+            </div>
+            <br id="temp">`
+          );
+          //setEndOfContenteditable(document.getElementById("temp"));
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+              ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      }
+    }
+    return false;
+  }
+  // this will add autocorrect box
+  setTimeout(autoCorrectMS4, 100);
+}
+
+function autoCorrectMS4() {
+  let pos = getCaretPosition();
+  if ($(pos).find("#adder").length == 1) $("#adder").remove();
+  while (document.getElementById("temp")) {
+    document.getElementById("temp").removeAttribute("id");
+  }
+  if (pos.textContent.indexOf(":") == -1) x = pos.textContent;
+  else x = pos.textContent;
+  let editor = document.getElementById("text_editor_p");
+  $(pos).replaceWith(
+    `<div id="temp">${pos.textContent}</div>
+    <div id="adder"></div>`
+  );
+
+  let m = "";
+  let first = 1;
+  if (x.indexOf(":") == -1) {
+    $("#adder").addClass("set-name");
+    sam4DataArray.forEach(({ name }) => {
+      if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
+        if (first) {
+          m += `<option selected value="${name}">${name}</option><br>`;
+        }
+        else {
+          m += `<option value="${name}">${name}</option><br>`;
+        }
+        first = 0;
+      }
+    });
+  }
+
+  let y =
+    `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
+    ${m}
+    </select>`;
+  // add auto correct ... only if there is atleast one match
+  if (m != "") {
+    document.getElementById("adder").innerHTML = y;
+    document.getElementById("adder").style.display = "block";
+    $("#adder select").focus();
+  } else {
+    $("#adder").remove();
+    setEndOfContenteditable(document.getElementById("temp"));
+    document.getElementById("temp").removeAttribute("id");
+  }
+}
+
+function pasteEventMS4(e) {
+  let editor = document.getElementById("ms4_text_editor");
+  let clipboardData = e.clipboardData || window.clipboardData;
+  let pD = clipboardData.getData("Text").split("\n");
+  for (let i = 0; i < pD.length; i++) {
+    let nbe = pD[i];
+    let inpData = nbe.split(":");
+    if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
+      let x;
+      if (
+        !findInputIdMS4(inpData[0].trim().split("_")[0].trim()) ||
+        (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
+        (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
+      ) {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design-invalid data-div");
+        x.textContent = nbe;
+      } else {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design data-div");
+        x.textContent = nbe;
+      }
+      editor.append(x);
+    }
+  }
+  removeExtraLines(editor);
+  editor.append(document.createElement("br"));
+  setEndOfContenteditable(editor);
+  return false;
+}
 // Form by Text Editor End
 // Manage template Sample 4 End
