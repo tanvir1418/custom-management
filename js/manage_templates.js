@@ -1675,13 +1675,13 @@ function manTemInpBuild(_id) {
         </div>
         <div class="width-input-group-35">
           <div class="input-section-sample4 right-side-input">
-            <input class="date-pick-style-sample4" type="text" id="datepicker_mnTemp1"/>
+            <input class="date-pick-style-sample4 datepicker_mnTemp1" type="text"/>
             <i class="far fa-calendar-alt icon-sample4"></i>
           </div>
         </div>
         <div class="width-input-group-35">
           <div class="input-section-sample4 left-side-input">
-            <input class="date-pick-style-sample4" type="text" id="datepicker_mnTemp2"/>
+            <input class="date-pick-style-sample4 datepicker_mnTemp2" type="text"/>
             <i class="far fa-calendar-alt icon-sample4"></i>
           </div>
         </div>
@@ -1731,11 +1731,11 @@ function manTemInpBuild(_id) {
 
   // Manage Template Sample 4 DATE PICKER START
   $(function () {
-    $("#datepicker_mnTemp1").datepicker();
-    $("#datepicker_mnTemp1").datepicker("option", "dateFormat", "DD, MM d, yy");
+    $(".datepicker_mnTemp1").datepicker();
+    $(".datepicker_mnTemp1").datepicker("option", "dateFormat", "DD, MM d, yy");
 
-    $("#datepicker_mnTemp2").datepicker();
-    $("#datepicker_mnTemp2").datepicker("option", "dateFormat", "DD, MM d, yy");
+    $(".datepicker_mnTemp2").datepicker();
+    $(".datepicker_mnTemp2").datepicker("option", "dateFormat", "DD, MM d, yy");
   });
 }
 
