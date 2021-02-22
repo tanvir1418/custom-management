@@ -949,13 +949,13 @@ function manTemInpBuildData(_id) {
         </div>
         <div class="width-input-group-35">
           <div class="input-section-sample4 right-side-input">
-            <input class="date-pick-style-sample4" type="text" id="datepicker_op41"/>
+            <input class="date-pick-style-sample4 datepicker_op41" type="text"/>
             <i class="far fa-calendar-alt icon-sample4"></i>
           </div>
         </div>
         <div class="width-input-group-35">
           <div class="input-section-sample4 left-side-input">
-            <input class="date-pick-style-sample4" type="text" id="datepicker_op42"/>
+            <input class="date-pick-style-sample4 datepicker_op42" type="text"/>
             <i class="far fa-calendar-alt icon-sample4"></i>
           </div>
         </div>
@@ -1005,11 +1005,11 @@ function manTemInpBuildData(_id) {
 
   // Manage Data Option 4 Sample 4 DATE PICKER START
   $(function () {
-    $("#datepicker_op41").datepicker();
-    $("#datepicker_op41").datepicker("option", "dateFormat", "DD, MM d, yy");
+    $(".datepicker_op41").datepicker();
+    $(".datepicker_op41").datepicker("option", "dateFormat", "DD, MM d, yy");
 
-    $("#datepicker_op42").datepicker();
-    $("#datepicker_op42").datepicker("option", "dateFormat", "DD, MM d, yy");
+    $(".datepicker_op42").datepicker();
+    $(".datepicker_op42").datepicker("option", "dateFormat", "DD, MM d, yy");
   });
 }
 
