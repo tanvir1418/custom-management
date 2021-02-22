@@ -1936,10 +1936,10 @@ function manTemInpBuild(_id) {
         </div>
         <div class="width-custom-range-70 d-flex">
           <span class="min">0</span>
-            <div class="range-wrapper-sample-4">
-                <input class="range-example-input-2" type="text" min="0" max="100" value="10,40" name="points" step="1" width="100" />
-            </div>
-            <span class="max">100</span>
+          <div class="range-wrapper-sample-4">
+            <input class="range-example-input-2" type="text" min="0" max="100" value="10,40" name="points" step="1" width="100" />
+          </div>
+          <span class="max">100</span>
         </div>
       </div>`;
     } else if (dataType == "date") {
@@ -1983,9 +1983,9 @@ function manTemInpBuild(_id) {
           <div class="input-section-sample4 right-side-input">
             <div class="custom-select-sample4">
               <select>
-                <option>Option Text 1</option>
-                <option>Option Text 2</option>
-                <option>Option Text 3</option>
+                <option value="Option Text 1">Option Text 1</option>
+                <option value="Option Text 2">Option Text 2</option>
+                <option value="Option Text 3">Option Text 3</option>
               </select>
             </div>
           </div>
@@ -1994,9 +1994,9 @@ function manTemInpBuild(_id) {
           <div class="input-section-sample4 left-side-input">
             <div class="custom-select-sample4">
               <select>
-                <option>Option Text 1</option>
-                <option>Option Text 2</option>
-                <option>Option Text 3</option>
+                <option value="Option Text 1">Option Text 1</option>
+                <option value="Option Text 2">Option Text 2</option>
+                <option value="Option Text 3">Option Text 3</option>
               </select>
             </div>
           </div>
@@ -2032,4 +2032,81 @@ function elementMove(_id, direc) {
     div.insertAfter(div.next());
   }
 }
+
+// Form by Text Editor Start
+function findInputIdMS4(title) {
+  let res = sam4DataArray.filter(a => a.name == title);
+  if (res.length) return res[0];
+  else return false;
+}
+
+function formToWindowMS4(e) {
+  let tBody = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ms4_text_editor");
+  let renHtml = "";
+
+  let idFromTable = $(`#tem-sample4-second tbody tr`);
+  let len = idFromTable.length;
+  for (let i = 0; i < len; i++){
+    let { id, name, dataType } = sam4DataArray.filter(a => a.id == idFromTable[i].id)[0];
+    let dataPtrn = name;
+    if (dataType == "inputText") {
+      let inpD = $(`#man-tem-sam4-input-data div#${id} input[type=text]`);
+      for (let j = 0; j < inpD.length; j++) dataPtrn +=` : ${inpD[j].value}`;
+    }
+    if (dataType == "range") {
+      let inpD = $(`#man-tem-sam4-input-data div#${id} input[type=text]`);
+      for (let j = 0; j < inpD.length; j++) dataPtrn +=` : ${inpD[j].value}`;
+    }
+    if (dataType == "date") {
+      let inpD = $(`#man-tem-sam4-input-data div#${id} input[type=text]`);
+      for (let j = 0; j < inpD.length; j++) dataPtrn +=` : ${inpD[j].value}`;
+    }
+    if (dataType == "select") {
+      let inpD = $(`#man-tem-sam4-input-data div#${id} select`);
+      for (let j = 0; j < inpD.length; j++) dataPtrn += ` : ${$(inpD[j]).find(":selected").text()}`;
+    }
+    renHtml += `<div class="form-text-design data-div">
+      ${dataPtrn}
+    </div>`;
+  }
+  tBody.html(renHtml);
+}
+
+function windowToFormMS4(e) {
+  let tRow = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ms4_text_editor div.form-text-design.data-div");
+  let len = tRow.length;
+  for (let i = 0; i < len; i++) {
+    let divData = $(tRow[i])[0].innerText.split(":");
+    let { id, dataType} = findInputIdMS4(divData[0].trim());
+    if (id && divData.length == 3) {
+      if (dataType == "select") {
+        let inpD = $(`#man-tem-sam4-input-data div#${id} select`);
+        for (let j = 0; j < inpD.length; j++) inpD[j].value = divData[j + 1].trim();
+      } else if (dataType != "select") {
+        let inpD = $(`#man-tem-sam4-input-data div#${id} input[type=text]`);
+        for (let j = 0; j < inpD.length; j++) inpD[j].value = divData[j + 1].trim();
+      }
+    } else if (id && divData.length == 2) {
+      if (dataType == "range") {
+        let rangeDiv = $(`#man-tem-sam4-input-data div#${id} div.width-custom-range-70.d-flex`);
+        let rangeDes =
+        `<span class="min">0</span>
+        <div class="range-wrapper-sample-4">
+          <input class="range-example-input-2" type="text" min="0" max="100" value="${divData[1].trim()}" name="points" step="1" width="100" />
+        </div>
+        <span class="max">100</span>`;
+        rangeDiv.html(rangeDes);
+        $(".range-example-input-2").asRange({
+          range: true,
+          limit: false
+        });
+      }
+    }
+  }
+}
+// Form by Text Editor End
 // Manage template Sample 4 End
