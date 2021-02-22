@@ -1006,7 +1006,7 @@ function manTemInpBuildData(_id) {
   // Manage Data Option 4 Sample 4 DATE PICKER START
   $(function () {
     $(".datepicker_op4").datepicker();
-    $(".datepicker_op4").datepicker("option", "dateFormat", "DD, MM d, yy");
+    $(".datepicker_op4").datepicker("option", "dateFormat", "DD - MM d, yy");
   });
 }
 

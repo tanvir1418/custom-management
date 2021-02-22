@@ -2013,7 +2013,7 @@ function manTemInpBuild(_id) {
   // Manage Template Sample 4 DATE PICKER START
   $(function () {
     $(".datepicker_op4").datepicker();
-    $(".datepicker_op4").datepicker("option", "dateFormat", "DD, MM d, yy");
+    $(".datepicker_op4").datepicker("option", "dateFormat", "DD - MM d, yy");
   });
 }
 
