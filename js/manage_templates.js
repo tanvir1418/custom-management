@@ -2259,3 +2259,25 @@ function pasteEventMS4(e) {
 }
 // Form by Text Editor End
 // Manage template Sample 4 End
+
+
+// Form by text editor Start
+// Manage template Sample 3 Start
+function checkingMS3(e){
+
+}
+function pasteEventMS3(e){
+
+}
+function windowToFormMS3(e){
+  
+}
+function formToWindowMS3(e) {
+  let sectionA = $("fieldset#fieldset_id21");
+  let inpA = sectionA.find(".data-form input[type=text]");
+  for (let i = 0; i < inpA.length; i++){
+    console.log(inpA[i].value);
+  }
+}
+// Form by text editor End
+// Manage template Sample 3 End
