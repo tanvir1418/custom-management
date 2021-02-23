@@ -271,6 +271,11 @@ function manResPagination(noRow) {
   container.pagination(options);
 }
 
+$("#res-row-no7").change(function (e) {
+  let noRow = e.target.value;
+  manResPagination(noRow);
+});
+
 function fnStatus(sts) {
   let status = sts.replace("days,", "D :").replace("hours,", "H :").replace("minutes", "M");
   let checkSts = status.split(" ")[0].trim();
