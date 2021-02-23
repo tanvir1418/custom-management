@@ -52,6 +52,10 @@ button:focus {
   transform: translate(-50%, -50%);
 }
 
+.modal-backdrop{
+  display: none;
+}
+
 /* =============== Navbar Start =================== */
 
 .mynav {
@@ -1777,6 +1781,7 @@ td {
 .pagination-table input#row-no3,
 .pagination-table input#row-no4,
 .pagination-table input#row-no5,
+.pagination-table input#res-row-no7,
 .pagination-table .paginationjs .paginationjs-go-input input {
   width: 60px;
   height: 43px;
@@ -1843,6 +1848,7 @@ td {
   .pagination-table input#row-no3,
   .pagination-table input#row-no4,
   .pagination-table input#row-no5,
+  .pagination-table input#res-row-no7,
   .pagination-table .paginationjs .paginationjs-go-input input {
     width: 50px;
     height: 35px;
