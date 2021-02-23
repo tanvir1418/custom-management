@@ -63,7 +63,6 @@
     /* display: none; */
 }
 
-/* Edit by Ashiq */
 .display-none {
     display: none;
 }
@@ -71,8 +70,6 @@
 .display-block {
     display: block;
 }
-
-/* Edit End by Ashiq */
 
 .table-scroll-404 .left-list-404 li .tik-box i {
     position: absolute;
@@ -84,7 +81,6 @@
     color: #ffffff;
 }
 
-
 .table-scroll-404 .left-list-404 li .arrow-404 {
     height: 18px;
     width: 18px;
@@ -93,7 +89,6 @@
     margin: auto 8px auto auto;
 }
 
-/* Edit by Ashiq */
 .arrow-404-background-color-1 {
     background: #ffffff;
 }
@@ -101,8 +96,6 @@
 .arrow-404-background-color-2 {
     background: #f6f6f6;
 }
-
-/* Edit End by Ashiq */
 
 .table-scroll-404 .left-list-404 li .arrow-404 i {
     position: absolute;
@@ -114,7 +107,6 @@
     /* color: #8f8f8f; */
 }
 
-/* Edit by Ashiq */
 .arrow-404-i-color-1 {
     color: #8f8f8f;
 }
@@ -122,9 +114,6 @@
 .arrow-404-i-color-2 {
     color: #000000;
 }
-
-/* Edit End by Ashiq */
-
 
 .table-scroll-404 .left-list-404 li:hover .arrow-404,
 .table-scroll-404 .left-list-404 li:hover .arrow-404 i {
@@ -159,7 +148,6 @@
 #table-box-404 .right-list-404.right-list-4043 {
     margin-left: 900px;
 }
-
 
 #table-box-404 .table-scroll-404 .right-list-404 li {
     border: 1px solid #a1a1a1;
@@ -1129,6 +1117,7 @@ tbody td .containerst12 .checkmark {
 /* 3RD|4TH COLUMN COL2,COL4 */
 .mytablesty12 .column-time .centerauto {
     margin-top: 64px;
+    text-align: center;
 }
 
 .mytablesty12 .column-time span {
@@ -1336,7 +1325,6 @@ tbody td .containerst12 .checkmark {
     width: 62px;
     position: absolute;
     bottom: 0;
-    left: 55%;
 }
 
 .mytablesty12 .penta2 .shape_penagon {
@@ -1370,7 +1358,6 @@ tbody td .containerst12 .checkmark {
 .mytablesty12 .lower-penta-box .shape_penagon {
     background: #FF4141;
     top: 0;
-    left: 5%;
     position: relative;
 }
 
@@ -2742,7 +2729,36 @@ th[draggable] a {
 
 /* ====/////=== MANAGE RESULT POPUP END ====///=== */
 
-
+/* Result Table design cell from CSV Start */
+.green-white{
+    background-color: #18A733 !important;
+}
+.green-white p,
+.green-white span{
+    color: white !important;
+}
+.yellow-black{
+    background-color: #FFFF33 !important;
+}
+.yellow-black p,
+.yellow-black span{
+    color: black !important;
+}
+.red-white{
+    background-color: #FF4141 !important;
+}
+.red-white p,
+.red-white span{
+    color: white !important;
+}
+.grey-white{
+    background-color: grey !important;
+}
+.grey-white p,
+.grey-white span{
+    color: white !important;
+}
+/* Result Table design cell from CSV End */
 
 
 /* MEDIA QUERY OF MANAGE RESULT*/
@@ -2931,8 +2947,6 @@ th[draggable] a {
         line-height: 28px;
     }
 }
-
-
 
 /* min query */
 @media screen and (min-width: 1460px) {

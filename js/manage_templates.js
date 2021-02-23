@@ -1936,10 +1936,10 @@ function manTemInpBuild(_id) {
         </div>
         <div class="width-custom-range-70 d-flex">
           <span class="min">0</span>
-            <div class="range-wrapper-sample-4">
-                <input class="range-example-input-2" type="text" min="0" max="100" value="10,40" name="points" step="1" width="100" />
-            </div>
-            <span class="max">100</span>
+          <div class="range-wrapper-sample-4">
+            <input class="range-example-input-2" type="text" min="0" max="100" value="10,40" name="points" step="1" width="100" />
+          </div>
+          <span class="max">100</span>
         </div>
       </div>`;
     } else if (dataType == "date") {
@@ -1956,13 +1956,13 @@ function manTemInpBuild(_id) {
         </div>
         <div class="width-input-group-35">
           <div class="input-section-sample4 right-side-input">
-            <input class="date-pick-style-sample4" type="text" id="datepicker_mnTemp1"/>
+            <input class="date-pick-style-sample4 datepicker_op4" type="text"/>
             <i class="far fa-calendar-alt icon-sample4"></i>
           </div>
         </div>
         <div class="width-input-group-35">
           <div class="input-section-sample4 left-side-input">
-            <input class="date-pick-style-sample4" type="text" id="datepicker_mnTemp2"/>
+            <input class="date-pick-style-sample4 datepicker_op4" type="text"/>
             <i class="far fa-calendar-alt icon-sample4"></i>
           </div>
         </div>
@@ -1983,9 +1983,9 @@ function manTemInpBuild(_id) {
           <div class="input-section-sample4 right-side-input">
             <div class="custom-select-sample4">
               <select>
-                <option>Option Text 1</option>
-                <option>Option Text 2</option>
-                <option>Option Text 3</option>
+                <option value="Option Text 1">Option Text 1</option>
+                <option value="Option Text 2">Option Text 2</option>
+                <option value="Option Text 3">Option Text 3</option>
               </select>
             </div>
           </div>
@@ -1994,9 +1994,9 @@ function manTemInpBuild(_id) {
           <div class="input-section-sample4 left-side-input">
             <div class="custom-select-sample4">
               <select>
-                <option>Option Text 1</option>
-                <option>Option Text 2</option>
-                <option>Option Text 3</option>
+                <option value="Option Text 1">Option Text 1</option>
+                <option value="Option Text 2">Option Text 2</option>
+                <option value="Option Text 3">Option Text 3</option>
               </select>
             </div>
           </div>
@@ -2012,11 +2012,8 @@ function manTemInpBuild(_id) {
 
   // Manage Template Sample 4 DATE PICKER START
   $(function () {
-    $("#datepicker_mnTemp1").datepicker();
-    $("#datepicker_mnTemp1").datepicker("option", "dateFormat", "DD, MM d, yy");
-
-    $("#datepicker_mnTemp2").datepicker();
-    $("#datepicker_mnTemp2").datepicker("option", "dateFormat", "DD, MM d, yy");
+    $(".datepicker_op4").datepicker();
+    $(".datepicker_op4").datepicker("option", "dateFormat", "DD - MM d, yy");
   });
 }
 
@@ -2032,4 +2029,255 @@ function elementMove(_id, direc) {
     div.insertAfter(div.next());
   }
 }
+
+// Form by Text Editor Start
+function findInputIdMS4(title) {
+  let res = sam4DataArray.filter(a => a.name == title);
+  if (res.length) return res[0];
+  else return false;
+}
+
+function formToWindowMS4(e) {
+  let tBody = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ms4_text_editor");
+  let renHtml = "";
+
+  let idFromTable = $(`#tem-sample4-second tbody tr`);
+  let len = idFromTable.length;
+  for (let i = 0; i < len; i++){
+    let { id, name, dataType } = sam4DataArray.filter(a => a.id == idFromTable[i].id)[0];
+    let dataPtrn = name;
+    if (dataType == "inputText") {
+      let inpD = $(`#man-tem-sam4-input-data div#${id} input[type=text]`);
+      for (let j = 0; j < inpD.length; j++) dataPtrn +=` : ${inpD[j].value}`;
+    }
+    if (dataType == "range") {
+      let inpD = $(`#man-tem-sam4-input-data div#${id} input[type=text]`);
+      for (let j = 0; j < inpD.length; j++) dataPtrn +=` : ${inpD[j].value}`;
+    }
+    if (dataType == "date") {
+      let inpD = $(`#man-tem-sam4-input-data div#${id} input[type=text]`);
+      for (let j = 0; j < inpD.length; j++) dataPtrn +=` : ${inpD[j].value}`;
+    }
+    if (dataType == "select") {
+      let inpD = $(`#man-tem-sam4-input-data div#${id} select`);
+      for (let j = 0; j < inpD.length; j++) dataPtrn += ` : ${$(inpD[j]).find(":selected").text()}`;
+    }
+    renHtml += `<div class="form-text-design data-div">
+      ${dataPtrn}
+    </div>`;
+  }
+  tBody.html(renHtml);
+}
+
+function windowToFormMS4(e) {
+  let tRow = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ms4_text_editor div.form-text-design.data-div");
+  let len = tRow.length;
+  for (let i = 0; i < len; i++) {
+    let divData = $(tRow[i])[0].innerText.split(":");
+    let { id, dataType} = findInputIdMS4(divData[0].trim());
+    if (id && divData.length == 3) {
+      if (dataType == "select") {
+        let inpD = $(`#man-tem-sam4-input-data div#${id} select`);
+        for (let j = 0; j < inpD.length; j++) inpD[j].value = divData[j + 1].trim();
+      } else if (dataType != "select") {
+        let inpD = $(`#man-tem-sam4-input-data div#${id} input[type=text]`);
+        for (let j = 0; j < inpD.length; j++) inpD[j].value = divData[j + 1].trim();
+      }
+    } else if (id && divData.length == 2) {
+      if (dataType == "range") {
+        let rangeDiv = $(`#man-tem-sam4-input-data div#${id} div.width-custom-range-70.d-flex`);
+        let rangeDes =
+        `<span class="min">0</span>
+        <div class="range-wrapper-sample-4">
+          <input class="range-example-input-2" type="text" min="0" max="100" value="${divData[1].trim()}" name="points" step="1" width="100" />
+        </div>
+        <span class="max">100</span>`;
+        rangeDiv.html(rangeDes);
+        $(".range-example-input-2").asRange({
+          range: true,
+          limit: false
+        });
+      }
+    }
+  }
+}
+
+function checkingMS4(e) {
+  $("#adder").remove();
+  // let nd = getCaretPosition();
+  // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+  if (e.keyCode == 13) {
+    let nd = getCaretPosition();
+    $("#temp").attr("id", "");
+    if (nd.nodeType != 3 && nd.getAttribute("id") == "ms4_text_editor") return false;
+    if (
+      nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
+      nd.textContent != ""
+    ) {
+      let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+      let extra = getCaretPosition2(nd2);
+      let starting = nd.textContent.substr(0, extra);
+      let inpData = starting.split(":");
+      if (
+        starting != "" &&
+        (!findInputIdMS4(inpData[0].trim().split("_")[0].trim()) ||
+          (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
+          (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
+        )
+      ) {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design-invalid data-div">${nd.textContent}</div><br id="temp">`
+          );
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design-invalid data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+            ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      } else {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design data-div">
+            ${nd.textContent}
+            </div>
+            <br id="temp">`
+          );
+          //setEndOfContenteditable(document.getElementById("temp"));
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+              ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      }
+    }
+    return false;
+  }
+  // this will add autocorrect box
+  setTimeout(autoCorrectMS4, 100);
+}
+
+function autoCorrectMS4() {
+  let pos = getCaretPosition();
+  if ($(pos).find("#adder").length == 1) $("#adder").remove();
+  while (document.getElementById("temp")) {
+    document.getElementById("temp").removeAttribute("id");
+  }
+  if (pos.textContent.indexOf(":") == -1) x = pos.textContent;
+  else x = pos.textContent;
+  let editor = document.getElementById("text_editor_p");
+  $(pos).replaceWith(
+    `<div id="temp">${pos.textContent}</div>
+    <div id="adder"></div>`
+  );
+
+  let m = "";
+  let first = 1;
+  if (x.indexOf(":") == -1) {
+    $("#adder").addClass("set-name");
+    sam4DataArray.forEach(({ name }) => {
+      if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
+        if (first) {
+          m += `<option selected value="${name}">${name}</option><br>`;
+        }
+        else {
+          m += `<option value="${name}">${name}</option><br>`;
+        }
+        first = 0;
+      }
+    });
+  }
+
+  let y =
+    `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
+    ${m}
+    </select>`;
+  // add auto correct ... only if there is atleast one match
+  if (m != "") {
+    document.getElementById("adder").innerHTML = y;
+    document.getElementById("adder").style.display = "block";
+    $("#adder select").focus();
+  } else {
+    $("#adder").remove();
+    setEndOfContenteditable(document.getElementById("temp"));
+    document.getElementById("temp").removeAttribute("id");
+  }
+}
+
+function pasteEventMS4(e) {
+  let editor = document.getElementById("ms4_text_editor");
+  let clipboardData = e.clipboardData || window.clipboardData;
+  let pD = clipboardData.getData("Text").split("\n");
+  for (let i = 0; i < pD.length; i++) {
+    let nbe = pD[i];
+    let inpData = nbe.split(":");
+    if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
+      let x;
+      if (
+        !findInputIdMS4(inpData[0].trim().split("_")[0].trim()) ||
+        (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
+        (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
+      ) {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design-invalid data-div");
+        x.textContent = nbe;
+      } else {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design data-div");
+        x.textContent = nbe;
+      }
+      editor.append(x);
+    }
+  }
+  removeExtraLines(editor);
+  editor.append(document.createElement("br"));
+  setEndOfContenteditable(editor);
+  return false;
+}
+// Form by Text Editor End
 // Manage template Sample 4 End
+
+
+// Form by text editor Start
+// Manage template Sample 3 Start
+function checkingMS3(e){
+
+}
+function pasteEventMS3(e){
+
+}
+function windowToFormMS3(e){
+  
+}
+function formToWindowMS3(e) {
+  let sectionA = $("fieldset#fieldset_id21");
+  let inpA = sectionA.find(".data-form input[type=text]");
+  for (let i = 0; i < inpA.length; i++){
+    console.log(inpA[i].value);
+  }
+}
+// Form by text editor End
+// Manage template Sample 3 End

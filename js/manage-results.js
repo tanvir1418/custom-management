@@ -990,7 +990,7 @@ $("#cross10").click(function () {
     $("#resizable554 td:nth-child(10)").addClass("th-dis-none");
 });
 
-$("#cross10").click(function () {
+$("#cross11").click(function () {
     $("#resizable554 th:nth-child(11)").addClass("th-dis-none");
     $("#resizable554 td:nth-child(11)").addClass("th-dis-none");
 });
