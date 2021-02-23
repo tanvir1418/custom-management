@@ -944,96 +944,17 @@ $(".style2-box").click(function () {
 
 // X CLICK TO REMOVE COLUMN START ==============
 
-$("#cross2").click(function () {
-    $("#resizable554 th:nth-child(2)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(2)").addClass("th-dis-none");
-});
-
-$("#cross3").click(function () {
-    $("#resizable554 th:nth-child(3)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(3)").addClass("th-dis-none");
-});
-
-
-$("#cross4").click(function () {
-    $("#resizable554 th:nth-child(4)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(4)").addClass("th-dis-none");
-});
-
-$("#cross5").click(function () {
-    $("#resizable554 th:nth-child(5)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(5)").addClass("th-dis-none");
-});
-
-$("#cross6").click(function () {
-    $("#resizable554 th:nth-child(6)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(6)").addClass("th-dis-none");
-});
-
-$("#cross7").click(function () {
-    $("#resizable554 th:nth-child(7)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(7)").addClass("th-dis-none");
-});
-
-$("#cross8").click(function () {
-    $("#resizable554 th:nth-child(8)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(8)").addClass("th-dis-none");
-});
-
-$("#cross9").click(function () {
-    $("#resizable554 th:nth-child(9)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(9)").addClass("th-dis-none");
-});
-
-$("#cross10").click(function () {
-    $("#resizable554 th:nth-child(10)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(10)").addClass("th-dis-none");
-});
-
-$("#cross11").click(function () {
-    $("#resizable554 th:nth-child(11)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(11)").addClass("th-dis-none");
-});
-
-$("#cross12").click(function () {
-    $("#resizable554 th:nth-child(12)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(12)").addClass("th-dis-none");
-});
-
-$("#cross13").click(function () {
-    $("#resizable554 th:nth-child(13)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(13)").addClass("th-dis-none");
-});
-
-
-$("#cross14").click(function () {
-    $("#resizable554 th:nth-child(14)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(14)").addClass("th-dis-none");
-});
-
-$("#cross15").click(function () {
-    $("#resizable554 th:nth-child(15)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(15)").addClass("th-dis-none");
-});
-
-$("#cross16").click(function () {
-    $("#resizable554 th:nth-child(16)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(16)").addClass("th-dis-none");
-});
-
-$("#cross17").click(function () {
-    $("#resizable554 th:nth-child(17)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(17)").addClass("th-dis-none");
-});
-
-$("#cross18").click(function () {
-    $("#resizable554 th:nth-child(18)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(18)").addClass("th-dis-none");
-});
-
-$("#cross19").click(function () {
-    $("#resizable554 th:nth-child(19)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(19)").addClass("th-dis-none");
+$("#resizable554 th").click(function (e) {
+    let target = e.target;
+    let index = $(this).index() + 1;
+    if (target.tagName === "I") {
+        target = target.parentNode;
+    }
+    let regex = /cross/g;
+    if (target.tagName === "DIV" && regex.test(target.id)) {
+        $(`#resizable554 th:nth-child(${index})`).addClass("th-dis-none");
+        $(`#resizable554 td:nth-child(${index})`).addClass("th-dis-none");
+    }
 });
 
 // ======== STYLE 2
