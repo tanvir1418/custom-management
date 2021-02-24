@@ -56,6 +56,67 @@ function manResPagination(noRow) {
         let d_per = parseFloat(csvD["D_%"]).toFixed(2);
         let n_val = parseFloat(csvD.N_Val).toFixed(2);
         let n_per = parseFloat(csvD["N_C"]).toFixed(2);
+
+        let AM_COUNT = parseFloat(csvD[" AM COUNT"]).toFixed(2);
+        let AN_COUNT = parseFloat(csvD[" AN COUNT"]).toFixed(2);
+        let AO_COUNT = parseFloat(csvD[" AO COUNT"]).toFixed(2);
+        let AP_COUNT = parseFloat(csvD[" AP COUNT"]).toFixed(2);
+        let AQ_COUNT = parseFloat(csvD[" AQ COUNT"]).toFixed(2);
+        let AR_COUNT = parseFloat(csvD[" AR COUNT"]).toFixed(2);
+        let AS_Count = parseFloat(csvD[" AS Count"]).toFixed(2);
+        let AT_Count = parseFloat(csvD[" AT Count"]).toFixed(2);
+        let AU_Count = parseFloat(csvD[" AU Count"]).toFixed(2);
+        let AV_Count = parseFloat(csvD[" AV Count"]).toFixed(2);
+        let AW_COUNT = parseFloat(csvD[" AW COUNT"]).toFixed(2);
+        let AX_COUNT = parseFloat(csvD[" AX COUNT"]).toFixed(2);
+        let AY_COUNT = parseFloat(csvD[" AY COUNT"]).toFixed(2);
+        let AZ_Count = parseFloat(csvD[" AZ Count"]).toFixed(2);
+        let BA_Count = parseFloat(csvD[" BA Count"]).toFixed(2);
+        let BB_Count = parseFloat(csvD[" BB Count"]).toFixed(2);
+        let BC_Count = parseFloat(csvD[" BC Count"]).toFixed(2);
+        let BD_Count = parseFloat(csvD[" BD Count"]).toFixed(2);
+        let BE_count = parseFloat(csvD[" BE count"]).toFixed(2);
+        let BF_COUNT = parseFloat(csvD[" BF COUNT"]).toFixed(2);
+        let BG_COUNT = parseFloat(csvD[" BG COUNT"]).toFixed(2);
+        let BH_COUNT = parseFloat(csvD[" BH COUNT"]).toFixed(2);
+        let BI_COUNT = parseFloat(csvD[" BI COUNT"]).toFixed(2);
+        let BJ_COUNT = parseFloat(csvD[" BJ COUNT"]).toFixed(2);
+        let BK_COUNT = parseFloat(csvD[" BK COUNT"]).toFixed(2);
+        let BL_COUNT = parseFloat(csvD[" BL COUNT"]).toFixed(2);
+        let BM_COUNT = parseFloat(csvD[" BM COUNT"]).toFixed(2);
+
+        
+
+        let Col2 = parseFloat(csvD.Col2).toFixed(2);
+        let Col3 = parseFloat(csvD.Col3).toFixed(2);
+        let DP_val = parseFloat(csvD["DP"]).toFixed(2);
+        let DY_val = csvD["DY"];
+        let DmA = parseFloat(csvD.DmA).toFixed(2);
+        let DmP = parseFloat(csvD.DmP).toFixed(2);
+        let DmP_per = parseFloat(csvD["DmP%"]).toFixed(2);
+        let ID_val = csvD["ID"];
+        let LoP_per = parseFloat(csvD["LoP%"]).toFixed(3);
+        let M_Val = parseFloat(csvD.M_Val).toFixed(2);
+        let MaP_per= parseFloat(csvD["MaP%"]).toFixed(3);
+
+        let { time: timeEnd, date: dateEnd } = ExcelDateToJSDate(csvD.O_End);
+        let O_End = `${dateEnd} ${timeEnd}`;
+        let { time: timeStart, date: dateStart } = ExcelDateToJSDate(csvD.O_Start);
+        let O_Start = `${dateStart} ${timeStart}`;
+        
+        let SP_val = csvD["SP"];
+        let Time_Frame = csvD["Time Frame"];
+        let UmA= parseFloat(csvD.UmA).toFixed(2);
+        let UmP = parseFloat(csvD.UmP).toFixed(2);
+        let UmP_per = parseFloat(csvD["UmP%"]).toFixed(3);
+        let Val2S = parseFloat(csvD.Val2S).toFixed(2);
+        let Val3S = parseFloat(csvD.Val3S).toFixed(2);
+        let Val6 = parseFloat(csvD.Val6).toFixed(2);
+
+        let Description = csvD["Description"];
+        let Details3 = csvD["Details3"];
+        let Details2 = csvD[" Details2"];
+
         tableTr +=
         `<tr class="dnd-moved">
           <td>
@@ -261,6 +322,162 @@ function manResPagination(noRow) {
           <td class="col_00 grey-white">
             <p class="centerizeany">${n_per}</p>
           </td>
+          <td class="col_00">
+            <p class="centerizeany">${AM_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${AN_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${AO_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${AP_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${AQ_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${AR_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${AS_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${AT_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${AU_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${AV_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${AW_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${AX_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${AY_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${AZ_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${BA_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${BB_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${BC_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${BD_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${BE_count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${BF_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${BG_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${BH_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${BI_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${BJ_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${BK_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${BL_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${BM_COUNT}</p>
+          </td>
+
+          <td class="col_00">
+            <p class="centerizeany">${Col2}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${Col3}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${DP_val}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${DY_val}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${DmA}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${DmP}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${DmP_per}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${ID_val}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${LoP_per}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${M_Val}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${MaP_per}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${O_End}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${O_Start}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${SP_val}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany"style="position: relative;">${Time_Frame}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${UmA}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${UmP}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${UmP_per}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${Val2S}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${Val3S}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany">${Val6}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany" style="position: relative;left: 55%;top: 25%;">${Description}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany" style="position: relative;left: 55%;top: 25%;">${Details3}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany" style="position: relative;left: 55%;top: 25%;">${Details3}</p>
+          </td>
+
+
         </tr>`;
       });
       let style1Table = $("#resizable554 tbody");
