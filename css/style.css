@@ -741,7 +741,7 @@ td {
   transform: translate(-50%, -50%);
 }
 /* PAGINATION START */
-
+/* 
 #chartPage .pagination-table {
   margin: 36px 0;
 }
@@ -885,7 +885,7 @@ td {
     height: 35px;
     margin-right: 5px;
   }
-}
+} */
 
 /* PAGINATION END */
 
@@ -1717,12 +1717,20 @@ td {
 .pagination-table .paginationjs .paginationjs-pages ul li.active a {
   color: #fff !important;
 }
+.pagination-table .paginationjs .paginationjs-pages ul li a:hover {
+  color: #fff !important;
+}
+.pagination-table .paginationjs .paginationjs-pages ul li.paginationjs-prev a:hover,
+.pagination-table .paginationjs .paginationjs-pages ul li.paginationjs-next a:hover {
+  color: #000000 !important;
+}
 .pagination-table .paginationjs .paginationjs-ellipsis {
   line-height: 20px !important;
   font-size: 40px !important;
   font-weight: 900 !important;
   margin: 0 10px;
 }
+
 .pagination-table
   .paginationjs
   .paginationjs-pages
@@ -1730,8 +1738,16 @@ td {
   li.paginationjs-ellipsis
   a {
   padding-bottom: 22px;
+  color: #000000 !important;
 }
-
+.pagination-table
+  .paginationjs
+  .paginationjs-pages
+  ul
+  li.paginationjs-ellipsis
+  a:hover {
+  color: #000000 !important;
+}
 .pagination-table .paginationjs .paginationjs-prev {
   margin-right: 40px;
   font-size: 24px;
@@ -1755,7 +1771,6 @@ td {
   background-color: #1d1d1d !important;
   filter: drop-shadow(10.5px 18.187px 10.5px rgba(51, 56, 72, 0.23));
 }
-
 .pagination-table .paginationjs ul li.active {
   color: #fff !important;
   background-color: #1d1d1d !important;
@@ -1775,6 +1790,7 @@ td {
   background-color: #ffffff;
   color: #545d7a;
   border: none;
+  outline: none;
 }
 
 .pagination-table input#row-no1,
@@ -1909,4 +1925,8 @@ td {
   .content .tab_2 .option_box p {
     margin-top: 30px;
   }
+}
+
+.pagination-table #pagination-man-res-table .paginationjs .paginationjs-go-button input {
+  background-color: #f2f2f2 !important;
 }
