@@ -265,6 +265,9 @@ function manResPagination(noRow) {
       });
       let style1Table = $("#resizable554 tbody");
       style1Table.html(tableTr);
+      // Code added by Tanvir 
+      $(".right-slider5").css("display", "block");
+      $(".left-slider5").css("display", "block");
     }
   }
   let container = $("#pagination-man-res-table");

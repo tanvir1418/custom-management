@@ -1403,11 +1403,13 @@ tbody td .containerst12 .checkmark {
 #style1Table .right-slider5 {
     top: 42%;
     right: -38px;
+    display: none;
 }
 
 #style1Table .left-slider5 {
     top: 42%;
     left: -38px;
+    display: none;
 }
 
 /* X CLICK TO REMOVE COLUMN START */
