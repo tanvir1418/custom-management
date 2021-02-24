@@ -859,7 +859,7 @@ table#sub2-editor-table {
     width: 250px;
     border: 0;
     border-radius: 0 !important;
-    left: 20%;
+    /* left: 20%; */
 }
 
 #dropBtnModal .modal-content .modal-body,
@@ -981,7 +981,7 @@ table#sub2-editor-table {
     width: 360px;
     border: 0;
     border-radius: 0 !important;
-    left: 20%;
+    /* left: 20%; */
 }
 
 #hyperTextModal1 .modal-content .modal-body {
@@ -2289,4 +2289,13 @@ Bottom codes are added by Tanvir
 #mnTempCheckBoxFormEditModal .modal-dialog .modal-body,
 #mnTempRangeCalenderFormEditModal .modal-dialog .modal-body{
     padding: 0px;
+}
+
+#col8Filter .modal-dialog{
+    /* position: absolute; */
+    position: fixed;
+    min-height: 0;
+    margin: 0;
+    /* top: 200px;
+    left: 400px; */
 }

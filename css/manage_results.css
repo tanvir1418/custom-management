@@ -460,6 +460,13 @@
     background: #fbfbfb;
 }
 
+#double_click table  tr:hover {
+    cursor: pointer;
+}
+  
+#double_click table  .mark-table-data {
+    background-color: yellow !important;
+}
 #double_click table tr td {
     font-family: gilroy-bold, sans-serif;
     font-weight: 600;
@@ -754,34 +761,23 @@
     margin-left: auto;
 }
 
-.records_style12 .pdf_box54,
-.records_style12 .csv_box54 {
+.records_style12 .pdf_box54{
     width: 40px;
-    height: 20px;
+    height: 22px;
     border-radius: 2px;
     cursor: pointer;
 }
 
 .records_style12 .pdf_box54 {
     background: #fa4747;
+    margin-right: 5px;
 }
 
 .records_style12 .pdf_box54:hover {
     background: #ff2828;
 }
 
-.records_style12 .csv_box54 {
-    background: #6c00ff;
-    margin-left: 8px;
-    margin-right: 16px;
-}
-
-.records_style12 .csv_box54:hover {
-    background: #3e0096;
-}
-
-.records_style12 .pdf_box54 span,
-.records_style12 .csv_box54 span {
+.records_style12 .pdf_box54 span{
     font-family: gilroy-bold, sans-serif;
     font-size: 14px;
     font-weight: 600;
@@ -1407,11 +1403,13 @@ tbody td .containerst12 .checkmark {
 #style1Table .right-slider5 {
     top: 42%;
     right: -38px;
+    display: none;
 }
 
 #style1Table .left-slider5 {
     top: 42%;
     left: -38px;
+    display: none;
 }
 
 /* X CLICK TO REMOVE COLUMN START */
@@ -3041,3 +3039,34 @@ th[draggable] a {
 
     /* DOUBLE CLICK BOX END */
 }
+
+
+/* -------------------------------------------- */
+/* CSV File Selector New Design Added By Tanvir */
+[type="file"] {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+}
+[type="file"] + label {
+    background: #6c00ff;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: gilroy-bold, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    outline: none;
+    padding: 0px 8px;
+    position: relative;
+    transition: all 0.3s;
+    vertical-align: middle;
+}
+[type="file"] + label:hover {
+    background-color: #3e0096;
+    cursor: pointer;
+}
+/* -------------------------------------------- */

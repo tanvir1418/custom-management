@@ -1418,3 +1418,103 @@ function resetResFilter(e) {
     inpBox.val("");
 }
 // ----------- Manage Result Filter End --------------------
+
+
+// #column-header-3 .drop-filter
+$("#column-header-3 .drop-filter").click( function(event) {
+    $("#col8Filter .modal-dialog").css({
+        top: ((event.clientY) + 15), 
+        left: ((event.clientX) - 240)
+    });
+    // console.log(`Clicked and Top(Page-Y) : ${event.pageY} Left(Page-X) : ${event.pageX} `);
+    // console.log(`Clicked and Top(client-Y) : ${event.clientY} Left(client-X) : ${event.clientX} `);
+    // console.log(`Clicked and Top(screen-Y) : ${event.screenY} Left(screen-X) : ${event.screenX} `);
+    // console.log(`Clicked and Top(offset-Y) : ${event.offsetY} Left(offset-X) : ${event.offsetX} `);
+    // var x = e.clientX,
+    // var y = e.clientY;
+    // console.log("Top: " + top + " and Left: " + left);
+});
+
+$("#column-header-4 .drop-filter").click( function(event) {
+    $("#col8Filter .modal-dialog").css({
+        top: ((event.clientY) + 15), 
+        left: ((event.clientX) - 240)
+    });
+});
+
+$("#column-header-5 .drop-filter").click( function(event) {
+    $("#col8Filter .modal-dialog").css({
+        top: ((event.clientY) + 15), 
+        left: ((event.clientX) - 240)
+    });
+});
+
+$("#column-header-6 .drop-filter").click( function(event) {
+    $("#col8Filter .modal-dialog").css({
+        top: ((event.clientY) + 15), 
+        left: ((event.clientX) - 240)
+    });
+});
+
+$("#column-header-7 .drop-filter").click( function(event) {
+    $("#col8Filter .modal-dialog").css({
+        top: ((event.clientY) + 15), 
+        left: ((event.clientX) - 240)
+    });
+});
+
+$("#column-header-8 .drop-filter").click( function(event) {
+    $("#col8Filter .modal-dialog").css({
+        top: ((event.clientY) + 15), 
+        left: ((event.clientX) - 240)
+    });
+});
+
+$("#column-header-9 .drop-filter").click( function(event) {
+    $("#col8Filter .modal-dialog").css({
+        top: ((event.clientY) + 15), 
+        left: ((event.clientX) - 240)
+    });
+});
+
+$("#column-header-10 .drop-filter").click( function(event) {
+    $("#col8Filter .modal-dialog").css({
+        top: ((event.clientY) + 15), 
+        left: ((event.clientX) - 240)
+    });
+});
+
+$("#column-header-11 .drop-filter").click( function(event) {
+    $("#col8Filter .modal-dialog").css({
+        top: ((event.clientY) + 15), 
+        left: ((event.clientX) - 240)
+    });
+});
+
+$("#column-header-12 .drop-filter").click( function(event) {
+    $("#col8Filter .modal-dialog").css({
+        top: ((event.clientY) + 15), 
+        left: ((event.clientX) - 240)
+    });
+});
+
+$("#column-header-13 .drop-filter").click( function(event) {
+    $("#col8Filter .modal-dialog").css({
+        top: ((event.clientY) + 15), 
+        left: ((event.clientX) - 240)
+    });
+});
+
+$("#column-header-14 .drop-filter").click( function(event) {
+    $("#col8Filter .modal-dialog").css({
+        top: ((event.clientY) + 15), 
+        left: ((event.clientX) - 240)
+    });
+});
+
+$("#column-header-15 .drop-filter").click( function(event) {
+    $("#col8Filter .modal-dialog").css({
+        top: ((event.clientY) + 15), 
+        left: ((event.clientX) - 240)
+    });
+});
