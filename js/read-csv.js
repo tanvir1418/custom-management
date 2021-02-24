@@ -268,6 +268,7 @@ function manResPagination(noRow) {
       // Code added by Tanvir 
       $(".right-slider5").css("display", "block");
       $(".left-slider5").css("display", "block");
+      $("#pagination-man-res-table .width-row-go").css("display", "block");
     }
   }
   let container = $("#pagination-man-res-table");
