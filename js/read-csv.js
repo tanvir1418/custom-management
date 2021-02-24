@@ -309,7 +309,7 @@ function ExcelDateToJSDate(serial) {
   minutes = minutes < 10 ? "0" + minutes : minutes;
   return {
     time: hours + ":" + minutes + " " + am_pm,
-    date: date_info.getDate() + "/" + date_info.getMonth() + "/" + date_info.getFullYear()
+    date: date_info.getDate() + "/" + (date_info.getMonth()+1) + "/" + date_info.getFullYear()
   }
 }
 
