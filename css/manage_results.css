@@ -863,9 +863,70 @@ td {
 #column-header-12,
 #column-header-13,
 #column-header-14,
-#column-header-15
-{
+#column-header-15{
     min-width: 77px;
+}
+#column-header-16,
+#column-header-17,
+#column-header-18,
+#column-header-19,
+#column-header-50,
+#column-header-51,
+#column-header-52,
+#column-header-53,
+#column-header-54,
+#column-header-55,
+#column-header-56,
+#column-header-57,
+#column-header-58,
+#column-header-59,
+#column-header-60,
+#column-header-61,
+#column-header-62,
+#column-header-63,
+#column-header-64,
+#column-header-65,
+#column-header-66,
+#column-header-67,
+#column-header-68,
+#column-header-69,
+#column-header-70,
+#column-header-71,
+#column-header-72,
+#column-header-73,
+#column-header-74,
+#column-header-75,
+#column-header-76,
+#column-header-77,
+#column-header-78,
+#column-header-79,
+#column-header-80,
+#column-header-81,
+#column-header-82,
+#column-header-83,
+#column-header-84,
+#column-header-85,
+#column-header-86,
+#column-header-88,
+#column-header-89,
+#column-header-90,
+#column-header-91,
+#column-header-92,
+#column-header-93
+{
+    min-width: 100px;
+}
+#column-header-87{
+    min-width: 140px;
+}
+#column-header-94{
+    min-width: 450px;
+}
+#column-header-95{
+    width: 450px;
+}
+#column-header-96{
+    min-width: 600px;
 }
 /* /////////// */
 

@@ -56,6 +56,67 @@ function manResPagination(noRow) {
         let d_per = parseFloat(csvD["D_%"]).toFixed(2);
         let n_val = parseFloat(csvD.N_Val).toFixed(2);
         let n_per = parseFloat(csvD["N_C"]).toFixed(2);
+
+        let AM_COUNT = parseFloat(csvD[" AM COUNT"]).toFixed(2);
+        let AN_COUNT = parseFloat(csvD[" AN COUNT"]).toFixed(2);
+        let AO_COUNT = parseFloat(csvD[" AO COUNT"]).toFixed(2);
+        let AP_COUNT = parseFloat(csvD[" AP COUNT"]).toFixed(2);
+        let AQ_COUNT = parseFloat(csvD[" AQ COUNT"]).toFixed(2);
+        let AR_COUNT = parseFloat(csvD[" AR COUNT"]).toFixed(2);
+        let AS_Count = parseFloat(csvD[" AS Count"]).toFixed(2);
+        let AT_Count = parseFloat(csvD[" AT Count"]).toFixed(2);
+        let AU_Count = parseFloat(csvD[" AU Count"]).toFixed(2);
+        let AV_Count = parseFloat(csvD[" AV Count"]).toFixed(2);
+        let AW_COUNT = parseFloat(csvD[" AW COUNT"]).toFixed(2);
+        let AX_COUNT = parseFloat(csvD[" AX COUNT"]).toFixed(2);
+        let AY_COUNT = parseFloat(csvD[" AY COUNT"]).toFixed(2);
+        let AZ_Count = parseFloat(csvD[" AZ Count"]).toFixed(2);
+        let BA_Count = parseFloat(csvD[" BA Count"]).toFixed(2);
+        let BB_Count = parseFloat(csvD[" BB Count"]).toFixed(2);
+        let BC_Count = parseFloat(csvD[" BC Count"]).toFixed(2);
+        let BD_Count = parseFloat(csvD[" BD Count"]).toFixed(2);
+        let BE_count = parseFloat(csvD[" BE count"]).toFixed(2);
+        let BF_COUNT = parseFloat(csvD[" BF COUNT"]).toFixed(2);
+        let BG_COUNT = parseFloat(csvD[" BG COUNT"]).toFixed(2);
+        let BH_COUNT = parseFloat(csvD[" BH COUNT"]).toFixed(2);
+        let BI_COUNT = parseFloat(csvD[" BI COUNT"]).toFixed(2);
+        let BJ_COUNT = parseFloat(csvD[" BJ COUNT"]).toFixed(2);
+        let BK_COUNT = parseFloat(csvD[" BK COUNT"]).toFixed(2);
+        let BL_COUNT = parseFloat(csvD[" BL COUNT"]).toFixed(2);
+        let BM_COUNT = parseFloat(csvD[" BM COUNT"]).toFixed(2);
+
+        
+
+        let Col2 = parseFloat(csvD.Col2).toFixed(2);
+        let Col3 = parseFloat(csvD.Col3).toFixed(2);
+        let DP_val = parseFloat(csvD["DP"]).toFixed(2);
+        let DY_val = csvD["DY"];
+        let DmA = parseFloat(csvD.DmA).toFixed(2);
+        let DmP = parseFloat(csvD.DmP).toFixed(2);
+        let DmP_per = parseFloat(csvD["DmP%"]).toFixed(2);
+        let ID_val = csvD["ID"];
+        let LoP_per = parseFloat(csvD["LoP%"]).toFixed(3);
+        let M_Val = parseFloat(csvD.M_Val).toFixed(2);
+        let MaP_per= parseFloat(csvD["MaP%"]).toFixed(3);
+
+        let { time: timeEnd, date: dateEnd } = ExcelDateToJSDate(csvD.O_End);
+        let O_End = `${dateEnd} ${timeEnd}`;
+        let { time: timeStart, date: dateStart } = ExcelDateToJSDate(csvD.O_Start);
+        let O_Start = `${dateStart} ${timeStart}`;
+        
+        let SP_val = csvD["SP"];
+        let Time_Frame = csvD["Time Frame"];
+        let UmA= parseFloat(csvD.UmA).toFixed(2);
+        let UmP = parseFloat(csvD.UmP).toFixed(2);
+        let UmP_per = parseFloat(csvD["UmP%"]).toFixed(3);
+        let Val2S = parseFloat(csvD.Val2S).toFixed(2);
+        let Val3S = parseFloat(csvD.Val3S).toFixed(2);
+        let Val6 = parseFloat(csvD.Val6).toFixed(2);
+
+        let Description = csvD["Description"];
+        let Details3 = csvD["Details3"];
+        let Details2 = csvD[" Details2"];
+
         tableTr +=
         `<tr class="dnd-moved">
           <td>
@@ -152,7 +213,7 @@ function manResPagination(noRow) {
           <td class="status22">
             <div class="inner_con ${designClass}">
               <div class="status22-centerize centerizeany">
-                <p>${checkSts == "Ended" ? checkSts : checkSts + " In"}</p>
+                <p class="mr-tableData">${checkSts == "Ended" ? checkSts : checkSts + " In"}</p>
                 <p>${checkSts == "Ended" ? "" : status}</p>
               </div>
             </div>
@@ -160,20 +221,20 @@ function manResPagination(noRow) {
           <td class="${classV1}">
             <div class="column-time">
               <div class="centerauto">
-                <span class="dis_time22">${val1}</span>
+                <span class="dis_time22 mr-tableData">${val1}</span>
               </div>
             </div>
           </td>
           <td class="${classV2}">
             <div class="column-time">
               <div class="centerauto">
-                <span class="dis_time22">${val2}</span>
+                <span class="dis_time22 mr-tableData">${val2}</span>
               </div>
             </div>
           </td>
           <td class="vall11_datel">
             <div class="val11">
-              <p class="centerizeany">${Val11}</p>
+              <p class="centerizeany mr-tableData">${Val11}</p>
             </div>
             <div class="date_reco">
               <div class="date_reco_center centerizeany">
@@ -184,7 +245,7 @@ function manResPagination(noRow) {
           </td>
           <td class="vall11_datel">
             <div class="val11 red-white">
-              <p class="centerizeany">${Val12}</p>
+              <p class="centerizeany mr-tableData">${Val12}</p>
             </div>
             <div class="date_reco">
               <div class="date_reco_center centerizeany">
@@ -202,7 +263,7 @@ function manResPagination(noRow) {
                 </div>
               </div>
               <div class="uddright">
-                <p class="centerizeany">${Val11}</p>
+                <p class="centerizeany mr-tableData">${Val11}</p>
               </div>
             </div>
             <div class="upper_part_22 dwnlong">
@@ -213,7 +274,7 @@ function manResPagination(noRow) {
                 </div>
               </div>
               <div class="uddright">
-                <p class="centerizeany">${Val12}</p>
+                <p class="centerizeany mr-tableData">${Val12}</p>
               </div>
             </div>
           </td>
@@ -221,7 +282,7 @@ function manResPagination(noRow) {
             <div class="upper-penta-box">
               <div class="shape_penagon" style="${styleG}">
                 <div class="top-num">
-                  <p>${Val11}</p>
+                  <p class="mr-tableData">${Val11}</p>
                 </div>
                 <div class="penta-count">
                   <p class="d-date">${daysG} D</p>
@@ -233,7 +294,7 @@ function manResPagination(noRow) {
             <div class="lower-penta-box">
               <div class="shape_penagon" style="${styleR}">
                 <div class="top-num">
-                  <p>${Val12}</p>
+                  <p class="mr-tableData">${Val12}</p>
                 </div>
                 <div class="penta-count">
                   <p class="d-date">${daysR} D</p>
@@ -244,23 +305,179 @@ function manResPagination(noRow) {
             </div>
           </td>
           <td class="col_00 green-white">
-            <p class="centerizeany">${u_val}</p>
+            <p class="centerizeany mr-tableData">${u_val}</p>
           </td>
           <td class="col_00 green-white">
-            <p class="centerizeany">${u_per}</p>
+            <p class="centerizeany mr-tableData">${u_per}</p>
           </td>
           <td class="col_00 red-white">
-            <p class="centerizeany">${d_val}</p>
+            <p class="centerizeany mr-tableData">${d_val}</p>
           </td>
           <td class="col_00 red-white">
-            <p class="centerizeany">${d_per}</p>
+            <p class="centerizeany mr-tableData">${d_per}</p>
           </td>
           <td class="col_00 grey-white">
-            <p class="centerizeany">${n_val}</p>
+            <p class="centerizeany mr-tableData">${n_val}</p>
           </td>
           <td class="col_00 grey-white">
-            <p class="centerizeany">${n_per}</p>
+            <p class="centerizeany mr-tableData">${n_per}</p>
           </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${AM_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${AN_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${AO_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${AP_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${AQ_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${AR_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${AS_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${AT_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${AU_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${AV_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${AW_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${AX_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${AY_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${AZ_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${BA_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${BB_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${BC_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${BD_Count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${BE_count}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${BF_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${BG_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${BH_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${BI_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${BJ_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${BK_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${BL_COUNT}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${BM_COUNT}</p>
+          </td>
+
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${Col2}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${Col3}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${DP_val}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${DY_val}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${DmA}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${DmP}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${DmP_per}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${ID_val}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${LoP_per}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${M_Val}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${MaP_per}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${O_End}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${O_Start}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${SP_val}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData"style="position: relative;">${Time_Frame}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${UmA}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${UmP}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${UmP_per}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${Val2S}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${Val3S}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData">${Val6}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData" style="position: relative;left: 55%;top: 25%;">${Description}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData" style="position: relative;left: 55%;top: 25%;">${Details3}</p>
+          </td>
+          <td class="col_00">
+            <p class="centerizeany mr-tableData" style="position: relative;left: 55%;top: 25%;">${Details2}</p>
+          </td>
+
+
         </tr>`;
       });
       let style1Table = $("#resizable554 tbody");
@@ -268,6 +485,7 @@ function manResPagination(noRow) {
       // Code added by Tanvir 
       $(".right-slider5").css("display", "block");
       $(".left-slider5").css("display", "block");
+      $("#pagination-man-res-table .width-row-go").css("display", "block");
     }
   }
   let container = $("#pagination-man-res-table");
