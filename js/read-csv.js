@@ -213,7 +213,7 @@ function manResPagination(noRow) {
           <td class="status22">
             <div class="inner_con ${designClass}">
               <div class="status22-centerize centerizeany">
-                <p>${checkSts == "Ended" ? checkSts : checkSts + " In"}</p>
+                <p class="mr-tableData">${checkSts == "Ended" ? checkSts : checkSts + " In"}</p>
                 <p>${checkSts == "Ended" ? "" : status}</p>
               </div>
             </div>
@@ -221,20 +221,20 @@ function manResPagination(noRow) {
           <td class="${classV1}">
             <div class="column-time">
               <div class="centerauto">
-                <span class="dis_time22">${val1}</span>
+                <span class="dis_time22 mr-tableData">${val1}</span>
               </div>
             </div>
           </td>
           <td class="${classV2}">
             <div class="column-time">
               <div class="centerauto">
-                <span class="dis_time22">${val2}</span>
+                <span class="dis_time22 mr-tableData">${val2}</span>
               </div>
             </div>
           </td>
           <td class="vall11_datel">
             <div class="val11">
-              <p class="centerizeany">${Val11}</p>
+              <p class="centerizeany mr-tableData">${Val11}</p>
             </div>
             <div class="date_reco">
               <div class="date_reco_center centerizeany">
@@ -245,7 +245,7 @@ function manResPagination(noRow) {
           </td>
           <td class="vall11_datel">
             <div class="val11 red-white">
-              <p class="centerizeany">${Val12}</p>
+              <p class="centerizeany mr-tableData">${Val12}</p>
             </div>
             <div class="date_reco">
               <div class="date_reco_center centerizeany">
@@ -263,7 +263,7 @@ function manResPagination(noRow) {
                 </div>
               </div>
               <div class="uddright">
-                <p class="centerizeany">${Val11}</p>
+                <p class="centerizeany mr-tableData">${Val11}</p>
               </div>
             </div>
             <div class="upper_part_22 dwnlong">
@@ -274,7 +274,7 @@ function manResPagination(noRow) {
                 </div>
               </div>
               <div class="uddright">
-                <p class="centerizeany">${Val12}</p>
+                <p class="centerizeany mr-tableData">${Val12}</p>
               </div>
             </div>
           </td>
@@ -282,7 +282,7 @@ function manResPagination(noRow) {
             <div class="upper-penta-box">
               <div class="shape_penagon" style="${styleG}">
                 <div class="top-num">
-                  <p>${Val11}</p>
+                  <p class="mr-tableData">${Val11}</p>
                 </div>
                 <div class="penta-count">
                   <p class="d-date">${daysG} D</p>
@@ -294,7 +294,7 @@ function manResPagination(noRow) {
             <div class="lower-penta-box">
               <div class="shape_penagon" style="${styleR}">
                 <div class="top-num">
-                  <p>${Val12}</p>
+                  <p class="mr-tableData">${Val12}</p>
                 </div>
                 <div class="penta-count">
                   <p class="d-date">${daysR} D</p>
@@ -305,176 +305,176 @@ function manResPagination(noRow) {
             </div>
           </td>
           <td class="col_00 green-white">
-            <p class="centerizeany">${u_val}</p>
+            <p class="centerizeany mr-tableData">${u_val}</p>
           </td>
           <td class="col_00 green-white">
-            <p class="centerizeany">${u_per}</p>
+            <p class="centerizeany mr-tableData">${u_per}</p>
           </td>
           <td class="col_00 red-white">
-            <p class="centerizeany">${d_val}</p>
+            <p class="centerizeany mr-tableData">${d_val}</p>
           </td>
           <td class="col_00 red-white">
-            <p class="centerizeany">${d_per}</p>
+            <p class="centerizeany mr-tableData">${d_per}</p>
           </td>
           <td class="col_00 grey-white">
-            <p class="centerizeany">${n_val}</p>
+            <p class="centerizeany mr-tableData">${n_val}</p>
           </td>
           <td class="col_00 grey-white">
-            <p class="centerizeany">${n_per}</p>
+            <p class="centerizeany mr-tableData">${n_per}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${AM_COUNT}</p>
+            <p class="centerizeany mr-tableData">${AM_COUNT}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${AN_COUNT}</p>
+            <p class="centerizeany mr-tableData">${AN_COUNT}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${AO_COUNT}</p>
+            <p class="centerizeany mr-tableData">${AO_COUNT}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${AP_COUNT}</p>
+            <p class="centerizeany mr-tableData">${AP_COUNT}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${AQ_COUNT}</p>
+            <p class="centerizeany mr-tableData">${AQ_COUNT}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${AR_COUNT}</p>
+            <p class="centerizeany mr-tableData">${AR_COUNT}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${AS_Count}</p>
+            <p class="centerizeany mr-tableData">${AS_Count}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${AT_Count}</p>
+            <p class="centerizeany mr-tableData">${AT_Count}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${AU_Count}</p>
+            <p class="centerizeany mr-tableData">${AU_Count}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${AV_Count}</p>
+            <p class="centerizeany mr-tableData">${AV_Count}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${AW_COUNT}</p>
+            <p class="centerizeany mr-tableData">${AW_COUNT}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${AX_COUNT}</p>
+            <p class="centerizeany mr-tableData">${AX_COUNT}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${AY_COUNT}</p>
+            <p class="centerizeany mr-tableData">${AY_COUNT}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${AZ_Count}</p>
+            <p class="centerizeany mr-tableData">${AZ_Count}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${BA_Count}</p>
+            <p class="centerizeany mr-tableData">${BA_Count}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${BB_Count}</p>
+            <p class="centerizeany mr-tableData">${BB_Count}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${BC_Count}</p>
+            <p class="centerizeany mr-tableData">${BC_Count}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${BD_Count}</p>
+            <p class="centerizeany mr-tableData">${BD_Count}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${BE_count}</p>
+            <p class="centerizeany mr-tableData">${BE_count}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${BF_COUNT}</p>
+            <p class="centerizeany mr-tableData">${BF_COUNT}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${BG_COUNT}</p>
+            <p class="centerizeany mr-tableData">${BG_COUNT}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${BH_COUNT}</p>
+            <p class="centerizeany mr-tableData">${BH_COUNT}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${BI_COUNT}</p>
+            <p class="centerizeany mr-tableData">${BI_COUNT}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${BJ_COUNT}</p>
+            <p class="centerizeany mr-tableData">${BJ_COUNT}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${BK_COUNT}</p>
+            <p class="centerizeany mr-tableData">${BK_COUNT}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${BL_COUNT}</p>
+            <p class="centerizeany mr-tableData">${BL_COUNT}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${BM_COUNT}</p>
+            <p class="centerizeany mr-tableData">${BM_COUNT}</p>
           </td>
 
           <td class="col_00">
-            <p class="centerizeany">${Col2}</p>
+            <p class="centerizeany mr-tableData">${Col2}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${Col3}</p>
+            <p class="centerizeany mr-tableData">${Col3}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${DP_val}</p>
+            <p class="centerizeany mr-tableData">${DP_val}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${DY_val}</p>
+            <p class="centerizeany mr-tableData">${DY_val}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${DmA}</p>
+            <p class="centerizeany mr-tableData">${DmA}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${DmP}</p>
+            <p class="centerizeany mr-tableData">${DmP}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${DmP_per}</p>
+            <p class="centerizeany mr-tableData">${DmP_per}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${ID_val}</p>
+            <p class="centerizeany mr-tableData">${ID_val}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${LoP_per}</p>
+            <p class="centerizeany mr-tableData">${LoP_per}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${M_Val}</p>
+            <p class="centerizeany mr-tableData">${M_Val}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${MaP_per}</p>
+            <p class="centerizeany mr-tableData">${MaP_per}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${O_End}</p>
+            <p class="centerizeany mr-tableData">${O_End}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${O_Start}</p>
+            <p class="centerizeany mr-tableData">${O_Start}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${SP_val}</p>
+            <p class="centerizeany mr-tableData">${SP_val}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany"style="position: relative;">${Time_Frame}</p>
+            <p class="centerizeany mr-tableData"style="position: relative;">${Time_Frame}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${UmA}</p>
+            <p class="centerizeany mr-tableData">${UmA}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${UmP}</p>
+            <p class="centerizeany mr-tableData">${UmP}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${UmP_per}</p>
+            <p class="centerizeany mr-tableData">${UmP_per}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${Val2S}</p>
+            <p class="centerizeany mr-tableData">${Val2S}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${Val3S}</p>
+            <p class="centerizeany mr-tableData">${Val3S}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany">${Val6}</p>
+            <p class="centerizeany mr-tableData">${Val6}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany" style="position: relative;left: 55%;top: 25%;">${Description}</p>
+            <p class="centerizeany mr-tableData" style="position: relative;left: 55%;top: 25%;">${Description}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany" style="position: relative;left: 55%;top: 25%;">${Details3}</p>
+            <p class="centerizeany mr-tableData" style="position: relative;left: 55%;top: 25%;">${Details3}</p>
           </td>
           <td class="col_00">
-            <p class="centerizeany" style="position: relative;left: 55%;top: 25%;">${Details3}</p>
+            <p class="centerizeany mr-tableData" style="position: relative;left: 55%;top: 25%;">${Details2}</p>
           </td>
 
 
