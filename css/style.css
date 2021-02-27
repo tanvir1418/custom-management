@@ -1930,3 +1930,7 @@ td {
 .pagination-table #pagination-man-res-table .paginationjs .paginationjs-go-button input {
   background-color: #f2f2f2 !important;
 }
+
+#pagination-man-res-table .width-row-go{
+  display: none;
+}

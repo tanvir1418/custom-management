@@ -565,7 +565,7 @@ table#sub2-editor-table {
     width: 250px;
     border: 0;
     border-radius: 0 !important;
-    left: 20%;
+    /* left: 20%; */
 }
 
 .table-header-click-popup {
@@ -703,6 +703,7 @@ table#sub2-editor-table {
     border: 1px solid rgb(219, 218, 218);
 }
 
+#checkbox-table-exist td ,
 #checkbox-table-first td {
     word-wrap: break-word;
     padding: 6px 0px 0px 10px;
@@ -2292,6 +2293,15 @@ Bottom codes are added by Tanvir
 }
 
 #col8Filter .modal-dialog{
+    /* position: absolute; */
+    position: fixed;
+    min-height: 0;
+    margin: 0;
+    /* top: 200px;
+    left: 400px; */
+}
+
+#dropBtnModal .modal-dialog{
     /* position: absolute; */
     position: fixed;
     min-height: 0;

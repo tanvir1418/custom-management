@@ -580,16 +580,16 @@ $(document).ready(function () {
     const mytablesty12 = document.querySelector(".mytablesty12");
     $("#style1Table .right-slider5").click(function () {
         $(".mytablesty12").animate({
-                scrollLeft: mytablesty12.scrollLeft + 250,
+                scrollLeft: mytablesty12.scrollLeft + 700,
             },
-            250
+            700
         );
     });
     $("#style1Table .left-slider5").click(function () {
         $(".mytablesty12").animate({
-                scrollLeft: mytablesty12.scrollLeft - 250,
+                scrollLeft: mytablesty12.scrollLeft - 700,
             },
-            250
+            700
         );
     });
 });
@@ -951,9 +951,40 @@ $("#resizable554 th").click(function (e) {
         target = target.parentNode;
     }
     let regex = /cross/g;
+    let regexD = /drop-filter/g;
     if (target.tagName === "DIV" && regex.test(target.id)) {
         $(`#resizable554 th:nth-child(${index})`).addClass("th-dis-none");
         $(`#resizable554 td:nth-child(${index})`).addClass("th-dis-none");
+    } else if (target.tagName === "DIV" && regexD.test(target.className)) {
+        let dataP = $(`#resizable554 td:nth-child(${index}) .mr-tableData`);
+        let headingPop = $(`#resizable554 th:nth-child(${index})`)[0].textContent;
+        $("#col8Filter #tableHeaderPop").html(headingPop);
+        let targetModal = $("#col8Filter #checkbox-table-first tbody");
+        const dataC = new Set();
+        for(let i=0; i< dataP.length; i++){
+            dataC.add(dataP[i].textContent);
+        }
+        let tableTr = "";
+        for (const item of dataC) {
+            tableTr += 
+            `<tr>
+                <td>
+                    <div class="popup__checkbox__page__toggle">
+                        <label class="popup__checkbox__toggle">
+                            <input class="popup__checkbox__toggle__input" type="checkbox">
+                            <span class="popup__checkbox__toggle__label">
+                                <span class="popup__checkbox__toggle__text">${item}</span>
+                            </span>
+                        </label>
+                    </div>
+                </td>
+            </tr>`;
+        }
+        targetModal.html(tableTr);
+        $("#col8Filter .modal-dialog").css({
+            top: ((e.clientY) + 15), 
+            left: ((e.clientX) - 240)
+        });
     }
 });
 
@@ -1419,102 +1450,17 @@ function resetResFilter(e) {
 }
 // ----------- Manage Result Filter End --------------------
 
-
 // #column-header-3 .drop-filter
-$("#column-header-3 .drop-filter").click( function(event) {
-    $("#col8Filter .modal-dialog").css({
-        top: ((event.clientY) + 15), 
-        left: ((event.clientX) - 240)
-    });
-    // console.log(`Clicked and Top(Page-Y) : ${event.pageY} Left(Page-X) : ${event.pageX} `);
-    // console.log(`Clicked and Top(client-Y) : ${event.clientY} Left(client-X) : ${event.clientX} `);
-    // console.log(`Clicked and Top(screen-Y) : ${event.screenY} Left(screen-X) : ${event.screenX} `);
-    // console.log(`Clicked and Top(offset-Y) : ${event.offsetY} Left(offset-X) : ${event.offsetX} `);
-    // var x = e.clientX,
-    // var y = e.clientY;
-    // console.log("Top: " + top + " and Left: " + left);
-});
-
-$("#column-header-4 .drop-filter").click( function(event) {
-    $("#col8Filter .modal-dialog").css({
-        top: ((event.clientY) + 15), 
-        left: ((event.clientX) - 240)
-    });
-});
-
-$("#column-header-5 .drop-filter").click( function(event) {
-    $("#col8Filter .modal-dialog").css({
-        top: ((event.clientY) + 15), 
-        left: ((event.clientX) - 240)
-    });
-});
-
-$("#column-header-6 .drop-filter").click( function(event) {
-    $("#col8Filter .modal-dialog").css({
-        top: ((event.clientY) + 15), 
-        left: ((event.clientX) - 240)
-    });
-});
-
-$("#column-header-7 .drop-filter").click( function(event) {
-    $("#col8Filter .modal-dialog").css({
-        top: ((event.clientY) + 15), 
-        left: ((event.clientX) - 240)
-    });
-});
-
-$("#column-header-8 .drop-filter").click( function(event) {
-    $("#col8Filter .modal-dialog").css({
-        top: ((event.clientY) + 15), 
-        left: ((event.clientX) - 240)
-    });
-});
-
-$("#column-header-9 .drop-filter").click( function(event) {
-    $("#col8Filter .modal-dialog").css({
-        top: ((event.clientY) + 15), 
-        left: ((event.clientX) - 240)
-    });
-});
-
-$("#column-header-10 .drop-filter").click( function(event) {
-    $("#col8Filter .modal-dialog").css({
-        top: ((event.clientY) + 15), 
-        left: ((event.clientX) - 240)
-    });
-});
-
-$("#column-header-11 .drop-filter").click( function(event) {
-    $("#col8Filter .modal-dialog").css({
-        top: ((event.clientY) + 15), 
-        left: ((event.clientX) - 240)
-    });
-});
-
-$("#column-header-12 .drop-filter").click( function(event) {
-    $("#col8Filter .modal-dialog").css({
-        top: ((event.clientY) + 15), 
-        left: ((event.clientX) - 240)
-    });
-});
-
-$("#column-header-13 .drop-filter").click( function(event) {
-    $("#col8Filter .modal-dialog").css({
-        top: ((event.clientY) + 15), 
-        left: ((event.clientX) - 240)
-    });
-});
-
-$("#column-header-14 .drop-filter").click( function(event) {
-    $("#col8Filter .modal-dialog").css({
-        top: ((event.clientY) + 15), 
-        left: ((event.clientX) - 240)
-    });
-});
-
-$("#column-header-15 .drop-filter").click( function(event) {
-    $("#col8Filter .modal-dialog").css({
-        top: ((event.clientY) + 15), 
-        left: ((event.clientX) - 240)
-    });
-});
+// $("#column-header-3 .drop-filter").click( function(event) {
+//     $("#col8Filter .modal-dialog").css({
+//         top: ((event.clientY) + 15), 
+//         left: ((event.clientX) - 240)
+//     });
+//     // console.log(`Clicked and Top(Page-Y) : ${event.pageY} Left(Page-X) : ${event.pageX} `);
+//     // console.log(`Clicked and Top(client-Y) : ${event.clientY} Left(client-X) : ${event.clientX} `);
+//     // console.log(`Clicked and Top(screen-Y) : ${event.screenY} Left(screen-X) : ${event.screenX} `);
+//     // console.log(`Clicked and Top(offset-Y) : ${event.offsetY} Left(offset-X) : ${event.offsetX} `);
+//     // var x = e.clientX,
+//     // var y = e.clientY;
+//     // console.log("Top: " + top + " and Left: " + left);
+// });
