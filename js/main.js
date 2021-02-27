@@ -790,18 +790,22 @@ manDtOpt1Exist("man-data-opt5-exist", 7, "pagination-op5-data", `tabChangeOpt5(t
 $("#row-no1").change(function (e) {
 	let noRow = e.target.value;
 	manDtOpt1Exist("man-data-opt1-exist", noRow, "pagination-op1-data", `tabChangeOpt1(this)`);
+	ExistTableHeadClick("man-data-opt1-exist");
 });
 $("#row-no3").change(function (e) {
 	let noRow = e.target.value;
 	manDtOpt1Exist("man-data-opt3-exist", noRow, "pagination-op3-data", `tabChangeOpt3(this)`);
+	ExistTableHeadClick("man-data-opt3-exist");
 });
 $("#row-no4").change(function (e) {
 	let noRow = e.target.value;
 	manDtOpt1Exist("man-data-opt4-exist", noRow, "pagination-op4-data", `tabChangeOpt4(this)`);
+	ExistTableHeadClick("man-data-opt4-exist");
 });
 $("#row-no5").change(function (e) {
 	let noRow = e.target.value;
 	manDtOpt1Exist("man-data-opt5-exist", noRow, "pagination-op5-data", `tabChangeOpt5(this)`);
+	ExistTableHeadClick("man-data-opt5-exist");
 });
 
 // function dropModalFilter(e) {
