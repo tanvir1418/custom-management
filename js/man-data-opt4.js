@@ -114,7 +114,25 @@ let opt4RightData = [
     type: "five",
   }
 ];
-  
+
+let opt4Extra = [
+  {
+    id: "opt4-if-option",
+    name: "IF",
+    type: "option",
+  },
+  {
+    id: "opt4-minimum-input",
+    name: "MINIMUM",
+    type: "input",
+  },
+  {
+    id: "opt4-every-option",
+    name: "EVERY",
+    type: "option",
+  },
+];
+
 function listRenderOpt4(id, name, addNewRow) {
   let ele = `<tr ondblclick="${addNewRow}" class="cursor-pointer" id="${id}">
     <td colspan="2">${name}</td>
@@ -493,7 +511,8 @@ function manDatacheckNum(e) {
 
 // Form by text editor start
 function findInputIdDS2(title) {
-  let res = opt4LeftData.filter((a) => a.name == title).map((b) => b.id);
+  let searchArr = opt4LeftData.concat(opt4RightData).concat(opt4Extra);
+  let res = searchArr.filter((a) => a.name == title).map((b) => b.id);
   if (res.length) return res[0];
   else return false;
 }
@@ -503,7 +522,16 @@ function formToWindowDS2(e) {
     .children(".text-editor-popup-body")
     .find("#ds2_text_editor");
   let renHtml = "";
-  manDataSeqListL.forEach((pid) => {
+  let manDataSeqList = manDataSeqListL.concat(manDataSeqListR);
+  opt4Extra.forEach(({ id, name, type }) => {
+    let valD = $(`#${id}`).val();
+    if (valD != "") {
+      renHtml += `<div class="form-text-design data-div">
+        ${name}: ${valD}
+      </div>`;
+    }
+  });
+  manDataSeqList.forEach((pid) => {
     let title = $(`#${pid} span.toggle__text`).html();
     let addSet = $(`#${pid} .add-set`).find(":selected").text();
     let seqTitle = $(`#${pid} .sequence-opt4`).find(":selected").text();
@@ -553,7 +581,8 @@ function windowToFormDS2(e) {
         $(`#${pid} .add-set`).val(divData[2].trim().toLowerCase());
       } else if (divData[1].trim().toUpperCase() == "SEQUENCE") {
         let seqVal = 0;
-        for (let k = 1; k <= opt4LeftData.length; k++) {
+        let len = Math.max(opt4LeftData.length, opt4RightData.length);
+        for (let k = 1; k <= len; k++) {
           if (divData[2].trim().toUpperCase() == inWords(k).toUpperCase()) {
             seqVal = k;
           }
@@ -565,10 +594,10 @@ function windowToFormDS2(e) {
       let inpSel = $(`#${pid} .user-inp`);
       if (inp.length > 0) {
         inp[no - 1].value = divData[1].trim();
-      }
-
-      if (inpSel.length > 0) {
+      } else if (inpSel.length > 0) {
         inpSel[no - 1].value = divData[1].trim();
+      } else {
+        $(`#${pid}`).val(divData[1].trim());
       }
     }
   }
@@ -662,19 +691,14 @@ function autoCorrectDS2() {
   while (document.getElementById("temp")) {
     document.getElementById("temp").removeAttribute("id");
   }
-  if (pos.textContent.indexOf(":") == -1) x = pos.textContent;
-  else x = pos.textContent;
+  x = pos.textContent;
   let editor = document.getElementById("text_editor_p");
-  $(pos).replaceWith(
-    `<div id="temp">${pos.textContent}</div>
-    <div id="adder"></div>`
-  );
 
   let m = "";
   let first = 1;
   if (x.indexOf(":") == -1) {
-    $("#adder").addClass("set-name");
-    opt4LeftData.forEach(({ name }) => {
+    let sugName = opt4LeftData.concat(opt4RightData).concat(opt4Extra);
+    sugName.forEach(({ name }) => {
       if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
         if (first) {
           m += `<option selected value="${name}">${name}</option><br>`;
@@ -687,7 +711,6 @@ function autoCorrectDS2() {
     });
   }
   else if ((x.split(":").length - 1) == 1) {
-    $("#adder").addClass("set-sug");
     setSugArray.forEach((set) => {
       let inp = x.split(":")[1].trim().toLowerCase();
       if (inp != "" && set.toLowerCase().indexOf(inp) == 0) {
@@ -702,7 +725,6 @@ function autoCorrectDS2() {
     });
   }
   else if ((x.split(":").length - 1) == 2) {
-    $("#adder").addClass("set-sug");
     setSugArray.forEach((set) => {
       let inp = x.split(":")[2].trim().toLowerCase();
       if (inp != "" && set.toLowerCase().indexOf(inp) == 0) {
@@ -723,13 +745,24 @@ function autoCorrectDS2() {
     </select>`;
   // add auto correct ... only if there is atleast one match
   if (m != "") {
+    if (x.indexOf(":") == -1) {
+      $(pos).replaceWith(
+        `<div id="temp">${x}</div>
+        <div id="adder" class="set-name"></div>`
+      );
+    } else {
+      $(pos).replaceWith(
+        `<div id="temp">${x}</div>
+        <div id="adder" class="set-sug"></div>`
+      );
+    }
     document.getElementById("adder").innerHTML = y;
     document.getElementById("adder").style.display = "block";
     $("#adder select").focus();
   } else {
     $("#adder").remove();
-    setEndOfContenteditable(document.getElementById("temp"));
-    document.getElementById("temp").removeAttribute("id");
+    // setEndOfContenteditable(document.getElementById("temp"));
+    // document.getElementById("temp").removeAttribute("id");
   }
 }
 
@@ -1253,10 +1286,59 @@ function pasteEventDS4(e) {
 // Form by Text Editor End
 // Manage Data Opt 4 Sample 4 End
 
-// Manage Data Opt 4 Sample 4 Start
+// Manage Data Opt 4 Sample 3 Start
 // Form by Text Editor Start
+let sectionDS3 = [
+  {
+    id: "fieldset_id1",
+    name: "sectionA",
+    type: "option",
+  },
+  {
+    id: "fieldset_id2",
+    name: "sectionB",
+    type: "option",
+  },
+  {
+    id: "fieldset_id3",
+    name: "sectionC",
+    type: "option",
+  },
+  {
+    id: "fieldset_id4",
+    name: "sectionD",
+    type: "option",
+  },
+  {
+    id: "fieldset_id5",
+    name: "sectionE",
+    type: "option",
+  },
+  {
+    id: "fieldset_id6",
+    name: "sectionF",
+    type: "option",
+  },
+  {
+    id: "fieldset_id7",
+    name: "sectionG",
+    type: "option",
+  },
+  {
+    id: "fieldset_id8",
+    name: "sectionH",
+    type: "option",
+  },
+  {
+    id: "fieldset_id9",
+    name: "sectionI",
+    type: "option",
+  },
+];
+
 function findInputIdDS3(title) {
-  let res = section.filter(a => a == title);
+  let searchArr = sectionDS3.concat(opt4Extra);
+  let res = searchArr.filter((a) => a.name == title).map((b) => b.id);
   if (res.length) return res[0];
   else return false;
 }
@@ -1277,7 +1359,7 @@ function checkingDS3(e) {
       let starting = nd.textContent.substr(0, extra);
       let inpData = starting.split(":");
       if (
-        starting != "" && !findInputIdMS3(inpData[0].trim())
+        starting != "" && !findInputIdDS3(inpData[0].trim())
       ) {
         if (extra == nd.textContent.length) {
           $(nd).replaceWith(
@@ -1346,7 +1428,8 @@ function autoCorrectDS3() {
   let first = 1;
   if (x.indexOf(":") == -1) {
     $("#adder").addClass("set-name");
-    section.forEach(name => {
+    let secArr = sectionDS3.concat(opt4Extra);
+    secArr.forEach(({name}) => {
       if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
         if (first) {
           m += `<option selected value="${name}">${name}</option><br>`;
@@ -1384,7 +1467,7 @@ function pasteEventDS3(e) {
     if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
       let x;
       if (
-        !findInputIdMS3(inpData[0].trim())
+        !findInputIdDS3(inpData[0].trim())
       ) {
         x = document.createElement("div");
         x.setAttribute("class", "form-text-design-invalid data-div");
@@ -1463,6 +1546,15 @@ function formToWindowDS3(e) {
     .find("#ds3_text_editor");
   let renHtml = "";
   let renData = "";
+  // yello head
+  opt4Extra.forEach(({ id, name, type }) => {
+    let valD = $(`#${id}`).val();
+    if (valD != "") {
+      renHtml += `<div class="form-text-design data-div">
+        ${name}: ${valD}
+      </div>`;
+    }
+  });
   // section A
   let sectionA = $("fieldset#fieldset_id1");
   let inpA = sectionA.find(".data-form input[type=text]");
@@ -1571,4 +1663,4 @@ function formToWindowDS3(e) {
   tBody.html(renHtml);
 }
 // Form by Text Editor End
-// Manage Data Opt 4 Sample 4 End
+// Manage Data Opt 4 Sample 3 End
