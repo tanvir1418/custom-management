@@ -553,6 +553,14 @@ $(function () {
 	$("#datepicker-2").datepicker();
 	$("#datepicker-2").datepicker("option", "dateFormat", "DD - MM d, yy");
 });
+
+$( "#datePicker1_Icon" ).click(function() {
+	$("#datepicker-1").focus();
+});
+$( "#datePicker2_Icon" ).click(function() {
+	$("#datepicker-2").focus();
+});
+
 // OPTION 3 DATE PICKER END
 
 // OPTION 4 DATE PICKER END
