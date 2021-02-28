@@ -91,6 +91,10 @@ $(document).ready(function () {
                                 display: false,
                             },
                             ticks: {
+                                callback: function(value, index, values) {
+                                    if(value>0) return "+" + value;
+                                    else return value;
+                                },
                                 suggestedMin: -100,
                                 suggestedMax: 100,
                                 stepSize: 25,
