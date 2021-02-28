@@ -334,8 +334,8 @@ let leftSideArray = [
 ]
 
 function listRender(id, name, addNewRow) {
-  let ele = `<tr ondblclick="${addNewRow}" class="cursor-pointer">
-    <td colspan="2" id="${id}">${name}</td>
+  let ele = `<tr ondblclick="${addNewRow}" class="cursor-pointer" id="${id}">
+    <td colspan="2">${name}</td>
     <td><i class="fas fa-question-circle"></i></td>
     <td></td>
   </tr>`;
@@ -415,8 +415,8 @@ function renderListInputHtml(_id, iCount, title, resetValue, swapSeq) {
 }
 
 function addNewRowL(e) {
+  let _id = $(e).attr("id");
   let element = $(e).children()[0];
-  let _id = element.id;
   let iCount = leftSideArray.filter((a) => a.id == _id).map((b) => b.count)[0];
   let title = element.innerText;
   if ($(`#leftSideDrag_op1 #${_id}`).length == 0) {
@@ -427,8 +427,8 @@ function addNewRowL(e) {
 }
 
 function addNewRowR(e) {
+  let _id = $(e).attr("id");
   let element = $(e).children()[0];
-  let _id = element.id;
   let iCount = rightSideData.filter((a) => a.id == _id).map((b) => b.count)[0];
   let title = element.innerText;
   if ($(`#rightSideDrag_op1 #${_id}`).length == 0) {
@@ -458,7 +458,7 @@ function formToWindow(e) {
     renHtml += `<div class="form-text-design data-div">
       ${title}: Set: Set
     </div>
-    <div class="form-text-design">
+    <div class="form-text-design data-div">
       ${title}: Sequence: ${seqTitle}
     </div>
     ${inpDiv}`;
@@ -582,31 +582,31 @@ function setCaret(el) {
 
 // this function check for valid input in text editor
 function checking(e) {
-  var editor = document.getElementById("text_editor");
+  let editor = document.getElementById("text_editor");
   $("#adder").remove(); // adder contains our auto correct select box
   // if key is enter key
-  var nd = getCaretPosition();
-  var nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
-  var extra = getCaretPosition2(nd2);
+  let nd = getCaretPosition();
+  let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+  let extra = getCaretPosition2(nd2);
   if (e.keyCode == 13) {
     // same algorithm as we see in updateActualForm() function
-    var nd = getCaretPosition();
+    let nd = getCaretPosition();
     $("#temp").attr("id", "");
     if (nd.nodeType != 3 && nd.getAttribute("id") == "text_editor") return false;
     if (
       nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
       nd.textContent != ""
     ) {
-      var nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
-      var extra = getCaretPosition2(nd2);
-      var starting = nd.textContent.substr(0, extra);
-      var ending = nd.textContent.substr(extra);
+      let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+      let extra = getCaretPosition2(nd2);
+      let starting = nd.textContent.substr(0, extra);
+      let ending = nd.textContent.substr(extra);
       // addition of check for allowing lines to split on enter key in between
 
       let inpData = starting.split(":");
       if (
         starting != "" &&
-        (!findInputId(starting.substr(0, starting.indexOf(":"))) ||
+        (!findInputId(inpData[0].trim().split("_")[0].trim()) ||
           (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
           (
             inpData.length == 3 &&
@@ -655,7 +655,7 @@ function checking(e) {
               : "<br>") +
             `<div id="temp">
               ${nd.textContent.substr(extra)}
-              "</div>`
+            "</div>`
           );
           setCaret($("#temp")[0]);
         }
@@ -668,11 +668,11 @@ function checking(e) {
   setTimeout(autoCorrect, 100);
 }
 
-let setSugArray = ["Sequence", "Set", "Form", "To"];
+let setSugArray = ["Sequence", "Set", "Form", "To", "Add"];
 
 function autoCorrect() {
   // getting current line... so that we place auto correct after it
-  var pos = getCaretPosition();
+  let pos = getCaretPosition();
   if ($(pos).find("#adder").length == 1) $("#adder").remove();
   // i mark current line as temp... to make auto correct work
   while (document.getElementById("temp")) {
@@ -680,14 +680,14 @@ function autoCorrect() {
   }
   if (pos.textContent.indexOf(":") == -1) x = pos.textContent;
   else x = pos.textContent;
-  var editor = document.getElementById("text_editor_p");
+  let editor = document.getElementById("text_editor_p");
   $(pos).replaceWith(
     `<div id="temp">${pos.textContent}</div>
     <div id="adder"></div>`
   );
 
-  var m = "";
-  var first = 1;
+  let m = "";
+  let first = 1;
   if (x.indexOf(":") == -1) {
     $("#adder").addClass("set-name");
     leftSideArray.forEach((sData) => {
@@ -720,7 +720,7 @@ function autoCorrect() {
 
   }
 
-  var y =
+  let y =
     `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
     ${m}
     </select>`;
@@ -740,14 +740,15 @@ function addField(key) {
   x = document.getElementById("temp");
   clicked = false;
   $("#adder").remove();
+  let sData = x.textContent.split(":");
   if (x.textContent.indexOf(":") == -1) {
     x.textContent = `${key}: \r`;
   }
-  else if ((x.textContent.split(":").length - 1) == 1) {
-    x.textContent = `${x.textContent.split(":")[0]}: ${key}: \r`;
+  else if ((sData.length - 1) == 1) {
+    x.textContent = `${sData[0]}: ${key}: \r`;
   }
-  else if ((x.textContent.split(":").length - 1) == 2) {
-    x.textContent = `${x.textContent.split(":")[1]}: ${key}: \r`;
+  else if ((sData.length - 1) == 2) {
+    x.textContent = `${sData[0]}: ${sData[1]}: ${key}\r`;
   }
   setTimeout(setEndOfContenteditable, 100, x);
 }
@@ -797,16 +798,16 @@ function setEndOfContenteditable(contentEditableElement) {
 
 // paste work... checks are same as in checking function or in updateActualForm
 function pasteEvent(e) {
-  var editor = document.getElementById("text_editor");
+  let editor = document.getElementById("text_editor");
   let clipboardData = e.clipboardData || window.clipboardData;
   let pD = clipboardData.getData("Text").split("\n");
-  for (var i = 0; i < pD.length; i++) {
+  for (let i = 0; i < pD.length; i++) {
     let nbe = pD[i];
     let inpData = nbe.split(":");
     if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
-      var x;
+      let x;
       if (
-        !findInputId(nbe.substr(0, nbe.indexOf(":")).split("_")[0].trim()) ||
+        !findInputId(inpData[0].trim().split("_")[0].trim()) ||
         (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
         (
           inpData.length == 3 &&
@@ -892,3 +893,225 @@ function checkGenerateBtn() {
     $("#op1GenerateBtnModal").modal('toggle');
   }
 }
+
+// Opt3 Form by text editor Start
+let op3Sug = ["Keyword", "From", "To"];
+function findInputIdOp3(title) {
+  let res = op3Sug.filter(a => a == title);
+  if (res.length) return res[0];
+  else return false;
+}
+
+function checkingOp3(e) {
+  $("#adder").remove(); // adder contains our auto correct select box
+  // if key is enter key
+  let nd = getCaretPosition();
+  // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+  // let extra = getCaretPosition2(nd2);
+  if (e.keyCode == 13) {
+    // same algorithm as we see in updateActualForm() function
+    let nd = getCaretPosition();
+    $("#temp").attr("id", "");
+    if (nd.nodeType != 3 && nd.getAttribute("id") == "op3_text_editor") return false;
+    if (
+      nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
+      nd.textContent != ""
+    ) {
+      let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+      let extra = getCaretPosition2(nd2);
+      let starting = nd.textContent.substr(0, extra);
+      let ending = nd.textContent.substr(extra);
+      // addition of check for allowing lines to split on enter key in between
+      let inpData = starting.split(":");
+      if (
+        starting != "" &&
+        (!findInputIdOp3(inpData[0].trim().split("_")[0].trim()) ||
+          (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
+        )
+      ) {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design-invalid data-div">${nd.textContent}</div><br id="temp">`
+          );
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design-invalid data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+            ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      } else {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design data-div">
+            ${nd.textContent}
+            </div>
+            <br id="temp">`
+          );
+          //setEndOfContenteditable(document.getElementById("temp"));
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+              ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      }
+    }
+    return false;
+  }
+  // this will add autocorrect box
+  setTimeout(autoCorrectOp3, 100);
+}
+
+function autoCorrectOp3() {
+  let pos = getCaretPosition();
+  if ($(pos).find("#adder").length == 1) $("#adder").remove();
+  while (document.getElementById("temp")) {
+    document.getElementById("temp").removeAttribute("id");
+  }
+  if (pos.textContent.indexOf(":") == -1) x = pos.textContent;
+  else x = pos.textContent;
+  $(pos).replaceWith(
+    `<div id="temp">${pos.textContent}</div>
+    <div id="adder"></div>`
+  );
+
+  let m = "";
+  let first = 1;
+  if (x.indexOf(":") == -1) {
+    $("#adder").addClass("set-name");
+    op3Sug.forEach((sug) => {
+      if (sug.toLowerCase().indexOf(x.toLowerCase()) == 0) {
+        if (first) {
+          m += `<option selected value="${sug}">${sug}</option><br>`;
+        }
+        else {
+          m += `<option value="${sug}">${sug}</option><br>`;
+        }
+        first = 0;
+      }
+    });
+  }
+
+  let y =
+  `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
+    ${m}
+  </select>`;
+  if (m != "") {
+    document.getElementById("adder").innerHTML = y;
+    document.getElementById("adder").style.display = "block";
+    $("#adder select").focus();
+  } else {
+    $("#adder").remove();
+    // let tempE = $("#temp").parent();
+    // tempE.parent().append(tempE.html());
+    // tempE.remove();
+    setEndOfContenteditable(document.getElementById("temp"));
+    document.getElementById("temp").removeAttribute("id");
+  }
+}
+
+function pasteEventOp3(e) {
+  var editor = document.getElementById("op3_text_editor");
+  let clipboardData = e.clipboardData || window.clipboardData;
+  let pD = clipboardData.getData("Text").split("\n");
+  for (var i = 0; i < pD.length; i++) {
+    let nbe = pD[i];
+    let inpData = nbe.split(":");
+    if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
+      var x;
+      if (
+        !findInputIdOp3(inpData[0].trim().split("_")[0].trim()) ||
+        (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
+      ) {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design-invalid data-div");
+        x.textContent = nbe;
+      } else {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design data-div");
+        x.textContent = nbe;
+      }
+      editor.append(x);
+    }
+  }
+  removeExtraLines(editor);
+  editor.append(document.createElement("br"));
+  setEndOfContenteditable(editor);
+  return false;
+}
+
+function formToWindowOp3(e) {
+  let tBody = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#op3_text_editor");
+  let keyword = $("#opt3-textarea-1").val();
+  let from = $("#datepicker-1").val();
+  let to = $("#datepicker-2").val();
+
+  let renHtml = "";
+
+  if (keyword != "") {
+    renHtml+=
+    `<div class="form-text-design data-div">
+      Keyword: ${keyword}
+    </div>`;
+  }
+
+  if (from != "") {
+    renHtml +=
+      `<div class="form-text-design data-div">
+      From: ${from}
+    </div>`;
+  }
+
+  if (to != "") {
+    renHtml +=
+    `<div class="form-text-design data-div">
+      To: ${to}
+    </div>`;
+  }
+
+  if (renHtml != "") {
+    tBody.html(renHtml);
+  }
+}
+
+function windowToFormOp3(e) {
+  let tRow = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#op3_text_editor div.form-text-design.data-div");
+  let len = tRow.length;
+  for (let i = 0; i < len; i++){
+    let divData = $(tRow[i])[0].innerText.split(":");
+    if (divData.length > 1) {
+      if (divData[0].trim() == "Keyword") {
+        $("#opt3-textarea-1").val(divData[1].trim());
+      }
+      else if (divData[0].trim() == "From") {
+        $("#datepicker-1").val(divData[1].trim());
+      }
+      else if (divData[0].trim() == "To") {
+        $("#datepicker-2").val(divData[1].trim());
+      }
+    }
+  }
+}
+// Opt3 Form by text editor End

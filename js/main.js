@@ -548,25 +548,10 @@ function updateThumbnail(dropZoneElement, file) {
 // OPTION 3 DATE PICKER START
 
 $(function () {
-
-	// Set Datepicker
-	// $("#datepicker-1").datepicker({
-	//   beforeShow: function (input, inst) {
-	//       setTimeout(function () {
-	//           inst.dpDiv.css({
-	//               bottom: $(".datepicker").offset().top + 35,
-	//               left: $(".datepicker").offset().left
-	//           });
-	//       }, 0);
-	//   }
-	// });
 	$("#datepicker-1").datepicker();
-	//$("#datepicker-1").datepicker("setDate", "10w+1");
-	$("#datepicker-1").datepicker("option", "dateFormat", "DD, MM d, yy");
-
+	$("#datepicker-1").datepicker("option", "dateFormat", "DD - MM d, yy");
 	$("#datepicker-2").datepicker();
-	//$("#datepicker-2").datepicker("setDate", "10w+1");
-	$("#datepicker-2").datepicker("option", "dateFormat", "DD, MM d, yy");
+	$("#datepicker-2").datepicker("option", "dateFormat", "DD - MM d, yy");
 });
 // OPTION 3 DATE PICKER END
 
@@ -677,46 +662,40 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 		`<tr>
 		<th scope="col">
 			ROW
-			<div class="head-filter">
-				<i class="fas fa-times"></i>
-			</div>
-			<div class="drop-filter" onclick="dropModalFilter(this)">
-				<i class="fas fa-caret-down"></i>
-			</div>
 		</th>
 		<th scope="col">
 			RECORDS COUNT
-			<div class="head-filter">
+			<div class="head-filter cross-exists">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" onclick="dropModalFilter(this)">
+			<div class="drop-filter" >
 				<i class="fas fa-caret-down"></i>
 			</div>
 		</th>
 		<th scope="col">
 			SAVED NAME
-			<div class="head-filter">
+			<div class="head-filter cross-exists">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" onclick="dropModalFilter(this)">
+			<div class="drop-filter" >
 				<i class="fas fa-caret-down"></i>
 			</div>
 		</th>
 		<th scope="col">
 			CREATED DATE TIME
-			<div class="head-filter">
+			<div class="head-filter cross-exists">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" onclick="dropModalFilter(this)">
+			<div class="drop-filter" >
 				<i class="fas fa-caret-down"></i>
 			</div>
 		</th>
 		<th scope="col">
 			LAST UPDATE DATE TIME
-			<div class="head-filter">
+			<div class="head-filter cross-exists">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" onclick="dropModalFilter(this)">
+			<div class="drop-filter" >
 				<i class="fas fa-caret-down"></i>
 			</div>
 		</th>
@@ -730,28 +709,28 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 		showGoButton: true,
 		callback: function (data, pagination) {
 			let tableTr = "";
-			data.forEach(({ id, serial, recordsCount, savedName, CDateTime, LUDateTime }) => {
+			data.forEach(({ id, serial, recordsCount, savedName, CDateTime, LUDateTime }, index) => {
 				tableTr +=
 					`<tr id="${id}">
 					<th class="row-data" scope="row">${serial}</th>
 					<td class="records-count">
 						<a data-toggle="modal" data-target="#hyperTextModal1" style="color: black" onclick="showHyperTextModal1(this)">
-							<p>${recordsCount}</p>
+							<p class="mn-exists-data">${recordsCount}</p>
 						</a>
 					</td>
 					<td>
-						<input class="save-name" value="${savedName}" type="text" />
+						<input class="save-name mn-exists-data" value="${savedName}" type="text" />
 					</td>
 					<td>
 						<div class="create-date-time date-time-39">
-							<p>${CDateTime.date}</p>
-							<p>${CDateTime.time}</p>
+							<p class="mn-exists-data">${CDateTime.date}</p>
+							<p class="mn-exists-data">${CDateTime.time}</p>
 						</div>
 					</td>
 					<td>
 						<div class="last-date-time date-time-39">
-							<p>${LUDateTime.date}</p>
-							<p>${LUDateTime.time}</p>
+							<p class="mn-exists-data">${LUDateTime.date}</p>
+							<p class="mn-exists-data">${LUDateTime.time}</p>
 						</div>
 					</td>
 					<td>
@@ -811,24 +790,89 @@ manDtOpt1Exist("man-data-opt5-exist", 7, "pagination-op5-data", `tabChangeOpt5(t
 $("#row-no1").change(function (e) {
 	let noRow = e.target.value;
 	manDtOpt1Exist("man-data-opt1-exist", noRow, "pagination-op1-data", `tabChangeOpt1(this)`);
+	ExistTableHeadClick("man-data-opt1-exist");
 });
 $("#row-no3").change(function (e) {
 	let noRow = e.target.value;
 	manDtOpt1Exist("man-data-opt3-exist", noRow, "pagination-op3-data", `tabChangeOpt3(this)`);
+	ExistTableHeadClick("man-data-opt3-exist");
 });
 $("#row-no4").change(function (e) {
 	let noRow = e.target.value;
 	manDtOpt1Exist("man-data-opt4-exist", noRow, "pagination-op4-data", `tabChangeOpt4(this)`);
+	ExistTableHeadClick("man-data-opt4-exist");
 });
 $("#row-no5").change(function (e) {
 	let noRow = e.target.value;
 	manDtOpt1Exist("man-data-opt5-exist", noRow, "pagination-op5-data", `tabChangeOpt5(this)`);
+	ExistTableHeadClick("man-data-opt5-exist");
 });
 
-function dropModalFilter(e) {
-	$("#dropBtnModal").modal('toggle');
-	let headerName = $(e).parent()[0].innerText;
-	$("#dropBtnModal div.modal-body div.table-header-popup-header-title p").html(headerName);
-}
+// function dropModalFilter(e) {
+// 	$("#dropBtnModal").modal('toggle');
+// 	let headerName = $(e).parent()[0].innerText;
+// 	$("#dropBtnModal div.modal-body div.table-header-popup-header-title p").html(headerName);
+// 	let index = $(this).index() + 1;
+// 	console.log(index);
+// }
 
 // Manage Data Option 1 Existing Pagination End
+
+function ExistTableHeadClick(tableId){
+	$(`#${tableId} th`).click(function (e) {
+		let target = e.target;
+		let index = $(this).index() + 1;
+		if (target.tagName === "I") {
+			target = target.parentNode;
+		}
+		let regex = /cross/g;
+		let regexD = /drop-filter/g;
+		if (target.tagName === "DIV" && regex.test(target.className)) {
+			$(`#${tableId} th:nth-child(${index})`).addClass("th-dis-none");
+			$(`#${tableId} td:nth-child(${index})`).addClass("th-dis-none");
+		}else if (target.tagName === "DIV" && regexD.test(target.className)) {
+			let dataP = $(`#${tableId} td:nth-child(${index}) .mn-exists-data`);
+			// console.log(dataP);
+			let headingPop = $(`#${tableId} th:nth-child(${index})`)[0].textContent;
+			$("#dropBtnModal #mnExistsThPop").html(headingPop);
+			let targetModal = $("#dropBtnModal #checkbox-table-exist tbody");
+			const dataC = new Set();
+			for(let i=0; i< dataP.length; i++){
+				if(dataP[i].tagName == "INPUT"){
+					dataC.add(dataP[i].value);
+				}else{
+					dataC.add(dataP[i].textContent);
+				}
+				// console.log(dataP[i].tagName);
+			}
+
+			let tableTr = "";
+			for (const item of dataC) {
+				tableTr += 
+				`<tr>
+					<td>
+						<div class="popup__checkbox__page__toggle">
+							<label class="popup__checkbox__toggle">
+								<input class="popup__checkbox__toggle__input" type="checkbox">
+								<span class="popup__checkbox__toggle__label">
+									<span class="popup__checkbox__toggle__text">${item}</span>
+								</span>
+							</label>
+						</div>
+					</td>
+				</tr>`;
+			}
+			targetModal.html(tableTr);
+			$("#dropBtnModal .modal-dialog").css({
+				top: ((e.clientY) + 15), 
+				left: ((e.clientX) - 240)
+			});
+			$("#dropBtnModal").modal('toggle');
+		}
+
+	}); 
+}
+ExistTableHeadClick("man-data-opt1-exist");
+ExistTableHeadClick("man-data-opt3-exist");
+ExistTableHeadClick("man-data-opt4-exist");
+ExistTableHeadClick("man-data-opt5-exist");

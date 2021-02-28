@@ -97,9 +97,9 @@ const managetempalistmodal = [
         }
       }
     }
-    
+
     htmlDataModal +=
-    `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempa-submodal-div-list-1-${index + 1}">
+      `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempa-submodal-div-list-1-${index + 1}">
       ${modallistmanagetempa_data1}
     </ul>
     <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="managetempa-submodal-div-list-2-${index + 1}">
@@ -191,7 +191,7 @@ const sub_ul_managetempamodallist = document.querySelector("#sub-ul-managetempa-
 sub_ul_managetempamodallist.addEventListener("click", function (e) {
   let target = e.target;
   if (target.tagName === "DIV") {
-    if (target.className.indexOf("sublist-cancel-box")!=-1) {
+    if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
       return;
     }
@@ -200,7 +200,7 @@ sub_ul_managetempamodallist.addEventListener("click", function (e) {
     target = target.parentNode;
   } else if (target.tagName === "I") {
     target = target.parentNode;
-    if (target.className.indexOf("sublist-cancel-box")!=-1) {
+    if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
       return;
     } else target = target.parentNode;
@@ -252,8 +252,8 @@ $(document).ready(function () {
   $(".managetempa-scroll-btn").click(function () {
     const managetempa_scroll_window = document.querySelector(".managetempa-scroll-window");
     $(".managetempa-scroll-window").animate({
-        scrollTop: managetempa_scroll_window.scrollTop + 100,
-      },
+      scrollTop: managetempa_scroll_window.scrollTop + 100,
+    },
       250
     );
   });
@@ -439,7 +439,7 @@ const sub_ul_managetempbmodallist = document.querySelector("#sub-ul-managetempb-
 sub_ul_managetempbmodallist.addEventListener("click", function (e) {
   let target = e.target;
   if (target.tagName === "DIV") {
-    if (target.className.indexOf("sublist-cancel-box")!=-1) {
+    if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
       return;
     }
@@ -448,7 +448,7 @@ sub_ul_managetempbmodallist.addEventListener("click", function (e) {
     target = target.parentNode;
   } else if (target.tagName === "I") {
     target = target.parentNode;
-    if (target.className.indexOf("sublist-cancel-box")!=-1) {
+    if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
       return;
     } else target = target.parentNode;
@@ -500,8 +500,8 @@ $(document).ready(function () {
   $(".managetempb-scroll-btn").click(function () {
     const managetempb_scroll_window = document.querySelector(".managetempb-scroll-window");
     $(".managetempb-scroll-window").animate({
-        scrollTop: managetempb_scroll_window.scrollTop + 100,
-      },
+      scrollTop: managetempb_scroll_window.scrollTop + 100,
+    },
       250
     );
   });
@@ -592,8 +592,8 @@ const managetempclistmodal = [
         }
       }
     }
-    htmlDataModal += 
-    `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempc-submodal-div-list-1-${index + 1}">
+    htmlDataModal +=
+      `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempc-submodal-div-list-1-${index + 1}">
 			${modallistmanagetempc_data1}
 		</ul>
 		<ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="managetempc-submodal-div-list-2-${index + 1}">
@@ -685,7 +685,7 @@ const sub_ul_managetempcmodallist = document.querySelector("#sub-ul-managetempc-
 sub_ul_managetempcmodallist.addEventListener("click", function (e) {
   let target = e.target;
   if (target.tagName === "DIV") {
-    if (target.className.indexOf("sublist-cancel-box")!=-1) {
+    if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
       return;
     }
@@ -694,7 +694,7 @@ sub_ul_managetempcmodallist.addEventListener("click", function (e) {
     target = target.parentNode;
   } else if (target.tagName === "I") {
     target = target.parentNode;
-    if (target.className.indexOf("sublist-cancel-box")!=-1) {
+    if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
       return;
     } else target = target.parentNode;
@@ -747,8 +747,8 @@ $(document).ready(function () {
   $(".managetempc-scroll-btn").click(function () {
     const managetempc_scroll_window = document.querySelector(".managetempc-scroll-window");
     $(".managetempc-scroll-window").animate({
-        scrollTop: managetempc_scroll_window.scrollTop + 100,
-      },
+      scrollTop: managetempc_scroll_window.scrollTop + 100,
+    },
       250
     );
   });
@@ -841,8 +841,8 @@ const managetempdlistmodal = [
         }
       }
     }
-    htmlDataModal += 
-    `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempd-submodal-div-list-1-${index + 1}">
+    htmlDataModal +=
+      `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempd-submodal-div-list-1-${index + 1}">
       ${modallistmanagetempd_data1}
     </ul>
     <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="managetempd-submodal-div-list-2-${index + 1}">
@@ -934,7 +934,7 @@ const sub_ul_managetempdmodallist = document.querySelector("#sub-ul-managetempd-
 sub_ul_managetempdmodallist.addEventListener("click", function (e) {
   let target = e.target;
   if (target.tagName === "DIV") {
-    if (target.className.indexOf("sublist-cancel-box")!=-1) {
+    if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
       return;
     }
@@ -943,7 +943,7 @@ sub_ul_managetempdmodallist.addEventListener("click", function (e) {
     target = target.parentNode;
   } else if (target.tagName === "I") {
     target = target.parentNode;
-    if (target.className.indexOf("sublist-cancel-box")!=-1) {
+    if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
       return;
     } else target = target.parentNode;
@@ -995,8 +995,8 @@ $(document).ready(function () {
   $(".managetempd-scroll-btn").click(function () {
     const managetempd_scroll_window = document.querySelector(".managetempd-scroll-window");
     $(".managetempd-scroll-window").animate({
-        scrollTop: managetempd_scroll_window.scrollTop + 100,
-      },
+      scrollTop: managetempd_scroll_window.scrollTop + 100,
+    },
       250
     );
   });
@@ -1006,20 +1006,181 @@ $(document).ready(function () {
 // ===/////=== MANAGE TEMP LIST4 ITEM END ===/////===
 
 // Manage template Sample 2 Start
-(function manTemSamLeftSide() {
+let manTemRightData = [
+  {
+    "id": "rsa-mntem-1",
+    "name": "R-Options 1",
+    "type": "one",
+  },
+  {
+    "id": "rsa-mntem-2",
+    "name": "R-Options 2",
+    "type": "one",
+  },
+  {
+    "id": "rsa-mntem-3",
+    "name": "R-Options 3",
+    "type": "two",
+  },
+  {
+    "id": "rsa-mntem-4",
+    "name": "R-Options 4",
+    "type": "three",
+  },
+  {
+    "id": "rsa-mntem-5",
+    "name": "R-Options 5",
+    "type": "four",
+  },
+  {
+    "id": "rsa-mntem-6",
+    "name": "R-Options 6",
+    "type": "four",
+  },
+  {
+    "id": "rsa-mntem-7",
+    "name": "R-Options 7",
+    "type": "four",
+  },
+  {
+    "id": "rsa-mntem-8",
+    "name": "R-Options 8",
+    "type": "four",
+  },
+  {
+    "id": "rsa-mntem-9",
+    "name": "R-Options 9",
+    "type": "two",
+  },
+  {
+    "id": "rsa-mntem-10",
+    "name": "R-Options 10",
+    "type": "four",
+  },
+  {
+    "id": "rsa-mntem-11",
+    "name": "R-Options 11",
+    "type": "five",
+  }
+];
+
+let manTemLeftData = [
+  {
+    "id": "lsa-mntem-1",
+    "name": "L-Options 1",
+    "type": "one",
+  },
+  {
+    "id": "lsa-mntem-2",
+    "name": "L-Options 2",
+    "type": "one",
+  },
+  {
+    "id": "lsa-mntem-3",
+    "name": "L-Options 3",
+    "type": "two",
+  },
+  {
+    "id": "lsa-mntem-4",
+    "name": "L-Options 4",
+    "type": "three",
+  },
+  {
+    "id": "lsa-mntem-5",
+    "name": "L-Options 5",
+    "type": "four",
+  },
+  {
+    "id": "lsa-mntem-6",
+    "name": "L-Options 6",
+    "type": "four",
+  },
+  {
+    "id": "lsa-mntem-7",
+    "name": "L-Options 7",
+    "type": "four",
+  },
+  {
+    "id": "lsa-mntem-8",
+    "name": "L-Options 8",
+    "type": "four",
+  },
+  {
+    "id": "lsa-mntem-9",
+    "name": "L-Options 9",
+    "type": "two",
+  },
+  {
+    "id": "lsa-mntem-10",
+    "name": "L-Options 10",
+    "type": "four",
+  },
+  {
+    "id": "lsa-mntem-11",
+    "name": "L-Options 11",
+    "type": "five",
+  },
+];
+
+function listRenderManTemp(id, name, addNewRow) {
+  let ele = `<tr ondblclick="${addNewRow}" class="cursor-pointer" id="${id}">
+    <td colspan="2">${name}</td>
+    <td><i class="fas fa-question-circle"></i></td>
+    <td></td>
+  </tr>`;
+  return ele;
+}
+
+function leftSideTableManTemp() {
+  let leftTable = "";
+  manTemLeftData.forEach(({ id, name }) => {
+    let addNewRowL = `manTemSam2Rend(this,'mnTemp_leftSideDrag')`;
+    leftTable += listRenderManTemp(id, name, addNewRowL);
+  });
+  $("#mnTemp-table-left-list").html(leftTable);
+}
+leftSideTableManTemp();
+
+function rightSideTableManTemp() {
+  let rightTable = "";
+  manTemRightData.forEach(({ id, name }) => {
+    let addNewRowR = `manTemSam2Rend(this, 'mnTemp_rightSideDrag')`;
+    rightTable += listRenderManTemp(id, name, addNewRowR);
+  });
+  $("#mnTemp-table-right-list").html(rightTable);
+}
+rightSideTableManTemp();
+
+function manTemSam2Rend(e, divId) {
+  let _id = $(e).attr("id");
+  let title = "", dataType = "", manTemSwapSeq = "", manTemResetValue = "";
+  if (divId == "mnTemp_leftSideDrag") {
+    let { name, type } = manTemLeftData.filter((a) => a.id == _id)[0];
+    title = name;
+    dataType = type;
+    manTemSwapSeq = "manTemSwapSeqL(this)";
+    manTemResetValue = "manTemResetValueL(this)";
+  }
+  else if (divId == "mnTemp_rightSideDrag") {
+    let { name, type } = manTemRightData.filter((a) => a.id == _id)[0];
+    title = name;
+    dataType = type;
+    manTemSwapSeq = "manTemSwapSeqR(this)";
+    manTemResetValue = "manTemResetValueR(this)";
+  }
   let lOptOne =
   `<div class="width-12">
     <div class="custome-select">
-      <select>
-        <option>SET</option>
-        <option>ADD</option>
-        <option>Add/Set</option>
+      <select class="add-set">
+        <option value="add/set">Add/Set</option>
+        <option value="set">Set</option>
+        <option value="add">Add</option>
       </select>
     </div>
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select class="sequence" onchange="manTemSwapSeqL(this)">
+      <select class="sequence" onchange="${manTemSwapSeq}">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -1036,30 +1197,29 @@ $(document).ready(function () {
   </div>`;
 
   let lOptTwo =
-  `<div class="width-12">
-  </div>
+  `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
-      <select class="sequence" onchange="manTemSwapSeqL(this)">
+      <select class="sequence" onchange="${manTemSwapSeq}">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select onfocus="onFocus(this)">
-        <option></option>
-        <option></option>
-        <option></option>
+      <select class="user-inp" onfocus="onFocus(this)">
+        <option value="abc">abc</option>
+        <option value="cde">cde</option>
+        <option value="fgh">fgh</option>
       </select>
     </div>
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select onfocus="onFocus(this)">
-        <option></option>
-        <option></option>
-        <option></option>
+      <select class="user-inp" onfocus="onFocus(this)">
+        <option value="ijk">ijk</option>
+        <option value="lmn">lmn</option>
+        <option value="opq">opq</option>
       </select>
     </div>
   </div>`;
@@ -1067,35 +1227,35 @@ $(document).ready(function () {
   let lOptThree =
   `<div class="width-12">
     <div class="custome-select">
-      <select>
-        <option>Add/Set</option>
-        <option>ADD</option>
-        <option>SET</option>
+      <select class="add-set">
+        <option value="add/set">Add/Set</option>
+        <option value="set">Set</option>
+        <option value="add">Add</option>
       </select>
     </div>
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select class="sequence" onchange="manTemSwapSeqL(this)">
+      <select class="sequence" onchange="${manTemSwapSeq}">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select onfocus="onFocus(this)">
-        <option></option>
-        <option></option>
-        <option></option>
+      <select class="user-inp" onfocus="onFocus(this)">
+        <option value="abc">abc</option>
+        <option value="cde">cde</option>
+        <option value="fgh">fgh</option>
       </select>
     </div>
   </div>
   <div class="width-22">
     <div class="custome-select">
-      <select onfocus="onFocus(this)">
-        <option></option>
-        <option></option>
-        <option></option>
+      <select class="user-inp" onfocus="onFocus(this)">
+        <option value="ijk">ijk</option>
+        <option value="lmn">lmn</option>
+        <option value="opq">opq</option>
       </select>
     </div>
   </div>`;
@@ -1104,7 +1264,7 @@ $(document).ready(function () {
   `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
-      <select class="sequence" onchange="manTemSwapSeqL(this)">
+      <select class="sequence" onchange="${manTemSwapSeq}">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -1124,7 +1284,7 @@ $(document).ready(function () {
   `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
-      <select class="sequence" onchange="manTemSwapSeqL(this)">
+      <select class="sequence" onchange="${manTemSwapSeq}">
         <option value="0">SEQUENCE</option>
       </select>
     </div>
@@ -1139,9 +1299,16 @@ $(document).ready(function () {
       <input type="number" onfocus="onFocus(this)" onfocusout="manTemcheckNum(this)" oninput="manTemcheckNum(this)"/>
     </div>
   </div>`;
+
+  let manType = "";
+  if (dataType == "one") manType = lOptOne;
+  else if (dataType == "two") manType = lOptTwo;
+  else if (dataType == "three") manType = lOptThree;
+  else if (dataType == "four") manType = lOptFour;
+  else if (dataType == "five") manType = lOptFive;
 
   let renderLeftSite =
-  `<div class="d-flex mb-2" id="manTemL-1">
+  `<div class="d-flex mb-2" id="${_id}">
     <div class="width-5 align-items-baseline">
       <div class="threebar">
         <span>|||</span>
@@ -1150,534 +1317,19 @@ $(document).ready(function () {
     <div class="width-26">
       <div class="page__toggle">
         <label class="toggle">
-          <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
+          <input class="toggle__input" type="checkbox" onchange="${manTemResetValue}"/>
           <span class="toggle__label">
-            <span class="toggle__text">L-Options 1</span>
+            <span class="toggle__text">${title}</span>
           </span>
         </label>
       </div>
     </div>
-  ${lOptOne}
-  </div>
-  <div class="d-flex mb-2" id="manTemL-2">
-    <div class="width-5 align-items-baseline">
-      <div class="threebar">
-        <span>|||</span>
-      </div>
-    </div>
-    <div class="width-26">
-      <div class="page__toggle">
-        <label class="toggle">
-          <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
-          <span class="toggle__label">
-            <span class="toggle__text">L-Options 2</span>
-          </span>
-        </label>
-      </div>
-    </div>
-  ${lOptOne}
-  </div>
-  <div class="d-flex mb-2" id="manTemL-3">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 3</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptTwo}
-  </div>
-  <div class="d-flex mb-2" id="manTemL-4">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 4</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptThree}
-  </div>
-  <div class="d-flex mb-2" id="manTemL-5">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 5</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manTemL-6">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 6</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manTemL-7">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 7</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manTemL-8">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 8</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manTemL-9">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 9</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptTwo}
-  </div>
-  <div class="d-flex mb-2" id="manTemL-10">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 10</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manTemL-11">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueL(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 11</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFive}
-  </div>`;
-  // lOptOne + lOptOne + lOptTwo + lOptThree + lOptFour + lOptFour + lOptFour + lOptFour + lOptTwo + lOptFour + lOptFive;
-  $("#mnTemp_leftSideDrag").html(renderLeftSite);
-})();
-(function manTemSamRightSide() {
-  let lOptOne =
-  `<div class="width-12">
-    <div class="custome-select">
-      <select>
-        <option>SET</option>
-        <option>ADD</option>
-        <option>Add/Set</option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select class="sequence" onchange="manTemSwapSeqR(this)">
-        <option value="0">SEQUENCE</option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)" onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)" onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
-    </div>
+    ${manType}
   </div>`;
 
-  let lOptTwo =
-  `<div class="width-12">
-  </div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select class="sequence" onchange="manTemSwapSeqR(this)">
-        <option value="0">SEQUENCE</option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select onfocus="onFocus(this)">
-        <option></option>
-        <option></option>
-        <option></option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select onfocus="onFocus(this)">
-        <option></option>
-        <option></option>
-        <option></option>
-      </select>
-    </div>
-  </div>`;
-
-  let lOptThree =
-  `<div class="width-12">
-    <div class="custome-select">
-      <select>
-        <option>Add/Set</option>
-        <option>ADD</option>
-        <option>SET</option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select class="sequence" onchange="manTemSwapSeqR(this)">
-        <option value="0">SEQUENCE</option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select onfocus="onFocus(this)">
-        <option></option>
-        <option></option>
-        <option></option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select onfocus="onFocus(this)">
-        <option></option>
-        <option></option>
-        <option></option>
-      </select>
-    </div>
-  </div>`;
-
-  let lOptFour =
-  `<div class="width-12"></div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select class="sequence" onchange="manTemSwapSeqR(this)">
-        <option value="0">SEQUENCE</option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)"  onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)"  onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
-    </div>
-  </div>`;
-
-  let lOptFive =
-  `<div class="width-12"></div>
-  <div class="width-22">
-    <div class="custome-select">
-      <select class="sequence" onchange="manTemSwapSeqR(this)">
-        <option value="0">SEQUENCE</option>
-      </select>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custom-input-only">
-      <input type="number" onfocus="onFocus(this)" onfocusout="manTemcheckNum(this)" oninput="manTemcheckNum(this)"/>
-    </div>
-  </div>
-  <div class="width-22">
-    <div class="custom-input-only">
-      <input type="number" onfocus="onFocus(this)" onfocusout="manTemcheckNum(this)" oninput="manTemcheckNum(this)"/>
-    </div>
-  </div>`;
-
-  let renderRightSite =
-  `<div class="d-flex mb-2" id="manTemR-1">
-    <div class="width-5 align-items-baseline">
-      <div class="threebar">
-        <span>|||</span>
-      </div>
-    </div>
-    <div class="width-26">
-      <div class="page__toggle">
-        <label class="toggle">
-          <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
-          <span class="toggle__label">
-            <span class="toggle__text">L-Options 1</span>
-          </span>
-        </label>
-      </div>
-    </div>
-  ${lOptOne}
-  </div>
-  <div class="d-flex mb-2" id="manTemR-2">
-    <div class="width-5 align-items-baseline">
-      <div class="threebar">
-        <span>|||</span>
-      </div>
-    </div>
-    <div class="width-26">
-      <div class="page__toggle">
-        <label class="toggle">
-          <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
-          <span class="toggle__label">
-            <span class="toggle__text">L-Options 2</span>
-          </span>
-        </label>
-      </div>
-    </div>
-  ${lOptOne}
-  </div>
-  <div class="d-flex mb-2" id="manTemR-3">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 3</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptTwo}
-  </div>
-  <div class="d-flex mb-2" id="manTemR-4">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 4</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptThree}
-  </div>
-  <div class="d-flex mb-2" id="manTemR-5">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 5</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manTemR-6">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 6</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manTemR-7">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 7</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manTemR-8">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 8</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manTemR-9">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 9</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptTwo}
-  </div>
-  <div class="d-flex mb-2" id="manTemR-10">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 10</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFour}
-  </div>
-  <div class="d-flex mb-2" id="manTemR-11">
-  <div class="width-5 align-items-baseline">
-    <div class="threebar">
-      <span>|||</span>
-    </div>
-  </div>
-  <div class="width-26">
-    <div class="page__toggle">
-      <label class="toggle">
-        <input class="toggle__input" type="checkbox" onchange="manTemResetValueR(this)"/>
-        <span class="toggle__label">
-          <span class="toggle__text">L-Options 11</span>
-        </span>
-      </label>
-    </div>
-  </div>
-  ${lOptFive}
-  </div>`;
-  // lOptOne + lOptOne + lOptTwo + lOptThree + lOptFour + lOptFour + lOptFour + lOptFour + lOptTwo + lOptFour + lOptFive;
-  $("#mnTemp_rightSideDrag").html(renderRightSite);
-})();
+  $(`#${divId}`).append(renderLeftSite);
+  $(e).remove();
+}
 
 var manTemSeqListL = [];
 var manTemSeqListR = [];
@@ -1695,6 +1347,7 @@ function manTemResetValueL(e) {
       $(`#${val} .sequence`).val(index + 1);
     });
     $(`#${pid} .sequence`).html(`<option value='0'>SEQUENCE</option>`);
+    $(`#${pid} .add-set`).val("Add/Set");
     // remove error message
     let errP = $(`#${pid} .width-22 .error-message`);
     let errC = $(`#${pid} .width-22 .custom-input-danger`);
@@ -1739,6 +1392,7 @@ function manTemResetValueR(e) {
       $(`#${val} .sequence`).val(index + 1);
     });
     $(`#${pid} .sequence`).html(`<option value='0'>SEQUENCE</option>`);
+    $(`#${pid} .add-set`).val("Add/Set");
     // remove error message
     let errP = $(`#${pid} .width-22 .error-message`);
     let errC = $(`#${pid} .width-22 .custom-input-danger`);
@@ -1843,9 +1497,289 @@ function manTemcheckNum(e) {
     }
   }
 }
+
+// Form by text editor start
+function findInputIdMS2(title) {
+  let res = manTemLeftData.filter((a) => a.name == title).map((b) => b.id);
+  if (res.length) return res[0];
+  else return false;
+}
+
+function formToWindowMS2(e) {
+  let tBody = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ms2_text_editor");
+  let renHtml = "";
+  manTemSeqListL.forEach((pid) => {
+    let title = $(`#${pid} span.toggle__text`).html();
+    let addSet = $(`#${pid} .add-set`).find(":selected").text();
+    let seqTitle = $(`#${pid} .sequence`).find(":selected").text();
+    let inpObj = $(`#${pid} .custom-input-only input`), inpDiv = "";
+    let inpSel = $(`#${pid} .user-inp`);
+    for (let i = 0; i < inpObj.length; i++) {
+      let uni_id = inpObj.length > 1 ? "_" + (i+1) : "";
+      let inpText = inpObj[i].value;
+      inpDiv += `<div class="form-text-design data-div">
+        ${title}${uni_id}: ${inpText}
+      </div>`;
+    }
+    for (let i = 0; i < inpSel.length; i++) {
+      let uni_id = inpSel.length > 1 ? "_" + (i+1) : "";
+      let inpText = $(inpSel[i]).find(":selected").text();
+      inpDiv += `<div class="form-text-design data-div">
+        ${title}${uni_id}: ${inpText}
+      </div>`;
+    }
+    if (addSet != "") {
+      renHtml += `<div class="form-text-design data-div">
+        ${title}: Set: ${addSet}
+      </div>`;
+    }
+    renHtml += `<div class="form-text-design data-div">
+      ${title}: Sequence: ${seqTitle}
+    </div>
+    ${inpDiv}`;
+  });
+  tBody.html(renHtml);
+}
+
+function windowToFormMS2(e) {
+  let tRow = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ms2_text_editor div.form-text-design.data-div");
+  let len = tRow.length;
+  for (let i = 0; i < len; i++) {
+    let divData = $(tRow[i])[0].innerText.split(":");
+    let [title,no] = divData[0].trim().split("_");
+    let pid = findInputIdMS2(title);
+    if (pid && divData.length == 3) {
+      let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
+      if (checkbox.checked == false ) checkbox.click();
+
+      if (divData[1].trim().toUpperCase() == "SET") {
+        $(`#${pid} .add-set`).val(divData[2].trim().toLowerCase());
+      } else if (divData[1].trim().toUpperCase() == "SEQUENCE") {
+        let seqVal = 0;
+        for (let k = 1; k <= manTemLeftData.length; k++) {
+          if (divData[2].trim().toUpperCase() == inWords(k).toUpperCase()) {
+            seqVal = k;
+          }
+        }
+        $(`#${pid} .sequence`).val(seqVal);
+      }
+    } else if (pid && divData.length == 2) {
+      let inp = $(`#${pid} .custom-input-only input`);
+      let inpSel = $(`#${pid} .user-inp`);
+      if (inp.length > 0) {
+        inp[no - 1].value = divData[1].trim();
+      }
+
+      if (inpSel.length > 0) {
+        inpSel[no - 1].value = divData[1].trim();
+      }
+    }
+  }
+}
+
+function checkingMS2(e) {
+  $("#adder").remove(); // adder contains our auto correct select box
+  // if key is enter key
+  let nd = getCaretPosition();
+  let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+  if (e.keyCode == 13) {
+    // same algorithm as we see in updateActualForm() function
+    let nd = getCaretPosition();
+    $("#temp").attr("id", "");
+    if (nd.nodeType != 3 && nd.getAttribute("id") == "ms2_text_editor") return false;
+    if (
+      nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
+      nd.textContent != ""
+    ) {
+      let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+      let extra = getCaretPosition2(nd2);
+      let starting = nd.textContent.substr(0, extra);
+      let inpData = starting.split(":");
+      if (
+        starting != "" &&
+        (!findInputIdMS2(inpData[0].trim().split("_")[0].trim()) ||
+          (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
+          (
+            inpData.length == 3 &&
+            inpData[1].trim() != "Set" &&
+            inpData[1].trim() != "Sequence" &&
+            inpData[1].trim() != "Form" &&
+            inpData[1].trim() != "To"
+          )
+        )
+      ) {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design-invalid data-div">${nd.textContent}</div><br id="temp">`
+          );
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design-invalid data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+            ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      } else {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design data-div">
+            ${nd.textContent}
+            </div>
+            <br id="temp">`
+          );
+          //setEndOfContenteditable(document.getElementById("temp"));
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+              ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      }
+    }
+    return false;
+  }
+  // this will add autocorrect box
+  setTimeout(autoCorrectMS2, 100);
+}
+
+function autoCorrectMS2() {
+  let pos = getCaretPosition();
+  if ($(pos).find("#adder").length == 1) $("#adder").remove();
+  while (document.getElementById("temp")) {
+    document.getElementById("temp").removeAttribute("id");
+  }
+  if (pos.textContent.indexOf(":") == -1) x = pos.textContent;
+  else x = pos.textContent;
+  let editor = document.getElementById("text_editor_p");
+  $(pos).replaceWith(
+    `<div id="temp">${pos.textContent}</div>
+    <div id="adder"></div>`
+  );
+
+  let m = "";
+  let first = 1;
+  if (x.indexOf(":") == -1) {
+    $("#adder").addClass("set-name");
+    manTemLeftData.forEach(({name}) => {
+      if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
+        if (first) {
+          m += `<option selected value="${name}">${name}</option><br>`;
+        }
+        else {
+          m += `<option value="${name}">${name}</option><br>`;
+        }
+        first = 0;
+      }
+    });
+  }
+  else if ((x.split(":").length - 1) == 1) {
+    $("#adder").addClass("set-sug");
+    setSugArray.forEach((set) => {
+      let inp = x.split(":")[1].trim().toLowerCase();
+      if (inp != "" && set.toLowerCase().indexOf(inp) == 0) {
+        if (first) {
+          m += `<option selected value="${set}">${set}</option><br>`;
+        }
+        else {
+          m += `<option value="${set}">${set}</option><br>`;
+        }
+        first = 0;
+      }
+    });
+  }
+  else if ((x.split(":").length - 1) == 2) {
+    $("#adder").addClass("set-sug");
+    setSugArray.forEach((set) => {
+      let inp = x.split(":")[2].trim().toLowerCase();
+      if (inp != "" && set.toLowerCase().indexOf(inp) == 0) {
+        if (first) {
+          m += `<option selected value="${set}">${set}</option><br>`;
+        }
+        else {
+          m += `<option value="${set}">${set}</option><br>`;
+        }
+        first = 0;
+      }
+    });
+  }
+
+  let y =
+    `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
+    ${m}
+    </select>`;
+  // add auto correct ... only if there is atleast one match
+  if (m != "") {
+    document.getElementById("adder").innerHTML = y;
+    document.getElementById("adder").style.display = "block";
+    $("#adder select").focus();
+  } else {
+    $("#adder").remove();
+    setEndOfContenteditable(document.getElementById("temp"));
+    document.getElementById("temp").removeAttribute("id");
+  }
+}
+
+function pasteEventMS2(e) {
+  let editor = document.getElementById("ms2_text_editor");
+  let clipboardData = e.clipboardData || window.clipboardData;
+  let pD = clipboardData.getData("Text").split("\n");
+  for (let i = 0; i < pD.length; i++) {
+    let nbe = pD[i];
+    let inpData = nbe.split(":");
+    if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
+      let x;
+      if (
+        !findInputIdMS2(inpData[0].trim().split("_")[0].trim()) ||
+        (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
+        (
+          inpData.length == 3 &&
+          inpData[1].trim() != "Set" &&
+          inpData[1].trim() != "Sequence" &&
+          inpData[1].trim() != "Form" &&
+          inpData[1].trim() != "To"
+        )
+      ) {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design-invalid data-div");
+        x.textContent = nbe;
+      } else {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design data-div");
+        x.textContent = nbe;
+      }
+      editor.append(x);
+    }
+  }
+  removeExtraLines(editor);
+  editor.append(document.createElement("br"));
+  setEndOfContenteditable(editor);
+  return false;
+}
+// Form by text editor End
 // Manage template Sample 2 End
 
-// Manage template Sample 3 Start
+// Manage template Sample 4 Start
 let sam4DataArray = [
   {
     id: "sam-id-1",
@@ -1891,9 +1825,9 @@ let sam4DataArray = [
 
 (function temSam4firstTable() {
   let htmlTable = "";
-  sam4DataArray.forEach(({id,name}) => {
+  sam4DataArray.forEach(({ id, name }) => {
     htmlTable += `<tr id="${id}" ondblclick="dblclickMove(this)" onclick="clickAddClass(this)">
-        <td>${name}</td>
+      <td>${name}</td>
     </tr>`;
   });
 
@@ -1908,7 +1842,7 @@ function moveLeftToRight() {
   let tr = $("#tem-sample4-first tr.mark-table-data");
   tr.removeClass("mark-table-data");
   $("#tem-sample4-second tbody").append(tr);
-  for (let i = 0; i < tr.length; i++){
+  for (let i = 0; i < tr.length; i++) {
     let _id = $(tr[i]).attr("id");
     manTemInpBuild(_id);
   }
@@ -1951,7 +1885,7 @@ function orderDown() {
   let row = $("#tem-sample4-second tbody tr.mark-table-data");
   row.each(function () {
     let rw = $(this).closest("tr");
-    for (let i = 0; i < row.length; i++){
+    for (let i = 0; i < row.length; i++) {
       rw.insertAfter(rw.next());
       let _id = rw.attr("id");
       elementMove(_id, "down");
@@ -1960,7 +1894,7 @@ function orderDown() {
 }
 
 function manTemInpBuild(_id) {
-  let {name,dataType} = sam4DataArray.filter(a => a.id == _id)[0];
+  let { name, dataType } = sam4DataArray.filter(a => a.id == _id)[0];
   let htmlData = "";
   if (name && dataType) {
     let nameArr = name.split("-");
@@ -2002,10 +1936,10 @@ function manTemInpBuild(_id) {
         </div>
         <div class="width-custom-range-70 d-flex">
           <span class="min">0</span>
-            <div class="range-wrapper-sample-4">
-                <input class="range-example-input-2" type="text" min="0" max="100" value="10,40" name="points" step="1" width="100" />
-            </div>
-            <span class="max">100</span>
+          <div class="range-wrapper-sample-4">
+            <input class="range-example-input-2" type="text" min="0" max="100" value="10,40" name="points" step="1" width="100" />
+          </div>
+          <span class="max">100</span>
         </div>
       </div>`;
     } else if (dataType == "date") {
@@ -2022,13 +1956,13 @@ function manTemInpBuild(_id) {
         </div>
         <div class="width-input-group-35">
           <div class="input-section-sample4 right-side-input">
-            <input class="date-pick-style-sample4" type="text" id="datepicker_mnTemp1"/>
+            <input class="date-pick-style-sample4 datepicker_op4" type="text"/>
             <i class="far fa-calendar-alt icon-sample4"></i>
           </div>
         </div>
         <div class="width-input-group-35">
           <div class="input-section-sample4 left-side-input">
-            <input class="date-pick-style-sample4" type="text" id="datepicker_mnTemp2"/>
+            <input class="date-pick-style-sample4 datepicker_op4" type="text"/>
             <i class="far fa-calendar-alt icon-sample4"></i>
           </div>
         </div>
@@ -2049,9 +1983,9 @@ function manTemInpBuild(_id) {
           <div class="input-section-sample4 right-side-input">
             <div class="custom-select-sample4">
               <select>
-                <option>Option Text 1</option>
-                <option>Option Text 2</option>
-                <option>Option Text 3</option>
+                <option value="Option Text 1">Option Text 1</option>
+                <option value="Option Text 2">Option Text 2</option>
+                <option value="Option Text 3">Option Text 3</option>
               </select>
             </div>
           </div>
@@ -2060,9 +1994,9 @@ function manTemInpBuild(_id) {
           <div class="input-section-sample4 left-side-input">
             <div class="custom-select-sample4">
               <select>
-                <option>Option Text 1</option>
-                <option>Option Text 2</option>
-                <option>Option Text 3</option>
+                <option value="Option Text 1">Option Text 1</option>
+                <option value="Option Text 2">Option Text 2</option>
+                <option value="Option Text 3">Option Text 3</option>
               </select>
             </div>
           </div>
@@ -2078,11 +2012,8 @@ function manTemInpBuild(_id) {
 
   // Manage Template Sample 4 DATE PICKER START
   $(function () {
-    $("#datepicker_mnTemp1").datepicker();
-    $("#datepicker_mnTemp1").datepicker("option", "dateFormat", "DD, MM d, yy");
-
-    $("#datepicker_mnTemp2").datepicker();
-    $("#datepicker_mnTemp2").datepicker("option", "dateFormat", "DD, MM d, yy");
+    $(".datepicker_op4").datepicker();
+    $(".datepicker_op4").datepicker("option", "dateFormat", "DD - MM d, yy");
   });
 }
 
@@ -2098,4 +2029,565 @@ function elementMove(_id, direc) {
     div.insertAfter(div.next());
   }
 }
+
+// Form by Text Editor Start
+function findInputIdMS4(title) {
+  let res = sam4DataArray.filter(a => a.name == title);
+  if (res.length) return res[0];
+  else return false;
+}
+
+function formToWindowMS4(e) {
+  let tBody = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ms4_text_editor");
+  let renHtml = "";
+
+  let idFromTable = $(`#tem-sample4-second tbody tr`);
+  let len = idFromTable.length;
+  for (let i = 0; i < len; i++){
+    let { id, name, dataType } = sam4DataArray.filter(a => a.id == idFromTable[i].id)[0];
+    let dataPtrn = name;
+    if (dataType == "inputText") {
+      let inpD = $(`#man-tem-sam4-input-data div#${id} input[type=text]`);
+      for (let j = 0; j < inpD.length; j++) dataPtrn +=` : ${inpD[j].value}`;
+    }
+    if (dataType == "range") {
+      let inpD = $(`#man-tem-sam4-input-data div#${id} input[type=text]`);
+      for (let j = 0; j < inpD.length; j++) dataPtrn +=` : ${inpD[j].value}`;
+    }
+    if (dataType == "date") {
+      let inpD = $(`#man-tem-sam4-input-data div#${id} input[type=text]`);
+      for (let j = 0; j < inpD.length; j++) dataPtrn +=` : ${inpD[j].value}`;
+    }
+    if (dataType == "select") {
+      let inpD = $(`#man-tem-sam4-input-data div#${id} select`);
+      for (let j = 0; j < inpD.length; j++) dataPtrn += ` : ${$(inpD[j]).find(":selected").text()}`;
+    }
+    renHtml += `<div class="form-text-design data-div">
+      ${dataPtrn}
+    </div>`;
+  }
+  tBody.html(renHtml);
+}
+
+function windowToFormMS4(e) {
+  let tRow = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ms4_text_editor div.form-text-design.data-div");
+  let len = tRow.length;
+  for (let i = 0; i < len; i++) {
+    let divData = $(tRow[i])[0].innerText.split(":");
+    let { id, dataType} = findInputIdMS4(divData[0].trim());
+    if (id && divData.length == 3) {
+      if (dataType == "select") {
+        let inpD = $(`#man-tem-sam4-input-data div#${id} select`);
+        for (let j = 0; j < inpD.length; j++) inpD[j].value = divData[j + 1].trim();
+      } else if (dataType != "select") {
+        let inpD = $(`#man-tem-sam4-input-data div#${id} input[type=text]`);
+        for (let j = 0; j < inpD.length; j++) inpD[j].value = divData[j + 1].trim();
+      }
+    } else if (id && divData.length == 2) {
+      if (dataType == "range") {
+        let rangeDiv = $(`#man-tem-sam4-input-data div#${id} div.width-custom-range-70.d-flex`);
+        let rangeDes =
+        `<span class="min">0</span>
+        <div class="range-wrapper-sample-4">
+          <input class="range-example-input-2" type="text" min="0" max="100" value="${divData[1].trim()}" name="points" step="1" width="100" />
+        </div>
+        <span class="max">100</span>`;
+        rangeDiv.html(rangeDes);
+        $(".range-example-input-2").asRange({
+          range: true,
+          limit: false
+        });
+      }
+    }
+  }
+}
+
+function checkingMS4(e) {
+  $("#adder").remove();
+  // let nd = getCaretPosition();
+  // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+  if (e.keyCode == 13) {
+    let nd = getCaretPosition();
+    $("#temp").attr("id", "");
+    if (nd.nodeType != 3 && nd.getAttribute("id") == "ms4_text_editor") return false;
+    if (
+      nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
+      nd.textContent != ""
+    ) {
+      let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+      let extra = getCaretPosition2(nd2);
+      let starting = nd.textContent.substr(0, extra);
+      let inpData = starting.split(":");
+      if (
+        starting != "" &&
+        (!findInputIdMS4(inpData[0].trim().split("_")[0].trim()) ||
+          (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
+          (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
+        )
+      ) {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design-invalid data-div">${nd.textContent}</div><br id="temp">`
+          );
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design-invalid data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+            ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      } else {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design data-div">
+            ${nd.textContent}
+            </div>
+            <br id="temp">`
+          );
+          //setEndOfContenteditable(document.getElementById("temp"));
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+              ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      }
+    }
+    return false;
+  }
+  // this will add autocorrect box
+  setTimeout(autoCorrectMS4, 100);
+}
+
+function autoCorrectMS4() {
+  let pos = getCaretPosition();
+  if ($(pos).find("#adder").length == 1) $("#adder").remove();
+  while (document.getElementById("temp")) {
+    document.getElementById("temp").removeAttribute("id");
+  }
+  if (pos.textContent.indexOf(":") == -1) x = pos.textContent;
+  else x = pos.textContent;
+  let editor = document.getElementById("text_editor_p");
+  $(pos).replaceWith(
+    `<div id="temp">${pos.textContent}</div>
+    <div id="adder"></div>`
+  );
+
+  let m = "";
+  let first = 1;
+  if (x.indexOf(":") == -1) {
+    $("#adder").addClass("set-name");
+    sam4DataArray.forEach(({ name }) => {
+      if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
+        if (first) {
+          m += `<option selected value="${name}">${name}</option><br>`;
+        }
+        else {
+          m += `<option value="${name}">${name}</option><br>`;
+        }
+        first = 0;
+      }
+    });
+  }
+
+  let y =
+    `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
+    ${m}
+    </select>`;
+  // add auto correct ... only if there is atleast one match
+  if (m != "") {
+    document.getElementById("adder").innerHTML = y;
+    document.getElementById("adder").style.display = "block";
+    $("#adder select").focus();
+  } else {
+    $("#adder").remove();
+    setEndOfContenteditable(document.getElementById("temp"));
+    document.getElementById("temp").removeAttribute("id");
+  }
+}
+
+function pasteEventMS4(e) {
+  let editor = document.getElementById("ms4_text_editor");
+  let clipboardData = e.clipboardData || window.clipboardData;
+  let pD = clipboardData.getData("Text").split("\n");
+  for (let i = 0; i < pD.length; i++) {
+    let nbe = pD[i];
+    let inpData = nbe.split(":");
+    if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
+      let x;
+      if (
+        !findInputIdMS4(inpData[0].trim().split("_")[0].trim()) ||
+        (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
+        (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
+      ) {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design-invalid data-div");
+        x.textContent = nbe;
+      } else {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design data-div");
+        x.textContent = nbe;
+      }
+      editor.append(x);
+    }
+  }
+  removeExtraLines(editor);
+  editor.append(document.createElement("br"));
+  setEndOfContenteditable(editor);
+  return false;
+}
+// Form by Text Editor End
 // Manage template Sample 4 End
+
+// Manage template Sample 3 Start
+// Form by text editor Start
+let section = [
+  "sectionA",
+  "sectionB",
+  "sectionC",
+  "sectionD",
+  "sectionE",
+  "sectionF",
+  "sectionG",
+  "sectionH",
+  "sectionI"
+];
+function findInputIdMS3(title) {
+  let res = section.filter(a => a == title);
+  if (res.length) return res[0];
+  else return false;
+}
+function checkingMS3(e){
+  $("#adder").remove();
+  // let nd = getCaretPosition();
+  // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+  if (e.keyCode == 13) {
+    let nd = getCaretPosition();
+    $("#temp").attr("id", "");
+    if (nd.nodeType != 3 && nd.getAttribute("id") == "ms3_text_editor") return false;
+    if (
+      nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
+      nd.textContent != ""
+    ) {
+      let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+      let extra = getCaretPosition2(nd2);
+      let starting = nd.textContent.substr(0, extra);
+      let inpData = starting.split(":");
+      if (
+        starting != "" && !findInputIdMS3(inpData[0].trim())
+      ) {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design-invalid data-div">${nd.textContent}</div><br id="temp">`
+          );
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design-invalid data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+            ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      } else {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design data-div">
+            ${nd.textContent}
+            </div>
+            <br id="temp">`
+          );
+          //setEndOfContenteditable(document.getElementById("temp"));
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+              ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      }
+    }
+    return false;
+  }
+  // this will add autocorrect box
+  setTimeout(autoCorrectMS3, 100);
+}
+function autoCorrectMS3() {
+  let pos = getCaretPosition();
+  if ($(pos).find("#adder").length == 1) $("#adder").remove();
+  while (document.getElementById("temp")) {
+    document.getElementById("temp").removeAttribute("id");
+  }
+  if (pos.textContent.indexOf(":") == -1) x = pos.textContent;
+  else x = pos.textContent;
+  let editor = document.getElementById("text_editor_p");
+  $(pos).replaceWith(
+    `<div id="temp">${pos.textContent}</div>
+    <div id="adder"></div>`
+  );
+  let m = "";
+  let first = 1;
+  if (x.indexOf(":") == -1) {
+    $("#adder").addClass("set-name");
+    section.forEach(name => {
+      if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
+        if (first) {
+          m += `<option selected value="${name}">${name}</option><br>`;
+        }
+        else {
+          m += `<option value="${name}">${name}</option><br>`;
+        }
+        first = 0;
+      }
+    });
+  }
+
+  let y =
+    `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
+    ${m}
+    </select>`;
+  // add auto correct ... only if there is atleast one match
+  if (m != "") {
+    document.getElementById("adder").innerHTML = y;
+    document.getElementById("adder").style.display = "block";
+    $("#adder select").focus();
+  } else {
+    $("#adder").remove();
+    setEndOfContenteditable(document.getElementById("temp"));
+    document.getElementById("temp").removeAttribute("id");
+  }
+}
+function pasteEventMS3(e){
+  let editor = document.getElementById("ms3_text_editor");
+  let clipboardData = e.clipboardData || window.clipboardData;
+  let pD = clipboardData.getData("Text").split("\n");
+  for (let i = 0; i < pD.length; i++) {
+    let nbe = pD[i];
+    let inpData = nbe.split(":");
+    if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
+      let x;
+      if (
+        !findInputIdMS3(inpData[0].trim())
+      ) {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design-invalid data-div");
+        x.textContent = nbe;
+      } else {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design data-div");
+        x.textContent = nbe;
+      }
+      editor.append(x);
+    }
+  }
+  removeExtraLines(editor);
+  editor.append(document.createElement("br"));
+  setEndOfContenteditable(editor);
+  return false;
+}
+function windowToFormMS3(e){
+  let tRow = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ms3_text_editor div.form-text-design.data-div");
+  let len = tRow.length;
+  for (let i = 0; i < len; i++) {
+    let divData = $(tRow[i])[0].innerText.split(":");
+    if (divData[0].trim() == "sectionA") {
+      let inp = $("fieldset#fieldset_id21 .data-form input[type=text]");
+      for (let i = 1; i < divData.length; i++){
+        inp[i - 1].value = divData[i].trim();
+      }
+    } else if (divData[0].trim() == "sectionB") {
+      let inp = $("fieldset#fieldset_id22 .data-form input[type=text]");
+      for (let i = 1, j = 0; i < divData.length, j < inp.length; i++,j++) {
+        inp[j].value = divData[i++].trim() + ":" + divData[i].trim();
+      }
+    } else if (divData[0].trim() == "sectionC") {
+      let inp = $("fieldset#fieldset_id23 .custome-select select");
+      for (let i = 1, j = 0; i < divData.length, j < inp.length; i++, j++) {
+        $(inp[j]).val(divData[i++].trim() + ":" + divData[i].trim());
+      }
+    } else if (divData[0].trim() == "sectionD") {
+      let inp = $("fieldset#fieldset_id24 .data-form input[type=text]");
+      for (let i = 1; i < divData.length; i++) {
+        inp[i - 1].value = divData[i].trim();
+      }
+    } else if (divData[0].trim() == "sectionE") {
+      let inp = $("fieldset#fieldset_id25 .data-form input[type=text]");
+      for (let i = 1; i < divData.length; i++) {
+        inp[i - 1].value = divData[i].trim();
+      }
+    } else if (divData[0].trim() == "sectionF") {
+      let inp = $("fieldset#fieldset_id26 .custome-select select");
+      for (let i = 1, j = 0; i < divData.length, j < inp.length; i++, j++) {
+        $(inp[j]).val(divData[i++].trim() + ":" + divData[i].trim());
+      }
+    } else if (divData[0].trim() == "sectionG") {
+      let inp = $("fieldset#fieldset_id27 .custome-select select");
+      for (let i = 1; i < divData.length; i++) {
+        $(inp[i - 1]).val(divData[i].trim());
+      }
+    } else if (divData[0].trim() == "sectionH") {
+      let inp = $("fieldset#fieldset_id28 .data-form input[type=text]");
+      for (let i = 1; i < divData.length; i++) {
+        inp[i - 1].value = divData[i].trim();
+      }
+    } else if (divData[0].trim() == "sectionI") {
+      let inp = $("fieldset#fieldset_id29 .data-form input[type=text]");
+      for (let i = 1; i < divData.length; i++) {
+        inp[i - 1].value = divData[i].trim();
+      }
+    }
+  }
+}
+function formToWindowMS3(e) {
+  let tBody = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ms3_text_editor");
+  let renHtml = "";
+  let renData = "";
+  // section A
+  let sectionA = $("fieldset#fieldset_id21");
+  let inpA = sectionA.find(".data-form input[type=text]");
+  renData = "sectionA";
+  for (let i = 0; i < inpA.length; i++){
+    renData += " : " + inpA[i].value;
+  }
+  if (renData.split(":")[1].trim()!="") {
+    renHtml += `<div class="form-text-design data-div">
+      ${renData}
+    </div>`;
+  }
+  // section B
+  let sectionB = $("fieldset#fieldset_id22");
+  let inpB = sectionB.find(".data-form input[type=text]");
+  renData = "sectionB";
+  for (let i = 0; i < inpB.length; i++) {
+    renData += " : " + inpB[i].value;
+  }
+  if (renData.split(":")[1].trim() != "") {
+    renHtml += `<div class="form-text-design data-div">
+      ${renData}
+    </div>`;
+  }
+  // section C
+  let sectionC = $("fieldset#fieldset_id23 .custome-select select");
+  renData = "sectionC";
+  for (let i = 0; i < sectionC.length; i++) {
+    renData += " : " + $(sectionC[i]).find(":selected").text();
+  }
+  if (renData.split(":")[1].trim() != "") {
+    renHtml += `<div class="form-text-design data-div">
+      ${renData}
+    </div>`;
+  }
+  // section D
+  let sectionD = $("fieldset#fieldset_id24");
+  let inpD = sectionD.find(".data-form input[type=text]");
+  renData = "sectionD";
+  for (let i = 0; i < inpD.length; i++) {
+    renData += " : " + inpD[i].value;
+  }
+  if (renData.split(":")[1].trim() != "") {
+    renHtml += `<div class="form-text-design data-div">
+      ${renData}
+    </div>`;
+  }
+  // section E
+  let sectionE = $("fieldset#fieldset_id25");
+  let inpE = sectionE.find(".data-form input[type=text]");
+  renData = "sectionE";
+  for (let i = 0; i < inpE.length; i++) {
+    renData += " : " + inpE[i].value;
+  }
+  if (renData.split(":")[1].trim() != "") {
+    renHtml += `<div class="form-text-design data-div">
+      ${renData}
+    </div>`;
+  }
+  // section F
+  let sectionF = $("fieldset#fieldset_id26 .custome-select select");
+  renData = "sectionF";
+  for (let i = 0; i < sectionF.length; i++) {
+    renData += " : " + $(sectionF[i]).find(":selected").text();
+  }
+  if (renData.split(":")[1].trim() != "") {
+    renHtml += `<div class="form-text-design data-div">
+      ${renData}
+    </div>`;
+  }
+  // section G
+  let sectionG = $("fieldset#fieldset_id27 .custome-select select");
+  renData = "sectionG";
+  for (let i = 0; i < sectionG.length; i++) {
+    renData += " : " + $(sectionG[i]).find(":selected").text();
+  }
+  if (renData.split(":")[1].trim() != "") {
+    renHtml += `<div class="form-text-design data-div">
+      ${renData}
+    </div>`;
+  }
+  // section H
+  let sectionH = $("fieldset#fieldset_id28");
+  let inpH = sectionH.find(".data-form input[type=text]");
+  renData = "sectionH";
+  for (let i = 0; i < inpH.length; i++) {
+    renData += " : " + inpH[i].value;
+  }
+  if (renData.split(":")[1].trim() != "") {
+    renHtml += `<div class="form-text-design data-div">
+      ${renData}
+    </div>`;
+  }
+  // section I
+  let sectionI = $("fieldset#fieldset_id29");
+  let inpI = sectionI.find(".data-form input[type=text]");
+  renData = "sectionI";
+  for (let i = 0; i < inpI.length; i++) {
+    renData += " : " + inpI[i].value;
+  }
+  if (renData.split(":")[1].trim() != "") {
+    renHtml += `<div class="form-text-design data-div">
+      ${renData}
+    </div>`;
+  }
+
+  tBody.html(renHtml);
+}
+// Form by text editor End
+// Manage template Sample 3 End

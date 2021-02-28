@@ -348,18 +348,6 @@ table#sub2-editor-table {
     display: none;
 }
 
-#op1FormEditModal .modal-content {
-    width: 400px;
-    border: 0;
-    border-radius: 0 !important;
-    left: 10%;
-}
-
-#op1FormEditModal .modal-content .modal-body {
-    padding: 0;
-    border-radius: 0 !important;
-}
-
 /* ====x===sub2 table style ends===x===  */
 /* Form by text editor pop-up style ends */
 /* ======================================= */
@@ -577,7 +565,7 @@ table#sub2-editor-table {
     width: 250px;
     border: 0;
     border-radius: 0 !important;
-    left: 20%;
+    /* left: 20%; */
 }
 
 .table-header-click-popup {
@@ -715,6 +703,7 @@ table#sub2-editor-table {
     border: 1px solid rgb(219, 218, 218);
 }
 
+#checkbox-table-exist td ,
 #checkbox-table-first td {
     word-wrap: break-word;
     padding: 6px 0px 0px 10px;
@@ -871,7 +860,7 @@ table#sub2-editor-table {
     width: 250px;
     border: 0;
     border-radius: 0 !important;
-    left: 20%;
+    /* left: 20%; */
 }
 
 #dropBtnModal .modal-content .modal-body,
@@ -993,7 +982,7 @@ table#sub2-editor-table {
     width: 360px;
     border: 0;
     border-radius: 0 !important;
-    left: 20%;
+    /* left: 20%; */
 }
 
 #hyperTextModal1 .modal-content .modal-body {
@@ -2086,10 +2075,17 @@ Bottom codes are added by Tanvir
     overflow-y: scroll;
     position: relative;
 }
-
-#text_editor {
-    border: none;
-    outline: none;
+#text_editor,
+#op3_text_editor,
+#ms2_text_editor,
+#ds2_text_editor,
+#ms4_text_editor,
+#ds4_text_editor,
+#ms3_text_editor,
+#ds3_text_editor
+{
+	border: none;
+	outline: none;
 }
 
 #text_editor:hover,
@@ -2122,6 +2118,7 @@ Bottom codes are added by Tanvir
     background: black;
 }
 
+/* TODO popup design  */
 #text_editor div:nth-child(even) {
     background-color: #ffffff !important;
 }
@@ -2253,4 +2250,62 @@ Bottom codes are added by Tanvir
 
 #op1GenerateBtnModal .modal-dialog .modal-body .generate-button-click-popup {
     height: 295px;
+}
+
+
+
+/* #op3FormEditModal .modal-content,
+#op1FormEditModal .modal-content {
+    width: 400px;
+    border: 0;
+    border-radius: 0 !important;
+    left: 10%;
+}
+#op3FormEditModal .modal-content .modal-body,
+#op1FormEditModal .modal-content .modal-body {
+    padding: 0;
+    border-radius: 0 !important;
+} */
+
+#op1FormEditModal .modal-dialog,
+#op3FormEditModal .modal-dialog,
+#op4ListFormEditModal .modal-dialog,
+#op4LeftRightFormEditModal .modal-dialog,
+#op4CheckBoxFormEditModal .modal-dialog,
+#op4RangeCalenderFormEditModal .modal-dialog,
+#mnTempListFormEditModal .modal-dialog,
+#mnTempLeftRightFormEditModal .modal-dialog,
+#mnTempCheckBoxFormEditModal .modal-dialog,
+#mnTempRangeCalenderFormEditModal .modal-dialog{
+    max-width: 401px;
+}
+#op1FormEditModal .modal-dialog .modal-body,
+#op3FormEditModal .modal-dialog .modal-body,
+#op4ListFormEditModal .modal-dialog .modal-body,
+#op4LeftRightFormEditModal .modal-dialog .modal-body,
+#op4CheckBoxFormEditModal .modal-dialog .modal-body,
+#op4RangeCalenderFormEditModal .modal-dialog .modal-body,
+#mnTempListFormEditModal .modal-dialog .modal-body,
+#mnTempLeftRightFormEditModal .modal-dialog .modal-body,
+#mnTempCheckBoxFormEditModal .modal-dialog .modal-body,
+#mnTempRangeCalenderFormEditModal .modal-dialog .modal-body{
+    padding: 0px;
+}
+
+#col8Filter .modal-dialog{
+    /* position: absolute; */
+    position: fixed;
+    min-height: 0;
+    margin: 0;
+    /* top: 200px;
+    left: 400px; */
+}
+
+#dropBtnModal .modal-dialog{
+    /* position: absolute; */
+    position: fixed;
+    min-height: 0;
+    margin: 0;
+    /* top: 200px;
+    left: 400px; */
 }

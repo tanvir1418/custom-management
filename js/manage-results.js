@@ -580,16 +580,16 @@ $(document).ready(function () {
     const mytablesty12 = document.querySelector(".mytablesty12");
     $("#style1Table .right-slider5").click(function () {
         $(".mytablesty12").animate({
-                scrollLeft: mytablesty12.scrollLeft + 250,
+                scrollLeft: mytablesty12.scrollLeft + 700,
             },
-            250
+            700
         );
     });
     $("#style1Table .left-slider5").click(function () {
         $(".mytablesty12").animate({
-                scrollLeft: mytablesty12.scrollLeft - 250,
+                scrollLeft: mytablesty12.scrollLeft - 700,
             },
-            250
+            700
         );
     });
 });
@@ -944,96 +944,48 @@ $(".style2-box").click(function () {
 
 // X CLICK TO REMOVE COLUMN START ==============
 
-$("#cross2").click(function () {
-    $("#resizable554 th:nth-child(2)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(2)").addClass("th-dis-none");
-});
-
-$("#cross3").click(function () {
-    $("#resizable554 th:nth-child(3)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(3)").addClass("th-dis-none");
-});
-
-
-$("#cross4").click(function () {
-    $("#resizable554 th:nth-child(4)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(4)").addClass("th-dis-none");
-});
-
-$("#cross5").click(function () {
-    $("#resizable554 th:nth-child(5)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(5)").addClass("th-dis-none");
-});
-
-$("#cross6").click(function () {
-    $("#resizable554 th:nth-child(6)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(6)").addClass("th-dis-none");
-});
-
-$("#cross7").click(function () {
-    $("#resizable554 th:nth-child(7)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(7)").addClass("th-dis-none");
-});
-
-$("#cross8").click(function () {
-    $("#resizable554 th:nth-child(8)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(8)").addClass("th-dis-none");
-});
-
-$("#cross9").click(function () {
-    $("#resizable554 th:nth-child(9)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(9)").addClass("th-dis-none");
-});
-
-$("#cross10").click(function () {
-    $("#resizable554 th:nth-child(10)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(10)").addClass("th-dis-none");
-});
-
-$("#cross10").click(function () {
-    $("#resizable554 th:nth-child(11)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(11)").addClass("th-dis-none");
-});
-
-$("#cross12").click(function () {
-    $("#resizable554 th:nth-child(12)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(12)").addClass("th-dis-none");
-});
-
-$("#cross13").click(function () {
-    $("#resizable554 th:nth-child(13)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(13)").addClass("th-dis-none");
-});
-
-
-$("#cross14").click(function () {
-    $("#resizable554 th:nth-child(14)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(14)").addClass("th-dis-none");
-});
-
-$("#cross15").click(function () {
-    $("#resizable554 th:nth-child(15)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(15)").addClass("th-dis-none");
-});
-
-$("#cross16").click(function () {
-    $("#resizable554 th:nth-child(16)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(16)").addClass("th-dis-none");
-});
-
-$("#cross17").click(function () {
-    $("#resizable554 th:nth-child(17)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(17)").addClass("th-dis-none");
-});
-
-$("#cross18").click(function () {
-    $("#resizable554 th:nth-child(18)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(18)").addClass("th-dis-none");
-});
-
-$("#cross19").click(function () {
-    $("#resizable554 th:nth-child(19)").addClass("th-dis-none");
-    $("#resizable554 td:nth-child(19)").addClass("th-dis-none");
+$("#resizable554 th").click(function (e) {
+    let target = e.target;
+    let index = $(this).index() + 1;
+    if (target.tagName === "I") {
+        target = target.parentNode;
+    }
+    let regex = /cross/g;
+    let regexD = /drop-filter/g;
+    if (target.tagName === "DIV" && regex.test(target.id)) {
+        $(`#resizable554 th:nth-child(${index})`).addClass("th-dis-none");
+        $(`#resizable554 td:nth-child(${index})`).addClass("th-dis-none");
+    } else if (target.tagName === "DIV" && regexD.test(target.className)) {
+        let dataP = $(`#resizable554 td:nth-child(${index}) .mr-tableData`);
+        let headingPop = $(`#resizable554 th:nth-child(${index})`)[0].textContent;
+        $("#col8Filter #tableHeaderPop").html(headingPop);
+        let targetModal = $("#col8Filter #checkbox-table-first tbody");
+        const dataC = new Set();
+        for(let i=0; i< dataP.length; i++){
+            dataC.add(dataP[i].textContent);
+        }
+        let tableTr = "";
+        for (const item of dataC) {
+            tableTr += 
+            `<tr>
+                <td>
+                    <div class="popup__checkbox__page__toggle">
+                        <label class="popup__checkbox__toggle">
+                            <input class="popup__checkbox__toggle__input" type="checkbox">
+                            <span class="popup__checkbox__toggle__label">
+                                <span class="popup__checkbox__toggle__text">${item}</span>
+                            </span>
+                        </label>
+                    </div>
+                </td>
+            </tr>`;
+        }
+        targetModal.html(tableTr);
+        $("#col8Filter .modal-dialog").css({
+            top: ((e.clientY) + 15), 
+            left: ((e.clientX) - 240)
+        });
+    }
 });
 
 // ======== STYLE 2
@@ -1357,3 +1309,158 @@ dataFilterModal.forEach((modalData) => {
     my_drag_list.innerHTML += modalElement;
 })
 //----------====== Manage result filter modal End ======----------------
+
+// ---------- ======= Double Click to ADD or REMOVE Start ======= -------------
+let manageResultTable = [
+    {
+        id: "res-id-1",
+        name: "Option 1",
+        dataType: "inputText",
+    },
+    {
+        id: "res-id-2",
+        name: "Option 2",
+        dataType: "range",
+    },
+    {
+        id: "res-id-3",
+        name: "Option 3",
+        dataType: "date",
+    },
+    {
+        id: "res-id-4",
+        name: "Option 4",
+        dataType: "select",
+    },
+    {
+        id: "res-id-5",
+        name: "Option 5",
+        dataType: "inputText",
+    },
+    {
+        id: "res-id-6",
+        name: "Option 6",
+        dataType: "range",
+    },
+    {
+        id: "res-id-7",
+        name: "Option 7",
+        dataType: "date",
+    },
+    {
+        id: "res-id-8",
+        name: "Option 8",
+        dataType: "select",
+    },
+    {
+        id: "res-id-9",
+        name: "Option 9",
+        dataType: "inputText",
+    },
+    {
+        id: "res-id-10",
+        name: "Option 10",
+        dataType: "range",
+    },
+    {
+        id: "res-id-11",
+        name: "Option 11",
+        dataType: "date",
+    },
+    {
+        id: "res-id-12",
+        name: "Option 12",
+        dataType: "select",
+    },
+    {
+        id: "res-id-13",
+        name: "Option 13",
+        dataType: "range",
+    },
+    {
+        id: "res-id-14",
+        name: "Option 14",
+        dataType: "date",
+    },
+    {
+        id: "res-id-15",
+        name: "Option 15",
+        dataType: "select",
+    },
+];
+
+(function manResTableRender() {
+    let htmlTable = "";
+    manageResultTable.forEach(({ id, name }) => {
+        htmlTable += `<tr id="${id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
+            <td>${name}</td>
+        </tr>`;
+    });
+    $("#man-res-opt-data-table-left").html(htmlTable);
+})();
+
+function dblclickResMove(e) {
+    let _id = $(e).parent().attr("id");
+    if (_id == "man-res-opt-data-table-left") {
+        $(e).removeClass("mark-table-data");
+        $("#man-res-opt-data-table-right").append(e);
+    }
+    else if (_id == "man-res-opt-data-table-right") {
+        $(e).removeClass("mark-table-data");
+        $("#man-res-opt-data-table-left").append(e);
+    }
+}
+
+function moveResLeftToRight() {
+    let tr = $("#man-res-opt-data-table-left tr.mark-table-data");
+    tr.removeClass("mark-table-data");
+    $("#man-res-opt-data-table-right").append(tr);
+}
+
+function moveResRightToLeft() {
+    let tr = $("#man-res-opt-data-table-right tr.mark-table-data");
+    tr.removeClass("mark-table-data");
+    $("#man-res-opt-data-table-left").append(tr);
+}
+
+function ResorderUp() {
+    let row = $("#man-res-opt-data-table-right tr.mark-table-data");
+    row.each(function () {
+        let rw = $(this).closest("tr.mark-table-data");
+        rw.insertBefore(rw.prev());
+    });
+}
+function ResorderDown() {
+    let row = $("#man-res-opt-data-table-right tr.mark-table-data");
+    row.each(function () {
+        let rw = $(this).closest("tr");
+        for (let i = 0; i < row.length; i++) {
+            rw.insertAfter(rw.next());
+        }
+    });
+}
+// ---------- ======= Double Click to ADD or REMOVE End ======= -------------
+
+// ----------- Manage Result Filter Start ------------------
+function resetResFilter(e) {
+    let inpBox = $(e).parent().parent()
+        .children(".outer-data7")
+        .find("div.valdata-box div.valinput input.myzap-input");
+    inpBox.val("");
+}
+// ----------- Manage Result Filter End --------------------
+
+// #column-header-3 .drop-filter
+// $("#column-header-3 .drop-filter").click( function(event) {
+//     $("#col8Filter .modal-dialog").css({
+//         top: ((event.clientY) + 15), 
+//         left: ((event.clientX) - 240)
+//     });
+//     // console.log(`Clicked and Top(Page-Y) : ${event.pageY} Left(Page-X) : ${event.pageX} `);
+//     // console.log(`Clicked and Top(client-Y) : ${event.clientY} Left(client-X) : ${event.clientX} `);
+//     // console.log(`Clicked and Top(screen-Y) : ${event.screenY} Left(screen-X) : ${event.screenX} `);
+//     // console.log(`Clicked and Top(offset-Y) : ${event.offsetY} Left(offset-X) : ${event.offsetX} `);
+//     // var x = e.clientX,
+//     // var y = e.clientY;
+//     // console.log("Top: " + top + " and Left: " + left);
+// });
