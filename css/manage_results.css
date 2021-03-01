@@ -838,6 +838,7 @@ td {
 }
 .column-header-2 {
     min-width: 154px;
+    max-width: 154px;
 }
 .column-header-3 {
     min-width: 130px;
@@ -918,9 +919,11 @@ td {
 }
 .column-header-87{
     min-width: 140px;
+    max-width: 140px;
 }
 .column-header-94{
     min-width: 450px;
+    max-width: 450px;
 }
 .column-header-95{
     min-width: 600px;
@@ -963,11 +966,21 @@ td {
 }
 
 /* Create a custom checkbox */
+.containerst12 .checkmarkHeader {
+    position: absolute;
+    left: 9px;
+    top: 4px;
+    height: 22px;
+    width: 22px;
+    border: 1px solid #f1f3f7;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
 .containerst12 .checkmark {
     position: absolute;
     left: -2px;
     top: -4px;
-    height: 20px;
+    height: 22px;
     width: 22px;
     border: 1px solid #f1f3f7;
     border-radius: 4px;
@@ -1082,9 +1095,9 @@ td {
 }
 
 /* 1ST COLUMN CHECK BOX */
-tbody td .containerst12 .checkmark {
+/* tbody td .containerst12 .checkmark {
     top: 80px;
-}
+} */
 
 .mytablesty12 td .icon-box22 {
     display: flex;
