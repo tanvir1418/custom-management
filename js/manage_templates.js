@@ -1500,7 +1500,8 @@ function manTemcheckNum(e) {
 
 // Form by text editor start
 function findInputIdMS2(title) {
-  let res = manTemLeftData.filter((a) => a.name == title).map((b) => b.id);
+  let searchArr = manTemLeftData.concat(manTemRightData);
+  let res = searchArr.filter((a) => a.name == title).map((b) => b.id);
   if (res.length) return res[0];
   else return false;
 }
@@ -1510,7 +1511,8 @@ function formToWindowMS2(e) {
     .children(".text-editor-popup-body")
     .find("#ms2_text_editor");
   let renHtml = "";
-  manTemSeqListL.forEach((pid) => {
+  let manTemSeqList = manTemSeqListL.concat(manTemSeqListR);
+  manTemSeqList.forEach((pid) => {
     let title = $(`#${pid} span.toggle__text`).html();
     let addSet = $(`#${pid} .add-set`).find(":selected").text();
     let seqTitle = $(`#${pid} .sequence`).find(":selected").text();
@@ -1560,7 +1562,8 @@ function windowToFormMS2(e) {
         $(`#${pid} .add-set`).val(divData[2].trim().toLowerCase());
       } else if (divData[1].trim().toUpperCase() == "SEQUENCE") {
         let seqVal = 0;
-        for (let k = 1; k <= manTemLeftData.length; k++) {
+        let len = Math.max(manTemLeftData.length, manTemRightData.length);
+        for (let k = 1; k <= len; k++) {
           if (divData[2].trim().toUpperCase() == inWords(k).toUpperCase()) {
             seqVal = k;
           }
@@ -1669,19 +1672,14 @@ function autoCorrectMS2() {
   while (document.getElementById("temp")) {
     document.getElementById("temp").removeAttribute("id");
   }
-  if (pos.textContent.indexOf(":") == -1) x = pos.textContent;
-  else x = pos.textContent;
+  let x = pos.textContent;
   let editor = document.getElementById("text_editor_p");
-  $(pos).replaceWith(
-    `<div id="temp">${pos.textContent}</div>
-    <div id="adder"></div>`
-  );
 
   let m = "";
   let first = 1;
   if (x.indexOf(":") == -1) {
-    $("#adder").addClass("set-name");
-    manTemLeftData.forEach(({name}) => {
+    let sugName = manTemLeftData.concat(manTemRightData);
+    sugName.forEach(({name}) => {
       if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
         if (first) {
           m += `<option selected value="${name}">${name}</option><br>`;
@@ -1694,7 +1692,6 @@ function autoCorrectMS2() {
     });
   }
   else if ((x.split(":").length - 1) == 1) {
-    $("#adder").addClass("set-sug");
     setSugArray.forEach((set) => {
       let inp = x.split(":")[1].trim().toLowerCase();
       if (inp != "" && set.toLowerCase().indexOf(inp) == 0) {
@@ -1709,7 +1706,6 @@ function autoCorrectMS2() {
     });
   }
   else if ((x.split(":").length - 1) == 2) {
-    $("#adder").addClass("set-sug");
     setSugArray.forEach((set) => {
       let inp = x.split(":")[2].trim().toLowerCase();
       if (inp != "" && set.toLowerCase().indexOf(inp) == 0) {
@@ -1730,13 +1726,24 @@ function autoCorrectMS2() {
     </select>`;
   // add auto correct ... only if there is atleast one match
   if (m != "") {
+    if (x.indexOf(":") == -1) {
+      $(pos).replaceWith(
+        `<div id="temp">${x}</div>
+        <div id="adder" class="set-name"></div>`
+      );
+    } else {
+      $(pos).replaceWith(
+        `<div id="temp">${x}</div>
+        <div id="adder" class="set-sug"></div>`
+      );
+    }
     document.getElementById("adder").innerHTML = y;
     document.getElementById("adder").style.display = "block";
     $("#adder select").focus();
   } else {
     $("#adder").remove();
-    setEndOfContenteditable(document.getElementById("temp"));
-    document.getElementById("temp").removeAttribute("id");
+    // setEndOfContenteditable(document.getElementById("temp"));
+    // document.getElementById("temp").removeAttribute("id");
   }
 }
 
@@ -2186,14 +2193,9 @@ function autoCorrectMS4() {
   while (document.getElementById("temp")) {
     document.getElementById("temp").removeAttribute("id");
   }
-  if (pos.textContent.indexOf(":") == -1) x = pos.textContent;
-  else x = pos.textContent;
+  let x = pos.textContent;
   let editor = document.getElementById("text_editor_p");
-  $(pos).replaceWith(
-    `<div id="temp">${pos.textContent}</div>
-    <div id="adder"></div>`
-  );
-
+  
   let m = "";
   let first = 1;
   if (x.indexOf(":") == -1) {
@@ -2217,13 +2219,24 @@ function autoCorrectMS4() {
     </select>`;
   // add auto correct ... only if there is atleast one match
   if (m != "") {
+    if (x.indexOf(":") == -1) {
+      $(pos).replaceWith(
+        `<div id="temp">${x}</div>
+        <div id="adder" class="set-name"></div>`
+      );
+    } else {
+      $(pos).replaceWith(
+        `<div id="temp">${x}</div>
+        <div id="adder" class="set-sug"></div>`
+      );
+    }
     document.getElementById("adder").innerHTML = y;
     document.getElementById("adder").style.display = "block";
     $("#adder select").focus();
   } else {
     $("#adder").remove();
-    setEndOfContenteditable(document.getElementById("temp"));
-    document.getElementById("temp").removeAttribute("id");
+    // setEndOfContenteditable(document.getElementById("temp"));
+    // document.getElementById("temp").removeAttribute("id");
   }
 }
 
@@ -2262,19 +2275,55 @@ function pasteEventMS4(e) {
 
 // Manage template Sample 3 Start
 // Form by text editor Start
-let section = [
-  "sectionA",
-  "sectionB",
-  "sectionC",
-  "sectionD",
-  "sectionE",
-  "sectionF",
-  "sectionG",
-  "sectionH",
-  "sectionI"
+let sectionMS3 = [
+  {
+    id: "fieldset_id21",
+    name: "sectionA",
+    type: "input",
+  },
+  {
+    id: "fieldset_id22",
+    name: "sectionB",
+    type: "input",
+  },
+  {
+    id: "fieldset_id23",
+    name: "sectionC",
+    type: "option",
+  },
+  {
+    id: "fieldset_id24",
+    name: "sectionD",
+    type: "input",
+  },
+  {
+    id: "fieldset_id25",
+    name: "sectionE",
+    type: "input",
+  },
+  {
+    id: "fieldset_id26",
+    name: "sectionF",
+    type: "option",
+  },
+  {
+    id: "fieldset_id27",
+    name: "sectionG",
+    type: "option",
+  },
+  {
+    id: "fieldset_id28",
+    name: "sectionH",
+    type: "input",
+  },
+  {
+    id: "fieldset_id29",
+    name: "sectionI",
+    type: "input",
+  },
 ];
 function findInputIdMS3(title) {
-  let res = section.filter(a => a == title);
+  let res = sectionMS3.filter(a => a.name == title);
   if (res.length) return res[0];
   else return false;
 }
@@ -2353,18 +2402,14 @@ function autoCorrectMS3() {
   while (document.getElementById("temp")) {
     document.getElementById("temp").removeAttribute("id");
   }
-  if (pos.textContent.indexOf(":") == -1) x = pos.textContent;
-  else x = pos.textContent;
+  let x = pos.textContent;
   let editor = document.getElementById("text_editor_p");
-  $(pos).replaceWith(
-    `<div id="temp">${pos.textContent}</div>
-    <div id="adder"></div>`
-  );
+  
   let m = "";
   let first = 1;
   if (x.indexOf(":") == -1) {
     $("#adder").addClass("set-name");
-    section.forEach(name => {
+    sectionMS3.forEach(({ name }) => {
       if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
         if (first) {
           m += `<option selected value="${name}">${name}</option><br>`;
@@ -2383,13 +2428,24 @@ function autoCorrectMS3() {
     </select>`;
   // add auto correct ... only if there is atleast one match
   if (m != "") {
+    if (x.indexOf(":") == -1) {
+      $(pos).replaceWith(
+        `<div id="temp">${x}</div>
+        <div id="adder" class="set-name"></div>`
+      );
+    } else {
+      $(pos).replaceWith(
+        `<div id="temp">${x}</div>
+        <div id="adder" class="set-sug"></div>`
+      );
+    }
     document.getElementById("adder").innerHTML = y;
     document.getElementById("adder").style.display = "block";
     $("#adder select").focus();
   } else {
     $("#adder").remove();
-    setEndOfContenteditable(document.getElementById("temp"));
-    document.getElementById("temp").removeAttribute("id");
+    // setEndOfContenteditable(document.getElementById("temp"));
+    // document.getElementById("temp").removeAttribute("id");
   }
 }
 function pasteEventMS3(e){
@@ -2427,50 +2483,26 @@ function windowToFormMS3(e){
   let len = tRow.length;
   for (let i = 0; i < len; i++) {
     let divData = $(tRow[i])[0].innerText.split(":");
-    if (divData[0].trim() == "sectionA") {
-      let inp = $("fieldset#fieldset_id21 .data-form input[type=text]");
-      for (let i = 1; i < divData.length; i++){
-        inp[i - 1].value = divData[i].trim();
+    let { id, name, type } = findInputIdMS3(divData[0].trim());
+    if (type == "input") {
+      let inp = $(`fieldset#${id} .data-form input[type=text]`);
+      for (let j = 0; j < inp.length; j++) {
+        let title = $(inp[j]).parent().parent().find(".title-section p")[0].textContent;
+        if (title == divData[1].trim()) {
+          let abc = divData.splice(2).join(":").trim();
+          $(inp[j]).val(abc);
+        }
       }
-    } else if (divData[0].trim() == "sectionB") {
-      let inp = $("fieldset#fieldset_id22 .data-form input[type=text]");
-      for (let i = 1, j = 0; i < divData.length, j < inp.length; i++,j++) {
-        inp[j].value = divData[i++].trim() + ":" + divData[i].trim();
-      }
-    } else if (divData[0].trim() == "sectionC") {
-      let inp = $("fieldset#fieldset_id23 .custome-select select");
-      for (let i = 1, j = 0; i < divData.length, j < inp.length; i++, j++) {
-        $(inp[j]).val(divData[i++].trim() + ":" + divData[i].trim());
-      }
-    } else if (divData[0].trim() == "sectionD") {
-      let inp = $("fieldset#fieldset_id24 .data-form input[type=text]");
-      for (let i = 1; i < divData.length; i++) {
-        inp[i - 1].value = divData[i].trim();
-      }
-    } else if (divData[0].trim() == "sectionE") {
-      let inp = $("fieldset#fieldset_id25 .data-form input[type=text]");
-      for (let i = 1; i < divData.length; i++) {
-        inp[i - 1].value = divData[i].trim();
-      }
-    } else if (divData[0].trim() == "sectionF") {
-      let inp = $("fieldset#fieldset_id26 .custome-select select");
-      for (let i = 1, j = 0; i < divData.length, j < inp.length; i++, j++) {
-        $(inp[j]).val(divData[i++].trim() + ":" + divData[i].trim());
-      }
-    } else if (divData[0].trim() == "sectionG") {
-      let inp = $("fieldset#fieldset_id27 .custome-select select");
-      for (let i = 1; i < divData.length; i++) {
-        $(inp[i - 1]).val(divData[i].trim());
-      }
-    } else if (divData[0].trim() == "sectionH") {
-      let inp = $("fieldset#fieldset_id28 .data-form input[type=text]");
-      for (let i = 1; i < divData.length; i++) {
-        inp[i - 1].value = divData[i].trim();
-      }
-    } else if (divData[0].trim() == "sectionI") {
-      let inp = $("fieldset#fieldset_id29 .data-form input[type=text]");
-      for (let i = 1; i < divData.length; i++) {
-        inp[i - 1].value = divData[i].trim();
+    } else if (type == "option") {
+      let selt = $(`fieldset#${id} .custome-select`);
+      for (let j = 0; j < selt.length; j++) {
+        let titleE = $(selt[j]).parent().parent();
+        let title = titleE.find(".title-section p")[0] != undefined ?
+          titleE.find(".title-section p")[0] : titleE.find(".custom-title-section p")[0];
+        if (title.textContent == divData[1].trim()) {
+          let abc = divData.splice(2).join(":").trim();
+          $(selt[j]).find("select").val(abc);
+        }
       }
     }
   }
@@ -2480,112 +2512,36 @@ function formToWindowMS3(e) {
     .children(".text-editor-popup-body")
     .find("#ms3_text_editor");
   let renHtml = "";
-  let renData = "";
-  // section A
-  let sectionA = $("fieldset#fieldset_id21");
-  let inpA = sectionA.find(".data-form input[type=text]");
-  renData = "sectionA";
-  for (let i = 0; i < inpA.length; i++){
-    renData += " : " + inpA[i].value;
-  }
-  if (renData.split(":")[1].trim()!="") {
-    renHtml += `<div class="form-text-design data-div">
-      ${renData}
-    </div>`;
-  }
-  // section B
-  let sectionB = $("fieldset#fieldset_id22");
-  let inpB = sectionB.find(".data-form input[type=text]");
-  renData = "sectionB";
-  for (let i = 0; i < inpB.length; i++) {
-    renData += " : " + inpB[i].value;
-  }
-  if (renData.split(":")[1].trim() != "") {
-    renHtml += `<div class="form-text-design data-div">
-      ${renData}
-    </div>`;
-  }
-  // section C
-  let sectionC = $("fieldset#fieldset_id23 .custome-select select");
-  renData = "sectionC";
-  for (let i = 0; i < sectionC.length; i++) {
-    renData += " : " + $(sectionC[i]).find(":selected").text();
-  }
-  if (renData.split(":")[1].trim() != "") {
-    renHtml += `<div class="form-text-design data-div">
-      ${renData}
-    </div>`;
-  }
-  // section D
-  let sectionD = $("fieldset#fieldset_id24");
-  let inpD = sectionD.find(".data-form input[type=text]");
-  renData = "sectionD";
-  for (let i = 0; i < inpD.length; i++) {
-    renData += " : " + inpD[i].value;
-  }
-  if (renData.split(":")[1].trim() != "") {
-    renHtml += `<div class="form-text-design data-div">
-      ${renData}
-    </div>`;
-  }
-  // section E
-  let sectionE = $("fieldset#fieldset_id25");
-  let inpE = sectionE.find(".data-form input[type=text]");
-  renData = "sectionE";
-  for (let i = 0; i < inpE.length; i++) {
-    renData += " : " + inpE[i].value;
-  }
-  if (renData.split(":")[1].trim() != "") {
-    renHtml += `<div class="form-text-design data-div">
-      ${renData}
-    </div>`;
-  }
-  // section F
-  let sectionF = $("fieldset#fieldset_id26 .custome-select select");
-  renData = "sectionF";
-  for (let i = 0; i < sectionF.length; i++) {
-    renData += " : " + $(sectionF[i]).find(":selected").text();
-  }
-  if (renData.split(":")[1].trim() != "") {
-    renHtml += `<div class="form-text-design data-div">
-      ${renData}
-    </div>`;
-  }
-  // section G
-  let sectionG = $("fieldset#fieldset_id27 .custome-select select");
-  renData = "sectionG";
-  for (let i = 0; i < sectionG.length; i++) {
-    renData += " : " + $(sectionG[i]).find(":selected").text();
-  }
-  if (renData.split(":")[1].trim() != "") {
-    renHtml += `<div class="form-text-design data-div">
-      ${renData}
-    </div>`;
-  }
-  // section H
-  let sectionH = $("fieldset#fieldset_id28");
-  let inpH = sectionH.find(".data-form input[type=text]");
-  renData = "sectionH";
-  for (let i = 0; i < inpH.length; i++) {
-    renData += " : " + inpH[i].value;
-  }
-  if (renData.split(":")[1].trim() != "") {
-    renHtml += `<div class="form-text-design data-div">
-      ${renData}
-    </div>`;
-  }
-  // section I
-  let sectionI = $("fieldset#fieldset_id29");
-  let inpI = sectionI.find(".data-form input[type=text]");
-  renData = "sectionI";
-  for (let i = 0; i < inpI.length; i++) {
-    renData += " : " + inpI[i].value;
-  }
-  if (renData.split(":")[1].trim() != "") {
-    renHtml += `<div class="form-text-design data-div">
-      ${renData}
-    </div>`;
-  }
+
+  // Section All
+  sectionMS3.forEach(({ id, name, type }) => {
+    if (type == "input") {
+      let section = $(`fieldset#${id}`);
+      let inp = section.find(".data-form input[type=text]");
+      for (let i = 0; i < inp.length; i++) {
+        let title = $(inp[i]).parent().parent().find(".title-section p")[0].textContent;
+        if (inp[i].value != "") {
+          renHtml += `<div class="form-text-design data-div">
+            ${name} : ${title} : ${inp[i].value}
+          </div>`;
+        }
+      }
+    }
+    else if (type == "option") {
+      let selt = $(`fieldset#${id} .custome-select`);
+      for (let i = 0; i < selt.length; i++) {
+        let titleE = $(selt[i]).parent().parent();
+        let title = titleE.find(".title-section p")[0] != undefined ?
+          titleE.find(".title-section p")[0] : titleE.find(".custom-title-section p")[0];
+        let selVal = $(selt[i]).find("select :selected").text();
+        if (selVal != "") {
+          renHtml += `<div class="form-text-design data-div">
+            ${name} : ${title.textContent} : ${selVal}
+          </div>`;
+        }
+      }
+    }
+  });
 
   tBody.html(renHtml);
 }
