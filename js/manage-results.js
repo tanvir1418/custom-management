@@ -707,7 +707,7 @@ var dis5_pos_value6 = pos_value6 * 0.7;
 var dis5_pos_value7 = pos_value7 * 0.7;
 var dis5_pos_value8 = pos_value8 * 0.7;
 var dis5_pos_value9 = pos_value9 * 0.7;
-var dis5_pos_value10 = pos_value10 * 0.7;
+var dis5_pos_value10 = pos_value10 * 0.78;
 
 var dis5_neg_value1 = neg_value1 * 1.11;
 var dis5_neg_value2 = neg_value2 * 1.11;
