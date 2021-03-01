@@ -119,13 +119,13 @@ function manResPagination(noRow) {
 
         tableTr +=
         `<tr class="dnd-moved">
-          <td>
+          <td class="column-header-1">
             <label class="containerst12">
               <input type="checkbox" />
               <span class="checkmark"></span>
             </label>
           </td>
-          <td>
+          <td class="column-header-2">
             <div class="icon-box22">
               <div class="circle2box">
                 <i class="fas fa-envelope"></i>
@@ -210,7 +210,7 @@ function manResPagination(noRow) {
               </div>
             </div>
           </td>
-          <td class="status22">
+          <td class="column-header-3 status22">
             <div class="inner_con ${designClass}">
               <div class="status22-centerize centerizeany">
                 <p class="mr-tableData">${checkSts == "Ended" ? checkSts : checkSts + " In"}</p>
@@ -218,21 +218,21 @@ function manResPagination(noRow) {
               </div>
             </div>
           </td>
-          <td class="${classV1}">
+          <td class="column-header-4 ${classV1}">
             <div class="column-time">
               <div class="centerauto">
                 <span class="dis_time22 mr-tableData">${val1}</span>
               </div>
             </div>
           </td>
-          <td class="${classV2}">
+          <td class="column-header-5 ${classV2}">
             <div class="column-time">
               <div class="centerauto">
                 <span class="dis_time22 mr-tableData">${val2}</span>
               </div>
             </div>
           </td>
-          <td class="vall11_datel">
+          <td class="column-header-6 vall11_datel">
             <div class="val11">
               <p class="centerizeany mr-tableData">${Val11}</p>
             </div>
@@ -243,7 +243,7 @@ function manResPagination(noRow) {
               </div>
             </div>
           </td>
-          <td class="vall11_datel">
+          <td class="column-header-7 vall11_datel">
             <div class="val11 red-white">
               <p class="centerizeany mr-tableData">${Val12}</p>
             </div>
@@ -254,7 +254,7 @@ function manResPagination(noRow) {
               </div>
             </div>
           </td>
-          <td class="dchart_1">
+          <td class="column-header-8 dchart_1">
             <div class="upper_part_22">
               <div class="uddleft">
                 <p class="centerizeany">${daysG} D : ${hoursG} H : ${minsG} M</p>
@@ -278,7 +278,7 @@ function manResPagination(noRow) {
               </div>
             </div>
           </td>
-          <td class="pentagon">
+          <td class="column-header-9 pentagon">
             <div class="upper-penta-box">
               <div class="shape_penagon" style="${styleG}">
                 <div class="top-num">
@@ -304,177 +304,177 @@ function manResPagination(noRow) {
               </div>
             </div>
           </td>
-          <td class="col_00 green-white">
+          <td class="col_00 column-header-10 green-white">
             <p class="centerizeany mr-tableData">${u_val}</p>
           </td>
-          <td class="col_00 green-white">
+          <td class="col_00 column-header-11 green-white">
             <p class="centerizeany mr-tableData">${u_per}</p>
           </td>
-          <td class="col_00 red-white">
+          <td class="col_00 column-header-12 red-white">
             <p class="centerizeany mr-tableData">${d_val}</p>
           </td>
-          <td class="col_00 red-white">
+          <td class="col_00 column-header-13 red-white">
             <p class="centerizeany mr-tableData">${d_per}</p>
           </td>
-          <td class="col_00 grey-white">
+          <td class="col_00 column-header-14 grey-white">
             <p class="centerizeany mr-tableData">${n_val}</p>
           </td>
-          <td class="col_00 grey-white">
+          <td class="col_00 column-header-15 grey-white">
             <p class="centerizeany mr-tableData">${n_per}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-16">
             <p class="centerizeany mr-tableData">${AM_COUNT}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-17">
             <p class="centerizeany mr-tableData">${AN_COUNT}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-18">
             <p class="centerizeany mr-tableData">${AO_COUNT}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-19">
             <p class="centerizeany mr-tableData">${AP_COUNT}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-50">
             <p class="centerizeany mr-tableData">${AQ_COUNT}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-51">
             <p class="centerizeany mr-tableData">${AR_COUNT}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-52">
             <p class="centerizeany mr-tableData">${AS_Count}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-53">
             <p class="centerizeany mr-tableData">${AT_Count}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-54">
             <p class="centerizeany mr-tableData">${AU_Count}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-55">
             <p class="centerizeany mr-tableData">${AV_Count}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-56">
             <p class="centerizeany mr-tableData">${AW_COUNT}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-57">
             <p class="centerizeany mr-tableData">${AX_COUNT}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-58">
             <p class="centerizeany mr-tableData">${AY_COUNT}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-59">
             <p class="centerizeany mr-tableData">${AZ_Count}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-60">
             <p class="centerizeany mr-tableData">${BA_Count}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-61">
             <p class="centerizeany mr-tableData">${BB_Count}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-62">
             <p class="centerizeany mr-tableData">${BC_Count}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-63">
             <p class="centerizeany mr-tableData">${BD_Count}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-64">
             <p class="centerizeany mr-tableData">${BE_count}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-65">
             <p class="centerizeany mr-tableData">${BF_COUNT}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-66">
             <p class="centerizeany mr-tableData">${BG_COUNT}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-67">
             <p class="centerizeany mr-tableData">${BH_COUNT}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-68">
             <p class="centerizeany mr-tableData">${BI_COUNT}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-69">
             <p class="centerizeany mr-tableData">${BJ_COUNT}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-70">
             <p class="centerizeany mr-tableData">${BK_COUNT}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-71">
             <p class="centerizeany mr-tableData">${BL_COUNT}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-72">
             <p class="centerizeany mr-tableData">${BM_COUNT}</p>
           </td>
 
-          <td class="col_00">
+          <td class="col_00 column-header-73">
             <p class="centerizeany mr-tableData">${Col2}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-74">
             <p class="centerizeany mr-tableData">${Col3}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-75">
             <p class="centerizeany mr-tableData">${DP_val}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-76">
             <p class="centerizeany mr-tableData">${DY_val}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-77">
             <p class="centerizeany mr-tableData">${DmA}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-78">
             <p class="centerizeany mr-tableData">${DmP}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-79">
             <p class="centerizeany mr-tableData">${DmP_per}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-80">
             <p class="centerizeany mr-tableData">${ID_val}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-81">
             <p class="centerizeany mr-tableData">${LoP_per}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-82">
             <p class="centerizeany mr-tableData">${M_Val}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-83">
             <p class="centerizeany mr-tableData">${MaP_per}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-84">
             <p class="centerizeany mr-tableData">${O_End}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-85">
             <p class="centerizeany mr-tableData">${O_Start}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-86">
             <p class="centerizeany mr-tableData">${SP_val}</p>
           </td>
-          <td class="col_00">
-            <p class="centerizeany mr-tableData"style="position: relative;">${Time_Frame}</p>
+          <td class="col_00 column-header-87">
+            <p class="mr-tableData">${Time_Frame}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-88">
             <p class="centerizeany mr-tableData">${UmA}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-89">
             <p class="centerizeany mr-tableData">${UmP}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-90">
             <p class="centerizeany mr-tableData">${UmP_per}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-91">
             <p class="centerizeany mr-tableData">${Val2S}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-92">
             <p class="centerizeany mr-tableData">${Val3S}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-93">
             <p class="centerizeany mr-tableData">${Val6}</p>
           </td>
-          <td class="col_00">
+          <td class="col_00 column-header-94">
             <p class="centerizeany mr-tableData" style="position: relative;left: 55%;top: 25%;">${Description}</p>
           </td>
-          <td class="col_00">
-            <p class="centerizeany mr-tableData" style="position: relative;left: 55%;top: 25%;">${Details3}</p>
+          <td class="col_00 column-header-95">
+            <p class="mr-tableData">${Details3}</p>
           </td>
-          <td class="col_00">
-            <p class="centerizeany mr-tableData" style="position: relative;left: 55%;top: 25%;">${Details2}</p>
+          <td class="col_00 column-header-96">
+            <p class="mr-tableData">${Details2}</p>
           </td>
 
 
