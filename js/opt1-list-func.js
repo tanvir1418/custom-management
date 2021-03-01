@@ -367,6 +367,8 @@ function resetLeftRightBox() {
   rightSideTable();
   $("#leftSideDrag_op1").html("");
   $("#rightSideDrag_op1").html("");
+  seqList = [];
+  seqListR = [];
 }
 
 function renderListInputHtml(_id, iCount, title, resetValue, swapSeq) {
@@ -443,7 +445,8 @@ function formToWindow(e) {
     .children(".text-editor-popup-body")
     .find("#text_editor");
   let renHtml = "";
-  seqList.forEach((pid) => {
+  let seqListJoin = seqList.concat(seqListR);
+  seqListJoin.forEach((pid) => {
     let title = $(`#${pid} span.toggle__text`).html();
     let seqVal = $(`#${pid} #sequence`).val();
     let seqTitle = $(`#${pid} #sequence`).find(":selected").text();
@@ -467,7 +470,8 @@ function formToWindow(e) {
 }
 
 function findInputId(title) {
-  let res = leftSideArray.filter((a) => a.name == title).map((b) => b.id);
+  let searchArr = leftSideArray.concat(rightSideData);
+  let res = searchArr.filter((a) => a.name == title).map((b) => b.id);
   if (res.length) return res[0];
   else return false;
 }
@@ -478,40 +482,28 @@ function windowToForm(e) {
     .find("#text_editor div.form-text-design.data-div");
   let len = tRow.length;
   for (let i = 0; i < len; i++) {
-    let divData = $(tRow[i++])[0].innerText.split(":");
-    let title = divData[0].trim().split("_")[0];
+    let divData = $(tRow[i])[0].innerText.split(":");
+    let [title, no] = divData[0].trim().split("_");
     let pid = findInputId(title);
-    let setVal = divData[divData.length - 1].trim();
-    divData = $(tRow[i++])[0].innerText.split(":");
-    let seqName = divData[divData.length - 1].trim();
-    let seqVal = 0;
-    for (let k = 1; k < 50; k++) {
-      if (seqName == inWords(k).toUpperCase()) {
-        seqVal = k;
-      }
-    }
-    let iCount = leftSideArray.filter((a) => a.id == pid).map((b) => b.count)[0];
+    let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
+    if (checkbox.checked == false) checkbox.click();
 
-    if (pid) {
-      let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
-      if (checkbox.checked == false && setVal == "Set") {
-        checkbox.click();
-      }
-      else if (checkbox.checked == true && setVal != "Set") {
-        checkbox.click();
-      }
-
-      if (checkbox.checked == true && setVal == "Set") {
+    if (pid && divData.length == 3) {
+      if (divData[1].trim().toUpperCase() == "SEQUENCE") {
+        let seqVal = 0;
+        let len = Math.max(leftSideArray.length, rightSideData.length);
+        for (let k = 1; k <= len; k++) {
+          if (divData[2].trim().toUpperCase() == inWords(k).toUpperCase()) {
+            seqVal = k;
+          }
+        }
         $(`#${pid} #sequence`).val(seqVal);
       }
-
-      for (let j = 0; j < iCount; j++) {
-        divData = $(tRow[i++])[0].innerText.split(":");
-        let inpVal = divData[divData.length - 1].trim();
-        $(`#${pid} input[type="text"]`)[j].value = inpVal;
-      }
+    } else if (pid && divData.length == 2) {
+      let inpVal = divData[divData.length - 1].trim();
+      no = no != undefined ? no : 1;
+      $(`#${pid} input[type="text"]`)[no-1].value = inpVal;
     }
-    i--;
   }
 }
 
@@ -678,19 +670,14 @@ function autoCorrect() {
   while (document.getElementById("temp")) {
     document.getElementById("temp").removeAttribute("id");
   }
-  if (pos.textContent.indexOf(":") == -1) x = pos.textContent;
-  else x = pos.textContent;
+  let x = pos.textContent;
   let editor = document.getElementById("text_editor_p");
-  $(pos).replaceWith(
-    `<div id="temp">${pos.textContent}</div>
-    <div id="adder"></div>`
-  );
-
+  
   let m = "";
   let first = 1;
   if (x.indexOf(":") == -1) {
-    $("#adder").addClass("set-name");
-    leftSideArray.forEach((sData) => {
+    let sugName = leftSideArray.concat(rightSideData);
+    sugName.forEach((sData) => {
       if (sData.name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
         if (first) {
           m += `<option selected value="${sData.name}">${sData.name}</option><br>`;
@@ -703,7 +690,6 @@ function autoCorrect() {
     });
   }
   else if ((x.split(":").length - 1) == 1) {
-    $("#adder").addClass("set-sug");
     setSugArray.forEach((set) => {
       let inp = x.split(":")[1].trim().toLowerCase();
       if (inp != "" && set.toLowerCase().indexOf(inp) == 0) {
@@ -726,13 +712,24 @@ function autoCorrect() {
     </select>`;
   // add auto correct ... only if there is atleast one match
   if (m != "") {
+    if (x.indexOf(":") == -1) {
+      $(pos).replaceWith(
+        `<div id="temp">${x}</div>
+        <div id="adder" class="set-name"></div>`
+      );
+    } else {
+      $(pos).replaceWith(
+        `<div id="temp">${x}</div>
+        <div id="adder" class="set-sug"></div>`
+      );
+    }
     document.getElementById("adder").innerHTML = y;
     document.getElementById("adder").style.display = "block";
     $("#adder select").focus();
   } else {
     $("#adder").remove();
-    setEndOfContenteditable(document.getElementById("temp"));
-    document.getElementById("temp").removeAttribute("id");
+    // setEndOfContenteditable(document.getElementById("temp"));
+    // document.getElementById("temp").removeAttribute("id");
   }
 }
 

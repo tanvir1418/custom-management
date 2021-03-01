@@ -768,7 +768,6 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 			$(`#${tableID} tbody`).html(tableTr);
 		}
 	}
-
 	let container = $(`#${pagiId}`);
 	container.pagination(options);
 }
@@ -870,7 +869,6 @@ function ExistTableHeadClick(tableId) {
 				}
 				// console.log(dataP[i].tagName);
 			}
-
 			let tableTr = "";
 			for (const item of dataC) {
 				tableTr +=
@@ -894,7 +892,6 @@ function ExistTableHeadClick(tableId) {
 			});
 			$("#dropBtnModal").modal('toggle');
 		}
-
 	});
 }
 ExistTableHeadClick("man-data-opt1-exist");
