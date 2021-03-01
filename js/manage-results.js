@@ -1464,3 +1464,7 @@ function resetResFilter(e) {
 //     // var y = e.clientY;
 //     // console.log("Top: " + top + " and Left: " + left);
 // });
+
+$('table#resizable554').on('scroll', function() {
+    $("table#resizable554 > *").width($("table#resizable554").width() + $("table#resizable554").scrollLeft());
+  });

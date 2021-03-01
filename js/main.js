@@ -562,6 +562,14 @@ $(function () {
 	$("#datepicker-2").datepicker();
 	$("#datepicker-2").datepicker("option", "dateFormat", "DD - MM d, yy");
 });
+
+$( "#datePicker1_Icon" ).click(function() {
+	$("#datepicker-1").focus();
+});
+$( "#datePicker2_Icon" ).click(function() {
+	$("#datepicker-2").focus();
+});
+
 // OPTION 3 DATE PICKER END
 
 // OPTION 4 DATE PICKER END
@@ -739,14 +747,12 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 					</td>
 					<td>
 						<div class="create-date-time date-time-39">
-							<p class="mn-exists-data">${CDateTime.date}</p>
-							<p class="mn-exists-data">${CDateTime.time}</p>
+							<p class="mn-exists-data">${CDateTime.date} ${CDateTime.time}</p>
 						</div>
 					</td>
 					<td>
 						<div class="last-date-time date-time-39">
-							<p class="mn-exists-data">${LUDateTime.date}</p>
-							<p class="mn-exists-data">${LUDateTime.time}</p>
+							<p class="mn-exists-data">${LUDateTime.date} ${LUDateTime.time}</p>
 						</div>
 					</td>
 					<td>
