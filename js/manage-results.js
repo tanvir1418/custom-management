@@ -1114,8 +1114,10 @@ $(document).ready(function () {
         maxHeight: thHeight,
         minWidth: 40,
         resize: function (event, ui) {
-            let sizerID = "#" + $(event.target).attr("id") + "-sizer";
+            let sizerID = "." + event.target.classList[0] + "-sizer";
             $(sizerID).width(ui.size.width);
+            $("."+event.target.classList[0]).width(ui.size.width);
+            console.log(event.target.classList[0]);
         }
     });
 })

@@ -277,6 +277,7 @@ function manResPagination(noRow) {
                 <p class="centerizeany mr-tableData">${Val12}</p>
               </div>
             </div>
+            <div class="column-header-8-sizer"></div>
           </td>
           <td class="column-header-9 pentagon">
             <div class="upper-penta-box">
