@@ -52,8 +52,11 @@ button:focus {
   transform: translate(-50%, -50%);
 }
 
-.modal-backdrop{
+/* .modal-backdrop{
   display: none;
+} */
+.modal-backdrop{
+  background-color:transparent;
 }
 
 /* =============== Navbar Start =================== */
@@ -700,12 +703,8 @@ td {
   align-content: center;
 }
 
-.mytable1 tbody .date-time-39 p:first-child {
-  margin: 0 4px 0 auto;
-}
-
-.mytable1 tbody .date-time-39 p:last-child {
-  margin: 0 auto 0 4px;
+.mytable1 tbody .date-time-39 p{
+  margin: 4px auto;
 }
 
 .mytable1 tbody .actions39 {

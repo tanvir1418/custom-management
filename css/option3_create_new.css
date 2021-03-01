@@ -274,6 +274,9 @@
   color: black;
   font-size: 18px;
 }
+.date-selection-container .icon-op3-date:hover {
+  cursor: pointer;
+}
 .date-selection-container .col-sm-6{
   padding-right: 0px !important;
 }

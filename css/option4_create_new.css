@@ -1139,6 +1139,9 @@
   display: none;
 }
 
+/* .avoid-clicks{
+  pointer-events: none;
+} */
 /* .elementss {
     pointer-events: none;
   } */
