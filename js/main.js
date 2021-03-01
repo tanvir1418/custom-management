@@ -131,6 +131,14 @@ $("#back-manage").click(function () {
 	document.getElementById("opt-content").style.marginTop = "50px";
 });
 
+// OPTION 5 BACK BTN
+$("#opt5-to-main").click(function () {
+	document.getElementById("option_5").style.display = "none";
+	document.getElementById("hide559").style.display = "block";
+	document.getElementById("tab_2").style.paddingTop = "60px";
+	document.getElementById("opt-content").style.marginTop = "50px";
+});
+
 
 // CREATE & MANAGE TAB START
 
@@ -246,7 +254,7 @@ const currentUser = localStorage.getItem("currentUser");
 const user_div = document.getElementById("username_div");
 if (currentUser != null && currentUser != "") {
 	user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
-} else { }
+} else {}
 // LOGIN DATA PASS END
 
 
@@ -290,7 +298,8 @@ const listItemData = [
 	"Item 29",
 ];
 (function listDataOptTwo() {
-	let htmllist = "", htmlDataModal = "";
+	let htmllist = "",
+		htmlDataModal = "";
 	listItemData.forEach((item, index) => {
 		htmllist += `<li class="list-item-${index + 1}">
 		<p>${item}</p>
@@ -458,8 +467,8 @@ $(document).ready(function () {
 	$(".scroll-down").click(function () {
 		const scrollable_list = document.querySelector(".scrollable-list");
 		$(".scrollable-list").animate({
-			scrollTop: scrollable_list.scrollTop + 100,
-		},
+				scrollTop: scrollable_list.scrollTop + 100,
+			},
 			250
 		);
 	});
@@ -582,8 +591,7 @@ sub_ul_list.addEventListener("click", function (e) {
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
 			return;
-		}
-		else target = target.parentNode;
+		} else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
 
 	if (oldLIClassname !== "" && oldLIClassname !== target.classList[0]) {
@@ -665,6 +673,7 @@ for (let i = 1; i <= 100; i++) {
 		}
 	});
 }
+
 function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 	let tableHead =
 		`<tr>
@@ -717,7 +726,14 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 		showGoButton: true,
 		callback: function (data, pagination) {
 			let tableTr = "";
-			data.forEach(({ id, serial, recordsCount, savedName, CDateTime, LUDateTime }, index) => {
+			data.forEach(({
+				id,
+				serial,
+				recordsCount,
+				savedName,
+				CDateTime,
+				LUDateTime
+			}, index) => {
 				tableTr +=
 					`<tr id="${id}">
 					<th class="row-data" scope="row">${serial}</th>
@@ -769,18 +785,21 @@ function tabChangeOpt1(e) {
 	createNew.find("div.createpera p").html("View/Update");
 	createNew.click();
 }
+
 function tabChangeOpt3(e) {
 	let tabMain = $(e).parent().parent().parent().parent().parent().parent().parent();
 	let createNew = tabMain.find("div.create-manage-tab div.create-new-content.zas43");
 	createNew.find("div.createpera p").html("View/Update");
 	createNew.click();
 }
+
 function tabChangeOpt4(e) {
 	let tabMain = $(e).parent().parent().parent().parent().parent().parent().parent();
 	let createNew = tabMain.find("div.create-manage-tab div.create-new-content.zas45");
 	createNew.find("div.createpera p").html("View/Update");
 	createNew.click();
 }
+
 function tabChangeOpt5(e) {
 	let tabMain = $(e).parent().parent().parent().parent().parent().parent().parent();
 	let createNew = tabMain.find("div.create-manage-tab div.create-new-content.zas41");
@@ -824,7 +843,7 @@ $("#row-no5").change(function (e) {
 
 // Manage Data Option 1 Existing Pagination End
 
-function ExistTableHeadClick(tableId){
+function ExistTableHeadClick(tableId) {
 	$(`#${tableId} th`).click(function (e) {
 		let target = e.target;
 		let index = $(this).index() + 1;
@@ -836,17 +855,17 @@ function ExistTableHeadClick(tableId){
 		if (target.tagName === "DIV" && regex.test(target.className)) {
 			$(`#${tableId} th:nth-child(${index})`).addClass("th-dis-none");
 			$(`#${tableId} td:nth-child(${index})`).addClass("th-dis-none");
-		}else if (target.tagName === "DIV" && regexD.test(target.className)) {
+		} else if (target.tagName === "DIV" && regexD.test(target.className)) {
 			let dataP = $(`#${tableId} td:nth-child(${index}) .mn-exists-data`);
 			// console.log(dataP);
 			let headingPop = $(`#${tableId} th:nth-child(${index})`)[0].textContent;
 			$("#dropBtnModal #mnExistsThPop").html(headingPop);
 			let targetModal = $("#dropBtnModal #checkbox-table-exist tbody");
 			const dataC = new Set();
-			for(let i=0; i< dataP.length; i++){
-				if(dataP[i].tagName == "INPUT"){
+			for (let i = 0; i < dataP.length; i++) {
+				if (dataP[i].tagName == "INPUT") {
 					dataC.add(dataP[i].value);
-				}else{
+				} else {
 					dataC.add(dataP[i].textContent);
 				}
 				// console.log(dataP[i].tagName);
@@ -854,8 +873,8 @@ function ExistTableHeadClick(tableId){
 
 			let tableTr = "";
 			for (const item of dataC) {
-				tableTr += 
-				`<tr>
+				tableTr +=
+					`<tr>
 					<td>
 						<div class="popup__checkbox__page__toggle">
 							<label class="popup__checkbox__toggle">
@@ -870,15 +889,69 @@ function ExistTableHeadClick(tableId){
 			}
 			targetModal.html(tableTr);
 			$("#dropBtnModal .modal-dialog").css({
-				top: ((e.clientY) + 15), 
+				top: ((e.clientY) + 15),
 				left: ((e.clientX) - 240)
 			});
 			$("#dropBtnModal").modal('toggle');
 		}
 
-	}); 
+	});
 }
 ExistTableHeadClick("man-data-opt1-exist");
 ExistTableHeadClick("man-data-opt3-exist");
 ExistTableHeadClick("man-data-opt4-exist");
 ExistTableHeadClick("man-data-opt5-exist");
+
+$('#opt4a-list-modal').on('show.bs.modal', function (e) {
+	$('body').addClass("example-open");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("example-open");
+})
+
+$('#opt4b-list-modal').on('show.bs.modal', function (e) {
+	$('body').addClass("example-open");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("example-open");
+})
+
+$('#opt4c-list-modal').on('show.bs.modal', function (e) {
+	$('body').addClass("example-open");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("example-open");
+})
+
+$('#opt4d-list-modal').on('show.bs.modal', function (e) {
+	$('body').addClass("example-open");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("example-open");
+})
+
+$('#manage-tempa-list-modal').on('show.bs.modal', function (e) {
+	$('body').addClass("example-open");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("example-open");
+})
+
+$('#manage-tempb-list-modal').on('show.bs.modal', function (e) {
+	$('body').addClass("example-open");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("example-open");
+})
+
+$('#manage-tempc-list-modal').on('show.bs.modal', function (e) {
+	$('body').addClass("example-open");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("example-open");
+})
+
+$('#manage-tempd-list-modal').on('show.bs.modal', function (e) {
+	$('body').addClass("example-open");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("example-open");
+})
+
+$('#myopt1listData').on('show.bs.modal', function (e) {
+	$('body').addClass("example-open");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("example-open");
+})

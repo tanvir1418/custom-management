@@ -570,7 +570,7 @@
 
 /* ========= DISPLAY 3 WAVES START ========= */
 #Display3.inner-tabcontent {
-    height: 466px !important;
+    height: 510px !important;
 }
 
 #Display4.inner-tabcontent {
@@ -597,10 +597,10 @@
     position: relative;
 }
 
-#Display3 .chart_compare_box {
+/* #Display3 .chart_compare_box {
     width: 100%;
     height: 100%;
-}
+} */
 
 #Display3 .chart_compare_box form {
     width: 100%;
@@ -709,6 +709,16 @@
 }
 
 /* ARROW STYLE END */
+
+#Display3 .x_axis_title{
+    margin: 20px 0px 0px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #726F6F;
+    font-size: 16px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 500;
+}
 
 /* scrollbar customize start */
 #Display3 .chartAreaWrapper::-webkit-scrollbar {
