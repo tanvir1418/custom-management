@@ -698,7 +698,7 @@ neg_value8 = -neg_value_sub8 * 3.34;
 neg_value9 = -neg_value_sub9 * 3.34;
 neg_value10 = -neg_value_sub10 * 3.34;
 
-var dis5_pos_value1 = pos_value1 * 0.7;
+var dis5_pos_value1 = pos_value1 * 0.78;
 var dis5_pos_value2 = pos_value2 * 0.7;
 var dis5_pos_value3 = pos_value3 * 0.7;
 var dis5_pos_value4 = pos_value4 * 0.7;
@@ -1107,14 +1107,14 @@ $("#cross43").click(function () {
 
 // TABLE RESIZEABLE START ===////////////////===
 $(document).ready(function () {
-    var thHeight = $("table#resizable554 th:first").height();
+    let thHeight = $("table#resizable554 th:first").height();
     $("table#resizable554 th").resizable({
         handles: "e",
         minHeight: thHeight,
         maxHeight: thHeight,
         minWidth: 40,
         resize: function (event, ui) {
-            var sizerID = "#" + $(event.target).attr("id") + "-sizer";
+            let sizerID = "#" + $(event.target).attr("id") + "-sizer";
             $(sizerID).width(ui.size.width);
         }
     });
