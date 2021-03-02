@@ -1466,4 +1466,4 @@ function resetResFilter(e) {
 
 $('table#resizable554').on('scroll', function() {
     $("table#resizable554 > *").width($("table#resizable554").width() + $("table#resizable554").scrollLeft());
-  });
+});

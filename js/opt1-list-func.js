@@ -892,9 +892,23 @@ function checkGenerateBtn() {
 }
 
 // Opt3 Form by text editor Start
-let op3Sug = ["Keyword", "From", "To"];
+let op3Sug = [
+  {
+    id: "op3-md-1",
+    name: "Keyword",
+  },
+  {
+    id: "op3-md-2",
+    name: "From",
+  },
+  {
+    id: "op3-md-3",
+    name: "To"
+  }
+];
 function findInputIdOp3(title) {
-  let res = op3Sug.filter(a => a == title);
+  let searchArr = op3Sug.concat(opt3TableData);
+  let res = searchArr.filter(a => a.name == title);
   if (res.length) return res[0];
   else return false;
 }
@@ -922,7 +936,7 @@ function checkingOp3(e) {
       let inpData = starting.split(":");
       if (
         starting != "" &&
-        (!findInputIdOp3(inpData[0].trim().split("_")[0].trim()) ||
+        (!(findInputIdOp3(inpData[0].trim()) || findInputIdOp3(inpData[1].trim())) ||
           (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
         )
       ) {
@@ -983,24 +997,19 @@ function autoCorrectOp3() {
   while (document.getElementById("temp")) {
     document.getElementById("temp").removeAttribute("id");
   }
-  if (pos.textContent.indexOf(":") == -1) x = pos.textContent;
-  else x = pos.textContent;
-  $(pos).replaceWith(
-    `<div id="temp">${pos.textContent}</div>
-    <div id="adder"></div>`
-  );
-
+  let x = pos.textContent;
+  
   let m = "";
   let first = 1;
   if (x.indexOf(":") == -1) {
-    $("#adder").addClass("set-name");
-    op3Sug.forEach((sug) => {
-      if (sug.toLowerCase().indexOf(x.toLowerCase()) == 0) {
+    let searchArr = op3Sug.concat(opt3TableData);
+    searchArr.forEach(({name}) => {
+      if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
         if (first) {
-          m += `<option selected value="${sug}">${sug}</option><br>`;
+          m += `<option selected value="${name}">${name}</option><br>`;
         }
         else {
-          m += `<option value="${sug}">${sug}</option><br>`;
+          m += `<option value="${name}">${name}</option><br>`;
         }
         first = 0;
       }
@@ -1012,16 +1021,19 @@ function autoCorrectOp3() {
     ${m}
   </select>`;
   if (m != "") {
+    if (x.indexOf(":") == -1) {
+      $(pos).replaceWith(
+        `<div id="temp">${x}</div>
+        <div id="adder" class="set-name"></div>`
+      );
+    }
     document.getElementById("adder").innerHTML = y;
     document.getElementById("adder").style.display = "block";
     $("#adder select").focus();
   } else {
     $("#adder").remove();
-    // let tempE = $("#temp").parent();
-    // tempE.parent().append(tempE.html());
-    // tempE.remove();
-    setEndOfContenteditable(document.getElementById("temp"));
-    document.getElementById("temp").removeAttribute("id");
+    // setEndOfContenteditable(document.getElementById("temp"));
+    // document.getElementById("temp").removeAttribute("id");
   }
 }
 
@@ -1035,7 +1047,7 @@ function pasteEventOp3(e) {
     if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
       var x;
       if (
-        !findInputIdOp3(inpData[0].trim().split("_")[0].trim()) ||
+        !(findInputIdOp3(inpData[0].trim()) || findInputIdOp3(inpData[1].trim())) ||
         (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
       ) {
         x = document.createElement("div");
@@ -1086,6 +1098,16 @@ function formToWindowOp3(e) {
     </div>`;
   }
 
+  let tableTr = $("#man-data-op3-table tbody tr.mark-table-data");
+  let len = tableTr.length;
+  let radioOption = $(".radio input[type = 'radio'][name = 'data-set-radio-button']:checked").val();
+  for (let i = 0; i < len; i++) {
+    let trData = $(tableTr[i]).children("td").text().trim();
+    renHtml +=
+    `<div class="form-text-design data-div">
+      ${radioOption}: ${trData}
+    </div>`;
+  }
   if (renHtml != "") {
     tBody.html(renHtml);
   }
@@ -1107,6 +1129,10 @@ function windowToFormOp3(e) {
       }
       else if (divData[0].trim() == "To") {
         $("#datepicker-2").val(divData[1].trim());
+      }
+      else {
+        let { id } = findInputIdOp3(divData[1].trim());
+        $(`#man-data-op3-table tbody tr#${id}`).addClass("mark-table-data");
       }
     }
   }
