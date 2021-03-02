@@ -2144,6 +2144,13 @@ th[draggable] a {
     box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
 }
 
+#tab_4 .modal#viewtwo .modal-dialog .modal-content {
+    width: 250px;
+}
+#tab_4 .modal#rowdetails .modal-dialog .modal-content {
+    width: 260px;
+}
+
 #tab_4 .modal .modal-header {
     background: #000000;
     border-radius: 3px;
@@ -3233,4 +3240,24 @@ td.s2-value .centerauto{
 
 #style2Con table .status22 .padding__resize__S2Status{
     padding: 17px 0 !important;
+}
+
+/* Manage Result Icon Pop-up Dynamic */
+#viewtwo .modal-dialog{
+    /* position: absolute; */
+    position: fixed;
+    min-height: 0;
+    margin: 0;
+    /* top: 200px;
+    left: 400px; */
+}
+#rowdetails .modal-dialog{
+    position: fixed;
+    min-height: 0;
+    margin: 0;
+}
+#noteswindow .modal-dialog{
+    position: fixed;
+    min-height: 0;
+    margin: 0;
 }

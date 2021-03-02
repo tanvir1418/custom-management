@@ -1482,4 +1482,38 @@ function resetResFilter(e) {
 
 $('table#resizable554').on('scroll', function() {
     $("table#resizable554 > *").width($("table#resizable554").width() + $("table#resizable554").scrollLeft());
-  });
+});
+
+function IconModalClick(){
+    let viewModalList = document.getElementsByClassName('view-modal-click');
+    for(let i = 0; i < viewModalList.length; i++) {
+        viewModalList[i].addEventListener("click", function(event) {
+            $("#viewtwo .modal-dialog").css({
+                top: ((event.clientY) + 20), 
+                left: ((event.clientX) - 125)
+            });
+            console.log("Clicked Happened");
+        });
+        console.log("Clicked Outer Happened");
+    }
+
+    let rowModalClick = document.getElementsByClassName('row-modal-click');
+    for(let i = 0; i < rowModalClick.length; i++) {
+        rowModalClick[i].addEventListener("click", function(event) {
+            $("#rowdetails .modal-dialog").css({
+                top: ((event.clientY) + 20), 
+                left: ((event.clientX) - 125)
+            });
+        });
+    }
+
+    let noteModalClick = document.getElementsByClassName('note-modal-click');
+    for(let i = 0; i < noteModalClick.length; i++) {
+        noteModalClick[i].addEventListener("click", function(event) {
+            $("#noteswindow .modal-dialog").css({
+                top: ((event.clientY) + 30), 
+                left: ((event.clientX) - 150)
+            });
+        });
+    }
+}
