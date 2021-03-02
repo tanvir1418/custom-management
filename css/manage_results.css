@@ -2132,9 +2132,9 @@ th[draggable] a {
     max-width: 1200px;
 }
 
-#tab_4 .modal#col8Filter .modal-dialog {
+/* #tab_4 .modal#col8Filter .modal-dialog {
     max-width: 200px !important;
-}
+} */
 
 #tab_4 .modal .modal-content {
     border: none;

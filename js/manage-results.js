@@ -1517,3 +1517,16 @@ function IconModalClick(){
         });
     }
 }
+
+function Style2DropFilterPos(){
+let style2FilterPosition = document.getElementsByClassName('style2-filterPosition');
+    for(let i = 0; i < style2FilterPosition.length; i++) {
+        style2FilterPosition[i].addEventListener("click", function(event) {
+            $("#col8Filter .modal-dialog").css({
+                top: ((event.clientY) + 20), 
+                left: ((event.clientX) - 240),
+                height: 350
+            });
+        });
+    }
+}

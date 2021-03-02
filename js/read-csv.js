@@ -619,7 +619,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross1" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -628,7 +628,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross2" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -637,7 +637,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross3" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -679,7 +679,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross4" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -688,7 +688,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross5" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -697,7 +697,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross6" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -706,7 +706,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross7" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -798,7 +798,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross8" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -807,7 +807,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross9" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -816,7 +816,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross10" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -825,7 +825,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross11" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -834,7 +834,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross12" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -843,7 +843,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross13" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -852,7 +852,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross14" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -861,7 +861,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross15" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -870,7 +870,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross16" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -879,7 +879,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross17" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -888,7 +888,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross18" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -897,7 +897,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross19" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -906,7 +906,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross20" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -992,7 +992,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross21" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1001,7 +1001,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross22" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1010,7 +1010,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross23" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1019,7 +1019,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross24" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1028,7 +1028,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross25" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1037,7 +1037,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross26" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1046,7 +1046,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross27" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1055,7 +1055,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross28" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1064,7 +1064,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross29" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1073,7 +1073,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross30" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1082,7 +1082,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross31" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1091,7 +1091,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross32" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1100,7 +1100,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross33" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1185,7 +1185,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross34" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1194,7 +1194,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross35" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1203,7 +1203,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross36" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1212,7 +1212,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross37" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1221,7 +1221,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross38" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1230,7 +1230,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross39" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1239,7 +1239,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross40" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1248,7 +1248,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross41" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1257,7 +1257,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross42" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1266,7 +1266,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross43" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1275,7 +1275,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross44" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1284,7 +1284,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross45" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1293,7 +1293,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross46" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1379,7 +1379,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross47" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1388,7 +1388,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross48" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1397,7 +1397,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross49" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1406,7 +1406,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross50" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1415,7 +1415,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross51" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1424,7 +1424,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross52" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1433,7 +1433,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross53" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1442,7 +1442,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross54" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1451,7 +1451,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross55" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1460,7 +1460,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross56" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1469,7 +1469,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross57" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1478,7 +1478,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross58" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1487,7 +1487,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross59" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1496,7 +1496,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross60" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1587,7 +1587,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross61" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1596,7 +1596,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross62" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1627,7 +1627,7 @@ function manResPagination(noRow) {
                         <div id="style2_cross63" class="head-filter">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1658,6 +1658,7 @@ function manResPagination(noRow) {
       $(".left-slider5").css("display", "block");
       $("#pagination-man-res-table .width-row-go").css("display", "block");
       IconModalClick();
+      Style2DropFilterPos();
     }
   }
   let container = $("#pagination-man-res-table");
