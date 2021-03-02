@@ -584,8 +584,21 @@ $(document).ready(function () {
             },
             700
         );
+    }).dblclick(function () {
+        $(".mytablesty12").animate({
+                scrollLeft: mytablesty12.scrollLeft + 700,
+            },
+            700
+        );
     });
+    
     $("#style1Table .left-slider5").click(function () {
+        $(".mytablesty12").animate({
+                scrollLeft: mytablesty12.scrollLeft - 700,
+            },
+            700
+        );
+    }).dblclick(function () {
         $(".mytablesty12").animate({
                 scrollLeft: mytablesty12.scrollLeft - 700,
             },
