@@ -49,18 +49,50 @@ function manResPagination(noRow) {
         let end = csvD.End;
         let start = csvD.Start;
 
-        //Extra Two Lines for Console Log
-        let { time: startTime, date: startDate } = ExcelDateToJSDate(csvD.Start);
-        let { time: endTime, date: endDate } = ExcelDateToJSDate(csvD.End);
-
         let { days: daysG, hours: hoursG, mins: minsG } = dateDiffInDays(csvD.MaPDT, start);
         let { days: daysR, hours: hoursR, mins: minsR } = dateDiffInDays(csvD.LoPDT, start);
-        let difMinG = dateDiffInMins(end, start, csvD.MaPDT);
-        let difMinR = dateDiffInMins(end, start, csvD.LoPDT);
-        difMinG = difMinG > 100 ? 100 : difMinG;
-        difMinR = difMinR > 100 ? 100 : difMinR;
-        let styleG = difMinG > 50 ? `left:${100 - difMinG}%` : `right:${difMinG}%`;
-        let styleR = difMinR > 50 ? `right:${100 - difMinR}%` : `left:${difMinR}%`;
+
+        let diffStartEnd = dateDiffInMins(end, start);
+        let difMinGreen = dateDiffInMins(csvD.MaPDT, start);
+        let difMinG = (difMinGreen*100)/diffStartEnd;
+        let difMinG_S2 = 0;
+        let difMinR_S2 = 0;
+
+        let difMinRed = dateDiffInMins(csvD.LoPDT, start);
+        let difMinR =  (difMinRed*100)/diffStartEnd;
+
+        // Normalization For 0 - 100 limit exceed (extra -> values are not exceeding the limit)
+        if(difMinG > 100){
+            difMinG = 100;
+        }else if(difMinG <= 0){
+            difMinG = 0;
+        }
+
+        if(difMinR > 100){
+            difMinR = 100;
+        }else if(difMinR <= 0){
+            difMinR = 0;
+        }
+
+        difMinG_S2 = difMinG;
+        difMinR_S2 = difMinR;
+
+        // Normalization For Style 1 Pentagon Overflow in Left Positioning
+        difMinG = difMinG * 0.62;
+        difMinR = difMinR * 0.62;
+
+        // Normalization For Style 2 Pentagon Overflow in Left Positioning
+        difMinG_S2 = difMinG_S2 * 0.80;
+        difMinR_S2 = difMinR_S2 * 0.80;
+
+        // Style 1 Pentagon Red Green Left Positioning
+        let styleG = `left:${difMinG}%`;
+        let styleR = `left:${difMinR}%`;
+
+        // Style 2 Pentagon Red Green Left Positioning
+        let styleG_S2 = `left:${difMinG_S2}%`;
+        let styleR_S2 = `left:${difMinR_S2}%`;
+
         // Chart 1 & 2 End
         let u_val = parseFloat(csvD.U_Val).toFixed(2);
         let u_per = parseFloat(csvD["U_%"]).toFixed(2);
@@ -130,7 +162,9 @@ function manResPagination(noRow) {
         let Details2 = csvD[" Details2"];
 
         // Extra Line for Console Log
-        console.log("Start :" + startTime + "  " + startDate + "  End: " + endTime + "  " + endDate + "  LoPDT :" + timeH + "  " +  dateH + "  MaPDT :" + dateL + " " +  timeL);
+        // console.log("Start :" + startTime + "  " + startDate + "  End: " + endTime + "  " + endDate + "  LoPDT :" + timeH + "  " +  dateH + "  MaPDT :" + dateL + " " +  timeL);
+
+        console.log("Start :" + csvD.Start + "  End: " + csvD.End + "  LoPDT :" + csvD.LoPDT + "  MaPDT :" + csvD.MaPDT);
 
         tableTr +=
         `<tr class="dnd-moved">
@@ -1392,7 +1426,7 @@ function manResPagination(noRow) {
                     </td>
                     <td class="pentagon">
                         <div class="upper-penta-box">
-                            <div class="shape_penagon" style="${styleG}">
+                            <div class="shape_penagon" style="${styleG_S2}">
                                 <div class="top-num">
                                     <p>${Val11}</p>
                                 </div>
@@ -1404,7 +1438,7 @@ function manResPagination(noRow) {
                             </div>
                         </div>
                         <div class="lower-penta-box">
-                            <div class="shape_penagon" style="${styleR}">
+                            <div class="shape_penagon" style="${styleR_S2}">
                                 <div class="top-num">
                                     <p>${Val12}</p>
                                 </div>
@@ -2332,6 +2366,7 @@ function ExcelDateToJSDate(serial) {
   }
 }
 
+// This function returns the milliseeond of input(Excel Date Value)
 function excelToJSDate(serial) {
   let utc_days = Math.floor(serial - 25569);
   let utc_value = utc_days * 86400;
@@ -2345,6 +2380,7 @@ function excelToJSDate(serial) {
   return Date.UTC(date_info.getFullYear(), date_info.getMonth(), date_info.getDate(), hours, minutes, seconds);
 }
 
+// This function Formates the milliseeond to Days, Hour, Minute
 function dateDiffInDays(date1, date2) {
   const utc1 = excelToJSDate(date1);
   const utc2 = excelToJSDate(date2);
@@ -2360,16 +2396,12 @@ function dateDiffInDays(date1, date2) {
   };
 }
 
-function dateDiffInMins(date1, date2, date3) {
-  const utc1 = excelToJSDate(date1);
-  const utc2 = excelToJSDate(date2);
-  const utc3 = excelToJSDate(date3);
-  let miliSec = (utc1 - utc2);
-  const msMin = 60 * 1000;
-  let mins = Math.floor(miliSec / msMin);
-  const msHour = 60 * 60 * 1000;
-  let mins2 = Math.floor((utc3 % msHour) / msMin);
-  return ((mins - mins2) / mins2).toFixed(2);
+// This function returns the minute counts for two Excel value Date Value
+function dateDiffInMins(date1, date2) {    
+  let miliSec = (excelToJSDate(date1) - excelToJSDate(date2));
+  let mins = Math.floor(miliSec / 60000);
+  console.log(`Date 1: ${date1}  Date 2: ${date2}  Diff_MilliSec: ${miliSec}  Minute: ${mins}`);
+  return mins;
 }
 
 // For Thead Detail3 Data length Shorthening 
