@@ -1956,14 +1956,14 @@ function manTemInpBuild(_id) {
         </div>
         <div class="width-input-group-35">
           <div class="input-section-sample4 right-side-input">
-            <input class="date-pick-style-sample4 datepicker_op4" type="text"/>
-            <i class="far fa-calendar-alt icon-sample4"></i>
+            <input class="date-pick-style-sample4 datepicker_mn" type="text"/>
+            <i class="far fa-calendar-alt icon-sample4 datepicker_mn_Icon"></i>
           </div>
         </div>
         <div class="width-input-group-35">
           <div class="input-section-sample4 left-side-input">
-            <input class="date-pick-style-sample4 datepicker_op4" type="text"/>
-            <i class="far fa-calendar-alt icon-sample4"></i>
+            <input class="date-pick-style-sample4 datepicker_mn" type="text"/>
+            <i class="far fa-calendar-alt icon-sample4 datepicker_mn_Icon"></i>
           </div>
         </div>
       </div>`;
@@ -2012,8 +2012,11 @@ function manTemInpBuild(_id) {
 
   // Manage Template Sample 4 DATE PICKER START
   $(function () {
-    $(".datepicker_op4").datepicker();
-    $(".datepicker_op4").datepicker("option", "dateFormat", "DD - MM d, yy");
+    $(".datepicker_mn").datepicker();
+    $(".datepicker_mn").datepicker("option", "dateFormat", "DD - MM d, yy");
+  });
+  $(".datepicker_mn_Icon").click(function() {
+    $(".datepicker_mn").focus();
   });
 }
 
