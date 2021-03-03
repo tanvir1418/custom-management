@@ -871,6 +871,36 @@ td {
 .column-header-17,
 .column-header-18,
 .column-header-19,
+.column-header-20,
+.column-header-21,
+.column-header-22,
+.column-header-23,
+.column-header-24,
+.column-header-25,
+.column-header-26,
+.column-header-27,
+.column-header-28,
+.column-header-29,
+.column-header-30,
+.column-header-31,
+.column-header-32,
+.column-header-33,
+.column-header-34,
+.column-header-35,
+.column-header-36,
+.column-header-37,
+.column-header-38,
+.column-header-39,
+.column-header-40,
+.column-header-41,
+.column-header-42,
+.column-header-43,
+.column-header-44,
+.column-header-45,
+.column-header-46,
+.column-header-47,
+.column-header-48,
+.column-header-49,
 .column-header-50,
 .column-header-51,
 .column-header-52,
@@ -878,54 +908,24 @@ td {
 .column-header-54,
 .column-header-55,
 .column-header-56,
-.column-header-57,
 .column-header-58,
 .column-header-59,
 .column-header-60,
 .column-header-61,
 .column-header-62,
-.column-header-63,
-.column-header-64,
-.column-header-65,
-.column-header-66,
-.column-header-67,
-.column-header-68,
-.column-header-69,
-.column-header-70,
-.column-header-71,
-.column-header-72,
-.column-header-73,
-.column-header-74,
-.column-header-75,
-.column-header-76,
-.column-header-77,
-.column-header-78,
-.column-header-79,
-.column-header-80,
-.column-header-81,
-.column-header-82,
-.column-header-83,
-.column-header-84,
-.column-header-85,
-.column-header-86,
-.column-header-88,
-.column-header-89,
-.column-header-90,
-.column-header-91,
-.column-header-92,
-.column-header-93
+.column-header-63
 {
     min-width: 100px;
 }
-.column-header-87{
+.column-header-57{
     min-width: 140px;
     max-width: 140px;
 }
-.column-header-94{
+.column-header-64{
     min-width: 450px;
     max-width: 450px;
 }
-.column-header-95{
+.column-header-65{
     min-width: 600px;
     max-width: 600px;
     /* white-space: nowrap; */
@@ -934,7 +934,7 @@ td {
     word-break: break-word;
     padding: 10px;
 }
-.column-header-96{
+.column-header-66{
     min-width: 800px;
     max-width: 800px;
     /* white-space: nowrap; */
