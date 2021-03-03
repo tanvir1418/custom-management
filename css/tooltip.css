@@ -105,6 +105,10 @@
     transform: translate(-50%, .5em);
 }
 
+.bkmark[tooltip][flow^="down"]::after{
+    font-size: 12px;
+}
+
 /* FLOW: LEFT */
 [tooltip][flow^="left"]::before {
     top: 50%;

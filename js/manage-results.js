@@ -583,8 +583,21 @@ $(document).ready(function () {
             },
             700
         );
+    }).dblclick(function () {
+        $(".mytablesty12").animate({
+                scrollLeft: mytablesty12.scrollLeft + 700,
+            },
+            700
+        );
     });
+    
     $("#style1Table .left-slider5").click(function () {
+        $(".mytablesty12").animate({
+                scrollLeft: mytablesty12.scrollLeft - 700,
+            },
+            700
+        );
+    }).dblclick(function () {
         $(".mytablesty12").animate({
                 scrollLeft: mytablesty12.scrollLeft - 700,
             },
@@ -697,7 +710,7 @@ neg_value8 = -neg_value_sub8 * 3.34;
 neg_value9 = -neg_value_sub9 * 3.34;
 neg_value10 = -neg_value_sub10 * 3.34;
 
-var dis5_pos_value1 = pos_value1 * 0.7;
+var dis5_pos_value1 = pos_value1 * 0.78;
 var dis5_pos_value2 = pos_value2 * 0.7;
 var dis5_pos_value3 = pos_value3 * 0.7;
 var dis5_pos_value4 = pos_value4 * 0.7;
@@ -988,133 +1001,135 @@ $("#resizable554 th").click(function (e) {
 });
 
 // ======== STYLE 2
-$("#cross20").click(function () {
-    $(".cross-table-1 th:nth-child(1)").addClass("th-dis-none");
-    $(".cross-table-1 td:nth-child(1)").addClass("th-dis-none");
-});
-$("#cross21").click(function () {
-    $(".cross-table-1 th:nth-child(2)").addClass("th-dis-none");
-    $(".cross-table-1 td:nth-child(2)").addClass("th-dis-none");
-});
-// =========
+// $("#cross20").click(function () {
+//     $(".cross-table-1 th:nth-child(1)").addClass("th-dis-none");
+//     $(".cross-table-1 td:nth-child(1)").addClass("th-dis-none");
+// });
+// $("#cross21").click(function () {
+//     $(".cross-table-1 th:nth-child(2)").addClass("th-dis-none");
+//     $(".cross-table-1 td:nth-child(2)").addClass("th-dis-none");
+// });
+// // =========
 
-$("#cross22").click(function () {
-    $(".cross-table-2 th:nth-child(1)").addClass("th-dis-none");
-    $(".cross-table-2 td:nth-child(1)").addClass("th-dis-none");
-});
-$("#cross23").click(function () {
-    $(".cross-table-2 th:nth-child(2)").addClass("th-dis-none");
-    $(".cross-table-2 td:nth-child(2)").addClass("th-dis-none");
-});
-// =============
-$("#cross24").click(function () {
-    $(".cross-table-3 th:nth-child(1)").addClass("th-dis-none");
-    $(".cross-table-3 td:nth-child(1)").addClass("th-dis-none");
-});
-$("#cross25").click(function () {
-    $(".cross-table-3 th:nth-child(2)").addClass("th-dis-none");
-    $(".cross-table-3 td:nth-child(2)").addClass("th-dis-none");
-});
-$("#cross26").click(function () {
-    $(".cross-table-3 th:nth-child(3)").addClass("th-dis-none");
-    $(".cross-table-3 td:nth-child(3)").addClass("th-dis-none");
-});
-// =============
+// $("#cross22").click(function () {
+//     $(".cross-table-2 th:nth-child(1)").addClass("th-dis-none");
+//     $(".cross-table-2 td:nth-child(1)").addClass("th-dis-none");
+// });
+// $("#cross23").click(function () {
+//     $(".cross-table-2 th:nth-child(2)").addClass("th-dis-none");
+//     $(".cross-table-2 td:nth-child(2)").addClass("th-dis-none");
+// });
+// // =============
+// $("#cross24").click(function () {
+//     $(".cross-table-3 th:nth-child(1)").addClass("th-dis-none");
+//     $(".cross-table-3 td:nth-child(1)").addClass("th-dis-none");
+// });
+// $("#cross25").click(function () {
+//     $(".cross-table-3 th:nth-child(2)").addClass("th-dis-none");
+//     $(".cross-table-3 td:nth-child(2)").addClass("th-dis-none");
+// });
+// $("#cross26").click(function () {
+//     $(".cross-table-3 th:nth-child(3)").addClass("th-dis-none");
+//     $(".cross-table-3 td:nth-child(3)").addClass("th-dis-none");
+// });
+// // =============
 
-$("#cross27").click(function () {
-    $(".cross-table-4 th:nth-child(1)").addClass("th-dis-none");
-    $(".cross-table-4 td:nth-child(1)").addClass("th-dis-none");
-});
-// =============
-$("#cross28").click(function () {
-    $(".cross-table-5 th:nth-child(1)").addClass("th-dis-none");
-    $(".cross-table-5 td:nth-child(1)").addClass("th-dis-none");
-});
-$("#cross29").click(function () {
-    $(".cross-table-5 th:nth-child(2)").addClass("th-dis-none");
-    $(".cross-table-5 td:nth-child(2)").addClass("th-dis-none");
-});
-// =============
+// $("#cross27").click(function () {
+//     $(".cross-table-4 th:nth-child(1)").addClass("th-dis-none");
+//     $(".cross-table-4 td:nth-child(1)").addClass("th-dis-none");
+// });
+// // =============
+// $("#cross28").click(function () {
+//     $(".cross-table-5 th:nth-child(1)").addClass("th-dis-none");
+//     $(".cross-table-5 td:nth-child(1)").addClass("th-dis-none");
+// });
+// $("#cross29").click(function () {
+//     $(".cross-table-5 th:nth-child(2)").addClass("th-dis-none");
+//     $(".cross-table-5 td:nth-child(2)").addClass("th-dis-none");
+// });
+// // =============
 
-$("#cross30").click(function () {
-    $(".cross-table-6 th:nth-child(1)").addClass("th-dis-none");
-    $(".cross-table-6 td:nth-child(1)").addClass("th-dis-none");
-});
-$("#cross31").click(function () {
-    $(".cross-table-6 th:nth-child(2)").addClass("th-dis-none");
-    $(".cross-table-6 td:nth-child(2)").addClass("th-dis-none");
-});
-// =============
+// $("#cross30").click(function () {
+//     $(".cross-table-6 th:nth-child(1)").addClass("th-dis-none");
+//     $(".cross-table-6 td:nth-child(1)").addClass("th-dis-none");
+// });
+// $("#cross31").click(function () {
+//     $(".cross-table-6 th:nth-child(2)").addClass("th-dis-none");
+//     $(".cross-table-6 td:nth-child(2)").addClass("th-dis-none");
+// });
+// // =============
 
-$("#cross32").click(function () {
-    $(".cross-table-7 th:nth-child(1)").addClass("th-dis-none");
-    $(".cross-table-7 td:nth-child(1)").addClass("th-dis-none");
-});
-$("#cross33").click(function () {
-    $(".cross-table-7 th:nth-child(2)").addClass("th-dis-none");
-    $(".cross-table-7 td:nth-child(2)").addClass("th-dis-none");
-});
-$("#cross34").click(function () {
-    $(".cross-table-7 th:nth-child(3)").addClass("th-dis-none");
-    $(".cross-table-7 td:nth-child(3)").addClass("th-dis-none");
-});
-// =============
-$("#cross35").click(function () {
-    $(".cross-table-8 th:nth-child(1)").addClass("th-dis-none");
-    $(".cross-table-8 td:nth-child(1)").addClass("th-dis-none");
-});
+// $("#cross32").click(function () {
+//     $(".cross-table-7 th:nth-child(1)").addClass("th-dis-none");
+//     $(".cross-table-7 td:nth-child(1)").addClass("th-dis-none");
+// });
+// $("#cross33").click(function () {
+//     $(".cross-table-7 th:nth-child(2)").addClass("th-dis-none");
+//     $(".cross-table-7 td:nth-child(2)").addClass("th-dis-none");
+// });
+// $("#cross34").click(function () {
+//     $(".cross-table-7 th:nth-child(3)").addClass("th-dis-none");
+//     $(".cross-table-7 td:nth-child(3)").addClass("th-dis-none");
+// });
+// // =============
+// $("#cross35").click(function () {
+//     $(".cross-table-8 th:nth-child(1)").addClass("th-dis-none");
+//     $(".cross-table-8 td:nth-child(1)").addClass("th-dis-none");
+// });
 
-// ========
-$("#cross36").click(function () {
-    $(".cross-table-9 th:nth-child(1)").addClass("th-dis-none");
-    $(".cross-table-9 td:nth-child(1)").addClass("th-dis-none");
-});
-$("#cross37").click(function () {
-    $(".cross-table-9 th:nth-child(2)").addClass("th-dis-none");
-    $(".cross-table-9 td:nth-child(2)").addClass("th-dis-none");
-});
+// // ========
+// $("#cross36").click(function () {
+//     $(".cross-table-9 th:nth-child(1)").addClass("th-dis-none");
+//     $(".cross-table-9 td:nth-child(1)").addClass("th-dis-none");
+// });
+// $("#cross37").click(function () {
+//     $(".cross-table-9 th:nth-child(2)").addClass("th-dis-none");
+//     $(".cross-table-9 td:nth-child(2)").addClass("th-dis-none");
+// });
 
-// ========
-$("#cross38").click(function () {
-    $(".cross-table-10 th:nth-child(1)").addClass("th-dis-none");
-    $(".cross-table-10 td:nth-child(1)").addClass("th-dis-none");
-});
-$("#cross37").click(function () {
-    $(".cross-table-10 th:nth-child(2)").addClass("th-dis-none");
-    $(".cross-table-10 td:nth-child(2)").addClass("th-dis-none");
-});
-// =============
-$("#cross40").click(function () {
-    $(".cross-table-11 th:nth-child(1)").addClass("th-dis-none");
-    $(".cross-table-11 td:nth-child(1)").addClass("th-dis-none");
-});
-$("#cross41").click(function () {
-    $(".cross-table-11 th:nth-child(2)").addClass("th-dis-none");
-    $(".cross-table-11 td:nth-child(2)").addClass("th-dis-none");
-});
-$("#cross42").click(function () {
-    $(".cross-table-11 th:nth-child(3)").addClass("th-dis-none");
-    $(".cross-table-11 td:nth-child(3)").addClass("th-dis-none");
-});
-// =============
-$("#cross43").click(function () {
-    $(".cross-table-12 th:nth-child(1)").addClass("th-dis-none");
-    $(".cross-table-12 td:nth-child(1)").addClass("th-dis-none");
-});
+// // ========
+// $("#cross38").click(function () {
+//     $(".cross-table-10 th:nth-child(1)").addClass("th-dis-none");
+//     $(".cross-table-10 td:nth-child(1)").addClass("th-dis-none");
+// });
+// $("#cross37").click(function () {
+//     $(".cross-table-10 th:nth-child(2)").addClass("th-dis-none");
+//     $(".cross-table-10 td:nth-child(2)").addClass("th-dis-none");
+// });
+// // =============
+// $("#cross40").click(function () {
+//     $(".cross-table-11 th:nth-child(1)").addClass("th-dis-none");
+//     $(".cross-table-11 td:nth-child(1)").addClass("th-dis-none");
+// });
+// $("#cross41").click(function () {
+//     $(".cross-table-11 th:nth-child(2)").addClass("th-dis-none");
+//     $(".cross-table-11 td:nth-child(2)").addClass("th-dis-none");
+// });
+// $("#cross42").click(function () {
+//     $(".cross-table-11 th:nth-child(3)").addClass("th-dis-none");
+//     $(".cross-table-11 td:nth-child(3)").addClass("th-dis-none");
+// });
+// // =============
+// $("#cross43").click(function () {
+//     $(".cross-table-12 th:nth-child(1)").addClass("th-dis-none");
+//     $(".cross-table-12 td:nth-child(1)").addClass("th-dis-none");
+// });
 
 // X CLICK TO REMOVE COLUMN END ==============
 
 // TABLE RESIZEABLE START ===////////////////===
 $(document).ready(function () {
-    var thHeight = $("table#resizable554 th:first").height();
+    let thHeight = $("table#resizable554 th:first").height();
     $("table#resizable554 th").resizable({
         handles: "e",
         minHeight: thHeight,
         maxHeight: thHeight,
         minWidth: 40,
         resize: function (event, ui) {
-            var sizerID = "#" + $(event.target).attr("id") + "-sizer";
+            let sizerID = "." + event.target.classList[0] + "-sizer";
             $(sizerID).width(ui.size.width);
+            $("."+event.target.classList[0]).width(ui.size.width);
+            console.log(event.target.classList[0]);
         }
     });
 })
@@ -1310,93 +1325,31 @@ dataFilterModal.forEach((modalData) => {
 //----------====== Manage result filter modal End ======----------------
 
 // ---------- ======= Double Click to ADD or REMOVE Start ======= -------------
-let manageResultTable = [
-    {
-        id: "res-id-1",
-        name: "Option 1",
-        dataType: "inputText",
-    },
-    {
-        id: "res-id-2",
-        name: "Option 2",
-        dataType: "range",
-    },
-    {
-        id: "res-id-3",
-        name: "Option 3",
-        dataType: "date",
-    },
-    {
-        id: "res-id-4",
-        name: "Option 4",
-        dataType: "select",
-    },
-    {
-        id: "res-id-5",
-        name: "Option 5",
-        dataType: "inputText",
-    },
-    {
-        id: "res-id-6",
-        name: "Option 6",
-        dataType: "range",
-    },
-    {
-        id: "res-id-7",
-        name: "Option 7",
-        dataType: "date",
-    },
-    {
-        id: "res-id-8",
-        name: "Option 8",
-        dataType: "select",
-    },
-    {
-        id: "res-id-9",
-        name: "Option 9",
-        dataType: "inputText",
-    },
-    {
-        id: "res-id-10",
-        name: "Option 10",
-        dataType: "range",
-    },
-    {
-        id: "res-id-11",
-        name: "Option 11",
-        dataType: "date",
-    },
-    {
-        id: "res-id-12",
-        name: "Option 12",
-        dataType: "select",
-    },
-    {
-        id: "res-id-13",
-        name: "Option 13",
-        dataType: "range",
-    },
-    {
-        id: "res-id-14",
-        name: "Option 14",
-        dataType: "date",
-    },
-    {
-        id: "res-id-15",
-        name: "Option 15",
-        dataType: "select",
-    },
-];
+let manageResultTable = [];
 
-(function manResTableRender() {
+function manResTableRender() {
+    let tabHD = $("#resizable554 thead th");
+    let len = tabHD.length;
     let htmlTable = "";
+    for(let i=1;i<len;i++){
+        let _id = "res-id-table"+i;
+        let content = tabHD[i].textContent.trim();
+        manageResultTable.push({
+            id: _id,
+            name: content
+        });
+        htmlTable += `<tr id="${_id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
+            <td>${content}</td>
+        </tr>`;
+    }
     manageResultTable.forEach(({ id, name }) => {
         htmlTable += `<tr id="${id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
             <td>${name}</td>
         </tr>`;
     });
-    $("#man-res-opt-data-table-left").html(htmlTable);
-})();
+    $("#man-res-opt-data-table-right").html(htmlTable);
+}
+manResTableRender();
 
 function dblclickResMove(e) {
     let _id = $(e).parent().attr("id");
@@ -1467,3 +1420,50 @@ function resetResFilter(e) {
 $('table#resizable554').on('scroll', function() {
     $("table#resizable554 > *").width($("table#resizable554").width() + $("table#resizable554").scrollLeft());
 });
+
+function IconModalClick(){
+    let viewModalList = document.getElementsByClassName('view-modal-click');
+    for(let i = 0; i < viewModalList.length; i++) {
+        viewModalList[i].addEventListener("click", function(event) {
+            $("#viewtwo .modal-dialog").css({
+                top: ((event.clientY) + 20), 
+                left: ((event.clientX) - 125)
+            });
+            console.log("Clicked Happened");
+        });
+        console.log("Clicked Outer Happened");
+    }
+
+    let rowModalClick = document.getElementsByClassName('row-modal-click');
+    for(let i = 0; i < rowModalClick.length; i++) {
+        rowModalClick[i].addEventListener("click", function(event) {
+            $("#rowdetails .modal-dialog").css({
+                top: ((event.clientY) + 20), 
+                left: ((event.clientX) - 125)
+            });
+        });
+    }
+
+    let noteModalClick = document.getElementsByClassName('note-modal-click');
+    for(let i = 0; i < noteModalClick.length; i++) {
+        noteModalClick[i].addEventListener("click", function(event) {
+            $("#noteswindow .modal-dialog").css({
+                top: ((event.clientY) + 30), 
+                left: ((event.clientX) - 150)
+            });
+        });
+    }
+}
+
+function Style2DropFilterPos(){
+let style2FilterPosition = document.getElementsByClassName('style2-filterPosition');
+    for(let i = 0; i < style2FilterPosition.length; i++) {
+        style2FilterPosition[i].addEventListener("click", function(event) {
+            $("#col8Filter .modal-dialog").css({
+                top: ((event.clientY) + 20), 
+                left: ((event.clientX) - 240),
+                height: 350
+            });
+        });
+    }
+}
