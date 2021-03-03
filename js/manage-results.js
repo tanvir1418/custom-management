@@ -1326,93 +1326,31 @@ dataFilterModal.forEach((modalData) => {
 //----------====== Manage result filter modal End ======----------------
 
 // ---------- ======= Double Click to ADD or REMOVE Start ======= -------------
-let manageResultTable = [
-    {
-        id: "res-id-1",
-        name: "Option 1",
-        dataType: "inputText",
-    },
-    {
-        id: "res-id-2",
-        name: "Option 2",
-        dataType: "range",
-    },
-    {
-        id: "res-id-3",
-        name: "Option 3",
-        dataType: "date",
-    },
-    {
-        id: "res-id-4",
-        name: "Option 4",
-        dataType: "select",
-    },
-    {
-        id: "res-id-5",
-        name: "Option 5",
-        dataType: "inputText",
-    },
-    {
-        id: "res-id-6",
-        name: "Option 6",
-        dataType: "range",
-    },
-    {
-        id: "res-id-7",
-        name: "Option 7",
-        dataType: "date",
-    },
-    {
-        id: "res-id-8",
-        name: "Option 8",
-        dataType: "select",
-    },
-    {
-        id: "res-id-9",
-        name: "Option 9",
-        dataType: "inputText",
-    },
-    {
-        id: "res-id-10",
-        name: "Option 10",
-        dataType: "range",
-    },
-    {
-        id: "res-id-11",
-        name: "Option 11",
-        dataType: "date",
-    },
-    {
-        id: "res-id-12",
-        name: "Option 12",
-        dataType: "select",
-    },
-    {
-        id: "res-id-13",
-        name: "Option 13",
-        dataType: "range",
-    },
-    {
-        id: "res-id-14",
-        name: "Option 14",
-        dataType: "date",
-    },
-    {
-        id: "res-id-15",
-        name: "Option 15",
-        dataType: "select",
-    },
-];
+let manageResultTable = [];
 
-(function manResTableRender() {
+function manResTableRender() {
+    let tabHD = $("#resizable554 thead th");
+    let len = tabHD.length;
     let htmlTable = "";
+    for(let i=1;i<len;i++){
+        let _id = "res-id-table"+i;
+        let content = tabHD[i].textContent.trim();
+        manageResultTable.push({
+            id: _id,
+            name: content
+        });
+        htmlTable += `<tr id="${_id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
+            <td>${content}</td>
+        </tr>`;
+    }
     manageResultTable.forEach(({ id, name }) => {
         htmlTable += `<tr id="${id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
             <td>${name}</td>
         </tr>`;
     });
-    $("#man-res-opt-data-table-left").html(htmlTable);
-})();
+    $("#man-res-opt-data-table-right").html(htmlTable);
+}
+manResTableRender();
 
 function dblclickResMove(e) {
     let _id = $(e).parent().attr("id");
