@@ -161,6 +161,7 @@ function manResPagination(noRow) {
         let Details3 = csvD["Details3"];
         let Details2 = csvD[" Details2"];
 
+        let tabDataArr = [];
         tableTr +=
         `<tr class="dnd-moved">
           <td class="column-header-1">
@@ -171,7 +172,7 @@ function manResPagination(noRow) {
           </td>
           <td class="column-header-2">
             <div class="icon-box22">
-              <div class="circle2box" tooltip="Click to Add to Bookmarks" flow="down">
+              <div class="circle2box bkmark" tooltip="Click to Add to Bookmarks" flow="down">
                 <i class="fas fa-envelope"></i>
               </div>
               <div class="circle2box" tooltip="Click to View Details" flow="down">
@@ -915,32 +916,32 @@ function manResPagination(noRow) {
             <tbody>
                 <tr>
                     <td class="vall11_datel">
-                        <div class="col1table">
+                        <div class="col1table green-white">
                             <span>${u_val}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
-                        <div class="col1table">
+                        <div class="col1table green-white">
                             <span>${u_per}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
-                        <div class="col1table">
+                        <div class="col1table red-white">
                             <span>${d_val}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
-                        <div class="col1table">
+                        <div class="col1table red-white">
                             <span>${d_per}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
-                        <div class="col1table">
+                        <div class="col1table grey-white">
                             <span>${n_val}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
-                        <div class="col1table">
+                        <div class="col1table grey-white">
                             <span>${n_per}</span>
                         </div>
                     </td>
@@ -1752,3 +1753,72 @@ function truncateText(maxLength) {
         }
     }
 }
+
+let Style1ColumnHeaders = [
+    "column-header-1",
+    "column-header-2",
+    "column-header-3",
+    "column-header-4",
+    "column-header-5",
+    "column-header-6",
+    "column-header-7",
+    "column-header-8",
+    "column-header-9",
+    "column-header-10",
+    "column-header-11",
+    "column-header-12",
+    "column-header-13",
+    "column-header-14",
+    "column-header-15",
+    "column-header-16",
+    "column-header-17",
+    "column-header-18",
+    "column-header-19",
+    "column-header-20",
+    "column-header-21",
+    "column-header-22",
+    "column-header-23",
+    "column-header-24",
+    "column-header-25",
+    "column-header-26",
+    "column-header-27",
+    "column-header-28",
+    "column-header-29",
+    "column-header-30",
+    "column-header-31",
+    "column-header-32",
+    "column-header-33",
+    "column-header-34",
+    "column-header-35",
+    "column-header-36",
+    "column-header-37",
+    "column-header-38",
+    "column-header-39",
+    "column-header-40",
+    "column-header-41",
+    "column-header-42",
+    "column-header-43",
+    "column-header-44",
+    "column-header-45",
+    "column-header-46",
+    "column-header-47",
+    "column-header-48",
+    "column-header-49",
+    "column-header-50",
+    "column-header-51",
+    "column-header-52",
+    "column-header-53",
+    "column-header-54",
+    "column-header-55",
+    "column-header-56",
+    "column-header-57",
+    "column-header-58",
+    "column-header-59",
+    "column-header-60",
+    "column-header-61",
+    "column-header-62",
+    "column-header-63",
+    "column-header-64",
+    "column-header-65",
+    "column-header-66"
+];
