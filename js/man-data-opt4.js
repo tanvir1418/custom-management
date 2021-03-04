@@ -983,13 +983,13 @@ function manTemInpBuildData(_id) {
         <div class="width-input-group-35">
           <div class="input-section-sample4 right-side-input">
             <input class="date-pick-style-sample4 datepicker_op4" type="text"/>
-            <i class="far fa-calendar-alt icon-sample4"></i>
+            <i class="far fa-calendar-alt icon-sample4 datepicker_op4_Icon"></i>
           </div>
         </div>
         <div class="width-input-group-35">
           <div class="input-section-sample4 left-side-input">
             <input class="date-pick-style-sample4 datepicker_op4" type="text"/>
-            <i class="far fa-calendar-alt icon-sample4"></i>
+            <i class="far fa-calendar-alt icon-sample4 datepicker_op4_Icon"></i>
           </div>
         </div>
       </div>`;
@@ -1041,6 +1041,10 @@ function manTemInpBuildData(_id) {
     $(".datepicker_op4").datepicker();
     $(".datepicker_op4").datepicker("option", "dateFormat", "DD - MM d, yy");
   });
+  
+  $(".datepicker_op4_Icon").click(function() {
+    $(".datepicker_op4").focus();
+  });
 }
 
 function removeElementData(_id) {
@@ -1080,26 +1084,25 @@ function formToWindowDS4(e) {
   let len = idFromTable.length;
   for (let i = 0; i < len; i++) {
     let { id, name, type } = manDataSam4Data.filter(a => a.id == idFromTable[i].id)[0];
-    let dataPtrn = name;
-    if (type == "inputText") {
+    if (type == "inputText" || type == "range" || type == "date") {
       let inpD = $(`#man-data-sam4-input-data div#${id} input[type=text]`);
-      for (let j = 0; j < inpD.length; j++) dataPtrn += ` : ${inpD[j].value}`;
-    }
-    if (type == "range") {
-      let inpD = $(`#man-data-sam4-input-data div#${id} input[type=text]`);
-      for (let j = 0; j < inpD.length; j++) dataPtrn += ` : ${inpD[j].value}`;
-    }
-    if (type == "date") {
-      let inpD = $(`#man-data-sam4-input-data div#${id} input[type=text]`);
-      for (let j = 0; j < inpD.length; j++) dataPtrn += ` : ${inpD[j].value}`;
-    }
-    if (type == "select") {
+      let len = inpD.length;
+      for (let j = 0; j < len; j++) {
+        let uni_id = len > 1 ? "_" + (j + 1) : "";
+        renHtml += `<div class="form-text-design data-div">
+          ${name}${uni_id} : ${inpD[j].value}
+        </div>`;
+      }
+    } else if (type == "select") {
       let inpD = $(`#man-data-sam4-input-data div#${id} select`);
-      for (let j = 0; j < inpD.length; j++) dataPtrn += ` : ${$(inpD[j]).find(":selected").text()}`;
+      let len = inpD.length;
+      for (let j = 0; j < len; j++) {
+        let uni_id = len > 1 ? "_" + (j + 1) : "";
+        renHtml += `<div class="form-text-design data-div">
+          ${name}${uni_id} : ${$(inpD[j]).find(":selected").text()}
+        </div>`;
+      }
     }
-    renHtml += `<div class="form-text-design data-div">
-      ${dataPtrn}
-    </div>`;
   }
   tBody.html(renHtml);
 }
@@ -1110,16 +1113,10 @@ function windowToFormDS4(e) {
   let len = tRow.length;
   for (let i = 0; i < len; i++) {
     let divData = $(tRow[i])[0].innerText.split(":");
-    let { id, type } = findInputIdDS4(divData[0].trim());
-    if (id && divData.length == 3) {
-      if (type == "select") {
-        let inpD = $(`#man-data-sam4-input-data div#${id} select`);
-        for (let j = 0; j < inpD.length; j++) inpD[j].value = divData[j + 1].trim();
-      } else if (type != "select") {
-        let inpD = $(`#man-data-sam4-input-data div#${id} input[type=text]`);
-        for (let j = 0; j < inpD.length; j++) inpD[j].value = divData[j + 1].trim();
-      }
-    } else if (id && divData.length == 2) {
+    let [title, no] = divData[0].trim().split("_");
+    no = no != undefined ? no : 1;
+    let { id, type } = findInputIdDS4(title);
+    if (id && divData.length == 2) {
       if (type == "range") {
         let rangeDiv = $(`#man-data-sam4-input-data div#${id} div.width-custom-range-70.d-flex`);
         let rangeDes =
@@ -1133,6 +1130,12 @@ function windowToFormDS4(e) {
           range: true,
           limit: false
         });
+      } else if (type == "select") {
+        let inpD = $(`#man-data-sam4-input-data div#${id} select`);
+        inpD[no-1].value = divData[1].trim();
+      } else if (type == "inputText" || type == "date") {
+        let inpD = $(`#man-data-sam4-input-data div#${id} input[type=text]`);
+        inpD[no-1].value = divData[1].trim();
       } else {
         $(`#${id}`).val(divData[1].trim());
       }

@@ -952,3 +952,44 @@ $('#myopt1listData').on('show.bs.modal', function (e) {
 }).on('hide.bs.modal', function (e) {
 	$('body').removeClass("example-open");
 })
+
+// manage data op3 create new table Start
+let opt3TableData1 = [];
+for (let i = 1; i <= 15; i++){
+	opt3TableData1.push({
+		id: "op3-mnd-o1-" + i,
+		name: "Option 1 - Text "+i
+	});
+}
+
+let opt3TableData2 = [];
+for (let i = 1; i <= 15; i++) {
+	opt3TableData2.push({
+		id: "op3-mnd-o2-" + i,
+		name: "Option 2 - Text " + i
+	});
+}
+
+function op3TableRender(tableData) {
+	let htmlRen = "";
+	tableData.forEach(({ id, name }) => {
+		htmlRen +=
+			`<tr id="${id}" onclick="clickAddClass(this)">
+			<td>${name}</td>
+		</tr>`;
+	});
+	$("#man-data-op3-table tbody").html(htmlRen);
+}
+op3TableRender(opt3TableData1);
+let opt3TableData = opt3TableData1;
+
+$(".radio input[type = 'radio'][name = 'data-set-radio-button']").change(function () {
+	if (this.value =="option-1") {
+		op3TableRender(opt3TableData1);
+		opt3TableData = opt3TableData1;
+	} else if (this.value =="option-2") {
+		op3TableRender(opt3TableData2);
+		opt3TableData = opt3TableData2;
+	}
+});
+// manage data op3 create new table End

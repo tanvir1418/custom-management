@@ -166,11 +166,19 @@
 }
 
 .table-options .table-scroll tr:nth-child(even) {
-  background-color: #ffffff !important;
+  background-color: #ffffff;
 }
 
 .table-options .table-scroll tr:nth-child(odd) {
-  background-color: #fbfbfb !important;
+  background-color: #fbfbfb;
+}
+
+.table-options .table-scroll .mark-table-data{
+  background-color: yellow !important;
+}
+
+.table-options .table-scroll tr:hover {
+  cursor: pointer;
 }
 
 /* ........................... */

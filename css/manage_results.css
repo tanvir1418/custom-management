@@ -871,6 +871,36 @@ td {
 .column-header-17,
 .column-header-18,
 .column-header-19,
+.column-header-20,
+.column-header-21,
+.column-header-22,
+.column-header-23,
+.column-header-24,
+.column-header-25,
+.column-header-26,
+.column-header-27,
+.column-header-28,
+.column-header-29,
+.column-header-30,
+.column-header-31,
+.column-header-32,
+.column-header-33,
+.column-header-34,
+.column-header-35,
+.column-header-36,
+.column-header-37,
+.column-header-38,
+.column-header-39,
+.column-header-40,
+.column-header-41,
+.column-header-42,
+.column-header-43,
+.column-header-44,
+.column-header-45,
+.column-header-46,
+.column-header-47,
+.column-header-48,
+.column-header-49,
 .column-header-50,
 .column-header-51,
 .column-header-52,
@@ -878,67 +908,39 @@ td {
 .column-header-54,
 .column-header-55,
 .column-header-56,
-.column-header-57,
 .column-header-58,
 .column-header-59,
 .column-header-60,
 .column-header-61,
 .column-header-62,
-.column-header-63,
-.column-header-64,
-.column-header-65,
-.column-header-66,
-.column-header-67,
-.column-header-68,
-.column-header-69,
-.column-header-70,
-.column-header-71,
-.column-header-72,
-.column-header-73,
-.column-header-74,
-.column-header-75,
-.column-header-76,
-.column-header-77,
-.column-header-78,
-.column-header-79,
-.column-header-80,
-.column-header-81,
-.column-header-82,
-.column-header-83,
-.column-header-84,
-.column-header-85,
-.column-header-86,
-.column-header-88,
-.column-header-89,
-.column-header-90,
-.column-header-91,
-.column-header-92,
-.column-header-93
+.column-header-63
 {
     min-width: 100px;
 }
-.column-header-87{
+.column-header-57{
     min-width: 140px;
     max-width: 140px;
 }
-.column-header-94{
+.column-header-64{
     min-width: 450px;
     max-width: 450px;
 }
-.column-header-95{
+.column-header-65{
     min-width: 600px;
     max-width: 600px;
     /* white-space: nowrap; */
-    overflow: hidden;
-    text-overflow: ellipsis;
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
+    word-break: break-word;
     padding: 10px;
 }
-.column-header-96{
+.column-header-66{
     min-width: 800px;
     max-width: 800px;
     /* white-space: nowrap; */
-    overflow: hidden;
-    text-overflow: ellipsis;
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
+    word-break: break-word;
     padding: 10px;
 }
 /* /////////// */
@@ -1084,6 +1086,7 @@ td {
 
 .mytablesty12 tbody td {
     height: 180px;
+    padding: 0;
 }
 
 .mytablesty12 tbody tr {
@@ -1103,6 +1106,7 @@ td {
     display: flex;
     flex-wrap: wrap;
     margin-top: 26px;
+    padding: 0px 10px;
 }
 
 /* 2ND COLUMN ICON BOX */
@@ -1166,7 +1170,7 @@ td {
 /* 5TH STATUS COLUMN */
 .mytablesty12 .status22 {
     margin: 0px;
-    padding: 1px;
+    /* padding: 1px; */
 }
 
 .mytablesty12 .status22 .inner_con {
@@ -1214,7 +1218,7 @@ td {
 /* 6TH VAL_DATE COLUMN */
 .mytablesty12 .vall11_datel {
     margin: 0px;
-    padding: 1px;
+    /* padding: 1px; */
 }
 
 .mytablesty12 .vall11_datel .val11 {
@@ -1264,7 +1268,7 @@ td {
 /* 8TH CHART1 COLUMN */
 .mytablesty12 .dchart_1 {
     margin: 0;
-    padding: 1px;
+    /* padding: 1px; */
 }
 
 .mytablesty12 .dchart_1 .upper_part_22 {
@@ -1665,9 +1669,9 @@ th[draggable] a {
 }
 
 /* ======== */
-#sty2table4.cross-table-4 th:nth-child(1) {
+/* #sty2table4.cross-table-4 th:nth-child(1) {
     max-width: 100% !important;
-}
+} */
 
 /* ======== */
 #sty2table1.cross-table-5 th:nth-child(1) {
@@ -1701,9 +1705,9 @@ th[draggable] a {
 }
 
 /* ======== */
-#sty2table4.cross-table-8 th:nth-child(1) {
+/* #sty2table4.cross-table-8 th:nth-child(1) {
     max-width: 100% !important;
-}
+} */
 
 /* ======== */
 #sty2table1.cross-table-9 th:nth-child(1) {
@@ -1737,9 +1741,9 @@ th[draggable] a {
 }
 
 /* ======== */
-#sty2table4.cross-table-12 th:nth-child(1) {
+/* #sty2table4.cross-table-12 th:nth-child(1) {
     max-width: 100% !important;
-}
+} */
 
 /* table head width end */
 
@@ -1758,7 +1762,7 @@ th[draggable] a {
 }
 
 #style2Con table td {
-    height: 80px;
+    height: 70px;
 }
 
 /* TABLE HEAD START */
@@ -2065,15 +2069,16 @@ th[draggable] a {
     text-align: center;
 }
 
-#style2Con table .vall11_datel .date_reco span {
-    display: block;
+#style2Con table .vall11_datel span {
     font-size: 16px;
     font-family: gilroy-bold, sans-serif;
     font-weight: 500;
     color: #454545;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
 }
-
+#style2Con table .vall11_datel .date_reco_center span {
+    display: block;
+}
 #style2Con table .vall11_datel .date_reco span:first-child {
     margin-bottom: 10px;
 }
@@ -2083,14 +2088,21 @@ th[draggable] a {
 }
 
 /* col1 */
-#style2Con table .vall11_datel .date_reco.col1table {
-    height: 100%;
+#style2Con table .vall11_datel .col1table {
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
 }
 
 /* table UPPER BORDER REMOVE */
 #style2Con #sty2table2,
 #style2Con #sty2table3,
-#style2Con #sty2table4 {
+#style2Con #sty2table4,
+#style2Con #sty2table5,
+#style2Con #sty2table6,
+#style2Con #sty2table7,
+#style2Con #sty2table8,
+#style2Con #sty2table9 {
     border-top: none !important;
 }
 
@@ -2122,9 +2134,9 @@ th[draggable] a {
     max-width: 1200px;
 }
 
-#tab_4 .modal#col8Filter .modal-dialog {
+/* #tab_4 .modal#col8Filter .modal-dialog {
     max-width: 200px !important;
-}
+} */
 
 #tab_4 .modal .modal-content {
     border: none;
@@ -2132,6 +2144,13 @@ th[draggable] a {
     -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
     -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
     box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+}
+
+#tab_4 .modal#viewtwo .modal-dialog .modal-content {
+    width: 250px;
+}
+#tab_4 .modal#rowdetails .modal-dialog .modal-content {
+    width: 260px;
 }
 
 #tab_4 .modal .modal-header {
@@ -3194,4 +3213,63 @@ table#resizable554 {
 .mytablesty12 .column-header-4 .column-time .centerauto,
 .mytablesty12 .column-header-5 .column-time .centerauto {
     margin-top: 0px !important;
+}
+
+#sty2table8 tbody td.vall11_datel,
+#sty2table9 tbody td.vall11_datel{
+    min-width: 50%;
+    height: 120px;
+}
+#sty2table8 tbody td.vall11_datel .col1table,
+#sty2table9 tbody td.vall11_datel .col1table{
+    line-height: 24px;
+    word-break: break-word;
+    text-align: left;
+    height: 100%;
+}
+#sty2table8 tbody td.vall11_datel .col1table p,
+#sty2table9 tbody td.vall11_datel .col1table p{
+    margin: 10px;
+}
+
+td.s2-value{
+    padding: 0;
+    width: 25%;
+}
+td.s2-value .centerauto{
+    line-height: 46px;
+}
+
+#style2Con table .status22 .padding__resize__S2Status{
+    padding: 17px 0 !important;
+}
+
+/* Manage Result Icon Pop-up Dynamic */
+#viewtwo .modal-dialog{
+    /* position: absolute; */
+    position: fixed;
+    min-height: 0;
+    margin: 0;
+    /* top: 200px;
+    left: 400px; */
+}
+#rowdetails .modal-dialog{
+    position: fixed;
+    min-height: 0;
+    margin: 0;
+}
+#noteswindow .modal-dialog{
+    position: fixed;
+    min-height: 0;
+    margin: 0;
+}
+
+#resizable554 tbody td.column-header-57{
+    padding: 0 12px;
+}
+#resizable554 tbody td.column-header-65{
+    padding: 0 15px;
+}
+#resizable554 tbody td.column-header-66{
+    padding: 0 15px;
 }
