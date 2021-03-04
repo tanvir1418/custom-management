@@ -1667,6 +1667,9 @@ th[draggable] a {
 #sty2table3.cross-table-3 th:nth-child(3) {
     max-width: 36% !important;
 }
+#sty2table3.cross-table-3 th:nth-child(4) {
+    max-width: 36% !important;
+}
 
 /* ======== */
 /* #sty2table4.cross-table-4 th:nth-child(1) {
@@ -3272,4 +3275,12 @@ td.s2-value .centerauto{
 }
 #resizable554 tbody td.column-header-66{
     padding: 0 15px;
+}
+
+i.fa-caret-down{
+    /* transition: all .1s linear; */
+}
+
+i.fa-caret-down.down-animation-icon{
+    transform: rotate(-180deg);
 }

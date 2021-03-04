@@ -971,6 +971,10 @@ $("#resizable554 th").click(function (e) {
     } else if (target.tagName === "DIV" && regexD.test(target.className)) {
         let dataP = $(`#resizable554 td:nth-child(${index}) .mr-tableData`);
         let headingPop = $(`#resizable554 th:nth-child(${index})`)[0].textContent;
+        
+        // this code add the down-animation-icon to the drop filter
+        $(`#resizable554 th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
+        
         $("#col8Filter #tableHeaderPop").html(headingPop);
         let targetModal = $("#col8Filter #checkbox-table-first tbody");
         const dataC = new Set();
@@ -1478,3 +1482,11 @@ let style2FilterPosition = document.getElementsByClassName('style2-filterPositio
         });
     }
 }
+
+// This Function will trigger when col8Filter is closed
+$('#col8Filter').on('hidden.bs.modal', function (e) {
+     $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+});
+$('#dropBtnModal').on('hidden.bs.modal', function (e) {
+     $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+});
