@@ -737,9 +737,9 @@ function manResPagination(noRow) {
 
         style2TableData += 
         `<div class="description-text">
-					<p>
-						Lorem ipsum, dolor sit amet conseetur adipisicing elit. Ad, distinctio incidunt molestias beatae nam doloribus cute laboriosam necesibus acntium recusandae adipisci.
-					</p>
+            <p>
+                Lorem ipsum, dolor sit amet conseetur adipisicing elit. Ad, distinctio incidunt molestias beatae nam doloribus cute laboriosam necesibus acntium recusandae adipisci.
+            </p>
         </div>
 
         <div class="icon-box55">

@@ -674,9 +674,9 @@ for (let i = 1; i <= 100; i++) {
 	});
 }
 
-function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
+function makeTableHead(tableID) {
 	let tableHead =
-		`<tr>
+	`<tr>
 		<th scope="col">
 			ROW
 		</th>
@@ -719,6 +719,9 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 		<th scope="col">ACTIONS</th>
 	</tr>`;
 	$(`#${tableID} thead`).html(tableHead);
+}
+
+function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 	let options = {
 		dataSource: manExisTable,
 		pageSize: noRow,
@@ -734,23 +737,29 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 				CDateTime,
 				LUDateTime
 			}, index) => {
+				let tabHd = $(`#${tableID} thead th`);
+				let len = tabHd.length;
+				let classList = [];
+				for (let i = 1; i < len-1; i++){
+					classList.push(tabHd[i].className);
+				}
 				tableTr +=
-					`<tr id="${id}">
+				`<tr id="${id}">
 					<th class="row-data" scope="row">${serial}</th>
-					<td class="records-count">
+					<td class="records-count ${classList[0]}">
 						<a data-toggle="modal" data-target="#hyperTextModal1" style="color: black" onclick="showHyperTextModal1(this)">
 							<p class="mn-exists-data">${recordsCount}</p>
 						</a>
 					</td>
-					<td>
+					<td class="${classList[1]}">
 						<input class="save-name mn-exists-data" value="${savedName}" type="text" />
 					</td>
-					<td>
+					<td class="${classList[2]}">
 						<div class="create-date-time date-time-39">
 							<p class="mn-exists-data">${CDateTime.date} ${CDateTime.time}</p>
 						</div>
 					</td>
-					<td>
+					<td class="${classList[3]}">
 						<div class="last-date-time date-time-39">
 							<p class="mn-exists-data">${LUDateTime.date} ${LUDateTime.time}</p>
 						</div>
@@ -805,10 +814,13 @@ function tabChangeOpt5(e) {
 	createNew.find("div.createpera p").html("View/Update");
 	createNew.click();
 }
-
+makeTableHead("man-data-opt1-exist");
 manDtOpt1Exist("man-data-opt1-exist", 7, "pagination-op1-data", `tabChangeOpt1(this)`);
+makeTableHead("man-data-opt3-exist");
 manDtOpt1Exist("man-data-opt3-exist", 7, "pagination-op3-data", `tabChangeOpt3(this)`);
+makeTableHead("man-data-opt4-exist");
 manDtOpt1Exist("man-data-opt4-exist", 7, "pagination-op4-data", `tabChangeOpt4(this)`);
+makeTableHead("man-data-opt5-exist");
 manDtOpt1Exist("man-data-opt5-exist", 7, "pagination-op5-data", `tabChangeOpt5(this)`);
 
 $("#row-no1").change(function (e) {
@@ -858,6 +870,8 @@ function ExistTableHeadClick(tableId) {
 			let dataP = $(`#${tableId} td:nth-child(${index}) .mn-exists-data`);
 			// console.log(dataP);
 			let headingPop = $(`#${tableId} th:nth-child(${index})`)[0].textContent;
+			$(`#${tableId} th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
+
 			$("#dropBtnModal #mnExistsThPop").html(headingPop);
 			let targetModal = $("#dropBtnModal #checkbox-table-exist tbody");
 			const dataC = new Set();
