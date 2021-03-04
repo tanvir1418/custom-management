@@ -870,6 +870,8 @@ function ExistTableHeadClick(tableId) {
 			let dataP = $(`#${tableId} td:nth-child(${index}) .mn-exists-data`);
 			// console.log(dataP);
 			let headingPop = $(`#${tableId} th:nth-child(${index})`)[0].textContent;
+			$(`#${tableId} th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
+
 			$("#dropBtnModal #mnExistsThPop").html(headingPop);
 			let targetModal = $("#dropBtnModal #checkbox-table-exist tbody");
 			const dataC = new Set();
