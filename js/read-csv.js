@@ -257,6 +257,7 @@ function manResPagination(noRow) {
 								</svg>
 							</div>
 						</div>
+                        <div class="column-header-2-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -267,6 +268,7 @@ function manResPagination(noRow) {
 								<p>${checkSts == "Ended" ? "" : status}</p>
 							</div>
 						</div>
+                        <div class="column-header-3-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -276,6 +278,7 @@ function manResPagination(noRow) {
 								<span class="dis_time22 mr-tableData">${val1}</span>
 							</div>
 						</div>
+                        <div class="column-header-4-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -285,6 +288,7 @@ function manResPagination(noRow) {
 								<span class="dis_time22 mr-tableData">${val2}</span>
 							</div>
 						</div>
+                        <div class="column-header-5-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -298,6 +302,7 @@ function manResPagination(noRow) {
 								<span>${dateL}</span>
 							</div>
 						</div>
+                        <div class="column-header-6-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -311,6 +316,7 @@ function manResPagination(noRow) {
 								<span>${dateH}</span>
 							</div>
 						</div>
+                        <div class="column-header-7-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -337,7 +343,7 @@ function manResPagination(noRow) {
 								<p class="centerizeany mr-tableData">${Val12}</p>
 							</div>
 						</div>
-						<div class="column-header-8-sizer"></div>
+                        <div class="column-header-8-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -366,291 +372,349 @@ function manResPagination(noRow) {
 								</div>
 							</div>
 						</div>
+                        <div class="column-header-9-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-10 green-white">
 						<p class="centerizeany mr-tableData">${u_val}</p>
+                        <div class="column-header-10-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-11 green-white">
 						<p class="centerizeany mr-tableData">${u_per}</p>
+                        <div class="column-header-11-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-12 red-white">
 						<p class="centerizeany mr-tableData">${d_val}</p>
+                        <div class="column-header-12-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-13 red-white">
 						<p class="centerizeany mr-tableData">${d_per}</p>
+                        <div class="column-header-13-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-14 grey-white">
 						<p class="centerizeany mr-tableData">${n_val}</p>
+                        <div class="column-header-14-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-15 grey-white">
 						<p class="centerizeany mr-tableData">${n_per}</p>
+                        <div class="column-header-15-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-16">
 						<p class="centerizeany mr-tableData">${AM_COUNT}</p>
+                        <div class="column-header-16-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-17">
 						<p class="centerizeany mr-tableData">${AN_COUNT}</p>
+                        <div class="column-header-17-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-18">
 						<p class="centerizeany mr-tableData">${AO_COUNT}</p>
+                        <div class="column-header-18-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-19">
 						<p class="centerizeany mr-tableData">${AP_COUNT}</p>
+                        <div class="column-header-19-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-20">
 						<p class="centerizeany mr-tableData">${AQ_COUNT}</p>
+                        <div class="column-header-20-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-21">
 						<p class="centerizeany mr-tableData">${AR_COUNT}</p>
+                        <div class="column-header-21-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-22">
 						<p class="centerizeany mr-tableData">${AS_Count}</p>
+                        <div class="column-header-22-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-23">
 						<p class="centerizeany mr-tableData">${AT_Count}</p>
+                        <div class="column-header-23-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-24">
 						<p class="centerizeany mr-tableData">${AU_Count}</p>
+                        <div class="column-header-24-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-25">
 						<p class="centerizeany mr-tableData">${AV_Count}</p>
+                        <div class="column-header-25-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-26">
 						<p class="centerizeany mr-tableData">${AW_COUNT}</p>
+                        <div class="column-header-26-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-27">
 						<p class="centerizeany mr-tableData">${AX_COUNT}</p>
+                        <div class="column-header-27-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-28">
 						<p class="centerizeany mr-tableData">${AY_COUNT}</p>
+                        <div class="column-header-28-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-29">
 						<p class="centerizeany mr-tableData">${AZ_Count}</p>
+                        <div class="column-header-29-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-30">
 						<p class="centerizeany mr-tableData">${BA_Count}</p>
+                        <div class="column-header-30-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-31">
 						<p class="centerizeany mr-tableData">${BB_Count}</p>
+                        <div class="column-header-31-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-32">
 						<p class="centerizeany mr-tableData">${BC_Count}</p>
+                        <div class="column-header-32-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-33">
 						<p class="centerizeany mr-tableData">${BD_Count}</p>
+                        <div class="column-header-33-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-34">
 						<p class="centerizeany mr-tableData">${BE_count}</p>
+                        <div class="column-header-34-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-35">
 						<p class="centerizeany mr-tableData">${BF_COUNT}</p>
+                        <div class="column-header-35-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-36">
 						<p class="centerizeany mr-tableData">${BG_COUNT}</p>
+                        <div class="column-header-36-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-37">
 						<p class="centerizeany mr-tableData">${BH_COUNT}</p>
+                        <div class="column-header-37-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-38">
 						<p class="centerizeany mr-tableData">${BI_COUNT}</p>
+                        <div class="column-header-38-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-39">
 						<p class="centerizeany mr-tableData">${BJ_COUNT}</p>
+                        <div class="column-header-39-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-40">
 						<p class="centerizeany mr-tableData">${BK_COUNT}</p>
+                        <div class="column-header-40-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-41">
 						<p class="centerizeany mr-tableData">${BL_COUNT}</p>
+                        <div class="column-header-41-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-42">
 						<p class="centerizeany mr-tableData">${BM_COUNT}</p>
+                        <div class="column-header-42-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-43">
 						<p class="centerizeany mr-tableData">${Col2}</p>
+                        <div class="column-header-43-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-44">
 						<p class="centerizeany mr-tableData">${Col3}</p>
+                        <div class="column-header-44-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-45">
 						<p class="centerizeany mr-tableData">${DP_val}</p>
+                        <div class="column-header-45-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-46">
 						<p class="centerizeany mr-tableData">${DY_val}</p>
+                        <div class="column-header-46-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-47">
 						<p class="centerizeany mr-tableData">${DmA}</p>
+                        <div class="column-header-47-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-48">
 						<p class="centerizeany mr-tableData">${DmP}</p>
+                        <div class="column-header-48-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-49">
 						<p class="centerizeany mr-tableData">${DmP_per}</p>
+                        <div class="column-header-49-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-50">
 						<p class="centerizeany mr-tableData">${ID_val}</p>
+                        <div class="column-header-50-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-51">
 						<p class="centerizeany mr-tableData">${LoP_per}</p>
+                        <div class="column-header-51-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-52">
 						<p class="centerizeany mr-tableData">${M_Val}</p>
+                        <div class="column-header-52-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-53">
 						<p class="centerizeany mr-tableData">${MaP_per}</p>
+                        <div class="column-header-53-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-54">
 						<p class="centerizeany mr-tableData">${O_End}</p>
+                        <div class="column-header-54-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-55">
 						<p class="centerizeany mr-tableData">${O_Start}</p>
+                        <div class="column-header-55-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-56">
 						<p class="centerizeany mr-tableData">${SP_val}</p>
+                        <div class="column-header-56-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-57">
 						<p class="mr-tableData">${Time_Frame}</p>
+                        <div class="column-header-57-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-58">
 						<p class="centerizeany mr-tableData">${UmA}</p>
+                        <div class="column-header-58-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-59">
 						<p class="centerizeany mr-tableData">${UmP}</p>
+                        <div class="column-header-59-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-60">
 						<p class="centerizeany mr-tableData">${UmP_per}</p>
+                        <div class="column-header-60-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-61">
 						<p class="centerizeany mr-tableData">${Val2S}</p>
+                        <div class="column-header-61-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-62">
 						<p class="centerizeany mr-tableData">${Val3S}</p>
+                        <div class="column-header-62-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-63">
 						<p class="centerizeany mr-tableData">${Val6}</p>
+                        <div class="column-header-63-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-64">
 						<p class="centerizeany mr-tableData" style="position: relative;left: 55%;top: 25%;">${Description}</p>
+                        <div class="column-header-64-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-65">
 						<p class="mr-tableData">${Details3}</p>
+                        <div class="column-header-65-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-66">
 						<p class="mr-tableData truncate-data">${Details2}</p>
+                        <div class="column-header-66-resizer"></div>
 					</td>`
 				);
 
