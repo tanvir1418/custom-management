@@ -1128,9 +1128,21 @@ $(document).ready(function () {
         minWidth: 40,
         resize: function (event, ui) {
             let sizerID = "." + event.target.classList[0] + "-sizer";
-            $(sizerID).width(ui.size.width);
-            $("."+event.target.classList[0]).width(ui.size.width);
-            console.log(event.target.classList[0]);
+            let valueSize = ui.size.width;
+            $(sizerID).width(valueSize);
+            let resizer = event.target.classList[0]  + "-resizer";
+            let shrinkWidth = `#resizable554 tbody .${resizer}`;
+            // console.log(shrinkWidth);
+            // $(shrinkWidth).width(valueSize);
+            // // $(shrinkWidth).width(valueSize - 24);
+            // $(shrinkWidth).css({
+            //     "min-width": `${valueSize-20}px`
+            // });
+            var gettingWidth = parseInt($(sizerID).css('width'), 10);
+            // let shrinkWidth = `#resizable554 tbody ${sizerID}`;
+            $(shrinkWidth).width(gettingWidth+"px");
+            console.log(shrinkWidth);
+            console.log(gettingWidth);
         }
     });
 })
@@ -1430,9 +1442,7 @@ function IconModalClick(){
                 top: ((event.clientY) + 20), 
                 left: ((event.clientX) - 125)
             });
-            console.log("Clicked Happened");
         });
-        console.log("Clicked Outer Happened");
     }
 
     let rowModalClick = document.getElementsByClassName('row-modal-click');

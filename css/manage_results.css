@@ -1086,6 +1086,7 @@ td {
 
 .mytablesty12 tbody td {
     height: 180px;
+    padding: 0;
 }
 
 .mytablesty12 tbody tr {
@@ -1105,6 +1106,7 @@ td {
     display: flex;
     flex-wrap: wrap;
     margin-top: 26px;
+    padding: 0px 10px;
 }
 
 /* 2ND COLUMN ICON BOX */
@@ -1168,7 +1170,7 @@ td {
 /* 5TH STATUS COLUMN */
 .mytablesty12 .status22 {
     margin: 0px;
-    padding: 1px;
+    /* padding: 1px; */
 }
 
 .mytablesty12 .status22 .inner_con {
@@ -1216,7 +1218,7 @@ td {
 /* 6TH VAL_DATE COLUMN */
 .mytablesty12 .vall11_datel {
     margin: 0px;
-    padding: 1px;
+    /* padding: 1px; */
 }
 
 .mytablesty12 .vall11_datel .val11 {
@@ -1266,7 +1268,7 @@ td {
 /* 8TH CHART1 COLUMN */
 .mytablesty12 .dchart_1 {
     margin: 0;
-    padding: 1px;
+    /* padding: 1px; */
 }
 
 .mytablesty12 .dchart_1 .upper_part_22 {
@@ -3260,4 +3262,14 @@ td.s2-value .centerauto{
     position: fixed;
     min-height: 0;
     margin: 0;
+}
+
+#resizable554 tbody td.column-header-57{
+    padding: 0 12px;
+}
+#resizable554 tbody td.column-header-65{
+    padding: 0 15px;
+}
+#resizable554 tbody td.column-header-66{
+    padding: 0 15px;
 }
