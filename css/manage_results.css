@@ -3287,3 +3287,22 @@ td.s2-value .centerauto{
 i.fa-caret-down.down-animation-icon{
     transform: rotate(-180deg);
 }
+
+@media screen and (max-width: 1510px) {
+    #sty2table3.cross-table-3 th:nth-child(1) {
+        min-width: 185px !important;
+    }
+    
+    #sty2table3.cross-table-3 th:nth-child(2) {
+        min-width: 185px !important;
+    }
+}
+@media screen and (max-width: 1350px) {
+    #sty2table3.cross-table-3 th:nth-child(1) {
+        min-width: 120px !important;
+    }
+    
+    #sty2table3.cross-table-3 th:nth-child(2) {
+        min-width: 120px !important;
+    }
+}
