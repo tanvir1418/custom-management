@@ -980,8 +980,8 @@ td {
 }
 .containerst12 .checkmark {
     position: absolute;
-    left: -2px;
-    top: -4px;
+    left: 8px;
+    top: 2px;
     height: 22px;
     width: 22px;
     border: 1px solid #f1f3f7;

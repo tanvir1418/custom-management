@@ -1002,6 +1002,9 @@ $("#resizable554 th").click(function (e) {
             top: ((e.clientY) + 15),
             left: ((e.clientX) - 240)
         });
+        $("#col8Filter .modal-dialog .table-header-click-popup").css({
+            "margin-top": "0px"
+        });
     }
 });
 
@@ -1541,6 +1544,9 @@ function Style2DropFilterPos() {
                 top: ((event.clientY) + 20),
                 left: ((event.clientX) - 240),
                 height: 350
+            });
+            $("#col8Filter .modal-dialog .table-header-click-popup").css({
+                "margin-top": "-15px"
             });
         });
     }
