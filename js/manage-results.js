@@ -85,7 +85,7 @@ const listItemData404 = [
             }
         }
         htmlDataModal +=
-        `<ul class="right-list-404 right-list-4041" style=" display: none" id="sub-ul-list-1-${index + 1}">
+            `<ul class="right-list-404 right-list-4041" style=" display: none" id="sub-ul-list-1-${index + 1}">
         ${list_data1}
         </ul>
         <ul class="right-list-404 right-list-4042" style=" display: none" id="sub-ul-list-2-${index + 1}">
@@ -212,8 +212,8 @@ $(document).ready(function () {
     $(".results-scroll-down").click(function () {
         const table_scroll_404 = document.querySelector(".table-scroll-404");
         $(".table-scroll-404").animate({
-                scrollTop: table_scroll_404.scrollTop + 100,
-            },
+            scrollTop: table_scroll_404.scrollTop + 100,
+        },
             250
         );
     });
@@ -237,18 +237,18 @@ $("#div-sub-ul-li-list").click(function (e) {
             deleteManageModal(target.parentNode.classList[0]);
             return;
         }
-		target = target.parentNode;
-	} else if (target.tagName === "P") {
-		target = target.parentNode;
-	} else if (target.tagName === "I") {
-		target = target.parentNode;
+        target = target.parentNode;
+    } else if (target.tagName === "P") {
+        target = target.parentNode;
+    } else if (target.tagName === "I") {
+        target = target.parentNode;
         if (target.className === "sublist-cancel-box-404") {
             deleteManageModal(target.parentNode.classList[0]);
             return;
         }
-		else target = target.parentNode;
+        else target = target.parentNode;
     } else if (target.tagName !== "LI") return;
-    
+
     let dataList = target.childNodes[1].innerHTML;
     document.querySelector("#chartPage .chart-title .left-item").innerHTML = left_list_data;
     document.querySelector("#chartPage .chart-title .right-item").innerHTML = dataList;
@@ -257,11 +257,11 @@ $("#div-sub-ul-li-list").click(function (e) {
 });
 
 function deleteManageModal(className) {
-	let mng_opt2_delete = document.querySelector("#mng-opt2-delete");
-	mng_opt2_delete.addEventListener("click", function () {
-		let delObj = document.querySelector(`.${className}`);
-		delObj.remove();
-	});
+    let mng_opt2_delete = document.querySelector("#mng-opt2-delete");
+    mng_opt2_delete.addEventListener("click", function () {
+        let delObj = document.querySelector(`.${className}`);
+        delObj.remove();
+    });
 }
 // ----------- ASHIQ -------------- 
 function calAngle(obj) {
@@ -396,29 +396,28 @@ $(".inner-tablink").click(function () {
 // ======= INNER TABS END ======
 
 // ============== DISPLAY 2 SPEEDOMETER START ====================
-
-$(".progressmeter").each(function () {
-
-    var $bar = $(this).find(".bar");
-    var $val = $(this).find(".progress-value");
-    var perc = parseInt($val.text(), 10);
-    $({
-        p: 0
-    }).animate({
-        p: perc
-    }, {
-        duration: 3000,
-        easing: "swing",
-        step: function (p) {
-            $bar.css({
-                transform: "rotate(" + (45.00 + (p * 1.8)) +
-                    "deg)", // 100%=180° so: ° = % * 1.8
-                // 45 is to add the needed rotation to have the green borders at the bottom
-            });
-            $val.text(p | 0);
-        }
+function gotoChartPage2() {
+    $(".progressmeter").each(function () {
+        let $bar = $(this).find(".bar");
+        let $val = $(this).find(".progress-value");
+        let perc = parseInt($val.text());
+        $({
+            p: 0
+        }).animate({
+            p: perc
+        }, {
+            duration: 3000,
+            easing: "swing",
+            step: function (p) {
+                $bar.css({
+                    transform: "rotate(" + (45.00 + (p * 1.8)) + "deg)", // 100%=180° so: ° = % * 1.8
+                    // 45 is to add the needed rotation to have the green borders at the bottom
+                });
+                $val.text(p | 0);
+            }
+        });
     });
-});
+}
 
 // ============== DISPLAY 2 SPEEDOMETER END ====================
 
@@ -429,67 +428,67 @@ $(".progressmeter").each(function () {
 
 // ================ DISPLAY 4 TABLE DATA START ================
 var array = [
-        ["2019", "100%", "-58.63%", "15.14%", "54.1%", "-76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-            "-56.54%", "87.45%"
-        ],
-        ["2018", "-100%", "58.63%", "-15.14%", "54.1%", "-76.32%", "24.08%", "-23.64%", "92.86%", "-53.59%", "-49.4%",
-            "56.54%", "-87.45%"
-        ],
-        ["2017", "100%", "-58.63%", "15.14%", "", "76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%", "-56.54%",
-            "87.45%"
-        ],
-        ["2016", "-100%", "58.63%", "-15.14%", "54.1%", "-76.32%", "24.08%", "-23.64%", "", "-53.59%", "49.4%",
-            "-56.54%", "-87.45%"
-        ],
-        ["2015", "100%", "-58.63%", "15.14%", "-54.1%", "76.32%", "-24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-            "56.54%", "-87.45%"
-        ],
-        ["2014", "-100%", "58.63%", "-15.14%", "54.1%", "-76.32%", "24.08%", "-23.64%", "92.86%", "-53.59%", "-49.4%",
-            "56.54%", "-87.45%"
-        ],
-        ["2013", "-100%", "-58.63%", "15.14%", "-54.1%", "76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-            "-56.54%", "87.45%"
-        ],
-        ["2012", "", "58.63%", "-15.14%", "-54.1%", "-76.32%", "24.08%", "-23.64%", "92.86%", "-53.59%", "-49.4%",
-            "56.54%", "-87.45%"
-        ],
-        ["2011", "100%", "-58.63%", "-15.14%", "-54.1%", "-76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-            "-56.54%", "87.45%"
-        ],
-        ["2010", "-100%", "-58.63%", "15.14%", "54.1%", "76.32%", "-24.08%", "23.64%", "92.86%", "-53.59%", "-49.4%",
-            "56.54%", "-87.45%"
-        ],
-        ["2009", "100%", "58.63%", "15.14%", "54.1%", "-76.32%", "24.08%", "-23.64%", "-92.86%", "53.59%", "49.4%",
-            "56.54%", "-87.45%"
-        ],
-        ["2008", "100%", "58.63%", "-15.14%", "54.1%", "76.32%", "-24.08%", "23.64%", "92.86%", "-53.59%", "-49.4%",
-            "56.54%", "-87.45%"
-        ],
-        ["2007", "-100%", "-58.63%", "15.14%", "-54.1%", "76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-            "-56.54%", "87.45%"
-        ],
-        ["2006", "100%", "58.63%", "-15.14%", "54.1%", "-76.32%", "-24.08%", "-23.64%", "-92.86%", "-53.59%", "-49.4%",
-            "56.54%", "-87.45%"
-        ],
-        ["2005", "-100%", "58.63%", "15.14%", "54.1%", "-76.32%", "24.08%", "23.64%", "92.86%", "53.59%", "49.4%",
-            "56.54%", "-87.45%"
-        ],
-        ["2004", "-100%", "-58.63%", "15.14%", "-54.1%", "76.32%", "-24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-            "-56.54%", "87.45%"
-        ],
-        ["2003", "100%", "58.63%", "-15.14%", "54.1%", "", "-24.08%", "-23.64%", "-92.86%", "-53.59%", "-49.4%",
-            "56.54%", "-87.45%"
-        ],
-        ["2002", "100%", "-58.63%", "", "36.1%", "-76.32%", "24.08%", "23.64%", "92.86%", "53.59%", "-49.4%",
-            "56.54%", "-87.45%"
-        ],
-        ["2001", "-100%", "58.63%", "-15.14%", "-54.1%", "-76.32%", "-24.08%", "-23.64%", "-92.86%", "-53.59%", "49.4%",
-            "56.54%", "-87.45%"
-        ],
-        ["2000", "-100%", "58.63%", "15.14%", "54.1%", "76.32%", "24.08%", "23.64%", "92.86%", "-53.59%", "-49.4%",
-            "56.54%", "-87.45%"
-        ]
+    ["2019", "100%", "-58.63%", "15.14%", "54.1%", "-76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
+        "-56.54%", "87.45%"
     ],
+    ["2018", "-100%", "58.63%", "-15.14%", "54.1%", "-76.32%", "24.08%", "-23.64%", "92.86%", "-53.59%", "-49.4%",
+        "56.54%", "-87.45%"
+    ],
+    ["2017", "100%", "-58.63%", "15.14%", "", "76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%", "-56.54%",
+        "87.45%"
+    ],
+    ["2016", "-100%", "58.63%", "-15.14%", "54.1%", "-76.32%", "24.08%", "-23.64%", "", "-53.59%", "49.4%",
+        "-56.54%", "-87.45%"
+    ],
+    ["2015", "100%", "-58.63%", "15.14%", "-54.1%", "76.32%", "-24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
+        "56.54%", "-87.45%"
+    ],
+    ["2014", "-100%", "58.63%", "-15.14%", "54.1%", "-76.32%", "24.08%", "-23.64%", "92.86%", "-53.59%", "-49.4%",
+        "56.54%", "-87.45%"
+    ],
+    ["2013", "-100%", "-58.63%", "15.14%", "-54.1%", "76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
+        "-56.54%", "87.45%"
+    ],
+    ["2012", "", "58.63%", "-15.14%", "-54.1%", "-76.32%", "24.08%", "-23.64%", "92.86%", "-53.59%", "-49.4%",
+        "56.54%", "-87.45%"
+    ],
+    ["2011", "100%", "-58.63%", "-15.14%", "-54.1%", "-76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
+        "-56.54%", "87.45%"
+    ],
+    ["2010", "-100%", "-58.63%", "15.14%", "54.1%", "76.32%", "-24.08%", "23.64%", "92.86%", "-53.59%", "-49.4%",
+        "56.54%", "-87.45%"
+    ],
+    ["2009", "100%", "58.63%", "15.14%", "54.1%", "-76.32%", "24.08%", "-23.64%", "-92.86%", "53.59%", "49.4%",
+        "56.54%", "-87.45%"
+    ],
+    ["2008", "100%", "58.63%", "-15.14%", "54.1%", "76.32%", "-24.08%", "23.64%", "92.86%", "-53.59%", "-49.4%",
+        "56.54%", "-87.45%"
+    ],
+    ["2007", "-100%", "-58.63%", "15.14%", "-54.1%", "76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
+        "-56.54%", "87.45%"
+    ],
+    ["2006", "100%", "58.63%", "-15.14%", "54.1%", "-76.32%", "-24.08%", "-23.64%", "-92.86%", "-53.59%", "-49.4%",
+        "56.54%", "-87.45%"
+    ],
+    ["2005", "-100%", "58.63%", "15.14%", "54.1%", "-76.32%", "24.08%", "23.64%", "92.86%", "53.59%", "49.4%",
+        "56.54%", "-87.45%"
+    ],
+    ["2004", "-100%", "-58.63%", "15.14%", "-54.1%", "76.32%", "-24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
+        "-56.54%", "87.45%"
+    ],
+    ["2003", "100%", "58.63%", "-15.14%", "54.1%", "", "-24.08%", "-23.64%", "-92.86%", "-53.59%", "-49.4%",
+        "56.54%", "-87.45%"
+    ],
+    ["2002", "100%", "-58.63%", "", "36.1%", "-76.32%", "24.08%", "23.64%", "92.86%", "53.59%", "-49.4%",
+        "56.54%", "-87.45%"
+    ],
+    ["2001", "-100%", "58.63%", "-15.14%", "-54.1%", "-76.32%", "-24.08%", "-23.64%", "-92.86%", "-53.59%", "49.4%",
+        "56.54%", "-87.45%"
+    ],
+    ["2000", "-100%", "58.63%", "15.14%", "54.1%", "76.32%", "24.08%", "23.64%", "92.86%", "-53.59%", "-49.4%",
+        "56.54%", "-87.45%"
+    ]
+],
     display_data_table = document.getElementById("display-data-table");
 
 for (var dt = 0; dt < array.length; dt++) {
@@ -541,15 +540,15 @@ $(document).ready(function () {
     const table001122 = document.querySelector("#table001122");
     $("#Display5 .right-slider5").click(function () {
         $("#table001122").animate({
-                scrollLeft: table001122.scrollLeft + 250,
-            },
+            scrollLeft: table001122.scrollLeft + 250,
+        },
             250
         );
     });
     $("#Display5 .left-slider5").click(function () {
         $("#table001122").animate({
-                scrollLeft: table001122.scrollLeft - 250,
-            },
+            scrollLeft: table001122.scrollLeft - 250,
+        },
             250
         );
     });
@@ -560,15 +559,15 @@ $(document).ready(function () {
     const chartAreaWrapper = document.querySelector(".chartAreaWrapper");
     $(".chart_main_box .right-slider5").click(function () {
         $(".chartAreaWrapper").animate({
-                scrollLeft: chartAreaWrapper.scrollLeft + 250,
-            },
+            scrollLeft: chartAreaWrapper.scrollLeft + 250,
+        },
             250
         );
     });
     $(".chart_main_box .left-slider5").click(function () {
         $(".chartAreaWrapper").animate({
-                scrollLeft: chartAreaWrapper.scrollLeft - 250,
-            },
+            scrollLeft: chartAreaWrapper.scrollLeft - 250,
+        },
             250
         );
     });
@@ -580,28 +579,28 @@ $(document).ready(function () {
     const mytablesty12 = document.querySelector(".mytablesty12");
     $("#style1Table .right-slider5").click(function () {
         $(".mytablesty12").animate({
-                scrollLeft: mytablesty12.scrollLeft + 700,
-            },
+            scrollLeft: mytablesty12.scrollLeft + 700,
+        },
             700
         );
     }).dblclick(function () {
         $(".mytablesty12").animate({
-                scrollLeft: mytablesty12.scrollLeft + 700,
-            },
+            scrollLeft: mytablesty12.scrollLeft + 700,
+        },
             700
         );
     });
-    
+
     $("#style1Table .left-slider5").click(function () {
         $(".mytablesty12").animate({
-                scrollLeft: mytablesty12.scrollLeft - 700,
-            },
+            scrollLeft: mytablesty12.scrollLeft - 700,
+        },
             700
         );
     }).dblclick(function () {
         $(".mytablesty12").animate({
-                scrollLeft: mytablesty12.scrollLeft - 700,
-            },
+            scrollLeft: mytablesty12.scrollLeft - 700,
+        },
             700
         );
     });
@@ -968,23 +967,24 @@ $("#resizable554 th").click(function (e) {
     if (target.tagName === "DIV" && regex.test(target.id)) {
         $(`#resizable554 th:nth-child(${index})`).addClass("th-dis-none");
         $(`#resizable554 td:nth-child(${index})`).addClass("th-dis-none");
+        manResTableRender();
     } else if (target.tagName === "DIV" && regexD.test(target.className)) {
         let dataP = $(`#resizable554 td:nth-child(${index}) .mr-tableData`);
         let headingPop = $(`#resizable554 th:nth-child(${index})`)[0].textContent;
-        
+
         // this code add the down-animation-icon to the drop filter
         $(`#resizable554 th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
-        
+
         $("#col8Filter #tableHeaderPop").html(headingPop);
         let targetModal = $("#col8Filter #checkbox-table-first tbody");
         const dataC = new Set();
-        for(let i=0; i< dataP.length; i++){
+        for (let i = 0; i < dataP.length; i++) {
             dataC.add(dataP[i].textContent);
         }
         let tableTr = "";
         for (const item of dataC) {
-            tableTr += 
-            `<tr>
+            tableTr +=
+                `<tr>
                 <td>
                     <div class="popup__checkbox__page__toggle">
                         <label class="popup__checkbox__toggle">
@@ -999,8 +999,11 @@ $("#resizable554 th").click(function (e) {
         }
         targetModal.html(tableTr);
         $("#col8Filter .modal-dialog").css({
-            top: ((e.clientY) + 15), 
+            top: ((e.clientY) + 15),
             left: ((e.clientX) - 240)
+        });
+        $("#col8Filter .modal-dialog .table-header-click-popup").css({
+            "margin-top": "0px"
         });
     }
 });
@@ -1134,7 +1137,7 @@ $(document).ready(function () {
             let sizerID = "." + event.target.classList[0] + "-sizer";
             let valueSize = ui.size.width;
             $(sizerID).width(valueSize);
-            let resizer = event.target.classList[0]  + "-resizer";
+            let resizer = event.target.classList[0] + "-resizer";
             let shrinkWidth = `#resizable554 tbody .${resizer}`;
             // console.log(shrinkWidth);
             // $(shrinkWidth).width(valueSize);
@@ -1144,7 +1147,7 @@ $(document).ready(function () {
             // });
             var gettingWidth = parseInt($(sizerID).css('width'), 10);
             // let shrinkWidth = `#resizable554 tbody ${sizerID}`;
-            $(shrinkWidth).width(gettingWidth+"px");
+            $(shrinkWidth).width(gettingWidth + "px");
             console.log(shrinkWidth);
             console.log(gettingWidth);
         }
@@ -1324,7 +1327,7 @@ $(function () {
 
 //----------====== Manage result filter modal ======--------------------
 let dataFilterModal = [];
-for (let i = 1; i <= 100; i++){
+for (let i = 1; i <= 100; i++) {
     dataFilterModal.push(`Column ${i}`);
 }
 let my_drag_list = document.querySelector("#my-drag-list");
@@ -1342,71 +1345,134 @@ dataFilterModal.forEach((modalData) => {
 //----------====== Manage result filter modal End ======----------------
 
 // ---------- ======= Double Click to ADD or REMOVE Start ======= -------------
-let manageResultTable = [];
+// let manageResultTable = [];
 
 function manResTableRender() {
     let tabHD = $("#resizable554 thead th");
     let len = tabHD.length;
-    let htmlTable = "";
-    for(let i=1;i<len;i++){
-        let _id = "res-id-table"+i;
+    let htmlTableR = "";
+    let htmlTableL = "";
+    for (let i = 2; i < len; i++) {
+        let className = tabHD[i].className.match(/column-header-\d+/g)[0];
+        let pos = className.match(/\d+/g)[0];
+        let _id = "res-id-table-" + pos;
         let content = tabHD[i].textContent.trim();
-        manageResultTable.push({
-            id: _id,
-            name: content
-        });
-        htmlTable += `<tr id="${_id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
-            <td>${content}</td>
-        </tr>`;
+        // manageResultTable.push({
+        //     id: _id,
+        //     name: content
+        // });
+        let regex = /th-dis-none/g;
+        if (regex.test(tabHD[i].className)) {
+            htmlTableL += `<tr id="${_id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
+                <td>${content}</td>
+            </tr>`;
+        } else {
+            htmlTableR += `<tr id="${_id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
+                <td>${content}</td>
+            </tr>`;
+        }
     }
-    manageResultTable.forEach(({ id, name }) => {
-        htmlTable += `<tr id="${id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
-            <td>${name}</td>
-        </tr>`;
-    });
-    $("#man-res-opt-data-table-right").html(htmlTable);
+    $("#man-res-opt-data-table-right").html(htmlTableR);
+    $("#man-res-opt-data-table-left").html(htmlTableL);
 }
 manResTableRender();
 
 function dblclickResMove(e) {
     let _id = $(e).parent().attr("id");
+    let index = $(e).attr("id").match(/\d+/g)[0];
     if (_id == "man-res-opt-data-table-left") {
-        $(e).removeClass("mark-table-data");
-        $("#man-res-opt-data-table-right").append(e);
+        $(e).remove();
+        $(`#resizable554 th.column-header-${index}`).removeClass("th-dis-none");
+        $(`#resizable554 td.column-header-${index}`).removeClass("th-dis-none");
+        manResTableRender();
     }
     else if (_id == "man-res-opt-data-table-right") {
-        $(e).removeClass("mark-table-data");
-        $("#man-res-opt-data-table-left").append(e);
+        $(e).remove();
+        $(`#resizable554 th.column-header-${index}`).addClass("th-dis-none");
+        $(`#resizable554 td.column-header-${index}`).addClass("th-dis-none");
+        manResTableRender();
     }
 }
 
 function moveResLeftToRight() {
     let tr = $("#man-res-opt-data-table-left tr.mark-table-data");
-    tr.removeClass("mark-table-data");
-    $("#man-res-opt-data-table-right").append(tr);
+    let len = tr.length;
+    for (let i = 0; i < len; i++) {
+        let index = $(tr[i]).attr("id").match(/\d+/g)[0];
+        $(tr[i]).remove();
+        $(`#resizable554 th.column-header-${index}`).removeClass("th-dis-none");
+        $(`#resizable554 td.column-header-${index}`).removeClass("th-dis-none");
+        manResTableRender();
+    }
 }
 
 function moveResRightToLeft() {
     let tr = $("#man-res-opt-data-table-right tr.mark-table-data");
-    tr.removeClass("mark-table-data");
-    $("#man-res-opt-data-table-left").append(tr);
+    let len = tr.length;
+    for (let i = 0; i < len; i++) {
+        let index = $(tr[i]).attr("id").match(/\d+/g)[0];
+        $(tr[i]).remove();
+        $(`#resizable554 th.column-header-${index}`).addClass("th-dis-none");
+        $(`#resizable554 td.column-header-${index}`).addClass("th-dis-none");
+        manResTableRender();
+    }
 }
 
 function ResorderUp() {
     let row = $("#man-res-opt-data-table-right tr.mark-table-data");
-    row.each(function () {
-        let rw = $(this).closest("tr.mark-table-data");
-        rw.insertBefore(rw.prev());
-    });
+    let rowFirst = $("#man-res-opt-data-table-right tr")[0];
+    if (rowFirst != row[0]) {
+        row.each(function () {
+            let rw = $(this).closest("tr.mark-table-data");
+            let index = $(rw).attr("id").match(/\d+/g)[0];
+            rw.insertBefore(rw.prev());
+            columnMove(index, "up");
+        });
+    }
 }
 function ResorderDown() {
     let row = $("#man-res-opt-data-table-right tr.mark-table-data");
     row.each(function () {
-        let rw = $(this).closest("tr");
+        let rw = $(this).closest("tr.mark-table-data");
+        let index = $(rw).attr("id").match(/\d+/g)[0];
         for (let i = 0; i < row.length; i++) {
             rw.insertAfter(rw.next());
+            columnMove(index, "down");
         }
     });
+}
+function findVisible(element, pos) {
+    let regex = /th-dis-none/g;
+    if (pos == "prev" && regex.test(element.attr("class"))) {
+        return findVisible(element.prev(), "prev");
+    } else if (pos == "next" && regex.test(element.attr("class"))) {
+        return findVisible(element.next(), "next");
+    }
+    else return element;
+}
+function columnMove(index, direc) {
+    let tHead = $(`#resizable554 th.column-header-${index}`);
+    let tBody = $(`#resizable554 td.column-header-${index}`);
+    let len = tBody.length;
+    if (direc == "up") {
+        let eleH = findVisible(tHead.prev(), "prev");
+        console.log(eleH);
+        tHead.insertBefore(eleH);
+        for (let i = 0; i < len; i++) {
+            let tbCell = $(tBody[i]);
+            let eleC = findVisible(tbCell.prev(), "prev");
+            tbCell.insertBefore(eleC);
+        }
+    } else if (direc == "down") {
+        let eleH = findVisible(tHead.next(), "next");
+        console.log(eleH);
+        tHead.insertAfter(eleH);
+        for (let i = 0; i < len; i++) {
+            let tbCell = $(tBody[i]);
+            let eleC = findVisible(tbCell.next(), "next");
+            tbCell.insertAfter(eleC);
+        }
+    }
 }
 // ---------- ======= Double Click to ADD or REMOVE End ======= -------------
 
@@ -1434,50 +1500,53 @@ function resetResFilter(e) {
 //     // console.log("Top: " + top + " and Left: " + left);
 // });
 
-$('table#resizable554').on('scroll', function() {
+$('table#resizable554').on('scroll', function () {
     $("table#resizable554 > *").width($("table#resizable554").width() + $("table#resizable554").scrollLeft());
 });
 
-function IconModalClick(){
+function IconModalClick() {
     let viewModalList = document.getElementsByClassName('view-modal-click');
-    for(let i = 0; i < viewModalList.length; i++) {
-        viewModalList[i].addEventListener("click", function(event) {
+    for (let i = 0; i < viewModalList.length; i++) {
+        viewModalList[i].addEventListener("click", function (event) {
             $("#viewtwo .modal-dialog").css({
-                top: ((event.clientY) + 20), 
+                top: ((event.clientY) + 20),
                 left: ((event.clientX) - 125)
             });
         });
     }
 
     let rowModalClick = document.getElementsByClassName('row-modal-click');
-    for(let i = 0; i < rowModalClick.length; i++) {
-        rowModalClick[i].addEventListener("click", function(event) {
+    for (let i = 0; i < rowModalClick.length; i++) {
+        rowModalClick[i].addEventListener("click", function (event) {
             $("#rowdetails .modal-dialog").css({
-                top: ((event.clientY) + 20), 
+                top: ((event.clientY) + 20),
                 left: ((event.clientX) - 125)
             });
         });
     }
 
     let noteModalClick = document.getElementsByClassName('note-modal-click');
-    for(let i = 0; i < noteModalClick.length; i++) {
-        noteModalClick[i].addEventListener("click", function(event) {
+    for (let i = 0; i < noteModalClick.length; i++) {
+        noteModalClick[i].addEventListener("click", function (event) {
             $("#noteswindow .modal-dialog").css({
-                top: ((event.clientY) + 30), 
+                top: ((event.clientY) + 30),
                 left: ((event.clientX) - 150)
             });
         });
     }
 }
 
-function Style2DropFilterPos(){
-let style2FilterPosition = document.getElementsByClassName('style2-filterPosition');
-    for(let i = 0; i < style2FilterPosition.length; i++) {
-        style2FilterPosition[i].addEventListener("click", function(event) {
+function Style2DropFilterPos() {
+    let style2FilterPosition = document.getElementsByClassName('style2-filterPosition');
+    for (let i = 0; i < style2FilterPosition.length; i++) {
+        style2FilterPosition[i].addEventListener("click", function (event) {
             $("#col8Filter .modal-dialog").css({
-                top: ((event.clientY) + 20), 
+                top: ((event.clientY) + 20),
                 left: ((event.clientX) - 240),
                 height: 350
+            });
+            $("#col8Filter .modal-dialog .table-header-click-popup").css({
+                "margin-top": "-15px"
             });
         });
     }
@@ -1485,8 +1554,8 @@ let style2FilterPosition = document.getElementsByClassName('style2-filterPositio
 
 // This Function will trigger when col8Filter is closed
 $('#col8Filter').on('hidden.bs.modal', function (e) {
-     $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+    $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
 });
 $('#dropBtnModal').on('hidden.bs.modal', function (e) {
-     $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+    $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
 });

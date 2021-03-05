@@ -674,9 +674,9 @@ for (let i = 1; i <= 100; i++) {
 	});
 }
 
-function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
+function makeTableHead(tableID) {
 	let tableHead =
-		`<tr>
+	`<tr>
 		<th scope="col">
 			ROW
 		</th>
@@ -719,6 +719,9 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 		<th scope="col">ACTIONS</th>
 	</tr>`;
 	$(`#${tableID} thead`).html(tableHead);
+}
+
+function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 	let options = {
 		dataSource: manExisTable,
 		pageSize: noRow,
@@ -734,23 +737,29 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 				CDateTime,
 				LUDateTime
 			}, index) => {
+				let tabHd = $(`#${tableID} thead th`);
+				let len = tabHd.length;
+				let classList = [];
+				for (let i = 1; i < len-1; i++){
+					classList.push(tabHd[i].className);
+				}
 				tableTr +=
-					`<tr id="${id}">
+				`<tr id="${id}">
 					<th class="row-data" scope="row">${serial}</th>
-					<td class="records-count">
+					<td class="records-count ${classList[0]}">
 						<a data-toggle="modal" data-target="#hyperTextModal1" style="color: black" onclick="showHyperTextModal1(this)">
 							<p class="mn-exists-data">${recordsCount}</p>
 						</a>
 					</td>
-					<td>
+					<td class="${classList[1]}">
 						<input class="save-name mn-exists-data" value="${savedName}" type="text" />
 					</td>
-					<td>
+					<td class="${classList[2]}">
 						<div class="create-date-time date-time-39">
 							<p class="mn-exists-data">${CDateTime.date} ${CDateTime.time}</p>
 						</div>
 					</td>
-					<td>
+					<td class="${classList[3]}">
 						<div class="last-date-time date-time-39">
 							<p class="mn-exists-data">${LUDateTime.date} ${LUDateTime.time}</p>
 						</div>
@@ -768,7 +777,6 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 			$(`#${tableID} tbody`).html(tableTr);
 		}
 	}
-
 	let container = $(`#${pagiId}`);
 	container.pagination(options);
 }
@@ -806,10 +814,13 @@ function tabChangeOpt5(e) {
 	createNew.find("div.createpera p").html("View/Update");
 	createNew.click();
 }
-
+makeTableHead("man-data-opt1-exist");
 manDtOpt1Exist("man-data-opt1-exist", 7, "pagination-op1-data", `tabChangeOpt1(this)`);
+makeTableHead("man-data-opt3-exist");
 manDtOpt1Exist("man-data-opt3-exist", 7, "pagination-op3-data", `tabChangeOpt3(this)`);
+makeTableHead("man-data-opt4-exist");
 manDtOpt1Exist("man-data-opt4-exist", 7, "pagination-op4-data", `tabChangeOpt4(this)`);
+makeTableHead("man-data-opt5-exist");
 manDtOpt1Exist("man-data-opt5-exist", 7, "pagination-op5-data", `tabChangeOpt5(this)`);
 
 $("#row-no1").change(function (e) {
@@ -872,7 +883,6 @@ function ExistTableHeadClick(tableId) {
 				}
 				// console.log(dataP[i].tagName);
 			}
-
 			let tableTr = "";
 			for (const item of dataC) {
 				tableTr +=
@@ -896,7 +906,6 @@ function ExistTableHeadClick(tableId) {
 			});
 			$("#dropBtnModal").modal('toggle');
 		}
-
 	});
 }
 ExistTableHeadClick("man-data-opt1-exist");
@@ -957,3 +966,44 @@ $('#myopt1listData').on('show.bs.modal', function (e) {
 }).on('hide.bs.modal', function (e) {
 	$('body').removeClass("example-open");
 })
+
+// manage data op3 create new table Start
+let opt3TableData1 = [];
+for (let i = 1; i <= 15; i++){
+	opt3TableData1.push({
+		id: "op3-mnd-o1-" + i,
+		name: "Option 1 - Text "+i
+	});
+}
+
+let opt3TableData2 = [];
+for (let i = 1; i <= 15; i++) {
+	opt3TableData2.push({
+		id: "op3-mnd-o2-" + i,
+		name: "Option 2 - Text " + i
+	});
+}
+
+function op3TableRender(tableData) {
+	let htmlRen = "";
+	tableData.forEach(({ id, name }) => {
+		htmlRen +=
+			`<tr id="${id}" onclick="clickAddClass(this)">
+			<td>${name}</td>
+		</tr>`;
+	});
+	$("#man-data-op3-table tbody").html(htmlRen);
+}
+op3TableRender(opt3TableData1);
+let opt3TableData = opt3TableData1;
+
+$(".radio input[type = 'radio'][name = 'data-set-radio-button']").change(function () {
+	if (this.value =="option-1") {
+		op3TableRender(opt3TableData1);
+		opt3TableData = opt3TableData1;
+	} else if (this.value =="option-2") {
+		op3TableRender(opt3TableData2);
+		opt3TableData = opt3TableData2;
+	}
+});
+// manage data op3 create new table End
