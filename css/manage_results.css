@@ -1637,123 +1637,38 @@ th[draggable] a {
 }
 
 /* table head width start */
-
-#sty2table1.cross-table-1 th:nth-child(1) {
-    max-width: 50% !important;
-}
-
-#sty2table1.cross-table-1 th:nth-child(2) {
-    max-width: 50% !important;
-}
-
 /* ======== */
-#sty2table2.cross-table-2 th:nth-child(1) {
+.sty2table2.cross-table-2 th:nth-child(1) {
     min-width: 300px;
 }
 
-#sty2table2.cross-table-2 th:nth-child(2) {
+.sty2table2.cross-table-2 th:nth-child(2) {
     min-width: 217px;
 }
 
 /* ======== */
-#sty2table3.cross-table-3 th:nth-child(1) {
+.sty2table3.cross-table-3 th:nth-child(1) {
     /* max-width: 32% !important; */
     min-width: 250px !important;
     max-width: 500px !important;
 }
 
-#sty2table3.cross-table-3 th:nth-child(2) {
+.sty2table3.cross-table-3 th:nth-child(2) {
     /* max-width: 32% !important; */
     min-width: 250px !important;
     max-width: 500px !important;
 }
 
-#sty2table3.cross-table-3 th:nth-child(3) {
+.sty2table3.cross-table-3 th:nth-child(3) {
     min-width: 315px !important;
     max-width: 315px !important;
 }
-#sty2table3.cross-table-3 th:nth-child(4) {
+.sty2table3.cross-table-3 th:nth-child(4) {
     /* max-width: 36% !important; */
     min-width: 315px !important;
     max-width: 315px !important;
 }
-
 /* ======== */
-/* #sty2table4.cross-table-4 th:nth-child(1) {
-    max-width: 100% !important;
-} */
-
-/* ======== */
-#sty2table1.cross-table-5 th:nth-child(1) {
-    max-width: 50% !important;
-}
-
-#sty2table1.cross-table-5 th:nth-child(2) {
-    max-width: 50% !important;
-}
-
-/* ======== */
-#sty2table2.cross-table-6 th:nth-child(1) {
-    min-width: 300px;
-}
-
-#sty2table2.cross-table-6 th:nth-child(2) {
-    min-width: 217px;
-}
-
-/* ======== */
-#sty2table3.cross-table-7 th:nth-child(1) {
-    max-width: 32% !important;
-}
-
-#sty2table3.cross-table-7 th:nth-child(2) {
-    max-width: 32% !important;
-}
-
-#sty2table3.cross-table-7 th:nth-child(3) {
-    max-width: 36% !important;
-}
-
-/* ======== */
-/* #sty2table4.cross-table-8 th:nth-child(1) {
-    max-width: 100% !important;
-} */
-
-/* ======== */
-#sty2table1.cross-table-9 th:nth-child(1) {
-    max-width: 50% !important;
-}
-
-#sty2table1.cross-table-9 th:nth-child(2) {
-    max-width: 50% !important;
-}
-
-/* ======== */
-#sty2table2.cross-table-10 th:nth-child(1) {
-    min-width: 300px;
-}
-
-#sty2table2.cross-table-10 th:nth-child(2) {
-    min-width: 217px;
-}
-
-/* ======== */
-#sty2table3.cross-table-11 th:nth-child(1) {
-    max-width: 32% !important;
-}
-
-#sty2table3.cross-table-11 th:nth-child(2) {
-    max-width: 32% !important;
-}
-
-#sty2table3.cross-table-11 th:nth-child(3) {
-    max-width: 36% !important;
-}
-
-/* ======== */
-/* #sty2table4.cross-table-12 th:nth-child(1) {
-    max-width: 100% !important;
-} */
 
 /* table head width end */
 
@@ -2105,14 +2020,14 @@ th[draggable] a {
 }
 
 /* table UPPER BORDER REMOVE */
-#style2Con #sty2table2,
-#style2Con #sty2table3,
-#style2Con #sty2table4,
-#style2Con #sty2table5,
-#style2Con #sty2table6,
-#style2Con #sty2table7,
-#style2Con #sty2table8,
-#style2Con #sty2table9 {
+/* #style2Con .sty2table2, */
+#style2Con .sty2table3,
+#style2Con .sty2table4,
+#style2Con .sty2table5,
+#style2Con .sty2table6,
+#style2Con .sty2table7,
+#style2Con .sty2table8,
+#style2Con .sty2table9 {
     border-top: none !important;
 }
 
@@ -3225,20 +3140,20 @@ table#resizable554 {
     margin-top: 0px !important;
 }
 
-#sty2table8 tbody td.vall11_datel,
-#sty2table9 tbody td.vall11_datel{
+.sty2table8 tbody td.vall11_datel,
+.sty2table9 tbody td.vall11_datel{
     min-width: 50%;
     height: 120px;
 }
-#sty2table8 tbody td.vall11_datel .col1table,
-#sty2table9 tbody td.vall11_datel .col1table{
+.sty2table8 tbody td.vall11_datel .col1table,
+.sty2table9 tbody td.vall11_datel .col1table{
     line-height: 24px;
     word-break: break-word;
     text-align: left;
     height: 100%;
 }
-#sty2table8 tbody td.vall11_datel .col1table p,
-#sty2table9 tbody td.vall11_datel .col1table p{
+.sty2table8 tbody td.vall11_datel .col1table p,
+.sty2table9 tbody td.vall11_datel .col1table p{
     margin: 10px;
 }
 
@@ -3289,20 +3204,20 @@ i.fa-caret-down.down-animation-icon{
 }
 
 @media screen and (max-width: 1510px) {
-    #sty2table3.cross-table-3 th:nth-child(1) {
+    .sty2table3.cross-table-3 th:nth-child(1) {
         min-width: 185px !important;
     }
     
-    #sty2table3.cross-table-3 th:nth-child(2) {
+    .sty2table3.cross-table-3 th:nth-child(2) {
         min-width: 185px !important;
     }
 }
 @media screen and (max-width: 1350px) {
-    #sty2table3.cross-table-3 th:nth-child(1) {
+    .sty2table3.cross-table-3 th:nth-child(1) {
         min-width: 120px !important;
     }
     
-    #sty2table3.cross-table-3 th:nth-child(2) {
+    .sty2table3.cross-table-3 th:nth-child(2) {
         min-width: 120px !important;
     }
 }

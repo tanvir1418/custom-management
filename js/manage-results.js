@@ -999,7 +999,7 @@ $("#resizable554 th").click(function (e) {
         }
         targetModal.html(tableTr);
         $("#col8Filter .modal-dialog").css({
-            top: ((e.clientY) + 15),
+            top: ((e.clientY) + 20),
             left: ((e.clientX) - 240)
         });
         $("#col8Filter .modal-dialog .table-header-click-popup").css({
@@ -1013,115 +1013,7 @@ $("#resizable554 th").click(function (e) {
 //     $(".cross-table-1 th:nth-child(1)").addClass("th-dis-none");
 //     $(".cross-table-1 td:nth-child(1)").addClass("th-dis-none");
 // });
-// $("#cross21").click(function () {
-//     $(".cross-table-1 th:nth-child(2)").addClass("th-dis-none");
-//     $(".cross-table-1 td:nth-child(2)").addClass("th-dis-none");
-// });
-// // =========
 
-// $("#cross22").click(function () {
-//     $(".cross-table-2 th:nth-child(1)").addClass("th-dis-none");
-//     $(".cross-table-2 td:nth-child(1)").addClass("th-dis-none");
-// });
-// $("#cross23").click(function () {
-//     $(".cross-table-2 th:nth-child(2)").addClass("th-dis-none");
-//     $(".cross-table-2 td:nth-child(2)").addClass("th-dis-none");
-// });
-// // =============
-// $("#cross24").click(function () {
-//     $(".cross-table-3 th:nth-child(1)").addClass("th-dis-none");
-//     $(".cross-table-3 td:nth-child(1)").addClass("th-dis-none");
-// });
-// $("#cross25").click(function () {
-//     $(".cross-table-3 th:nth-child(2)").addClass("th-dis-none");
-//     $(".cross-table-3 td:nth-child(2)").addClass("th-dis-none");
-// });
-// $("#cross26").click(function () {
-//     $(".cross-table-3 th:nth-child(3)").addClass("th-dis-none");
-//     $(".cross-table-3 td:nth-child(3)").addClass("th-dis-none");
-// });
-// // =============
-
-// $("#cross27").click(function () {
-//     $(".cross-table-4 th:nth-child(1)").addClass("th-dis-none");
-//     $(".cross-table-4 td:nth-child(1)").addClass("th-dis-none");
-// });
-// // =============
-// $("#cross28").click(function () {
-//     $(".cross-table-5 th:nth-child(1)").addClass("th-dis-none");
-//     $(".cross-table-5 td:nth-child(1)").addClass("th-dis-none");
-// });
-// $("#cross29").click(function () {
-//     $(".cross-table-5 th:nth-child(2)").addClass("th-dis-none");
-//     $(".cross-table-5 td:nth-child(2)").addClass("th-dis-none");
-// });
-// // =============
-
-// $("#cross30").click(function () {
-//     $(".cross-table-6 th:nth-child(1)").addClass("th-dis-none");
-//     $(".cross-table-6 td:nth-child(1)").addClass("th-dis-none");
-// });
-// $("#cross31").click(function () {
-//     $(".cross-table-6 th:nth-child(2)").addClass("th-dis-none");
-//     $(".cross-table-6 td:nth-child(2)").addClass("th-dis-none");
-// });
-// // =============
-
-// $("#cross32").click(function () {
-//     $(".cross-table-7 th:nth-child(1)").addClass("th-dis-none");
-//     $(".cross-table-7 td:nth-child(1)").addClass("th-dis-none");
-// });
-// $("#cross33").click(function () {
-//     $(".cross-table-7 th:nth-child(2)").addClass("th-dis-none");
-//     $(".cross-table-7 td:nth-child(2)").addClass("th-dis-none");
-// });
-// $("#cross34").click(function () {
-//     $(".cross-table-7 th:nth-child(3)").addClass("th-dis-none");
-//     $(".cross-table-7 td:nth-child(3)").addClass("th-dis-none");
-// });
-// // =============
-// $("#cross35").click(function () {
-//     $(".cross-table-8 th:nth-child(1)").addClass("th-dis-none");
-//     $(".cross-table-8 td:nth-child(1)").addClass("th-dis-none");
-// });
-
-// // ========
-// $("#cross36").click(function () {
-//     $(".cross-table-9 th:nth-child(1)").addClass("th-dis-none");
-//     $(".cross-table-9 td:nth-child(1)").addClass("th-dis-none");
-// });
-// $("#cross37").click(function () {
-//     $(".cross-table-9 th:nth-child(2)").addClass("th-dis-none");
-//     $(".cross-table-9 td:nth-child(2)").addClass("th-dis-none");
-// });
-
-// // ========
-// $("#cross38").click(function () {
-//     $(".cross-table-10 th:nth-child(1)").addClass("th-dis-none");
-//     $(".cross-table-10 td:nth-child(1)").addClass("th-dis-none");
-// });
-// $("#cross37").click(function () {
-//     $(".cross-table-10 th:nth-child(2)").addClass("th-dis-none");
-//     $(".cross-table-10 td:nth-child(2)").addClass("th-dis-none");
-// });
-// // =============
-// $("#cross40").click(function () {
-//     $(".cross-table-11 th:nth-child(1)").addClass("th-dis-none");
-//     $(".cross-table-11 td:nth-child(1)").addClass("th-dis-none");
-// });
-// $("#cross41").click(function () {
-//     $(".cross-table-11 th:nth-child(2)").addClass("th-dis-none");
-//     $(".cross-table-11 td:nth-child(2)").addClass("th-dis-none");
-// });
-// $("#cross42").click(function () {
-//     $(".cross-table-11 th:nth-child(3)").addClass("th-dis-none");
-//     $(".cross-table-11 td:nth-child(3)").addClass("th-dis-none");
-// });
-// // =============
-// $("#cross43").click(function () {
-//     $(".cross-table-12 th:nth-child(1)").addClass("th-dis-none");
-//     $(".cross-table-12 td:nth-child(1)").addClass("th-dis-none");
-// });
 
 // X CLICK TO REMOVE COLUMN END ==============
 
@@ -1156,7 +1048,6 @@ $(document).ready(function () {
 // TABLE RESIZEABLE END ===////////////////===
 
 // TABLE RESIZEABLE STYLE 2 START ===////////////////===
-// table1
 $(document).ready(function () {
     var thHeight = $("table.cross-table-1 th:first").height();
     $("table.cross-table-1 th").resizable({
@@ -1171,149 +1062,7 @@ $(document).ready(function () {
     });
 })
 
-$(document).ready(function () {
-    var thHeight = $("table.cross-table-2 th:first").height();
-    $("table.cross-table-2 th").resizable({
-        handles: "e",
-        minHeight: thHeight,
-        maxHeight: thHeight,
-        minWidth: 40,
-        resize: function (event, ui) {
-            var sizerID = "#" + $(event.target).attr("id") + "-sizer";
-            $(sizerID).width(ui.size.width);
-        }
-    });
-})
-$(document).ready(function () {
-    var thHeight = $("table.cross-table-3 th:first").height();
-    $("table.cross-table-3 th").resizable({
-        handles: "e",
-        minHeight: thHeight,
-        maxHeight: thHeight,
-        minWidth: 40,
-        resize: function (event, ui) {
-            var sizerID = "#" + $(event.target).attr("id") + "-sizer";
-            $(sizerID).width(ui.size.width);
-        }
-    });
-})
-$(document).ready(function () {
-    var thHeight = $("table.cross-table-4 th:first").height();
-    $("table.cross-table-4 th").resizable({
-        handles: "e",
-        minHeight: thHeight,
-        maxHeight: thHeight,
-        minWidth: 40,
-        resize: function (event, ui) {
-            var sizerID = "#" + $(event.target).attr("id") + "-sizer";
-            $(sizerID).width(ui.size.width);
-        }
-    });
-})
-$(document).ready(function () {
-    var thHeight = $("table.cross-table-5 th:first").height();
-    $("table.cross-table-5 th").resizable({
-        handles: "e",
-        minHeight: thHeight,
-        maxHeight: thHeight,
-        minWidth: 40,
-        resize: function (event, ui) {
-            var sizerID = "#" + $(event.target).attr("id") + "-sizer";
-            $(sizerID).width(ui.size.width);
-        }
-    });
-})
-$(document).ready(function () {
-    var thHeight = $("table.cross-table-6 th:first").height();
-    $("table.cross-table-6 th").resizable({
-        handles: "e",
-        minHeight: thHeight,
-        maxHeight: thHeight,
-        minWidth: 40,
-        resize: function (event, ui) {
-            var sizerID = "#" + $(event.target).attr("id") + "-sizer";
-            $(sizerID).width(ui.size.width);
-        }
-    });
-})
-$(document).ready(function () {
-    var thHeight = $("table.cross-table-7 th:first").height();
-    $("table.cross-table-7 th").resizable({
-        handles: "e",
-        minHeight: thHeight,
-        maxHeight: thHeight,
-        minWidth: 40,
-        resize: function (event, ui) {
-            var sizerID = "#" + $(event.target).attr("id") + "-sizer";
-            $(sizerID).width(ui.size.width);
-        }
-    });
-})
-$(document).ready(function () {
-    var thHeight = $("table.cross-table-8 th:first").height();
-    $("table.cross-table-8 th").resizable({
-        handles: "e",
-        minHeight: thHeight,
-        maxHeight: thHeight,
-        minWidth: 40,
-        resize: function (event, ui) {
-            var sizerID = "#" + $(event.target).attr("id") + "-sizer";
-            $(sizerID).width(ui.size.width);
-        }
-    });
-})
-$(document).ready(function () {
-    var thHeight = $("table.cross-table-9 th:first").height();
-    $("table.cross-table-9 th").resizable({
-        handles: "e",
-        minHeight: thHeight,
-        maxHeight: thHeight,
-        minWidth: 40,
-        resize: function (event, ui) {
-            var sizerID = "#" + $(event.target).attr("id") + "-sizer";
-            $(sizerID).width(ui.size.width);
-        }
-    });
-})
-$(document).ready(function () {
-    var thHeight = $("table.cross-table-10 th:first").height();
-    $("table.cross-table-10 th").resizable({
-        handles: "e",
-        minHeight: thHeight,
-        maxHeight: thHeight,
-        minWidth: 40,
-        resize: function (event, ui) {
-            var sizerID = "#" + $(event.target).attr("id") + "-sizer";
-            $(sizerID).width(ui.size.width);
-        }
-    });
-})
-$(document).ready(function () {
-    var thHeight = $("table.cross-table-11 th:first").height();
-    $("table.cross-table-11 th").resizable({
-        handles: "e",
-        minHeight: thHeight,
-        maxHeight: thHeight,
-        minWidth: 40,
-        resize: function (event, ui) {
-            var sizerID = "#" + $(event.target).attr("id") + "-sizer";
-            $(sizerID).width(ui.size.width);
-        }
-    });
-})
-$(document).ready(function () {
-    var thHeight = $("table.cross-table-12 th:first").height();
-    $("table.cross-table-12 th").resizable({
-        handles: "e",
-        minHeight: thHeight,
-        maxHeight: thHeight,
-        minWidth: 40,
-        resize: function (event, ui) {
-            var sizerID = "#" + $(event.target).attr("id") + "-sizer";
-            $(sizerID).width(ui.size.width);
-        }
-    });
-})
+
 // TABLE RESIZEABLE END ===////////////////===
 $("table#resizable554").dragableColumns();
 // Drag and Drop END

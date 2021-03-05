@@ -821,7 +821,7 @@ function manResPagination(noRow) {
             </div>
         </div>
 
-        <table id="sty2table2" class="table cross-table-2">
+        <table class="table sty2table2 cross-table-2">
             <thead>
                 <tr>
                     <th scope="col">
@@ -881,7 +881,7 @@ function manResPagination(noRow) {
             </tbody>
         </table>
 
-        <table id="sty2table3" class="table cross-table-3">
+        <table class="table sty2table3 cross-table-3">
             <thead>
                 <tr>
                     <th scope="col">
@@ -1000,7 +1000,7 @@ function manResPagination(noRow) {
             </tbody>
         </table>
         
-        <table id="sty2table4" class="table cross-table-4">
+        <table class="table sty2table4 cross-table-4">
             <thead>
                 <tr>
                     <th scope="col">
@@ -1194,7 +1194,7 @@ function manResPagination(noRow) {
             </tbody>
         </table>
         
-        <table id="sty2table5" class="table cross-table-4">
+        <table class="table sty2table5 cross-table-4">
             <thead>
                 <tr>
                     <th scope="col">
@@ -1387,7 +1387,7 @@ function manResPagination(noRow) {
             </tbody>
         </table>
         
-        <table id="sty2table6" class="table cross-table-4">
+        <table class="table sty2table6 cross-table-4">
             <thead>
                 <tr>
                     <th scope="col">
@@ -1581,7 +1581,7 @@ function manResPagination(noRow) {
             </tbody>
         </table>
         
-        <table id="sty2table7" class="table cross-table-4">
+        <table class="table sty2table7 cross-table-4">
             <thead>
                 <tr>
                     <th scope="col">
@@ -1789,7 +1789,7 @@ function manResPagination(noRow) {
             </tbody>
         </table>
         
-        <table id="sty2table8" class="table cross-table-4">
+        <table class="table sty2table8 cross-table-4">
             <thead>
                 <tr>
                     <th scope="col">
@@ -1829,7 +1829,7 @@ function manResPagination(noRow) {
             </tbody>
         </table>
     
-        <table id="sty2table9" class="table cross-table-4" style="margin-bottom: 50px;">
+        <table class="table sty2table9 cross-table-4" style="margin-bottom: 50px;">
             <thead>
                 <tr>
                     <th scope="col">
