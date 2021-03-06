@@ -254,7 +254,7 @@ const currentUser = localStorage.getItem("currentUser");
 const user_div = document.getElementById("username_div");
 if (currentUser != null && currentUser != "") {
 	user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
-} else {}
+} else { }
 // LOGIN DATA PASS END
 
 
@@ -357,7 +357,7 @@ const listItemData = [
 		</ul>`;
 		/* Update End By Ashiq */
 	});
-	main_list.innerHTML += htmllist;
+	main_list.innerHTML = htmllist;
 	document.querySelector("#sub-ul-list").innerHTML = htmlDataModal;
 })();
 
@@ -467,8 +467,8 @@ $(document).ready(function () {
 	$(".scroll-down").click(function () {
 		const scrollable_list = document.querySelector(".scrollable-list");
 		$(".scrollable-list").animate({
-				scrollTop: scrollable_list.scrollTop + 100,
-			},
+			scrollTop: scrollable_list.scrollTop + 100,
+		},
 			250
 		);
 	});
@@ -563,10 +563,10 @@ $(function () {
 	$("#datepicker-2").datepicker("option", "dateFormat", "DD - MM d, yy");
 });
 
-$( "#datePicker1_Icon" ).click(function() {
+$("#datePicker1_Icon").click(function () {
 	$("#datepicker-1").focus();
 });
-$( "#datePicker2_Icon" ).click(function() {
+$("#datePicker2_Icon").click(function () {
 	$("#datepicker-2").focus();
 });
 
@@ -676,7 +676,7 @@ for (let i = 1; i <= 100; i++) {
 
 function makeTableHead(tableID) {
 	let tableHead =
-	`<tr>
+		`<tr>
 		<th scope="col">
 			ROW
 		</th>
@@ -740,11 +740,11 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 				let tabHd = $(`#${tableID} thead th`);
 				let len = tabHd.length;
 				let classList = [];
-				for (let i = 1; i < len-1; i++){
+				for (let i = 1; i < len - 1; i++) {
 					classList.push(tabHd[i].className);
 				}
 				tableTr +=
-				`<tr id="${id}">
+					`<tr id="${id}">
 					<th class="row-data" scope="row">${serial}</th>
 					<td class="records-count ${classList[0]}">
 						<a data-toggle="modal" data-target="#hyperTextModal1" style="color: black" onclick="showHyperTextModal1(this)">
@@ -969,10 +969,10 @@ $('#myopt1listData').on('show.bs.modal', function (e) {
 
 // manage data op3 create new table Start
 let opt3TableData1 = [];
-for (let i = 1; i <= 15; i++){
+for (let i = 1; i <= 15; i++) {
 	opt3TableData1.push({
 		id: "op3-mnd-o1-" + i,
-		name: "Option 1 - Text "+i
+		name: "Option 1 - Text " + i
 	});
 }
 
@@ -998,10 +998,10 @@ op3TableRender(opt3TableData1);
 let opt3TableData = opt3TableData1;
 
 $(".radio input[type = 'radio'][name = 'data-set-radio-button']").change(function () {
-	if (this.value =="option-1") {
+	if (this.value == "option-1") {
 		op3TableRender(opt3TableData1);
 		opt3TableData = opt3TableData1;
-	} else if (this.value =="option-2") {
+	} else if (this.value == "option-2") {
 		op3TableRender(opt3TableData2);
 		opt3TableData = opt3TableData2;
 	}

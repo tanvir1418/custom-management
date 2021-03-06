@@ -1,42 +1,26 @@
 // ===/////=== OPTION 4 LIST1 ITEM START ===/////===
 const optfourmodala_list = document.querySelector(".optfourmodala-list");
 // Added by ASHIQ
-const optfourmodalalistmodal = [
-  "Item 1",
-  "Item 2",
-  "Item 3",
-  "Item 4",
-  "Item 5",
-  "Item 6",
-  "Item 7",
-  "Item 8",
-  "Item 9",
-  "Item 10",
-  "Item 11",
-  "Item 12",
-  "Item 13",
-  "Item 14",
-  "Item 15",
-  "Item 16",
-  "Item 17",
-  "Item 18",
-  "Item 19",
-  "Item 20",
-  "Item 21",
-  "Item 22",
-  "Item 23",
-  "Item 24",
-  "Item 25",
-  "Item 26",
-  "Item 27",
-  "Item 28",
-  "Item 29",
-];
+let optfourmodalalistmodal = []
+for (let i = 1; i <= 29; i++) {
+  let files = []
+  for (let j = 1; j <= 72; j++) {
+    files.push({
+      id: `option-optfourmodalamodallist-${i}-${j}`,
+      item: `Level ${i} - Item ${j}`
+    });
+  }
+  optfourmodalalistmodal.push({
+    id: `modaloptfourmodallist-item-${i}`,
+    item: `Item ${i}`,
+    files
+  })
+}
 
 (function optfourmodalAListModal() {
   let htmloptfourmodalalistmodal = "", htmlDataModal = "";
-  optfourmodalalistmodal.forEach((item, index) => {
-    htmloptfourmodalalistmodal += `<li class="modaloptfourmodalalist-item-${index + 1}">
+  optfourmodalalistmodal.forEach(({ id, item, files }, index) => {
+    htmloptfourmodalalistmodal += `<li class="${id}">
     <p>${item}</p>
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
@@ -49,10 +33,11 @@ const optfourmodalalistmodal = [
     let modallistoptfourmodala_data1 = "",
       modallistoptfourmodala_data2 = "",
       modallistoptfourmodala_data3 = "",
-      length = 72;
-    for (let i = 1; i <= length; i++) {
-      let elementHtml = `<li class="option-optfourmodalamodallist-${index + 1}-${i}">
-      <p>Level ${index + 1} - Item ${i}</p>
+      length = files.length;
+    files.forEach(({ id: _id, item }, idx) => {
+      let i = idx + 1;
+      let elementHtml = `<li class="${_id}">
+      <p>${item}</p>
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
@@ -79,10 +64,10 @@ const optfourmodalalistmodal = [
           modallistoptfourmodala_data3 += elementHtml;
         }
       }
-    }
-    
+    });
+
     htmlDataModal +=
-    `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="optfourmodala-submodal-div-list-1-${index + 1}">
+      `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="optfourmodala-submodal-div-list-1-${index + 1}">
       ${modallistoptfourmodala_data1}
     </ul>
     <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="optfourmodala-submodal-div-list-2-${index + 1}">
@@ -94,7 +79,7 @@ const optfourmodalalistmodal = [
     /* Update End By Ashiq */
   });
   optfourmodala_list.innerHTML = htmloptfourmodalalistmodal;
-  document.querySelector("#sub-ul-optfourmodala-modallist").innerHTML = htmlDataModal;
+  document.querySelector("div#opt4a-list-modal div.sub-ul-optfourmodal-modallist").innerHTML = htmlDataModal;
 })();
 
 /* New Function Start */
@@ -170,11 +155,11 @@ let optfourmodala_left_list = "";
 })();
 
 let optfourmodala_oldLIClassnameModal = "";
-const sub_ul_optfourmodalamodallist = document.querySelector("#sub-ul-optfourmodala-modallist");
+const sub_ul_optfourmodalamodallist = document.querySelector("div#opt4a-list-modal div.sub-ul-optfourmodal-modallist");
 sub_ul_optfourmodalamodallist.addEventListener("click", function (e) {
   let target = e.target;
   if (target.tagName === "DIV") {
-    if (target.className.indexOf("sublist-cancel-box")!=-1) {
+    if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
       return;
     }
@@ -183,7 +168,7 @@ sub_ul_optfourmodalamodallist.addEventListener("click", function (e) {
     target = target.parentNode;
   } else if (target.tagName === "I") {
     target = target.parentNode;
-    if (target.className.indexOf("sublist-cancel-box")!=-1) {
+    if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
       return;
     } else target = target.parentNode;
@@ -202,16 +187,18 @@ $("#optfourmodala-mng-opt2-delete").click(function () {
 });
 
 function countoptfourmodalaListModal(e) {
-  let countItem = $(e).parent().parent().find("#sub-ul-optfourmodala-modallist .sublist-check-box.checkbox_show").length;
+  let countItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-check-box.checkbox_show").length;
   $("#optfourmodala-list-count").html(`${countItem} Items Selected`);
 }
 
 function resetoptfourmodalaListModal(e) {
-  let checkItem = $(e).parent().parent().find("#sub-ul-optfourmodala-modallist .sublist-check-box.checkbox_show");
-  let uncheckItem = $(e).parent().parent().find("#sub-ul-optfourmodala-modallist .sublist-cancel-box.checkbox_hide");
+  let checkItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-check-box.checkbox_show");
+  let uncheckItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-cancel-box.checkbox_hide");
   checkItem.toggleClass("checkbox_show checkbox_hide");
   uncheckItem.toggleClass("checkbox_show checkbox_hide");
   $("#optfourmodala-list-count").html(`0 Items Selected`);
+  let leftItem = $(e).parent().parent().find("ul.optfourmodala-list li div.green-check-box.display-block");
+  leftItem.toggleClass("display-block display-none");
 }
 
 function opt4ALeftOnRight(target) {
@@ -219,12 +206,12 @@ function opt4ALeftOnRight(target) {
   let pos = _id.length;
   let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
   if (len > 0) {
-    let markItem = $(`ul.optfourmodala-list li.modaloptfourmodalalist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.optfourmodala-list li.modaloptfourmodallist-item-${_id[pos - 1]}`)
       .children("div.green-check-box");
     markItem.addClass("display-block");
     markItem.removeClass("display-none");
   } else {
-    let markItem = $(`ul.optfourmodala-list li.modaloptfourmodalalist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.optfourmodala-list li.modaloptfourmodallist-item-${_id[pos - 1]}`)
       .children("div.green-check-box");
     markItem.addClass("display-none");
     markItem.removeClass("display-block");
@@ -235,8 +222,8 @@ $(document).ready(function () {
   $(".optfourmodala-scroll-btn").click(function () {
     const optfourmodala_scroll_window = document.querySelector(".optfourmodala-scroll-window");
     $(".optfourmodala-scroll-window").animate({
-        scrollTop: optfourmodala_scroll_window.scrollTop + 100,
-      },
+      scrollTop: optfourmodala_scroll_window.scrollTop + 100,
+    },
       250
     );
   });
@@ -250,42 +237,26 @@ $(document).ready(function () {
 // ===/////=== OPTION 4 LIST2 ITEM START ===/////===
 const optfourmodalb_list = document.querySelector(".optfourmodalb-list");
 // Added by ASHIQ
-const optfourmodalblistmodal = [
-  "Item 1",
-  "Item 2",
-  "Item 3",
-  "Item 4",
-  "Item 5",
-  "Item 6",
-  "Item 7",
-  "Item 8",
-  "Item 9",
-  "Item 10",
-  "Item 11",
-  "Item 12",
-  "Item 13",
-  "Item 14",
-  "Item 15",
-  "Item 16",
-  "Item 17",
-  "Item 18",
-  "Item 19",
-  "Item 20",
-  "Item 21",
-  "Item 22",
-  "Item 23",
-  "Item 24",
-  "Item 25",
-  "Item 26",
-  "Item 27",
-  "Item 28",
-  "Item 29",
-];
+let optfourmodalblistmodal = []
+for (let i = 1; i <= 29; i++) {
+  let files = []
+  for (let j = 1; j <= 72; j++) {
+    files.push({
+      id: `option-optfourmodalbmodallist-${i}-${j}`,
+      item: `Level ${i} - Item ${j}`
+    });
+  }
+  optfourmodalblistmodal.push({
+    id: `modaloptfourmodallist-item-${i}`,
+    item: `Item ${i}`,
+    files
+  })
+}
 
 (function optfourmodalbListModal() {
   let htmloptfourmodalblistmodal = "", htmlDataModal = "";
-  optfourmodalblistmodal.forEach((item, index) => {
-    htmloptfourmodalblistmodal += `<li class="modaloptfourmodalblist-item-${index + 1}">
+  optfourmodalblistmodal.forEach(({ id, item, files }, index) => {
+    htmloptfourmodalblistmodal += `<li class="${id}">
     <p>${item}</p>
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
@@ -298,10 +269,11 @@ const optfourmodalblistmodal = [
     let modallistoptfourmodalb_data1 = "",
       modallistoptfourmodalb_data2 = "",
       modallistoptfourmodalb_data3 = "",
-      length = 72;
-    for (let i = 1; i <= length; i++) {
-      let elementHtml = `<li class="option-optfourmodalbmodallist-${index + 1}-${i}">
-      <p>Level ${index + 1} - Item ${i}</p>
+      length = files.length;
+    files.forEach(({ id: _id, item }, idx) => {
+      let i = idx + 1;
+      let elementHtml = `<li class="${_id}">
+			<p>${item}</p>
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
@@ -328,10 +300,10 @@ const optfourmodalblistmodal = [
           modallistoptfourmodalb_data3 += elementHtml;
         }
       }
-    }
-    
+    });
+
     htmlDataModal +=
-    `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="optfourmodalb-submodal-div-list-1-${index + 1}">
+      `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="optfourmodalb-submodal-div-list-1-${index + 1}">
       ${modallistoptfourmodalb_data1}
     </ul>
     <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="optfourmodalb-submodal-div-list-2-${index + 1}">
@@ -343,7 +315,7 @@ const optfourmodalblistmodal = [
     /* Update End By Ashiq */
   });
   optfourmodalb_list.innerHTML = htmloptfourmodalblistmodal;
-  document.querySelector("#sub-ul-optfourmodalb-modallist").innerHTML = htmlDataModal;
+  document.querySelector("div#opt4b-list-modal div.sub-ul-optfourmodal-modallist").innerHTML = htmlDataModal;
 })();
 
 /* New Function Start */
@@ -419,11 +391,11 @@ let optfourmodalb_left_list = "";
 })();
 
 let optfourmodalb_oldLIClassnameModal = "";
-const sub_ul_optfourmodalbmodallist = document.querySelector("#sub-ul-optfourmodalb-modallist");
+const sub_ul_optfourmodalbmodallist = document.querySelector("div#opt4b-list-modal div.sub-ul-optfourmodal-modallist");
 sub_ul_optfourmodalbmodallist.addEventListener("click", function (e) {
   let target = e.target;
   if (target.tagName === "DIV") {
-    if (target.className.indexOf("sublist-cancel-box")!=-1) {
+    if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
       return;
     }
@@ -432,7 +404,7 @@ sub_ul_optfourmodalbmodallist.addEventListener("click", function (e) {
     target = target.parentNode;
   } else if (target.tagName === "I") {
     target = target.parentNode;
-    if (target.className.indexOf("sublist-cancel-box")!=-1) {
+    if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
       return;
     } else target = target.parentNode;
@@ -451,16 +423,18 @@ $("#optfourmodalb-mng-opt2-delete").click(function () {
 });
 
 function countoptfourmodalbListModal(e) {
-  let countItem = $(e).parent().parent().find("#sub-ul-optfourmodalb-modallist .sublist-check-box.checkbox_show").length;
+  let countItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-check-box.checkbox_show").length;
   $("#optfourmodalb-list-count").html(`${countItem} Items Selected`);
 }
 
 function resetoptfourmodalbListModal(e) {
-  let checkItem = $(e).parent().parent().find("#sub-ul-optfourmodalb-modallist .sublist-check-box.checkbox_show");
-  let uncheckItem = $(e).parent().parent().find("#sub-ul-optfourmodalb-modallist .sublist-cancel-box.checkbox_hide");
+  let checkItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-check-box.checkbox_show");
+  let uncheckItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-cancel-box.checkbox_hide");
   checkItem.toggleClass("checkbox_show checkbox_hide");
   uncheckItem.toggleClass("checkbox_show checkbox_hide");
   $("#optfourmodalb-list-count").html(`0 Items Selected`);
+  let leftItem = $(e).parent().parent().find("ul.optfourmodalb-list li div.green-check-box.display-block");
+  leftItem.toggleClass("display-block display-none");
 }
 
 function opt4BLeftOnRight(target) {
@@ -468,12 +442,12 @@ function opt4BLeftOnRight(target) {
   let pos = _id.length;
   let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
   if (len > 0) {
-    let markItem = $(`ul.optfourmodalb-list li.modaloptfourmodalblist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.optfourmodalb-list li.modaloptfourmodallist-item-${_id[pos - 1]}`)
       .children("div.green-check-box");
     markItem.addClass("display-block");
     markItem.removeClass("display-none");
   } else {
-    let markItem = $(`ul.optfourmodalb-list li.modaloptfourmodalblist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.optfourmodalb-list li.modaloptfourmodallist-item-${_id[pos - 1]}`)
       .children("div.green-check-box");
     markItem.addClass("display-none");
     markItem.removeClass("display-block");
@@ -484,8 +458,8 @@ $(document).ready(function () {
   $(".optfourmodalb-scroll-btn").click(function () {
     const optfourmodalb_scroll_window = document.querySelector(".optfourmodalb-scroll-window");
     $(".optfourmodalb-scroll-window").animate({
-        scrollTop: optfourmodalb_scroll_window.scrollTop + 100,
-      },
+      scrollTop: optfourmodalb_scroll_window.scrollTop + 100,
+    },
       250
     );
   });
@@ -499,42 +473,26 @@ $(document).ready(function () {
 // ===/////=== OPTION 4 LIST3 ITEM START ===/////===
 const optfourmodalc_list = document.querySelector(".optfourmodalc-list");
 // Added by ASHIQ
-const optfourmodalclistmodal = [
-  "Item 1",
-  "Item 2",
-  "Item 3",
-  "Item 4",
-  "Item 5",
-  "Item 6",
-  "Item 7",
-  "Item 8",
-  "Item 9",
-  "Item 10",
-  "Item 11",
-  "Item 12",
-  "Item 13",
-  "Item 14",
-  "Item 15",
-  "Item 16",
-  "Item 17",
-  "Item 18",
-  "Item 19",
-  "Item 20",
-  "Item 21",
-  "Item 22",
-  "Item 23",
-  "Item 24",
-  "Item 25",
-  "Item 26",
-  "Item 27",
-  "Item 28",
-  "Item 29",
-];
+let optfourmodalclistmodal = []
+for (let i = 1; i <= 29; i++) {
+  let files = []
+  for (let j = 1; j <= 72; j++) {
+    files.push({
+      id: `option-optfourmodalcmodallist-${i}-${j}`,
+      item: `Level ${i} - Item ${j}`
+    });
+  }
+  optfourmodalclistmodal.push({
+    id: `modaloptfourmodallist-item-${i}`,
+    item: `Item ${i}`,
+    files
+  })
+}
 
 (function optfourmodalcListModal() {
   let htmloptfourmodalclistmodal = "", htmlDataModal = "";
-  optfourmodalclistmodal.forEach((item, index) => {
-    htmloptfourmodalclistmodal += `<li class="modaloptfourmodalclist-item-${index + 1}">
+  optfourmodalclistmodal.forEach(({ id, item, files }, index) => {
+    htmloptfourmodalclistmodal += `<li class="${id}">
     <p>${item}</p>
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
@@ -547,10 +505,11 @@ const optfourmodalclistmodal = [
     let modallistoptfourmodalc_data1 = "",
       modallistoptfourmodalc_data2 = "",
       modallistoptfourmodalc_data3 = "",
-      length = 72;
-    for (let i = 1; i <= length; i++) {
-      let elementHtml = `<li class="option-optfourmodalcmodallist-${index + 1}-${i}">
-      <p>Level ${index + 1} - Item ${i}</p>
+      length = files.length;
+    files.forEach(({ id: _id, item }, idx) => {
+      let i = idx + 1;
+      let elementHtml = `<li class="${_id}">
+			<p>${item}</p>
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
@@ -577,10 +536,10 @@ const optfourmodalclistmodal = [
           modallistoptfourmodalc_data3 += elementHtml;
         }
       }
-    }
-    
+    });
+
     htmlDataModal +=
-    `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="optfourmodalc-submodal-div-list-1-${index + 1}">
+      `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="optfourmodalc-submodal-div-list-1-${index + 1}">
       ${modallistoptfourmodalc_data1}
     </ul>
     <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="optfourmodalc-submodal-div-list-2-${index + 1}">
@@ -592,7 +551,7 @@ const optfourmodalclistmodal = [
     /* Update End By Ashiq */
   });
   optfourmodalc_list.innerHTML = htmloptfourmodalclistmodal;
-  document.querySelector("#sub-ul-optfourmodalc-modallist").innerHTML = htmlDataModal;
+  document.querySelector("div#opt4c-list-modal div.sub-ul-optfourmodal-modallist").innerHTML = htmlDataModal;
 })();
 
 /* New Function Start */
@@ -668,11 +627,11 @@ let optfourmodalc_left_list = "";
 })();
 
 let optfourmodalc_oldLIClassnameModal = "";
-const sub_ul_optfourmodalcmodallist = document.querySelector("#sub-ul-optfourmodalc-modallist");
+const sub_ul_optfourmodalcmodallist = document.querySelector("div#opt4c-list-modal div.sub-ul-optfourmodal-modallist");
 sub_ul_optfourmodalcmodallist.addEventListener("click", function (e) {
   let target = e.target;
   if (target.tagName === "DIV") {
-    if (target.className.indexOf("sublist-cancel-box")!=-1) {
+    if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
       return;
     }
@@ -681,7 +640,7 @@ sub_ul_optfourmodalcmodallist.addEventListener("click", function (e) {
     target = target.parentNode;
   } else if (target.tagName === "I") {
     target = target.parentNode;
-    if (target.className.indexOf("sublist-cancel-box")!=-1) {
+    if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
       return;
     } else target = target.parentNode;
@@ -700,16 +659,18 @@ $("#optfourmodalc-mng-opt2-delete").click(function () {
 });
 
 function countoptfourmodalcListModal(e) {
-  let countItem = $(e).parent().parent().find("#sub-ul-optfourmodalc-modallist .sublist-check-box.checkbox_show").length;
+  let countItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-check-box.checkbox_show").length;
   $("#optfourmodalc-list-count").html(`${countItem} Items Selected`);
 }
 
 function resetoptfourmodalcListModal(e) {
-  let checkItem = $(e).parent().parent().find("#sub-ul-optfourmodalc-modallist .sublist-check-box.checkbox_show");
-  let uncheckItem = $(e).parent().parent().find("#sub-ul-optfourmodalc-modallist .sublist-cancel-box.checkbox_hide");
+  let checkItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-check-box.checkbox_show");
+  let uncheckItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-cancel-box.checkbox_hide");
   checkItem.toggleClass("checkbox_show checkbox_hide");
   uncheckItem.toggleClass("checkbox_show checkbox_hide");
   $("#optfourmodalc-list-count").html(`0 Items Selected`);
+  let leftItem = $(e).parent().parent().find("ul.optfourmodalc-list li div.green-check-box.display-block");
+  leftItem.toggleClass("display-block display-none");
 }
 
 function opt4CLeftOnRight(target) {
@@ -717,12 +678,12 @@ function opt4CLeftOnRight(target) {
   let pos = _id.length;
   let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
   if (len > 0) {
-    let markItem = $(`ul.optfourmodalc-list li.modaloptfourmodalclist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.optfourmodalc-list li.modaloptfourmodallist-item-${_id[pos - 1]}`)
       .children("div.green-check-box");
     markItem.addClass("display-block");
     markItem.removeClass("display-none");
   } else {
-    let markItem = $(`ul.optfourmodalc-list li.modaloptfourmodalclist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.optfourmodalc-list li.modaloptfourmodallist-item-${_id[pos - 1]}`)
       .children("div.green-check-box");
     markItem.addClass("display-none");
     markItem.removeClass("display-block");
@@ -733,8 +694,8 @@ $(document).ready(function () {
   $(".optfourmodalc-scroll-btn").click(function () {
     const optfourmodalc_scroll_window = document.querySelector(".optfourmodalc-scroll-window");
     $(".optfourmodalc-scroll-window").animate({
-        scrollTop: optfourmodalc_scroll_window.scrollTop + 100,
-      },
+      scrollTop: optfourmodalc_scroll_window.scrollTop + 100,
+    },
       250
     );
   });
@@ -748,42 +709,59 @@ $(document).ready(function () {
 // ===/////=== OPTION 4 LIST4 ITEM START ===/////===
 const optfourmodald_list = document.querySelector(".optfourmodald-list");
 // Added by ASHIQ
-const optfourmodaldlistmodal = [
-  "Item 1",
-  "Item 2",
-  "Item 3",
-  "Item 4",
-  "Item 5",
-  "Item 6",
-  "Item 7",
-  "Item 8",
-  "Item 9",
-  "Item 10",
-  "Item 11",
-  "Item 12",
-  "Item 13",
-  "Item 14",
-  "Item 15",
-  "Item 16",
-  "Item 17",
-  "Item 18",
-  "Item 19",
-  "Item 20",
-  "Item 21",
-  "Item 22",
-  "Item 23",
-  "Item 24",
-  "Item 25",
-  "Item 26",
-  "Item 27",
-  "Item 28",
-  "Item 29",
-];
+let optfourmodaldlistmodal = [];
+for (let i = 1; i <= 29; i++) {
+  let files = [];
+  for (let j = 1; j <= 72; j++) {
+    files.push({
+      id: `option-optfourmodaldmodallist-${i}-${j}`,
+      item: `Level ${i} - Item ${j}`
+    });
+  }
+  optfourmodaldlistmodal.push({
+    id: `modaloptfourmodallist-item-${i}`,
+    item: `Item ${i}`,
+    files
+  })
+}
+
+function findFileListOpt4(_id, name) {
+  if (name == "LIST 1") {
+    for (let val of optfourmodalalistmodal) {
+      for (let file of val.files) {
+        if (file.id == _id) return { id: val.id, item: val.item };
+        else if (file.item == _id) return { id: file.id, item: file.item };
+      }
+    }
+  } else if (name == "LIST 2") {
+    for (let val of optfourmodalblistmodal) {
+      for (let file of val.files) {
+        if (file.id == _id) return { id: val.id, item: val.item };
+        else if (file.item == _id) return { id: file.id, item: file.item };
+      }
+    }
+  } else if (name == "LIST 3") {
+    for (let val of optfourmodalclistmodal) {
+      for (let file of val.files) {
+        if (file.id == _id) return { id: val.id, item: val.item };
+        else if (file.item == _id) return { id: file.id, item: file.item };
+      }
+    }
+  } else if (name == "LIST 4") {
+    for (let val of optfourmodaldlistmodal) {
+      for (let file of val.files) {
+        if (file.id == _id) return { id: val.id, item: val.item };
+        else if (file.item == _id) return { id: file.id, item: file.item };
+      }
+    }
+  }
+  return false;
+}
 
 (function optfourmodaldListModal() {
   let htmloptfourmodaldlistmodal = "", htmlDataModal = "";
-  optfourmodaldlistmodal.forEach((item, index) => {
-    htmloptfourmodaldlistmodal += `<li class="modaloptfourmodaldlist-item-${index + 1}">
+  optfourmodaldlistmodal.forEach(({ id, item, files }, index) => {
+    htmloptfourmodaldlistmodal += `<li class="${id}">
     <p>${item}</p>
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
@@ -796,10 +774,11 @@ const optfourmodaldlistmodal = [
     let modallistoptfourmodald_data1 = "",
       modallistoptfourmodald_data2 = "",
       modallistoptfourmodald_data3 = "",
-      length = 72;
-    for (let i = 1; i <= length; i++) {
-      let elementHtml = `<li class="option-optfourmodaldmodallist-${index + 1}-${i}">
-      <p>Level ${index + 1} - Item ${i}</p>
+      length = files.length;
+    files.forEach(({ id: _id, item }, idx) => {
+      let i = idx + 1;
+      let elementHtml = `<li class="${_id}">
+			<p>${item}</p>
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
@@ -826,10 +805,10 @@ const optfourmodaldlistmodal = [
           modallistoptfourmodald_data3 += elementHtml;
         }
       }
-    }
-    
+    });
+
     htmlDataModal +=
-    `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="optfourmodald-submodal-div-list-1-${index + 1}">
+      `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="optfourmodald-submodal-div-list-1-${index + 1}">
       ${modallistoptfourmodald_data1}
     </ul>
     <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="optfourmodald-submodal-div-list-2-${index + 1}">
@@ -841,7 +820,7 @@ const optfourmodaldlistmodal = [
     /* Update End By Ashiq */
   });
   optfourmodald_list.innerHTML = htmloptfourmodaldlistmodal;
-  document.querySelector("#sub-ul-optfourmodald-modallist").innerHTML = htmlDataModal;
+  document.querySelector("div#opt4d-list-modal div.sub-ul-optfourmodal-modallist").innerHTML = htmlDataModal;
 })();
 
 /* New Function Start */
@@ -917,11 +896,11 @@ let optfourmodald_left_list = "";
 })();
 
 let optfourmodald_oldLIClassnameModal = "";
-const sub_ul_optfourmodaldmodallist = document.querySelector("#sub-ul-optfourmodald-modallist");
+const sub_ul_optfourmodaldmodallist = document.querySelector("div#opt4d-list-modal div.sub-ul-optfourmodal-modallist");
 sub_ul_optfourmodaldmodallist.addEventListener("click", function (e) {
   let target = e.target;
   if (target.tagName === "DIV") {
-    if (target.className.indexOf("sublist-cancel-box")!=-1) {
+    if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
       return;
     }
@@ -930,7 +909,7 @@ sub_ul_optfourmodaldmodallist.addEventListener("click", function (e) {
     target = target.parentNode;
   } else if (target.tagName === "I") {
     target = target.parentNode;
-    if (target.className.indexOf("sublist-cancel-box")!=-1) {
+    if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
       return;
     } else target = target.parentNode;
@@ -949,16 +928,18 @@ $("#optfourmodald-mng-opt2-delete").click(function () {
 });
 
 function countoptfourmodaldListModal(e) {
-  let countItem = $(e).parent().parent().find("#sub-ul-optfourmodald-modallist .sublist-check-box.checkbox_show").length;
+  let countItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-check-box.checkbox_show").length;
   $("#optfourmodald-list-count").html(`${countItem} Items Selected`);
 }
 
 function resetoptfourmodaldListModal(e) {
-  let checkItem = $(e).parent().parent().find("#sub-ul-optfourmodald-modallist .sublist-check-box.checkbox_show");
-  let uncheckItem = $(e).parent().parent().find("#sub-ul-optfourmodald-modallist .sublist-cancel-box.checkbox_hide");
+  let checkItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-check-box.checkbox_show");
+  let uncheckItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-cancel-box.checkbox_hide");
   checkItem.toggleClass("checkbox_show checkbox_hide");
   uncheckItem.toggleClass("checkbox_show checkbox_hide");
   $("#optfourmodald-list-count").html(`0 Items Selected`);
+  let leftItem = $(e).parent().parent().find("ul.optfourmodald-list li div.green-check-box.display-block");
+  leftItem.toggleClass("display-block display-none");
 }
 
 function opt4DLeftOnRight(target) {
@@ -966,12 +947,12 @@ function opt4DLeftOnRight(target) {
   let pos = _id.length;
   let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
   if (len > 0) {
-    let markItem = $(`ul.optfourmodald-list li.modaloptfourmodaldlist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.optfourmodald-list li.modaloptfourmodallist-item-${_id[pos - 1]}`)
       .children("div.green-check-box");
     markItem.addClass("display-block");
     markItem.removeClass("display-none");
   } else {
-    let markItem = $(`ul.optfourmodald-list li.modaloptfourmodaldlist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.optfourmodald-list li.modaloptfourmodallist-item-${_id[pos - 1]}`)
       .children("div.green-check-box");
     markItem.addClass("display-none");
     markItem.removeClass("display-block");
@@ -982,8 +963,8 @@ $(document).ready(function () {
   $(".optfourmodald-scroll-btn").click(function () {
     const optfourmodald_scroll_window = document.querySelector(".optfourmodald-scroll-window");
     $(".optfourmodald-scroll-window").animate({
-        scrollTop: optfourmodald_scroll_window.scrollTop + 100,
-      },
+      scrollTop: optfourmodald_scroll_window.scrollTop + 100,
+    },
       250
     );
   });
