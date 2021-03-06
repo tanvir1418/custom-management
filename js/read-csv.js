@@ -257,7 +257,7 @@ function manResPagination(noRow) {
 								</svg>
 							</div>
 						</div>
-                        <div class="column-header-2-resizer"></div>
+            <div class="column-header-2-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -268,7 +268,7 @@ function manResPagination(noRow) {
 								<p>${checkSts == "Ended" ? "" : status}</p>
 							</div>
 						</div>
-                        <div class="column-header-3-resizer"></div>
+            <div class="column-header-3-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -278,7 +278,7 @@ function manResPagination(noRow) {
 								<span class="dis_time22 mr-tableData">${val1}</span>
 							</div>
 						</div>
-                        <div class="column-header-4-resizer"></div>
+            <div class="column-header-4-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -288,7 +288,7 @@ function manResPagination(noRow) {
 								<span class="dis_time22 mr-tableData">${val2}</span>
 							</div>
 						</div>
-                        <div class="column-header-5-resizer"></div>
+            <div class="column-header-5-resizer"></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -826,28 +826,28 @@ function manResPagination(noRow) {
                 <tr>
                     <th scope="col">
                         STATUS
-                        <div id="style2_cross1" class="head-filter">
+                        <div class="head-filter style2_cross01">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         Val1
-                        <div id="style2_cross2" class="head-filter">
+                        <div class="head-filter style2_cross02">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         Val2
-                        <div id="style2_cross3" class="head-filter">
+                        <div class="head-filter style2_cross03">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -866,14 +866,14 @@ function manResPagination(noRow) {
                     <td class="s2-value">
                         <div class="column-time ${classV1}">
                             <div class="centerauto">
-                                <span>${val1}</span>
+                                <span class="mr-tableData">${val1}</span>
                             </div>
                         </div>
                     </td>
                     <td class="s2-value">
                         <div class="column-time ${classV2}">
                             <div class="centerauto">
-                                <span>${val2}</span>
+                                <span class="mr-tableData">${val2}</span>
                             </div>
                         </div>
                     </td>
@@ -886,37 +886,37 @@ function manResPagination(noRow) {
                 <tr>
                     <th scope="col">
                         VAL11+DATEL
-                        <div id="style2_cross4" class="head-filter">
+                        <div class="head-filter style2_cross04">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         VAL12+DATEH
-                        <div id="style2_cross5" class="head-filter">
+                        <div class="head-filter style2_cross05">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         CHART 1
-                        <div id="style2_cross6" class="head-filter">
+                        <div class="head-filter style2_cross06">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         CHART2
-                        <div id="style2_cross7" class="head-filter">
+                        <div class="head-filter style2_cross07">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -926,7 +926,7 @@ function manResPagination(noRow) {
                 <tr>
                     <td class="vall11_datel">
                         <div class="val11">
-                            <p class="centerizeany">${Val11}</p>
+                            <p class="centerizeany mr-tableData">${Val11}</p>
                         </div>
                         <div class="date_reco">
                             <div class="date_reco_center centerizeany">
@@ -937,7 +937,7 @@ function manResPagination(noRow) {
                     </td>
                     <td class="vall11_datel">
                         <div class="val11">
-                            <p class="centerizeany">${Val12}</p>
+                            <p class="centerizeany mr-tableData">${Val12}</p>
                         </div>
                         <div class="date_reco">
                             <div class="date_reco_center centerizeany">
@@ -955,7 +955,7 @@ function manResPagination(noRow) {
                                 </div>
                             </div>
                             <div class="uddright">
-                                <p class="centerizeany">${Val11}</p>
+                                <p class="centerizeany mr-tableData">${Val11}</p>
                             </div>
                         </div>
                         <div class="upper_part_22 dwnlong">
@@ -966,7 +966,7 @@ function manResPagination(noRow) {
                                 </div>
                             </div>
                             <div class="uddright">
-                                <p class="centerizeany">${Val12}</p>
+                                <p class="centerizeany mr-tableData">${Val12}</p>
                             </div>
                         </div>
                     </td>
@@ -974,7 +974,7 @@ function manResPagination(noRow) {
                         <div class="upper-penta-box">
                             <div class="shape_penagon" style="${styleG_S2}">
                                 <div class="top-num">
-                                    <p>${Val11}</p>
+                                    <p class="mr-tableData">${Val11}</p>
                                 </div>
                                 <div class="penta-count">
                                     <p class="d-date">${daysG} D</p>
@@ -986,7 +986,7 @@ function manResPagination(noRow) {
                         <div class="lower-penta-box">
                             <div class="shape_penagon" style="${styleR_S2}">
                                 <div class="top-num">
-                                    <p>${Val12}</p>
+                                    <p class="mr-tableData">${Val12}</p>
                                 </div>
                                 <div class="penta-count">
                                 <p class="d-date">${daysR} D</p>
@@ -1005,118 +1005,118 @@ function manResPagination(noRow) {
                 <tr>
                     <th scope="col">
                         U_Val
-                        <div id="style2_cross8" class="head-filter">
+                        <div class="head-filter style2_cross08">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         U_%
-                        <div id="style2_cross9" class="head-filter">
+                        <div class="head-filter style2_cross09">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         D_Val
-                        <div id="style2_cross10" class="head-filter">
+                        <div class="head-filter style2_cross10">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         D_%
-                        <div id="style2_cross11" class="head-filter">
+                        <div class="head-filter style2_cross11">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         N_Val
-                        <div id="style2_cross12" class="head-filter">
+                        <div class="head-filter style2_cross12">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 5)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         N_C
-                        <div id="style2_cross13" class="head-filter">
+                        <div class="head-filter style2_cross13">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 6)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         AM COUNT
-                        <div id="style2_cross14" class="head-filter">
+                        <div class="head-filter style2_cross14">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 7)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         AN COUNT
-                        <div id="style2_cross15" class="head-filter">
+                        <div class="head-filter style2_cross15">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 8)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         AO COUNT
-                        <div id="style2_cross16" class="head-filter">
+                        <div class="head-filter style2_cross16">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 9)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         AP COUNT
-                        <div id="style2_cross17" class="head-filter">
+                        <div class="head-filter style2_cross17">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 10)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         AQ COUNT
-                        <div id="style2_cross18" class="head-filter">
+                        <div class="head-filter style2_cross18">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 11)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         AR COUNT
-                        <div id="style2_cross19" class="head-filter">
+                        <div class="head-filter style2_cross19">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 12)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         AS COUNT
-                        <div id="style2_cross20" class="head-filter">
+                        <div class="head-filter style2_cross20">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 13)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1126,67 +1126,67 @@ function manResPagination(noRow) {
                 <tr>
                     <td class="vall11_datel">
                         <div class="col1table green-white">
-                            <span>${u_val}</span>
+                            <span class="mr-tableData">${u_val}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table green-white">
-                            <span>${u_per}</span>
+                            <span class="mr-tableData">${u_per}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table red-white">
-                            <span>${d_val}</span>
+                            <span class="mr-tableData">${d_val}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table red-white">
-                            <span>${d_per}</span>
+                            <span class="mr-tableData">${d_per}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table grey-white">
-                            <span>${n_val}</span>
+                            <span class="mr-tableData">${n_val}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table grey-white">
-                            <span>${n_per}</span>
+                            <span class="mr-tableData">${n_per}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${AM_COUNT}</span>
+                            <span class="mr-tableData">${AM_COUNT}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${AN_COUNT}</span>
+                            <span class="mr-tableData">${AN_COUNT}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${AO_COUNT}</span>
+                            <span class="mr-tableData">${AO_COUNT}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${AP_COUNT}</span>
+                            <span class="mr-tableData">${AP_COUNT}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${AQ_COUNT}</span>
+                            <span class="mr-tableData">${AQ_COUNT}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${AR_COUNT}</span>
+                            <span class="mr-tableData">${AR_COUNT}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${AS_Count}</span>
+                            <span class="mr-tableData">${AS_Count}</span>
                         </div>
                     </td>
                 </tr>
@@ -1199,118 +1199,118 @@ function manResPagination(noRow) {
                 <tr>
                     <th scope="col">
                         AT COUNT
-                        <div id="style2_cross21" class="head-filter">
+                        <div class="head-filter style2_cross21">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         AU COUNT
-                        <div id="style2_cross22" class="head-filter">
+                        <div class="head-filter style2_cross22">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         AV COUNT
-                        <div id="style2_cross23" class="head-filter">
+                        <div class="head-filter style2_cross23">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         AW COUNT
-                        <div id="style2_cross24" class="head-filter">
+                        <div class="head-filter style2_cross24">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         AX COUNT
-                        <div id="style2_cross25" class="head-filter">
+                        <div class="head-filter style2_cross25">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 5)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         AY COUNT
-                        <div id="style2_cross26" class="head-filter">
+                        <div class="head-filter style2_cross26">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 6)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         AZ COUNT
-                        <div id="style2_cross27" class="head-filter">
+                        <div class="head-filter style2_cross27">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 7)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         BA COUNT
-                        <div id="style2_cross28" class="head-filter">
+                        <div class="head-filter style2_cross28">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 8)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         BB COUNT
-                        <div id="style2_cross29" class="head-filter">
+                        <div class="head-filter style2_cross29">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 9)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         BC COUNT
-                        <div id="style2_cross30" class="head-filter">
+                        <div class="head-filter style2_cross30">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 10)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         BD COUNT
-                        <div id="style2_cross31" class="head-filter">
+                        <div class="head-filter style2_cross31">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 11)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         BE COUNT
-                        <div id="style2_cross32" class="head-filter">
+                        <div class="head-filter style2_cross32">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 12)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         BF COUNT
-                        <div id="style2_cross33" class="head-filter">
+                        <div class="head-filter style2_cross33">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 13)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1320,67 +1320,67 @@ function manResPagination(noRow) {
                 <tr>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${AT_Count}</span>
+                            <span class="mr-tableData">${AT_Count}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${AU_Count}</span>
+                            <span class="mr-tableData">${AU_Count}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${AV_Count}</span>
+                            <span class="mr-tableData">${AV_Count}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${AW_COUNT}</span>
+                            <span class="mr-tableData">${AW_COUNT}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${AX_COUNT}</span>
+                            <span class="mr-tableData">${AX_COUNT}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${AY_COUNT}</span>
+                            <span class="mr-tableData">${AY_COUNT}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${AZ_Count}</span>
+                            <span class="mr-tableData">${AZ_Count}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${BA_Count}</span>
+                            <span class="mr-tableData">${BA_Count}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${BB_Count}</span>
+                            <span class="mr-tableData">${BB_Count}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${BC_Count}</span>
+                            <span class="mr-tableData">${BC_Count}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${BE_count}</span>
+                            <span class="mr-tableData">${BD_Count}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${BF_COUNT}</span>
+                            <span class="mr-tableData">${BE_count}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${BG_COUNT}</span>
+                            <span class="mr-tableData">${BF_COUNT}</span>
                         </div>
                     </td>
                 </tr>
@@ -1392,118 +1392,127 @@ function manResPagination(noRow) {
                 <tr>
                     <th scope="col">
                         BG COUNT
-                        <div id="style2_cross34" class="head-filter">
+                        <div class="head-filter style2_cross34">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         BH COUNT
-                        <div id="style2_cross35" class="head-filter">
+                        <div class="head-filter style2_cross35">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         BI COUNT
-                        <div id="style2_cross36" class="head-filter">
+                        <div class="head-filter style2_cross36">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         BJ COUNT
-                        <div id="style2_cross37" class="head-filter">
+                        <div class="head-filter style2_cross37">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         BK COUNT
-                        <div id="style2_cross38" class="head-filter">
+                        <div class="head-filter style2_cross38">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 5)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         BL COUNT
-                        <div id="style2_cross39" class="head-filter">
+                        <div class="head-filter style2_cross39">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 6)" data-toggle="modal" data-target="#col8Filter">
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        BM COUNT
+                        <div class="head-filter style2_cross40">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 7)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         Col2
-                        <div id="style2_cross40" class="head-filter">
+                        <div class="head-filter style2_cross41">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 8)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         Col3
-                        <div id="style2_cross41" class="head-filter">
+                        <div class="head-filter style2_cross42">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 9)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         DP
-                        <div id="style2_cross42" class="head-filter">
+                        <div class="head-filter style2_cross43">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 10)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         DY
-                        <div id="style2_cross43" class="head-filter">
+                        <div class="head-filter style2_cross44">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 11)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         DmA
-                        <div id="style2_cross44" class="head-filter">
+                        <div class="head-filter style2_cross45">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 12)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         DmP
-                        <div id="style2_cross45" class="head-filter">
+                        <div class="head-filter style2_cross46">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 13)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         DmP%
-                        <div id="style2_cross46" class="head-filter">
+                        <div class="head-filter style2_cross47">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 14)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1513,67 +1522,72 @@ function manResPagination(noRow) {
                 <tr>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${BH_COUNT}</span>
+                            <span class="mr-tableData">${BG_COUNT}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${BI_COUNT}</span>
+                            <span class="mr-tableData">${BH_COUNT}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${BJ_COUNT}</span>
+                            <span class="mr-tableData">${BI_COUNT}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${BK_COUNT}</span>
+                            <span class="mr-tableData">${BJ_COUNT}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${BL_COUNT}</span>
+                            <span class="mr-tableData">${BK_COUNT}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${BM_COUNT}</span>
+                            <span class="mr-tableData">${BL_COUNT}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${Col2}</span>
+                            <span class="mr-tableData">${BM_COUNT}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${Col3}</span>
+                            <span class="mr-tableData">${Col2}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${DP_val}</span>
+                            <span class="mr-tableData">${Col3}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${DY_val}</span>
+                            <span class="mr-tableData">${DP_val}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${DmA}</span>
+                            <span class="mr-tableData">${DY_val}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${DmP}</span>
+                            <span class="mr-tableData">${DmA}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${DmP_per}</span>
+                            <span class="mr-tableData">${DmP}</span>
+                        </div>
+                    </td>
+                    <td class="vall11_datel">
+                        <div class="col1table">
+                            <span class="mr-tableData">${DmP_per}</span>
                         </div>
                     </td>
                 </tr>
@@ -1586,127 +1600,127 @@ function manResPagination(noRow) {
                 <tr>
                     <th scope="col">
                         ID
-                        <div id="style2_cross47" class="head-filter">
+                        <div class="head-filter style2_cross48">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         LoP%
-                        <div id="style2_cross48" class="head-filter">
+                        <div class="head-filter style2_cross49">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         M_Val
-                        <div id="style2_cross49" class="head-filter">
+                        <div class="head-filter style2_cross50">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         MaP%
-                        <div id="style2_cross50" class="head-filter">
+                        <div class="head-filter style2_cross51">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         O_End
-                        <div id="style2_cross51" class="head-filter">
+                        <div class="head-filter style2_cross52">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 5)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         O_Start
-                        <div id="style2_cross52" class="head-filter">
+                        <div class="head-filter style2_cross53">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 6)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         SP
-                        <div id="style2_cross53" class="head-filter">
+                        <div class="head-filter style2_cross54">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 7)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         Time Frame
-                        <div id="style2_cross54" class="head-filter">
+                        <div class="head-filter style2_cross55">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 8)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         UmA
-                        <div id="style2_cross55" class="head-filter">
+                        <div class="head-filter style2_cross56">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 9)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         UmP
-                        <div id="style2_cross56" class="head-filter">
+                        <div class="head-filter style2_cross57">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 10)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         UmP%
-                        <div id="style2_cross57" class="head-filter">
+                        <div class="head-filter style2_cross58">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 11)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         Val2S
-                        <div id="style2_cross58" class="head-filter">
+                        <div class="head-filter style2_cross59">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 12)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         Val3S
-                        <div id="style2_cross59" class="head-filter">
+                        <div class="head-filter style2_cross60">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 13)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         Val6
-                        <div id="style2_cross60" class="head-filter">
+                        <div class="head-filter style2_cross61">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 14)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1716,72 +1730,72 @@ function manResPagination(noRow) {
                 <tr>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${ID_val}</span>
+                            <span class="mr-tableData">${ID_val}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${LoP_per}</span>
+                            <span class="mr-tableData">${LoP_per}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${M_Val}</span>
+                            <span class="mr-tableData">${M_Val}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${MaP_per}</span>
+                            <span class="mr-tableData">${MaP_per}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${O_End}</span>
+                            <span class="mr-tableData">${O_End}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${O_Start}</span>
+                            <span class="mr-tableData">${O_Start}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${SP_val}</span>
+                            <span class="mr-tableData">${SP_val}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${Time_Frame}</span>
+                            <span class="mr-tableData">${Time_Frame}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${UmA}</span>
+                            <span class="mr-tableData">${UmA}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${UmP}</span>
+                            <span class="mr-tableData">${UmP}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${UmP_per}</span>
+                            <span class="mr-tableData">${UmP_per}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${Val2S}</span>
+                            <span class="mr-tableData">${Val2S}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${Val3S}</span>
+                            <span class="mr-tableData">${Val3S}</span>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <span>${Val6}</span>
+                            <span class="mr-tableData">${Val6}</span>
                         </div>
                     </td>
                 </tr>
@@ -1794,19 +1808,19 @@ function manResPagination(noRow) {
                 <tr>
                     <th scope="col">
                         Description
-                        <div id="style2_cross61" class="head-filter">
+                        <div class="head-filter style2_cross62">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
                     <th scope="col">
                         Details3
-                        <div id="style2_cross62" class="head-filter">
+                        <div class="head-filter style2_cross63">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1816,12 +1830,12 @@ function manResPagination(noRow) {
                 <tr>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <p>${Description}</p>
+                            <p class="mr-tableData">${Description}</p>
                         </div>
                     </td>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <p>${Details3}</p>
+                            <p class="mr-tableData">${Details3}</p>
                         </div>
                     </td>
                 </tr>
@@ -1834,10 +1848,10 @@ function manResPagination(noRow) {
                 <tr>
                     <th scope="col">
                         Details2
-                        <div id="style2_cross63" class="head-filter">
+                        <div class="head-filter style2_cross64">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="drop-filter style2-filterPosition" data-toggle="modal" data-target="#col8Filter">
+                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
@@ -1847,7 +1861,7 @@ function manResPagination(noRow) {
                 <tr>
                     <td class="vall11_datel">
                         <div class="col1table">
-                            <p class="truncate-data">${Details2}</p>
+                            <p class="mr-tableData truncate-data">${Details2}</p>
                         </div>
                     </td>
                 </tr>
@@ -1972,3 +1986,38 @@ function truncateText(maxLength) {
 $("#resizable554 th").on("drop", function(e){
 	manResTableRender();
 });
+
+function popUpHandlerS2Table (e, indexValue){
+    
+    let targetElementClassList = e.path[5].getAttribute("class");
+    let targetElementClass = targetElementClassList.split(" ");
+
+    let tableTargetHead = $(`#style2Con .${targetElementClass[1]} thead th:nth-child(${indexValue})`);
+    let tableTargetData = $(`#style2Con .${targetElementClass[1]} tbody td:nth-child(${indexValue}) .mr-tableData`);
+    let filterHeading = tableTargetHead[0].textContent;
+
+    $("#col8Filter #tableHeaderPop").html(filterHeading);
+
+    let targetModal = $("#col8Filter #checkbox-table-first tbody");
+    const dataC = new Set();
+    for (let i = 0; i < tableTargetData.length; i++) {
+        dataC.add(tableTargetData[i].textContent);
+    }
+    let tableTr = "";
+    for (const item of dataC) {
+        tableTr +=
+            `<tr>
+            <td>
+                <div class="popup__checkbox__page__toggle">
+                    <label class="popup__checkbox__toggle">
+                        <input class="popup__checkbox__toggle__input" type="checkbox">
+                        <span class="popup__checkbox__toggle__label">
+                            <span class="popup__checkbox__toggle__text">${item}</span>
+                        </span>
+                    </label>
+                </div>
+            </td>
+        </tr>`;
+    }
+     targetModal.html(tableTr);
+}
