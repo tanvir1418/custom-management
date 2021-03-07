@@ -3,42 +3,36 @@
 const select_item_main = document.querySelector(".select-item-main");
 
 // Added by ASHIQ
-const listItemDatamodal = [
-	"Item 1",
-	"Item 2",
-	"Item 3",
-	"Item 4",
-	"Item 5",
-	"Item 6",
-	"Item 7",
-	"Item 8",
-	"Item 9",
-	"Item 10",
-	"Item 11",
-	"Item 12",
-	"Item 13",
-	"Item 14",
-	"Item 15",
-	"Item 16",
-	"Item 17",
-	"Item 18",
-	"Item 19",
-	"Item 20",
-	"Item 21",
-	"Item 22",
-	"Item 23",
-	"Item 24",
-	"Item 25",
-	"Item 26",
-	"Item 27",
-	"Item 28",
-	"Item 29",
-];
+let listItemDatamodal = []
+for (let i = 1; i <= 29; i++) {
+	let files = []
+	for (let j = 1; j <= 72; j++) {
+		files.push({
+			id: `option-modallist-${i}-${j}`,
+			item: `Level ${i} - Item ${j}`
+		});
+	}
+	listItemDatamodal.push({
+		id: `modallist-item-${i}`,
+		item: `Item ${i}`,
+		files
+	})
+}
+
+function findFileList(_id) {
+	for (let val of listItemDatamodal) {
+		for (let file of val.files) {
+			if (file.id == _id) return { id: val.id, item: val.item };
+			else if (file.item == _id) return { id: file.id, item: file.item };
+		}
+	}
+	return false;
+}
 
 (function modalListWithCount() {
 	let htmllistmodal = "", htmlDataModal = "";
-	listItemDatamodal.forEach((item, index) => {
-		htmllistmodal += `<li class="modallist-item-${index + 1}">
+	listItemDatamodal.forEach(({ id, item, files }, index) => {
+		htmllistmodal += `<li class="${id}">
 		<p>${item}</p>
 		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
@@ -51,10 +45,11 @@ const listItemDatamodal = [
 		let modallist_data1 = "",
 			modallist_data2 = "",
 			modallist_data3 = "",
-			length = 72;
-		for (let i = 1; i <= length; i++) {
-			let elementHtml = `<li class="option-modallist-${index + 1}-${i}">
-			<p>Level ${index + 1} - Item ${i}</p>
+			length = files.length;
+		files.forEach(({ id: _id, item }, idx) => {
+			let i = idx + 1;
+			let elementHtml = `<li class="${_id}">
+			<p>${item}</p>
 			<div class="sublist-check-box checkbox_hide">
 				<i class="fas fa-check"></i>
 			</div>
@@ -81,7 +76,7 @@ const listItemDatamodal = [
 					modallist_data3 += elementHtml;
 				}
 			}
-		}
+		});
 
 		htmlDataModal +=
 			`<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="submodal-div-list-1-${index + 1}">
@@ -219,15 +214,14 @@ function resetOpt1ListModal(e) {
 
 function markLeftOnRight(target) {
 	let _id = $(target).parent().attr("id");
-	let pos = _id.length;
 	let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
 	if (len > 0) {
-		let markItem = $(`ul.select-item-main li.modallist-item-${_id[pos - 1]}`)
+		let markItem = $(`ul.select-item-main li.modallist-item-${_id.split("-").splice(-1)[0]}`)
 			.children("div.green-check-box");
 		markItem.addClass("display-block");
 		markItem.removeClass("display-none");
 	} else {
-		let markItem = $(`ul.select-item-main li.modallist-item-${_id[pos - 1]}`)
+		let markItem = $(`ul.select-item-main li.modallist-item-${_id.split("-").splice(-1)[0]}`)
 			.children("div.green-check-box");
 		markItem.addClass("display-none");
 		markItem.removeClass("display-block");
