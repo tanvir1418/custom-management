@@ -913,6 +913,8 @@ ExistTableHeadClick("man-data-opt3-exist");
 ExistTableHeadClick("man-data-opt4-exist");
 ExistTableHeadClick("man-data-opt5-exist");
 
+
+// modal background
 $('#opt4a-list-modal').on('show.bs.modal', function (e) {
 	$('body').addClass("example-open");
 }).on('hide.bs.modal', function (e) {
@@ -962,6 +964,17 @@ $('#manage-tempd-list-modal').on('show.bs.modal', function (e) {
 })
 
 $('#myopt1listData').on('show.bs.modal', function (e) {
+	$('body').addClass("example-open");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("example-open");
+})
+
+$('#copyrowlist').on('show.bs.modal', function (e) {
+	$('body').addClass("example-open");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("example-open");
+})
+$('#moverowlist').on('show.bs.modal', function (e) {
 	$('body').addClass("example-open");
 }).on('hide.bs.modal', function (e) {
 	$('body').removeClass("example-open");
