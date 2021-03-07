@@ -18,42 +18,26 @@ $(document).ready(function () {
 // ===/////=== MANAGE TEMP LIST1 ITEM START ===/////===
 const managetempa_list = document.querySelector(".managetempa-list");
 // Added by ASHIQ
-const managetempalistmodal = [
-  "Item 1",
-  "Item 2",
-  "Item 3",
-  "Item 4",
-  "Item 5",
-  "Item 6",
-  "Item 7",
-  "Item 8",
-  "Item 9",
-  "Item 10",
-  "Item 11",
-  "Item 12",
-  "Item 13",
-  "Item 14",
-  "Item 15",
-  "Item 16",
-  "Item 17",
-  "Item 18",
-  "Item 19",
-  "Item 20",
-  "Item 21",
-  "Item 22",
-  "Item 23",
-  "Item 24",
-  "Item 25",
-  "Item 26",
-  "Item 27",
-  "Item 28",
-  "Item 29",
-];
+let managetempalistmodal = [];
+for (let i = 1; i <= 29; i++) {
+  let files = []
+  for (let j = 1; j <= 72; j++) {
+    files.push({
+      id: `option-managetempamodallist-${i}-${j}`,
+      item: `Level ${i} - Item ${j}`
+    });
+  }
+  managetempalistmodal.push({
+    id: `modalmanagetemplist-item-${i}`,
+    item: `Item ${i}`,
+    files
+  });
+}
 
 (function manageAListModal() {
   let htmlmanagetempalistmodal = "", htmlDataModal = "";
-  managetempalistmodal.forEach((item, index) => {
-    htmlmanagetempalistmodal += `<li class="modalmanagetempalist-item-${index + 1}">
+  managetempalistmodal.forEach(({ id, item, files }, index) => {
+    htmlmanagetempalistmodal += `<li class="${id}">
     <p>${item}</p>
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
@@ -66,10 +50,11 @@ const managetempalistmodal = [
     let modallistmanagetempa_data1 = "",
       modallistmanagetempa_data2 = "",
       modallistmanagetempa_data3 = "",
-      length = 72;
-    for (let i = 1; i <= length; i++) {
-      let elementHtml = `<li class="option-managetempamodallist-${index + 1}-${i}">
-      <p>Level ${index + 1} - Item ${i}</p>
+      length = files.length;
+    files.forEach(({ id: _id, item }, idx) => {
+      let i = idx + 1;
+      let elementHtml = `<li class="${_id}">
+      <p>${item}</p>
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
@@ -96,10 +81,10 @@ const managetempalistmodal = [
           modallistmanagetempa_data3 += elementHtml;
         }
       }
-    }
+    });
 
     htmlDataModal +=
-      `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempa-submodal-div-list-1-${index + 1}">
+    `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempa-submodal-div-list-1-${index + 1}">
       ${modallistmanagetempa_data1}
     </ul>
     <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="managetempa-submodal-div-list-2-${index + 1}">
@@ -111,7 +96,7 @@ const managetempalistmodal = [
     /* Update End By Ashiq */
   });
   managetempa_list.innerHTML = htmlmanagetempalistmodal;
-  document.querySelector("#sub-ul-managetempa-modallist").innerHTML = htmlDataModal;
+  document.querySelector("#manage-tempa-list-modal div.sub-ul-managetemp-modallist").innerHTML = htmlDataModal;
 })();
 
 /* New Function Start */
@@ -187,7 +172,7 @@ let opt_managetempa_left_list = "";
 })();
 
 let managetempa_oldLIClassnameModal = "";
-const sub_ul_managetempamodallist = document.querySelector("#sub-ul-managetempa-modallist");
+const sub_ul_managetempamodallist = document.querySelector("#manage-tempa-list-modal div.sub-ul-managetemp-modallist");
 sub_ul_managetempamodallist.addEventListener("click", function (e) {
   let target = e.target;
   if (target.tagName === "DIV") {
@@ -219,29 +204,30 @@ $("#managetempa-mng-opt2-delete").click(function () {
 });
 
 function countTempAListModal(e) {
-  let countItem = $(e).parent().parent().find("#sub-ul-managetempa-modallist .sublist-check-box.checkbox_show").length;
+  let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   $("#managetempa-list-count").html(`${countItem} Items Selected`);
 }
 
 function resetTempAListModal(e) {
-  let checkItem = $(e).parent().parent().find("#sub-ul-managetempa-modallist .sublist-check-box.checkbox_show");
-  let uncheckItem = $(e).parent().parent().find("#sub-ul-managetempa-modallist .sublist-cancel-box.checkbox_hide");
+  let checkItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show");
+  let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
   checkItem.toggleClass("checkbox_show checkbox_hide");
   uncheckItem.toggleClass("checkbox_show checkbox_hide");
   $("#managetempa-list-count").html(`0 Items Selected`);
+  let leftItem = $(e).parent().parent().find("ul.managetempa-list li div.green-check-box.display-block");
+  leftItem.toggleClass("display-block display-none");
 }
 
 function manTemALeftOnRight(target) {
   let _id = $(target).parent().attr("id");
-  let pos = _id.length;
   let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
   if (len > 0) {
-    let markItem = $(`ul.managetempa-list li.modalmanagetempalist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.managetempa-list li.modalmanagetemplist-item-${_id.split("-").splice(-1)[0]}`)
       .children("div.green-check-box");
     markItem.addClass("display-block");
     markItem.removeClass("display-none");
   } else {
-    let markItem = $(`ul.managetempa-list li.modalmanagetempalist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.managetempa-list li.modalmanagetemplist-item-${_id.split("-").splice(-1)[0]}`)
       .children("div.green-check-box");
     markItem.addClass("display-none");
     markItem.removeClass("display-block");
@@ -268,41 +254,26 @@ $(document).ready(function () {
 // ===/////=== MANAGE TEMP LIST2 ITEM START ===/////===
 const managetempb_list = document.querySelector(".managetempb-list");
 // Added by ASHIQ
-const managetempblistmodal = [
-  "Item 1",
-  "Item 2",
-  "Item 3",
-  "Item 4",
-  "Item 5",
-  "Item 6",
-  "Item 7",
-  "Item 8",
-  "Item 9",
-  "Item 10",
-  "Item 11",
-  "Item 12",
-  "Item 13",
-  "Item 14",
-  "Item 15",
-  "Item 16",
-  "Item 17",
-  "Item 18",
-  "Item 19",
-  "Item 20",
-  "Item 21",
-  "Item 22",
-  "Item 23",
-  "Item 24",
-  "Item 25",
-  "Item 26",
-  "Item 27",
-  "Item 28",
-  "Item 29",
-];
+let managetempblistmodal = [];
+for (let i = 1; i <= 29; i++) {
+  let files = []
+  for (let j = 1; j <= 72; j++) {
+    files.push({
+      id: `option-managetempbmodallist-${i}-${j}`,
+      item: `Level ${i} - Item ${j}`
+    });
+  }
+  managetempblistmodal.push({
+    id: `modalmanagetemplist-item-${i}`,
+    item: `Item ${i}`,
+    files
+  });
+}
+
 (function manageBListModal() {
   let htmlmanagetempblistmodal = "", htmlDataModal = "";
-  managetempblistmodal.forEach((item, index) => {
-    htmlmanagetempblistmodal += `<li class="modalmanagetempblist-item-${index + 1}">
+  managetempblistmodal.forEach(({ id, item, files }, index) => {
+    htmlmanagetempblistmodal += `<li class="${id}">
     <p>${item}</p>
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
@@ -315,10 +286,11 @@ const managetempblistmodal = [
     let modallistmanagetempb_data1 = "",
       modallistmanagetempb_data2 = "",
       modallistmanagetempb_data3 = "",
-      length = 72;
-    for (let i = 1; i <= length; i++) {
-      let elementHtml = `<li class="option-managetempbmodallist-${index + 1}-${i}">
-      <p>Level ${index + 1} - Item ${i}</p>
+      length = files.length;
+    files.forEach(({ id: _id, item }, idx) => {
+      let i = idx + 1;
+      let elementHtml = `<li class="${_id}">
+      <p>${item}</p>
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
@@ -345,7 +317,7 @@ const managetempblistmodal = [
           modallistmanagetempb_data3 += elementHtml;
         }
       }
-    }
+    });
     htmlDataModal += `
     <ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempb-submodal-div-list-1-${index + 1}">
       ${modallistmanagetempb_data1}
@@ -358,8 +330,7 @@ const managetempblistmodal = [
     </ul>`;
   });
   managetempb_list.innerHTML = htmlmanagetempblistmodal;
-  document.querySelector("#sub-ul-managetempb-modallist").innerHTML = htmlDataModal;
-  /* Update End By Ashiq */
+  document.querySelector("#manage-tempb-list-modal div.sub-ul-managetemp-modallist").innerHTML = htmlDataModal;
 })();
 
 /* New Function Start */
@@ -435,7 +406,7 @@ let opt_managetempb_left_list = "";
 })();
 
 let managetempb_oldLIClassnameModal = "";
-const sub_ul_managetempbmodallist = document.querySelector("#sub-ul-managetempb-modallist");
+const sub_ul_managetempbmodallist = document.querySelector("#manage-tempb-list-modal div.sub-ul-managetemp-modallist");
 sub_ul_managetempbmodallist.addEventListener("click", function (e) {
   let target = e.target;
   if (target.tagName === "DIV") {
@@ -467,29 +438,30 @@ $("#managetempb-mng-opt2-delete").click(function () {
 });
 
 function countTempBListModal(e) {
-  let countItem = $(e).parent().parent().find("#sub-ul-managetempb-modallist .sublist-check-box.checkbox_show").length;
+  let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   $("#managetempb-list-count").html(`${countItem} Items Selected`);
 }
 
 function resetTempBListModal(e) {
-  let checkItem = $(e).parent().parent().find("#sub-ul-managetempb-modallist .sublist-check-box.checkbox_show");
-  let uncheckItem = $(e).parent().parent().find("#sub-ul-managetempb-modallist .sublist-cancel-box.checkbox_hide");
+  let checkItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show");
+  let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
   checkItem.toggleClass("checkbox_show checkbox_hide");
   uncheckItem.toggleClass("checkbox_show checkbox_hide");
   $("#managetempb-list-count").html(`0 Items Selected`);
+  let leftItem = $(e).parent().parent().find("ul.managetempb-list li div.green-check-box.display-block");
+  leftItem.toggleClass("display-block display-none");
 }
 
 function manTemBLeftOnRight(target) {
   let _id = $(target).parent().attr("id");
-  let pos = _id.length;
   let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
   if (len > 0) {
-    let markItem = $(`ul.managetempb-list li.modalmanagetempblist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.managetempb-list li.modalmanagetemplist-item-${_id.split("-").splice(-1)[0]}`)
       .children("div.green-check-box");
     markItem.addClass("display-block");
     markItem.removeClass("display-none");
   } else {
-    let markItem = $(`ul.managetempb-list li.modalmanagetempblist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.managetempb-list li.modalmanagetemplist-item-${_id.split("-").splice(-1)[0]}`)
       .children("div.green-check-box");
     markItem.addClass("display-none");
     markItem.removeClass("display-block");
@@ -514,41 +486,26 @@ $(document).ready(function () {
 // ===/////=== MANAGE TEMP LIST3 ITEM START ===/////===
 const managetempc_list = document.querySelector(".managetempc-list");
 // Added by ASHIQ
-const managetempclistmodal = [
-  "Item 1",
-  "Item 2",
-  "Item 3",
-  "Item 4",
-  "Item 5",
-  "Item 6",
-  "Item 7",
-  "Item 8",
-  "Item 9",
-  "Item 10",
-  "Item 11",
-  "Item 12",
-  "Item 13",
-  "Item 14",
-  "Item 15",
-  "Item 16",
-  "Item 17",
-  "Item 18",
-  "Item 19",
-  "Item 20",
-  "Item 21",
-  "Item 22",
-  "Item 23",
-  "Item 24",
-  "Item 25",
-  "Item 26",
-  "Item 27",
-  "Item 28",
-  "Item 29",
-];
+let managetempclistmodal = [];
+for (let i = 1; i <= 29; i++) {
+  let files = []
+  for (let j = 1; j <= 72; j++) {
+    files.push({
+      id: `option-managetempcmodallist-${i}-${j}`,
+      item: `Level ${i} - Item ${j}`
+    });
+  }
+  managetempclistmodal.push({
+    id: `modalmanagetemplist-item-${i}`,
+    item: `Item ${i}`,
+    files
+  });
+}
+
 (function manageCListModal() {
   let htmlmanagetempclistmodal = "", htmlDataModal = "";
-  managetempclistmodal.forEach((item, index) => {
-    htmlmanagetempclistmodal += `<li class="modalmanagetempclist-item-${index + 1}">
+  managetempclistmodal.forEach(({ id, item, files }, index) => {
+    htmlmanagetempclistmodal += `<li class="${id}">
     <p>${item}</p>
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
@@ -561,10 +518,11 @@ const managetempclistmodal = [
     let modallistmanagetempc_data1 = "",
       modallistmanagetempc_data2 = "",
       modallistmanagetempc_data3 = "",
-      length = 72;
-    for (let i = 1; i <= length; i++) {
-      let elementHtml = `<li class="option-managetempcmodallist-${index + 1}-${i}">
-      <p>Level ${index + 1} - Item ${i}</p>
+      length = files.length;
+    files.forEach(({ id: _id, item }, idx) => {
+      let i = idx + 1;
+      let elementHtml = `<li class="${_id}">
+      <p>${item}</p>
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
@@ -591,9 +549,9 @@ const managetempclistmodal = [
           modallistmanagetempc_data3 += elementHtml;
         }
       }
-    }
+    });
     htmlDataModal +=
-      `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempc-submodal-div-list-1-${index + 1}">
+    `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempc-submodal-div-list-1-${index + 1}">
 			${modallistmanagetempc_data1}
 		</ul>
 		<ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="managetempc-submodal-div-list-2-${index + 1}">
@@ -604,7 +562,7 @@ const managetempclistmodal = [
 		</ul>`;
   });
   managetempc_list.innerHTML += htmlmanagetempclistmodal;
-  document.querySelector("#sub-ul-managetempc-modallist").innerHTML = htmlDataModal;
+  document.querySelector("#manage-tempc-list-modal div.sub-ul-managetemp-modallist").innerHTML = htmlDataModal;
   /* Update End By Ashiq */
 })();
 
@@ -681,7 +639,7 @@ let opt_managetempc_left_list = "";
 })();
 
 let managetempc_oldLIClassnameModal = "";
-const sub_ul_managetempcmodallist = document.querySelector("#sub-ul-managetempc-modallist");
+const sub_ul_managetempcmodallist = document.querySelector("#manage-tempc-list-modal div.sub-ul-managetemp-modallist");
 sub_ul_managetempcmodallist.addEventListener("click", function (e) {
   let target = e.target;
   if (target.tagName === "DIV") {
@@ -714,29 +672,30 @@ $("#managetempc-mng-opt2-delete").click(function () {
 });
 
 function countTempCListModal(e) {
-  let countItem = $(e).parent().parent().find("#sub-ul-managetempc-modallist .sublist-check-box.checkbox_show").length;
+  let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   $("#managetempc-list-count").html(`${countItem} Items Selected`);
 }
 
 function resetTempCListModal(e) {
-  let checkItem = $(e).parent().parent().find("#sub-ul-managetempc-modallist .sublist-check-box.checkbox_show");
-  let uncheckItem = $(e).parent().parent().find("#sub-ul-managetempc-modallist .sublist-cancel-box.checkbox_hide");
+  let checkItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show");
+  let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
   checkItem.toggleClass("checkbox_show checkbox_hide");
   uncheckItem.toggleClass("checkbox_show checkbox_hide");
   $("#managetempc-list-count").html(`0 Items Selected`);
+  let leftItem = $(e).parent().parent().find("ul.managetempc-list li div.green-check-box.display-block");
+  leftItem.toggleClass("display-block display-none");
 }
 
 function manTemCLeftOnRight(target) {
   let _id = $(target).parent().attr("id");
-  let pos = _id.length;
   let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
   if (len > 0) {
-    let markItem = $(`ul.managetempc-list li.modalmanagetempclist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.managetempc-list li.modalmanagetemplist-item-${_id.split("-").splice(-1)[0]}`)
       .children("div.green-check-box");
     markItem.addClass("display-block");
     markItem.removeClass("display-none");
   } else {
-    let markItem = $(`ul.managetempc-list li.modalmanagetempclist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.managetempc-list li.modalmanagetemplist-item-${_id.split("-").splice(-1)[0]}`)
       .children("div.green-check-box");
     markItem.addClass("display-none");
     markItem.removeClass("display-block");
@@ -762,42 +721,58 @@ $(document).ready(function () {
 // ===/////=== MANAGE TEMP LIST4 ITEM START ===/////===
 const managetempd_list = document.querySelector(".managetempd-list");
 // Added by ASHIQ
-const managetempdlistmodal = [
-  "Item 1",
-  "Item 2",
-  "Item 3",
-  "Item 4",
-  "Item 5",
-  "Item 6",
-  "Item 7",
-  "Item 8",
-  "Item 9",
-  "Item 10",
-  "Item 11",
-  "Item 12",
-  "Item 13",
-  "Item 14",
-  "Item 15",
-  "Item 16",
-  "Item 17",
-  "Item 18",
-  "Item 19",
-  "Item 20",
-  "Item 21",
-  "Item 22",
-  "Item 23",
-  "Item 24",
-  "Item 25",
-  "Item 26",
-  "Item 27",
-  "Item 28",
-  "Item 29",
-];
+let managetempdlistmodal = [];
+for (let i = 1; i <= 29; i++) {
+  let files = []
+  for (let j = 1; j <= 72; j++) {
+    files.push({
+      id: `option-managetempdmodallist-${i}-${j}`,
+      item: `Level ${i} - Item ${j}`
+    });
+  }
+  managetempdlistmodal.push({
+    id: `modalmanagetemplist-item-${i}`,
+    item: `Item ${i}`,
+    files
+  });
+}
+function findFileListMS1(_id, name) {
+  if (name == "LIST 1") {
+    for (let val of managetempalistmodal) {
+      for (let file of val.files) {
+        if (file.id == _id) return { id: val.id, item: val.item };
+        else if (file.item == _id) return { id: file.id, item: file.item };
+      }
+    }
+  } else if (name == "LIST 2") {
+    for (let val of managetempblistmodal) {
+      for (let file of val.files) {
+        if (file.id == _id) return { id: val.id, item: val.item };
+        else if (file.item == _id) return { id: file.id, item: file.item };
+      }
+    }
+  } else if (name == "LIST 3") {
+    for (let val of managetempclistmodal) {
+      for (let file of val.files) {
+        if (file.id == _id) return { id: val.id, item: val.item };
+        else if (file.item == _id) return { id: file.id, item: file.item };
+      }
+    }
+  } else if (name == "LIST 4") {
+    for (let val of managetempdlistmodal) {
+      for (let file of val.files) {
+        if (file.id == _id) return { id: val.id, item: val.item };
+        else if (file.item == _id) return { id: file.id, item: file.item };
+      }
+    }
+  }
+  return false;
+}
 
 (function manageDListModal() {
   let htmlmanagetempdlistmodal = "", htmlDataModal = "";
-  managetempdlistmodal.forEach((item, index) => {
-    htmlmanagetempdlistmodal += `<li class="modalmanagetempdlist-item-${index + 1}">
+  managetempdlistmodal.forEach(({ id, item, files }, index) => {
+    htmlmanagetempdlistmodal += `<li class="${id}">
     <p>${item}</p>
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
@@ -810,10 +785,11 @@ const managetempdlistmodal = [
     let modallistmanagetempd_data1 = "",
       modallistmanagetempd_data2 = "",
       modallistmanagetempd_data3 = "",
-      length = 72;
-    for (let i = 1; i <= length; i++) {
-      let elementHtml = `<li class="option-managetempdmodallist-${index + 1}-${i}">
-      <p>Level ${index + 1} - Item ${i}</p>
+      length = files.length;
+    files.forEach(({ id: _id, item }, idx) => {
+      let i = idx + 1;
+      let elementHtml = `<li class="${_id}">
+      <p>${item}</p>
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
@@ -840,9 +816,9 @@ const managetempdlistmodal = [
           modallistmanagetempd_data3 += elementHtml;
         }
       }
-    }
+    });
     htmlDataModal +=
-      `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempd-submodal-div-list-1-${index + 1}">
+    `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempd-submodal-div-list-1-${index + 1}">
       ${modallistmanagetempd_data1}
     </ul>
     <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="managetempd-submodal-div-list-2-${index + 1}">
@@ -853,7 +829,7 @@ const managetempdlistmodal = [
     </ul>`;
   });
   managetempd_list.innerHTML = htmlmanagetempdlistmodal;
-  document.querySelector("#sub-ul-managetempd-modallist").innerHTML = htmlDataModal;
+  document.querySelector("#manage-tempd-list-modal div.sub-ul-managetemp-modallist").innerHTML = htmlDataModal;
   /* Update End By Ashiq */
 })();
 
@@ -930,7 +906,7 @@ let opt_managetempd_left_list = "";
 })();
 
 let managetempd_oldLIClassnameModal = "";
-const sub_ul_managetempdmodallist = document.querySelector("#sub-ul-managetempd-modallist");
+const sub_ul_managetempdmodallist = document.querySelector("#manage-tempd-list-modal div.sub-ul-managetemp-modallist");
 sub_ul_managetempdmodallist.addEventListener("click", function (e) {
   let target = e.target;
   if (target.tagName === "DIV") {
@@ -962,29 +938,30 @@ $("#managetempd-mng-opt2-delete").click(function () {
 });
 
 function countTempDListModal(e) {
-  let countItem = $(e).parent().parent().find("#sub-ul-managetempd-modallist .sublist-check-box.checkbox_show").length;
+  let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   $("#managetempd-list-count").html(`${countItem} Items Selected`);
 }
 
 function resetTempDListModal(e) {
-  let checkItem = $(e).parent().parent().find("#sub-ul-managetempd-modallist .sublist-check-box.checkbox_show");
-  let uncheckItem = $(e).parent().parent().find("#sub-ul-managetempd-modallist .sublist-cancel-box.checkbox_hide");
+  let checkItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show");
+  let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
   checkItem.toggleClass("checkbox_show checkbox_hide");
   uncheckItem.toggleClass("checkbox_show checkbox_hide");
   $("#managetempd-list-count").html(`0 Items Selected`);
+  let leftItem = $(e).parent().parent().find("ul.managetempd-list li div.green-check-box.display-block");
+  leftItem.toggleClass("display-block display-none");
 }
 
 function manTemDLeftOnRight(target) {
   let _id = $(target).parent().attr("id");
-  let pos = _id.length;
   let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
   if (len > 0) {
-    let markItem = $(`ul.managetempd-list li.modalmanagetempdlist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.managetempd-list li.modalmanagetemplist-item-${_id.split("-").splice(-1)[0]}`)
       .children("div.green-check-box");
     markItem.addClass("display-block");
     markItem.removeClass("display-none");
   } else {
-    let markItem = $(`ul.managetempd-list li.modalmanagetempdlist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.managetempd-list li.modalmanagetemplist-item-${_id.split("-").splice(-1)[0]}`)
       .children("div.green-check-box");
     markItem.addClass("display-none");
     markItem.removeClass("display-block");
@@ -2549,3 +2526,230 @@ function formToWindowMS3(e) {
 }
 // Form by text editor End
 // Manage template Sample 3 End
+
+// Manage template Sample 1 Start
+// Form by text editor Start
+let listMS1 = [
+  {
+    id: "manage-tempa-list-modal",
+    name: "LIST 1",
+  },
+  {
+    id: "manage-tempb-list-modal",
+    name: "LIST 2",
+  },
+  {
+    id: "manage-tempc-list-modal",
+    name: "LIST 3",
+  },
+  {
+    id: "manage-tempd-list-modal",
+    name: "LIST 4",
+  },
+];
+function findInputIdMS1(title) {
+  let res = listMS1.filter((a) => a.name == title);
+  if (res.length) return res[0];
+  else return false;
+}
+function checkingMS1(e) {
+  $("#adder").remove();
+  // let nd = getCaretPosition();
+  // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+  if (e.keyCode == 13) {
+    let nd = getCaretPosition();
+    $("#temp").attr("id", "");
+    if (nd.nodeType != 3 && nd.getAttribute("id") == "ms1_text_editor") return false;
+    if (
+      nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
+      nd.textContent != ""
+    ) {
+      let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+      let extra = getCaretPosition2(nd2);
+      let starting = nd.textContent.substr(0, extra);
+      let inpData = starting.split(":");
+      if (
+        starting != "" && !findInputIdMS1(inpData[0].trim())
+      ) {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design-invalid data-div">${nd.textContent}</div><br id="temp">`
+          );
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design-invalid data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+            ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      } else {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design data-div">
+            ${nd.textContent}
+            </div>
+            <br id="temp">`
+          );
+          //setEndOfContenteditable(document.getElementById("temp"));
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+              ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      }
+    }
+    return false;
+  }
+  // this will add autocorrect box
+  setTimeout(autoCorrectMS1, 100);
+}
+function autoCorrectMS1() {
+  let pos = getCaretPosition();
+  if ($(pos).find("#adder").length == 1) $("#adder").remove();
+  while (document.getElementById("temp")) {
+    document.getElementById("temp").removeAttribute("id");
+  }
+  let x = pos.textContent;
+  let editor = document.getElementById("text_editor_p");
+
+  let m = "";
+  let first = 1;
+  if (x.indexOf(":") == -1) {
+    listMS1.forEach(({ name }) => {
+      if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
+        if (first) {
+          m += `<option selected value="${name}">${name}</option><br>`;
+        }
+        else {
+          m += `<option value="${name}">${name}</option><br>`;
+        }
+        first = 0;
+      }
+    });
+  }
+
+  let y =
+    `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
+    ${m}
+    </select>`;
+  // add auto correct ... only if there is atleast one match
+  if (m != "") {
+    if (x.indexOf(":") == -1) {
+      $(pos).replaceWith(
+        `<div id="temp">${x}</div>
+        <div id="adder" class="set-name"></div>`
+      );
+    } else {
+      $(pos).replaceWith(
+        `<div id="temp">${x}</div>
+        <div id="adder" class="set-sug"></div>`
+      );
+    }
+    document.getElementById("adder").innerHTML = y;
+    document.getElementById("adder").style.display = "block";
+    $("#adder select").focus();
+  } else {
+    $("#adder").remove();
+    // setEndOfContenteditable(document.getElementById("temp"));
+    // document.getElementById("temp").removeAttribute("id");
+  }
+}
+function pasteEventMS1(e) {
+  let editor = document.getElementById("ms1_text_editor");
+  let clipboardData = e.clipboardData || window.clipboardData;
+  let pD = clipboardData.getData("Text").split("\n");
+  for (let i = 0; i < pD.length; i++) {
+    let nbe = pD[i];
+    let inpData = nbe.split(":");
+    if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
+      let x;
+      if (
+        !findInputIdMS1(inpData[0].trim())
+      ) {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design-invalid data-div");
+        x.textContent = nbe;
+      } else {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design data-div");
+        x.textContent = nbe;
+      }
+      editor.append(x);
+    }
+  }
+  removeExtraLines(editor);
+  editor.append(document.createElement("br"));
+  setEndOfContenteditable(editor);
+  return false;
+}
+function windowToFormMS1(e) {
+  let tRow = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ms1_text_editor div.form-text-design.data-div");
+  let len = tRow.length;
+  for (let i = 0; i < len; i++) {
+    let divData = $(tRow[i])[0].innerText.split(":");
+    let { id, name } = findInputIdMS1(divData[0].trim());
+    let dataLi = divData.length > 2 ? findFileListMS1(divData[2].trim(), name) : false;
+    if (dataLi) {
+      let { id:id2 } = dataLi;
+      let liList = document.querySelector(`div#${id} div.sub-ul-managetemp-modallist ul li.${id2}`);
+      let checkBox = $(liList).children(`div.sublist-check-box`);
+      let cancelBox = $(liList).children(`div.sublist-cancel-box`);
+      checkBox.addClass("checkbox_show");
+      checkBox.removeClass("checkbox_hide");
+      cancelBox.removeClass("checkbox_show");
+      cancelBox.addClass("checkbox_hide");
+
+      let _id = $(liList).parent().attr("id");
+      let markItem = $(`div#${id} ul.left-list-box li.modalmanagetemplist-item-${_id.split("-").splice(-1)[0]} div.green-check-box`);
+      markItem.addClass("display-block");
+      markItem.removeClass("display-none");
+
+      $(`div#${id} a#submit_list`).click();
+    }
+  }
+}
+function formToWindowMS1(e) {
+  let tBody = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ms1_text_editor");
+  let renHtml = "";
+  listMS1.forEach(({ id, name }) => {
+    let checkList = $(`div#${id} div.sub-ul-managetemp-modallist .submodal-list div.sublist-check-box.checkbox_show`);
+    let len = checkList.length;
+    for (let i = 0; i < len; i++) {
+      let li = $(checkList[i]).parent();
+      let listName = li.children("p")[0].textContent.trim();
+      let className = li.attr("class");
+      let dataLi = findFileListMS1(className, name);
+      if (dataLi) {
+        renHtml += `<div class="form-text-design data-div">
+          ${name}: ${dataLi.item}: ${listName}
+        </div>`;
+      }
+    }
+  });
+
+  tBody.html(renHtml);
+}
+// Form by text editor End
+// Manage template Sample 1 End

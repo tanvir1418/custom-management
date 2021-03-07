@@ -288,7 +288,7 @@ let rightSideData = [
     "name": "Sub text lsa6-2",
     "count": 0,
   }
-]
+];
 
 let leftSideArray = [
   {
@@ -331,7 +331,7 @@ let leftSideArray = [
     "name": "Any text lsa8",
     "count": 2,
   },
-]
+];
 
 function listRender(id, name, addNewRow) {
   let ele = `<tr ondblclick="${addNewRow}" class="cursor-pointer" id="${id}">
@@ -452,7 +452,7 @@ function formToWindow(e) {
     let seqTitle = $(`#${pid} #sequence`).find(":selected").text();
     let inpObj = $(`#${pid} input[type="text"]`), inpDiv = "";
     for (let i = 0; i < inpObj.length; i++) {
-      let uni_id = inpObj.length > 1 ? "_"+(i+1) : "";
+      let uni_id = inpObj.length > 1 ? "_" + (i + 1) : "";
       let inpText = inpObj[i].value;
       inpDiv += `<div class="form-text-design data-div">
         ${title}${uni_id}: ${inpText}
@@ -466,11 +466,30 @@ function formToWindow(e) {
     </div>
     ${inpDiv}`;
   });
+
+  let checkList = $("div#myopt1listData div#sub-ul-modallist .submodal-list div.sublist-check-box.checkbox_show");
+  let len = checkList.length;
+  for (let i = 0; i < len; i++) {
+    let li = $(checkList[i]).parent();
+    let listName = li.children("p")[0].textContent.trim();
+    let className = li.attr("class");
+    let dataLi = findFileList(className);
+    if (dataLi) {
+      renHtml += `<div class="form-text-design data-div">
+        LIST 1: ${dataLi.item}: ${listName}
+      </div>`;
+    }
+  }
+
   tBody.html(renHtml);
 }
 
 function findInputId(title) {
-  let searchArr = leftSideArray.concat(rightSideData);
+  let list = [{
+    id: "myopt1listData",
+    name: "LIST 1"
+  }];
+  let searchArr = leftSideArray.concat(rightSideData).concat(list);
   let res = searchArr.filter((a) => a.name == title).map((b) => b.id);
   if (res.length) return res[0];
   else return false;
@@ -485,24 +504,42 @@ function windowToForm(e) {
     let divData = $(tRow[i])[0].innerText.split(":");
     let [title, no] = divData[0].trim().split("_");
     let pid = findInputId(title);
-    let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
-    if (checkbox.checked == false) checkbox.click();
-
-    if (pid && divData.length == 3) {
-      if (divData[1].trim().toUpperCase() == "SEQUENCE") {
-        let seqVal = 0;
-        let len = Math.max(leftSideArray.length, rightSideData.length);
-        for (let k = 1; k <= len; k++) {
-          if (divData[2].trim().toUpperCase() == inWords(k).toUpperCase()) {
-            seqVal = k;
+    let dataLi = divData.length > 2 ? findFileList(divData[2].trim()) : false;
+    if (pid && !dataLi) {
+      let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
+      if (checkbox.checked == false) checkbox.click();
+      if (divData.length == 3) {
+        if (divData[1].trim().toUpperCase() == "SEQUENCE") {
+          let seqVal = 0;
+          let len = Math.max(leftSideArray.length, rightSideData.length);
+          for (let k = 1; k <= len; k++) {
+            if (divData[2].trim().toUpperCase() == inWords(k).toUpperCase()) {
+              seqVal = k;
+            }
           }
+          $(`#${pid} #sequence`).val(seqVal);
         }
-        $(`#${pid} #sequence`).val(seqVal);
+      } else if (divData.length == 2) {
+        let inpVal = divData[divData.length - 1].trim();
+        no = no != undefined ? no : 1;
+        $(`#${pid} input[type="text"]`)[no - 1].value = inpVal;
       }
-    } else if (pid && divData.length == 2) {
-      let inpVal = divData[divData.length - 1].trim();
-      no = no != undefined ? no : 1;
-      $(`#${pid} input[type="text"]`)[no-1].value = inpVal;
+    } else if (dataLi) {
+      let { id } = dataLi;
+      let liList = document.querySelector(`div#myopt1listData div#sub-ul-modallist ul li.${id}`);
+      let checkBox = $(liList).children(`div.sublist-check-box`);
+      let cancelBox = $(liList).children(`div.sublist-cancel-box`);
+      checkBox.addClass("checkbox_show");
+      checkBox.removeClass("checkbox_hide");
+      cancelBox.removeClass("checkbox_show");
+      cancelBox.addClass("checkbox_hide");
+
+      let _id = $(liList).parent().attr("id");
+      let markItem = $(`div#myopt1listData ul.select-item-main li.modallist-item-${_id.split("-").splice(-1)[0]} div.green-check-box`);
+      markItem.addClass("display-block");
+      markItem.removeClass("display-none");
+
+      $("div#myopt1listData button.done-myfo").click();
     }
   }
 }
@@ -595,6 +632,7 @@ function checking(e) {
       let ending = nd.textContent.substr(extra);
       // addition of check for allowing lines to split on enter key in between
 
+      let regex = /Item \d+/g;
       let inpData = starting.split(":");
       if (
         starting != "" &&
@@ -605,7 +643,8 @@ function checking(e) {
             inpData[1].trim() != "Set" &&
             inpData[1].trim() != "Sequence" &&
             inpData[1].trim() != "Form" &&
-            inpData[1].trim() != "To"
+            inpData[1].trim() != "To" &&
+            !regex.test(inpData[1].trim())
           )
         )
       ) {
@@ -672,7 +711,7 @@ function autoCorrect() {
   }
   let x = pos.textContent;
   let editor = document.getElementById("text_editor_p");
-  
+
   let m = "";
   let first = 1;
   if (x.indexOf(":") == -1) {
@@ -803,6 +842,7 @@ function pasteEvent(e) {
     let inpData = nbe.split(":");
     if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
       let x;
+      let regex = /Item \d+/g;
       if (
         !findInputId(inpData[0].trim().split("_")[0].trim()) ||
         (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
@@ -811,7 +851,8 @@ function pasteEvent(e) {
           inpData[1].trim() != "Set" &&
           inpData[1].trim() != "Sequence" &&
           inpData[1].trim() != "Form" &&
-          inpData[1].trim() != "To"
+          inpData[1].trim() != "To" &&
+          !regex.test(inpData[1].trim())
         )
       ) {
         x = document.createElement("div");
@@ -844,9 +885,9 @@ function removeExtraLines(e) {
 function isGenerateDisable() {
   let len = seqList.length;
   if (!len) return false;
-  for (let i = 0; i < len; i++){
+  for (let i = 0; i < len; i++) {
     let abc = $(`#leftSideDrag_op1 #${seqList[i]} .custom-input-only input`);
-    for (let j = 0; j < abc.length; j++){
+    for (let j = 0; j < abc.length; j++) {
       if (abc[j].value == "") {
         $(abc[j]).parent().addClass("custom-input-danger");
         $(abc[j]).parent().removeClass("custom-input-success");
@@ -861,12 +902,12 @@ function isGenerateDisable() {
       }
     }
   }
-  
+
   let len2 = seqListR.length;
   if (!len2) return false;
-  for (let i = 0; i < len2; i++){
+  for (let i = 0; i < len2; i++) {
     let abc = $(`#rightSideDrag_op1 #${seqListR[i]} .custom-input-only input`);
-    for (let j = 0; j < abc.length; j++){
+    for (let j = 0; j < abc.length; j++) {
       if (abc[j].value == "") {
         $(abc[j]).parent().addClass("custom-input-danger");
         $(abc[j]).parent().removeClass("custom-input-success");
@@ -998,12 +1039,12 @@ function autoCorrectOp3() {
     document.getElementById("temp").removeAttribute("id");
   }
   let x = pos.textContent;
-  
+
   let m = "";
   let first = 1;
   if (x.indexOf(":") == -1) {
     let searchArr = op3Sug.concat(opt3TableData);
-    searchArr.forEach(({name}) => {
+    searchArr.forEach(({ name }) => {
       if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
         if (first) {
           m += `<option selected value="${name}">${name}</option><br>`;
@@ -1017,7 +1058,7 @@ function autoCorrectOp3() {
   }
 
   let y =
-  `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
+    `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
     ${m}
   </select>`;
   if (m != "") {
@@ -1078,8 +1119,8 @@ function formToWindowOp3(e) {
   let renHtml = "";
 
   if (keyword != "") {
-    renHtml+=
-    `<div class="form-text-design data-div">
+    renHtml +=
+      `<div class="form-text-design data-div">
       Keyword: ${keyword}
     </div>`;
   }
@@ -1093,7 +1134,7 @@ function formToWindowOp3(e) {
 
   if (to != "") {
     renHtml +=
-    `<div class="form-text-design data-div">
+      `<div class="form-text-design data-div">
       To: ${to}
     </div>`;
   }
@@ -1104,7 +1145,7 @@ function formToWindowOp3(e) {
   for (let i = 0; i < len; i++) {
     let trData = $(tableTr[i]).children("td").text().trim();
     renHtml +=
-    `<div class="form-text-design data-div">
+      `<div class="form-text-design data-div">
       ${radioOption}: ${trData}
     </div>`;
   }
@@ -1118,7 +1159,7 @@ function windowToFormOp3(e) {
     .children(".text-editor-popup-body")
     .find("#op3_text_editor div.form-text-design.data-div");
   let len = tRow.length;
-  for (let i = 0; i < len; i++){
+  for (let i = 0; i < len; i++) {
     let divData = $(tRow[i])[0].innerText.split(":");
     if (divData.length > 1) {
       if (divData[0].trim() == "Keyword") {

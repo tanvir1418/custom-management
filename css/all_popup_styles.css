@@ -2089,12 +2089,14 @@ Bottom codes are added by Tanvir
 
 #text_editor,
 #op3_text_editor,
-#ms2_text_editor,
+#ds1_text_editor,
+#ms1_text_editor,
 #ds2_text_editor,
-#ms4_text_editor,
-#ds4_text_editor,
+#ms2_text_editor,
+#ds3_text_editor,
 #ms3_text_editor,
-#ds3_text_editor {
+#ds4_text_editor,
+#ms4_text_editor {
     border: none;
     outline: none;
 }
