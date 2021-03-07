@@ -1786,7 +1786,7 @@ function windowToFormDS1(e) {
         cancelBox.addClass("checkbox_hide");
 
         let _id = $(liList).parent().attr("id");
-        let markItem = $(`div#${id} ul.left-list-box li.modaloptfourmodallist-item-${_id.slice(-1)} div.green-check-box`);
+        let markItem = $(`div#${id} ul.left-list-box li.modaloptfourmodallist-item-${_id.split("-").splice(-1)[0]} div.green-check-box`);
         markItem.addClass("display-block");
         markItem.removeClass("display-none");
 
@@ -1816,7 +1816,7 @@ function formToWindowDS1(e) {
     for (let i = 0; i < len; i++) {
       let li = $(checkList[i]).parent();
       let listName = li.children("p")[0].textContent.trim();
-      let className = li.attr("class").match(/option-optfourmodal[a-d]modallist-\d+-\d+/g)[0];
+      let className = li.attr("class");
       let dataLi = findFileListOpt4(className, name);
       if (dataLi) {
         renHtml += `<div class="form-text-design data-div">

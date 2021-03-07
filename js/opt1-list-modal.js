@@ -216,12 +216,12 @@ function markLeftOnRight(target) {
 	let _id = $(target).parent().attr("id");
 	let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
 	if (len > 0) {
-		let markItem = $(`ul.select-item-main li.modallist-item-${_id.slice(-1)}`)
+		let markItem = $(`ul.select-item-main li.modallist-item-${_id.split("-").splice(-1)[0]}`)
 			.children("div.green-check-box");
 		markItem.addClass("display-block");
 		markItem.removeClass("display-none");
 	} else {
-		let markItem = $(`ul.select-item-main li.modallist-item-${_id.slice(-1)}`)
+		let markItem = $(`ul.select-item-main li.modallist-item-${_id.split("-").splice(-1)[0]}`)
 			.children("div.green-check-box");
 		markItem.addClass("display-none");
 		markItem.removeClass("display-block");

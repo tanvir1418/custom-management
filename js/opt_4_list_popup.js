@@ -1,7 +1,7 @@
 // ===/////=== OPTION 4 LIST1 ITEM START ===/////===
 const optfourmodala_list = document.querySelector(".optfourmodala-list");
 // Added by ASHIQ
-let optfourmodalalistmodal = []
+let optfourmodalalistmodal = [];
 for (let i = 1; i <= 29; i++) {
   let files = []
   for (let j = 1; j <= 72; j++) {
@@ -14,7 +14,7 @@ for (let i = 1; i <= 29; i++) {
     id: `modaloptfourmodallist-item-${i}`,
     item: `Item ${i}`,
     files
-  })
+  });
 }
 
 (function optfourmodalAListModal() {
@@ -206,12 +206,12 @@ function opt4ALeftOnRight(target) {
   let pos = _id.length;
   let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
   if (len > 0) {
-    let markItem = $(`ul.optfourmodala-list li.modaloptfourmodallist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.optfourmodala-list li.modaloptfourmodallist-item-${_id.split("-").splice(-1)[0]}`)
       .children("div.green-check-box");
     markItem.addClass("display-block");
     markItem.removeClass("display-none");
   } else {
-    let markItem = $(`ul.optfourmodala-list li.modaloptfourmodallist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.optfourmodala-list li.modaloptfourmodallist-item-${_id.split("-").splice(-1)[0]}`)
       .children("div.green-check-box");
     markItem.addClass("display-none");
     markItem.removeClass("display-block");
@@ -442,12 +442,12 @@ function opt4BLeftOnRight(target) {
   let pos = _id.length;
   let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
   if (len > 0) {
-    let markItem = $(`ul.optfourmodalb-list li.modaloptfourmodallist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.optfourmodalb-list li.modaloptfourmodallist-item-${_id.split("-").splice(-1)[0]}`)
       .children("div.green-check-box");
     markItem.addClass("display-block");
     markItem.removeClass("display-none");
   } else {
-    let markItem = $(`ul.optfourmodalb-list li.modaloptfourmodallist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.optfourmodalb-list li.modaloptfourmodallist-item-${_id.split("-").splice(-1)[0]}`)
       .children("div.green-check-box");
     markItem.addClass("display-none");
     markItem.removeClass("display-block");
@@ -678,12 +678,12 @@ function opt4CLeftOnRight(target) {
   let pos = _id.length;
   let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
   if (len > 0) {
-    let markItem = $(`ul.optfourmodalc-list li.modaloptfourmodallist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.optfourmodalc-list li.modaloptfourmodallist-item-${_id.split("-").splice(-1)[0]}`)
       .children("div.green-check-box");
     markItem.addClass("display-block");
     markItem.removeClass("display-none");
   } else {
-    let markItem = $(`ul.optfourmodalc-list li.modaloptfourmodallist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.optfourmodalc-list li.modaloptfourmodallist-item-${_id.split("-").splice(-1)[0]}`)
       .children("div.green-check-box");
     markItem.addClass("display-none");
     markItem.removeClass("display-block");
@@ -947,12 +947,12 @@ function opt4DLeftOnRight(target) {
   let pos = _id.length;
   let len = $(target).parent().parent().find(".submodal-list.checkbox_show div.sublist-check-box.checkbox_show").length;
   if (len > 0) {
-    let markItem = $(`ul.optfourmodald-list li.modaloptfourmodallist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.optfourmodald-list li.modaloptfourmodallist-item-${_id.split("-").splice(-1)[0]}`)
       .children("div.green-check-box");
     markItem.addClass("display-block");
     markItem.removeClass("display-none");
   } else {
-    let markItem = $(`ul.optfourmodald-list li.modaloptfourmodallist-item-${_id[pos - 1]}`)
+    let markItem = $(`ul.optfourmodald-list li.modaloptfourmodallist-item-${_id.split("-").splice(-1)[0]}`)
       .children("div.green-check-box");
     markItem.addClass("display-none");
     markItem.removeClass("display-block");

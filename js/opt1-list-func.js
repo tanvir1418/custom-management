@@ -288,7 +288,7 @@ let rightSideData = [
     "name": "Sub text lsa6-2",
     "count": 0,
   }
-]
+];
 
 let leftSideArray = [
   {
@@ -331,7 +331,7 @@ let leftSideArray = [
     "name": "Any text lsa8",
     "count": 2,
   },
-]
+];
 
 function listRender(id, name, addNewRow) {
   let ele = `<tr ondblclick="${addNewRow}" class="cursor-pointer" id="${id}">
@@ -472,7 +472,7 @@ function formToWindow(e) {
   for (let i = 0; i < len; i++) {
     let li = $(checkList[i]).parent();
     let listName = li.children("p")[0].textContent.trim();
-    let className = li.attr("class").match(/option-modallist-\d+-\d+/g)[0];
+    let className = li.attr("class");
     let dataLi = findFileList(className);
     if (dataLi) {
       renHtml += `<div class="form-text-design data-div">
@@ -485,10 +485,13 @@ function formToWindow(e) {
 }
 
 function findInputId(title) {
-  let searchArr = leftSideArray.concat(rightSideData);
+  let list = [{
+    id: "myopt1listData",
+    name: "LIST 1"
+  }];
+  let searchArr = leftSideArray.concat(rightSideData).concat(list);
   let res = searchArr.filter((a) => a.name == title).map((b) => b.id);
   if (res.length) return res[0];
-  else if (title == "LIST 1") return true;
   else return false;
 }
 
@@ -502,7 +505,7 @@ function windowToForm(e) {
     let [title, no] = divData[0].trim().split("_");
     let pid = findInputId(title);
     let dataLi = divData.length > 2 ? findFileList(divData[2].trim()) : false;
-    if (pid && pid != true) {
+    if (pid && !dataLi) {
       let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
       if (checkbox.checked == false) checkbox.click();
       if (divData.length == 3) {
@@ -532,7 +535,7 @@ function windowToForm(e) {
       cancelBox.addClass("checkbox_hide");
 
       let _id = $(liList).parent().attr("id");
-      let markItem = $(`div#myopt1listData ul.select-item-main li.modallist-item-${_id.slice(-1)} div.green-check-box`);
+      let markItem = $(`div#myopt1listData ul.select-item-main li.modallist-item-${_id.split("-").splice(-1)[0]} div.green-check-box`);
       markItem.addClass("display-block");
       markItem.removeClass("display-none");
 
