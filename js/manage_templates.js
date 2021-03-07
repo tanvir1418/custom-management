@@ -1100,7 +1100,7 @@ let manTemLeftData = [
 ];
 
 function listRenderManTemp(id, name, addNewRow) {
-  let ele = `<tr ondblclick="${addNewRow}" class="cursor-pointer" id="${id}">
+  let ele = `<tr ondblclick="${addNewRow}" onclick="clickAddClass(this)" class="cursor-pointer" id="${id}">
     <td colspan="2">${name}</td>
     <td><i class="fas fa-question-circle"></i></td>
     <td></td>
@@ -1533,7 +1533,13 @@ function windowToFormMS2(e) {
     let pid = findInputIdMS2(title);
     if (pid && divData.length == 3) {
       let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
-      if (checkbox.checked == false ) checkbox.click();
+      if (checkbox && checkbox.checked == false) {
+        checkbox.click();
+      } else {
+        $(`tr#${pid}`).dblclick();
+        let afterCheck = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
+        if(afterCheck && afterCheck.checked == false) afterCheck.click();
+      }
 
       if (divData[1].trim().toUpperCase() == "SET") {
         $(`#${pid} .add-set`).val(divData[2].trim().toLowerCase());
