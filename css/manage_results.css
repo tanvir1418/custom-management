@@ -3233,3 +3233,37 @@ i.fa-caret-down.down-animation-icon{
         min-width: 120px !important;
     }
 }
+
+#viewtwo .view-arrow-top:after {
+  content: " ";
+  position: absolute;
+  left: 20px;
+  top: -5px;
+  border-top: none;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-bottom: 5px solid black;
+}
+
+#rowdetails .row-arrow-top:after {
+  content: " ";
+  position: absolute;
+  left: 20px;
+  top: -5px;
+  border-top: none;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-bottom: 5px solid black;
+}
+
+#noteswindow .notes-arrow-top:after {
+  content: " ";
+  position: absolute;
+  left: 20px;
+  top: -5px;
+  border-top: none;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-bottom: 5px solid black;
+}
+

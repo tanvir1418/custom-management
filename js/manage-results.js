@@ -1258,8 +1258,8 @@ function IconModalClick() {
     for (let i = 0; i < viewModalList.length; i++) {
         viewModalList[i].addEventListener("click", function (event) {
             $("#viewtwo .modal-dialog").css({
-                top: ((event.clientY) + 20),
-                left: ((event.clientX) - 125)
+                top: ((event.clientY) + 25),
+                left: ((event.clientX) - 20)
             });
         });
     }
@@ -1268,8 +1268,8 @@ function IconModalClick() {
     for (let i = 0; i < rowModalClick.length; i++) {
         rowModalClick[i].addEventListener("click", function (event) {
             $("#rowdetails .modal-dialog").css({
-                top: ((event.clientY) + 20),
-                left: ((event.clientX) - 125)
+                top: ((event.clientY) + 25),
+                left: ((event.clientX) - 20)
             });
         });
     }
@@ -1278,8 +1278,8 @@ function IconModalClick() {
     for (let i = 0; i < noteModalClick.length; i++) {
         noteModalClick[i].addEventListener("click", function (event) {
             $("#noteswindow .modal-dialog").css({
-                top: ((event.clientY) + 30),
-                left: ((event.clientX) - 150)
+                top: ((event.clientY) + 25),
+                left: ((event.clientX) - 20)
             });
         });
     }
