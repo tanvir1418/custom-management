@@ -116,9 +116,9 @@ function openOption(evt, optionName) {
 		tablinks[i].className = tablinks[i].className.replace(" active", "");
 	}
 	document.getElementById(optionName).style.display = "block";
-	// document.getElementById("hide559").style.display = "none";
-	// document.getElementById("tab_2").style.paddingTop = "0px";
-	// document.getElementById("opt-content").style.marginTop = "0px";
+	document.getElementById("hide559").style.display = "none";
+	document.getElementById("tab_2").style.paddingTop = "0px";
+	document.getElementById("opt-content").style.marginTop = "0px";
 	evt.currentTarget.className += " active";
 }
 // CHOOSE OPTION SECTION END
@@ -915,71 +915,70 @@ ExistTableHeadClick("man-data-opt5-exist");
 
 
 // modal background
-$('#opt4a-list-modal').on('show.bs.modal', function (e) {
-	$('body').addClass("example-open");
-}).on('hide.bs.modal', function (e) {
-	$('body').removeClass("example-open");
-})
+// $('#opt4a-list-modal').on('show.bs.modal', function (e) {
+// 	$('body').addClass("example-open");
+// }).on('hide.bs.modal', function (e) {
+// 	$('body').removeClass("example-open");
+// })
 
-$('#opt4b-list-modal').on('show.bs.modal', function (e) {
-	$('body').addClass("example-open");
-}).on('hide.bs.modal', function (e) {
-	$('body').removeClass("example-open");
-})
+// $('#opt4b-list-modal').on('show.bs.modal', function (e) {
+// 	$('body').addClass("example-open");
+// }).on('hide.bs.modal', function (e) {
+// 	$('body').removeClass("example-open");
+// })
 
-$('#opt4c-list-modal').on('show.bs.modal', function (e) {
-	$('body').addClass("example-open");
-}).on('hide.bs.modal', function (e) {
-	$('body').removeClass("example-open");
-})
+// $('#opt4c-list-modal').on('show.bs.modal', function (e) {
+// 	$('body').addClass("example-open");
+// }).on('hide.bs.modal', function (e) {
+// 	$('body').removeClass("example-open");
+// })
 
-$('#opt4d-list-modal').on('show.bs.modal', function (e) {
-	$('body').addClass("example-open");
-}).on('hide.bs.modal', function (e) {
-	$('body').removeClass("example-open");
-})
+// $('#opt4d-list-modal').on('show.bs.modal', function (e) {
+// 	$('body').addClass("example-open");
+// }).on('hide.bs.modal', function (e) {
+// 	$('body').removeClass("example-open");
+// })
 
-$('#manage-tempa-list-modal').on('show.bs.modal', function (e) {
-	$('body').addClass("example-open");
-}).on('hide.bs.modal', function (e) {
-	$('body').removeClass("example-open");
-})
+// $('#manage-tempa-list-modal').on('show.bs.modal', function (e) {
+// 	$('body').addClass("example-open");
+// }).on('hide.bs.modal', function (e) {
+// 	$('body').removeClass("example-open");
+// })
 
-$('#manage-tempb-list-modal').on('show.bs.modal', function (e) {
-	$('body').addClass("example-open");
-}).on('hide.bs.modal', function (e) {
-	$('body').removeClass("example-open");
-})
+// $('#manage-tempb-list-modal').on('show.bs.modal', function (e) {
+// 	$('body').addClass("example-open");
+// }).on('hide.bs.modal', function (e) {
+// 	$('body').removeClass("example-open");
+// })
 
-$('#manage-tempc-list-modal').on('show.bs.modal', function (e) {
-	$('body').addClass("example-open");
-}).on('hide.bs.modal', function (e) {
-	$('body').removeClass("example-open");
-})
+// $('#manage-tempc-list-modal').on('show.bs.modal', function (e) {
+// 	$('body').addClass("example-open");
+// }).on('hide.bs.modal', function (e) {
+// 	$('body').removeClass("example-open");
+// })
 
-$('#manage-tempd-list-modal').on('show.bs.modal', function (e) {
-	$('body').addClass("example-open");
-}).on('hide.bs.modal', function (e) {
-	$('body').removeClass("example-open");
-})
+// $('#manage-tempd-list-modal').on('show.bs.modal', function (e) {
+// 	$('body').addClass("example-open");
+// }).on('hide.bs.modal', function (e) {
+// 	$('body').removeClass("example-open");
+// })
 
-$('#myopt1listData').on('show.bs.modal', function (e) {
-	$('body').addClass("example-open");
-}).on('hide.bs.modal', function (e) {
-	$('body').removeClass("example-open");
-})
+// $('#myopt1listData').on('show.bs.modal', function (e) {
+// 	$('body').addClass("example-open");
+// }).on('hide.bs.modal', function (e) {
+// 	$('body').removeClass("example-open");
+// })
 
-$('#copyrowlist').on('show.bs.modal', function (e) {
-	$('body').addClass("example-open");
-}).on('hide.bs.modal', function (e) {
-	$('body').removeClass("example-open");
-})
-$('#moverowlist').on('show.bs.modal', function (e) {
-	$('body').addClass("example-open");
-}).on('hide.bs.modal', function (e) {
-	$('body').removeClass("example-open");
-})
-
+// $('#copyrowlist').on('show.bs.modal', function (e) {
+// 	$('body').addClass("example-open");
+// }).on('hide.bs.modal', function (e) {
+// 	$('body').removeClass("example-open");
+// })
+// $('#moverowlist').on('show.bs.modal', function (e) {
+// 	$('body').addClass("example-open");
+// }).on('hide.bs.modal', function (e) {
+// 	$('body').removeClass("example-open");
+// })
 // manage data op3 create new table Start
 let opt3TableData1 = [];
 for (let i = 1; i <= 15; i++) {
