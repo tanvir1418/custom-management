@@ -463,7 +463,7 @@
 #double_click table  tr:hover {
     cursor: pointer;
 }
-  
+
 #double_click table  .mark-table-data {
     background-color: yellow !important;
 }
@@ -2066,9 +2066,12 @@ th[draggable] a {
 #tab_4 .modal .modal-content {
     border: none;
     border-radius: 3px;
-    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    /* -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
     -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
-    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75); */
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    -moz-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
 }
 
 #tab_4 .modal#viewtwo .modal-dialog .modal-content {

@@ -133,8 +133,16 @@ let opt4Extra = [
   },
 ];
 
+function clickAddClassSgl(e) {
+  let allTr = $(e).parent().children("tr.mark-table-data");
+  for (let i = 0; i < allTr.length; i++){
+    if(allTr[i]!=e) $(allTr[i]).removeClass("mark-table-data");
+  }
+  $(e).toggleClass("mark-table-data");
+}
+
 function listRenderOpt4(id, name, addNewRow) {
-  let ele = `<tr ondblclick="${addNewRow}" class="cursor-pointer" id="${id}">
+  let ele = `<tr ondblclick="${addNewRow}" onclick="clickAddClassSgl(this)" class="cursor-pointer" id="${id}">
     <td colspan="2">${name}</td>
     <td><i class="fas fa-question-circle"></i></td>
     <td></td>
@@ -575,7 +583,13 @@ function windowToFormDS2(e) {
     let pid = findInputIdDS2(title);
     if (pid && divData.length == 3) {
       let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
-      if (checkbox.checked == false) checkbox.click();
+      if (checkbox && checkbox.checked == false) {
+        checkbox.click();
+      } else {
+        $(`tr#${pid}`).dblclick();
+        let afterCheck = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
+        if(afterCheck && afterCheck.checked == false) afterCheck.click();
+      }
 
       if (divData[1].trim().toUpperCase() == "SET") {
         $(`#${pid} .add-set`).val(divData[2].trim().toLowerCase());
@@ -1037,12 +1051,9 @@ function manTemInpBuildData(_id) {
   });
 
   // Manage Data Option 4 Sample 4 DATE PICKER START
-  $(function () {
-    $(".datepicker_op4").datepicker();
-    $(".datepicker_op4").datepicker("option", "dateFormat", "DD - MM d, yy");
-  });
-  
-  $(".datepicker_op4_Icon").click(function() {
+  $(".datepicker_op4").datepicker();
+  $(".datepicker_op4").datepicker("option", "dateFormat", "DD - MM d, yy");
+  $(".datepicker_op4_Icon").click(function () {
     $(".datepicker_op4").focus();
   });
 }
@@ -1115,29 +1126,36 @@ function windowToFormDS4(e) {
     let divData = $(tRow[i])[0].innerText.split(":");
     let [title, no] = divData[0].trim().split("_");
     no = no != undefined ? no : 1;
-    let { id, type } = findInputIdDS4(title);
+    let { id, name, type } = findInputIdDS4(title);
     if (id && divData.length == 2) {
-      if (type == "range") {
-        let rangeDiv = $(`#man-data-sam4-input-data div#${id} div.width-custom-range-70.d-flex`);
-        let rangeDes =
-          `<span class="min">0</span>
-        <div class="range-wrapper-sample-4">
-          <input class="range-example-input-1" type="text" min="0" max="100" value="${divData[1].trim()}" name="points" step="1" width="100" />
-        </div>
-        <span class="max">100</span>`;
-        rangeDiv.html(rangeDes);
-        $(".range-example-input-1").asRange({
-          range: true,
-          limit: false
-        });
-      } else if (type == "select") {
-        let inpD = $(`#man-data-sam4-input-data div#${id} select`);
-        inpD[no-1].value = divData[1].trim();
-      } else if (type == "inputText" || type == "date") {
-        let inpD = $(`#man-data-sam4-input-data div#${id} input[type=text]`);
-        inpD[no-1].value = divData[1].trim();
-      } else {
+      if (name == "IF" || name == "MINIMUM" || name == "EVERY") {
         $(`#${id}`).val(divData[1].trim());
+      } else {
+        let comDiv = $(`#man-data-sam4-input-data div#${id}`);
+        if (!(comDiv && comDiv.length)) { 
+          $(`tr#${id}`).dblclick();
+          comDiv = $(`#man-data-sam4-input-data div#${id}`);
+        }
+        if (type == "range") {
+          let rangeDiv = comDiv.find(`div.width-custom-range-70.d-flex`);
+          let rangeDes =
+          `<span class="min">0</span>
+          <div class="range-wrapper-sample-4">
+            <input class="range-example-input-1" type="text" min="0" max="100" value="${divData[1].trim()}" name="points" step="1" width="100" />
+          </div>
+          <span class="max">100</span>`;
+          rangeDiv.html(rangeDes);
+          $(".range-example-input-1").asRange({
+            range: true,
+            limit: false
+          });
+        } else if (type == "select") {
+          let inpD = comDiv.find(`select`);
+          inpD[no - 1].value = divData[1].trim();
+        } else if (type == "inputText" || type == "date") {
+          let inpD = $(`#man-data-sam4-input-data div#${id} input[type=text]`);
+          inpD[no - 1].value = divData[1].trim();
+        }
       }
     }
   }
@@ -1578,6 +1596,250 @@ function formToWindowDS3(e) {
             ${name} : ${title.textContent} : ${selVal}
           </div>`;
         }
+      }
+    }
+  });
+
+  tBody.html(renHtml);
+}
+// Form by Text Editor End
+// Manage Data Opt 4 Sample 3 End
+
+
+// Manage Data Opt 4 Sample 3 Start
+// Form by Text Editor Start
+let listDS1 = [
+  {
+    id: "opt4a-list-modal",
+    name: "LIST 1",
+  },
+  {
+    id: "opt4b-list-modal",
+    name: "LIST 2",
+  },
+  {
+    id: "opt4c-list-modal",
+    name: "LIST 3",
+  },
+  {
+    id: "opt4d-list-modal",
+    name: "LIST 4",
+  },
+];
+function findInputIdDS1(title) {
+  let searchArr = listDS1.concat(opt4Extra);
+  let res = searchArr.filter((a) => a.name == title);
+  if (res.length) return res[0];
+  else return false;
+}
+function checkingDS1(e) {
+  $("#adder").remove();
+  // let nd = getCaretPosition();
+  // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+  if (e.keyCode == 13) {
+    let nd = getCaretPosition();
+    $("#temp").attr("id", "");
+    if (nd.nodeType != 3 && nd.getAttribute("id") == "ds1_text_editor") return false;
+    if (
+      nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
+      nd.textContent != ""
+    ) {
+      let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+      let extra = getCaretPosition2(nd2);
+      let starting = nd.textContent.substr(0, extra);
+      let inpData = starting.split(":");
+      if (
+        starting != "" && !findInputIdDS1(inpData[0].trim())
+      ) {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design-invalid data-div">${nd.textContent}</div><br id="temp">`
+          );
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design-invalid data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+            ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      } else {
+        if (extra == nd.textContent.length) {
+          $(nd).replaceWith(
+            `<div class="form-text-design data-div">
+            ${nd.textContent}
+            </div>
+            <br id="temp">`
+          );
+          //setEndOfContenteditable(document.getElementById("temp"));
+          setCaret($("#temp")[0]);
+        } else {
+          $(nd).replaceWith(
+            (extra != 0
+              ? `<div class="form-text-design data-div">
+              ${nd.textContent.substr(0, extra)}
+              </div>`
+              : "<br>") +
+            `<div id="temp">
+              ${nd.textContent.substr(extra)}
+            </div>`
+          );
+          setCaret($("#temp")[0]);
+        }
+        document.getElementById("temp").removeAttribute("id");
+      }
+    }
+    return false;
+  }
+  // this will add autocorrect box
+  setTimeout(autoCorrectDS1, 100);
+}
+function autoCorrectDS1() {
+  let pos = getCaretPosition();
+  if ($(pos).find("#adder").length == 1) $("#adder").remove();
+  while (document.getElementById("temp")) {
+    document.getElementById("temp").removeAttribute("id");
+  }
+  let x = pos.textContent;
+  let editor = document.getElementById("text_editor_p");
+
+  let m = "";
+  let first = 1;
+  if (x.indexOf(":") == -1) {
+    let secArr = listDS1.concat(opt4Extra);
+    secArr.forEach(({ name }) => {
+      if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
+        if (first) {
+          m += `<option selected value="${name}">${name}</option><br>`;
+        }
+        else {
+          m += `<option value="${name}">${name}</option><br>`;
+        }
+        first = 0;
+      }
+    });
+  }
+
+  let y =
+    `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
+    ${m}
+    </select>`;
+  // add auto correct ... only if there is atleast one match
+  if (m != "") {
+    if (x.indexOf(":") == -1) {
+      $(pos).replaceWith(
+        `<div id="temp">${x}</div>
+        <div id="adder" class="set-name"></div>`
+      );
+    } else {
+      $(pos).replaceWith(
+        `<div id="temp">${x}</div>
+        <div id="adder" class="set-sug"></div>`
+      );
+    }
+    document.getElementById("adder").innerHTML = y;
+    document.getElementById("adder").style.display = "block";
+    $("#adder select").focus();
+  } else {
+    $("#adder").remove();
+    // setEndOfContenteditable(document.getElementById("temp"));
+    // document.getElementById("temp").removeAttribute("id");
+  }
+}
+function pasteEventDS1(e) {
+  let editor = document.getElementById("ds1_text_editor");
+  let clipboardData = e.clipboardData || window.clipboardData;
+  let pD = clipboardData.getData("Text").split("\n");
+  for (let i = 0; i < pD.length; i++) {
+    let nbe = pD[i];
+    let inpData = nbe.split(":");
+    if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
+      let x;
+      if (
+        !findInputIdDS1(inpData[0].trim())
+      ) {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design-invalid data-div");
+        x.textContent = nbe;
+      } else {
+        x = document.createElement("div");
+        x.setAttribute("class", "form-text-design data-div");
+        x.textContent = nbe;
+      }
+      editor.append(x);
+    }
+  }
+  removeExtraLines(editor);
+  editor.append(document.createElement("br"));
+  setEndOfContenteditable(editor);
+  return false;
+}
+function windowToFormDS1(e) {
+  let tRow = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ds1_text_editor div.form-text-design.data-div");
+  let len = tRow.length;
+  for (let i = 0; i < len; i++) {
+    let divData = $(tRow[i])[0].innerText.split(":");
+    let { id, name } = findInputIdDS1(divData[0].trim());
+    if (name == "IF" || name == "MINIMUM" || name == "EVERY") {
+      $(`#${id}`).val(divData[1].trim());
+    } else {
+      let dataLi = divData.length > 2 ? findFileListOpt4(divData[2].trim(), name) : false;
+      if (dataLi) {
+        let { id:id2 } = dataLi;
+        let liList = document.querySelector(`div#${id} div.sub-ul-optfourmodal-modallist ul li.${id2}`);
+        let checkBox = $(liList).children(`div.sublist-check-box`);
+        let cancelBox = $(liList).children(`div.sublist-cancel-box`);
+        checkBox.addClass("checkbox_show");
+        checkBox.removeClass("checkbox_hide");
+        cancelBox.removeClass("checkbox_show");
+        cancelBox.addClass("checkbox_hide");
+
+        let _id = $(liList).parent().attr("id");
+        let markItem = $(`div#${id} ul.left-list-box li.modaloptfourmodallist-item-${_id.split("-").splice(-1)[0]} div.green-check-box`);
+        markItem.addClass("display-block");
+        markItem.removeClass("display-none");
+
+        $(`div#${id} a#submit_list`).click();
+      }
+    }
+  }
+}
+function formToWindowDS1(e) {
+  let tBody = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ds1_text_editor");
+  let renHtml = "";
+  // yello head
+  opt4Extra.forEach(({ id, name }) => {
+    let valD = $(`#${id}`).val();
+    if (valD != "") {
+      renHtml += `<div class="form-text-design data-div">
+        ${name}: ${valD}
+      </div>`;
+    }
+  });
+  
+  listDS1.forEach(({ id, name }) => {
+    let checkList = $(`div#${id} div.sub-ul-optfourmodal-modallist .submodal-list div.sublist-check-box.checkbox_show`);
+    let len = checkList.length;
+    for (let i = 0; i < len; i++) {
+      let li = $(checkList[i]).parent();
+      let listName = li.children("p")[0].textContent.trim();
+      let className = li.attr("class");
+      let dataLi = findFileListOpt4(className, name);
+      if (dataLi) {
+        renHtml += `<div class="form-text-design data-div">
+          ${name}: ${dataLi.item}: ${listName}
+        </div>`;
       }
     }
   });
