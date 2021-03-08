@@ -1100,7 +1100,7 @@ let manTemLeftData = [
 ];
 
 function listRenderManTemp(id, name, addNewRow) {
-  let ele = `<tr ondblclick="${addNewRow}" onclick="clickAddClass(this)" class="cursor-pointer" id="${id}">
+  let ele = `<tr ondblclick="${addNewRow}" onclick="clickAddClassSgl(this)" class="cursor-pointer" id="${id}">
     <td colspan="2">${name}</td>
     <td><i class="fas fa-question-circle"></i></td>
     <td></td>
@@ -2001,10 +2001,8 @@ function manTemInpBuild(_id) {
   });
 
   // Manage Template Sample 4 DATE PICKER START
-  $(function () {
-    $(".datepicker_mn").datepicker();
-    $(".datepicker_mn").datepicker("option", "dateFormat", "DD - MM d, yy");
-  });
+  $(".datepicker_mn").datepicker();
+  $(".datepicker_mn").datepicker("option", "dateFormat", "DD - MM d, yy");
   $(".datepicker_mn_Icon").click(function() {
     $(".datepicker_mn").focus();
   });
@@ -2074,6 +2072,10 @@ function windowToFormMS4(e) {
     no = no != undefined ? no : 1;
     let { id, dataType } = findInputIdMS4(title);
     if (id && divData.length == 2) {
+      let comDiv = $(`#man-tem-sam4-input-data div#${id}`);
+      if (!(comDiv && comDiv.length)) { 
+        $(`tr#${id}`).dblclick();
+      }
       if (dataType == "range") {
         let rangeDiv = $(`#man-tem-sam4-input-data div#${id} div.width-custom-range-70.d-flex`);
         let rangeDes =

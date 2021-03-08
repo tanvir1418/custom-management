@@ -133,8 +133,16 @@ let opt4Extra = [
   },
 ];
 
+function clickAddClassSgl(e) {
+  let allTr = $(e).parent().children("tr.mark-table-data");
+  for (let i = 0; i < allTr.length; i++){
+    if(allTr[i]!=e) $(allTr[i]).removeClass("mark-table-data");
+  }
+  $(e).toggleClass("mark-table-data");
+}
+
 function listRenderOpt4(id, name, addNewRow) {
-  let ele = `<tr ondblclick="${addNewRow}" onclick="clickAddClass(this)" class="cursor-pointer" id="${id}">
+  let ele = `<tr ondblclick="${addNewRow}" onclick="clickAddClassSgl(this)" class="cursor-pointer" id="${id}">
     <td colspan="2">${name}</td>
     <td><i class="fas fa-question-circle"></i></td>
     <td></td>
@@ -1043,11 +1051,8 @@ function manTemInpBuildData(_id) {
   });
 
   // Manage Data Option 4 Sample 4 DATE PICKER START
-  $(function () {
-    $(".datepicker_op4").datepicker();
-    $(".datepicker_op4").datepicker("option", "dateFormat", "DD - MM d, yy");
-  });
-
+  $(".datepicker_op4").datepicker();
+  $(".datepicker_op4").datepicker("option", "dateFormat", "DD - MM d, yy");
   $(".datepicker_op4_Icon").click(function () {
     $(".datepicker_op4").focus();
   });
@@ -1121,29 +1126,36 @@ function windowToFormDS4(e) {
     let divData = $(tRow[i])[0].innerText.split(":");
     let [title, no] = divData[0].trim().split("_");
     no = no != undefined ? no : 1;
-    let { id, type } = findInputIdDS4(title);
+    let { id, name, type } = findInputIdDS4(title);
     if (id && divData.length == 2) {
-      if (type == "range") {
-        let rangeDiv = $(`#man-data-sam4-input-data div#${id} div.width-custom-range-70.d-flex`);
-        let rangeDes =
-          `<span class="min">0</span>
-        <div class="range-wrapper-sample-4">
-          <input class="range-example-input-1" type="text" min="0" max="100" value="${divData[1].trim()}" name="points" step="1" width="100" />
-        </div>
-        <span class="max">100</span>`;
-        rangeDiv.html(rangeDes);
-        $(".range-example-input-1").asRange({
-          range: true,
-          limit: false
-        });
-      } else if (type == "select") {
-        let inpD = $(`#man-data-sam4-input-data div#${id} select`);
-        inpD[no - 1].value = divData[1].trim();
-      } else if (type == "inputText" || type == "date") {
-        let inpD = $(`#man-data-sam4-input-data div#${id} input[type=text]`);
-        inpD[no - 1].value = divData[1].trim();
-      } else {
+      if (name == "IF" || name == "MINIMUM" || name == "EVERY") {
         $(`#${id}`).val(divData[1].trim());
+      } else {
+        let comDiv = $(`#man-data-sam4-input-data div#${id}`);
+        if (!(comDiv && comDiv.length)) { 
+          $(`tr#${id}`).dblclick();
+          comDiv = $(`#man-data-sam4-input-data div#${id}`);
+        }
+        if (type == "range") {
+          let rangeDiv = comDiv.find(`div.width-custom-range-70.d-flex`);
+          let rangeDes =
+          `<span class="min">0</span>
+          <div class="range-wrapper-sample-4">
+            <input class="range-example-input-1" type="text" min="0" max="100" value="${divData[1].trim()}" name="points" step="1" width="100" />
+          </div>
+          <span class="max">100</span>`;
+          rangeDiv.html(rangeDes);
+          $(".range-example-input-1").asRange({
+            range: true,
+            limit: false
+          });
+        } else if (type == "select") {
+          let inpD = comDiv.find(`select`);
+          inpD[no - 1].value = divData[1].trim();
+        } else if (type == "inputText" || type == "date") {
+          let inpD = $(`#man-data-sam4-input-data div#${id} input[type=text]`);
+          inpD[no - 1].value = divData[1].trim();
+        }
       }
     }
   }
