@@ -334,7 +334,7 @@ let leftSideArray = [
 ];
 
 function listRender(id, name, addNewRow) {
-  let ele = `<tr ondblclick="${addNewRow}" class="cursor-pointer" id="${id}">
+  let ele = `<tr ondblclick="${addNewRow}" onclick="clickAddClassSgl(this)" class="cursor-pointer" id="${id}">
     <td colspan="2">${name}</td>
     <td><i class="fas fa-question-circle"></i></td>
     <td></td>
@@ -507,7 +507,15 @@ function windowToForm(e) {
     let dataLi = divData.length > 2 ? findFileList(divData[2].trim()) : false;
     if (pid && !dataLi) {
       let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
-      if (checkbox.checked == false) checkbox.click();
+      if (checkbox && checkbox.checked == false) {
+        checkbox.click();
+      }
+      else {
+        $(`tr#${pid}`).dblclick();
+        let afterCheck = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
+        if(afterCheck && afterCheck.checked == false) afterCheck.click();
+      }
+
       if (divData.length == 3) {
         if (divData[1].trim().toUpperCase() == "SEQUENCE") {
           let seqVal = 0;
@@ -879,7 +887,7 @@ function removeExtraLines(e) {
     .each(function () {
       if ($(this).text().trim() == "") $(this).remove();
     });
-  $(e).append("<br>");
+  // $(e).append("<br>");
 }
 
 function isGenerateDisable() {

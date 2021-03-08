@@ -64,7 +64,7 @@
 
 /* ========================== */
 /* custom radio button starts */
-.radio-selection-option input[type="radio"] + label {
+.radio-selection-option input[type="radio"]+label {
   display: inline-block;
   cursor: pointer;
   position: relative;
@@ -75,7 +75,7 @@
   /* font-weight: 500; */
 }
 
-.radio-selection-option input[type="radio"] + label:before {
+.radio-selection-option input[type="radio"]+label:before {
   content: "";
   display: block;
   width: 26px;
@@ -96,7 +96,7 @@
   *display: inline;
 }
 
-.radio-selection-option input[type="radio"] + label:after {
+.radio-selection-option input[type="radio"]+label:after {
   content: "";
   display: block;
   position: absolute;
@@ -109,13 +109,13 @@
   opacity: 0.5;
 }
 
-.radio-selection-option input[type="radio"]:checked + label:before {
+.radio-selection-option input[type="radio"]:checked+label:before {
   border: 1px solid #359f01;
   background-color: #fff;
   opacity: 1;
 }
 
-.radio-selection-option input[type="radio"]:checked + label:after {
+.radio-selection-option input[type="radio"]:checked+label:after {
   background: #359f01;
   opacity: 1;
 }
@@ -173,7 +173,7 @@
   background-color: #fbfbfb;
 }
 
-.table-options .table-scroll .mark-table-data{
+.table-options .table-scroll .mark-table-data {
   background-color: yellow !important;
 }
 
@@ -282,10 +282,12 @@
   color: black;
   font-size: 18px;
 }
+
 .date-selection-container .icon-op3-date:hover {
   cursor: pointer;
 }
-.date-selection-container .col-sm-6{
+
+.date-selection-container .col-sm-6 {
   padding-right: 0px !important;
 }
 
@@ -312,7 +314,10 @@
   border: none !important;
   background: #ffffff !important;
   color: #848484 !important;
-  box-shadow: 3px 5px 15px 0px #b0bcd4 !important;
+  /* box-shadow: 3px 5px 15px 0px #b0bcd4 !important; */
+  -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
 }
 
 .ui-datepicker .ui-datepicker-title {
@@ -382,18 +387,22 @@
   .content-43 {
     padding: 0 25px;
   }
+
   .sub-heading-section p {
     font-size: 18px;
   }
-  .radio-selection-option input[type="radio"] + label {
+
+  .radio-selection-option input[type="radio"]+label {
     padding-left: 30px;
     font-size: 18px;
   }
-  .radio-selection-option input[type="radio"] + label:before {
+
+  .radio-selection-option input[type="radio"]+label:before {
     width: 22px;
     height: 22px;
   }
-  .radio-selection-option input[type="radio"] + label:after {
+
+  .radio-selection-option input[type="radio"]+label:after {
     top: 4px;
     left: 4px;
     width: 14px;
@@ -405,17 +414,21 @@
   .content-43 {
     padding: 0 15px;
   }
+
   .content-43 .padding-left {
     padding-left: 0px;
     padding-right: 0px;
   }
+
   .content-43 .padding-right {
     padding-right: 0px;
     padding-left: 0px;
   }
+
   .heading-for-create-new-content-section p {
     margin-bottom: 30px;
   }
+
   .option-3-create-new .control-section {
     margin: 40px 0px 30px 0px;
   }
