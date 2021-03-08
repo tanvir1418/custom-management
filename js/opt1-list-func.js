@@ -476,7 +476,7 @@ function formToWindow(e) {
     let dataLi = findFileList(className);
     if (dataLi) {
       renHtml += `<div class="form-text-design data-div">
-        LIST 1: ${dataLi.item}: ${listName}
+        LIST 1: ${dataLi.item}: ${listName}: checked
       </div>`;
     }
   }
@@ -504,7 +504,7 @@ function windowToForm(e) {
     let divData = $(tRow[i])[0].innerText.split(":");
     let [title, no] = divData[0].trim().split("_");
     let pid = findInputId(title);
-    let dataLi = divData.length > 2 ? findFileList(divData[2].trim()) : false;
+    let dataLi = divData.length > 3 ? findFileList(divData[2].trim()) : false;
     if (pid && !dataLi) {
       let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
       if (checkbox && checkbox.checked == false) {
@@ -537,15 +537,30 @@ function windowToForm(e) {
       let liList = document.querySelector(`div#myopt1listData div#sub-ul-modallist ul li.${id}`);
       let checkBox = $(liList).children(`div.sublist-check-box`);
       let cancelBox = $(liList).children(`div.sublist-cancel-box`);
-      checkBox.addClass("checkbox_show");
-      checkBox.removeClass("checkbox_hide");
-      cancelBox.removeClass("checkbox_show");
-      cancelBox.addClass("checkbox_hide");
+      if (divData[3].trim() == "checked") {
+        checkBox.addClass("checkbox_show");
+        checkBox.removeClass("checkbox_hide");
+        cancelBox.removeClass("checkbox_show");
+        cancelBox.addClass("checkbox_hide");
+      } else if (divData[3].trim() == "unchecked") {
+        checkBox.addClass("checkbox_hide");
+        checkBox.removeClass("checkbox_show");
+        cancelBox.addClass("checkbox_show");
+        cancelBox.removeClass("checkbox_hide");
+      }
 
       let _id = $(liList).parent().attr("id");
       let markItem = $(`div#myopt1listData ul.select-item-main li.modallist-item-${_id.split("-").splice(-1)[0]} div.green-check-box`);
-      markItem.addClass("display-block");
-      markItem.removeClass("display-none");
+      let count = $(`div#myopt1listData div#sub-ul-modallist ul#submodal-div-list-1-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
+      count += $(`div#myopt1listData div#sub-ul-modallist ul#submodal-div-list-2-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
+      count += $(`div#myopt1listData div#sub-ul-modallist ul#submodal-div-list-3-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
+      if (count > 0) {
+        markItem.addClass("display-block");
+        markItem.removeClass("display-none");
+      } else {
+        markItem.addClass("display-none");
+        markItem.removeClass("display-block");
+      }
 
       $("div#myopt1listData button.done-myfo").click();
     }
