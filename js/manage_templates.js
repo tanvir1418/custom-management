@@ -2763,3 +2763,15 @@ function formToWindowMS1(e) {
 }
 // Form by text editor End
 // Manage template Sample 1 End
+$("#datepicker_field_set21").datepicker();
+$("#datepicker_field_set21").datepicker("option", "dateFormat", "DD - MM d, yy");
+$("#datepicker_field_set22").datepicker();
+$("#datepicker_field_set22").datepicker("option", "dateFormat", "DD - MM d, yy");
+
+
+$("#datepicker_field_set21_icon").click(function () {
+	$("#datepicker_field_set21").focus();
+});
+$("#datepicker_field_set22_icon").click(function () {
+	$("#datepicker_field_set22").focus();
+});
