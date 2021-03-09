@@ -1945,13 +1945,13 @@ function manTemInpBuild(_id) {
           </div>
         </div>
         <div class="width-input-group-35">
-          <div class="input-section-sample4 right-side-input">
+          <div class="input-section-sample4 right-side-input" onclick="calenderPop(this)">
             <input class="date-pick-style-sample4 datepicker_mn" type="text"/>
             <i class="far fa-calendar-alt icon-sample4 datepicker_mn_Icon"></i>
           </div>
         </div>
         <div class="width-input-group-35">
-          <div class="input-section-sample4 left-side-input">
+          <div class="input-section-sample4 left-side-input" onclick="calenderPop(this)">
             <input class="date-pick-style-sample4 datepicker_mn" type="text"/>
             <i class="far fa-calendar-alt icon-sample4 datepicker_mn_Icon"></i>
           </div>
@@ -2003,9 +2003,11 @@ function manTemInpBuild(_id) {
   // Manage Template Sample 4 DATE PICKER START
   $(".datepicker_mn").datepicker();
   $(".datepicker_mn").datepicker("option", "dateFormat", "DD - MM d, yy");
-  $(".datepicker_mn_Icon").click(function() {
-    $(".datepicker_mn").focus();
-  });
+
+}
+
+function calenderPop(e){
+  $(e).children("input").focus();
 }
 
 function removeElement(_id) {
