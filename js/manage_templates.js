@@ -1945,13 +1945,13 @@ function manTemInpBuild(_id) {
           </div>
         </div>
         <div class="width-input-group-35">
-          <div class="input-section-sample4 right-side-input">
+          <div class="input-section-sample4 right-side-input" onclick="calenderPop(this)">
             <input class="date-pick-style-sample4 datepicker_mn" type="text"/>
             <i class="far fa-calendar-alt icon-sample4 datepicker_mn_Icon"></i>
           </div>
         </div>
         <div class="width-input-group-35">
-          <div class="input-section-sample4 left-side-input">
+          <div class="input-section-sample4 left-side-input" onclick="calenderPop(this)">
             <input class="date-pick-style-sample4 datepicker_mn" type="text"/>
             <i class="far fa-calendar-alt icon-sample4 datepicker_mn_Icon"></i>
           </div>
@@ -2003,9 +2003,11 @@ function manTemInpBuild(_id) {
   // Manage Template Sample 4 DATE PICKER START
   $(".datepicker_mn").datepicker();
   $(".datepicker_mn").datepicker("option", "dateFormat", "DD - MM d, yy");
-  $(".datepicker_mn_Icon").click(function() {
-    $(".datepicker_mn").focus();
-  });
+
+}
+
+function calenderPop(e){
+  $(e).children("input").focus();
 }
 
 function removeElement(_id) {
@@ -2761,3 +2763,15 @@ function formToWindowMS1(e) {
 }
 // Form by text editor End
 // Manage template Sample 1 End
+$("#datepicker_field_set21").datepicker();
+$("#datepicker_field_set21").datepicker("option", "dateFormat", "DD - MM d, yy");
+$("#datepicker_field_set22").datepicker();
+$("#datepicker_field_set22").datepicker("option", "dateFormat", "DD - MM d, yy");
+
+
+$("#datepicker_field_set21_icon").click(function () {
+	$("#datepicker_field_set21").focus();
+});
+$("#datepicker_field_set22_icon").click(function () {
+	$("#datepicker_field_set22").focus();
+});

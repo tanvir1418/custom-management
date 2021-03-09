@@ -482,3 +482,17 @@ $("#next-show-save-start-op4").click(function(){
 $("#prev-hide-save-start-op4").click(function(){
   $('#saveStartTarget-op4').addClass('save-start-class-hide-show-op4');
 });
+
+
+$("#datepicker_field_set11").datepicker();
+$("#datepicker_field_set11").datepicker("option", "dateFormat", "DD - MM d, yy");
+$("#datepicker_field_set12").datepicker();
+$("#datepicker_field_set12").datepicker("option", "dateFormat", "DD - MM d, yy");
+
+
+$("#datepicker_field_set11_icon").click(function () {
+	$("#datepicker_field_set11").focus();
+});
+$("#datepicker_field_set12_icon").click(function () {
+	$("#datepicker_field_set12").focus();
+});

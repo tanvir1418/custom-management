@@ -579,29 +579,29 @@ $(document).ready(function () {
     const mytablesty12 = document.querySelector(".mytablesty12");
     $("#style1Table .right-slider5").click(function () {
         $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft + 700,
+            scrollLeft: mytablesty12.scrollLeft + 800,
         },
-            700
+            0
         );
     }).dblclick(function () {
         $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft + 700,
+            scrollLeft: mytablesty12.scrollLeft + 800,
         },
-            700
+            0
         );
     });
 
     $("#style1Table .left-slider5").click(function () {
         $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft - 700,
+            scrollLeft: mytablesty12.scrollLeft - 800,
         },
-            700
+            0
         );
     }).dblclick(function () {
         $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft - 700,
+            scrollLeft: mytablesty12.scrollLeft - 800,
         },
-            700
+            0
         );
     });
 });
@@ -1258,8 +1258,8 @@ function IconModalClick() {
     for (let i = 0; i < viewModalList.length; i++) {
         viewModalList[i].addEventListener("click", function (event) {
             $("#viewtwo .modal-dialog").css({
-                top: ((event.clientY) + 20),
-                left: ((event.clientX) - 125)
+                top: ((event.clientY) + 25),
+                left: ((event.clientX) - 20)
             });
         });
     }
@@ -1268,8 +1268,8 @@ function IconModalClick() {
     for (let i = 0; i < rowModalClick.length; i++) {
         rowModalClick[i].addEventListener("click", function (event) {
             $("#rowdetails .modal-dialog").css({
-                top: ((event.clientY) + 20),
-                left: ((event.clientX) - 125)
+                top: ((event.clientY) + 25),
+                left: ((event.clientX) - 20)
             });
         });
     }
@@ -1278,8 +1278,8 @@ function IconModalClick() {
     for (let i = 0; i < noteModalClick.length; i++) {
         noteModalClick[i].addEventListener("click", function (event) {
             $("#noteswindow .modal-dialog").css({
-                top: ((event.clientY) + 30),
-                left: ((event.clientX) - 150)
+                top: ((event.clientY) + 25),
+                left: ((event.clientX) - 20)
             });
         });
     }
