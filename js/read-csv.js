@@ -826,7 +826,7 @@ function manResPagination(noRow) {
                 <tr>
                     <th scope="col">
                         STATUS
-                        <div class="head-filter style2_cross01">
+                        <div class="head-filter style2_cross01" onclick="crossHandlerS2Table(this, 1)">
                             <i class="fas fa-times"></i>
                         </div>
                         <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
@@ -835,7 +835,7 @@ function manResPagination(noRow) {
                     </th>
                     <th scope="col">
                         Val1
-                        <div class="head-filter style2_cross02">
+                        <div class="head-filter style2_cross02" onclick="crossHandlerS2Table(this, 2)">
                             <i class="fas fa-times"></i>
                         </div>
                         <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
@@ -844,7 +844,7 @@ function manResPagination(noRow) {
                     </th>
                     <th scope="col">
                         Val2
-                        <div class="head-filter style2_cross03">
+                        <div class="head-filter style2_cross03" onclick="crossHandlerS2Table(this, 3)">
                             <i class="fas fa-times"></i>
                         </div>
                         <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)" data-toggle="modal" data-target="#col8Filter">
@@ -2020,4 +2020,9 @@ function popUpHandlerS2Table (e, indexValue){
         </tr>`;
     }
      targetModal.html(tableTr);
+}
+
+function crossHandlerS2Table(eventCross, crossIndex){
+    console.log(eventCross.parent("thead"));
+    // console.log(eventCross.parentNode.parentNode.parentNode);
 }
