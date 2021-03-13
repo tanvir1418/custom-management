@@ -1789,21 +1789,37 @@ function windowToFormDS1(e) {
     if (name == "IF" || name == "MINIMUM" || name == "EVERY") {
       $(`#${id}`).val(divData[1].trim());
     } else {
-      let dataLi = divData.length > 2 ? findFileListOpt4(divData[2].trim(), name) : false;
+      let dataLi = divData.length > 3 ? findFileListOpt4(divData[2].trim(), name) : false;
       if (dataLi) {
         let { id:id2 } = dataLi;
         let liList = document.querySelector(`div#${id} div.sub-ul-optfourmodal-modallist ul li.${id2}`);
         let checkBox = $(liList).children(`div.sublist-check-box`);
         let cancelBox = $(liList).children(`div.sublist-cancel-box`);
-        checkBox.addClass("checkbox_show");
-        checkBox.removeClass("checkbox_hide");
-        cancelBox.removeClass("checkbox_show");
-        cancelBox.addClass("checkbox_hide");
+        if (divData[3].trim() == "checked") {
+          checkBox.addClass("checkbox_show");
+          checkBox.removeClass("checkbox_hide");
+          cancelBox.removeClass("checkbox_show");
+          cancelBox.addClass("checkbox_hide");
+        } else if (divData[3].trim() == "unchecked") {
+          checkBox.addClass("checkbox_hide");
+          checkBox.removeClass("checkbox_show");
+          cancelBox.addClass("checkbox_show");
+          cancelBox.removeClass("checkbox_hide");
+        }
 
         let _id = $(liList).parent().attr("id");
         let markItem = $(`div#${id} ul.left-list-box li.modaloptfourmodallist-item-${_id.split("-").splice(-1)[0]} div.green-check-box`);
-        markItem.addClass("display-block");
-        markItem.removeClass("display-none");
+        let abcd = name == "LIST 1" ? "a" : name == "LIST 2" ? "b" : name == "LIST 3" ? "c" : name == "LIST 4" ? "d" : "";
+        let count = $(`div#${id} ul#optfourmodal${abcd}-submodal-div-list-1-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
+        count += $(`div#${id} ul#optfourmodal${abcd}-submodal-div-list-2-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
+        count += $(`div#${id} ul#optfourmodal${abcd}-submodal-div-list-3-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
+        if (count > 0) {
+          markItem.addClass("display-block");
+          markItem.removeClass("display-none");
+        } else {
+          markItem.addClass("display-none");
+          markItem.removeClass("display-block");
+        }
 
         $(`div#${id} a#submit_list`).click();
       }
@@ -1835,7 +1851,7 @@ function formToWindowDS1(e) {
       let dataLi = findFileListOpt4(className, name);
       if (dataLi) {
         renHtml += `<div class="form-text-design data-div">
-          ${name}: ${dataLi.item}: ${listName}
+          ${name}: ${dataLi.item}: ${listName}: checked
         </div>`;
       }
     }
