@@ -513,7 +513,7 @@ function windowToForm(e) {
       else {
         $(`tr#${pid}`).dblclick();
         let afterCheck = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
-        if(afterCheck && afterCheck.checked == false) afterCheck.click();
+        if (afterCheck && afterCheck.checked == false) afterCheck.click();
       }
 
       if (divData.length == 3) {
@@ -634,14 +634,13 @@ function setCaret(el) {
 
 // this function check for valid input in text editor
 function checking(e) {
-  let editor = document.getElementById("text_editor");
+  // let editor = document.getElementById("text_editor");
   $("#adder").remove(); // adder contains our auto correct select box
   // if key is enter key
-  let nd = getCaretPosition();
-  let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
-  let extra = getCaretPosition2(nd2);
+  // let nd = getCaretPosition();
+  // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
+  // let extra = getCaretPosition2(nd2);
   if (e.keyCode == 13) {
-    // same algorithm as we see in updateActualForm() function
     let nd = getCaretPosition();
     $("#temp").attr("id", "");
     if (nd.nodeType != 3 && nd.getAttribute("id") == "text_editor") return false;
@@ -709,7 +708,8 @@ function checking(e) {
               : "<br>") +
             `<div id="temp">
               ${nd.textContent.substr(extra)}
-            "</div>`
+            </div>
+            <br>`
           );
           setCaret($("#temp")[0]);
         }
@@ -821,50 +821,41 @@ function keyHandler(e, x) {
 }
 
 function setEndOfContenteditable(contentEditableElement) {
-  var range, selection;
-  if (document.createRange) {
-    //Firefox, Chrome, Opera, Safari, IE 9+
-    range = document.createRange(); //Create a range (a range is a like the selection but invisible)
-    range.selectNodeContents(contentEditableElement); //Select the entire contents of the element with the range
-    range.setStart(
-      contentEditableElement.childNodes[
-      contentEditableElement.childNodes.length - 1
-      ],
-      contentEditableElement.childNodes[
-        contentEditableElement.childNodes.length - 1
-      ].length
-    );
-    range.collapse(true); //collapse the range to the end point. false means collapse to end rather than the start
-    selection = window.getSelection(); //get the selection object (allows you to change selection)
-    selection.removeAllRanges(); //remove any selections already made
-    selection.addRange(range); //make the range you have just created the visible selection
-  } else if (document.selection) {
-    //IE 8 and lower
-    range = document.body.createTextRange(); //Create a range (a range is a like the selection but invisible)
-    range.moveToElementText(contentEditableElement); //Select the entire contents of the element with the range
-    range.setStart(
-      contentEditableElement.childNodes[
-      contentEditableElement.childNodes.length - 1
-      ],
-      contentEditableElement.childNodes[
-        contentEditableElement.childNodes.length - 1
-      ].length
-    );
-    range.collapse(true); //collapse the range to the end point. false means collapse to end rather than the start
-    range.select(); //Select the range (make it the visible selection
+  let range, selection;
+  if (document.createRange)//Firefox, Chrome, Opera, Safari, IE 9+
+  {
+    range = document.createRange();//Create a range (a range is a like the selection but invisible)
+    range.selectNodeContents(contentEditableElement);//Select the entire contents of the element with the range
+    range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+    selection = window.getSelection();//get the selection object (allows you to change selection)
+    selection.removeAllRanges();//remove any selections already made
+    selection.addRange(range);//make the range you have just created the visible selection
+  }
+  else if (document.selection)//IE 8 and lower
+  {
+    range = document.body.createTextRange();//Create a range (a range is a like the selection but invisible)
+    range.moveToElementText(contentEditableElement);//Select the entire contents of the element with the range
+    range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+    range.select();//Select the range (make it the visible selection
   }
 }
 
 // paste work... checks are same as in checking function or in updateActualForm
 function pasteEvent(e) {
-  let editor = document.getElementById("text_editor");
+  let caretPos = getCaretPosition();
+  let editorPos = document.getElementById("text_editor");
+  let editor = editorPos == caretPos ? editorPos : caretPos;
   let clipboardData = e.clipboardData || window.clipboardData;
   let pD = clipboardData.getData("Text").split("\n");
+  let x = "";
   for (let i = 0; i < pD.length; i++) {
     let nbe = pD[i];
+    if (i == 0 && !editor.tagName) {
+      replaceSelectedText(nbe);
+      continue;
+    }
     let inpData = nbe.split(":");
     if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
-      let x;
       let regex = /Item \d+/g;
       if (
         !findInputId(inpData[0].trim().split("_")[0].trim()) ||
@@ -878,20 +869,31 @@ function pasteEvent(e) {
           !regex.test(inpData[1].trim())
         )
       ) {
-        x = document.createElement("div");
-        x.setAttribute("class", "form-text-design-invalid data-div");
-        x.textContent = nbe;
+        x += `<div class="form-text-design-invalid data-div">
+        ${nbe}
+        </div>`;
       } else {
-        x = document.createElement("div");
-        x.setAttribute("class", "form-text-design data-div");
-        x.textContent = nbe;
+        x += `<div class="form-text-design data-div">
+        ${nbe}
+        </div>`;
       }
-      editor.append(x);
     }
   }
+  if (editor.tagName) editor.innerHTML += x;
+  else {
+    caretPos = caretPos.parentElement;
+    caretPos.innerHTML += x;
+  }
   removeExtraLines(editor);
-  editor.append(document.createElement("br"));
-  setEndOfContenteditable(editor);
+  if (editorPos == caretPos) {
+    editor.innerHTML += "<br>";
+    setEndOfContenteditable(editor);
+  } else if (!editor.tagName && pD.length == 1) {
+    setEndOfContenteditable(getCaretPosition());
+  } else {
+    $(editorPos).find("br").remove();
+    setEndOfContenteditable(caretPos);
+  }
   return false;
 }
 
@@ -978,13 +980,11 @@ function findInputIdOp3(title) {
 }
 
 function checkingOp3(e) {
-  $("#adder").remove(); // adder contains our auto correct select box
-  // if key is enter key
-  let nd = getCaretPosition();
+  $("#adder").remove();
+  // let nd = getCaretPosition();
   // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
   // let extra = getCaretPosition2(nd2);
   if (e.keyCode == 13) {
-    // same algorithm as we see in updateActualForm() function
     let nd = getCaretPosition();
     $("#temp").attr("id", "");
     if (nd.nodeType != 3 && nd.getAttribute("id") == "op3_text_editor") return false;
@@ -1042,7 +1042,8 @@ function checkingOp3(e) {
               : "<br>") +
             `<div id="temp">
               ${nd.textContent.substr(extra)}
-            </div>`
+            </div>
+            <br>`
           );
           setCaret($("#temp")[0]);
         }
@@ -1102,32 +1103,49 @@ function autoCorrectOp3() {
 }
 
 function pasteEventOp3(e) {
-  var editor = document.getElementById("op3_text_editor");
+  let caretPos = getCaretPosition();
+  let editorPos = document.getElementById("op3_text_editor");
+  let editor = editorPos == caretPos ? editorPos : caretPos;
   let clipboardData = e.clipboardData || window.clipboardData;
   let pD = clipboardData.getData("Text").split("\n");
+  let x = "";
   for (var i = 0; i < pD.length; i++) {
     let nbe = pD[i];
+    if (i == 0 && !editor.tagName) {
+      replaceSelectedText(nbe);
+      continue;
+    }
     let inpData = nbe.split(":");
     if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
-      var x;
       if (
         !(findInputIdOp3(inpData[0].trim()) || findInputIdOp3(inpData[1].trim())) ||
         (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
       ) {
-        x = document.createElement("div");
-        x.setAttribute("class", "form-text-design-invalid data-div");
-        x.textContent = nbe;
+        x += `<div class="form-text-design-invalid data-div">
+        ${nbe}
+        </div>`;
       } else {
-        x = document.createElement("div");
-        x.setAttribute("class", "form-text-design data-div");
-        x.textContent = nbe;
+        x += `<div class="form-text-design data-div">
+        ${nbe}
+        </div>`;
       }
-      editor.append(x);
     }
   }
+  if (editor.tagName) editor.innerHTML += x;
+  else {
+    caretPos = caretPos.parentElement;
+    caretPos.innerHTML += x;
+  }
   removeExtraLines(editor);
-  editor.append(document.createElement("br"));
-  setEndOfContenteditable(editor);
+  if (editorPos == caretPos) {
+    editor.innerHTML += "<br>";
+    setEndOfContenteditable(editor);
+  } else if (!editor.tagName && pD.length == 1) {
+    setEndOfContenteditable(getCaretPosition());
+  } else {
+    $(editorPos).find("br").remove();
+    setEndOfContenteditable(caretPos);
+  }
   return false;
 }
 
@@ -1169,7 +1187,7 @@ function formToWindowOp3(e) {
     let trData = $(tableTr[i]).children("td").text().trim();
     renHtml +=
       `<div class="form-text-design data-div">
-      ${radioOption}: ${trData}
+      ${radioOption}: ${trData}: checked
     </div>`;
   }
   if (renHtml != "") {
@@ -1196,9 +1214,30 @@ function windowToFormOp3(e) {
       }
       else {
         let { id } = findInputIdOp3(divData[1].trim());
-        $(`#man-data-op3-table tbody tr#${id}`).addClass("mark-table-data");
+        if (divData[2].trim() == "checked") {
+          $(`#man-data-op3-table tbody tr#${id}`).addClass("mark-table-data");
+        } else if (divData[2].trim() == "unchecked") {
+          $(`#man-data-op3-table tbody tr#${id}`).removeClass("mark-table-data");
+        }
       }
     }
   }
 }
 // Opt3 Form by text editor End
+
+// Extra start
+function replaceSelectedText(replacementText) {
+  let sel, range;
+  if (window.getSelection) {
+    sel = window.getSelection();
+    if (sel.rangeCount) {
+      range = sel.getRangeAt(0);
+      range.deleteContents();
+      range.insertNode(document.createTextNode(replacementText));
+    }
+  } else if (document.selection && document.selection.createRange) {
+    range = document.selection.createRange();
+    range.text = replacementText;
+  }
+}
+//Extra End
