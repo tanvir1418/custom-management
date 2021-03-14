@@ -9,7 +9,10 @@ $(".multistep-container .form-box .button-row .previous").click(function () {
   $(this).parents(".form-box").prev().show();
 });
 
-const listSingle = document.querySelectorAll(".single-list-item-design");
+// const listSingle = document.querySelectorAll(".single-list-item-design");
+const targetPopUpImg = document.querySelectorAll(".single-list-item-file-container img");
+const targetPopUpImgContainer = document.querySelectorAll(".single-list-item-file-container");
+
 const listSingleImg = document.querySelectorAll(".single-list-item-help");
 const listSingleLink = document.querySelectorAll(".skip-link-container");
 const listSingleTick = document.querySelectorAll(".green-tik-container");
@@ -17,7 +20,7 @@ const getTickContainer = document.querySelectorAll(".green-tik-and-skip-link");
 // const selectItemText = document.querySelectorAll(".selected-text-danger");
 const fileBackgroundColor = document.querySelectorAll(".single-list-item-file-container");
 // const fileContainer = document.querySelectorAll(".single-list-item-file");
-const pTopText = document.querySelectorAll(".pTopText");
+// const pTopText = document.querySelectorAll(".pTopText");
 
 for (let i = 0; i < listSingle.length; i++) {
   listSingle[i].addEventListener("click", function () {
@@ -26,7 +29,7 @@ for (let i = 0; i < listSingle.length; i++) {
     // fileContainer[i].classList.toggle("avoid-clicks");
     fileBackgroundColor[i].classList.toggle("fileContainerColor");
     // selectItemText[i].classList.toggle("hideListDiv");
-    pTopText[i].classList.toggle("hideListDiv");
+    // pTopText[i].classList.toggle("hideListDiv");
   });
   listSingle[i].addEventListener("mouseover", function () {
     getTickContainer[i].classList.toggle("imageVisibilityHide");
@@ -39,23 +42,23 @@ for (let i = 0; i < listSingle.length; i++) {
 }
 
 // prevent from add/remove style (modal)
-const preventListStyle = document.querySelectorAll(".single-list-item-file-container");
+//const preventListStyle = document.querySelectorAll(".single-list-item-file-container");
 // single-list-item-file-container
-for (let i = 0; i < preventListStyle.length; i++) {
-  preventListStyle[i].addEventListener("click", function () {
-    listSingleLink[i].classList.toggle("hideListDiv");
-    listSingleTick[i].classList.toggle("hideListDiv");
-    fileBackgroundColor[i].classList.toggle("fileContainerColor");
+//for (let i = 0; i < preventListStyle.length; i++) {
+  // preventListStyle[i].addEventListener("click", function () {
+  //   listSingleLink[i].classList.toggle("hideListDiv");
+  //   listSingleTick[i].classList.toggle("hideListDiv");
+  //   fileBackgroundColor[i].classList.toggle("fileContainerColor");
     // selectItemText[i].classList.toggle("hideListDiv");
-    pTopText[i].classList.toggle("hideListDiv");
+    // pTopText[i].classList.toggle("hideListDiv");
       
     // let modalId = fileBackgroundColor[i].getAttribute("id");
     // if(!$(`#${modalId}`).hasClass("fileContainerColor")){
     //   // console.log("File color Class Exists:"+ $(`#${modalId}`).hasClass("fileContainerColor"));
     //   $(`#${modalId}-modal`).modal('show'); 
     // }
-  });
-}
+//   });
+// }
 
 //code below working fine
 $(document).ready(function () {
