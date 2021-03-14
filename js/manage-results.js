@@ -924,6 +924,7 @@ document.querySelector(".tab_filter-style12 .progress-style12 p").innerHTML = "P
 
 // CLICL TO TOGGLE STYLE1 & STYLE2 START =====
 $("#style2Con").addClass("displayNone");
+$("#double_click_style2").addClass("displayNone");
 $(".style1-box").addClass("clickstylebg");
 $(".style2-box").addClass("clickstylebrdr");
 
@@ -936,6 +937,9 @@ $(".style1-box").click(function () {
 
     $(".style2-box").addClass("clickstylebrdr");
     $(".style2-box").removeClass("clickstylebg");
+
+    $("#double_click").removeClass("displayNone");
+    $("#double_click_style2").addClass("displayNone");
 });
 
 $(".style2-box").click(function () {
@@ -947,6 +951,9 @@ $(".style2-box").click(function () {
 
     $(".style1-box").addClass("clickstylebrdr");
     $(".style1-box").removeClass("clickstylebg");
+
+    $("#double_click").addClass("displayNone");
+    $("#double_click_style2").removeClass("displayNone");
 });
 
 
