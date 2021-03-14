@@ -67,7 +67,7 @@ for (let i = 1; i <= 29; i++) {
     });
 
     htmlDataModal +=
-      `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="optfourmodala-submodal-div-list-1-${index + 1}">
+    `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="optfourmodala-submodal-div-list-1-${index + 1}">
       ${modallistoptfourmodala_data1}
     </ul>
     <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="optfourmodala-submodal-div-list-2-${index + 1}">
