@@ -14,7 +14,7 @@ const listSingleImg = document.querySelectorAll(".single-list-item-help");
 const listSingleLink = document.querySelectorAll(".skip-link-container");
 const listSingleTick = document.querySelectorAll(".green-tik-container");
 const getTickContainer = document.querySelectorAll(".green-tik-and-skip-link");
-const selectItemText = document.querySelectorAll(".selected-text-danger");
+// const selectItemText = document.querySelectorAll(".selected-text-danger");
 const fileBackgroundColor = document.querySelectorAll(".single-list-item-file-container");
 // const fileContainer = document.querySelectorAll(".single-list-item-file");
 const pTopText = document.querySelectorAll(".pTopText");
@@ -25,7 +25,7 @@ for (let i = 0; i < listSingle.length; i++) {
     listSingleTick[i].classList.toggle("hideListDiv");
     // fileContainer[i].classList.toggle("avoid-clicks");
     fileBackgroundColor[i].classList.toggle("fileContainerColor");
-    selectItemText[i].classList.toggle("hideListDiv");
+    // selectItemText[i].classList.toggle("hideListDiv");
     pTopText[i].classList.toggle("hideListDiv");
   });
   listSingle[i].addEventListener("mouseover", function () {
@@ -46,14 +46,14 @@ for (let i = 0; i < preventListStyle.length; i++) {
     listSingleLink[i].classList.toggle("hideListDiv");
     listSingleTick[i].classList.toggle("hideListDiv");
     fileBackgroundColor[i].classList.toggle("fileContainerColor");
-    selectItemText[i].classList.toggle("hideListDiv");
+    // selectItemText[i].classList.toggle("hideListDiv");
     pTopText[i].classList.toggle("hideListDiv");
       
-    let modalId = fileBackgroundColor[i].getAttribute("id");
-    if(!$(`#${modalId}`).hasClass("fileContainerColor")){
-      // console.log("File color Class Exists:"+ $(`#${modalId}`).hasClass("fileContainerColor"));
-      $(`#${modalId}-modal`).modal('show'); 
-    }
+    // let modalId = fileBackgroundColor[i].getAttribute("id");
+    // if(!$(`#${modalId}`).hasClass("fileContainerColor")){
+    //   // console.log("File color Class Exists:"+ $(`#${modalId}`).hasClass("fileContainerColor"));
+    //   $(`#${modalId}-modal`).modal('show'); 
+    // }
   });
 }
 
