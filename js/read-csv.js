@@ -9,7 +9,8 @@ $("#exelFile").change((e) => {
       const sheet = wb.SheetNames[0];
       if (wb && sheet) {
         tableData = XLSX.utils.sheet_to_json(wb.Sheets[sheet]);
-        manResPagination(7);
+				manResPagination(7);
+				allHeadTable2Call();
       }
     };
   }
@@ -24,17 +25,17 @@ function manResPagination(noRow) {
     callback: function (data, pagination) {
       let tableTr = "";
       let style2TableData = "";
-			let tableH = $("#resizable554 thead th");
-			let disNone = [];
-      data.forEach(csvD => {
+      let tableH = $("#resizable554 thead th");
+      let disNone = [];
+      data.forEach((csvD) => {
         // Status Column
         let sts = csvD[" Status"];
         let { status, checkSts, designClass } = fnStatus(sts);
 
         //variable for table style 2 Status design purpose
         let s2_statusClass = "";
-        if(checkSts != "Ended"){
-            s2_statusClass = "padding__resize__S2Status";
+        if (checkSts != "Ended") {
+          s2_statusClass = "padding__resize__S2Status";
         }
         // Val1 & Val2 Column
         let val1 = parseFloat(csvD.Val1).toFixed(2);
@@ -51,29 +52,35 @@ function manResPagination(noRow) {
         let end = csvD.End;
         let start = csvD.Start;
 
-        let { days: daysG, hours: hoursG, mins: minsG } = dateDiffInDays(csvD.MaPDT, start);
-        let { days: daysR, hours: hoursR, mins: minsR } = dateDiffInDays(csvD.LoPDT, start);
+        let { days: daysG, hours: hoursG, mins: minsG } = dateDiffInDays(
+          csvD.MaPDT,
+          start
+        );
+        let { days: daysR, hours: hoursR, mins: minsR } = dateDiffInDays(
+          csvD.LoPDT,
+          start
+        );
 
         let diffStartEnd = dateDiffInMins(end, start);
         let difMinGreen = dateDiffInMins(csvD.MaPDT, start);
-        let difMinG = (difMinGreen*100)/diffStartEnd;
+        let difMinG = (difMinGreen * 100) / diffStartEnd;
         let difMinG_S2 = 0;
         let difMinR_S2 = 0;
 
         let difMinRed = dateDiffInMins(csvD.LoPDT, start);
-        let difMinR =  (difMinRed*100)/diffStartEnd;
+        let difMinR = (difMinRed * 100) / diffStartEnd;
 
         // Normalization For 0 - 100 limit exceed (extra -> values are not exceeding the limit)
-        if(difMinG > 100){
-            difMinG = 100;
-        }else if(difMinG <= 0){
-            difMinG = 0;
+        if (difMinG > 100) {
+          difMinG = 100;
+        } else if (difMinG <= 0) {
+          difMinG = 0;
         }
 
-        if(difMinR > 100){
-            difMinR = 100;
-        }else if(difMinR <= 0){
-            difMinR = 0;
+        if (difMinR > 100) {
+          difMinR = 100;
+        } else if (difMinR <= 0) {
+          difMinR = 0;
         }
 
         difMinG_S2 = difMinG;
@@ -84,8 +91,8 @@ function manResPagination(noRow) {
         difMinR = difMinR * 0.62;
 
         // Normalization For Style 2 Pentagon Overflow in Left Positioning
-        difMinG_S2 = difMinG_S2 * 0.80;
-        difMinR_S2 = difMinR_S2 * 0.80;
+        difMinG_S2 = difMinG_S2 * 0.8;
+        difMinR_S2 = difMinR_S2 * 0.8;
 
         // Style 1 Pentagon Red Green Left Positioning
         let styleG = `left:${difMinG}%`;
@@ -131,8 +138,6 @@ function manResPagination(noRow) {
         let BL_COUNT = parseFloat(csvD[" BL COUNT"]).toFixed(2);
         let BM_COUNT = parseFloat(csvD[" BM COUNT"]).toFixed(2);
 
-        
-
         let Col2 = parseFloat(csvD.Col2).toFixed(2);
         let Col3 = parseFloat(csvD.Col3).toFixed(2);
         let DP_val = parseFloat(csvD["DP"]).toFixed(2);
@@ -143,16 +148,18 @@ function manResPagination(noRow) {
         let ID_val = csvD["ID"];
         let LoP_per = parseFloat(csvD["LoP%"]).toFixed(3);
         let M_Val = parseFloat(csvD.M_Val).toFixed(2);
-        let MaP_per= parseFloat(csvD["MaP%"]).toFixed(3);
+        let MaP_per = parseFloat(csvD["MaP%"]).toFixed(3);
 
         let { time: timeEnd, date: dateEnd } = ExcelDateToJSDate(csvD.O_End);
         let O_End = `${dateEnd} ${timeEnd}`;
-        let { time: timeStart, date: dateStart } = ExcelDateToJSDate(csvD.O_Start);
+        let { time: timeStart, date: dateStart } = ExcelDateToJSDate(
+          csvD.O_Start
+        );
         let O_Start = `${dateStart} ${timeStart}`;
-        
+
         let SP_val = csvD["SP"];
         let Time_Frame = csvD["Time Frame"];
-        let UmA= parseFloat(csvD.UmA).toFixed(2);
+        let UmA = parseFloat(csvD.UmA).toFixed(2);
         let UmP = parseFloat(csvD.UmP).toFixed(2);
         let UmP_per = parseFloat(csvD["UmP%"]).toFixed(3);
         let Val2S = parseFloat(csvD.Val2S).toFixed(2);
@@ -165,15 +172,15 @@ function manResPagination(noRow) {
 
         let tabDataArr = [];
         tabDataArr.push(
-        	`<td class="column-header-1">
+          `<td class="column-header-1">
             <label class="containerst12">
               <input type="checkbox" />
               <span class="checkmark"></span>
             </label>
           </td>`
         );
-				tabDataArr.push(
-					`<td class="column-header-2">
+        tabDataArr.push(
+          `<td class="column-header-2">
 						<div class="icon-box22">
 							<div class="circle2box bkmark" tooltip="Click to Add to Bookmarks" flow="down">
 								<i class="fas fa-envelope"></i>
@@ -259,9 +266,9 @@ function manResPagination(noRow) {
 						</div>
             <div class="column-header-2-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="column-header-3 status22">
+        );
+        tabDataArr.push(
+          `<td class="column-header-3 status22">
 						<div class="inner_con ${designClass}">
 							<div class="status22-centerize centerizeany">
 								<p class="mr-tableData">${checkSts == "Ended" ? checkSts : checkSts + " In"}</p>
@@ -270,9 +277,9 @@ function manResPagination(noRow) {
 						</div>
             <div class="column-header-3-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="column-header-4 ${classV1}">
+        );
+        tabDataArr.push(
+          `<td class="column-header-4 ${classV1}">
 						<div class="column-time">
 							<div class="centerauto">
 								<span class="dis_time22 mr-tableData">${val1}</span>
@@ -280,9 +287,9 @@ function manResPagination(noRow) {
 						</div>
             <div class="column-header-4-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="column-header-5 ${classV2}">
+        );
+        tabDataArr.push(
+          `<td class="column-header-5 ${classV2}">
 						<div class="column-time">
 							<div class="centerauto">
 								<span class="dis_time22 mr-tableData">${val2}</span>
@@ -290,9 +297,9 @@ function manResPagination(noRow) {
 						</div>
             <div class="column-header-5-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="column-header-6 vall11_datel">
+        );
+        tabDataArr.push(
+          `<td class="column-header-6 vall11_datel">
 						<div class="val11">
 							<p class="centerizeany mr-tableData">${Val11}</p>
 						</div>
@@ -304,9 +311,9 @@ function manResPagination(noRow) {
 						</div>
                         <div class="column-header-6-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="column-header-7 vall11_datel">
+        );
+        tabDataArr.push(
+          `<td class="column-header-7 vall11_datel">
 						<div class="val11 red-white">
 							<p class="centerizeany mr-tableData">${Val12}</p>
 						</div>
@@ -318,9 +325,9 @@ function manResPagination(noRow) {
 						</div>
                         <div class="column-header-7-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="column-header-8 dchart_1">
+        );
+        tabDataArr.push(
+          `<td class="column-header-8 dchart_1">
 						<div class="upper_part_22">
 							<div class="uddleft">
 								<p class="centerizeany">${daysG} D : ${hoursG} H : ${minsG} M</p>
@@ -345,9 +352,9 @@ function manResPagination(noRow) {
 						</div>
                         <div class="column-header-8-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="column-header-9 pentagon">
+        );
+        tabDataArr.push(
+          `<td class="column-header-9 pentagon">
 						<div class="upper-penta-box">
 							<div class="shape_penagon" style="${styleG}">
 								<div class="top-num">
@@ -372,519 +379,519 @@ function manResPagination(noRow) {
 								</div>
 							</div>
 						</div>
-                        <div class="column-header-9-resizer"></div>
+            <div class="column-header-9-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-10 green-white">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-10 green-white">
 						<p class="centerizeany mr-tableData">${u_val}</p>
-                        <div class="column-header-10-resizer"></div>
+            <div class="column-header-10-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-11 green-white">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-11 green-white">
 						<p class="centerizeany mr-tableData">${u_per}</p>
-                        <div class="column-header-11-resizer"></div>
+            <div class="column-header-11-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-12 red-white">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-12 red-white">
 						<p class="centerizeany mr-tableData">${d_val}</p>
-                        <div class="column-header-12-resizer"></div>
+            <div class="column-header-12-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-13 red-white">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-13 red-white">
 						<p class="centerizeany mr-tableData">${d_per}</p>
-                        <div class="column-header-13-resizer"></div>
+            <div class="column-header-13-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-14 grey-white">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-14 grey-white">
 						<p class="centerizeany mr-tableData">${n_val}</p>
-                        <div class="column-header-14-resizer"></div>
+            <div class="column-header-14-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-15 grey-white">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-15 grey-white">
 						<p class="centerizeany mr-tableData">${n_per}</p>
-                        <div class="column-header-15-resizer"></div>
+            <div class="column-header-15-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-16">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-16">
 						<p class="centerizeany mr-tableData">${AM_COUNT}</p>
-                        <div class="column-header-16-resizer"></div>
+            <div class="column-header-16-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-17">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-17">
 						<p class="centerizeany mr-tableData">${AN_COUNT}</p>
-                        <div class="column-header-17-resizer"></div>
+            <div class="column-header-17-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-18">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-18">
 						<p class="centerizeany mr-tableData">${AO_COUNT}</p>
-                        <div class="column-header-18-resizer"></div>
+            <div class="column-header-18-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-19">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-19">
 						<p class="centerizeany mr-tableData">${AP_COUNT}</p>
-                        <div class="column-header-19-resizer"></div>
+            <div class="column-header-19-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-20">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-20">
 						<p class="centerizeany mr-tableData">${AQ_COUNT}</p>
-                        <div class="column-header-20-resizer"></div>
+            <div class="column-header-20-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-21">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-21">
 						<p class="centerizeany mr-tableData">${AR_COUNT}</p>
-                        <div class="column-header-21-resizer"></div>
+            <div class="column-header-21-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-22">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-22">
 						<p class="centerizeany mr-tableData">${AS_Count}</p>
-                        <div class="column-header-22-resizer"></div>
+            <div class="column-header-22-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-23">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-23">
 						<p class="centerizeany mr-tableData">${AT_Count}</p>
-                        <div class="column-header-23-resizer"></div>
+            <div class="column-header-23-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-24">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-24">
 						<p class="centerizeany mr-tableData">${AU_Count}</p>
-                        <div class="column-header-24-resizer"></div>
+            <div class="column-header-24-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-25">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-25">
 						<p class="centerizeany mr-tableData">${AV_Count}</p>
-                        <div class="column-header-25-resizer"></div>
+            <div class="column-header-25-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-26">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-26">
 						<p class="centerizeany mr-tableData">${AW_COUNT}</p>
-                        <div class="column-header-26-resizer"></div>
+            <div class="column-header-26-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-27">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-27">
 						<p class="centerizeany mr-tableData">${AX_COUNT}</p>
-                        <div class="column-header-27-resizer"></div>
+            <div class="column-header-27-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-28">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-28">
 						<p class="centerizeany mr-tableData">${AY_COUNT}</p>
-                        <div class="column-header-28-resizer"></div>
+            <div class="column-header-28-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-29">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-29">
 						<p class="centerizeany mr-tableData">${AZ_Count}</p>
-                        <div class="column-header-29-resizer"></div>
+            <div class="column-header-29-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-30">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-30">
 						<p class="centerizeany mr-tableData">${BA_Count}</p>
-                        <div class="column-header-30-resizer"></div>
+            <div class="column-header-30-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-31">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-31">
 						<p class="centerizeany mr-tableData">${BB_Count}</p>
-                        <div class="column-header-31-resizer"></div>
+            <div class="column-header-31-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-32">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-32">
 						<p class="centerizeany mr-tableData">${BC_Count}</p>
-                        <div class="column-header-32-resizer"></div>
+            <div class="column-header-32-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-33">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-33">
 						<p class="centerizeany mr-tableData">${BD_Count}</p>
-                        <div class="column-header-33-resizer"></div>
+            <div class="column-header-33-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-34">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-34">
 						<p class="centerizeany mr-tableData">${BE_count}</p>
-                        <div class="column-header-34-resizer"></div>
+            <div class="column-header-34-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-35">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-35">
 						<p class="centerizeany mr-tableData">${BF_COUNT}</p>
-                        <div class="column-header-35-resizer"></div>
+            <div class="column-header-35-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-36">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-36">
 						<p class="centerizeany mr-tableData">${BG_COUNT}</p>
-                        <div class="column-header-36-resizer"></div>
+            <div class="column-header-36-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-37">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-37">
 						<p class="centerizeany mr-tableData">${BH_COUNT}</p>
-                        <div class="column-header-37-resizer"></div>
+            <div class="column-header-37-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-38">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-38">
 						<p class="centerizeany mr-tableData">${BI_COUNT}</p>
-                        <div class="column-header-38-resizer"></div>
+            <div class="column-header-38-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-39">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-39">
 						<p class="centerizeany mr-tableData">${BJ_COUNT}</p>
-                        <div class="column-header-39-resizer"></div>
+            <div class="column-header-39-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-40">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-40">
 						<p class="centerizeany mr-tableData">${BK_COUNT}</p>
-                        <div class="column-header-40-resizer"></div>
+            <div class="column-header-40-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-41">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-41">
 						<p class="centerizeany mr-tableData">${BL_COUNT}</p>
-                        <div class="column-header-41-resizer"></div>
+            <div class="column-header-41-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-42">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-42">
 						<p class="centerizeany mr-tableData">${BM_COUNT}</p>
-                        <div class="column-header-42-resizer"></div>
+            <div class="column-header-42-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-43">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-43">
 						<p class="centerizeany mr-tableData">${Col2}</p>
-                        <div class="column-header-43-resizer"></div>
+            <div class="column-header-43-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-44">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-44">
 						<p class="centerizeany mr-tableData">${Col3}</p>
-                        <div class="column-header-44-resizer"></div>
+            <div class="column-header-44-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-45">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-45">
 						<p class="centerizeany mr-tableData">${DP_val}</p>
-                        <div class="column-header-45-resizer"></div>
+            <div class="column-header-45-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-46">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-46">
 						<p class="centerizeany mr-tableData">${DY_val}</p>
-                        <div class="column-header-46-resizer"></div>
+            <div class="column-header-46-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-47">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-47">
 						<p class="centerizeany mr-tableData">${DmA}</p>
-                        <div class="column-header-47-resizer"></div>
+            <div class="column-header-47-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-48">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-48">
 						<p class="centerizeany mr-tableData">${DmP}</p>
-                        <div class="column-header-48-resizer"></div>
+            <div class="column-header-48-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-49">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-49">
 						<p class="centerizeany mr-tableData">${DmP_per}</p>
-                        <div class="column-header-49-resizer"></div>
+            <div class="column-header-49-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-50">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-50">
 						<p class="centerizeany mr-tableData">${ID_val}</p>
-                        <div class="column-header-50-resizer"></div>
+            <div class="column-header-50-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-51">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-51">
 						<p class="centerizeany mr-tableData">${LoP_per}</p>
-                        <div class="column-header-51-resizer"></div>
+            <div class="column-header-51-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-52">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-52">
 						<p class="centerizeany mr-tableData">${M_Val}</p>
-                        <div class="column-header-52-resizer"></div>
+            <div class="column-header-52-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-53">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-53">
 						<p class="centerizeany mr-tableData">${MaP_per}</p>
-                        <div class="column-header-53-resizer"></div>
+            <div class="column-header-53-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-54">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-54">
 						<p class="centerizeany mr-tableData">${O_End}</p>
-                        <div class="column-header-54-resizer"></div>
+            <div class="column-header-54-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-55">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-55">
 						<p class="centerizeany mr-tableData">${O_Start}</p>
-                        <div class="column-header-55-resizer"></div>
+            <div class="column-header-55-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-56">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-56">
 						<p class="centerizeany mr-tableData">${SP_val}</p>
                         <div class="column-header-56-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-57">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-57">
 						<p class="mr-tableData">${Time_Frame}</p>
-                        <div class="column-header-57-resizer"></div>
+            <div class="column-header-57-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-58">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-58">
 						<p class="centerizeany mr-tableData">${UmA}</p>
-                        <div class="column-header-58-resizer"></div>
+            <div class="column-header-58-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-59">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-59">
 						<p class="centerizeany mr-tableData">${UmP}</p>
-                        <div class="column-header-59-resizer"></div>
+            <div class="column-header-59-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-60">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-60">
 						<p class="centerizeany mr-tableData">${UmP_per}</p>
-                        <div class="column-header-60-resizer"></div>
+            <div class="column-header-60-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-61">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-61">
 						<p class="centerizeany mr-tableData">${Val2S}</p>
-                        <div class="column-header-61-resizer"></div>
+            <div class="column-header-61-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-62">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-62">
 						<p class="centerizeany mr-tableData">${Val3S}</p>
                         <div class="column-header-62-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-63">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-63">
 						<p class="centerizeany mr-tableData">${Val6}</p>
-                        <div class="column-header-63-resizer"></div>
+            <div class="column-header-63-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-64">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-64">
 						<p class="centerizeany mr-tableData" style="position: relative;left: 55%;top: 25%;">${Description}</p>
-                        <div class="column-header-64-resizer"></div>
+            <div class="column-header-64-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-65">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-65">
 						<p class="mr-tableData">${Details3}</p>
-                        <div class="column-header-65-resizer"></div>
+            <div class="column-header-65-resizer"></div>
 					</td>`
-				);
-				tabDataArr.push(
-					`<td class="col_00 column-header-66">
+        );
+        tabDataArr.push(
+          `<td class="col_00 column-header-66">
 						<p class="mr-tableData truncate-data">${Details2}</p>
-                        <div class="column-header-66-resizer"></div>
+            <div class="column-header-66-resizer"></div>
 					</td>`
-				);
+        );
 
-				let len = tableH.length;
-				disNone = [];
-				let tabTd = "";
-				for(let i=0;i<len;i++){
-					let regex = /th-dis-none/g;
-					let className = tableH[i].className.match(/column-header-\d+/g)[0];
-					let pos = className.match(/\d+/g)[0]-1;
-					if(regex.test(tableH[i].className)){
-						disNone.push(i+1);
-					}
-					tabTd += tabDataArr[pos];
-				}
-				tableTr +=
-        `<tr class="dnd-moved">
+        let len = tableH.length;
+        disNone = [];
+        let tabTd = "";
+        for (let i = 0; i < len; i++) {
+          let regex = /th-dis-none/g;
+          let className = tableH[i].className.match(/column-header-\d+/g)[0];
+          let pos = className.match(/\d+/g)[0] - 1;
+          if (regex.test(tableH[i].className)) {
+            disNone.push(i + 1);
+          }
+          tabTd += tabDataArr[pos];
+        }
+        tableTr += `<tr class="dnd-moved">
 					${tabTd}
         </tr>`;
 
-        style2TableData += 
-        `<div class="description-text">
-            <p>
-                Lorem ipsum, dolor sit amet conseetur adipisicing elit. Ad, distinctio incidunt molestias beatae nam doloribus cute laboriosam necesibus acntium recusandae adipisci.
-            </p>
+        style2TableData += `<div class="description-text">
+					<p>
+						Lorem ipsum, dolor sit amet conseetur adipisicing elit. Ad, distinctio incidunt molestias beatae nam doloribus cute laboriosam necesibus acntium recusandae adipisci.
+					</p>
         </div>
 
         <div class="icon-box55">
-            <div class="circle2box" tooltip="Click to Add to Bookmarks" flow="down">
-                <i class="fas fa-envelope"></i>
-            </div>
-            <div class="circle2box" tooltip="Click to View Details" flow="down">
-                <i class="fas fa-pen"></i>
-            </div>
-            <div class="circle2box view-modal-click" data-toggle="modal" data-target="#viewtwo">
-                <i class="fas fa-eye"></i>
-            </div>
-            <div class="circle2box" tooltip="Click to Delete" flow="down">
-                <i class="fas fa-trash-alt"></i>
-            </div>
-            <div class="circle2box row-modal-click" data-toggle="modal" data-target="#rowdetails">
-                <svg class="svg1" viewBox="-21 0 512 512">
-                    <g>
-                        <path d="M406,60h-30v15c0,24.814-20.186,45-45,45H181c-24.814,0-45-20.186-45-45V60h-30c-24.814,0-45,20.186-45,45v360
-                            c0,24.814,20.186,47,45,47h300c24.814,0,45-22.186,45-47V105C451,80.186,430.814,60,406,60z M136,450c-8.284,0-15-6.716-15-15
-                            c0-8.286,6.716-15,15-15s15,6.714,15,15C151,443.284,144.284,450,136,450z M136,360c-8.284,0-15-6.716-15-15
-                            c0-8.286,6.716-15,15-15s15,6.714,15,15C151,353.284,144.284,360,136,360z M136,270c-8.284,0-15-6.716-15-15
-                            c0-8.286,6.716-15,15-15s15,6.714,15,15C151,263.284,144.284,270,136,270z M136,180c-8.284,0-15-6.716-15-15
-                            c0-8.286,6.716-15,15-15s15,6.714,15,15C151,173.284,144.284,180,136,180z M376,450H196c-8.291,0-15-6.709-15-15
-                            c0-8.291,6.709-15,15-15h180c8.291,0,15,6.709,15,15C391,443.291,384.291,450,376,450z M376,360H196c-8.291,0-15-6.709-15-15
-                            c0-8.291,6.709-15,15-15h180c8.291,0,15,6.709,15,15C391,353.291,384.291,360,376,360z M376,270H196c-8.291,0-15-6.709-15-15
-                            c0-8.291,6.709-15,15-15h180c8.291,0,15,6.709,15,15S384.291,270,376,270z M376,180H196c-8.291,0-15-6.709-15-15s6.709-15,15-15
-                            h180c8.291,0,15,6.709,15,15S384.291,180,376,180z" />
-                    </g>
-                    <g>
-                        <path
-                            d="M316,30h-28.154l-3.545-9.99C280.053,8.042,268.686,0,256,0c-12.686,0-24.053,8.042-28.301,20.01L224.154,30H196
-                            c-16.569,0-30,13.431-30,30v15c0,8.284,6.716,15,15,15h150c8.284,0,15-6.716,15-15V60C346,43.431,332.569,30,316,30z" />
-                    </g>
-                </svg>
-            </div>
-            <div class="circle2box note-modal-click" data-toggle="modal" data-target="#noteswindow">
-                <svg class="svg2" viewBox="0 0 24 24">
-                    <path
-                        d="m12.25 2h-1.1c-.33-1.15-1.39-2-2.65-2s-2.32.85-2.65 2h-1.1c-.41 0-.75.34-.75.75v1.5c0 .96.79 1.75 1.75 1.75h5.5c.96 0 1.75-.79 1.75-1.75v-1.5c0-.41-.34-.75-.75-.75z" />
-                    <path
-                        d="m14.25 3h-.25v1.25c0 1.52-1.23 2.75-2.75 2.75h-5.5c-1.52 0-2.75-1.23-2.75-2.75v-1.25h-.25c-1.52 0-2.75 1.23-2.75 2.75v12.5c0 1.52 1.23 2.75 2.75 2.75h7.38l.22-1.23c.1-.56.36-1.06.76-1.47l.8-.8h-8.16c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h9.5c.05 0 .09 0 .14.02h.01l3.6-3.6v-6.67c0-1.52-1.23-2.75-2.75-2.75zm-1 11.25h-9.5c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h9.5c.41 0 .75.34.75.75s-.34.75-.75.75zm0-3.25h-9.5c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h9.5c.41 0 .75.34.75.75s-.34.75-.75.75z" />
-                    <path
-                        d="m12.527 24c-.197 0-.389-.078-.53-.22-.173-.173-.251-.419-.208-.661l.53-3.005c.026-.151.1-.291.208-.4l7.425-7.424c.912-.914 1.808-.667 2.298-.177l1.237 1.237c.683.682.683 1.792 0 2.475l-7.425 7.425c-.108.109-.248.182-.4.208l-3.005.53c-.043.008-.087.012-.13.012zm3.005-1.28h.01z" />
-                </svg>
-            </div>
-            <div class="circle2box" data-toggle="modal" data-target="#copyrowlist">
-                <svg class="svg3" viewBox="0 0 24 24">
-                    <path
-                        d="m4 6.75c0-2.619 2.131-4.75 4.75-4.75h9.133c-.329-1.151-1.378-2-2.633-2h-11.5c-1.517 0-2.75 1.233-2.75 2.75v15.5c0 1.517 1.233 2.75 2.75 2.75h.25z" />
-                    <path
-                        d="m20.25 4h-11.5c-1.517 0-2.75 1.233-2.75 2.75v14.5c0 1.517 1.233 2.75 2.75 2.75h11.5c1.517 0 2.75-1.233 2.75-2.75v-14.5c0-1.517-1.233-2.75-2.75-2.75zm-2 17h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75zm0-4h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75zm0-3.5h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75zm0-4h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75z" />
-                </svg>
-            </div>
-            <div class="circle2box" data-toggle="modal" data-target="#moverowlist">
-                <svg class="svg4" viewBox="0 0 512.007 512.007">
-                    <g>
-                        <path
-                            d="m142 143.003h139v-143c-49.379 0-107.674 0-154 0v128c0 8.271 6.729 15 15 15z" />
-                        <path
-                            d="m345 128.003v-128c-9.97 0-21.461 0-34 0v143h19c8.271 0 15-6.729 15-15z" />
-                        <path d="m127 512.003h218v-161h-218z" />
-                        <path
-                            d="m511.927 126.537c-.279-2.828-1.38-5.667-3.315-8.027-.747-.913 6.893 6.786-114.006-114.113-2.882-2.882-6.794-4.396-10.612-4.394-.789 0-3.925 0-8.995 0v128c0 24.813-20.187 45-45 45-14.028 0-186.064 0-188 0-24.813 0-45-20.187-45-45v-128c-29.589 0-49.82 0-52 0-24.813 0-45 20.187-45 45v422c0 24.813 20.187 45 45 45h52c0-10.815 0-201.797 0-210 0-24.813 20.187-45 45-45h188c24.813 0 45 20.187 45 45v210h92c24.813 0 45-20.187 45-45 .001-364.186.041-339.316-.072-340.466z" />
-                        <path
-                            d="m330 287.003h-188c-8.271 0-15 6.729-15 15v19h218v-19c0-8.271-6.729-15-15-15z" />
-                    </g>
-                </svg>
-            </div>
-            <div class="circle2box" data-toggle="modal" data-target="#alertswindow">
-                <svg viewBox="0 0 511.156 511.156">
-                    <path
-                        d="m184.904 465.044c11.999 27.127 39.154 46.112 70.674 46.112s58.674-18.985 70.674-46.112z" />
-                    <path
-                        d="m255.573 48.836c20.8 0 40.772 3.67 59.306 10.389v-2.283c0-31.398-25.544-56.942-56.941-56.942h-4.719c-31.398 0-56.942 25.544-56.942 56.942v2.254c18.524-6.699 38.49-10.36 59.296-10.36z" />
-                    <path
-                        d="m442.747 435.044h-374.338c-7.082 0-13.569-4.776-15.042-11.704-1.458-6.859 1.668-13.629 8.01-16.559 1.505-.976 12.833-8.897 24.174-32.862 20.829-44.01 25.201-106.005 25.201-150.263 0-79.855 64.967-144.82 144.821-144.82 79.665 0 144.512 64.652 144.82 144.245.007.191.011.383.011.575 0 44.258 4.372 106.253 25.201 150.263 11.341 23.965 22.668 31.887 24.174 32.862 6.342 2.93 9.469 9.699 8.01 16.559-1.473 6.927-7.959 11.704-15.042 11.704zm7.2-28.157h.01z" />
-                </svg>
-            </div>
+					<div class="circle2box" tooltip="Click to Add to Bookmarks" flow="down">
+						<i class="fas fa-envelope"></i>
+					</div>
+					<div class="circle2box" tooltip="Click to View Details" flow="down">
+						<i class="fas fa-pen"></i>
+					</div>
+					<div class="circle2box view-modal-click" data-toggle="modal" data-target="#viewtwo">
+						<i class="fas fa-eye"></i>
+					</div>
+					<div class="circle2box" tooltip="Click to Delete" flow="down">
+						<i class="fas fa-trash-alt"></i>
+					</div>
+					<div class="circle2box row-modal-click" data-toggle="modal" data-target="#rowdetails">
+						<svg class="svg1" viewBox="-21 0 512 512">
+							<g>
+								<path d="M406,60h-30v15c0,24.814-20.186,45-45,45H181c-24.814,0-45-20.186-45-45V60h-30c-24.814,0-45,20.186-45,45v360
+									c0,24.814,20.186,47,45,47h300c24.814,0,45-22.186,45-47V105C451,80.186,430.814,60,406,60z M136,450c-8.284,0-15-6.716-15-15
+									c0-8.286,6.716-15,15-15s15,6.714,15,15C151,443.284,144.284,450,136,450z M136,360c-8.284,0-15-6.716-15-15
+									c0-8.286,6.716-15,15-15s15,6.714,15,15C151,353.284,144.284,360,136,360z M136,270c-8.284,0-15-6.716-15-15
+									c0-8.286,6.716-15,15-15s15,6.714,15,15C151,263.284,144.284,270,136,270z M136,180c-8.284,0-15-6.716-15-15
+									c0-8.286,6.716-15,15-15s15,6.714,15,15C151,173.284,144.284,180,136,180z M376,450H196c-8.291,0-15-6.709-15-15
+									c0-8.291,6.709-15,15-15h180c8.291,0,15,6.709,15,15C391,443.291,384.291,450,376,450z M376,360H196c-8.291,0-15-6.709-15-15
+									c0-8.291,6.709-15,15-15h180c8.291,0,15,6.709,15,15C391,353.291,384.291,360,376,360z M376,270H196c-8.291,0-15-6.709-15-15
+									c0-8.291,6.709-15,15-15h180c8.291,0,15,6.709,15,15S384.291,270,376,270z M376,180H196c-8.291,0-15-6.709-15-15s6.709-15,15-15
+									h180c8.291,0,15,6.709,15,15S384.291,180,376,180z" />
+							</g>
+							<g>
+								<path
+									d="M316,30h-28.154l-3.545-9.99C280.053,8.042,268.686,0,256,0c-12.686,0-24.053,8.042-28.301,20.01L224.154,30H196
+									c-16.569,0-30,13.431-30,30v15c0,8.284,6.716,15,15,15h150c8.284,0,15-6.716,15-15V60C346,43.431,332.569,30,316,30z" />
+							</g>
+						</svg>
+					</div>
+					<div class="circle2box note-modal-click" data-toggle="modal" data-target="#noteswindow">
+						<svg class="svg2" viewBox="0 0 24 24">
+							<path
+								d="m12.25 2h-1.1c-.33-1.15-1.39-2-2.65-2s-2.32.85-2.65 2h-1.1c-.41 0-.75.34-.75.75v1.5c0 .96.79 1.75 1.75 1.75h5.5c.96 0 1.75-.79 1.75-1.75v-1.5c0-.41-.34-.75-.75-.75z" />
+							<path
+								d="m14.25 3h-.25v1.25c0 1.52-1.23 2.75-2.75 2.75h-5.5c-1.52 0-2.75-1.23-2.75-2.75v-1.25h-.25c-1.52 0-2.75 1.23-2.75 2.75v12.5c0 1.52 1.23 2.75 2.75 2.75h7.38l.22-1.23c.1-.56.36-1.06.76-1.47l.8-.8h-8.16c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h9.5c.05 0 .09 0 .14.02h.01l3.6-3.6v-6.67c0-1.52-1.23-2.75-2.75-2.75zm-1 11.25h-9.5c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h9.5c.41 0 .75.34.75.75s-.34.75-.75.75zm0-3.25h-9.5c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h9.5c.41 0 .75.34.75.75s-.34.75-.75.75z" />
+							<path
+								d="m12.527 24c-.197 0-.389-.078-.53-.22-.173-.173-.251-.419-.208-.661l.53-3.005c.026-.151.1-.291.208-.4l7.425-7.424c.912-.914 1.808-.667 2.298-.177l1.237 1.237c.683.682.683 1.792 0 2.475l-7.425 7.425c-.108.109-.248.182-.4.208l-3.005.53c-.043.008-.087.012-.13.012zm3.005-1.28h.01z" />
+						</svg>
+					</div>
+					<div class="circle2box" data-toggle="modal" data-target="#copyrowlist">
+						<svg class="svg3" viewBox="0 0 24 24">
+							<path
+								d="m4 6.75c0-2.619 2.131-4.75 4.75-4.75h9.133c-.329-1.151-1.378-2-2.633-2h-11.5c-1.517 0-2.75 1.233-2.75 2.75v15.5c0 1.517 1.233 2.75 2.75 2.75h.25z" />
+							<path
+								d="m20.25 4h-11.5c-1.517 0-2.75 1.233-2.75 2.75v14.5c0 1.517 1.233 2.75 2.75 2.75h11.5c1.517 0 2.75-1.233 2.75-2.75v-14.5c0-1.517-1.233-2.75-2.75-2.75zm-2 17h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75zm0-4h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75zm0-3.5h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75zm0-4h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75z" />
+						</svg>
+					</div>
+					<div class="circle2box" data-toggle="modal" data-target="#moverowlist">
+						<svg class="svg4" viewBox="0 0 512.007 512.007">
+							<g>
+								<path
+									d="m142 143.003h139v-143c-49.379 0-107.674 0-154 0v128c0 8.271 6.729 15 15 15z" />
+								<path
+									d="m345 128.003v-128c-9.97 0-21.461 0-34 0v143h19c8.271 0 15-6.729 15-15z" />
+								<path d="m127 512.003h218v-161h-218z" />
+								<path
+									d="m511.927 126.537c-.279-2.828-1.38-5.667-3.315-8.027-.747-.913 6.893 6.786-114.006-114.113-2.882-2.882-6.794-4.396-10.612-4.394-.789 0-3.925 0-8.995 0v128c0 24.813-20.187 45-45 45-14.028 0-186.064 0-188 0-24.813 0-45-20.187-45-45v-128c-29.589 0-49.82 0-52 0-24.813 0-45 20.187-45 45v422c0 24.813 20.187 45 45 45h52c0-10.815 0-201.797 0-210 0-24.813 20.187-45 45-45h188c24.813 0 45 20.187 45 45v210h92c24.813 0 45-20.187 45-45 .001-364.186.041-339.316-.072-340.466z" />
+								<path
+									d="m330 287.003h-188c-8.271 0-15 6.729-15 15v19h218v-19c0-8.271-6.729-15-15-15z" />
+							</g>
+						</svg>
+					</div>
+					<div class="circle2box" data-toggle="modal" data-target="#alertswindow">
+						<svg viewBox="0 0 511.156 511.156">
+							<path
+								d="m184.904 465.044c11.999 27.127 39.154 46.112 70.674 46.112s58.674-18.985 70.674-46.112z" />
+							<path
+								d="m255.573 48.836c20.8 0 40.772 3.67 59.306 10.389v-2.283c0-31.398-25.544-56.942-56.941-56.942h-4.719c-31.398 0-56.942 25.544-56.942 56.942v2.254c18.524-6.699 38.49-10.36 59.296-10.36z" />
+							<path
+								d="m442.747 435.044h-374.338c-7.082 0-13.569-4.776-15.042-11.704-1.458-6.859 1.668-13.629 8.01-16.559 1.505-.976 12.833-8.897 24.174-32.862 20.829-44.01 25.201-106.005 25.201-150.263 0-79.855 64.967-144.82 144.821-144.82 79.665 0 144.512 64.652 144.82 144.245.007.191.011.383.011.575 0 44.258 4.372 106.253 25.201 150.263 11.341 23.965 22.668 31.887 24.174 32.862 6.342 2.93 9.469 9.699 8.01 16.559-1.473 6.927-7.959 11.704-15.042 11.704zm7.2-28.157h.01z" />
+						</svg>
+					</div>
         </div>
 
         <table class="table sty2table2 cross-table-2">
-            <thead>
-                <tr>
-                    <th scope="col">
-                        STATUS
-                        <div class="head-filter style2_cross01" onclick="crossHandlerS2Table(this, 1)">
-                            <i class="fas fa-times"></i>
-                        </div>
-                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
-                            <i class="fas fa-caret-down"></i>
-                        </div>
-                    </th>
-                    <th scope="col">
-                        Val1
-                        <div class="head-filter style2_cross02" onclick="crossHandlerS2Table(this, 2)">
-                            <i class="fas fa-times"></i>
-                        </div>
-                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
-                            <i class="fas fa-caret-down"></i>
-                        </div>
-                    </th>
-                    <th scope="col">
-                        Val2
-                        <div class="head-filter style2_cross03" onclick="crossHandlerS2Table(this, 3)">
-                            <i class="fas fa-times"></i>
-                        </div>
-                        <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)" data-toggle="modal" data-target="#col8Filter">
-                            <i class="fas fa-caret-down"></i>
-                        </div>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="status22">
-                        <div class="inner_con ${designClass} ${s2_statusClass}">
-                            <div class="status22-centerize">
-                            <p class="mr-tableData">${checkSts == "Ended" ? checkSts : checkSts + " In"}</p>
-                            <p>${checkSts == "Ended" ? "" : status}</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="s2-value">
-                        <div class="column-time ${classV1}">
-                            <div class="centerauto">
-                                <span class="mr-tableData">${val1}</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="s2-value">
-                        <div class="column-time ${classV2}">
-                            <div class="centerauto">
-                                <span class="mr-tableData">${val2}</span>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
+					<thead>
+						<tr>
+							<th scope="col" class="style-two-head-01">
+								STATUS
+								<div class="head-filter style2_cross01" >
+									<i class="fas fa-times"></i>
+								</div>
+								<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
+									<i class="fas fa-caret-down"></i>
+								</div>
+							</th>
+							<th scope="col" class="style-two-head-02">
+								Val1
+								<div class="head-filter style2_cross02" >
+									<i class="fas fa-times"></i>
+								</div>
+								<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
+									<i class="fas fa-caret-down"></i>
+								</div>
+							</th>
+							<th scope="col" class="style-two-head-03">
+								Val2
+								<div class="head-filter style2_cross03" >
+									<i class="fas fa-times"></i>
+								</div>
+								<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)" data-toggle="modal" data-target="#col8Filter">
+									<i class="fas fa-caret-down"></i>
+								</div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="status22 style-two-head-01">
+								<div class="inner_con ${designClass} ${s2_statusClass}">
+										<div class="status22-centerize">
+										<p class="mr-tableData">
+										${ checkSts == "Ended" ? checkSts : checkSts + " In" }
+										</p>
+										<p>${checkSts == "Ended" ? "" : status}</p>
+										</div>
+								</div>
+							</td>
+							<td class="s2-value style-two-head-02">
+								<div class="column-time ${classV1}">
+										<div class="centerauto">
+												<span class="mr-tableData">${val1}</span>
+										</div>
+								</div>
+							</td>
+							<td class="s2-value style-two-head-03">
+								<div class="column-time ${classV2}">
+										<div class="centerauto">
+												<span class="mr-tableData">${val2}</span>
+										</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
         </table>
 
         <table class="table sty2table3 cross-table-3">
             <thead>
                 <tr>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-04">
                         VAL11+DATEL
                         <div class="head-filter style2_cross04">
                             <i class="fas fa-times"></i>
@@ -893,7 +900,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-05">
                         VAL12+DATEH
                         <div class="head-filter style2_cross05">
                             <i class="fas fa-times"></i>
@@ -902,7 +909,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-06">
                         CHART 1
                         <div class="head-filter style2_cross06">
                             <i class="fas fa-times"></i>
@@ -911,7 +918,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-07">
                         CHART2
                         <div class="head-filter style2_cross07">
                             <i class="fas fa-times"></i>
@@ -924,7 +931,7 @@ function manResPagination(noRow) {
             </thead>
             <tbody>
                 <tr>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-04">
                         <div class="val11">
                             <p class="centerizeany mr-tableData">${Val11}</p>
                         </div>
@@ -935,7 +942,7 @@ function manResPagination(noRow) {
                             </div>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-05">
                         <div class="val11">
                             <p class="centerizeany mr-tableData">${Val12}</p>
                         </div>
@@ -946,7 +953,7 @@ function manResPagination(noRow) {
                             </div>
                         </div>
                     </td>
-                    <td class="dchart_1">
+                    <td class="dchart_1 style-two-head-06">
                         <div class="upper_part_22">
                             <div class="uddleft">
                                 <p class="centerizeany">${daysG} D : ${hoursG} H : ${minsG} M</p>
@@ -970,7 +977,7 @@ function manResPagination(noRow) {
                             </div>
                         </div>
                     </td>
-                    <td class="pentagon">
+                    <td class="pentagon style-two-head-07">
                         <div class="upper-penta-box">
                             <div class="shape_penagon" style="${styleG_S2}">
                                 <div class="top-num">
@@ -1003,7 +1010,7 @@ function manResPagination(noRow) {
         <table class="table sty2table4 cross-table-4">
             <thead>
                 <tr>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-08">
                         U_Val
                         <div class="head-filter style2_cross08">
                             <i class="fas fa-times"></i>
@@ -1012,7 +1019,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-09">
                         U_%
                         <div class="head-filter style2_cross09">
                             <i class="fas fa-times"></i>
@@ -1021,7 +1028,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-10">
                         D_Val
                         <div class="head-filter style2_cross10">
                             <i class="fas fa-times"></i>
@@ -1030,7 +1037,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-11">
                         D_%
                         <div class="head-filter style2_cross11">
                             <i class="fas fa-times"></i>
@@ -1039,7 +1046,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-12">
                         N_Val
                         <div class="head-filter style2_cross12">
                             <i class="fas fa-times"></i>
@@ -1048,7 +1055,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-13">
                         N_C
                         <div class="head-filter style2_cross13">
                             <i class="fas fa-times"></i>
@@ -1057,7 +1064,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-14">
                         AM COUNT
                         <div class="head-filter style2_cross14">
                             <i class="fas fa-times"></i>
@@ -1066,7 +1073,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-15">
                         AN COUNT
                         <div class="head-filter style2_cross15">
                             <i class="fas fa-times"></i>
@@ -1075,7 +1082,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-16">
                         AO COUNT
                         <div class="head-filter style2_cross16">
                             <i class="fas fa-times"></i>
@@ -1084,7 +1091,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-17">
                         AP COUNT
                         <div class="head-filter style2_cross17">
                             <i class="fas fa-times"></i>
@@ -1093,7 +1100,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-18">
                         AQ COUNT
                         <div class="head-filter style2_cross18">
                             <i class="fas fa-times"></i>
@@ -1102,7 +1109,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-19">
                         AR COUNT
                         <div class="head-filter style2_cross19">
                             <i class="fas fa-times"></i>
@@ -1111,7 +1118,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-20">
                         AS COUNT
                         <div class="head-filter style2_cross20">
                             <i class="fas fa-times"></i>
@@ -1124,80 +1131,79 @@ function manResPagination(noRow) {
             </thead>
             <tbody>
                 <tr>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-08">
                         <div class="col1table green-white">
                             <span class="mr-tableData">${u_val}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-09">
                         <div class="col1table green-white">
                             <span class="mr-tableData">${u_per}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-10">
                         <div class="col1table red-white">
                             <span class="mr-tableData">${d_val}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-11">
                         <div class="col1table red-white">
                             <span class="mr-tableData">${d_per}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-12">
                         <div class="col1table grey-white">
                             <span class="mr-tableData">${n_val}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-13">
                         <div class="col1table grey-white">
                             <span class="mr-tableData">${n_per}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-14">
                         <div class="col1table">
                             <span class="mr-tableData">${AM_COUNT}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-15">
                         <div class="col1table">
                             <span class="mr-tableData">${AN_COUNT}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-16">
                         <div class="col1table">
                             <span class="mr-tableData">${AO_COUNT}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-17">
                         <div class="col1table">
                             <span class="mr-tableData">${AP_COUNT}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-18">
                         <div class="col1table">
                             <span class="mr-tableData">${AQ_COUNT}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-19">
                         <div class="col1table">
                             <span class="mr-tableData">${AR_COUNT}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-20">
                         <div class="col1table">
                             <span class="mr-tableData">${AS_Count}</span>
                         </div>
                     </td>
                 </tr>
-                
             </tbody>
         </table>
         
         <table class="table sty2table5 cross-table-4">
             <thead>
                 <tr>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-21">
                         AT COUNT
                         <div class="head-filter style2_cross21">
                             <i class="fas fa-times"></i>
@@ -1206,7 +1212,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-22">
                         AU COUNT
                         <div class="head-filter style2_cross22">
                             <i class="fas fa-times"></i>
@@ -1215,7 +1221,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-23">
                         AV COUNT
                         <div class="head-filter style2_cross23">
                             <i class="fas fa-times"></i>
@@ -1224,7 +1230,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-24">
                         AW COUNT
                         <div class="head-filter style2_cross24">
                             <i class="fas fa-times"></i>
@@ -1233,7 +1239,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-25">
                         AX COUNT
                         <div class="head-filter style2_cross25">
                             <i class="fas fa-times"></i>
@@ -1242,7 +1248,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-26">
                         AY COUNT
                         <div class="head-filter style2_cross26">
                             <i class="fas fa-times"></i>
@@ -1251,7 +1257,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-27">
                         AZ COUNT
                         <div class="head-filter style2_cross27">
                             <i class="fas fa-times"></i>
@@ -1260,7 +1266,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-28">
                         BA COUNT
                         <div class="head-filter style2_cross28">
                             <i class="fas fa-times"></i>
@@ -1269,7 +1275,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-29">
                         BB COUNT
                         <div class="head-filter style2_cross29">
                             <i class="fas fa-times"></i>
@@ -1278,7 +1284,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-30">
                         BC COUNT
                         <div class="head-filter style2_cross30">
                             <i class="fas fa-times"></i>
@@ -1287,7 +1293,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-31">
                         BD COUNT
                         <div class="head-filter style2_cross31">
                             <i class="fas fa-times"></i>
@@ -1296,7 +1302,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-32">
                         BE COUNT
                         <div class="head-filter style2_cross32">
                             <i class="fas fa-times"></i>
@@ -1305,7 +1311,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-33">
                         BF COUNT
                         <div class="head-filter style2_cross33">
                             <i class="fas fa-times"></i>
@@ -1318,67 +1324,67 @@ function manResPagination(noRow) {
             </thead>
             <tbody>
                 <tr>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-21">
                         <div class="col1table">
                             <span class="mr-tableData">${AT_Count}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-22">
                         <div class="col1table">
                             <span class="mr-tableData">${AU_Count}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-23">
                         <div class="col1table">
                             <span class="mr-tableData">${AV_Count}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-24">
                         <div class="col1table">
                             <span class="mr-tableData">${AW_COUNT}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-25">
                         <div class="col1table">
                             <span class="mr-tableData">${AX_COUNT}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-26">
                         <div class="col1table">
                             <span class="mr-tableData">${AY_COUNT}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-27">
                         <div class="col1table">
                             <span class="mr-tableData">${AZ_Count}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-28">
                         <div class="col1table">
                             <span class="mr-tableData">${BA_Count}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-29">
                         <div class="col1table">
                             <span class="mr-tableData">${BB_Count}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-30">
                         <div class="col1table">
                             <span class="mr-tableData">${BC_Count}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-31">
                         <div class="col1table">
                             <span class="mr-tableData">${BD_Count}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-32">
                         <div class="col1table">
                             <span class="mr-tableData">${BE_count}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-33">
                         <div class="col1table">
                             <span class="mr-tableData">${BF_COUNT}</span>
                         </div>
@@ -1390,7 +1396,7 @@ function manResPagination(noRow) {
         <table class="table sty2table6 cross-table-4">
             <thead>
                 <tr>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-34">
                         BG COUNT
                         <div class="head-filter style2_cross34">
                             <i class="fas fa-times"></i>
@@ -1399,7 +1405,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-35">
                         BH COUNT
                         <div class="head-filter style2_cross35">
                             <i class="fas fa-times"></i>
@@ -1408,7 +1414,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-36">
                         BI COUNT
                         <div class="head-filter style2_cross36">
                             <i class="fas fa-times"></i>
@@ -1417,7 +1423,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-37">
                         BJ COUNT
                         <div class="head-filter style2_cross37">
                             <i class="fas fa-times"></i>
@@ -1426,7 +1432,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-38">
                         BK COUNT
                         <div class="head-filter style2_cross38">
                             <i class="fas fa-times"></i>
@@ -1435,7 +1441,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-39">
                         BL COUNT
                         <div class="head-filter style2_cross39">
                             <i class="fas fa-times"></i>
@@ -1444,7 +1450,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-40">
                         BM COUNT
                         <div class="head-filter style2_cross40">
                             <i class="fas fa-times"></i>
@@ -1453,7 +1459,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-41">
                         Col2
                         <div class="head-filter style2_cross41">
                             <i class="fas fa-times"></i>
@@ -1462,7 +1468,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-42">
                         Col3
                         <div class="head-filter style2_cross42">
                             <i class="fas fa-times"></i>
@@ -1471,7 +1477,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-43">
                         DP
                         <div class="head-filter style2_cross43">
                             <i class="fas fa-times"></i>
@@ -1480,7 +1486,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-44">
                         DY
                         <div class="head-filter style2_cross44">
                             <i class="fas fa-times"></i>
@@ -1489,7 +1495,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-45">
                         DmA
                         <div class="head-filter style2_cross45">
                             <i class="fas fa-times"></i>
@@ -1498,7 +1504,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-46">
                         DmP
                         <div class="head-filter style2_cross46">
                             <i class="fas fa-times"></i>
@@ -1507,7 +1513,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-47">
                         DmP%
                         <div class="head-filter style2_cross47">
                             <i class="fas fa-times"></i>
@@ -1520,72 +1526,72 @@ function manResPagination(noRow) {
             </thead>
             <tbody>
                 <tr>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-34">
                         <div class="col1table">
                             <span class="mr-tableData">${BG_COUNT}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-35">
                         <div class="col1table">
                             <span class="mr-tableData">${BH_COUNT}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-36">
                         <div class="col1table">
                             <span class="mr-tableData">${BI_COUNT}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-37">
                         <div class="col1table">
                             <span class="mr-tableData">${BJ_COUNT}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-38">
                         <div class="col1table">
                             <span class="mr-tableData">${BK_COUNT}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-39">
                         <div class="col1table">
                             <span class="mr-tableData">${BL_COUNT}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-40">
                         <div class="col1table">
                             <span class="mr-tableData">${BM_COUNT}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-41">
                         <div class="col1table">
                             <span class="mr-tableData">${Col2}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-42">
                         <div class="col1table">
                             <span class="mr-tableData">${Col3}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-43">
                         <div class="col1table">
                             <span class="mr-tableData">${DP_val}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-44">
                         <div class="col1table">
                             <span class="mr-tableData">${DY_val}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-45">
                         <div class="col1table">
                             <span class="mr-tableData">${DmA}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-46">
                         <div class="col1table">
                             <span class="mr-tableData">${DmP}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-47">
                         <div class="col1table">
                             <span class="mr-tableData">${DmP_per}</span>
                         </div>
@@ -1598,7 +1604,7 @@ function manResPagination(noRow) {
         <table class="table sty2table7 cross-table-4">
             <thead>
                 <tr>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-48">
                         ID
                         <div class="head-filter style2_cross48">
                             <i class="fas fa-times"></i>
@@ -1607,7 +1613,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-49">
                         LoP%
                         <div class="head-filter style2_cross49">
                             <i class="fas fa-times"></i>
@@ -1616,7 +1622,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-50">
                         M_Val
                         <div class="head-filter style2_cross50">
                             <i class="fas fa-times"></i>
@@ -1625,7 +1631,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-51">
                         MaP%
                         <div class="head-filter style2_cross51">
                             <i class="fas fa-times"></i>
@@ -1634,7 +1640,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-52">
                         O_End
                         <div class="head-filter style2_cross52">
                             <i class="fas fa-times"></i>
@@ -1643,7 +1649,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-53">
                         O_Start
                         <div class="head-filter style2_cross53">
                             <i class="fas fa-times"></i>
@@ -1652,7 +1658,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-54">
                         SP
                         <div class="head-filter style2_cross54">
                             <i class="fas fa-times"></i>
@@ -1661,7 +1667,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-55">
                         Time Frame
                         <div class="head-filter style2_cross55">
                             <i class="fas fa-times"></i>
@@ -1670,7 +1676,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-56">
                         UmA
                         <div class="head-filter style2_cross56">
                             <i class="fas fa-times"></i>
@@ -1679,7 +1685,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-57">
                         UmP
                         <div class="head-filter style2_cross57">
                             <i class="fas fa-times"></i>
@@ -1688,7 +1694,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-58">
                         UmP%
                         <div class="head-filter style2_cross58">
                             <i class="fas fa-times"></i>
@@ -1697,7 +1703,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-59">
                         Val2S
                         <div class="head-filter style2_cross59">
                             <i class="fas fa-times"></i>
@@ -1706,7 +1712,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-60">
                         Val3S
                         <div class="head-filter style2_cross60">
                             <i class="fas fa-times"></i>
@@ -1715,7 +1721,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-61">
                         Val6
                         <div class="head-filter style2_cross61">
                             <i class="fas fa-times"></i>
@@ -1728,72 +1734,72 @@ function manResPagination(noRow) {
             </thead>
             <tbody>
                 <tr>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-48">
                         <div class="col1table">
                             <span class="mr-tableData">${ID_val}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-49">
                         <div class="col1table">
                             <span class="mr-tableData">${LoP_per}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-50">
                         <div class="col1table">
                             <span class="mr-tableData">${M_Val}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-51">
                         <div class="col1table">
                             <span class="mr-tableData">${MaP_per}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-52">
                         <div class="col1table">
                             <span class="mr-tableData">${O_End}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-53">
                         <div class="col1table">
                             <span class="mr-tableData">${O_Start}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-54">
                         <div class="col1table">
                             <span class="mr-tableData">${SP_val}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-55">
                         <div class="col1table">
                             <span class="mr-tableData">${Time_Frame}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-56">
                         <div class="col1table">
                             <span class="mr-tableData">${UmA}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-57">
                         <div class="col1table">
                             <span class="mr-tableData">${UmP}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-58">
                         <div class="col1table">
                             <span class="mr-tableData">${UmP_per}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-59">
                         <div class="col1table">
                             <span class="mr-tableData">${Val2S}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-60">
                         <div class="col1table">
                             <span class="mr-tableData">${Val3S}</span>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-61">
                         <div class="col1table">
                             <span class="mr-tableData">${Val6}</span>
                         </div>
@@ -1806,7 +1812,7 @@ function manResPagination(noRow) {
         <table class="table sty2table8 cross-table-4">
             <thead>
                 <tr>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-62">
                         Description
                         <div class="head-filter style2_cross62">
                             <i class="fas fa-times"></i>
@@ -1815,7 +1821,7 @@ function manResPagination(noRow) {
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-63">
                         Details3
                         <div class="head-filter style2_cross63">
                             <i class="fas fa-times"></i>
@@ -1828,12 +1834,12 @@ function manResPagination(noRow) {
             </thead>
             <tbody>
                 <tr>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-62">
                         <div class="col1table">
                             <p class="mr-tableData">${Description}</p>
                         </div>
                     </td>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-63">
                         <div class="col1table">
                             <p class="mr-tableData">${Details3}</p>
                         </div>
@@ -1846,7 +1852,7 @@ function manResPagination(noRow) {
         <table class="table sty2table9 cross-table-4" style="margin-bottom: 50px;">
             <thead>
                 <tr>
-                    <th scope="col">
+                    <th scope="col" class="style-two-head-64">
                         Details2
                         <div class="head-filter style2_cross64">
                             <i class="fas fa-times"></i>
@@ -1859,7 +1865,7 @@ function manResPagination(noRow) {
             </thead>
             <tbody>
                 <tr>
-                    <td class="vall11_datel">
+                    <td class="vall11_datel style-two-head-64">
                         <div class="col1table">
                             <p class="mr-tableData truncate-data">${Details2}</p>
                         </div>
@@ -1867,37 +1873,41 @@ function manResPagination(noRow) {
                 </tr>
             </tbody>
         </table>`;
-
       });
       let style1Table = $("#resizable554 tbody");
       let style2Table = $("#style2Con");
       style1Table.html(tableTr);
       style2Table.html(style2TableData);
 
-			// hide td base on th start
-			disNone.forEach((k)=>{
-				$(`#resizable554 td:nth-child(${k})`).addClass("th-dis-none");
-			})
-			// hide td base on th end
+      // hide td base on th start
+      disNone.forEach((k) => {
+        $(`#resizable554 td:nth-child(${k})`).addClass("th-dis-none");
+      });
+      // hide td base on th end
 
       // Truncate the Detail 2 Text (Huge Text)
       truncateText(450);
 
-      // Code added by Tanvir 
+      // Code added by Tanvir
       $(".right-slider5").css("display", "block");
       $(".left-slider5").css("display", "block");
       $("#pagination-man-res-table .width-row-go").css("display", "block");
       IconModalClick();
-      Style2DropFilterPos();
-    }
-  }
+			Style2DropFilterPos();
+			// function for table 2 Start
+			pagiHideHead();
+			table2HeadClickCall();
+			// function for table 2 End
+    },
+  };
   let container = $("#pagination-man-res-table");
   container.pagination(options);
 }
 
 $("#res-row-no7").change(function (e) {
   let noRow = e.target.value;
-  manResPagination(noRow);
+	manResPagination(noRow);
+	pagiHideHead();
 });
 
 function fnStatus(sts) {
@@ -1952,7 +1962,7 @@ function excelToJSDate(serial) {
 function dateDiffInDays(date1, date2) {
   const utc1 = excelToJSDate(date1);
   const utc2 = excelToJSDate(date2);
-  let miliSec = (utc1 - utc2);
+  let miliSec = utc1 - utc2;
   const msDay = 24 * 60 * 60 * 1000;
   let days = Math.floor(miliSec / msDay);
   const msHour = 60 * 60 * 1000;
@@ -1965,64 +1975,61 @@ function dateDiffInDays(date1, date2) {
 }
 
 // This function returns the minute counts for two Excel value Date Value
-function dateDiffInMins(date1, date2) {    
-  let miliSec = (excelToJSDate(date1) - excelToJSDate(date2));
+function dateDiffInMins(date1, date2) {
+  let miliSec = excelToJSDate(date1) - excelToJSDate(date2);
   let mins = Math.floor(miliSec / 60000);
   return mins;
 }
 
-// For Thead Detail3 Data length Shorthening 
+// For Thead Detail3 Data length Shorthening
 function truncateText(maxLength) {
-    let element = document.querySelectorAll('.truncate-data');
-    for (i = 0; i < element.length; i++) {
-        truncated = element[i].innerText;
-        if (truncated.length > maxLength) {
-            truncated = truncated.substr(0,maxLength) + '...';
-            element[i].innerText = truncated;
-        }
+  let element = document.querySelectorAll(".truncate-data");
+  for (i = 0; i < element.length; i++) {
+    truncated = element[i].innerText;
+    if (truncated.length > maxLength) {
+      truncated = truncated.substr(0, maxLength) + "...";
+      element[i].innerText = truncated;
     }
+  }
 }
 
-$("#resizable554 th").on("drop", function(e){
-	manResTableRender();
+$("#resizable554 th").on("drop", function (e) {
+  manResTableRender();
 });
 
-function popUpHandlerS2Table (e, indexValue){
-    
-    let targetElementClassList = e.path[5].getAttribute("class");
-    let targetElementClass = targetElementClassList.split(" ");
+function popUpHandlerS2Table(e, indexValue) {
+  let targetElementClassList = e.path[5].getAttribute("class");
+  let targetElementClass = targetElementClassList.split(" ");
 
-    let tableTargetHead = $(`#style2Con .${targetElementClass[1]} thead th:nth-child(${indexValue})`);
-    let tableTargetData = $(`#style2Con .${targetElementClass[1]} tbody td:nth-child(${indexValue}) .mr-tableData`);
-    let filterHeading = tableTargetHead[0].textContent;
+	let tableTargetHead = $(`#style2Con .${targetElementClass[1]} thead th:nth-child(${indexValue})`);
+	let tableTargetData = $(`#style2Con .${targetElementClass[1]} tbody td:nth-child(${indexValue}) .mr-tableData`);
+	let filterHeading = tableTargetHead[0].textContent;
 
-    $("#col8Filter #tableHeaderPop").html(filterHeading);
+	$("#col8Filter #tableHeaderPop").html(filterHeading);
 
-    let targetModal = $("#col8Filter #checkbox-table-first tbody");
-    const dataC = new Set();
-    for (let i = 0; i < tableTargetData.length; i++) {
-        dataC.add(tableTargetData[i].textContent);
-    }
-    let tableTr = "";
-    for (const item of dataC) {
-        tableTr +=
-            `<tr>
-            <td>
-                <div class="popup__checkbox__page__toggle">
-                    <label class="popup__checkbox__toggle">
-                        <input class="popup__checkbox__toggle__input" type="checkbox">
-                        <span class="popup__checkbox__toggle__label">
-                            <span class="popup__checkbox__toggle__text">${item}</span>
-                        </span>
-                    </label>
-                </div>
-            </td>
-        </tr>`;
-    }
-     targetModal.html(tableTr);
+	let targetModal = $("#col8Filter #checkbox-table-first tbody");
+	const dataC = new Set();
+	for (let i = 0; i < tableTargetData.length; i++) {
+		dataC.add(tableTargetData[i].textContent);
+	}
+	let tableTr = "";
+	for (const item of dataC) {
+    tableTr += `<tr>
+			<td>
+				<div class="popup__checkbox__page__toggle">
+					<label class="popup__checkbox__toggle">
+						<input class="popup__checkbox__toggle__input" type="checkbox">
+						<span class="popup__checkbox__toggle__label">
+							<span class="popup__checkbox__toggle__text">${item}</span>
+						</span>
+					</label>
+				</div>
+			</td>
+		</tr>`;
+  }
+  targetModal.html(tableTr);
 }
 
-function crossHandlerS2Table(eventCross, crossIndex){
-    console.log(eventCross.parent("thead"));
-    // console.log(eventCross.parentNode.parentNode.parentNode);
+function crossHandlerS2Table(eventCross, crossIndex) {
+  console.log("Style 2 table cross click...");
 }
