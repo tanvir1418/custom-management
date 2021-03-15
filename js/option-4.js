@@ -10,9 +10,6 @@ $(".multistep-container .form-box .button-row .previous").click(function () {
 });
 
 // const listSingle = document.querySelectorAll(".single-list-item-design");
-const targetPopUpImg = document.querySelectorAll(".single-list-item-file-container img");
-const targetPopUpImgContainer = document.querySelectorAll(".single-list-item-file-container");
-
 const listSingleImg = document.querySelectorAll(".single-list-item-help");
 const listSingleLink = document.querySelectorAll(".skip-link-container");
 const listSingleTick = document.querySelectorAll(".green-tik-container");
@@ -22,24 +19,73 @@ const fileBackgroundColor = document.querySelectorAll(".single-list-item-file-co
 // const fileContainer = document.querySelectorAll(".single-list-item-file");
 // const pTopText = document.querySelectorAll(".pTopText");
 
-for (let i = 0; i < listSingle.length; i++) {
-  listSingle[i].addEventListener("click", function () {
-    listSingleLink[i].classList.toggle("hideListDiv");
-    listSingleTick[i].classList.toggle("hideListDiv");
-    // fileContainer[i].classList.toggle("avoid-clicks");
-    fileBackgroundColor[i].classList.toggle("fileContainerColor");
-    // selectItemText[i].classList.toggle("hideListDiv");
-    // pTopText[i].classList.toggle("hideListDiv");
+const targetPopUpImg = document.querySelectorAll(".single-list-item-file-container img");
+const imageHoverYellow = document.querySelectorAll(".single-list-item-wrapper");
+for (let i = 0; i < targetPopUpImg.length; i++) {
+  targetPopUpImg[i].addEventListener("click", function () {
+    imageHoverYellow[i].classList.add("imageClickBackground");
   });
-  listSingle[i].addEventListener("mouseover", function () {
-    getTickContainer[i].classList.toggle("imageVisibilityHide");
+  targetPopUpImg[i].addEventListener("mouseover", function () {
     listSingleImg[i].classList.toggle("imageVisibilityHide");
+    imageHoverYellow[i].classList.toggle("imageHoverYellowStyle");
   });
-  listSingle[i].addEventListener("mouseout", function () {
-    getTickContainer[i].classList.toggle("imageVisibilityHide");
+  targetPopUpImg[i].addEventListener("mouseout", function () {
     listSingleImg[i].classList.toggle("imageVisibilityHide");
+    imageHoverYellow[i].classList.toggle("imageHoverYellowStyle");
   });
 }
+
+$("#op-skip1").click(function () {
+  $("#op-single-list1").removeClass('imageClickBackground');
+  $("#op-single-list2").addClass('imageClickBackground');
+});
+$("#op-skip2").click(function () {
+  $("#op-single-list2").removeClass('imageClickBackground');
+  $("#op-single-list3").addClass('imageClickBackground');
+});
+$("#op-skip3").click(function () {
+  $("#op-single-list3").removeClass('imageClickBackground');
+  $("#op-single-list4").addClass('imageClickBackground');
+});
+$("#op-skip4").click(function () {
+  $("#op-single-list4").removeClass('imageClickBackground');
+});
+
+$("#temp-skip1").click(function () {
+  $("#temp-single-list1").removeClass('imageClickBackground');
+  $("#temp-single-list2").addClass('imageClickBackground');
+});
+$("#temp-skip2").click(function () {
+  $("#temp-single-list2").removeClass('imageClickBackground');
+  $("#temp-single-list3").addClass('imageClickBackground');
+});
+$("#temp-skip3").click(function () {
+  $("#temp-single-list3").removeClass('imageClickBackground');
+  $("#temp-single-list4").addClass('imageClickBackground');
+});
+$("#temp-skip4").click(function () {
+  $("#temp-single-list4").removeClass('imageClickBackground');
+});
+
+// for (let i = 0; i < listSingle.length; i++) {
+//   listSingle[i].addEventListener("click", function () {
+//     listSingleLink[i].classList.toggle("hideListDiv");
+//     listSingleTick[i].classList.toggle("hideListDiv");
+//     // fileContainer[i].classList.toggle("avoid-clicks");
+//     fileBackgroundColor[i].classList.toggle("fileContainerColor");
+//     // selectItemText[i].classList.toggle("hideListDiv");
+//     // pTopText[i].classList.toggle("hideListDiv");
+//   });
+//   listSingle[i].addEventListener("mouseover", function () {
+//     getTickContainer[i].classList.toggle("imageVisibilityHide");
+//     listSingleImg[i].classList.toggle("imageVisibilityHide");
+//   });
+//   listSingle[i].addEventListener("mouseout", function () {
+//     getTickContainer[i].classList.toggle("imageVisibilityHide");
+//     listSingleImg[i].classList.toggle("imageVisibilityHide");
+//   });
+// }
+
 
 // prevent from add/remove style (modal)
 //const preventListStyle = document.querySelectorAll(".single-list-item-file-container");
