@@ -2078,8 +2078,11 @@ th[draggable] a {
 
 /* ====/////=== MANAGE RESULT POPUP START ====////=== */
 #tab_4 .modal#rowdetails .modal-dialog,
+#tab_4 .modal#rowdetails_style2 .modal-dialog,
 #tab_4 .modal#noteswindow .modal-dialog,
-#tab_4 .modal#viewtwo .modal-dialog {
+#tab_4 .modal#noteswindow_style2 .modal-dialog,
+#tab_4 .modal#viewtwo .modal-dialog,
+#tab_4 .modal#viewtwo_style2 .modal-dialog {
     max-width: 320px;
 }
 
@@ -2102,10 +2105,12 @@ th[draggable] a {
     box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
 }
 
-#tab_4 .modal#viewtwo .modal-dialog .modal-content {
+#tab_4 .modal#viewtwo .modal-dialog .modal-content,
+#tab_4 .modal#viewtwo_style2 .modal-dialog .modal-content {
     width: 250px;
 }
-#tab_4 .modal#rowdetails .modal-dialog .modal-content {
+#tab_4 .modal#rowdetails .modal-dialog .modal-content,
+#tab_4 .modal#rowdetails_style2 .modal-dialog .modal-content {
     width: 260px;
 }
 
@@ -3239,7 +3244,8 @@ td.s2-value .centerauto{
 }
 
 /* Manage Result Icon Pop-up Dynamic */
-#viewtwo .modal-dialog{
+#viewtwo .modal-dialog,
+#viewtwo_style2 .modal-dialog{
     /* position: absolute; */
     position: fixed;
     min-height: 0;
@@ -3247,12 +3253,14 @@ td.s2-value .centerauto{
     /* top: 200px;
     left: 400px; */
 }
-#rowdetails .modal-dialog{
+#rowdetails .modal-dialog,
+#rowdetails_style2 .modal-dialog{
     position: fixed;
     min-height: 0;
     margin: 0;
 }
-#noteswindow .modal-dialog{
+#noteswindow .modal-dialog,
+#noteswindow_style2 .modal-dialog{
     position: fixed;
     min-height: 0;
     margin: 0;
@@ -3291,7 +3299,8 @@ i.fa-caret-down.down-animation-icon{
     }
 }
 
-#viewtwo .view-arrow-top:after {
+#viewtwo .view-arrow-top:after,
+#viewtwo_style2 .view-arrow-top:after {
   content: " ";
   position: absolute;
   left: 20px;
@@ -3302,7 +3311,8 @@ i.fa-caret-down.down-animation-icon{
   border-bottom: 5px solid black;
 }
 
-#rowdetails .row-arrow-top:after {
+#rowdetails .row-arrow-top:after,
+#rowdetails_style2 .row-arrow-top:after {
   content: " ";
   position: absolute;
   left: 20px;
@@ -3313,7 +3323,8 @@ i.fa-caret-down.down-animation-icon{
   border-bottom: 5px solid black;
 }
 
-#noteswindow .notes-arrow-top:after {
+#noteswindow .notes-arrow-top:after,
+#noteswindow_style2 .notes-arrow-top:after {
   content: " ";
   position: absolute;
   left: 20px;

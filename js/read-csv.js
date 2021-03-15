@@ -188,14 +188,14 @@ function manResPagination(noRow) {
 							<div class="circle2box" tooltip="Click to View Details" flow="down">
 								<i class="fas fa-pen"></i>
 							</div>
-							<div class="circle2box view-modal-click" data-toggle="modal" data-target="#viewtwo">
-								<i class="fas fa-eye"></i>
+							<div class="circle2box">
+								<i class="fas fa-eye view-modal-click" data-toggle="modal" data-target="#viewtwo"></i>
 							</div>
 							<div class="circle2box" tooltip="Click to Delete" flow="down">
 								<i class="fas fa-trash-alt"></i>
 							</div>
-							<div class="circle2box row-modal-click" data-toggle="modal" data-target="#rowdetails">
-								<svg class="svg1" viewBox="-21 0 512 512">
+							<div class="circle2box">
+								<svg class="svg1 row-modal-click" viewBox="-21 0 512 512" data-toggle="modal" data-target="#rowdetails">
 									<g>
 										<path
 											d="M406,60h-30v15c0,24.814-20.186,45-45,45H181c-24.814,0-45-20.186-45-45V60h-30c-24.814,0-45,20.186-45,45v360c0,24.814,20.186,47,45,47h300c24.814,0,45-22.186,45-47V105C451,80.186,430.814,60,406,60z M136,450c-8.284,0-15-6.716-15-15c0-8.286,6.716-15,15-15s15,6.714,15,15C151,443.284,144.284,450,136,450z M136,360c-8.284,0-15-6.716-15-15c0-8.286,6.716-15,15-15s15,6.714,15,15C151,353.284,144.284,360,136,360z M136,270c-8.284,0-15-6.716-15-15c0-8.286,6.716-15,15-15s15,6.714,15,15C151,263.284,144.284,270,136,270z M136,180c-8.284,0-15-6.716-15-15c0-8.286,6.716-15,15-15s15,6.714,15,15C151,173.284,144.284,180,136,180z M376,450H196c-8.291,0-15-6.709-15-15c0-8.291,6.709-15,15-15h180c8.291,0,15,6.709,15,15C391,443.291,384.291,450,376,450z M376,360H196c-8.291,0-15-6.709-15-15c0-8.291,6.709-15,15-15h180c8.291,0,15,6.709,15,15C391,353.291,384.291,360,376,360z M376,270H196c-8.291,0-15-6.709-15-15c0-8.291,6.709-15,15-15h180c8.291,0,15,6.709,15,15S384.291,270,376,270z M376,180H196c-8.291,0-15-6.709-15-15s6.709-15,15-15h180c8.291,0,15,6.709,15,15S384.291,180,376,180z"
@@ -208,8 +208,8 @@ function manResPagination(noRow) {
 									</g>
 								</svg>
 							</div>
-							<div class="circle2box note-modal-click" data-toggle="modal" data-target="#noteswindow">
-								<svg class="svg2" viewBox="0 0 24 24">
+							<div class="circle2box">
+								<svg class="svg2 note-modal-click" viewBox="0 0 24 24" data-toggle="modal" data-target="#noteswindow">
 									<path
 										d="m12.25 2h-1.1c-.33-1.15-1.39-2-2.65-2s-2.32.85-2.65 2h-1.1c-.41 0-.75.34-.75.75v1.5c0 .96.79 1.75 1.75 1.75h5.5c.96 0 1.75-.79 1.75-1.75v-1.5c0-.41-.34-.75-.75-.75z"
 									/>
@@ -754,14 +754,14 @@ function manResPagination(noRow) {
 					<div class="circle2box" tooltip="Click to View Details" flow="down">
 						<i class="fas fa-pen"></i>
 					</div>
-					<div class="circle2box view-modal-click" data-toggle="modal" data-target="#viewtwo">
-						<i class="fas fa-eye"></i>
+					<div class="circle2box">
+						<i class="fas fa-eye view-modal-click-style2" data-toggle="modal" data-target="#viewtwo_style2"></i>
 					</div>
 					<div class="circle2box" tooltip="Click to Delete" flow="down">
 						<i class="fas fa-trash-alt"></i>
 					</div>
-					<div class="circle2box row-modal-click" data-toggle="modal" data-target="#rowdetails">
-						<svg class="svg1" viewBox="-21 0 512 512">
+					<div class="circle2box">
+						<svg class="svg1 row-modal-click-style2" viewBox="-21 0 512 512" data-toggle="modal" data-target="#rowdetails_style2">
 							<g>
 								<path d="M406,60h-30v15c0,24.814-20.186,45-45,45H181c-24.814,0-45-20.186-45-45V60h-30c-24.814,0-45,20.186-45,45v360
 									c0,24.814,20.186,47,45,47h300c24.814,0,45-22.186,45-47V105C451,80.186,430.814,60,406,60z M136,450c-8.284,0-15-6.716-15-15
@@ -781,8 +781,8 @@ function manResPagination(noRow) {
 							</g>
 						</svg>
 					</div>
-					<div class="circle2box note-modal-click" data-toggle="modal" data-target="#noteswindow">
-						<svg class="svg2" viewBox="0 0 24 24">
+					<div class="circle2box">
+						<svg class="svg2 note-modal-click-style2" viewBox="0 0 24 24" data-toggle="modal" data-target="#noteswindow_style2">
 							<path
 								d="m12.25 2h-1.1c-.33-1.15-1.39-2-2.65-2s-2.32.85-2.65 2h-1.1c-.41 0-.75.34-.75.75v1.5c0 .96.79 1.75 1.75 1.75h5.5c.96 0 1.75-.79 1.75-1.75v-1.5c0-.41-.34-.75-.75-.75z" />
 							<path
