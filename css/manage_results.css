@@ -1717,7 +1717,10 @@ th[draggable] a {
 #style2Con table td {
     height: 70px;
 }
-
+#style2Con table.sty2table3 td{
+    min-height: 180px;
+    height: 193px;
+}
 /* TABLE HEAD START */
 #style2Con table thead th {
     font-size: 12px;
