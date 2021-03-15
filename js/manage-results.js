@@ -1371,8 +1371,18 @@ function IconModalClick() {
     for (let i = 0; i < viewModalList.length; i++) {
         viewModalList[i].addEventListener("click", function (event) {
             $("#viewtwo .modal-dialog").css({
-                top: ((event.clientY) + 25),
-                left: ((event.clientX) - 20)
+                top: ((event.clientY) + 13),
+                left: ((event.clientX) - 25)
+            });
+        });
+    }
+
+    let viewModalListSty2 = document.getElementsByClassName('view-modal-click-style2');
+    for (let i = 0; i < viewModalListSty2.length; i++) {
+        viewModalListSty2[i].addEventListener("click", function (event) {
+            $("#viewtwo_style2 .modal-dialog").css({
+                top: ((event.clientY) + 13),
+                left: ((event.clientX) - 25)
             });
         });
     }
@@ -1381,8 +1391,18 @@ function IconModalClick() {
     for (let i = 0; i < rowModalClick.length; i++) {
         rowModalClick[i].addEventListener("click", function (event) {
             $("#rowdetails .modal-dialog").css({
-                top: ((event.clientY) + 25),
-                left: ((event.clientX) - 20)
+                top: ((event.clientY) + 13),
+                left: ((event.clientX) - 25)
+            });
+        });
+    }
+
+    let rowModalClickSty2 = document.getElementsByClassName('row-modal-click-style2');
+    for (let i = 0; i < rowModalClickSty2.length; i++) {
+        rowModalClickSty2[i].addEventListener("click", function (event) {
+            $("#rowdetails_style2 .modal-dialog").css({
+                top: ((event.clientY) + 13),
+                left: ((event.clientX) - 25)
             });
         });
     }
@@ -1391,8 +1411,18 @@ function IconModalClick() {
     for (let i = 0; i < noteModalClick.length; i++) {
         noteModalClick[i].addEventListener("click", function (event) {
             $("#noteswindow .modal-dialog").css({
-                top: ((event.clientY) + 25),
-                left: ((event.clientX) - 20)
+                top: ((event.clientY) + 13),
+                left: ((event.clientX) - 25)
+            });
+        });
+    }
+
+    let noteModalClickSty2 = document.getElementsByClassName('note-modal-click-style2');
+    for (let i = 0; i < noteModalClickSty2.length; i++) {
+        noteModalClickSty2[i].addEventListener("click", function (event) {
+            $("#noteswindow_style2 .modal-dialog").css({
+                top: ((event.clientY) + 13),
+                left: ((event.clientX) - 25)
             });
         });
     }
