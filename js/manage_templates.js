@@ -84,7 +84,7 @@ for (let i = 1; i <= 29; i++) {
     });
 
     htmlDataModal +=
-    `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempa-submodal-div-list-1-${index + 1}">
+      `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempa-submodal-div-list-1-${index + 1}">
       ${modallistmanagetempa_data1}
     </ul>
     <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="managetempa-submodal-div-list-2-${index + 1}">
@@ -206,6 +206,18 @@ $("#managetempa-mng-opt2-delete").click(function () {
 function countTempAListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   $("#managetempa-list-count").html(`${countItem} Items Selected`);
+  $("#managetempa-list-count").removeClass('hideListDiv');
+  if(countItem > 0){
+    $("#temp-first-skip").addClass('hideListDiv');
+    $("#temp-first-check").removeClass('hideListDiv');
+    $("#temp-first-fileColor").addClass('fileContainerColor');
+  }else{
+    $("#temp-first-skip").removeClass('hideListDiv');
+    $("#temp-first-check").addClass('hideListDiv');
+    $("#temp-first-fileColor").removeClass('fileContainerColor');
+  }
+  $("#temp-single-list1").removeClass('imageClickBackground');
+  $("#temp-single-list2").addClass('imageClickBackground');
 }
 
 function resetTempAListModal(e) {
@@ -440,6 +452,18 @@ $("#managetempb-mng-opt2-delete").click(function () {
 function countTempBListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   $("#managetempb-list-count").html(`${countItem} Items Selected`);
+  $("#managetempb-list-count").removeClass('hideListDiv');
+  if(countItem > 0){
+    $("#temp-sec-skip").addClass('hideListDiv');
+    $("#temp-sec-check").removeClass('hideListDiv');
+    $("#temp-sec-fileColor").addClass('fileContainerColor');
+  }else{
+    $("#temp-sec-skip").removeClass('hideListDiv');
+    $("#temp-sec-check").addClass('hideListDiv');
+    $("#temp-sec-fileColor").removeClass('fileContainerColor');
+  }
+  $("#temp-single-list2").removeClass('imageClickBackground');
+  $("#temp-single-list3").addClass('imageClickBackground');
 }
 
 function resetTempBListModal(e) {
@@ -551,7 +575,7 @@ for (let i = 1; i <= 29; i++) {
       }
     });
     htmlDataModal +=
-    `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempc-submodal-div-list-1-${index + 1}">
+      `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempc-submodal-div-list-1-${index + 1}">
 			${modallistmanagetempc_data1}
 		</ul>
 		<ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="managetempc-submodal-div-list-2-${index + 1}">
@@ -674,6 +698,18 @@ $("#managetempc-mng-opt2-delete").click(function () {
 function countTempCListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   $("#managetempc-list-count").html(`${countItem} Items Selected`);
+  $("#managetempc-list-count").removeClass('hideListDiv');
+  if(countItem > 0){
+    $("#temp-third-skip").addClass('hideListDiv');
+    $("#temp-third-check").removeClass('hideListDiv');
+    $("#temp-third-fileColor").addClass('fileContainerColor');
+  }else{
+    $("#temp-third-skip").removeClass('hideListDiv');
+    $("#temp-third-check").addClass('hideListDiv');
+    $("#temp-third-fileColor").removeClass('fileContainerColor');
+  }
+  $("#temp-single-list3").removeClass('imageClickBackground');
+  $("#temp-single-list4").addClass('imageClickBackground');
 }
 
 function resetTempCListModal(e) {
@@ -818,7 +854,7 @@ function findFileListMS1(_id, name) {
       }
     });
     htmlDataModal +=
-    `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempd-submodal-div-list-1-${index + 1}">
+      `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempd-submodal-div-list-1-${index + 1}">
       ${modallistmanagetempd_data1}
     </ul>
     <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="managetempd-submodal-div-list-2-${index + 1}">
@@ -940,6 +976,17 @@ $("#managetempd-mng-opt2-delete").click(function () {
 function countTempDListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   $("#managetempd-list-count").html(`${countItem} Items Selected`);
+  $("#managetempd-list-count").removeClass('hideListDiv');
+  if(countItem > 0){
+    $("#temp-forth-skip").addClass('hideListDiv');
+    $("#temp-forth-check").removeClass('hideListDiv');
+    $("#temp-forth-fileColor").addClass('fileContainerColor');
+  }else{
+    $("#temp-forth-skip").removeClass('hideListDiv');
+    $("#temp-forth-check").addClass('hideListDiv');
+    $("#temp-forth-fileColor").removeClass('fileContainerColor');
+  }
+  $("#temp-single-list4").removeClass('imageClickBackground');
 }
 
 function resetTempDListModal(e) {
@@ -1100,7 +1147,7 @@ let manTemLeftData = [
 ];
 
 function listRenderManTemp(id, name, addNewRow) {
-  let ele = `<tr ondblclick="${addNewRow}" onclick="clickAddClass(this)" class="cursor-pointer" id="${id}">
+  let ele = `<tr ondblclick="${addNewRow}" onclick="clickAddClassSgl(this)" class="cursor-pointer" id="${id}">
     <td colspan="2">${name}</td>
     <td><i class="fas fa-question-circle"></i></td>
     <td></td>
@@ -1146,7 +1193,7 @@ function manTemSam2Rend(e, divId) {
     manTemResetValue = "manTemResetValueR(this)";
   }
   let lOptOne =
-  `<div class="width-12">
+    `<div class="width-12">
     <div class="custome-select">
       <select class="add-set">
         <option value="add/set">Add/Set</option>
@@ -1174,7 +1221,7 @@ function manTemSam2Rend(e, divId) {
   </div>`;
 
   let lOptTwo =
-  `<div class="width-12"></div>
+    `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
       <select class="sequence" onchange="${manTemSwapSeq}">
@@ -1202,7 +1249,7 @@ function manTemSam2Rend(e, divId) {
   </div>`;
 
   let lOptThree =
-  `<div class="width-12">
+    `<div class="width-12">
     <div class="custome-select">
       <select class="add-set">
         <option value="add/set">Add/Set</option>
@@ -1238,7 +1285,7 @@ function manTemSam2Rend(e, divId) {
   </div>`;
 
   let lOptFour =
-  `<div class="width-12"></div>
+    `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
       <select class="sequence" onchange="${manTemSwapSeq}">
@@ -1258,7 +1305,7 @@ function manTemSam2Rend(e, divId) {
   </div>`;
 
   let lOptFive =
-  `<div class="width-12"></div>
+    `<div class="width-12"></div>
   <div class="width-22">
     <div class="custome-select">
       <select class="sequence" onchange="${manTemSwapSeq}">
@@ -1285,7 +1332,7 @@ function manTemSam2Rend(e, divId) {
   else if (dataType == "five") manType = lOptFive;
 
   let renderLeftSite =
-  `<div class="d-flex mb-2" id="${_id}">
+    `<div class="d-flex mb-2" id="${_id}">
     <div class="width-5 align-items-baseline">
       <div class="threebar">
         <span>|||</span>
@@ -1496,14 +1543,14 @@ function formToWindowMS2(e) {
     let inpObj = $(`#${pid} .custom-input-only input`), inpDiv = "";
     let inpSel = $(`#${pid} .user-inp`);
     for (let i = 0; i < inpObj.length; i++) {
-      let uni_id = inpObj.length > 1 ? "_" + (i+1) : "";
+      let uni_id = inpObj.length > 1 ? "_" + (i + 1) : "";
       let inpText = inpObj[i].value;
       inpDiv += `<div class="form-text-design data-div">
         ${title}${uni_id}: ${inpText}
       </div>`;
     }
     for (let i = 0; i < inpSel.length; i++) {
-      let uni_id = inpSel.length > 1 ? "_" + (i+1) : "";
+      let uni_id = inpSel.length > 1 ? "_" + (i + 1) : "";
       let inpText = $(inpSel[i]).find(":selected").text();
       inpDiv += `<div class="form-text-design data-div">
         ${title}${uni_id}: ${inpText}
@@ -1529,7 +1576,7 @@ function windowToFormMS2(e) {
   let len = tRow.length;
   for (let i = 0; i < len; i++) {
     let divData = $(tRow[i])[0].innerText.split(":");
-    let [title,no] = divData[0].trim().split("_");
+    let [title, no] = divData[0].trim().split("_");
     let pid = findInputIdMS2(title);
     if (pid && divData.length == 3) {
       let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
@@ -1538,7 +1585,7 @@ function windowToFormMS2(e) {
       } else {
         $(`tr#${pid}`).dblclick();
         let afterCheck = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
-        if(afterCheck && afterCheck.checked == false) afterCheck.click();
+        if (afterCheck && afterCheck.checked == false) afterCheck.click();
       }
 
       if (divData[1].trim().toUpperCase() == "SET") {
@@ -1636,7 +1683,8 @@ function checkingMS2(e) {
               : "<br>") +
             `<div id="temp">
               ${nd.textContent.substr(extra)}
-            </div>`
+            </div>
+            <br>`
           );
           setCaret($("#temp")[0]);
         }
@@ -1662,7 +1710,7 @@ function autoCorrectMS2() {
   let first = 1;
   if (x.indexOf(":") == -1) {
     let sugName = manTemLeftData.concat(manTemRightData);
-    sugName.forEach(({name}) => {
+    sugName.forEach(({ name }) => {
       if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
         if (first) {
           m += `<option selected value="${name}">${name}</option><br>`;
@@ -1731,14 +1779,20 @@ function autoCorrectMS2() {
 }
 
 function pasteEventMS2(e) {
-  let editor = document.getElementById("ms2_text_editor");
+  let caretPos = getCaretPosition();
+  let editorPos = document.getElementById("ms2_text_editor");
+  let editor = editorPos == caretPos ? editorPos : caretPos;
   let clipboardData = e.clipboardData || window.clipboardData;
   let pD = clipboardData.getData("Text").split("\n");
+  let x = "";
   for (let i = 0; i < pD.length; i++) {
     let nbe = pD[i];
+    if (i == 0 && !editor.tagName) {
+      replaceSelectedText(nbe);
+      continue;
+    }
     let inpData = nbe.split(":");
     if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
-      let x;
       if (
         !findInputIdMS2(inpData[0].trim().split("_")[0].trim()) ||
         (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
@@ -1750,20 +1804,32 @@ function pasteEventMS2(e) {
           inpData[1].trim() != "To"
         )
       ) {
-        x = document.createElement("div");
-        x.setAttribute("class", "form-text-design-invalid data-div");
-        x.textContent = nbe;
+        x += `<div class="form-text-design-invalid data-div">
+        ${nbe}
+        </div>`;
       } else {
-        x = document.createElement("div");
-        x.setAttribute("class", "form-text-design data-div");
-        x.textContent = nbe;
+        x += `<div class="form-text-design data-div">
+        ${nbe}
+        </div>`;
       }
-      editor.append(x);
     }
   }
+  if (editor.tagName) editor.innerHTML += x;
+  else {
+    caretPos = caretPos.parentElement;
+    caretPos.innerHTML += x;
+  }
   removeExtraLines(editor);
-  editor.append(document.createElement("br"));
-  setEndOfContenteditable(editor);
+  if (editorPos == caretPos) {
+    editor.innerHTML += "<br>";
+    setEndOfContenteditable(editor);
+  } else if (!editor.tagName && pD.length == 1) {
+    setEndOfContenteditable(getCaretPosition());
+  }
+  else {
+    $(editorPos).find("br").remove();
+    setEndOfContenteditable(caretPos);
+  }
   return false;
 }
 // Form by text editor End
@@ -1945,13 +2011,13 @@ function manTemInpBuild(_id) {
           </div>
         </div>
         <div class="width-input-group-35">
-          <div class="input-section-sample4 right-side-input">
+          <div class="input-section-sample4 right-side-input" onclick="calenderPop(this)">
             <input class="date-pick-style-sample4 datepicker_mn" type="text"/>
             <i class="far fa-calendar-alt icon-sample4 datepicker_mn_Icon"></i>
           </div>
         </div>
         <div class="width-input-group-35">
-          <div class="input-section-sample4 left-side-input">
+          <div class="input-section-sample4 left-side-input" onclick="calenderPop(this)">
             <input class="date-pick-style-sample4 datepicker_mn" type="text"/>
             <i class="far fa-calendar-alt icon-sample4 datepicker_mn_Icon"></i>
           </div>
@@ -2001,13 +2067,13 @@ function manTemInpBuild(_id) {
   });
 
   // Manage Template Sample 4 DATE PICKER START
-  $(function () {
-    $(".datepicker_mn").datepicker();
-    $(".datepicker_mn").datepicker("option", "dateFormat", "DD - MM d, yy");
-  });
-  $(".datepicker_mn_Icon").click(function() {
-    $(".datepicker_mn").focus();
-  });
+  $(".datepicker_mn").datepicker();
+  $(".datepicker_mn").datepicker("option", "dateFormat", "DD - MM d, yy");
+
+}
+
+function calenderPop(e) {
+  $(e).children("input").focus();
 }
 
 function removeElement(_id) {
@@ -2038,7 +2104,7 @@ function formToWindowMS4(e) {
 
   let idFromTable = $(`#tem-sample4-second tbody tr`);
   let len = idFromTable.length;
-  for (let i = 0; i < len; i++){
+  for (let i = 0; i < len; i++) {
     let { id, name, dataType } = sam4DataArray.filter(a => a.id == idFromTable[i].id)[0];
     if (dataType == "inputText" || dataType == "range" || dataType == "date") {
       let inpD = $(`#man-tem-sam4-input-data div#${id} input[type=text]`);
@@ -2074,10 +2140,14 @@ function windowToFormMS4(e) {
     no = no != undefined ? no : 1;
     let { id, dataType } = findInputIdMS4(title);
     if (id && divData.length == 2) {
+      let comDiv = $(`#man-tem-sam4-input-data div#${id}`);
+      if (!(comDiv && comDiv.length)) {
+        $(`tr#${id}`).dblclick();
+      }
       if (dataType == "range") {
         let rangeDiv = $(`#man-tem-sam4-input-data div#${id} div.width-custom-range-70.d-flex`);
         let rangeDes =
-        `<span class="min">0</span>
+          `<span class="min">0</span>
         <div class="range-wrapper-sample-4">
           <input class="range-example-input-2" type="text" min="0" max="100" value="${divData[1].trim()}" name="points" step="1" width="100" />
         </div>
@@ -2159,7 +2229,8 @@ function checkingMS4(e) {
               : "<br>") +
             `<div id="temp">
               ${nd.textContent.substr(extra)}
-            </div>`
+            </div>
+            <br>`
           );
           setCaret($("#temp")[0]);
         }
@@ -2180,7 +2251,7 @@ function autoCorrectMS4() {
   }
   let x = pos.textContent;
   let editor = document.getElementById("text_editor_p");
-  
+
   let m = "";
   let first = 1;
   if (x.indexOf(":") == -1) {
@@ -2226,33 +2297,50 @@ function autoCorrectMS4() {
 }
 
 function pasteEventMS4(e) {
-  let editor = document.getElementById("ms4_text_editor");
+  let caretPos = getCaretPosition();
+  let editorPos = document.getElementById("ms4_text_editor");
+  let editor = editorPos == caretPos ? editorPos : caretPos;
   let clipboardData = e.clipboardData || window.clipboardData;
   let pD = clipboardData.getData("Text").split("\n");
+  let x = "";
   for (let i = 0; i < pD.length; i++) {
     let nbe = pD[i];
+    if (i == 0 && !editor.tagName) {
+      replaceSelectedText(nbe);
+      continue;
+    }
     let inpData = nbe.split(":");
     if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
-      let x;
       if (
         !findInputIdMS4(inpData[0].trim().split("_")[0].trim()) ||
         (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
         (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
       ) {
-        x = document.createElement("div");
-        x.setAttribute("class", "form-text-design-invalid data-div");
-        x.textContent = nbe;
+        x += `<div class="form-text-design-invalid data-div">
+        ${nbe}
+        </div>`;
       } else {
-        x = document.createElement("div");
-        x.setAttribute("class", "form-text-design data-div");
-        x.textContent = nbe;
+        x += `<div class="form-text-design data-div">
+        ${nbe}
+        </div>`;
       }
-      editor.append(x);
     }
   }
+  if (editor.tagName) editor.innerHTML += x;
+  else {
+    caretPos = caretPos.parentElement;
+    caretPos.innerHTML += x;
+  }
   removeExtraLines(editor);
-  editor.append(document.createElement("br"));
-  setEndOfContenteditable(editor);
+  if (editorPos == caretPos) {
+    editor.innerHTML += "<br>";
+    setEndOfContenteditable(editor);
+  } else if (!editor.tagName && pD.length == 1) {
+    setEndOfContenteditable(getCaretPosition());
+  } else {
+    $(editorPos).find("br").remove();
+    setEndOfContenteditable(caretPos);
+  }
   return false;
 }
 // Form by Text Editor End
@@ -2312,7 +2400,7 @@ function findInputIdMS3(title) {
   if (res.length) return res[0];
   else return false;
 }
-function checkingMS3(e){
+function checkingMS3(e) {
   $("#adder").remove();
   // let nd = getCaretPosition();
   // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
@@ -2369,7 +2457,8 @@ function checkingMS3(e){
               : "<br>") +
             `<div id="temp">
               ${nd.textContent.substr(extra)}
-            </div>`
+            </div>
+            <br>`
           );
           setCaret($("#temp")[0]);
         }
@@ -2389,7 +2478,7 @@ function autoCorrectMS3() {
   }
   let x = pos.textContent;
   let editor = document.getElementById("text_editor_p");
-  
+
   let m = "";
   let first = 1;
   if (x.indexOf(":") == -1) {
@@ -2433,35 +2522,52 @@ function autoCorrectMS3() {
     // document.getElementById("temp").removeAttribute("id");
   }
 }
-function pasteEventMS3(e){
-  let editor = document.getElementById("ms3_text_editor");
+function pasteEventMS3(e) {
+  let caretPos = getCaretPosition();
+  let editorPos = document.getElementById("ms3_text_editor");
+  let editor = editorPos == caretPos ? editorPos : caretPos;
   let clipboardData = e.clipboardData || window.clipboardData;
   let pD = clipboardData.getData("Text").split("\n");
+  let x = "";
   for (let i = 0; i < pD.length; i++) {
     let nbe = pD[i];
+    if (i == 0 && !editor.tagName) {
+      replaceSelectedText(nbe);
+      continue;
+    }
     let inpData = nbe.split(":");
     if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
-      let x;
       if (
         !findInputIdMS3(inpData[0].trim())
       ) {
-        x = document.createElement("div");
-        x.setAttribute("class", "form-text-design-invalid data-div");
-        x.textContent = nbe;
+        x += `<div class="form-text-design-invalid data-div">
+        ${nbe}
+        </div>`;
       } else {
-        x = document.createElement("div");
-        x.setAttribute("class", "form-text-design data-div");
-        x.textContent = nbe;
+        x += `<div class="form-text-design data-div">
+        ${nbe}
+        </div>`;
       }
-      editor.append(x);
     }
   }
+  if (editor.tagName) editor.innerHTML += x;
+  else {
+    caretPos = caretPos.parentElement;
+    caretPos.innerHTML += x;
+  }
   removeExtraLines(editor);
-  editor.append(document.createElement("br"));
-  setEndOfContenteditable(editor);
+  if (editorPos == caretPos) {
+    editor.innerHTML += "<br>";
+    setEndOfContenteditable(editor);
+  } else if (!editor.tagName && pD.length == 1) {
+    setEndOfContenteditable(getCaretPosition());
+  } else {
+    $(editorPos).find("br").remove();
+    setEndOfContenteditable(caretPos);
+  }
   return false;
 }
-function windowToFormMS3(e){
+function windowToFormMS3(e) {
   let tRow = $(e).parent().parent().parent()
     .children(".text-editor-popup-body")
     .find("#ms3_text_editor div.form-text-design.data-div");
@@ -2615,7 +2721,8 @@ function checkingMS1(e) {
               : "<br>") +
             `<div id="temp">
               ${nd.textContent.substr(extra)}
-            </div>`
+            </div>
+            <br>`
           );
           setCaret($("#temp")[0]);
         }
@@ -2679,31 +2786,48 @@ function autoCorrectMS1() {
   }
 }
 function pasteEventMS1(e) {
-  let editor = document.getElementById("ms1_text_editor");
+  let caretPos = getCaretPosition();
+  let editorPos = document.getElementById("ms1_text_editor");
+  let editor = editorPos == caretPos ? editorPos : caretPos;
   let clipboardData = e.clipboardData || window.clipboardData;
   let pD = clipboardData.getData("Text").split("\n");
+  let x = "";
   for (let i = 0; i < pD.length; i++) {
     let nbe = pD[i];
+    if (i == 0 && !editor.tagName) {
+      replaceSelectedText(nbe);
+      continue;
+    }
     let inpData = nbe.split(":");
     if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
-      let x;
       if (
         !findInputIdMS1(inpData[0].trim())
       ) {
-        x = document.createElement("div");
-        x.setAttribute("class", "form-text-design-invalid data-div");
-        x.textContent = nbe;
+        x += `<div class="form-text-design-invalid data-div">
+        ${nbe}
+        </div>`;
       } else {
-        x = document.createElement("div");
-        x.setAttribute("class", "form-text-design data-div");
-        x.textContent = nbe;
+        x += `<div class="form-text-design data-div">
+        ${nbe}
+        </div>`;
       }
-      editor.append(x);
     }
   }
+  if (editor.tagName) editor.innerHTML += x;
+  else {
+    caretPos = caretPos.parentElement;
+    caretPos.innerHTML += x;
+  }
   removeExtraLines(editor);
-  editor.append(document.createElement("br"));
-  setEndOfContenteditable(editor);
+  if (editorPos == caretPos) {
+    editor.innerHTML += "<br>";
+    setEndOfContenteditable(editor);
+  } else if (!editor.tagName && pD.length == 1) {
+    setEndOfContenteditable(getCaretPosition());
+  } else {
+    $(editorPos).find("br").remove();
+    setEndOfContenteditable(caretPos);
+  }
   return false;
 }
 function windowToFormMS1(e) {
@@ -2716,19 +2840,35 @@ function windowToFormMS1(e) {
     let { id, name } = findInputIdMS1(divData[0].trim());
     let dataLi = divData.length > 2 ? findFileListMS1(divData[2].trim(), name) : false;
     if (dataLi) {
-      let { id:id2 } = dataLi;
+      let { id: id2 } = dataLi;
       let liList = document.querySelector(`div#${id} div.sub-ul-managetemp-modallist ul li.${id2}`);
       let checkBox = $(liList).children(`div.sublist-check-box`);
       let cancelBox = $(liList).children(`div.sublist-cancel-box`);
-      checkBox.addClass("checkbox_show");
-      checkBox.removeClass("checkbox_hide");
-      cancelBox.removeClass("checkbox_show");
-      cancelBox.addClass("checkbox_hide");
+      if (divData[3].trim() == "checked") {
+        checkBox.addClass("checkbox_show");
+        checkBox.removeClass("checkbox_hide");
+        cancelBox.removeClass("checkbox_show");
+        cancelBox.addClass("checkbox_hide");
+      } else if (divData[3].trim() == "unchecked") {
+        checkBox.addClass("checkbox_hide");
+        checkBox.removeClass("checkbox_show");
+        cancelBox.addClass("checkbox_show");
+        cancelBox.removeClass("checkbox_hide");
+      }
 
       let _id = $(liList).parent().attr("id");
       let markItem = $(`div#${id} ul.left-list-box li.modalmanagetemplist-item-${_id.split("-").splice(-1)[0]} div.green-check-box`);
-      markItem.addClass("display-block");
-      markItem.removeClass("display-none");
+      let abcd = name == "LIST 1" ? "a" : name == "LIST 2" ? "b" : name == "LIST 3" ? "c" : name == "LIST 4" ? "d" : "";
+      let count = $(`div#${id} ul#managetemp${abcd}-submodal-div-list-1-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
+      count += $(`div#${id} ul#managetemp${abcd}-submodal-div-list-2-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
+      count += $(`div#${id} ul#managetemp${abcd}-submodal-div-list-3-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
+      if (count > 0) {
+        markItem.addClass("display-block");
+        markItem.removeClass("display-none");
+      } else {
+        markItem.addClass("display-none");
+        markItem.removeClass("display-block");
+      }
 
       $(`div#${id} a#submit_list`).click();
     }
@@ -2749,7 +2889,7 @@ function formToWindowMS1(e) {
       let dataLi = findFileListMS1(className, name);
       if (dataLi) {
         renHtml += `<div class="form-text-design data-div">
-          ${name}: ${dataLi.item}: ${listName}
+          ${name}: ${dataLi.item}: ${listName}: checked
         </div>`;
       }
     }
@@ -2759,3 +2899,15 @@ function formToWindowMS1(e) {
 }
 // Form by text editor End
 // Manage template Sample 1 End
+$("#datepicker_field_set21").datepicker();
+$("#datepicker_field_set21").datepicker("option", "dateFormat", "DD - MM d, yy");
+$("#datepicker_field_set22").datepicker();
+$("#datepicker_field_set22").datepicker("option", "dateFormat", "DD - MM d, yy");
+
+
+$("#datepicker_field_set21_icon").click(function () {
+  $("#datepicker_field_set21").focus();
+});
+$("#datepicker_field_set22_icon").click(function () {
+  $("#datepicker_field_set22").focus();
+});

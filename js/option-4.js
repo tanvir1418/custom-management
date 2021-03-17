@@ -9,53 +9,102 @@ $(".multistep-container .form-box .button-row .previous").click(function () {
   $(this).parents(".form-box").prev().show();
 });
 
-const listSingle = document.querySelectorAll(".single-list-item-design");
+// const listSingle = document.querySelectorAll(".single-list-item-design");
 const listSingleImg = document.querySelectorAll(".single-list-item-help");
 const listSingleLink = document.querySelectorAll(".skip-link-container");
 const listSingleTick = document.querySelectorAll(".green-tik-container");
 const getTickContainer = document.querySelectorAll(".green-tik-and-skip-link");
-const selectItemText = document.querySelectorAll(".selected-text-danger");
+// const selectItemText = document.querySelectorAll(".selected-text-danger");
 const fileBackgroundColor = document.querySelectorAll(".single-list-item-file-container");
 // const fileContainer = document.querySelectorAll(".single-list-item-file");
-const pTopText = document.querySelectorAll(".pTopText");
+// const pTopText = document.querySelectorAll(".pTopText");
 
-for (let i = 0; i < listSingle.length; i++) {
-  listSingle[i].addEventListener("click", function () {
-    listSingleLink[i].classList.toggle("hideListDiv");
-    listSingleTick[i].classList.toggle("hideListDiv");
-    // fileContainer[i].classList.toggle("avoid-clicks");
-    fileBackgroundColor[i].classList.toggle("fileContainerColor");
-    selectItemText[i].classList.toggle("hideListDiv");
-    pTopText[i].classList.toggle("hideListDiv");
+const targetPopUpImg = document.querySelectorAll(".single-list-item-file-container img");
+const imageHoverYellow = document.querySelectorAll(".single-list-item-wrapper");
+for (let i = 0; i < targetPopUpImg.length; i++) {
+  targetPopUpImg[i].addEventListener("click", function () {
+    imageHoverYellow[i].classList.add("imageClickBackground");
   });
-  listSingle[i].addEventListener("mouseover", function () {
-    getTickContainer[i].classList.toggle("imageVisibilityHide");
+  targetPopUpImg[i].addEventListener("mouseover", function () {
     listSingleImg[i].classList.toggle("imageVisibilityHide");
+    imageHoverYellow[i].classList.toggle("imageHoverYellowStyle");
   });
-  listSingle[i].addEventListener("mouseout", function () {
-    getTickContainer[i].classList.toggle("imageVisibilityHide");
+  targetPopUpImg[i].addEventListener("mouseout", function () {
     listSingleImg[i].classList.toggle("imageVisibilityHide");
+    imageHoverYellow[i].classList.toggle("imageHoverYellowStyle");
   });
 }
+
+$("#op-skip1").click(function () {
+  $("#op-single-list1").removeClass('imageClickBackground');
+  $("#op-single-list2").addClass('imageClickBackground');
+});
+$("#op-skip2").click(function () {
+  $("#op-single-list2").removeClass('imageClickBackground');
+  $("#op-single-list3").addClass('imageClickBackground');
+});
+$("#op-skip3").click(function () {
+  $("#op-single-list3").removeClass('imageClickBackground');
+  $("#op-single-list4").addClass('imageClickBackground');
+});
+$("#op-skip4").click(function () {
+  $("#op-single-list4").removeClass('imageClickBackground');
+});
+
+$("#temp-skip1").click(function () {
+  $("#temp-single-list1").removeClass('imageClickBackground');
+  $("#temp-single-list2").addClass('imageClickBackground');
+});
+$("#temp-skip2").click(function () {
+  $("#temp-single-list2").removeClass('imageClickBackground');
+  $("#temp-single-list3").addClass('imageClickBackground');
+});
+$("#temp-skip3").click(function () {
+  $("#temp-single-list3").removeClass('imageClickBackground');
+  $("#temp-single-list4").addClass('imageClickBackground');
+});
+$("#temp-skip4").click(function () {
+  $("#temp-single-list4").removeClass('imageClickBackground');
+});
+
+// for (let i = 0; i < listSingle.length; i++) {
+//   listSingle[i].addEventListener("click", function () {
+//     listSingleLink[i].classList.toggle("hideListDiv");
+//     listSingleTick[i].classList.toggle("hideListDiv");
+//     // fileContainer[i].classList.toggle("avoid-clicks");
+//     fileBackgroundColor[i].classList.toggle("fileContainerColor");
+//     // selectItemText[i].classList.toggle("hideListDiv");
+//     // pTopText[i].classList.toggle("hideListDiv");
+//   });
+//   listSingle[i].addEventListener("mouseover", function () {
+//     getTickContainer[i].classList.toggle("imageVisibilityHide");
+//     listSingleImg[i].classList.toggle("imageVisibilityHide");
+//   });
+//   listSingle[i].addEventListener("mouseout", function () {
+//     getTickContainer[i].classList.toggle("imageVisibilityHide");
+//     listSingleImg[i].classList.toggle("imageVisibilityHide");
+//   });
+// }
+
 
 // prevent from add/remove style (modal)
-const preventListStyle = document.querySelectorAll(".single-list-item-file-container");
+//const preventListStyle = document.querySelectorAll(".single-list-item-file-container");
 // single-list-item-file-container
-for (let i = 0; i < preventListStyle.length; i++) {
-  preventListStyle[i].addEventListener("click", function () {
-    listSingleLink[i].classList.toggle("hideListDiv");
-    listSingleTick[i].classList.toggle("hideListDiv");
-    fileBackgroundColor[i].classList.toggle("fileContainerColor");
-    selectItemText[i].classList.toggle("hideListDiv");
-    pTopText[i].classList.toggle("hideListDiv");
+//for (let i = 0; i < preventListStyle.length; i++) {
+  // preventListStyle[i].addEventListener("click", function () {
+  //   listSingleLink[i].classList.toggle("hideListDiv");
+  //   listSingleTick[i].classList.toggle("hideListDiv");
+  //   fileBackgroundColor[i].classList.toggle("fileContainerColor");
+    // selectItemText[i].classList.toggle("hideListDiv");
+    // pTopText[i].classList.toggle("hideListDiv");
       
-    let modalId = fileBackgroundColor[i].getAttribute("id");
-    if(!$(`#${modalId}`).hasClass("fileContainerColor")){
-      // console.log("File color Class Exists:"+ $(`#${modalId}`).hasClass("fileContainerColor"));
-      $(`#${modalId}-modal`).modal('show'); 
-    }
-  });
-}
+    // let modalId = fileBackgroundColor[i].getAttribute("id");
+    // if(!$(`#${modalId}`).hasClass("fileContainerColor")){
+    //   // console.log("File color Class Exists:"+ $(`#${modalId}`).hasClass("fileContainerColor"));
+    //   $(`#${modalId}-modal`).modal('show'); 
+    // }
+//   });
+// }
 
 //code below working fine
 $(document).ready(function () {
@@ -481,4 +530,18 @@ $("#next-show-save-start-op4").click(function(){
 
 $("#prev-hide-save-start-op4").click(function(){
   $('#saveStartTarget-op4').addClass('save-start-class-hide-show-op4');
+});
+
+
+$("#datepicker_field_set11").datepicker();
+$("#datepicker_field_set11").datepicker("option", "dateFormat", "DD - MM d, yy");
+$("#datepicker_field_set12").datepicker();
+$("#datepicker_field_set12").datepicker("option", "dateFormat", "DD - MM d, yy");
+
+
+$("#datepicker_field_set11_icon").click(function () {
+	$("#datepicker_field_set11").focus();
+});
+$("#datepicker_field_set12_icon").click(function () {
+	$("#datepicker_field_set12").focus();
 });

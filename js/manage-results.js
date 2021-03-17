@@ -579,29 +579,29 @@ $(document).ready(function () {
     const mytablesty12 = document.querySelector(".mytablesty12");
     $("#style1Table .right-slider5").click(function () {
         $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft + 700,
+            scrollLeft: mytablesty12.scrollLeft + 800,
         },
-            700
+            0
         );
     }).dblclick(function () {
         $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft + 700,
+            scrollLeft: mytablesty12.scrollLeft + 800,
         },
-            700
+            0
         );
     });
 
     $("#style1Table .left-slider5").click(function () {
         $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft - 700,
+            scrollLeft: mytablesty12.scrollLeft - 800,
         },
-            700
+            0
         );
     }).dblclick(function () {
         $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft - 700,
+            scrollLeft: mytablesty12.scrollLeft - 800,
         },
-            700
+            0
         );
     });
 });
@@ -924,6 +924,7 @@ document.querySelector(".tab_filter-style12 .progress-style12 p").innerHTML = "P
 
 // CLICL TO TOGGLE STYLE1 & STYLE2 START =====
 $("#style2Con").addClass("displayNone");
+$("#double_click_style2").addClass("displayNone");
 $(".style1-box").addClass("clickstylebg");
 $(".style2-box").addClass("clickstylebrdr");
 
@@ -936,6 +937,9 @@ $(".style1-box").click(function () {
 
     $(".style2-box").addClass("clickstylebrdr");
     $(".style2-box").removeClass("clickstylebg");
+
+    $("#double_click").removeClass("displayNone");
+    $("#double_click_style2").addClass("displayNone");
 });
 
 $(".style2-box").click(function () {
@@ -947,6 +951,9 @@ $(".style2-box").click(function () {
 
     $(".style1-box").addClass("clickstylebrdr");
     $(".style1-box").removeClass("clickstylebg");
+
+    $("#double_click").addClass("displayNone");
+    $("#double_click_style2").removeClass("displayNone");
 });
 
 
@@ -1008,13 +1015,125 @@ $("#resizable554 th").click(function (e) {
     }
 });
 
-// ======== STYLE 2
-// $("#cross20").click(function () {
-//     $(".cross-table-1 th:nth-child(1)").addClass("th-dis-none");
-//     $(".cross-table-1 td:nth-child(1)").addClass("th-dis-none");
-// });
+// ======== STYLE 2 Table =========
+function table2HeadClickCall() {
+    table2HeadClick("sty2table2");
+    table2HeadClick("sty2table3");
+    table2HeadClick("sty2table4");
+    table2HeadClick("sty2table5");
+    table2HeadClick("sty2table6");
+    table2HeadClick("sty2table7");
+    table2HeadClick("sty2table8");
+    table2HeadClick("sty2table9");
+}
 
+function table2HeadClick(tName) {
+    $(`#style2Con .table.${tName} th`).click(function (e) {
+        let target = e.target;
+        let index = $(this).index() + 1;
+        if (target.tagName === "I") {
+            target = target.parentNode;
+        }
+        let regex = /style2_cross\d+/g;
+        if (target.tagName === "DIV" && regex.test(target.className)) {
+            $(`#style2Con .table.${tName} th:nth-child(${index})`).addClass("th-dis-none");
+            $(`#style2Con .table.${tName} td:nth-child(${index})`).addClass("th-dis-none");
+            allHeadTable2Call();
+        }
+    });
+}
 
+function allHeadTable2Call() {
+    let { htmlTableL: L2, htmlTableR: R2 } = allHeadTable2("sty2table2");
+    let { htmlTableL: L3, htmlTableR: R3 } = allHeadTable2("sty2table3");
+    let { htmlTableL: L4, htmlTableR: R4 } = allHeadTable2("sty2table4");
+    let { htmlTableL: L5, htmlTableR: R5 } = allHeadTable2("sty2table5");
+    let { htmlTableL: L6, htmlTableR: R6 } = allHeadTable2("sty2table6");
+    let { htmlTableL: L7, htmlTableR: R7 } = allHeadTable2("sty2table7");
+    let { htmlTableL: L8, htmlTableR: R8 } = allHeadTable2("sty2table8");
+    let { htmlTableL: L9, htmlTableR: R9 } = allHeadTable2("sty2table9");
+    $("#style2-man-res-opt-data-table-right").html(R2 + R3 + R4 + R5 + R6 + R7 + R8 + R9);
+    $("#style2-man-res-opt-data-table-left").html(L2 + L3 + L4 + L5 + L6 + L7 + L8 + L9);
+}
+
+function allHeadTable2(tName) {
+    let head = $(`#style2Con .table.${tName}`)[0];
+    let th = $(head).find("th");
+    let len = th.length;
+    let htmlTableR = "";
+    let htmlTableL = "";
+    for (let i = 0; i < len; i++) {
+        let className = th[i].className.match(/style-two-head-\d+/g)[0];
+        let pos = className.match(/\d+/g)[0];
+        let _id = "res-table-two-" + pos;
+        let content = th[i].textContent.trim();
+        let regex = /th-dis-none/g;
+        if (regex.test(th[i].className)) {
+            htmlTableL += `<tr id="${_id}" ondblclick="dblclickRes2Move(this)" onclick="clickAddClass(this)">
+                <td>${content}</td>
+            </tr>`;
+        } else {
+            htmlTableR += `<tr id="${_id}" ondblclick="dblclickRes2Move(this)" onclick="clickAddClass(this)">
+                <td>${content}</td>
+            </tr>`;
+        }
+    }
+    return {
+        htmlTableL,
+        htmlTableR,
+    }
+}
+
+function dblclickRes2Move(e) {
+    let _id = $(e).parent().attr("id");
+    let index = $(e).attr("id").match(/\d+/g)[0];
+    if (_id == "style2-man-res-opt-data-table-left") {
+        $(e).remove();
+        $(`#style2Con .table th.style-two-head-${index}`).removeClass("th-dis-none");
+        $(`#style2Con .table td.style-two-head-${index}`).removeClass("th-dis-none");
+        allHeadTable2Call();
+    }
+    else if (_id == "style2-man-res-opt-data-table-right") {
+        $(e).remove();
+        $(`#style2Con .table th.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#style2Con .table td.style-two-head-${index}`).addClass("th-dis-none");
+        allHeadTable2Call();
+    }
+}
+
+function pagiHideHead() {
+    let tr = $("#style2-man-res-opt-data-table-left tr");
+    let len = tr.length;
+    for (let i = 0; i < len; i++){
+        let index = $(tr[i]).attr("id").match(/\d+/g)[0];
+        $(`#style2Con .table th.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#style2Con .table td.style-two-head-${index}`).addClass("th-dis-none");
+    }
+}
+
+function moveRes2LeftToRight() {
+    let tr = $("#style2-man-res-opt-data-table-left tr.mark-table-data");
+    let len = tr.length;
+    for (let i = 0; i < len; i++) {
+        let index = $(tr[i]).attr("id").match(/\d+/g)[0];
+        $(tr[i]).remove();
+        $(`#style2Con .table th.style-two-head-${index}`).removeClass("th-dis-none");
+        $(`#style2Con .table td.style-two-head-${index}`).removeClass("th-dis-none");
+        allHeadTable2Call();
+    }
+}
+
+function moveRes2RightToLeft() {
+    let tr = $("#style2-man-res-opt-data-table-right tr.mark-table-data");
+    let len = tr.length;
+    for (let i = 0; i < len; i++) {
+        let index = $(tr[i]).attr("id").match(/\d+/g)[0];
+        $(tr[i]).remove();
+        $(`#style2Con .table th.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#style2Con .table td.style-two-head-${index}`).addClass("th-dis-none");
+        allHeadTable2Call();
+    }
+}
 // X CLICK TO REMOVE COLUMN END ==============
 
 // TABLE RESIZEABLE START ===////////////////===
@@ -1094,8 +1213,6 @@ dataFilterModal.forEach((modalData) => {
 //----------====== Manage result filter modal End ======----------------
 
 // ---------- ======= Double Click to ADD or REMOVE Start ======= -------------
-// let manageResultTable = [];
-
 function manResTableRender() {
     let tabHD = $("#resizable554 thead th");
     let len = tabHD.length;
@@ -1106,10 +1223,6 @@ function manResTableRender() {
         let pos = className.match(/\d+/g)[0];
         let _id = "res-id-table-" + pos;
         let content = tabHD[i].textContent.trim();
-        // manageResultTable.push({
-        //     id: _id,
-        //     name: content
-        // });
         let regex = /th-dis-none/g;
         if (regex.test(tabHD[i].className)) {
             htmlTableL += `<tr id="${_id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
@@ -1258,8 +1371,18 @@ function IconModalClick() {
     for (let i = 0; i < viewModalList.length; i++) {
         viewModalList[i].addEventListener("click", function (event) {
             $("#viewtwo .modal-dialog").css({
-                top: ((event.clientY) + 20),
-                left: ((event.clientX) - 125)
+                top: ((event.clientY) + 13),
+                left: ((event.clientX) - 25)
+            });
+        });
+    }
+
+    let viewModalListSty2 = document.getElementsByClassName('view-modal-click-style2');
+    for (let i = 0; i < viewModalListSty2.length; i++) {
+        viewModalListSty2[i].addEventListener("click", function (event) {
+            $("#viewtwo_style2 .modal-dialog").css({
+                top: ((event.clientY) + 13),
+                left: ((event.clientX) - 25)
             });
         });
     }
@@ -1268,8 +1391,18 @@ function IconModalClick() {
     for (let i = 0; i < rowModalClick.length; i++) {
         rowModalClick[i].addEventListener("click", function (event) {
             $("#rowdetails .modal-dialog").css({
-                top: ((event.clientY) + 20),
-                left: ((event.clientX) - 125)
+                top: ((event.clientY) + 13),
+                left: ((event.clientX) - 25)
+            });
+        });
+    }
+
+    let rowModalClickSty2 = document.getElementsByClassName('row-modal-click-style2');
+    for (let i = 0; i < rowModalClickSty2.length; i++) {
+        rowModalClickSty2[i].addEventListener("click", function (event) {
+            $("#rowdetails_style2 .modal-dialog").css({
+                top: ((event.clientY) + 13),
+                left: ((event.clientX) - 25)
             });
         });
     }
@@ -1278,8 +1411,18 @@ function IconModalClick() {
     for (let i = 0; i < noteModalClick.length; i++) {
         noteModalClick[i].addEventListener("click", function (event) {
             $("#noteswindow .modal-dialog").css({
-                top: ((event.clientY) + 30),
-                left: ((event.clientX) - 150)
+                top: ((event.clientY) + 13),
+                left: ((event.clientX) - 25)
+            });
+        });
+    }
+
+    let noteModalClickSty2 = document.getElementsByClassName('note-modal-click-style2');
+    for (let i = 0; i < noteModalClickSty2.length; i++) {
+        noteModalClickSty2[i].addEventListener("click", function (event) {
+            $("#noteswindow_style2 .modal-dialog").css({
+                top: ((event.clientY) + 13),
+                left: ((event.clientX) - 25)
             });
         });
     }

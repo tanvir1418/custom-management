@@ -787,9 +787,9 @@
   background-color: #ffffff;
 }
 
-.single-list-item-wrapper:hover {
+/* .single-list-item-wrapper:hover {
   background-color: #fff500;
-}
+} */
 
 .single-list-item-name {
   width: 25%;
@@ -831,7 +831,7 @@
   width: 60%;
   margin: 10px;
 }
-.single-list-item-wrapper {
+.single-list-item-file-container img:hover {
   cursor: pointer;
 }
 
@@ -866,7 +866,7 @@
   font-weight: 600;
 }
 
-.single-list-item-wrapper .green-tik-and-skip-link .skip-link-container a {
+.single-list-item-wrapper .green-tik-and-skip-link .skip-link-container p {
   color: #ff0005;
   font-family: "gilroy-bold", sans-serif;
   font-size: 22px;
@@ -874,7 +874,9 @@
   text-decoration: underline;
   /* padding-left: 10px; */
 }
-
+.single-list-item-wrapper .green-tik-and-skip-link .skip-link-container p:hover {
+  cursor: pointer;
+}
 .single-list-item-wrapper .green-tik-and-skip-link .green-tik-container span {
   display: block;
   position: relative;
@@ -1114,7 +1116,7 @@
     font-size: 10px;
   }
 
-  .single-list-item-wrapper .green-tik-and-skip-link .skip-link-container a {
+  .single-list-item-wrapper .green-tik-and-skip-link .skip-link-container p {
     font-size: 18px;
   }
   .text_container_textarea {
@@ -1153,6 +1155,13 @@
   background-color: #359f01;
 }
 
+.imageHoverYellowStyle{
+  background-color: #fff500;
+}
+
+.imageClickBackground{
+  background-color: #fff500;
+}
 /* XXXXXXXXXXXXXX single yellow list style ends XXXXXXXXXXXXXX */
 /* ========== Manage Template Sample 1 style ends ========== */
 /* sample 1 List Element style ends  */
