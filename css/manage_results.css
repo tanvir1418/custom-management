@@ -3166,29 +3166,31 @@ th[draggable] a {
     cursor: pointer;
 }
 /* -------------------------------------------- */
-
+/* ====== sticky table head start ========= */
+/* #style1Table{
+    display: table;
+    overflow: scroll;
+} */
 table#resizable554 {
     border-collapse: collapse;
     width: 100%;
-    overflow-x: scroll;
-    display: block;
   }
   
 #resizable554 thead {
     background-color: #EFEFEF;
 }
   
-#resizable554 thead,
+/* #resizable554 thead,
 #resizable554 tbody {
     display: block;
-}
+} */
   
 #resizable554 tbody {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 1000px;
+    /* overflow-y: scroll; */
+    /* overflow-x: hidden !important; */
+    /* height: 1000px; */
     /* width: 8000px !important; */
-    width: 8263px !important;
+    /* width: 8263px !important; */
 }
   
 /* #resizable554 td.col_00{
@@ -3198,10 +3200,12 @@ table#resizable554 {
     /* min-width: 100px; */
     height: 50px;
     /* border: dashed 1px lightblue; */
-    overflow: hidden;
+    /* overflow: hidden; */
     /* text-overflow: ellipsis; */
     /* max-width: 100px; */
 }
+
+/* ====== sticky table head end ========= */
 
 .mytablesty12 .column-header-4 .column-time .centerauto,
 .mytablesty12 .column-header-5 .column-time .centerauto {

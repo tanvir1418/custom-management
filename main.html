@@ -4615,7 +4615,7 @@
                             </div>
                             <!-- ====//////====== STYLE 1 TABLE START ====//////====== -->
                             <div id="style1Table">
-                                <table id="resizable554" class="mytablesty12">
+                                <table id="resizable554" class="table-fixed mytablesty12">
                                     <thead>
                                         <tr class="dnd-moved">
                                             <!-- Add class dnd-moved by ASHIQ-->
@@ -5275,14 +5275,36 @@
                                     <tbody>
 
                                     </tbody>
-                                  </table>
+                                </table>
                                 <div class="right-slider5">
                                     <i class="fas fa-long-arrow-alt-right"></i>
                                 </div>
                                 <div class="left-slider5">
                                     <i class="fas fa-long-arrow-alt-left"></i>
                                 </div>
+                                <style>
+                                    /* .table-fixed {
+                                        width: 100%;
+                                    } */
+                            
+                                    /*This will work on every browser but Chrome Browser*/
+                                    .table-fixed thead {
+                                        position: sticky;
+                                        position: -webkit-sticky;
+                                        top: -2px;
+                                        z-index: 999;
+                                    }
+                            
+                                    /*This will work on every browser*/
+                                    .table-fixed thead th {
+                                        position: sticky;
+                                        position: -webkit-sticky;
+                                        top: -2px;
+                                        z-index: 999;
+                                    }
+                                </style>
                             </div>
+
                             <!-- ====//////====== STYLE 1 TABLE END ====//////====== -->
 
                             <div id="style2Con">
@@ -7729,7 +7751,7 @@
     <!-- =========hyper text click Modal Ends========= -->
 
     
-
+    
     <!-- JS FILES -->
     <script src="./js/jquery.js" defer ></script>
     <script src="./js/bootstrap.js" defer ></script>
