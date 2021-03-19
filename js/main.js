@@ -74,8 +74,8 @@ $(function () {
 
 
 // MAIN TAB START
-$(".content .tab_content").hide();
-$(".content .tab_content:nth-child(2)").show();
+// $(".content .tab_content").hide();
+// $(".content .tab_content:nth-child(2)").show();
 
 $("#tabs_ul li").click(function () {
 

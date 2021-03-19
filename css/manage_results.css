@@ -3185,13 +3185,13 @@ table#resizable554 {
     display: block;
 }
   
-#resizable554 tbody {
+/* #resizable554 tbody {
     overflow-y: hidden;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     height: 1000px;
-    /* width: 8000px !important; */
+    width: 8000px !important;
     width: 8263px !important;
-}
+} */
   
 /* #resizable554 td.col_00{
     min-width: 100px;
