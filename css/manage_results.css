@@ -836,12 +836,12 @@
     position: relative;
 }
 
-#style1Table table {
+/* #style1Table table {
     width: 100%;
     height: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
-}
+} */
 
 #style1Table .mytablesty12 {
     border: 2px solid #eff1f7 !important;
@@ -3166,11 +3166,13 @@ th[draggable] a {
     cursor: pointer;
 }
 /* -------------------------------------------- */
-
+#style1Table{
+    overflow-x: scroll;
+}
 table#resizable554 {
     border-collapse: collapse;
     width: 100%;
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
     display: block;
   }
   
@@ -3184,8 +3186,8 @@ table#resizable554 {
 }
   
 #resizable554 tbody {
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-y: hidden;
+    /* overflow-x: hidden; */
     height: 1000px;
     /* width: 8000px !important; */
     width: 8263px !important;
