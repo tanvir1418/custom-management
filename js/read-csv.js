@@ -12,6 +12,7 @@ $("#exelFile").change((e) => {
 				tableHeadSty1();
 				manResTableRender();
 				manResPagination(7);
+				table1HeadClick();
 				allHeadTable2Call();
 			}
 		};

@@ -962,18 +962,13 @@ $(".style2-box").click(function () {
 // ============== STYLE 1 STYLE 2 END ==============
 
 // X CLICK TO REMOVE COLUMN START ==============
-
-$("#resizable554 th").click(function (e) {
-    let target = e.target;
-    let index = $(this).index() + 1;
-    if (target.tagName === "I") {
-        target = target.parentNode;
-    }
+function headClick(target, index, x, y) {
     let regex = /cross/g;
     let regexD = /drop-filter/g;
     if (target.tagName === "DIV" && regex.test(target.id)) {
         $(`#resizable554 th:nth-child(${index})`).addClass("th-dis-none");
         $(`#resizable554 td:nth-child(${index})`).addClass("th-dis-none");
+        $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).addClass("th-dis-none");
         manResTableRender();
     } else if (target.tagName === "DIV" && regexD.test(target.className)) {
         let dataP = $(`#resizable554 td:nth-child(${index}) .mr-tableData`);
@@ -991,7 +986,7 @@ $("#resizable554 th").click(function (e) {
         let tableTr = "";
         for (const item of dataC) {
             tableTr +=
-                `<tr>
+            `<tr>
                 <td>
                     <div class="popup__checkbox__page__toggle">
                         <label class="popup__checkbox__toggle">
@@ -1006,14 +1001,37 @@ $("#resizable554 th").click(function (e) {
         }
         targetModal.html(tableTr);
         $("#col8Filter .modal-dialog").css({
-            top: ((e.clientY) + 20),
-            left: ((e.clientX) - 240)
+            top: x,
+            left: y,
         });
         $("#col8Filter .modal-dialog .table-header-click-popup").css({
             "margin-top": "0px"
         });
     }
-});
+}
+function table1HeadClick() {
+    $("#resizable554 th").click(function (e) {
+        let target = e.target;
+        let index = $(this).index() + 1;
+        if (target.tagName === "I") {
+            target = target.parentNode;
+        }
+        const x = e.clientX;
+        const y = e.clientY;
+        headClick(target, index, x, y);
+    });
+
+    $("#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th").click(function (e) {
+        let target = e.target;
+        let index = $(this).index() + 1;
+        if (target.tagName === "I") {
+            target = target.parentNode;
+        }
+        const x = e.clientX;
+        const y = e.clientY;
+        headClick(target, index, x, y);
+    });
+}
 
 // ======== STYLE 2 Table =========
 function table2HeadClickCall() {
@@ -1245,12 +1263,14 @@ function dblclickResMove(e) {
         $(e).remove();
         $(`#resizable554 th.column-header-${index}`).removeClass("th-dis-none");
         $(`#resizable554 td.column-header-${index}`).removeClass("th-dis-none");
+        $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).removeClass("th-dis-none");
         manResTableRender();
     }
     else if (_id == "man-res-opt-data-table-right") {
         $(e).remove();
         $(`#resizable554 th.column-header-${index}`).addClass("th-dis-none");
         $(`#resizable554 td.column-header-${index}`).addClass("th-dis-none");
+        $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).addClass("th-dis-none");
         manResTableRender();
     }
 }
@@ -1263,6 +1283,7 @@ function moveResLeftToRight() {
         $(tr[i]).remove();
         $(`#resizable554 th.column-header-${index}`).removeClass("th-dis-none");
         $(`#resizable554 td.column-header-${index}`).removeClass("th-dis-none");
+        $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).removeClass("th-dis-none");
         manResTableRender();
     }
 }
@@ -1275,6 +1296,7 @@ function moveResRightToLeft() {
         $(tr[i]).remove();
         $(`#resizable554 th.column-header-${index}`).addClass("th-dis-none");
         $(`#resizable554 td.column-header-${index}`).addClass("th-dis-none");
+        $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).addClass("th-dis-none");
         manResTableRender();
     }
 }
