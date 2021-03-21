@@ -1237,7 +1237,6 @@ function manResTableRender() {
     $("#man-res-opt-data-table-right").html(htmlTableR);
     $("#man-res-opt-data-table-left").html(htmlTableL);
 }
-manResTableRender();
 
 function dblclickResMove(e) {
     let _id = $(e).parent().attr("id");
