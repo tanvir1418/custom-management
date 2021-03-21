@@ -74,8 +74,8 @@ $(function () {
 
 
 // MAIN TAB START
-$(".content .tab_content").hide();
-$(".content .tab_content:nth-child(2)").show();
+// $(".content .tab_content").hide();
+// $(".content .tab_content:nth-child(2)").show();
 
 $("#tabs_ul li").click(function () {
 
@@ -97,8 +97,6 @@ for (var i = 0; i < li_tabs.length; i++) {
 		this.className += "active";
 
 		var current_tab_value = this.getAttribute("data-list");
-		document.getElementById(current_tab_value).style.display = "none";
-		document.getElementById(current_tab_value).style.display = "block";
 
 	});
 }

@@ -836,12 +836,12 @@
     position: relative;
 }
 
-#style1Table table {
+/* #style1Table table {
     width: 100%;
     height: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
-}
+} */
 
 #style1Table .mytablesty12 {
     border: 2px solid #eff1f7 !important;
@@ -1717,7 +1717,10 @@ th[draggable] a {
 #style2Con table td {
     height: 70px;
 }
-
+#style2Con table.sty2table3 td{
+    min-height: 180px;
+    height: 193px;
+}
 /* TABLE HEAD START */
 #style2Con table thead th {
     font-size: 12px;
@@ -3163,11 +3166,13 @@ th[draggable] a {
     cursor: pointer;
 }
 /* -------------------------------------------- */
-
+#style1Table{
+    overflow-x: scroll;
+}
 table#resizable554 {
     border-collapse: collapse;
     width: 100%;
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
     display: block;
   }
   
@@ -3180,13 +3185,13 @@ table#resizable554 {
     display: block;
 }
   
-#resizable554 tbody {
-    overflow-y: scroll;
+/* #resizable554 tbody {
+    overflow-y: hidden;
     overflow-x: hidden;
     height: 1000px;
-    /* width: 8000px !important; */
+    width: 8000px !important;
     width: 8263px !important;
-}
+} */
   
 /* #resizable554 td.col_00{
     min-width: 100px;
