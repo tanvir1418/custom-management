@@ -2103,7 +2103,8 @@ th[draggable] a {
     max-width: 320px;
 }
 
-#tab_4 .modal#alertswindow .modal-dialog {
+#tab_4 .modal#alertswindow .modal-dialog,
+#tab_4 .modal#alertswindow_style2 .modal-dialog {
     max-width: 1200px;
 }
 
@@ -2140,7 +2141,8 @@ th[draggable] a {
     position: relative;
 }
 
-#tab_4 .modal#alertswindow .modal-header {
+#tab_4 .modal#alertswindow .modal-header,
+#tab_4 .modal#alertswindow_style2 .modal-header {
     padding: 22px 16px;
 }
 
@@ -2153,7 +2155,8 @@ th[draggable] a {
     margin: 0 auto;
 }
 
-#tab_4 .modal#alertswindow .modal-title {
+#tab_4 .modal#alertswindow .modal-title,
+#tab_4 .modal#alertswindow_style2 .modal-title {
     font-family: gilroy-bold, sans-serif;
     font-weight: 600;
     font-size: 20px;
@@ -3267,7 +3270,7 @@ td.s2-value .centerauto{
 #viewtwo .modal-dialog,
 #viewtwo_style2 .modal-dialog{
     /* position: absolute; */
-    position: fixed;
+    position: relative;
     min-height: 0;
     margin: 0;
     /* top: 200px;
@@ -3275,13 +3278,13 @@ td.s2-value .centerauto{
 }
 #rowdetails .modal-dialog,
 #rowdetails_style2 .modal-dialog{
-    position: fixed;
+    position: relative;
     min-height: 0;
     margin: 0;
 }
 #noteswindow .modal-dialog,
 #noteswindow_style2 .modal-dialog{
-    position: fixed;
+    position: relative;
     min-height: 0;
     margin: 0;
 }
@@ -3331,7 +3334,17 @@ i.fa-caret-down.down-animation-icon{
   border-bottom: 5px solid black;
 }
 
-#rowdetails .row-arrow-top:after,
+#rowdetails .row-arrow-top:after{
+  content: " ";
+  position: absolute;
+  left: 20px;
+  top: -5px;
+  border-top: none;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-bottom: 5px solid black;
+}
+
 #rowdetails_style2 .row-arrow-top:after {
   content: " ";
   position: absolute;
@@ -3343,8 +3356,7 @@ i.fa-caret-down.down-animation-icon{
   border-bottom: 5px solid black;
 }
 
-#noteswindow .notes-arrow-top:after,
-#noteswindow_style2 .notes-arrow-top:after {
+#noteswindow .notes-arrow-top:after{
   content: " ";
   position: absolute;
   left: 20px;
@@ -3355,3 +3367,89 @@ i.fa-caret-down.down-animation-icon{
   border-bottom: 5px solid black;
 }
 
+#noteswindow_style2 .notes-arrow-top:after {
+    content: " ";
+    position: absolute;
+    left: 20px;
+    top: -5px;
+    border-top: none;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid black;
+}
+
+#alertswindow .alerts-arrow-top:after{
+  content: " ";
+  position: absolute;
+  left: 20px;
+  top: -5px;
+  border-top: none;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-bottom: 5px solid black;
+}
+
+#alertswindow_style2 .alerts-arrow-top:after {
+  content: " ";
+  position: absolute;
+  right: 364px;
+  top: -5px;
+  border-top: none;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-bottom: 5px solid black;
+}
+
+#moverowlist .move-arrow-top:after{
+    content: " ";
+    position: absolute;
+    left: 20px;
+    top: -5px;
+    border-top: none;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid black;
+  }
+
+#moverowlist_style2 .move-arrow-top:after {
+    content: " ";
+    position: absolute;
+    right: 364px;
+    top: -5px;
+    border-top: none;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid black;
+  }
+
+  #copyrowlist .copy-arrow-top:after{
+    content: " ";
+    position: absolute;
+    left: 20px;
+    top: -5px;
+    border-top: none;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid black;
+  }
+  
+#copyrowlist_style2 .copy-arrow-top:after {
+    content: " ";
+    position: absolute;
+    right: 364px;
+    top: -5px;
+    border-top: none;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid black;
+  }
+
+.modal#alertswindow .modal-dialog,
+.modal#alertswindow_style2 .modal-dialog,
+.modal#copyrowlist .modal-dialog,
+.modal#copyrowlist_style2 .modal-dialog,
+.modal#moverowlist .modal-dialog,
+.modal#moverowlist_style2 .modal-dialog{
+    position: relative;
+    margin: 0;
+}

@@ -583,7 +583,6 @@ function style1TableScroller () {
         },
             0
         );
-        console.log("Right Slider Clicked");
     }).dblclick(function () {
         $("#style1Table").animate({
             scrollLeft: style1TableScroll.scrollLeft + 800,
@@ -598,7 +597,6 @@ function style1TableScroller () {
         },
             0
         );
-        console.log("Left Slider Clicked");
     }).dblclick(function () {
         $("#style1Table").animate({
             scrollLeft: style1TableScroll.scrollLeft - 800,
@@ -942,6 +940,12 @@ $(".style1-box").click(function () {
 
     $("#double_click").removeClass("displayNone");
     $("#double_click_style2").addClass("displayNone");
+
+		let rowNumber = $("#style1Table #resizable554 tbody tr");
+		if(rowNumber.length > 0){
+			$(".right-slider5").css("display", "block");
+			$(".left-slider5").css("display", "block");
+		}
 });
 
 $(".style2-box").click(function () {
@@ -956,6 +960,12 @@ $(".style2-box").click(function () {
 
     $("#double_click").addClass("displayNone");
     $("#double_click_style2").removeClass("displayNone");
+
+		let rowNumber = $("#style1Table #resizable554 tbody tr");
+		if(rowNumber.length > 0){
+			$(".right-slider5").css("display", "none");
+			$(".left-slider5").css("display", "none");
+		}
 });
 
 
@@ -1455,6 +1465,67 @@ function IconModalClick() {
             });
         });
     }
+
+    let copyModalClick = document.getElementsByClassName('copyrowlist-modal-click');
+    for (let i = 0; i < copyModalClick.length; i++) {
+        copyModalClick[i].addEventListener("click", function (event) {
+            $("#copyrowlist .modal-dialog").css({
+                top: ((event.clientY) + 13),
+                left: ((event.clientX) - 25)
+            });
+        });
+    }
+
+    let moveModalClick = document.getElementsByClassName('moverowlist-modal-click');
+    for (let i = 0; i < moveModalClick.length; i++) {
+        moveModalClick[i].addEventListener("click", function (event) {
+            $("#moverowlist .modal-dialog").css({
+                top: ((event.clientY) + 13),
+                left: ((event.clientX) - 25)
+            });
+        });
+    }
+
+    let alertModalClick = document.getElementsByClassName('alertswindow-modal-click');
+    for (let i = 0; i < alertModalClick.length; i++) {
+        alertModalClick[i].addEventListener("click", function (event) {
+            $("#alertswindow .modal-dialog").css({
+                top: ((event.clientY) + 13),
+                left: ((event.clientX) - 25)
+            });
+        });
+    }
+
+		let copyModalClickSty2 = document.getElementsByClassName('copyrowlist-modal-click-style2');
+    for (let i = 0; i < copyModalClickSty2.length; i++) {
+        copyModalClickSty2[i].addEventListener("click", function (event) {
+            $("#copyrowlist_style2 .modal-dialog").css({
+                top: ((event.clientY) + 20),
+                left: ((event.clientX) - 830)
+            });
+        });
+    }
+
+    let moveModalClickSty2 = document.getElementsByClassName('moverowlist-modal-click-style2');
+    for (let i = 0; i < moveModalClickSty2.length; i++) {
+        moveModalClickSty2[i].addEventListener("click", function (event) {
+            $("#moverowlist_style2 .modal-dialog").css({
+                top: ((event.clientY) + 20),
+                left: ((event.clientX) - 830)
+            });
+        });
+    }
+
+    let alertModalClickSty2 = document.getElementsByClassName('alertswindow-modal-click-style2');
+    for (let i = 0; i < alertModalClickSty2.length; i++) {
+			alertModalClickSty2[i].addEventListener("click", function (event) {
+				$("#alertswindow_style2 .modal-dialog").css({
+					top: ((event.clientY) + 20),
+					left: ((event.clientX) - 830)
+				});
+			});
+    }
+
 }
 
 function Style2DropFilterPos() {
