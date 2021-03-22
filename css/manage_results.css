@@ -834,6 +834,8 @@
 #style1Table {
     width: 100%;
     position: relative;
+    border: 2px solid #eff1f7 !important;
+    border-bottom: 0px !important;
 }
 
 /* #style1Table table {
@@ -844,7 +846,11 @@
 } */
 
 #style1Table .mytablesty12 {
-    border: 2px solid #eff1f7 !important;
+    /* border: 2px solid #eff1f7 !important; */
+}
+
+#style1Table .mytablesty12 tbody tr:first-child {
+    border-top: 2px solid #eff1f7 !important;
 }
 
 #style1Table .mytablesty12 thead {
@@ -3168,10 +3174,11 @@ th[draggable] a {
 /* -------------------------------------------- */
 #style1Table{
     overflow-x: scroll;
+    overflow-y: hidden;
 }
 table#resizable554 {
     border-collapse: collapse;
-    width: 100%;
+    /* width: 100%; */
     /* overflow-x: scroll; */
     display: block;
   }
