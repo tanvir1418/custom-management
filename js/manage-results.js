@@ -964,7 +964,7 @@ $(".style2-box").click(function () {
 // ============== STYLE 1 STYLE 2 END ==============
 
 // X CLICK TO REMOVE COLUMN START ==============
-function headClick(target, index, x, y) {
+function headClick(target, index) {
     let regex = /cross/g;
     let regexD = /drop-filter/g;
     if (target.tagName === "DIV" && regex.test(target.id)) {
@@ -1002,13 +1002,7 @@ function headClick(target, index, x, y) {
             </tr>`;
         }
         targetModal.html(tableTr);
-        $("#col8Filter .modal-dialog").css({
-            top: x,
-            left: y,
-        });
-        $("#col8Filter .modal-dialog .table-header-click-popup").css({
-            "margin-top": "0px"
-        });
+        
     }
 }
 function table1HeadClick() {
@@ -1018,9 +1012,15 @@ function table1HeadClick() {
         if (target.tagName === "I") {
             target = target.parentNode;
         }
-        const y = e.clientY + 20;
-        const x = e.clientX - 240;
-        headClick(target, index, x, y);
+        headClick(target, index);
+
+        $("#col8Filter .modal-dialog").css({
+            top: ((e.clientY) + 20), 
+            left: ((e.clientX) - 240)
+        });
+        $("#col8Filter .modal-dialog .table-header-click-popup").css({
+            "margin-top": "0px"
+        });
     });
 
     $("#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th").click(function (e) {
@@ -1029,9 +1029,15 @@ function table1HeadClick() {
         if (target.tagName === "I") {
             target = target.parentNode;
         }
-        const y = e.clientY;
-        const x = e.clientX - 240;
-        headClick(target, index, x, y);
+        headClick(target, index);
+
+        $("#col8Filter .modal-dialog").css({
+            top: ((e.clientY) + 20), 
+            left: ((e.clientX) - 240)
+        });
+        $("#col8Filter .modal-dialog .table-header-click-popup").css({
+            "margin-top": "0px"
+        });
     });
 }
 
