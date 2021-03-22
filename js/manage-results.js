@@ -575,36 +575,38 @@ $(document).ready(function () {
 
 
 // ///////////////////////////////////////////
-$(document).ready(function () {
-    const mytablesty12 = document.querySelector(".mytablesty12");
-    $("#style1Table .right-slider5").click(function () {
-        $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft + 800,
+function style1TableScroller () {
+    const style1TableScroll = document.querySelector("#style1Table");
+    $("#outer_table_box7 .right-slider5").click(function () {
+        $("#style1Table").animate({
+            scrollLeft: style1TableScroll.scrollLeft + 800,
         },
             0
         );
+        console.log("Right Slider Clicked");
     }).dblclick(function () {
-        $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft + 800,
+        $("#style1Table").animate({
+            scrollLeft: style1TableScroll.scrollLeft + 800,
         },
             0
         );
     });
 
-    $("#style1Table .left-slider5").click(function () {
-        $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft - 800,
+    $("#outer_table_box7 .left-slider5").click(function () {
+        $("#style1Table").animate({
+            scrollLeft: style1TableScroll.scrollLeft - 800,
         },
             0
         );
+        console.log("Left Slider Clicked");
     }).dblclick(function () {
-        $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft - 800,
+        $("#style1Table").animate({
+            scrollLeft: style1TableScroll.scrollLeft - 800,
         },
             0
         );
     });
-});
+}
 
 // ================ ARROW SCROLL BAR END ================
 

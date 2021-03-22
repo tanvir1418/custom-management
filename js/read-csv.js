@@ -2558,6 +2558,7 @@ function manResPagination(noRow) {
 			// Code added by Tanvir
 			$(".right-slider5").css("display", "block");
 			$(".left-slider5").css("display", "block");
+			$("#style1Table").css("border", "2px solid #eff1f7");
 			$("#pagination-man-res-table .width-row-go").css("display", "block");
 			IconModalClick();
 			Style2DropFilterPos();
@@ -2565,6 +2566,7 @@ function manResPagination(noRow) {
 			pagiHideHead();
 			table2HeadClickCall();
 			// function for table 2 End
+			style1TableScroller();
 		},
 	};
 	let container = $("#pagination-man-res-table");
