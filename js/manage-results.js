@@ -1016,8 +1016,8 @@ function table1HeadClick() {
         if (target.tagName === "I") {
             target = target.parentNode;
         }
-        const x = e.clientX;
-        const y = e.clientY;
+        const y = e.clientY + 20;
+        const x = e.clientX - 240;
         headClick(target, index, x, y);
     });
 
@@ -1027,11 +1027,143 @@ function table1HeadClick() {
         if (target.tagName === "I") {
             target = target.parentNode;
         }
-        const x = e.clientX;
         const y = e.clientY;
+        const x = e.clientX - 240;
         headClick(target, index, x, y);
     });
 }
+
+// ---------- ======= Double Click to ADD or REMOVE Start ======= -------------
+function manResTableRender() {
+    let tabHD = $("#resizable554 thead th");
+    let len = tabHD.length;
+    let htmlTableR = "";
+    let htmlTableL = "";
+    for (let i = 2; i < len; i++) {
+        let className = tabHD[i].className.match(/column-header-\d+/g)[0];
+        let pos = className.match(/\d+/g)[0];
+        let _id = "res-id-table-" + pos;
+        let content = tabHD[i].textContent.trim();
+        let regex = /th-dis-none/g;
+        if (regex.test(tabHD[i].className)) {
+            htmlTableL += `<tr id="${_id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
+                <td>${content}</td>
+            </tr>`;
+        } else {
+            htmlTableR += `<tr id="${_id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
+                <td>${content}</td>
+            </tr>`;
+        }
+    }
+    $("#man-res-opt-data-table-right").html(htmlTableR);
+    $("#man-res-opt-data-table-left").html(htmlTableL);
+}
+
+function dblclickResMove(e) {
+    let _id = $(e).parent().attr("id");
+    let index = $(e).attr("id").match(/\d+/g)[0];
+    if (_id == "man-res-opt-data-table-left") {
+        $(e).remove();
+        $(`#resizable554 th.column-header-${index}`).removeClass("th-dis-none");
+        $(`#resizable554 td.column-header-${index}`).removeClass("th-dis-none");
+        $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).removeClass("th-dis-none");
+        manResTableRender();
+    }
+    else if (_id == "man-res-opt-data-table-right") {
+        $(e).remove();
+        $(`#resizable554 th.column-header-${index}`).addClass("th-dis-none");
+        $(`#resizable554 td.column-header-${index}`).addClass("th-dis-none");
+        $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).addClass("th-dis-none");
+        manResTableRender();
+    }
+}
+
+function moveResLeftToRight() {
+    let tr = $("#man-res-opt-data-table-left tr.mark-table-data");
+    let len = tr.length;
+    for (let i = 0; i < len; i++) {
+        let index = $(tr[i]).attr("id").match(/\d+/g)[0];
+        $(tr[i]).remove();
+        $(`#resizable554 th.column-header-${index}`).removeClass("th-dis-none");
+        $(`#resizable554 td.column-header-${index}`).removeClass("th-dis-none");
+        $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).removeClass("th-dis-none");
+        manResTableRender();
+    }
+}
+
+function moveResRightToLeft() {
+    let tr = $("#man-res-opt-data-table-right tr.mark-table-data");
+    let len = tr.length;
+    for (let i = 0; i < len; i++) {
+        let index = $(tr[i]).attr("id").match(/\d+/g)[0];
+        $(tr[i]).remove();
+        $(`#resizable554 th.column-header-${index}`).addClass("th-dis-none");
+        $(`#resizable554 td.column-header-${index}`).addClass("th-dis-none");
+        $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).addClass("th-dis-none");
+        manResTableRender();
+    }
+}
+
+function ResorderUp() {
+    let row = $("#man-res-opt-data-table-right tr.mark-table-data");
+    let rowFirst = $("#man-res-opt-data-table-right tr")[0];
+    if (rowFirst != row[0]) {
+        row.each(function () {
+            let rw = $(this).closest("tr.mark-table-data");
+            let index = $(rw).attr("id").match(/\d+/g)[0];
+            rw.insertBefore(rw.prev());
+            columnMove(index, "up");
+        });
+    }
+}
+function ResorderDown() {
+    let row = $("#man-res-opt-data-table-right tr.mark-table-data");
+    row.each(function () {
+        let rw = $(this).closest("tr.mark-table-data");
+        let index = $(rw).attr("id").match(/\d+/g)[0];
+        for (let i = 0; i < row.length; i++) {
+            rw.insertAfter(rw.next());
+            columnMove(index, "down");
+        }
+    });
+}
+function findVisible(element, pos) {
+    let regex = /th-dis-none/g;
+    if (pos == "prev" && regex.test(element.attr("class"))) {
+        return findVisible(element.prev(), "prev");
+    } else if (pos == "next" && regex.test(element.attr("class"))) {
+        return findVisible(element.next(), "next");
+    }
+    else return element;
+}
+function columnMove(index, direc) {
+    let tHead = $(`#resizable554 th.column-header-${index}`);
+    let tBody = $(`#resizable554 td.column-header-${index}`);
+    let tvHead = $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th.column-header-${index}`);
+    let len = tBody.length;
+    if (direc == "up") {
+        let eleH = findVisible(tHead.prev(), "prev");
+        tHead.insertBefore(eleH);
+        let eleHV = findVisible(tvHead.prev(), "prev");
+        tvHead.insertBefore(eleHV);
+        for (let i = 0; i < len; i++) {
+            let tbCell = $(tBody[i]);
+            let eleC = findVisible(tbCell.prev(), "prev");
+            tbCell.insertBefore(eleC);
+        }
+    } else if (direc == "down") {
+        let eleH = findVisible(tHead.next(), "next");
+        tHead.insertAfter(eleH);
+        let eleHV = findVisible(tvHead.next(), "next");
+        tvHead.insertAfter(eleHV);
+        for (let i = 0; i < len; i++) {
+            let tbCell = $(tBody[i]);
+            let eleC = findVisible(tbCell.next(), "next");
+            tbCell.insertAfter(eleC);
+        }
+    }
+}
+// ---------- ======= Double Click to ADD or REMOVE End ======= -------------
 
 // ======== STYLE 2 Table =========
 function table2HeadClickCall() {
@@ -1155,9 +1287,8 @@ function moveRes2RightToLeft() {
 // X CLICK TO REMOVE COLUMN END ==============
 
 // TABLE RESIZEABLE START ===////////////////===
-$(document).ready(function () {
-    let thHeight = $("table#resizable554 th:first").height();
-    $("table#resizable554 th").resizable({
+function resizeWithUi(tQuery,thHeight) {
+    $(tQuery).resizable({
         handles: "e",
         minHeight: thHeight,
         maxHeight: thHeight,
@@ -1168,20 +1299,16 @@ $(document).ready(function () {
             $(sizerID).width(valueSize);
             let resizer = event.target.classList[0] + "-resizer";
             let shrinkWidth = `#resizable554 tbody .${resizer}`;
-            // console.log(shrinkWidth);
-            // $(shrinkWidth).width(valueSize);
-            // // $(shrinkWidth).width(valueSize - 24);
-            // $(shrinkWidth).css({
-            //     "min-width": `${valueSize-20}px`
-            // });
-            var gettingWidth = parseInt($(sizerID).css('width'), 10);
-            // let shrinkWidth = `#resizable554 tbody ${sizerID}`;
+            let gettingWidth = parseInt($(sizerID).css('width'), 10);
             $(shrinkWidth).width(gettingWidth + "px");
-            console.log(shrinkWidth);
-            console.log(gettingWidth);
         }
     });
-})
+}
+function resizableTable1() {
+    let thHeight = $("table#resizable554 th:first").height();
+    resizeWithUi("table#resizable554 th",thHeight);
+    resizeWithUi("#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th",thHeight);
+}
 // TABLE RESIZEABLE END ===////////////////===
 
 // TABLE RESIZEABLE STYLE 2 START ===////////////////===
@@ -1201,7 +1328,9 @@ $(document).ready(function () {
 
 
 // TABLE RESIZEABLE END ===////////////////===
-$("table#resizable554").dragableColumns();
+function dragAndDrop() {
+    $("table#resizable554").dragableColumns();
+}
 // Drag and Drop END
 
 // DRAG AND DROP START FILTER
@@ -1229,135 +1358,6 @@ dataFilterModal.forEach((modalData) => {
     my_drag_list.innerHTML += modalElement;
 })
 //----------====== Manage result filter modal End ======----------------
-
-// ---------- ======= Double Click to ADD or REMOVE Start ======= -------------
-function manResTableRender() {
-    let tabHD = $("#resizable554 thead th");
-    let len = tabHD.length;
-    let htmlTableR = "";
-    let htmlTableL = "";
-    for (let i = 2; i < len; i++) {
-        let className = tabHD[i].className.match(/column-header-\d+/g)[0];
-        let pos = className.match(/\d+/g)[0];
-        let _id = "res-id-table-" + pos;
-        let content = tabHD[i].textContent.trim();
-        let regex = /th-dis-none/g;
-        if (regex.test(tabHD[i].className)) {
-            htmlTableL += `<tr id="${_id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
-                <td>${content}</td>
-            </tr>`;
-        } else {
-            htmlTableR += `<tr id="${_id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
-                <td>${content}</td>
-            </tr>`;
-        }
-    }
-    $("#man-res-opt-data-table-right").html(htmlTableR);
-    $("#man-res-opt-data-table-left").html(htmlTableL);
-}
-
-function dblclickResMove(e) {
-    let _id = $(e).parent().attr("id");
-    let index = $(e).attr("id").match(/\d+/g)[0];
-    if (_id == "man-res-opt-data-table-left") {
-        $(e).remove();
-        $(`#resizable554 th.column-header-${index}`).removeClass("th-dis-none");
-        $(`#resizable554 td.column-header-${index}`).removeClass("th-dis-none");
-        $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).removeClass("th-dis-none");
-        manResTableRender();
-    }
-    else if (_id == "man-res-opt-data-table-right") {
-        $(e).remove();
-        $(`#resizable554 th.column-header-${index}`).addClass("th-dis-none");
-        $(`#resizable554 td.column-header-${index}`).addClass("th-dis-none");
-        $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).addClass("th-dis-none");
-        manResTableRender();
-    }
-}
-
-function moveResLeftToRight() {
-    let tr = $("#man-res-opt-data-table-left tr.mark-table-data");
-    let len = tr.length;
-    for (let i = 0; i < len; i++) {
-        let index = $(tr[i]).attr("id").match(/\d+/g)[0];
-        $(tr[i]).remove();
-        $(`#resizable554 th.column-header-${index}`).removeClass("th-dis-none");
-        $(`#resizable554 td.column-header-${index}`).removeClass("th-dis-none");
-        $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).removeClass("th-dis-none");
-        manResTableRender();
-    }
-}
-
-function moveResRightToLeft() {
-    let tr = $("#man-res-opt-data-table-right tr.mark-table-data");
-    let len = tr.length;
-    for (let i = 0; i < len; i++) {
-        let index = $(tr[i]).attr("id").match(/\d+/g)[0];
-        $(tr[i]).remove();
-        $(`#resizable554 th.column-header-${index}`).addClass("th-dis-none");
-        $(`#resizable554 td.column-header-${index}`).addClass("th-dis-none");
-        $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).addClass("th-dis-none");
-        manResTableRender();
-    }
-}
-
-function ResorderUp() {
-    let row = $("#man-res-opt-data-table-right tr.mark-table-data");
-    let rowFirst = $("#man-res-opt-data-table-right tr")[0];
-    if (rowFirst != row[0]) {
-        row.each(function () {
-            let rw = $(this).closest("tr.mark-table-data");
-            let index = $(rw).attr("id").match(/\d+/g)[0];
-            rw.insertBefore(rw.prev());
-            columnMove(index, "up");
-        });
-    }
-}
-function ResorderDown() {
-    let row = $("#man-res-opt-data-table-right tr.mark-table-data");
-    row.each(function () {
-        let rw = $(this).closest("tr.mark-table-data");
-        let index = $(rw).attr("id").match(/\d+/g)[0];
-        for (let i = 0; i < row.length; i++) {
-            rw.insertAfter(rw.next());
-            columnMove(index, "down");
-        }
-    });
-}
-function findVisible(element, pos) {
-    let regex = /th-dis-none/g;
-    if (pos == "prev" && regex.test(element.attr("class"))) {
-        return findVisible(element.prev(), "prev");
-    } else if (pos == "next" && regex.test(element.attr("class"))) {
-        return findVisible(element.next(), "next");
-    }
-    else return element;
-}
-function columnMove(index, direc) {
-    let tHead = $(`#resizable554 th.column-header-${index}`);
-    let tBody = $(`#resizable554 td.column-header-${index}`);
-    let len = tBody.length;
-    if (direc == "up") {
-        let eleH = findVisible(tHead.prev(), "prev");
-        console.log(eleH);
-        tHead.insertBefore(eleH);
-        for (let i = 0; i < len; i++) {
-            let tbCell = $(tBody[i]);
-            let eleC = findVisible(tbCell.prev(), "prev");
-            tbCell.insertBefore(eleC);
-        }
-    } else if (direc == "down") {
-        let eleH = findVisible(tHead.next(), "next");
-        console.log(eleH);
-        tHead.insertAfter(eleH);
-        for (let i = 0; i < len; i++) {
-            let tbCell = $(tBody[i]);
-            let eleC = findVisible(tbCell.next(), "next");
-            tbCell.insertAfter(eleC);
-        }
-    }
-}
-// ---------- ======= Double Click to ADD or REMOVE End ======= -------------
 
 // ----------- Manage Result Filter Start ------------------
 function resetResFilter(e) {
