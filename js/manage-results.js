@@ -941,11 +941,11 @@ $(".style1-box").click(function () {
     $("#double_click").removeClass("displayNone");
     $("#double_click_style2").addClass("displayNone");
 
-		let rowNumber = $("#style1Table #resizable554 tbody tr");
-		if(rowNumber.length > 0){
-			$(".right-slider5").css("display", "block");
-			$(".left-slider5").css("display", "block");
-		}
+    let rowNumber = $("#style1Table #resizable554 tbody tr");
+    if(rowNumber.length > 0){
+        $(".right-slider5").css("display", "block");
+        $(".left-slider5").css("display", "block");
+    }
 });
 
 $(".style2-box").click(function () {
@@ -961,11 +961,11 @@ $(".style2-box").click(function () {
     $("#double_click").addClass("displayNone");
     $("#double_click_style2").removeClass("displayNone");
 
-		let rowNumber = $("#style1Table #resizable554 tbody tr");
-		if(rowNumber.length > 0){
-			$(".right-slider5").css("display", "none");
-			$(".left-slider5").css("display", "none");
-		}
+    let rowNumber = $("#style1Table #resizable554 tbody tr");
+    if(rowNumber.length > 0){
+        $(".right-slider5").css("display", "none");
+        $(".left-slider5").css("display", "none");
+    }
 });
 
 
