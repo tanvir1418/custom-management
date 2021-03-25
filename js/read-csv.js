@@ -855,14 +855,14 @@ function manResPagination(noRow) {
 							<div class="circle2box" tooltip="Click to View Details" flow="down">
 								<i class="fas fa-pen"></i>
 							</div>
-							<div class="circle2box">
-								<i class="fas fa-eye view-modal-click" data-toggle="modal" data-target="#viewtwo"></i>
+							<div class="circle2box view-modal-click" data-toggle="modal" data-target="#viewtwo">
+								<i class="fas fa-eye"></i>
 							</div>
 							<div class="circle2box" tooltip="Click to Delete" flow="down">
 								<i class="fas fa-trash-alt"></i>
 							</div>
-							<div class="circle2box">
-								<svg class="svg1 row-modal-click" viewBox="-21 0 512 512" data-toggle="modal" data-target="#rowdetails">
+							<div class="circle2box row-modal-click" data-toggle="modal" data-target="#rowdetails">
+								<svg class="svg1" viewBox="-21 0 512 512">
 									<g>
 										<path
 											d="M406,60h-30v15c0,24.814-20.186,45-45,45H181c-24.814,0-45-20.186-45-45V60h-30c-24.814,0-45,20.186-45,45v360c0,24.814,20.186,47,45,47h300c24.814,0,45-22.186,45-47V105C451,80.186,430.814,60,406,60z M136,450c-8.284,0-15-6.716-15-15c0-8.286,6.716-15,15-15s15,6.714,15,15C151,443.284,144.284,450,136,450z M136,360c-8.284,0-15-6.716-15-15c0-8.286,6.716-15,15-15s15,6.714,15,15C151,353.284,144.284,360,136,360z M136,270c-8.284,0-15-6.716-15-15c0-8.286,6.716-15,15-15s15,6.714,15,15C151,263.284,144.284,270,136,270z M136,180c-8.284,0-15-6.716-15-15c0-8.286,6.716-15,15-15s15,6.714,15,15C151,173.284,144.284,180,136,180z M376,450H196c-8.291,0-15-6.709-15-15c0-8.291,6.709-15,15-15h180c8.291,0,15,6.709,15,15C391,443.291,384.291,450,376,450z M376,360H196c-8.291,0-15-6.709-15-15c0-8.291,6.709-15,15-15h180c8.291,0,15,6.709,15,15C391,353.291,384.291,360,376,360z M376,270H196c-8.291,0-15-6.709-15-15c0-8.291,6.709-15,15-15h180c8.291,0,15,6.709,15,15S384.291,270,376,270z M376,180H196c-8.291,0-15-6.709-15-15s6.709-15,15-15h180c8.291,0,15,6.709,15,15S384.291,180,376,180z"
@@ -875,8 +875,8 @@ function manResPagination(noRow) {
 									</g>
 								</svg>
 							</div>
-							<div class="circle2box">
-								<svg class="svg2 note-modal-click" viewBox="0 0 24 24" data-toggle="modal" data-target="#noteswindow">
+							<div class="circle2box note-modal-click" data-toggle="modal" data-target="#noteswindow">
+								<svg class="svg2" viewBox="0 0 24 24">
 									<path
 										d="m12.25 2h-1.1c-.33-1.15-1.39-2-2.65-2s-2.32.85-2.65 2h-1.1c-.41 0-.75.34-.75.75v1.5c0 .96.79 1.75 1.75 1.75h5.5c.96 0 1.75-.79 1.75-1.75v-1.5c0-.41-.34-.75-.75-.75z"
 									/>
@@ -888,8 +888,8 @@ function manResPagination(noRow) {
 									/>
 								</svg>
 							</div>
-							<div class="circle2box">
-								<svg class="svg3 copyrowlist-modal-click" viewBox="0 0 24 24" data-toggle="modal" data-target="#copyrowlist">
+							<div class="circle2box copyrowlist-modal-click" data-toggle="modal" data-target="#copyrowlist">
+								<svg class="svg3" viewBox="0 0 24 24">
 									<path
 										d="m4 6.75c0-2.619 2.131-4.75 4.75-4.75h9.133c-.329-1.151-1.378-2-2.633-2h-11.5c-1.517 0-2.75 1.233-2.75 2.75v15.5c0 1.517 1.233 2.75 2.75 2.75h.25z"
 									/>
@@ -898,8 +898,8 @@ function manResPagination(noRow) {
 									/>
 								</svg>
 							</div>
-							<div class="circle2box">
-								<svg class="svg4 moverowlist-modal-click" viewBox="0 0 512.007 512.007" data-toggle="modal" data-target="#moverowlist">
+							<div class="circle2box moverowlist-modal-click" data-toggle="modal" data-target="#moverowlist">
+								<svg class="svg4" viewBox="0 0 512.007 512.007">
 									<g>
 										<path
 											d="m142 143.003h139v-143c-49.379 0-107.674 0-154 0v128c0 8.271 6.729 15 15 15z"
@@ -917,8 +917,8 @@ function manResPagination(noRow) {
 									</g>
 								</svg>
 							</div>
-							<div class="circle2box">
-								<svg viewBox="0 0 511.156 511.156" class="alertswindow-modal-click" data-toggle="modal" data-target="#alertswindow">
+							<div class="circle2box alertswindow-modal-click" data-toggle="modal" data-target="#alertswindow">
+								<svg viewBox="0 0 511.156 511.156">
 									<path
 										d="m184.904 465.044c11.999 27.127 39.154 46.112 70.674 46.112s58.674-18.985 70.674-46.112z"
 									/>
@@ -1421,14 +1421,14 @@ function manResPagination(noRow) {
 					<div class="circle2box" tooltip="Click to View Details" flow="down">
 						<i class="fas fa-pen"></i>
 					</div>
-					<div class="circle2box">
-						<i class="fas fa-eye view-modal-click-style2" data-toggle="modal" data-target="#viewtwo_style2"></i>
+					<div class="circle2box view-modal-click-style2" data-toggle="modal" data-target="#viewtwo_style2">
+						<i class="fas fa-eye"></i>
 					</div>
 					<div class="circle2box" tooltip="Click to Delete" flow="down">
 						<i class="fas fa-trash-alt"></i>
 					</div>
-					<div class="circle2box">
-						<svg class="svg1 row-modal-click-style2" viewBox="-21 0 512 512" data-toggle="modal" data-target="#rowdetails_style2">
+					<div class="circle2box row-modal-click-style2" data-toggle="modal" data-target="#rowdetails_style2">
+						<svg class="svg1" viewBox="-21 0 512 512">
 							<g>
 								<path d="M406,60h-30v15c0,24.814-20.186,45-45,45H181c-24.814,0-45-20.186-45-45V60h-30c-24.814,0-45,20.186-45,45v360
 									c0,24.814,20.186,47,45,47h300c24.814,0,45-22.186,45-47V105C451,80.186,430.814,60,406,60z M136,450c-8.284,0-15-6.716-15-15
@@ -1448,8 +1448,8 @@ function manResPagination(noRow) {
 							</g>
 						</svg>
 					</div>
-					<div class="circle2box">
-						<svg class="svg2 note-modal-click-style2" viewBox="0 0 24 24" data-toggle="modal" data-target="#noteswindow_style2">
+					<div class="circle2box note-modal-click-style2" data-toggle="modal" data-target="#noteswindow_style2">
+						<svg class="svg2" viewBox="0 0 24 24">
 							<path
 								d="m12.25 2h-1.1c-.33-1.15-1.39-2-2.65-2s-2.32.85-2.65 2h-1.1c-.41 0-.75.34-.75.75v1.5c0 .96.79 1.75 1.75 1.75h5.5c.96 0 1.75-.79 1.75-1.75v-1.5c0-.41-.34-.75-.75-.75z" />
 							<path
@@ -1458,16 +1458,16 @@ function manResPagination(noRow) {
 								d="m12.527 24c-.197 0-.389-.078-.53-.22-.173-.173-.251-.419-.208-.661l.53-3.005c.026-.151.1-.291.208-.4l7.425-7.424c.912-.914 1.808-.667 2.298-.177l1.237 1.237c.683.682.683 1.792 0 2.475l-7.425 7.425c-.108.109-.248.182-.4.208l-3.005.53c-.043.008-.087.012-.13.012zm3.005-1.28h.01z" />
 						</svg>
 					</div>
-					<div class="circle2box">
-						<svg class="svg3 copyrowlist-modal-click-style2" viewBox="0 0 24 24" data-toggle="modal" data-target="#copyrowlist_style2">
+					<div class="circle2box copyrowlist-modal-click-style2" data-toggle="modal" data-target="#copyrowlist_style2">
+						<svg class="svg3" viewBox="0 0 24 24">
 							<path
 								d="m4 6.75c0-2.619 2.131-4.75 4.75-4.75h9.133c-.329-1.151-1.378-2-2.633-2h-11.5c-1.517 0-2.75 1.233-2.75 2.75v15.5c0 1.517 1.233 2.75 2.75 2.75h.25z" />
 							<path
 								d="m20.25 4h-11.5c-1.517 0-2.75 1.233-2.75 2.75v14.5c0 1.517 1.233 2.75 2.75 2.75h11.5c1.517 0 2.75-1.233 2.75-2.75v-14.5c0-1.517-1.233-2.75-2.75-2.75zm-2 17h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75zm0-4h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75zm0-3.5h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75zm0-4h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75z" />
 						</svg>
 					</div>
-					<div class="circle2box">
-						<svg class="svg4 moverowlist-modal-click-style2" viewBox="0 0 512.007 512.007" data-toggle="modal" data-target="#moverowlist_style2">
+					<div class="circle2box moverowlist-modal-click-style2" data-toggle="modal" data-target="#moverowlist_style2">
+						<svg class="svg4" viewBox="0 0 512.007 512.007">
 							<g>
 								<path
 									d="m142 143.003h139v-143c-49.379 0-107.674 0-154 0v128c0 8.271 6.729 15 15 15z" />
@@ -1481,8 +1481,8 @@ function manResPagination(noRow) {
 							</g>
 						</svg>
 					</div>
-					<div class="circle2box">
-						<svg class="alertswindow-modal-click-style2" viewBox="0 0 511.156 511.156" data-toggle="modal" data-target="#alertswindow_style2">
+					<div class="circle2box alertswindow-modal-click-style2" data-toggle="modal" data-target="#alertswindow_style2">
+						<svg class="" viewBox="0 0 511.156 511.156">
 							<path
 								d="m184.904 465.044c11.999 27.127 39.154 46.112 70.674 46.112s58.674-18.985 70.674-46.112z" />
 							<path
@@ -2556,8 +2556,12 @@ function manResPagination(noRow) {
 			truncateText(450);
 
 			// Code added by Tanvir
-			$(".right-slider5").css("display", "block");
-			$(".left-slider5").css("display", "block");
+			let decideDisplay = $(".style2-box").hasClass("clickstylebg");
+			if(!decideDisplay){
+				$(".right-slider5").css("display", "block");
+				$(".left-slider5").css("display", "block");
+			}
+			
 			$("#style1Table").css("border", "2px solid #eff1f7");
 			$("#pagination-man-res-table .width-row-go").css("display", "block");
 			IconModalClick();

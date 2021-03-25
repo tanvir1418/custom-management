@@ -2350,3 +2350,10 @@ Bottom codes are added by Tanvir
     /* top: 200px;
     left: 400px; */
 }
+
+
+#mnTemp_timePicker .modal-dialog {
+    position: absolute;
+    min-height: 0;
+    margin: 0;
+}
