@@ -970,6 +970,14 @@ let op3Sug = [
   {
     id: "op3-md-3",
     name: "To"
+  },
+  {
+    id: "op3-md-4",
+    name: "Source Option 1"
+  },
+  {
+    id: "op3-md-5",
+    name: "Source Option 2"
   }
 ];
 function findInputIdOp3(title) {
@@ -1183,6 +1191,12 @@ function formToWindowOp3(e) {
   let tableTr = $("#man-data-op3-table tbody tr.mark-table-data");
   let len = tableTr.length;
   let radioOption = $(".radio input[type = 'radio'][name = 'data-set-radio-button']:checked").val();
+  if (radioOption != "") {
+    renHtml +=
+      `<div class="form-text-design data-div">
+      ${radioOption}: checked
+    </div>`;
+  }
   for (let i = 0; i < len; i++) {
     let trData = $(tableTr[i]).children("td").text().trim();
     renHtml +=
@@ -1202,7 +1216,7 @@ function windowToFormOp3(e) {
   let len = tRow.length;
   for (let i = 0; i < len; i++) {
     let divData = $(tRow[i])[0].innerText.split(":");
-    if (divData.length > 1) {
+    if (divData.length == 2) {
       if (divData[0].trim() == "Keyword") {
         $("#opt3-textarea-1").val(divData[1].trim());
       }
@@ -1212,13 +1226,18 @@ function windowToFormOp3(e) {
       else if (divData[0].trim() == "To") {
         $("#datepicker-2").val(divData[1].trim());
       }
-      else {
-        let { id } = findInputIdOp3(divData[1].trim());
-        if (divData[2].trim() == "checked") {
-          $(`#man-data-op3-table tbody tr#${id}`).addClass("mark-table-data");
-        } else if (divData[2].trim() == "unchecked") {
-          $(`#man-data-op3-table tbody tr#${id}`).removeClass("mark-table-data");
+      else if (divData[0].trim() == "Source Option 1" || divData[0].trim() == "Source Option 2") {
+        let radioBtn = $(`.radio input[type = "radio"][value = "${divData[0].trim()}"]`);
+        if (radioBtn.length && divData[1].trim()=="checked") {
+          radioBtn[0].checked = true;
         }
+      }
+    } else if (divData.length > 2) {
+      let { id } = findInputIdOp3(divData[1].trim());
+      if (divData[2].trim() == "checked") {
+        $(`#man-data-op3-table tbody tr#${id}`).addClass("mark-table-data");
+      } else if (divData[2].trim() == "unchecked") {
+        $(`#man-data-op3-table tbody tr#${id}`).removeClass("mark-table-data");
       }
     }
   }
