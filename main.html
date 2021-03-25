@@ -2783,24 +2783,20 @@
                                                             <div class="title-section">
                                                                 <p>Time 1</p>
                                                             </div>
-                                                            <div class="input-section input-time">
+                                                            <div class="input-section input-time" id="TP_time1" data-toggle="modal" data-target="#mnTemp_timePicker">
                                                                 <input class=" date-pick-style" type="text"
                                                                     id="timepicker_mnTemp1">
-                                                                <i class="far fa-calendar-alt time-pick-icon"
-                                                                    data-toggle="modal" id="TP_time1"
-                                                                    data-target="#mnTemp_timePicker"></i>
+                                                                <i class="far fa-calendar-alt time-pick-icon"></i>
                                                             </div>
                                                         </div>
                                                         <div class="horizontal-input-group">
                                                             <div class="title-section">
                                                                 <p>Time 2</p>
                                                             </div>
-                                                            <div class="input-section input-time">
+                                                            <div class="input-section input-time" id="TP_time2" data-toggle="modal" data-target="#mnTemp_timePicker">
                                                                 <input class=" date-pick-style" type="text"
                                                                     id="timepicker_mnTemp2">
-                                                                <i class="far fa-calendar-alt time-pick-icon"
-                                                                    data-toggle="modal" id="TP_time2"
-                                                                    data-target="#mnTemp_timePicker"></i>
+                                                                <i class="far fa-calendar-alt time-pick-icon"></i>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4620,12 +4616,12 @@
                                         <thead></thead>
                                         <tbody></tbody>
                                     </table>
-                                    <div class="right-slider5">
-                                        <i class="fas fa-long-arrow-alt-right"></i>
-                                    </div>
-                                    <div class="left-slider5">
-                                        <i class="fas fa-long-arrow-alt-left"></i>
-                                    </div>
+                                </div>
+                                <div class="right-slider5">
+                                    <i class="fas fa-long-arrow-alt-right"></i>
+                                </div>
+                                <div class="left-slider5">
+                                    <i class="fas fa-long-arrow-alt-left"></i>
                                 </div>
                             </div>
                             <!-- ====//////====== STYLE 1 TABLE END ====//////====== -->
@@ -5093,7 +5089,436 @@
                             <div class="modal fade" id="alertswindow">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
-                                        <div class="modal-header">
+                                        <div class="modal-header alerts-arrow-top">
+                                            <p class="modal-title">ALERTS WINDOW</p>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="alertwinbox">
+                                                <div class="alert_text_box">
+                                                    <p>Lorem ipsum dolor, sit amet ctetur adiping elit.
+                                                        Vetis rerum
+                                                        nemo cotur lanum ipsam facere quasi excturi quae
+                                                        dtis
+                                                        corporis, delec qsdam pers eius conatur qui does.
+                                                        Iue eaque
+                                                        rerum nam exenem similique, ipsam inventore sint
+                                                        aliquid
+                                                        exta? Ex, porro!</p>
+                                                </div>
+                                                <table class="alert-table">
+                                                    <thead>
+                                                        <th class="rowrow4">Row</th>
+                                                        <th class="alerttype4">Alert Type</th>
+                                                        <th class="alertvalue4">Alert Value</th>
+                                                        <th class="alertfreq4">Alert Frequency</th>
+                                                        <th class="alertmethod4">Alert Method</th>
+                                                        <th class="alertnull4"></th>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td class="selectaltype">
+                                                                <select name="" id="">
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                </select>
+                                                                <div class="selectarrow">
+                                                                    <i class="fas fa-caret-down"></i>
+                                                                </div>
+                                                            </td>
+                                                            <td class="inpalertval">
+                                                                <input type="text">
+                                                            </td>
+                                                            <td class="selectalfreq">
+                                                                <select name="" id="">
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                </select>
+                                                                <div class="selectarrow">
+                                                                    <i class="fas fa-caret-down"></i>
+                                                                </div>
+                                                            </td>
+                                                            <td class="inpumail">
+                                                                <div class="mail_enter">
+                                                                    <div class="mail_icons">
+                                                                        <i class="fas fa-envelope"></i>
+                                                                        <i class="fas fa-phone-alt"></i>
+                                                                        <i class="fas fa-comment-alt"></i>
+                                                                    </div>
+                                                                    <input type="email"
+                                                                        placeholder="Enter a Email Address">
+                                                                </div>
+                                                            </td>
+                                                            <td class="removenull">
+                                                                <div class="circle_550">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </div>
+                                                                <div class="circle_550">
+                                                                    <i class="fas fa-times"></i>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td class="selectaltype">
+                                                                <select name="" id="">
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                </select>
+                                                                <div class="selectarrow">
+                                                                    <i class="fas fa-caret-down"></i>
+                                                                </div>
+                                                            </td>
+                                                            <td class="inpalertval">
+                                                                <input type="text">
+                                                            </td>
+                                                            <td class="selectalfreq">
+                                                                <select name="" id="">
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                </select>
+                                                                <div class="selectarrow">
+                                                                    <i class="fas fa-caret-down"></i>
+                                                                </div>
+                                                            </td>
+                                                            <td class="inpumail">
+                                                                <div class="mail_enter">
+                                                                    <div class="mail_icons">
+                                                                        <i class="fas fa-envelope"></i>
+                                                                        <i class="fas fa-phone-alt"></i>
+                                                                        <i class="fas fa-comment-alt"></i>
+                                                                    </div>
+                                                                    <input type="email"
+                                                                        placeholder="Enter a Email Address">
+                                                                </div>
+                                                            </td>
+                                                            <td class="removenull">
+                                                                <div class="circle_550">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </div>
+                                                                <div class="circle_550">
+                                                                    <i class="fas fa-times"></i>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3</td>
+                                                            <td class="selectaltype">
+                                                                <select name="" id="">
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                </select>
+                                                                <div class="selectarrow">
+                                                                    <i class="fas fa-caret-down"></i>
+                                                                </div>
+                                                            </td>
+                                                            <td class="inpalertval">
+                                                                <input type="text">
+                                                            </td>
+                                                            <td class="selectalfreq">
+                                                                <select name="" id="">
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                </select>
+                                                                <div class="selectarrow">
+                                                                    <i class="fas fa-caret-down"></i>
+                                                                </div>
+                                                            </td>
+                                                            <td class="inpumail">
+                                                                <div class="mail_enter">
+                                                                    <div class="mail_icons">
+                                                                        <i class="fas fa-envelope"></i>
+                                                                        <i class="fas fa-phone-alt"></i>
+                                                                        <i class="fas fa-comment-alt"></i>
+                                                                    </div>
+                                                                    <input type="email"
+                                                                        placeholder="Enter a Email Address">
+                                                                </div>
+                                                            </td>
+                                                            <td class="removenull">
+                                                                <div class="circle_550">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </div>
+                                                                <div class="circle_550">
+                                                                    <i class="fas fa-times"></i>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>4</td>
+                                                            <td class="selectaltype">
+                                                                <select name="" id="">
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                </select>
+                                                                <div class="selectarrow">
+                                                                    <i class="fas fa-caret-down"></i>
+                                                                </div>
+                                                            </td>
+                                                            <td class="inpalertval">
+                                                                <input type="text">
+                                                            </td>
+                                                            <td class="selectalfreq">
+                                                                <select name="" id="">
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                </select>
+                                                                <div class="selectarrow">
+                                                                    <i class="fas fa-caret-down"></i>
+                                                                </div>
+                                                            </td>
+                                                            <td class="inpumail">
+                                                                <div class="mail_enter">
+                                                                    <div class="mail_icons">
+                                                                        <i class="fas fa-envelope"></i>
+                                                                        <i class="fas fa-phone-alt"></i>
+                                                                        <i class="fas fa-comment-alt"></i>
+                                                                    </div>
+                                                                    <input type="email"
+                                                                        placeholder="Enter a Email Address">
+                                                                </div>
+                                                            </td>
+                                                            <td class="removenull">
+                                                                <div class="circle_550">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </div>
+                                                                <div class="circle_550">
+                                                                    <i class="fas fa-times"></i>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>5</td>
+                                                            <td class="selectaltype">
+                                                                <select name="" id="">
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                </select>
+                                                                <div class="selectarrow">
+                                                                    <i class="fas fa-caret-down"></i>
+                                                                </div>
+                                                            </td>
+                                                            <td class="inpalertval">
+                                                                <input type="text">
+                                                            </td>
+                                                            <td class="selectalfreq">
+                                                                <select name="" id="">
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                </select>
+                                                                <div class="selectarrow">
+                                                                    <i class="fas fa-caret-down"></i>
+                                                                </div>
+                                                            </td>
+                                                            <td class="inpumail">
+                                                                <div class="mail_enter">
+                                                                    <div class="mail_icons">
+                                                                        <i class="fas fa-envelope"></i>
+                                                                        <i class="fas fa-phone-alt"></i>
+                                                                        <i class="fas fa-comment-alt"></i>
+                                                                    </div>
+                                                                    <input type="email"
+                                                                        placeholder="Enter a Email Address">
+                                                                </div>
+                                                            </td>
+                                                            <td class="removenull">
+                                                                <div class="circle_550">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </div>
+                                                                <div class="circle_550">
+                                                                    <i class="fas fa-times"></i>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>6</td>
+                                                            <td class="selectaltype">
+                                                                <select name="" id="">
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                </select>
+                                                                <div class="selectarrow">
+                                                                    <i class="fas fa-caret-down"></i>
+                                                                </div>
+                                                            </td>
+                                                            <td class="inpalertval">
+                                                                <input type="text">
+                                                            </td>
+                                                            <td class="selectalfreq">
+                                                                <select name="" id="">
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                </select>
+                                                                <div class="selectarrow">
+                                                                    <i class="fas fa-caret-down"></i>
+                                                                </div>
+                                                            </td>
+                                                            <td class="inpumail">
+                                                                <div class="mail_enter">
+                                                                    <div class="mail_icons">
+                                                                        <i class="fas fa-envelope"></i>
+                                                                        <i class="fas fa-phone-alt"></i>
+                                                                        <i class="fas fa-comment-alt"></i>
+                                                                    </div>
+                                                                    <input type="email"
+                                                                        placeholder="Enter a Email Address">
+                                                                </div>
+                                                            </td>
+                                                            <td class="removenull">
+                                                                <div class="circle_550">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </div>
+                                                                <div class="circle_550">
+                                                                    <i class="fas fa-times"></i>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>7</td>
+                                                            <td class="selectaltype">
+                                                                <select name="" id="">
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                    <option value="">Precent Change
+                                                                        Greather...
+                                                                    </option>
+                                                                </select>
+                                                                <div class="selectarrow">
+                                                                    <i class="fas fa-caret-down"></i>
+                                                                </div>
+                                                            </td>
+                                                            <td class="inpalertval">
+                                                                <input type="text">
+                                                            </td>
+                                                            <td class="selectalfreq">
+                                                                <select name="" id="">
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                    <option value="">Anytime</option>
+                                                                </select>
+                                                                <div class="selectarrow">
+                                                                    <i class="fas fa-caret-down"></i>
+                                                                </div>
+                                                            </td>
+                                                            <td class="inpumail">
+                                                                <div class="mail_enter">
+                                                                    <div class="mail_icons">
+                                                                        <i class="fas fa-envelope"></i>
+                                                                        <i class="fas fa-phone-alt"></i>
+                                                                        <i class="fas fa-comment-alt"></i>
+                                                                    </div>
+                                                                    <input type="email"
+                                                                        placeholder="Enter a Email Address">
+                                                                </div>
+                                                            </td>
+                                                            <td class="removenull">
+                                                                <div class="circle_550">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </div>
+                                                                <div class="circle_550">
+                                                                    <i class="fas fa-times"></i>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <div class="reset-save-btn">
+                                                    <button class="reset4" type="button">Reset</button>
+                                                    <button class="save4" type="button">Save</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="alertswindow_style2">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header alerts-arrow-top">
                                             <p class="modal-title">ALERTS WINDOW</p>
                                             <button type="button" class="close" data-dismiss="modal"
                                                 aria-label="Close">
@@ -6289,7 +6714,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="wrapper-modal-list">
-                        <div class="weapper-list-title">
+                        <div class="weapper-list-title copy-arrow-top">
                             <p>COPY THIS ROW TO</p>
                         </div>
                         <div class="scroll-list-box scrollable-list-op1 copytoscrollwindow">
@@ -6309,6 +6734,31 @@
             </div>
         </div>
     </div>
+    <div class="modal fade listData-modal" id="copyrowlist_style2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="wrapper-modal-list">
+                        <div class="weapper-list-title copy-arrow-top">
+                            <p>COPY THIS ROW TO</p>
+                        </div>
+                        <div class="scroll-list-box scrollable-list-op1 copytoscrollwindow_style2">
+                            <ul class="copytorow-list_style2 left-list-box">
+                                <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
+                            </ul>
+
+                            <div id="sub-ul-copyto-modallist_style2">
+                                <!-- get checkbox data from opt1-list-modal.JS by ASHIQ... -->
+                            </div>
+                        </div>
+                        <div class="scroll-down copytoscrollbtn_style2">
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- ========== STYLE 2 COPY TO ROW select items modal END =============== -->
 
     <!-- ========== STYLE 2 MOVE TO ROW select items modal START =============== -->
@@ -6317,7 +6767,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="wrapper-modal-list">
-                        <div class="weapper-list-title">
+                        <div class="weapper-list-title move-arrow-top">
                             <p>MOVE THIS ROW TO</p>
                         </div>
                         <div class="scroll-list-box scrollable-list-op1 movetoscrollwindow">
@@ -6330,6 +6780,31 @@
                             </div>
                         </div>
                         <div class="scroll-down movetoscrollbtn">
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade listData-modal" id="moverowlist_style2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="wrapper-modal-list">
+                        <div class="weapper-list-title move-arrow-top">
+                            <p>MOVE THIS ROW TO</p>
+                        </div>
+                        <div class="scroll-list-box scrollable-list-op1 movetoscrollwindow_style29">
+                            <ul class="movetorow-list_style29 left-list-box">
+                                <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
+                            </ul>
+
+                            <div id="sub-ul-moveto-modallist_style29">
+                                <!-- get checkbox data from opt1-list-modal.JS by ASHIQ... -->
+                            </div>
+                        </div>
+                        <div class="scroll-down movetoscrollbtn_style29">
                             <i class="fas fa-caret-down"></i>
                         </div>
                     </div>
@@ -6393,6 +6868,33 @@
     </div>
     <!-- ========== STYLE 2 COPY TO ROW select items delete modal END ============ -->
 
+    <!-- ========== STYLE 2 COPY TO ROW style2 select items delete modal START =========== -->
+    <div class="modal fade delete-list-item" id="delet-copytolistopt2_style2">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title">DELETE</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="remove-box">
+                        <div class="question-delete">
+                            <p>Remove this item permanently?</p>
+                        </div>
+                        <div class="comfirm-btn-bx">
+                            <button type="button" class="cancel-list-data" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="confirm-list-data" data-dismiss="modal"
+                                id="copyto-mng-opt2-delete_style2">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========== STYLE 2 COPY TO ROW style2 select items delete modal END ============ -->
+
     <!-- ======= STYLE 2 MOVE TO ROW select items delete modal START =========== -->
     <div class="modal fade delete-list-item" id="delet-movetolistopt2">
         <div class="modal-dialog modal-dialog-centered">
@@ -6412,6 +6914,30 @@
                             <button type="button" class="cancel-list-data" data-dismiss="modal">Cancel</button>
                             <button type="button" class="confirm-list-data" data-dismiss="modal"
                                 id="moveto-mng-opt2-delete">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade delete-list-item" id="delet-movetolistopt2_style29">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title">DELETE</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="remove-box">
+                        <div class="question-delete">
+                            <p>Remove this item permanently?</p>
+                        </div>
+                        <div class="comfirm-btn-bx">
+                            <button type="button" class="cancel-list-data" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="confirm-list-data" data-dismiss="modal"
+                                id="moveto-mng-opt2-delete_style29">Confirm</button>
                         </div>
                     </div>
                 </div>
@@ -7096,6 +7622,7 @@
     <script src="./js/option-4.js" defer ></script>
     <script src="./js/main.js" defer ></script>
     <script src="./js/opt1-list-modal.js" defer ></script>
+    <script src="./js/manage_rst_rowModal.js"></script>
     <script src="./js/chartCode.js" defer ></script>
     <script src="./js/opt1-list-func.js" defer ></script>
     <script src="./js/manage-results.js" defer ></script>

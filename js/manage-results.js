@@ -575,36 +575,36 @@ $(document).ready(function () {
 
 
 // ///////////////////////////////////////////
-$(document).ready(function () {
-    const mytablesty12 = document.querySelector(".mytablesty12");
-    $("#style1Table .right-slider5").click(function () {
-        $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft + 800,
+function style1TableScroller () {
+    const style1TableScroll = document.querySelector("#style1Table");
+    $("#outer_table_box7 .right-slider5").click(function () {
+        $("#style1Table").animate({
+            scrollLeft: style1TableScroll.scrollLeft + 800,
         },
             0
         );
     }).dblclick(function () {
-        $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft + 800,
+        $("#style1Table").animate({
+            scrollLeft: style1TableScroll.scrollLeft + 800,
         },
             0
         );
     });
 
-    $("#style1Table .left-slider5").click(function () {
-        $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft - 800,
+    $("#outer_table_box7 .left-slider5").click(function () {
+        $("#style1Table").animate({
+            scrollLeft: style1TableScroll.scrollLeft - 800,
         },
             0
         );
     }).dblclick(function () {
-        $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft - 800,
+        $("#style1Table").animate({
+            scrollLeft: style1TableScroll.scrollLeft - 800,
         },
             0
         );
     });
-});
+}
 
 // ================ ARROW SCROLL BAR END ================
 
@@ -940,6 +940,12 @@ $(".style1-box").click(function () {
 
     $("#double_click").removeClass("displayNone");
     $("#double_click_style2").addClass("displayNone");
+
+    let rowNumber = $("#style1Table #resizable554 tbody tr");
+    if(rowNumber.length > 0){
+        $(".right-slider5").css("display", "block");
+        $(".left-slider5").css("display", "block");
+    }
 });
 
 $(".style2-box").click(function () {
@@ -954,6 +960,12 @@ $(".style2-box").click(function () {
 
     $("#double_click").addClass("displayNone");
     $("#double_click_style2").removeClass("displayNone");
+
+    let rowNumber = $("#style1Table #resizable554 tbody tr");
+    if(rowNumber.length > 0){
+        $(".right-slider5").css("display", "none");
+        $(".left-slider5").css("display", "none");
+    }
 });
 
 
@@ -962,7 +974,7 @@ $(".style2-box").click(function () {
 // ============== STYLE 1 STYLE 2 END ==============
 
 // X CLICK TO REMOVE COLUMN START ==============
-function headClick(target, index, x, y) {
+function headClick(target, index) {
     let regex = /cross/g;
     let regexD = /drop-filter/g;
     if (target.tagName === "DIV" && regex.test(target.id)) {
@@ -1000,13 +1012,7 @@ function headClick(target, index, x, y) {
             </tr>`;
         }
         targetModal.html(tableTr);
-        $("#col8Filter .modal-dialog").css({
-            top: x,
-            left: y,
-        });
-        $("#col8Filter .modal-dialog .table-header-click-popup").css({
-            "margin-top": "0px"
-        });
+        
     }
 }
 function table1HeadClick() {
@@ -1016,9 +1022,15 @@ function table1HeadClick() {
         if (target.tagName === "I") {
             target = target.parentNode;
         }
-        const y = e.clientY + 20;
-        const x = e.clientX - 240;
-        headClick(target, index, x, y);
+        headClick(target, index);
+
+        $("#col8Filter .modal-dialog").css({
+            top: ((e.clientY) + 20), 
+            left: ((e.clientX) - 240)
+        });
+        $("#col8Filter .modal-dialog .table-header-click-popup").css({
+            "margin-top": "0px"
+        });
     });
 
     $("#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th").click(function (e) {
@@ -1027,9 +1039,15 @@ function table1HeadClick() {
         if (target.tagName === "I") {
             target = target.parentNode;
         }
-        const y = e.clientY;
-        const x = e.clientX - 240;
-        headClick(target, index, x, y);
+        headClick(target, index);
+
+        $("#col8Filter .modal-dialog").css({
+            top: ((e.clientY) + 20), 
+            left: ((e.clientX) - 240)
+        });
+        $("#col8Filter .modal-dialog .table-header-click-popup").css({
+            "margin-top": "0px"
+        });
     });
 }
 
@@ -1391,9 +1409,10 @@ function IconModalClick() {
     let viewModalList = document.getElementsByClassName('view-modal-click');
     for (let i = 0; i < viewModalList.length; i++) {
         viewModalList[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
             $("#viewtwo .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) - 10)
             });
         });
     }
@@ -1401,19 +1420,34 @@ function IconModalClick() {
     let viewModalListSty2 = document.getElementsByClassName('view-modal-click-style2');
     for (let i = 0; i < viewModalListSty2.length; i++) {
         viewModalListSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+            
+            // console.log(event.target.nodeName);
+            // console.log(event.target.parentElement.nodeName);
+            // console.log(event.target.parentElement.parentElement.nodeName);
+            // console.log(event.target.parentElement.parentElement.parentElement.nodeName);
+
+            // console.log("Bottom value :" + event.target.getBoundingClientRect().bottom);
+            // console.log("Left value :" + event.target.getBoundingClientRect().left);
+
             $("#viewtwo_style2 .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) + 2)
             });
+            // $("#viewtwo_style2 .modal-dialog").css({
+            //     top: ((event.clientY) + 13),
+            //     left: ((event.clientX) - 25)
+            // });
         });
     }
 
     let rowModalClick = document.getElementsByClassName('row-modal-click');
     for (let i = 0; i < rowModalClick.length; i++) {
         rowModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
             $("#rowdetails .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) - 10)
             });
         });
     }
@@ -1421,9 +1455,10 @@ function IconModalClick() {
     let rowModalClickSty2 = document.getElementsByClassName('row-modal-click-style2');
     for (let i = 0; i < rowModalClickSty2.length; i++) {
         rowModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
             $("#rowdetails_style2 .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) + 2)
             });
         });
     }
@@ -1431,9 +1466,10 @@ function IconModalClick() {
     let noteModalClick = document.getElementsByClassName('note-modal-click');
     for (let i = 0; i < noteModalClick.length; i++) {
         noteModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
             $("#noteswindow .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) - 10)
             });
         });
     }
@@ -1441,12 +1477,80 @@ function IconModalClick() {
     let noteModalClickSty2 = document.getElementsByClassName('note-modal-click-style2');
     for (let i = 0; i < noteModalClickSty2.length; i++) {
         noteModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
             $("#noteswindow_style2 .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) + 2)
             });
         });
     }
+
+    let copyModalClick = document.getElementsByClassName('copyrowlist-modal-click');
+    for (let i = 0; i < copyModalClick.length; i++) {
+        copyModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+            $("#copyrowlist .modal-dialog").css({
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) - 10)
+            });
+        });
+    }
+
+    let moveModalClick = document.getElementsByClassName('moverowlist-modal-click');
+    for (let i = 0; i < moveModalClick.length; i++) {
+        moveModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+            $("#moverowlist .modal-dialog").css({
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) - 10)
+            });
+        });
+    }
+
+    let alertModalClick = document.getElementsByClassName('alertswindow-modal-click');
+    for (let i = 0; i < alertModalClick.length; i++) {
+        alertModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+            $("#alertswindow .modal-dialog").css({
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) - 10)
+            });
+        });
+    }
+
+		let copyModalClickSty2 = document.getElementsByClassName('copyrowlist-modal-click-style2');
+    for (let i = 0; i < copyModalClickSty2.length; i++) {
+        copyModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+            $("#copyrowlist_style2 .modal-dialog").css({
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) - 802)
+            });
+        });
+    }
+
+    let moveModalClickSty2 = document.getElementsByClassName('moverowlist-modal-click-style2');
+    for (let i = 0; i < moveModalClickSty2.length; i++) {
+        moveModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+            $("#moverowlist_style2 .modal-dialog").css({
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) - 802)
+            });
+        });
+    }
+
+    let alertModalClickSty2 = document.getElementsByClassName('alertswindow-modal-click-style2');
+    for (let i = 0; i < alertModalClickSty2.length; i++) {
+			alertModalClickSty2[i].addEventListener("click", function (event) {
+                let elementPositionMain = forceEventTargetDiv(event);
+				$("#alertswindow_style2 .modal-dialog").css({
+					top: ((elementPositionMain.bottom) + 7),
+                    left: ((elementPositionMain.left) - 802)
+				});
+			});
+    }
+
 }
 
 function Style2DropFilterPos() {
@@ -1472,3 +1576,33 @@ $('#col8Filter').on('hidden.bs.modal', function (e) {
 $('#dropBtnModal').on('hidden.bs.modal', function (e) {
     $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
 });
+
+
+// Forcing Event Target To div for Dynamic PopUp Position 
+function forceEventTargetDiv(e){
+    let elementPosition = "";
+    let targetName = e.target.nodeName.toLowerCase();
+    // console.log("Tag Name: " + targetName);
+    if(targetName == "i"){
+        elementPosition = e.target.parentElement.getBoundingClientRect();
+    }else{
+        if(targetName == "path"){
+            let pathFinder = e.target.parentElement.nodeName.toLowerCase();
+            if(pathFinder == "g"){
+                elementPosition = e.target.parentElement.parentElement.parentElement.getBoundingClientRect();
+            }else{
+                elementPosition = e.target.parentElement.parentElement.getBoundingClientRect();
+            }
+        }
+        else if(targetName == "g"){
+            elementPosition = e.target.parentElement.parentElement.getBoundingClientRect();
+        }
+        else if(targetName == "svg"){
+            elementPosition = e.target.parentElement.getBoundingClientRect();
+        }
+        else{
+            elementPosition = e.target.getBoundingClientRect();
+        }
+    }
+    return elementPosition;
+}
