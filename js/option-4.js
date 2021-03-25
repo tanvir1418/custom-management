@@ -419,7 +419,15 @@ $("#TP_time1").click(function () {
   document.querySelector("#ampmInputValue").value = formatTime.ampm;
   setTimeValue();
   $('.ampm-picker .period').click();
+
+  let divPosition = document.querySelector("#TP_time1").getBoundingClientRect();
+  $("#mnTemp_timePicker .modal-dialog").css({
+    top: ((divPosition.bottom) + 3),
+    left: ((divPosition.left) + 3)
+  });
+
 });
+
 $("#TP_time2").click(function () {
   inputId = "#timepicker_mnTemp2";
   let currentTime = new Date();
@@ -428,6 +436,13 @@ $("#TP_time2").click(function () {
   document.querySelector("#min_input").value = formatTime.minutes;
   setTimeValue();
   $('.ampm-picker .period').click();
+
+  let divPosition = document.querySelector("#TP_time2").getBoundingClientRect();
+  $("#mnTemp_timePicker .modal-dialog").css({
+    top: ((divPosition.bottom) + 3),
+    left: ((divPosition.left) + 3)
+  });
+
 });
 
 function formatAMPM(date) {
@@ -465,37 +480,6 @@ $('.ampm-picker .period').click(function (e) {
   }
 });
 
-// Form By Text Edit Pop Up Script
-$("td input").click(function (event) {
-  $("#sub__table").css({
-    top: ((event.offsetY) + 160),
-    left: ((event.offsetX) + 100)
-  });
-  $("#sub2__table").css({
-    top: ((event.offsetY) + 180),
-    left: ((event.offsetX) + 100 + 92)
-  });
-  //   $("#sub__table").css( {
-  //     top: ((event.pageY)), 
-  //     left: ((event.pageX))
-  //   }    
-  // );
-  // $("#sub2__table").css( {
-  //     top: ((event.pageY)), 
-  //     left: ((event.pageX) + 92)
-  //   }    
-  // );
-  if (!$("#sub__table").hasClass("dispHideShow")) {
-    $("#sub__table").addClass("dispHideShow");
-  }
-  if (!$("#sub2__table").hasClass("dispHideShow")) {
-    $("#sub2__table").addClass("dispHideShow");
-  }
-
-  var element = document.getElementById("sub__table");
-  element.classList.toggle("dispHideShow");
-
-});
 
 $(".set_select").mouseenter(function (event) {
   var element = document.getElementById("sub2__table");

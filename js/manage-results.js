@@ -1409,9 +1409,10 @@ function IconModalClick() {
     let viewModalList = document.getElementsByClassName('view-modal-click');
     for (let i = 0; i < viewModalList.length; i++) {
         viewModalList[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
             $("#viewtwo .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) - 10)
             });
         });
     }
@@ -1419,19 +1420,34 @@ function IconModalClick() {
     let viewModalListSty2 = document.getElementsByClassName('view-modal-click-style2');
     for (let i = 0; i < viewModalListSty2.length; i++) {
         viewModalListSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+            
+            // console.log(event.target.nodeName);
+            // console.log(event.target.parentElement.nodeName);
+            // console.log(event.target.parentElement.parentElement.nodeName);
+            // console.log(event.target.parentElement.parentElement.parentElement.nodeName);
+
+            // console.log("Bottom value :" + event.target.getBoundingClientRect().bottom);
+            // console.log("Left value :" + event.target.getBoundingClientRect().left);
+
             $("#viewtwo_style2 .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) + 2)
             });
+            // $("#viewtwo_style2 .modal-dialog").css({
+            //     top: ((event.clientY) + 13),
+            //     left: ((event.clientX) - 25)
+            // });
         });
     }
 
     let rowModalClick = document.getElementsByClassName('row-modal-click');
     for (let i = 0; i < rowModalClick.length; i++) {
         rowModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
             $("#rowdetails .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) - 10)
             });
         });
     }
@@ -1439,9 +1455,10 @@ function IconModalClick() {
     let rowModalClickSty2 = document.getElementsByClassName('row-modal-click-style2');
     for (let i = 0; i < rowModalClickSty2.length; i++) {
         rowModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
             $("#rowdetails_style2 .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) + 2)
             });
         });
     }
@@ -1449,9 +1466,10 @@ function IconModalClick() {
     let noteModalClick = document.getElementsByClassName('note-modal-click');
     for (let i = 0; i < noteModalClick.length; i++) {
         noteModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
             $("#noteswindow .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) - 10)
             });
         });
     }
@@ -1459,9 +1477,10 @@ function IconModalClick() {
     let noteModalClickSty2 = document.getElementsByClassName('note-modal-click-style2');
     for (let i = 0; i < noteModalClickSty2.length; i++) {
         noteModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
             $("#noteswindow_style2 .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) + 2)
             });
         });
     }
@@ -1469,9 +1488,10 @@ function IconModalClick() {
     let copyModalClick = document.getElementsByClassName('copyrowlist-modal-click');
     for (let i = 0; i < copyModalClick.length; i++) {
         copyModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
             $("#copyrowlist .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) - 10)
             });
         });
     }
@@ -1479,9 +1499,10 @@ function IconModalClick() {
     let moveModalClick = document.getElementsByClassName('moverowlist-modal-click');
     for (let i = 0; i < moveModalClick.length; i++) {
         moveModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
             $("#moverowlist .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) - 10)
             });
         });
     }
@@ -1489,9 +1510,10 @@ function IconModalClick() {
     let alertModalClick = document.getElementsByClassName('alertswindow-modal-click');
     for (let i = 0; i < alertModalClick.length; i++) {
         alertModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
             $("#alertswindow .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) - 10)
             });
         });
     }
@@ -1499,9 +1521,10 @@ function IconModalClick() {
 		let copyModalClickSty2 = document.getElementsByClassName('copyrowlist-modal-click-style2');
     for (let i = 0; i < copyModalClickSty2.length; i++) {
         copyModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
             $("#copyrowlist_style2 .modal-dialog").css({
-                top: ((event.clientY) + 20),
-                left: ((event.clientX) - 830)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) - 802)
             });
         });
     }
@@ -1509,9 +1532,10 @@ function IconModalClick() {
     let moveModalClickSty2 = document.getElementsByClassName('moverowlist-modal-click-style2');
     for (let i = 0; i < moveModalClickSty2.length; i++) {
         moveModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
             $("#moverowlist_style2 .modal-dialog").css({
-                top: ((event.clientY) + 20),
-                left: ((event.clientX) - 830)
+                top: ((elementPositionMain.bottom) + 7),
+                left: ((elementPositionMain.left) - 802)
             });
         });
     }
@@ -1519,9 +1543,10 @@ function IconModalClick() {
     let alertModalClickSty2 = document.getElementsByClassName('alertswindow-modal-click-style2');
     for (let i = 0; i < alertModalClickSty2.length; i++) {
 			alertModalClickSty2[i].addEventListener("click", function (event) {
+                let elementPositionMain = forceEventTargetDiv(event);
 				$("#alertswindow_style2 .modal-dialog").css({
-					top: ((event.clientY) + 20),
-					left: ((event.clientX) - 830)
+					top: ((elementPositionMain.bottom) + 7),
+                    left: ((elementPositionMain.left) - 802)
 				});
 			});
     }
@@ -1551,3 +1576,33 @@ $('#col8Filter').on('hidden.bs.modal', function (e) {
 $('#dropBtnModal').on('hidden.bs.modal', function (e) {
     $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
 });
+
+
+// Forcing Event Target To div for Dynamic PopUp Position 
+function forceEventTargetDiv(e){
+    let elementPosition = "";
+    let targetName = e.target.nodeName.toLowerCase();
+    // console.log("Tag Name: " + targetName);
+    if(targetName == "i"){
+        elementPosition = e.target.parentElement.getBoundingClientRect();
+    }else{
+        if(targetName == "path"){
+            let pathFinder = e.target.parentElement.nodeName.toLowerCase();
+            if(pathFinder == "g"){
+                elementPosition = e.target.parentElement.parentElement.parentElement.getBoundingClientRect();
+            }else{
+                elementPosition = e.target.parentElement.parentElement.getBoundingClientRect();
+            }
+        }
+        else if(targetName == "g"){
+            elementPosition = e.target.parentElement.parentElement.getBoundingClientRect();
+        }
+        else if(targetName == "svg"){
+            elementPosition = e.target.parentElement.getBoundingClientRect();
+        }
+        else{
+            elementPosition = e.target.getBoundingClientRect();
+        }
+    }
+    return elementPosition;
+}
