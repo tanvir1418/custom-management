@@ -445,6 +445,41 @@ $("#TP_time2").click(function () {
 
 });
 
+$("#TP_time1_mData").click(function () {
+  inputId = "#timepicker_mData1";
+  let currentTime = new Date();
+  let formatTime = formatAMPM(currentTime);
+  document.querySelector("#hour_input").value = formatTime.hours;
+  document.querySelector("#min_input").value = formatTime.minutes;
+  document.querySelector("#ampmInputValue").value = formatTime.ampm;
+  setTimeValue();
+  $('.ampm-picker .period').click();
+
+  let divPosition = document.querySelector("#TP_time1_mData").getBoundingClientRect();
+  $("#mnTemp_timePicker .modal-dialog").css({
+    top: ((divPosition.bottom) + 3),
+    left: ((divPosition.left) + 3)
+  });
+
+});
+
+$("#TP_time2_mData").click(function () {
+  inputId = "#timepicker_mData2";
+  let currentTime = new Date();
+  let formatTime = formatAMPM(currentTime);
+  document.querySelector("#hour_input").value = formatTime.hours;
+  document.querySelector("#min_input").value = formatTime.minutes;
+  setTimeValue();
+  $('.ampm-picker .period').click();
+
+  let divPosition = document.querySelector("#TP_time2_mData").getBoundingClientRect();
+  $("#mnTemp_timePicker .modal-dialog").css({
+    top: ((divPosition.bottom) + 3),
+    left: ((divPosition.left) + 3)
+  });
+
+});
+
 function formatAMPM(date) {
   let hours = date.getHours();
   let minutes = date.getMinutes();
