@@ -2094,45 +2094,56 @@ th[draggable] a {
 /* ====---------====== CHART PAGE END ======------------=== */
 
 /* ====/////=== MANAGE RESULT POPUP START ====////=== */
-#tab_4 .modal#rowdetails .modal-dialog,
-#tab_4 .modal#rowdetails_style2 .modal-dialog,
-#tab_4 .modal#noteswindow .modal-dialog,
-#tab_4 .modal#noteswindow_style2 .modal-dialog,
-#tab_4 .modal#viewtwo .modal-dialog,
-#tab_4 .modal#viewtwo_style2 .modal-dialog {
+.viewtwo-modal-wrapper,
+.viewtwo-modal-wrapper_style2,
+.noteswindow-modal-wrapper,
+.noteswindow-modal-wrapper_style2,
+.rowdetails-modal-wrapper,
+.rowdetails-modal-wrapper_style2{
     max-width: 320px;
+    background: #ffffff;
 }
 
-#tab_4 .modal#alertswindow .modal-dialog,
-#tab_4 .modal#alertswindow_style2 .modal-dialog {
+.alertswindow-modal-wrapper,
+.alertswindow-modal-wrapper_style2{
     max-width: 1200px;
+    background: #ffffff;
 }
 
 /* #tab_4 .modal#col8Filter .modal-dialog {
     max-width: 200px !important;
 } */
 
-#tab_4 .modal .modal-content {
+.viewtwo-modal-wrapper,
+.viewtwo-modal-wrapper_style2,
+.noteswindow-modal-wrapper_style2,
+.noteswindow-modal-wrapper,
+.rowdetails-modal-wrapper_style2,
+.rowdetails-modal-wrapper,
+.alertswindow-modal-wrapper,
+.alertswindow-modal-wrapper_style2{
     border: none;
     border-radius: 3px;
     /* -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
-    -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
-    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75); */
+    -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);*/
     -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
     -moz-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
     box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
 }
 
-#tab_4 .modal#viewtwo .modal-dialog .modal-content,
-#tab_4 .modal#viewtwo_style2 .modal-dialog .modal-content {
+.viewtwo-modal-wrapper_style2 .viewtwo-content,
+.viewtwo-modal-wrapper .viewtwo-content,
+.rowdetails-modal-wrapper_style2 .rowdetails-content,
+.rowdetails-modal-wrapper .rowdetails-content{
     width: 250px;
 }
-#tab_4 .modal#rowdetails .modal-dialog .modal-content,
-#tab_4 .modal#rowdetails_style2 .modal-dialog .modal-content {
-    width: 260px;
+
+.noteswindow-modal-wrapper_style2 .noteswindow-content,
+.noteswindow-modal-wrapper .noteswindow-content{
+    width: 300px;
 }
 
-#tab_4 .modal .modal-header {
+.custom-modal-header {
     background: #000000;
     border-radius: 3px;
     border-bottom-left-radius: 0px;
@@ -2141,12 +2152,11 @@ th[draggable] a {
     position: relative;
 }
 
-#tab_4 .modal#alertswindow .modal-header,
-#tab_4 .modal#alertswindow_style2 .modal-header {
+.alertswindow-content .custom-modal-header{
     padding: 22px 16px;
 }
 
-#tab_4 .modal .modal-title {
+.custom-modal-title {
     color: #ffffff;
     text-align: center;
     font-family: gilroy-medium, sans-serif;
@@ -2155,14 +2165,14 @@ th[draggable] a {
     margin: 0 auto;
 }
 
-#tab_4 .modal#alertswindow .modal-title,
-#tab_4 .modal#alertswindow_style2 .modal-title {
+.alertswindow-content .custom-modal-title{
     font-family: gilroy-bold, sans-serif;
     font-weight: 600;
     font-size: 20px;
 }
 
-#tab_4 .modal .close {
+.custom-modal-header .close,
+.top-container .close {
     position: absolute;
     color: #ffffff;
     padding: 0;
@@ -2172,38 +2182,39 @@ th[draggable] a {
     opacity: 1;
 }
 
-#tab_4 .modal .close span {
+.custom-modal-header .close span,
+.top-container .close span {
     color: #ffffff;
     font-size: 26px;
     text-shadow: none;
 }
 
-#tab_4 .modal .modal-body {
+.custom-modal-body {
     padding: 0px;
 }
 
-#tab_4 .modal .modal-bodywrap {
+.modal-bodywrap {
     width: 100%;
     height: 190px;
     background: #ffffff;
     padding: 10px 10px 10px 10px;
 }
 
-#tab_4 .modal #scrollmodal {
+.scrollmodal {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
     border: 1px solid #eeeff0;
 }
 
-#tab_4 .modal #scrollmodal .tablemodal {
+.scrollmodal .tablemodal {
     width: 100%;
     height: 100%;
     margin: 0;
     border: none !important;
 }
 
-#tab_4 .modal .tablemodal td {
+.tablemodal td {
     margin: 0;
     padding: 0;
     height: 24px;
@@ -2215,16 +2226,16 @@ th[draggable] a {
     padding-left: 12px;
 }
 
-#tab_4 .modal .tablemodal tr:nth-child(odd) {
+.tablemodal tr:nth-child(odd) {
     background: #f8f9fa;
 }
 
 /* scrollbar customize start */
-#tab_4 .modal #scrollmodal::-webkit-scrollbar {
+.scrollmodal::-webkit-scrollbar {
     width: 4px;
 }
 
-#tab_4 .modal #scrollmodal::-webkit-scrollbar-thumb {
+.scrollmodal::-webkit-scrollbar-thumb {
     background: #d4d3d3;
     border-radius: 15px;
 }
@@ -2232,18 +2243,18 @@ th[draggable] a {
 /* scrollbar customize end */
 
 /* NOTES WINDOW START */
-#tab_4 .modal .tablemodal .dateda {
+.tablemodal .dateda {
     font-family: gilroy-regular, sans-serif;
     font-weight: 600;
     color: #1601f9;
     font-size: 12px;
 }
 
-#tab_4 .modal .submit-notes {
+.submit-notes {
     padding: 0px 10px 20px;
 }
 
-#tab_4 .modal .submit-notes .input-box5 {
+.submit-notes .input-box5 {
     background: #f2f3f6;
     border: 1px solid #bbbbbb;
     border-radius: 3px;
@@ -2251,7 +2262,7 @@ th[draggable] a {
     padding: 5px 5px 5px 12px;
 }
 
-#tab_4 .modal .submit-notes .input-box5 p {
+.submit-notes .input-box5 p {
     margin: auto 0;
     font-family: gilroy-regular, sans-serif;
     font-weight: 600;
@@ -2260,7 +2271,7 @@ th[draggable] a {
     padding-right: 8px;
 }
 
-#tab_4 .modal .submit-notes input[type="text"] {
+.submit-notes input[type="text"] {
     width: 90%;
     height: 25px;
     margin-left: auto;
@@ -2273,11 +2284,11 @@ th[draggable] a {
     font-size: 12px;
 }
 
-#tab_4 .modal .submit-notes .submit-box5 {
+.submit-notes .submit-box5 {
     padding-top: 20px;
 }
 
-#tab_4 .modal .submit-notes input[type="submit"] {
+.submit-notes input[type="submit"] {
     font-family: gilroy-regular, sans-serif;
     font-weight: 600;
     color: #1d1d1d;
@@ -2292,22 +2303,22 @@ th[draggable] a {
     transition: all 0.3s ease;
 }
 
-#tab_4 .modal .submit-notes input[type="submit"]:hover {
+.submit-notes input[type="submit"]:hover {
     background: #dddddd;
 }
 
 /* NOTES WINDOW END */
 
 /* ALERTS WINDOW START */
-#tab_4 .modal .alertwinbox {
+.alertswindow-content .alertwinbox {
     padding: 32px;
 }
 
-#tab_4 .modal .alertwinbox .alert_text_box {
+.alertswindow-content .alertwinbox .alert_text_box {
     padding: 16px;
 }
 
-#tab_4 .modal .alertwinbox .alert_text_box p {
+.alertswindow-content .alertwinbox .alert_text_box p {
     text-align: center;
     font-family: gilroy-medium, sans-serif;
     font-weight: 500;
@@ -2316,45 +2327,45 @@ th[draggable] a {
     line-height: 32px;
 }
 
-#tab_4 .modal .alertwinbox .alert-table {
+.alertswindow-content .alertwinbox .alert-table {
     width: 100%;
     margin-top: 36px;
 }
 
-#tab_4 .modal .alertwinbox .alert-table,
-#tab_4 .modal .alertwinbox .alert-table thead,
-#tab_4 .modal .alertwinbox .alert-table th,
-#tab_4 .modal .alertwinbox .alert-table td {
+.alertswindow-content .alertwinbox .alert-table,
+.alertswindow-content .alertwinbox .alert-table thead,
+.alertswindow-content .alertwinbox .alert-table th,
+.alertswindow-content .alertwinbox .alert-table td {
     border: none !important;
     font-family: gilroy-bold, sans-serif;
     text-align: center;
 }
 
-#tab_4 .modal .alertwinbox .alert-table th.rowrow4 {
+.alertswindow-content .alertwinbox .alert-table th.rowrow4 {
     width: 8%;
 }
 
-#tab_4 .modal .alertwinbox .alert-table th.alerttype4 {
+.alertswindow-content .alertwinbox .alert-table th.alerttype4 {
     width: 25%;
 }
 
-#tab_4 .modal .alertwinbox .alert-table th.alertvalue4 {
+.alertswindow-content .alertwinbox .alert-table th.alertvalue4 {
     width: 17%;
 }
 
-#tab_4 .modal .alertwinbox .alert-table th.alertfreq4 {
+.alertswindow-content .alertwinbox .alert-table th.alertfreq4 {
     width: 17%;
 }
 
-#tab_4 .modal .alertwinbox .alert-table th.alertmethod4 {
+.alertswindow-content .alertwinbox .alert-table th.alertmethod4 {
     width: 25%;
 }
 
-#tab_4 .modal .alertwinbox .alert-table th.alertnull4 {
+.alertswindow-content .alertwinbox .alert-table th.alertnull4 {
     width: 8%;
 }
 
-#tab_4 .modal .alertwinbox .alert-table th {
+.alertswindow-content .alertwinbox .alert-table th {
     background: #ffffff;
     color: #222222;
     font-weight: 500;
@@ -2362,27 +2373,27 @@ th[draggable] a {
     padding: 0 0 20px;
 }
 
-#tab_4 .modal .alertwinbox .alert-table tr:nth-child(odd) {
+.alertswindow-content .alertwinbox .alert-table tr:nth-child(odd) {
     background: #f5f5f5;
 }
 
-#tab_4 .modal .alertwinbox .alert-table td {
+.alertswindow-content .alertwinbox .alert-table td {
     height: 50px !important;
     padding: 0 16px;
 }
 
-#tab_4 .modal .alertwinbox .alert-table td:first-child {
+.alertswindow-content .alertwinbox .alert-table td:first-child {
     color: #222222;
     font-size: 18px;
 }
 
-#tab_4 .modal .alert-table .selectaltype,
-#tab_4 .modal .alert-table .selectalfreq {
+.alertswindow-content .alert-table .selectaltype,
+.alertswindow-content .alert-table .selectalfreq {
     position: relative;
 }
 
-#tab_4 .modal .alert-table .selectaltype select,
-#tab_4 .modal .alert-table .selectalfreq select {
+.alertswindow-content .alert-table .selectaltype select,
+.alertswindow-content .alert-table .selectalfreq select {
     width: 100%;
     height: 30px;
     border: 1px solid #8c8c8c;
@@ -2399,7 +2410,7 @@ th[draggable] a {
     font-size: 14px;
 }
 
-#tab_4 .modal .alert-table .selectarrow {
+.alertswindow-content .alert-table .selectarrow {
     background: #f5f5f5;
     height: 14px;
     width: 14px;
@@ -2409,7 +2420,7 @@ th[draggable] a {
     right: 24px;
 }
 
-#tab_4 .modal .alert-table .selectarrow i {
+.alertswindow-content .alert-table .selectarrow i {
     color: #818181;
     position: absolute;
     left: 54%;
@@ -2417,7 +2428,7 @@ th[draggable] a {
     transform: translate(-50%, -50%);
 }
 
-#tab_4 .modal .alert-table .inpalertval input {
+.alertswindow-content .alert-table .inpalertval input {
     width: 100%;
     height: 30px;
     border: 1px solid #8c8c8c;
@@ -2427,7 +2438,7 @@ th[draggable] a {
     outline: none;
 }
 
-#tab_4 .modal .alert-table .inpumail .mail_enter {
+.alertswindow-content .alert-table .inpumail .mail_enter {
     width: 100%;
     height: 30px;
     border: 1px solid #8c8c8c;
@@ -2436,29 +2447,29 @@ th[draggable] a {
     display: flex;
 }
 
-#tab_4 .modal .alert-table .inpumail .mail_icons {
+.alertswindow-content .alert-table .inpumail .mail_icons {
     width: 30%;
     height: 100%;
     padding: 4px;
     background: #888888;
 }
 
-#tab_4 .modal .alert-table .mail_icons i.fa-envelope {
+.alertswindow-content .alert-table .mail_icons i.fa-envelope {
     margin-right: 3px;
     color: #9bff00;
 }
 
-#tab_4 .modal .alert-table .mail_icons i.fa-phone-alt {
+.alertswindow-content .alert-table .mail_icons i.fa-phone-alt {
     color: #e1e1e1;
     text-align: center;
 }
 
-#tab_4 .modal .alert-table .mail_icons i.fa-comment-alt {
+.alertswindow-content .alert-table .mail_icons i.fa-comment-alt {
     margin-left: 3px;
     color: #e1e1e1;
 }
 
-#tab_4 .modal .alert-table .mail_enter input {
+.alertswindow-content .alert-table .mail_enter input {
     width: 70%;
     height: 100%;
     border: none;
@@ -2470,17 +2481,17 @@ th[draggable] a {
     border-radius: 3px;
 }
 
-#tab_4 .modal .alert-table .mail_enter input::placeholder {
+.alertswindow-content .alert-table .mail_enter input::placeholder {
     color: #d1d1d1;
 }
 
-#tab_4 .modal .alert-table .removenull {
+.alertswindow-content .alert-table .removenull {
     width: 100%;
     height: 30px;
     display: flex;
 }
 
-#tab_4 .modal .alert-table .removenull .circle_550 {
+.alertswindow-content .alert-table .removenull .circle_550 {
     margin: auto;
     height: 30px;
     width: 30px;
@@ -2490,12 +2501,12 @@ th[draggable] a {
     cursor: pointer;
 }
 
-#tab_4 .modal .alert-table .removenull .circle_550:first-child {
+.alertswindow-content .alert-table .removenull .circle_550:first-child {
     margin-right: 8px;
     background: #e5e5e5;
 }
 
-#tab_4 .modal .alert-table .removenull .circle_550 i {
+.alertswindow-content .alert-table .removenull .circle_550 i {
     position: absolute;
     color: #ff3535;
     left: 50%;
@@ -2503,17 +2514,17 @@ th[draggable] a {
     transform: translate(-50%, -50%);
 }
 
-#tab_4 .modal .alert-table .removenull .circle_550:first-child i {
+.alertswindow-content .alert-table .removenull .circle_550:first-child i {
     color: #878787;
 }
 
-#tab_4 .modal .reset-save-btn {
+.alertswindow-content .reset-save-btn {
     margin-top: 42px;
     width: 100%;
     text-align: center;
 }
 
-#tab_4 .modal .reset-save-btn button {
+.alertswindow-content .reset-save-btn button {
     padding: 8px 34px;
     border-radius: 3px;
     border: 1px solid #bbbbbb;
@@ -2526,18 +2537,18 @@ th[draggable] a {
     transition: all 0.3s ease;
 }
 
-#tab_4 .modal .reset-save-btn .reset4:hover {
+.alertswindow-content .reset-save-btn .reset4:hover {
     background: #b3b3b3;
 }
 
-#tab_4 .modal .reset-save-btn .save4 {
+.alertswindow-content .reset-save-btn .save4 {
     border: 1px solid #000000;
     color: #ffffff;
     background: #000000;
     margin-left: 16px;
 }
 
-#tab_4 .modal .reset-save-btn .save4:hover {
+.alertswindow-content .reset-save-btn .save4:hover {
     background: #f1f3f5;
     color: #1d1d1d;
 }
@@ -3323,7 +3334,7 @@ i.fa-caret-down.down-animation-icon{
 }
 
 #viewtwo .view-arrow-top:after,
-#viewtwo_style2 .view-arrow-top:after {
+#viewtwo_style2 .view-arrow-top:after{
   content: " ";
   position: absolute;
   left: 20px;
@@ -3409,7 +3420,7 @@ i.fa-caret-down.down-animation-icon{
     border-right: 5px solid transparent;
     border-left: 5px solid transparent;
     border-bottom: 5px solid black;
-  }
+}
 
 #moverowlist_style2 .move-arrow-top:after {
     content: " ";
@@ -3420,9 +3431,9 @@ i.fa-caret-down.down-animation-icon{
     border-right: 5px solid transparent;
     border-left: 5px solid transparent;
     border-bottom: 5px solid black;
-  }
+}
 
-  #copyrowlist .copy-arrow-top:after{
+#copyrowlist .copy-arrow-top:after{
     content: " ";
     position: absolute;
     left: 20px;
@@ -3442,9 +3453,9 @@ i.fa-caret-down.down-animation-icon{
     border-right: 5px solid transparent;
     border-left: 5px solid transparent;
     border-bottom: 5px solid black;
-  }
+}
 
-.modal#alertswindow .modal-dialog,
+/* .modal#alertswindow .modal-dialog,
 .modal#alertswindow_style2 .modal-dialog,
 .modal#copyrowlist .modal-dialog,
 .modal#copyrowlist_style2 .modal-dialog,
@@ -3452,4 +3463,8 @@ i.fa-caret-down.down-animation-icon{
 .modal#moverowlist_style2 .modal-dialog{
     position: relative;
     margin: 0;
+} */
+
+.top-container{
+    position: relative;
 }

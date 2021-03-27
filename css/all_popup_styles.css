@@ -1609,9 +1609,12 @@ Bottom codes are added by Tanvir
 }
 
 .wrapper-modal-list {
-    position: relative;
-    width: 100%;
+    position: absolute;
+    /* width: 100%; */
+    width: 1200px;
     height: 670px;
+    display: none;
+    background-color: #ffffff;
 }
 
 .wrapper-modal-list .weapper-list-title {
@@ -2356,4 +2359,20 @@ Bottom codes are added by Tanvir
     position: absolute;
     min-height: 0;
     margin: 0;
+}
+
+#viewtwo,
+#viewtwo_style2,
+#rowdetails,
+#rowdetails_style2,
+#noteswindow,
+#noteswindow_style2,
+#alertswindow,
+#alertswindow_style2{
+    position: absolute;
+    /* width: 100%; */
+    /* width: 1200px;
+    height: 670px; */
+    display: none;
+    background-color: #ffffff;
 }

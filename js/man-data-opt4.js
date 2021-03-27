@@ -1361,7 +1361,7 @@ let sectionDS3 = [
   {
     id: "fieldset_id2",
     name: "sectionB",
-    type: "option",
+    type: "input",
   },
   {
     id: "fieldset_id3",
