@@ -1945,6 +1945,7 @@ Bottom codes are added by Tanvir
     z-index: 1;
 }
 
+#myopt1listData .wrapper-modal-list,
 #manage-tempa-list-modal .wrapper-modal-list,
 #manage-tempb-list-modal .wrapper-modal-list,
 #manage-tempc-list-modal .wrapper-modal-list,
