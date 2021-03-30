@@ -1955,6 +1955,9 @@ Bottom codes are added by Tanvir
 #opt4d-list-modal .wrapper-modal-list {
     border: 2px solid #1b1b1b;
     height: 680px;
+    position: relative;
+    width: 100%;
+    display: block;
 }
 
 #manage-tempa-list-modal .scroll-list-box,
