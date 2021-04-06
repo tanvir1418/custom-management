@@ -2571,6 +2571,20 @@ function manResPagination(noRow) {
 			table2HeadClickCall();
 			// function for table 2 End
 			style1TableScroller();
+
+			$("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
+			$("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
 		},
 	};
 	let container = $("#pagination-man-res-table");
