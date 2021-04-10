@@ -1192,9 +1192,7 @@
                                                     <div class="pop-up-yellow-button-wrap">
                                                         <div class="text-edition-form">
                                                             <div class="text-edition-box">
-                                                                <input type="button" value="Form By Text Editor"
-                                                                    data-toggle="modal"
-                                                                    data-target="#op4LeftRightFormEditModal">
+                                                                <input type="button" value="Form By Text Editor" data-toggle="modal" data-target="#op4ListFormEditModal">
                                                                 <i class="fas fa-arrow-right" id="arrow-icon"></i>
                                                             </div>
                                                         </div>
@@ -1722,9 +1720,7 @@
                                                     <div class="pop-up-yellow-button-wrap">
                                                         <div class="text-edition-form">
                                                             <div class="text-edition-box">
-                                                                <input type="button" value="Form By Text Editor"
-                                                                    data-toggle="modal"
-                                                                    data-target="#op4CheckBoxFormEditModal">
+                                                                <input type="button" value="Form By Text Editor" data-toggle="modal" data-target="#op4ListFormEditModal">
                                                                 <i class="fas fa-arrow-right" id="arrow-icon"></i>
                                                             </div>
                                                         </div>
@@ -1835,9 +1831,7 @@
                                                 <div class="pop-up-yellow-button-wrap">
                                                     <div class="text-edition-form">
                                                         <div class="text-edition-box">
-                                                            <input type="button" value="Form By Text Editor"
-                                                                data-toggle="modal"
-                                                                data-target="#op4RangeCalenderFormEditModal">
+                                                            <input type="button" value="Form By Text Editor" data-toggle="modal" data-target="#op4ListFormEditModal">
                                                             <i class="fas fa-arrow-right" id="arrow-icon"></i>
                                                         </div>
                                                     </div>
@@ -5044,7 +5038,7 @@
                                 <div class="text-editor-content-wrapper">
                                     <div class="text-editor-table-wrapper">
                                         <div id="text_editor_p" onclick="document.getElementById('ds1_text_editor').focus()">
-                                            <div contenteditable="true" onkeypress="return checkingDS1(event)" onpaste="return pasteEventDS1(event)" id="ds1_text_editor">
+                                            <div contenteditable="true" onkeypress="return checkingAllDS(event)" onpaste="return pasteEventAllDS(event)" id="ds1_text_editor">
                                             </div>
                                         </div>
                                     </div>
@@ -5052,8 +5046,8 @@
                             </div>
                             <div class="text-editor-popup-footer">
                                 <div class="text-editor-button-row">
-                                    <input type="button" value="Window to Form" class="window-form" onclick="windowToFormDS1(this)">
-                                    <input type="button" value="Form to Window" class="form-window" onclick="formToWindowDS1(this)">
+                                    <input type="button" value="Window to Form" class="window-form" onclick="windowToFormAllDS(this)">
+                                    <input type="button" value="Form to Window" class="form-window" onclick="formToWindowAllDS(this)">
                                 </div>
                             </div>
                         </div>
@@ -5064,125 +5058,6 @@
         </div>
     </div>
     <!-- =====X====Option 4 List Item Form Edit Modal Ends=====X==== -->
-
-    <!-- =========Option 4 Left Right Form Edit Modal Starts========= -->
-    <div class="modal fade" id="op4LeftRightFormEditModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <!-- ======Form by text editor pop-up starts====== -->
-                    <div class="text-editor-click-popup">
-                        <div class="text-editor-click-popup-wrapper">
-                            <div class="text-editor-popup-header-title">
-                                <p>Form By Text Editor Window</p>
-                            </div>
-                            <div class="text-editor-popup-body">
-                                <div class="text-editor-content-wrapper">
-                                    <div class="text-editor-table-wrapper">
-                                        <div id="text_editor_p"
-                                            onclick="document.getElementById('ds2_text_editor').focus()">
-                                            <div contenteditable="true" onkeypress="return checkingDS2(event)" onpaste="return pasteEventDS2(event)" id="ds2_text_editor">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-editor-popup-footer">
-                                <div class="text-editor-button-row">
-                                    <input type="button" value="Window to Form" class="window-form" onclick="windowToFormDS2(this)">
-                                    <input type="button" value="Form to Window" class="form-window" onclick="formToWindowDS2(this)">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ===x===Form by text editor pop-up ends===x=== -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- =====X====Option 4 Left Right Form Edit Modal Ends=====X==== -->
-
-    <!-- =========Option 4 CheckBox Form Edit Modal Starts========= -->
-    <div class="modal fade" id="op4CheckBoxFormEditModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-
-                    <!-- ======Form by text editor pop-up starts====== -->
-                    <div class="text-editor-click-popup">
-                        <div class="text-editor-click-popup-wrapper">
-                            <div class="text-editor-popup-header-title">
-                                <p>Form By Text Editor Window</p>
-                            </div>
-                            <div class="text-editor-popup-body">
-                                <div class="text-editor-content-wrapper">
-                                    <div class="text-editor-table-wrapper">
-                                        <div id="text_editor_p"
-                                            onclick="document.getElementById('ds3_text_editor').focus()">
-                                            <div contenteditable="true" onkeypress="return checkingDS3(event)"
-                                                onpaste="return pasteEventDS3(event)" id="ds3_text_editor">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-editor-popup-footer">
-                                <div class="text-editor-button-row">
-                                    <input type="button" value="Window to Form" class="window-form"
-                                        onclick="windowToFormDS3(this)">
-                                    <input type="button" value="Form to Window" class="form-window"
-                                        onclick="formToWindowDS3(this)">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ===x===Form by text editor pop-up ends===x=== -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- =====X====Option 4 CheckBox Form Edit Modal Ends=====X==== -->
-
-    <!-- =========Option 4 Range Calander Form Edit Modal Starts========= -->
-    <div class="modal fade" id="op4RangeCalenderFormEditModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <!-- ======Form by text editor pop-up starts====== -->
-                    <div class="text-editor-click-popup">
-                        <div class="text-editor-click-popup-wrapper">
-                            <div class="text-editor-popup-header-title">
-                                <p>Form By Text Editor Window</p>
-                            </div>
-                            <div class="text-editor-popup-body">
-                                <div class="text-editor-content-wrapper">
-                                    <div class="text-editor-table-wrapper">
-                                        <div id="text_editor_p"
-                                            onclick="document.getElementById('ds4_text_editor').focus()">
-                                            <div contenteditable="true" onkeypress="return checkingDS4(event)"
-                                                onpaste="return pasteEventDS4(event)" id="ds4_text_editor">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-editor-popup-footer">
-                                <div class="text-editor-button-row">
-                                    <input type="button" value="Window to Form" class="window-form" onclick="windowToFormDS4(this)">
-                                    <input type="button" value="Form to Window" class="form-window" onclick="formToWindowDS4(this)">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ===x===Form by text editor pop-up ends===x=== -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- =====X====Option 4 Range Calander Form Edit Modal Ends=====X==== -->
 
     <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
     <!-- ============= Manage Template Modal Starts Here ============= -->

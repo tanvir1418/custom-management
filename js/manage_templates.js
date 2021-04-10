@@ -20,7 +20,7 @@ const managetempa_list = document.querySelector(".managetempa-list");
 // Added by ASHIQ
 let managetempalistmodal = [];
 for (let i = 1; i <= 29; i++) {
-  let files = []
+  let files = [];
   for (let j = 1; j <= 72; j++) {
     files.push({
       id: `option-managetempamodallist-${i}-${j}`,
@@ -1568,6 +1568,7 @@ function formToWindowMS2() {
 
 function windowToFormMS2(divData) {
   let [title, no] = divData[0].trim().split("_");
+  no = no != undefined ? no : 1;
   let { id:pid } = findInputIdMS2(title);
   if (pid && divData.length == 3) {
     let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
@@ -1597,7 +1598,6 @@ function windowToFormMS2(divData) {
     if (inp.length > 0) {
       inp[no - 1].value = divData[1].trim();
     }
-
     if (inpSel.length > 0) {
       inpSel[no - 1].value = divData[1].trim();
     }
@@ -2320,12 +2320,12 @@ function pasteEventAll(e) {
           !findInputIdMS1(inpData[0].trim())
         ) {
           x += `<div class="form-text-design-invalid data-div">
-        ${nbe}
-        </div>`;
+          ${nbe}
+          </div>`;
         } else {
           x += `<div class="form-text-design data-div">
-        ${nbe}
-        </div>`;
+          ${nbe}
+          </div>`;
         }
       }
       else if (pageName == "sp2") {
@@ -2341,12 +2341,12 @@ function pasteEventAll(e) {
           )
         ) {
           x += `<div class="form-text-design-invalid data-div">
-        ${nbe}
-        </div>`;
+          ${nbe}
+          </div>`;
         } else {
           x += `<div class="form-text-design data-div">
-        ${nbe}
-        </div>`;
+          ${nbe}
+          </div>`;
         }
       }
       else if (pageName == "sp3") {
@@ -2354,12 +2354,12 @@ function pasteEventAll(e) {
           !findInputIdMS3(inpData[0].trim())
         ) {
           x += `<div class="form-text-design-invalid data-div">
-        ${nbe}
-        </div>`;
+          ${nbe}
+          </div>`;
         } else {
           x += `<div class="form-text-design data-div">
-        ${nbe}
-        </div>`;
+          ${nbe}
+          </div>`;
         }
       }
       else if (pageName == "sp4") {
@@ -2369,12 +2369,12 @@ function pasteEventAll(e) {
           (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
         ) {
           x += `<div class="form-text-design-invalid data-div">
-        ${nbe}
-        </div>`;
+          ${nbe}
+          </div>`;
         } else {
           x += `<div class="form-text-design data-div">
-        ${nbe}
-        </div>`;
+          ${nbe}
+          </div>`;
         }
       }
     }
