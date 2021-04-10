@@ -1426,12 +1426,21 @@ function IconModalClick() {
     for (let i = 0; i < viewModalList.length; i++) {
         viewModalList[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#viewtwo").css('display','none');
+
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
             $("#viewtwo").css({
                 top: ((elementPositionMain.y) + window.scrollY + 33),
                 left: ((elementPositionMain.x) - 10)
             });
+
             $("#viewtwo").css('display','block');
+
         });
     }
 
@@ -1439,12 +1448,21 @@ function IconModalClick() {
     for (let i = 0; i < rowModalClick.length; i++) {
         rowModalClick[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#rowdetails").css('display','none');
+
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
             $("#rowdetails").css({
                 top: ((elementPositionMain.y) + window.scrollY + 33),
                 left: ((elementPositionMain.x) - 10)
             });
+
             $("#rowdetails").css('display','block');
+
         });
     }
 
@@ -1452,12 +1470,21 @@ function IconModalClick() {
     for (let i = 0; i < noteModalClick.length; i++) {
         noteModalClick[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#noteswindow").css('display','none');
+
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
             $("#noteswindow").css({
                 top: ((elementPositionMain.y) + window.scrollY + 33),
                 left: ((elementPositionMain.x) - 10)
             });
+
             $("#noteswindow").css('display','block');
+
         });
     }
 
@@ -1465,12 +1492,21 @@ function IconModalClick() {
     for (let i = 0; i < copyModalClick.length; i++) {
         copyModalClick[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#copyrowlist").css('display','none');
+
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
             $("#copyrowlist").css({
                 top: ((elementPositionMain.y) + window.scrollY + 33),
                 left: ((elementPositionMain.x) - 10)
             });
+
             $("#copyrowlist").css('display','block');
+
         });
     }
 
@@ -1478,12 +1514,21 @@ function IconModalClick() {
     for (let i = 0; i < moveModalClick.length; i++) {
         moveModalClick[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#moverowlist").css('display','none');
+
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
             $("#moverowlist").css({
                 top: ((elementPositionMain.y) + window.scrollY + 33),
                 left: ((elementPositionMain.x) - 10)
             });
+
             $("#moverowlist").css('display','block');
+
         });
     }
 
@@ -1491,12 +1536,21 @@ function IconModalClick() {
     for (let i = 0; i < alertModalClick.length; i++) {
         alertModalClick[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#alertswindow").css('display','none');
+
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
             $("#alertswindow").css({
                 top: ((elementPositionMain.y) + window.scrollY + 33),
                 left: ((elementPositionMain.x) - 10)
             });
+
             $("#alertswindow").css('display','block');
+
         });
     }
 
@@ -1504,11 +1558,19 @@ function IconModalClick() {
     for (let i = 0; i < viewModalListSty2.length; i++) {
         viewModalListSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#viewtwo_style2").css('display','none');
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
             $("#viewtwo_style2").css({
                 top: ((elementPositionMain.y) + window.scrollY + 62),
                 left: ((elementPositionMain.x) + 2)
             });
+
             $("#viewtwo_style2").css('display','block');
             // console.log(event.target.nodeName);
             // console.log(event.target.parentElement.nodeName);
@@ -1545,12 +1607,21 @@ function IconModalClick() {
     for (let i = 0; i < rowModalClickSty2.length; i++) {
         rowModalClickSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#rowdetails_style2").css('display','none');
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
             $("#rowdetails_style2").css({
                 top: ((elementPositionMain.y) + window.scrollY + 62),
                 left: ((elementPositionMain.x) + 2)
             });
+
             $("#rowdetails_style2").css('display','block');
+
         });
     }
 
@@ -1558,12 +1629,21 @@ function IconModalClick() {
     for (let i = 0; i < noteModalClickSty2.length; i++) {
         noteModalClickSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#noteswindow_style2").css('display','none');
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
             $("#noteswindow_style2").css({
                 top: ((elementPositionMain.y) + window.scrollY + 62),
                 left: ((elementPositionMain.x) + 2)
             });
+
             $("#noteswindow_style2").css('display','block');
+
         });
     }
 
@@ -1571,12 +1651,21 @@ function IconModalClick() {
     for (let i = 0; i < copyModalClickSty2.length; i++) {
         copyModalClickSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#copyrowlist_style2").css('display','none');
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
             $("#copyrowlist_style2").css({
                 top: ((elementPositionMain.y) + window.scrollY + 62),
                 left: ((elementPositionMain.x) - 804)
             });
+
             $("#copyrowlist_style2").css('display','block');
+
         });
     }
 
@@ -1584,12 +1673,21 @@ function IconModalClick() {
     for (let i = 0; i < moveModalClickSty2.length; i++) {
         moveModalClickSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#moverowlist_style2").css('display','none');
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
             $("#moverowlist_style2").css({
                 top: ((elementPositionMain.y) + window.scrollY + 62),
                 left: ((elementPositionMain.x) - 804)
             });
+
             $("#moverowlist_style2").css('display','block');
+
         });
     }
 
@@ -1597,12 +1695,21 @@ function IconModalClick() {
     for (let i = 0; i < alertModalClickSty2.length; i++) {
         alertModalClickSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#alertswindow_style2").css('display','none');
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
             $("#alertswindow_style2").css({
                 top: ((elementPositionMain.y) + window.scrollY + 62),
                 left: ((elementPositionMain.x) - 804)
             });
+
             $("#alertswindow_style2").css('display','block');
+
         });
     }
 
@@ -1637,7 +1744,7 @@ $('#dropBtnModal').on('hidden.bs.modal', function (e) {
 function forceEventTargetDiv(e){
     let elementPosition = "";
     let targetName = e.target.nodeName.toLowerCase();
-    console.log("Tag Name: " + targetName);
+    //console.log("Tag Name: " + targetName);
     if(targetName == "i"){
         elementPosition = e.target.parentElement.getBoundingClientRect();
     }else{
