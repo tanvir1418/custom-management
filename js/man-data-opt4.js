@@ -926,47 +926,47 @@ function windowToFormDS4(divData, searchData) {
 let sectionDS3 = [
   {
     id: "fieldset_id1",
-    name: "sectionA",
+    name: "Section A",
     type: "input",
   },
   {
     id: "fieldset_id2",
-    name: "sectionB",
+    name: "Section B",
     type: "input",
   },
   {
     id: "fieldset_id3",
-    name: "sectionC",
+    name: "Section C",
     type: "option",
   },
   {
     id: "fieldset_id4",
-    name: "sectionD",
+    name: "Section D",
     type: "input",
   },
   {
     id: "fieldset_id5",
-    name: "sectionE",
+    name: "Section E",
     type: "input",
   },
   {
     id: "fieldset_id6",
-    name: "sectionF",
+    name: "Section F",
     type: "option",
   },
   {
     id: "fieldset_id7",
-    name: "sectionG",
+    name: "Section G",
     type: "option",
   },
   {
     id: "fieldset_id8",
-    name: "sectionH",
+    name: "Section H",
     type: "input",
   },
   {
     id: "fieldset_id9",
-    name: "sectionI",
+    name: "Section I",
     type: "input",
   },
 ];
@@ -977,26 +977,35 @@ function findInputIdDS3(title) {
 }
 function windowToFormDS3(divData, searchData) {
   let { id, name, type } = searchData;
-  
-  if (type == "input") {
-    let inp = $(`fieldset#${id} .data-form input[type=text]`);
-    for (let j = 0; j < inp.length; j++) {
-      let title = $(inp[j]).parent().parent().find(".title-section p")[0].textContent;
-      if (title == divData[1].trim()) {
-        let abc = divData.splice(2).join(":").trim();
-        $(inp[j]).val(abc);
+  if (divData.length > 2) {
+    if (type == "input") {
+      let inp = $(`fieldset#${id} .data-form input[type=text]`);
+      for (let j = 0; j < inp.length; j++) {
+        let title = $(inp[j]).parent().parent().find(".title-section p")[0].textContent;
+        if (title == divData[1].trim()) {
+          let abc = divData.splice(2).join(":").trim();
+          $(inp[j]).val(abc);
+        }
+      }
+    } else if (type == "option") {
+      let selt = $(`fieldset#${id} .custome-select`);
+      for (let j = 0; j < selt.length; j++) {
+        let titleE = $(selt[j]).parent().parent();
+        let title = titleE.find(".title-section p")[0] != undefined ?
+          titleE.find(".title-section p")[0] : titleE.find(".custom-title-section p")[0];
+        if (title.textContent == divData[1].trim()) {
+          let abc = divData.splice(2).join(":").trim();
+          $(selt[j]).find("select").val(abc);
+        }
       }
     }
-  } else if (type == "option") {
-    let selt = $(`fieldset#${id} .custome-select`);
-    for (let j = 0; j < selt.length; j++) {
-      let titleE = $(selt[j]).parent().parent();
-      let title = titleE.find(".title-section p")[0] != undefined ?
-        titleE.find(".title-section p")[0] : titleE.find(".custom-title-section p")[0];
-      if (title.textContent == divData[1].trim()) {
-        let abc = divData.splice(2).join(":").trim();
-        $(selt[j]).find("select").val(abc);
-      }
+  }
+  else if (divData.length == 2) {
+    const sectionCheck = $(`fieldset#${id} legend input[type=checkbox]`);
+    if (divData[1].trim() == "checked") {
+      sectionCheck.prop("checked", true);
+    } else if (divData[1].trim() == "unchecked") {
+      sectionCheck.prop("checked", false);
     }
   }
 }
@@ -1004,6 +1013,13 @@ function formToWindowDS3() {
   let renHtml = "";
   // Section All
   sectionDS3.forEach(({ id, name, type }) => {
+    const sectionCheck = $(`fieldset#${id} legend input[type=checkbox]`);
+    if (sectionCheck.is(":checked")) {
+      renHtml += `<div class="form-text-design data-div">
+        ${name} : checked
+      </div>`;
+    }
+
     if (type == "input") {
       let section = $(`fieldset#${id}`);
       let inp = section.find(".data-form input[type=text]");
