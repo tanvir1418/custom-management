@@ -20,7 +20,7 @@ const managetempa_list = document.querySelector(".managetempa-list");
 // Added by ASHIQ
 let managetempalistmodal = [];
 for (let i = 1; i <= 29; i++) {
-  let files = []
+  let files = [];
   for (let j = 1; j <= 72; j++) {
     files.push({
       id: `option-managetempamodallist-${i}-${j}`,
@@ -1568,6 +1568,7 @@ function formToWindowMS2() {
 
 function windowToFormMS2(divData) {
   let [title, no] = divData[0].trim().split("_");
+  no = no != undefined ? no : 1;
   let { id:pid } = findInputIdMS2(title);
   if (pid && divData.length == 3) {
     let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
@@ -1597,7 +1598,6 @@ function windowToFormMS2(divData) {
     if (inp.length > 0) {
       inp[no - 1].value = divData[1].trim();
     }
-
     if (inpSel.length > 0) {
       inpSel[no - 1].value = divData[1].trim();
     }
@@ -1938,47 +1938,47 @@ function windowToFormMS4(divData) {
 let sectionMS3 = [
   {
     id: "fieldset_id21",
-    name: "sectionA",
+    name: "Section A",
     type: "input",
   },
   {
     id: "fieldset_id22",
-    name: "sectionB",
+    name: "Section B",
     type: "input",
   },
   {
     id: "fieldset_id23",
-    name: "sectionC",
+    name: "Section C",
     type: "option",
   },
   {
     id: "fieldset_id24",
-    name: "sectionD",
+    name: "Section D",
     type: "input",
   },
   {
     id: "fieldset_id25",
-    name: "sectionE",
+    name: "Section E",
     type: "input",
   },
   {
     id: "fieldset_id26",
-    name: "sectionF",
+    name: "Section F",
     type: "option",
   },
   {
     id: "fieldset_id27",
-    name: "sectionG",
+    name: "Section G",
     type: "option",
   },
   {
     id: "fieldset_id28",
-    name: "sectionH",
+    name: "Section H",
     type: "input",
   },
   {
     id: "fieldset_id29",
-    name: "sectionI",
+    name: "Section I",
     type: "input",
   },
 ];
@@ -1990,25 +1990,35 @@ function findInputIdMS3(title) {
 
 function windowToFormMS3(divData) {
   let { id, name, type } = findInputIdMS3(divData[0].trim());
-  if (type == "input") {
-    let inp = $(`fieldset#${id} .data-form input[type=text]`);
-    for (let j = 0; j < inp.length; j++) {
-      let title = $(inp[j]).parent().parent().find(".title-section p")[0].textContent;
-      if (title == divData[1].trim()) {
-        let abc = divData.splice(2).join(":").trim();
-        $(inp[j]).val(abc);
+  if (divData.length > 2) {
+    if (type == "input") {
+      let inp = $(`fieldset#${id} .data-form input[type=text]`);
+      for (let j = 0; j < inp.length; j++) {
+        let title = $(inp[j]).parent().parent().find(".title-section p")[0].textContent;
+        if (title == divData[1].trim()) {
+          let abc = divData.splice(2).join(":").trim();
+          $(inp[j]).val(abc);
+        }
+      }
+    } else if (type == "option") {
+      let selt = $(`fieldset#${id} .custome-select`);
+      for (let j = 0; j < selt.length; j++) {
+        let titleE = $(selt[j]).parent().parent();
+        let title = titleE.find(".title-section p")[0] != undefined ?
+          titleE.find(".title-section p")[0] : titleE.find(".custom-title-section p")[0];
+        if (title.textContent == divData[1].trim()) {
+          let abc = divData.splice(2).join(":").trim();
+          $(selt[j]).find("select").val(abc);
+        }
       }
     }
-  } else if (type == "option") {
-    let selt = $(`fieldset#${id} .custome-select`);
-    for (let j = 0; j < selt.length; j++) {
-      let titleE = $(selt[j]).parent().parent();
-      let title = titleE.find(".title-section p")[0] != undefined ?
-        titleE.find(".title-section p")[0] : titleE.find(".custom-title-section p")[0];
-      if (title.textContent == divData[1].trim()) {
-        let abc = divData.splice(2).join(":").trim();
-        $(selt[j]).find("select").val(abc);
-      }
+  }
+  else if (divData.length == 2) {
+    const sectionCheck = $(`fieldset#${id} legend input[type=checkbox]`);
+    if (divData[1].trim() == "checked") {
+      sectionCheck.prop("checked", true);
+    } else if (divData[1].trim() == "unchecked") {
+      sectionCheck.prop("checked", false);
     }
   }
 }
@@ -2017,6 +2027,13 @@ function formToWindowMS3() {
 
   // Section All
   sectionMS3.forEach(({ id, name, type }) => {
+    const sectionCheck = $(`fieldset#${id} legend input[type=checkbox]`);
+    if (sectionCheck.is(":checked")) {
+      renHtml += `<div class="form-text-design data-div">
+        ${name} : checked
+      </div>`;
+    }
+
     if (type == "input") {
       let section = $(`fieldset#${id}`);
       let inp = section.find(".data-form input[type=text]");
@@ -2320,12 +2337,12 @@ function pasteEventAll(e) {
           !findInputIdMS1(inpData[0].trim())
         ) {
           x += `<div class="form-text-design-invalid data-div">
-        ${nbe}
-        </div>`;
+          ${nbe}
+          </div>`;
         } else {
           x += `<div class="form-text-design data-div">
-        ${nbe}
-        </div>`;
+          ${nbe}
+          </div>`;
         }
       }
       else if (pageName == "sp2") {
@@ -2341,12 +2358,12 @@ function pasteEventAll(e) {
           )
         ) {
           x += `<div class="form-text-design-invalid data-div">
-        ${nbe}
-        </div>`;
+          ${nbe}
+          </div>`;
         } else {
           x += `<div class="form-text-design data-div">
-        ${nbe}
-        </div>`;
+          ${nbe}
+          </div>`;
         }
       }
       else if (pageName == "sp3") {
@@ -2354,12 +2371,12 @@ function pasteEventAll(e) {
           !findInputIdMS3(inpData[0].trim())
         ) {
           x += `<div class="form-text-design-invalid data-div">
-        ${nbe}
-        </div>`;
+          ${nbe}
+          </div>`;
         } else {
           x += `<div class="form-text-design data-div">
-        ${nbe}
-        </div>`;
+          ${nbe}
+          </div>`;
         }
       }
       else if (pageName == "sp4") {
@@ -2369,12 +2386,12 @@ function pasteEventAll(e) {
           (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
         ) {
           x += `<div class="form-text-design-invalid data-div">
-        ${nbe}
-        </div>`;
+          ${nbe}
+          </div>`;
         } else {
           x += `<div class="form-text-design data-div">
-        ${nbe}
-        </div>`;
+          ${nbe}
+          </div>`;
         }
       }
     }

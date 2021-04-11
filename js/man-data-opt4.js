@@ -519,26 +519,15 @@ function manDatacheckNum(e) {
 
 // Form by text editor start
 function findInputIdDS2(title) {
-  let searchArr = opt4LeftData.concat(opt4RightData).concat(opt4Extra);
-  let res = searchArr.filter((a) => a.name == title).map((b) => b.id);
+  let searchArr = opt4LeftData.concat(opt4RightData);
+  let res = searchArr.filter((a) => a.name == title);
   if (res.length) return res[0];
   else return false;
 }
 
-function formToWindowDS2(e) {
-  let tBody = $(e).parent().parent().parent()
-    .children(".text-editor-popup-body")
-    .find("#ds2_text_editor");
+function formToWindowDS2() {
   let renHtml = "";
   let manDataSeqList = manDataSeqListL.concat(manDataSeqListR);
-  opt4Extra.forEach(({ id, name, type }) => {
-    let valD = $(`#${id}`).val();
-    if (valD != "") {
-      renHtml += `<div class="form-text-design data-div">
-        ${name}: ${valD}
-      </div>`;
-    }
-  });
   manDataSeqList.forEach((pid) => {
     let title = $(`#${pid} span.toggle__text`).html();
     let addSet = $(`#${pid} .add-set`).find(":selected").text();
@@ -569,270 +558,47 @@ function formToWindowDS2(e) {
     </div>
     ${inpDiv}`;
   });
-  tBody.html(renHtml);
+
+  return renHtml;
 }
 
-function windowToFormDS2(e) {
-  let tRow = $(e).parent().parent().parent()
-    .children(".text-editor-popup-body")
-    .find("#ds2_text_editor div.form-text-design.data-div");
-  let len = tRow.length;
-  for (let i = 0; i < len; i++) {
-    let divData = $(tRow[i])[0].innerText.split(":");
-    let [title, no] = divData[0].trim().split("_");
-    let pid = findInputIdDS2(title);
-    if (pid && divData.length == 3) {
-      let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
-      if (checkbox && checkbox.checked == false) {
-        checkbox.click();
-      } else {
-        $(`tr#${pid}`).dblclick();
-        let afterCheck = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
-        if (afterCheck && afterCheck.checked == false) afterCheck.click();
-      }
-
-      if (divData[1].trim().toUpperCase() == "SET") {
-        $(`#${pid} .add-set`).val(divData[2].trim().toLowerCase());
-      } else if (divData[1].trim().toUpperCase() == "SEQUENCE") {
-        let seqVal = 0;
-        let len = Math.max(opt4LeftData.length, opt4RightData.length);
-        for (let k = 1; k <= len; k++) {
-          if (divData[2].trim().toUpperCase() == inWords(k).toUpperCase()) {
-            seqVal = k;
-          }
-        }
-        $(`#${pid} .sequence-opt4`).val(seqVal);
-      }
-    } else if (pid && divData.length == 2) {
-      let inp = $(`#${pid} .custom-input-only input`);
-      let inpSel = $(`#${pid} .user-inp`);
-      if (inp.length > 0) {
-        inp[no - 1].value = divData[1].trim();
-      } else if (inpSel.length > 0) {
-        inpSel[no - 1].value = divData[1].trim();
-      } else {
-        $(`#${pid}`).val(divData[1].trim());
-      }
-    }
-  }
-}
-
-function checkingDS2(e) {
-  $("#adder").remove(); // adder contains our auto correct select box
-  // if key is enter key
-  // let nd = getCaretPosition();
-  // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
-  if (e.keyCode == 13) {
-    let nd = getCaretPosition();
-    $("#temp").attr("id", "");
-    if (nd.nodeType != 3 && nd.getAttribute("id") == "ds2_text_editor") return false;
-    if (
-      nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
-      nd.textContent != ""
-    ) {
-      let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
-      let extra = getCaretPosition2(nd2);
-      let starting = nd.textContent.substr(0, extra);
-      let inpData = starting.split(":");
-      if (
-        starting != "" &&
-        (!findInputIdDS2(inpData[0].trim().split("_")[0].trim()) ||
-          (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
-          (
-            inpData.length == 3 &&
-            inpData[1].trim() != "Set" &&
-            inpData[1].trim() != "Sequence" &&
-            inpData[1].trim() != "Form" &&
-            inpData[1].trim() != "To"
-          )
-        )
-      ) {
-        if (extra == nd.textContent.length) {
-          $(nd).replaceWith(
-            `<div class="form-text-design-invalid data-div">${nd.textContent}</div><br id="temp">`
-          );
-          setCaret($("#temp")[0]);
-        } else {
-          $(nd).replaceWith(
-            (extra != 0
-              ? `<div class="form-text-design-invalid data-div">
-              ${nd.textContent.substr(0, extra)}
-              </div>`
-              : "<br>") +
-            `<div id="temp">
-            ${nd.textContent.substr(extra)}
-            </div>`
-          );
-          setCaret($("#temp")[0]);
-        }
-        document.getElementById("temp").removeAttribute("id");
-      } else {
-        if (extra == nd.textContent.length) {
-          $(nd).replaceWith(
-            `<div class="form-text-design data-div">
-            ${nd.textContent}
-            </div>
-            <br id="temp">`
-          );
-          //setEndOfContenteditable(document.getElementById("temp"));
-          setCaret($("#temp")[0]);
-        } else {
-          $(nd).replaceWith(
-            (extra != 0
-              ? `<div class="form-text-design data-div">
-              ${nd.textContent.substr(0, extra)}
-              </div>`
-              : "<br>") +
-            `<div id="temp">
-              ${nd.textContent.substr(extra)}
-            </div>
-            <br>`
-          );
-          setCaret($("#temp")[0]);
-        }
-        document.getElementById("temp").removeAttribute("id");
-      }
-    }
-    return false;
-  }
-  // this will add autocorrect box
-  setTimeout(autoCorrectDS2, 100);
-}
-
-function autoCorrectDS2() {
-  let pos = getCaretPosition();
-  if ($(pos).find("#adder").length == 1) $("#adder").remove();
-  while (document.getElementById("temp")) {
-    document.getElementById("temp").removeAttribute("id");
-  }
-  let x = pos.textContent;
-  let editor = document.getElementById("text_editor_p");
-
-  let m = "";
-  let first = 1;
-  if (x.indexOf(":") == -1) {
-    let sugName = opt4LeftData.concat(opt4RightData).concat(opt4Extra);
-    sugName.forEach(({ name }) => {
-      if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
-        if (first) {
-          m += `<option selected value="${name}">${name}</option><br>`;
-        }
-        else {
-          m += `<option value="${name}">${name}</option><br>`;
-        }
-        first = 0;
-      }
-    });
-  }
-  else if ((x.split(":").length - 1) == 1) {
-    setSugArray.forEach((set) => {
-      let inp = x.split(":")[1].trim().toLowerCase();
-      if (inp != "" && set.toLowerCase().indexOf(inp) == 0) {
-        if (first) {
-          m += `<option selected value="${set}">${set}</option><br>`;
-        }
-        else {
-          m += `<option value="${set}">${set}</option><br>`;
-        }
-        first = 0;
-      }
-    });
-  }
-  else if ((x.split(":").length - 1) == 2) {
-    setSugArray.forEach((set) => {
-      let inp = x.split(":")[2].trim().toLowerCase();
-      if (inp != "" && set.toLowerCase().indexOf(inp) == 0) {
-        if (first) {
-          m += `<option selected value="${set}">${set}</option><br>`;
-        }
-        else {
-          m += `<option value="${set}">${set}</option><br>`;
-        }
-        first = 0;
-      }
-    });
-  }
-
-  let y =
-    `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
-    ${m}
-    </select>`;
-  // add auto correct ... only if there is atleast one match
-  if (m != "") {
-    if (x.indexOf(":") == -1) {
-      $(pos).replaceWith(
-        `<div id="temp">${x}</div>
-        <div id="adder" class="set-name"></div>`
-      );
+function windowToFormDS2(divData, searchData) {
+  let [title, no] = divData[0].trim().split("_");
+  no = no != undefined ? no : 1;
+  let { id: pid } = searchData;
+  if (pid && divData.length == 3) {
+    let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
+    if (checkbox && checkbox.checked == false) {
+      checkbox.click();
     } else {
-      $(pos).replaceWith(
-        `<div id="temp">${x}</div>
-        <div id="adder" class="set-sug"></div>`
-      );
+      $(`tr#${pid}`).dblclick();
+      let afterCheck = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
+      if (afterCheck && afterCheck.checked == false) afterCheck.click();
     }
-    document.getElementById("adder").innerHTML = y;
-    document.getElementById("adder").style.display = "block";
-    $("#adder select").focus();
-  } else {
-    $("#adder").remove();
-    // setEndOfContenteditable(document.getElementById("temp"));
-    // document.getElementById("temp").removeAttribute("id");
+
+    if (divData[1].trim().toUpperCase() == "SET") {
+      $(`#${pid} .add-set`).val(divData[2].trim().toLowerCase());
+    } else if (divData[1].trim().toUpperCase() == "SEQUENCE") {
+      let seqVal = 0;
+      let len = Math.max(opt4LeftData.length, opt4RightData.length);
+      for (let k = 1; k <= len; k++) {
+        if (divData[2].trim().toUpperCase() == inWords(k).toUpperCase()) {
+          seqVal = k;
+        }
+      }
+      $(`#${pid} .sequence-opt4`).val(seqVal);
+    }
+  } else if (pid && divData.length == 2) {
+    let inp = $(`#${pid} .custom-input-only input`);
+    let inpSel = $(`#${pid} .user-inp`);
+    if (inp.length > 0) {
+      inp[no - 1].value = divData[1].trim();
+    } else if (inpSel.length > 0) {
+      inpSel[no - 1].value = divData[1].trim();
+    }
   }
 }
 
-function pasteEventDS2(e) {
-  let caretPos = getCaretPosition();
-  let editorPos = document.getElementById("ds2_text_editor");
-  let editor = editorPos == caretPos ? editorPos : caretPos;
-  let clipboardData = e.clipboardData || window.clipboardData;
-  let pD = clipboardData.getData("Text").split("\n");
-  let x = "";
-  for (let i = 0; i < pD.length; i++) {
-    let nbe = pD[i];
-    if (i == 0 && !editor.tagName) {
-      replaceSelectedText(nbe);
-      continue;
-    }
-    let inpData = nbe.split(":");
-    if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
-      if (
-        !findInputIdDS2(inpData[0].trim().split("_")[0].trim()) ||
-        (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
-        (
-          inpData.length == 3 &&
-          inpData[1].trim() != "Set" &&
-          inpData[1].trim() != "Sequence" &&
-          inpData[1].trim() != "Form" &&
-          inpData[1].trim() != "To"
-        )
-      ) {
-        x += `<div class="form-text-design-invalid data-div">
-        ${nbe}
-        </div>`;
-      } else {
-        x += `<div class="form-text-design data-div">
-        ${nbe}
-        </div>`;
-      }
-    }
-  }
-  if (editor.tagName) editor.innerHTML += x;
-  else {
-    caretPos = caretPos.parentElement;
-    caretPos.innerHTML += x;
-  }
-  removeExtraLines(editor);
-  if (editorPos == caretPos) {
-    editor.innerHTML += "<br>";
-    setEndOfContenteditable(editor);
-  } else if (!editor.tagName && pD.length == 1) {
-    setEndOfContenteditable(getCaretPosition());
-  } else {
-    $(editorPos).find("br").remove();
-    setEndOfContenteditable(caretPos);
-  }
-  return false;
-}
 // Form by text editor End
 // Manage Data Opt 4 Sample 2 End
 
@@ -1087,24 +853,13 @@ function elementMoveData(_id, direc) {
 
 // Form by Text Editor Start
 function findInputIdDS4(title) {
-  let searchArr = manDataSam4Data.concat(opt4Extra);
-  let res = searchArr.filter(a => a.name == title);
+  let res = manDataSam4Data.filter(a => a.name == title);
   if (res.length) return res[0];
   else return false;
 }
 function formToWindowDS4(e) {
-  let tBody = $(e).parent().parent().parent()
-    .children(".text-editor-popup-body")
-    .find("#ds4_text_editor");
   let renHtml = "";
-  opt4Extra.forEach(({ id, name, type }) => {
-    let valD = $(`#${id}`).val();
-    if (valD != "") {
-      renHtml += `<div class="form-text-design data-div">
-        ${name}: ${valD}
-      </div>`;
-    }
-  });
+
   let idFromTable = $(`#sample4-second tbody tr`);
   let len = idFromTable.length;
   for (let i = 0; i < len; i++) {
@@ -1129,59 +884,316 @@ function formToWindowDS4(e) {
       }
     }
   }
-  tBody.html(renHtml);
+  return renHtml;
 }
-function windowToFormDS4(e) {
-  let tRow = $(e).parent().parent().parent()
-    .children(".text-editor-popup-body")
-    .find("#ds4_text_editor div.form-text-design.data-div");
-  let len = tRow.length;
-  for (let i = 0; i < len; i++) {
-    let divData = $(tRow[i])[0].innerText.split(":");
-    let [title, no] = divData[0].trim().split("_");
-    no = no != undefined ? no : 1;
-    let { id, name, type } = findInputIdDS4(title);
-    if (id && divData.length == 2) {
-      if (name == "IF" || name == "MINIMUM" || name == "EVERY") {
-        $(`#${id}`).val(divData[1].trim());
-      } else {
-        let comDiv = $(`#man-data-sam4-input-data div#${id}`);
-        if (!(comDiv && comDiv.length)) {
-          $(`tr#${id}`).dblclick();
-          comDiv = $(`#man-data-sam4-input-data div#${id}`);
+function windowToFormDS4(divData, searchData) {
+  let [title, no] = divData[0].trim().split("_");
+  no = no != undefined ? no : 1;
+  let { id, name, type } = searchData;
+  if (id && divData.length == 2) {
+    let comDiv = $(`#man-data-sam4-input-data div#${id}`);
+    if (!(comDiv && comDiv.length)) {
+      $(`tr#${id}`).dblclick();
+      comDiv = $(`#man-data-sam4-input-data div#${id}`);
+    }
+    if (type == "range") {
+      let rangeDiv = comDiv.find(`div.width-custom-range-70.d-flex`);
+      let rangeDes =
+        `<span class="min">0</span>
+      <div class="range-wrapper-sample-4">
+        <input class="range-example-input-1" type="text" min="0" max="100" value="${divData[1].trim()}" name="points" step="1" width="100" />
+      </div>
+      <span class="max">100</span>`;
+      rangeDiv.html(rangeDes);
+      $(".range-example-input-1").asRange({
+        range: true,
+        limit: false
+      });
+    } else if (type == "select") {
+      let inpD = comDiv.find(`select`);
+      inpD[no - 1].value = divData[1].trim();
+    } else if (type == "inputText" || type == "date") {
+      let inpD = $(`#man-data-sam4-input-data div#${id} input[type=text]`);
+      inpD[no - 1].value = divData[1].trim();
+    }
+  }
+}
+// Form by Text Editor End
+// Manage Data Opt 4 Sample 4 End
+
+// Manage Data Opt 4 Sample 3 Start
+// Form by Text Editor Start
+let sectionDS3 = [
+  {
+    id: "fieldset_id1",
+    name: "Section A",
+    type: "input",
+  },
+  {
+    id: "fieldset_id2",
+    name: "Section B",
+    type: "input",
+  },
+  {
+    id: "fieldset_id3",
+    name: "Section C",
+    type: "option",
+  },
+  {
+    id: "fieldset_id4",
+    name: "Section D",
+    type: "input",
+  },
+  {
+    id: "fieldset_id5",
+    name: "Section E",
+    type: "input",
+  },
+  {
+    id: "fieldset_id6",
+    name: "Section F",
+    type: "option",
+  },
+  {
+    id: "fieldset_id7",
+    name: "Section G",
+    type: "option",
+  },
+  {
+    id: "fieldset_id8",
+    name: "Section H",
+    type: "input",
+  },
+  {
+    id: "fieldset_id9",
+    name: "Section I",
+    type: "input",
+  },
+];
+function findInputIdDS3(title) {
+  let res = sectionDS3.filter((a) => a.name == title);
+  if (res.length) return res[0];
+  else return false;
+}
+function windowToFormDS3(divData, searchData) {
+  let { id, name, type } = searchData;
+  if (divData.length > 2) {
+    if (type == "input") {
+      let inp = $(`fieldset#${id} .data-form input[type=text]`);
+      for (let j = 0; j < inp.length; j++) {
+        let title = $(inp[j]).parent().parent().find(".title-section p")[0].textContent;
+        if (title == divData[1].trim()) {
+          let abc = divData.splice(2).join(":").trim();
+          $(inp[j]).val(abc);
         }
-        if (type == "range") {
-          let rangeDiv = comDiv.find(`div.width-custom-range-70.d-flex`);
-          let rangeDes =
-            `<span class="min">0</span>
-          <div class="range-wrapper-sample-4">
-            <input class="range-example-input-1" type="text" min="0" max="100" value="${divData[1].trim()}" name="points" step="1" width="100" />
-          </div>
-          <span class="max">100</span>`;
-          rangeDiv.html(rangeDes);
-          $(".range-example-input-1").asRange({
-            range: true,
-            limit: false
-          });
-        } else if (type == "select") {
-          let inpD = comDiv.find(`select`);
-          inpD[no - 1].value = divData[1].trim();
-        } else if (type == "inputText" || type == "date") {
-          let inpD = $(`#man-data-sam4-input-data div#${id} input[type=text]`);
-          inpD[no - 1].value = divData[1].trim();
+      }
+    } else if (type == "option") {
+      let selt = $(`fieldset#${id} .custome-select`);
+      for (let j = 0; j < selt.length; j++) {
+        let titleE = $(selt[j]).parent().parent();
+        let title = titleE.find(".title-section p")[0] != undefined ?
+          titleE.find(".title-section p")[0] : titleE.find(".custom-title-section p")[0];
+        if (title.textContent == divData[1].trim()) {
+          let abc = divData.splice(2).join(":").trim();
+          $(selt[j]).find("select").val(abc);
         }
       }
     }
   }
+  else if (divData.length == 2) {
+    const sectionCheck = $(`fieldset#${id} legend input[type=checkbox]`);
+    if (divData[1].trim() == "checked") {
+      sectionCheck.prop("checked", true);
+    } else if (divData[1].trim() == "unchecked") {
+      sectionCheck.prop("checked", false);
+    }
+  }
 }
-function checkingDS4(e) {
+function formToWindowDS3() {
+  let renHtml = "";
+  // Section All
+  sectionDS3.forEach(({ id, name, type }) => {
+    const sectionCheck = $(`fieldset#${id} legend input[type=checkbox]`);
+    if (sectionCheck.is(":checked")) {
+      renHtml += `<div class="form-text-design data-div">
+        ${name} : checked
+      </div>`;
+    }
+
+    if (type == "input") {
+      let section = $(`fieldset#${id}`);
+      let inp = section.find(".data-form input[type=text]");
+      for (let i = 0; i < inp.length; i++) {
+        let title = $(inp[i]).parent().parent().find(".title-section p")[0].textContent;
+        if (inp[i].value != "") {
+          renHtml += `<div class="form-text-design data-div">
+            ${name} : ${title} : ${inp[i].value}
+          </div>`;
+        }
+      }
+    }
+    else if (type == "option") {
+      let selt = $(`fieldset#${id} .custome-select`);
+      for (let i = 0; i < selt.length; i++) {
+        let titleE = $(selt[i]).parent().parent();
+        let title = titleE.find(".title-section p")[0] != undefined ?
+          titleE.find(".title-section p")[0] : titleE.find(".custom-title-section p")[0];
+        let selVal = $(selt[i]).find("select :selected").text();
+        if (selVal != "") {
+          renHtml += `<div class="form-text-design data-div">
+            ${name} : ${title.textContent} : ${selVal}
+          </div>`;
+        }
+      }
+    }
+  });
+
+  return renHtml;
+}
+// Form by Text Editor End
+// Manage Data Opt 4 Sample 3 End
+
+
+// Manage Data Opt 4 Sample 3 Start
+// Form by Text Editor Start
+let listDS1 = [
+  {
+    id: "opt4a-list-modal",
+    name: "LIST 1",
+  },
+  {
+    id: "opt4b-list-modal",
+    name: "LIST 2",
+  },
+  {
+    id: "opt4c-list-modal",
+    name: "LIST 3",
+  },
+  {
+    id: "opt4d-list-modal",
+    name: "LIST 4",
+  },
+];
+function findInputIdDS1(title) {
+  let searchArr = listDS1.concat(opt4Extra);
+  let res = searchArr.filter((a) => a.name == title);
+  if (res.length) return res[0];
+  else return false;
+}
+function windowToFormDS1(divData, searchData) {
+  let { id, name } = searchData;
+  if (name == "IF" || name == "MINIMUM" || name == "EVERY") {
+    $(`#${id}`).val(divData[1].trim());
+  } else {
+    let dataLi = divData.length > 3 ? findFileListOpt4(divData[2].trim(), name) : false;
+    if (dataLi) {
+      let { id: id2 } = dataLi;
+      let liList = document.querySelector(`div#${id} div.sub-ul-optfourmodal-modallist ul li.${id2}`);
+      let checkBox = $(liList).children(`div.sublist-check-box`);
+      let cancelBox = $(liList).children(`div.sublist-cancel-box`);
+      if (divData[3].trim() == "checked") {
+        checkBox.addClass("checkbox_show");
+        checkBox.removeClass("checkbox_hide");
+        cancelBox.removeClass("checkbox_show");
+        cancelBox.addClass("checkbox_hide");
+      } else if (divData[3].trim() == "unchecked") {
+        checkBox.addClass("checkbox_hide");
+        checkBox.removeClass("checkbox_show");
+        cancelBox.addClass("checkbox_show");
+        cancelBox.removeClass("checkbox_hide");
+      }
+
+      let _id = $(liList).parent().attr("id");
+      let markItem = $(`div#${id} ul.left-list-box li.modaloptfourmodallist-item-${_id.split("-").splice(-1)[0]} div.green-check-box`);
+      let abcd = name == "LIST 1" ? "a" : name == "LIST 2" ? "b" : name == "LIST 3" ? "c" : name == "LIST 4" ? "d" : "";
+      let count = $(`div#${id} ul#optfourmodal${abcd}-submodal-div-list-1-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
+      count += $(`div#${id} ul#optfourmodal${abcd}-submodal-div-list-2-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
+      count += $(`div#${id} ul#optfourmodal${abcd}-submodal-div-list-3-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
+      if (count > 0) {
+        markItem.addClass("display-block");
+        markItem.removeClass("display-none");
+      } else {
+        markItem.addClass("display-none");
+        markItem.removeClass("display-block");
+      }
+
+      $(`div#${id} a#submit_list`).click();
+    }
+  }
+}
+function formToWindowDS1() {
+  let renHtml = "";
+  // yello head
+  opt4Extra.forEach(({ id, name }) => {
+    let valD = $(`#${id}`).val();
+    if (valD != "") {
+      renHtml += `<div class="form-text-design data-div">
+        ${name}: ${valD}
+      </div>`;
+    }
+  });
+
+  listDS1.forEach(({ id, name }) => {
+    let checkList = $(`div#${id} div.sub-ul-optfourmodal-modallist .submodal-list div.sublist-check-box.checkbox_show`);
+    let len = checkList.length;
+    for (let i = 0; i < len; i++) {
+      let li = $(checkList[i]).parent();
+      let listName = li.children("p")[0].textContent.trim();
+      let className = li.attr("class");
+      let dataLi = findFileListOpt4(className, name);
+      if (dataLi) {
+        renHtml += `<div class="form-text-design data-div">
+          ${name}: ${dataLi.item}: ${listName}: checked
+        </div>`;
+      }
+    }
+  });
+
+  return renHtml;
+}
+// Form by Text Editor End
+// Manage Data Opt 4 Sample 3 End
+
+// All in one(2) Start
+function findInputIdAllDS(title) {
+  const findId1 = findInputIdDS1(title);
+  const findId2 = findInputIdDS2(title);
+  const findId3 = findInputIdDS3(title);
+  const findId4 = findInputIdDS4(title);
+
+  if (findId1) {
+    return {
+      pageName: "sp1",
+      searchData: findId1
+    }
+  }
+  else if (findId2) {
+    return {
+      pageName: "sp2",
+      searchData: findId2
+    }
+  }
+  else if (findId3) {
+    return {
+      pageName: "sp3",
+      searchData: findId3
+    }
+  }
+  else if (findId4) {
+    return {
+      pageName: "sp4",
+      searchData: findId4
+    }
+  }
+  else return false;
+}
+
+function checkingAllDS(e) {
   $("#adder").remove();
-  // let nd = getCaretPosition();
-  // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
   if (e.keyCode == 13) {
     let nd = getCaretPosition();
     $("#temp").attr("id", "");
-    if (nd.nodeType != 3 && nd.getAttribute("id") == "ds4_text_editor") return false;
+    if (nd.nodeType != 3 && nd.getAttribute("id") == "ds3_text_editor") return false;
     if (
       nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
       nd.textContent != ""
@@ -1191,11 +1203,7 @@ function checkingDS4(e) {
       let starting = nd.textContent.substr(0, extra);
       let inpData = starting.split(":");
       if (
-        starting != "" &&
-        (!findInputIdDS4(inpData[0].trim().split("_")[0].trim()) ||
-          (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
-          (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
-        )
+        starting != "" && !findInputIdAllDS(inpData[0].trim().split("_")[0].trim())
       ) {
         if (extra == nd.textContent.length) {
           $(nd).replaceWith(
@@ -1246,9 +1254,10 @@ function checkingDS4(e) {
     return false;
   }
   // this will add autocorrect box
-  setTimeout(autoCorrectDS4, 100);
+  setTimeout(autoCorrectAllDS, 100);
 }
-function autoCorrectDS4() {
+
+function autoCorrectAllDS() {
   let pos = getCaretPosition();
   if ($(pos).find("#adder").length == 1) $("#adder").remove();
   while (document.getElementById("temp")) {
@@ -1260,7 +1269,7 @@ function autoCorrectDS4() {
   let m = "";
   let first = 1;
   if (x.indexOf(":") == -1) {
-    let sugName = manDataSam4Data.concat(opt4Extra);
+    const sugName = listDS1.concat(opt4Extra).concat(opt4LeftData).concat(opt4RightData).concat(sectionDS3).concat(manDataSam4Data);
     sugName.forEach(({ name }) => {
       if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
         if (first) {
@@ -1296,515 +1305,10 @@ function autoCorrectDS4() {
     $("#adder select").focus();
   } else {
     $("#adder").remove();
-    // setEndOfContenteditable(document.getElementById("temp"));
-    // document.getElementById("temp").removeAttribute("id");
   }
 }
-function pasteEventDS4(e) {
-  let caretPos = getCaretPosition();
-  let editorPos = document.getElementById("ds4_text_editor");
-  let editor = editorPos == caretPos ? editorPos : caretPos;
-  let clipboardData = e.clipboardData || window.clipboardData;
-  let pD = clipboardData.getData("Text").split("\n");
-  let x = "";
-  for (let i = 0; i < pD.length; i++) {
-    let nbe = pD[i];
-    if (i == 0 && !editor.tagName) {
-      replaceSelectedText(nbe);
-      continue;
-    }
-    let inpData = nbe.split(":");
-    if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
-      if (
-        !findInputIdDS4(inpData[0].trim().split("_")[0].trim()) ||
-        (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
-        (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
-      ) {
-        x += `<div class="form-text-design-invalid data-div">
-        ${nbe}
-        </div>`;
-      } else {
-        x += `<div class="form-text-design data-div">
-        ${nbe}
-        </div>`;
-      }
-    }
-  }
-  if (editor.tagName) editor.innerHTML += x;
-  else {
-    caretPos = caretPos.parentElement;
-    caretPos.innerHTML += x;
-  }
-  removeExtraLines(editor);
-  if (editorPos == caretPos) {
-    editor.innerHTML += "<br>";
-    setEndOfContenteditable(editor);
-  } else if (!editor.tagName && pD.length == 1) {
-    setEndOfContenteditable(getCaretPosition());
-  } else {
-    $(editorPos).find("br").remove();
-    setEndOfContenteditable(caretPos);
-  }
-  return false;
-}
-// Form by Text Editor End
-// Manage Data Opt 4 Sample 4 End
 
-// Manage Data Opt 4 Sample 3 Start
-// Form by Text Editor Start
-let sectionDS3 = [
-  {
-    id: "fieldset_id1",
-    name: "sectionA",
-    type: "input",
-  },
-  {
-    id: "fieldset_id2",
-    name: "sectionB",
-    type: "input",
-  },
-  {
-    id: "fieldset_id3",
-    name: "sectionC",
-    type: "option",
-  },
-  {
-    id: "fieldset_id4",
-    name: "sectionD",
-    type: "input",
-  },
-  {
-    id: "fieldset_id5",
-    name: "sectionE",
-    type: "input",
-  },
-  {
-    id: "fieldset_id6",
-    name: "sectionF",
-    type: "option",
-  },
-  {
-    id: "fieldset_id7",
-    name: "sectionG",
-    type: "option",
-  },
-  {
-    id: "fieldset_id8",
-    name: "sectionH",
-    type: "input",
-  },
-  {
-    id: "fieldset_id9",
-    name: "sectionI",
-    type: "input",
-  },
-];
-function findInputIdDS3(title) {
-  let searchArr = sectionDS3.concat(opt4Extra);
-  let res = searchArr.filter((a) => a.name == title);
-  if (res.length) return res[0];
-  else return false;
-}
-function checkingDS3(e) {
-  $("#adder").remove();
-  // let nd = getCaretPosition();
-  // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
-  if (e.keyCode == 13) {
-    let nd = getCaretPosition();
-    $("#temp").attr("id", "");
-    if (nd.nodeType != 3 && nd.getAttribute("id") == "ds3_text_editor") return false;
-    if (
-      nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
-      nd.textContent != ""
-    ) {
-      let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
-      let extra = getCaretPosition2(nd2);
-      let starting = nd.textContent.substr(0, extra);
-      let inpData = starting.split(":");
-      if (
-        starting != "" && !findInputIdDS3(inpData[0].trim())
-      ) {
-        if (extra == nd.textContent.length) {
-          $(nd).replaceWith(
-            `<div class="form-text-design-invalid data-div">${nd.textContent}</div><br id="temp">`
-          );
-          setCaret($("#temp")[0]);
-        } else {
-          $(nd).replaceWith(
-            (extra != 0
-              ? `<div class="form-text-design-invalid data-div">
-              ${nd.textContent.substr(0, extra)}
-              </div>`
-              : "<br>") +
-            `<div id="temp">
-            ${nd.textContent.substr(extra)}
-            </div>`
-          );
-          setCaret($("#temp")[0]);
-        }
-        document.getElementById("temp").removeAttribute("id");
-      } else {
-        if (extra == nd.textContent.length) {
-          $(nd).replaceWith(
-            `<div class="form-text-design data-div">
-            ${nd.textContent}
-            </div>
-            <br id="temp">`
-          );
-          //setEndOfContenteditable(document.getElementById("temp"));
-          setCaret($("#temp")[0]);
-        } else {
-          $(nd).replaceWith(
-            (extra != 0
-              ? `<div class="form-text-design data-div">
-              ${nd.textContent.substr(0, extra)}
-              </div>`
-              : "<br>") +
-            `<div id="temp">
-              ${nd.textContent.substr(extra)}
-            </div>
-            <br>`
-          );
-          setCaret($("#temp")[0]);
-        }
-        document.getElementById("temp").removeAttribute("id");
-      }
-    }
-    return false;
-  }
-  // this will add autocorrect box
-  setTimeout(autoCorrectDS3, 100);
-}
-function autoCorrectDS3() {
-  let pos = getCaretPosition();
-  if ($(pos).find("#adder").length == 1) $("#adder").remove();
-  while (document.getElementById("temp")) {
-    document.getElementById("temp").removeAttribute("id");
-  }
-  let x = pos.textContent;
-  let editor = document.getElementById("text_editor_p");
-
-  let m = "";
-  let first = 1;
-  if (x.indexOf(":") == -1) {
-    $("#adder").addClass("set-name");
-    let secArr = sectionDS3.concat(opt4Extra);
-    secArr.forEach(({ name }) => {
-      if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
-        if (first) {
-          m += `<option selected value="${name}">${name}</option><br>`;
-        }
-        else {
-          m += `<option value="${name}">${name}</option><br>`;
-        }
-        first = 0;
-      }
-    });
-  }
-
-  let y =
-    `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
-    ${m}
-    </select>`;
-  // add auto correct ... only if there is atleast one match
-  if (m != "") {
-    if (x.indexOf(":") == -1) {
-      $(pos).replaceWith(
-        `<div id="temp">${x}</div>
-        <div id="adder" class="set-name"></div>`
-      );
-    } else {
-      $(pos).replaceWith(
-        `<div id="temp">${x}</div>
-        <div id="adder" class="set-sug"></div>`
-      );
-    }
-    document.getElementById("adder").innerHTML = y;
-    document.getElementById("adder").style.display = "block";
-    $("#adder select").focus();
-  } else {
-    $("#adder").remove();
-    // setEndOfContenteditable(document.getElementById("temp"));
-    // document.getElementById("temp").removeAttribute("id");
-  }
-}
-function pasteEventDS3(e) {
-  let caretPos = getCaretPosition();
-  let editorPos = document.getElementById("ds3_text_editor");
-  let editor = editorPos == caretPos ? editorPos : caretPos;
-  let clipboardData = e.clipboardData || window.clipboardData;
-  let pD = clipboardData.getData("Text").split("\n");
-  let x = "";
-  for (let i = 0; i < pD.length; i++) {
-    let nbe = pD[i];
-    if (i == 0 && !editor.tagName) {
-      replaceSelectedText(nbe);
-      continue;
-    }
-    let inpData = nbe.split(":");
-    if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
-      if (
-        !findInputIdDS3(inpData[0].trim())
-      ) {
-        x += `<div class="form-text-design-invalid data-div">
-        ${nbe}
-        </div>`;
-      } else {
-        x += `<div class="form-text-design data-div">
-        ${nbe}
-        </div>`;
-      }
-    }
-  }
-  if (editor.tagName) editor.innerHTML += x;
-  else {
-    caretPos = caretPos.parentElement;
-    caretPos.innerHTML += x;
-  }
-  removeExtraLines(editor);
-  if (editorPos == caretPos) {
-    editor.innerHTML += "<br>";
-    setEndOfContenteditable(editor);
-  } else if (!editor.tagName && pD.length == 1) {
-    setEndOfContenteditable(getCaretPosition());
-  } else {
-    $(editorPos).find("br").remove();
-    setEndOfContenteditable(caretPos);
-  }
-  return false;
-}
-function windowToFormDS3(e) {
-  let tRow = $(e).parent().parent().parent()
-    .children(".text-editor-popup-body")
-    .find("#ds3_text_editor div.form-text-design.data-div");
-  let len = tRow.length;
-  for (let i = 0; i < len; i++) {
-    let divData = $(tRow[i])[0].innerText.split(":");
-    let { id, name, type } = findInputIdDS3(divData[0].trim());
-    if (name == "IF" || name == "MINIMUM" || name == "EVERY") {
-      $(`#${id}`).val(divData[1].trim());
-    } else if (type == "input") {
-      let inp = $(`fieldset#${id} .data-form input[type=text]`);
-      for (let j = 0; j < inp.length; j++) {
-        let title = $(inp[j]).parent().parent().find(".title-section p")[0].textContent;
-        if (title == divData[1].trim()) {
-          let abc = divData.splice(2).join(":").trim();
-          $(inp[j]).val(abc);
-        }
-      }
-    } else if (type == "option") {
-      let selt = $(`fieldset#${id} .custome-select`);
-      for (let j = 0; j < selt.length; j++) {
-        let titleE = $(selt[j]).parent().parent();
-        let title = titleE.find(".title-section p")[0] != undefined ?
-          titleE.find(".title-section p")[0] : titleE.find(".custom-title-section p")[0];
-        if (title.textContent == divData[1].trim()) {
-          let abc = divData.splice(2).join(":").trim();
-          $(selt[j]).find("select").val(abc);
-        }
-      }
-    }
-  }
-}
-function formToWindowDS3(e) {
-  let tBody = $(e).parent().parent().parent()
-    .children(".text-editor-popup-body")
-    .find("#ds3_text_editor");
-  let renHtml = "";
-  // yello head
-  opt4Extra.forEach(({ id, name, type }) => {
-    let valD = $(`#${id}`).val();
-    if (valD != "") {
-      renHtml += `<div class="form-text-design data-div">
-        ${name}: ${valD}
-      </div>`;
-    }
-  });
-  // Section All
-  sectionDS3.forEach(({ id, name, type }) => {
-    if (type == "input") {
-      let section = $(`fieldset#${id}`);
-      let inp = section.find(".data-form input[type=text]");
-      for (let i = 0; i < inp.length; i++) {
-        let title = $(inp[i]).parent().parent().find(".title-section p")[0].textContent;
-        if (inp[i].value != "") {
-          renHtml += `<div class="form-text-design data-div">
-            ${name} : ${title} : ${inp[i].value}
-          </div>`;
-        }
-      }
-    }
-    else if (type == "option") {
-      let selt = $(`fieldset#${id} .custome-select`);
-      for (let i = 0; i < selt.length; i++) {
-        let titleE = $(selt[i]).parent().parent();
-        let title = titleE.find(".title-section p")[0] != undefined ?
-          titleE.find(".title-section p")[0] : titleE.find(".custom-title-section p")[0];
-        let selVal = $(selt[i]).find("select :selected").text();
-        if (selVal != "") {
-          renHtml += `<div class="form-text-design data-div">
-            ${name} : ${title.textContent} : ${selVal}
-          </div>`;
-        }
-      }
-    }
-  });
-
-  tBody.html(renHtml);
-}
-// Form by Text Editor End
-// Manage Data Opt 4 Sample 3 End
-
-
-// Manage Data Opt 4 Sample 3 Start
-// Form by Text Editor Start
-let listDS1 = [
-  {
-    id: "opt4a-list-modal",
-    name: "LIST 1",
-  },
-  {
-    id: "opt4b-list-modal",
-    name: "LIST 2",
-  },
-  {
-    id: "opt4c-list-modal",
-    name: "LIST 3",
-  },
-  {
-    id: "opt4d-list-modal",
-    name: "LIST 4",
-  },
-];
-function findInputIdDS1(title) {
-  let searchArr = listDS1.concat(opt4Extra);
-  let res = searchArr.filter((a) => a.name == title);
-  if (res.length) return res[0];
-  else return false;
-}
-function checkingDS1(e) {
-  $("#adder").remove();
-  // let nd = getCaretPosition();
-  // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
-  if (e.keyCode == 13) {
-    let nd = getCaretPosition();
-    $("#temp").attr("id", "");
-    if (nd.nodeType != 3 && nd.getAttribute("id") == "ds1_text_editor") return false;
-    if (
-      nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
-      nd.textContent != ""
-    ) {
-      let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
-      let extra = getCaretPosition2(nd2);
-      let starting = nd.textContent.substr(0, extra);
-      let inpData = starting.split(":");
-      if (
-        starting != "" && !findInputIdDS1(inpData[0].trim())
-      ) {
-        if (extra == nd.textContent.length) {
-          $(nd).replaceWith(
-            `<div class="form-text-design-invalid data-div">${nd.textContent}</div><br id="temp">`
-          );
-          setCaret($("#temp")[0]);
-        } else {
-          $(nd).replaceWith(
-            (extra != 0
-              ? `<div class="form-text-design-invalid data-div">
-              ${nd.textContent.substr(0, extra)}
-              </div>`
-              : "<br>") +
-            `<div id="temp">
-            ${nd.textContent.substr(extra)}
-            </div>`
-          );
-          setCaret($("#temp")[0]);
-        }
-        document.getElementById("temp").removeAttribute("id");
-      } else {
-        if (extra == nd.textContent.length) {
-          $(nd).replaceWith(
-            `<div class="form-text-design data-div">
-            ${nd.textContent}
-            </div>
-            <br id="temp">`
-          );
-          //setEndOfContenteditable(document.getElementById("temp"));
-          setCaret($("#temp")[0]);
-        } else {
-          $(nd).replaceWith(
-            (extra != 0
-              ? `<div class="form-text-design data-div">
-              ${nd.textContent.substr(0, extra)}
-              </div>`
-              : "<br>") +
-            `<div id="temp">
-              ${nd.textContent.substr(extra)}
-            </div>
-            <br>`
-          );
-          setCaret($("#temp")[0]);
-        }
-        document.getElementById("temp").removeAttribute("id");
-      }
-    }
-    return false;
-  }
-  // this will add autocorrect box
-  setTimeout(autoCorrectDS1, 100);
-}
-function autoCorrectDS1() {
-  let pos = getCaretPosition();
-  if ($(pos).find("#adder").length == 1) $("#adder").remove();
-  while (document.getElementById("temp")) {
-    document.getElementById("temp").removeAttribute("id");
-  }
-  let x = pos.textContent;
-  let editor = document.getElementById("text_editor_p");
-
-  let m = "";
-  let first = 1;
-  if (x.indexOf(":") == -1) {
-    let secArr = listDS1.concat(opt4Extra);
-    secArr.forEach(({ name }) => {
-      if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
-        if (first) {
-          m += `<option selected value="${name}">${name}</option><br>`;
-        }
-        else {
-          m += `<option value="${name}">${name}</option><br>`;
-        }
-        first = 0;
-      }
-    });
-  }
-
-  let y =
-    `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
-    ${m}
-    </select>`;
-  // add auto correct ... only if there is atleast one match
-  if (m != "") {
-    if (x.indexOf(":") == -1) {
-      $(pos).replaceWith(
-        `<div id="temp">${x}</div>
-        <div id="adder" class="set-name"></div>`
-      );
-    } else {
-      $(pos).replaceWith(
-        `<div id="temp">${x}</div>
-        <div id="adder" class="set-sug"></div>`
-      );
-    }
-    document.getElementById("adder").innerHTML = y;
-    document.getElementById("adder").style.display = "block";
-    $("#adder select").focus();
-  } else {
-    $("#adder").remove();
-    // setEndOfContenteditable(document.getElementById("temp"));
-    // document.getElementById("temp").removeAttribute("id");
-  }
-}
-function pasteEventDS1(e) {
+function pasteEventAllDS(e) {
   let caretPos = getCaretPosition();
   let editorPos = document.getElementById("ds1_text_editor");
   let editor = editorPos == caretPos ? editorPos : caretPos;
@@ -1819,16 +1323,68 @@ function pasteEventDS1(e) {
     }
     let inpData = nbe.split(":");
     if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
-      if (
-        !findInputIdDS1(inpData[0].trim())
-      ) {
-        x += `<div class="form-text-design-invalid data-div">
-        ${nbe}
-        </div>`;
-      } else {
-        x += `<div class="form-text-design data-div">
-        ${nbe}
-        </div>`;
+      const { pageName } = findInputIdAllDS(inpData[0].trim().split("_")[0].trim());
+      if (pageName == "sp1") {
+        if (
+          !findInputIdDS1(inpData[0].trim())
+        ) {
+          x += `<div class="form-text-design-invalid data-div">
+          ${nbe}
+          </div>`;
+        } else {
+          x += `<div class="form-text-design data-div">
+          ${nbe}
+          </div>`;
+        }
+      }
+      else if (pageName == "sp2") {
+        if (
+          !findInputIdDS2(inpData[0].trim().split("_")[0].trim()) ||
+          (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
+          (
+            inpData.length == 3 &&
+            inpData[1].trim() != "Set" &&
+            inpData[1].trim() != "Sequence" &&
+            inpData[1].trim() != "Form" &&
+            inpData[1].trim() != "To"
+          )
+        ) {
+          x += `<div class="form-text-design-invalid data-div">
+          ${nbe}
+          </div>`;
+        } else {
+          x += `<div class="form-text-design data-div">
+          ${nbe}
+          </div>`;
+        }
+      }
+      else if (pageName == "sp3") {
+        if (
+          !findInputIdDS3(inpData[0].trim())
+        ) {
+          x += `<div class="form-text-design-invalid data-div">
+          ${nbe}
+          </div>`;
+        } else {
+          x += `<div class="form-text-design data-div">
+          ${nbe}
+          </div>`;
+        }
+      }
+      else if (pageName == "sp4") {
+        if (
+          !findInputIdDS4(inpData[0].trim().split("_")[0].trim()) ||
+          (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
+          (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
+        ) {
+          x += `<div class="form-text-design-invalid data-div">
+          ${nbe}
+          </div>`;
+        } else {
+          x += `<div class="form-text-design data-div">
+          ${nbe}
+          </div>`;
+        }
       }
     }
   }
@@ -1849,86 +1405,40 @@ function pasteEventDS1(e) {
   }
   return false;
 }
-function windowToFormDS1(e) {
+
+function formToWindowAllDS(e) {
+  let tBody = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ds1_text_editor");
+  const renHtml1 = formToWindowDS1();
+  const renHtml2 = formToWindowDS2();
+  const renHtml3 = formToWindowDS3();
+  const renHtml4 = formToWindowDS4();
+  tBody.html(renHtml1 + renHtml2 + renHtml3 + renHtml4);
+}
+
+function windowToFormAllDS(e) {
   let tRow = $(e).parent().parent().parent()
     .children(".text-editor-popup-body")
     .find("#ds1_text_editor div.form-text-design.data-div");
   let len = tRow.length;
+
   for (let i = 0; i < len; i++) {
     let divData = $(tRow[i])[0].innerText.split(":");
-    let { id, name } = findInputIdDS1(divData[0].trim());
-    if (name == "IF" || name == "MINIMUM" || name == "EVERY") {
-      $(`#${id}`).val(divData[1].trim());
-    } else {
-      let dataLi = divData.length > 3 ? findFileListOpt4(divData[2].trim(), name) : false;
-      if (dataLi) {
-        let { id: id2 } = dataLi;
-        let liList = document.querySelector(`div#${id} div.sub-ul-optfourmodal-modallist ul li.${id2}`);
-        let checkBox = $(liList).children(`div.sublist-check-box`);
-        let cancelBox = $(liList).children(`div.sublist-cancel-box`);
-        if (divData[3].trim() == "checked") {
-          checkBox.addClass("checkbox_show");
-          checkBox.removeClass("checkbox_hide");
-          cancelBox.removeClass("checkbox_show");
-          cancelBox.addClass("checkbox_hide");
-        } else if (divData[3].trim() == "unchecked") {
-          checkBox.addClass("checkbox_hide");
-          checkBox.removeClass("checkbox_show");
-          cancelBox.addClass("checkbox_show");
-          cancelBox.removeClass("checkbox_hide");
-        }
-
-        let _id = $(liList).parent().attr("id");
-        let markItem = $(`div#${id} ul.left-list-box li.modaloptfourmodallist-item-${_id.split("-").splice(-1)[0]} div.green-check-box`);
-        let abcd = name == "LIST 1" ? "a" : name == "LIST 2" ? "b" : name == "LIST 3" ? "c" : name == "LIST 4" ? "d" : "";
-        let count = $(`div#${id} ul#optfourmodal${abcd}-submodal-div-list-1-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
-        count += $(`div#${id} ul#optfourmodal${abcd}-submodal-div-list-2-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
-        count += $(`div#${id} ul#optfourmodal${abcd}-submodal-div-list-3-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
-        if (count > 0) {
-          markItem.addClass("display-block");
-          markItem.removeClass("display-none");
-        } else {
-          markItem.addClass("display-none");
-          markItem.removeClass("display-block");
-        }
-
-        $(`div#${id} a#submit_list`).click();
-      }
+    const [title, no] = divData[0].trim().split("_");
+    const { pageName, searchData } = findInputIdAllDS(title);
+    if (pageName == "sp1") {
+      windowToFormDS1(divData, searchData);
+    }
+    else if (pageName == "sp2") {
+      windowToFormDS2(divData, searchData);
+    }
+    else if (pageName == "sp3") {
+      windowToFormDS3(divData, searchData);
+    }
+    else if (pageName == "sp4") {
+      windowToFormDS4(divData, searchData);
     }
   }
 }
-function formToWindowDS1(e) {
-  let tBody = $(e).parent().parent().parent()
-    .children(".text-editor-popup-body")
-    .find("#ds1_text_editor");
-  let renHtml = "";
-  // yello head
-  opt4Extra.forEach(({ id, name }) => {
-    let valD = $(`#${id}`).val();
-    if (valD != "") {
-      renHtml += `<div class="form-text-design data-div">
-        ${name}: ${valD}
-      </div>`;
-    }
-  });
-
-  listDS1.forEach(({ id, name }) => {
-    let checkList = $(`div#${id} div.sub-ul-optfourmodal-modallist .submodal-list div.sublist-check-box.checkbox_show`);
-    let len = checkList.length;
-    for (let i = 0; i < len; i++) {
-      let li = $(checkList[i]).parent();
-      let listName = li.children("p")[0].textContent.trim();
-      let className = li.attr("class");
-      let dataLi = findFileListOpt4(className, name);
-      if (dataLi) {
-        renHtml += `<div class="form-text-design data-div">
-          ${name}: ${dataLi.item}: ${listName}: checked
-        </div>`;
-      }
-    }
-  });
-
-  tBody.html(renHtml);
-}
-// Form by Text Editor End
-// Manage Data Opt 4 Sample 3 End
+// All in one(2) End
