@@ -2121,7 +2121,8 @@ th[draggable] a {
 .rowdetails-modal-wrapper_style2,
 .rowdetails-modal-wrapper,
 .alertswindow-modal-wrapper,
-.alertswindow-modal-wrapper_style2{
+.alertswindow-modal-wrapper_style2,
+.white-shad-rowing{
     border: none;
     border-radius: 3px;
     /* -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
