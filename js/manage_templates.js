@@ -20,7 +20,7 @@ const managetempa_list = document.querySelector(".managetempa-list");
 // Added by ASHIQ
 let managetempalistmodal = [];
 for (let i = 1; i <= 29; i++) {
-  let files = []
+  let files = [];
   for (let j = 1; j <= 72; j++) {
     files.push({
       id: `option-managetempamodallist-${i}-${j}`,
@@ -1525,15 +1525,12 @@ function manTemcheckNum(e) {
 // Form by text editor start
 function findInputIdMS2(title) {
   let searchArr = manTemLeftData.concat(manTemRightData);
-  let res = searchArr.filter((a) => a.name == title).map((b) => b.id);
+  let res = searchArr.filter((a) => a.name == title);
   if (res.length) return res[0];
   else return false;
 }
 
-function formToWindowMS2(e) {
-  let tBody = $(e).parent().parent().parent()
-    .children(".text-editor-popup-body")
-    .find("#ms2_text_editor");
+function formToWindowMS2() {
   let renHtml = "";
   let manTemSeqList = manTemSeqListL.concat(manTemSeqListR);
   manTemSeqList.forEach((pid) => {
@@ -1566,272 +1563,47 @@ function formToWindowMS2(e) {
     </div>
     ${inpDiv}`;
   });
-  tBody.html(renHtml);
+  return renHtml;
 }
 
-function windowToFormMS2(e) {
-  let tRow = $(e).parent().parent().parent()
-    .children(".text-editor-popup-body")
-    .find("#ms2_text_editor div.form-text-design.data-div");
-  let len = tRow.length;
-  for (let i = 0; i < len; i++) {
-    let divData = $(tRow[i])[0].innerText.split(":");
-    let [title, no] = divData[0].trim().split("_");
-    let pid = findInputIdMS2(title);
-    if (pid && divData.length == 3) {
-      let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
-      if (checkbox && checkbox.checked == false) {
-        checkbox.click();
-      } else {
-        $(`tr#${pid}`).dblclick();
-        let afterCheck = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
-        if (afterCheck && afterCheck.checked == false) afterCheck.click();
-      }
-
-      if (divData[1].trim().toUpperCase() == "SET") {
-        $(`#${pid} .add-set`).val(divData[2].trim().toLowerCase());
-      } else if (divData[1].trim().toUpperCase() == "SEQUENCE") {
-        let seqVal = 0;
-        let len = Math.max(manTemLeftData.length, manTemRightData.length);
-        for (let k = 1; k <= len; k++) {
-          if (divData[2].trim().toUpperCase() == inWords(k).toUpperCase()) {
-            seqVal = k;
-          }
-        }
-        $(`#${pid} .sequence`).val(seqVal);
-      }
-    } else if (pid && divData.length == 2) {
-      let inp = $(`#${pid} .custom-input-only input`);
-      let inpSel = $(`#${pid} .user-inp`);
-      if (inp.length > 0) {
-        inp[no - 1].value = divData[1].trim();
-      }
-
-      if (inpSel.length > 0) {
-        inpSel[no - 1].value = divData[1].trim();
-      }
-    }
-  }
-}
-
-function checkingMS2(e) {
-  $("#adder").remove(); // adder contains our auto correct select box
-  // if key is enter key
-  let nd = getCaretPosition();
-  let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
-  if (e.keyCode == 13) {
-    // same algorithm as we see in updateActualForm() function
-    let nd = getCaretPosition();
-    $("#temp").attr("id", "");
-    if (nd.nodeType != 3 && nd.getAttribute("id") == "ms2_text_editor") return false;
-    if (
-      nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
-      nd.textContent != ""
-    ) {
-      let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
-      let extra = getCaretPosition2(nd2);
-      let starting = nd.textContent.substr(0, extra);
-      let inpData = starting.split(":");
-      if (
-        starting != "" &&
-        (!findInputIdMS2(inpData[0].trim().split("_")[0].trim()) ||
-          (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
-          (
-            inpData.length == 3 &&
-            inpData[1].trim() != "Set" &&
-            inpData[1].trim() != "Sequence" &&
-            inpData[1].trim() != "Form" &&
-            inpData[1].trim() != "To"
-          )
-        )
-      ) {
-        if (extra == nd.textContent.length) {
-          $(nd).replaceWith(
-            `<div class="form-text-design-invalid data-div">${nd.textContent}</div><br id="temp">`
-          );
-          setCaret($("#temp")[0]);
-        } else {
-          $(nd).replaceWith(
-            (extra != 0
-              ? `<div class="form-text-design-invalid data-div">
-              ${nd.textContent.substr(0, extra)}
-              </div>`
-              : "<br>") +
-            `<div id="temp">
-            ${nd.textContent.substr(extra)}
-            </div>`
-          );
-          setCaret($("#temp")[0]);
-        }
-        document.getElementById("temp").removeAttribute("id");
-      } else {
-        if (extra == nd.textContent.length) {
-          $(nd).replaceWith(
-            `<div class="form-text-design data-div">
-            ${nd.textContent}
-            </div>
-            <br id="temp">`
-          );
-          //setEndOfContenteditable(document.getElementById("temp"));
-          setCaret($("#temp")[0]);
-        } else {
-          $(nd).replaceWith(
-            (extra != 0
-              ? `<div class="form-text-design data-div">
-              ${nd.textContent.substr(0, extra)}
-              </div>`
-              : "<br>") +
-            `<div id="temp">
-              ${nd.textContent.substr(extra)}
-            </div>
-            <br>`
-          );
-          setCaret($("#temp")[0]);
-        }
-        document.getElementById("temp").removeAttribute("id");
-      }
-    }
-    return false;
-  }
-  // this will add autocorrect box
-  setTimeout(autoCorrectMS2, 100);
-}
-
-function autoCorrectMS2() {
-  let pos = getCaretPosition();
-  if ($(pos).find("#adder").length == 1) $("#adder").remove();
-  while (document.getElementById("temp")) {
-    document.getElementById("temp").removeAttribute("id");
-  }
-  let x = pos.textContent;
-  let editor = document.getElementById("text_editor_p");
-
-  let m = "";
-  let first = 1;
-  if (x.indexOf(":") == -1) {
-    let sugName = manTemLeftData.concat(manTemRightData);
-    sugName.forEach(({ name }) => {
-      if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
-        if (first) {
-          m += `<option selected value="${name}">${name}</option><br>`;
-        }
-        else {
-          m += `<option value="${name}">${name}</option><br>`;
-        }
-        first = 0;
-      }
-    });
-  }
-  else if ((x.split(":").length - 1) == 1) {
-    setSugArray.forEach((set) => {
-      let inp = x.split(":")[1].trim().toLowerCase();
-      if (inp != "" && set.toLowerCase().indexOf(inp) == 0) {
-        if (first) {
-          m += `<option selected value="${set}">${set}</option><br>`;
-        }
-        else {
-          m += `<option value="${set}">${set}</option><br>`;
-        }
-        first = 0;
-      }
-    });
-  }
-  else if ((x.split(":").length - 1) == 2) {
-    setSugArray.forEach((set) => {
-      let inp = x.split(":")[2].trim().toLowerCase();
-      if (inp != "" && set.toLowerCase().indexOf(inp) == 0) {
-        if (first) {
-          m += `<option selected value="${set}">${set}</option><br>`;
-        }
-        else {
-          m += `<option value="${set}">${set}</option><br>`;
-        }
-        first = 0;
-      }
-    });
-  }
-
-  let y =
-    `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
-    ${m}
-    </select>`;
-  // add auto correct ... only if there is atleast one match
-  if (m != "") {
-    if (x.indexOf(":") == -1) {
-      $(pos).replaceWith(
-        `<div id="temp">${x}</div>
-        <div id="adder" class="set-name"></div>`
-      );
+function windowToFormMS2(divData) {
+  let [title, no] = divData[0].trim().split("_");
+  no = no != undefined ? no : 1;
+  let { id:pid } = findInputIdMS2(title);
+  if (pid && divData.length == 3) {
+    let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
+    if (checkbox && checkbox.checked == false) {
+      checkbox.click();
     } else {
-      $(pos).replaceWith(
-        `<div id="temp">${x}</div>
-        <div id="adder" class="set-sug"></div>`
-      );
+      $(`tr#${pid}`).dblclick();
+      let afterCheck = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
+      if (afterCheck && afterCheck.checked == false) afterCheck.click();
     }
-    document.getElementById("adder").innerHTML = y;
-    document.getElementById("adder").style.display = "block";
-    $("#adder select").focus();
-  } else {
-    $("#adder").remove();
-    // setEndOfContenteditable(document.getElementById("temp"));
-    // document.getElementById("temp").removeAttribute("id");
+
+    if (divData[1].trim().toUpperCase() == "SET") {
+      $(`#${pid} .add-set`).val(divData[2].trim().toLowerCase());
+    } else if (divData[1].trim().toUpperCase() == "SEQUENCE") {
+      let seqVal = 0;
+      let len = Math.max(manTemLeftData.length, manTemRightData.length);
+      for (let k = 1; k <= len; k++) {
+        if (divData[2].trim().toUpperCase() == inWords(k).toUpperCase()) {
+          seqVal = k;
+        }
+      }
+      $(`#${pid} .sequence`).val(seqVal);
+    }
+  } else if (pid && divData.length == 2) {
+    let inp = $(`#${pid} .custom-input-only input`);
+    let inpSel = $(`#${pid} .user-inp`);
+    if (inp.length > 0) {
+      inp[no - 1].value = divData[1].trim();
+    }
+    if (inpSel.length > 0) {
+      inpSel[no - 1].value = divData[1].trim();
+    }
   }
 }
 
-function pasteEventMS2(e) {
-  let caretPos = getCaretPosition();
-  let editorPos = document.getElementById("ms2_text_editor");
-  let editor = editorPos == caretPos ? editorPos : caretPos;
-  let clipboardData = e.clipboardData || window.clipboardData;
-  let pD = clipboardData.getData("Text").split("\n");
-  let x = "";
-  for (let i = 0; i < pD.length; i++) {
-    let nbe = pD[i];
-    if (i == 0 && !editor.tagName) {
-      replaceSelectedText(nbe);
-      continue;
-    }
-    let inpData = nbe.split(":");
-    if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
-      if (
-        !findInputIdMS2(inpData[0].trim().split("_")[0].trim()) ||
-        (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
-        (
-          inpData.length == 3 &&
-          inpData[1].trim() != "Set" &&
-          inpData[1].trim() != "Sequence" &&
-          inpData[1].trim() != "Form" &&
-          inpData[1].trim() != "To"
-        )
-      ) {
-        x += `<div class="form-text-design-invalid data-div">
-        ${nbe}
-        </div>`;
-      } else {
-        x += `<div class="form-text-design data-div">
-        ${nbe}
-        </div>`;
-      }
-    }
-  }
-  if (editor.tagName) editor.innerHTML += x;
-  else {
-    caretPos = caretPos.parentElement;
-    caretPos.innerHTML += x;
-  }
-  removeExtraLines(editor);
-  if (editorPos == caretPos) {
-    editor.innerHTML += "<br>";
-    setEndOfContenteditable(editor);
-  } else if (!editor.tagName && pD.length == 1) {
-    setEndOfContenteditable(getCaretPosition());
-  }
-  else {
-    $(editorPos).find("br").remove();
-    setEndOfContenteditable(caretPos);
-  }
-  return false;
-}
 // Form by text editor End
 // Manage template Sample 2 End
 
@@ -2096,10 +1868,7 @@ function findInputIdMS4(title) {
   else return false;
 }
 
-function formToWindowMS4(e) {
-  let tBody = $(e).parent().parent().parent()
-    .children(".text-editor-popup-body")
-    .find("#ms4_text_editor");
+function formToWindowMS4() {
   let renHtml = "";
 
   let idFromTable = $(`#tem-sample4-second tbody tr`);
@@ -2126,223 +1895,41 @@ function formToWindowMS4(e) {
       }
     }
   }
-  tBody.html(renHtml);
+  return renHtml;
 }
 
-function windowToFormMS4(e) {
-  let tRow = $(e).parent().parent().parent()
-    .children(".text-editor-popup-body")
-    .find("#ms4_text_editor div.form-text-design.data-div");
-  let len = tRow.length;
-  for (let i = 0; i < len; i++) {
-    let divData = $(tRow[i])[0].innerText.split(":");
-    let [title, no] = divData[0].trim().split("_");
-    no = no != undefined ? no : 1;
-    let { id, dataType } = findInputIdMS4(title);
-    if (id && divData.length == 2) {
-      let comDiv = $(`#man-tem-sam4-input-data div#${id}`);
-      if (!(comDiv && comDiv.length)) {
-        $(`tr#${id}`).dblclick();
-      }
-      if (dataType == "range") {
-        let rangeDiv = $(`#man-tem-sam4-input-data div#${id} div.width-custom-range-70.d-flex`);
-        let rangeDes =
-          `<span class="min">0</span>
-        <div class="range-wrapper-sample-4">
-          <input class="range-example-input-2" type="text" min="0" max="100" value="${divData[1].trim()}" name="points" step="1" width="100" />
-        </div>
-        <span class="max">100</span>`;
-        rangeDiv.html(rangeDes);
-        $(".range-example-input-2").asRange({
-          range: true,
-          limit: false
-        });
-      } else if (dataType == "select") {
-        let inpD = $(`#man-tem-sam4-input-data div#${id} select`);
-        inpD[no - 1].value = divData[1].trim();
-      } else if (dataType == "inputText" || dataType == "date") {
-        let inpD = $(`#man-tem-sam4-input-data div#${id} input[type=text]`);
-        inpD[no - 1].value = divData[1].trim();
-      }
+function windowToFormMS4(divData) {
+  let [title, no] = divData[0].trim().split("_");
+  no = no != undefined ? no : 1;
+  let { id, dataType } = findInputIdMS4(title);
+  if (id && divData.length == 2) {
+    let comDiv = $(`#man-tem-sam4-input-data div#${id}`);
+    if (!(comDiv && comDiv.length)) {
+      $(`tr#${id}`).dblclick();
+    }
+    if (dataType == "range") {
+      let rangeDiv = $(`#man-tem-sam4-input-data div#${id} div.width-custom-range-70.d-flex`);
+      let rangeDes =
+        `<span class="min">0</span>
+      <div class="range-wrapper-sample-4">
+        <input class="range-example-input-2" type="text" min="0" max="100" value="${divData[1].trim()}" name="points" step="1" width="100" />
+      </div>
+      <span class="max">100</span>`;
+      rangeDiv.html(rangeDes);
+      $(".range-example-input-2").asRange({
+        range: true,
+        limit: false
+      });
+    } else if (dataType == "select") {
+      let inpD = $(`#man-tem-sam4-input-data div#${id} select`);
+      inpD[no - 1].value = divData[1].trim();
+    } else if (dataType == "inputText" || dataType == "date") {
+      let inpD = $(`#man-tem-sam4-input-data div#${id} input[type=text]`);
+      inpD[no - 1].value = divData[1].trim();
     }
   }
 }
 
-function checkingMS4(e) {
-  $("#adder").remove();
-  // let nd = getCaretPosition();
-  // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
-  if (e.keyCode == 13) {
-    let nd = getCaretPosition();
-    $("#temp").attr("id", "");
-    if (nd.nodeType != 3 && nd.getAttribute("id") == "ms4_text_editor") return false;
-    if (
-      nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
-      nd.textContent != ""
-    ) {
-      let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
-      let extra = getCaretPosition2(nd2);
-      let starting = nd.textContent.substr(0, extra);
-      let inpData = starting.split(":");
-      if (
-        starting != "" &&
-        (!findInputIdMS4(inpData[0].trim().split("_")[0].trim()) ||
-          (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
-          (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
-        )
-      ) {
-        if (extra == nd.textContent.length) {
-          $(nd).replaceWith(
-            `<div class="form-text-design-invalid data-div">${nd.textContent}</div><br id="temp">`
-          );
-          setCaret($("#temp")[0]);
-        } else {
-          $(nd).replaceWith(
-            (extra != 0
-              ? `<div class="form-text-design-invalid data-div">
-              ${nd.textContent.substr(0, extra)}
-              </div>`
-              : "<br>") +
-            `<div id="temp">
-            ${nd.textContent.substr(extra)}
-            </div>`
-          );
-          setCaret($("#temp")[0]);
-        }
-        document.getElementById("temp").removeAttribute("id");
-      } else {
-        if (extra == nd.textContent.length) {
-          $(nd).replaceWith(
-            `<div class="form-text-design data-div">
-            ${nd.textContent}
-            </div>
-            <br id="temp">`
-          );
-          //setEndOfContenteditable(document.getElementById("temp"));
-          setCaret($("#temp")[0]);
-        } else {
-          $(nd).replaceWith(
-            (extra != 0
-              ? `<div class="form-text-design data-div">
-              ${nd.textContent.substr(0, extra)}
-              </div>`
-              : "<br>") +
-            `<div id="temp">
-              ${nd.textContent.substr(extra)}
-            </div>
-            <br>`
-          );
-          setCaret($("#temp")[0]);
-        }
-        document.getElementById("temp").removeAttribute("id");
-      }
-    }
-    return false;
-  }
-  // this will add autocorrect box
-  setTimeout(autoCorrectMS4, 100);
-}
-
-function autoCorrectMS4() {
-  let pos = getCaretPosition();
-  if ($(pos).find("#adder").length == 1) $("#adder").remove();
-  while (document.getElementById("temp")) {
-    document.getElementById("temp").removeAttribute("id");
-  }
-  let x = pos.textContent;
-  let editor = document.getElementById("text_editor_p");
-
-  let m = "";
-  let first = 1;
-  if (x.indexOf(":") == -1) {
-    $("#adder").addClass("set-name");
-    sam4DataArray.forEach(({ name }) => {
-      if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
-        if (first) {
-          m += `<option selected value="${name}">${name}</option><br>`;
-        }
-        else {
-          m += `<option value="${name}">${name}</option><br>`;
-        }
-        first = 0;
-      }
-    });
-  }
-
-  let y =
-    `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
-    ${m}
-    </select>`;
-  // add auto correct ... only if there is atleast one match
-  if (m != "") {
-    if (x.indexOf(":") == -1) {
-      $(pos).replaceWith(
-        `<div id="temp">${x}</div>
-        <div id="adder" class="set-name"></div>`
-      );
-    } else {
-      $(pos).replaceWith(
-        `<div id="temp">${x}</div>
-        <div id="adder" class="set-sug"></div>`
-      );
-    }
-    document.getElementById("adder").innerHTML = y;
-    document.getElementById("adder").style.display = "block";
-    $("#adder select").focus();
-  } else {
-    $("#adder").remove();
-    // setEndOfContenteditable(document.getElementById("temp"));
-    // document.getElementById("temp").removeAttribute("id");
-  }
-}
-
-function pasteEventMS4(e) {
-  let caretPos = getCaretPosition();
-  let editorPos = document.getElementById("ms4_text_editor");
-  let editor = editorPos == caretPos ? editorPos : caretPos;
-  let clipboardData = e.clipboardData || window.clipboardData;
-  let pD = clipboardData.getData("Text").split("\n");
-  let x = "";
-  for (let i = 0; i < pD.length; i++) {
-    let nbe = pD[i];
-    if (i == 0 && !editor.tagName) {
-      replaceSelectedText(nbe);
-      continue;
-    }
-    let inpData = nbe.split(":");
-    if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
-      if (
-        !findInputIdMS4(inpData[0].trim().split("_")[0].trim()) ||
-        (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
-        (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
-      ) {
-        x += `<div class="form-text-design-invalid data-div">
-        ${nbe}
-        </div>`;
-      } else {
-        x += `<div class="form-text-design data-div">
-        ${nbe}
-        </div>`;
-      }
-    }
-  }
-  if (editor.tagName) editor.innerHTML += x;
-  else {
-    caretPos = caretPos.parentElement;
-    caretPos.innerHTML += x;
-  }
-  removeExtraLines(editor);
-  if (editorPos == caretPos) {
-    editor.innerHTML += "<br>";
-    setEndOfContenteditable(editor);
-  } else if (!editor.tagName && pD.length == 1) {
-    setEndOfContenteditable(getCaretPosition());
-  } else {
-    $(editorPos).find("br").remove();
-    setEndOfContenteditable(caretPos);
-  }
-  return false;
-}
 // Form by Text Editor End
 // Manage template Sample 4 End
 
@@ -2351,47 +1938,47 @@ function pasteEventMS4(e) {
 let sectionMS3 = [
   {
     id: "fieldset_id21",
-    name: "sectionA",
+    name: "Section A",
     type: "input",
   },
   {
     id: "fieldset_id22",
-    name: "sectionB",
+    name: "Section B",
     type: "input",
   },
   {
     id: "fieldset_id23",
-    name: "sectionC",
+    name: "Section C",
     type: "option",
   },
   {
     id: "fieldset_id24",
-    name: "sectionD",
+    name: "Section D",
     type: "input",
   },
   {
     id: "fieldset_id25",
-    name: "sectionE",
+    name: "Section E",
     type: "input",
   },
   {
     id: "fieldset_id26",
-    name: "sectionF",
+    name: "Section F",
     type: "option",
   },
   {
     id: "fieldset_id27",
-    name: "sectionG",
+    name: "Section G",
     type: "option",
   },
   {
     id: "fieldset_id28",
-    name: "sectionH",
+    name: "Section H",
     type: "input",
   },
   {
     id: "fieldset_id29",
-    name: "sectionI",
+    name: "Section I",
     type: "input",
   },
 ];
@@ -2400,181 +1987,10 @@ function findInputIdMS3(title) {
   if (res.length) return res[0];
   else return false;
 }
-function checkingMS3(e) {
-  $("#adder").remove();
-  // let nd = getCaretPosition();
-  // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
-  if (e.keyCode == 13) {
-    let nd = getCaretPosition();
-    $("#temp").attr("id", "");
-    if (nd.nodeType != 3 && nd.getAttribute("id") == "ms3_text_editor") return false;
-    if (
-      nd.textContent.substr(0, nd.textContent.indexOf(": ")) != -1 &&
-      nd.textContent != ""
-    ) {
-      let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
-      let extra = getCaretPosition2(nd2);
-      let starting = nd.textContent.substr(0, extra);
-      let inpData = starting.split(":");
-      if (
-        starting != "" && !findInputIdMS3(inpData[0].trim())
-      ) {
-        if (extra == nd.textContent.length) {
-          $(nd).replaceWith(
-            `<div class="form-text-design-invalid data-div">${nd.textContent}</div><br id="temp">`
-          );
-          setCaret($("#temp")[0]);
-        } else {
-          $(nd).replaceWith(
-            (extra != 0
-              ? `<div class="form-text-design-invalid data-div">
-              ${nd.textContent.substr(0, extra)}
-              </div>`
-              : "<br>") +
-            `<div id="temp">
-            ${nd.textContent.substr(extra)}
-            </div>`
-          );
-          setCaret($("#temp")[0]);
-        }
-        document.getElementById("temp").removeAttribute("id");
-      } else {
-        if (extra == nd.textContent.length) {
-          $(nd).replaceWith(
-            `<div class="form-text-design data-div">
-            ${nd.textContent}
-            </div>
-            <br id="temp">`
-          );
-          //setEndOfContenteditable(document.getElementById("temp"));
-          setCaret($("#temp")[0]);
-        } else {
-          $(nd).replaceWith(
-            (extra != 0
-              ? `<div class="form-text-design data-div">
-              ${nd.textContent.substr(0, extra)}
-              </div>`
-              : "<br>") +
-            `<div id="temp">
-              ${nd.textContent.substr(extra)}
-            </div>
-            <br>`
-          );
-          setCaret($("#temp")[0]);
-        }
-        document.getElementById("temp").removeAttribute("id");
-      }
-    }
-    return false;
-  }
-  // this will add autocorrect box
-  setTimeout(autoCorrectMS3, 100);
-}
-function autoCorrectMS3() {
-  let pos = getCaretPosition();
-  if ($(pos).find("#adder").length == 1) $("#adder").remove();
-  while (document.getElementById("temp")) {
-    document.getElementById("temp").removeAttribute("id");
-  }
-  let x = pos.textContent;
-  let editor = document.getElementById("text_editor_p");
 
-  let m = "";
-  let first = 1;
-  if (x.indexOf(":") == -1) {
-    $("#adder").addClass("set-name");
-    sectionMS3.forEach(({ name }) => {
-      if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
-        if (first) {
-          m += `<option selected value="${name}">${name}</option><br>`;
-        }
-        else {
-          m += `<option value="${name}">${name}</option><br>`;
-        }
-        first = 0;
-      }
-    });
-  }
-
-  let y =
-    `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
-    ${m}
-    </select>`;
-  // add auto correct ... only if there is atleast one match
-  if (m != "") {
-    if (x.indexOf(":") == -1) {
-      $(pos).replaceWith(
-        `<div id="temp">${x}</div>
-        <div id="adder" class="set-name"></div>`
-      );
-    } else {
-      $(pos).replaceWith(
-        `<div id="temp">${x}</div>
-        <div id="adder" class="set-sug"></div>`
-      );
-    }
-    document.getElementById("adder").innerHTML = y;
-    document.getElementById("adder").style.display = "block";
-    $("#adder select").focus();
-  } else {
-    $("#adder").remove();
-    // setEndOfContenteditable(document.getElementById("temp"));
-    // document.getElementById("temp").removeAttribute("id");
-  }
-}
-function pasteEventMS3(e) {
-  let caretPos = getCaretPosition();
-  let editorPos = document.getElementById("ms3_text_editor");
-  let editor = editorPos == caretPos ? editorPos : caretPos;
-  let clipboardData = e.clipboardData || window.clipboardData;
-  let pD = clipboardData.getData("Text").split("\n");
-  let x = "";
-  for (let i = 0; i < pD.length; i++) {
-    let nbe = pD[i];
-    if (i == 0 && !editor.tagName) {
-      replaceSelectedText(nbe);
-      continue;
-    }
-    let inpData = nbe.split(":");
-    if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
-      if (
-        !findInputIdMS3(inpData[0].trim())
-      ) {
-        x += `<div class="form-text-design-invalid data-div">
-        ${nbe}
-        </div>`;
-      } else {
-        x += `<div class="form-text-design data-div">
-        ${nbe}
-        </div>`;
-      }
-    }
-  }
-  if (editor.tagName) editor.innerHTML += x;
-  else {
-    caretPos = caretPos.parentElement;
-    caretPos.innerHTML += x;
-  }
-  removeExtraLines(editor);
-  if (editorPos == caretPos) {
-    editor.innerHTML += "<br>";
-    setEndOfContenteditable(editor);
-  } else if (!editor.tagName && pD.length == 1) {
-    setEndOfContenteditable(getCaretPosition());
-  } else {
-    $(editorPos).find("br").remove();
-    setEndOfContenteditable(caretPos);
-  }
-  return false;
-}
-function windowToFormMS3(e) {
-  let tRow = $(e).parent().parent().parent()
-    .children(".text-editor-popup-body")
-    .find("#ms3_text_editor div.form-text-design.data-div");
-  let len = tRow.length;
-  for (let i = 0; i < len; i++) {
-    let divData = $(tRow[i])[0].innerText.split(":");
-    let { id, name, type } = findInputIdMS3(divData[0].trim());
+function windowToFormMS3(divData) {
+  let { id, name, type } = findInputIdMS3(divData[0].trim());
+  if (divData.length > 2) {
     if (type == "input") {
       let inp = $(`fieldset#${id} .data-form input[type=text]`);
       for (let j = 0; j < inp.length; j++) {
@@ -2597,15 +2013,27 @@ function windowToFormMS3(e) {
       }
     }
   }
+  else if (divData.length == 2) {
+    const sectionCheck = $(`fieldset#${id} legend input[type=checkbox]`);
+    if (divData[1].trim() == "checked") {
+      sectionCheck.prop("checked", true);
+    } else if (divData[1].trim() == "unchecked") {
+      sectionCheck.prop("checked", false);
+    }
+  }
 }
-function formToWindowMS3(e) {
-  let tBody = $(e).parent().parent().parent()
-    .children(".text-editor-popup-body")
-    .find("#ms3_text_editor");
+function formToWindowMS3() {
   let renHtml = "";
 
   // Section All
   sectionMS3.forEach(({ id, name, type }) => {
+    const sectionCheck = $(`fieldset#${id} legend input[type=checkbox]`);
+    if (sectionCheck.is(":checked")) {
+      renHtml += `<div class="form-text-design data-div">
+        ${name} : checked
+      </div>`;
+    }
+
     if (type == "input") {
       let section = $(`fieldset#${id}`);
       let inp = section.find(".data-form input[type=text]");
@@ -2634,7 +2062,7 @@ function formToWindowMS3(e) {
     }
   });
 
-  tBody.html(renHtml);
+  return renHtml;
 }
 // Form by text editor End
 // Manage template Sample 3 End
@@ -2664,10 +2092,114 @@ function findInputIdMS1(title) {
   if (res.length) return res[0];
   else return false;
 }
-function checkingMS1(e) {
+function windowToFormMS1(divData) {
+  let { id, name } = findInputIdMS1(divData[0].trim());
+  let dataLi = divData.length > 2 ? findFileListMS1(divData[2].trim(), name) : false;
+  if (dataLi) {
+    let { id: id2 } = dataLi;
+    let liList = document.querySelector(`div#${id} div.sub-ul-managetemp-modallist ul li.${id2}`);
+    let checkBox = $(liList).children(`div.sublist-check-box`);
+    let cancelBox = $(liList).children(`div.sublist-cancel-box`);
+    if (divData[3].trim() == "checked") {
+      checkBox.addClass("checkbox_show");
+      checkBox.removeClass("checkbox_hide");
+      cancelBox.removeClass("checkbox_show");
+      cancelBox.addClass("checkbox_hide");
+    } else if (divData[3].trim() == "unchecked") {
+      checkBox.addClass("checkbox_hide");
+      checkBox.removeClass("checkbox_show");
+      cancelBox.addClass("checkbox_show");
+      cancelBox.removeClass("checkbox_hide");
+    }
+
+    let _id = $(liList).parent().attr("id");
+    let markItem = $(`div#${id} ul.left-list-box li.modalmanagetemplist-item-${_id.split("-").splice(-1)[0]} div.green-check-box`);
+    let abcd = name == "LIST 1" ? "a" : name == "LIST 2" ? "b" : name == "LIST 3" ? "c" : name == "LIST 4" ? "d" : "";
+    let count = $(`div#${id} ul#managetemp${abcd}-submodal-div-list-1-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
+    count += $(`div#${id} ul#managetemp${abcd}-submodal-div-list-2-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
+    count += $(`div#${id} ul#managetemp${abcd}-submodal-div-list-3-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
+    if (count > 0) {
+      markItem.addClass("display-block");
+      markItem.removeClass("display-none");
+    } else {
+      markItem.addClass("display-none");
+      markItem.removeClass("display-block");
+    }
+
+    $(`div#${id} a#submit_list`).click();
+  }
+}
+function formToWindowMS1() {
+  let renHtml = "";
+  listMS1.forEach(({ id, name }) => {
+    let checkList = $(`div#${id} div.sub-ul-managetemp-modallist .submodal-list div.sublist-check-box.checkbox_show`);
+    let len = checkList.length;
+    for (let i = 0; i < len; i++) {
+      let li = $(checkList[i]).parent();
+      let listName = li.children("p")[0].textContent.trim();
+      let className = li.attr("class");
+      let dataLi = findFileListMS1(className, name);
+      if (dataLi) {
+        renHtml += `<div class="form-text-design data-div">
+          ${name}: ${dataLi.item}: ${listName}: checked
+        </div>`;
+      }
+    }
+  });
+
+  return renHtml;
+}
+// Form by text editor End
+// Manage template Sample 1 End
+$("#datepicker_field_set21").datepicker();
+$("#datepicker_field_set21").datepicker("option", "dateFormat", "DD - MM d, yy");
+$("#datepicker_field_set22").datepicker();
+$("#datepicker_field_set22").datepicker("option", "dateFormat", "DD - MM d, yy");
+
+
+$("#datepicker_field_set21_icon").click(function () {
+  $("#datepicker_field_set21").focus();
+});
+$("#datepicker_field_set22_icon").click(function () {
+  $("#datepicker_field_set22").focus();
+});
+
+// All in one Start
+function findInputIdAll(title) {
+  const findId1 = findInputIdMS1(title);
+  const findId2 = findInputIdMS2(title);
+  const findId3 = findInputIdMS3(title);
+  const findId4 = findInputIdMS4(title);
+
+  if (findId1) {
+    return {
+      pageName: "sp1",
+      ...findId1
+    }
+  }
+  else if (findId2) {
+    return {
+      pageName: "sp2",
+      ...findId2
+    }
+  }
+  else if (findId3) {
+    return {
+      pageName: "sp3",
+      ...findId3
+    }
+  }
+  else if (findId4) {
+    return {
+      pageName: "sp4",
+      ...findId4
+    }
+  }
+  else return false;
+}
+
+function checkingAll(e) {
   $("#adder").remove();
-  // let nd = getCaretPosition();
-  // let nd2 = nd.nodeType == 3 ? $(nd).parent()[0] : nd;
   if (e.keyCode == 13) {
     let nd = getCaretPosition();
     $("#temp").attr("id", "");
@@ -2681,7 +2213,7 @@ function checkingMS1(e) {
       let starting = nd.textContent.substr(0, extra);
       let inpData = starting.split(":");
       if (
-        starting != "" && !findInputIdMS1(inpData[0].trim())
+        starting != "" && !findInputIdAll(inpData[0].trim().split("_")[0].trim())
       ) {
         if (extra == nd.textContent.length) {
           $(nd).replaceWith(
@@ -2710,7 +2242,6 @@ function checkingMS1(e) {
             </div>
             <br id="temp">`
           );
-          //setEndOfContenteditable(document.getElementById("temp"));
           setCaret($("#temp")[0]);
         } else {
           $(nd).replaceWith(
@@ -2732,9 +2263,10 @@ function checkingMS1(e) {
     return false;
   }
   // this will add autocorrect box
-  setTimeout(autoCorrectMS1, 100);
+  setTimeout(autoCorrectAll, 100);
 }
-function autoCorrectMS1() {
+
+function autoCorrectAll() {
   let pos = getCaretPosition();
   if ($(pos).find("#adder").length == 1) $("#adder").remove();
   while (document.getElementById("temp")) {
@@ -2746,7 +2278,8 @@ function autoCorrectMS1() {
   let m = "";
   let first = 1;
   if (x.indexOf(":") == -1) {
-    listMS1.forEach(({ name }) => {
+    const sugName = listMS1.concat(manTemLeftData).concat(manTemRightData).concat(sectionMS3).concat(sam4DataArray);
+    sugName.forEach(({ name }) => {
       if (name.toLowerCase().indexOf(x.toLowerCase()) == 0) {
         if (first) {
           m += `<option selected value="${name}">${name}</option><br>`;
@@ -2763,7 +2296,6 @@ function autoCorrectMS1() {
     `<select onfocus="this.size=3" onblur="this.size=1" onkeydown="keyHandler(event, this)" onclick="event.stopPropagation();if(clicked) addField(this.value); clicked = true;">
     ${m}
     </select>`;
-  // add auto correct ... only if there is atleast one match
   if (m != "") {
     if (x.indexOf(":") == -1) {
       $(pos).replaceWith(
@@ -2781,11 +2313,10 @@ function autoCorrectMS1() {
     $("#adder select").focus();
   } else {
     $("#adder").remove();
-    // setEndOfContenteditable(document.getElementById("temp"));
-    // document.getElementById("temp").removeAttribute("id");
   }
 }
-function pasteEventMS1(e) {
+
+function pasteEventAll(e) {
   let caretPos = getCaretPosition();
   let editorPos = document.getElementById("ms1_text_editor");
   let editor = editorPos == caretPos ? editorPos : caretPos;
@@ -2800,16 +2331,68 @@ function pasteEventMS1(e) {
     }
     let inpData = nbe.split(":");
     if (nbe.substr(0, nbe.indexOf(": ")) != -1 && nbe != "") {
-      if (
-        !findInputIdMS1(inpData[0].trim())
-      ) {
-        x += `<div class="form-text-design-invalid data-div">
-        ${nbe}
-        </div>`;
-      } else {
-        x += `<div class="form-text-design data-div">
-        ${nbe}
-        </div>`;
+      const { pageName } = findInputIdAll(inpData[0].trim().split("_")[0].trim());
+      if (pageName == "sp1") {
+        if (
+          !findInputIdMS1(inpData[0].trim())
+        ) {
+          x += `<div class="form-text-design-invalid data-div">
+          ${nbe}
+          </div>`;
+        } else {
+          x += `<div class="form-text-design data-div">
+          ${nbe}
+          </div>`;
+        }
+      }
+      else if (pageName == "sp2") {
+        if (
+          !findInputIdMS2(inpData[0].trim().split("_")[0].trim()) ||
+          (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
+          (
+            inpData.length == 3 &&
+            inpData[1].trim() != "Set" &&
+            inpData[1].trim() != "Sequence" &&
+            inpData[1].trim() != "Form" &&
+            inpData[1].trim() != "To"
+          )
+        ) {
+          x += `<div class="form-text-design-invalid data-div">
+          ${nbe}
+          </div>`;
+        } else {
+          x += `<div class="form-text-design data-div">
+          ${nbe}
+          </div>`;
+        }
+      }
+      else if (pageName == "sp3") {
+        if (
+          !findInputIdMS3(inpData[0].trim())
+        ) {
+          x += `<div class="form-text-design-invalid data-div">
+          ${nbe}
+          </div>`;
+        } else {
+          x += `<div class="form-text-design data-div">
+          ${nbe}
+          </div>`;
+        }
+      }
+      else if (pageName == "sp4") {
+        if (
+          !findInputIdMS4(inpData[0].trim().split("_")[0].trim()) ||
+          (inpData.length == 3 && (inpData[2].trim() == "\r" || inpData[2].trim() == "")) ||
+          (inpData.length == 2 && (inpData[1].trim() == "\r" || inpData[1].trim() == ""))
+        ) {
+          x += `<div class="form-text-design-invalid data-div">
+          ${nbe}
+          </div>`;
+        } else {
+          x += `<div class="form-text-design data-div">
+          ${nbe}
+          </div>`;
+        }
       }
     }
   }
@@ -2824,90 +2407,47 @@ function pasteEventMS1(e) {
     setEndOfContenteditable(editor);
   } else if (!editor.tagName && pD.length == 1) {
     setEndOfContenteditable(getCaretPosition());
-  } else {
+  }
+  else {
     $(editorPos).find("br").remove();
     setEndOfContenteditable(caretPos);
   }
   return false;
 }
-function windowToFormMS1(e) {
+
+function formToWindowAll(e) {
+  let tBody = $(e).parent().parent().parent()
+    .children(".text-editor-popup-body")
+    .find("#ms1_text_editor");
+  const renHtml1 = formToWindowMS1();
+  const renHtml2 = formToWindowMS2();
+  const renHtml3 = formToWindowMS3();
+  const renHtml4 = formToWindowMS4();
+  tBody.html(renHtml1 + renHtml2 + renHtml3 + renHtml4);
+}
+
+function windowToFormAll(e){
   let tRow = $(e).parent().parent().parent()
     .children(".text-editor-popup-body")
     .find("#ms1_text_editor div.form-text-design.data-div");
   let len = tRow.length;
   for (let i = 0; i < len; i++) {
-    let divData = $(tRow[i])[0].innerText.split(":");
-    let { id, name } = findInputIdMS1(divData[0].trim());
-    let dataLi = divData.length > 2 ? findFileListMS1(divData[2].trim(), name) : false;
-    if (dataLi) {
-      let { id: id2 } = dataLi;
-      let liList = document.querySelector(`div#${id} div.sub-ul-managetemp-modallist ul li.${id2}`);
-      let checkBox = $(liList).children(`div.sublist-check-box`);
-      let cancelBox = $(liList).children(`div.sublist-cancel-box`);
-      if (divData[3].trim() == "checked") {
-        checkBox.addClass("checkbox_show");
-        checkBox.removeClass("checkbox_hide");
-        cancelBox.removeClass("checkbox_show");
-        cancelBox.addClass("checkbox_hide");
-      } else if (divData[3].trim() == "unchecked") {
-        checkBox.addClass("checkbox_hide");
-        checkBox.removeClass("checkbox_show");
-        cancelBox.addClass("checkbox_show");
-        cancelBox.removeClass("checkbox_hide");
-      }
-
-      let _id = $(liList).parent().attr("id");
-      let markItem = $(`div#${id} ul.left-list-box li.modalmanagetemplist-item-${_id.split("-").splice(-1)[0]} div.green-check-box`);
-      let abcd = name == "LIST 1" ? "a" : name == "LIST 2" ? "b" : name == "LIST 3" ? "c" : name == "LIST 4" ? "d" : "";
-      let count = $(`div#${id} ul#managetemp${abcd}-submodal-div-list-1-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
-      count += $(`div#${id} ul#managetemp${abcd}-submodal-div-list-2-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
-      count += $(`div#${id} ul#managetemp${abcd}-submodal-div-list-3-${_id.split("-").splice(-1)[0]} li div.sublist-check-box.checkbox_show`).length;
-      if (count > 0) {
-        markItem.addClass("display-block");
-        markItem.removeClass("display-none");
-      } else {
-        markItem.addClass("display-none");
-        markItem.removeClass("display-block");
-      }
-
-      $(`div#${id} a#submit_list`).click();
+    // ms1
+    const divData = $(tRow[i])[0].innerText.split(":");
+    const [title, no] = divData[0].trim().split("_");
+    const { pageName } = findInputIdAll(title);
+    if (pageName == "sp1") {
+      windowToFormMS1(divData);
+    }
+    else if (pageName == "sp2") {
+      windowToFormMS2(divData);
+    }
+    else if (pageName == "sp3") {
+      windowToFormMS3(divData);
+    }
+    else if (pageName == "sp4") {
+      windowToFormMS4(divData);
     }
   }
 }
-function formToWindowMS1(e) {
-  let tBody = $(e).parent().parent().parent()
-    .children(".text-editor-popup-body")
-    .find("#ms1_text_editor");
-  let renHtml = "";
-  listMS1.forEach(({ id, name }) => {
-    let checkList = $(`div#${id} div.sub-ul-managetemp-modallist .submodal-list div.sublist-check-box.checkbox_show`);
-    let len = checkList.length;
-    for (let i = 0; i < len; i++) {
-      let li = $(checkList[i]).parent();
-      let listName = li.children("p")[0].textContent.trim();
-      let className = li.attr("class");
-      let dataLi = findFileListMS1(className, name);
-      if (dataLi) {
-        renHtml += `<div class="form-text-design data-div">
-          ${name}: ${dataLi.item}: ${listName}: checked
-        </div>`;
-      }
-    }
-  });
-
-  tBody.html(renHtml);
-}
-// Form by text editor End
-// Manage template Sample 1 End
-$("#datepicker_field_set21").datepicker();
-$("#datepicker_field_set21").datepicker("option", "dateFormat", "DD - MM d, yy");
-$("#datepicker_field_set22").datepicker();
-$("#datepicker_field_set22").datepicker("option", "dateFormat", "DD - MM d, yy");
-
-
-$("#datepicker_field_set21_icon").click(function () {
-  $("#datepicker_field_set21").focus();
-});
-$("#datepicker_field_set22_icon").click(function () {
-  $("#datepicker_field_set22").focus();
-});
+// All in one End

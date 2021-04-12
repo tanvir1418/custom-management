@@ -946,6 +946,14 @@ $(".style1-box").click(function () {
         $(".right-slider5").css("display", "block");
         $(".left-slider5").css("display", "block");
     }
+
+    $("#viewtwo_style2").css('display','none');
+    $("#rowdetails_style2").css('display','none');
+    $("#noteswindow_style2").css('display','none');
+    $("#alertswindow_style2").css('display','none');
+    $("#copyrowlist_style2").css('display','none');
+    $("#moverowlist_style2").css('display','none');
+
 });
 
 $(".style2-box").click(function () {
@@ -966,6 +974,14 @@ $(".style2-box").click(function () {
         $(".right-slider5").css("display", "none");
         $(".left-slider5").css("display", "none");
     }
+
+    $("#viewtwo").css('display','none');
+    $("#rowdetails").css('display','none');
+    $("#noteswindow").css('display','none');
+    $("#alertswindow").css('display','none');
+    $("#copyrowlist").css('display','none');
+    $("#moverowlist").css('display','none');
+
 });
 
 
@@ -1410,10 +1426,131 @@ function IconModalClick() {
     for (let i = 0; i < viewModalList.length; i++) {
         viewModalList[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#viewtwo .modal-dialog").css({
-                top: ((elementPositionMain.bottom) + 7),
-                left: ((elementPositionMain.left) - 10)
+
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
+            $("#viewtwo").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
             });
+
+            $("#viewtwo").css('display','block');
+
+        });
+    }
+
+    let rowModalClick = document.getElementsByClassName('row-modal-click');
+    for (let i = 0; i < rowModalClick.length; i++) {
+        rowModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
+            $("#rowdetails").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
+            });
+
+            $("#rowdetails").css('display','block');
+
+        });
+    }
+
+    let noteModalClick = document.getElementsByClassName('note-modal-click');
+    for (let i = 0; i < noteModalClick.length; i++) {
+        noteModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
+            $("#noteswindow").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
+            });
+
+            $("#noteswindow").css('display','block');
+
+        });
+    }
+
+    let copyModalClick = document.getElementsByClassName('copyrowlist-modal-click');
+    for (let i = 0; i < copyModalClick.length; i++) {
+        copyModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
+            $("#copyrowlist").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
+            });
+
+            $("#copyrowlist").css('display','block');
+
+        });
+    }
+
+    let moveModalClick = document.getElementsByClassName('moverowlist-modal-click');
+    for (let i = 0; i < moveModalClick.length; i++) {
+        moveModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
+            $("#moverowlist").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
+            });
+
+            $("#moverowlist").css('display','block');
+
+        });
+    }
+
+    let alertModalClick = document.getElementsByClassName('alertswindow-modal-click');
+    for (let i = 0; i < alertModalClick.length; i++) {
+        alertModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
+            $("#alertswindow").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
+            });
+
+            $("#alertswindow").css('display','block');
+
         });
     }
 
@@ -1421,7 +1558,20 @@ function IconModalClick() {
     for (let i = 0; i < viewModalListSty2.length; i++) {
         viewModalListSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
+            $("#viewtwo_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) + 2)
+            });
+
+            $("#viewtwo_style2").css('display','block');
             // console.log(event.target.nodeName);
             // console.log(event.target.parentElement.nodeName);
             // console.log(event.target.parentElement.parentElement.nodeName);
@@ -1430,25 +1580,26 @@ function IconModalClick() {
             // console.log("Bottom value :" + event.target.getBoundingClientRect().bottom);
             // console.log("Left value :" + event.target.getBoundingClientRect().left);
 
-            $("#viewtwo_style2 .modal-dialog").css({
-                top: ((elementPositionMain.bottom) + 7),
-                left: ((elementPositionMain.left) + 2)
-            });
+            // $("#viewtwo_style2 .modal-dialog").css({
+            //     top: ((elementPositionMain.bottom) + 7),
+            //     left: ((elementPositionMain.left) + 2)
+            // });
+
             // $("#viewtwo_style2 .modal-dialog").css({
             //     top: ((event.clientY) + 13),
             //     left: ((event.clientX) - 25)
             // });
-        });
-    }
 
-    let rowModalClick = document.getElementsByClassName('row-modal-click');
-    for (let i = 0; i < rowModalClick.length; i++) {
-        rowModalClick[i].addEventListener("click", function (event) {
-            let elementPositionMain = forceEventTargetDiv(event);
-            $("#rowdetails .modal-dialog").css({
-                top: ((elementPositionMain.bottom) + 7),
-                left: ((elementPositionMain.left) - 10)
-            });
+            // $("#viewtwo_style2").css({
+                //     top: ((event.pageY) + event.offsetY),
+                //     left: ((event.pageX) - event.offsetX)
+            // });
+
+            // let targetName = event.target.nodeName;
+            // console.log("Tag Name: " + targetName);
+            // console.log(event.target.getBoundingClientRect());
+            // console.log(window.scrollY);
+            // console.log(event.target.getBoundingClientRect().y + window.scrollY);
         });
     }
 
@@ -1456,21 +1607,21 @@ function IconModalClick() {
     for (let i = 0; i < rowModalClickSty2.length; i++) {
         rowModalClickSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#rowdetails_style2 .modal-dialog").css({
-                top: ((elementPositionMain.bottom) + 7),
-                left: ((elementPositionMain.left) + 2)
-            });
-        });
-    }
 
-    let noteModalClick = document.getElementsByClassName('note-modal-click');
-    for (let i = 0; i < noteModalClick.length; i++) {
-        noteModalClick[i].addEventListener("click", function (event) {
-            let elementPositionMain = forceEventTargetDiv(event);
-            $("#noteswindow .modal-dialog").css({
-                top: ((elementPositionMain.bottom) + 7),
-                left: ((elementPositionMain.left) - 10)
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
+            $("#rowdetails_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) + 2)
             });
+
+            $("#rowdetails_style2").css('display','block');
+
         });
     }
 
@@ -1478,54 +1629,43 @@ function IconModalClick() {
     for (let i = 0; i < noteModalClickSty2.length; i++) {
         noteModalClickSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#noteswindow_style2 .modal-dialog").css({
-                top: ((elementPositionMain.bottom) + 7),
-                left: ((elementPositionMain.left) + 2)
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
+            $("#noteswindow_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) + 2)
             });
+
+            $("#noteswindow_style2").css('display','block');
+
         });
     }
 
-    let copyModalClick = document.getElementsByClassName('copyrowlist-modal-click');
-    for (let i = 0; i < copyModalClick.length; i++) {
-        copyModalClick[i].addEventListener("click", function (event) {
-            let elementPositionMain = forceEventTargetDiv(event);
-            $("#copyrowlist .modal-dialog").css({
-                top: ((elementPositionMain.bottom) + 7),
-                left: ((elementPositionMain.left) - 10)
-            });
-        });
-    }
-
-    let moveModalClick = document.getElementsByClassName('moverowlist-modal-click');
-    for (let i = 0; i < moveModalClick.length; i++) {
-        moveModalClick[i].addEventListener("click", function (event) {
-            let elementPositionMain = forceEventTargetDiv(event);
-            $("#moverowlist .modal-dialog").css({
-                top: ((elementPositionMain.bottom) + 7),
-                left: ((elementPositionMain.left) - 10)
-            });
-        });
-    }
-
-    let alertModalClick = document.getElementsByClassName('alertswindow-modal-click');
-    for (let i = 0; i < alertModalClick.length; i++) {
-        alertModalClick[i].addEventListener("click", function (event) {
-            let elementPositionMain = forceEventTargetDiv(event);
-            $("#alertswindow .modal-dialog").css({
-                top: ((elementPositionMain.bottom) + 7),
-                left: ((elementPositionMain.left) - 10)
-            });
-        });
-    }
-
-		let copyModalClickSty2 = document.getElementsByClassName('copyrowlist-modal-click-style2');
+	let copyModalClickSty2 = document.getElementsByClassName('copyrowlist-modal-click-style2');
     for (let i = 0; i < copyModalClickSty2.length; i++) {
         copyModalClickSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#copyrowlist_style2 .modal-dialog").css({
-                top: ((elementPositionMain.bottom) + 7),
-                left: ((elementPositionMain.left) - 802)
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
+            $("#copyrowlist_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) - 804)
             });
+
+            $("#copyrowlist_style2").css('display','block');
+
         });
     }
 
@@ -1533,22 +1673,44 @@ function IconModalClick() {
     for (let i = 0; i < moveModalClickSty2.length; i++) {
         moveModalClickSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
-            $("#moverowlist_style2 .modal-dialog").css({
-                top: ((elementPositionMain.bottom) + 7),
-                left: ((elementPositionMain.left) - 802)
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
+            $("#moverowlist_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) - 804)
             });
+
+            $("#moverowlist_style2").css('display','block');
+
         });
     }
 
     let alertModalClickSty2 = document.getElementsByClassName('alertswindow-modal-click-style2');
     for (let i = 0; i < alertModalClickSty2.length; i++) {
-			alertModalClickSty2[i].addEventListener("click", function (event) {
-                let elementPositionMain = forceEventTargetDiv(event);
-				$("#alertswindow_style2 .modal-dialog").css({
-					top: ((elementPositionMain.bottom) + 7),
-                    left: ((elementPositionMain.left) - 802)
-				});
-			});
+        alertModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
+            $("#alertswindow_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) - 804)
+            });
+
+            $("#alertswindow_style2").css('display','block');
+
+        });
     }
 
 }
@@ -1582,7 +1744,7 @@ $('#dropBtnModal').on('hidden.bs.modal', function (e) {
 function forceEventTargetDiv(e){
     let elementPosition = "";
     let targetName = e.target.nodeName.toLowerCase();
-    // console.log("Tag Name: " + targetName);
+    //console.log("Tag Name: " + targetName);
     if(targetName == "i"){
         elementPosition = e.target.parentElement.getBoundingClientRect();
     }else{
@@ -1606,3 +1768,45 @@ function forceEventTargetDiv(e){
     }
     return elementPosition;
 }
+
+$("#viewtwo_close").click(function () {
+    $("#viewtwo").css('display','none');
+});
+$("#viewtwo_s2_close").click(function () {
+    $("#viewtwo_style2").css('display','none');
+});
+
+$("#rowdetails_close").click(function () {
+    $("#rowdetails").css('display','none');
+});
+$("#rowdetails_s2_close").click(function () {
+    $("#rowdetails_style2").css('display','none');
+});
+
+$("#note_close").click(function () {
+    $("#noteswindow").css('display','none');
+});
+$("#note_s2_close").click(function () {
+    $("#noteswindow_style2").css('display','none');
+});
+
+$("#alert_close").click(function () {
+    $("#alertswindow").css('display','none');
+});
+$("#alert_s2_close").click(function () {
+    $("#alertswindow_style2").css('display','none');
+});
+
+$("#copyRow_close").click(function () {
+    $("#copyrowlist").css('display','none');
+});
+$("#copyRow_s2_close").click(function () {
+    $("#copyrowlist_style2").css('display','none');
+});
+
+$("#moveRow_close").click(function () {
+    $("#moverowlist").css('display','none');
+});
+$("#moveRow_s2_close").click(function () {
+    $("#moverowlist_style2").css('display','none');
+});
