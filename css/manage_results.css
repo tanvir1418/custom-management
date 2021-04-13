@@ -3469,3 +3469,7 @@ i.fa-caret-down.down-animation-icon{
 .top-container{
     position: relative;
 }
+
+#style1Table .clone-head-table-wrap{
+    height: 45px !important;
+}

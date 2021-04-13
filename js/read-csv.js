@@ -40,7 +40,7 @@ function tableHeadSty1() {
 			<div id="cross3" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-3-sizer"></div>
@@ -50,7 +50,7 @@ function tableHeadSty1() {
 			<div id="cross4" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-4-sizer"></div>
@@ -60,7 +60,7 @@ function tableHeadSty1() {
 			<div id="cross5" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-5-sizer"></div>
@@ -70,7 +70,7 @@ function tableHeadSty1() {
 			<div id="cross6" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-6-sizer"></div>
@@ -80,7 +80,7 @@ function tableHeadSty1() {
 			<div id="cross7" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-7-sizer"></div>
@@ -90,7 +90,7 @@ function tableHeadSty1() {
 			<div id="cross8" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-8-sizer"></div>
@@ -100,7 +100,7 @@ function tableHeadSty1() {
 			<div id="cross9" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-9-sizer"></div>
@@ -110,7 +110,7 @@ function tableHeadSty1() {
 			<div id="cross10" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-10-sizer"></div>
@@ -120,7 +120,7 @@ function tableHeadSty1() {
 			<div id="cross11" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-11-sizer"></div>
@@ -130,7 +130,7 @@ function tableHeadSty1() {
 			<div id="cross12" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-12-sizer"></div>
@@ -140,7 +140,7 @@ function tableHeadSty1() {
 			<div id="cross13" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-13-sizer"></div>
@@ -150,7 +150,7 @@ function tableHeadSty1() {
 			<div id="cross14" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-14-sizer"></div>
@@ -160,7 +160,7 @@ function tableHeadSty1() {
 			<div id="cross15" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-15-sizer"></div>
@@ -170,7 +170,7 @@ function tableHeadSty1() {
 			<div id="cross16" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-16-sizer"></div>
@@ -180,7 +180,7 @@ function tableHeadSty1() {
 			<div id="cross17" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-17-sizer"></div>
@@ -190,7 +190,7 @@ function tableHeadSty1() {
 			<div id="cross18" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-18-sizer"></div>
@@ -200,7 +200,7 @@ function tableHeadSty1() {
 			<div id="cross19" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-19-sizer"></div>
@@ -210,7 +210,7 @@ function tableHeadSty1() {
 			<div id="cross20" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-20-sizer"></div>
@@ -220,7 +220,7 @@ function tableHeadSty1() {
 			<div id="cross21" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-21-sizer"></div>
@@ -230,7 +230,7 @@ function tableHeadSty1() {
 			<div id="cross22" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-22-sizer"></div>
@@ -240,7 +240,7 @@ function tableHeadSty1() {
 			<div id="cross23" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-23-sizer"></div>
@@ -250,7 +250,7 @@ function tableHeadSty1() {
 			<div id="cross24" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-24-sizer"></div>
@@ -260,7 +260,7 @@ function tableHeadSty1() {
 			<div id="cross25" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-25-sizer"></div>
@@ -270,7 +270,7 @@ function tableHeadSty1() {
 			<div id="cross26" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-26-sizer"></div>
@@ -280,7 +280,7 @@ function tableHeadSty1() {
 			<div id="cross27" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-27-sizer"></div>
@@ -290,7 +290,7 @@ function tableHeadSty1() {
 			<div id="cross28" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-28-sizer"></div>
@@ -300,7 +300,7 @@ function tableHeadSty1() {
 			<div id="cross29" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-29-sizer"></div>
@@ -310,7 +310,7 @@ function tableHeadSty1() {
 			<div id="cross30" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-30-sizer"></div>
@@ -320,7 +320,7 @@ function tableHeadSty1() {
 			<div id="cross31" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-31-sizer"></div>
@@ -330,7 +330,7 @@ function tableHeadSty1() {
 			<div id="cross32" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-32-sizer"></div>
@@ -340,7 +340,7 @@ function tableHeadSty1() {
 			<div id="cross33" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-33-sizer"></div>
@@ -350,7 +350,7 @@ function tableHeadSty1() {
 			<div id="cross34" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-34-sizer"></div>
@@ -360,7 +360,7 @@ function tableHeadSty1() {
 			<div id="cross35" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-35-sizer"></div>
@@ -370,7 +370,7 @@ function tableHeadSty1() {
 			<div id="cross36" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-36-sizer"></div>
@@ -380,7 +380,7 @@ function tableHeadSty1() {
 			<div id="cross37" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-37-sizer"></div>
@@ -390,7 +390,7 @@ function tableHeadSty1() {
 			<div id="cross38" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-38-sizer"></div>
@@ -400,7 +400,7 @@ function tableHeadSty1() {
 			<div id="cross39" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-39-sizer"></div>
@@ -410,7 +410,7 @@ function tableHeadSty1() {
 			<div id="cross40" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-40-sizer"></div>
@@ -420,7 +420,7 @@ function tableHeadSty1() {
 			<div id="cross41" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-41-sizer"></div>
@@ -430,7 +430,7 @@ function tableHeadSty1() {
 			<div id="cross42" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-42-sizer"></div>
@@ -440,7 +440,7 @@ function tableHeadSty1() {
 			<div id="cross43" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-43-sizer"></div>
@@ -450,7 +450,7 @@ function tableHeadSty1() {
 			<div id="cross44" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-44-sizer"></div>
@@ -460,7 +460,7 @@ function tableHeadSty1() {
 			<div id="cross45" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-45-sizer"></div>
@@ -470,7 +470,7 @@ function tableHeadSty1() {
 			<div id="cross46" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-46-sizer"></div>
@@ -480,7 +480,7 @@ function tableHeadSty1() {
 			<div id="cross47" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-47-sizer"></div>
@@ -490,7 +490,7 @@ function tableHeadSty1() {
 			<div id="cross48" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-48-sizer"></div>
@@ -500,7 +500,7 @@ function tableHeadSty1() {
 			<div id="cross49" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-49-sizer"></div>
@@ -510,7 +510,7 @@ function tableHeadSty1() {
 			<div id="cross50" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-50-sizer"></div>
@@ -520,7 +520,7 @@ function tableHeadSty1() {
 			<div id="cross51" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-51-sizer"></div>
@@ -530,7 +530,7 @@ function tableHeadSty1() {
 			<div id="cross52" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-52-sizer"></div>
@@ -540,7 +540,7 @@ function tableHeadSty1() {
 			<div id="cross53" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-53-sizer"></div>
@@ -550,7 +550,7 @@ function tableHeadSty1() {
 			<div id="cross54" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-54-sizer"></div>
@@ -560,7 +560,7 @@ function tableHeadSty1() {
 			<div id="cross55" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-55-sizer"></div>
@@ -570,7 +570,7 @@ function tableHeadSty1() {
 			<div id="cross56" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-56-sizer"></div>
@@ -580,7 +580,7 @@ function tableHeadSty1() {
 			<div id="cross57" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-57-sizer"></div>
@@ -590,7 +590,7 @@ function tableHeadSty1() {
 			<div id="cross58" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-58-sizer"></div>
@@ -600,7 +600,7 @@ function tableHeadSty1() {
 			<div id="cross59" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-59-sizer"></div>
@@ -610,7 +610,7 @@ function tableHeadSty1() {
 			<div id="cross60" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-60-sizer"></div>
@@ -620,7 +620,7 @@ function tableHeadSty1() {
 			<div id="cross61" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-61-sizer"></div>
@@ -630,7 +630,7 @@ function tableHeadSty1() {
 			<div id="cross62" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-62-sizer"></div>
@@ -640,7 +640,7 @@ function tableHeadSty1() {
 			<div id="cross63" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-63-sizer"></div>
@@ -650,7 +650,7 @@ function tableHeadSty1() {
 			<div id="cross64" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-64-sizer"></div>
@@ -660,7 +660,7 @@ function tableHeadSty1() {
 			<div id="cross65" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-65-sizer"></div>
@@ -670,7 +670,7 @@ function tableHeadSty1() {
 			<div id="cross66" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" data-toggle="modal" data-target="#col8Filter">
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 			<div class="column-header-66-sizer"></div>
@@ -1501,7 +1501,7 @@ function manResPagination(noRow) {
 								<div class="head-filter style2_cross01" >
 									<i class="fas fa-times"></i>
 								</div>
-								<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
+								<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)">
 									<i class="fas fa-caret-down"></i>
 								</div>
 							</th>
@@ -1510,7 +1510,7 @@ function manResPagination(noRow) {
 								<div class="head-filter style2_cross02" >
 									<i class="fas fa-times"></i>
 								</div>
-								<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
+								<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)">
 									<i class="fas fa-caret-down"></i>
 								</div>
 							</th>
@@ -1519,7 +1519,7 @@ function manResPagination(noRow) {
 								<div class="head-filter style2_cross03" >
 									<i class="fas fa-times"></i>
 								</div>
-								<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)" data-toggle="modal" data-target="#col8Filter">
+								<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)">
 									<i class="fas fa-caret-down"></i>
 								</div>
 							</th>
@@ -1563,7 +1563,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross04">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1572,7 +1572,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross05">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1581,7 +1581,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross06">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1590,7 +1590,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross07">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1682,7 +1682,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross08">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1691,7 +1691,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross09">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1700,7 +1700,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross10">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1709,7 +1709,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross11">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1718,7 +1718,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross12">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 5)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 5)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1727,7 +1727,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross13">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 6)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 6)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1736,7 +1736,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross14">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 7)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 7)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1745,7 +1745,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross15">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 8)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 8)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1754,7 +1754,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross16">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 9)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 9)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1763,7 +1763,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross17">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 10)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 10)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1772,7 +1772,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross18">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 11)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 11)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1781,7 +1781,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross19">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 12)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 12)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1790,7 +1790,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross20">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 13)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 13)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1875,7 +1875,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross21">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1884,7 +1884,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross22">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1893,7 +1893,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross23">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1902,7 +1902,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross24">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1911,7 +1911,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross25">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 5)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 5)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1920,7 +1920,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross26">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 6)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 6)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1929,7 +1929,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross27">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 7)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 7)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1938,7 +1938,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross28">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 8)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 8)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1947,7 +1947,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross29">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 9)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 9)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1956,7 +1956,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross30">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 10)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 10)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1965,7 +1965,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross31">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 11)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 11)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1974,7 +1974,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross32">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 12)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 12)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1983,7 +1983,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross33">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 13)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 13)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2068,7 +2068,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross34">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2077,7 +2077,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross35">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2086,7 +2086,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross36">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2095,7 +2095,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross37">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2104,7 +2104,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross38">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 5)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 5)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2113,7 +2113,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross39">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 6)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 6)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2122,7 +2122,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross40">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 7)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 7)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2131,7 +2131,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross41">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 8)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 8)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2140,7 +2140,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross42">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 9)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 9)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2149,7 +2149,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross43">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 10)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 10)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2158,7 +2158,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross44">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 11)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 11)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2167,7 +2167,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross45">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 12)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 12)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2176,7 +2176,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross46">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 13)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 13)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2185,7 +2185,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross47">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 14)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 14)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2276,7 +2276,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross48">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2285,7 +2285,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross49">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2294,7 +2294,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross50">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2303,7 +2303,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross51">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2312,7 +2312,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross52">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 5)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 5)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2321,7 +2321,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross53">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 6)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 6)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2330,7 +2330,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross54">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 7)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 7)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2339,7 +2339,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross55">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 8)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 8)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2348,7 +2348,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross56">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 9)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 9)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2357,7 +2357,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross57">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 10)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 10)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2366,7 +2366,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross58">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 11)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 11)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2375,7 +2375,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross59">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 12)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 12)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2384,7 +2384,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross60">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 13)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 13)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2393,7 +2393,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross61">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 14)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 14)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2484,7 +2484,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross62">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2493,7 +2493,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross63">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2524,7 +2524,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross64">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)" data-toggle="modal" data-target="#col8Filter">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2585,6 +2585,8 @@ function manResPagination(noRow) {
 			$("#alertswindow_style2").css("display", "none");
 			$("#copyrowlist_style2").css("display", "none");
 			$("#moverowlist_style2").css("display", "none");
+
+			$("#col8Filter").css('display','none');
 		},
 	};
 	let container = $("#pagination-man-res-table");
@@ -2684,7 +2686,7 @@ $("#resizable554 th").on("drop", function (e) {
 	manResTableRender();
 });
 
-function popUpHandlerS2Table(e, indexValue) {
+function popUpHandlerS2Table(e, indexValue) {	
 	let targetElementClassList = e.path[5].getAttribute("class");
 	let targetElementClass = targetElementClassList.split(" ");
 

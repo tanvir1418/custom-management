@@ -112,6 +112,13 @@ for (var i = 0; i < li_tabs.length; i++) {
 			$("#alertswindow_style2").css("display", "none");
 			$("#copyrowlist_style2").css("display", "none");
 			$("#moverowlist_style2").css("display", "none");
+
+			$("#col8Filter").css('display','none');
+
+			const rotateIcon = document.querySelectorAll("#outer_table_box7 i.fa-caret-down.down-animation-icon");
+			for (let i = 0; i < rotateIcon.length; i++) {
+				$(rotateIcon[i]).removeClass("down-animation-icon");
+			}
 		}
 
 	});
