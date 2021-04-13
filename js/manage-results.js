@@ -1853,9 +1853,11 @@ $("#note_s2_close").click(function () {
 
 $("#alert_close").click(function () {
     $("#alertswindow").css('display','none');
+    resetInputFieldAlert();
 });
 $("#alert_s2_close").click(function () {
     $("#alertswindow_style2").css('display','none');
+    resetInputFieldAlertStyle2();
 });
 
 $("#copyRow_close").click(function () {
@@ -1882,3 +1884,37 @@ $("#closeCol8Filter").click(function () {
         $(rotateIcon[i]).removeClass("down-animation-icon");
     }
 });
+
+
+$("#resetAlert").click(function () {
+    resetInputFieldAlert();
+});
+
+$("#resetAlertS2").click(function () {
+    resetInputFieldAlertStyle2();
+});
+
+
+function resetInputFieldAlert(){
+    const inputInterval = document.querySelectorAll("#alertswindow td.inpalertval input");
+    for (let i = 0; i < inputInterval.length; i++) {
+        inputInterval[i].value = "";
+    }
+
+    const inputMail = document.querySelectorAll("#alertswindow td.inpumail input");
+    for (let i = 0; i < inputMail.length; i++) {
+        inputMail[i].value = "";
+    }
+}
+
+function resetInputFieldAlertStyle2(){
+    const inputIntervalS2 = document.querySelectorAll("#alertswindow_style2 td.inpalertval input");
+    for (let i = 0; i < inputIntervalS2.length; i++) {
+        inputIntervalS2[i].value = "";
+    }
+
+    const inputMailS2 = document.querySelectorAll("#alertswindow_style2 td.inpumail input");
+    for (let i = 0; i < inputMailS2.length; i++) {
+        inputMailS2[i].value = "";
+    }
+}
