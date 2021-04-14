@@ -909,7 +909,9 @@ function removeExtraLines(e) {
 
 function isGenerateDisable() {
   let len = seqList.length;
-  if (!len) return false;
+  let len2 = seqListR.length;
+  if (!len && !len2) return false;
+
   for (let i = 0; i < len; i++) {
     let abc = $(`#leftSideDrag_op1 #${seqList[i]} .custom-input-only input`);
     for (let j = 0; j < abc.length; j++) {
@@ -928,8 +930,6 @@ function isGenerateDisable() {
     }
   }
 
-  let len2 = seqListR.length;
-  if (!len2) return false;
   for (let i = 0; i < len2; i++) {
     let abc = $(`#rightSideDrag_op1 #${seqListR[i]} .custom-input-only input`);
     for (let j = 0; j < abc.length; j++) {
