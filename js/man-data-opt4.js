@@ -969,6 +969,16 @@ let sectionDS3 = [
     name: "Section I",
     type: "input",
   },
+  {
+    id: "fieldset_id10",
+    name: "Section J",
+    type: "input",
+  },
+  {
+    id: "fieldset_id11",
+    name: "Section K",
+    type: "input",
+  },
 ];
 function findInputIdDS3(title) {
   let res = sectionDS3.filter((a) => a.name == title);
@@ -1004,8 +1014,10 @@ function windowToFormDS3(divData, searchData) {
     const sectionCheck = $(`fieldset#${id} legend input[type=checkbox]`);
     if (divData[1].trim() == "checked") {
       sectionCheck.prop("checked", true);
+      $(`fieldset#${id}`).addClass("borderGreen");
     } else if (divData[1].trim() == "unchecked") {
       sectionCheck.prop("checked", false);
+      $(`fieldset#${id}`).removeClass("borderGreen");
     }
   }
 }
