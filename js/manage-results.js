@@ -1921,10 +1921,14 @@ function resetInputFieldAlertStyle2(){
 
 window.addEventListener("scroll", (event) => {
     let scroll = this.scrollY;
-    console.log(scroll)
-    if (scroll >1550) {
-        $("#outer_table_box7 .left-slider5").css('display','block');
-        $("#outer_table_box7 .right-slider5").css('display','block');
+    // console.log(scroll);
+    if (scroll >1500) {
+        // if(style_1_box)
+        let arrowShowing = $("#style_1_box").hasClass("clickstylebg");
+        if(arrowShowing){
+            $("#outer_table_box7 .left-slider5").css('display','block');
+            $("#outer_table_box7 .right-slider5").css('display','block');
+        }
     } else {
         $("#outer_table_box7 .left-slider5").css('display','none');
         $("#outer_table_box7 .right-slider5").css('display','none');
