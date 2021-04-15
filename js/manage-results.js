@@ -1918,3 +1918,15 @@ function resetInputFieldAlertStyle2(){
         inputMailS2[i].value = "";
     }
 }
+
+window.addEventListener("scroll", (event) => {
+    let scroll = this.scrollY;
+    console.log(scroll)
+    if (scroll >1550) {
+        $("#outer_table_box7 .left-slider5").css('display','block');
+        $("#outer_table_box7 .right-slider5").css('display','block');
+    } else {
+        $("#outer_table_box7 .left-slider5").css('display','none');
+        $("#outer_table_box7 .right-slider5").css('display','none');
+    }
+});
