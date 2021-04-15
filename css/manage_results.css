@@ -1510,7 +1510,7 @@ td {
     height: 32px;
     background: #d0d0d0;
     border-radius: 50%;
-    position: absolute;
+    /* position: absolute; */
     cursor: pointer;
 }
 
@@ -1530,16 +1530,29 @@ td {
     z-index: 100;
 }
 
-#outer_table_box7 .right-slider5 {
+/* #outer_table_box7 .right-slider5 {
     top: 42%;
     right: -38px;
     display: none;
-}
+} */
 
-#outer_table_box7 .left-slider5 {
+/* #outer_table_box7 .left-slider5 {
     top: 42%;
     left: -38px;
     display: none;
+} */
+
+#outer_table_box7 .right-slider5,
+#outer_table_box7 .left-slider5{
+    position: fixed;
+    top: 42%;
+    display: none;
+}
+#outer_table_box7 .right-slider5{
+    right: 5%;
+}
+#outer_table_box7 .left-slider5{
+    left: 5%;
 }
 
 /* X CLICK TO REMOVE COLUMN START */
