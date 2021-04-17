@@ -813,7 +813,7 @@ table#sub2-editor-table {
     position: absolute;
     top: 2px;
     left: 5px;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 .popup__checkbox__toggle__input:checked~.popup__checkbox__toggle__label::after {
@@ -867,16 +867,16 @@ table#sub2-editor-table {
 
 /* Custom Check Box Ends  */
 
-
+/* 
 #col8Filter .modal-content {
     width: 250px;
     border: 0;
     border-radius: 0 !important;
-    /* left: 20%; */
-}
+    left: 20%;
+} */
 
-#dropBtnModal .modal-content .modal-body,
-#col8Filter .modal-content .modal-body {
+#dropBtnModal .modal-content .modal-body{
+/* #col8Filter .modal-content .modal-body { */
     padding: 0;
     border-radius: 0 !important;
 }
@@ -2373,6 +2373,15 @@ Bottom codes are added by Tanvir
 #noteswindow_style2,
 #alertswindow,
 #alertswindow_style2{
+    position: absolute;
+    /* width: 100%; */
+    /* width: 1200px;
+    height: 670px; */
+    display: none;
+    background-color: #ffffff;
+}
+
+#col8Filter{
     position: absolute;
     /* width: 100%; */
     /* width: 1200px;
