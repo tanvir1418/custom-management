@@ -2557,10 +2557,10 @@ function manResPagination(noRow) {
 
 			// Code added by Tanvir
 			let decideDisplay = $(".style2-box").hasClass("clickstylebg");
-			if(!decideDisplay){
-				$(".right-slider5").css("display", "block");
-				$(".left-slider5").css("display", "block");
-			}
+			// if(!decideDisplay){
+			// 	$(".right-slider5").css("display", "block");
+			// 	$(".left-slider5").css("display", "block");
+			// }
 			
 			$("#style1Table").css("border", "2px solid #eff1f7");
 			$("#pagination-man-res-table .width-row-go").css("display", "block");

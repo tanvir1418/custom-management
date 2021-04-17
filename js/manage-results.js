@@ -1922,7 +1922,7 @@ function resetInputFieldAlertStyle2(){
 window.addEventListener("scroll", (event) => {
     let scroll = this.scrollY;
     // console.log(scroll);
-    if (scroll >1500) {
+    if (scroll >1400) {
         // if(style_1_box)
         let arrowShowing = $("#style_1_box").hasClass("clickstylebg");
         if(arrowShowing){
