@@ -23,6 +23,28 @@
     <link rel="stylesheet" href="./css/tooltip.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/media.css">
+
+    <!-- JS Files  -->
+    <script src="./js/bootstrap.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" defer></script>
+    <script src="./js/chart.js" defer></script>
+    <script src="./js/pagination.js" defer></script>
+    <script src="./js/jquery-asRange.js" defer></script>
+    <script src="./js/drag-drop.js" defer></script>
+    <script src="./js/xlsx-package.js" defer></script>
+    <script src="./js/option-4.js" defer></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/opt1-list-modal.js" defer></script>
+    <script src="./js/manage_rst_rowModal.js" defer></script>
+    <script src="./js/chartCode.js" defer></script>
+    <script src="./js/opt1-list-func.js" defer></script>
+    <script src="./js/manage-results.js" defer></script>
+    <script src="./js/manage_templates.js" defer></script>
+    <script src="./js/opt_4_list_popup.js" defer></script>
+    <script src="./js/man-data-opt4.js" defer></script>
+    <script src="./js/read-csv.js" defer></script>
 </head>
 
 <body>
@@ -194,7 +216,7 @@
     <!-- ============================= TAB CONTENT START ============================= -->
     <div class="content">
         <!-- ====----=-=-=-=-=-=-=-=-=- MANAGE ACCOUNT SECTION START ====----=-=-=-=-=-=-=-=-=- -->
-        <div class="tab_content tab_1" id="tab_1">
+        <div class="tab_content tab_1" id="tab_1" style="display: none;">
         </div>
         <!-- ====----=-=-=-=xx-=-=-=-=-=- MANAGE ACCOUNT SECTION END ====----=-=-=xx-=-=-=-=-=-=- -->
 
@@ -2133,7 +2155,7 @@
 
 
         <!-- ====----=-=-=-=-=-=-=-=-=- MANAGE TEMPLATES SECTION START ====----=-=-=-=-=-=-=-=-=- -->
-        <div class="tab_content tab_3" id="tab_3">
+        <div class="tab_content tab_3" id="tab_3" style="display: none;">
 
             <!-- ==== LOAD TEMPLATES SLIDER START ==== -->
             <div id="load_temp_slider">
@@ -3326,7 +3348,7 @@
         <!-- ====----=-=-=-=-=-=-=-=-=- MANAGE TEMPLATES SECTION END ====----=-=-=-=-=-=-=-=-=- -->
 
         <!-- ====----=-=-=-=-=-=-=-=-=- MANAGE RESULTS START ====----=-=-=-=-=-=-=-=-=- -->
-        <div class="tab_content tab_4" id="tab_4">
+        <div class="tab_content tab_4" id="tab_4" style="display: none;">
             <!-- ========== SELECT TABLE ITEMS START ============ -->
             <div class="select-item-table">
                 <p class="title4">Please Select a Item to View Results</p>
@@ -4645,7 +4667,7 @@
         <!-- ====----=-=-=-=-=-=-=-=-=- MANAGE RESULTS END ====----=-=-=-=-=-=-=-=-=- -->
 
         <!-- ====----=-=-=-=-=-=-=-=-=- MANAGE ALERTS START ====----=-=-=-=-=-=-=-=-=- -->
-        <div class="tab_content tab_5" id="tab_5">
+        <div class="tab_content tab_5" id="tab_5" style="display: none;">
         </div>
         <!-- ====----=-=-=-=-=-=-=-=-=- MANAGE ALERTS END ====----=-=-=-=-=-=-=-=-=- -->
 
@@ -7369,33 +7391,31 @@
 
     <!-- JS FILES -->
     <script src="./js/jquery.js"></script>
-    <script>
+    <!-- <script>
         $(".content .tab_content").hide();
         $(".content .tab_content:nth-child(2)").show();
-    </script>
-    <script src="./js/bootstrap.js" defer ></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous" defer>
-    </script>
+    </script> -->
+    <!-- <script src="./js/bootstrap.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
     
-    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" defer ></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" defer></script>
-    <script src="./js/chart.js" defer ></script>
-    <script src="./js/pagination.js" defer ></script>
-    <script src="./js/jquery-asRange.js" defer ></script>
-    <script src="./js/drag-drop.js" defer ></script>
-    <script src="./js/xlsx-package.js" defer ></script>
-    <script src="./js/option-4.js" defer ></script>
-    <script src="./js/main.js" defer ></script>
-    <script src="./js/opt1-list-modal.js" defer ></script>
-    <script src="./js/manage_rst_rowModal.js"></script>
-    <script src="./js/chartCode.js" defer ></script>
-    <script src="./js/opt1-list-func.js" defer ></script>
-    <script src="./js/manage-results.js" defer ></script>
-    <script src="./js/manage_templates.js" defer ></script>
-    <script src="./js/opt_4_list_popup.js" defer ></script>
-    <script src="./js/man-data-opt4.js" defer ></script>
-    <script src="./js/read-csv.js" defer ></script>
+    <script src="./js/chart.js" defer></script>
+    <script src="./js/pagination.js" defer></script>
+    <script src="./js/jquery-asRange.js" defer></script>
+    <script src="./js/drag-drop.js" defer></script>
+    <script src="./js/xlsx-package.js" defer></script>
+    <script src="./js/option-4.js" defer></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/opt1-list-modal.js" defer></script>
+    <script src="./js/manage_rst_rowModal.js" defer></script>
+    <script src="./js/chartCode.js" defer></script>
+    <script src="./js/opt1-list-func.js" defer></script>
+    <script src="./js/manage-results.js" defer></script>
+    <script src="./js/manage_templates.js" defer></script>
+    <script src="./js/opt_4_list_popup.js" defer></script>
+    <script src="./js/man-data-opt4.js" defer></script>
+    <script src="./js/read-csv.js" defer></script> -->
     <script src="./js/freeze-table.js"></script>
 </body>
 
