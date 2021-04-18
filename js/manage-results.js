@@ -1060,13 +1060,19 @@ function table1HeadClick() {
         // $("#col8Filter .modal-dialog .table-header-click-popup").css({
         //     "margin-top": "0px"
         // });
-        let elementPositionMain = e.target.getBoundingClientRect();;
-        $("#col8Filter").css('display','none');
-        $("#col8Filter").css({
-            top: ((elementPositionMain.y) + window.scrollY + 30),
-            left: ((elementPositionMain.x) - 235)
-        });
-        $("#col8Filter").css('display','block');
+
+        if(target.className == "drop-filter"){
+            let elementPositionMain = e.target.getBoundingClientRect();;
+            $("#col8Filter").css('display','none');
+            $("#col8Filter").css({
+                top: ((elementPositionMain.y) + window.scrollY + 30),
+                left: ((elementPositionMain.x) - 235)
+            });
+            $("#col8Filter").css('display','block');
+        }
+        
+
+        console.log(target.className);
     });
 
     $("#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th").click(function (e) {
@@ -1085,13 +1091,23 @@ function table1HeadClick() {
         //     "margin-top": "0px"
         // });
 
-        let elementPositionMain = e.target.getBoundingClientRect();;
-        $("#col8Filter").css('display','none');
-        $("#col8Filter").css({
-            top: ((elementPositionMain.y) + window.scrollY + 30),
-            left: ((elementPositionMain.x) - 235)
-        });
-        $("#col8Filter").css('display','block');
+        if(target.className == "drop-filter"){
+            let elementPositionMain = e.target.getBoundingClientRect();;
+            $("#col8Filter").css('display','none');
+            $("#col8Filter").css({
+                top: ((elementPositionMain.y) + window.scrollY + 30),
+                left: ((elementPositionMain.x) - 235)
+            });
+            $("#col8Filter").css('display','block');
+        }
+        
+
+        // console.dir(target.className);
+
+        // console.log(`Clicked and Top(Page-Y) : ${event.pageY} Left(Page-X) : ${event.pageX} `);
+        // console.log(`Clicked and Top(client-Y) : ${event.clientY} Left(client-X) : ${event.clientX} `);
+        // console.log(`Clicked and Top(screen-Y) : ${event.screenY} Left(screen-X) : ${event.screenX} `);
+        // console.log(`Clicked and Top(offset-Y) : ${event.offsetY} Left(offset-X) : ${event.offsetX} `);
 
     });
 }
