@@ -3,6 +3,11 @@
 // const sub_ul_list_11 = document.querySelector(".sub-ul-list-11");
 // const sub_ul_list_22 = document.querySelector(".sub-ul-list-22");
 // const sub_ul_list_33 = document.querySelector(".sub-ul-list-33");
+
+// Header Index Where Click is happened.
+let headerIndexClick = "";
+
+
 const left_list_404 = document.querySelector(".left-list-404");
 
 // Added by ASHIQ
@@ -1007,6 +1012,9 @@ function headClick(target, index) {
         $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).addClass("th-dis-none");
         manResTableRender();
     } else if (target.tagName === "DIV" && regexD.test(target.className)) {
+        
+        headerIndexClick = index;
+        
         let dataP = $(`#resizable554 td:nth-child(${index}) .mr-tableData`);
         let headingPop = $(`#resizable554 th:nth-child(${index})`)[0].textContent;
 
@@ -1053,26 +1061,17 @@ function table1HeadClick() {
         }
         headClick(target, index);
 
-        // $("#col8Filter .modal-dialog").css({
-        //     top: ((e.clientY) + 20), 
-        //     left: ((e.clientX) - 240)
-        // });
-        // $("#col8Filter .modal-dialog .table-header-click-popup").css({
-        //     "margin-top": "0px"
-        // });
-
         if(target.className == "drop-filter"){
             let elementPositionMain = e.target.getBoundingClientRect();;
             $("#col8Filter").css('display','none');
             $("#col8Filter").css({
                 top: ((elementPositionMain.y) + window.scrollY + 30),
-                left: ((elementPositionMain.x) - 235)
+                left: ((elementPositionMain.x) - 235),
+                position: "absolute"
             });
             $("#col8Filter").css('display','block');
         }
         
-
-        console.log(target.className);
     });
 
     $("#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th").click(function (e) {
@@ -1083,31 +1082,17 @@ function table1HeadClick() {
         }
         headClick(target, index);
 
-        // $("#col8Filter .modal-dialog").css({
-        //     top: ((e.clientY) + 20), 
-        //     left: ((e.clientX) - 240)
-        // });
-        // $("#col8Filter .modal-dialog .table-header-click-popup").css({
-        //     "margin-top": "0px"
-        // });
-
         if(target.className == "drop-filter"){
             let elementPositionMain = e.target.getBoundingClientRect();;
             $("#col8Filter").css('display','none');
             $("#col8Filter").css({
-                top: ((elementPositionMain.y) + window.scrollY + 30),
-                left: ((elementPositionMain.x) - 235)
+                // top: ((elementPositionMain.y) + window.scrollY + 30),
+                top: (46),
+                left: ((elementPositionMain.x) - 235),
+                position: "fixed"
             });
             $("#col8Filter").css('display','block');
         }
-        
-
-        // console.dir(target.className);
-
-        // console.log(`Clicked and Top(Page-Y) : ${event.pageY} Left(Page-X) : ${event.pageX} `);
-        // console.log(`Clicked and Top(client-Y) : ${event.clientY} Left(client-X) : ${event.clientX} `);
-        // console.log(`Clicked and Top(screen-Y) : ${event.screenY} Left(screen-X) : ${event.screenX} `);
-        // console.log(`Clicked and Top(offset-Y) : ${event.offsetY} Left(offset-X) : ${event.offsetX} `);
 
     });
 }
@@ -1949,4 +1934,54 @@ window.addEventListener("scroll", (event) => {
         $("#outer_table_box7 .left-slider5").css('display','none');
         $("#outer_table_box7 .right-slider5").css('display','none');
     }
+
+    if (scroll >1200) {
+        let arrowShowing = $("#style_1_box").hasClass("clickstylebg");
+
+        let filterTargeting =  document.querySelector('#col8Filter');
+        let filterStyles = window.getComputedStyle(filterTargeting);
+        //console.log(filterStyles.display);
+
+        if(arrowShowing==true && filterStyles.display == "block" && headerIndexClick != ""){
+            let virtualHeader =  document.querySelector('#outer_table_box7 #style1Table .clone-head-table-wrap');
+            let compStyles = window.getComputedStyle(virtualHeader);
+            // console.log(compStyles.visibility);
+            // console.log("Index No: " + headerIndexClick);
+
+            if(compStyles.visibility == "visible"){
+                $("#col8Filter").css({
+                    top: (45),
+                    position: "fixed"
+                });
+            }
+            
+            if(compStyles.visibility == "hidden"){
+                let actualHeaderTarget = document.querySelector(`#resizable554 th:nth-child(${headerIndexClick})`);
+                // $(`#resizable554 th:nth-child(${headerIndexClick})`);
+                let elementPositionMain = actualHeaderTarget.getBoundingClientRect();
+                $("#col8Filter").css({
+                    top: ((elementPositionMain.y) + window.scrollY + 55),
+                    position: "absolute"
+                });
+            }
+        }
+    }
 });
+
+
+// function virtualHeaderVisibility(){
+//     let virtualHeader =  document.querySelector('#outer_table_box7 #style1Table .clone-head-table-wrap');
+//     virtualHeader.addEventListener("visibilitychange", function() {
+//         if (virtualHeader.visibilityState === 'visible') {
+//             console.log("Virtual Header Shown");
+//         }
+//         if (virtualHeader.visibilityState === 'hidden') {
+//         console.log("Virtual Header Hidden");
+//         } 
+
+//     });
+// }
+
+// let virtualHeader =  document.querySelector('#outer_table_box7 #style1Table .clone-head-table-wrap');
+// let compStyles = window.getComputedStyle(virtualHeader);
+// compStyles.visibility
