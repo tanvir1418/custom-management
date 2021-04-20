@@ -589,6 +589,7 @@ function style1TableScroller () {
             0
         );
         $("#col8Filter").css('display','none');
+        resetDownArrow();
     }).dblclick(function () {
         $("#style1Table").animate({
             scrollLeft: style1TableScroll.scrollLeft + 800,
@@ -596,6 +597,7 @@ function style1TableScroller () {
             0
         );
         $("#col8Filter").css('display','none');
+        resetDownArrow();
     });
 
     $("#outer_table_box7 .left-slider5").click(function () {
@@ -605,6 +607,7 @@ function style1TableScroller () {
             0
         );
         $("#col8Filter").css('display','none');
+        resetDownArrow();
     }).dblclick(function () {
         $("#style1Table").animate({
             scrollLeft: style1TableScroll.scrollLeft - 800,
@@ -612,6 +615,7 @@ function style1TableScroller () {
             0
         );
         $("#col8Filter").css('display','none');
+        resetDownArrow();
     });
 }
 
@@ -1012,6 +1016,7 @@ function headClick(target, index) {
         $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).addClass("th-dis-none");
         manResTableRender();
         $("#col8Filter").css('display','none');
+        resetDownArrow();
         return "hidePopup";
 
     } else if (target.tagName === "DIV" && regexD.test(target.className)) {
@@ -1041,6 +1046,7 @@ function headClick(target, index) {
 
             // this code add the down-animation-icon to the drop filter
             $(`#resizable554 th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
+            $(`.clone-head-table-wrap .mytablesty12 th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
 
             $("#col8Filter #tableHeaderPop").html(headingPop);
             let targetModal = $("#col8Filter #checkbox-table-first tbody");
@@ -2004,3 +2010,26 @@ window.addEventListener("scroll", (event) => {
 // let virtualHeader =  document.querySelector('#outer_table_box7 #style1Table .clone-head-table-wrap');
 // let compStyles = window.getComputedStyle(virtualHeader);
 // compStyles.visibility
+
+$(document).keydown(function(e){
+    let arrowShowing = $("#style_1_box").hasClass("clickstylebg");
+    let filterTargeting =  document.querySelector('#col8Filter');
+    let filterStyles = window.getComputedStyle(filterTargeting);
+    if (e.which == 37 && arrowShowing==true && filterStyles.display == "block") { 
+        $("#col8Filter").css('display','none');
+        resetDownArrow();
+    //    return false;
+    }
+    if (e.which == 39 && arrowShowing==true && filterStyles.display == "block") { 
+        $("#col8Filter").css('display','none');
+        resetDownArrow();
+    //    return false;
+    }
+});
+
+function resetDownArrow(){
+    const rotateIcon = document.querySelectorAll("#outer_table_box7 i.fa-caret-down.down-animation-icon");
+    for (let i = 0; i < rotateIcon.length; i++) {
+        $(rotateIcon[i]).removeClass("down-animation-icon");
+    }
+}
