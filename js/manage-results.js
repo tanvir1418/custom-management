@@ -588,6 +588,12 @@ function style1TableScroller () {
         },
             0
         );
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
         $("#col8Filter").css('display','none');
         resetDownArrow();
     }).dblclick(function () {
@@ -596,6 +602,12 @@ function style1TableScroller () {
         },
             0
         );
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
         $("#col8Filter").css('display','none');
         resetDownArrow();
     });
@@ -606,6 +618,12 @@ function style1TableScroller () {
         },
             0
         );
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
         $("#col8Filter").css('display','none');
         resetDownArrow();
     }).dblclick(function () {
@@ -614,6 +632,12 @@ function style1TableScroller () {
         },
             0
         );
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
         $("#col8Filter").css('display','none');
         resetDownArrow();
     });
@@ -2015,12 +2039,24 @@ $(document).keydown(function(e){
     let arrowShowing = $("#style_1_box").hasClass("clickstylebg");
     let filterTargeting =  document.querySelector('#col8Filter');
     let filterStyles = window.getComputedStyle(filterTargeting);
-    if (e.which == 37 && arrowShowing==true && filterStyles.display == "block") { 
+    if (e.which == 37 && arrowShowing==true) { 
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
         $("#col8Filter").css('display','none');
         resetDownArrow();
     //    return false;
     }
-    if (e.which == 39 && arrowShowing==true && filterStyles.display == "block") { 
+    if (e.which == 39 && arrowShowing==true) { 
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
         $("#col8Filter").css('display','none');
         resetDownArrow();
     //    return false;
