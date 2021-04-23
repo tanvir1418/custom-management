@@ -1933,3 +1933,297 @@ td {
 #pagination-man-res-table .width-row-go{
   display: none;
 }
+
+
+/*======= Manage Account Style Starts ====== */
+.account-content {
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+.account-content .content-inner {
+  padding: 60px 0px;
+}
+
+.content-inner .hero-title {
+  display: flex;
+}
+
+.content-inner .hero-title .hero-box {
+  margin: auto auto 60px auto;
+  display: flex;
+}
+.content-inner .hero-title .title-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #000000;
+  position: relative;
+  margin-right: 18px;
+}
+
+.content-inner .hero-title .title-icon img {
+  position: absolute;
+  width: 22px;
+  height: 28px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.content-inner .hero-title .mytitle {
+  margin: auto;
+}
+
+.content-inner .hero-title .mytitle p {
+  font-size: 36px;
+  letter-spacing: 2px;
+  margin: 0;
+  line-height: normal;
+  color: #312d4f;
+  font-family: gilroy-bold, sans-serif;
+  font-weight: bold;
+  text-align: center;
+} 
+
+/* =====Account Form Container Design=====  */
+.content-inner .account-form-container{
+  background: #ffffff;
+  padding: 50px 80px;
+  margin: 0 3%;
+}
+.account-form-container .account-form-group{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.account-form-group .ac-width-50 {
+  width: 50%;
+  display: flex;
+  height: 60px;
+}
+
+.account-form-group .ac-width-100{
+  width: 100%;
+  display: flex;
+  height: 60px;
+}
+
+.account-form-group .ac-title{
+  width: 200px;
+}
+
+.account-form-group .ac-input{
+   width: calc(100% - 200px);
+}
+
+.account-form-group .ac-title p {
+  margin-bottom: 0;
+  padding-top: 8px;
+  color: #a5a5a5;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.account-form-group .ac-title p.diff-title{
+  text-align: right;
+  padding-right: 15px;
+}
+
+.account-form-group .ac-title p sup{
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+}
+/*  Custom Input styling Starts  */
+.account-form-group .ac-input .custom-input-success {
+  background: #e6e6e6;
+  position: relative;
+  width: 100%;
+  height: 40px;
+  z-index: 3;
+  border-radius: 6px;
+}
+
+.account-form-group .ac-input .custom-input-success input {
+  background: #e6e6e6;
+  color: #2e2c2c;
+  outline: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 2;
+  padding: 5px 10px;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #41e167 !important;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.account-form-group .ac-input .custom-input-success input:hover,
+.account-form-group .ac-input .custom-input-success input:focus {
+  box-shadow: chartreuse;
+}
+
+.account-form-group .ac-input .custom-input-success:after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  background-color: #e8ffed;
+  z-index: 2;
+  right: 10px;
+  top: 10px;
+  border-radius: 2px;
+}
+
+.account-form-group .ac-input .custom-input-success:before {
+  content: "\2714";
+  position: absolute;
+  font-size: 11px;
+  color: green;
+  z-index: 3;
+  right: 15px;
+  top: 9px;
+}
+
+.account-form-group .ac-input .custom-input-success input {
+  background: #ffffff;
+}
+
+/* Custom Input Danger */
+.account-form-group .ac-input .custom-input-danger {
+  background: #e6e6e6;
+  position: relative;
+  width: 100%;
+  height: 40px;
+  z-index: 3;
+  border-radius: 6px;
+}
+
+.account-form-group .ac-input .custom-input-danger input {
+  background: #e6e6e6;
+  color: #2e2c2c;
+  outline: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 2;
+  padding: 5px 10px;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #fe7e7e !important;
+  border-radius: 4px;
+}
+
+.account-form-group .ac-input .custom-input-danger input:hover,
+.account-form-group .ac-input .custom-input-danger input:focus {
+  box-shadow: red;
+}
+
+.account-form-group .ac-input .custom-input-danger:after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  background-color: #ffe9e9;
+  z-index: 2;
+  right: 10px;
+  top: 10px;
+  border-radius: 2px;
+}
+
+.account-form-group .ac-input .custom-input-danger:before {
+  content: "\2716";
+  position: absolute;
+  font-size: 11px;
+  color: red;
+  z-index: 3;
+  right: 15px;
+  top: 9px;
+}
+
+.account-form-group .ac-input .custom-input-danger input {
+  background: #ffffff;
+}
+
+/* Custom Input Only */
+.account-form-group .ac-input .custom-input-only{
+  background: #e6e6e6;
+  position: relative;
+  width: 100%;
+  height: 40px;
+  z-index: 3;
+  border-radius: 6px;
+}
+
+.account-form-group .ac-input .custom-input-only input{
+  background: #ffffff;
+  color: #2e2c2c;
+  outline: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 2;
+  padding: 5px 10px;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+}
+.account-form-group .ac-input .error-message p {
+  font-size: 12px;
+  color: red;
+  padding-left: 4px;
+}
+
+/*  Custom Input styling Ends  */
+/* ============================ */
+.account-content .account-form-container .ac-button-row{
+  margin-top: 40px;
+  height: 70px;
+}
+.account-content .account-form-container .ac-button-row .reset,
+.account-content .account-form-container .ac-button-row .save  {
+  box-shadow: none;
+  width: 200px;
+  height: 100%;
+  font-family: gilroy-medium, sans-serif;
+  font-size: 32px;
+  background: #e9e9e9;
+  color: #7b7b7b;
+  transition: 150ms;
+  outline: none;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.account-content .account-form-container .ac-button-row .save {
+  background: #000000;
+  color: #e6e6e6;
+  float: right;
+}
+
+.account-content .account-form-container .ac-button-row .reset:hover{
+  background: #000000;
+  color: #e6e6e6;
+}
+
+.account-content .account-form-container .ac-button-row .save:hover{
+  background: #e9e9e9;
+  color: #7b7b7b;
+}
