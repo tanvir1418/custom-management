@@ -588,14 +588,28 @@ function style1TableScroller () {
         },
             0
         );
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
         $("#col8Filter").css('display','none');
+        resetDownArrow();
     }).dblclick(function () {
         $("#style1Table").animate({
             scrollLeft: style1TableScroll.scrollLeft + 800,
         },
             0
         );
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
         $("#col8Filter").css('display','none');
+        resetDownArrow();
     });
 
     $("#outer_table_box7 .left-slider5").click(function () {
@@ -604,14 +618,28 @@ function style1TableScroller () {
         },
             0
         );
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
         $("#col8Filter").css('display','none');
+        resetDownArrow();
     }).dblclick(function () {
         $("#style1Table").animate({
             scrollLeft: style1TableScroll.scrollLeft - 800,
         },
             0
         );
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
         $("#col8Filter").css('display','none');
+        resetDownArrow();
     });
 }
 
@@ -1011,45 +1039,65 @@ function headClick(target, index) {
         $(`#resizable554 td:nth-child(${index})`).addClass("th-dis-none");
         $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).addClass("th-dis-none");
         manResTableRender();
+        $("#col8Filter").css('display','none');
+        resetDownArrow();
+        return "hidePopup";
+
     } else if (target.tagName === "DIV" && regexD.test(target.className)) {
         
         headerIndexClick = index;
-        
-        let dataP = $(`#resizable554 td:nth-child(${index}) .mr-tableData`);
-        let headingPop = $(`#resizable554 th:nth-child(${index})`)[0].textContent;
+        let hideFilterWhenClick = $(`#resizable554 th:nth-child(${index}) .drop-filter .fa-caret-down`).hasClass("down-animation-icon");
+        let filterTargeting =  document.querySelector('#col8Filter');
+        let filterStyles = window.getComputedStyle(filterTargeting);
 
-        const rotateIcon = document.querySelectorAll("#outer_table_box7 i.fa-caret-down.down-animation-icon");
-        for (let i = 0; i < rotateIcon.length; i++) {
-            $(rotateIcon[i]).removeClass("down-animation-icon");
-        }
+        if(hideFilterWhenClick==true && filterStyles.display == "block"){
+            const rotateIcon = document.querySelectorAll("#outer_table_box7 i.fa-caret-down.down-animation-icon");
+            for (let i = 0; i < rotateIcon.length; i++) {
+                $(rotateIcon[i]).removeClass("down-animation-icon");
+            }
+            $("#col8Filter").css('display','none');
 
-        // this code add the down-animation-icon to the drop filter
-        $(`#resizable554 th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
+            return "hidePopup";
+        }
+        else{
+            let dataP = $(`#resizable554 td:nth-child(${index}) .mr-tableData`);
+            let headingPop = $(`#resizable554 th:nth-child(${index})`)[0].textContent;
 
-        $("#col8Filter #tableHeaderPop").html(headingPop);
-        let targetModal = $("#col8Filter #checkbox-table-first tbody");
-        const dataC = new Set();
-        for (let i = 0; i < dataP.length; i++) {
-            dataC.add(dataP[i].textContent);
+            const rotateIcon = document.querySelectorAll("#outer_table_box7 i.fa-caret-down.down-animation-icon");
+            for (let i = 0; i < rotateIcon.length; i++) {
+                $(rotateIcon[i]).removeClass("down-animation-icon");
+            }
+
+            // this code add the down-animation-icon to the drop filter
+            $(`#resizable554 th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
+            $(`.clone-head-table-wrap .mytablesty12 th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
+
+            $("#col8Filter #tableHeaderPop").html(headingPop);
+            let targetModal = $("#col8Filter #checkbox-table-first tbody");
+            const dataC = new Set();
+            for (let i = 0; i < dataP.length; i++) {
+                dataC.add(dataP[i].textContent);
+            }
+            let tableTr = "";
+            for (const item of dataC) {
+                tableTr +=
+                `<tr>
+                    <td>
+                        <div class="popup__checkbox__page__toggle">
+                            <label class="popup__checkbox__toggle">
+                                <input class="popup__checkbox__toggle__input" type="checkbox">
+                                <span class="popup__checkbox__toggle__label">
+                                    <span class="popup__checkbox__toggle__text">${item}</span>
+                                </span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>`;
+            }
+            targetModal.html(tableTr);
+
+            return "showPopup";
         }
-        let tableTr = "";
-        for (const item of dataC) {
-            tableTr +=
-            `<tr>
-                <td>
-                    <div class="popup__checkbox__page__toggle">
-                        <label class="popup__checkbox__toggle">
-                            <input class="popup__checkbox__toggle__input" type="checkbox">
-                            <span class="popup__checkbox__toggle__label">
-                                <span class="popup__checkbox__toggle__text">${item}</span>
-                            </span>
-                        </label>
-                    </div>
-                </td>
-            </tr>`;
-        }
-        targetModal.html(tableTr);
-        
     }
 }
 function table1HeadClick() {
@@ -1059,9 +1107,9 @@ function table1HeadClick() {
         if (target.tagName === "I") {
             target = target.parentNode;
         }
-        headClick(target, index);
+        let popupDecision = headClick(target, index);
 
-        if(target.className == "drop-filter"){
+        if(target.className == "drop-filter" && popupDecision == "showPopup"){
             let elementPositionMain = e.target.getBoundingClientRect();;
             $("#col8Filter").css('display','none');
             $("#col8Filter").css({
@@ -1080,9 +1128,9 @@ function table1HeadClick() {
         if (target.tagName === "I") {
             target = target.parentNode;
         }
-        headClick(target, index);
+        let popupDecision = headClick(target, index);
 
-        if(target.className == "drop-filter"){
+        if(target.className == "drop-filter" && popupDecision == "showPopup"){
             let elementPositionMain = e.target.getBoundingClientRect();;
             $("#col8Filter").css('display','none');
             $("#col8Filter").css({
@@ -1253,6 +1301,7 @@ function table2HeadClick(tName) {
             $(`#style2Con .table.${tName} th:nth-child(${index})`).addClass("th-dis-none");
             $(`#style2Con .table.${tName} td:nth-child(${index})`).addClass("th-dis-none");
             allHeadTable2Call();
+            $("#col8Filter").css('display','none');
         }
     });
 }
@@ -1985,3 +2034,38 @@ window.addEventListener("scroll", (event) => {
 // let virtualHeader =  document.querySelector('#outer_table_box7 #style1Table .clone-head-table-wrap');
 // let compStyles = window.getComputedStyle(virtualHeader);
 // compStyles.visibility
+
+$(document).keydown(function(e){
+    let arrowShowing = $("#style_1_box").hasClass("clickstylebg");
+    let filterTargeting =  document.querySelector('#col8Filter');
+    let filterStyles = window.getComputedStyle(filterTargeting);
+    if (e.which == 37 && arrowShowing==true) { 
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
+        $("#col8Filter").css('display','none');
+        resetDownArrow();
+    //    return false;
+    }
+    if (e.which == 39 && arrowShowing==true) { 
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
+        $("#col8Filter").css('display','none');
+        resetDownArrow();
+    //    return false;
+    }
+});
+
+function resetDownArrow(){
+    const rotateIcon = document.querySelectorAll("#outer_table_box7 i.fa-caret-down.down-animation-icon");
+    for (let i = 0; i < rotateIcon.length; i++) {
+        $(rotateIcon[i]).removeClass("down-animation-icon");
+    }
+}
