@@ -1840,7 +1840,7 @@ function manTemInpBuild(_id) {
 
   // Manage Template Sample 4 DATE PICKER START
   $(".datepicker_mn").datepicker();
-  $(".datepicker_mn").datepicker("option", "dateFormat", "DD - MM d, yy");
+  $(".datepicker_mn").datepicker("option", "dateFormat", "mm/dd/yy");
 
 }
 
@@ -2164,9 +2164,9 @@ function formToWindowMS1() {
 // Form by text editor End
 // Manage template Sample 1 End
 $("#datepicker_field_set21").datepicker();
-$("#datepicker_field_set21").datepicker("option", "dateFormat", "DD - MM d, yy");
+$("#datepicker_field_set21").datepicker("option", "dateFormat", "mm/dd/yy");
 $("#datepicker_field_set22").datepicker();
-$("#datepicker_field_set22").datepicker("option", "dateFormat", "DD - MM d, yy");
+$("#datepicker_field_set22").datepicker("option", "dateFormat", "mm/dd/yy");
 
 
 $("#datepicker_field_set21_icon").click(function () {
@@ -2463,3 +2463,43 @@ function windowToFormAll(e){
   }
 }
 // All in one End
+
+
+// Mutlistep Form Header Click (Manage Template)
+let spanHeaderTargetTemp = $("#create_new_mn_temp .mutistep-form-area .section-name span");
+for (let i = 0; i < spanHeaderTargetTemp.length; i++) {
+  spanHeaderTargetTemp[i].addEventListener("click", function (event) {
+    spanClassNameTemp = spanHeaderTargetTemp[i].className;
+    
+    if(spanClassNameTemp == "temp-select1"){
+      $("#tempFormStep1").css("display", "block");
+      $("#tempFormStep2").css("display", "none");
+      $("#tempFormStep3").css("display", "none");
+      $("#tempFormStep4").css("display", "none");
+    }
+    else if(spanClassNameTemp == "temp-select2"){
+      $("#tempFormStep1").css("display", "none");
+      $("#tempFormStep2").css("display", "block");
+      $("#tempFormStep3").css("display", "none");
+      $("#tempFormStep4").css("display", "none");
+    }
+    else if(spanClassNameTemp == "temp-select3"){
+      $("#tempFormStep1").css("display", "none");
+      $("#tempFormStep2").css("display", "none");
+      $("#tempFormStep3").css("display", "block");
+      $("#tempFormStep4").css("display", "none");
+      $('#saveStartTarget-mnTemp').addClass('save-start-class-hide-show-mnTemp');
+    }
+    else{
+      $("#tempFormStep1").css("display", "none");
+      $("#tempFormStep2").css("display", "none");
+      $("#tempFormStep3").css("display", "none");
+      $("#tempFormStep4").css("display", "block");
+      $('#saveStartTarget-mnTemp').removeClass('save-start-class-hide-show-mnTemp');
+    }
+    
+  });
+}
+
+// temp-select1
+// tempFormStep3

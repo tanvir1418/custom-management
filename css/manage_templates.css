@@ -1241,3 +1241,8 @@ padding: 0 5px;
     margin: 0px 30px;
   }
 }
+
+
+#create_new_mn_temp .mutistep-form-area .section-name span:hover{
+  cursor: pointer;
+}

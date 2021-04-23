@@ -835,7 +835,7 @@ function manTemInpBuildData(_id) {
 
   // Manage Data Option 4 Sample 4 DATE PICKER START
   $(".datepicker_op4").datepicker();
-  $(".datepicker_op4").datepicker("option", "dateFormat", "DD - MM d, yy");
+  $(".datepicker_op4").datepicker("option", "dateFormat", "mm/dd/yy");
 }
 
 function removeElementData(_id) {
@@ -1454,3 +1454,39 @@ function windowToFormAllDS(e) {
   }
 }
 // All in one(2) End
+
+// Mutlistep Form Header Click (Manage Data Option 4)
+let spanHeaderTarget = $("#create_new_option_four .mutistep-form-area .section-name span");
+for (let i = 0; i < spanHeaderTarget.length; i++) {
+  spanHeaderTarget[i].addEventListener("click", function (event) {
+    spanClassName = spanHeaderTarget[i].className;
+
+    if(spanClassName == "md-select1"){
+      $("#op4FormStep1").css("display", "block");
+      $("#op4FormStep2").css("display", "none");
+      $("#op4FormStep3").css("display", "none");
+      $("#op4FormStep4").css("display", "none");
+    }
+    else if(spanClassName == "md-select2"){
+      $("#op4FormStep1").css("display", "none");
+      $("#op4FormStep2").css("display", "block");
+      $("#op4FormStep3").css("display", "none");
+      $("#op4FormStep4").css("display", "none");
+    }
+    else if(spanClassName == "md-select3"){
+      $("#op4FormStep1").css("display", "none");
+      $("#op4FormStep2").css("display", "none");
+      $("#op4FormStep3").css("display", "block");
+      $("#op4FormStep4").css("display", "none");
+      $('#saveStartTarget-op4').addClass('save-start-class-hide-show-op4');
+    }
+    else{
+      $("#op4FormStep1").css("display", "none");
+      $("#op4FormStep2").css("display", "none");
+      $("#op4FormStep3").css("display", "none");
+      $("#op4FormStep4").css("display", "block");
+      $('#saveStartTarget-op4').removeClass('save-start-class-hide-show-op4');
+    }
+    
+  });
+}

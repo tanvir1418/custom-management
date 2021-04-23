@@ -319,15 +319,6 @@ $("#close-btn").on("click", function () {
   $('#mnTemp_saveStart').modal('hide');
 });
 
-// Manage Template Sample 4 DATE PICKER START
-// $(function () {
-
-//   $("#datepicker_mnTemp1").datepicker();
-//   $("#datepicker_mnTemp1").datepicker("option", "dateFormat", "DD, MM d, yy");
-
-//   $("#datepicker_mnTemp2").datepicker();
-//   $("#datepicker_mnTemp2").datepicker("option", "dateFormat", "DD, MM d, yy");
-// });
 
 // Manage Template Time Picker Icon Click Operation Starts
 $("#time_picker_close-btn").on("click", function () {
@@ -553,9 +544,9 @@ $("#prev-hide-save-start-op4").click(function(){
 
 
 $("#datepicker_field_set11").datepicker();
-$("#datepicker_field_set11").datepicker("option", "dateFormat", "DD - MM d, yy");
+$("#datepicker_field_set11").datepicker("option", "dateFormat", "mm/dd/yy");
 $("#datepicker_field_set12").datepicker();
-$("#datepicker_field_set12").datepicker("option", "dateFormat", "DD - MM d, yy");
+$("#datepicker_field_set12").datepicker("option", "dateFormat", "mm/dd/yy");
 
 
 $("#datepicker_field_set11_icon").click(function () {
