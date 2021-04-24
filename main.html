@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./css/all_popup_styles.css">
     <link rel="stylesheet" href="./css/checkbox.css">
     <link rel="stylesheet" href="./css/manage_templates.css">
+    <link rel="stylesheet" href="./css/manage_alert.css">
     <link rel="stylesheet" href="./css/tooltip.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/media.css">
@@ -5010,7 +5011,466 @@
 
         <!-- ====----=-=-=-=-=-=-=-=-=- MANAGE ALERTS START ====----=-=-=-=-=-=-=-=-=- -->
         <div class="tab_content tab_5" id="tab_5" style="display: none;">
-
+            <div class="alert-window">
+                <div class="hero-title">
+                    <div class="hero-box">
+                        <div class="title-icon">
+                            <img src="./images/option_title.png" alt="">
+                        </div>
+                        <div class="mytitle">
+                            <p class="">Manage Alerts</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert-mytable">
+                    <table class="table table-responsive-xl table89">
+                        <thead>
+                            <th class="">ROW</th>
+                            <th class="">ALERT TYPE
+                                <div class="head-filter">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <div class="drop-filter">
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
+                            </th>
+                            <th class="">ALERT VALUE
+                                <div class="head-filter">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <div class="drop-filter">
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
+                            </th>
+                            <th class="">ALERT FREQUENCY
+                                <div class="head-filter">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <div class="drop-filter">
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
+                            </th>
+                            <th class="">ALERT METHOD
+                                <div class="head-filter">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <div class="drop-filter">
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
+                            </th>
+                            <th class="">ACTIONS</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td class="selectaltype">
+                                    <select name="" id="">
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                    </select>
+                                    <div class="selectarrow">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                </td>
+                                <td class="inpalertval">
+                                    <input type="text">
+                                </td>
+                                <td class="selectalfreq">
+                                    <select name="" id="">
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                    </select>
+                                    <div class="selectarrow">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                </td>
+                                <td class="inpumail">
+                                    <div class="mail_enter">
+                                        <div class="mail_icons">
+                                            <i class="fas fa-envelope"></i>
+                                            <i class="fas fa-phone-alt"></i>
+                                            <i class="fas fa-comment-alt"></i>
+                                        </div>
+                                        <input type="email" placeholder="Enter a Email Address">
+                                    </div>
+                                </td>
+                                <td class="removenull">
+                                    <div class="reset-save-btn">
+                                        <button class="reset4" type="button" id="resetAlertS2">Reset</button>
+                                        <button class="save4" type="button">Save</button>
+                                    </div>
+                                    <div class="circle_550 plus89">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="circle_550">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="selectaltype">
+                                    <select name="" id="">
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                    </select>
+                                    <div class="selectarrow">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                </td>
+                                <td class="inpalertval">
+                                    <input type="text">
+                                </td>
+                                <td class="selectalfreq">
+                                    <select name="" id="">
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                    </select>
+                                    <div class="selectarrow">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                </td>
+                                <td class="inpumail">
+                                    <div class="mail_enter">
+                                        <div class="mail_icons">
+                                            <i class="fas fa-envelope"></i>
+                                            <i class="fas fa-phone-alt"></i>
+                                            <i class="fas fa-comment-alt"></i>
+                                        </div>
+                                        <input type="email" placeholder="Enter a Email Address">
+                                    </div>
+                                </td>
+                                <td class="removenull">
+                                    <div class="reset-save-btn">
+                                        <button class="reset4" type="button" id="resetAlertS2">Reset</button>
+                                        <button class="save4" type="button">Save</button>
+                                    </div>
+                                    <div class="circle_550 plus89">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="circle_550">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="selectaltype">
+                                    <select name="" id="">
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                    </select>
+                                    <div class="selectarrow">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                </td>
+                                <td class="inpalertval">
+                                    <input type="text">
+                                </td>
+                                <td class="selectalfreq">
+                                    <select name="" id="">
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                    </select>
+                                    <div class="selectarrow">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                </td>
+                                <td class="inpumail">
+                                    <div class="mail_enter">
+                                        <div class="mail_icons">
+                                            <i class="fas fa-envelope"></i>
+                                            <i class="fas fa-phone-alt"></i>
+                                            <i class="fas fa-comment-alt"></i>
+                                        </div>
+                                        <input type="email" placeholder="Enter a Email Address">
+                                    </div>
+                                </td>
+                                <td class="removenull">
+                                    <div class="reset-save-btn">
+                                        <button class="reset4" type="button" id="resetAlertS2">Reset</button>
+                                        <button class="save4" type="button">Save</button>
+                                    </div>
+                                    <div class="circle_550 plus89">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="circle_550">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td class="selectaltype">
+                                    <select name="" id="">
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                    </select>
+                                    <div class="selectarrow">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                </td>
+                                <td class="inpalertval">
+                                    <input type="text">
+                                </td>
+                                <td class="selectalfreq">
+                                    <select name="" id="">
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                    </select>
+                                    <div class="selectarrow">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                </td>
+                                <td class="inpumail">
+                                    <div class="mail_enter">
+                                        <div class="mail_icons">
+                                            <i class="fas fa-envelope"></i>
+                                            <i class="fas fa-phone-alt"></i>
+                                            <i class="fas fa-comment-alt"></i>
+                                        </div>
+                                        <input type="email" placeholder="Enter a Email Address">
+                                    </div>
+                                </td>
+                                <td class="removenull">
+                                    <div class="reset-save-btn">
+                                        <button class="reset4" type="button" id="resetAlertS2">Reset</button>
+                                        <button class="save4" type="button">Save</button>
+                                    </div>
+                                    <div class="circle_550 plus89">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="circle_550">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td class="selectaltype">
+                                    <select name="" id="">
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                    </select>
+                                    <div class="selectarrow">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                </td>
+                                <td class="inpalertval">
+                                    <input type="text">
+                                </td>
+                                <td class="selectalfreq">
+                                    <select name="" id="">
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                    </select>
+                                    <div class="selectarrow">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                </td>
+                                <td class="inpumail">
+                                    <div class="mail_enter">
+                                        <div class="mail_icons">
+                                            <i class="fas fa-envelope"></i>
+                                            <i class="fas fa-phone-alt"></i>
+                                            <i class="fas fa-comment-alt"></i>
+                                        </div>
+                                        <input type="email" placeholder="Enter a Email Address">
+                                    </div>
+                                </td>
+                                <td class="removenull">
+                                    <div class="reset-save-btn">
+                                        <button class="reset4" type="button" id="resetAlertS2">Reset</button>
+                                        <button class="save4" type="button">Save</button>
+                                    </div>
+                                    <div class="circle_550 plus89">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="circle_550">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td class="selectaltype">
+                                    <select name="" id="">
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                    </select>
+                                    <div class="selectarrow">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                </td>
+                                <td class="inpalertval">
+                                    <input type="text">
+                                </td>
+                                <td class="selectalfreq">
+                                    <select name="" id="">
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                    </select>
+                                    <div class="selectarrow">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                </td>
+                                <td class="inpumail">
+                                    <div class="mail_enter">
+                                        <div class="mail_icons">
+                                            <i class="fas fa-envelope"></i>
+                                            <i class="fas fa-phone-alt"></i>
+                                            <i class="fas fa-comment-alt"></i>
+                                        </div>
+                                        <input type="email" placeholder="Enter a Email Address">
+                                    </div>
+                                </td>
+                                <td class="removenull">
+                                    <div class="reset-save-btn">
+                                        <button class="reset4" type="button" id="resetAlertS2">Reset</button>
+                                        <button class="save4" type="button">Save</button>
+                                    </div>
+                                    <div class="circle_550 plus89">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="circle_550">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td class="selectaltype">
+                                    <select name="" id="">
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                        <option value="">Precent Change
+                                            Greather...
+                                        </option>
+                                    </select>
+                                    <div class="selectarrow">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                </td>
+                                <td class="inpalertval">
+                                    <input type="text">
+                                </td>
+                                <td class="selectalfreq">
+                                    <select name="" id="">
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                        <option value="">Anytime</option>
+                                    </select>
+                                    <div class="selectarrow">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                </td>
+                                <td class="inpumail">
+                                    <div class="mail_enter">
+                                        <div class="mail_icons">
+                                            <i class="fas fa-envelope"></i>
+                                            <i class="fas fa-phone-alt"></i>
+                                            <i class="fas fa-comment-alt"></i>
+                                        </div>
+                                        <input type="email" placeholder="Enter a Email Address">
+                                    </div>
+                                </td>
+                                <td class="removenull">
+                                    <div class="reset-save-btn">
+                                        <button class="reset4" type="button" id="resetAlertS2">Reset</button>
+                                        <button class="save4" type="button">Save</button>
+                                    </div>
+                                    <div class="circle_550 plus89">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="circle_550">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <!-- ====----=-=-=-=-=-=-=-=-=- MANAGE ALERTS END ====----=-=-=-=-=-=-=-=-=- -->
 
