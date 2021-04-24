@@ -65,11 +65,11 @@ body {
     letter-spacing: 2px;
 }
 
-.login-form .login-input form {
+.login-form .login-input div#loginForm {
     padding-top: 25px;
 }
 
-.login-input form .myinput {
+.login-input .myinput {
     width: 500px;
     height: 50px;
     margin-bottom: 25px;
@@ -83,7 +83,7 @@ body {
     font-family: gilroy-regular, sans-serif;
 }
 
-.login-input form input:focus {
+.login-input input:focus {
     outline: none;
 }
 
