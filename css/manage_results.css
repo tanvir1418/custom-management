@@ -2470,9 +2470,8 @@ th[draggable] a {
 
 .alertswindow-content .alert-table .mail_icons i.fa-envelope {
     margin-right: 3px;
-    color: #9bff00;
+    color: #e1e1e1;
 }
-
 .alertswindow-content .alert-table .mail_icons i.fa-phone-alt {
     color: #e1e1e1;
     text-align: center;
@@ -3486,4 +3485,13 @@ i.fa-caret-down.down-animation-icon{
 #style1Table .clone-head-table-wrap{
     height: 45px !important;
     background-color: #fafafc !important;
+}
+
+.iconActive{
+    color: #9bff00 !important;
+}
+
+#alertswindow .mail_icons i:hover,
+#alertswindow_style2 .mail_icons i:hover{
+    cursor: pointer;
 }
