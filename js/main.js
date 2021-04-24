@@ -596,9 +596,9 @@ function updateThumbnail(dropZoneElement, file) {
 
 $(function () {
   $("#datepicker-1").datepicker();
-  $("#datepicker-1").datepicker("option", "dateFormat", "DD - MM d, yy");
+  $("#datepicker-1").datepicker("option", "dateFormat", "mm/dd/yy");
   $("#datepicker-2").datepicker();
-  $("#datepicker-2").datepicker("option", "dateFormat", "DD - MM d, yy");
+  $("#datepicker-2").datepicker("option", "dateFormat", "mm/dd/yy");
 });
 
 $("#datePicker1_Icon").click(function () {
