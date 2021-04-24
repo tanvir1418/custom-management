@@ -2981,3 +2981,10 @@ element.style {
     width: 80%;
   } */
 }
+
+#create_new_option_four .mutistep-form-area .section-name span:hover{
+  cursor: pointer;
+}
+.fa-calendar-alt:hover{
+  cursor: pointer;
+}
