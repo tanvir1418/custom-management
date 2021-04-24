@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" defer></script>
-    <script src="./js/main.js" defer></script>
+    <!-- <script src="./js/main.js" defer></script> -->
 </head>
 
 <body>
@@ -193,19 +193,19 @@
             </div>
             <div class="login-input">
                 <div class="row">
-                    <form id="loginForm" action="" class="mx-auto">
+                    <div id="loginForm" action="" class="mx-auto">
                         <div class="row">
-                            <input id="username" class="myinput" type="text" placeholder="User Name">
+                            <input id="usernameField" class="myinput" type="text" placeholder="User Name">
                         </div>
                         <div class="row">
-                            <input id="password" class="myinput" type="password" placeholder="Password">
+                            <input id="passwordField" class="myinput" type="password" placeholder="Password">
                         </div>
                         <div class="row button-box d-flex">
-                            <a class="reset" href="index.html">Reset</a>
-                            <input class="ml-auto login" type="submit" value="LOGIN" />
-                            <input class="ml-auto login" type="submit" value="REGISTER" />
+                            <a class="reset" href="index.html"id="resetBtn">Reset</a>
+                            <input class="ml-auto login" type="submit" value="LOGIN" id="loginBtn"/>
+                            <input class="ml-auto login" type="submit" value="REGISTER" id="registerBtn" />
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -236,26 +236,30 @@
         </div>
     </div>
     <!-- Login is required Modal start -->
-
-    <script>
-        const loginForm = document.getElementById("loginForm");
-        const username = document.getElementById("username");
-        const password = document.getElementById("password");
-
-        function loginSubmit(event) {
-            event.preventDefault();
-            localStorage.setItem("currentUser", username.value);
-            loginForm.reset();
-            window.location.href = "/termsconditions.html";
-        }
-
-        loginForm.addEventListener("submit", loginSubmit);
-    </script>
-
-
-
     <!-- JS FILES -->
     <script src="./js/jquery.js"></script>
+    <script>
+        const usernameIndex = document.getElementById("usernameField");
+        const passwordIndex = document.getElementById("passwordField");
+
+        $("#registerBtn").click(function (event) {
+            event.preventDefault();
+            window.location.href = "/main.html";
+        });
+
+        $("#loginBtn").click(function (event) {
+            event.preventDefault();
+            localStorage.setItem("currentUser", usernameIndex.value);
+            usernameIndex.value = "";
+            passwordIndex.value = "";
+            window.location.href = "/termsconditions.html";
+        });
+        $("#resetBtn").click(function (event) {
+            event.preventDefault();
+            usernameIndex.value = "";
+            passwordIndex.value = "";
+        });
+    </script>
 
 </body>
 

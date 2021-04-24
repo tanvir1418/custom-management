@@ -1831,7 +1831,7 @@ function Style2DropFilterPos() {
             //     "margin-top": "-15px"
             // });
 
-            let elementPositionMain = event.target.getBoundingClientRect();;
+            let elementPositionMain = event.target.getBoundingClientRect();
             $("#col8Filter").css('display','none');
             $("#col8Filter").css({
                 top: ((elementPositionMain.y) + window.scrollY + 25),
@@ -1954,7 +1954,21 @@ function resetInputFieldAlert(){
     const inputMail = document.querySelectorAll("#alertswindow td.inpumail input");
     for (let i = 0; i < inputMail.length; i++) {
         inputMail[i].value = "";
+        // Resetting the Input Placeholder into default state
+        $(inputMail[i]).attr("placeholder","Enter a Email Addres").attr("type","email");
     }
+
+    // Resetting the icon into default state
+    let emailAlert = $("#alertswindow .mail_icons .fa-envelope");
+    let phoneAlert = $("#alertswindow .mail_icons .fa-phone-alt");
+    let textAlert = $("#alertswindow .mail_icons .fa-comment-alt");
+
+    for(i=0; i<emailAlert.length; i++){
+        $(emailAlert[i]).addClass("iconActive");
+        $(phoneAlert[i]).removeClass("iconActive");
+        $(textAlert[i]).removeClass("iconActive");
+    }
+
 }
 
 function resetInputFieldAlertStyle2(){
@@ -1966,6 +1980,19 @@ function resetInputFieldAlertStyle2(){
     const inputMailS2 = document.querySelectorAll("#alertswindow_style2 td.inpumail input");
     for (let i = 0; i < inputMailS2.length; i++) {
         inputMailS2[i].value = "";
+        // Resetting the Input Placeholder into default state
+        $(inputMailS2[i]).attr("placeholder","Enter a Email Addres").attr("type","email");
+    }
+
+    // Resetting the icon into default state
+    let emailAlert_S2 = $("#alertswindow_style2 .mail_icons .fa-envelope");
+    let phoneAlert_S2 = $("#alertswindow_style2 .mail_icons .fa-phone-alt");
+    let textAlert_S2 = $("#alertswindow_style2 .mail_icons .fa-comment-alt");
+
+    for(i=0; i<emailAlert_S2.length; i++){
+        $(emailAlert_S2[i]).addClass("iconActive");
+        $(phoneAlert_S2[i]).removeClass("iconActive");
+        $(textAlert_S2[i]).removeClass("iconActive");
     }
 }
 
@@ -2068,4 +2095,69 @@ function resetDownArrow(){
     for (let i = 0; i < rotateIcon.length; i++) {
         $(rotateIcon[i]).removeClass("down-animation-icon");
     }
+}
+
+// Manage Result : Alert PopUps (Changing Placeholder and Icon Color)
+let mailIconAlert = $("#alertswindow .mail_icons");
+for (let i = 0; i < mailIconAlert.length; i++) {
+    mailIconAlert[i].addEventListener("click", function (event) {
+        // let elementPositionMain = event.target;
+        if(event.target.nodeName == "I"){
+            let iconClassName = event.target.classList[1];
+            if(iconClassName == "fa-envelope"){
+                $(mailIconAlert[i].children[0]).addClass("iconActive");
+                $(mailIconAlert[i].children[1]).removeClass("iconActive");
+                $(mailIconAlert[i].children[2]).removeClass("iconActive");
+
+                $(mailIconAlert[i].parentNode.lastElementChild).attr("placeholder","Enter a Email Address").attr("type","email");
+            }
+            else if(iconClassName == "fa-phone-alt"){
+                $(mailIconAlert[i].children[0]).removeClass("iconActive");
+                $(mailIconAlert[i].children[1]).addClass("iconActive");
+                $(mailIconAlert[i].children[2]).removeClass("iconActive");
+
+                $(mailIconAlert[i].parentNode.lastElementChild).attr("placeholder","Enter a Phone Number").attr("type","number");
+            }
+            else if(iconClassName == "fa-comment-alt"){
+                $(mailIconAlert[i].children[0]).removeClass("iconActive");
+                $(mailIconAlert[i].children[1]).removeClass("iconActive");
+                $(mailIconAlert[i].children[2]).addClass("iconActive");
+
+                $(mailIconAlert[i].parentNode.lastElementChild).attr("placeholder","Enter a Text Message").attr("type","text");
+            }
+            
+        }
+    });
+}
+
+
+let mailIconAlert_s2 = $("#alertswindow_style2 .mail_icons");
+for (let i = 0; i < mailIconAlert_s2.length; i++) {
+    mailIconAlert_s2[i].addEventListener("click", function (event) {
+        if(event.target.nodeName == "I"){
+            let iconClassName = event.target.classList[1];
+            if(iconClassName == "fa-envelope"){
+                $(mailIconAlert_s2[i].children[0]).addClass("iconActive");
+                $(mailIconAlert_s2[i].children[1]).removeClass("iconActive");
+                $(mailIconAlert_s2[i].children[2]).removeClass("iconActive");
+
+                $(mailIconAlert_s2[i].parentNode.lastElementChild).attr("placeholder","Enter a Email Address").attr("type","email");
+            }
+            else if(iconClassName == "fa-phone-alt"){
+                $(mailIconAlert_s2[i].children[0]).removeClass("iconActive");
+                $(mailIconAlert_s2[i].children[1]).addClass("iconActive");
+                $(mailIconAlert_s2[i].children[2]).removeClass("iconActive");
+
+                $(mailIconAlert_s2[i].parentNode.lastElementChild).attr("placeholder","Enter a Phone Number").attr("type","number");
+            }
+            else if(iconClassName == "fa-comment-alt"){
+                $(mailIconAlert_s2[i].children[0]).removeClass("iconActive");
+                $(mailIconAlert_s2[i].children[1]).removeClass("iconActive");
+                $(mailIconAlert_s2[i].children[2]).addClass("iconActive");
+
+                $(mailIconAlert_s2[i].parentNode.lastElementChild).attr("placeholder","Enter a Text Message").attr("type","text");
+            }
+            
+        }
+    });
 }
