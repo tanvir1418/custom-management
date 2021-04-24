@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Terms and Conditions</title>
     <link rel="stylesheet" href="./css/all_min.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -37,6 +37,10 @@
             <div class="icon-box">
                 <i class="icon fas fa-envelope"></i>
                 <i class="icon fas fa-user"></i>
+            </div>
+            <div class="welcome-box">
+                <p class="welcome m-0">Welcome</p>
+                <p id="username_div" class="name m-0">Peter Parker</p>
             </div>
         </div>
         <!-- FIXED BAR ITEMS END -->
@@ -184,29 +188,67 @@
     <!-- ============ HEADER SECTON END  ============ -->
 
     <!-- ============ LOGIN SECTON START =============== -->
-    <div id="login-section">
-        <div class="login-form">
-            <div class="login-title">
-                <div class="row">
-                    <P>LOGIN</P>
-                </div>
+    <div id="tc-section">
+        <div class="terms_conditions">
+            <p class="tc-head">Sample header text goes here</p>
+            <p class="tc-head">Sample header text goes here</p>
+            <div class="tc-outerbox">
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
+                <p>Text goes here ..... Text goes here ..... Text goes here ..... Text goes here ..... Text goes here
+                    ..... Text goes here .....</p>
             </div>
-            <div class="login-input">
-                <div class="row">
-                    <form id="loginForm" action="" class="mx-auto">
-                        <div class="row">
-                            <input id="username" class="myinput" type="text" placeholder="User Name">
-                        </div>
-                        <div class="row">
-                            <input id="password" class="myinput" type="password" placeholder="Password">
-                        </div>
-                        <div class="row button-box d-flex">
-                            <a class="reset" href="index.html">Reset</a>
-                            <input class="ml-auto login" type="submit" value="LOGIN" />
-                            <input class="ml-auto login" type="submit" value="REGISTER" />
-                        </div>
-                    </form>
-                </div>
+            <div class="tic-box">
+                <input type="checkbox">
+                <p>Please do not show this page next time after login</p>
+            </div>
+            <div class="accept-btn-box">
+                <input class="decline" type="submit" value="DECLINE"/>
+                <input class="accept" type="submit" value="ACCEPT"/>
             </div>
         </div>
     </div>
@@ -246,14 +288,11 @@
             event.preventDefault();
             localStorage.setItem("currentUser", username.value);
             loginForm.reset();
-            window.location.href = "/termsconditions.html";
+            window.location.href = "/main.html";
         }
 
         loginForm.addEventListener("submit", loginSubmit);
     </script>
-
-
-
     <!-- JS FILES -->
     <script src="./js/jquery.js"></script>
 
