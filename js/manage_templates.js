@@ -2503,3 +2503,14 @@ for (let i = 0; i < spanHeaderTargetTemp.length; i++) {
 
 // temp-select1
 // tempFormStep3
+
+// Manage Template Sample3 (any item click inside automatically "Check")
+let mTempFieldSetDataForms = $("#tempFormStep3 .checkbox-container-inner fieldset .data-form");
+for (let i = 0; i < mTempFieldSetDataForms.length; i++) {
+  mTempFieldSetDataForms[i].addEventListener("click", function (event) {
+    tempFieldSetId = mTempFieldSetDataForms[i].parentElement.id;
+    let tempFieldSection = $(`fieldset#${tempFieldSetId} legend input[type=checkbox]`);
+    tempFieldSection.prop("checked", true);
+    $(`fieldset#${tempFieldSetId}`).addClass("borderGreen");
+  });
+}

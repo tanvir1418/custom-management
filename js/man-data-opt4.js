@@ -1490,3 +1490,14 @@ for (let i = 0; i < spanHeaderTarget.length; i++) {
     
   });
 }
+
+// Manage Data Option4 Sample3 (any item click inside automatically "Check")
+let op4FieldSetDataForms = $("#op4FormStep3 .checkbox-container-inner fieldset .data-form");
+for (let i = 0; i < op4FieldSetDataForms.length; i++) {
+  op4FieldSetDataForms[i].addEventListener("click", function (event) {
+    fieldSetId = op4FieldSetDataForms[i].parentElement.id;
+    let fieldSection = $(`fieldset#${fieldSetId} legend input[type=checkbox]`);
+    fieldSection.prop("checked", true);
+    $(`fieldset#${fieldSetId}`).addClass("borderGreen");
+  });
+}
