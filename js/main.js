@@ -777,11 +777,7 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
     showGoButton: true,
     callback: function (data, pagination) {
       let tableTr = "";
-      data.forEach(
-        (
-          { id, serial, recordsCount, savedName, CDateTime, LUDateTime },
-          index
-        ) => {
+      data.forEach(({ id, serial, recordsCount, savedName, CDateTime, LUDateTime }, index) => {
           let tabHd = $(`#${tableID} thead th`);
           let len = tabHd.length;
           let classList = [];
@@ -897,13 +893,10 @@ function tabChangeOpt5(e) {
   createNew.find("div.createpera p").html("View/Update");
   createNew.click();
 }
+
 makeTableHead("man-data-opt1-exist");
-manDtOpt1Exist(
-  "man-data-opt1-exist",
-  7,
-  "pagination-op1-data",
-  `tabChangeOpt1(this)`
-);
+manDtOpt1Exist("man-data-opt1-exist",7,"pagination-op1-data",`tabChangeOpt1(this)`);
+
 makeTableHead("man-data-opt3-exist");
 manDtOpt1Exist(
   "man-data-opt3-exist",
@@ -1163,3 +1156,12 @@ function resetAccountFormFields() {
     $(formInputContainer[i]).parent().children(".error-message").remove();
   }
 }
+
+// User Icon Click on Navbar Redirect to Manage Account 
+$("#userAvatar").click(function () {
+  $("#tabs_ul li").removeClass("active");
+  $("#tabs_ul li:nth-child(1)").addClass("active");
+
+  $(".content .tab_content").hide();
+  $(".content .tab_content:nth-child(1)").show();
+});
