@@ -65,7 +65,7 @@
         <div class="nav-items d-flex">
             <div class="icon-box">
                 <i class="icon fas fa-envelope"></i>
-                <i class="icon fas fa-user"></i>
+                <i class="icon fas fa-user" id="userAvatar"></i>
             </div>
             <div class="welcome-box">
                 <p class="welcome m-0">Welcome</p>
@@ -87,7 +87,7 @@
             <!-- ======== TAB MENU NAVIGATION START ======== -->
             <div class="tabs">
                 <ul id="tabs_ul">
-                    <li class="active" data-list="tab_1">
+                    <li data-list="tab_1">
                         <div class="tab-box">
                             <div class="svg-box">
                                 <svg viewBox="-21 0 512 512">
@@ -109,7 +109,7 @@
                             </div>
                         </div>
                     </li>
-                    <li data-list="tab_2">
+                    <li class="active" data-list="tab_2">
                         <div class="tab-box">
                             <div class="svg-box">
                                 <svg viewBox="-21 0 512 512">
@@ -218,7 +218,7 @@
     <!-- ============================= TAB CONTENT START ============================= -->
     <div class="content">
         <!-- ====----=-=-=-=-=-=-=-=-=- MANAGE ACCOUNT SECTION START ====----=-=-=-=-=-=-=-=-=- -->
-        <div class="tab_content tab_1" id="tab_1">
+        <div class="tab_content tab_1" id="tab_1" style="display: none;">
             <div class="account-content">
                 <div class="content-inner">
                     <div class="hero-title">
@@ -383,7 +383,7 @@
 
 
         <!-- ====----=-=-=-=-=-=-=-=-=- MANAGE DATA SECTION START ====----=-=-=-=-=-=-=-=-=- -->
-        <div class="tab_content tab_2" id="tab_2" style="display: none;">
+        <div class="tab_content tab_2" id="tab_2">
             <div id="hide559" class="container">
                 <div class="row">
                     <div class="title">
@@ -5029,7 +5029,7 @@
                             
                         </thead>
                         <tbody>
-                            
+
                         </tbody>
                     </table>
                     <!-- Manage Alert PAGINATION START -->

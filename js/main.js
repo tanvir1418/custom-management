@@ -1156,3 +1156,13 @@ function resetAccountFormFields() {
     $(formInputContainer[i]).parent().children(".error-message").remove();
   }
 }
+
+// User Icon Click on Navbar Redirect to Manage Account 
+$("#userAvatar").click(function () {
+  $("#tabs_ul li").removeClass("active");
+  $("#tabs_ul li:nth-child(1)").addClass("active");
+
+  $(".content .tab_content").hide();
+  $(".content .tab_content:nth-child(1)").show();
+  console.log("Clicked");
+});
