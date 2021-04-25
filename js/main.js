@@ -1164,5 +1164,4 @@ $("#userAvatar").click(function () {
 
   $(".content .tab_content").hide();
   $(".content .tab_content:nth-child(1)").show();
-  console.log("Clicked");
 });

@@ -7794,6 +7794,31 @@
     <script src="./js/man-data-opt4.js" defer></script>
     <script src="./js/read-csv.js" defer></script> -->
     <script src="./js/freeze-table.js"></script>
+    <script>
+        const mAccVisibility = localStorage.getItem("manageAccoutVisibility");
+        if(mAccVisibility == "showAccount"){
+            $("#tabs_ul li").removeClass("active");
+            $("#tabs_ul li:nth-child(1)").addClass("active");
+
+            $(".content .tab_content").hide();
+            $(".content .tab_content:nth-child(1)").show();
+
+            // var ul = document.getElementById("tabs_ul");
+            // var li_tabs = ul.getElementsByTagName("li");
+            // for (var i = 0; i < li_tabs.length; i++) {
+            // li_tabs[i].addEventListener("click", function () {
+            //     var current = ul.getElementsByClassName("active");
+            //     current[0].className = current[0].className.replace("active", "");
+            //     this.className += "active";
+
+            //     var current_tab_value = this.getAttribute("data-list");
+            //     //console.log(current_tab_value);
+            // });
+            // }
+        }
+
+
+    </script>
 </body>
 
 </html>
