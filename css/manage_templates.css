@@ -1241,3 +1241,21 @@ padding: 0 5px;
     margin: 0px 30px;
   }
 }
+
+
+#create_new_mn_temp .mutistep-form-area .section-name span:hover{
+  cursor: pointer;
+}
+
+fieldset legend.w-auto label.toggle span.tooltip-container{
+  margin-left: 5px;
+}
+
+fieldset legend.w-auto label.toggle i{
+  padding-top: 9px;
+  padding-left: 2px;
+}
+
+fieldset legend.w-auto label.toggle i:hover{
+  cursor: pointer;
+}

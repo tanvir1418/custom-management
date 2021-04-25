@@ -3,6 +3,11 @@
 // const sub_ul_list_11 = document.querySelector(".sub-ul-list-11");
 // const sub_ul_list_22 = document.querySelector(".sub-ul-list-22");
 // const sub_ul_list_33 = document.querySelector(".sub-ul-list-33");
+
+// Header Index Where Click is happened.
+let headerIndexClick = "";
+
+
 const left_list_404 = document.querySelector(".left-list-404");
 
 // Added by ASHIQ
@@ -575,36 +580,68 @@ $(document).ready(function () {
 
 
 // ///////////////////////////////////////////
-$(document).ready(function () {
-    const mytablesty12 = document.querySelector(".mytablesty12");
-    $("#style1Table .right-slider5").click(function () {
-        $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft + 800,
+function style1TableScroller () {
+    const style1TableScroll = document.querySelector("#style1Table");
+    $("#outer_table_box7 .right-slider5").click(function () {
+        $("#style1Table").animate({
+            scrollLeft: style1TableScroll.scrollLeft + 800,
         },
             0
         );
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
+        $("#col8Filter").css('display','none');
+        resetDownArrow();
     }).dblclick(function () {
-        $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft + 800,
+        $("#style1Table").animate({
+            scrollLeft: style1TableScroll.scrollLeft + 800,
         },
             0
         );
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
+        $("#col8Filter").css('display','none');
+        resetDownArrow();
     });
 
-    $("#style1Table .left-slider5").click(function () {
-        $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft - 800,
+    $("#outer_table_box7 .left-slider5").click(function () {
+        $("#style1Table").animate({
+            scrollLeft: style1TableScroll.scrollLeft - 800,
         },
             0
         );
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
+        $("#col8Filter").css('display','none');
+        resetDownArrow();
     }).dblclick(function () {
-        $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft - 800,
+        $("#style1Table").animate({
+            scrollLeft: style1TableScroll.scrollLeft - 800,
         },
             0
         );
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
+        $("#col8Filter").css('display','none');
+        resetDownArrow();
     });
-});
+}
 
 // ================ ARROW SCROLL BAR END ================
 
@@ -940,6 +977,22 @@ $(".style1-box").click(function () {
 
     $("#double_click").removeClass("displayNone");
     $("#double_click_style2").addClass("displayNone");
+
+    let rowNumber = $("#style1Table #resizable554 tbody tr");
+    if(rowNumber.length > 0){
+        $(".right-slider5").css("display", "block");
+        $(".left-slider5").css("display", "block");
+    }
+
+    $("#viewtwo_style2").css('display','none');
+    $("#rowdetails_style2").css('display','none');
+    $("#noteswindow_style2").css('display','none');
+    $("#alertswindow_style2").css('display','none');
+    $("#copyrowlist_style2").css('display','none');
+    $("#moverowlist_style2").css('display','none');
+
+    $("#col8Filter").css('display','none');
+
 });
 
 $(".style2-box").click(function () {
@@ -954,6 +1007,22 @@ $(".style2-box").click(function () {
 
     $("#double_click").addClass("displayNone");
     $("#double_click_style2").removeClass("displayNone");
+
+    let rowNumber = $("#style1Table #resizable554 tbody tr");
+    if(rowNumber.length > 0){
+        $(".right-slider5").css("display", "none");
+        $(".left-slider5").css("display", "none");
+    }
+
+    $("#viewtwo").css('display','none');
+    $("#rowdetails").css('display','none');
+    $("#noteswindow").css('display','none');
+    $("#alertswindow").css('display','none');
+    $("#copyrowlist").css('display','none');
+    $("#moverowlist").css('display','none');
+
+    $("#col8Filter").css('display','none');
+
 });
 
 
@@ -962,7 +1031,7 @@ $(".style2-box").click(function () {
 // ============== STYLE 1 STYLE 2 END ==============
 
 // X CLICK TO REMOVE COLUMN START ==============
-function headClick(target, index, x, y) {
+function headClick(target, index) {
     let regex = /cross/g;
     let regexD = /drop-filter/g;
     if (target.tagName === "DIV" && regex.test(target.id)) {
@@ -970,43 +1039,65 @@ function headClick(target, index, x, y) {
         $(`#resizable554 td:nth-child(${index})`).addClass("th-dis-none");
         $(`#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).addClass("th-dis-none");
         manResTableRender();
+        $("#col8Filter").css('display','none');
+        resetDownArrow();
+        return "hidePopup";
+
     } else if (target.tagName === "DIV" && regexD.test(target.className)) {
-        let dataP = $(`#resizable554 td:nth-child(${index}) .mr-tableData`);
-        let headingPop = $(`#resizable554 th:nth-child(${index})`)[0].textContent;
+        
+        headerIndexClick = index;
+        let hideFilterWhenClick = $(`#resizable554 th:nth-child(${index}) .drop-filter .fa-caret-down`).hasClass("down-animation-icon");
+        let filterTargeting =  document.querySelector('#col8Filter');
+        let filterStyles = window.getComputedStyle(filterTargeting);
 
-        // this code add the down-animation-icon to the drop filter
-        $(`#resizable554 th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
+        if(hideFilterWhenClick==true && filterStyles.display == "block"){
+            const rotateIcon = document.querySelectorAll("#outer_table_box7 i.fa-caret-down.down-animation-icon");
+            for (let i = 0; i < rotateIcon.length; i++) {
+                $(rotateIcon[i]).removeClass("down-animation-icon");
+            }
+            $("#col8Filter").css('display','none');
 
-        $("#col8Filter #tableHeaderPop").html(headingPop);
-        let targetModal = $("#col8Filter #checkbox-table-first tbody");
-        const dataC = new Set();
-        for (let i = 0; i < dataP.length; i++) {
-            dataC.add(dataP[i].textContent);
+            return "hidePopup";
         }
-        let tableTr = "";
-        for (const item of dataC) {
-            tableTr +=
-            `<tr>
-                <td>
-                    <div class="popup__checkbox__page__toggle">
-                        <label class="popup__checkbox__toggle">
-                            <input class="popup__checkbox__toggle__input" type="checkbox">
-                            <span class="popup__checkbox__toggle__label">
-                                <span class="popup__checkbox__toggle__text">${item}</span>
-                            </span>
-                        </label>
-                    </div>
-                </td>
-            </tr>`;
+        else{
+            let dataP = $(`#resizable554 td:nth-child(${index}) .mr-tableData`);
+            let headingPop = $(`#resizable554 th:nth-child(${index})`)[0].textContent;
+
+            const rotateIcon = document.querySelectorAll("#outer_table_box7 i.fa-caret-down.down-animation-icon");
+            for (let i = 0; i < rotateIcon.length; i++) {
+                $(rotateIcon[i]).removeClass("down-animation-icon");
+            }
+
+            // this code add the down-animation-icon to the drop filter
+            $(`#resizable554 th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
+            $(`.clone-head-table-wrap .mytablesty12 th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
+
+            $("#col8Filter #tableHeaderPop").html(headingPop);
+            let targetModal = $("#col8Filter #checkbox-table-first tbody");
+            const dataC = new Set();
+            for (let i = 0; i < dataP.length; i++) {
+                dataC.add(dataP[i].textContent);
+            }
+            let tableTr = "";
+            for (const item of dataC) {
+                tableTr +=
+                `<tr>
+                    <td>
+                        <div class="popup__checkbox__page__toggle">
+                            <label class="popup__checkbox__toggle">
+                                <input class="popup__checkbox__toggle__input" type="checkbox">
+                                <span class="popup__checkbox__toggle__label">
+                                    <span class="popup__checkbox__toggle__text">${item}</span>
+                                </span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>`;
+            }
+            targetModal.html(tableTr);
+
+            return "showPopup";
         }
-        targetModal.html(tableTr);
-        $("#col8Filter .modal-dialog").css({
-            top: x,
-            left: y,
-        });
-        $("#col8Filter .modal-dialog .table-header-click-popup").css({
-            "margin-top": "0px"
-        });
     }
 }
 function table1HeadClick() {
@@ -1016,9 +1107,19 @@ function table1HeadClick() {
         if (target.tagName === "I") {
             target = target.parentNode;
         }
-        const y = e.clientY + 20;
-        const x = e.clientX - 240;
-        headClick(target, index, x, y);
+        let popupDecision = headClick(target, index);
+
+        if(target.className == "drop-filter" && popupDecision == "showPopup"){
+            let elementPositionMain = e.target.getBoundingClientRect();;
+            $("#col8Filter").css('display','none');
+            $("#col8Filter").css({
+                top: ((elementPositionMain.y) + window.scrollY + 30),
+                left: ((elementPositionMain.x) - 235),
+                position: "absolute"
+            });
+            $("#col8Filter").css('display','block');
+        }
+        
     });
 
     $("#outer_table_box7 #style1Table .clone-head-table-wrap .mytablesty12 th").click(function (e) {
@@ -1027,9 +1128,20 @@ function table1HeadClick() {
         if (target.tagName === "I") {
             target = target.parentNode;
         }
-        const y = e.clientY;
-        const x = e.clientX - 240;
-        headClick(target, index, x, y);
+        let popupDecision = headClick(target, index);
+
+        if(target.className == "drop-filter" && popupDecision == "showPopup"){
+            let elementPositionMain = e.target.getBoundingClientRect();;
+            $("#col8Filter").css('display','none');
+            $("#col8Filter").css({
+                // top: ((elementPositionMain.y) + window.scrollY + 30),
+                top: (46),
+                left: ((elementPositionMain.x) - 235),
+                position: "fixed"
+            });
+            $("#col8Filter").css('display','block');
+        }
+
     });
 }
 
@@ -1189,6 +1301,7 @@ function table2HeadClick(tName) {
             $(`#style2Con .table.${tName} th:nth-child(${index})`).addClass("th-dis-none");
             $(`#style2Con .table.${tName} td:nth-child(${index})`).addClass("th-dis-none");
             allHeadTable2Call();
+            $("#col8Filter").css('display','none');
         }
     });
 }
@@ -1391,76 +1504,340 @@ function IconModalClick() {
     let viewModalList = document.getElementsByClassName('view-modal-click');
     for (let i = 0; i < viewModalList.length; i++) {
         viewModalList[i].addEventListener("click", function (event) {
-            $("#viewtwo .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
-            });
-        });
-    }
+            let elementPositionMain = forceEventTargetDiv(event);
 
-    let viewModalListSty2 = document.getElementsByClassName('view-modal-click-style2');
-    for (let i = 0; i < viewModalListSty2.length; i++) {
-        viewModalListSty2[i].addEventListener("click", function (event) {
-            $("#viewtwo_style2 .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
+            $("#col8Filter").css('display','none');
+
+            $("#viewtwo").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
             });
+
+            $("#viewtwo").css('display','block');
+
         });
     }
 
     let rowModalClick = document.getElementsByClassName('row-modal-click');
     for (let i = 0; i < rowModalClick.length; i++) {
         rowModalClick[i].addEventListener("click", function (event) {
-            $("#rowdetails .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
-            });
-        });
-    }
+            let elementPositionMain = forceEventTargetDiv(event);
 
-    let rowModalClickSty2 = document.getElementsByClassName('row-modal-click-style2');
-    for (let i = 0; i < rowModalClickSty2.length; i++) {
-        rowModalClickSty2[i].addEventListener("click", function (event) {
-            $("#rowdetails_style2 .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
+            $("#col8Filter").css('display','none');
+
+            $("#rowdetails").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
             });
+
+            $("#rowdetails").css('display','block');
+
         });
     }
 
     let noteModalClick = document.getElementsByClassName('note-modal-click');
     for (let i = 0; i < noteModalClick.length; i++) {
         noteModalClick[i].addEventListener("click", function (event) {
-            $("#noteswindow .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
+            $("#col8Filter").css('display','none');
+
+            $("#noteswindow").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
             });
+
+            $("#noteswindow").css('display','block');
+
+        });
+    }
+
+    let copyModalClick = document.getElementsByClassName('copyrowlist-modal-click');
+    for (let i = 0; i < copyModalClick.length; i++) {
+        copyModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
+            $("#col8Filter").css('display','none');
+
+            $("#copyrowlist").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
+            });
+
+            $("#copyrowlist").css('display','block');
+
+        });
+    }
+
+    let moveModalClick = document.getElementsByClassName('moverowlist-modal-click');
+    for (let i = 0; i < moveModalClick.length; i++) {
+        moveModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
+            $("#col8Filter").css('display','none');
+
+            $("#moverowlist").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
+            });
+
+            $("#moverowlist").css('display','block');
+
+        });
+    }
+
+    let alertModalClick = document.getElementsByClassName('alertswindow-modal-click');
+    for (let i = 0; i < alertModalClick.length; i++) {
+        alertModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            $("#viewtwo").css("display", "none");
+			$("#rowdetails").css("display", "none");
+			$("#noteswindow").css("display", "none");
+			$("#alertswindow").css("display", "none");
+			$("#copyrowlist").css("display", "none");
+			$("#moverowlist").css("display", "none");
+
+            $("#col8Filter").css('display','none');
+
+            $("#alertswindow").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
+            });
+
+            $("#alertswindow").css('display','block');
+
+        });
+    }
+
+    let viewModalListSty2 = document.getElementsByClassName('view-modal-click-style2');
+    for (let i = 0; i < viewModalListSty2.length; i++) {
+        viewModalListSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
+            $("#col8Filter").css('display','none');
+
+            $("#viewtwo_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) + 2)
+            });
+
+            $("#viewtwo_style2").css('display','block');
+            // console.log(event.target.nodeName);
+            // console.log(event.target.parentElement.nodeName);
+            // console.log(event.target.parentElement.parentElement.nodeName);
+            // console.log(event.target.parentElement.parentElement.parentElement.nodeName);
+
+            // console.log("Bottom value :" + event.target.getBoundingClientRect().bottom);
+            // console.log("Left value :" + event.target.getBoundingClientRect().left);
+
+            // $("#viewtwo_style2 .modal-dialog").css({
+            //     top: ((elementPositionMain.bottom) + 7),
+            //     left: ((elementPositionMain.left) + 2)
+            // });
+
+            // $("#viewtwo_style2 .modal-dialog").css({
+            //     top: ((event.clientY) + 13),
+            //     left: ((event.clientX) - 25)
+            // });
+
+            // $("#viewtwo_style2").css({
+                //     top: ((event.pageY) + event.offsetY),
+                //     left: ((event.pageX) - event.offsetX)
+            // });
+
+            // let targetName = event.target.nodeName;
+            // console.log("Tag Name: " + targetName);
+            // console.log(event.target.getBoundingClientRect());
+            // console.log(window.scrollY);
+            // console.log(event.target.getBoundingClientRect().y + window.scrollY);
+        });
+    }
+
+    let rowModalClickSty2 = document.getElementsByClassName('row-modal-click-style2');
+    for (let i = 0; i < rowModalClickSty2.length; i++) {
+        rowModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
+            $("#col8Filter").css('display','none');
+
+            $("#rowdetails_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) + 2)
+            });
+
+            $("#rowdetails_style2").css('display','block');
+
         });
     }
 
     let noteModalClickSty2 = document.getElementsByClassName('note-modal-click-style2');
     for (let i = 0; i < noteModalClickSty2.length; i++) {
         noteModalClickSty2[i].addEventListener("click", function (event) {
-            $("#noteswindow_style2 .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
+            $("#col8Filter").css('display','none');
+
+            $("#noteswindow_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) + 2)
             });
+
+            $("#noteswindow_style2").css('display','block');
+
         });
     }
+
+	let copyModalClickSty2 = document.getElementsByClassName('copyrowlist-modal-click-style2');
+    for (let i = 0; i < copyModalClickSty2.length; i++) {
+        copyModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
+            $("#col8Filter").css('display','none');
+
+            $("#copyrowlist_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) - 804)
+            });
+
+            $("#copyrowlist_style2").css('display','block');
+
+        });
+    }
+
+    let moveModalClickSty2 = document.getElementsByClassName('moverowlist-modal-click-style2');
+    for (let i = 0; i < moveModalClickSty2.length; i++) {
+        moveModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
+            $("#col8Filter").css('display','none');
+
+            $("#moverowlist_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) - 804)
+            });
+
+            $("#moverowlist_style2").css('display','block');
+
+        });
+    }
+
+    let alertModalClickSty2 = document.getElementsByClassName('alertswindow-modal-click-style2');
+    for (let i = 0; i < alertModalClickSty2.length; i++) {
+        alertModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            $("#viewtwo_style2").css("display", "none");
+			$("#rowdetails_style2").css("display", "none");
+			$("#noteswindow_style2").css("display", "none");
+			$("#alertswindow_style2").css("display", "none");
+			$("#copyrowlist_style2").css("display", "none");
+			$("#moverowlist_style2").css("display", "none");
+
+            $("#col8Filter").css('display','none');
+
+            $("#alertswindow_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) - 804)
+            });
+
+            $("#alertswindow_style2").css('display','block');
+
+        });
+    }
+
 }
 
 function Style2DropFilterPos() {
     let style2FilterPosition = document.getElementsByClassName('style2-filterPosition');
     for (let i = 0; i < style2FilterPosition.length; i++) {
         style2FilterPosition[i].addEventListener("click", function (event) {
-            $("#col8Filter .modal-dialog").css({
-                top: ((event.clientY) + 20),
-                left: ((event.clientX) - 240),
-                height: 350
+            // $("#col8Filter .modal-dialog").css({
+            //     top: ((event.clientY) + 20),
+            //     left: ((event.clientX) - 240),
+            //     height: 350
+            // });
+            // $("#col8Filter .modal-dialog .table-header-click-popup").css({
+            //     "margin-top": "-15px"
+            // });
+
+            let elementPositionMain = event.target.getBoundingClientRect();
+            $("#col8Filter").css('display','none');
+            $("#col8Filter").css({
+                top: ((elementPositionMain.y) + window.scrollY + 25),
+                left: ((elementPositionMain.x) - 235)
             });
-            $("#col8Filter .modal-dialog .table-header-click-popup").css({
-                "margin-top": "-15px"
-            });
+            $("#col8Filter").css('display','block');
         });
     }
 }
@@ -1472,3 +1849,315 @@ $('#col8Filter').on('hidden.bs.modal', function (e) {
 $('#dropBtnModal').on('hidden.bs.modal', function (e) {
     $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
 });
+
+
+// Forcing Event Target To div for Dynamic PopUp Position 
+function forceEventTargetDiv(e){
+    let elementPosition = "";
+    let targetName = e.target.nodeName.toLowerCase();
+    //console.log("Tag Name: " + targetName);
+    if(targetName == "i"){
+        elementPosition = e.target.parentElement.getBoundingClientRect();
+    }else{
+        if(targetName == "path"){
+            let pathFinder = e.target.parentElement.nodeName.toLowerCase();
+            if(pathFinder == "g"){
+                elementPosition = e.target.parentElement.parentElement.parentElement.getBoundingClientRect();
+            }else{
+                elementPosition = e.target.parentElement.parentElement.getBoundingClientRect();
+            }
+        }
+        else if(targetName == "g"){
+            elementPosition = e.target.parentElement.parentElement.getBoundingClientRect();
+        }
+        else if(targetName == "svg"){
+            elementPosition = e.target.parentElement.getBoundingClientRect();
+        }
+        else{
+            elementPosition = e.target.getBoundingClientRect();
+        }
+    }
+    return elementPosition;
+}
+
+$("#viewtwo_close").click(function () {
+    $("#viewtwo").css('display','none');
+});
+$("#viewtwo_s2_close").click(function () {
+    $("#viewtwo_style2").css('display','none');
+});
+
+$("#rowdetails_close").click(function () {
+    $("#rowdetails").css('display','none');
+});
+$("#rowdetails_s2_close").click(function () {
+    $("#rowdetails_style2").css('display','none');
+});
+
+$("#note_close").click(function () {
+    $("#noteswindow").css('display','none');
+});
+$("#note_s2_close").click(function () {
+    $("#noteswindow_style2").css('display','none');
+});
+
+$("#alert_close").click(function () {
+    $("#alertswindow").css('display','none');
+    resetInputFieldAlert();
+});
+$("#alert_s2_close").click(function () {
+    $("#alertswindow_style2").css('display','none');
+    resetInputFieldAlertStyle2();
+});
+
+$("#copyRow_close").click(function () {
+    $("#copyrowlist").css('display','none');
+});
+$("#copyRow_s2_close").click(function () {
+    $("#copyrowlist_style2").css('display','none');
+});
+
+$("#moveRow_close").click(function () {
+    $("#moverowlist").css('display','none');
+});
+$("#moveRow_s2_close").click(function () {
+    $("#moverowlist_style2").css('display','none');
+});
+
+
+
+$("#closeCol8Filter").click(function () {
+    $("#col8Filter").css('display','none');
+
+    const rotateIcon = document.querySelectorAll("#outer_table_box7 i.fa-caret-down.down-animation-icon");
+    for (let i = 0; i < rotateIcon.length; i++) {
+        $(rotateIcon[i]).removeClass("down-animation-icon");
+    }
+});
+
+
+$("#resetAlert").click(function () {
+    resetInputFieldAlert();
+});
+
+$("#resetAlertS2").click(function () {
+    resetInputFieldAlertStyle2();
+});
+
+
+function resetInputFieldAlert(){
+    const inputInterval = document.querySelectorAll("#alertswindow td.inpalertval input");
+    for (let i = 0; i < inputInterval.length; i++) {
+        inputInterval[i].value = "";
+    }
+
+    const inputMail = document.querySelectorAll("#alertswindow td.inpumail input");
+    for (let i = 0; i < inputMail.length; i++) {
+        inputMail[i].value = "";
+        // Resetting the Input Placeholder into default state
+        $(inputMail[i]).attr("placeholder","Enter a Email Addres").attr("type","email");
+    }
+
+    // Resetting the icon into default state
+    let emailAlert = $("#alertswindow .mail_icons .fa-envelope");
+    let phoneAlert = $("#alertswindow .mail_icons .fa-phone-alt");
+    let textAlert = $("#alertswindow .mail_icons .fa-comment-alt");
+
+    for(i=0; i<emailAlert.length; i++){
+        $(emailAlert[i]).addClass("iconActive");
+        $(phoneAlert[i]).removeClass("iconActive");
+        $(textAlert[i]).removeClass("iconActive");
+    }
+
+}
+
+function resetInputFieldAlertStyle2(){
+    const inputIntervalS2 = document.querySelectorAll("#alertswindow_style2 td.inpalertval input");
+    for (let i = 0; i < inputIntervalS2.length; i++) {
+        inputIntervalS2[i].value = "";
+    }
+
+    const inputMailS2 = document.querySelectorAll("#alertswindow_style2 td.inpumail input");
+    for (let i = 0; i < inputMailS2.length; i++) {
+        inputMailS2[i].value = "";
+        // Resetting the Input Placeholder into default state
+        $(inputMailS2[i]).attr("placeholder","Enter a Email Addres").attr("type","email");
+    }
+
+    // Resetting the icon into default state
+    let emailAlert_S2 = $("#alertswindow_style2 .mail_icons .fa-envelope");
+    let phoneAlert_S2 = $("#alertswindow_style2 .mail_icons .fa-phone-alt");
+    let textAlert_S2 = $("#alertswindow_style2 .mail_icons .fa-comment-alt");
+
+    for(i=0; i<emailAlert_S2.length; i++){
+        $(emailAlert_S2[i]).addClass("iconActive");
+        $(phoneAlert_S2[i]).removeClass("iconActive");
+        $(textAlert_S2[i]).removeClass("iconActive");
+    }
+}
+
+window.addEventListener("scroll", (event) => {
+    let scroll = this.scrollY;
+    // console.log(scroll);
+    if (scroll >1400) {
+        // if(style_1_box)
+        let arrowShowing = $("#style_1_box").hasClass("clickstylebg");
+        if(arrowShowing){
+            $("#outer_table_box7 .left-slider5").css('display','block');
+            $("#outer_table_box7 .right-slider5").css('display','block');
+        }
+    } else {
+        $("#outer_table_box7 .left-slider5").css('display','none');
+        $("#outer_table_box7 .right-slider5").css('display','none');
+    }
+
+    if (scroll >1200) {
+        let arrowShowing = $("#style_1_box").hasClass("clickstylebg");
+
+        let filterTargeting =  document.querySelector('#col8Filter');
+        let filterStyles = window.getComputedStyle(filterTargeting);
+        //console.log(filterStyles.display);
+
+        if(arrowShowing==true && filterStyles.display == "block" && headerIndexClick != ""){
+            let virtualHeader =  document.querySelector('#outer_table_box7 #style1Table .clone-head-table-wrap');
+            let compStyles = window.getComputedStyle(virtualHeader);
+            // console.log(compStyles.visibility);
+            // console.log("Index No: " + headerIndexClick);
+
+            if(compStyles.visibility == "visible"){
+                $("#col8Filter").css({
+                    top: (45),
+                    position: "fixed"
+                });
+            }
+            
+            if(compStyles.visibility == "hidden"){
+                let actualHeaderTarget = document.querySelector(`#resizable554 th:nth-child(${headerIndexClick})`);
+                // $(`#resizable554 th:nth-child(${headerIndexClick})`);
+                let elementPositionMain = actualHeaderTarget.getBoundingClientRect();
+                $("#col8Filter").css({
+                    top: ((elementPositionMain.y) + window.scrollY + 55),
+                    position: "absolute"
+                });
+            }
+        }
+    }
+});
+
+
+// function virtualHeaderVisibility(){
+//     let virtualHeader =  document.querySelector('#outer_table_box7 #style1Table .clone-head-table-wrap');
+//     virtualHeader.addEventListener("visibilitychange", function() {
+//         if (virtualHeader.visibilityState === 'visible') {
+//             console.log("Virtual Header Shown");
+//         }
+//         if (virtualHeader.visibilityState === 'hidden') {
+//         console.log("Virtual Header Hidden");
+//         } 
+
+//     });
+// }
+
+// let virtualHeader =  document.querySelector('#outer_table_box7 #style1Table .clone-head-table-wrap');
+// let compStyles = window.getComputedStyle(virtualHeader);
+// compStyles.visibility
+
+$(document).keydown(function(e){
+    let arrowShowing = $("#style_1_box").hasClass("clickstylebg");
+    let filterTargeting =  document.querySelector('#col8Filter');
+    let filterStyles = window.getComputedStyle(filterTargeting);
+    if (e.which == 37 && arrowShowing==true) { 
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
+        $("#col8Filter").css('display','none');
+        resetDownArrow();
+    //    return false;
+    }
+    if (e.which == 39 && arrowShowing==true) { 
+        $("#viewtwo").css('display','none');
+        $("#rowdetails").css('display','none');
+        $("#noteswindow").css('display','none');
+        $("#alertswindow").css('display','none');
+        $("#copyrowlist").css('display','none');
+        $("#moverowlist").css('display','none');
+        $("#col8Filter").css('display','none');
+        resetDownArrow();
+    //    return false;
+    }
+});
+
+function resetDownArrow(){
+    const rotateIcon = document.querySelectorAll("#outer_table_box7 i.fa-caret-down.down-animation-icon");
+    for (let i = 0; i < rotateIcon.length; i++) {
+        $(rotateIcon[i]).removeClass("down-animation-icon");
+    }
+}
+
+// Manage Result : Alert PopUps (Changing Placeholder and Icon Color)
+let mailIconAlert = $("#alertswindow .mail_icons");
+for (let i = 0; i < mailIconAlert.length; i++) {
+    mailIconAlert[i].addEventListener("click", function (event) {
+        // let elementPositionMain = event.target;
+        if(event.target.nodeName == "I"){
+            let iconClassName = event.target.classList[1];
+            if(iconClassName == "fa-envelope"){
+                $(mailIconAlert[i].children[0]).addClass("iconActive");
+                $(mailIconAlert[i].children[1]).removeClass("iconActive");
+                $(mailIconAlert[i].children[2]).removeClass("iconActive");
+
+                $(mailIconAlert[i].parentNode.lastElementChild).attr("placeholder","Enter a Email Address").attr("type","email");
+            }
+            else if(iconClassName == "fa-phone-alt"){
+                $(mailIconAlert[i].children[0]).removeClass("iconActive");
+                $(mailIconAlert[i].children[1]).addClass("iconActive");
+                $(mailIconAlert[i].children[2]).removeClass("iconActive");
+
+                $(mailIconAlert[i].parentNode.lastElementChild).attr("placeholder","Enter a Phone Number").attr("type","number");
+            }
+            else if(iconClassName == "fa-comment-alt"){
+                $(mailIconAlert[i].children[0]).removeClass("iconActive");
+                $(mailIconAlert[i].children[1]).removeClass("iconActive");
+                $(mailIconAlert[i].children[2]).addClass("iconActive");
+
+                $(mailIconAlert[i].parentNode.lastElementChild).attr("placeholder","Enter a Text Message").attr("type","text");
+            }
+            
+        }
+    });
+}
+
+
+let mailIconAlert_s2 = $("#alertswindow_style2 .mail_icons");
+for (let i = 0; i < mailIconAlert_s2.length; i++) {
+    mailIconAlert_s2[i].addEventListener("click", function (event) {
+        if(event.target.nodeName == "I"){
+            let iconClassName = event.target.classList[1];
+            if(iconClassName == "fa-envelope"){
+                $(mailIconAlert_s2[i].children[0]).addClass("iconActive");
+                $(mailIconAlert_s2[i].children[1]).removeClass("iconActive");
+                $(mailIconAlert_s2[i].children[2]).removeClass("iconActive");
+
+                $(mailIconAlert_s2[i].parentNode.lastElementChild).attr("placeholder","Enter a Email Address").attr("type","email");
+            }
+            else if(iconClassName == "fa-phone-alt"){
+                $(mailIconAlert_s2[i].children[0]).removeClass("iconActive");
+                $(mailIconAlert_s2[i].children[1]).addClass("iconActive");
+                $(mailIconAlert_s2[i].children[2]).removeClass("iconActive");
+
+                $(mailIconAlert_s2[i].parentNode.lastElementChild).attr("placeholder","Enter a Phone Number").attr("type","number");
+            }
+            else if(iconClassName == "fa-comment-alt"){
+                $(mailIconAlert_s2[i].children[0]).removeClass("iconActive");
+                $(mailIconAlert_s2[i].children[1]).removeClass("iconActive");
+                $(mailIconAlert_s2[i].children[2]).addClass("iconActive");
+
+                $(mailIconAlert_s2[i].parentNode.lastElementChild).attr("placeholder","Enter a Text Message").attr("type","text");
+            }
+            
+        }
+    });
+}

@@ -813,7 +813,7 @@ table#sub2-editor-table {
     position: absolute;
     top: 2px;
     left: 5px;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 .popup__checkbox__toggle__input:checked~.popup__checkbox__toggle__label::after {
@@ -867,16 +867,16 @@ table#sub2-editor-table {
 
 /* Custom Check Box Ends  */
 
-
+/* 
 #col8Filter .modal-content {
     width: 250px;
     border: 0;
     border-radius: 0 !important;
-    /* left: 20%; */
-}
+    left: 20%;
+} */
 
-#dropBtnModal .modal-content .modal-body,
-#col8Filter .modal-content .modal-body {
+#dropBtnModal .modal-content .modal-body{
+/* #col8Filter .modal-content .modal-body { */
     padding: 0;
     border-radius: 0 !important;
 }
@@ -1609,9 +1609,12 @@ Bottom codes are added by Tanvir
 }
 
 .wrapper-modal-list {
-    position: relative;
-    width: 100%;
+    position: absolute;
+    /* width: 100%; */
+    width: 1200px;
     height: 670px;
+    display: none;
+    background-color: #ffffff;
 }
 
 .wrapper-modal-list .weapper-list-title {
@@ -1631,6 +1634,9 @@ Bottom codes are added by Tanvir
 }
 
 #copyrowlist .wrapper-modal-list .weapper-list-title p {
+    font-size: 18px;
+}
+#copyrowlist_style2 .wrapper-modal-list .weapper-list-title p {
     font-size: 18px;
 }
 
@@ -1939,6 +1945,7 @@ Bottom codes are added by Tanvir
     z-index: 1;
 }
 
+#myopt1listData .wrapper-modal-list,
 #manage-tempa-list-modal .wrapper-modal-list,
 #manage-tempb-list-modal .wrapper-modal-list,
 #manage-tempc-list-modal .wrapper-modal-list,
@@ -1949,6 +1956,9 @@ Bottom codes are added by Tanvir
 #opt4d-list-modal .wrapper-modal-list {
     border: 2px solid #1b1b1b;
     height: 680px;
+    position: relative;
+    width: 100%;
+    display: block;
 }
 
 #manage-tempa-list-modal .scroll-list-box,
@@ -2332,7 +2342,7 @@ Bottom codes are added by Tanvir
 
 #col8Filter .modal-dialog {
     /* position: absolute; */
-    position: fixed;
+    position: absolute;
     min-height: 0;
     margin: 0;
     /* top: 200px;
@@ -2341,9 +2351,41 @@ Bottom codes are added by Tanvir
 
 #dropBtnModal .modal-dialog {
     /* position: absolute; */
-    position: fixed;
+    position: absolute;
     min-height: 0;
     margin: 0;
     /* top: 200px;
     left: 400px; */
+}
+
+
+#mnTemp_timePicker .modal-dialog {
+    position: absolute;
+    min-height: 0;
+    margin: 0;
+}
+
+#viewtwo,
+#viewtwo_style2,
+#rowdetails,
+#rowdetails_style2,
+#noteswindow,
+#noteswindow_style2,
+#alertswindow,
+#alertswindow_style2{
+    position: absolute;
+    /* width: 100%; */
+    /* width: 1200px;
+    height: 670px; */
+    display: none;
+    background-color: #ffffff;
+}
+
+#col8Filter{
+    position: absolute;
+    /* width: 100%; */
+    /* width: 1200px;
+    height: 670px; */
+    display: none;
+    background-color: #ffffff;
 }

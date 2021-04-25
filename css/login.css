@@ -21,19 +21,25 @@
 }
 
 body {
-    background: #ffffff;
+    background: #f0f0f0;
     font-family: gilroy-regular, sans-serif;
-    overflow: hidden;
+    /* overflow: hidden; */
+}
+
+.wrapper .tabs ul li.active {
+    border-bottom: none;
 }
 
 #login-section {
-    width: 100vw;
-    height: 100vh;
+    width: 95%;
     position: relative;
+    background: #ffffff;
+    margin: 32px auto;
+    padding: 100px 0;
 }
 
 #login-section .login-form {
-    position: absolute;
+    /* position: absolute; */
     width: 600px;
     height: 315px;
     top: 0;
@@ -59,11 +65,11 @@ body {
     letter-spacing: 2px;
 }
 
-.login-form .login-input form {
+.login-form .login-input div#loginForm {
     padding-top: 25px;
 }
 
-.login-input form .myinput {
+.login-input .myinput {
     width: 500px;
     height: 50px;
     margin-bottom: 25px;
@@ -77,7 +83,7 @@ body {
     font-family: gilroy-regular, sans-serif;
 }
 
-.login-input form input:focus {
+.login-input input:focus {
     outline: none;
 }
 
@@ -120,3 +126,140 @@ a:visited {
     text-decoration: none;
 
 }
+
+#loginRequired .modal-body p{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    font-family: gilroy-medium, sans-serif;
+    color: #ff0000;
+}
+#loginRequired .modal-body button{
+    width: 100px;
+    font-size: 16px;
+    background: #e9e9e9;
+    color: black;
+    font-weight: bold;
+    transition: 150ms;
+    outline: none;
+    border: 0 none;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 4px 0px;
+}
+#loginRequired .modal-body button:hover{
+    background: #000000;
+    color: #e9e9e9;
+}
+
+/* ========== PAGE AFTER LOGIN ========== */
+
+#tc-section{
+    width: 95%;
+    position: relative;
+    background: #ffffff;
+    margin: 32px auto;
+    padding: 20px 0;
+}
+.terms_conditions .tc-head{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: gilroy-medium, sans-serif;
+    color: #000000;
+}
+.terms_conditions .tc-outerbox{
+    width: 80%;
+    height: 350px;
+    margin: 16px auto 0;
+    overflow-y: scroll;
+    border: 3px solid #848484;
+    border-radius: 5px;
+    padding: 16px;
+}
+.terms_conditions .tc-outerbox p{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: gilroy-medium, sans-serif;
+    color: #000000;
+}
+.terms_conditions .tic-box{
+    display: flex;
+    margin: 16px 0;
+    justify-content: center;
+}
+
+.terms_conditions .tic-box input {
+    height: 25px;
+    width: 25px;
+    border: 2px solid #000000;
+    outline: none;
+    transition-duration: 0.3s;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+.terms_conditions .tic-box p{
+    margin: 0;
+    margin-left: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: gilroy-medium, sans-serif;
+    color: #1b1b1b;
+}
+.terms_conditions .accept-btn-box{
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.terms_conditions .accept-btn-box input{
+    padding: 10px 30px;
+    color: #ffffff;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: gilroy-medium, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+.terms_conditions .accept-btn-box .decline{
+    background-color: #ff0000;
+}
+.terms_conditions .accept-btn-box .accept{
+    background-color: #3A5D00;
+    margin-left: auto;
+}
+.terms_conditions .accept-btn-box .decline:hover{
+    background-color: #f10000;
+}
+.terms_conditions .accept-btn-box .accept:hover{
+    background-color: #375800;
+}
+
+/* scrollbar customize start */
+.tc-outerbox::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.tc-outerbox::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #919191;
+    border-radius: 10px;
+}
+
+/* Handle */
+.tc-outerbox::-webkit-scrollbar-thumb {
+    background: #919191;
+    border-radius: 15px;
+}
+
+/* Handle on hover */
+.tc-outerbox::-webkit-scrollbar-thumb:hover {
+    background: #616161;
+}
+
+/* scrollbar customize end */
