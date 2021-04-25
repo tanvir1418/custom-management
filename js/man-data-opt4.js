@@ -1030,34 +1030,35 @@ function formToWindowDS3() {
       renHtml += `<div class="form-text-design data-div">
         ${name} : checked
       </div>`;
-    }
 
-    if (type == "input") {
-      let section = $(`fieldset#${id}`);
-      let inp = section.find(".data-form input[type=text]");
-      for (let i = 0; i < inp.length; i++) {
-        let title = $(inp[i]).parent().parent().find(".title-section p")[0].textContent;
-        if (inp[i].value != "") {
-          renHtml += `<div class="form-text-design data-div">
-            ${name} : ${title} : ${inp[i].value}
-          </div>`;
+      if (type == "input") {
+        let section = $(`fieldset#${id}`);
+        let inp = section.find(".data-form input[type=text]");
+        for (let i = 0; i < inp.length; i++) {
+          let title = $(inp[i]).parent().parent().find(".title-section p")[0].textContent;
+          if (inp[i].value != "") {
+            renHtml += `<div class="form-text-design data-div">
+              ${name} : ${title} : ${inp[i].value}
+            </div>`;
+          }
+        }
+      }
+      else if (type == "option") {
+        let selt = $(`fieldset#${id} .custome-select`);
+        for (let i = 0; i < selt.length; i++) {
+          let titleE = $(selt[i]).parent().parent();
+          let title = titleE.find(".title-section p")[0] != undefined ?
+            titleE.find(".title-section p")[0] : titleE.find(".custom-title-section p")[0];
+          let selVal = $(selt[i]).find("select :selected").text();
+          if (selVal.trim() != "" && selVal.trim() != "Select Time" && selVal.trim() != "Select Option") {
+            renHtml += `<div class="form-text-design data-div">
+              ${name} : ${title.textContent} : ${selVal}
+            </div>`;
+          }
         }
       }
     }
-    else if (type == "option") {
-      let selt = $(`fieldset#${id} .custome-select`);
-      for (let i = 0; i < selt.length; i++) {
-        let titleE = $(selt[i]).parent().parent();
-        let title = titleE.find(".title-section p")[0] != undefined ?
-          titleE.find(".title-section p")[0] : titleE.find(".custom-title-section p")[0];
-        let selVal = $(selt[i]).find("select :selected").text();
-        if (selVal != "") {
-          renHtml += `<div class="form-text-design data-div">
-            ${name} : ${title.textContent} : ${selVal}
-          </div>`;
-        }
-      }
-    }
+    
   });
 
   return renHtml;
