@@ -1662,9 +1662,9 @@ td {
 .pagination-table {
   margin: 36px 0;
 }
-.pagination-table .width-row-go .no-of-rows {
+/* .pagination-table .width-row-go .no-of-rows {
   display: flex;
-}
+} */
 
 .width-pagination {
   display: flex;
@@ -1797,6 +1797,7 @@ td {
 .pagination-table input#row-no4,
 .pagination-table input#row-no5,
 .pagination-table input#res-row-no7,
+.pagination-table input#row-mnAlert,
 .pagination-table .paginationjs .paginationjs-go-input input {
   width: 60px;
   height: 43px;
@@ -1864,6 +1865,7 @@ td {
   .pagination-table input#row-no4,
   .pagination-table input#row-no5,
   .pagination-table input#res-row-no7,
+  .pagination-table input#row-mnAlert,
   .pagination-table .paginationjs .paginationjs-go-input input {
     width: 50px;
     height: 35px;
