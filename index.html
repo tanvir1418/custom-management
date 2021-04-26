@@ -241,18 +241,25 @@
     <script>
         const usernameIndex = document.getElementById("usernameField");
         const passwordIndex = document.getElementById("passwordField");
+        const termsPageCondition = localStorage.getItem("termsPageCondition");
 
         $("#registerBtn").click(function (event) {
             event.preventDefault();
+            localStorage.setItem("manageAccoutVisibility", "showAccount");
             window.location.href = "/main.html";
         });
 
         $("#loginBtn").click(function (event) {
             event.preventDefault();
             localStorage.setItem("currentUser", usernameIndex.value);
+            localStorage.setItem("manageAccoutVisibility", "");
             usernameIndex.value = "";
             passwordIndex.value = "";
-            window.location.href = "/termsconditions.html";
+            if(termsPageCondition == "hideTermsPage"){
+                window.location.href = "/main.html";
+            }else{
+                window.location.href = "/termsconditions.html";
+            }
         });
         $("#resetBtn").click(function (event) {
             event.preventDefault();
