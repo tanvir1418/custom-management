@@ -1,6 +1,7 @@
 /* START TOOLTIP STYLES */
 [tooltip] {
     position: relative;
+    cursor: pointer;
     /* opinion 1 */
 }
 

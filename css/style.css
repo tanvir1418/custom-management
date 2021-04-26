@@ -632,7 +632,7 @@ td {
 }
 
 .mytable1 thead th {
-  font-size: 14px;
+  font-size: 13px;
   font-family: gilroy-bold, sans-serif;
   font-weight: 600;
   color: #9f9f9f;
@@ -2226,4 +2226,18 @@ td {
 .account-content .account-form-container .ac-button-row .save:hover{
   background: #e9e9e9;
   color: #7b7b7b;
+}
+
+/* FOOTER LINKS STYLE */
+#tc-section .footer-page{
+  margin: 22px 50px;
+}
+#tc-section .footer-page p{
+  text-align: center;
+  margin: 0;
+  font-family: gilroy-medium, sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #0c0c0c;
+  font-size: 16px;
 }
