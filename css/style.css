@@ -632,7 +632,7 @@ td {
 }
 
 .mytable1 thead th {
-  font-size: 14px;
+  font-size: 13px;
   font-family: gilroy-bold, sans-serif;
   font-weight: 600;
   color: #9f9f9f;
@@ -2230,6 +2230,21 @@ td {
   color: #7b7b7b;
 }
 
+<<<<<<< HEAD
+/* FOOTER LINKS STYLE */
+#tc-section .footer-page{
+  margin: 22px 50px;
+}
+#tc-section .footer-page p{
+  text-align: center;
+  margin: 0;
+  font-family: gilroy-medium, sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #0c0c0c;
+  font-size: 16px;
+=======
 .mynav .nav-items i:hover{
   cursor: pointer;
+>>>>>>> ecb040f074593976ce74cacd94e22ca8564a42b3
 }

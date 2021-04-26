@@ -1149,7 +1149,11 @@ let manTemLeftData = [
 function listRenderManTemp(id, name, addNewRow) {
   let ele = `<tr ondblclick="${addNewRow}" onclick="clickAddClassSgl(this)" class="cursor-pointer" id="${id}">
     <td colspan="2">${name}</td>
-    <td><i class="fas fa-question-circle"></i></td>
+    <td>
+      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+        <i class="fas fa-question-circle"></i>
+      </span>
+    </td>
     <td></td>
   </tr>`;
   return ele;

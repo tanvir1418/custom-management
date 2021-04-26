@@ -730,6 +730,9 @@ function makeTableHead(tableID) {
 		</th>
 		<th scope="col">
 			RECORDS COUNT
+        <span class="tooltip-container" tooltip="Sample text here" flow="down">
+          <i class="fas fa-question-circle"></i>
+        </span>
 			<div class="head-filter cross-exists">
 				<i class="fas fa-times"></i>
 			</div>
@@ -739,6 +742,9 @@ function makeTableHead(tableID) {
 		</th>
 		<th scope="col">
 			SAVED NAME
+      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+          <i class="fas fa-question-circle"></i>
+      </span>
 			<div class="head-filter cross-exists">
 				<i class="fas fa-times"></i>
 			</div>
@@ -748,6 +754,9 @@ function makeTableHead(tableID) {
 		</th>
 		<th scope="col">
 			CREATED DATE TIME
+      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+          <i class="fas fa-question-circle"></i>
+      </span>
 			<div class="head-filter cross-exists">
 				<i class="fas fa-times"></i>
 			</div>
@@ -757,6 +766,9 @@ function makeTableHead(tableID) {
 		</th>
 		<th scope="col">
 			LAST UPDATE DATE TIME
+      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+          <i class="fas fa-question-circle"></i>
+      </span>
 			<div class="head-filter cross-exists">
 				<i class="fas fa-times"></i>
 			</div>
@@ -764,7 +776,11 @@ function makeTableHead(tableID) {
 				<i class="fas fa-caret-down"></i>
 			</div>
 		</th>
-		<th scope="col">ACTIONS</th>
+		<th scope="col">ACTIONS
+      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+        <i class="fas fa-question-circle"></i>
+      </span>
+    </th>
 	</tr>`;
   $(`#${tableID} thead`).html(tableHead);
 }
