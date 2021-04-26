@@ -46,6 +46,7 @@
     <script src="./js/opt_4_list_popup.js" defer></script>
     <script src="./js/man-data-opt4.js" defer></script>
     <script src="./js/read-csv.js" defer></script>
+    <script src="./js/manage-alert.js" defer></script>
 </head>
 
 <body>
@@ -64,7 +65,7 @@
         <div class="nav-items d-flex">
             <div class="icon-box">
                 <i class="icon fas fa-envelope"></i>
-                <i class="icon fas fa-user"></i>
+                <i class="icon fas fa-user" id="userAvatar"></i>
             </div>
             <div class="welcome-box">
                 <p class="welcome m-0">Welcome</p>
@@ -86,7 +87,7 @@
             <!-- ======== TAB MENU NAVIGATION START ======== -->
             <div class="tabs">
                 <ul id="tabs_ul">
-                    <li class="active" data-list="tab_1">
+                    <li data-list="tab_1">
                         <div class="tab-box">
                             <div class="svg-box">
                                 <svg viewBox="-21 0 512 512">
@@ -108,7 +109,7 @@
                             </div>
                         </div>
                     </li>
-                    <li data-list="tab_2">
+                    <li class="active" data-list="tab_2">
                         <div class="tab-box">
                             <div class="svg-box">
                                 <svg viewBox="-21 0 512 512">
@@ -217,7 +218,7 @@
     <!-- ============================= TAB CONTENT START ============================= -->
     <div class="content">
         <!-- ====----=-=-=-=-=-=-=-=-=- MANAGE ACCOUNT SECTION START ====----=-=-=-=-=-=-=-=-=- -->
-        <div class="tab_content tab_1" id="tab_1">
+        <div class="tab_content tab_1" id="tab_1" style="display: none;">
             <div class="account-content">
                 <div class="content-inner">
                     <div class="hero-title">
@@ -382,7 +383,7 @@
 
 
         <!-- ====----=-=-=-=-=-=-=-=-=- MANAGE DATA SECTION START ====----=-=-=-=-=-=-=-=-=- -->
-        <div class="tab_content tab_2" id="tab_2" style="display: none;">
+        <div class="tab_content tab_2" id="tab_2">
             <div id="hide559" class="container">
                 <div class="row">
                     <div class="title">
@@ -623,7 +624,7 @@
                                 <div class="pagination-table">
                                     <div class="width-pagination" id="pagination-op1-data">
                                         <div class="width-row-go">
-                                            <div id="no-of-rows">
+                                            <div class="no-of-rows">
                                                 <div class="left-row-no">
                                                     <input type="number" id="row-no1" name="rowNo" value="7">
                                                     <label for="rowNo">rows per page</label>
@@ -981,7 +982,7 @@
                                 <div class="pagination-table">
                                     <div class="width-pagination" id="pagination-op3-data">
                                         <div class="width-row-go">
-                                            <div id="no-of-rows">
+                                            <div class="no-of-rows">
                                                 <div class="left-row-no">
                                                     <input type="number" id="row-no3" name="rowNo" value="7">
                                                     <label for="rowNo">rows per page</label>
@@ -1589,13 +1590,9 @@
                                                                                     <div class="custom-input-section">
                                                                                         <div class="custome-select">
                                                                                             <select>
-                                                                                                <option
-                                                                                                    value="10:56 pm">
-                                                                                                    10:56 pm</option>
-                                                                                                <option value="9:20 am">
-                                                                                                    9:20 am</option>
-                                                                                                <option value="9:20 pm">
-                                                                                                    9:20 pm</option>
+                                                                                                <option value="Select Time">Select Time</option>
+                                                                                                <option value="9:20 am">9:20 am</option>
+                                                                                                <option value="10:20 pm">10:20 pm</option>
                                                                                             </select>
                                                                                         </div>
                                                                                     </div>
@@ -1610,13 +1607,9 @@
                                                                                     <div class="custom-input-section">
                                                                                         <div class="custome-select">
                                                                                             <select>
-                                                                                                <option
-                                                                                                    value="10:56 pm">
-                                                                                                    10:56 pm</option>
-                                                                                                <option value="9:20 am">
-                                                                                                    9:20 am</option>
-                                                                                                <option value="9:20 pm">
-                                                                                                    9:20 pm</option>
+                                                                                                <option value="Select Time">Select Time</option>
+                                                                                                <option value="11:20 am">11:20 am</option>
+                                                                                                <option value="7:20 pm">7:20 pm</option>
                                                                                             </select>
                                                                                         </div>
                                                                                     </div>
@@ -1632,13 +1625,9 @@
                                                                                     <div class="custom-input-section">
                                                                                         <div class="custome-select">
                                                                                             <select>
-                                                                                                <option
-                                                                                                    value="10:56 pm">
-                                                                                                    10:56 pm</option>
-                                                                                                <option value="9:20 am">
-                                                                                                    9:20 am</option>
-                                                                                                <option value="9:20 pm">
-                                                                                                    9:20 pm</option>
+                                                                                                <option value="Select Time">Select Time</option>
+                                                                                                <option value="3:20 am">3:20 am</option>
+                                                                                                <option value="7:20 pm">7:20 pm</option>
                                                                                             </select>
                                                                                         </div>
                                                                                     </div>
@@ -1652,13 +1641,9 @@
                                                                                     <div class="custom-input-section">
                                                                                         <div class="custome-select">
                                                                                             <select>
-                                                                                                <option
-                                                                                                    value="10:56 pm">
-                                                                                                    10:56 pm</option>
-                                                                                                <option value="9:20 am">
-                                                                                                    9:20 am</option>
-                                                                                                <option value="9:20 pm">
-                                                                                                    9:20 pm</option>
+                                                                                                <option value="Select Time">Select Time</option>
+                                                                                                <option value="1:20 am">1:20 am</option>
+                                                                                                <option value="5:20 pm">5:20 pm</option>
                                                                                             </select>
                                                                                         </div>
                                                                                     </div>
@@ -1695,7 +1680,7 @@
                                                                             </div>
                                                                             <div class="input-section">
                                                                                 <input type="text" width="100"
-                                                                                    value="0.50%" />
+                                                                                    value="" />
                                                                             </div>
                                                                         </div>
                                                                         <div class="horizontal-input-group">
@@ -1704,7 +1689,7 @@
                                                                             </div>
                                                                             <div class="input-section">
                                                                                 <input type="text" width="100"
-                                                                                    value="0.50%" />
+                                                                                    value="" />
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -1739,7 +1724,7 @@
                                                                             </div>
                                                                             <div class="input-section">
                                                                                 <input type="text" width="100"
-                                                                                    value="0.50%" />
+                                                                                    value="" />
                                                                             </div>
                                                                         </div>
                                                                         <div class="horizontal-input-group">
@@ -1748,7 +1733,7 @@
                                                                             </div>
                                                                             <div class="input-section">
                                                                                 <input type="text" width="100"
-                                                                                    value="0.50%" />
+                                                                                    value="" />
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -1782,7 +1767,7 @@
                                                                             <div class="input-section">
                                                                                 <div class="custome-select">
                                                                                     <select>
-                                                                                        <option value="Op1">Op1</option>
+                                                                                        <option value="Select Option">Select Option</option>
                                                                                         <option value="Op2">Op2</option>
                                                                                         <option value="Op3">Op3</option>
                                                                                     </select>
@@ -1796,7 +1781,7 @@
                                                                             <div class="input-section">
                                                                                 <div class="custome-select">
                                                                                     <select>
-                                                                                        <option value="Op1">Op1</option>
+                                                                                        <option value="Select Option">Select Option</option>
                                                                                         <option value="Op2">Op2</option>
                                                                                         <option value="Op3">Op3</option>
                                                                                     </select>
@@ -1836,8 +1821,7 @@
                                                                             <div class="input-section">
                                                                                 <div class="custome-select">
                                                                                     <select>
-                                                                                        <option value="Option 01">Option
-                                                                                            01</option>
+                                                                                        <option value="Select Option">Select Option</option>
                                                                                         <option value="Option 02">Option
                                                                                             02</option>
                                                                                         <option value="Option 03">Option
@@ -1853,8 +1837,7 @@
                                                                             <div class="input-section">
                                                                                 <div class="custome-select">
                                                                                     <select>
-                                                                                        <option value="Option 1">Option
-                                                                                            1</option>
+                                                                                        <option value="Select Option">Select Option</option>
                                                                                         <option value="Option 2">Option
                                                                                             2</option>
                                                                                         <option value="Option 3">Option
@@ -1893,7 +1876,7 @@
                                                                             </div>
                                                                             <div class="input-section">
                                                                                 <input type="text" width="100"
-                                                                                    value="0.50%"" />
+                                                                                    value="" />
                                                                             </div>
                                                                         </div>
                                                                         <div class=" horizontal-input-group">
@@ -1902,7 +1885,7 @@
                                                                                 </div>
                                                                                 <div class="input-section">
                                                                                     <input type="text" width="100"
-                                                                                        value="0.50%" />
+                                                                                        value="" />
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -2197,7 +2180,7 @@
                                 <div class="pagination-table">
                                     <div class="width-pagination" id="pagination-op4-data">
                                         <div class="width-row-go">
-                                            <div id="no-of-rows">
+                                            <div class="no-of-rows">
                                                 <div class="left-row-no">
                                                     <input type="number" id="row-no4" name="rowNo" value="7">
                                                     <label for="rowNo">rows per page</label>
@@ -2416,7 +2399,7 @@
                                 <div class="pagination-table">
                                     <div class="width-pagination" id="pagination-op5-data">
                                         <div class="width-row-go">
-                                            <div id="no-of-rows">
+                                            <div class="no-of-rows">
                                                 <div class="left-row-no">
                                                     <input type="number" id="row-no5" name="rowNo" value="7">
                                                     <label for="rowNo">rows per page</label>
@@ -3156,10 +3139,9 @@
                                                                     <div class="custom-input-section">
                                                                         <div class="custome-select">
                                                                             <select>
-                                                                                <option value="10:56 pm">10:56 pm
-                                                                                </option>
-                                                                                <option value="9:20 am">9:20 am</option>
-                                                                                <option value="9:20 am">9:20 am</option>
+                                                                                <option value="Select Time">Select Time</option>
+                                                                                <option value="12:20 am">12:20 am</option>
+                                                                                <option value="7:20 pm">7:20 pm</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -3173,10 +3155,9 @@
                                                                     <div class="custom-input-section">
                                                                         <div class="custome-select">
                                                                             <select>
-                                                                                <option value="10:56 pm">10:56 pm
-                                                                                </option>
-                                                                                <option value="9:20 am">9:20 am</option>
-                                                                                <option value="9:20 am">9:20 am</option>
+                                                                                <option value="Select Time">Select Time</option>
+                                                                                <option value="3:20 am">3:20 am</option>
+                                                                                <option value="8:20 pm">8:20 pm</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -3192,10 +3173,10 @@
                                                                     <div class="custom-input-section">
                                                                         <div class="custome-select">
                                                                             <select>
-                                                                                <option value="10:56 pm">10:56 pm
+                                                                                <option value="Select Time">Select Time
                                                                                 </option>
-                                                                                <option value="9:20 am">9:20 am</option>
-                                                                                <option value="9:20 am">9:20 am</option>
+                                                                                <option value="1:20 am">1:20 am</option>
+                                                                                <option value="6:20 pm">6:20 pm</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -3209,10 +3190,10 @@
                                                                     <div class="custom-input-section">
                                                                         <div class="custome-select">
                                                                             <select>
-                                                                                <option value="10:56 pm">10:56 pm
+                                                                                <option value="Select Time">Select Time
                                                                                 </option>
                                                                                 <option value="9:20 am">9:20 am</option>
-                                                                                <option value="9:20 am">9:20 am</option>
+                                                                                <option value="4:20 pm">4:20 pm</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -3244,7 +3225,7 @@
                                                                 <p>Percent 1</p>
                                                             </div>
                                                             <div class="input-section percent-input">
-                                                                <input type="text" width="100" value="0.50%" />
+                                                                <input type="text" width="100" value="" />
                                                                 <span><strong>%</strong></span>
                                                             </div>
                                                         </div>
@@ -3253,7 +3234,7 @@
                                                                 <p>Percent 2</p>
                                                             </div>
                                                             <div class="input-section percent-input">
-                                                                <input type="text" width="100" value="0.50%" />
+                                                                <input type="text" width="100" value="" />
                                                                 <span><strong>%</strong></span>
                                                             </div>
                                                         </div>
@@ -3284,7 +3265,7 @@
                                                                 <p>Percent 1</p>
                                                             </div>
                                                             <div class="input-section percent-input">
-                                                                <input type="text" width="100" value="0.50%" />
+                                                                <input type="text" width="100" value="" />
                                                                 <span><strong>%</strong></span>
                                                             </div>
                                                         </div>
@@ -3293,7 +3274,7 @@
                                                                 <p>Percent 2</p>
                                                             </div>
                                                             <div class="input-section percent-input">
-                                                                <input type="text" width="100" value="0.50%" />
+                                                                <input type="text" width="100" value="" />
                                                                 <span><strong>%</strong></span>
                                                             </div>
                                                         </div>
@@ -3324,9 +3305,9 @@
                                                             <div class="input-section">
                                                                 <div class="custome-select">
                                                                     <select>
-                                                                        <option value="10:56 pm">10:56 pm</option>
+                                                                        <option value="Select Option">Select Option</option>
                                                                         <option value="9:20 am">9:20 am</option>
-                                                                        <option value="9:20 am">9:20 am</option>
+                                                                        <option value="10:20 pm">10:20 pm</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -3338,9 +3319,9 @@
                                                             <div class="input-section">
                                                                 <div class="custome-select">
                                                                     <select>
+                                                                        <option value="Select Option">Select Option</option>
                                                                         <option value="9:20 am">9:20 am</option>
-                                                                        <option value="10:56 pm">10:56 pm</option>
-                                                                        <option value="9:20 am">9:20 am</option>
+                                                                        <option value="10:20 pm">10:20 pm</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -3374,7 +3355,7 @@
                                                             <div class="input-section">
                                                                 <div class="custome-select">
                                                                     <select>
-                                                                        <option value="Op11">Op11</option>
+                                                                        <option value="Select Option">Select Option</option>
                                                                         <option value="Op12">Op12</option>
                                                                         <option value="Op13">Op13</option>
                                                                     </select>
@@ -3388,7 +3369,7 @@
                                                             <div class="input-section">
                                                                 <div class="custome-select">
                                                                     <select>
-                                                                        <option value="Op21">Op21</option>
+                                                                        <option value="Select Option">Select Option</option>
                                                                         <option value="Op22">Op22</option>
                                                                         <option value="Op23">Op23</option>
                                                                     </select>
@@ -3420,7 +3401,7 @@
                                                                 <p>Percent 1</p>
                                                             </div>
                                                             <div class="input-section percent-input">
-                                                                <input type="text" width="100" value="0.50%" />
+                                                                <input type="text" width="100" value="" />
                                                                 <span><strong>%</strong></span>
                                                             </div>
                                                         </div>
@@ -3429,7 +3410,7 @@
                                                                 <p>Percent 2</p>
                                                             </div>
                                                             <div class="input-section percent-input">
-                                                                <input type="text" width="100" value="0.50%" />
+                                                                <input type="text" width="100" value="" />
                                                                 <span><strong>%</strong></span>
                                                             </div>
                                                         </div>
@@ -4757,10 +4738,9 @@
                                                                         <div class="valinput">
                                                                             <div class="arrow-equal">
                                                                                 <span class="arrow7-right">
-                                                                                    << /span><span class="equal7data">=
+                                                                                    <</span><span class="equal7data">=
                                                                                         </span>
-                                                                                        <!-- <span class="arrow7-right">&#60;</span><span class="equal7data">=
-                                                                                        </span> -->
+                                                                                        <!-- <span class="arrow7-right">&#60;</span><span class="equal7data">= </span> -->
                                                                             </div>
                                                                             <input type="text" class="myzap-input">
                                                                             <div class="delete-mydata">
@@ -4989,7 +4969,7 @@
                             <div class="pagination-table">
                                 <div class="width-pagination" id="pagination-man-res-table">
                                     <div class="width-row-go">
-                                        <div id="no-of-rows">
+                                        <div class="no-of-rows">
                                             <div class="left-row-no">
                                                 <input type="number" id="res-row-no7" name="rowNo" value="7">
                                                 <label for="rowNo">rows per page</label>
@@ -5023,482 +5003,30 @@
                     </div>
                 </div>
                 <div class="alert-mytable">
-                    <table class="table table-responsive-xl table89">
+                    <table class="table table-responsive-xl table89" id="manage-alert-table-exist">
                         <thead>
-                            <th class="">ROW</th>
-                            <th class="">ALERT TYPE
-                                <span class="tooltip-container" tooltip="Sample text here" flow="down">
-                                    <i class="fas fa-question-circle"></i>
-                                </span>
-                                <div class="head-filter">
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <div class="drop-filter">
-                                    <i class="fas fa-caret-down"></i>
-                                </div>
-                            </th>
-                            <th class="">ALERT VALUE
-                                <span class="tooltip-container" tooltip="Sample text here" flow="down">
-                                    <i class="fas fa-question-circle"></i>
-                                </span>
-                                <div class="head-filter">
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <div class="drop-filter">
-                                    <i class="fas fa-caret-down"></i>
-                                </div>
-                            </th>
-                            <th class="">ALERT FREQUENCY
-                                <span class="tooltip-container" tooltip="Sample text here" flow="down">
-                                    <i class="fas fa-question-circle"></i>
-                                </span>
-                                <div class="head-filter">
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <div class="drop-filter">
-                                    <i class="fas fa-caret-down"></i>
-                                </div>
-                            </th>
-                            <th class="">ALERT METHOD
-                                <span class="tooltip-container" tooltip="Sample text here" flow="down">
-                                    <i class="fas fa-question-circle"></i>
-                                </span>
-                                <div class="head-filter">
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <div class="drop-filter">
-                                    <i class="fas fa-caret-down"></i>
-                                </div>
-                            </th>
-                            <th class="">ACTIONS
-                                <span class="tooltip-container" tooltip="Sample text here" flow="down">
-                                    <i class="fas fa-question-circle"></i>
-                                </span>
-                            </th>
+                            
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td class="selectaltype">
-                                    <select name="" id="">
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                    </select>
-                                    <div class="selectarrow">
-                                        <i class="fas fa-caret-down"></i>
-                                    </div>
-                                </td>
-                                <td class="inpalertval">
-                                    <input type="text">
-                                </td>
-                                <td class="selectalfreq">
-                                    <select name="" id="">
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                    </select>
-                                    <div class="selectarrow">
-                                        <i class="fas fa-caret-down"></i>
-                                    </div>
-                                </td>
-                                <td class="inpumail">
-                                    <div class="mail_enter">
-                                        <div class="mail_icons">
-                                            <i class="fas fa-envelope"></i>
-                                            <i class="fas fa-phone-alt"></i>
-                                            <i class="fas fa-comment-alt"></i>
-                                        </div>
-                                        <input type="email" placeholder="Enter a Email Address">
-                                    </div>
-                                </td>
-                                <td class="removenull">
-                                    <div class="reset-save-btn">
-                                        <button class="reset4" type="button" id="resetAlertS2">Reset</button>
-                                        <button class="save4" type="button">Save</button>
-                                    </div>
-                                    <div class="cross-box-89">
-                                        <div class="circle_550 plus89">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-                                        <div class="circle_550">
-                                            <i class="fas fa-times"></i>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td class="selectaltype">
-                                    <select name="" id="">
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                    </select>
-                                    <div class="selectarrow">
-                                        <i class="fas fa-caret-down"></i>
-                                    </div>
-                                </td>
-                                <td class="inpalertval">
-                                    <input type="text">
-                                </td>
-                                <td class="selectalfreq">
-                                    <select name="" id="">
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                    </select>
-                                    <div class="selectarrow">
-                                        <i class="fas fa-caret-down"></i>
-                                    </div>
-                                </td>
-                                <td class="inpumail">
-                                    <div class="mail_enter">
-                                        <div class="mail_icons">
-                                            <i class="fas fa-envelope"></i>
-                                            <i class="fas fa-phone-alt"></i>
-                                            <i class="fas fa-comment-alt"></i>
-                                        </div>
-                                        <input type="email" placeholder="Enter a Email Address">
-                                    </div>
-                                </td>
-                                <td class="removenull">
-                                    <div class="reset-save-btn">
-                                        <button class="reset4" type="button" id="resetAlertS2">Reset</button>
-                                        <button class="save4" type="button">Save</button>
-                                    </div>
-                                    <div class="cross-box-89">
-                                        <div class="circle_550 plus89">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-                                        <div class="circle_550">
-                                            <i class="fas fa-times"></i>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td class="selectaltype">
-                                    <select name="" id="">
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                    </select>
-                                    <div class="selectarrow">
-                                        <i class="fas fa-caret-down"></i>
-                                    </div>
-                                </td>
-                                <td class="inpalertval">
-                                    <input type="text">
-                                </td>
-                                <td class="selectalfreq">
-                                    <select name="" id="">
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                    </select>
-                                    <div class="selectarrow">
-                                        <i class="fas fa-caret-down"></i>
-                                    </div>
-                                </td>
-                                <td class="inpumail">
-                                    <div class="mail_enter">
-                                        <div class="mail_icons">
-                                            <i class="fas fa-envelope"></i>
-                                            <i class="fas fa-phone-alt"></i>
-                                            <i class="fas fa-comment-alt"></i>
-                                        </div>
-                                        <input type="email" placeholder="Enter a Email Address">
-                                    </div>
-                                </td>
-                                <td class="removenull">
-                                    <div class="reset-save-btn">
-                                        <button class="reset4" type="button" id="resetAlertS2">Reset</button>
-                                        <button class="save4" type="button">Save</button>
-                                    </div>
-                                    <div class="cross-box-89">
-                                        <div class="circle_550 plus89">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-                                        <div class="circle_550">
-                                            <i class="fas fa-times"></i>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td class="selectaltype">
-                                    <select name="" id="">
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                    </select>
-                                    <div class="selectarrow">
-                                        <i class="fas fa-caret-down"></i>
-                                    </div>
-                                </td>
-                                <td class="inpalertval">
-                                    <input type="text">
-                                </td>
-                                <td class="selectalfreq">
-                                    <select name="" id="">
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                    </select>
-                                    <div class="selectarrow">
-                                        <i class="fas fa-caret-down"></i>
-                                    </div>
-                                </td>
-                                <td class="inpumail">
-                                    <div class="mail_enter">
-                                        <div class="mail_icons">
-                                            <i class="fas fa-envelope"></i>
-                                            <i class="fas fa-phone-alt"></i>
-                                            <i class="fas fa-comment-alt"></i>
-                                        </div>
-                                        <input type="email" placeholder="Enter a Email Address">
-                                    </div>
-                                </td>
-                                <td class="removenull">
-                                    <div class="reset-save-btn">
-                                        <button class="reset4" type="button" id="resetAlertS2">Reset</button>
-                                        <button class="save4" type="button">Save</button>
-                                    </div>
-                                    <div class="cross-box-89">
-                                        <div class="circle_550 plus89">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-                                        <div class="circle_550">
-                                            <i class="fas fa-times"></i>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td class="selectaltype">
-                                    <select name="" id="">
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                    </select>
-                                    <div class="selectarrow">
-                                        <i class="fas fa-caret-down"></i>
-                                    </div>
-                                </td>
-                                <td class="inpalertval">
-                                    <input type="text">
-                                </td>
-                                <td class="selectalfreq">
-                                    <select name="" id="">
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                    </select>
-                                    <div class="selectarrow">
-                                        <i class="fas fa-caret-down"></i>
-                                    </div>
-                                </td>
-                                <td class="inpumail">
-                                    <div class="mail_enter">
-                                        <div class="mail_icons">
-                                            <i class="fas fa-envelope"></i>
-                                            <i class="fas fa-phone-alt"></i>
-                                            <i class="fas fa-comment-alt"></i>
-                                        </div>
-                                        <input type="email" placeholder="Enter a Email Address">
-                                    </div>
-                                </td>
-                                <td class="removenull">
-                                    <div class="reset-save-btn">
-                                        <button class="reset4" type="button" id="resetAlertS2">Reset</button>
-                                        <button class="save4" type="button">Save</button>
-                                    </div>
-                                    <div class="cross-box-89">
-                                        <div class="circle_550 plus89">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-                                        <div class="circle_550">
-                                            <i class="fas fa-times"></i>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td class="selectaltype">
-                                    <select name="" id="">
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                    </select>
-                                    <div class="selectarrow">
-                                        <i class="fas fa-caret-down"></i>
-                                    </div>
-                                </td>
-                                <td class="inpalertval">
-                                    <input type="text">
-                                </td>
-                                <td class="selectalfreq">
-                                    <select name="" id="">
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                    </select>
-                                    <div class="selectarrow">
-                                        <i class="fas fa-caret-down"></i>
-                                    </div>
-                                </td>
-                                <td class="inpumail">
-                                    <div class="mail_enter">
-                                        <div class="mail_icons">
-                                            <i class="fas fa-envelope"></i>
-                                            <i class="fas fa-phone-alt"></i>
-                                            <i class="fas fa-comment-alt"></i>
-                                        </div>
-                                        <input type="email" placeholder="Enter a Email Address">
-                                    </div>
-                                </td>
-                                <td class="removenull">
-                                    <div class="reset-save-btn">
-                                        <button class="reset4" type="button" id="resetAlertS2">Reset</button>
-                                        <button class="save4" type="button">Save</button>
-                                    </div>
-                                    <div class="cross-box-89">
-                                        <div class="circle_550 plus89">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-                                        <div class="circle_550">
-                                            <i class="fas fa-times"></i>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td class="selectaltype">
-                                    <select name="" id="">
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                        <option value="">Precent Change
-                                            Greather...
-                                        </option>
-                                    </select>
-                                    <div class="selectarrow">
-                                        <i class="fas fa-caret-down"></i>
-                                    </div>
-                                </td>
-                                <td class="inpalertval">
-                                    <input type="text">
-                                </td>
-                                <td class="selectalfreq">
-                                    <select name="" id="">
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                        <option value="">Anytime</option>
-                                    </select>
-                                    <div class="selectarrow">
-                                        <i class="fas fa-caret-down"></i>
-                                    </div>
-                                </td>
-                                <td class="inpumail">
-                                    <div class="mail_enter">
-                                        <div class="mail_icons">
-                                            <i class="fas fa-envelope"></i>
-                                            <i class="fas fa-phone-alt"></i>
-                                            <i class="fas fa-comment-alt"></i>
-                                        </div>
-                                        <input type="email" placeholder="Enter a Email Address">
-                                    </div>
-                                </td>
-                                <td class="removenull">
-                                    <div class="reset-save-btn">
-                                        <button class="reset4" type="button" id="resetAlertS2">Reset</button>
-                                        <button class="save4" type="button">Save</button>
-                                    </div>
-                                    <div class="cross-box-89">
-                                        <div class="circle_550 plus89">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-                                        <div class="circle_550">
-                                            <i class="fas fa-times"></i>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+
                         </tbody>
                     </table>
+                    <!-- Manage Alert PAGINATION START -->
+                    <div class="pagination-container">
+                        <div class="pagination-table">
+                            <div class="width-pagination" id="pagination-manage-alert">
+                                <div class="width-row-go">
+                                    <div class="no-of-rows">
+                                        <div class="left-row-no">
+                                            <input type="number" id="row-mnAlert" name="rowNo" value="7">
+                                            <label for="rowNo">rows per page</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Manage Alert PAGINATION END -->
                 </div>
             </div>
         </div>
@@ -8277,6 +7805,31 @@
     <script src="./js/man-data-opt4.js" defer></script>
     <script src="./js/read-csv.js" defer></script> -->
     <script src="./js/freeze-table.js"></script>
+    <script>
+        const mAccVisibility = localStorage.getItem("manageAccoutVisibility");
+        if(mAccVisibility == "showAccount"){
+            $("#tabs_ul li").removeClass("active");
+            $("#tabs_ul li:nth-child(1)").addClass("active");
+
+            $(".content .tab_content").hide();
+            $(".content .tab_content:nth-child(1)").show();
+
+            // var ul = document.getElementById("tabs_ul");
+            // var li_tabs = ul.getElementsByTagName("li");
+            // for (var i = 0; i < li_tabs.length; i++) {
+            // li_tabs[i].addEventListener("click", function () {
+            //     var current = ul.getElementsByClassName("active");
+            //     current[0].className = current[0].className.replace("active", "");
+            //     this.className += "active";
+
+            //     var current_tab_value = this.getAttribute("data-list");
+            //     //console.log(current_tab_value);
+            // });
+            // }
+        }
+
+
+    </script>
 </body>
 
 </html>

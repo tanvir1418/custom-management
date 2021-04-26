@@ -216,8 +216,9 @@
                     ..... Text goes here .....</p>
             </div>
             <div class="tic-box">
-                <input type="checkbox">
+                <input type="checkbox" id="agreed-checkBox">
                 <p>Please do not show this page next time after login</p>
+                
             </div>
             <div class="accept-btn-box">
                 <input class="decline" type="submit" value="DECLINE" id="terms-decline"/>
@@ -254,6 +255,9 @@
     <script src="./js/jquery.js"></script>
     <script>
         $("#terms-accept").click(function (event) {
+            if ($("#agreed-checkBox").prop("checked")) {
+                localStorage.setItem("termsPageCondition", "hideTermsPage");
+            }
             window.location.href = "/main.html";
         });
         $("#terms-decline").click(function (event) {

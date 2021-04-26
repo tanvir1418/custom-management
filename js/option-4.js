@@ -161,47 +161,112 @@ $(document).ready(function () {
 var span1 = document.querySelector('span.toggle__select1');
 span1.addEventListener('click', function (e) {
   document.getElementById("fieldset_id1").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id1 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id1 .data-form input")[0].value = "";
+    $("#fieldset_id1 .data-form input")[1].value = "";
+  }
+
 });
 
 var span2 = document.querySelector('span.toggle__select2');
 span2.addEventListener('click', function (e) {
   document.getElementById("fieldset_id2").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id2 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id2 .data-form input")[0].value = "";
+    $("#fieldset_id2 .data-form input")[1].value = "";
+  }
+
 });
 
 var span3 = document.querySelector('span.toggle__select3');
 span3.addEventListener('click', function (e) {
   document.getElementById("fieldset_id3").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id3 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id3 .data-form select")[0].selectedIndex = 0;
+    $("#fieldset_id3 .data-form select")[1].selectedIndex = 0;
+    $("#fieldset_id3 .data-form select")[2].selectedIndex = 0;
+    $("#fieldset_id3 .data-form select")[3].selectedIndex = 0;
+  }
+
 });
 
 
 var span4 = document.querySelector('span.toggle__select4');
 span4.addEventListener('click', function (e) {
   document.getElementById("fieldset_id4").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id4 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id4 .data-form input")[0].value = "";
+    $("#fieldset_id4 .data-form input")[1].value = "";
+  }
+
 });
 
 var span5 = document.querySelector('span.toggle__select5');
 span5.addEventListener('click', function (e) {
   document.getElementById("fieldset_id5").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id5 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id5 .data-form input")[0].value = "";
+    $("#fieldset_id5 .data-form input")[1].value = "";
+  }
+  
 });
 
 var span6 = document.querySelector('span.toggle__select6');
 span6.addEventListener('click', function (e) {
   document.getElementById("fieldset_id6").classList.toggle('borderGreen');
+  
+  let resetting = $("fieldset#fieldset_id6 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id6 .data-form select")[0].selectedIndex = 0;
+    $("#fieldset_id6 .data-form select")[1].selectedIndex = 0;
+  }
+
 });
 
 var span7 = document.querySelector('span.toggle__select7');
 span7.addEventListener('click', function (e) {
   document.getElementById("fieldset_id7").classList.toggle('borderGreen');
+  
+  let resetting = $("fieldset#fieldset_id7 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id7 .data-form select")[0].selectedIndex = 0;
+    $("#fieldset_id7 .data-form select")[1].selectedIndex = 0;
+  }
+
 });
 
 var span8 = document.querySelector('span.toggle__select8');
 span8.addEventListener('click', function (e) {
   document.getElementById("fieldset_id8").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id8 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id8 .data-form input")[0].value = "";
+    $("#fieldset_id8 .data-form input")[1].value = "";
+  }
+  
 });
 
 var span9 = document.querySelector('span.toggle__select9');
 span9.addEventListener('click', function (e) {
   document.getElementById("fieldset_id9").classList.toggle('borderGreen');
+  
+  let resetting = $("fieldset#fieldset_id9 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id9 .data-form input")[0].value = "";
+    $("#fieldset_id9 .data-form input")[1].value = "";
+  }
+  
 });
 
 var span10 = document.querySelector('span.toggle__select10');
@@ -218,47 +283,112 @@ span11.addEventListener('click', function (e) {
 var span21 = document.querySelector('span.toggle__select21');
 span21.addEventListener('click', function (e) {
   document.getElementById("fieldset_id21").classList.toggle('borderGreen');
+  
+  let resetting = $("fieldset#fieldset_id21 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id21 .data-form input")[0].value = "";
+    $("#fieldset_id21 .data-form input")[1].value = "";
+  }
+  
 });
 
 var span22 = document.querySelector('span.toggle__select22');
 span22.addEventListener('click', function (e) {
   document.getElementById("fieldset_id22").classList.toggle('borderGreen');
+  
+  let resetting = $("fieldset#fieldset_id22 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id22 .data-form input")[0].value = "";
+    $("#fieldset_id22 .data-form input")[1].value = "";
+  }
+  
 });
 
 var span23 = document.querySelector('span.toggle__select23');
 span23.addEventListener('click', function (e) {
   document.getElementById("fieldset_id23").classList.toggle('borderGreen');
+  
+  let resetting = $("fieldset#fieldset_id23 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id23 .data-form select")[0].selectedIndex = 0;
+    $("#fieldset_id23 .data-form select")[1].selectedIndex = 0;
+    $("#fieldset_id23 .data-form select")[2].selectedIndex = 0;
+    $("#fieldset_id23 .data-form select")[3].selectedIndex = 0;
+  }
+
 });
 
 
 var span24 = document.querySelector('span.toggle__select24');
 span24.addEventListener('click', function (e) {
   document.getElementById("fieldset_id24").classList.toggle('borderGreen');
+  
+  let resetting = $("fieldset#fieldset_id24 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id24 .data-form input")[0].value = "";
+    $("#fieldset_id24 .data-form input")[1].value = "";
+  }
+  
 });
 
 var span25 = document.querySelector('span.toggle__select25');
 span25.addEventListener('click', function (e) {
   document.getElementById("fieldset_id25").classList.toggle('borderGreen');
+  
+  let resetting = $("fieldset#fieldset_id25 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id25 .data-form input")[0].value = "";
+    $("#fieldset_id25 .data-form input")[1].value = "";
+  }
+  
 });
 
 var span26 = document.querySelector('span.toggle__select26');
 span26.addEventListener('click', function (e) {
   document.getElementById("fieldset_id26").classList.toggle('borderGreen');
+  
+  let resetting = $("fieldset#fieldset_id26 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id26 .data-form select")[0].selectedIndex = 0;
+    $("#fieldset_id26 .data-form select")[1].selectedIndex = 0;
+  }
+
 });
 
 var span27 = document.querySelector('span.toggle__select27');
 span27.addEventListener('click', function (e) {
   document.getElementById("fieldset_id27").classList.toggle('borderGreen');
+  
+  let resetting = $("fieldset#fieldset_id27 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id27 .data-form select")[0].selectedIndex = 0;
+    $("#fieldset_id27 .data-form select")[1].selectedIndex = 0;
+  }
+
 });
 
 var span28 = document.querySelector('span.toggle__select28');
 span28.addEventListener('click', function (e) {
   document.getElementById("fieldset_id28").classList.toggle('borderGreen');
+  
+  let resetting = $("fieldset#fieldset_id28 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id28 .data-form input")[0].value = "";
+    $("#fieldset_id28 .data-form input")[1].value = "";
+  }
+  
 });
 
 var span29 = document.querySelector('span.toggle__select29');
 span29.addEventListener('click', function (e) {
   document.getElementById("fieldset_id29").classList.toggle('borderGreen');
+  
+  let resetting = $("fieldset#fieldset_id29 legend input[type=checkbox]").prop("checked");
+  if(resetting){
+    $("#fieldset_id29 .data-form input")[0].value = "";
+    $("#fieldset_id29 .data-form input")[1].value = "";
+  }
+  
 });
 
 var span210 = document.querySelector('span.toggle__select210');
