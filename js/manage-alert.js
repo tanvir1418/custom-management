@@ -14,6 +14,9 @@ function makeTableHeadAlert(tableID) {
   let tableHead = 
       `<th class="">ROW</th>
         <th class="">ALERT TYPE
+          <span class="tooltip-container" tooltip="Sample text here" flow="down">
+            <i class="fas fa-question-circle"></i>
+          </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
             </div>
@@ -22,6 +25,9 @@ function makeTableHeadAlert(tableID) {
             </div>
         </th>
         <th class="">ALERT VALUE
+          <span class="tooltip-container" tooltip="Sample text here" flow="down">
+            <i class="fas fa-question-circle"></i>
+          </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
             </div>
@@ -30,6 +36,9 @@ function makeTableHeadAlert(tableID) {
             </div>
         </th>
         <th class="">ALERT FREQUENCY
+          <span class="tooltip-container" tooltip="Sample text here" flow="down">
+            <i class="fas fa-question-circle"></i>
+          </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
             </div>
@@ -38,6 +47,9 @@ function makeTableHeadAlert(tableID) {
             </div>
         </th>
         <th class="">ALERT METHOD
+          <span class="tooltip-container" tooltip="Sample text here" flow="down">
+            <i class="fas fa-question-circle"></i>
+          </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
             </div>
@@ -45,7 +57,11 @@ function makeTableHeadAlert(tableID) {
                 <i class="fas fa-caret-down"></i>
             </div>
         </th>
-        <th class="">ACTIONS</th>`;
+        <th class="">ACTIONS
+          <span class="tooltip-container" tooltip="Sample text here" flow="down">
+            <i class="fas fa-question-circle"></i>
+          </span>
+          </th>`;
 
     $(`#${tableID} thead`).html(tableHead);
 
@@ -66,7 +82,8 @@ function alertTableExist(tableID, noRow, pagiId) {
           for (let i = 1; i < len - 1; i++) {
             classList.push(tabHd[i].className);
           }
-          tableTr += `<tr id="${id}">
+          tableTr += `
+          <tr id="${id}">
 					<th class="row-data" scope="row">${serial}</th>
           <td class="selectaltype ${classList[0]}">
               <select name="" id="">
@@ -108,20 +125,24 @@ function alertTableExist(tableID, noRow, pagiId) {
 					
 					<td class="removenull">
               <div class="reset-save-btn">
-                  <button class="reset4" type="button" id="resetAlertS2">Reset</button>
+                  <button class="reset4" type="button">Reset</button>
                   <button class="save4" type="button">Save</button>
               </div>
-              <div class="circle_550 plus89">
+              <div class="cross-box-89">
+                <div class="circle_550 plus89">
                   <i class="fas fa-plus"></i>
-              </div>
-              <div class="circle_550">
+                </div>
+                <div class="circle_550 red-cross">
                   <i class="fas fa-times"></i>
+                </div>
               </div>
           </td>
 				</tr>`;
         }
       );
       $(`#${tableID} tbody`).html(tableTr);
+      
+      mnAlertCancelConfirmBox();
     },
   };
   let container = $(`#${pagiId}`);
@@ -193,3 +214,13 @@ function alertTableHeadClick(tableId) {
 }
 
 alertTableHeadClick("manage-alert-table-exist");
+
+// Manage ALERT Existing Table Actions > Red Cross (Cancel Box) Delete Button Confirm Popup
+function mnAlertCancelConfirmBox(){
+  let alertMnExistsCrosses = $("#manage-alert-table-exist tbody .removenull .red-cross");
+  for (let i = 0; i < alertMnExistsCrosses.length; i++) {
+    alertMnExistsCrosses[i].addEventListener("click", function (event) {
+      $('#universal_confirm_modal').modal('show');
+    });
+  }
+}
