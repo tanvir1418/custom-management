@@ -816,6 +816,11 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
         }
       );
       $(`#${tableID} tbody`).html(tableTr);
+
+      option1CancelConfirmBox();
+      option3CancelConfirmBox();
+      option4CancelConfirmBox();
+      option5CancelConfirmBox();
     },
   };
   let container = $(`#${pagiId}`);
@@ -1165,3 +1170,40 @@ $("#userAvatar").click(function () {
   $(".content .tab_content").hide();
   $(".content .tab_content:nth-child(1)").show();
 });
+
+
+// Manage Existing Table Actions > Red Cross (Cancel Box) Delete Button Confirm Popup
+function option1CancelConfirmBox(){
+  let op1MnExistsCrosses = $("#man-data-opt1-exist tbody .cancel-box");
+  for (let i = 0; i < op1MnExistsCrosses.length; i++) {
+    op1MnExistsCrosses[i].addEventListener("click", function (event) {
+      $('#universal_confirm_modal').modal('show');
+    });
+  }
+}
+function option3CancelConfirmBox(){
+  let op3MnExistsCrosses = $("#man-data-opt3-exist tbody .cancel-box");
+  for (let i = 0; i < op3MnExistsCrosses.length; i++) {
+    op3MnExistsCrosses[i].addEventListener("click", function (event) {
+      $('#universal_confirm_modal').modal('show');
+    });
+  }
+}
+
+function option4CancelConfirmBox(){
+  let op4MnExistsCrosses = $("#man-data-opt4-exist tbody .cancel-box");
+  for (let i = 0; i < op4MnExistsCrosses.length; i++) {
+    op4MnExistsCrosses[i].addEventListener("click", function (event) {
+      $('#universal_confirm_modal').modal('show');
+    });
+  }
+}
+
+function option5CancelConfirmBox(){
+  let op5MnExistsCrosses = $("#man-data-opt5-exist tbody .cancel-box");
+  for (let i = 0; i < op5MnExistsCrosses.length; i++) {
+    op5MnExistsCrosses[i].addEventListener("click", function (event) {
+      $('#universal_confirm_modal').modal('show');
+    });
+  }
+}
