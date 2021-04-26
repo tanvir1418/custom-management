@@ -336,7 +336,11 @@ let leftSideArray = [
 function listRender(id, name, addNewRow) {
   let ele = `<tr ondblclick="${addNewRow}" onclick="clickAddClassSgl(this)" class="cursor-pointer" id="${id}">
     <td colspan="2">${name}</td>
-    <td><i class="fas fa-question-circle"></i></td>
+    <td>
+      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+        <i class="fas fa-question-circle"></i>
+      </span>
+    </td>
     <td></td>
   </tr>`;
   return ele;
@@ -399,7 +403,7 @@ function renderListInputHtml(_id, iCount, title, resetValue, swapSeq) {
       </div>
     </div>
     <div class="width-5">
-      <div class="icon-container">
+      <div class="icon-container" tooltip="Sample text here" flow="down">
         <i class="fas fa-question-circle"></i>
       </div>
     </div>
