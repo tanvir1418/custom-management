@@ -2230,7 +2230,6 @@ td {
   color: #7b7b7b;
 }
 
-<<<<<<< HEAD
 /* FOOTER LINKS STYLE */
 #tc-section .footer-page{
   margin: 22px 50px;
@@ -2243,8 +2242,31 @@ td {
   letter-spacing: 2px;
   color: #0c0c0c;
   font-size: 16px;
-=======
+}
+
 .mynav .nav-items i:hover{
   cursor: pointer;
->>>>>>> ecb040f074593976ce74cacd94e22ca8564a42b3
+  color: #f6e802;
 }
+
+.tooltip-inner {
+  font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    min-width: 3em;
+    max-width: 21em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: .6ch 1.5ch;
+    border-radius: .3ch;
+    box-shadow: 0 1em 2em -0.5em rgb(0 0 0 / 35%);
+    background: #000000;
+    color: #fff;
+}
+/* 
+.bs-tooltip-auto[x-placement^=bottom] .arrow::before,
+.bs-tooltip-bottom .arrow::before {
+  border-bottom-color: #f00;
+} */

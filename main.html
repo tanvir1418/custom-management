@@ -4677,15 +4677,15 @@
                                         <img src="./images/style-2.png" alt="">
                                         <span>Style 2</span>
                                     </div>
-                                    <a class="style12btn-3 ml-auto" href="#" tooltip="Click to Update" flow="down">
+                                    <button class="style12btn-3 ml-auto updateNowBtn" href="#" tooltip="Click to Update" flow="down" onclick="universalConfirmModalDelete(this)">
                                         <p>Update Now</p>
-                                    </a>
-                                    <a class="style12btn-3" href="#" tooltip="Click to Clear Filter" flow="down">
+                                    </button>
+                                    <button class="style12btn-3 clearFilterBtn" href="#" tooltip="Click to Clear Filter" flow="down" onclick="universalConfirmModalDelete(this)">
                                         <p>Clear Filter</p>
-                                    </a>
-                                    <a class="style12btn-3" href="#" tooltip="Click to Clear Sorting" flow="down">
+                                    </button>
+                                    <button class="style12btn-3 clearSortingBtn" href="#" tooltip="Click to Clear Sorting" flow="down" onclick="universalConfirmModalDelete(this)">
                                         <p>Clear Sorting</p>
-                                    </a>
+                                    </button>
                                     <div class="filtering-style12" data-toggle="modal" data-target="#filter-modal">
                                         <i class="fas fa-filter fa-flip-horizontal"></i>
                                     </div>
@@ -4881,8 +4881,10 @@
                                                         <div class="reset-save-btn">
                                                             <button class="reset4" type="button"
                                                                 onclick="resetResFilter(this)">Reset</button>
-                                                            <button data-dismiss="modal" class="save4"
-                                                                type="button">Save</button>
+                                                            <!-- <button data-dismiss="modal" class="save4 mnResFilterSaveBtn"
+                                                                type="button" onclick="universalConfirmModalDelete(this)">Save</button> -->
+                                                            <button class="save4 mnResFilterSaveBtn"
+                                                                type="button" onclick="universalConfirmModalDelete(this)">Save</button>
                                                         </div>
                                                     </div>
                                                     <div class="con-box-filter drag-column">
@@ -7779,16 +7781,16 @@
     <div class="modal fade delete-list-item" id="universal_confirm_modal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <p class="modal-title">DELETE</p>
+                <div class="modal-header" id="confirm_header">
+                    <p class="modal-title"></p>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="remove-box">
-                        <div class="question-delete">
-                            <p>Remove this item permanently?</p>
+                        <div class="question-delete" id="confirm_deatis">
+                            <p></p>
                         </div>
                         <div class="comfirm-btn-bx">
                             <button type="button" class="cancel-list-data" data-dismiss="modal">Cancel</button>

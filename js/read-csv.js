@@ -1050,7 +1050,7 @@ function manResPagination(noRow) {
 							<div class="circle2box view-modal-click">
 								<i class="fas fa-eye"></i>
 							</div>
-							<div class="circle2box" tooltip="Click to Delete" flow="down">
+							<div class="circle2box deleteRowLayout12" tooltip="Click to Delete" flow="down" onclick="universalConfirmModalDelete(this)">
 								<i class="fas fa-trash-alt"></i>
 							</div>
 							<div class="circle2box row-modal-click">
@@ -1616,7 +1616,7 @@ function manResPagination(noRow) {
 					<div class="circle2box view-modal-click-style2">
 						<i class="fas fa-eye"></i>
 					</div>
-					<div class="circle2box" tooltip="Click to Delete" flow="down">
+					<div class="circle2box deleteRowLayout12" tooltip="Click to Delete" flow="down" onclick="universalConfirmModalDelete(this)">
 						<i class="fas fa-trash-alt"></i>
 					</div>
 					<div class="circle2box row-modal-click-style2">

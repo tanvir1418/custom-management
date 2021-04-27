@@ -1245,6 +1245,7 @@ padding: 0 5px;
 
 #create_new_mn_temp .mutistep-form-area .section-name span:hover{
   cursor: pointer;
+  text-decoration: underline;
 }
 
 fieldset legend.w-auto label.toggle span.tooltip-container{

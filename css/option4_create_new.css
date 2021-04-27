@@ -2984,6 +2984,7 @@ element.style {
 
 #create_new_option_four .mutistep-form-area .section-name span:hover{
   cursor: pointer;
+  text-decoration: underline;
 }
 .fa-calendar-alt:hover{
   cursor: pointer;
