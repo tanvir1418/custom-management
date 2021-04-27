@@ -582,10 +582,7 @@
                                                 autocomplete="off" required>
                                         </div>
                                         <div class="generate-button">
-                                            <!-- <button class="button btn-generate"
-                                                onclick="checkGenerateBtn()">Generate</button> -->
-                                            <button class="button btn-generate" data-toggle="modal"
-                                                data-target="#op1GenerateBtnModal">Generate</button>
+                                            <button class="button btn-generate" onclick="universalThankDraft(this)">Generate</button>
                                         </div>
                                     </div>
                                 </div>
@@ -909,42 +906,7 @@
                                                     required>
                                             </div>
                                             <div class="generate-button">
-                                                <button class="button btn-generate" data-toggle="modal"
-                                                    data-target="#op3GenerateBtnModal">Generate</button>
-                                                <!-- =========Option 3 Form Edit Modal Starts========= -->
-                                                <div class="modal fade" id="op3GenerateBtnModal" tabindex="-1"
-                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered">
-                                                        <div class="modal-content">
-                                                            <div class="modal-body">
-                                                                <!-- =========================================== -->
-                                                                <!-- thank you pop-up-for-generate button starts -->
-                                                                <div class="generate-button-click-popup">
-                                                                    <div class="generate-button-click-popup-wrapper">
-                                                                        <div class="generate-button-popup-header-title">
-                                                                            <p>Thank You</p>
-                                                                        </div>
-                                                                        <div class="generate-button-popup-body-wrapper">
-                                                                            <div
-                                                                                class="generate-button-popup-body-content">
-                                                                                <p>Your Request has been Successfully
-                                                                                    Processed</p>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="generate-popup"
-                                                                            data-dismiss="modal">
-                                                                            <input type="button" value="Close"
-                                                                                class="gn-close-btn">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- thank you pop-up-for-generate button ends -->
-                                                                <!-- ================XXXXXXXXXXX============== -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- =========Option 3 Form Edit Modal Ends========= -->
+                                                <button class="button btn-generate" onclick="universalThankDraft(this)">Generate</button>
                                             </div>
                                         </div>
                                     </div>
@@ -2142,8 +2104,9 @@
                                                         required>
                                                 </div>
                                                 <div class="save-draft-wrapper">
-                                                    <button class="option4-below-button btn-save-draft" data-toggle="modal" data-target="#mnTemp_saveDraft">Save
-                                                        Draft</button>
+                                                    <button class="option4-below-button btn-save-draft" onclick="universalThankDraft(this)">
+                                                        Save Draft
+                                                    </button>
                                                 </div>
                                                 <div class="save-start-wrapper save-start-class-hide-show-op4"
                                                     id="saveStartTarget-op4">
@@ -2331,48 +2294,12 @@
                                                 <p>Reset</p>
                                             </div>
                                         </a>
-                                        <!-- <a href="#">
-                                            <div class="mybtns-39 submit-btn">
-                                                <p>Done</p>
-                                            </div> -->
-                                        <a href="#" data-toggle="modal" data-target="#doneBtnModal">
+                                        <a href="#" onclick="universalThankDraft(this)">
                                             <div class="mybtns-39 submit-btn">
                                                 <p>Done</p>
                                             </div>
                                         </a>
                                     </div>
-                                    <!-- =========Option 5 Done Button Modal Starts========= -->
-                                    <div class="modal fade" id="doneBtnModal" tabindex="-1"
-                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                    <!-- =========================================== -->
-                                                    <!-- thank you pop-up-for-generate button starts -->
-                                                    <div class="generate-button-click-popup">
-                                                        <div class="generate-button-click-popup-wrapper">
-                                                            <div class="generate-button-popup-header-title">
-                                                                <p style="color: white">Thank You</p>
-                                                            </div>
-                                                            <div class="generate-button-popup-body-wrapper">
-                                                                <div class="generate-button-popup-body-content">
-                                                                    <p>Your Request has been Successfully
-                                                                        Processed</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="generate-popup">
-                                                                <input data-dismiss="modal" type="button" value="Close"
-                                                                    class="gn-close-btn">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- thank you pop-up-for-generate button ends -->
-                                                    <!-- ================XXXXXXXXXXX============== -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- =========Option 5 Done Button Modal Ends========= -->
                                 </div>
                             </div>
                         </div>
@@ -3651,8 +3578,7 @@
                                     <input type="text" placeholder="Template Name" autocomplete="off" required>
                                 </div>
                                 <div class="save-draft-wrapper">
-                                    <button class="option4-below-button btn-save-draft" data-toggle="modal"
-                                        data-target="#mnTemp_saveDraft">Save Draft</button>
+                                    <button class="option4-below-button btn-save-draft" onclick="universalThankDraft(this)">Save Draft</button>
                                 </div>
                                 <div class="save-start-wrapper save-start-class-hide-show-mnTemp"
                                     id="saveStartTarget-mnTemp">
@@ -5053,40 +4979,6 @@
     </section>
     <!-- =========== FOOTER SECTION END =========== -->
 
-    <!-- ===================================== -->
-    <!-- Bottom codes are added by Tanvir  -->
-    <!-- ===================================== -->
-    <!-- ======= Manage Template Popup Section Starts ========= -->
-    <!-- ======save draft button popup starts=======  -->
-    <div class="modal fade" id="mnTemp_saveDraft" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <!-- =========================================== -->
-                    <!-- thank you pop-up-for save draft button starts -->
-                    <div class="generate-button-click-popup" style="height: 290px !important;">
-                        <div class="generate-button-click-popup-wrapper">
-                            <div class="generate-button-popup-header-title">
-                                <p>Thank You</p>
-                            </div>
-                            <div class="generate-button-popup-body-wrapper">
-                                <div class="generate-button-popup-body-content">
-                                    <p>The Draft Form has been Successfully
-                                        Saved</p>
-                                </div>
-                            </div>
-                            <div class="generate-popup">
-                                <input type="button" value="Close" class="gn-close-btn" data-dismiss="modal">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- thank you pop-up-for save draft button ends -->
-                    <!-- ================XXXXXXXXXXX============== -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- xxxxxxx save draft button popup ends xxxxxxxx -->
     <!-- ======Save and Start pop-up button starts=======  -->
     <div class="modal fade" id="mnTemp_saveStart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -7403,22 +7295,21 @@
         </div>
     </div>
     <!-- ======= MANAGE TEMPLATE LIST24 MODA delete modal END =========== -->
-    <!-- =========Option 1 Generate Btn Modal Starts========= -->
-    <div class="modal fade" id="op1GenerateBtnModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+
+    <!-- =========Universal Thank Draft Modal Starts========= -->
+    <div class="modal fade" id="universalThankDraftModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <!-- =========================================== -->
-                    <!-- thank you pop-up-for-generate button starts -->
                     <div class="generate-button-click-popup">
                         <div class="generate-button-click-popup-wrapper">
                             <div class="generate-button-popup-header-title">
                                 <p>Thank You</p>
                             </div>
                             <div class="generate-button-popup-body-wrapper">
-                                <div class="generate-button-popup-body-content">
-                                    <p>Your Request has been Successfully Processed</p>
+                                <div class="generate-button-popup-body-content" id="thank_draft_details">
+                                    <p></p>
                                 </div>
                             </div>
                             <div class="generate-popup" data-dismiss="modal">
@@ -7426,13 +7317,11 @@
                             </div>
                         </div>
                     </div>
-                    <!-- thank you pop-up-for-generate button ends -->
-                    <!-- ================XXXXXXXXXXX============== -->
                 </div>
             </div>
         </div>
     </div>
-    <!-- =========Option 1 Generate Btn Modal Ends========= -->
+    <!-- =========Universal Thank Draft Modal Ends========= -->
 
     <!-- ===-=-=-=- OPTION 4 LIST1 MODAL START opt4a-list-modal  ======-===== -->
     <div class="modal fade listData-modal" id="opt4a-list-modal">

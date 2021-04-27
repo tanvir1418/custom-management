@@ -358,8 +358,8 @@ table#sub2-editor-table {
 /* ================================================ */
 /* thank you pop-up-for-generate button style starts */
 .generate-button-click-popup {
-    width: 359px;
-    height: 275px;
+    width: 360px;
+    height: 290px;
     /* -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
     -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
     box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75); */
@@ -427,26 +427,14 @@ table#sub2-editor-table {
     color: #e6e6e6;
 }
 
-#op3GenerateBtnModal .modal-content {
+#universalThankDraftModal .modal-content {
     width: 360px;
     border: 0;
     border-radius: 0 !important;
     left: 20%;
 }
 
-#op3GenerateBtnModal .modal-content .modal-body {
-    padding: 0;
-    border-radius: 0 !important;
-}
-
-#doneBtnModal .modal-content {
-    width: 360px;
-    border: 0;
-    border-radius: 0 !important;
-    left: 20%;
-}
-
-#doneBtnModal .modal-content .modal-body {
+#universalThankDraftModal .modal-content .modal-body {
     padding: 0;
     border-radius: 0 !important;
 }
@@ -2285,34 +2273,6 @@ Bottom codes are added by Tanvir
         font-size: 7px;
     }
 }
-
-/* Manage Data Option 1 THANK YOU Pop-Ups Customization */
-#op1GenerateBtnModal .modal-dialog {
-    max-width: 360px;
-}
-
-#op1GenerateBtnModal .modal-dialog .modal-body {
-    padding: 0px;
-}
-
-#op1GenerateBtnModal .modal-dialog .modal-body .generate-button-click-popup {
-    height: 295px;
-}
-
-
-
-/* #op3FormEditModal .modal-content,
-#op1FormEditModal .modal-content {
-    width: 400px;
-    border: 0;
-    border-radius: 0 !important;
-    left: 10%;
-}
-#op3FormEditModal .modal-content .modal-body,
-#op1FormEditModal .modal-content .modal-body {
-    padding: 0;
-    border-radius: 0 !important;
-} */
 
 #op1FormEditModal .modal-dialog,
 #op3FormEditModal .modal-dialog,

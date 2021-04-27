@@ -1225,3 +1225,12 @@ function universalConfirmModalDelete(globalVariable){
   $('#universal_confirm_modal').modal('show');
   console.dir(globalVariable);
 }
+
+function universalThankDraft(globalThankVar){
+  let thankDetailsText = "Your Request has been Successfully Processed";
+  if(globalThankVar.className.includes("btn-save-draft")){
+    thankDetailsText = "The Draft Form has been Successfully Saved";
+  }
+  $("#universalThankDraftModal #thank_draft_details p").html(thankDetailsText);
+  $('#universalThankDraftModal').modal('show');
+}
