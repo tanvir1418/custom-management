@@ -1690,6 +1690,9 @@ function manResPagination(noRow) {
 						<tr>
 							<th scope="col" class="style-two-head-01">
 								STATUS
+								<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             						<i class="fas fa-question-circle"></i>
+           						</span>
 								<div class="head-filter style2_cross01" >
 									<i class="fas fa-times"></i>
 								</div>
@@ -1699,6 +1702,9 @@ function manResPagination(noRow) {
 							</th>
 							<th scope="col" class="style-two-head-02">
 								Val1
+								<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             						<i class="fas fa-question-circle"></i>
+           						</span>
 								<div class="head-filter style2_cross02" >
 									<i class="fas fa-times"></i>
 								</div>
@@ -1708,6 +1714,9 @@ function manResPagination(noRow) {
 							</th>
 							<th scope="col" class="style-two-head-03">
 								Val2
+								<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             						<i class="fas fa-question-circle"></i>
+           						</span>
 								<div class="head-filter style2_cross03" >
 									<i class="fas fa-times"></i>
 								</div>
@@ -1752,6 +1761,9 @@ function manResPagination(noRow) {
 								<tr>
 										<th scope="col" class="style-two-head-04">
 												VAL11+DATEL
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross04">
 														<i class="fas fa-times"></i>
 												</div>
@@ -1761,6 +1773,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-05">
 												VAL12+DATEH
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross05">
 														<i class="fas fa-times"></i>
 												</div>
@@ -1770,6 +1785,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-06">
 												CHART 1
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross06">
 														<i class="fas fa-times"></i>
 												</div>
@@ -1779,6 +1797,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-07">
 												CHART2
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross07">
 														<i class="fas fa-times"></i>
 												</div>
@@ -1871,6 +1892,9 @@ function manResPagination(noRow) {
 								<tr>
 										<th scope="col" class="style-two-head-08">
 												U_Val
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross08">
 														<i class="fas fa-times"></i>
 												</div>
@@ -1880,6 +1904,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-09">
 												U_%
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross09">
 														<i class="fas fa-times"></i>
 												</div>
@@ -1889,6 +1916,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-10">
 												D_Val
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross10">
 														<i class="fas fa-times"></i>
 												</div>
@@ -1898,6 +1928,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-11">
 												D_%
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross11">
 														<i class="fas fa-times"></i>
 												</div>
@@ -1907,6 +1940,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-12">
 												N_Val
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross12">
 														<i class="fas fa-times"></i>
 												</div>
@@ -1916,6 +1952,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-13">
 												N_C
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross13">
 														<i class="fas fa-times"></i>
 												</div>
@@ -1925,6 +1964,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-14">
 												AM COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross14">
 														<i class="fas fa-times"></i>
 												</div>
@@ -1934,6 +1976,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-15">
 												AN COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross15">
 														<i class="fas fa-times"></i>
 												</div>
@@ -1943,6 +1988,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-16">
 												AO COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross16">
 														<i class="fas fa-times"></i>
 												</div>
@@ -1952,6 +2000,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-17">
 												AP COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross17">
 														<i class="fas fa-times"></i>
 												</div>
@@ -1961,6 +2012,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-18">
 												AQ COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross18">
 														<i class="fas fa-times"></i>
 												</div>
@@ -1970,6 +2024,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-19">
 												AR COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross19">
 														<i class="fas fa-times"></i>
 												</div>
@@ -1979,6 +2036,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-20">
 												AS COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross20">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2064,6 +2124,9 @@ function manResPagination(noRow) {
 								<tr>
 										<th scope="col" class="style-two-head-21">
 												AT COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross21">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2073,6 +2136,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-22">
 												AU COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross22">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2082,6 +2148,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-23">
 												AV COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross23">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2091,6 +2160,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-24">
 												AW COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross24">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2100,6 +2172,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-25">
 												AX COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross25">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2109,6 +2184,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-26">
 												AY COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross26">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2118,6 +2196,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-27">
 												AZ COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross27">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2127,6 +2208,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-28">
 												BA COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross28">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2136,6 +2220,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-29">
 												BB COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross29">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2145,6 +2232,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-30">
 												BC COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross30">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2154,6 +2244,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-31">
 												BD COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross31">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2163,6 +2256,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-32">
 												BE COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross32">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2172,6 +2268,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-33">
 												BF COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross33">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2257,6 +2356,9 @@ function manResPagination(noRow) {
 								<tr>
 										<th scope="col" class="style-two-head-34">
 												BG COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross34">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2266,6 +2368,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-35">
 												BH COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross35">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2275,6 +2380,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-36">
 												BI COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross36">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2284,6 +2392,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-37">
 												BJ COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross37">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2293,6 +2404,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-38">
 												BK COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross38">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2302,6 +2416,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-39">
 												BL COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross39">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2311,6 +2428,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-40">
 												BM COUNT
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross40">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2320,6 +2440,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-41">
 												Col2
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross41">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2329,6 +2452,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-42">
 												Col3
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross42">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2338,6 +2464,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-43">
 												DP
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross43">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2347,6 +2476,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-44">
 												DY
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross44">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2356,6 +2488,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-45">
 												DmA
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross45">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2365,6 +2500,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-46">
 												DmP
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross46">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2374,6 +2512,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-47">
 												DmP%
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross47">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2465,6 +2606,9 @@ function manResPagination(noRow) {
 								<tr>
 										<th scope="col" class="style-two-head-48">
 												ID
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross48">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2474,6 +2618,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-49">
 												LoP%
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross49">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2483,6 +2630,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-50">
 												M_Val
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross50">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2492,6 +2642,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-51">
 												MaP%
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross51">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2501,6 +2654,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-52">
 												O_End
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross52">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2510,6 +2666,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-53">
 												O_Start
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross53">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2519,6 +2678,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-54">
 												SP
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross54">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2528,6 +2690,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-55">
 												Time Frame
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross55">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2537,6 +2702,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-56">
 												UmA
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross56">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2546,6 +2714,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-57">
 												UmP
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross57">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2555,6 +2726,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-58">
 												UmP%
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross58">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2573,6 +2747,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-60">
 												Val3S
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross60">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2582,6 +2759,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-61">
 												Val6
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross61">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2673,6 +2853,9 @@ function manResPagination(noRow) {
 								<tr>
 										<th scope="col" class="style-two-head-62">
 												Description
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross62">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2682,6 +2865,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-63">
 												Details3
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross63">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2713,6 +2899,9 @@ function manResPagination(noRow) {
 								<tr>
 										<th scope="col" class="style-two-head-64">
 												Details2
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross64">
 														<i class="fas fa-times"></i>
 												</div>
