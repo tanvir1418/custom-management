@@ -823,7 +823,7 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 					<td>
 						<div class="actions39">
 							<a onclick="${tabChange}">Click To View/Update</a>
-							<div class="cancel-box">
+							<div class="cancel-box" onclick="universalConfirmModalDelete(this)">
 								<i class="fas fa-times"></i>
 							</div>
 						</div>
@@ -833,10 +833,6 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
       );
       $(`#${tableID} tbody`).html(tableTr);
 
-      option1CancelConfirmBox();
-      option3CancelConfirmBox();
-      option4CancelConfirmBox();
-      option5CancelConfirmBox();
     },
   };
   let container = $(`#${pagiId}`);
@@ -1187,45 +1183,45 @@ $("#userAvatar").click(function () {
   $(".content .tab_content:nth-child(1)").show();
 });
 
-
-// Manage Existing Table Actions > Red Cross (Cancel Box) Delete Button Confirm Popup
-function option1CancelConfirmBox(){
-  let op1MnExistsCrosses = $("#man-data-opt1-exist tbody .cancel-box");
-  for (let i = 0; i < op1MnExistsCrosses.length; i++) {
-    op1MnExistsCrosses[i].addEventListener("click", function (event) {
-      $('#universal_confirm_modal').modal('show');
-    });
-  }
-}
-function option3CancelConfirmBox(){
-  let op3MnExistsCrosses = $("#man-data-opt3-exist tbody .cancel-box");
-  for (let i = 0; i < op3MnExistsCrosses.length; i++) {
-    op3MnExistsCrosses[i].addEventListener("click", function (event) {
-      $('#universal_confirm_modal').modal('show');
-    });
-  }
-}
-
-function option4CancelConfirmBox(){
-  let op4MnExistsCrosses = $("#man-data-opt4-exist tbody .cancel-box");
-  for (let i = 0; i < op4MnExistsCrosses.length; i++) {
-    op4MnExistsCrosses[i].addEventListener("click", function (event) {
-      $('#universal_confirm_modal').modal('show');
-    });
-  }
-}
-
-function option5CancelConfirmBox(){
-  let op5MnExistsCrosses = $("#man-data-opt5-exist tbody .cancel-box");
-  for (let i = 0; i < op5MnExistsCrosses.length; i++) {
-    op5MnExistsCrosses[i].addEventListener("click", function (event) {
-      $('#universal_confirm_modal').modal('show');
-    });
-  }
-}
-
+// Bootstrap Tooltip Enable Function (Manage Result Table Tooltips)
 function tooltipFunction(){
   $('[data-toggle="tooltip"]').tooltip(
-  {container:'body', trigger: 'hover', placement:"bottom"}
+    { 
+      animation : true,
+      container: 'body',
+      trigger: 'hover',
+      placement: 'bottom',
+      delay: { "show": 10, "hide": 0 }
+    }
   );   
 };
+
+function universalConfirmModalDelete(globalVariable){
+  let headerText = "DELETE ROW";
+  let detailsText = "Remove this item permanently?";
+
+  if(globalVariable.className.includes("deleteTableRow")){
+    headerText = "DELETE ROW";
+    detailsText = "Remove this item permanently?";
+  }else if(globalVariable.className.includes("updateNowBtn")){
+    headerText = "UPDATE NOW";
+    detailsText = "Confirm to update data?";
+  }else if(globalVariable.className.includes("clearFilterBtn")){
+    headerText = "CLEAR FILTER";
+    detailsText = "Confirm to clear filter?";
+  }else if(globalVariable.className.includes("clearSortingBtn")){
+    headerText = "CLEAR SORTING";
+    detailsText = "Confirm to clear sorting?";
+  }else if(globalVariable.className.includes("mnResFilterSaveBtn")){
+    headerText = "SAVE FILTER";
+    detailsText = "Confirm to save filter data?";
+  }else if(globalVariable.className.includes("deleteRowLayout12")){
+    headerText = "DELETE TABLE ROW";
+    detailsText = "Remove this row permanently?";
+  }
+
+  $("#universal_confirm_modal #confirm_header p").html(headerText);
+  $("#universal_confirm_modal #confirm_deatis p").html(detailsText);
+  $('#universal_confirm_modal').modal('show');
+  console.dir(globalVariable);
+}

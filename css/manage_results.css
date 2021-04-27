@@ -2531,13 +2531,15 @@ th[draggable] a {
     color: #878787;
 }
 
-.alertswindow-content .reset-save-btn {
+.alertswindow-content .reset-save-btn,
+#filter-modal .reset-save-btn {
     margin-top: 42px;
     width: 100%;
     text-align: center;
 }
 
-.alertswindow-content .reset-save-btn button {
+.alertswindow-content .reset-save-btn button,
+#filter-modal .reset-save-btn button {
     padding: 8px 34px;
     border-radius: 3px;
     border: 1px solid #bbbbbb;
@@ -2550,18 +2552,21 @@ th[draggable] a {
     transition: all 0.3s ease;
 }
 
-.alertswindow-content .reset-save-btn .reset4:hover {
+.alertswindow-content .reset-save-btn .reset4:hover,
+#filter-modal .reset-save-btn .reset4:hover {
     background: #b3b3b3;
 }
 
-.alertswindow-content .reset-save-btn .save4 {
+.alertswindow-content .reset-save-btn .save4,
+#filter-modal .reset-save-btn .save4 {
     border: 1px solid #000000;
     color: #ffffff;
     background: #000000;
     margin-left: 16px;
 }
 
-.alertswindow-content .reset-save-btn .save4:hover {
+.alertswindow-content .reset-save-btn .save4:hover,
+#filter-modal .reset-save-btn .save4:hover {
     background: #f1f3f5;
     color: #1d1d1d;
 }
