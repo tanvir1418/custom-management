@@ -132,7 +132,7 @@ function alertTableExist(tableID, noRow, pagiId) {
                 <div class="circle_550 plus89">
                   <i class="fas fa-plus"></i>
                 </div>
-                <div class="circle_550 red-cross">
+                <div class="deleteTableRow circle_550" onclick="universalConfirmModalDelete(this)">
                   <i class="fas fa-times"></i>
                 </div>
               </div>
@@ -141,8 +141,6 @@ function alertTableExist(tableID, noRow, pagiId) {
         }
       );
       $(`#${tableID} tbody`).html(tableTr);
-      
-      mnAlertCancelConfirmBox();
     },
   };
   let container = $(`#${pagiId}`);
@@ -214,13 +212,3 @@ function alertTableHeadClick(tableId) {
 }
 
 alertTableHeadClick("manage-alert-table-exist");
-
-// Manage ALERT Existing Table Actions > Red Cross (Cancel Box) Delete Button Confirm Popup
-function mnAlertCancelConfirmBox(){
-  let alertMnExistsCrosses = $("#manage-alert-table-exist tbody .removenull .red-cross");
-  for (let i = 0; i < alertMnExistsCrosses.length; i++) {
-    alertMnExistsCrosses[i].addEventListener("click", function (event) {
-      $('#universal_confirm_modal').modal('show');
-    });
-  }
-}
