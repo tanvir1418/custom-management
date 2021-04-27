@@ -1223,3 +1223,9 @@ function option5CancelConfirmBox(){
     });
   }
 }
+
+function tooltipFunction(){
+  $('[data-toggle="tooltip"]').tooltip(
+  {container:'body', trigger: 'hover', placement:"bottom"}
+  );   
+};
