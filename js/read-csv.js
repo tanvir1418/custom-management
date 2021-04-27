@@ -37,7 +37,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-3">
 			STATUS
-			<span class="tooltip-container" tooltip="Sample text here" flow="down">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross3" class="head-filter">
@@ -50,7 +50,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-4">
 			Val1
-			<span class="tooltip-container" tooltip="Sample text here" flow="down">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross4" class="head-filter">
@@ -63,7 +63,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-5">
 			Val2
-			<span class="tooltip-container" tooltip="Sample text here" flow="down">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross5" class="head-filter">
@@ -76,7 +76,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-6">
 			VAL11+DATEL
-			<span class="tooltip-container" tooltip="Sample text here" flow="down">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross6" class="head-filter">
@@ -89,7 +89,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-7">
 			VAL12+DATEH
-			<span class="tooltip-container" tooltip="Sample text here" flow="down">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross7" class="head-filter">
@@ -102,7 +102,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-8">
 			CHART 1
-			<span class="tooltip-container" tooltip="Sample text here" flow="down">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross8" class="head-filter">
@@ -115,7 +115,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-9">
 			CHART2
-			<span class="tooltip-container" tooltip="Sample text here" flow="down">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross9" class="head-filter">
@@ -128,7 +128,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-10">
 			U_Val
-			<span class="tooltip-container" tooltip="Sample text here" flow="down">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross10" class="head-filter">
@@ -141,7 +141,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-11">
 			U_%
-			<span class="tooltip-container" tooltip="Sample text here" flow="down">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross11" class="head-filter">
@@ -154,7 +154,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-12">
 			D_Val
-			<span class="tooltip-container" tooltip="Sample text here" flow="right">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross12" class="head-filter">
@@ -167,6 +167,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-13">
 			D_%
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross13" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -177,6 +180,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-14">
 			N_Val
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross14" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -187,6 +193,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-15">
 			N_C
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross15" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -197,6 +206,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-16">
 			AM COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross16" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -207,6 +219,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-17">
 			AN COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross17" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -217,6 +232,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-18">
 			AO COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross18" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -227,6 +245,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-19">
 			AP COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross19" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -237,6 +258,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-20">
 			AQ COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross20" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -247,6 +271,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-21">
 			AR COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross21" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -257,6 +284,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-22">
 			AS COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross22" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -267,6 +297,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-23">
 			AT COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross23" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -277,6 +310,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-24">
 			AU COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross24" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -287,6 +323,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-25">
 			AV COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross25" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -297,6 +336,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-26">
 			AW COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross26" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -307,6 +349,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-27">
 			AX COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross27" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -317,6 +362,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-28">
 			AY COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross28" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -327,6 +375,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-29">
 			AZ COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross29" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -337,6 +388,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-30">
 			BA COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross30" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -347,6 +401,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-31">
 			BB COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross31" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -357,6 +414,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-32">
 			BC COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross32" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -367,6 +427,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-33">
 			BD COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross33" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -377,6 +440,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-34">
 			BE COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross34" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -387,6 +453,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-35">
 			BF COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross35" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -397,6 +466,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-36">
 			BG COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross36" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -407,6 +479,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-37">
 			BH COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross37" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -417,6 +492,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-38">
 			BI COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross38" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -427,6 +505,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-39">
 			BJ COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross39" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -437,6 +518,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-40">
 			BK COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross40" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -447,6 +531,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-41">
 			BL COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross41" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -457,6 +544,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-42">
 			BM COUNT
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross42" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -467,6 +557,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-43">
 			Col2
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross43" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -477,6 +570,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-44">
 			Col3
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross44" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -487,6 +583,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-45">
 			DP
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross45" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -497,6 +596,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-46">
 			DY
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross46" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -507,6 +609,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-47">
 			DmA
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross47" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -517,6 +622,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-48">
 			DmP
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross48" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -527,6 +635,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-49">
 			DmP%
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross49" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -537,6 +648,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-50">
 			ID
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross50" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -547,6 +661,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-51">
 			LoP%
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross51" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -557,6 +674,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-52">
 			M_Val
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross52" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -567,6 +687,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-53">
 			MaP%
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross53" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -577,6 +700,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-54">
 			O_End
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross54" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -587,6 +713,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-55">
 			O_Start
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross55" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -597,6 +726,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-56">
 			SP
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross56" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -607,6 +739,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-57">
 			Time Frame
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross57" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -617,6 +752,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-58">
 			UmA
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross58" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -627,6 +765,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-59">
 			UmP
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross59" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -637,6 +778,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-60">
 			UmP%
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross60" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -647,6 +791,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-61">
 			Val2S
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross61" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -657,6 +804,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-62">
 			Val3S
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross62" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -667,6 +817,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-63">
 			Val6
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross63" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -677,6 +830,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-64">
 			Description
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross64" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -687,6 +843,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-65">
 			Details3
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross65" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -697,6 +856,9 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-66">
 			Details2
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+              <i class="fas fa-question-circle"></i>
+            </span>
 			<div id="cross66" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
@@ -2617,6 +2779,8 @@ function manResPagination(noRow) {
 			$("#moverowlist_style2").css("display", "none");
 
 			$("#col8Filter").css('display','none');
+
+			tooltipFunction();
 		},
 	};
 	let container = $("#pagination-man-res-table");
