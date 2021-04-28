@@ -670,11 +670,10 @@ $("#mng-opt2-delete").click(function () {
 });
 
 // Manage Data Option 3 Start
-function opt3Reset(e) {
-  let element = $(e).parent().parent().parent().children(".content-43");
-  element.find("#opt3-textarea-1").val("");
-  element.find(".datepicker #datepicker-1").val("");
-  element.find(".datepicker #datepicker-2").val("");
+function opt3Reset() {
+  $("#opt3-textarea-1").val("");
+  $("#datepicker-1").val("");
+  $("#datepicker-2").val("");
 }
 // Manage Data Option 3 End
 
@@ -1218,6 +1217,18 @@ function universalConfirmModalDelete(globalVariable){
   }else if(globalVariable.className.includes("deleteRowLayout12")){
     headerText = "DELETE TABLE ROW";
     detailsText = "Remove this row permanently?";
+  }else if(globalVariable.className.includes("btn-reset")){
+    headerText = "RESET FIELDS";
+    detailsText = "Confirm to reset input fields?";
+  }else if(globalVariable.className.includes("submitSaveNote")){
+    headerText = "SAVE NOTES";
+    detailsText = "Confirm to save notes?";
+  }else if(globalVariable.className.includes("saveAlerts")){
+    headerText = "SAVE ALERTS";
+    detailsText = "Confirm to save alerts?";
+  }else if(globalVariable.className.includes("save-start-cancel-btn")){
+    headerText = "SAVE DETAILS";
+    detailsText = "Confirm to save result saving details?";
   }
 
   $("#universal_confirm_modal #confirm_header p").html(headerText);
@@ -1227,10 +1238,30 @@ function universalConfirmModalDelete(globalVariable){
 }
 
 function universalThankDraft(globalThankVar){
+  let thankHeaderText = "THANK YOU";
   let thankDetailsText = "Your Request has been Successfully Processed";
   if(globalThankVar.className.includes("btn-save-draft")){
     thankDetailsText = "The Draft Form has been Successfully Saved";
   }
+  $("#universalThankDraftModal #thank_draft_header p").html(thankHeaderText);
   $("#universalThankDraftModal #thank_draft_details p").html(thankDetailsText);
+  $('#universalThankDraftModal').modal('show');
+}
+
+function uniConfirmButton(){
+  $('#universal_confirm_modal').modal('hide');
+
+  let manageDataTab =  window.getComputedStyle(document.querySelector('#tab_2'));
+  let createNewActive = $("#my567").hasClass("createGreen");
+  if(manageDataTab.display == "block" && createNewActive == true){
+    resetLeftRightBox();
+  }
+  // console.log("Manage Data Tab :" + manageDataTab.display);
+  // console.log("Create New Active :" + createNewActive);
+  // console.log($("#leftSideDrag_op1").html());
+  // console.log($("#rightSideDrag_op1").html());
+
+  $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
+  $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
   $('#universalThankDraftModal').modal('show');
 }

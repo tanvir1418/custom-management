@@ -535,10 +535,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- added by Tanvir id="leftSideDrag_op1" -->
-                                            <div class="op1-option-selection" id="leftSideDrag_op1">
-                                                <!-- data add from list double click ASHIQ -->
-                                            </div>
+                                            <div class="op1-option-selection" id="leftSideDrag_op1"></div>
                                         </div>
                                     </div>
                                     <!-- <div class="col-lg-6 col-md-12 padding-remove"> -->
@@ -560,10 +557,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- added by Tanvir id="rightSideDrag_op1" -->
-                                            <div class="op1-option-selection" id="rightSideDrag_op1">
-                                                <!-- data add from list double click ASHIQ-->
-                                            </div>
+
+                                            <div class="op1-option-selection" id="rightSideDrag_op1"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -574,8 +569,7 @@
                                             <button id="back-manage" class="button btn-back">Back</button>
                                         </div>
                                         <div class="reset-button">
-                                            <button class="button btn-reset"
-                                                onclick="resetLeftRightBox()">Reset</button>
+                                            <button class="button btn-reset" onclick="universalConfirmModalDelete(this)">Reset</button>
                                         </div>
                                         <div class="save-result-input">
                                             <input type="text" placeholder="Enter A Name to Save Results"
@@ -897,7 +891,7 @@
                                             <div class="back-button">
                                                 <button class="button btn-back">Back</button>
                                             </div>
-                                            <div class="reset-button" onclick="opt3Reset(this)">
+                                            <div class="reset-button" onclick="opt3Reset()">
                                                 <button class="button btn-reset">Reset</button>
                                             </div>
                                             <div class="save-result-input">
@@ -5020,7 +5014,7 @@
                             </div>
                             <div class="save-start-popup-button-row">
                                 <input data-dismiss="modal" type="button" value="Back" class="save-start-done-btn">
-                                <input data-dismiss="modal" type="button" value="Done" class="save-start-cancel-btn">
+                                <input type="button" value="Done" class="save-start-cancel-btn" onclick="universalConfirmModalDelete(this)">
                             </div>
                         </div>
                     </div>
@@ -5898,8 +5892,8 @@
                         <p>NOTE</p>
                         <input type="text">
                     </div>
-                    <div class="submit-box5" data-dismiss="modal">
-                        <input type="submit">
+                    <div class="submit-box5">
+                        <input type="submit" class="submitSaveNote" onclick="universalConfirmModalDelete(this)">
                     </div>
                 </div>
             </div>
@@ -5998,8 +5992,8 @@
                         <p>NOTE</p>
                         <input type="text">
                     </div>
-                    <div class="submit-box5" data-dismiss="modal">
-                        <input type="submit">
+                    <div class="submit-box5">
+                        <input type="submit" class="submitSaveNote" onclick="universalConfirmModalDelete(this)">
                     </div>
                 </div>
             </div>
@@ -6104,7 +6098,7 @@
                                     <div class="circle_550">
                                         <i class="fas fa-plus"></i>
                                     </div>
-                                    <div class="circle_550">
+                                    <div class="circle_550 deleteTableRow" onclick="universalConfirmModalDelete(this)">
                                         <i class="fas fa-times"></i>
                                     </div>
                                 </td>
@@ -6158,7 +6152,7 @@
                                     <div class="circle_550">
                                         <i class="fas fa-plus"></i>
                                     </div>
-                                    <div class="circle_550">
+                                    <div class="circle_550 deleteTableRow" onclick="universalConfirmModalDelete(this)">
                                         <i class="fas fa-times"></i>
                                     </div>
                                 </td>
@@ -6212,7 +6206,7 @@
                                     <div class="circle_550">
                                         <i class="fas fa-plus"></i>
                                     </div>
-                                    <div class="circle_550">
+                                    <div class="circle_550 deleteTableRow" onclick="universalConfirmModalDelete(this)">
                                         <i class="fas fa-times"></i>
                                     </div>
                                 </td>
@@ -6266,7 +6260,7 @@
                                     <div class="circle_550">
                                         <i class="fas fa-plus"></i>
                                     </div>
-                                    <div class="circle_550">
+                                    <div class="circle_550 deleteTableRow" onclick="universalConfirmModalDelete(this)">
                                         <i class="fas fa-times"></i>
                                     </div>
                                 </td>
@@ -6320,7 +6314,7 @@
                                     <div class="circle_550">
                                         <i class="fas fa-plus"></i>
                                     </div>
-                                    <div class="circle_550">
+                                    <div class="circle_550 deleteTableRow" onclick="universalConfirmModalDelete(this)">
                                         <i class="fas fa-times"></i>
                                     </div>
                                 </td>
@@ -6374,7 +6368,7 @@
                                     <div class="circle_550">
                                         <i class="fas fa-plus"></i>
                                     </div>
-                                    <div class="circle_550">
+                                    <div class="circle_550 deleteTableRow" onclick="universalConfirmModalDelete(this)">
                                         <i class="fas fa-times"></i>
                                     </div>
                                 </td>
@@ -6428,7 +6422,7 @@
                                     <div class="circle_550">
                                         <i class="fas fa-plus"></i>
                                     </div>
-                                    <div class="circle_550">
+                                    <div class="circle_550 deleteTableRow" onclick="universalConfirmModalDelete(this)">
                                         <i class="fas fa-times"></i>
                                     </div>
                                 </td>
@@ -6437,7 +6431,7 @@
                     </table>
                     <div class="reset-save-btn">
                         <button class="reset4" type="button" id="resetAlert">Reset</button>
-                        <button class="save4" type="button">Save</button>
+                        <button class="save4 saveAlerts" type="button" onclick="universalConfirmModalDelete(this)">Save</button>
                     </div>
                 </div>
             </div>
@@ -6542,7 +6536,7 @@
                                     <div class="circle_550">
                                         <i class="fas fa-plus"></i>
                                     </div>
-                                    <div class="circle_550">
+                                    <div class="circle_550 deleteTableRow" onclick="universalConfirmModalDelete(this)">
                                         <i class="fas fa-times"></i>
                                     </div>
                                 </td>
@@ -6596,7 +6590,7 @@
                                     <div class="circle_550">
                                         <i class="fas fa-plus"></i>
                                     </div>
-                                    <div class="circle_550">
+                                    <div class="circle_550 deleteTableRow" onclick="universalConfirmModalDelete(this)">
                                         <i class="fas fa-times"></i>
                                     </div>
                                 </td>
@@ -6650,7 +6644,7 @@
                                     <div class="circle_550">
                                         <i class="fas fa-plus"></i>
                                     </div>
-                                    <div class="circle_550">
+                                    <div class="circle_550 deleteTableRow" onclick="universalConfirmModalDelete(this)">
                                         <i class="fas fa-times"></i>
                                     </div>
                                 </td>
@@ -6704,7 +6698,7 @@
                                     <div class="circle_550">
                                         <i class="fas fa-plus"></i>
                                     </div>
-                                    <div class="circle_550">
+                                    <div class="circle_550 deleteTableRow" onclick="universalConfirmModalDelete(this)">
                                         <i class="fas fa-times"></i>
                                     </div>
                                 </td>
@@ -6758,7 +6752,7 @@
                                     <div class="circle_550">
                                         <i class="fas fa-plus"></i>
                                     </div>
-                                    <div class="circle_550">
+                                    <div class="circle_550 deleteTableRow" onclick="universalConfirmModalDelete(this)">
                                         <i class="fas fa-times"></i>
                                     </div>
                                 </td>
@@ -6812,7 +6806,7 @@
                                     <div class="circle_550">
                                         <i class="fas fa-plus"></i>
                                     </div>
-                                    <div class="circle_550">
+                                    <div class="circle_550 deleteTableRow" onclick="universalConfirmModalDelete(this)">
                                         <i class="fas fa-times"></i>
                                     </div>
                                 </td>
@@ -6866,7 +6860,7 @@
                                     <div class="circle_550">
                                         <i class="fas fa-plus"></i>
                                     </div>
-                                    <div class="circle_550">
+                                    <div class="circle_550 deleteTableRow" onclick="universalConfirmModalDelete(this)">
                                         <i class="fas fa-times"></i>
                                     </div>
                                 </td>
@@ -6875,7 +6869,7 @@
                     </table>
                     <div class="reset-save-btn">
                         <button class="reset4" type="button" id="resetAlertS2">Reset</button>
-                        <button class="save4" type="button">Save</button>
+                        <button class="save4 saveAlerts" type="button" onclick="universalConfirmModalDelete(this)">Save</button>
                     </div>
                 </div>
             </div>
@@ -7304,8 +7298,8 @@
                 <div class="modal-body">
                     <div class="generate-button-click-popup">
                         <div class="generate-button-click-popup-wrapper">
-                            <div class="generate-button-popup-header-title">
-                                <p>Thank You</p>
+                            <div class="generate-button-popup-header-title" id="thank_draft_header">
+                                <p></p>
                             </div>
                             <div class="generate-button-popup-body-wrapper">
                                 <div class="generate-button-popup-body-content" id="thank_draft_details">
@@ -7683,8 +7677,7 @@
                         </div>
                         <div class="comfirm-btn-bx">
                             <button type="button" class="cancel-list-data" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="confirm-list-data" data-dismiss="modal"
-                                id="uni_confirm_modalBtn">Confirm</button>
+                            <button type="button" class="confirm-list-data" onclick="uniConfirmButton(this)" id="uni_confirm_modalBtn">Confirm</button>
                         </div>
                     </div>
                 </div>
