@@ -255,10 +255,16 @@ $("#div-sub-ul-li-list").click(function (e) {
     } else if (target.tagName !== "LI") return;
 
     let dataList = target.childNodes[1].innerHTML;
-    document.querySelector("#chartPage .chart-title .left-item").innerHTML = left_list_data;
-    document.querySelector("#chartPage .chart-title .right-item").innerHTML = dataList;
-    document.getElementById("firstOpen").click();
-    gotoChartPage();
+
+    // console.log(left_list_data);
+    // console.log(dataList);
+
+    displayChartManageResult(left_list_data, dataList);
+
+    // document.querySelector("#chartPage .chart-title .left-item").innerHTML = itemTitle;
+    // document.querySelector("#chartPage .chart-title .right-item").innerHTML = itemSubTitle;
+    // document.getElementById("firstOpen").click();
+    // gotoChartPage();
 });
 
 function deleteManageModal(className) {

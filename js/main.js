@@ -1274,6 +1274,7 @@ function uniConfirmButton(){
   if(targetCopyMoveElement != ""){
     $(`.${targetCopyMoveElement}`).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
 	  $(`.${targetCopyMoveElement}`).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
+    targetCopyMoveElement = "";
   }
 
   $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
@@ -1308,4 +1309,29 @@ function confirmModalCopyMove(targetELEMENT){
   $("#universal_confirm_modal #confirm_deatis p").html(detailsCopyMoveText);
   $('#universal_confirm_modal').modal('show');
   
+}
+
+let mnResultTitle = "";
+let mnResultSubTitle = "";
+
+function displayChartManageResult(itemTitle, itemSubTitle){
+  mnResultTitle = itemTitle;
+  mnResultSubTitle = itemSubTitle;
+  $('#manageResultChartDisplay_modal').modal('show');
+}
+
+function chartDispConfirmButton(){
+  $('#manageResultChartDisplay_modal').modal('hide');
+
+  document.querySelector("#chartPage .chart-title .left-item").innerHTML = mnResultTitle;
+  document.querySelector("#chartPage .chart-title .right-item").innerHTML = mnResultSubTitle;
+  document.getElementById("firstOpen").click();
+  gotoChartPage();
+
+  $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
+  $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
+  $('#universalThankDraftModal').modal('show');
+  
+  mnResultTitle = "";
+  mnResultSubTitle = "";
 }
