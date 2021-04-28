@@ -189,10 +189,11 @@ sub_ul_copytomodallist_style2.addEventListener("click", function (e) {
         } else target = target.parentNode;
     } else if (target.tagName !== "LI") return;
 
-    $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
-    $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
+    // $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
+    // $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
 
     copyto_oldLIClassnameModal_style2 = target.classList[0];
+    confirmModalCopyMove(target.className);
 });
 
 $("#copyto-mng-opt2-delete_style2").click(function () {
@@ -408,9 +409,9 @@ sub_ul_movetomodallist_style29.addEventListener("click", function (e) {
         } else target = target.parentNode;
     } else if (target.tagName !== "LI") return;
 
-    $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
-    $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
-
+    // $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
+    // $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
+    confirmModalCopyMove(target.className);
     // moveto_oldLIClassnameModal_style29 = target.classList[0];
 });
 
