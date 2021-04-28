@@ -255,10 +255,16 @@ $("#div-sub-ul-li-list").click(function (e) {
     } else if (target.tagName !== "LI") return;
 
     let dataList = target.childNodes[1].innerHTML;
-    document.querySelector("#chartPage .chart-title .left-item").innerHTML = left_list_data;
-    document.querySelector("#chartPage .chart-title .right-item").innerHTML = dataList;
-    document.getElementById("firstOpen").click();
-    gotoChartPage();
+
+    // console.log(left_list_data);
+    // console.log(dataList);
+
+    displayChartManageResult(left_list_data, dataList);
+
+    // document.querySelector("#chartPage .chart-title .left-item").innerHTML = itemTitle;
+    // document.querySelector("#chartPage .chart-title .right-item").innerHTML = itemSubTitle;
+    // document.getElementById("firstOpen").click();
+    // gotoChartPage();
 });
 
 function deleteManageModal(className) {
@@ -2087,6 +2093,21 @@ $(document).keydown(function(e){
         $("#col8Filter").css('display','none');
         resetDownArrow();
     //    return false;
+    }
+    // universal_confirm_modal
+    // manageResultChartDisplay_modal
+    // $("#universalThankDraftModal
+    let universalConfirm =  window.getComputedStyle(document.querySelector('#universal_confirm_modal'));
+    let mnResDispConfirm =  window.getComputedStyle(document.querySelector('#manageResultChartDisplay_modal'));
+    let uniThankYou =  window.getComputedStyle(document.querySelector('#universalThankDraftModal'));
+
+    if (e.which == 27 && (universalConfirm.display == "block" || mnResDispConfirm.display == "block") && uniThankYou.display == "none") {
+        $('#universal_confirm_modal').modal('hide');
+        $('#manageResultChartDisplay_modal').modal('hide');
+        
+        $("#universalThankDraftModal #thank_draft_header p").html("CANCELLATION");
+        $("#universalThankDraftModal #thank_draft_details p").html("The Request has been Canceled!");
+        $('#universalThankDraftModal').modal('show');
     }
 });
 

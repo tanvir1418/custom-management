@@ -1229,8 +1229,14 @@ function universalConfirmModalDelete(globalVariable){
   }else if(globalVariable.className.includes("save-start-cancel-btn")){
     headerText = "SAVE DETAILS";
     detailsText = "Confirm to save result saving details?";
+  }else if(globalVariable.className.includes("addToBookMark")){
+    headerText = "ADD TO BOOKMARKS";
+    detailsText = "Confirm to add to bookmark?";
+  }else if(globalVariable.className.includes("clickViewDetails")){
+    headerText = "VIEW DETAILS";
+    detailsText = "Confirm to view details?";
   }
-
+  
   $("#universal_confirm_modal #confirm_header p").html(headerText);
   $("#universal_confirm_modal #confirm_deatis p").html(detailsText);
   $('#universal_confirm_modal').modal('show');
@@ -1248,20 +1254,84 @@ function universalThankDraft(globalThankVar){
   $('#universalThankDraftModal').modal('show');
 }
 
+let targetCopyMoveElement = "";
+
 function uniConfirmButton(){
   $('#universal_confirm_modal').modal('hide');
 
+  // console.log("Manage Data Tab :" + manageDataTab.display);
+  // console.log("Create New Active :" + createNewActive);
+  // console.log($("#leftSideDrag_op1").html());
+  // console.log($("#rightSideDrag_op1").html());
+  // if(($("#leftSideDrag_op1").html() != "") || ($("#rightSideDrag_op1").html() != "")){}
   let manageDataTab =  window.getComputedStyle(document.querySelector('#tab_2'));
   let createNewActive = $("#my567").hasClass("createGreen");
   if(manageDataTab.display == "block" && createNewActive == true){
     resetLeftRightBox();
   }
-  // console.log("Manage Data Tab :" + manageDataTab.display);
-  // console.log("Create New Active :" + createNewActive);
-  // console.log($("#leftSideDrag_op1").html());
-  // console.log($("#rightSideDrag_op1").html());
+  
+
+  if(targetCopyMoveElement != ""){
+    $(`.${targetCopyMoveElement}`).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
+	  $(`.${targetCopyMoveElement}`).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
+    targetCopyMoveElement = "";
+  }
 
   $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
   $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
   $('#universalThankDraftModal').modal('show');
+}
+
+function confirmModalCopyMove(targetELEMENT){
+  targetCopyMoveElement = targetELEMENT;
+
+  let headerCopyMoveText = "CONFIRM BOX";
+  let detailsCopyMoveText = "Please confirm to proceed?";
+
+  let unCheckRow = $(`.${targetELEMENT}`).children(".sublist-check-box").hasClass("checkbox_show");
+
+  if(targetELEMENT.includes("copyto")){
+    headerCopyMoveText = "COPY ROW";
+    detailsCopyMoveText = "Confirm to copy row?";
+  }else if(targetELEMENT.includes("moveto")){
+    headerCopyMoveText = "MOVE ROW";
+    detailsCopyMoveText = "Confirm to move row?";
+  }
+
+  if(unCheckRow){
+    headerCopyMoveText = "UNCHECK ROW";
+    detailsCopyMoveText = "Confirm to uncheck row?";
+  }
+  // console.log(targetELEMENT);
+  // console.log(unCheckRow);
+
+  $("#universal_confirm_modal #confirm_header p").html(headerCopyMoveText);
+  $("#universal_confirm_modal #confirm_deatis p").html(detailsCopyMoveText);
+  $('#universal_confirm_modal').modal('show');
+  
+}
+
+let mnResultTitle = "";
+let mnResultSubTitle = "";
+
+function displayChartManageResult(itemTitle, itemSubTitle){
+  mnResultTitle = itemTitle;
+  mnResultSubTitle = itemSubTitle;
+  $('#manageResultChartDisplay_modal').modal('show');
+}
+
+function chartDispConfirmButton(){
+  $('#manageResultChartDisplay_modal').modal('hide');
+
+  document.querySelector("#chartPage .chart-title .left-item").innerHTML = mnResultTitle;
+  document.querySelector("#chartPage .chart-title .right-item").innerHTML = mnResultSubTitle;
+  document.getElementById("firstOpen").click();
+  gotoChartPage();
+
+  $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
+  $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
+  $('#universalThankDraftModal').modal('show');
+  
+  mnResultTitle = "";
+  mnResultSubTitle = "";
 }

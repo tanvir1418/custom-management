@@ -1041,10 +1041,10 @@ function manResPagination(noRow) {
 				tabDataArr.push(
 					`<td class="column-header-2">
 						<div class="icon-box22">
-							<div class="circle2box bkmark" tooltip="Click to Add to Bookmarks" flow="down">
+							<div class="circle2box bkmark addToBookMark" tooltip="Click to Add to Bookmarks" flow="down"  onclick="universalConfirmModalDelete(this)">
 								<i class="fas fa-envelope"></i>
 							</div>
-							<div class="circle2box" tooltip="Click to View Details" flow="down">
+							<div class="circle2box clickViewDetails" tooltip="Click to View Details" flow="down" onclick="universalConfirmModalDelete(this)">
 								<i class="fas fa-pen"></i>
 							</div>
 							<div class="circle2box view-modal-click">
@@ -1607,10 +1607,10 @@ function manResPagination(noRow) {
 				</div>
 
 				<div class="icon-box55">
-					<div class="circle2box" tooltip="Click to Add to Bookmarks" flow="down">
+					<div class="circle2box addToBookMark" tooltip="Click to Add to Bookmarks" flow="down" onclick="universalConfirmModalDelete(this)">
 						<i class="fas fa-envelope"></i>
 					</div>
-					<div class="circle2box" tooltip="Click to View Details" flow="down">
+					<div class="circle2box clickViewDetails" tooltip="Click to View Details" flow="down" onclick="universalConfirmModalDelete(this)">
 						<i class="fas fa-pen"></i>
 					</div>
 					<div class="circle2box view-modal-click-style2">
