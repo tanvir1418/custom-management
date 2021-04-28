@@ -1229,8 +1229,14 @@ function universalConfirmModalDelete(globalVariable){
   }else if(globalVariable.className.includes("save-start-cancel-btn")){
     headerText = "SAVE DETAILS";
     detailsText = "Confirm to save result saving details?";
+  }else if(globalVariable.className.includes("addToBookMark")){
+    headerText = "ADD TO BOOKMARKS";
+    detailsText = "Confirm to add to bookmark?";
+  }else if(globalVariable.className.includes("clickViewDetails")){
+    headerText = "VIEW DETAILS";
+    detailsText = "Confirm to view details?";
   }
-
+  
   $("#universal_confirm_modal #confirm_header p").html(headerText);
   $("#universal_confirm_modal #confirm_deatis p").html(detailsText);
   $('#universal_confirm_modal').modal('show');
