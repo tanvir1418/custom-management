@@ -358,8 +358,8 @@ table#sub2-editor-table {
 /* ================================================ */
 /* thank you pop-up-for-generate button style starts */
 .generate-button-click-popup {
-    width: 359px;
-    height: 275px;
+    width: 358px;
+    height: 265px;
     /* -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
     -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
     box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75); */
@@ -372,9 +372,9 @@ table#sub2-editor-table {
     background-color: #000;
     color: #fff;
     text-align: center;
-    height: 80px;
+    height: 65px;
     width: 100%;
-    line-height: 80px;
+    line-height: 65px;
 }
 
 .generate-button-popup-header-title p {
@@ -402,13 +402,13 @@ table#sub2-editor-table {
 }
 
 .generate-button-click-popup-wrapper .generate-popup {
-    margin-top: 15px;
+    margin-top: 5px;
     margin-right: 25px;
     float: right;
 }
 
 .generate-button-click-popup-wrapper .generate-popup .gn-close-btn {
-    width: 120px;
+    width: 110px;
     font-size: 18px;
     background: #e9e9e9;
     color: black;
@@ -418,7 +418,7 @@ table#sub2-editor-table {
     border: 0 none;
     border-radius: 2px;
     cursor: pointer;
-    padding: 8px 0px;
+    padding: 6px 0px;
 }
 
 .generate-button-click-popup-wrapper .generate-popup .gn-close-btn:hover,
@@ -427,26 +427,20 @@ table#sub2-editor-table {
     color: #e6e6e6;
 }
 
-#op3GenerateBtnModal .modal-content {
+/* #universalThankDraftModal .modal-content {
     width: 360px;
     border: 0;
     border-radius: 0 !important;
     left: 20%;
-}
+} */
 
-#op3GenerateBtnModal .modal-content .modal-body {
-    padding: 0;
-    border-radius: 0 !important;
-}
-
-#doneBtnModal .modal-content {
+#universalThankDraftModal .modal-dialog{
     width: 360px;
     border: 0;
     border-radius: 0 !important;
-    left: 20%;
 }
 
-#doneBtnModal .modal-content .modal-body {
+#universalThankDraftModal .modal-content .modal-body {
     padding: 0;
     border-radius: 0 !important;
 }
@@ -2057,7 +2051,7 @@ Bottom codes are added by Tanvir
 }
 
 .delete-list-item .remove-box {
-    padding: 8px 16px 16px;
+    padding: 25px;
 }
 
 .delete-list-item .remove-box .question-delete {
@@ -2077,13 +2071,13 @@ Bottom codes are added by Tanvir
 }
 
 .delete-list-item .remove-box .comfirm-btn-bx {
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .delete-list-item .comfirm-btn-bx button {
     border: none;
     border-radius: 2px;
-    padding: 5px 22px;
+    padding: 8px 25px;
     color: #1D1D1D;
     font-family: gilroy-medium, sans-serif;
     font-weight: 600;
@@ -2285,34 +2279,6 @@ Bottom codes are added by Tanvir
         font-size: 7px;
     }
 }
-
-/* Manage Data Option 1 THANK YOU Pop-Ups Customization */
-#op1GenerateBtnModal .modal-dialog {
-    max-width: 360px;
-}
-
-#op1GenerateBtnModal .modal-dialog .modal-body {
-    padding: 0px;
-}
-
-#op1GenerateBtnModal .modal-dialog .modal-body .generate-button-click-popup {
-    height: 295px;
-}
-
-
-
-/* #op3FormEditModal .modal-content,
-#op1FormEditModal .modal-content {
-    width: 400px;
-    border: 0;
-    border-radius: 0 !important;
-    left: 10%;
-}
-#op3FormEditModal .modal-content .modal-body,
-#op1FormEditModal .modal-content .modal-body {
-    padding: 0;
-    border-radius: 0 !important;
-} */
 
 #op1FormEditModal .modal-dialog,
 #op3FormEditModal .modal-dialog,
