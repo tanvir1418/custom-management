@@ -2094,6 +2094,21 @@ $(document).keydown(function(e){
         resetDownArrow();
     //    return false;
     }
+    // universal_confirm_modal
+    // manageResultChartDisplay_modal
+    // $("#universalThankDraftModal
+    let universalConfirm =  window.getComputedStyle(document.querySelector('#universal_confirm_modal'));
+    let mnResDispConfirm =  window.getComputedStyle(document.querySelector('#manageResultChartDisplay_modal'));
+    let uniThankYou =  window.getComputedStyle(document.querySelector('#universalThankDraftModal'));
+
+    if (e.which == 27 && (universalConfirm.display == "block" || mnResDispConfirm.display == "block") && uniThankYou.display == "none") {
+        $('#universal_confirm_modal').modal('hide');
+        $('#manageResultChartDisplay_modal').modal('hide');
+        
+        $("#universalThankDraftModal #thank_draft_header p").html("CANCELLATION");
+        $("#universalThankDraftModal #thank_draft_details p").html("The Request has been Canceled!");
+        $('#universalThankDraftModal').modal('show');
+    }
 });
 
 function resetDownArrow(){
