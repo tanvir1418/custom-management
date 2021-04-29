@@ -569,7 +569,7 @@
                                             <button id="back-manage" class="button btn-back">Back</button>
                                         </div>
                                         <div class="reset-button">
-                                            <button class="button btn-reset" onclick="universalConfirmModalDelete(this)">Reset</button>
+                                            <button class="button btn-reset" onclick="op1ResetBtnConfirm(this)">Reset</button>
                                         </div>
                                         <div class="save-result-input">
                                             <input type="text" placeholder="Enter A Name to Save Results"
@@ -2288,7 +2288,7 @@
                                                 <p>Reset</p>
                                             </div>
                                         </a>
-                                        <a href="#" onclick="universalThankDraft(this)">
+                                        <a onclick="universalThankDraft(this)">
                                             <div class="mybtns-39 submit-btn">
                                                 <p>Done</p>
                                             </div>
@@ -7685,6 +7685,32 @@
         </div>
     </div>
     <!-- ======= Universal Confirm Modal END =========== -->
+
+    <!-- ======= Manage Result Chart Display Confirm Modal START =========== -->
+    <div class="modal fade delete-list-item" id="manageResultChartDisplay_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title">CONFIRM CHART DISPLAY</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="remove-box">
+                        <div class="question-delete">
+                            <p>Confirm to goto manage result chart display?</p>
+                        </div>
+                        <div class="comfirm-btn-bx">
+                            <button type="button" class="cancel-list-data" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="confirm-list-data" onclick="chartDispConfirmButton(this)" id="chart_display_modalBtn">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======= Manage Result Chart Display Confirm Modal END =========== -->
 
     <!-- JS FILES -->
     <script src="./js/jquery.js"></script>
