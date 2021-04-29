@@ -2355,3 +2355,33 @@ Bottom codes are added by Tanvir
     display: none;
     background-color: #ffffff;
 }
+
+.modal-force-open{
+    overflow:hidden !important;
+    padding-right: -17px !important;
+}
+.modal-force-open .modal{
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+}
+
+.table-scroll i.fa-question-circle:hover{
+    opacity: 1;
+}
+
+.filter7-modal-con .heading-filter .close{
+    position: absolute;
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+    top: 5px;
+    right: 10px;
+    opacity: 1;
+}
+.filter7-modal-con .heading-filter .close span{
+    color: #ffffff;
+    font-size: 26px;
+    text-shadow: none;
+}
+
+    
