@@ -1217,9 +1217,6 @@ function universalConfirmModalDelete(globalVariable){
   }else if(globalVariable.className.includes("deleteRowLayout12")){
     headerText = "DELETE TABLE ROW";
     detailsText = "Remove this row permanently?";
-  }else if(globalVariable.className.includes("btn-reset")){
-    headerText = "RESET FIELDS";
-    detailsText = "Confirm to reset input fields?";
   }else if(globalVariable.className.includes("submitSaveNote")){
     headerText = "SAVE NOTES";
     detailsText = "Confirm to save notes?";
@@ -1243,6 +1240,14 @@ function universalConfirmModalDelete(globalVariable){
   console.dir(globalVariable);
 }
 
+function op1ResetBtnConfirm(resetGlobal){
+  if(($("#leftSideDrag_op1").html() != "") || ($("#rightSideDrag_op1").html() != "")){
+    $("#universal_confirm_modal #confirm_header p").html("RESET FIELDS");
+    $("#universal_confirm_modal #confirm_deatis p").html("Confirm to reset input fields?");
+    $('#universal_confirm_modal').modal('show');
+  }
+}
+
 function universalThankDraft(globalThankVar){
   let thankHeaderText = "THANK YOU";
   let thankDetailsText = "Your Request has been Successfully Processed";
@@ -1258,7 +1263,6 @@ let targetCopyMoveElement = "";
 
 function uniConfirmButton(){
   $('#universal_confirm_modal').modal('hide');
-
   // console.log("Manage Data Tab :" + manageDataTab.display);
   // console.log("Create New Active :" + createNewActive);
   // console.log($("#leftSideDrag_op1").html());
@@ -1280,7 +1284,18 @@ function uniConfirmButton(){
   $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
   $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
   $('#universalThankDraftModal').modal('show');
+
+  // $('body').addClass("modal-force-open");
+  // $('body').delay(5000).addClass("modal-open");
+
 }
+
+// Universal Thank Draft Modal (on show/hide event)
+$('#universalThankDraftModal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-force-open");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-force-open");
+})
 
 function confirmModalCopyMove(targetELEMENT){
   targetCopyMoveElement = targetELEMENT;
