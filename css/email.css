@@ -1,0 +1,78 @@
+#select_optn {
+    background: #ffffff;
+    padding-bottom: 50px;
+}
+
+#select_optn .email_header_select {
+    padding: 32px 0;
+}
+
+#select_optn .email_header_select p {
+    font-size: 36px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 600;
+    color: #141414;
+    letter-spacing: 2px;
+    margin: 0px;
+    text-align: center;
+}
+
+#select_optn .column {
+    width: 20%;
+}
+
+#select_optn .system_stat {
+    margin-left: auto;
+}
+
+#select_optn .contact_stat {
+    margin-right: auto;
+}
+
+#select_optn .option_box {
+    display: table;
+    width: 210px;
+    height: 260px;
+    border-radius: 2px;
+    border: 1px solid #959595;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    margin: auto;
+    background: #f9f9f9;
+}
+
+#select_optn .option_box .option-content-box {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#select_optn .option_box img {
+    width: 70px;
+}
+
+#select_optn .option_box p {
+    font-size: 22px;
+    color: #6b6b6b;
+    font-weight: bold;
+    font-family: gilroy-bold, sans-serif;
+    letter-spacing: 2px;
+    margin: 0;
+    margin-top: 32px;
+}
+
+#select_optn .option_box p:last-child {
+    margin-top: 0px;
+}
+
+#select_optn .option-content-box:hover {
+    background: #dfdfdf;
+}
+
+#select_optn .option-content-box:hover p {
+    color: #1d1d1d;
+}
+
+#select_optn .option-content {
+    margin: 0;
+}
