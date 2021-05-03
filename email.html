@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms and Conditions</title>
+    <title>email</title>
     <link rel="stylesheet" href="./css/all_min.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/email.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/media.css">
@@ -187,24 +188,94 @@
     <!-- =====X===== COLLAPSE MENU BAR END ======X==== -->
     <!-- ============ HEADER SECTON END  ============ -->
 
-    <!-- ============ TERMS AND CONDITION SECTON START =============== -->
-    <div id="tc-section">
-        <div class="terms_conditions">
-            <p class="tc-head">Terms & Conditions</p>
+    <!-- ============ SELECT A OPTION SECTON START =============== -->
+    <div id="select_optn">
+        <div id="hide955">
+            <div class="email_header_select">
+                <p>Select A Option</p>
+            </div>
+            <div class="row">
+                <div class="column system_stat">
+                    <div class="option_box" onclick="selectEmailop(event, 'mail_option_1')">
+                        <div class="option-content-box">
+                            <img src="./images/option_1.png" alt="">
+                            <p>System</p>
+                            <p>Status</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column tasks_stat">
+                    <div class="option_box" onclick="selectEmailop(event, 'mail_option_2')">
+                        <div class="option-content-box">
+                            <img src="./images/option_2.png" alt="">
+                            <p>Tasks</p>
+                            <p>Status</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column contact_stat">
+                    <div class="option_box" onclick="selectEmailop(event, 'mail_option_3')">
+                        <div class="option-content-box">
+                            <img src="./images/option_3.png" alt="">
+                            <p>Contact</p>
+                            <p>Status</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="footer-page terms">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum iure architecto maxime quod in atque.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero debitis animi distinctio.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia tenetur tempore facilis eaque harum eoriosam accusantium.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste ipsam dignissimos magnam.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendise dignissimos eveniet provident voluptatem.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum iure architecto maxime quod in atque.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero debitis animi distinctio.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia tenetur tempore facilis eaque harum earum m accusantium.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste ipsam dignissimos magnam.</p>
+
+        <!-- ================ OPTION CONTENT START ============= -->
+        <div class="option-content" id="opt-content">
+            <!-- ==----=-=-=-=-=-=-=-=-=- SYSTEM STATUS START ==----=-=-=-=-=-=-=-=-=- -->
+            <div class="option" id="mail_option_1">
+                <div class="hero-title">
+                    <div class="hero-box">
+                        <div class="title-icon">
+                            <img src="./images/option_title.png" alt="">
+                        </div>
+                        <div class="mytitle">
+                            <p class="">Option 1 Name</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ==----=-=-=-XX=-=-=-=-=- SYSTEM STATUS END ==----=-=-=-=-XX=-=-=-=-=- -->
+
+            <!-- ==----=-=-=-=-=-=-=-=-=- TASKS STATUS START ==----=-=-=-=-=-=-=-=-=- -->
+            <div class="option" id="mail_option_2">
+                <div class="hero-title">
+                    <div class="hero-box">
+                        <div class="title-icon">
+                            <img src="./images/option_title.png" alt="">
+                        </div>
+                        <div class="mytitle">
+                            <p class="">Option 2 Name</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ==----=-=-=XX-=-=-=-=-=- TASKS STATUS END ==----=-=-=-=-=-=XX-=-=-=- -->
+
+            <!-- ==----=-=-=-=-=-=-=-=-=- CONTACT TASKS START ==----=-=-=-=-=-=-=-=-=- -->
+            <div class="option" id="mail_option_3">
+                <div class="hero-title">
+                    <div class="hero-box">
+                        <div class="title-icon">
+                            <img src="./images/option_title.png" alt="">
+                        </div>
+                        <div class="mytitle">
+                            <p class="">Option 3 Name</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ==----=-=-=XX-=-=-=-=-=- CONTACT TASKS END ==----=-=-=-=XX-=-=-=-=-=- -->
         </div>
+        <!-- ==========X====== OPTION CONTENT END ======X======= -->
+
     </div>
-    <!-- ============  TERMS AND CONDITION SECTON END =============== -->
+    <!-- ============ SELECT A OPTION SECTON END =============== -->
     <section id="footer">
         <div class="footer-inner">
             <div class="footer-link">
@@ -217,6 +288,25 @@
             </div>
         </div>
     </section>
+    <script>
+        // CHOOSE OPTION SECTION START
+        function selectEmailop(evt, optionName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("option");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("option_box");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(optionName).style.display = "block";
+            document.getElementById("hide955").style.display = "none";
+            document.getElementById("select_optn").style.paddingBottom = "0px";
+            evt.currentTarget.className += " active";
+        }
+        // CHOOSE OPTION SECTION END
+    </script>
 
     <!-- JS FILES -->
     <script src="./js/jquery.js"></script>
