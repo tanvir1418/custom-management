@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/login.css" />
     <link rel="stylesheet" href="./css/media.css" />
-    <link rel="stylesheet" href="./css/tooltip.css">
+    <link rel="stylesheet" href="./css/tooltip.css" />
 
     <!-- JS Files  -->
     <script src="./js/bootstrap.js" defer></script>
@@ -18,6 +18,7 @@
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" defer></script>
     <!-- <script src="./js/main.js" defer></script> -->
+    <script src="./js/pagination.js" defer></script>
     <script src="./js/email-manage.js" defer></script>
   </head>
 
@@ -496,12 +497,48 @@
               </div>
             </div>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla odio necessitatibus ratione accusantium cum atque qui aut vero a minima praesentium reprehenderit consequuntur eveniet sapiente explicabo, repudiandae debitis optio ullam totam molestiae. Laboriosam ducimus provident ipsum
-            reiciendis dolorum esse velit totam facere, aspernatur illum fugit ex porro, quis a, sapiente accusamus reprehenderit sit nostrum labore corrupti at. Error voluptate, ipsam totam, expedita, cum sed cumque provident neque adipisci quos amet non eligendi. Ea velit aperiam debitis minus
-            molestiae eum blanditiis tempora! Cum quis, quae rerum accusamus debitis at cupiditate fuga tenetur alias praesentium quas numquam fugiat quisquam. Numquam adipisci nam ipsam et necessitatibus totam eaque, ea quidem unde reiciendis incidunt quibusdam, minus est? Inventore temporibus quam
-            illum possimus labore impedit enim, voluptas suscipit nesciunt iste, ab illo architecto magnam perspiciatis quos quaerat voluptates nulla voluptatum earum maiores numquam corporis consequatur. Quo error corrupti veritatis nam, tempore autem sed blanditiis repellat.
-          </p>
+          <div class="task-status-content-wrapper">
+            <div class="task-status-statistics">
+              <div class="stat-box stat-inProgress">
+                <p class="stat-title">Tasks Completed</p>
+                <p class="stat-number">1002</p>
+              </div>
+              <div class="stat-box stat-pending">
+                <p class="stat-title">Tasks Pending</p>
+                <p class="stat-number">202</p>
+              </div>
+              <div class="stat-box stat-cancelled">
+                <p class="stat-title">Tasks Cancelled</p>
+                <p class="stat-number">55</p>
+              </div>
+              <div class="stat-box stat-completed">
+                <p class="stat-title">Total Tasks</p>
+                <p class="stat-number">1259</p>
+              </div>
+            </div>
+            <div class="task-status-table">
+              <table class="table table-responsive-xl table89" id="email_task_status_table">
+                <thead></thead>
+                <tbody></tbody>
+              </table>
+              <!-- Task Status PAGINATION START -->
+              <div class="pagination-container">
+                <div class="pagination-table">
+                  <div class="width-pagination" id="pagination_task_status">
+                    <div class="width-row-go">
+                      <div class="no-of-rows">
+                        <div class="left-row-no">
+                          <input type="number" id="row_taskStatus" name="rowNo" value="7" />
+                          <label for="rowNo">rows per page</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Task Status PAGINATION END -->
+            </div>
+          </div>
         </div>
         <!-- ==----=-=-=XX-=-=-=-=-=- TASKS STATUS END ==----=-=-=-=-=-=XX-=-=-=- -->
 
@@ -519,66 +556,66 @@
           </div>
           <div class="contact-sp-container">
             <form action="">
-            <div class="contact-sp-inner">
-              <div class="contact-sp-group">
-                <div class="sp-width-100">
-                  <div class="sp-title">
-                    <p>Department:</p>
-                  </div>
-                  <div class="sp-input">
-                    <div class="custom-input-only">
-                      <input type="text"/>
+              <div class="contact-sp-inner">
+                <div class="contact-sp-group">
+                  <div class="sp-width-100">
+                    <div class="sp-title">
+                      <p>Department:</p>
+                    </div>
+                    <div class="sp-input">
+                      <div class="custom-input-only">
+                        <input type="text" />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="contact-sp-group">
-                <div class="sp-width-100">
-                  <div class="sp-title">
-                    <p>First Name</p>
-                  </div>
-                  <div class="sp-input">
-                    <div class="custom-input-only">
-                      <input type="text"/>
+                <div class="contact-sp-group">
+                  <div class="sp-width-100">
+                    <div class="sp-title">
+                      <p>First Name</p>
+                    </div>
+                    <div class="sp-input">
+                      <div class="custom-input-only">
+                        <input type="text" />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="contact-sp-group">
-                <div class="sp-width-100">
-                  <div class="sp-title">
-                    <p>Last Name:</p>
-                  </div>
-                  <div class="sp-input">
-                    <div class="custom-input-only">
-                      <input type="text"/>
+                <div class="contact-sp-group">
+                  <div class="sp-width-100">
+                    <div class="sp-title">
+                      <p>Last Name:</p>
+                    </div>
+                    <div class="sp-input">
+                      <div class="custom-input-only">
+                        <input type="text" />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="contact-sp-group">
-                <div class="sp-width-100">
-                  <div class="sp-title">
-                    <p>Subject:</p>
-                  </div>
-                  <div class="sp-input">
-                    <div class="custom-input-only">
-                      <input type="text"/>
+                <div class="contact-sp-group">
+                  <div class="sp-width-100">
+                    <div class="sp-title">
+                      <p>Subject:</p>
+                    </div>
+                    <div class="sp-input">
+                      <div class="custom-input-only">
+                        <input type="text" />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="contact-sp-group">
-                <div class="sp-widthTextBox-100">
-                  <div class="sp-title">
-                    <p>Request:</p>
-                  </div>
-                  <div class="sp-textbox">
+                <div class="contact-sp-group">
+                  <div class="sp-widthTextBox-100">
+                    <div class="sp-title">
+                      <p>Request:</p>
+                    </div>
+                    <div class="sp-textbox">
                       <textarea></textarea>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
               <div class="sp-button-row">
                 <input type="button" value="Reset" class="reset" onclick="resetContactFormFields()" />
                 <input type="button" value="Submit" class="submit" />
@@ -603,6 +640,120 @@
         </div>
       </div>
     </section>
+
+    <!-- =========Option 5 Plus Button Modal Starts========= -->
+    <div class="modal fade" id="dropBtnModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <!-- ==================================== -->
+            <!-- pop-up-for-table-header-click starts -->
+            <div class="table-header-click-popup">
+              <div class="table-header-click-popup-wrapper">
+                <div class="table-header-popup-header-title">
+                  <p id="mnExistsThPop"></p>
+                </div>
+                <div class="table-header-popup-body">
+                  <div class="find-sort-wrapper">
+                    <div class="find-wrapper">
+                      <div class="find-wrapper-inner"><input type="text" /><input type="submit" value="Find" /></div>
+                    </div>
+                    <div class="sort-wrapper">
+                      <input type="submit" value="Sort" />
+                    </div>
+                  </div>
+                  <div class="checkbox-content-wrapper">
+                    <div class="checkbox-table-wrapper">
+                      <div class="checkbox-table-scroll">
+                        <table id="checkbox-table-exist">
+                          <tbody>
+                            <!-- <tr>
+                                                      <td>
+                                                          <div class="popup__checkbox__page__toggle">
+                                                              <label class="popup__checkbox__toggle">
+                                                                  <input class="popup__checkbox__toggle__input"
+                                                                      type="checkbox">
+                                                                  <span class="popup__checkbox__toggle__label">
+                                                                      <span
+                                                                          class="popup__checkbox__toggle__text">1923.73</span>
+                                                                  </span>
+                                                              </label>
+                                                          </div>
+                                                      </td>
+                                                  </tr> -->
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="table-header-popup-footer">
+                  <div class="button-row">
+                    <input type="button" value="Close" class="close-btn" data-dismiss="modal" />
+                    <input type="button" value="Select" class="select-btn" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- pop-up-for-table-header-click ends -->
+            <!-- ==============XXXXXXXXXXX============= -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- =========Option 5 Plus Button Modal Ends========= -->
+
+    <!-- ======= Universal Confirm Modal START =========== -->
+    <div class="modal fade delete-list-item" id="email_confirm_modal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <p class="modal-title">DELETE ROW</p>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="remove-box">
+              <div class="question-delete">
+                <p>Remove this item permanently?</p>
+              </div>
+              <div class="comfirm-btn-bx">
+                <button type="button" class="cancel-list-data" data-dismiss="modal">Cancel</button>
+                <button type="button" class="confirm-list-data" onclick="emailConfirmButton(this)">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ======= Universal Confirm Modal END =========== -->
+
+    <!-- =========Universal Thank Draft Modal Starts========= -->
+    <div class="modal fade" id="emailThankModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="generate-button-click-popup">
+              <div class="generate-button-click-popup-wrapper">
+                <div class="generate-button-popup-header-title" id="email_thank_header">
+                  <p></p>
+                </div>
+                <div class="generate-button-popup-body-wrapper">
+                  <div class="generate-button-popup-body-content" id="email_thank_details">
+                    <p></p>
+                  </div>
+                </div>
+                <div class="generate-popup" data-dismiss="modal">
+                  <input type="button" value="Close" class="gn-close-btn" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- =========Universal Thank Draft Modal Ends========= -->
 
     <script>
       // CHOOSE OPTION SECTION START
