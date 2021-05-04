@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy</title>
+    <link rel="stylesheet" href="./css/all_min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/media.css">
+
+    <!-- JS Files  -->
+    <script src="./js/bootstrap.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+    <!-- ============ HEADER SECTON START  ============ -->
+    <!-- ============= NAVBAR START ============= -->
+    <div class="mynav d-flex">
+        <!-- FIXED BAR ITEMS START data-toggle="collapse" data-target="#collapsemenu" -->
+        <div class="toggle-btn" onclick="myFunction()" type="button">
+            <div class="hambugrer hambugrer1"></div>
+            <div class="hambugrer"></div>
+            <div class="hambugrer hambugrer3"></div>
+        </div>
+        <div class="marquee">
+            <p>Scrolling text goes here and scrolls... Scrolling text goes here and scrolls... Scrolling text goes here
+                and scrolls...</p>
+        </div>
+        <div class="nav-items d-flex">
+            <div class="icon-box">
+                <i class="icon fas fa-envelope" onclick="location.href='email.html';"></i>
+                <i class="icon fas fa-user"></i>
+            </div>
+            <div class="welcome-box">
+                <p class="welcome m-0">Welcome</p>
+                <p id="username_div" class="name m-0">Peter Parker</p>
+            </div>
+        </div>
+        <!-- FIXED BAR ITEMS END -->
+    </div>
+
+    <!-- triangle -->
+    <div id="triangle"></div>
+
+    <!-- ======X====== NAVBAR END =======X===== -->
+
+    <!-- =========== COLLAPSE MENU BAR START =========== -->
+    <div class="open navbar-collapse" id="collapsemenu">
+        <!-- ============ MAIN TAB CONTAINER + ITEM SECTION START ============ -->
+        <div class="wrapper">
+            <!-- ======== TAB MENU NAVIGATION START ======== -->
+            <div class="tabs">
+                <ul id="tabs_ul">
+                    <li data-list="tab_1" onclick="window.location.href ='main.html';">
+                        <div class="tab-box">
+                            <div class="svg-box">
+                                <svg viewBox="-21 0 512 512">
+                                    <path
+                                        d="M510.702,438.722c-2.251-10.813-12.84-17.754-23.657-15.503c-10.814,2.251-17.755,12.843-15.503,23.656
+                                c1.297,6.229-0.248,12.613-4.236,17.519c-2.31,2.841-7.461,7.606-15.999,7.606H60.693c-8.538,0-13.689-4.766-15.999-7.606
+                                c-3.989-4.905-5.533-11.29-4.236-17.519c20.756-99.695,108.691-172.521,210.24-174.977c1.759,0.068,3.526,0.102,5.302,0.102
+                                c1.782,0,3.556-0.035,5.322-0.103c71.532,1.716,137.648,37.947,177.687,97.66c6.151,9.175,18.574,11.625,27.75,5.474
+                                c9.174-6.151,11.625-18.575,5.473-27.749c-32.817-48.944-80.47-84.534-134.804-102.417C370.538,220.036,392,180.477,392,136
+                                C392,61.01,330.991,0,256,0S120,61.01,120,136c0,44.504,21.488,84.084,54.633,108.911c-30.368,9.998-58.863,25.555-83.803,46.069
+                                c-45.732,37.617-77.529,90.086-89.532,147.742c-3.762,18.067,0.745,36.623,12.363,50.909C25.222,503.847,42.365,512,60.693,512
+                                h390.613c18.329,0,35.472-8.153,47.032-22.369C509.958,475.345,514.464,456.789,510.702,438.722z M160,136
+                                c0-52.935,43.065-96,96-96s96,43.065,96,96c0,51.305-40.455,93.339-91.141,95.878c-1.617-0.03-3.237-0.045-4.859-0.045c-1.614,0-3.228,0.016-4.84,0.046C200.465,229.35,160,187.312,160,136z" />
+                                </svg>
+                            </div>
+                            <div class="title-box">
+                                <p>Manage</p>
+                                <p>Account</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-list="tab_2" onclick="window.location.href ='main.html';">
+                        <div class="tab-box">
+                            <div class="svg-box">
+                                <svg viewBox="-21 0 512 512">
+                                    <path
+                                        d="m455.477 398.803c-25.981 0-47.91 17.649-54.493 41.599h-90.406c-5.269-19.169-20.369-34.289-39.513-39.566v-57.142h148.732c49.92 0 90.532-40.667 90.532-90.653 0-47.68-36.953-86.88-83.686-90.396-3.867-40.845-38.314-72.901-80.1-72.901-8.187 0-16.195 1.216-23.834 3.585-1.519-51.722-44.011-93.329-96.025-93.329-52.971 0-96.066 43.152-96.066 96.194v6.727h-8.551c-66.294 0-120.227 54.005-120.227 120.387s53.933 120.386 120.226 120.386h119.038v57.142c-19.144 5.276-34.244 20.397-39.513 39.566h-90.574c-6.583-23.949-28.512-41.599-54.493-41.599-31.167 0-56.524 25.39-56.524 56.598s25.357 56.599 56.524 56.599c25.981 0 47.91-17.649 54.493-41.599h90.574c6.583 23.95 28.512 41.599 54.493 41.599s47.91-17.649 54.493-41.599h90.406c6.584 23.95 28.512 41.599 54.494 41.599 31.167 0 56.523-25.39 56.523-56.599s-25.356-56.598-56.523-56.598zm-423.676-175.495c0-49.839 40.493-90.387 90.267-90.387h38.511v-36.727c0-36.5 29.655-66.194 66.106-66.194s66.106 29.695 66.106 66.194v50.954l23.861-17.587c8.713-6.422 19.05-9.817 29.892-9.817 27.846 0 50.5 22.685 50.5 50.567 0 1.774-.101 3.618-.3 5.48l-1.774 16.597h24.827c33.399 0 60.572 27.209 60.572 60.653s-27.173 60.652-60.572 60.652h-297.73c-49.774.001-90.266-40.546-90.266-90.385zm24.723 258.692c-14.647 0-26.564-11.932-26.564-26.599s11.917-26.599 26.564-26.599c14.648 0 26.563 11.932 26.563 26.599s-11.915 26.599-26.563 26.599zm199.56 0c-14.648 0-26.563-11.932-26.563-26.599s11.916-26.599 26.563-26.599 26.563 11.932 26.563 26.599-11.915 26.599-26.563 26.599zm199.393 0c-14.648 0-26.563-11.932-26.563-26.599s11.916-26.599 26.563-26.599 26.563 11.932 26.563 26.599-11.916 26.599-26.563 26.599z" />
+                                </svg>
+                            </div>
+                            <div class="title-box">
+                                <p>Manage</p>
+                                <p>Data</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-list="tab_3" onclick="window.location.href ='main.html';">
+                        <div class="tab-box">
+                            <div class="svg-box">
+                                <svg viewBox="0 0 24 24">
+                                    <g>
+                                        <path
+                                            d="m8 13c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3zm0-4.5c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z" />
+                                    </g>
+                                    <g>
+                                        <path
+                                            d="m18.25 9h-4.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h4.5c.414 0 .75.336.75.75s-.336.75-.75.75z" />
+                                    </g>
+                                    <g>
+                                        <path
+                                            d="m18.25 12.5h-4.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h4.5c.414 0 .75.336.75.75s-.336.75-.75.75z" />
+                                    </g>
+                                    <g>
+                                        <path
+                                            d="m22.25 4.5h-20.5c-.965 0-1.75-.785-1.75-1.75v-1c0-.965.785-1.75 1.75-1.75h20.5c.965 0 1.75.785 1.75 1.75v1c0 .965-.785 1.75-1.75 1.75zm-20.5-3c-.138 0-.25.112-.25.25v1c0 .138.112.25.25.25h20.5c.138 0 .25-.112.25-.25v-1c0-.138-.112-.25-.25-.25z" />
+                                    </g>
+                                    <g>
+                                        <path
+                                            d="m22.25 18h-20.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h20.5c.414 0 .75.336.75.75s-.336.75-.75.75z" />
+                                    </g>
+                                    <g>
+                                        <path
+                                            d="m12 24c-.414 0-.75-.336-.75-.75v-5.75c0-.414.336-.75.75-.75s.75.336.75.75v5.75c0 .414-.336.75-.75.75z" />
+                                    </g>
+                                    <g>
+                                        <path
+                                            d="m16.25 24c-.229 0-.457-.105-.604-.304l-3.646-4.934-3.647 4.934c-.247.334-.716.403-1.049.157s-.403-.716-.157-1.049l4.25-5.75c.282-.383.924-.383 1.206 0l4.25 5.75c.246.333.176.803-.157 1.049-.134.099-.291.147-.446.147z" />
+                                    </g>
+                                    <g>
+                                        <path
+                                            d="m21.25 18c-.414 0-.75-.336-.75-.75v-13.5c0-.414.336-.75.75-.75s.75.336.75.75v13.5c0 .414-.336.75-.75.75z" />
+                                    </g>
+                                    <g>
+                                        <path
+                                            d="m2.75 18c-.414 0-.75-.336-.75-.75v-13.5c0-.414.336-.75.75-.75s.75.336.75.75v13.5c0 .414-.336.75-.75.75z" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="title-box">
+                                <p>Manage</p>
+                                <p>Templates</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-list="tab_4" onclick="window.location.href ='main.html';">
+                        <div class="tab-box">
+                            <div class="svg-box">
+                                <svg viewBox="-76 0 512 512">
+                                    <path
+                                        d="m340 38h-47v-18c0-11.046875-8.953125-20-20-20h-186c-11.046875 0-20 8.953125-20 20v18h-47c-11.046875 0-20 8.953125-20 20v434c0 11.046875 8.953125 20 20 20h320c11.046875 0 20-8.953125 20-20v-434c0-11.046875-8.953125-20-20-20zm-233 2h146v36h-146zm213 432h-280v-394h27v18c0 11.046875 8.953125 20 20 20h186c11.046875 0 20-8.953125 20-20v-18h27zm-27-238c0 11.046875-8.953125 20-20 20-40.171875 0-47.160156-40-62-40-14.769531 0-21.933594 40-62.003906 40-40.171875 0-47.15625-40-61.996094-40-11.046875 0-20-8.953125-20-20s8.953125-20 20-20c40.171875 0 47.160156 40 61.996094 40 14.769531 0 21.9375-40 62.003906-40 40.171875 0 47.160156 40 62 40 11.046875 0 20 8.953125 20 20zm-172.5 100c-11.046875 0-20-8.953125-20-20s8.953125-20 20-20h119c11.046875 0 20 8.953125 20 20s-8.953125 20-20 20zm172.5 60c0 11.046875-8.953125 20-20 20h-186c-11.046875 0-20-8.953125-20-20s8.953125-20 20-20h186c11.046875 0 20 8.953125 20 20zm0 0" />
+                                </svg>
+                            </div>
+                            <div class="title-box">
+                                <p>Manage</p>
+                                <p>Results</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-list="tab_5" onclick="window.location.href ='main.html';">
+                        <div class="tab-box">
+                            <div class="svg-box">
+                                <svg viewBox="-21 0 512 512">
+                                    <path
+                                        d="m453.332031 229.332031c-8.832031 0-16-7.167969-16-16 0-61.269531-23.847656-118.847656-67.15625-162.175781-6.25-6.25-6.25-16.382812 0-22.632812s16.382813-6.25 22.636719 0c49.34375 49.363281 76.519531 115.007812 76.519531 184.808593 0 8.832031-7.167969 16-16 16zm0 0" />
+                                    <path
+                                        d="m16 229.332031c-8.832031 0-16-7.167969-16-16 0-69.800781 27.179688-135.445312 76.542969-184.789062 6.25-6.25 16.386719-6.25 22.636719 0s6.25 16.386719 0 22.636719c-43.328126 43.304687-67.179688 100.882812-67.179688 162.152343 0 8.832031-7.167969 16-16 16zm0 0" />
+                                    <path
+                                        d="m234.667969 512c-44.117188 0-80-35.882812-80-80 0-8.832031 7.167969-16 16-16s16 7.167969 16 16c0 26.476562 21.523437 48 48 48 26.472656 0 48-21.523438 48-48 0-8.832031 7.167969-16 16-16s16 7.167969 16 16c0 44.117188-35.882813 80-80 80zm0 0" />
+                                    <path
+                                        d="m410.667969 448h-352c-20.589844 0-37.335938-16.746094-37.335938-37.332031 0-10.925781 4.757813-21.269531 13.058594-28.375 32.445313-27.414063 50.941406-67.261719 50.941406-109.480469v-59.480469c0-82.34375 66.988281-149.332031 149.335938-149.332031 82.34375 0 149.332031 66.988281 149.332031 149.332031v59.480469c0 42.21875 18.496094 82.066406 50.730469 109.332031 8.511719 7.253907 13.269531 17.597657 13.269531 28.523438 0 20.585937-16.746094 37.332031-37.332031 37.332031zm-176-352c-64.707031 0-117.335938 52.628906-117.335938 117.332031v59.480469c0 51.644531-22.632812 100.414062-62.078125 133.757812-.746094.640626-1.921875 1.964844-1.921875 4.097657 0 2.898437 2.433594 5.332031 5.335938 5.332031h352c2.898437 0 5.332031-2.433594 5.332031-5.332031 0-2.132813-1.171875-3.457031-1.878906-4.054688-39.488282-33.386719-62.121094-82.15625-62.121094-133.800781v-59.480469c0-64.703125-52.628906-117.332031-117.332031-117.332031zm0 0" />
+                                    <path
+                                        d="m234.667969 96c-8.832031 0-16-7.167969-16-16v-64c0-8.832031 7.167969-16 16-16s16 7.167969 16 16v64c0 8.832031-7.167969 16-16 16zm0 0" />
+                                </svg>
+                            </div>
+                            <div class="title-box">
+                                <p>Manage</p>
+                                <p>Alerts</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- ===x===== TAB MENU NAVIGATION END ====x==== -->
+        </div>
+        <!-- ======x====== MAIN TAB CONTAINER + ITEM SECTION END ======x====== -->
+    </div>
+    <!-- =====X===== COLLAPSE MENU BAR END ======X==== -->
+    <!-- ============ HEADER SECTON END  ============ -->
+
+    <!-- ============ TERMS AND CONDITION SECTON START =============== -->
+    <div class="title-terms">
+        <div class="hero-title">
+            <div class="hero-box">
+                <div class="title-icon">
+                    <img src="./images/option_title.png" alt="">
+                </div>
+                <div class="mytitle">
+                    <p class="">Policy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tc-section">
+        <div class="footer-page terms">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum iure architecto maxime quod in atque.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero debitis animi distinctio.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia tenetur tempore facilis eaque harum
+                eoriosam accusantium.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste ipsam dignissimos magnam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendise dignissimos eveniet provident
+                voluptatem.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum iure architecto maxime quod in atque.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero debitis animi distinctio.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia tenetur tempore facilis eaque harum
+                earum m accusantium.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste ipsam dignissimos magnam.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum iure architecto maxime quod in atque.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero debitis animi distinctio.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia tenetur tempore facilis eaque harum
+                eoriosam accusantium.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste ipsam dignissimos magnam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendise dignissimos eveniet provident
+                voluptatem.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum iure architecto maxime quod in atque.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero debitis animi distinctio.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia tenetur tempore facilis eaque harum
+                earum m accusantium.</p>
+        </div>
+    </div>
+    <!-- ============  TERMS AND CONDITION SECTON END =============== -->
+    <section id="footer">
+        <div class="footer-inner">
+            <div class="footer-link">
+                <a href="terms.html" class="terms">Terms & Conditions</a>
+                <div class="services">
+                    <a href="allservices.html">All Services</a>
+                    <p>|</p>
+                    <a href="policy.html">Policy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JS FILES -->
+    <script src="./js/jquery.js"></script>
+
+</body>
+
+</html>
