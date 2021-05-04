@@ -1,0 +1,214 @@
+#select_optn {
+  background: #ffffff;
+  padding-bottom: 50px;
+}
+
+#select_optn .email_header_select {
+  padding: 32px 0;
+}
+
+#select_optn .email_header_select p {
+  font-size: 36px;
+  font-family: gilroy-bold, sans-serif;
+  font-weight: 600;
+  color: #141414;
+  letter-spacing: 2px;
+  margin: 0px;
+  text-align: center;
+}
+
+#select_optn .column {
+  width: 20%;
+}
+
+#select_optn .system_stat {
+  margin-left: auto;
+}
+
+#select_optn .contact_stat {
+  margin-right: auto;
+}
+
+#select_optn .option_box {
+  display: table;
+  width: 210px;
+  height: 260px;
+  border-radius: 2px;
+  border: 1px solid #959595;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  margin: auto;
+  background: #f9f9f9;
+}
+
+#select_optn .option_box .option-content-box {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#select_optn .option_box img {
+  width: 70px;
+}
+
+#select_optn .option_box p {
+  font-size: 22px;
+  color: #6b6b6b;
+  font-weight: bold;
+  font-family: gilroy-bold, sans-serif;
+  letter-spacing: 2px;
+  margin: 0;
+  margin-top: 32px;
+}
+
+#select_optn .option_box p:last-child {
+  margin-top: 0px;
+}
+
+#select_optn .option-content-box:hover {
+  background: #dfdfdf;
+}
+
+#select_optn .option-content-box:hover p {
+  color: #1d1d1d;
+}
+
+#select_optn .option-content {
+  margin: 0;
+}
+
+/*======= Manage Account Style Starts ====== */
+/* =====Account Form Container Design=====  */
+.contact-sp-container {
+  background: #ffffff;
+  padding: 50px 80px;
+  margin: 0 10%;
+}
+.contact-sp-container .contact-sp-inner {
+  margin: 0 10%;
+}
+.contact-sp-container .contact-sp-group {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.contact-sp-group .sp-width-100 {
+  width: 100%;
+  display: flex;
+  height: 45px;
+}
+.contact-sp-group .sp-widthTextBox-100 {
+  width: 100%;
+  display: flex;
+}
+
+.contact-sp-group .sp-title,
+.sp-widthTextBox-100 .sp-title {
+  width: 200px;
+}
+
+.contact-sp-group .sp-input,
+.sp-widthTextBox-100 .sp-textbox {
+  width: calc(100% - 200px);
+}
+
+.contact-sp-group .sp-title p,
+.sp-widthTextBox-100 .sp-title p {
+  margin-bottom: 0;
+  /* padding-top: 8px; */
+  color: #a5a5a5;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+/* Custom Input Only Style Starts */
+.contact-sp-group .sp-input .custom-input-only {
+  background: #e6e6e6;
+  position: relative;
+  width: 100%;
+  height: 40px;
+  z-index: 3;
+  border-radius: 6px;
+}
+
+.contact-sp-group .sp-input .custom-input-only input {
+  background: #ffffff;
+  color: #2e2c2c;
+  outline: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 2;
+  padding: 5px 10px;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+}
+.contact-sp-group .sp-input .error-message p {
+  font-size: 12px;
+  color: red;
+  padding-left: 4px;
+}
+/*  Custom Input styling Ends  */
+
+.sp-widthTextBox-100 textarea {
+  background: #ffffff;
+  color: #2e2c2c;
+  outline: 0;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%;
+  height: 175px;
+  border-radius: 4px;
+  padding: 5px 10px;
+  border: 1px solid #d5d5d5;
+}
+.sp-widthTextBox-100 textarea:focus {
+  outline: none;
+}
+.contact-sp-container .sp-button-row {
+  margin-top: 40px;
+  height: 70px;
+}
+.contact-sp-container .sp-button-row .reset,
+.contact-sp-container .sp-button-row .submit {
+  box-shadow: none;
+  width: 200px;
+  height: 100%;
+  font-family: gilroy-medium, sans-serif;
+  font-size: 32px;
+  /* background: #e9e9e9; */
+  background: #aaa;
+  color: #ffffff;
+  /* color: #7b7b7b; */
+  transition: 150ms;
+  outline: none;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.contact-sp-container .sp-button-row .submit {
+  /* background: #000000; */
+  background: #2ecc40;
+  color: #ffffff;
+  /* color: #e6e6e6; */
+  float: right;
+}
+
+.contact-sp-container .sp-button-row .reset:hover {
+  /* background: #000000; */
+  background: #919191;
+  /* color: #e6e6e6; */
+}
+
+.contact-sp-container .sp-button-row .submit:hover {
+  /* background: #e9e9e9; */
+  background: #25a233;
+  /* color: #7b7b7b; */
+}
