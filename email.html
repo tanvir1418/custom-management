@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/login.css" />
     <link rel="stylesheet" href="./css/media.css" />
+    <link rel="stylesheet" href="./css/tooltip.css">
 
     <!-- JS Files  -->
     <script src="./js/bootstrap.js" defer></script>
@@ -229,12 +230,257 @@
               </div>
             </div>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla odio necessitatibus ratione accusantium cum atque qui aut vero a minima praesentium reprehenderit consequuntur eveniet sapiente explicabo, repudiandae debitis optio ullam totam molestiae. Laboriosam ducimus provident ipsum
-            reiciendis dolorum esse velit totam facere, aspernatur illum fugit ex porro, quis a, sapiente accusamus reprehenderit sit nostrum labore corrupti at. Error voluptate, ipsam totam, expedita, cum sed cumque provident neque adipisci quos amet non eligendi. Ea velit aperiam debitis minus
-            molestiae eum blanditiis tempora! Cum quis, quae rerum accusamus debitis at cupiditate fuga tenetur alias praesentium quas numquam fugiat quisquam. Numquam adipisci nam ipsam et necessitatibus totam eaque, ea quidem unde reiciendis incidunt quibusdam, minus est? Inventore temporibus quam
-            illum possimus labore impedit enim, voluptas suscipit nesciunt iste, ab illo architecto magnam perspiciatis quos quaerat voluptates nulla voluptatum earum maiores numquam corporis consequatur. Quo error corrupti veritatis nam, tempore autem sed blanditiis repellat.
-          </p>
+          <div class="system-status-container">
+            <div class="status-row">
+              <div class="status-grid">
+                <div class="status-grid-cell">
+                  <div class="st-title">
+                    System 1
+                    <span class="tooltip-container" tooltip="Section Details" flow="down">
+                      <i class="fas fa-question-circle"></i>
+                    </span>
+                  </div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 1</div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 2</div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 3 Goes Here</div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+              </div>
+              <div class="status-grid">
+                <div class="status-grid-cell">
+                  <div class="st-title">
+                    System 2
+                    <span class="tooltip-container" tooltip="Section Details" flow="down">
+                      <i class="fas fa-question-circle"></i>
+                    </span>
+                  </div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 1</div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 2</div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 3 Goes Here</div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+              </div>
+              <div class="status-grid">
+                <div class="status-grid-cell">
+                  <div class="st-title">
+                    System 3
+                    <span class="tooltip-container" tooltip="Section Details" flow="down">
+                      <i class="fas fa-question-circle"></i>
+                    </span>
+                  </div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 1</div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 2</div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 3 Goes Here</div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+              </div>
+            </div>
+            <div class="status-row">
+              <div class="status-grid">
+                <div class="status-grid-cell">
+                  <div class="st-title">
+                    System 4
+                    <span class="tooltip-container" tooltip="Section Details" flow="down">
+                      <i class="fas fa-question-circle"></i>
+                    </span>
+                  </div>
+                  <div class="st-status st-disabled">Disabled</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 1 Goes Here</div>
+                  <div class="st-status st-ok">OK</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 2</div>
+                  <div class="st-status st-ok">OK</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 3</div>
+                  <div class="st-status st-disabled">Disabled</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 4</div>
+                  <div class="st-status st-ok">OK</div>
+                </div>
+              </div>
+              <div class="status-grid">
+                <div class="status-grid-cell">
+                  <div class="st-title">
+                    System 5
+                    <span class="tooltip-container" tooltip="Section Details" flow="down">
+                      <i class="fas fa-question-circle"></i>
+                    </span>
+                  </div>
+                  <div class="st-status st-ok">OK</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 1 Goes Here</div>
+                  <div class="st-status st-ok">OK</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 2</div>
+                  <div class="st-status st-ok">OK</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 3</div>
+                  <div class="st-status st-ok">OK</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 4</div>
+                  <div class="st-status st-ok">OK</div>
+                </div>
+              </div>
+              <div class="status-grid">
+                <div class="status-grid-cell">
+                  <div class="st-title">
+                    System 6
+                    <span class="tooltip-container" tooltip="Section Details" flow="down">
+                      <i class="fas fa-question-circle"></i>
+                    </span>
+                  </div>
+                  <div class="st-status st-disabled">Disabled</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 1 Goes Here</div>
+                  <div class="st-status st-ok">OK</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 2</div>
+                  <div class="st-status st-ok">OK</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 3</div>
+                  <div class="st-status st-disabled">Disabled</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 4</div>
+                  <div class="st-status st-ok">OK</div>
+                </div>
+              </div>
+            </div>
+            <div class="status-row">
+              <div class="status-grid">
+                <div class="status-grid-cell">
+                  <div class="st-title">
+                    System 7
+                    <span class="tooltip-container" tooltip="Section Details" flow="down">
+                      <i class="fas fa-question-circle"></i>
+                    </span>
+                  </div>
+                  <div class="st-status st-ok">OK</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 1</div>
+                  <div class="st-status st-disabled">Disabled</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 2</div>
+                  <div class="st-status st-disabled">Disabled</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 3</div>
+                  <div class="st-status st-disabled">Disabled</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 4</div>
+                  <div class="st-status st-disabled">Disabled</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 5</div>
+                  <div class="st-status st-disabled">Disabled</div>
+                </div>
+              </div>
+              <div class="status-grid">
+                <div class="status-grid-cell">
+                  <div class="st-title">
+                    System 8
+                    <span class="tooltip-container" tooltip="Section Details" flow="down">
+                      <i class="fas fa-question-circle"></i>
+                    </span>
+                  </div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 1</div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 2</div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 3</div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 4</div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 5</div>
+                  <div class="st-status st-offline">Offline</div>
+                </div>
+              </div>
+              <div class="status-grid">
+                <div class="status-grid-cell">
+                  <div class="st-title">
+                    System 9
+                    <span class="tooltip-container" tooltip="Section Details" flow="down">
+                      <i class="fas fa-question-circle"></i>
+                    </span>
+                  </div>
+                  <div class="st-status st-ok">OK</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 1</div>
+                  <div class="st-status st-disabled">Disabled</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 2</div>
+                  <div class="st-status st-disabled">Disabled</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 3</div>
+                  <div class="st-status st-disabled">Disabled</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 4</div>
+                  <div class="st-status st-disabled">Disabled</div>
+                </div>
+                <div class="status-grid-cell">
+                  <div class="st-title">Application 5</div>
+                  <div class="st-status st-disabled">Disabled</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- ==----=-=-=-XX=-=-=-=-=- SYSTEM STATUS END ==----=-=-=-=-XX=-=-=-=-=- -->
 

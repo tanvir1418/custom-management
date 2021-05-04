@@ -1,3 +1,18 @@
+@font-face {
+  font-family: gilroy-regular;
+  src: url(../fonts/Gilroy-Regular.ttf);
+}
+
+@font-face {
+  font-family: gilroy-medium;
+  src: url(../fonts/Gilroy-Medium.ttf);
+}
+
+@font-face {
+  font-family: gilroy-bold;
+  src: url(../fonts/Gilroy-SemiBold.ttf);
+}
+
 #select_optn {
   background: #ffffff;
   padding-bottom: 50px;
@@ -77,8 +92,7 @@
   margin: 0;
 }
 
-/*======= Manage Account Style Starts ====== */
-/* =====Account Form Container Design=====  */
+/*======= Contact Status Style Starts ====== */
 .contact-sp-container {
   background: #ffffff;
   padding: 50px 80px;
@@ -212,3 +226,71 @@
   background: #25a233;
   /* color: #7b7b7b; */
 }
+
+/* ====== Contact Status Style Ends ====== */
+
+/* ====== System Status Style Starts ====== */
+.system-status-container{
+  background: #ffffff;
+  padding: 50px;
+  margin: 0 3%;
+}
+.system-status-container .status-row{
+  display: flex;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.system-status-container .status-row:last-child{
+  margin-bottom: 0px;
+}
+.system-status-container .status-row .status-grid{
+  width: 33.33%;
+}
+.system-status-container .status-row .status-grid:not(:last-child){
+  margin-right: 40px;
+}
+.status-grid .status-grid-cell{
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 20px 8px 20px;
+}
+
+.status-grid .status-grid-cell .st-title{
+  font-family: gilroy-medium, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.status-grid .status-grid-cell .st-title span{
+  margin-left: 10px;
+}
+.status-grid .status-grid-cell .st-title span i{
+  opacity: 0.2;
+}
+.status-grid .status-grid-cell .st-title span i:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+.status-grid .status-grid-cell .st-status{
+  width: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 30px;
+  height: 30px;
+  font-weight: 700;
+  border-radius: 10px;
+  color: #ffffff;
+  font-family: gilroy-medium, sans-serif;
+  font-size: 18px;
+}
+.status-grid .status-grid-cell .st-offline{
+  background-color: #F70200;
+}
+.status-grid .status-grid-cell .st-disabled{
+  background-color: #E5FE01;
+  color: #000000;
+}
+.status-grid .status-grid-cell .st-ok{
+  background-color: #137601;
+}
+
+/* ====== System Status Style Ends ====== */
