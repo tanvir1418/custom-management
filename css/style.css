@@ -2230,12 +2230,12 @@ td {
   color: #7b7b7b;
 }
 
-/* FOOTER LINKS STYLE */
+/* Terms and Condition STYLE START */
 #tc-section .footer-page{
   margin: 22px 50px;
 }
 #tc-section .footer-page p{
-  text-align: center;
+  /* text-align: center; */
   margin: 0;
   font-family: gilroy-medium, sans-serif;
   font-weight: 600;
@@ -2248,6 +2248,54 @@ td {
   cursor: pointer;
   color: #f6e802;
 }
+
+.title-terms{
+  margin-top: 32px;
+}
+.title-terms .hero-title {
+  display: flex;
+}
+
+.title-terms .hero-title .hero-box {
+  margin: auto auto auto auto;
+  display: flex;
+}
+
+.title-terms .hero-title .title-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #000000;
+  position: relative;
+  margin-right: 18px;
+}
+
+.title-terms .hero-title .title-icon img {
+  position: absolute;
+  width: 22px;
+  height: 28px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.title-terms .hero-title .mytitle {
+  margin: auto;
+}
+
+.title-terms .hero-title .mytitle p {
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin: 0;
+  line-height: normal;
+  color: #312d4f;
+  font-family: gilroy-bold, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+/* Terms and Condition STYLE END */
 
 .tooltip-inner {
   font-family: gilroy-medium, sans-serif;
