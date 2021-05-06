@@ -51,4 +51,30 @@ for (var i = 0; i < li_tabs.length; i++) {
         var current_tab_value = this.getAttribute("data-list");
     });
 }
-  // MAIN TAB END
+// MAIN TAB END
+
+//   On click Tab Set the active tab and content 
+function setAccountTab() {
+    localStorage.setItem("manageTabVisibility", "showAccount");
+    window.location.href = "/main.html";
+}
+
+function setDataTab() {
+    localStorage.setItem("manageTabVisibility", "showData");
+    window.location.href = "/main.html";
+}
+
+function setTemplateTab() {
+    localStorage.setItem("manageTabVisibility", "showTemplate");
+    window.location.href = "/main.html";
+}
+
+function setResultTab() {
+    localStorage.setItem("manageTabVisibility", "showResult");
+    window.location.href = "/main.html";
+}
+
+function setAlertTab() {
+    localStorage.setItem("manageTabVisibility", "showAlert");
+    window.location.href = "/main.html";
+}
