@@ -120,6 +120,9 @@ button:focus {
 .mynav .icon-box .icon:first-child {
   padding-right: 32px;
 }
+.ftr-pad{
+  padding-right: 16px !important;
+}
 .mynav .icon-box .icon:last-child {
   padding-right: 22px;
 }
@@ -2024,7 +2027,8 @@ td {
 .account-form-group .ac-title p {
   margin-bottom: 0;
   padding-top: 8px;
-  color: #a5a5a5;
+  color: #181818;
+  font-family: gilroy-medium, sans-serif;
   font-weight: 500;
   text-transform: uppercase;
   font-size: 16px;
