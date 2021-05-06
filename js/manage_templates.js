@@ -3,14 +3,22 @@ $('.carousel').carousel({
 });
 
 // CLICK LOAD TEMPLATE TO OPEN SAMPLE START
-$(document).ready(function () {
-  $(".template_box").click(function () {
-    let abc = document.querySelector(".sample_options");
-    abc.classList.remove("dispaly_hide");
 
+$(".template_box").click(function (event) {
+  let tempTarget = event.target.classList.value;
+  if (tempTarget == "template_box" || tempTarget == "template-content-box" || tempTarget == "load-image" || tempTarget == "load-txt" || tempTarget == "temp-txt") {
+    let loadTempWrapper = document.querySelector(".sample_options");
+    loadTempWrapper.classList.remove("dispaly_hide");
     $("#load_temp_slider").addClass("dispaly_hide");
-  });
+  }
 });
+
+$(".create_new_temp").click(function (event) {
+  let loadTempWrapper = document.querySelector(".sample_options");
+  loadTempWrapper.classList.remove("dispaly_hide");
+  $("#load_temp_slider").addClass("dispaly_hide");
+});
+
 // CLICK LOAD TEMPLATE TO OPEN SAMPLE START
 
 
@@ -207,11 +215,11 @@ function countTempAListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   $("#managetempa-list-count").html(`${countItem} Items Selected`);
   $("#managetempa-list-count").removeClass('hideListDiv');
-  if(countItem > 0){
+  if (countItem > 0) {
     $("#temp-first-skip").addClass('hideListDiv');
     $("#temp-first-check").removeClass('hideListDiv');
     $("#temp-first-fileColor").addClass('fileContainerColor');
-  }else{
+  } else {
     $("#temp-first-skip").removeClass('hideListDiv');
     $("#temp-first-check").addClass('hideListDiv');
     $("#temp-first-fileColor").removeClass('fileContainerColor');
@@ -453,11 +461,11 @@ function countTempBListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   $("#managetempb-list-count").html(`${countItem} Items Selected`);
   $("#managetempb-list-count").removeClass('hideListDiv');
-  if(countItem > 0){
+  if (countItem > 0) {
     $("#temp-sec-skip").addClass('hideListDiv');
     $("#temp-sec-check").removeClass('hideListDiv');
     $("#temp-sec-fileColor").addClass('fileContainerColor');
-  }else{
+  } else {
     $("#temp-sec-skip").removeClass('hideListDiv');
     $("#temp-sec-check").addClass('hideListDiv');
     $("#temp-sec-fileColor").removeClass('fileContainerColor');
@@ -699,11 +707,11 @@ function countTempCListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   $("#managetempc-list-count").html(`${countItem} Items Selected`);
   $("#managetempc-list-count").removeClass('hideListDiv');
-  if(countItem > 0){
+  if (countItem > 0) {
     $("#temp-third-skip").addClass('hideListDiv');
     $("#temp-third-check").removeClass('hideListDiv');
     $("#temp-third-fileColor").addClass('fileContainerColor');
-  }else{
+  } else {
     $("#temp-third-skip").removeClass('hideListDiv');
     $("#temp-third-check").addClass('hideListDiv');
     $("#temp-third-fileColor").removeClass('fileContainerColor');
@@ -977,11 +985,11 @@ function countTempDListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   $("#managetempd-list-count").html(`${countItem} Items Selected`);
   $("#managetempd-list-count").removeClass('hideListDiv');
-  if(countItem > 0){
+  if (countItem > 0) {
     $("#temp-forth-skip").addClass('hideListDiv');
     $("#temp-forth-check").removeClass('hideListDiv');
     $("#temp-forth-fileColor").addClass('fileContainerColor');
-  }else{
+  } else {
     $("#temp-forth-skip").removeClass('hideListDiv');
     $("#temp-forth-check").addClass('hideListDiv');
     $("#temp-forth-fileColor").removeClass('fileContainerColor');
@@ -1573,7 +1581,7 @@ function formToWindowMS2() {
 function windowToFormMS2(divData) {
   let [title, no] = divData[0].trim().split("_");
   no = no != undefined ? no : 1;
-  let { id:pid } = findInputIdMS2(title);
+  let { id: pid } = findInputIdMS2(title);
   if (pid && divData.length == 3) {
     let checkbox = $(`#${pid} input[type='checkbox'].toggle__input`)[0];
     if (checkbox && checkbox.checked == false) {
@@ -2443,7 +2451,7 @@ function formToWindowAll(e) {
   tBody.html(renHtml1 + renHtml2 + renHtml3 + renHtml4);
 }
 
-function windowToFormAll(e){
+function windowToFormAll(e) {
   let tRow = $(e).parent().parent().parent()
     .children(".text-editor-popup-body")
     .find("#ms1_text_editor div.form-text-design.data-div");
@@ -2475,34 +2483,34 @@ let spanHeaderTargetTemp = $("#create_new_mn_temp .mutistep-form-area .section-n
 for (let i = 0; i < spanHeaderTargetTemp.length; i++) {
   spanHeaderTargetTemp[i].addEventListener("click", function (event) {
     spanClassNameTemp = spanHeaderTargetTemp[i].className;
-    
-    if(spanClassNameTemp == "temp-select1"){
+
+    if (spanClassNameTemp == "temp-select1") {
       $("#tempFormStep1").css("display", "block");
       $("#tempFormStep2").css("display", "none");
       $("#tempFormStep3").css("display", "none");
       $("#tempFormStep4").css("display", "none");
     }
-    else if(spanClassNameTemp == "temp-select2"){
+    else if (spanClassNameTemp == "temp-select2") {
       $("#tempFormStep1").css("display", "none");
       $("#tempFormStep2").css("display", "block");
       $("#tempFormStep3").css("display", "none");
       $("#tempFormStep4").css("display", "none");
     }
-    else if(spanClassNameTemp == "temp-select3"){
+    else if (spanClassNameTemp == "temp-select3") {
       $("#tempFormStep1").css("display", "none");
       $("#tempFormStep2").css("display", "none");
       $("#tempFormStep3").css("display", "block");
       $("#tempFormStep4").css("display", "none");
       $('#saveStartTarget-mnTemp').addClass('save-start-class-hide-show-mnTemp');
     }
-    else{
+    else {
       $("#tempFormStep1").css("display", "none");
       $("#tempFormStep2").css("display", "none");
       $("#tempFormStep3").css("display", "none");
       $("#tempFormStep4").css("display", "block");
       $('#saveStartTarget-mnTemp').removeClass('save-start-class-hide-show-mnTemp');
     }
-    
+
   });
 }
 
@@ -2518,4 +2526,21 @@ for (let i = 0; i < mTempFieldSetDataForms.length; i++) {
     tempFieldSection.prop("checked", true);
     $(`fieldset#${tempFieldSetId}`).addClass("borderGreen");
   });
+}
+
+
+// Handles the CONFIRM BOX, hide/show of Load Template Boxes 
+let targetTempBoxId = "";
+
+function mnTempConfirmModal(globalVariable) {
+  $('#mnTemp_confirm_modal').modal('show');
+  targetTempBoxId = globalVariable.offsetParent.id;
+}
+
+function mnTempConfirmButton() {
+  if (targetTempBoxId != "") {
+    let hideColBox = document.getElementById(`${targetTempBoxId}`).parentElement.id;
+    $(`#${hideColBox}`).css("display", "none");
+    targetTempBoxId = "";
+  }
 }
