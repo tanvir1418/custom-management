@@ -245,14 +245,14 @@
 
         $("#registerBtn").click(function (event) {
             event.preventDefault();
-            localStorage.setItem("manageAccoutVisibility", "showAccount");
+            localStorage.setItem("manageTabVisibility", "showAccount");
             window.location.href = "/main.html";
         });
 
         $("#loginBtn").click(function (event) {
             event.preventDefault();
             localStorage.setItem("currentUser", usernameIndex.value);
-            localStorage.setItem("manageAccoutVisibility", "");
+            localStorage.setItem("manageTabVisibility", "");
             usernameIndex.value = "";
             passwordIndex.value = "";
             if(termsPageCondition == "hideTermsPage"){

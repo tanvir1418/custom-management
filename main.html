@@ -5016,6 +5016,62 @@
             </div>
         </div>
         <!-- ====----=-=-=-=-=-=-=-=-=- MANAGE ALERTS END ====----=-=-=-=-=-=-=-=-=- -->
+        
+        <script>
+            // Working Code starts
+                // $("#tabs_ul li").removeClass("active");
+                // $("#tabs_ul li:nth-child(1)").addClass("active");
+    
+                // $(".content .tab_content").hide();
+                // $(".content .tab_content:nth-child(1)").show();
+                // Working Code starts
+            const tabVisibleDecision = localStorage.getItem("manageTabVisibility");
+            let totalTab = document.querySelectorAll("#tabs_ul li");
+            let totalTabContent = document.querySelectorAll(".content .tab_content");
+
+            if(tabVisibleDecision == "showAccount"){
+                for (let i = 0; i < totalTab.length; i++) {
+                    totalTab[i].classList.remove("active");
+                    totalTabContent[i].style.display = "none";
+                }
+                totalTab[0].classList.add("active");
+                totalTabContent[0].style.display = "block";
+                localStorage.setItem("manageTabVisibility", "");
+            }else if(tabVisibleDecision == "showData"){
+                for (let i = 0; i < totalTab.length; i++) {
+                    totalTab[i].classList.remove("active");
+                    totalTabContent[i].style.display = "none";
+                }
+                totalTab[1].classList.add("active");
+                totalTabContent[1].style.display = "block";
+                localStorage.setItem("manageTabVisibility", "");
+            }else if(tabVisibleDecision == "showTemplate"){
+                for (let i = 0; i < totalTab.length; i++) {
+                    totalTab[i].classList.remove("active");
+                    totalTabContent[i].style.display = "none";
+                }
+                totalTab[2].classList.add("active");
+                totalTabContent[2].style.display = "block";
+                localStorage.setItem("manageTabVisibility", "");
+            }else if(tabVisibleDecision == "showResult"){
+                for (let i = 0; i < totalTab.length; i++) {
+                    totalTab[i].classList.remove("active");
+                    totalTabContent[i].style.display = "none";
+                }
+                totalTab[3].classList.add("active");
+                totalTabContent[3].style.display = "block";
+                localStorage.setItem("manageTabVisibility", "");
+            }else if(tabVisibleDecision == "showAlert"){
+                for (let i = 0; i < totalTab.length; i++) {
+                    totalTab[i].classList.remove("active");
+                    totalTabContent[i].style.display = "none";
+                }
+                totalTab[4].classList.add("active");
+                totalTabContent[4].style.display = "block";
+                localStorage.setItem("manageTabVisibility", "");
+            }
+            localStorage.setItem("manageTabVisibility", "");
+        </script>
 
     </div>
     <!-- ============================= TAB CONTENT END ============================= -->
@@ -7833,31 +7889,7 @@
     <script src="./js/man-data-opt4.js" defer></script>
     <script src="./js/read-csv.js" defer></script> -->
     <script src="./js/freeze-table.js"></script>
-    <script>
-        const mAccVisibility = localStorage.getItem("manageAccoutVisibility");
-        if(mAccVisibility == "showAccount"){
-            $("#tabs_ul li").removeClass("active");
-            $("#tabs_ul li:nth-child(1)").addClass("active");
 
-            $(".content .tab_content").hide();
-            $(".content .tab_content:nth-child(1)").show();
-
-            // var ul = document.getElementById("tabs_ul");
-            // var li_tabs = ul.getElementsByTagName("li");
-            // for (var i = 0; i < li_tabs.length; i++) {
-            // li_tabs[i].addEventListener("click", function () {
-            //     var current = ul.getElementsByClassName("active");
-            //     current[0].className = current[0].className.replace("active", "");
-            //     this.className += "active";
-
-            //     var current_tab_value = this.getAttribute("data-list");
-            //     //console.log(current_tab_value);
-            // });
-            // }
-        }
-
-
-    </script>
 </body>
 
 </html>
