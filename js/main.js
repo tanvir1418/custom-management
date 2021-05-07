@@ -358,19 +358,16 @@ const listItemData = [
         }
       }
     }
-    htmlDataModal += `<ul class="sub-list checkbox_hide" style="margin-left: 300px;" id="sub-div-list-1-${
-      index + 1
-    }">
+    htmlDataModal += `<ul class="sub-list checkbox_hide" style="margin-left: 300px;" id="sub-div-list-1-${index + 1
+      }">
 			${list_data1}
 		</ul>
-		<ul class="sub-list checkbox_hide" style="margin-left: 600px;" id="sub-div-list-2-${
-      index + 1
-    }">
+		<ul class="sub-list checkbox_hide" style="margin-left: 600px;" id="sub-div-list-2-${index + 1
+      }">
 			${list_data2}
 		</ul>
-		<ul class="sub-list checkbox_hide" style="margin-left: 900px;" id="sub-div-list-3-${
-      index + 1
-    }">
+		<ul class="sub-list checkbox_hide" style="margin-left: 900px;" id="sub-div-list-3-${index + 1
+      }">
 			${list_data3}
 		</ul>`;
     /* Update End By Ashiq */
@@ -793,13 +790,13 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
     callback: function (data, pagination) {
       let tableTr = "";
       data.forEach(({ id, serial, recordsCount, savedName, CDateTime, LUDateTime }, index) => {
-          let tabHd = $(`#${tableID} thead th`);
-          let len = tabHd.length;
-          let classList = [];
-          for (let i = 1; i < len - 1; i++) {
-            classList.push(tabHd[i].className);
-          }
-          tableTr += `<tr id="${id}">
+        let tabHd = $(`#${tableID} thead th`);
+        let len = tabHd.length;
+        let classList = [];
+        for (let i = 1; i < len - 1; i++) {
+          classList.push(tabHd[i].className);
+        }
+        tableTr += `<tr id="${id}">
 					<th class="row-data" scope="row">${serial}</th>
 					<td class="records-count ${classList[0]}">
 						<a data-toggle="modal" data-target="#hyperTextModal1" style="color: black" onclick="showHyperTextModal1(this)">
@@ -828,7 +825,7 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 						</div>
 					</td>
 				</tr>`;
-        }
+      }
       );
       $(`#${tableID} tbody`).html(tableTr);
 
@@ -911,7 +908,7 @@ function tabChangeOpt5(e) {
 }
 
 makeTableHead("man-data-opt1-exist");
-manDtOpt1Exist("man-data-opt1-exist",7,"pagination-op1-data",`tabChangeOpt1(this)`);
+manDtOpt1Exist("man-data-opt1-exist", 7, "pagination-op1-data", `tabChangeOpt1(this)`);
 
 makeTableHead("man-data-opt3-exist");
 manDtOpt1Exist(
@@ -1183,75 +1180,75 @@ $("#userAvatar").click(function () {
 });
 
 // Bootstrap Tooltip Enable Function (Manage Result Table Tooltips)
-function tooltipFunction(){
+function tooltipFunction() {
   $('[data-toggle="tooltip"]').tooltip(
-    { 
-      animation : true,
+    {
+      animation: true,
       container: 'body',
       trigger: 'hover',
       placement: 'bottom',
       delay: { "show": 10, "hide": 0 }
     }
-  );   
+  );
 };
 
-function universalConfirmModalDelete(globalVariable){
+function universalConfirmModalDelete(globalVariable) {
   let headerText = "DELETE ROW";
   let detailsText = "Remove this item permanently?";
 
-  if(globalVariable.className.includes("deleteTableRow")){
+  if (globalVariable.className.includes("deleteTableRow")) {
     headerText = "DELETE ROW";
     detailsText = "Remove this item permanently?";
-  }else if(globalVariable.className.includes("updateNowBtn")){
+  } else if (globalVariable.className.includes("updateNowBtn")) {
     headerText = "UPDATE NOW";
     detailsText = "Confirm to update data?";
-  }else if(globalVariable.className.includes("clearFilterBtn")){
+  } else if (globalVariable.className.includes("clearFilterBtn")) {
     headerText = "CLEAR FILTER";
     detailsText = "Confirm to clear filter?";
-  }else if(globalVariable.className.includes("clearSortingBtn")){
+  } else if (globalVariable.className.includes("clearSortingBtn")) {
     headerText = "CLEAR SORTING";
     detailsText = "Confirm to clear sorting?";
-  }else if(globalVariable.className.includes("mnResFilterSaveBtn")){
+  } else if (globalVariable.className.includes("mnResFilterSaveBtn")) {
     headerText = "SAVE FILTER";
     detailsText = "Confirm to save filter data?";
-  }else if(globalVariable.className.includes("deleteRowLayout12")){
+  } else if (globalVariable.className.includes("deleteRowLayout12")) {
     headerText = "DELETE TABLE ROW";
     detailsText = "Remove this row permanently?";
-  }else if(globalVariable.className.includes("submitSaveNote")){
+  } else if (globalVariable.className.includes("submitSaveNote")) {
     headerText = "SAVE NOTES";
     detailsText = "Confirm to save notes?";
-  }else if(globalVariable.className.includes("saveAlerts")){
+  } else if (globalVariable.className.includes("saveAlerts")) {
     headerText = "SAVE ALERTS";
     detailsText = "Confirm to save alerts?";
-  }else if(globalVariable.className.includes("save-start-cancel-btn")){
+  } else if (globalVariable.className.includes("save-start-cancel-btn")) {
     headerText = "SAVE DETAILS";
     detailsText = "Confirm to save result saving details?";
-  }else if(globalVariable.className.includes("addToBookMark")){
+  } else if (globalVariable.className.includes("addToBookMark")) {
     headerText = "ADD TO BOOKMARKS";
     detailsText = "Confirm to add to bookmark?";
-  }else if(globalVariable.className.includes("clickViewDetails")){
+  } else if (globalVariable.className.includes("clickViewDetails")) {
     headerText = "VIEW DETAILS";
     detailsText = "Confirm to view details?";
   }
-  
+
   $("#universal_confirm_modal #confirm_header p").html(headerText);
   $("#universal_confirm_modal #confirm_deatis p").html(detailsText);
   $('#universal_confirm_modal').modal('show');
   console.dir(globalVariable);
 }
 
-function op1ResetBtnConfirm(resetGlobal){
-  if(($("#leftSideDrag_op1").html() != "") || ($("#rightSideDrag_op1").html() != "")){
+function op1ResetBtnConfirm(resetGlobal) {
+  if (($("#leftSideDrag_op1").html() != "") || ($("#rightSideDrag_op1").html() != "")) {
     $("#universal_confirm_modal #confirm_header p").html("RESET FIELDS");
     $("#universal_confirm_modal #confirm_deatis p").html("Confirm to reset input fields?");
     $('#universal_confirm_modal').modal('show');
   }
 }
 
-function universalThankDraft(globalThankVar){
+function universalThankDraft(globalThankVar) {
   let thankHeaderText = "THANK YOU";
   let thankDetailsText = "Your Request has been Successfully Processed";
-  if(globalThankVar.className.includes("btn-save-draft")){
+  if (globalThankVar.className.includes("btn-save-draft")) {
     thankDetailsText = "The Draft Form has been Successfully Saved";
   }
   $("#universalThankDraftModal #thank_draft_header p").html(thankHeaderText);
@@ -1261,23 +1258,23 @@ function universalThankDraft(globalThankVar){
 
 let targetCopyMoveElement = "";
 
-function uniConfirmButton(){
+function uniConfirmButton() {
   $('#universal_confirm_modal').modal('hide');
   // console.log("Manage Data Tab :" + manageDataTab.display);
   // console.log("Create New Active :" + createNewActive);
   // console.log($("#leftSideDrag_op1").html());
   // console.log($("#rightSideDrag_op1").html());
   // if(($("#leftSideDrag_op1").html() != "") || ($("#rightSideDrag_op1").html() != "")){}
-  let manageDataTab =  window.getComputedStyle(document.querySelector('#tab_2'));
+  let manageDataTab = window.getComputedStyle(document.querySelector('#tab_2'));
   let createNewActive = $("#my567").hasClass("createGreen");
-  if(manageDataTab.display == "block" && createNewActive == true){
+  if (manageDataTab.display == "block" && createNewActive == true) {
     resetLeftRightBox();
   }
-  
 
-  if(targetCopyMoveElement != ""){
+
+  if (targetCopyMoveElement != "") {
     $(`.${targetCopyMoveElement}`).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
-	  $(`.${targetCopyMoveElement}`).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
+    $(`.${targetCopyMoveElement}`).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
     targetCopyMoveElement = "";
   }
 
@@ -1292,12 +1289,12 @@ function uniConfirmButton(){
 
 // Universal Thank Draft Modal (on show/hide event)
 $('#universalThankDraftModal').on('show.bs.modal', function (e) {
-	$('body').addClass("modal-force-open");
+  $('body').addClass("modal-force-open");
 }).on('hide.bs.modal', function (e) {
-	$('body').removeClass("modal-force-open");
+  $('body').removeClass("modal-force-open");
 })
 
-function confirmModalCopyMove(targetELEMENT){
+function confirmModalCopyMove(targetELEMENT) {
   targetCopyMoveElement = targetELEMENT;
 
   let headerCopyMoveText = "CONFIRM BOX";
@@ -1305,15 +1302,15 @@ function confirmModalCopyMove(targetELEMENT){
 
   let unCheckRow = $(`.${targetELEMENT}`).children(".sublist-check-box").hasClass("checkbox_show");
 
-  if(targetELEMENT.includes("copyto")){
+  if (targetELEMENT.includes("copyto")) {
     headerCopyMoveText = "COPY ROW";
     detailsCopyMoveText = "Confirm to copy row?";
-  }else if(targetELEMENT.includes("moveto")){
+  } else if (targetELEMENT.includes("moveto")) {
     headerCopyMoveText = "MOVE ROW";
     detailsCopyMoveText = "Confirm to move row?";
   }
 
-  if(unCheckRow){
+  if (unCheckRow) {
     headerCopyMoveText = "UNCHECK ROW";
     detailsCopyMoveText = "Confirm to uncheck row?";
   }
@@ -1323,19 +1320,19 @@ function confirmModalCopyMove(targetELEMENT){
   $("#universal_confirm_modal #confirm_header p").html(headerCopyMoveText);
   $("#universal_confirm_modal #confirm_deatis p").html(detailsCopyMoveText);
   $('#universal_confirm_modal').modal('show');
-  
+
 }
 
 let mnResultTitle = "";
 let mnResultSubTitle = "";
 
-function displayChartManageResult(itemTitle, itemSubTitle){
+function displayChartManageResult(itemTitle, itemSubTitle) {
   mnResultTitle = itemTitle;
   mnResultSubTitle = itemSubTitle;
   $('#manageResultChartDisplay_modal').modal('show');
 }
 
-function chartDispConfirmButton(){
+function chartDispConfirmButton() {
   $('#manageResultChartDisplay_modal').modal('hide');
 
   document.querySelector("#chartPage .chart-title .left-item").innerHTML = mnResultTitle;
@@ -1343,10 +1340,10 @@ function chartDispConfirmButton(){
   document.getElementById("firstOpen").click();
   gotoChartPage();
 
-  $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
-  $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
-  $('#universalThankDraftModal').modal('show');
-  
+  // $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
+  // $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
+  // $('#universalThankDraftModal').modal('show');
+
   mnResultTitle = "";
   mnResultSubTitle = "";
 }
