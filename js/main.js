@@ -1292,6 +1292,23 @@ $('#universalThankDraftModal').on('show.bs.modal', function (e) {
   $('body').addClass("modal-force-open");
 }).on('hide.bs.modal', function (e) {
   $('body').removeClass("modal-force-open");
+
+  $("#viewtwo").css("display", "none");
+  $("#rowdetails").css("display", "none");
+  $("#noteswindow").css("display", "none");
+  $("#alertswindow").css("display", "none");
+  $("#copyrowlist").css("display", "none");
+  $("#moverowlist").css("display", "none");
+
+  $("#viewtwo_style2").css("display", "none");
+  $("#rowdetails_style2").css("display", "none");
+  $("#noteswindow_style2").css("display", "none");
+  $("#alertswindow_style2").css("display", "none");
+  $("#copyrowlist_style2").css("display", "none");
+  $("#moverowlist_style2").css("display", "none");
+
+  $("#col8Filter").css('display', 'none');
+
 })
 
 function confirmModalCopyMove(targetELEMENT) {

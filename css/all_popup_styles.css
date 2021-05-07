@@ -427,20 +427,15 @@ table#sub2-editor-table {
     color: #e6e6e6;
 }
 
-/* #universalThankDraftModal .modal-content {
-    width: 360px;
-    border: 0;
-    border-radius: 0 !important;
-    left: 20%;
-} */
-
-#universalThankDraftModal .modal-dialog{
+#universalThankDraftModal .modal-dialog,
+#mnAccountThankModal .modal-dialog{
     width: 360px;
     border: 0;
     border-radius: 0 !important;
 }
 
-#universalThankDraftModal .modal-content .modal-body {
+#universalThankDraftModal .modal-content .modal-body,
+#mnAccountThankModal .modal-content .modal-body {
     padding: 0;
     border-radius: 0 !important;
 }
@@ -2358,7 +2353,7 @@ Bottom codes are added by Tanvir
 
 .modal-force-open{
     overflow:hidden !important;
-    padding-right: -17px !important;
+    padding-right: 17px !important;
 }
 .modal-force-open .modal{
     overflow-x:hidden !important;

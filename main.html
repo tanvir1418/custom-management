@@ -372,7 +372,7 @@
                             </div>
                             <div class="ac-button-row">
                                 <input type="button" value="Reset" class="reset" onclick="resetAccountFormFields()">
-                                <input type="button" value="Save" class="save">
+                                <input type="button" value="Save" class="save" data-toggle="modal" data-target="#mnAccountThankModal">
                             </div>
                         </form>
                     </div>
@@ -7467,6 +7467,32 @@
         </div>
     </div>
     <!-- =========Universal Thank Draft Modal Ends========= -->
+
+    <!-- =========Manage Account THANK Modal Starts========= -->
+    <div class="modal fade" id="mnAccountThankModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="generate-button-click-popup">
+                        <div class="generate-button-click-popup-wrapper">
+                            <div class="generate-button-popup-header-title" id="thank_draft_header">
+                                <p>THANK YOU</p>
+                            </div>
+                            <div class="generate-button-popup-body-wrapper">
+                                <div class="generate-button-popup-body-content" id="thank_draft_details">
+                                    <p>Your Request has been Successfully Processed</p>
+                                </div>
+                            </div>
+                            <div class="generate-popup" data-dismiss="modal">
+                                <input type="button" value="Close" class="gn-close-btn" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =========Manage Account THANK Modal Ends========= -->
 
     <!-- ===-=-=-=- OPTION 4 LIST1 MODAL START opt4a-list-modal  ======-===== -->
     <div class="modal fade listData-modal" id="opt4a-list-modal">
