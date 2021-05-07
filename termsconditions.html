@@ -255,6 +255,13 @@
     <!-- Login is required Modal start -->
     <script src="./js/jquery.js"></script>
     <script>
+        // LOGIN DATA PASS START
+        const currentUser = localStorage.getItem("currentUser");
+        const user_div = document.getElementById("username_div");
+        if (currentUser != null && currentUser != "") {
+            user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
+        }
+
         $("#terms-accept").click(function (event) {
             if ($("#agreed-checkBox").prop("checked")) {
                 localStorage.setItem("termsPageCondition", "hideTermsPage");

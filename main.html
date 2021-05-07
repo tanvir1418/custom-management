@@ -5050,13 +5050,19 @@
         <!-- ====----=-=-=-=-=-=-=-=-=- MANAGE ALERTS END ====----=-=-=-=-=-=-=-=-=- -->
         
         <script>
+            // LOGIN DATA PASS START
+            const currentUser = localStorage.getItem("currentUser");
+            const user_div = document.getElementById("username_div");
+            if (currentUser != null && currentUser != "") {
+                user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
+            }
             // Working Code starts
-                // $("#tabs_ul li").removeClass("active");
-                // $("#tabs_ul li:nth-child(1)").addClass("active");
-    
-                // $(".content .tab_content").hide();
-                // $(".content .tab_content:nth-child(1)").show();
-                // Working Code starts
+            // $("#tabs_ul li").removeClass("active");
+            // $("#tabs_ul li:nth-child(1)").addClass("active");
+
+            // $(".content .tab_content").hide();
+            // $(".content .tab_content:nth-child(1)").show();
+            // Working Code starts
             const tabVisibleDecision = localStorage.getItem("manageTabVisibility");
             let totalTab = document.querySelectorAll("#tabs_ul li");
             let totalTabContent = document.querySelectorAll(".content .tab_content");
@@ -5103,6 +5109,7 @@
                 localStorage.setItem("manageTabVisibility", "");
             }
             localStorage.setItem("manageTabVisibility", "");
+
         </script>
 
     </div>

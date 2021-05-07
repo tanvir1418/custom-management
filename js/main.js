@@ -263,12 +263,13 @@ $(document).ready(function () {
 // CREATE & MANAGE TAB END
 
 // LOGIN DATA PASS START
-const currentUser = localStorage.getItem("currentUser");
-const user_div = document.getElementById("username_div");
-if (currentUser != null && currentUser != "") {
-  user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
-} else {
-}
+// const currentUser = localStorage.getItem("currentUser");
+// const user_div = document.getElementById("username_div");
+// if (currentUser != null && currentUser != "") {
+//   user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
+// } else {
+// }
+
 // LOGIN DATA PASS END
 
 // option 2 list item start
