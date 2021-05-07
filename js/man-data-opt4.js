@@ -1062,7 +1062,7 @@ function formToWindowDS3() {
         }
       }
     }
-    
+
   });
 
   return renHtml;
@@ -1466,35 +1466,69 @@ for (let i = 0; i < spanHeaderTarget.length; i++) {
   spanHeaderTarget[i].addEventListener("click", function (event) {
     spanClassName = spanHeaderTarget[i].className;
 
-    if(spanClassName == "md-select1"){
+    if (spanClassName == "md-select1") {
       $("#op4FormStep1").css("display", "block");
       $("#op4FormStep2").css("display", "none");
       $("#op4FormStep3").css("display", "none");
       $("#op4FormStep4").css("display", "none");
     }
-    else if(spanClassName == "md-select2"){
+    else if (spanClassName == "md-select2") {
       $("#op4FormStep1").css("display", "none");
       $("#op4FormStep2").css("display", "block");
       $("#op4FormStep3").css("display", "none");
       $("#op4FormStep4").css("display", "none");
     }
-    else if(spanClassName == "md-select3"){
+    else if (spanClassName == "md-select3") {
       $("#op4FormStep1").css("display", "none");
       $("#op4FormStep2").css("display", "none");
       $("#op4FormStep3").css("display", "block");
       $("#op4FormStep4").css("display", "none");
       $('#saveStartTarget-op4').addClass('save-start-class-hide-show-op4');
     }
-    else{
+    else {
       $("#op4FormStep1").css("display", "none");
       $("#op4FormStep2").css("display", "none");
       $("#op4FormStep3").css("display", "none");
       $("#op4FormStep4").css("display", "block");
       $('#saveStartTarget-op4').removeClass('save-start-class-hide-show-op4');
     }
-    
+
   });
 }
+
+
+// Manage Data Option-4 Circle Click Handling
+$('#create_new_option_four .form-box .progressBar li .click-circle').on('click', function (e) {
+  let circleTarget = e.target.className.trim();
+  
+  if (circleTarget == "click-circle s1") {
+    $("#op4FormStep1").css("display", "block");
+    $("#op4FormStep2").css("display", "none");
+    $("#op4FormStep3").css("display", "none");
+    $("#op4FormStep4").css("display", "none");
+  }
+  else if (circleTarget == "click-circle s2") {
+    $("#op4FormStep1").css("display", "none");
+    $("#op4FormStep2").css("display", "block");
+    $("#op4FormStep3").css("display", "none");
+    $("#op4FormStep4").css("display", "none");
+  }
+  else if (circleTarget == "click-circle s3") {
+    $("#op4FormStep1").css("display", "none");
+    $("#op4FormStep2").css("display", "none");
+    $("#op4FormStep3").css("display", "block");
+    $("#op4FormStep4").css("display", "none");
+    $('#saveStartTarget-op4').addClass('save-start-class-hide-show-op4');
+  }
+  else {
+    $("#op4FormStep1").css("display", "none");
+    $("#op4FormStep2").css("display", "none");
+    $("#op4FormStep3").css("display", "none");
+    $("#op4FormStep4").css("display", "block");
+    $('#saveStartTarget-op4').removeClass('save-start-class-hide-show-op4');
+  }
+});
+
 
 // Manage Data Option4 Sample3 (any item click inside automatically "Check")
 let op4FieldSetDataForms = $("#op4FormStep3 .checkbox-container-inner fieldset .data-form");

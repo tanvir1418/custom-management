@@ -2514,8 +2514,39 @@ for (let i = 0; i < spanHeaderTargetTemp.length; i++) {
   });
 }
 
-// temp-select1
-// tempFormStep3
+
+// Manage Template Sample Circle Click Handling
+$('#create_new_mn_temp .form-box .progressBar li .click-circle').on('click', function (e) {
+  let circleTargetTemp = e.target.className.trim();
+
+  if (circleTargetTemp == "click-circle tempS1") {
+    $("#tempFormStep1").css("display", "block");
+    $("#tempFormStep2").css("display", "none");
+    $("#tempFormStep3").css("display", "none");
+    $("#tempFormStep4").css("display", "none");
+  }
+  else if (circleTargetTemp == "click-circle tempS2") {
+    $("#tempFormStep1").css("display", "none");
+    $("#tempFormStep2").css("display", "block");
+    $("#tempFormStep3").css("display", "none");
+    $("#tempFormStep4").css("display", "none");
+  }
+  else if (circleTargetTemp == "click-circle tempS3") {
+    $("#tempFormStep1").css("display", "none");
+    $("#tempFormStep2").css("display", "none");
+    $("#tempFormStep3").css("display", "block");
+    $("#tempFormStep4").css("display", "none");
+    $('#saveStartTarget-mnTemp').addClass('save-start-class-hide-show-mnTemp');
+  }
+  else {
+    $("#tempFormStep1").css("display", "none");
+    $("#tempFormStep2").css("display", "none");
+    $("#tempFormStep3").css("display", "none");
+    $("#tempFormStep4").css("display", "block");
+    $('#saveStartTarget-mnTemp').removeClass('save-start-class-hide-show-mnTemp');
+  }
+
+});
 
 // Manage Template Sample3 (any item click inside automatically "Check")
 let mTempFieldSetDataForms = $("#tempFormStep3 .checkbox-container-inner fieldset .data-form");
