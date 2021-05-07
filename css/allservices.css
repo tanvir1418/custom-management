@@ -365,7 +365,7 @@
     color: #030303;
     font-family: gilroy-medium, sans-serif;
     font-weight: 600;
-    width: 80%;
+    width: 30%;
     margin: 0 auto;
     display: block;
 }
@@ -383,12 +383,16 @@
     transition: max-height 0.2s ease-out;
 }
 
-.extra-faq i {
+.extra-faq button i {
     transform: rotate(0deg);
     transition: transform 0.3s linear;
 }
 
-.extra-faq i.open {
+.extra-faq button i.open {
     transform: rotate(180deg);
     transition: transform 0.3s linear;
+}
+
+#more_faq{
+    margin-top: 0px !important;
 }

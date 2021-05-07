@@ -1384,3 +1384,37 @@ i.fa-caret-down.down-animation-icon{
   font-size: 64px;
   line-height: 60px;
 }
+
+@media screen and (max-width: 1680px) {
+  .task-status-statistics .stat-box{
+    width: calc(25% - 40px);
+  }
+  .task-status-statistics .stat-box p.stat-title{
+    font-size: 36px;
+    line-height: 80px;
+  }
+  .task-status-statistics .stat-box p.stat-number{
+    font-size: 56px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .task-status-statistics .stat-box p.stat-title{
+    font-size: 32px;
+    line-height: 90px;
+  }
+  .task-status-statistics .stat-box p.stat-number{
+    font-size: 50px;
+    line-height: 25px;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .task-status-statistics .stat-box{
+    width: calc(25% - 35px);
+  }
+  .task-status-statistics .stat-box p.stat-number{
+    line-height: 20px;
+  }
+}

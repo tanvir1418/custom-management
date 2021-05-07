@@ -38,7 +38,7 @@
         <div class="nav-items d-flex">
             <div class="icon-box">
                 <i class="icon fas fa-envelope ftr-pad" onclick="location.href='email.html';"></i>
-                <i class="icon fas fa-user"></i>
+                <i class="icon fas fa-user" onclick="setAccountTab()"></i>
             </div>
             <div class="welcome-box">
                 <p class="welcome m-0">Welcome</p>
@@ -535,107 +535,106 @@
                     </div>
                 </div>
             </div>
+            <div class="faq-wrapper" id="more_faq" style="display: none;">
+                <div class="inside-box-faq-left">
+                    <div class="asked-questions">
+                        <div class="zap-title">
+                            <p>Question 9 Goes Here</p>
+                        </div>
+                        <div class="zap-discription">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi temporibus est
+                                vitae illo
+                                natus perspiciatis, repudiandae, doloremque dolor repellendus iure aspernatur
+                                eius
+                                maiores tenetur expedita consequuntur recusandae eum quod nostrum!</p>
+                        </div>
+                    </div>
+                    <div class="asked-questions">
+                        <div class="zap-title">
+                            <p>Question 10 Goes Here</p>
+                        </div>
+                        <div class="zap-discription">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quos vero, debitis
+                                esse
+                                alias at ipsum quod quasi numquam error commodi eius iusto repellat ad?</p>
+                        </div>
+                    </div>
+                    <div class="asked-questions">
+                        <div class="zap-title">
+                            <p>Question 11 Goes Here</p>
+                        </div>
+                        <div class="zap-discription">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius hic debitis fugiat
+                                modi aut
+                                suscipit officia quisquam quas laborum quasi consequatur laboriosam nisi esse
+                                pariatur
+                                nobis ullam, rem incidunt eaque, mollitia quis.</p>
+                        </div>
+                    </div>
+                    <div class="asked-questions">
+                        <div class="zap-title">
+                            <p>Question 12 Goes Here</p>
+                        </div>
+                        <div class="zap-discription">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio corrupti, saepe
+                                autem
+                                odio magni cupiditate ex. Sit, odio.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="inside-box-faq-right">
+                    <div class="asked-questions">
+                        <div class="zap-title">
+                            <p>Question 13 Goes Here</p>
+                        </div>
+                        <div class="zap-discription">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum earum, impedit
+                                alias
+                                eligendi dignissimos nesciunt molestias officia quisquam amet ab iure asperiores
+                                deleniti quia consequuntur.</p>
+                        </div>
+                    </div>
+                    <div class="asked-questions">
+                        <div class="zap-title">
+                            <p>Question 14 Goes Here</p>
+                        </div>
+                        <div class="zap-discription">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur provident
+                                inventore
+                                ex aliquam quo nobis non ipsam, incidunt eaque dicta nihil doloribus quis
+                                deleniti
+                                cupiditate ea id, optio consequuntur iusto?</p>
+                        </div>
+                    </div>
+                    <div class="asked-questions">
+                        <div class="zap-title">
+                            <p>Question 15 Goes Here</p>
+                        </div>
+                        <div class="zap-discription">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur iusto dolor in
+                                nesciunt
+                                reprehenderit! Asperiores, iusto! Libero doloremque qui animi sequi, consectetur
+                                molestiae velit. Ad?</p>
+                        </div>
+                    </div>
+                    <div class="asked-questions">
+                        <div class="zap-title">
+                            <p>Question 16 Goes Here</p>
+                        </div>
+                        <div class="zap-discription">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem pariatur
+                                voluptatem quaerat placeat ipsa impedit ratione accusamus, assumenda ut,
+                                quibusdam enim
+                                maiores praesentium dicta eveniet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="extra-faq">
                 <button id="fds546" class="accordion">Click to Expand to View Additional FAQ's
                     <i id="sfe2" class="fas fa-chevron-down"></i>
                 </button>
-                <div class="panel">
-                    <div class="faq-wrapper">
-                        <div class="inside-box-faq-left">
-                            <div class="asked-questions">
-                                <div class="zap-title">
-                                    <p>Question 9 Goes Here</p>
-                                </div>
-                                <div class="zap-discription">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi temporibus est
-                                        vitae illo
-                                        natus perspiciatis, repudiandae, doloremque dolor repellendus iure aspernatur
-                                        eius
-                                        maiores tenetur expedita consequuntur recusandae eum quod nostrum!</p>
-                                </div>
-                            </div>
-                            <div class="asked-questions">
-                                <div class="zap-title">
-                                    <p>Question 10 Goes Here</p>
-                                </div>
-                                <div class="zap-discription">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quos vero, debitis
-                                        esse
-                                        alias at ipsum quod quasi numquam error commodi eius iusto repellat ad?</p>
-                                </div>
-                            </div>
-                            <div class="asked-questions">
-                                <div class="zap-title">
-                                    <p>Question 11 Goes Here</p>
-                                </div>
-                                <div class="zap-discription">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius hic debitis fugiat
-                                        modi aut
-                                        suscipit officia quisquam quas laborum quasi consequatur laboriosam nisi esse
-                                        pariatur
-                                        nobis ullam, rem incidunt eaque, mollitia quis.</p>
-                                </div>
-                            </div>
-                            <div class="asked-questions">
-                                <div class="zap-title">
-                                    <p>Question 12 Goes Here</p>
-                                </div>
-                                <div class="zap-discription">
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio corrupti, saepe
-                                        autem
-                                        odio magni cupiditate ex. Sit, odio.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="inside-box-faq-right">
-                            <div class="asked-questions">
-                                <div class="zap-title">
-                                    <p>Question 13 Goes Here</p>
-                                </div>
-                                <div class="zap-discription">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum earum, impedit
-                                        alias
-                                        eligendi dignissimos nesciunt molestias officia quisquam amet ab iure asperiores
-                                        deleniti quia consequuntur.</p>
-                                </div>
-                            </div>
-                            <div class="asked-questions">
-                                <div class="zap-title">
-                                    <p>Question 14 Goes Here</p>
-                                </div>
-                                <div class="zap-discription">
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur provident
-                                        inventore
-                                        ex aliquam quo nobis non ipsam, incidunt eaque dicta nihil doloribus quis
-                                        deleniti
-                                        cupiditate ea id, optio consequuntur iusto?</p>
-                                </div>
-                            </div>
-                            <div class="asked-questions">
-                                <div class="zap-title">
-                                    <p>Question 15 Goes Here</p>
-                                </div>
-                                <div class="zap-discription">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur iusto dolor in
-                                        nesciunt
-                                        reprehenderit! Asperiores, iusto! Libero doloremque qui animi sequi, consectetur
-                                        molestiae velit. Ad?</p>
-                                </div>
-                            </div>
-                            <div class="asked-questions">
-                                <div class="zap-title">
-                                    <p>Question 16 Goes Here</p>
-                                </div>
-                                <div class="zap-discription">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem pariatur
-                                        voluptatem quaerat placeat ipsa impedit ratione accusamus, assumenda ut,
-                                        quibusdam enim
-                                        maiores praesentium dicta eveniet.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <!-- FREQUENTLY ASKED QUESTIONS END -->
@@ -653,37 +652,14 @@
             </div>
         </div>
     </section>
+    
+    <script src="./js/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                }
-            });
-        }
-        // arrow down to up
-        (function (document) {
-            var div = document.getElementById('fds546');
-            var icon = document.getElementById('sfe2');
-            var open = false;
-
-            div.addEventListener('click', function () {
-                if (open) {
-                    icon.className = 'fas fa-chevron-down';
-                } else {
-                    icon.className = 'fas fa-chevron-down open';
-                }
-
-                open = !open;
-            });
-        })(document);
+        $("#fds546").click(function(){
+            $("#more_faq").fadeToggle(500);
+            $("#sfe2").toggleClass("open")
+        });
     </script>
 
     <!-- JS FILES -->
