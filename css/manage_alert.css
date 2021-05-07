@@ -232,7 +232,7 @@ td {
 
 .alert-mytable .table89 .mail_icons i.fa-envelope {
     margin-right: 3px;
-    color: #9bff00;
+    color: #e1e1e1;
 }
 
 .alert-mytable .table89 .mail_icons i.fa-phone-alt {
@@ -243,6 +243,10 @@ td {
 .alert-mytable .table89 .mail_icons i.fa-comment-alt {
     margin-left: 3px;
     color: #e1e1e1;
+}
+
+.alert-mytable .table89 .mail_icons i:hover{
+    cursor: pointer;
 }
 
 .alert-mytable .table89 .mail_enter input {
