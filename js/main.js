@@ -122,6 +122,12 @@ for (var i = 0; i < li_tabs.length; i++) {
     if (current_tab_value != "tab_4"){
       $(".content").removeClass("sfsf");
     }
+    if (current_tab_value == "tab_5"){
+      $(".content").addClass("sfsf");
+    }
+    if (current_tab_value != "tab_5"){
+      $(".content").removeClass("sfsf");
+    }
   });
 }
 // MAIN TAB END
