@@ -1,3 +1,6 @@
+#tab_5{
+    margin-bottom: 60px;
+}
 .tab_5 .alert-window {
     width: 100%;
     background-color: #f2f2f2;
@@ -52,6 +55,7 @@
 .alert-window .alert-mytable {
     background: #ffffff;
     margin: 0 3%;
+    padding: 20px;
 }
 
 .alert-mytable th,
@@ -267,6 +271,7 @@ td {
 
 .alert-mytable .table89 .reset-save-btn {
     display: flex;
+    margin-left: auto;
 }
 
 .alert-mytable .table89 .reset-save-btn button {
@@ -306,7 +311,8 @@ td {
 
 .alert-mytable .table89 .removenull .cross-box-89 {
     display: flex;
-    margin-left: auto;
+    margin-left: 32px;
+    margin-right: auto;
 }
 
 .alert-mytable .table89 .removenull .circle_550 {
@@ -333,6 +339,10 @@ td {
 
 .alert-mytable .table89 .removenull .circle_550.plus89 i {
     color: #878787;
+}
+
+#tab_5 .pagination-table{
+    margin-bottom: 16px;
 }
 
 

@@ -37,7 +37,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-3">
 			STATUS
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header1">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross3" class="head-filter">
@@ -50,7 +50,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-4">
 			Val1
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header2">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross4" class="head-filter">
@@ -63,7 +63,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-5">
 			Val2
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header3">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross5" class="head-filter">
@@ -76,7 +76,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-6">
 			VAL11+DATEL
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header4">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross6" class="head-filter">
@@ -89,7 +89,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-7">
 			VAL12+DATEH
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header5">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross7" class="head-filter">
@@ -102,7 +102,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-8">
 			CHART 1
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header6">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross8" class="head-filter">
@@ -115,7 +115,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-9">
 			CHART2
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header7">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross9" class="head-filter">
@@ -128,7 +128,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-10">
 			U_Val
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header8">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross10" class="head-filter">
@@ -141,7 +141,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-11">
 			U_%
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header9">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross11" class="head-filter">
@@ -154,7 +154,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-12">
 			D_Val
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header10">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross12" class="head-filter">
@@ -167,7 +167,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-13">
 			D_%
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header11">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross13" class="head-filter">
@@ -180,7 +180,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-14">
 			N_Val
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header12">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross14" class="head-filter">
@@ -193,7 +193,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-15">
 			N_C
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header13">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross15" class="head-filter">
@@ -206,7 +206,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-16">
 			AM COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header14">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross16" class="head-filter">
@@ -219,7 +219,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-17">
 			AN COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header15">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross17" class="head-filter">
@@ -232,7 +232,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-18">
 			AO COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header16">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross18" class="head-filter">
@@ -245,7 +245,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-19">
 			AP COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header17">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross19" class="head-filter">
@@ -258,7 +258,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-20">
 			AQ COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header18">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross20" class="head-filter">
@@ -271,7 +271,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-21">
 			AR COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header19">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross21" class="head-filter">
@@ -284,7 +284,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-22">
 			AS COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header20">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross22" class="head-filter">
@@ -297,7 +297,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-23">
 			AT COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header21">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross23" class="head-filter">
@@ -310,7 +310,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-24">
 			AU COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header22">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross24" class="head-filter">
@@ -323,7 +323,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-25">
 			AV COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header23">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross25" class="head-filter">
@@ -336,7 +336,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-26">
 			AW COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header24">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross26" class="head-filter">
@@ -349,7 +349,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-27">
 			AX COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header25">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross27" class="head-filter">
@@ -362,7 +362,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-28">
 			AY COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header26">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross28" class="head-filter">
@@ -375,7 +375,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-29">
 			AZ COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header27">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross29" class="head-filter">
@@ -388,7 +388,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-30">
 			BA COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header28">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross30" class="head-filter">
@@ -401,7 +401,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-31">
 			BB COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header29">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross31" class="head-filter">
@@ -414,7 +414,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-32">
 			BC COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header30">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross32" class="head-filter">
@@ -427,7 +427,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-33">
 			BD COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header31">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross33" class="head-filter">
@@ -440,7 +440,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-34">
 			BE COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header32">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross34" class="head-filter">
@@ -453,7 +453,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-35">
 			BF COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header33">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross35" class="head-filter">
@@ -466,7 +466,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-36">
 			BG COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header34">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross36" class="head-filter">
@@ -479,7 +479,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-37">
 			BH COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header35">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross37" class="head-filter">
@@ -492,7 +492,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-38">
 			BI COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header36">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross38" class="head-filter">
@@ -505,7 +505,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-39">
 			BJ COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header37">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross39" class="head-filter">
@@ -518,7 +518,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-40">
 			BK COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header38">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross40" class="head-filter">
@@ -531,7 +531,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-41">
 			BL COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header39">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross41" class="head-filter">
@@ -544,7 +544,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-42">
 			BM COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header40">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross42" class="head-filter">
@@ -557,7 +557,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-43">
 			Col2
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header41">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross43" class="head-filter">
@@ -570,7 +570,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-44">
 			Col3
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header42">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross44" class="head-filter">
@@ -583,7 +583,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-45">
 			DP
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header43">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross45" class="head-filter">
@@ -596,7 +596,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-46">
 			DY
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header44">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross46" class="head-filter">
@@ -609,7 +609,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-47">
 			DmA
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header45">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross47" class="head-filter">
@@ -622,7 +622,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-48">
 			DmP
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header46">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross48" class="head-filter">
@@ -635,7 +635,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-49">
 			DmP%
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header47">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross49" class="head-filter">
@@ -648,7 +648,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-50">
 			ID
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header48">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross50" class="head-filter">
@@ -661,7 +661,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-51">
 			LoP%
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header49">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross51" class="head-filter">
@@ -674,7 +674,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-52">
 			M_Val
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header50">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross52" class="head-filter">
@@ -687,7 +687,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-53">
 			MaP%
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header51">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross53" class="head-filter">
@@ -700,7 +700,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-54">
 			O_End
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header52">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross54" class="head-filter">
@@ -713,7 +713,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-55">
 			O_Start
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header53">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross55" class="head-filter">
@@ -726,7 +726,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-56">
 			SP
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header54">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross56" class="head-filter">
@@ -739,7 +739,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-57">
 			Time Frame
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header55">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross57" class="head-filter">
@@ -752,7 +752,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-58">
 			UmA
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header56">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross58" class="head-filter">
@@ -765,7 +765,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-59">
 			UmP
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header57">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross59" class="head-filter">
@@ -778,7 +778,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-60">
 			UmP%
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header58">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross60" class="head-filter">
@@ -791,7 +791,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-61">
 			Val2S
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header59">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross61" class="head-filter">
@@ -804,7 +804,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-62">
 			Val3S
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header60">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross62" class="head-filter">
@@ -817,7 +817,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-63">
 			Val6
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header61">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross63" class="head-filter">
@@ -830,7 +830,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-64">
 			Description
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header62">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross64" class="head-filter">
@@ -843,7 +843,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-65">
 			Details3
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header63">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross65" class="head-filter">
@@ -856,7 +856,7 @@ function tableHeadSty1() {
 		</th>
 		<th scope="col" class="column-header-66">
 			Details2
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header">
+			<span data-toggle="tooltip" data-placement="bottom" title="Table Header64">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross66" class="head-filter">
@@ -1690,7 +1690,7 @@ function manResPagination(noRow) {
 						<tr>
 							<th scope="col" class="style-two-head-01">
 								STATUS
-								<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+								<span data-toggle="tooltip" data-placement="bottom" title="Sample Text1">
              						<i class="fas fa-question-circle"></i>
            						</span>
 								<div class="head-filter style2_cross01" >
@@ -1702,7 +1702,7 @@ function manResPagination(noRow) {
 							</th>
 							<th scope="col" class="style-two-head-02">
 								Val1
-								<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+								<span data-toggle="tooltip" data-placement="bottom" title="Sample Text2">
              						<i class="fas fa-question-circle"></i>
            						</span>
 								<div class="head-filter style2_cross02" >
@@ -1714,7 +1714,7 @@ function manResPagination(noRow) {
 							</th>
 							<th scope="col" class="style-two-head-03">
 								Val2
-								<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+								<span data-toggle="tooltip" data-placement="bottom" title="Sample Text3">
              						<i class="fas fa-question-circle"></i>
            						</span>
 								<div class="head-filter style2_cross03" >
@@ -1761,7 +1761,7 @@ function manResPagination(noRow) {
 								<tr>
 										<th scope="col" class="style-two-head-04">
 												VAL11+DATEL
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text4">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross04">
@@ -1773,7 +1773,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-05">
 												VAL12+DATEH
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text5">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross05">
@@ -1785,7 +1785,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-06">
 												CHART 1
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text6">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross06">
@@ -1797,7 +1797,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-07">
 												CHART2
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text7">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross07">
@@ -1892,7 +1892,7 @@ function manResPagination(noRow) {
 								<tr>
 										<th scope="col" class="style-two-head-08">
 												U_Val
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text8">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross08">
@@ -1904,7 +1904,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-09">
 												U_%
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text9">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross09">
@@ -1916,7 +1916,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-10">
 												D_Val
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text10">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross10">
@@ -1928,7 +1928,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-11">
 												D_%
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text11">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross11">
@@ -1940,7 +1940,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-12">
 												N_Val
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text12">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross12">
@@ -1952,7 +1952,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-13">
 												N_C
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text13">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross13">
@@ -1964,7 +1964,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-14">
 												AM COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text14">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross14">
@@ -1976,7 +1976,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-15">
 												AN COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text15">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross15">
@@ -1988,7 +1988,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-16">
 												AO COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text16">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross16">
@@ -2000,7 +2000,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-17">
 												AP COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text17">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross17">
@@ -2012,7 +2012,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-18">
 												AQ COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text18">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross18">
@@ -2024,7 +2024,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-19">
 												AR COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text19">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross19">
@@ -2036,7 +2036,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-20">
 												AS COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text20">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross20">
@@ -2124,7 +2124,7 @@ function manResPagination(noRow) {
 								<tr>
 										<th scope="col" class="style-two-head-21">
 												AT COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text21">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross21">
@@ -2136,7 +2136,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-22">
 												AU COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text22">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross22">
@@ -2148,7 +2148,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-23">
 												AV COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text23">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross23">
@@ -2160,7 +2160,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-24">
 												AW COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text24">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross24">
@@ -2172,7 +2172,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-25">
 												AX COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text25">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross25">
@@ -2184,7 +2184,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-26">
 												AY COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text26">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross26">
@@ -2196,7 +2196,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-27">
 												AZ COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text27">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross27">
@@ -2208,7 +2208,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-28">
 												BA COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text28">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross28">
@@ -2220,7 +2220,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-29">
 												BB COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text29">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross29">
@@ -2232,7 +2232,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-30">
 												BC COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text30">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross30">
@@ -2244,7 +2244,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-31">
 												BD COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text31">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross31">
@@ -2256,7 +2256,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-32">
 												BE COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text32">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross32">
@@ -2268,7 +2268,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-33">
 												BF COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text33">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross33">
@@ -2356,7 +2356,7 @@ function manResPagination(noRow) {
 								<tr>
 										<th scope="col" class="style-two-head-34">
 												BG COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text34">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross34">
@@ -2368,7 +2368,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-35">
 												BH COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text35">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross35">
@@ -2380,7 +2380,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-36">
 												BI COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text36">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross36">
@@ -2392,7 +2392,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-37">
 												BJ COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text37">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross37">
@@ -2404,7 +2404,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-38">
 												BK COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text38">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross38">
@@ -2416,7 +2416,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-39">
 												BL COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text39">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross39">
@@ -2428,7 +2428,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-40">
 												BM COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text40">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross40">
@@ -2440,7 +2440,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-41">
 												Col2
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text41">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross41">
@@ -2452,7 +2452,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-42">
 												Col3
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text42">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross42">
@@ -2464,7 +2464,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-43">
 												DP
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text43">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross43">
@@ -2476,7 +2476,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-44">
 												DY
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text44">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross44">
@@ -2488,7 +2488,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-45">
 												DmA
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text45">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross45">
@@ -2500,7 +2500,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-46">
 												DmP
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text46">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross46">
@@ -2512,7 +2512,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-47">
 												DmP%
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text47">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross47">
@@ -2606,7 +2606,7 @@ function manResPagination(noRow) {
 								<tr>
 										<th scope="col" class="style-two-head-48">
 												ID
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text7=48">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross48">
@@ -2618,7 +2618,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-49">
 												LoP%
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text49">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross49">
@@ -2630,7 +2630,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-50">
 												M_Val
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text50">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross50">
@@ -2642,7 +2642,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-51">
 												MaP%
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text51">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross51">
@@ -2654,7 +2654,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-52">
 												O_End
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text52">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross52">
@@ -2666,7 +2666,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-53">
 												O_Start
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text53">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross53">
@@ -2678,7 +2678,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-54">
 												SP
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text54">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross54">
@@ -2690,7 +2690,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-55">
 												Time Frame
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text55">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross55">
@@ -2702,7 +2702,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-56">
 												UmA
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text56">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross56">
@@ -2714,7 +2714,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-57">
 												UmP
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text57">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross57">
@@ -2726,7 +2726,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-58">
 												UmP%
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text58">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross58">
@@ -2738,6 +2738,9 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-59">
 												Val2S
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text59">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
 												<div class="head-filter style2_cross59">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2747,7 +2750,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-60">
 												Val3S
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text60">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross60">
@@ -2759,7 +2762,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-61">
 												Val6
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text61">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross61">
@@ -2853,7 +2856,7 @@ function manResPagination(noRow) {
 								<tr>
 										<th scope="col" class="style-two-head-62">
 												Description
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text62">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross62">
@@ -2865,7 +2868,7 @@ function manResPagination(noRow) {
 										</th>
 										<th scope="col" class="style-two-head-63">
 												Details3
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text63">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross63">
@@ -2899,7 +2902,7 @@ function manResPagination(noRow) {
 								<tr>
 										<th scope="col" class="style-two-head-64">
 												Details2
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text">
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text64">
              										<i class="fas fa-question-circle"></i>
            										</span>
 												<div class="head-filter style2_cross64">

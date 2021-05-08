@@ -35,10 +35,11 @@
 #allserv-section .plan-box {
     border: 3px solid #131313;
     width: 280px;
+    box-shadow: 5px 5px 10px -4px rgb(51 51 51 / 75%);
 }
 
 #allserv-section .plan-box-1 {
-    margin: 30px 5px 0px auto;
+    margin: 30px 32px 0px auto;
 }
 
 #allserv-section .plan-box-2 {
@@ -46,7 +47,7 @@
 }
 
 #allserv-section .plan-box-3 {
-    margin: 30px auto 0px 5px;
+    margin: 30px auto 0px 32px;
 }
 
 #allserv-section .plan_name {
@@ -70,12 +71,25 @@
 }
 #allserv-section .plan-box-2 .plan_name .plan-star{
     position: absolute;
-    font-size: 136px;
+    font-size: 180px;
     color: #0B00FF;
-    top: -100px;
-    right: -42px;
+    top: -132px;
+    right: -58px;
     transform: rotate(110deg);
     user-select: none;
+    text-shadow: 5px 5px #ff1c1c;
+}
+#allserv-section .plan-box-2 .plan_name .plan-star-text{
+    font-size: 18px;
+    margin: 0;
+    line-height: normal;
+    color: #ffffff;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+    position: absolute;
+    top: -12px;
+    right: -20px;
+    transform: rotate(40deg);
 }
 
 #allserv-section .plan-box-2 .plan_name p {

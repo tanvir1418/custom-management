@@ -116,6 +116,18 @@ for (var i = 0; i < li_tabs.length; i++) {
         $(rotateIcon[i]).removeClass("down-animation-icon");
       }
     }
+    if (current_tab_value == "tab_4") {
+      $(".content").addClass("sfsf");
+    }
+    if (current_tab_value != "tab_4") {
+      $(".content").removeClass("sfsf");
+    }
+    if (current_tab_value == "tab_5") {
+      $(".content").addClass("sfsf");
+    }
+    if (current_tab_value != "tab_5") {
+      $(".content").removeClass("sfsf");
+    }
   });
 }
 // MAIN TAB END
@@ -132,9 +144,9 @@ function openOption(evt, optionName) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
   document.getElementById(optionName).style.display = "block";
-  document.getElementById("hide559").style.display = "none";
-  document.getElementById("tab_2").style.paddingTop = "0px";
-  document.getElementById("opt-content").style.marginTop = "0px";
+  // document.getElementById("hide559").style.display = "none";
+  // document.getElementById("tab_2").style.paddingTop = "0px";
+  // document.getElementById("opt-content").style.marginTop = "0px";
   evt.currentTarget.className += " active";
 }
 // CHOOSE OPTION SECTION END
@@ -1388,3 +1400,7 @@ $('#sample4SaveStart_confirm_modal').on('show.bs.modal', function (e) {
 }).on('hide.bs.modal', function (e) {
   $('body').removeClass("modal-force-open-confirm");
 });
+
+if ($(".tab_4").hasClass("active")) {
+  $(".content").style.backgroundColor = "#000";
+}
