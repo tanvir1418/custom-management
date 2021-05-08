@@ -116,6 +116,12 @@ for (var i = 0; i < li_tabs.length; i++) {
         $(rotateIcon[i]).removeClass("down-animation-icon");
       }
     }
+    if (current_tab_value == "tab_4"){
+      $(".content").addClass("sfsf");
+    }
+    if (current_tab_value != "tab_4"){
+      $(".content").removeClass("sfsf");
+    }
   });
 }
 // MAIN TAB END
@@ -1349,4 +1355,8 @@ function chartDispConfirmButton(){
   
   mnResultTitle = "";
   mnResultSubTitle = "";
+}
+
+if ($(".tab_4").hasClass("active")) {
+  $(".content").style.backgroundColor = "#000";
 }
