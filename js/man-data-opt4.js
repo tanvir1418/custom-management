@@ -145,7 +145,7 @@ function listRenderOpt4(id, name, addNewRow) {
   let ele = `<tr ondblclick="${addNewRow}" onclick="clickAddClassSgl(this)" class="cursor-pointer" id="${id}">
     <td colspan="2">${name}</td>
     <td>
-      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+      <span class="tooltip-container" tooltip="${name}" flow="down">
         <i class="fas fa-question-circle"></i>
       </span>
     </td>
@@ -1500,7 +1500,7 @@ for (let i = 0; i < spanHeaderTarget.length; i++) {
 // Manage Data Option-4 Circle Click Handling
 $('#create_new_option_four .form-box .progressBar li .click-circle').on('click', function (e) {
   let circleTarget = e.target.className.trim();
-  
+
   if (circleTarget == "click-circle s1") {
     $("#op4FormStep1").css("display", "block");
     $("#op4FormStep2").css("display", "none");

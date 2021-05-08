@@ -337,7 +337,7 @@ function listRender(id, name, addNewRow) {
   let ele = `<tr ondblclick="${addNewRow}" onclick="clickAddClassSgl(this)" class="cursor-pointer" id="${id}">
     <td colspan="2">${name}</td>
     <td>
-      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+      <span class="tooltip-container" tooltip="${name}" flow="down">
         <i class="fas fa-question-circle"></i>
       </span>
     </td>
@@ -1232,7 +1232,7 @@ function windowToFormOp3(e) {
       }
       else if (divData[0].trim() == "Source Option 1" || divData[0].trim() == "Source Option 2") {
         let radioBtn = $(`.radio input[type = "radio"][value = "${divData[0].trim()}"]`);
-        if (radioBtn.length && divData[1].trim()=="checked") {
+        if (radioBtn.length && divData[1].trim() == "checked") {
           radioBtn[0].checked = true;
         }
       }
