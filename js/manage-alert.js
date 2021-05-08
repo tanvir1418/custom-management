@@ -14,7 +14,7 @@ function makeTableHeadAlert(tableID) {
   let tableHead =
     `<th class="">ROW</th>
         <th class="">ALERT TYPE
-          <span class="tooltip-container" tooltip="Sample text here" flow="down">
+          <span class="tooltip-container" tooltip="Sample text here1" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
             <div class="head-filter cross-exists">
@@ -25,7 +25,7 @@ function makeTableHeadAlert(tableID) {
             </div>
         </th>
         <th class="">ALERT VALUE
-          <span class="tooltip-container" tooltip="Sample text here" flow="down">
+          <span class="tooltip-container" tooltip="Sample text here2" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
             <div class="head-filter cross-exists">
@@ -36,7 +36,7 @@ function makeTableHeadAlert(tableID) {
             </div>
         </th>
         <th class="">ALERT FREQUENCY
-          <span class="tooltip-container" tooltip="Sample text here" flow="down">
+          <span class="tooltip-container" tooltip="Sample text here3" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
             <div class="head-filter cross-exists">
@@ -47,7 +47,7 @@ function makeTableHeadAlert(tableID) {
             </div>
         </th>
         <th class="">ALERT METHOD
-          <span class="tooltip-container" tooltip="Sample text here" flow="down">
+          <span class="tooltip-container" tooltip="Sample text here4" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
             <div class="head-filter cross-exists">
@@ -58,7 +58,7 @@ function makeTableHeadAlert(tableID) {
             </div>
         </th>
         <th class="">ACTIONS
-          <span class="tooltip-container" tooltip="Sample text here" flow="down">
+          <span class="tooltip-container" tooltip="Sample text here5" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
           </th>`;
