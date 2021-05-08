@@ -2322,3 +2322,60 @@ td {
 .bs-tooltip-bottom .arrow::before {
   border-bottom-color: #f00;
 } */
+
+/* login Alert Popup design starts  */
+#loginRequired .modal-dialog{
+  width: 300px;
+}
+#loginRequired .modal-dialog .modal-content{
+  border-radius: 2px;
+  overflow: hidden;
+  border: none;
+  -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+}
+
+#loginRequired .login-alert-header{
+  height: 70px;
+  line-height: 70px;
+  padding: 10px;
+  text-align: center;
+  background-color: #fff011;
+  color: #272727;
+}
+
+#loginRequired .login-alert-header i{
+  font-size: 40px;
+}
+
+#loginRequired .modal-body{
+  text-align: center;
+}
+#loginRequired .modal-body p{
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: gilroy-medium, sans-serif;
+  /* color: #ff0000; */
+  color: #000000;
+}
+#loginRequired .modal-body button{
+  width: 100px;
+  font-size: 16px;
+  background: #000000;
+  color: #e9e9e9;
+  font-weight: bold;
+  transition: 150ms;
+  outline: none;
+  border: 0 none;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 4px 0px;
+}
+#loginRequired .modal-body button:hover{
+  background: #312c2c;
+  color: #ffffff;
+  /* color: black; */
+}
+/* login Alert Popup design ends  */
