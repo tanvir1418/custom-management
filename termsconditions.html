@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" defer></script>
-    <script src="./js/navbar-script.js" defer></script>
+    <script src="./js/navbar-index-terms.js" defer></script>
     
 </head>
 
@@ -48,18 +48,18 @@
     </div>
 
     <!-- triangle -->
-    <div id="triangle"></div>
+    <div id="triangle" style="display: none;"></div>
 
     <!-- ======X====== NAVBAR END =======X===== -->
 
     <!-- =========== COLLAPSE MENU BAR START =========== -->
-    <div class="open navbar-collapse" id="collapsemenu">
+    <div class="navbar-collapse" id="collapsemenu" style="height: 0px;">
         <!-- ============ MAIN TAB CONTAINER + ITEM SECTION START ============ -->
         <div class="wrapper">
             <!-- ======== TAB MENU NAVIGATION START ======== -->
             <div class="tabs">
                 <ul id="tabs_ul">
-                    <li data-list="tab_1" data-toggle="modal" data-target="#loginRequired">
+                    <li data-list="tab_1">
                         <div class="tab-box">
                             <div class="svg-box">
                                 <svg viewBox="-21 0 512 512">
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                     </li>
-                    <li data-list="tab_2" data-toggle="modal" data-target="#loginRequired">
+                    <li data-list="tab_2">
                         <div class="tab-box">
                             <div class="svg-box">
                                 <svg viewBox="-21 0 512 512">
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                     </li>
-                    <li data-list="tab_3" data-toggle="modal" data-target="#loginRequired">
+                    <li data-list="tab_3">
                         <div class="tab-box">
                             <div class="svg-box">
                                 <svg viewBox="0 0 24 24">
@@ -143,7 +143,7 @@
                             </div>
                         </div>
                     </li>
-                    <li data-list="tab_4" data-toggle="modal" data-target="#loginRequired">
+                    <li data-list="tab_4">
                         <div class="tab-box">
                             <div class="svg-box">
                                 <svg viewBox="-76 0 512 512">
@@ -157,7 +157,7 @@
                             </div>
                         </div>
                     </li>
-                    <li data-list="tab_5" data-toggle="modal" data-target="#loginRequired">
+                    <li data-list="tab_5">
                         <div class="tab-box">
                             <div class="svg-box">
                                 <svg viewBox="-21 0 512 512">
@@ -241,18 +241,6 @@
         </div>
     </section>
 
-    <!-- Login is required Modal start -->
-    <div class="modal fade" id="loginRequired">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <p>Login is required to access this page</p>
-                    <button type="button" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Login is required Modal start -->
     <script src="./js/jquery.js"></script>
     <script>
         // LOGIN DATA PASS START

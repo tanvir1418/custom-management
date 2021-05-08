@@ -5172,7 +5172,7 @@
                             </div>
                             <div class="save-start-popup-button-row">
                                 <input data-dismiss="modal" type="button" value="Back" class="save-start-done-btn">
-                                <input type="button" value="Done" class="save-start-cancel-btn" onclick="universalConfirmModalDelete(this)">
+                                <input type="button" value="Done" class="save-start-cancel-btn" data-dismiss="modal" onclick="showConfirmSample4StartBtn()">
                             </div>
                         </div>
                     </div>
@@ -7921,6 +7921,32 @@
         </div>
     </div>
     <!-- ======= Manage Template Confirm Modal END =========== -->
+
+    <!-- ======= Sample 4 SaveStart-Button Confirm Modal START =========== -->
+    <div class="modal fade delete-list-item" id="sample4SaveStart_confirm_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title">SAVE DETAILS</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="remove-box">
+                        <div class="question-delete">
+                            <p>Confirm to save result saving details?</p>
+                        </div>
+                        <div class="comfirm-btn-bx">
+                            <button type="button" class="cancel-list-data" data-dismiss="modal" onclick="sample4StartCancelBtn(this)">Cancel</button>
+                            <button type="button" class="confirm-list-data" data-dismiss="modal" onclick="sample4StartConfirmBtn(this)">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======= Sample 4 SaveStart-Button Confirm Modal END =========== -->
 
     <!-- JS FILES -->
     <script src="./js/jquery.js"></script>
