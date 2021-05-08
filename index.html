@@ -250,6 +250,7 @@
         $("#registerBtn").click(function (event) {
             event.preventDefault();
             localStorage.setItem("currentUser", "");
+            localStorage.setItem("loginStatus", "NOT_LOGGED");
             localStorage.setItem("manageTabVisibility", "showAccount");
             window.location.href = "/main.html";
         });
@@ -257,7 +258,8 @@
         $("#loginBtn").click(function (event) {
             event.preventDefault();
             localStorage.setItem("currentUser", usernameIndex.value);
-            localStorage.setItem("manageTabVisibility", "");
+            localStorage.setItem("loginStatus", "LOGGED_IN");
+            localStorage.setItem("manageTabVisibility", "showData");
             usernameIndex.value = "";
             passwordIndex.value = "";
             if(termsPageCondition == "hideTermsPage"){

@@ -56,7 +56,10 @@ $(function () {
   var w = $("#collapsemenu");
   var l = $(".wrapper");
 
-  w.height(l.outerHeight(true));
+  let loginCondition = localStorage.getItem("loginStatus");
+  if (loginCondition == "LOGGED_IN") {
+    w.height(l.outerHeight(true));
+  }
 
   b.click(function () {
     if (w.hasClass("open")) {
@@ -74,60 +77,70 @@ $(function () {
 // $(".content .tab_content:nth-child(2)").show();
 
 $("#tabs_ul li").click(function () {
-  $("#tabs_ul li").removeClass("active");
-  $(this).addClass("active");
+  let loginStat = localStorage.getItem("loginStatus");
+  if (loginStat == "LOGGED_IN") {
+    $("#tabs_ul li").removeClass("active");
+    $(this).addClass("active");
 
-  var current_tab = $(this).attr("data-list");
-  $(".content .tab_content").hide();
-  $("." + current_tab).show();
+    var current_tab = $(this).attr("data-list");
+    $(".content .tab_content").hide();
+    $("." + current_tab).show();
+  }
 });
 
 var ul = document.getElementById("tabs_ul");
 var li_tabs = ul.getElementsByTagName("li");
 for (var i = 0; i < li_tabs.length; i++) {
   li_tabs[i].addEventListener("click", function () {
-    var current = ul.getElementsByClassName("active");
-    current[0].className = current[0].className.replace("active", "");
-    this.className += "active";
 
-    var current_tab_value = this.getAttribute("data-list");
-    //console.log(current_tab_value);
-    if (current_tab_value == "tab_2" || current_tab_value == "tab_3") {
-      $("#viewtwo").css("display", "none");
-      $("#rowdetails").css("display", "none");
-      $("#noteswindow").css("display", "none");
-      $("#alertswindow").css("display", "none");
-      $("#copyrowlist").css("display", "none");
-      $("#moverowlist").css("display", "none");
+    let loginStatus = localStorage.getItem("loginStatus");
+    if (loginStatus == "LOGGED_IN") {
+      var current = ul.getElementsByClassName("active");
+      current[0].className = current[0].className.replace("active", "");
+      this.className += "active";
 
-      $("#viewtwo_style2").css("display", "none");
-      $("#rowdetails_style2").css("display", "none");
-      $("#noteswindow_style2").css("display", "none");
-      $("#alertswindow_style2").css("display", "none");
-      $("#copyrowlist_style2").css("display", "none");
-      $("#moverowlist_style2").css("display", "none");
+      var current_tab_value = this.getAttribute("data-list");
+      //console.log(current_tab_value);
+      if (current_tab_value == "tab_2" || current_tab_value == "tab_3") {
+        $("#viewtwo").css("display", "none");
+        $("#rowdetails").css("display", "none");
+        $("#noteswindow").css("display", "none");
+        $("#alertswindow").css("display", "none");
+        $("#copyrowlist").css("display", "none");
+        $("#moverowlist").css("display", "none");
 
-      $("#col8Filter").css("display", "none");
+        $("#viewtwo_style2").css("display", "none");
+        $("#rowdetails_style2").css("display", "none");
+        $("#noteswindow_style2").css("display", "none");
+        $("#alertswindow_style2").css("display", "none");
+        $("#copyrowlist_style2").css("display", "none");
+        $("#moverowlist_style2").css("display", "none");
 
-      const rotateIcon = document.querySelectorAll(
-        "#outer_table_box7 i.fa-caret-down.down-animation-icon"
-      );
-      for (let i = 0; i < rotateIcon.length; i++) {
-        $(rotateIcon[i]).removeClass("down-animation-icon");
+        $("#col8Filter").css("display", "none");
+
+        const rotateIcon = document.querySelectorAll(
+          "#outer_table_box7 i.fa-caret-down.down-animation-icon"
+        );
+        for (let i = 0; i < rotateIcon.length; i++) {
+          $(rotateIcon[i]).removeClass("down-animation-icon");
+        }
       }
+      if (current_tab_value == "tab_4") {
+        $(".content").addClass("sfsf");
+      }
+      if (current_tab_value != "tab_4") {
+        $(".content").removeClass("sfsf");
+      }
+      if (current_tab_value == "tab_5") {
+        $(".content").addClass("sfsf");
+      }
+      if (current_tab_value != "tab_5") {
+        $(".content").removeClass("sfsf");
+      }
+    } else {
+      $('#loginRequired').modal('show');
     }
-    if (current_tab_value == "tab_4") {
-      $(".content").addClass("sfsf");
-    }
-    if (current_tab_value != "tab_4") {
-      $(".content").removeClass("sfsf");
-    }
-    if (current_tab_value == "tab_5") {
-      $(".content").addClass("sfsf");
-    }
-    if (current_tab_value != "tab_5") {
-      $(".content").removeClass("sfsf");
-    }
+
   });
 }
 // MAIN TAB END
