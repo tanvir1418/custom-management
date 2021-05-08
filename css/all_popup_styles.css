@@ -2351,11 +2351,15 @@ Bottom codes are added by Tanvir
     background-color: #ffffff;
 }
 
-.modal-force-open{
+.modal-force-open,
+.modal-force-open-confirm,
+.modal-force-open-sample4{
     overflow:hidden !important;
     padding-right: 17px !important;
 }
-.modal-force-open .modal{
+.modal-force-open .modal,
+.modal-force-open-confirm .modal,
+.modal-force-open-sample4 .modal{
     overflow-x:hidden !important;
     overflow-y:auto !important;
 }

@@ -1221,9 +1221,6 @@ function universalConfirmModalDelete(globalVariable) {
   } else if (globalVariable.className.includes("saveAlerts")) {
     headerText = "SAVE ALERTS";
     detailsText = "Confirm to save alerts?";
-  } else if (globalVariable.className.includes("save-start-cancel-btn")) {
-    headerText = "SAVE DETAILS";
-    detailsText = "Confirm to save result saving details?";
   } else if (globalVariable.className.includes("addToBookMark")) {
     headerText = "ADD TO BOOKMARKS";
     detailsText = "Confirm to add to bookmark?";
@@ -1365,3 +1362,29 @@ function chartDispConfirmButton() {
   mnResultTitle = "";
   mnResultSubTitle = "";
 }
+
+function showConfirmSample4StartBtn() {
+  $('#sample4SaveStart_confirm_modal').modal('show');
+}
+
+function sample4StartCancelBtn() {
+  $('#mnTemp_saveStart').modal('show');
+}
+
+function sample4StartConfirmBtn() {
+  $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
+  $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
+  $('#universalThankDraftModal').modal('show');
+}
+
+$('#mnTemp_saveStart').on('show.bs.modal', function (e) {
+  $('body').addClass("modal-force-open-sample4");
+}).on('hide.bs.modal', function (e) {
+  $('body').removeClass("modal-force-open-sample4");
+});
+
+$('#sample4SaveStart_confirm_modal').on('show.bs.modal', function (e) {
+  $('body').addClass("modal-force-open-confirm");
+}).on('hide.bs.modal', function (e) {
+  $('body').removeClass("modal-force-open-confirm");
+});
