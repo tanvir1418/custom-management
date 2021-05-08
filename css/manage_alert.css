@@ -267,6 +267,7 @@ td {
 
 .alert-mytable .table89 .reset-save-btn {
     display: flex;
+    margin-left: auto;
 }
 
 .alert-mytable .table89 .reset-save-btn button {
@@ -306,7 +307,8 @@ td {
 
 .alert-mytable .table89 .removenull .cross-box-89 {
     display: flex;
-    margin-left: auto;
+    margin-left: 32px;
+    margin-right: auto;
 }
 
 .alert-mytable .table89 .removenull .circle_550 {
