@@ -2562,16 +2562,54 @@ for (let i = 0; i < mTempFieldSetDataForms.length; i++) {
 
 // Handles the CONFIRM BOX, hide/show of Load Template Boxes 
 let targetTempBoxId = "";
+let rowContainerID = "";
 
-function mnTempConfirmModal(globalVariable) {
+function mnTempConfirmModal(globVariable) {
   $('#mnTemp_confirm_modal').modal('show');
-  targetTempBoxId = globalVariable.offsetParent.id;
+  targetTempBoxId = globVariable.offsetParent.id;
+
+  rowContainerID = globVariable.parentElement.parentElement.parentElement.id;
+  // console.dir(globVariable.parentElement.parentElement.parentElement.id);
 }
 
 function mnTempConfirmButton() {
   if (targetTempBoxId != "") {
+    let boxNoContainerTwo = $("#tempContainer_2 .mycolmn").length;
+    let boxNoContainerThree = $("#tempContainer_3 .mycolmn").length;
+
     let hideColBox = document.getElementById(`${targetTempBoxId}`).parentElement.id;
-    $(`#${hideColBox}`).css("display", "none");
+    // $(`#${hideColBox}`).css("display", "none");
+    $(`#${hideColBox}`).remove();
+
+    if (rowContainerID == "tempContainer_1") {
+
+      if (boxNoContainerTwo > 1 && boxNoContainerThree > 1) {
+
+        let targetFirstChildOfSecondContainer = $("#tempContainer_2 .mycolmn")[0];
+        let targetFirstChildOfThirdContainer = $("#tempContainer_3 .mycolmn")[0];
+        $("#createCol_1").before(targetFirstChildOfSecondContainer);
+        $("#createCol_2").before(targetFirstChildOfThirdContainer);
+
+      } else if (boxNoContainerTwo > 1 && boxNoContainerThree == 1) {
+
+        let targetFirstChildOfSecondContainer = $("#tempContainer_2 .mycolmn")[0];
+        $("#createCol_1").before(targetFirstChildOfSecondContainer);
+
+      }
+    } else if (rowContainerID == "tempContainer_2") {
+      if (boxNoContainerThree > 1) {
+
+        let targetFirstChildOfThirdContainer = $("#tempContainer_3 .mycolmn")[0];
+        $("#createCol_2").before(targetFirstChildOfThirdContainer);
+
+      }
+    }
+    // else if(rowContainerID == "tempContainer_3"){
+
+    // }
+
     targetTempBoxId = "";
+    rowContainerID = ""
+
   }
 }
