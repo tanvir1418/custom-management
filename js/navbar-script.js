@@ -52,7 +52,6 @@ for (var i = 0; i < li_tabs.length; i++) {
     });
 }
 // MAIN TAB END
-
 //   On click Tab Set the active tab and content 
 function setAccountTab() {
     localStorage.setItem("manageTabVisibility", "showAccount");
@@ -60,21 +59,45 @@ function setAccountTab() {
 }
 
 function setDataTab() {
-    localStorage.setItem("manageTabVisibility", "showData");
-    window.location.href = "/main.html";
+    let loginCondition = localStorage.getItem("loginStatus");
+    if (loginCondition == "LOGGED_IN") {
+        localStorage.setItem("manageTabVisibility", "showData");
+        window.location.href = "/main.html";
+    } else {
+        localStorage.setItem("manageTabVisibility", "showAccount");
+        window.location.href = "/main.html";
+    }
 }
 
 function setTemplateTab() {
-    localStorage.setItem("manageTabVisibility", "showTemplate");
-    window.location.href = "/main.html";
+    let loginCondition = localStorage.getItem("loginStatus");
+    if (loginCondition == "LOGGED_IN") {
+        localStorage.setItem("manageTabVisibility", "showTemplate");
+        window.location.href = "/main.html";
+    } else {
+        localStorage.setItem("manageTabVisibility", "showAccount");
+        window.location.href = "/main.html";
+    }
 }
 
 function setResultTab() {
-    localStorage.setItem("manageTabVisibility", "showResult");
-    window.location.href = "/main.html";
+    let loginCondition = localStorage.getItem("loginStatus");
+    if (loginCondition == "LOGGED_IN") {
+        localStorage.setItem("manageTabVisibility", "showResult");
+        window.location.href = "/main.html";
+    } else {
+        localStorage.setItem("manageTabVisibility", "showAccount");
+        window.location.href = "/main.html";
+    }
 }
 
 function setAlertTab() {
-    localStorage.setItem("manageTabVisibility", "showAlert");
-    window.location.href = "/main.html";
+    let loginCondition = localStorage.getItem("loginStatus");
+    if (loginCondition == "LOGGED_IN") {
+        localStorage.setItem("manageTabVisibility", "showAlert");
+        window.location.href = "/main.html";
+    } else {
+        localStorage.setItem("manageTabVisibility", "showAccount");
+        window.location.href = "/main.html";
+    }
 }
