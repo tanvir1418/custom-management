@@ -1185,6 +1185,7 @@ function manDatacheckEmptyDiff(e) {
 }
 
 function resetAccountFormFields() {
+  $("#tab_1 .account-form-container .custome-select select")[0].selectedIndex = 0;
   let formInputContainer = $(".account-form-container .custom-input-only");
   let formInputs = $(".account-form-container .custom-input-only input");
   for (i = 0; i < formInputContainer.length; i++) {

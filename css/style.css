@@ -2174,6 +2174,7 @@ td {
   height: 40px;
   z-index: 3;
   border-radius: 6px;
+  box-shadow: 3px 5px 15px 0px #b0bcd4;
 }
 
 .account-form-group .ac-input .custom-input-only input{
@@ -2201,6 +2202,73 @@ td {
 
 /*  Custom Input styling Ends  */
 /* ============================ */
+
+/*  Select box styling Starts  */
+.account-form-group .custome-select {
+  background: #e6e6e6;
+  position: relative;
+  width: 100%;
+  height: 40px;
+  z-index: 3;
+  border-radius: 6px;
+  box-shadow: 3px 5px 15px 0px #b0bcd4;
+}
+
+.account-form-group .custome-select select {
+  background: #ffffff !important;
+  color: #2e2c2c !important;
+  /* font-family: gilroy-medium, sans-serif; */
+  /* font-weight: 600; */
+  font-size: 18px;
+  outline: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  padding: 0 10px;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+}
+
+.account-form-group .custome-select select:hover,
+.account-form-group .custome-select select:focus {
+  cursor: pointer;
+  outline: 0;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+}
+
+.account-form-group .custome-select:after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  background-color: #F5F5F5;
+  z-index: 2;
+  right: 10px;
+  top: 10px;
+  border-radius: 2px;
+}
+
+.account-form-group .custome-select:before {
+  content: "\25bc";
+  position: absolute;
+  font-size: 11px;
+  color: #818181;
+  z-index: 3;
+  right: 14px;
+  top: 9px;
+}
+.account-form-group .custome-select select option {
+  background: #ffffff;
+}
+
+/* ....... Select box styling Ends ....... */
+
 .account-content .account-form-container .ac-button-row{
   margin-top: 40px;
   height: 70px;
