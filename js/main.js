@@ -132,10 +132,10 @@ for (var i = 0; i < li_tabs.length; i++) {
         $(".content").removeClass("sfsf");
       }
       if (current_tab_value == "tab_5") {
-        $(".content").addClass("sfsf");
+        $(".content").addClass("tvtv");
       }
       if (current_tab_value != "tab_5") {
-        $(".content").removeClass("sfsf");
+        $(".content").removeClass("tvtv");
       }
     } else {
       $('#loginRequired').modal('show');
@@ -157,9 +157,9 @@ function openOption(evt, optionName) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
   document.getElementById(optionName).style.display = "block";
-  // document.getElementById("hide559").style.display = "none";
-  // document.getElementById("tab_2").style.paddingTop = "0px";
-  // document.getElementById("opt-content").style.marginTop = "0px";
+  document.getElementById("hide559").style.display = "none";
+  document.getElementById("tab_2").style.paddingTop = "0px";
+  document.getElementById("opt-content").style.marginTop = "0px";
   evt.currentTarget.className += " active";
 }
 // CHOOSE OPTION SECTION END
@@ -752,7 +752,7 @@ function makeTableHead(tableID) {
 		</th>
 		<th scope="col">
 			RECORDS COUNT
-        <span class="tooltip-container" tooltip="Sample text here" flow="down">
+        <span class="tooltip-container" tooltip="RECORDS COUNT" flow="down">
           <i class="fas fa-question-circle"></i>
         </span>
 			<div class="head-filter cross-exists">
@@ -764,7 +764,7 @@ function makeTableHead(tableID) {
 		</th>
 		<th scope="col">
 			SAVED NAME
-      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+      <span class="tooltip-container" tooltip="SAVED NAME" flow="down">
           <i class="fas fa-question-circle"></i>
       </span>
 			<div class="head-filter cross-exists">
@@ -776,7 +776,7 @@ function makeTableHead(tableID) {
 		</th>
 		<th scope="col">
 			CREATED DATE TIME
-      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+      <span class="tooltip-container" tooltip="CREATED DATE TIME" flow="down">
           <i class="fas fa-question-circle"></i>
       </span>
 			<div class="head-filter cross-exists">
@@ -788,7 +788,7 @@ function makeTableHead(tableID) {
 		</th>
 		<th scope="col">
 			LAST UPDATE DATE TIME
-      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+      <span class="tooltip-container" tooltip="LAST UPDATE DATE TIME" flow="down">
           <i class="fas fa-question-circle"></i>
       </span>
 			<div class="head-filter cross-exists">
@@ -799,9 +799,6 @@ function makeTableHead(tableID) {
 			</div>
 		</th>
 		<th scope="col">ACTIONS
-      <span class="tooltip-container" tooltip="Sample text here" flow="down">
-        <i class="fas fa-question-circle"></i>
-      </span>
     </th>
 	</tr>`;
   $(`#${tableID} thead`).html(tableHead);
