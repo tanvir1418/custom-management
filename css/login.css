@@ -146,6 +146,48 @@ a:visited {
     font-family: gilroy-medium, sans-serif;
     color: #000000;
 }
+
+.terms_conditions .text-box44545{
+    width: 80%;
+    margin: 0 auto;
+}
+.terms_conditions .after-login-text{
+    width: 100%;
+    height: 350px;
+    margin: 16px auto 0;
+    overflow-y: scroll;
+    border: 3px solid #848484;
+    border-radius: 5px;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: gilroy-medium, sans-serif;
+    color: #000000;
+}
+/*  Text box scrollbar customize start */
+.after-login-text::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.after-login-text::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #919191;
+    border-radius: 10px;
+}
+
+/* Handle */
+.after-login-text::-webkit-scrollbar-thumb {
+    background: #919191;
+    border-radius: 15px;
+}
+
+/* Handle on hover */
+.after-login-text::-webkit-scrollbar-thumb:hover {
+    background: #616161;
+}
+
+/* Text box scrollbar customize end */
+
 .terms_conditions .tc-outerbox{
     width: 80%;
     height: 350px;
