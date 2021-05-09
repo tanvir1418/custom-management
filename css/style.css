@@ -2425,6 +2425,7 @@ td {
 
 #loginRequired .login-alert-header i{
   font-size: 40px;
+  color: #ff0101;
 }
 
 #loginRequired .modal-body{
