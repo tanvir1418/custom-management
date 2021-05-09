@@ -2174,6 +2174,7 @@ td {
   height: 40px;
   z-index: 3;
   border-radius: 6px;
+  box-shadow: 3px 5px 15px 0px #b0bcd4;
 }
 
 .account-form-group .ac-input .custom-input-only input{
@@ -2201,6 +2202,73 @@ td {
 
 /*  Custom Input styling Ends  */
 /* ============================ */
+
+/*  Select box styling Starts  */
+.account-form-group .custome-select {
+  background: #e6e6e6;
+  position: relative;
+  width: 100%;
+  height: 40px;
+  z-index: 3;
+  border-radius: 6px;
+  box-shadow: 3px 5px 15px 0px #b0bcd4;
+}
+
+.account-form-group .custome-select select {
+  background: #ffffff !important;
+  color: #2e2c2c !important;
+  /* font-family: gilroy-medium, sans-serif; */
+  /* font-weight: 600; */
+  font-size: 18px;
+  outline: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  padding: 0 10px;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+}
+
+.account-form-group .custome-select select:hover,
+.account-form-group .custome-select select:focus {
+  cursor: pointer;
+  outline: 0;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+}
+
+.account-form-group .custome-select:after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  background-color: #F5F5F5;
+  z-index: 2;
+  right: 10px;
+  top: 10px;
+  border-radius: 2px;
+}
+
+.account-form-group .custome-select:before {
+  content: "\25bc";
+  position: absolute;
+  font-size: 11px;
+  color: #818181;
+  z-index: 3;
+  right: 14px;
+  top: 9px;
+}
+.account-form-group .custome-select select option {
+  background: #ffffff;
+}
+
+/* ....... Select box styling Ends ....... */
+
 .account-content .account-form-container .ac-button-row{
   margin-top: 40px;
   height: 70px;
@@ -2325,3 +2393,64 @@ td {
 .bs-tooltip-bottom .arrow::before {
   border-bottom-color: #f00;
 } */
+
+/* login Alert Popup design starts  */
+#loginRequired .modal-dialog{
+  width: 300px;
+}
+#loginRequired .modal-dialog .modal-content{
+  border-radius: 2px;
+  overflow: hidden;
+  border: none;
+
+  -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+  -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+  box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+  /* -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1); */
+}
+
+#loginRequired .login-alert-header{
+  height: 70px;
+  line-height: 70px;
+  padding: 10px;
+  text-align: center;
+  background-color: #fff011;
+  color: #272727;
+}
+
+#loginRequired .login-alert-header i{
+  font-size: 40px;
+}
+
+#loginRequired .modal-body{
+  text-align: center;
+}
+#loginRequired .modal-body p{
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: gilroy-medium, sans-serif;
+  /* color: #ff0000; */
+  color: #000000;
+}
+#loginRequired .modal-body button{
+  width: 100px;
+  font-size: 16px;
+  background: #000000;
+  color: #e9e9e9;
+  font-weight: bold;
+  transition: 150ms;
+  outline: none;
+  border: 0 none;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 4px 0px;
+}
+#loginRequired .modal-body button:hover{
+  background: #312c2c;
+  color: #ffffff;
+  /* color: black; */
+}
+/* login Alert Popup design ends  */

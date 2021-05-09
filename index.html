@@ -17,6 +17,7 @@
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" defer></script>
     <!-- <script src="./js/main.js" defer></script> -->
+    <script src="./js/navbar-index-terms.js" defer></script>
 </head>
 
 <body>
@@ -43,12 +44,12 @@
     </div>
 
     <!-- triangle -->
-    <div id="triangle"></div>
+    <div id="triangle" style="display: none;"></div>
 
     <!-- ======X====== NAVBAR END =======X===== -->
 
     <!-- =========== COLLAPSE MENU BAR START =========== -->
-    <div class="open navbar-collapse" id="collapsemenu">
+    <div class="navbar-collapse" id="collapsemenu" style="height: 0px;">
         <!-- ============ MAIN TAB CONTAINER + ITEM SECTION START ============ -->
         <div class="wrapper">
             <!-- ======== TAB MENU NAVIGATION START ======== -->
@@ -228,6 +229,9 @@
     <div class="modal fade" id="loginRequired">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
+                <div class="login-alert-header">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
                 <div class="modal-body">
                     <p>Login is required to access this page</p>
                     <button type="button" data-dismiss="modal">Close</button>
@@ -245,6 +249,8 @@
 
         $("#registerBtn").click(function (event) {
             event.preventDefault();
+            localStorage.setItem("currentUser", "");
+            localStorage.setItem("loginStatus", "NOT_LOGGED");
             localStorage.setItem("manageTabVisibility", "showAccount");
             window.location.href = "/main.html";
         });
@@ -252,7 +258,8 @@
         $("#loginBtn").click(function (event) {
             event.preventDefault();
             localStorage.setItem("currentUser", usernameIndex.value);
-            localStorage.setItem("manageTabVisibility", "");
+            localStorage.setItem("loginStatus", "LOGGED_IN");
+            localStorage.setItem("manageTabVisibility", "showData");
             usernameIndex.value = "";
             passwordIndex.value = "";
             if(termsPageCondition == "hideTermsPage"){

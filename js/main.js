@@ -56,7 +56,10 @@ $(function () {
   var w = $("#collapsemenu");
   var l = $(".wrapper");
 
-  w.height(l.outerHeight(true));
+  let loginCondition = localStorage.getItem("loginStatus");
+  if (loginCondition == "LOGGED_IN") {
+    w.height(l.outerHeight(true));
+  }
 
   b.click(function () {
     if (w.hasClass("open")) {
@@ -74,60 +77,70 @@ $(function () {
 // $(".content .tab_content:nth-child(2)").show();
 
 $("#tabs_ul li").click(function () {
-  $("#tabs_ul li").removeClass("active");
-  $(this).addClass("active");
+  let loginStat = localStorage.getItem("loginStatus");
+  if (loginStat == "LOGGED_IN") {
+    $("#tabs_ul li").removeClass("active");
+    $(this).addClass("active");
 
-  var current_tab = $(this).attr("data-list");
-  $(".content .tab_content").hide();
-  $("." + current_tab).show();
+    var current_tab = $(this).attr("data-list");
+    $(".content .tab_content").hide();
+    $("." + current_tab).show();
+  }
 });
 
 var ul = document.getElementById("tabs_ul");
 var li_tabs = ul.getElementsByTagName("li");
 for (var i = 0; i < li_tabs.length; i++) {
   li_tabs[i].addEventListener("click", function () {
-    var current = ul.getElementsByClassName("active");
-    current[0].className = current[0].className.replace("active", "");
-    this.className += "active";
 
-    var current_tab_value = this.getAttribute("data-list");
-    //console.log(current_tab_value);
-    if (current_tab_value == "tab_2" || current_tab_value == "tab_3") {
-      $("#viewtwo").css("display", "none");
-      $("#rowdetails").css("display", "none");
-      $("#noteswindow").css("display", "none");
-      $("#alertswindow").css("display", "none");
-      $("#copyrowlist").css("display", "none");
-      $("#moverowlist").css("display", "none");
+    let loginStatus = localStorage.getItem("loginStatus");
+    if (loginStatus == "LOGGED_IN") {
+      var current = ul.getElementsByClassName("active");
+      current[0].className = current[0].className.replace("active", "");
+      this.className += "active";
 
-      $("#viewtwo_style2").css("display", "none");
-      $("#rowdetails_style2").css("display", "none");
-      $("#noteswindow_style2").css("display", "none");
-      $("#alertswindow_style2").css("display", "none");
-      $("#copyrowlist_style2").css("display", "none");
-      $("#moverowlist_style2").css("display", "none");
+      var current_tab_value = this.getAttribute("data-list");
+      //console.log(current_tab_value);
+      if (current_tab_value == "tab_2" || current_tab_value == "tab_3") {
+        $("#viewtwo").css("display", "none");
+        $("#rowdetails").css("display", "none");
+        $("#noteswindow").css("display", "none");
+        $("#alertswindow").css("display", "none");
+        $("#copyrowlist").css("display", "none");
+        $("#moverowlist").css("display", "none");
 
-      $("#col8Filter").css("display", "none");
+        $("#viewtwo_style2").css("display", "none");
+        $("#rowdetails_style2").css("display", "none");
+        $("#noteswindow_style2").css("display", "none");
+        $("#alertswindow_style2").css("display", "none");
+        $("#copyrowlist_style2").css("display", "none");
+        $("#moverowlist_style2").css("display", "none");
 
-      const rotateIcon = document.querySelectorAll(
-        "#outer_table_box7 i.fa-caret-down.down-animation-icon"
-      );
-      for (let i = 0; i < rotateIcon.length; i++) {
-        $(rotateIcon[i]).removeClass("down-animation-icon");
+        $("#col8Filter").css("display", "none");
+
+        const rotateIcon = document.querySelectorAll(
+          "#outer_table_box7 i.fa-caret-down.down-animation-icon"
+        );
+        for (let i = 0; i < rotateIcon.length; i++) {
+          $(rotateIcon[i]).removeClass("down-animation-icon");
+        }
       }
+      if (current_tab_value == "tab_4") {
+        $(".content").addClass("sfsf");
+      }
+      if (current_tab_value != "tab_4") {
+        $(".content").removeClass("sfsf");
+      }
+      if (current_tab_value == "tab_5") {
+        $(".content").addClass("sfsf");
+      }
+      if (current_tab_value != "tab_5") {
+        $(".content").removeClass("sfsf");
+      }
+    } else {
+      $('#loginRequired').modal('show');
     }
-    if (current_tab_value == "tab_4"){
-      $(".content").addClass("sfsf");
-    }
-    if (current_tab_value != "tab_4"){
-      $(".content").removeClass("sfsf");
-    }
-    if (current_tab_value == "tab_5"){
-      $(".content").addClass("sfsf");
-    }
-    if (current_tab_value != "tab_5"){
-      $(".content").removeClass("sfsf");
-    }
+
   });
 }
 // MAIN TAB END
@@ -275,12 +288,13 @@ $(document).ready(function () {
 // CREATE & MANAGE TAB END
 
 // LOGIN DATA PASS START
-const currentUser = localStorage.getItem("currentUser");
-const user_div = document.getElementById("username_div");
-if (currentUser != null && currentUser != "") {
-  user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
-} else {
-}
+// const currentUser = localStorage.getItem("currentUser");
+// const user_div = document.getElementById("username_div");
+// if (currentUser != null && currentUser != "") {
+//   user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
+// } else {
+// }
+
 // LOGIN DATA PASS END
 
 // option 2 list item start
@@ -370,19 +384,16 @@ const listItemData = [
         }
       }
     }
-    htmlDataModal += `<ul class="sub-list checkbox_hide" style="margin-left: 300px;" id="sub-div-list-1-${
-      index + 1
-    }">
+    htmlDataModal += `<ul class="sub-list checkbox_hide" style="margin-left: 300px;" id="sub-div-list-1-${index + 1
+      }">
 			${list_data1}
 		</ul>
-		<ul class="sub-list checkbox_hide" style="margin-left: 600px;" id="sub-div-list-2-${
-      index + 1
-    }">
+		<ul class="sub-list checkbox_hide" style="margin-left: 600px;" id="sub-div-list-2-${index + 1
+      }">
 			${list_data2}
 		</ul>
-		<ul class="sub-list checkbox_hide" style="margin-left: 900px;" id="sub-div-list-3-${
-      index + 1
-    }">
+		<ul class="sub-list checkbox_hide" style="margin-left: 900px;" id="sub-div-list-3-${index + 1
+      }">
 			${list_data3}
 		</ul>`;
     /* Update End By Ashiq */
@@ -805,13 +816,13 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
     callback: function (data, pagination) {
       let tableTr = "";
       data.forEach(({ id, serial, recordsCount, savedName, CDateTime, LUDateTime }, index) => {
-          let tabHd = $(`#${tableID} thead th`);
-          let len = tabHd.length;
-          let classList = [];
-          for (let i = 1; i < len - 1; i++) {
-            classList.push(tabHd[i].className);
-          }
-          tableTr += `<tr id="${id}">
+        let tabHd = $(`#${tableID} thead th`);
+        let len = tabHd.length;
+        let classList = [];
+        for (let i = 1; i < len - 1; i++) {
+          classList.push(tabHd[i].className);
+        }
+        tableTr += `<tr id="${id}">
 					<th class="row-data" scope="row">${serial}</th>
 					<td class="records-count ${classList[0]}">
 						<a data-toggle="modal" data-target="#hyperTextModal1" style="color: black" onclick="showHyperTextModal1(this)">
@@ -840,7 +851,7 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange) {
 						</div>
 					</td>
 				</tr>`;
-        }
+      }
       );
       $(`#${tableID} tbody`).html(tableTr);
 
@@ -923,7 +934,7 @@ function tabChangeOpt5(e) {
 }
 
 makeTableHead("man-data-opt1-exist");
-manDtOpt1Exist("man-data-opt1-exist",7,"pagination-op1-data",`tabChangeOpt1(this)`);
+manDtOpt1Exist("man-data-opt1-exist", 7, "pagination-op1-data", `tabChangeOpt1(this)`);
 
 makeTableHead("man-data-opt3-exist");
 manDtOpt1Exist(
@@ -1174,6 +1185,7 @@ function manDatacheckEmptyDiff(e) {
 }
 
 function resetAccountFormFields() {
+  $("#tab_1 .account-form-container .custome-select select")[0].selectedIndex = 0;
   let formInputContainer = $(".account-form-container .custom-input-only");
   let formInputs = $(".account-form-container .custom-input-only input");
   for (i = 0; i < formInputContainer.length; i++) {
@@ -1195,75 +1207,72 @@ $("#userAvatar").click(function () {
 });
 
 // Bootstrap Tooltip Enable Function (Manage Result Table Tooltips)
-function tooltipFunction(){
+function tooltipFunction() {
   $('[data-toggle="tooltip"]').tooltip(
-    { 
-      animation : true,
+    {
+      animation: true,
       container: 'body',
       trigger: 'hover',
       placement: 'bottom',
       delay: { "show": 10, "hide": 0 }
     }
-  );   
+  );
 };
 
-function universalConfirmModalDelete(globalVariable){
+function universalConfirmModalDelete(globalVariable) {
   let headerText = "DELETE ROW";
   let detailsText = "Remove this item permanently?";
 
-  if(globalVariable.className.includes("deleteTableRow")){
+  if (globalVariable.className.includes("deleteTableRow")) {
     headerText = "DELETE ROW";
     detailsText = "Remove this item permanently?";
-  }else if(globalVariable.className.includes("updateNowBtn")){
+  } else if (globalVariable.className.includes("updateNowBtn")) {
     headerText = "UPDATE NOW";
     detailsText = "Confirm to update data?";
-  }else if(globalVariable.className.includes("clearFilterBtn")){
+  } else if (globalVariable.className.includes("clearFilterBtn")) {
     headerText = "CLEAR FILTER";
     detailsText = "Confirm to clear filter?";
-  }else if(globalVariable.className.includes("clearSortingBtn")){
+  } else if (globalVariable.className.includes("clearSortingBtn")) {
     headerText = "CLEAR SORTING";
     detailsText = "Confirm to clear sorting?";
-  }else if(globalVariable.className.includes("mnResFilterSaveBtn")){
+  } else if (globalVariable.className.includes("mnResFilterSaveBtn")) {
     headerText = "SAVE FILTER";
     detailsText = "Confirm to save filter data?";
-  }else if(globalVariable.className.includes("deleteRowLayout12")){
+  } else if (globalVariable.className.includes("deleteRowLayout12")) {
     headerText = "DELETE TABLE ROW";
     detailsText = "Remove this row permanently?";
-  }else if(globalVariable.className.includes("submitSaveNote")){
+  } else if (globalVariable.className.includes("submitSaveNote")) {
     headerText = "SAVE NOTES";
     detailsText = "Confirm to save notes?";
-  }else if(globalVariable.className.includes("saveAlerts")){
+  } else if (globalVariable.className.includes("saveAlerts")) {
     headerText = "SAVE ALERTS";
     detailsText = "Confirm to save alerts?";
-  }else if(globalVariable.className.includes("save-start-cancel-btn")){
-    headerText = "SAVE DETAILS";
-    detailsText = "Confirm to save result saving details?";
-  }else if(globalVariable.className.includes("addToBookMark")){
+  } else if (globalVariable.className.includes("addToBookMark")) {
     headerText = "ADD TO BOOKMARKS";
     detailsText = "Confirm to add to bookmark?";
-  }else if(globalVariable.className.includes("clickViewDetails")){
+  } else if (globalVariable.className.includes("clickViewDetails")) {
     headerText = "VIEW DETAILS";
     detailsText = "Confirm to view details?";
   }
-  
+
   $("#universal_confirm_modal #confirm_header p").html(headerText);
   $("#universal_confirm_modal #confirm_deatis p").html(detailsText);
   $('#universal_confirm_modal').modal('show');
   console.dir(globalVariable);
 }
 
-function op1ResetBtnConfirm(resetGlobal){
-  if(($("#leftSideDrag_op1").html() != "") || ($("#rightSideDrag_op1").html() != "")){
+function op1ResetBtnConfirm(resetGlobal) {
+  if (($("#leftSideDrag_op1").html() != "") || ($("#rightSideDrag_op1").html() != "")) {
     $("#universal_confirm_modal #confirm_header p").html("RESET FIELDS");
     $("#universal_confirm_modal #confirm_deatis p").html("Confirm to reset input fields?");
     $('#universal_confirm_modal').modal('show');
   }
 }
 
-function universalThankDraft(globalThankVar){
+function universalThankDraft(globalThankVar) {
   let thankHeaderText = "THANK YOU";
   let thankDetailsText = "Your Request has been Successfully Processed";
-  if(globalThankVar.className.includes("btn-save-draft")){
+  if (globalThankVar.className.includes("btn-save-draft")) {
     thankDetailsText = "The Draft Form has been Successfully Saved";
   }
   $("#universalThankDraftModal #thank_draft_header p").html(thankHeaderText);
@@ -1273,23 +1282,23 @@ function universalThankDraft(globalThankVar){
 
 let targetCopyMoveElement = "";
 
-function uniConfirmButton(){
+function uniConfirmButton() {
   $('#universal_confirm_modal').modal('hide');
   // console.log("Manage Data Tab :" + manageDataTab.display);
   // console.log("Create New Active :" + createNewActive);
   // console.log($("#leftSideDrag_op1").html());
   // console.log($("#rightSideDrag_op1").html());
   // if(($("#leftSideDrag_op1").html() != "") || ($("#rightSideDrag_op1").html() != "")){}
-  let manageDataTab =  window.getComputedStyle(document.querySelector('#tab_2'));
+  let manageDataTab = window.getComputedStyle(document.querySelector('#tab_2'));
   let createNewActive = $("#my567").hasClass("createGreen");
-  if(manageDataTab.display == "block" && createNewActive == true){
+  if (manageDataTab.display == "block" && createNewActive == true) {
     resetLeftRightBox();
   }
-  
 
-  if(targetCopyMoveElement != ""){
+
+  if (targetCopyMoveElement != "") {
     $(`.${targetCopyMoveElement}`).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
-	  $(`.${targetCopyMoveElement}`).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
+    $(`.${targetCopyMoveElement}`).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
     targetCopyMoveElement = "";
   }
 
@@ -1304,12 +1313,29 @@ function uniConfirmButton(){
 
 // Universal Thank Draft Modal (on show/hide event)
 $('#universalThankDraftModal').on('show.bs.modal', function (e) {
-	$('body').addClass("modal-force-open");
+  $('body').addClass("modal-force-open");
 }).on('hide.bs.modal', function (e) {
-	$('body').removeClass("modal-force-open");
+  $('body').removeClass("modal-force-open");
+
+  $("#viewtwo").css("display", "none");
+  $("#rowdetails").css("display", "none");
+  $("#noteswindow").css("display", "none");
+  $("#alertswindow").css("display", "none");
+  $("#copyrowlist").css("display", "none");
+  $("#moverowlist").css("display", "none");
+
+  $("#viewtwo_style2").css("display", "none");
+  $("#rowdetails_style2").css("display", "none");
+  $("#noteswindow_style2").css("display", "none");
+  $("#alertswindow_style2").css("display", "none");
+  $("#copyrowlist_style2").css("display", "none");
+  $("#moverowlist_style2").css("display", "none");
+
+  $("#col8Filter").css('display', 'none');
+
 })
 
-function confirmModalCopyMove(targetELEMENT){
+function confirmModalCopyMove(targetELEMENT) {
   targetCopyMoveElement = targetELEMENT;
 
   let headerCopyMoveText = "CONFIRM BOX";
@@ -1317,15 +1343,15 @@ function confirmModalCopyMove(targetELEMENT){
 
   let unCheckRow = $(`.${targetELEMENT}`).children(".sublist-check-box").hasClass("checkbox_show");
 
-  if(targetELEMENT.includes("copyto")){
+  if (targetELEMENT.includes("copyto")) {
     headerCopyMoveText = "COPY ROW";
     detailsCopyMoveText = "Confirm to copy row?";
-  }else if(targetELEMENT.includes("moveto")){
+  } else if (targetELEMENT.includes("moveto")) {
     headerCopyMoveText = "MOVE ROW";
     detailsCopyMoveText = "Confirm to move row?";
   }
 
-  if(unCheckRow){
+  if (unCheckRow) {
     headerCopyMoveText = "UNCHECK ROW";
     detailsCopyMoveText = "Confirm to uncheck row?";
   }
@@ -1335,19 +1361,19 @@ function confirmModalCopyMove(targetELEMENT){
   $("#universal_confirm_modal #confirm_header p").html(headerCopyMoveText);
   $("#universal_confirm_modal #confirm_deatis p").html(detailsCopyMoveText);
   $('#universal_confirm_modal').modal('show');
-  
+
 }
 
 let mnResultTitle = "";
 let mnResultSubTitle = "";
 
-function displayChartManageResult(itemTitle, itemSubTitle){
+function displayChartManageResult(itemTitle, itemSubTitle) {
   mnResultTitle = itemTitle;
   mnResultSubTitle = itemSubTitle;
   $('#manageResultChartDisplay_modal').modal('show');
 }
 
-function chartDispConfirmButton(){
+function chartDispConfirmButton() {
   $('#manageResultChartDisplay_modal').modal('hide');
 
   document.querySelector("#chartPage .chart-title .left-item").innerHTML = mnResultTitle;
@@ -1355,13 +1381,39 @@ function chartDispConfirmButton(){
   document.getElementById("firstOpen").click();
   gotoChartPage();
 
-  $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
-  $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
-  $('#universalThankDraftModal').modal('show');
-  
+  // $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
+  // $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
+  // $('#universalThankDraftModal').modal('show');
+
   mnResultTitle = "";
   mnResultSubTitle = "";
 }
+
+function showConfirmSample4StartBtn() {
+  $('#sample4SaveStart_confirm_modal').modal('show');
+}
+
+function sample4StartCancelBtn() {
+  $('#mnTemp_saveStart').modal('show');
+}
+
+function sample4StartConfirmBtn() {
+  $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
+  $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
+  $('#universalThankDraftModal').modal('show');
+}
+
+$('#mnTemp_saveStart').on('show.bs.modal', function (e) {
+  $('body').addClass("modal-force-open-sample4");
+}).on('hide.bs.modal', function (e) {
+  $('body').removeClass("modal-force-open-sample4");
+});
+
+$('#sample4SaveStart_confirm_modal').on('show.bs.modal', function (e) {
+  $('body').addClass("modal-force-open-confirm");
+}).on('hide.bs.modal', function (e) {
+  $('body').removeClass("modal-force-open-confirm");
+});
 
 if ($(".tab_4").hasClass("active")) {
   $(".content").style.backgroundColor = "#000";

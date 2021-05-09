@@ -11,8 +11,8 @@ for (let i = 1; i <= 100; i++) {
 }
 
 function makeTableHeadAlert(tableID) {
-  let tableHead = 
-      `<th class="">ROW</th>
+  let tableHead =
+    `<th class="">ROW</th>
         <th class="">ALERT TYPE
           <span class="tooltip-container" tooltip="Sample text here1" flow="down">
             <i class="fas fa-question-circle"></i>
@@ -63,7 +63,7 @@ function makeTableHeadAlert(tableID) {
           </span>
           </th>`;
 
-    $(`#${tableID} thead`).html(tableHead);
+  $(`#${tableID} thead`).html(tableHead);
 
 }
 
@@ -76,13 +76,13 @@ function alertTableExist(tableID, noRow, pagiId) {
     callback: function (data, pagination) {
       let tableTr = "";
       data.forEach(({ id, serial, alertValue, alertEmail }, index) => {
-          let tabHd = $(`#${tableID} thead th`);
-          let len = tabHd.length;
-          let classList = [];
-          for (let i = 1; i < len - 1; i++) {
-            classList.push(tabHd[i].className);
-          }
-          tableTr += `
+        let tabHd = $(`#${tableID} thead th`);
+        let len = tabHd.length;
+        let classList = [];
+        for (let i = 1; i < len - 1; i++) {
+          classList.push(tabHd[i].className);
+        }
+        tableTr += `
           <tr id="${id}">
 					<th class="row-data" scope="row">${serial}</th>
           <td class="selectaltype ${classList[0]}">
@@ -115,11 +115,12 @@ function alertTableExist(tableID, noRow, pagiId) {
           <td class="${classList[3]} inpumail">
               <div class="mail_enter">
                   <div class="mail_icons">
-                      <i class="fas fa-envelope"></i>
+                      <i class="fas fa-envelope iconActive"></i>
                       <i class="fas fa-phone-alt"></i>
                       <i class="fas fa-comment-alt"></i>
                   </div>
-                  <input type="email" class="alert-exists-data" value="${alertEmail}" placeholder="Enter a Email Address">
+                  <!-- <input type="email" class="alert-exists-data" value="${alertEmail}" placeholder="Enter a Email Address"> -->
+                  <input type="email" class="alert-exists-data" value="" placeholder="Enter a Email Address">
               </div>
           </td>
 					
@@ -138,9 +139,13 @@ function alertTableExist(tableID, noRow, pagiId) {
               </div>
           </td>
 				</tr>`;
-        }
+      }
       );
       $(`#${tableID} tbody`).html(tableTr);
+
+      //Handling Alert Methods Icons
+      manageAlertsIconHandling();
+
     },
   };
   let container = $(`#${pagiId}`);
@@ -148,11 +153,11 @@ function alertTableExist(tableID, noRow, pagiId) {
 }
 
 makeTableHeadAlert("manage-alert-table-exist");
-alertTableExist("manage-alert-table-exist",7,"pagination-manage-alert");
+alertTableExist("manage-alert-table-exist", 7, "pagination-manage-alert");
 
 $("#row-mnAlert").change(function (e) {
   let noRow = e.target.value;
-  alertTableExist("manage-alert-table-exist",noRow,"pagination-manage-alert");
+  alertTableExist("manage-alert-table-exist", noRow, "pagination-manage-alert");
   alertTableHeadClick("manage-alert-table-exist");
 });
 
@@ -212,3 +217,40 @@ function alertTableHeadClick(tableId) {
 }
 
 alertTableHeadClick("manage-alert-table-exist");
+
+
+// Manage Alerts : Alert Methods Column ICONS (Changing Placeholder and Icon Color)
+
+function manageAlertsIconHandling() {
+  let emailIconMnAlert = $("#manage-alert-table-exist tr .inpumail .mail_icons");
+  for (let i = 0; i < emailIconMnAlert.length; i++) {
+    emailIconMnAlert[i].addEventListener("click", function (event) {
+      // let elementPositionMain = event.target;
+      if (event.target.nodeName == "I") {
+        let iconClassName = event.target.classList[1];
+        if (iconClassName == "fa-envelope") {
+          $(emailIconMnAlert[i].children[0]).addClass("iconActive");
+          $(emailIconMnAlert[i].children[1]).removeClass("iconActive");
+          $(emailIconMnAlert[i].children[2]).removeClass("iconActive");
+
+          $(emailIconMnAlert[i].parentNode.lastElementChild).attr("placeholder", "Enter a Email Address").attr("type", "email");
+        }
+        else if (iconClassName == "fa-phone-alt") {
+          $(emailIconMnAlert[i].children[0]).removeClass("iconActive");
+          $(emailIconMnAlert[i].children[1]).addClass("iconActive");
+          $(emailIconMnAlert[i].children[2]).removeClass("iconActive");
+
+          $(emailIconMnAlert[i].parentNode.lastElementChild).attr("placeholder", "Enter a Phone Number").attr("type", "number");
+        }
+        else if (iconClassName == "fa-comment-alt") {
+          $(emailIconMnAlert[i].children[0]).removeClass("iconActive");
+          $(emailIconMnAlert[i].children[1]).removeClass("iconActive");
+          $(emailIconMnAlert[i].children[2]).addClass("iconActive");
+
+          $(emailIconMnAlert[i].parentNode.lastElementChild).attr("placeholder", "Enter a Text Message").attr("type", "text");
+        }
+
+      }
+    });
+  }
+}
