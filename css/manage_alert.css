@@ -277,7 +277,8 @@ td {
 .alert-mytable .table89 .reset-save-btn button {
     padding: 0px 8px;
     border-radius: 2px;
-    border: 1px solid #bbbbbb;
+    border: 1px solid #bbbbbb !important;
+    /* border: 0; */
     font-family: gilroy-medium, sans-serif;
     font-weight: 600;
     font-size: 14px;
@@ -285,22 +286,28 @@ td {
     letter-spacing: 1px;
     background: #f1f3f5;
     transition: all 0.3s ease;
+    outline: 0;
 }
 
 .alert-mytable .table89 .reset-save-btn .reset4:hover {
+    border: 1px solid #bbbbbb !important;
     background: #b3b3b3;
+    outline: 0;
 }
 
 .alert-mytable .table89 .reset-save-btn .save4 {
-    border: 1px solid #000000;
+    border: 1px solid #000000 !important;
     color: #ffffff;
     background: #000000;
     margin-left: 10px;
+    outline: 0;
 }
 
 .alert-mytable .table89 .reset-save-btn .save4:hover {
+    border: 1px solid #000000 !important;
     background: #f1f3f5;
     color: #1d1d1d;
+    outline: 0;
 }
 
 .alert-mytable .table89 .removenull {
