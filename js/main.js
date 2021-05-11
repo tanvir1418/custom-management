@@ -1424,3 +1424,30 @@ function checkMailIcon() {
     $('#loginRequired').modal('show');
   }
 }
+
+function controlFilterConfirmModal() {
+  $('#filter_confirm_modal').modal('show');
+}
+
+function filterThankModal() {
+  $('#filter_confirm_modal').modal('hide');
+  $('#filterThankYouModal').modal('show');
+}
+
+$('#filter-modal').on('show.bs.modal', function (e) {
+  // $('body').addClass("modal-open-filter");
+}).on('hide.bs.modal', function (e) {
+  $('body').removeClass("modal-open-filter");
+});
+
+$('#filter_confirm_modal').on('show.bs.modal', function (e) {
+  $('body').addClass("modal-open-filter-confirm").addClass("modal-open-filter");;
+}).on('hide.bs.modal', function (e) {
+  $('body').removeClass("modal-open-filter-confirm");
+});
+
+$('#filterThankYouModal').on('show.bs.modal', function (e) {
+  $('body').addClass("modal-open-filter-thanks");
+}).on('hide.bs.modal', function (e) {
+  $('body').removeClass("modal-open-filter-thanks");
+});
