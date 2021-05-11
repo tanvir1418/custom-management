@@ -428,6 +428,7 @@ table#sub2-editor-table {
 }
 
 #universalThankDraftModal .modal-dialog,
+#saveDraftThankYouModal .modal-dialog,
 #mnAccountThankModal .modal-dialog{
     width: 360px;
     border: 0;
@@ -435,6 +436,7 @@ table#sub2-editor-table {
 }
 
 #universalThankDraftModal .modal-content .modal-body,
+#saveDraftThankYouModal .modal-content .modal-body,
 #mnAccountThankModal .modal-content .modal-body {
     padding: 0;
     border-radius: 0 !important;

@@ -2131,7 +2131,7 @@
                                                         required>
                                                 </div>
                                                 <div class="save-draft-wrapper">
-                                                    <button class="option4-below-button btn-save-draft" onclick="universalThankDraft(this)">
+                                                    <button class="option4-below-button btn-save-draft" data-toggle="modal" data-target="#saveDraftThankYouModal">
                                                         Save Draft
                                                     </button>
                                                 </div>
@@ -3684,7 +3684,7 @@
                                     <input type="text" placeholder="Template Name" autocomplete="off" required>
                                 </div>
                                 <div class="save-draft-wrapper">
-                                    <button class="option4-below-button btn-save-draft" onclick="universalThankDraft(this)">Save Draft</button>
+                                    <button class="option4-below-button btn-save-draft" data-toggle="modal" data-target="#saveDraftThankYouModal">Save Draft</button>
                                 </div>
                                 <div class="save-start-wrapper save-start-class-hide-show-mnTemp"
                                     id="saveStartTarget-mnTemp">
@@ -7499,6 +7499,33 @@
         </div>
     </div>
     <!-- =========Universal Thank Draft Modal Ends========= -->
+
+    <!-- =========Save Draft Thank You Modal Starts========= -->
+    <div class="modal fade" id="saveDraftThankYouModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="generate-button-click-popup">
+                        <div class="generate-button-click-popup-wrapper">
+                            <div class="generate-button-popup-header-title">
+                                <p>THANK YOU</p>
+                            </div>
+                            <div class="generate-button-popup-body-wrapper">
+                                <div class="generate-button-popup-body-content">
+                                    <p>The Draft Form has been Successfully Saved</p>
+                                </div>
+                            </div>
+                            <div class="generate-popup" data-dismiss="modal">
+                                <input type="button" value="Close" class="gn-close-btn" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =========Save Draft Thank You Modal Ends========= -->
 
     <!-- =========Manage Account THANK Modal Starts========= -->
     <div class="modal fade" id="mnAccountThankModal">
