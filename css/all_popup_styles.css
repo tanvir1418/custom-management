@@ -427,14 +427,18 @@ table#sub2-editor-table {
     color: #e6e6e6;
 }
 
+#filterThankYouModal .modal-dialog,
 #universalThankDraftModal .modal-dialog,
+#saveDraftThankYouModal .modal-dialog,
 #mnAccountThankModal .modal-dialog{
     width: 360px;
     border: 0;
     border-radius: 0 !important;
 }
 
+#filterThankYouModal .modal-content .modal-body,
 #universalThankDraftModal .modal-content .modal-body,
+#saveDraftThankYouModal .modal-content .modal-body,
 #mnAccountThankModal .modal-content .modal-body {
     padding: 0;
     border-radius: 0 !important;
@@ -2352,12 +2356,18 @@ Bottom codes are added by Tanvir
 }
 
 .modal-force-open,
+.modal-open-filter,
+.modal-open-filter-confirm,
+.modal-open-filter-thanks,
 .modal-force-open-confirm,
 .modal-force-open-sample4{
     overflow:hidden !important;
     padding-right: 17px !important;
 }
 .modal-force-open .modal,
+.modal-open-filter .modal,
+.modal-open-filter-confirm .modal,
+.modal-open-filter-thanks .modal,
 .modal-force-open-confirm .modal,
 .modal-force-open-sample4 .modal{
     overflow-x:hidden !important;

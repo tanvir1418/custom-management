@@ -37,12 +37,12 @@
         </div>
         <div class="nav-items d-flex">
             <div class="icon-box">
-                <i class="icon fas fa-envelope ftr-pad" onclick="location.href='email.html';"></i>
+                <i class="icon fas fa-envelope ftr-pad" onclick="checkMailIcon()"></i>
                 <i class="icon fas fa-user" onclick="setAccountTab()"></i>
             </div>
             <div class="welcome-box">
                 <p class="welcome m-0">Welcome</p>
-                <p id="username_div" class="name m-0">Peter Parker</p>
+                <p id="username_div" class="name m-0"></p>
             </div>
         </div>
         <!-- FIXED BAR ITEMS END -->
@@ -257,7 +257,7 @@
                         <p>Services 10 Goes Here</p>
                     </div>
                 </div>
-                <div class="signup-box3">
+                <div class="signup-box3" onclick="setAccountTab()">
                     <p>SIGN UP</p>
                 </div>
             </div>
@@ -319,7 +319,7 @@
                         <p>Services 10 Goes Here</p>
                     </div>
                 </div>
-                <div class="signup-box3">
+                <div class="signup-box3" onclick="setAccountTab()">
                     <p>SIGN UP</p>
                 </div>
             </div>
@@ -372,7 +372,7 @@
                         <p>Services 10 Goes Here</p>
                     </div>
                 </div>
-                <div class="signup-box3">
+                <div class="signup-box3" onclick="setAccountTab()">
                     <p>SIGN UP</p>
                 </div>
             </div>
@@ -658,10 +658,31 @@
             </div>
         </div>
     </section>
-    
+    <!-- Login is required Modal start -->
+    <div class="modal fade" id="loginRequired">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="login-alert-header">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="modal-body">
+                    <p>Login is required to access this page</p>
+                    <button type="button" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login is required Modal start -->
     <script src="./js/jquery.js"></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script>
+        
+        const currentUser = localStorage.getItem("currentUser");
+        const user_div = document.getElementById("username_div");
+        if (currentUser != null && currentUser != "") {
+            user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
+        }
+
         $("#fds546").click(function(){
             $("#more_faq").fadeToggle(500);
             $("#sfe2").toggleClass("open")
