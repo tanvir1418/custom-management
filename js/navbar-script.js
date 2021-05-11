@@ -101,3 +101,12 @@ function setAlertTab() {
         window.location.href = "/main.html";
     }
 }
+
+function checkMailIcon() {
+    let loginCondition = localStorage.getItem("loginStatus");
+    if (loginCondition == "LOGGED_IN") {
+        window.location.href = "/email.html";
+    } else {
+        $('#loginRequired').modal('show');
+    }
+}

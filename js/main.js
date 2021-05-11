@@ -1415,3 +1415,12 @@ $('#sample4SaveStart_confirm_modal').on('show.bs.modal', function (e) {
 if ($(".tab_4").hasClass("active")) {
   $(".content").style.backgroundColor = "#000";
 }
+
+function checkMailIcon() {
+  let loginCondition = localStorage.getItem("loginStatus");
+  if (loginCondition == "LOGGED_IN") {
+    window.location.href = "/email.html";
+  } else {
+    $('#loginRequired').modal('show');
+  }
+}

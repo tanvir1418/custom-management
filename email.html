@@ -43,7 +43,7 @@
         </div>
         <div class="welcome-box">
           <p class="welcome m-0">Welcome</p>
-          <p id="username_div" class="name m-0">Peter Parker</p>
+          <p id="username_div" class="name m-0"></p>
         </div>
       </div>
       <!-- FIXED BAR ITEMS END -->
@@ -755,8 +755,30 @@
       </div>
     </div>
     <!-- =========Universal Thank Draft Modal Ends========= -->
+    <!-- Login is required Modal start -->
+    <div class="modal fade" id="loginRequired">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+              <div class="login-alert-header">
+                  <i class="fas fa-exclamation-triangle"></i>
+              </div>
+              <div class="modal-body">
+                  <p>Login is required to access this page</p>
+                  <button type="button" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Login is required Modal start -->
 
     <script>
+      
+      const currentUser = localStorage.getItem("currentUser");
+        const user_div = document.getElementById("username_div");
+        if (currentUser != null && currentUser != "") {
+            user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
+        }
+
       // CHOOSE OPTION SECTION START
       function selectEmailop(evt, optionName) {
         var i, tabcontent, tablinks;
