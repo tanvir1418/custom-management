@@ -1072,7 +1072,7 @@
 /* Forcing Modal To Be Acting Like Actual Modal After Hide of The First Modal (Confirm Box Modal) */
 .modal-force-open{
   overflow:hidden !important;
-  padding-right: -17px !important;
+  padding-right: 17px !important;
 }
 .modal-force-open .modal{
   overflow-x:hidden !important;

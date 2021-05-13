@@ -619,7 +619,7 @@
               </div>
               <div class="sp-button-row">
                 <input type="button" value="Reset" class="reset" onclick="resetContactFormFields()" />
-                <input type="button" value="Submit" class="submit" />
+                <input type="button" value="Submit" class="submit" data-toggle="modal" data-target="#form_submit_modal"/>
               </div>
             </form>
           </div>
@@ -722,6 +722,32 @@
               <div class="comfirm-btn-bx">
                 <button type="button" class="cancel-list-data" data-dismiss="modal">Cancel</button>
                 <button type="button" class="confirm-list-data" onclick="emailConfirmButton(this)">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ======= Universal Confirm Modal END =========== -->
+
+    <!-- ======= Universal Confirm Modal START =========== -->
+    <div class="modal fade delete-list-item" id="form_submit_modal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <p class="modal-title">SUBMIT DETAILS</p>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="remove-box">
+              <div class="question-delete">
+                <p>Do you want to submit detatils?</p>
+              </div>
+              <div class="comfirm-btn-bx">
+                <button type="button" class="cancel-list-data" data-dismiss="modal">Cancel</button>
+                <button type="button" class="confirm-list-data" onclick="formConfirmBtn(this)">Confirm</button>
               </div>
             </div>
           </div>
