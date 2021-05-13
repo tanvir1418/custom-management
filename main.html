@@ -387,6 +387,43 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="account-form-group user-info-group">
+                                <div class="ac-width-33">
+                                    <div class="ac-title">
+                                        <p>Email</p>
+                                    </div>
+                                    <div class="ac-input">
+                                        <div class="custom-input-only">
+                                            <input type="text" onfocusout="manDatacheckEmpty(this)"
+                                                oninput="manDatacheckEmpty(this)" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ac-width-33">
+                                    <div class="ac-title">
+                                        <p class="diff-title">Password</p>
+                                    </div>
+                                    <div class="ac-input">
+                                        <div class="custom-input-only">
+                                            <input type="password" id="user_password_field" onfocusout="passwordEmptyCheck(this)"
+                                                oninput="passwordEmptyCheck(this)" />
+                                            <span toggle="#user_password_field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ac-width-33">
+                                    <div class="ac-title">
+                                        <p class="diff-title">Repeat Password</p>
+                                    </div>
+                                    <div class="ac-input">
+                                        <div class="custom-input-only">
+                                            <input type="password" id="repeat_password_field" onfocusout="passwordEmptyCheck(this)"
+                                                oninput="passwordEmptyCheck(this)" />
+                                            <span toggle="#repeat_password_field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="ac-button-row">
                                 <input type="button" value="Reset" class="reset" onclick="resetAccountFormFields()">
                                 <input type="button" value="Save" class="save" data-toggle="modal" data-target="#mnAccountThankModal">
@@ -7569,7 +7606,7 @@
                                 </div>
                             </div>
                             <div class="generate-popup" data-dismiss="modal">
-                                <input type="button" value="Close" class="gn-close-btn" />
+                                <input type="button" value="Close" class="gn-close-btn" onclick="window.location.href ='index.html';" />
                             </div>
                         </div>
                     </div>
