@@ -71,25 +71,32 @@
 }
 #allserv-section .plan-box-2 .plan_name .plan-star{
     position: absolute;
-    font-size: 180px;
+    font-size: 250px;
     color: #0B00FF;
-    top: -132px;
-    right: -58px;
+    top: -185px;
+    right: -105px;
     transform: rotate(110deg);
     user-select: none;
-    text-shadow: 5px 5px #ff1c1c;
+    /* text-shadow: 5px 5px #ff1c1c; */
 }
-#allserv-section .plan-box-2 .plan_name .plan-star-text{
+#allserv-section .plan-box-2 .plan_name .ght8{
     font-size: 18px;
     margin: 0;
     line-height: normal;
     color: #ffffff;
     font-family: gilroy-medium, sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     position: absolute;
-    top: -12px;
-    right: -20px;
     transform: rotate(40deg);
+}
+
+#allserv-section .plan-box-2 .plan_name .star-text1{
+    top: -19px;
+    right: -56px;
+}
+#allserv-section .plan-box-2 .plan_name .star-text2{
+    top: -7px;
+    right: -47px;
 }
 
 #allserv-section .plan-box-2 .plan_name p {
