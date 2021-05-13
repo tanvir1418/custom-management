@@ -71,10 +71,10 @@
 }
 #allserv-section .plan-box-2 .plan_name .plan-star{
     position: absolute;
-    font-size: 250px;
+    font-size: 136px;
     color: #0B00FF;
-    top: -185px;
-    right: -105px;
+    top: -92px;
+    right: -56px;
     transform: rotate(110deg);
     user-select: none;
     /* text-shadow: 5px 5px #ff1c1c; */
@@ -91,12 +91,12 @@
 }
 
 #allserv-section .plan-box-2 .plan_name .star-text1{
-    top: -19px;
-    right: -56px;
+    top: -13px;
+    right: -39px;
 }
 #allserv-section .plan-box-2 .plan_name .star-text2{
-    top: -7px;
-    right: -47px;
+    top: 3px;
+    right: -27px;
 }
 
 #allserv-section .plan-box-2 .plan_name p {
