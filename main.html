@@ -387,6 +387,43 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="account-form-group user-info-group">
+                                <div class="ac-width-33">
+                                    <div class="ac-title">
+                                        <p>Email</p>
+                                    </div>
+                                    <div class="ac-input">
+                                        <div class="custom-input-only">
+                                            <input type="text" onfocusout="manDatacheckEmpty(this)"
+                                                oninput="manDatacheckEmpty(this)" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ac-width-33">
+                                    <div class="ac-title">
+                                        <p class="diff-title">Password</p>
+                                    </div>
+                                    <div class="ac-input">
+                                        <div class="custom-input-only">
+                                            <input type="password" id="user_password_field" onfocusout="passwordEmptyCheck(this)"
+                                                oninput="passwordEmptyCheck(this)" />
+                                            <span toggle="#user_password_field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ac-width-33">
+                                    <div class="ac-title">
+                                        <p class="diff-title">Repeat Password</p>
+                                    </div>
+                                    <div class="ac-input">
+                                        <div class="custom-input-only">
+                                            <input type="password" id="repeat_password_field" onfocusout="passwordEmptyCheck(this)"
+                                                oninput="passwordEmptyCheck(this)" />
+                                            <span toggle="#repeat_password_field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="ac-button-row">
                                 <input type="button" value="Reset" class="reset" onclick="resetAccountFormFields()">
                                 <input type="button" value="Save" class="save" data-toggle="modal" data-target="#mnAccountThankModal">
@@ -593,7 +630,7 @@
                                                 autocomplete="off" required>
                                         </div>
                                         <div class="generate-button">
-                                            <button class="button btn-generate" onclick="universalThankDraft(this)">Generate</button>
+                                            <button class="button btn-generate" data-toggle="modal" data-target="#onlyThankModal">Generate</button>
                                         </div>
                                     </div>
                                 </div>
@@ -917,7 +954,7 @@
                                                     required>
                                             </div>
                                             <div class="generate-button">
-                                                <button class="button btn-generate" onclick="universalThankDraft(this)">Generate</button>
+                                                <button class="button btn-generate" data-toggle="modal" data-target="#onlyThankModal">Generate</button>
                                             </div>
                                         </div>
                                     </div>
@@ -2321,7 +2358,7 @@
                                                 <p>Reset</p>
                                             </div>
                                         </a>
-                                        <a onclick="universalThankDraft(this)">
+                                        <a data-toggle="modal" data-target="#onlyThankModal">
                                             <div class="mybtns-39 submit-btn">
                                                 <p>Done</p>
                                             </div>
@@ -7569,7 +7606,7 @@
                                 </div>
                             </div>
                             <div class="generate-popup" data-dismiss="modal">
-                                <input type="button" value="Close" class="gn-close-btn" />
+                                <input type="button" value="Close" class="gn-close-btn" onclick="window.location.href ='index.html';" />
                             </div>
                         </div>
                     </div>
@@ -7578,6 +7615,32 @@
         </div>
     </div>
     <!-- =========Manage Account THANK Modal Ends========= -->
+
+    <!-- =========JUST THANK Modal Starts========= -->
+    <div class="modal fade" id="onlyThankModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="generate-button-click-popup">
+                        <div class="generate-button-click-popup-wrapper">
+                            <div class="generate-button-popup-header-title">
+                                <p>THANK YOU</p>
+                            </div>
+                            <div class="generate-button-popup-body-wrapper">
+                                <div class="generate-button-popup-body-content">
+                                    <p>Your Request has been Successfully Processed</p>
+                                </div>
+                            </div>
+                            <div class="generate-popup" data-dismiss="modal">
+                                <input type="button" value="Close" class="gn-close-btn" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =========JUST THANK Modal Ends========= -->
 
     <!-- ===-=-=-=- OPTION 4 LIST1 MODAL START opt4a-list-modal  ======-===== -->
     <div class="modal fade listData-modal" id="opt4a-list-modal">

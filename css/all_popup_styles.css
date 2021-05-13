@@ -427,6 +427,7 @@ table#sub2-editor-table {
     color: #e6e6e6;
 }
 
+#onlyThankModal .modal-dialog,
 #filterThankYouModal .modal-dialog,
 #universalThankDraftModal .modal-dialog,
 #saveDraftThankYouModal .modal-dialog,
@@ -436,6 +437,7 @@ table#sub2-editor-table {
     border-radius: 0 !important;
 }
 
+#onlyThankModal .modal-content .modal-body,
 #filterThankYouModal .modal-content .modal-body,
 #universalThankDraftModal .modal-content .modal-body,
 #saveDraftThankYouModal .modal-content .modal-body,
