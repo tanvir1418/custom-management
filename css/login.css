@@ -196,12 +196,17 @@ a:visited {
     border: 3px solid #848484;
     border-radius: 5px;
     padding: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: gilroy-medium, sans-serif;
+    color: #000000;
 }
 .terms_conditions .tc-outerbox p{
     font-size: 18px;
     font-weight: 500;
     font-family: gilroy-medium, sans-serif;
     color: #000000;
+    margin: 0;
 }
 .terms_conditions .tic-box{
     display: flex;
