@@ -64,12 +64,12 @@
         </div>
         <div class="nav-items d-flex">
             <div class="icon-box">
-                <i class="icon fas fa-envelope" onclick="location.href='email.html';"></i>
+                <i class="icon fas fa-envelope" onclick="checkMailIcon()"></i>
                 <i class="icon fas fa-user" id="userAvatar"></i>
             </div>
             <div class="welcome-box">
                 <p class="welcome m-0">Welcome</p>
-                <p id="username_div" class="name m-0">Peter Parker</p>
+                <p id="username_div" class="name m-0"></p>
             </div>
         </div>
         <!-- FIXED BAR ITEMS END -->
@@ -2131,7 +2131,7 @@
                                                         required>
                                                 </div>
                                                 <div class="save-draft-wrapper">
-                                                    <button class="option4-below-button btn-save-draft" onclick="universalThankDraft(this)">
+                                                    <button class="option4-below-button btn-save-draft" data-toggle="modal" data-target="#saveDraftThankYouModal">
                                                         Save Draft
                                                     </button>
                                                 </div>
@@ -3684,7 +3684,7 @@
                                     <input type="text" placeholder="Template Name" autocomplete="off" required>
                                 </div>
                                 <div class="save-draft-wrapper">
-                                    <button class="option4-below-button btn-save-draft" onclick="universalThankDraft(this)">Save Draft</button>
+                                    <button class="option4-below-button btn-save-draft" data-toggle="modal" data-target="#saveDraftThankYouModal">Save Draft</button>
                                 </div>
                                 <div class="save-start-wrapper save-start-class-hide-show-mnTemp"
                                     id="saveStartTarget-mnTemp">
@@ -4916,7 +4916,7 @@
                                                             <!-- <button data-dismiss="modal" class="save4 mnResFilterSaveBtn"
                                                                 type="button" onclick="universalConfirmModalDelete(this)">Save</button> -->
                                                             <button class="save4 mnResFilterSaveBtn"
-                                                                type="button" onclick="universalConfirmModalDelete(this)">Save</button>
+                                                                type="button" onclick="controlFilterConfirmModal(this)">Save</button>
                                                         </div>
                                                     </div>
                                                     <div class="con-box-filter drag-column">
@@ -7500,6 +7500,59 @@
     </div>
     <!-- =========Universal Thank Draft Modal Ends========= -->
 
+    <!-- =========Save Draft Thank You Modal Starts========= -->
+    <div class="modal fade" id="saveDraftThankYouModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="generate-button-click-popup">
+                        <div class="generate-button-click-popup-wrapper">
+                            <div class="generate-button-popup-header-title">
+                                <p>THANK YOU</p>
+                            </div>
+                            <div class="generate-button-popup-body-wrapper">
+                                <div class="generate-button-popup-body-content">
+                                    <p>The Draft Form has been Successfully Saved</p>
+                                </div>
+                            </div>
+                            <div class="generate-popup" data-dismiss="modal">
+                                <input type="button" value="Close" class="gn-close-btn" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =========Save Draft Thank You Modal Ends========= -->
+
+    <!-- =========Filter Thank You Modal Starts========= -->
+    <div class="modal fade" id="filterThankYouModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="generate-button-click-popup">
+                        <div class="generate-button-click-popup-wrapper">
+                            <div class="generate-button-popup-header-title">
+                                <p>THANK YOU</p>
+                            </div>
+                            <div class="generate-button-popup-body-wrapper">
+                                <div class="generate-button-popup-body-content">
+                                    <p>Your Request has been Successfully Processed.</p>
+                                </div>
+                            </div>
+                            <div class="generate-popup" data-dismiss="modal">
+                                <input type="button" value="Close" class="gn-close-btn" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =========Filter Thank You Modal Ends========= -->
+
     <!-- =========Manage Account THANK Modal Starts========= -->
     <div class="modal fade" id="mnAccountThankModal">
         <div class="modal-dialog modal-dialog-centered">
@@ -7894,6 +7947,32 @@
         </div>
     </div>
     <!-- ======= Universal Confirm Modal END =========== -->
+
+    <!-- ======= Filter Confirm Modal START =========== -->
+    <div class="modal fade delete-list-item" id="filter_confirm_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title">SAVE FILTER</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="remove-box">
+                        <div class="question-delete">
+                            <p>Confirm to save filter data?</p>
+                        </div>
+                        <div class="comfirm-btn-bx">
+                            <button type="button" class="cancel-list-data" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="confirm-list-data" onclick="filterThankModal(this)">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======= Filter Confirm Modal END =========== -->
 
     <!-- ======= Manage Result Chart Display Confirm Modal START =========== -->
     <div class="modal fade delete-list-item" id="manageResultChartDisplay_modal">
