@@ -36,8 +36,8 @@
         </div>
         <div class="nav-items d-flex">
             <div class="icon-box">
-                <i class="icon fas fa-envelope ftr-pad" onclick="location.href='email.html';"></i>
-                <i class="icon fas fa-user"></i>
+                <i class="icon fas fa-envelope ftr-pad" onclick="checkMailIcon()"></i>
+                <i class="icon fas fa-user" onclick="setAccountTab()"></i>
             </div>
             <div class="welcome-box">
                 <p class="welcome m-0">Welcome</p>
@@ -194,7 +194,25 @@
             <p class="tc-head">Sample header text goes here</p>
             <p class="tc-head">Sample header text goes here</p>
             <div class="text-box44545">
-                <textarea class="after-login-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sunt et quisquam quibusdam omnis porro? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam aperiam non excepturi omnis mollitia! Deleniti optio officia sequi? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat ipsam, sequi vel sed enim deleniti hic nam ipsum rerum dolor! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, consectetur. Nisi placeat minima, cumque quod voluptatibus assumenda atque repellat dignissimos quos quo consequuntur distinctio numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro recusandae quaerat veritatis distinctio similique illo. Error nesciunt ipsa autem sapiente debitis aut totam harum animi! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est cumque porro reprehenderit ipsum libero nisi? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus officia facilis eius aperiam eos voluptatibus magnam suscipit placeat, tenetur fuga!</textarea>
+                <div class="tc-outerbox" id="all_terms_condition">
+                    <p style="text-align: center; color: red; font-size: 30px;"><b>Terms and Condition</b></p>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing</b> elit. Dicta voluptate inventore nemo ducimus veniam
+                        delectus eligendi incidunt debitis esse nisi.</p>
+                    <p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing</b> elit. Dicta voluptate inventore nemo ducimus veniam
+                        delectus eligendi incidunt debitis esse nisi.</p>
+                    <p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing</b> elit. Dicta voluptate inventore nemo ducimus veniam
+                        delectus eligendi incidunt debitis esse nisi.</p>
+                    <p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing</b> elit. Dicta voluptate inventore nemo ducimus veniam
+                        delectus eligendi incidunt debitis esse nisi.</p>
+                    <p>Lorem ipsum dolor sit amet,elit. Dicta voluptate inventore nemo ducimus veniam delectus eligendi incidunt debitis
+                        esse nisi.</p>
+                    <p>Lorem ipsum dolor sit amet,elit. Dicta voluptate inventore nemo ducimus veniam delectus eligendi incidunt debitis
+                        esse nisi.</p>
+                    <p>Lorem <b>consectetur adipisicing</b> ipsum dolor sit amet,elit. Dicta voluptate inventore nemo d<b>consectetur
+                            adipisicing</b> ucimus
+                        veniam delectus eligendi incidunt debitis esse nisi.</p>
+                </div>
             </div>
             <div class="tic-box">
                 <input type="checkbox" id="agreed-checkBox">
@@ -211,11 +229,14 @@
     <section id="footer">
         <div class="footer-inner">
             <div class="footer-link">
-                <a href="terms.html" class="terms">Terms & Conditions</a>
+                <!-- <a href="terms.html" class="terms">Terms & Conditions</a> -->
+                <span class="terms" onclick="linkTermsConditions()">Terms & Conditions</span>
                 <div class="services">
-                    <a href="allservices.html">All Services</a>
+                    <!-- <a href="allservices.html">All Services</a> -->
+                    <span onclick="linkAllServices()">All Services</span>
                     <p>|</p>
-                    <a href="policy.html">Policy</a>
+                    <!-- <a href="policy.html">Policy</a> -->
+                    <span onclick="linkPolicy()">Policy</span>
                 </div>
             </div>
         </div>

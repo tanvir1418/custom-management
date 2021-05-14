@@ -66,38 +66,96 @@
     padding: 18px 0;
 }
 
-#allserv-section .plan-box-2 .plan_name{
+#allserv-section .plan-box-2 .plan_name {
     position: relative;
 }
-#allserv-section .plan-box-2 .plan_name .plan-star{
+
+/* ==== START DESIGN START ==== */
+#allserv-section .plan-box-2 .plan_name .plan-star {
     position: absolute;
-    font-size: 250px;
+    font-size: 136px;
     color: #0B00FF;
-    top: -185px;
-    right: -105px;
+    top: -22px;
+    right: -16px;
     transform: rotate(110deg);
     user-select: none;
-    /* text-shadow: 5px 5px #ff1c1c; */
-}
-#allserv-section .plan-box-2 .plan_name .ght8{
-    font-size: 18px;
-    margin: 0;
-    line-height: normal;
-    color: #ffffff;
-    font-family: gilroy-medium, sans-serif;
-    font-weight: 600;
-    position: absolute;
-    transform: rotate(40deg);
 }
 
-#allserv-section .plan-box-2 .plan_name .star-text1{
-    top: -19px;
-    right: -56px;
+.starburst {
+    background: #0B00FF;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    color: #fff;
 }
-#allserv-section .plan-box-2 .plan_name .star-text2{
-    top: -7px;
-    right: -47px;
+
+.starburst,
+.starburst span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.starburst span {
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    transform: rotate(45deg);
+}
+
+.starburst:before,
+.starburst:after,
+.starburst span:before,
+.starburst span:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    z-index: -1;
+    transform: rotate(30deg);
+}
+
+.starburst:after {
+    transform: rotate(-30deg);
+}
+
+.starburst span:after {
+    transform: rotate(30deg);
+}
+
+.starburst span:before {
+    transform: rotate(-30deg);
+}
+
+#allserv-section .plan-box-2 .plan_name .ght8 {
+    margin: 0;
+    /* letter-spacing: 3px; */
+    /* line-height: normal; */
+    color: #ffffff;
+    position: absolute;
+    transform: rotate(290deg);
+}
+
+#allserv-section .plan-box-2 .plan_name .star-text1 {
+    top: 13px;
+    right: 16px;
+    font-size: 36px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 900;
+}
+
+#allserv-section .plan-box-2 .plan_name .star-text2 {
+    top: 34px;
+    right: -6px;
+    font-size: 24px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+}
+
+/* ==== START DESIGN END ==== */
 
 #allserv-section .plan-box-2 .plan_name p {
     font-weight: 600;
@@ -414,6 +472,6 @@
     transition: transform 0.3s linear;
 }
 
-#more_faq{
+#more_faq {
     margin-top: 0px !important;
 }

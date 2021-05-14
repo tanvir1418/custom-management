@@ -18,7 +18,7 @@
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" defer></script>
     <script src="./js/navbar-script.js" defer></script>
-    
+
 </head>
 
 <body>
@@ -265,13 +265,17 @@
                 <div class="plan_name">
                     <p>Plan 2</p>
                     <div class="plan-star">
-                        &#9733;
-                    </div>
-                    <div class="ght8 star-text1">
-                        Star plan
-                    </div>
-                    <div class="ght8 star-text2">
-                        Demo text
+                        <!-- &#9733; -->
+                        <!-- <i class="fas fa-star"></i> -->
+                        <div class="starburst">
+                            <span></span>
+                        </div>
+                        <div class="ght8 star-text1">
+                            BEST
+                        </div>
+                        <div class="ght8 star-text2">
+                            OFFER
+                        </div>
                     </div>
                 </div>
                 <div class="plan_price">
@@ -636,7 +640,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="extra-faq">
                 <button id="fds546" class="accordion">Click to Expand to View Additional FAQ's
                     <i id="sfe2" class="fas fa-chevron-down"></i>
@@ -649,11 +653,11 @@
     <section id="footer">
         <div class="footer-inner">
             <div class="footer-link">
-                <a href="terms.html" class="terms">Terms & Conditions</a>
+                <span class="terms" onclick="linkTermsConditions()">Terms & Conditions</span>
                 <div class="services">
-                    <a href="allservices.html">All Services</a>
+                    <span onclick="linkAllServices()">All Services</span>
                     <p>|</p>
-                    <a href="policy.html">Policy</a>
+                    <span onclick="linkPolicy()">Policy</span>
                 </div>
             </div>
         </div>
@@ -676,14 +680,13 @@
     <script src="./js/jquery.js"></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script>
-        
         const currentUser = localStorage.getItem("currentUser");
         const user_div = document.getElementById("username_div");
         if (currentUser != null && currentUser != "") {
             user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
         }
 
-        $("#fds546").click(function(){
+        $("#fds546").click(function () {
             $("#more_faq").fadeToggle(500);
             $("#sfe2").toggleClass("open")
         });
