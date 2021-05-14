@@ -1181,6 +1181,24 @@ function manDatacheckEmptyDiff(e) {
   }
 }
 
+function passwordEmptyCheck(e) {
+  if (e.value !== "") {
+    $(e).parent().addClass("success-border");
+    $(e).parent().removeClass("danger-border");
+    $(e).parent().parent().children(".error-message").remove();
+  } else {
+    $(e).parent().addClass("danger-border");
+    $(e).parent().removeClass("success-border");
+    let errorMessage = `<div class="error-message">
+      <p>A value must be entered</p>
+    </div>`;
+    let errPos = $(e).parent().parent();
+    if (!errPos.children("div.error-message").length) {
+      errPos.append(errorMessage);
+    }
+  }
+}
+
 function resetAccountFormFields() {
   $("#tab_1 .account-form-container .custome-select select")[0].selectedIndex = 0;
   let formInputContainer = $(".account-form-container .custom-input-only");
@@ -1450,4 +1468,19 @@ $('#filterThankYouModal').on('show.bs.modal', function (e) {
   $('body').addClass("modal-open-filter-thanks");
 }).on('hide.bs.modal', function (e) {
   $('body').removeClass("modal-open-filter-thanks");
+});
+
+$('#mnAccountThankModal').on('hide.bs.modal', function (e) {
+  window.location.href = '/index.html';
+});
+
+// Show hide Password Field Icon and text (Manage Account)
+$(".toggle-password").click(function () {
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
 });

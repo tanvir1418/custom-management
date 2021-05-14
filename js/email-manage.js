@@ -284,3 +284,10 @@ $('#emailThankModal').on('show.bs.modal', function (e) {
 $('#dropBtnModal').on('hidden.bs.modal', function (e) {
     $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
 });
+
+function formConfirmBtn() {
+    $('#form_submit_modal').modal('hide');
+    $("#hide955").css("display", "block");
+    $("#select_optn").css("padding-bottom", "50px");
+    $("#opt-content .option").css("display", "none");
+}
