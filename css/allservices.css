@@ -76,7 +76,7 @@
     font-size: 136px;
     color: #0B00FF;
     top: -22px;
-    right: -32px;
+    right: -16px;
     transform: rotate(110deg);
     user-select: none;
 }
@@ -131,25 +131,28 @@
 }
 
 #allserv-section .plan-box-2 .plan_name .ght8 {
-    font-size: 20px;
     margin: 0;
-    letter-spacing: 3px;
-    line-height: normal;
+    /* letter-spacing: 3px; */
+    /* line-height: normal; */
     color: #ffffff;
-    font-family: gilroy-medium, sans-serif;
-    font-weight: 600;
     position: absolute;
     transform: rotate(290deg);
 }
 
 #allserv-section .plan-box-2 .plan_name .star-text1 {
-    top: 26px;
-    right: 28px;
+    top: 13px;
+    right: 16px;
+    font-size: 36px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 900;
 }
 
 #allserv-section .plan-box-2 .plan_name .star-text2 {
-    top: 35px;
-    right: -5px;
+    top: 34px;
+    right: -6px;
+    font-size: 24px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
 }
 
 /* ==== START DESIGN END ==== */

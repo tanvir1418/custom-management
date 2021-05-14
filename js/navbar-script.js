@@ -110,3 +110,30 @@ function checkMailIcon() {
         $('#loginRequired').modal('show');
     }
 }
+
+function linkTermsConditions() {
+    let loginCondition = localStorage.getItem("loginStatus");
+    if (loginCondition == "LOGGED_IN") {
+        window.location.href = "/terms.html";
+    } else {
+        $('#loginRequired').modal('show');
+    }
+}
+
+function linkAllServices() {
+    let loginCondition = localStorage.getItem("loginStatus");
+    if (loginCondition == "LOGGED_IN") {
+        window.location.href = "/allservices.html";
+    } else {
+        $('#loginRequired').modal('show');
+    }
+}
+
+function linkPolicy() {
+    let loginCondition = localStorage.getItem("loginStatus");
+    if (loginCondition == "LOGGED_IN") {
+        window.location.href = "/policy.html";
+    } else {
+        $('#loginRequired').modal('show');
+    }
+}

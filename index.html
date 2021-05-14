@@ -36,8 +36,8 @@
         </div>
         <div class="nav-items d-flex">
             <div class="icon-box">
-                <i class="icon fas fa-envelope"></i>
-                <i class="icon fas fa-user"></i>
+                <i class="icon fas fa-envelope" onclick="checkMailIcon()"></i>
+                <i class="icon fas fa-user" onclick="setAccountTab()"></i>
             </div>
         </div>
         <!-- FIXED BAR ITEMS END -->
@@ -215,16 +215,18 @@
     <section id="footer">
         <div class="footer-inner">
             <div class="footer-link">
-                <a href="terms.html" class="terms">Terms & Conditions</a>
+                <!-- <a href="terms.html" class="terms">Terms & Conditions</a> -->
+                <span class="terms" onclick="linkTermsConditions()">Terms & Conditions</span>
                 <div class="services">
-                    <a href="allservices.html">All Services</a>
+                    <!-- <a href="allservices.html">All Services</a> -->
+                    <span onclick="linkAllServices()">All Services</span>
                     <p>|</p>
-                    <a href="policy.html">Policy</a>
+                    <!-- <a href="policy.html">Policy</a> -->
+                    <span onclick="linkPolicy()">Policy</span>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Login is required Modal start -->
     <div class="modal fade" id="loginRequired">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -243,6 +245,14 @@
     <!-- JS FILES -->
     <script src="./js/jquery.js"></script>
     <script>
+        // localStorage.clear();
+        // localStorage.setItem("currentUser", "");
+        // localStorage.setItem("loginStatus", "");
+        // localStorage.setItem("manageTabVisibility", "");
+        localStorage.removeItem('currentUser');
+        localStorage.removeItem('loginStatus');
+        localStorage.removeItem('manageTabVisibility');
+
         const usernameIndex = document.getElementById("usernameField");
         const passwordIndex = document.getElementById("passwordField");
         const termsPageCondition = localStorage.getItem("termsPageCondition");
