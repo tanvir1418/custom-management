@@ -1126,9 +1126,10 @@ td {
     padding: 0;
 }
 
-.mytablesty12 tbody tr {
+/* .mytablesty12 tbody tr {
     border-bottom: 2px solid #eff1f7 !important;
-}
+    transition: transform 0.2s ease-out, box-shadow 0.3s ease;
+} */
 
 .mytablesty12 tbody tr:last-child {
     border-bottom: none !important;
@@ -3499,4 +3500,216 @@ i.fa-caret-down.down-animation-icon{
 #alertswindow .mail_icons i:hover,
 #alertswindow_style2 .mail_icons i:hover{
     cursor: pointer;
+}
+
+.mytablesty12 tbody tr {
+    border-bottom: 2px solid #eff1f7 !important;
+    transition: transform 2s ease-out, box-shadow 4s ease;
+}
+
+.mytablesty12 tbody tr::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	/* height: 100%; */
+    height: 180px;
+	/* background: linear-gradient(90deg, #eee 2%, #ddd 14%, #eee 33%); */
+	background: linear-gradient(90deg, #eee 2%, #ddd 14%, #eee 33%);
+	background-size: 50%;
+	animation-name: aniHorizontal;
+	animation-delay: 0s;
+	animation-timing-function: linear;
+	opacity: 0;
+	pointer-events: none;
+    z-index: 1;
+    animation-duration: 2s;
+    padding-bottom: 2px;
+    border: 1px solid #eff1f7 !important;
+}
+
+.mytablesty12 tbody tr:nth-child(even)::before {
+    content: "";
+	position: absolute;
+	width: 100%;
+	/* height: 100%; */
+    height: 180px;
+    /* background: linear-gradient(90deg, rgb(209, 203, 203) 2%, #eee 14%, rgb(209, 203, 203) 33%); */
+    /* background: linear-gradient(90deg,#ccc 2%,rgb(255, 255, 255) 18%,#ccc 33%); */
+    background: linear-gradient(90deg,#f6f6f6 50%, #b3b3b3 72%,#f6f6f6 95%);
+    background-size: 50%;
+	animation-name: aniHorizontal;
+	animation-delay: 0s;
+	animation-timing-function: linear;
+	opacity: 0;
+	pointer-events: none;
+    z-index: 1;
+    animation-duration: 2s;
+    padding-bottom: 2px;
+    border: 1px solid #eff1f7 !important;
+}
+/* .mytablesty12 tbody tr:nth-last-child(1)::before {
+	animation-duration: 7s;
+}
+
+.mytablesty12 tbody tr:nth-last-child(2)::before {
+    animation-duration: 6.5s;
+}
+
+.mytablesty12 tbody tr:nth-last-child(3)::before {
+    animation-duration: 6s;
+}
+
+.mytablesty12 tbody tr:nth-last-child(4)::before {
+    animation-duration: 5.5s;
+}
+
+.mytablesty12 tbody tr:nth-last-child(5)::before {
+    animation-duration: 5s;
+}
+
+.mytablesty12 tbody tr:nth-last-child(6)::before {
+    animation-duration: 4.5s;
+}
+
+.mytablesty12 tbody tr:nth-last-child(7)::before {
+    animation-duration: 4s;
+} */
+.cross-table-2 tbody tr::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	/* height: 100%; */
+    height: 80px;
+	/* background: linear-gradient(90deg, #eee 2%, #ddd 14%, #eee 33%); */
+	background: linear-gradient(90deg, #eee 2%, #ddd 14%, #eee 33%);
+	background-size: 50%;
+	animation-name: aniHorizontal;
+	animation-delay: 0s;
+	animation-timing-function: linear;
+	opacity: 0;
+	pointer-events: none;
+    z-index: 1;
+    animation-duration: 2s;
+    padding-bottom: 2px;
+    border: 1px solid #eff1f7 !important;
+}
+/* 80
+193
+min-height: 180px;
+height: 193px;
+
+70 */
+.cross-table-3 tbody tr::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	/* height: 100%; */
+    min-height: 180px;
+    height: 193px;
+	/* background: linear-gradient(90deg, #eee 2%, #ddd 14%, #eee 33%); */
+	background: linear-gradient(90deg, #eee 2%, #ddd 14%, #eee 33%);
+	background-size: 50%;
+	animation-name: aniHorizontal;
+	animation-delay: 0s;
+	animation-timing-function: linear;
+	opacity: 0;
+	pointer-events: none;
+    z-index: 1;
+    animation-duration: 2s;
+    padding-bottom: 2px;
+    border: 1px solid #eff1f7 !important;
+}
+.cross-table-4  tbody tr::before,
+.cross-table-6  tbody tr::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	/* height: 100%; */
+    height: 70px;
+	/* background: linear-gradient(90deg, #eee 2%, #ddd 14%, #eee 33%); */
+	background: linear-gradient(90deg, #eee 2%, #ddd 14%, #eee 33%);
+	background-size: 50%;
+	animation-name: aniHorizontal;
+	animation-delay: 0s;
+	animation-timing-function: linear;
+	opacity: 0;
+	pointer-events: none;
+    z-index: 1;
+    animation-duration: 2s;
+    padding-bottom: 2px;
+    border: 1px solid #eff1f7 !important;
+}
+.cross-table-5  tbody tr::before
+.cross-table-7  tbody tr::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	/* height: 100%; */
+    height: 70px;
+	/* background: linear-gradient(90deg, #eee 2%, #ddd 14%, #eee 33%); */
+	background: linear-gradient(90deg, #eee 2%, #ddd 14%, #eee 33%);
+	background-size: 50%;
+	animation-name: aniHorizontal;
+	animation-delay: 0s;
+	animation-timing-function: linear;
+	opacity: 0;
+	pointer-events: none;
+    z-index: 1;
+    animation-duration: 2s;
+    padding-bottom: 2px;
+    border: 1px solid #eff1f7 !important;
+}
+.cross-table-8  tbody tr::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+    /* height: 114px; */
+	/* background: linear-gradient(90deg, #eee 2%, #ddd 14%, #eee 33%); */
+	background: linear-gradient(90deg, #eee 2%, #ddd 14%, #eee 33%);
+	background-size: 50%;
+	animation-name: aniHorizontal;
+	animation-delay: 0s;
+	animation-timing-function: linear;
+	opacity: 0;
+	pointer-events: none;
+    z-index: 1;
+    animation-duration: 2s;
+    padding-bottom: 2px;
+    border: 1px solid #eff1f7 !important;
+}
+.cross-table-9  tbody tr::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+    /* height: 80px; */
+	/* background: linear-gradient(90deg, #eee 2%, #ddd 14%, #eee 33%); */
+	background: linear-gradient(90deg, #eee 2%, #ddd 14%, #eee 33%);
+	background-size: 50%;
+	animation-name: aniHorizontal;
+	animation-delay: 0s;
+	animation-timing-function: linear;
+	opacity: 0;
+	pointer-events: none;
+    z-index: 1;
+    animation-duration: 2s;
+    padding-bottom: 2px;
+    border: 1px solid #eff1f7 !important;
+}
+
+@keyframes aniHorizontal {
+	0% {
+		opacity: 1;
+		background-position: -100% 0;
+	}
+
+	95% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0.8;
+		background-position: 100% 0;
+	}
 }
