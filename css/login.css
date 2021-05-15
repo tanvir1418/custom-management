@@ -136,7 +136,7 @@ a:visited {
     position: relative;
     background: #ffffff;
     margin: 32px auto;
-    padding: 20px 0;
+    padding: 20px 0 30px 0;
 }
 .terms_conditions .tc-head{
     margin: 0 auto;
@@ -232,13 +232,14 @@ a:visited {
     color: #1b1b1b;
 }
 .terms_conditions .accept-btn-box{
-    width: 80%;
+    width: 65%;
     margin: auto;
+    margin-top: 20px;
     display: flex;
 }
 
 .terms_conditions .accept-btn-box input{
-    padding: 10px 30px;
+    padding: 16px 35px;
     color: #ffffff;
     border: none;
     font-size: 18px;
@@ -248,20 +249,21 @@ a:visited {
     text-decoration: none;
     display: inline-block;
     letter-spacing: 2px;
+    border-radius: 2px;
     transition: all 0.3s ease;
 }
 .terms_conditions .accept-btn-box .decline{
     background-color: #ff0000;
 }
 .terms_conditions .accept-btn-box .accept{
-    background-color: #3A5D00;
+    background-color: #558804;
     margin-left: auto;
 }
 .terms_conditions .accept-btn-box .decline:hover{
-    background-color: #f10000;
+    background-color: #e62424;
 }
 .terms_conditions .accept-btn-box .accept:hover{
-    background-color: #375800;
+    background-color: #3A5D00;
 }
 
 /* scrollbar customize start */

@@ -38,7 +38,7 @@
       </div>
       <div class="nav-items d-flex">
         <div class="icon-box">
-          <i class="icon fas fa-envelope ftr-pad" onclick="location.href='email.html';"></i>
+          <i class="icon fas fa-envelope ftr-pad" onclick="checkMailIcon()"></i>
           <i class="icon fas fa-user" onclick="setAccountTab()"></i>
         </div>
         <div class="welcome-box">
@@ -631,16 +631,16 @@
     <!-- ============ SELECT A OPTION SECTON END =============== -->
     <section id="footer">
       <div class="footer-inner">
-        <div class="footer-link">
-          <a href="terms.html" class="terms">Terms & Conditions</a>
-          <div class="services">
-            <a href="allservices.html">All Services</a>
-            <p>|</p>
-            <a href="policy.html">Policy</a>
+          <div class="footer-link">
+              <span class="terms" onclick="linkTermsConditions()">Terms & Conditions</span>
+              <div class="services">
+                  <span onclick="linkAllServices()">All Services</span>
+                  <p>|</p>
+                  <span onclick="linkPolicy()">Policy</span>
+              </div>
           </div>
-        </div>
       </div>
-    </section>
+  </section>
 
     <!-- =========Option 5 Plus Button Modal Starts========= -->
     <div class="modal fade" id="dropBtnModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
