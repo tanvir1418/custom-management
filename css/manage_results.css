@@ -3506,8 +3506,16 @@ i.fa-caret-down.down-animation-icon{
 #loading_table thead tr th{
     height: 45px;
 }
+
 #loading_table tbody tr td .loading-row{
     height: 160px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+#style2_loading tbody tr td .loading-row{
+    height: 100%;
     width: 100%;
     background-color: #ffffff;
     padding: 10px;
@@ -3551,6 +3559,7 @@ i.fa-caret-down.down-animation-icon{
     }
 }
 
+#style2_loading,
 #loading_table{
     display: none;
 }

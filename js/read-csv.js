@@ -884,15 +884,24 @@ function manResPagination(noRow) {
 		$("#resizable554").css("display", "none");
 		$("#loading_table").css("display", "block");
 
+		$("#style2Con #style2_Content").css("display", "none");
+		$("#style2_loading").css("display", "block");
+
 		setTimeout(() => {
 			$("#loading_table").css("display", "none");
 			$("#resizable554").css("display", "block");
+
+			$("#style2_loading").css("display", "none");
+			$("#style2Con #style2_Content").css("display", "block");
 		}, 3000);
 
 		showSkeleton = "";
 	} else {
 		$("#resizable554").css("display", "block");
 		$("#loading_table").css("display", "none");
+
+		$("#style2Con #style2_Content").css("display", "block");
+		$("#style2_loading").css("display", "none");
 	}
 
 	let options = {
@@ -1619,7 +1628,7 @@ function manResPagination(noRow) {
 					${tabTd}
 				</tr>`;
 
-				style2TableData += `<div class="description-text">
+				style2TableData += `	<div class="description-text">
 					<p>
 						Lorem ipsum, dolor sit amet conseetur adipisicing elit. Ad, distinctio incidunt molestias beatae nam doloribus cute laboriosam necesibus acntium recusandae adipisci.
 					</p>
@@ -2962,7 +2971,7 @@ function manResPagination(noRow) {
 
 
 			let style1Table = $("#resizable554 tbody");
-			let style2Table = $("#style2Con");
+			let style2Table = $("#style2Con #style2_Content");
 			style1Table.html(tableTr);
 			style2Table.html(style2TableData);
 
@@ -2976,7 +2985,7 @@ function manResPagination(noRow) {
 			truncateText(450);
 
 			// Code added by Tanvir
-			let decideDisplay = $(".style2-box").hasClass("clickstylebg");
+			// let decideDisplay = $(".style2-box").hasClass("clickstylebg");
 			// if(!decideDisplay){
 			// 	$(".right-slider5").css("display", "block");
 			// 	$(".left-slider5").css("display", "block");
