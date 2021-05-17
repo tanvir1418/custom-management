@@ -3500,3 +3500,70 @@ i.fa-caret-down.down-animation-icon{
 #alertswindow_style2 .mail_icons i:hover{
     cursor: pointer;
 }
+
+
+/* Label Skeleton Loading Animation Starts  */
+#loading_table thead tr th{
+    height: 45px;
+}
+
+#loading_table tbody tr td .loading-row{
+    height: 160px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0px;
+}
+
+#style2_loading tbody tr td .loading-row{
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0px;
+}
+
+#style2_loading table tbody tr .dchart_1 {
+    padding: 0px !important;
+}
+
+.loading{
+    position: relative;
+    background-color: #b8b8b8;
+    overflow: hidden;
+}
+
+.loading-animation.loading{
+    /* margin-bottom: 1rem; */
+    /* min-height: 60px; */
+    height: 100%;
+    border-radius: 4px;
+}
+
+.loading-animation2.loading{
+    height: 45%;
+    /* height: calc(50% - 2px); */
+    border-radius: 4px;
+}
+
+.loading::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    background-image: linear-gradient(to left, transparent, rgba(255,255,255,0.5), transparent);
+
+    animation: loading 1s infinite;
+}
+
+@keyframes loading{
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+#style2_loading,
+#loading_table{
+    display: none;
+}

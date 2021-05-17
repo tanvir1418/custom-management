@@ -23,7 +23,7 @@ $("#exelFile").change((e) => {
 
 function tableHeadSty1() {
 	let tHeadTr =
-	`<tr class="dnd-moved">
+		`<tr class="dnd-moved">
 		<th class="column-header-1">
 			<label class="containerst12">
 				<input type="checkbox" />
@@ -875,13 +875,47 @@ function tableHeadSty1() {
 	});
 }
 
+// Variable for controlling the skeleton of table
+// let showSkeleton = "showAnimation";
+
 function manResPagination(noRow) {
+
+
+	// $("#resizable554").css("display", "none");
+	// $("#loading_table").css("display", "block");
+
+	// $("#style2Con #style2_Content").css("display", "none");
+	// $("#style2_loading").css("display", "block");
+
+	// setTimeout(() => {
+	// 	$("#loading_table").css("display", "none");
+	// 	$("#resizable554").css("display", "block");
+
+	// 	$("#style2_loading").css("display", "none");
+	// 	$("#style2Con #style2_Content").css("display", "block");
+	// }, 3000);
+
 	let options = {
 		dataSource: tableData,
 		pageSize: noRow,
 		showGoInput: true,
 		showGoButton: true,
 		callback: function (data, pagination) {
+
+			$("#resizable554").css("display", "none");
+			$("#loading_table").css("display", "block");
+
+			$("#style2Con #style2_Content").css("display", "none");
+			$("#style2_loading").css("display", "block");
+
+			setTimeout(() => {
+				$("#loading_table").css("display", "none");
+				$("#resizable554").css("display", "block");
+
+				$("#style2_loading").css("display", "none");
+				$("#style2Con #style2_Content").css("display", "block");
+			}, 3000);
+
 			let tableTr = "";
 			let style2TableData = "";
 			let tableH = $("#resizable554 thead th");
@@ -1600,7 +1634,7 @@ function manResPagination(noRow) {
 					${tabTd}
 				</tr>`;
 
-				style2TableData += `<div class="description-text">
+				style2TableData += `	<div class="description-text">
 					<p>
 						Lorem ipsum, dolor sit amet conseetur adipisicing elit. Ad, distinctio incidunt molestias beatae nam doloribus cute laboriosam necesibus acntium recusandae adipisci.
 					</p>
@@ -2925,8 +2959,25 @@ function manResPagination(noRow) {
 						</tbody>
 				</table>`;
 			});
+
+			// if (showSkeleton == "showAnimation") {
+			// 	$("#resizable554").css("display", "none");
+			// 	$("#loading_table").css("display", "block");
+
+			// 	setTimeout(() => {
+			// 		$("#loading_table").css("display", "none");
+			// 		$("#resizable554").css("display", "block");
+			// 	}, 3000);
+
+			// 	showSkeleton = "";
+			// } else {
+			// 	$("#resizable554").css("display", "block");
+			// 	$("#loading_table").css("display", "none");
+			// }
+
+
 			let style1Table = $("#resizable554 tbody");
-			let style2Table = $("#style2Con");
+			let style2Table = $("#style2Con #style2_Content");
 			style1Table.html(tableTr);
 			style2Table.html(style2TableData);
 
@@ -2940,12 +2991,12 @@ function manResPagination(noRow) {
 			truncateText(450);
 
 			// Code added by Tanvir
-			let decideDisplay = $(".style2-box").hasClass("clickstylebg");
+			// let decideDisplay = $(".style2-box").hasClass("clickstylebg");
 			// if(!decideDisplay){
 			// 	$(".right-slider5").css("display", "block");
 			// 	$(".left-slider5").css("display", "block");
 			// }
-			
+
 			$("#style1Table").css("border", "2px solid #eff1f7");
 			$("#pagination-man-res-table .width-row-go").css("display", "block");
 			IconModalClick();
@@ -2970,7 +3021,7 @@ function manResPagination(noRow) {
 			$("#copyrowlist_style2").css("display", "none");
 			$("#moverowlist_style2").css("display", "none");
 
-			$("#col8Filter").css('display','none');
+			$("#col8Filter").css('display', 'none');
 
 			tooltipFunction();
 		},
@@ -3072,7 +3123,7 @@ $("#resizable554 th").on("drop", function (e) {
 	manResTableRender();
 });
 
-function popUpHandlerS2Table(e, indexValue) {	
+function popUpHandlerS2Table(e, indexValue) {
 	let targetElementClassList = e.path[5].getAttribute("class");
 	let targetElementClass = targetElementClassList.split(" ");
 
