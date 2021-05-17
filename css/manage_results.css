@@ -3525,9 +3525,22 @@ i.fa-caret-down.down-animation-icon{
     padding: 0px !important;
 }
 
+#mnData-opt1-loading tbody tr td .loading-row,
+#mnData-opt3-loading tbody tr td .loading-row,
+#mnData-opt4-loading tbody tr td .loading-row,
+#mnData-opt5-loading tbody tr td .loading-row,
+#mnAlert-loading tbody tr td .loading-row{
+    height: 40px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0px;
+}
+
 .loading{
     position: relative;
-    background-color: #b8b8b8;
+    /* background-color: #b8b8b8; */
+    /* background-color: #c8c8c8; */
+    background-color: #d8d8d8;
     overflow: hidden;
 }
 
@@ -3563,6 +3576,11 @@ i.fa-caret-down.down-animation-icon{
     }
 }
 
+#mnData-opt1-loading,
+#mnData-opt3-loading,
+#mnData-opt4-loading,
+#mnData-opt5-loading,
+#mnAlert-loading,
 #style2_loading,
 #loading_table{
     display: none;

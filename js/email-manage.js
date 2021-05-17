@@ -125,6 +125,15 @@ function taskStatusTableExist(tableID, noRow, pagiId) {
         showGoInput: true,
         showGoButton: true,
         callback: function (data, pagination) {
+
+            $("#task_status_data_table").css("display", "none");
+            $("#task_status_loading_table").css("display", "block");
+
+            setTimeout(() => {
+                $("#task_status_loading_table").css("display", "none");
+                $("#task_status_data_table").css("display", "block");
+            }, 3000);
+
             let tableTr = "";
             data.forEach(({ id, serial, name, status, statusClass, progressValue, startTime, endTime }, index) => {
                 let tabHd = $(`#${tableID} thead th`);
@@ -185,8 +194,8 @@ function taskStatusTableExist(tableID, noRow, pagiId) {
     container.pagination(options);
 }
 
-taskStatusHead("email_task_status_table");
-taskStatusTableExist("email_task_status_table", 7, "pagination_task_status");
+// taskStatusHead("email_task_status_table");
+// taskStatusTableExist("email_task_status_table", 7, "pagination_task_status");
 
 $("#row_taskStatus").change(function (e) {
     let noRow = e.target.value;
@@ -291,3 +300,26 @@ function formConfirmBtn() {
     $("#select_optn").css("padding-bottom", "50px");
     $("#opt-content .option").css("display", "none");
 }
+
+// CHOOSE OPTION SECTION START
+function selectEmailop(evt, optionName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("option");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("option_box");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(optionName).style.display = "block";
+    document.getElementById("hide955").style.display = "none";
+    document.getElementById("select_optn").style.paddingBottom = "0px";
+    evt.currentTarget.className += " active";
+
+    if (optionName == "mail_option_2") {
+        taskStatusHead("email_task_status_table");
+        taskStatusTableExist("email_task_status_table", 7, "pagination_task_status");
+    }
+}
+// CHOOSE OPTION SECTION END

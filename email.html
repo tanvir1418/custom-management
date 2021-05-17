@@ -518,10 +518,342 @@
               </div>
             </div>
             <div class="task-status-table">
-              <table class="table table-responsive-xl table89" id="email_task_status_table">
-                <thead></thead>
-                <tbody></tbody>
-              </table>
+              <div id="task_status_data_table">
+                <table class="table table-responsive-xl table89" id="email_task_status_table">
+                  <thead></thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <!-- Table Loading Skeleton starts  -->
+              <div id="task_status_loading_table">
+                <table class="table table-responsive-xl table89" id="taskStatus-loading">
+                  <thead>
+                    <th class="">ROW</th>
+                    <th class="">NAME
+                      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                      <div class="head-filter cross-exists">
+                        <i class="fas fa-times"></i>
+                      </div>
+                      <div class="drop-filter">
+                        <i class="fas fa-caret-down"></i>
+                      </div>
+                    </th>
+                    <th class="">STATUS
+                      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                      <div class="head-filter cross-exists">
+                        <i class="fas fa-times"></i>
+                      </div>
+                      <div class="drop-filter">
+                        <i class="fas fa-caret-down"></i>
+                      </div>
+                    </th>
+                    <th class="">PROGRESS
+                      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                      <div class="head-filter cross-exists">
+                        <i class="fas fa-times"></i>
+                      </div>
+                      <div class="drop-filter">
+                        <i class="fas fa-caret-down"></i>
+                      </div>
+                    </th>
+                    <th class="">START TIME
+                      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                      <div class="head-filter cross-exists">
+                        <i class="fas fa-times"></i>
+                      </div>
+                      <div class="drop-filter">
+                        <i class="fas fa-caret-down"></i>
+                      </div>
+                    </th>
+                    <th class="">END TIME
+                      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                      <div class="head-filter cross-exists">
+                        <i class="fas fa-times"></i>
+                      </div>
+                      <div class="drop-filter">
+                        <i class="fas fa-caret-down"></i>
+                      </div>
+                    </th>
+                    <th class="">ACTIONS
+                      <span class="tooltip-container" tooltip="Sample text here" flow="down">
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                    </th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td class="">
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="loading-row">
+                          <p class="loading-animation loading"></p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Table Loading Skeleton ends  -->
               <!-- Task Status PAGINATION START -->
               <div class="pagination-container">
                 <div class="pagination-table">
@@ -798,30 +1130,11 @@
   <!-- Login is required Modal start -->
 
     <script>
-      
       const currentUser = localStorage.getItem("currentUser");
-        const user_div = document.getElementById("username_div");
-        if (currentUser != null && currentUser != "") {
-            user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
-        }
-
-      // CHOOSE OPTION SECTION START
-      function selectEmailop(evt, optionName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("option");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("option_box");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(optionName).style.display = "block";
-        document.getElementById("hide955").style.display = "none";
-        document.getElementById("select_optn").style.paddingBottom = "0px";
-        evt.currentTarget.className += " active";
+      const user_div = document.getElementById("username_div");
+      if (currentUser != null && currentUser != "") {
+        user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
       }
-      // CHOOSE OPTION SECTION END
     </script>
 
     <!-- JS FILES -->

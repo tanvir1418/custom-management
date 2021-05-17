@@ -325,6 +325,7 @@
 
 .task-status-table .table89 thead {
   border-bottom: 1px solid #dfe2e7 !important;
+  width: 100%;
 }
 
 .task-status-table .table89 td,
@@ -337,27 +338,27 @@
 }
 
 .table89 thead th:nth-child(2) {
-  width: 20%;
+  width: 17%;
 }
 
 .table89 thead th:nth-child(3) {
-  width: 13%;
+  width: 17%;
 }
 
 .table89 thead th:nth-child(4) {
-  width: 15%;
+  width: 17%;
 }
 
 .table89 thead th:nth-child(5) {
-  width: 18%;
+  width: 17%;
 }
 
 .table89 thead th:nth-child(6) {
-  width: 18%;
+  width: 17%;
 }
 
 .table89 thead th:nth-child(7) {
-  width: 8%;
+  width: 10%;
 }
 
 .table89 thead th {
@@ -486,68 +487,9 @@
       margin: 0 7%;
   } */
 
-  /* .table89 thead th:nth-child(1) {
-      width: 4%;
-  }
-
-  .table89 thead th:nth-child(2) {
-      width: 18%;
-  }
-
-  .table89 thead th:nth-child(3) {
-      width: 14%;
-  }
-
-  .table89 thead th:nth-child(4) {
-      width: 18%;
-  }
-
-  .table89 thead th:nth-child(5) {
-      width: 24%;
-  }
-
-  .table89 thead th:nth-child(6) {
-      width: 22%;
-  }
-
-  .table89 thead th:nth-child(7) {
-    width: 19%;
-  } */
-
 }
 @media only screen and (min-width: 1500px) {
-  /* #mail_option_2 .task-status-table {
-      margin: 0 7%;
-  } */
-
-  /* .table89 thead th:nth-child(1) {
-      width: 5%;
-  }
-
-  .table89 thead th:nth-child(2) {
-      width: 20%;
-  }
-
-  .table89 thead th:nth-child(3) {
-      width: 15%;
-  }
-
-  .table89 thead th:nth-child(4) {
-      width: 18%;
-  }
-
-  .table89 thead th:nth-child(5) {
-      width: 22%;
-  }
-
-  .table89 thead th:nth-child(6) {
-      width: 20%;
-  }
-
-  .table89 thead th:nth-child(7) {
-    width: 19%;
-  } */
-
+  
 }
 
 /* @media only screen and (min-width: 1600px) {
@@ -1418,4 +1360,74 @@ i.fa-caret-down.down-animation-icon{
   .task-status-statistics .stat-box p.stat-number{
     line-height: 20px;
   }
+}
+
+
+/* Task Status Skeleton Loading */
+#taskStatus-loading thead th:nth-child(1) {
+  width: 5%;
+}
+
+#taskStatus-loading thead th:nth-child(2) {
+  width: 17%;
+}
+
+#taskStatus-loading thead th:nth-child(3) {
+  width: 17%;
+}
+
+#taskStatus-loading thead th:nth-child(4) {
+  width: 17%;
+}
+
+#taskStatus-loading thead th:nth-child(5) {
+  width: 17%;
+}
+
+#taskStatus-loading thead th:nth-child(6) {
+  width: 17%;
+}
+
+#taskStatus-loading thead th:nth-child(7) {
+  width: 10%;
+}
+#taskStatus-loading tbody tr td .loading-row{
+  height: 32px;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 0px;
+}
+
+.loading{
+  position: relative;
+  background-color: #d8d8d8;
+  overflow: hidden;
+}
+
+.loading-animation.loading{
+  height: 100%;
+  border-radius: 4px;
+}
+
+.loading::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  background-image: linear-gradient(to left, transparent, rgba(255,255,255,0.5), transparent);
+
+  animation: loading 1s infinite;
+}
+
+@keyframes loading{
+  100%{
+      transform: translateX(100%);
+  }
+}
+
+#task_status_loading_table{
+  display: none;
 }
