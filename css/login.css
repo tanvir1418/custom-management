@@ -68,6 +68,7 @@ body {
 
 .login-form .login-input div#loginForm {
     padding-top: 25px;
+    padding-bottom: 10px;
 }
 
 .login-input .myinput {
@@ -307,29 +308,102 @@ a:visited {
     min-width: 650px;
 }
 #forgotPass .modal-content{
-    padding:20px;
+    padding: 0px;
+    border-radius: 0;
 }
 #forgotPass .modal-content p{
     font-size: 16px;
     font-family: gilroy-medium, sans-serif;
     font-weight: 500;
 }
-#forgotPass .forgot-title p{
-    font-size: 20px;
-    color: #004799;
+#forgotPass .forgot-title{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    line-height: 40px;
+    background-color: #000000;
 }
-#forgotPass .enter-verified-email p{
+
+#forgotPass .forgot-title p{
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: gilroy, sans-serif;
+    margin: auto;
+    text-transform: uppercase;
+    /* padding: 10px 0; */
+    letter-spacing: 2px;
+}
+#forgotPass .forgot-pass-pera p.enter-pass-text{
     font-weight: 600;
     color: #000000;
     margin-bottom: 0;
 }
+
+#forgotPass .forgot-pass-pera{
+    padding-top: 15px;
+}
+
+#forgotPass .forgot-pass-pera,
+#forgotPass .enter-verified-email{
+    margin: 0 30px;
+}
+
+#forgotPass .enter-verified-email{
+    display: flex;
+    margin-top: 15px;
+    margin-bottom:  30px;
+}
+
 #forgotPass .enter-verified-email input{
     padding: 5px;
     font-size: 16px;
     font-family: gilroy-medium, sans-serif;
     font-weight: 500;
 }
-#forgotPass .enter-verified-email input[type=email]{
-    width: 60%;
+#forgotPass .enter-verified-email input.btn-success,
+#forgotPass .enter-verified-email input.btn-light{
+    padding: 0 18px;
+    margin-left: 15px;
 }
 
+#forgotPass .enter-verified-email input.btn-light{
+    background-color: #e2e6ea;
+}
+
+#forgotPass .enter-verified-email input.btn-light:hover{
+    background-color: #cfcbcb;
+    color: #000000;
+}
+
+#forgotPass .enter-verified-email input[type=email]{
+    width: 100%;
+    background-color: #f0f0f0;
+    border: 2px solid #000000;
+    border-radius: 3px;
+    padding-left: 15px;
+    font-size: 16px;
+    color: #7d7c7c;
+    font-weight: 600;
+    font-family: gilroy-regular, sans-serif;
+}
+
+
+/* Password eye icon styles  */
+.password-container{
+    position: relative;
+}
+
+.password-container span.password-field-icon{
+    cursor: pointer;
+}
+
+.password-field-icon {
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    z-index: 3;
+    font-size: 22px;
+}
+  
