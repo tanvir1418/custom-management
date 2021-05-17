@@ -3511,14 +3511,18 @@ i.fa-caret-down.down-animation-icon{
     height: 160px;
     width: 100%;
     background-color: #ffffff;
-    padding: 10px;
+    padding: 0px;
 }
 
 #style2_loading tbody tr td .loading-row{
     height: 100%;
     width: 100%;
     background-color: #ffffff;
-    padding: 10px;
+    padding: 0px;
+}
+
+#style2_loading table tbody tr .dchart_1 {
+    padding: 0px !important;
 }
 
 .loading{
@@ -3535,8 +3539,8 @@ i.fa-caret-down.down-animation-icon{
 }
 
 .loading-animation2.loading{
-    /* height: 48%; */
-    height: calc(50% - 8px);
+    height: 45%;
+    /* height: calc(50% - 2px); */
     border-radius: 4px;
 }
 

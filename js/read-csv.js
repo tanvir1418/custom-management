@@ -876,33 +876,24 @@ function tableHeadSty1() {
 }
 
 // Variable for controlling the skeleton of table
-let showSkeleton = "showAnimation";
+// let showSkeleton = "showAnimation";
 
 function manResPagination(noRow) {
 
-	if (showSkeleton == "showAnimation") {
-		$("#resizable554").css("display", "none");
-		$("#loading_table").css("display", "block");
 
-		$("#style2Con #style2_Content").css("display", "none");
-		$("#style2_loading").css("display", "block");
+	// $("#resizable554").css("display", "none");
+	// $("#loading_table").css("display", "block");
 
-		setTimeout(() => {
-			$("#loading_table").css("display", "none");
-			$("#resizable554").css("display", "block");
+	// $("#style2Con #style2_Content").css("display", "none");
+	// $("#style2_loading").css("display", "block");
 
-			$("#style2_loading").css("display", "none");
-			$("#style2Con #style2_Content").css("display", "block");
-		}, 3000);
+	// setTimeout(() => {
+	// 	$("#loading_table").css("display", "none");
+	// 	$("#resizable554").css("display", "block");
 
-		showSkeleton = "";
-	} else {
-		$("#resizable554").css("display", "block");
-		$("#loading_table").css("display", "none");
-
-		$("#style2Con #style2_Content").css("display", "block");
-		$("#style2_loading").css("display", "none");
-	}
+	// 	$("#style2_loading").css("display", "none");
+	// 	$("#style2Con #style2_Content").css("display", "block");
+	// }, 3000);
 
 	let options = {
 		dataSource: tableData,
@@ -910,6 +901,21 @@ function manResPagination(noRow) {
 		showGoInput: true,
 		showGoButton: true,
 		callback: function (data, pagination) {
+
+			$("#resizable554").css("display", "none");
+			$("#loading_table").css("display", "block");
+
+			$("#style2Con #style2_Content").css("display", "none");
+			$("#style2_loading").css("display", "block");
+
+			setTimeout(() => {
+				$("#loading_table").css("display", "none");
+				$("#resizable554").css("display", "block");
+
+				$("#style2_loading").css("display", "none");
+				$("#style2Con #style2_Content").css("display", "block");
+			}, 3000);
+
 			let tableTr = "";
 			let style2TableData = "";
 			let tableH = $("#resizable554 thead th");
