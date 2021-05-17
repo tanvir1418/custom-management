@@ -133,6 +133,8 @@ for (var i = 0; i < li_tabs.length; i++) {
 			}
 			if (current_tab_value == "tab_5") {
 				$(".content").addClass("tvtv");
+				makeTableHeadAlert("manage-alert-table-exist");
+				alertTableExist("manage-alert-table-exist", 7, "pagination-manage-alert", "manage-alert-table-exist", "manage_alert_loading_table");
 			}
 			if (current_tab_value != "tab_5") {
 				$(".content").removeClass("tvtv");
@@ -836,7 +838,7 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange, dataTableId, loadingT
 			setTimeout(() => {
 				$(`#${loadingTableId}`).css("display", "none");
 				$(`#${dataTableId}`).css("display", "block");
-			}, 3000);
+			}, 2000);
 
 			let tableTr = "";
 			data.forEach(({ id, serial, recordsCount, savedName, CDateTime, LUDateTime }, index) => {

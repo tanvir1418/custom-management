@@ -132,7 +132,7 @@ function taskStatusTableExist(tableID, noRow, pagiId) {
             setTimeout(() => {
                 $("#task_status_loading_table").css("display", "none");
                 $("#task_status_data_table").css("display", "block");
-            }, 3000);
+            }, 2000);
 
             let tableTr = "";
             data.forEach(({ id, serial, name, status, statusClass, progressValue, startTime, endTime }, index) => {
