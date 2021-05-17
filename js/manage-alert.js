@@ -67,13 +67,22 @@ function makeTableHeadAlert(tableID) {
 
 }
 
-function alertTableExist(tableID, noRow, pagiId) {
+function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId) {
   let options = {
     dataSource: alertExistData,
     pageSize: noRow,
     showGoInput: true,
     showGoButton: true,
     callback: function (data, pagination) {
+
+      $(`#${maDataTableId}`).css("display", "none");
+      $(`#${maLoadTableId}`).css("display", "block");
+
+      setTimeout(() => {
+        $(`#${maLoadTableId}`).css("display", "none");
+        $(`#${maDataTableId}`).css("display", "block");
+      }, 2000);
+
       let tableTr = "";
       data.forEach(({ id, serial, alertValue, alertEmail }, index) => {
         let tabHd = $(`#${tableID} thead th`);
@@ -153,11 +162,11 @@ function alertTableExist(tableID, noRow, pagiId) {
 }
 
 makeTableHeadAlert("manage-alert-table-exist");
-alertTableExist("manage-alert-table-exist", 7, "pagination-manage-alert");
+alertTableExist("manage-alert-table-exist", 7, "pagination-manage-alert", "manage-alert-table-exist", "manage_alert_loading_table");
 
 $("#row-mnAlert").change(function (e) {
   let noRow = e.target.value;
-  alertTableExist("manage-alert-table-exist", noRow, "pagination-manage-alert");
+  alertTableExist("manage-alert-table-exist", noRow, "pagination-manage-alert", "manage-alert-table-exist", "manage_alert_loading_table");
   alertTableHeadClick("manage-alert-table-exist");
 });
 
