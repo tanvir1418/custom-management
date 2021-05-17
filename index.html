@@ -7,6 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="./css/all_min.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/tooltip.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/media.css">
@@ -36,8 +37,12 @@
         </div>
         <div class="nav-items d-flex">
             <div class="icon-box">
-                <i class="icon fas fa-envelope" onclick="checkMailIcon()"></i>
-                <i class="icon fas fa-user" onclick="setAccountTab()"></i>
+                <span class="msg45" tooltip="Email Options" flow="down">
+                    <i class="icon fas fa-envelope" onclick="checkMailIcon()"></i>
+                </span>
+                <span class="user45" tooltip="Registration" flow="down">
+                    <i class="icon fas fa-user" onclick="setAccountTab()"></i>
+                </span>
             </div>
         </div>
         <!-- FIXED BAR ITEMS END -->
@@ -206,6 +211,9 @@
                             <input class="ml-auto login" type="submit" value="LOGIN" id="loginBtn"/>
                             <input class="ml-auto login" type="submit" value="REGISTER" id="registerBtn" />
                         </div>
+                        <div class="forget-pass" data-toggle="modal" data-target="#forgotPass">
+                            <span>Forgot password?</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -241,7 +249,31 @@
             </div>
         </div>
     </div>
-    <!-- Login is required Modal start -->
+    <!-- Login is required Modal end -->
+
+    <!-- FORGOT PASSWORD MODAL START -->
+    <div class="modal fade" id="forgotPass">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="forgot-title">
+                    <p>Forgot Your Username or Password?</p>
+                </div>
+                <div class="forgot-pass-pera">
+                    <p>Just enter your email address below and we'll help you retrieve your username or create a new password.</p>
+                    <p>We'll email you a link to retrieve your username or create a new password, if you don't receive the link soon, try checking your spam or junk folder.</p>
+                </div>
+                <div class="enter-verified-email">
+                    <form action="">
+                        <p>Enter your user account's verified email address and we will send you a password reset link.</p>
+                        <input type="email" placeholder="Enter your email address">
+                        <input type="submit" name="" id="" value="Submit">
+                        <input type="submit" name="" id="" value="Cancel" data-dismiss="modal">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FORGOT PASSWORD MODAL END -->
     <!-- JS FILES -->
     <script src="./js/jquery.js"></script>
     <script>
