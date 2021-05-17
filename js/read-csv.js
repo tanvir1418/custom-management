@@ -916,6 +916,18 @@ function manResPagination(noRow) {
 				$("#style2Con #style2_Content").css("display", "block");
 			}, 3000);
 
+			let currentPageNumber = pagination.pageNumber;
+			let dataRowPerPage = pagination.pageSize;
+			let totalDataRows = pagination.totalNumber;
+			let totalPageNumber = Math.ceil(totalDataRows / dataRowPerPage);
+			let dataShowingFrom = ((currentPageNumber - 1) * dataRowPerPage) + 1;
+			let dataShowingTo = ((currentPageNumber * dataRowPerPage) < totalDataRows) ? (currentPageNumber * dataRowPerPage) : totalDataRows;
+
+			$("#current_page").html(currentPageNumber);
+			$("#total_pages").html(totalPageNumber);
+			$("#record_showingFrom").html(dataShowingFrom);
+			$("#record_showingTo").html(dataShowingTo);
+
 			let tableTr = "";
 			let style2TableData = "";
 			let tableH = $("#resizable554 thead th");
