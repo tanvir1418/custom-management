@@ -302,6 +302,34 @@ a:visited {
     color: #0366d6;
 }
 
-/* FORGER PASSWORD MODAL */
-
+/* FORGOT PASSWORD MODAL */
+#forgotPass .modal-dialog{
+    min-width: 650px;
+}
+#forgotPass .modal-content{
+    padding:20px;
+}
+#forgotPass .modal-content p{
+    font-size: 16px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+}
+#forgotPass .forgot-title p{
+    font-size: 20px;
+    color: #004799;
+}
+#forgotPass .enter-verified-email p{
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 0;
+}
+#forgotPass .enter-verified-email input{
+    padding: 5px;
+    font-size: 16px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+}
+#forgotPass .enter-verified-email input[type=email]{
+    width: 60%;
+}
 
