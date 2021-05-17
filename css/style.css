@@ -117,14 +117,31 @@ button:focus {
   color: #787878;
 }
 
-.mynav .icon-box .icon:first-child {
-  padding-right: 32px;
+.mynav .icon-box .msg45 {
+  margin-right: 32px;
+}
+.mynav .icon-box .moni45 {
+  margin-right: 32px;
+}
+.mynav .icon-box .help45 {
+  margin-right: 32px;
 }
 .ftr-pad{
   padding-right: 16px !important;
 }
-.mynav .icon-box .icon:last-child {
-  padding-right: 22px;
+.mynav .icon-box .user45 {
+  margin-right: 32px;
+}
+.mynav .icon-box .logout45 {
+  margin-right: 22px;
+}
+
+/* FOR Terms page */
+.mynav .icon-box.other-page45 span{
+  margin-right: 16px;
+}
+.mynav .icon-box.other-page45 .logout45 {
+  margin-right: 22px;
 }
 
 .mynav .welcome-box p {
