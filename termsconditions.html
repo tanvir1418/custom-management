@@ -7,6 +7,7 @@
     <title>Terms and Conditions</title>
     <link rel="stylesheet" href="./css/all_min.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/tooltip.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/media.css">
@@ -36,8 +37,12 @@
         </div>
         <div class="nav-items d-flex">
             <div class="icon-box">
-                <i class="icon fas fa-envelope ftr-pad" onclick="checkMailIcon()"></i>
-                <i class="icon fas fa-user" onclick="setAccountTab()"></i>
+                <span class="msg45" tooltip="Email Options" flow="down">
+                    <i class="icon fas fa-envelope" onclick="checkMailIcon()"></i>
+                </span>
+                <span class="user45" tooltip="Registration" flow="down">
+                    <i class="icon fas fa-user" onclick="setAccountTab()"></i>
+                </span>
             </div>
             <div class="welcome-box">
                 <p class="welcome m-0">Welcome</p>
