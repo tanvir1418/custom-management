@@ -3576,11 +3576,11 @@ i.fa-caret-down.down-animation-icon{
     }
 }
 
-#mnData-opt1-loading,
-#mnData-opt3-loading,
-#mnData-opt4-loading,
-#mnData-opt5-loading,
-#mnAlert-loading,
+#mnData-opt1-loadingWrapper,
+#mnData-opt3-loadingWrapper,
+#mnData-opt4-loadingWrapper,
+#mnData-opt5-loadingWrapper,
+#manage_alert_loading_table,
 #style2_loading,
 #loading_table{
     display: none;
