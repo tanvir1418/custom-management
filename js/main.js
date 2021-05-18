@@ -1511,3 +1511,9 @@ function linkPolicy() {
 		$('#loginRequired').modal('show');
 	}
 }
+
+function loggingOut() {
+	// let loginCondition = localStorage.setItem("loginStatus", "");
+	localStorage.removeItem('loginStatus');
+	window.location.href = "/index.html";
+}
