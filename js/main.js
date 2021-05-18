@@ -1519,11 +1519,22 @@ function loggingOut() {
 }
 
 function gotoSystemStatus() {
-	localStorage.setItem("emailTabShowing", "systemStatus");
-	window.location.href = "/email.html";
+	let loginCondition = localStorage.getItem("loginStatus");
+	if (loginCondition == "LOGGED_IN") {
+		localStorage.setItem("emailTabShowing", "systemStatus");
+		window.location.href = "/email.html";
+	} else {
+		$('#loginRequired').modal('show');
+	}
+
 }
 
 function gotoContactStatus() {
-	localStorage.setItem("emailTabShowing", "contactStatus");
-	window.location.href = "/email.html";
+	let loginCondition = localStorage.getItem("loginStatus");
+	if (loginCondition == "LOGGED_IN") {
+		localStorage.setItem("emailTabShowing", "contactStatus");
+		window.location.href = "/email.html";
+	} else {
+		$('#loginRequired').modal('show');
+	}
 }
