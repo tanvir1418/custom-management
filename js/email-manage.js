@@ -303,15 +303,18 @@ function formConfirmBtn() {
 
 // CHOOSE OPTION SECTION START
 function selectEmailop(evt, optionName) {
-    var i, tabcontent, tablinks;
+    let i, tabcontent, tablinks;
+
     tabcontent = document.getElementsByClassName("option");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
+
     tablinks = document.getElementsByClassName("option_box");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
+
     document.getElementById(optionName).style.display = "block";
     document.getElementById("hide955").style.display = "none";
     document.getElementById("select_optn").style.paddingBottom = "0px";
@@ -323,3 +326,31 @@ function selectEmailop(evt, optionName) {
     }
 }
 // CHOOSE OPTION SECTION END
+
+function showSystemStatus() {
+    document.getElementById("hide955").style.display = "none";
+    document.getElementById("select_optn").style.paddingBottom = "0px";
+    document.getElementById("mail_option_2").style.display = "none";
+    document.getElementById("mail_option_3").style.display = "none";
+    document.getElementById("mail_option_1").style.display = "block";
+
+    let tablinks = document.getElementsByClassName("option_box");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    tablinks[0].className += " active";
+}
+
+function showContactStatus() {
+    document.getElementById("hide955").style.display = "none";
+    document.getElementById("select_optn").style.paddingBottom = "0px";
+    document.getElementById("mail_option_1").style.display = "none";
+    document.getElementById("mail_option_2").style.display = "none";
+    document.getElementById("mail_option_3").style.display = "block";
+
+    let tablinks = document.getElementsByClassName("option_box");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    tablinks[2].className += " active";
+}

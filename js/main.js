@@ -1517,3 +1517,13 @@ function loggingOut() {
 	localStorage.removeItem('loginStatus');
 	window.location.href = "/index.html";
 }
+
+function gotoSystemStatus() {
+	localStorage.setItem("emailTabShowing", "systemStatus");
+	window.location.href = "/email.html";
+}
+
+function gotoContactStatus() {
+	localStorage.setItem("emailTabShowing", "contactStatus");
+	window.location.href = "/email.html";
+}

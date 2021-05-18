@@ -42,10 +42,10 @@
             <i class="icon fas fa-envelope" onclick="checkMailIcon()"></i>
           </span>
           <span class="moni45" tooltip="System Status" flow="down">
-            <i class="icon fas fa-desktop"></i>
+            <i class="icon fas fa-desktop" onclick="showSystemStatus()"></i>
           </span>
           <span class="help45" tooltip="Customer Support" flow="down">
-            <i class="icon fas fa-hands-helping"></i>
+            <i class="icon fas fa-hands-helping" onclick="showContactStatus()"></i>
           </span>
           <span class="user45" tooltip="User Info" flow="down">
             <i class="icon fas fa-user" onclick="setAccountTab()"></i>
@@ -58,14 +58,6 @@
           <p class="welcome m-0">Welcome</p>
           <p id="username_div" class="name m-0"></p>
         </div>
-        <!-- <div class="icon-box">
-                <i class="icon fas fa-envelope ftr-pad" onclick="checkMailIcon()"></i>
-                <i class="icon fas fa-user" onclick="setAccountTab()"></i>
-              </div>
-              <div class="welcome-box">
-                <p class="welcome m-0">Welcome</p>
-                <p id="username_div" class="name m-0"></p>
-              </div> -->
       </div>
       <!-- FIXED BAR ITEMS END -->
     </div>
@@ -1021,20 +1013,6 @@
                       <div class="checkbox-table-scroll">
                         <table id="checkbox-table-exist">
                           <tbody>
-                            <!-- <tr>
-                                                      <td>
-                                                          <div class="popup__checkbox__page__toggle">
-                                                              <label class="popup__checkbox__toggle">
-                                                                  <input class="popup__checkbox__toggle__input"
-                                                                      type="checkbox">
-                                                                  <span class="popup__checkbox__toggle__label">
-                                                                      <span
-                                                                          class="popup__checkbox__toggle__text">1923.73</span>
-                                                                  </span>
-                                                              </label>
-                                                          </div>
-                                                      </td>
-                                                  </tr> -->
                           </tbody>
                         </table>
                       </div>
@@ -1150,15 +1128,50 @@
   </div>
   <!-- Login is required Modal start -->
 
+    <!-- JS FILES -->
+    <script src="./js/jquery.js"></script>
+
     <script>
       const currentUser = localStorage.getItem("currentUser");
       const user_div = document.getElementById("username_div");
       if (currentUser != null && currentUser != "") {
         user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
       }
+
+      const showEmailTab = localStorage.getItem("emailTabShowing");
+
+      if(showEmailTab == "systemStatus"){
+        document.getElementById("hide955").style.display = "none";
+        document.getElementById("select_optn").style.paddingBottom = "0px";
+        document.getElementById("mail_option_2").style.display = "none";
+        document.getElementById("mail_option_3").style.display = "none";
+        document.getElementById("mail_option_1").style.display = "block";
+
+        let tablinks = document.getElementsByClassName("option_box");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        tablinks[0].className += " active";
+        localStorage.removeItem("emailTabShowing");
+
+      }else if(showEmailTab == "contactStatus"){
+        document.getElementById("hide955").style.display = "none";
+        document.getElementById("select_optn").style.paddingBottom = "0px";
+        document.getElementById("mail_option_1").style.display = "none";
+        document.getElementById("mail_option_2").style.display = "none";
+        document.getElementById("mail_option_3").style.display = "block";
+
+        let tablinks = document.getElementsByClassName("option_box");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        tablinks[2].className += " active";
+        localStorage.removeItem("emailTabShowing");
+
+      }
     </script>
 
     <!-- JS FILES -->
-    <script src="./js/jquery.js"></script>
+    <!-- <script src="./js/jquery.js"></script> -->
   </body>
 </html>
