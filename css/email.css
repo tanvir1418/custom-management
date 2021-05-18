@@ -1431,3 +1431,11 @@ i.fa-caret-down.down-animation-icon{
 #task_status_loading_table{
   display: none;
 }
+
+.mynav .icon-box span {
+  margin-right: 15px !important;
+}
+
+/* .mynav .icon-box span:last-child {
+  margin-right: 25px !important;
+} */
