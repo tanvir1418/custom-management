@@ -258,7 +258,7 @@ function taskStatusHeadClick(tableId) {
     });
 }
 
-taskStatusHeadClick("email_task_status_table");
+// taskStatusHeadClick("email_task_status_table");
 
 function emailConfirmButton() {
     $('#email_confirm_modal').modal('hide');
@@ -323,6 +323,7 @@ function selectEmailop(evt, optionName) {
     if (optionName == "mail_option_2") {
         taskStatusHead("email_task_status_table");
         taskStatusTableExist("email_task_status_table", 7, "pagination_task_status");
+        taskStatusHeadClick("email_task_status_table");
     }
 }
 // CHOOSE OPTION SECTION END

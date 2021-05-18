@@ -134,7 +134,8 @@ for (var i = 0; i < li_tabs.length; i++) {
 			if (current_tab_value == "tab_5") {
 				$(".content").addClass("tvtv");
 				makeTableHeadAlert("manage-alert-table-exist");
-				alertTableExist("manage-alert-table-exist", 7, "pagination-manage-alert", "manage-alert-table-exist", "manage_alert_loading_table");
+				alertTableExist("manage-alert-table-exist", 7, "pagination-manage-alert", "manage_alert_data_table", "manage_alert_loading_table");
+				alertTableHeadClick("manage-alert-table-exist");
 			}
 			if (current_tab_value != "tab_5") {
 				$(".content").removeClass("tvtv");
@@ -193,6 +194,7 @@ $(".tab-39").click(function () {
 	if (dataId == "tab40") {
 		makeTableHead("man-data-opt1-exist");
 		manDtOpt1Exist("man-data-opt1-exist", 7, "pagination-op1-data", `tabChangeOpt1(this)`, "mnData-opt1-dataWrapper", "mnData-opt1-loadingWrapper");
+		ExistTableHeadClick("man-data-opt1-exist");
 	}
 
 	$(".mytab-39[data-id='" + $(this).attr("data-id") + "']").addClass("tab-active-39");
@@ -222,6 +224,7 @@ $(".tab-43").click(function () {
 	if (dataId == "tab44") {
 		makeTableHead("man-data-opt3-exist");
 		manDtOpt1Exist("man-data-opt3-exist", 7, "pagination-op3-data", `tabChangeOpt3(this)`, "mnData-opt3-dataWrapper", "mnData-opt3-loadingWrapper");
+		ExistTableHeadClick("man-data-opt3-exist");
 	}
 
 	$(".mytab-43[data-id='" + $(this).attr("data-id") + "']").addClass(
@@ -253,6 +256,7 @@ $(".tab-45").click(function () {
 	if (dataId == "tab46") {
 		makeTableHead("man-data-opt4-exist");
 		manDtOpt1Exist("man-data-opt4-exist", 7, "pagination-op4-data", `tabChangeOpt4(this)`, "mnData-opt4-dataWrapper", "mnData-opt4-loadingWrapper");
+		ExistTableHeadClick("man-data-opt4-exist");
 	}
 
 	$(".mytab-45[data-id='" + $(this).attr("data-id") + "']").addClass(
@@ -283,6 +287,7 @@ $(".tab-41").click(function () {
 	if (dataId == "tab42") {
 		makeTableHead("man-data-opt5-exist");
 		manDtOpt1Exist("man-data-opt5-exist", 7, "pagination-op5-data", `tabChangeOpt5(this)`, "mnData-opt5-dataWrapper", "mnData-opt5-loadingWrapper");
+		ExistTableHeadClick("man-data-opt5-exist");
 	}
 
 	$(".mytab-41[data-id='" + $(this).attr("data-id") + "']").addClass(
@@ -903,6 +908,7 @@ function tabChangeOpt1(e) {
 		.parent()
 		.parent()
 		.parent()
+		.parent()
 		.parent();
 	let createNew = tabMain.find(
 		"div.create-manage-tab div.create-new-content.zas"
@@ -913,6 +919,7 @@ function tabChangeOpt1(e) {
 
 function tabChangeOpt3(e) {
 	let tabMain = $(e)
+		.parent()
 		.parent()
 		.parent()
 		.parent()
@@ -935,6 +942,7 @@ function tabChangeOpt4(e) {
 		.parent()
 		.parent()
 		.parent()
+		.parent()
 		.parent();
 	let createNew = tabMain.find(
 		"div.create-manage-tab div.create-new-content.zas45"
@@ -945,6 +953,7 @@ function tabChangeOpt4(e) {
 
 function tabChangeOpt5(e) {
 	let tabMain = $(e)
+		.parent()
 		.parent()
 		.parent()
 		.parent()
@@ -1060,10 +1069,10 @@ function ExistTableHeadClick(tableId) {
 		}
 	});
 }
-ExistTableHeadClick("man-data-opt1-exist");
-ExistTableHeadClick("man-data-opt3-exist");
-ExistTableHeadClick("man-data-opt4-exist");
-ExistTableHeadClick("man-data-opt5-exist");
+// ExistTableHeadClick("man-data-opt1-exist");
+// ExistTableHeadClick("man-data-opt3-exist");
+// ExistTableHeadClick("man-data-opt4-exist");
+// ExistTableHeadClick("man-data-opt5-exist");
 
 // modal background
 // $('#opt4a-list-modal').on('show.bs.modal', function (e) {
@@ -1072,64 +1081,6 @@ ExistTableHeadClick("man-data-opt5-exist");
 // 	$('body').removeClass("example-open");
 // })
 
-// $('#opt4b-list-modal').on('show.bs.modal', function (e) {
-// 	$('body').addClass("example-open");
-// }).on('hide.bs.modal', function (e) {
-// 	$('body').removeClass("example-open");
-// })
-
-// $('#opt4c-list-modal').on('show.bs.modal', function (e) {
-// 	$('body').addClass("example-open");
-// }).on('hide.bs.modal', function (e) {
-// 	$('body').removeClass("example-open");
-// })
-
-// $('#opt4d-list-modal').on('show.bs.modal', function (e) {
-// 	$('body').addClass("example-open");
-// }).on('hide.bs.modal', function (e) {
-// 	$('body').removeClass("example-open");
-// })
-
-// $('#manage-tempa-list-modal').on('show.bs.modal', function (e) {
-// 	$('body').addClass("example-open");
-// }).on('hide.bs.modal', function (e) {
-// 	$('body').removeClass("example-open");
-// })
-
-// $('#manage-tempb-list-modal').on('show.bs.modal', function (e) {
-// 	$('body').addClass("example-open");
-// }).on('hide.bs.modal', function (e) {
-// 	$('body').removeClass("example-open");
-// })
-
-// $('#manage-tempc-list-modal').on('show.bs.modal', function (e) {
-// 	$('body').addClass("example-open");
-// }).on('hide.bs.modal', function (e) {
-// 	$('body').removeClass("example-open");
-// })
-
-// $('#manage-tempd-list-modal').on('show.bs.modal', function (e) {
-// 	$('body').addClass("example-open");
-// }).on('hide.bs.modal', function (e) {
-// 	$('body').removeClass("example-open");
-// })
-
-// $('#myopt1listData').on('show.bs.modal', function (e) {
-// 	$('body').addClass("example-open");
-// }).on('hide.bs.modal', function (e) {
-// 	$('body').removeClass("example-open");
-// })
-
-// $('#copyrowlist').on('show.bs.modal', function (e) {
-// 	$('body').addClass("example-open");
-// }).on('hide.bs.modal', function (e) {
-// 	$('body').removeClass("example-open");
-// })
-// $('#moverowlist').on('show.bs.modal', function (e) {
-// 	$('body').addClass("example-open");
-// }).on('hide.bs.modal', function (e) {
-// 	$('body').removeClass("example-open");
-// })
 // manage data op3 create new table Start
 let opt3TableData1 = [];
 for (let i = 1; i <= 15; i++) {
