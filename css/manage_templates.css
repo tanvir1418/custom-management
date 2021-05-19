@@ -27,6 +27,18 @@
   text-align: center;
   transition: all 0.3s ease;
   margin: auto;
+  position: relative;
+  z-index: 9;
+}
+.tab_3 .template_box:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #ffffff;
 }
 
 .tab_3 .template_box{
