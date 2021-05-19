@@ -1944,6 +1944,7 @@ legend {
 } */
 .checkbox-container .page__toggle {
   margin: 0 8px;
+  margin-right: 35px;
 }
 .toggle {
   display: inline-flex;

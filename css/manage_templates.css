@@ -1277,8 +1277,23 @@ padding: 0 5px;
   text-decoration: underline;
 }
 
-fieldset legend.w-auto label.toggle span.tooltip-container{
-  margin-left: 5px;
+fieldset legend.w-auto span.tooltip-container{
+  position: absolute;
+  color: black;
+  display: block;
+  font-size: 18px;
+  top: 6px;
+  left: 185px;
+}
+
+fieldset legend.w-auto span.span-180{
+  left: 180px;
+}
+fieldset legend.w-auto span.span-190{
+  left: 190px;
+}
+fieldset legend.w-auto span.diff-position{
+  top: 88px;
 }
 
 fieldset legend.w-auto label.toggle i{
