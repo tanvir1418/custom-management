@@ -388,19 +388,6 @@ button:focus {
   transition: all 0.3s ease;
   margin: auto;
   background: #f9f9f9;
-  position: relative;
-  z-index: 9;
-}
-
-.content .tab_2 .option_box:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: #ffffff;
 }
 
 .content .tab_2 .option_box .option-content-box {
