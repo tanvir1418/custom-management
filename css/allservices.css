@@ -78,7 +78,7 @@
     top: -22px;
     right: -16px;
     transform: rotate(110deg);
-    user-select: none;
+    /* user-select: none; */
 }
 
 .starburst {
@@ -132,24 +132,32 @@
 
 #allserv-section .plan-box-2 .plan_name .ght8 {
     margin: 0;
-    /* letter-spacing: 3px; */
-    /* line-height: normal; */
-    color: #ffffff;
     position: absolute;
-    transform: rotate(290deg);
+    transform: rotate(35deg);
+    top: -32px;
+    right: 43px;
+}
+#allserv-section .plan-box-2 .plan_name .textboxgt8{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-33%, 0%);
+    width: 250px;
+}
+#allserv-section .plan-box-2 .plan_name p{
+    margin: 0 auto;
+    padding: 0;
+    color: #ffffff;
+    text-align: center;
 }
 
 #allserv-section .plan-box-2 .plan_name .star-text1 {
-    top: 13px;
-    right: 16px;
-    font-size: 36px;
+    font-size: 32px;
     font-family: gilroy-bold, sans-serif;
     font-weight: 900;
 }
 
 #allserv-section .plan-box-2 .plan_name .star-text2 {
-    top: 34px;
-    right: -6px;
     font-size: 24px;
     font-family: gilroy-medium, sans-serif;
     font-weight: 500;
