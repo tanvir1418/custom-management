@@ -761,7 +761,8 @@ td {
   background: #feffd6;
   color: #000000;
   border-radius: 50px;
-  margin-right: auto;
+  margin-right: 24px;
+  margin-left: auto;
 }
 
 .mytable1 tbody .actions39 .cancel-box {
@@ -773,6 +774,7 @@ td {
   width: 25px;
   border-radius: 50%;
   cursor: pointer;
+  margin-right: auto;
 }
 
 .mytable1 tbody .actions39 .cancel-box i {
