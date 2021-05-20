@@ -162,11 +162,11 @@ function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId) {
 }
 
 makeTableHeadAlert("manage-alert-table-exist");
-alertTableExist("manage-alert-table-exist", 7, "pagination-manage-alert", "manage-alert-table-exist", "manage_alert_loading_table");
+alertTableExist("manage-alert-table-exist", 7, "pagination-manage-alert", "manage_alert_data_table", "manage_alert_loading_table");
 
 $("#row-mnAlert").change(function (e) {
   let noRow = e.target.value;
-  alertTableExist("manage-alert-table-exist", noRow, "pagination-manage-alert", "manage-alert-table-exist", "manage_alert_loading_table");
+  alertTableExist("manage-alert-table-exist", noRow, "pagination-manage-alert", "manage_alert_data_table", "manage_alert_loading_table");
   alertTableHeadClick("manage-alert-table-exist");
 });
 

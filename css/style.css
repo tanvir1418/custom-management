@@ -148,6 +148,10 @@ button:focus {
   text-align: right;
 }
 
+.mynav .welcome-box{
+  min-width: 80px;
+}
+
 .mynav .welcome-box .welcome {
   font-weight: 900;
   font-size: 16px;

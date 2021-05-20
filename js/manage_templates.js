@@ -2566,6 +2566,10 @@ let rowContainerID = "";
 
 function mnTempConfirmModal(globVariable) {
   $('#mnTemp_confirm_modal').modal('show');
+  let loadTempBoxId = globVariable.parentElement.parentElement.id;
+  let templateNum = document.querySelector(`#${loadTempBoxId} .temp-txt .temp-num`).textContent;
+  document.querySelector("#mnTemp_confirm_modal .template-number").textContent = templateNum;
+
   targetTempBoxId = globVariable.offsetParent.id;
 
   rowContainerID = globVariable.parentElement.parentElement.parentElement.id;

@@ -203,16 +203,17 @@
                         <div class="row">
                             <input id="usernameField" class="myinput" type="text" placeholder="User Name">
                         </div>
-                        <div class="row">
+                        <div class="row password-container">
                             <input id="passwordField" class="myinput" type="password" placeholder="Password">
+                            <span toggle="#passwordField" class="fa fa-fw fa-eye password-field-icon toggle-password"></span>
                         </div>
                         <div class="row button-box d-flex">
                             <a class="reset" href="index.html"id="resetBtn">Reset</a>
                             <input class="ml-auto login" type="submit" value="LOGIN" id="loginBtn"/>
                             <input class="ml-auto login" type="submit" value="REGISTER" id="registerBtn" />
                         </div>
-                        <div class="forget-pass" data-toggle="modal" data-target="#forgotPass">
-                            <span>Forgot password?</span>
+                        <div class="forget-pass">
+                            <span data-toggle="modal" data-target="#forgotPass">Forgot password?</span>
                         </div>
                     </div>
                 </div>
@@ -253,22 +254,20 @@
 
     <!-- FORGOT PASSWORD MODAL START -->
     <div class="modal fade" id="forgotPass">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="forgot-title">
-                    <p>Forgot Your Username or Password?</p>
+                    <p>Forgot Username or Password?</p>
                 </div>
                 <div class="forgot-pass-pera">
                     <p>Just enter your email address below and we'll help you retrieve your username or create a new password.</p>
                     <p>We'll email you a link to retrieve your username or create a new password, if you don't receive the link soon, try checking your spam or junk folder.</p>
+                    <p class="enter-pass-text">Enter your user account's verified email address and we will send you a password reset link.</p>
                 </div>
                 <div class="enter-verified-email">
-                    <form action="">
-                        <p>Enter your user account's verified email address and we will send you a password reset link.</p>
-                        <input type="email" placeholder="Enter your email address">
-                        <input type="submit" name="" id="" value="Submit">
-                        <input type="submit" name="" id="" value="Cancel" data-dismiss="modal">
-                    </form>
+                    <input type="email" placeholder="Enter your email address">
+                    <input class="btn btn-success" type="submit" name="" id="" value="Submit">
+                    <input class="btn btn-light" type="submit" name="" id="" value="Cancel" data-dismiss="modal">
                 </div>
             </div>
         </div>
@@ -284,6 +283,7 @@
         localStorage.removeItem('currentUser');
         localStorage.removeItem('loginStatus');
         localStorage.removeItem('manageTabVisibility');
+        localStorage.removeItem("emailTabShowing");
 
         const usernameIndex = document.getElementById("usernameField");
         const passwordIndex = document.getElementById("passwordField");
