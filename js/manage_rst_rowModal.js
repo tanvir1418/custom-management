@@ -176,6 +176,10 @@ sub_ul_copytomodallist_style2.addEventListener("click", function (e) {
     if (target.tagName === "DIV") {
         if (target.className.indexOf("sublist-cancel-box") != -1) {
             deleteListClassName = target.parentNode.classList[0];
+
+            let dataCopyToS2_Itag = target.parentNode.childNodes[1].innerHTML;
+            document.querySelector("#delet-copytolistopt2_style2 .copyToS2-item-name").innerHTML = dataCopyToS2_Itag;
+
             return;
         }
         target = target.parentNode;
@@ -185,15 +189,22 @@ sub_ul_copytomodallist_style2.addEventListener("click", function (e) {
         target = target.parentNode;
         if (target.className.indexOf("sublist-cancel-box") != -1) {
             deleteListClassName = target.parentNode.classList[0];
+
+            let dataCopyToS2_Itag = target.parentNode.childNodes[1].innerHTML;
+            document.querySelector("#delet-copytolistopt2_style2 .copyToS2-item-name").innerHTML = dataCopyToS2_Itag;
+
             return;
         } else target = target.parentNode;
     } else if (target.tagName !== "LI") return;
+
+    let dataCopyToStyle2 = target.childNodes[1].innerHTML;
+    console.log(`Tag P/Div: Copy This Row To Style-2: ${dataCopyToStyle2}`);
 
     // $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
     // $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
 
     copyto_oldLIClassnameModal_style2 = target.classList[0];
-    confirmModalCopyMove(target.className);
+    confirmModalCopyMove(target.className, dataCopyToStyle2);
 });
 
 $("#copyto-mng-opt2-delete_style2").click(function () {
@@ -206,8 +217,8 @@ $(document).ready(function () {
     $(".copytoscrollbtn_style2").click(function () {
         const copytoscrollwindow_style2 = document.querySelector(".copytoscrollwindow_style2");
         $(".copytoscrollwindow_style2").animate({
-                scrollTop: copytoscrollwindow_style2.scrollTop + 100,
-            },
+            scrollTop: copytoscrollwindow_style2.scrollTop + 100,
+        },
             250
         );
     });
@@ -396,6 +407,10 @@ sub_ul_movetomodallist_style29.addEventListener("click", function (e) {
     if (target.tagName === "DIV") {
         if (target.className.indexOf("sublist-cancel-box") != -1) {
             deleteListClassName = target.parentNode.classList[0];
+
+            let dataMoveToStyle2 = target.parentNode.childNodes[1].innerHTML;
+            document.querySelector("#delet-movetolistopt2_style29 .moveToS2-item-name").innerHTML = dataMoveToStyle2;
+
             return;
         }
         target = target.parentNode;
@@ -405,13 +420,21 @@ sub_ul_movetomodallist_style29.addEventListener("click", function (e) {
         target = target.parentNode;
         if (target.className.indexOf("sublist-cancel-box") != -1) {
             deleteListClassName = target.parentNode.classList[0];
+
+            let dataMoveToStyle2 = target.parentNode.childNodes[1].innerHTML;
+            document.querySelector("#delet-movetolistopt2_style29 .moveToS2-item-name").innerHTML = dataMoveToStyle2;
+
             return;
         } else target = target.parentNode;
     } else if (target.tagName !== "LI") return;
 
+
+    let dataMoveToStyle2 = target.childNodes[1].innerHTML;
+    console.log(`Tag P/Div: Copy This Row To Style-2: ${dataMoveToStyle2}`);
+
     // $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
     // $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
-    confirmModalCopyMove(target.className);
+    confirmModalCopyMove(target.className, dataMoveToStyle2);
     // moveto_oldLIClassnameModal_style29 = target.classList[0];
 });
 
@@ -425,8 +448,8 @@ $(document).ready(function () {
     $(".movetoscrollbtn_style29").click(function () {
         const movetoscrollwindow_style29 = document.querySelector(".movetoscrollwindow_style29");
         $(".movetoscrollwindow_style29").animate({
-                scrollTop: movetoscrollwindow_style29.scrollTop + 100,
-            },
+            scrollTop: movetoscrollwindow_style29.scrollTop + 100,
+        },
             250
         );
     });

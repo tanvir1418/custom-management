@@ -421,6 +421,10 @@ sub_ul_copytomodallist.addEventListener("click", function (e) {
 	if (target.tagName === "DIV") {
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
+
+			let dataCopyToS1_Itag = target.parentNode.childNodes[1].innerHTML;
+			document.querySelector("#delet-copytolistopt2 .copyToS1-item-name").innerHTML = dataCopyToS1_Itag;
+
 			return;
 		}
 		target = target.parentNode;
@@ -430,9 +434,16 @@ sub_ul_copytomodallist.addEventListener("click", function (e) {
 		target = target.parentNode;
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
+
+			let dataCopyToS1_Itag = target.parentNode.childNodes[1].innerHTML;
+			document.querySelector("#delet-copytolistopt2 .copyToS1-item-name").innerHTML = dataCopyToS1_Itag;
+
 			return;
 		} else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
+
+	let dataCopyToStyle1 = target.childNodes[1].innerHTML;
+	console.log(`Tag P/Div: Copy This Row To Style-1: ${dataCopyToStyle1}`);
 
 	// console.log(target);
 	// console.dir(target);
@@ -440,7 +451,7 @@ sub_ul_copytomodallist.addEventListener("click", function (e) {
 	// $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
 
 	copyto_oldLIClassnameModal = target.classList[0];
-	confirmModalCopyMove(target.className);
+	confirmModalCopyMove(target.className, dataCopyToStyle1);
 });
 
 $("#copyto-mng-opt2-delete").click(function () {
@@ -642,6 +653,10 @@ sub_ul_movetomodallist.addEventListener("click", function (e) {
 	if (target.tagName === "DIV") {
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
+
+			let dataMoveToStyle1 = target.parentNode.childNodes[1].innerHTML;
+			document.querySelector("#delet-movetolistopt2 .moveToS1-item-name").innerHTML = dataMoveToStyle1;
+
 			return;
 		}
 		target = target.parentNode;
@@ -651,13 +666,20 @@ sub_ul_movetomodallist.addEventListener("click", function (e) {
 		target = target.parentNode;
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
+
+			let dataMoveToStyle1 = target.parentNode.childNodes[1].innerHTML;
+			document.querySelector("#delet-movetolistopt2 .moveToS1-item-name").innerHTML = dataMoveToStyle1;
+
 			return;
 		} else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
 
+	let dataMoveToStyle1 = target.childNodes[1].innerHTML;
+	console.log(`Tag P/Div: Copy This Row To Style-2: ${dataMoveToStyle1}`);
+
 	// $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
 	// $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
-	confirmModalCopyMove(target.className);
+	confirmModalCopyMove(target.className, dataMoveToStyle1);
 	// moveto_oldLIClassnameModal = target.classList[0];
 });
 

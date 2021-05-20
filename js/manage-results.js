@@ -239,6 +239,10 @@ $("#div-sub-ul-li-list").click(function (e) {
     let target = e.target;
     if (target.tagName === "DIV") {
         if (target.className === "sublist-cancel-box-404") {
+
+            let chart_deleteName = target.parentNode.childNodes[1].innerHTML;
+            document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = chart_deleteName;
+
             deleteManageModal(target.parentNode.classList[0]);
             return;
         }
@@ -248,6 +252,10 @@ $("#div-sub-ul-li-list").click(function (e) {
     } else if (target.tagName === "I") {
         target = target.parentNode;
         if (target.className === "sublist-cancel-box-404") {
+
+            let chart_deleteName = target.parentNode.childNodes[1].innerHTML;
+            document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = chart_deleteName;
+
             deleteManageModal(target.parentNode.classList[0]);
             return;
         }

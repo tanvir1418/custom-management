@@ -1300,7 +1300,7 @@ $('#universalThankDraftModal').on('show.bs.modal', function (e) {
 
 })
 
-function confirmModalCopyMove(targetELEMENT) {
+function confirmModalCopyMove(targetELEMENT, targetRowName) {
 	targetCopyMoveElement = targetELEMENT;
 
 	let headerCopyMoveText = "CONFIRM BOX";
@@ -1310,15 +1310,15 @@ function confirmModalCopyMove(targetELEMENT) {
 
 	if (targetELEMENT.includes("copyto")) {
 		headerCopyMoveText = "COPY ROW";
-		detailsCopyMoveText = "Confirm to copy row?";
+		detailsCopyMoveText = `Confirm to copy ${targetRowName} row?`;
 	} else if (targetELEMENT.includes("moveto")) {
 		headerCopyMoveText = "MOVE ROW";
-		detailsCopyMoveText = "Confirm to move row?";
+		detailsCopyMoveText = `Confirm to move ${targetRowName} row?`;
 	}
 
 	if (unCheckRow) {
 		headerCopyMoveText = "UNCHECK ROW";
-		detailsCopyMoveText = "Confirm to uncheck row?";
+		detailsCopyMoveText = `Confirm to uncheck ${targetRowName} row?`;
 	}
 	// console.log(targetELEMENT);
 	// console.log(unCheckRow);
@@ -1336,6 +1336,7 @@ function displayChartManageResult(itemTitle, itemSubTitle) {
 	mnResultTitle = itemTitle;
 	mnResultSubTitle = itemSubTitle;
 	$('#manageResultChartDisplay_modal').modal('show');
+	document.querySelector("#manageResultChartDisplay_modal .question-delete .chart-name").innerHTML = mnResultSubTitle;
 }
 
 function chartDispConfirmButton() {
