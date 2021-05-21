@@ -443,7 +443,6 @@ sub_ul_copytomodallist.addEventListener("click", function (e) {
 	} else if (target.tagName !== "LI") return;
 
 	let dataCopyToStyle1 = target.childNodes[1].innerHTML;
-	console.log(`Tag P/Div: Copy This Row To Style-1: ${dataCopyToStyle1}`);
 
 	// console.log(target);
 	// console.dir(target);
@@ -675,7 +674,6 @@ sub_ul_movetomodallist.addEventListener("click", function (e) {
 	} else if (target.tagName !== "LI") return;
 
 	let dataMoveToStyle1 = target.childNodes[1].innerHTML;
-	console.log(`Tag P/Div: Copy This Row To Style-2: ${dataMoveToStyle1}`);
 
 	// $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
 	// $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");

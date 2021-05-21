@@ -198,7 +198,6 @@ sub_ul_copytomodallist_style2.addEventListener("click", function (e) {
     } else if (target.tagName !== "LI") return;
 
     let dataCopyToStyle2 = target.childNodes[1].innerHTML;
-    console.log(`Tag P/Div: Copy This Row To Style-2: ${dataCopyToStyle2}`);
 
     // $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
     // $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
@@ -430,7 +429,6 @@ sub_ul_movetomodallist_style29.addEventListener("click", function (e) {
 
 
     let dataMoveToStyle2 = target.childNodes[1].innerHTML;
-    console.log(`Tag P/Div: Copy This Row To Style-2: ${dataMoveToStyle2}`);
 
     // $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
     // $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
