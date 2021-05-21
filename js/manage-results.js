@@ -670,7 +670,7 @@ let dis_date = document.querySelectorAll(".dis_date");
 
 dis_date.forEach((element) => {
 
-    element.innerHTML = d + "/" + m + "/" + y;
+    element.innerHTML = m + "/" + d + "/" + y;
 
 });
 
