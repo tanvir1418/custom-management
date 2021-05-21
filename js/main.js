@@ -310,6 +310,12 @@ $(".pas41").click(function () {
 	$("#my399").removeClass("createGreen");
 });
 
+// Remove List Box Animation Effect 
+setTimeout(() => {
+	$(".content .tab_2 .box-loading-animation").removeClass("box-loading-animation");
+}, 4000);
+
+
 // CREATE & MANAGE TAB END
 
 // LOGIN DATA PASS START
