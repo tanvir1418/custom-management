@@ -174,6 +174,10 @@ sub_ul_modallist.addEventListener("click", function (e) {
 	if (target.tagName === "DIV") {
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
+
+			let op1List1_itemName = target.parentNode.childNodes[1].innerHTML;
+			document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = op1List1_itemName;
+
 			return;
 		}
 		target = target.parentNode;
@@ -183,6 +187,10 @@ sub_ul_modallist.addEventListener("click", function (e) {
 		target = target.parentNode;
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
+
+			let op1List1_itemName = target.parentNode.childNodes[1].innerHTML;
+			document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = op1List1_itemName;
+
 			return;
 		} else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
@@ -195,8 +203,13 @@ sub_ul_modallist.addEventListener("click", function (e) {
 });
 
 $("#mng-opt2-delete").click(function () {
-	let delObj = document.querySelector(`.${deleteListClassName}`);
-	delObj.remove();
+	// console.log(`Delete class name: ${deleteListClassName}`);
+	// let delObj = document.querySelector(`.${deleteListClassName}`);
+	// document.querySelector(`.${deleteListClassName}`).remove();
+	$(`.${deleteListClassName}`).remove();
+	// console.log(delObj);
+	// console.dir(delObj);
+	// delObj.remove();
 });
 
 function countOpt1ListModal(e) {

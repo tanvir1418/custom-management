@@ -186,6 +186,10 @@ sub_ul_managetempamodallist.addEventListener("click", function (e) {
   if (target.tagName === "DIV") {
     if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
+
+      let mnTempModalListA_rowName = target.parentNode.childNodes[1].innerHTML;
+      document.querySelector("#delet-manage-tempa-list-modal .mnTemp-list1-row-name").innerHTML = mnTempModalListA_rowName;
+
       return;
     }
     target = target.parentNode;
@@ -195,6 +199,10 @@ sub_ul_managetempamodallist.addEventListener("click", function (e) {
     target = target.parentNode;
     if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
+
+      let mnTempModalListA_rowName = target.parentNode.childNodes[1].innerHTML;
+      document.querySelector("#delet-manage-tempa-list-modal .mnTemp-list1-row-name").innerHTML = mnTempModalListA_rowName;
+
       return;
     } else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
@@ -432,6 +440,10 @@ sub_ul_managetempbmodallist.addEventListener("click", function (e) {
   if (target.tagName === "DIV") {
     if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
+
+      let mnTempModalListB_rowName = target.parentNode.childNodes[1].innerHTML;
+      document.querySelector("#delet-manage-tempb-list-modal .mnTemp-list2-row-name").innerHTML = mnTempModalListB_rowName;
+
       return;
     }
     target = target.parentNode;
@@ -441,6 +453,10 @@ sub_ul_managetempbmodallist.addEventListener("click", function (e) {
     target = target.parentNode;
     if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
+
+      let mnTempModalListB_rowName = target.parentNode.childNodes[1].innerHTML;
+      document.querySelector("#delet-manage-tempb-list-modal .mnTemp-list2-row-name").innerHTML = mnTempModalListB_rowName;
+
       return;
     } else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
@@ -677,6 +693,10 @@ sub_ul_managetempcmodallist.addEventListener("click", function (e) {
   if (target.tagName === "DIV") {
     if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
+
+      let mnTempModalListC_rowName = target.parentNode.childNodes[1].innerHTML;
+      document.querySelector("#delet-manage-tempc-list-modal .mnTemp-list3-row-name").innerHTML = mnTempModalListC_rowName;
+
       return;
     }
     target = target.parentNode;
@@ -686,6 +706,10 @@ sub_ul_managetempcmodallist.addEventListener("click", function (e) {
     target = target.parentNode;
     if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
+
+      let mnTempModalListC_rowName = target.parentNode.childNodes[1].innerHTML;
+      document.querySelector("#delet-manage-tempc-list-modal .mnTemp-list3-row-name").innerHTML = mnTempModalListC_rowName;
+
       return;
     } else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
@@ -956,6 +980,10 @@ sub_ul_managetempdmodallist.addEventListener("click", function (e) {
   if (target.tagName === "DIV") {
     if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
+
+      let mnTempModalListD_rowName = target.parentNode.childNodes[1].innerHTML;
+      document.querySelector("#delet-manage-tempd-list-modal .mnTemp-list4-row-name").innerHTML = mnTempModalListD_rowName;
+
       return;
     }
     target = target.parentNode;
@@ -965,6 +993,10 @@ sub_ul_managetempdmodallist.addEventListener("click", function (e) {
     target = target.parentNode;
     if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
+
+      let mnTempModalListD_rowName = target.parentNode.childNodes[1].innerHTML;
+      document.querySelector("#delet-manage-tempd-list-modal .mnTemp-list4-row-name").innerHTML = mnTempModalListD_rowName;
+
       return;
     } else target = target.parentNode;
   } else if (target.tagName !== "LI") return;

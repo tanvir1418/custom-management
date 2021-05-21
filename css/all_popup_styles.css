@@ -2357,6 +2357,7 @@ Bottom codes are added by Tanvir
     background-color: #ffffff;
 }
 
+.modal-list-open,
 .modal-force-open,
 .modal-open-filter,
 .modal-open-filter-confirm,
@@ -2366,6 +2367,7 @@ Bottom codes are added by Tanvir
     overflow:hidden !important;
     padding-right: 17px !important;
 }
+.modal-list-open .modal,
 .modal-force-open .modal,
 .modal-open-filter .modal,
 .modal-open-filter-confirm .modal,

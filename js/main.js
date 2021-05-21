@@ -1075,11 +1075,70 @@ function ExistTableHeadClick(tableId) {
 // ExistTableHeadClick("man-data-opt5-exist");
 
 // modal background
-// $('#opt4a-list-modal').on('show.bs.modal', function (e) {
-// 	$('body').addClass("example-open");
-// }).on('hide.bs.modal', function (e) {
-// 	$('body').removeClass("example-open");
-// })
+$('#delet-optfourmodala-modal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-list-open");
+})
+$('#delet-optfourmodalb-modal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-list-open");
+})
+$('#delet-optfourmodalc-modal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-list-open");
+})
+$('#delet-optfourmodald-modal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-list-open");
+})
+
+$('#delet-manage-tempa-list-modal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-list-open");
+})
+$('#delet-manage-tempb-list-modal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-list-open");
+})
+$('#delet-manage-tempc-list-modal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-list-open");
+})
+$('#delet-manage-tempd-list-modal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-list-open");
+})
+
+$("#opt4a-list-modal").on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-list-open");
+})
+$("#opt4b-list-modal").on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-list-open");
+})
+$("#opt4c-list-modal").on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-list-open");
+})
+$("#opt4d-list-modal").on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-list-open");
+})
+
+$("#manage-tempa-list-modal").on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-list-open");
+})
+$("#manage-tempb-list-modal").on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-list-open");
+})
+$("#manage-tempc-list-modal").on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-list-open");
+})
+$("#manage-tempd-list-modal").on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-list-open");
+})
+
+// myopt1listData
+// deletlistopt2
+$('#deletlistopt2').on('show.bs.modal', function (e) {
+	let opt1ListDataStyles = window.getComputedStyle(document.querySelector('#myopt1listData'));
+	if (opt1ListDataStyles.display == "block") {
+		$('body').addClass("modal-list-open");
+	}
+})
+
+$("#myopt1listData").on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-list-open");
+})
 
 // manage data op3 create new table Start
 let opt3TableData1 = [];
