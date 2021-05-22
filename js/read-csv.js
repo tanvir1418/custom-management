@@ -875,25 +875,7 @@ function tableHeadSty1() {
 	});
 }
 
-// Variable for controlling the skeleton of table
-// let showSkeleton = "showAnimation";
-
 function manResPagination(noRow) {
-
-
-	// $("#resizable554").css("display", "none");
-	// $("#loading_table").css("display", "block");
-
-	// $("#style2Con #style2_Content").css("display", "none");
-	// $("#style2_loading").css("display", "block");
-
-	// setTimeout(() => {
-	// 	$("#loading_table").css("display", "none");
-	// 	$("#resizable554").css("display", "block");
-
-	// 	$("#style2_loading").css("display", "none");
-	// 	$("#style2Con #style2_Content").css("display", "block");
-	// }, 3000);
 
 	let options = {
 		dataSource: tableData,
@@ -901,6 +883,32 @@ function manResPagination(noRow) {
 		showGoInput: true,
 		showGoButton: true,
 		callback: function (data, pagination) {
+
+			// for (let columnVNum = 1; columnVNum < 16; columnVNum++) {
+			// 	$(`.clone-head-table-wrap table.mytablesty12 thead tr .column-header-${columnVNum} .column-header-${columnVNum}-sizer`).removeAttr("style");
+			// }
+			// tableHeadSty1();
+			// for (let columnNum = 1; columnNum <= 66; columnNum++) {
+			// 	let sizerWidth = $(`#resizable554 thead tr .column-header-${columnNum} .column-header-${columnNum}-sizer`).attr("style");
+			// 	if (sizerWidth != undefined) {
+			// 		sizerWidth = sizerWidth.replace('width: ', '').replace('px;', '').trim();
+			// 		console.log("Width Value: " + sizerWidth);
+			// 		let totalRow = $(`#resizable554 tbody tr`).length;
+			// 		console.log("Total Row: " + totalRow);
+			// 		for (let rowNum = 1; rowNum <= totalRow; rowNum++) {
+			// 			$(`#resizable554 tbody tr:nth-child(${rowNum}) .column-header-${columnNum} .column-header-${columnNum}-sizer`).css("width", `${sizerWidth}`);
+			// 			console.log("Width Value: " + sizerWidth);
+			// 		}
+			// 	} else {
+			// 		console.log(`Column-header-${columnNum} Undefined Found`);
+			// 	}
+			// }
+			let tdWidthContainer = [];
+			tdWidthContainer.push("undefined");
+
+			for (let columnNum = 1; columnNum <= 66; columnNum++) {
+				tdWidthContainer.push($(`#resizable554 thead tr .column-header-${columnNum} .column-header-${columnNum}-sizer`).attr("style"));
+			}
 
 			$("#resizable554").css("display", "none");
 			$("#loading_table").css("display", "block");
@@ -1180,7 +1188,7 @@ function manResPagination(noRow) {
 								<p>${checkSts == "Ended" ? "" : status}</p>
 							</div>
 						</div>
-						<div class="column-header-3-resizer"></div>
+						<div class="column-header-3-resizer" style="${tdWidthContainer[3] != "undefined" ? tdWidthContainer[3] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -1190,7 +1198,7 @@ function manResPagination(noRow) {
 								<span class="dis_time22 mr-tableData">${val1}</span>
 							</div>
 						</div>
-						<div class="column-header-4-resizer"></div>
+						<div class="column-header-4-resizer" style="${tdWidthContainer[4] != "undefined" ? tdWidthContainer[4] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -1200,7 +1208,7 @@ function manResPagination(noRow) {
 								<span class="dis_time22 mr-tableData">${val2}</span>
 							</div>
 						</div>
-						<div class="column-header-5-resizer"></div>
+						<div class="column-header-5-resizer" style="${tdWidthContainer[5] != "undefined" ? tdWidthContainer[5] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -1214,7 +1222,7 @@ function manResPagination(noRow) {
 								<span>${dateL}</span>
 							</div>
 						</div>
-												<div class="column-header-6-resizer"></div>
+						<div class="column-header-6-resizer" style="${tdWidthContainer[6] != "undefined" ? tdWidthContainer[6] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -1228,7 +1236,7 @@ function manResPagination(noRow) {
 								<span>${dateH}</span>
 							</div>
 						</div>
-												<div class="column-header-7-resizer"></div>
+						<div class="column-header-7-resizer" style="${tdWidthContainer[7] != "undefined" ? tdWidthContainer[7] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -1255,7 +1263,7 @@ function manResPagination(noRow) {
 								<p class="centerizeany mr-tableData">${Val12}</p>
 							</div>
 						</div>
-												<div class="column-header-8-resizer"></div>
+						<div class="column-header-8-resizer" style="${tdWidthContainer[8] != "undefined" ? tdWidthContainer[8] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
@@ -1284,349 +1292,349 @@ function manResPagination(noRow) {
 								</div>
 							</div>
 						</div>
-						<div class="column-header-9-resizer"></div>
+						<div class="column-header-9-resizer" style="${tdWidthContainer[9] != "undefined" ? tdWidthContainer[9] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-10 green-white">
 						<p class="centerizeany mr-tableData">${u_val}</p>
-						<div class="column-header-10-resizer"></div>
+						<div class="column-header-10-resizer" style="${tdWidthContainer[10] != "undefined" ? tdWidthContainer[10] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-11 green-white">
 						<p class="centerizeany mr-tableData">${u_per}</p>
-						<div class="column-header-11-resizer"></div>
+						<div class="column-header-11-resizer" style="${tdWidthContainer[11] != "undefined" ? tdWidthContainer[11] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-12 red-white">
 						<p class="centerizeany mr-tableData">${d_val}</p>
-						<div class="column-header-12-resizer"></div>
+						<div class="column-header-12-resizer" style="${tdWidthContainer[12] != "undefined" ? tdWidthContainer[12] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-13 red-white">
 						<p class="centerizeany mr-tableData">${d_per}</p>
-						<div class="column-header-13-resizer"></div>
+						<div class="column-header-13-resizer" style="${tdWidthContainer[13] != "undefined" ? tdWidthContainer[13] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-14 grey-white">
 						<p class="centerizeany mr-tableData">${n_val}</p>
-						<div class="column-header-14-resizer"></div>
+						<div class="column-header-14-resizer" style="${tdWidthContainer[14] != "undefined" ? tdWidthContainer[14] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-15 grey-white">
 						<p class="centerizeany mr-tableData">${n_per}</p>
-						<div class="column-header-15-resizer"></div>
+						<div class="column-header-15-resizer" style="${tdWidthContainer[15] != "undefined" ? tdWidthContainer[15] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-16">
 						<p class="centerizeany mr-tableData">${AM_COUNT}</p>
-						<div class="column-header-16-resizer"></div>
+						<div class="column-header-16-resizer"  style="${tdWidthContainer[16] != "undefined" ? tdWidthContainer[16] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-17">
 						<p class="centerizeany mr-tableData">${AN_COUNT}</p>
-						<div class="column-header-17-resizer"></div>
+						<div class="column-header-17-resizer"  style="${tdWidthContainer[17] != "undefined" ? tdWidthContainer[17] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-18">
 						<p class="centerizeany mr-tableData">${AO_COUNT}</p>
-						<div class="column-header-18-resizer"></div>
+						<div class="column-header-18-resizer"  style="${tdWidthContainer[18] != "undefined" ? tdWidthContainer[18] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-19">
 						<p class="centerizeany mr-tableData">${AP_COUNT}</p>
-						<div class="column-header-19-resizer"></div>
+						<div class="column-header-19-resizer"  style="${tdWidthContainer[19] != "undefined" ? tdWidthContainer[19] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-20">
 						<p class="centerizeany mr-tableData">${AQ_COUNT}</p>
-						<div class="column-header-20-resizer"></div>
+						<div class="column-header-20-resizer"  style="${tdWidthContainer[20] != "undefined" ? tdWidthContainer[20] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-21">
 						<p class="centerizeany mr-tableData">${AR_COUNT}</p>
-						<div class="column-header-21-resizer"></div>
+						<div class="column-header-21-resizer"  style="${tdWidthContainer[21] != "undefined" ? tdWidthContainer[21] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-22">
 						<p class="centerizeany mr-tableData">${AS_Count}</p>
-						<div class="column-header-22-resizer"></div>
+						<div class="column-header-22-resizer"  style="${tdWidthContainer[22] != "undefined" ? tdWidthContainer[22] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-23">
 						<p class="centerizeany mr-tableData">${AT_Count}</p>
-						<div class="column-header-23-resizer"></div>
+						<div class="column-header-23-resizer"  style="${tdWidthContainer[23] != "undefined" ? tdWidthContainer[23] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-24">
 						<p class="centerizeany mr-tableData">${AU_Count}</p>
-						<div class="column-header-24-resizer"></div>
+						<div class="column-header-24-resizer"  style="${tdWidthContainer[24] != "undefined" ? tdWidthContainer[24] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-25">
 						<p class="centerizeany mr-tableData">${AV_Count}</p>
-						<div class="column-header-25-resizer"></div>
+						<div class="column-header-25-resizer"  style="${tdWidthContainer[25] != "undefined" ? tdWidthContainer[25] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-26">
 						<p class="centerizeany mr-tableData">${AW_COUNT}</p>
-						<div class="column-header-26-resizer"></div>
+						<div class="column-header-26-resizer"  style="${tdWidthContainer[26] != "undefined" ? tdWidthContainer[26] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-27">
 						<p class="centerizeany mr-tableData">${AX_COUNT}</p>
-						<div class="column-header-27-resizer"></div>
+						<div class="column-header-27-resizer"  style="${tdWidthContainer[27] != "undefined" ? tdWidthContainer[27] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-28">
 						<p class="centerizeany mr-tableData">${AY_COUNT}</p>
-						<div class="column-header-28-resizer"></div>
+						<div class="column-header-28-resizer"  style="${tdWidthContainer[28] != "undefined" ? tdWidthContainer[28] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-29">
 						<p class="centerizeany mr-tableData">${AZ_Count}</p>
-						<div class="column-header-29-resizer"></div>
+						<div class="column-header-29-resizer"  style="${tdWidthContainer[29] != "undefined" ? tdWidthContainer[29] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-30">
 						<p class="centerizeany mr-tableData">${BA_Count}</p>
-						<div class="column-header-30-resizer"></div>
+						<div class="column-header-30-resizer"  style="${tdWidthContainer[30] != "undefined" ? tdWidthContainer[30] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-31">
 						<p class="centerizeany mr-tableData">${BB_Count}</p>
-						<div class="column-header-31-resizer"></div>
+						<div class="column-header-31-resizer"  style="${tdWidthContainer[31] != "undefined" ? tdWidthContainer[31] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-32">
 						<p class="centerizeany mr-tableData">${BC_Count}</p>
-						<div class="column-header-32-resizer"></div>
+						<div class="column-header-32-resizer"  style="${tdWidthContainer[32] != "undefined" ? tdWidthContainer[32] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-33">
 						<p class="centerizeany mr-tableData">${BD_Count}</p>
-						<div class="column-header-33-resizer"></div>
+						<div class="column-header-33-resizer"  style="${tdWidthContainer[33] != "undefined" ? tdWidthContainer[33] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-34">
 						<p class="centerizeany mr-tableData">${BE_count}</p>
-						<div class="column-header-34-resizer"></div>
+						<div class="column-header-34-resizer"  style="${tdWidthContainer[34] != "undefined" ? tdWidthContainer[34] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-35">
 						<p class="centerizeany mr-tableData">${BF_COUNT}</p>
-						<div class="column-header-35-resizer"></div>
+						<div class="column-header-35-resizer"  style="${tdWidthContainer[35] != "undefined" ? tdWidthContainer[35] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-36">
 						<p class="centerizeany mr-tableData">${BG_COUNT}</p>
-						<div class="column-header-36-resizer"></div>
+						<div class="column-header-36-resizer"  style="${tdWidthContainer[36] != "undefined" ? tdWidthContainer[36] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-37">
 						<p class="centerizeany mr-tableData">${BH_COUNT}</p>
-						<div class="column-header-37-resizer"></div>
+						<div class="column-header-37-resizer"  style="${tdWidthContainer[37] != "undefined" ? tdWidthContainer[37] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-38">
 						<p class="centerizeany mr-tableData">${BI_COUNT}</p>
-						<div class="column-header-38-resizer"></div>
+						<div class="column-header-38-resizer"  style="${tdWidthContainer[38] != "undefined" ? tdWidthContainer[38] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-39">
 						<p class="centerizeany mr-tableData">${BJ_COUNT}</p>
-						<div class="column-header-39-resizer"></div>
+						<div class="column-header-39-resizer"  style="${tdWidthContainer[39] != "undefined" ? tdWidthContainer[39] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-40">
 						<p class="centerizeany mr-tableData">${BK_COUNT}</p>
-						<div class="column-header-40-resizer"></div>
+						<div class="column-header-40-resizer"  style="${tdWidthContainer[40] != "undefined" ? tdWidthContainer[40] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-41">
 						<p class="centerizeany mr-tableData">${BL_COUNT}</p>
-						<div class="column-header-41-resizer"></div>
+						<div class="column-header-41-resizer"  style="${tdWidthContainer[41] != "undefined" ? tdWidthContainer[41] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-42">
 						<p class="centerizeany mr-tableData">${BM_COUNT}</p>
-						<div class="column-header-42-resizer"></div>
+						<div class="column-header-42-resizer"  style="${tdWidthContainer[42] != "undefined" ? tdWidthContainer[42] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-43">
 						<p class="centerizeany mr-tableData">${Col2}</p>
-						<div class="column-header-43-resizer"></div>
+						<div class="column-header-43-resizer"  style="${tdWidthContainer[43] != "undefined" ? tdWidthContainer[43] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-44">
 						<p class="centerizeany mr-tableData">${Col3}</p>
-						<div class="column-header-44-resizer"></div>
+						<div class="column-header-44-resizer"  style="${tdWidthContainer[44] != "undefined" ? tdWidthContainer[44] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-45">
 						<p class="centerizeany mr-tableData">${DP_val}</p>
-						<div class="column-header-45-resizer"></div>
+						<div class="column-header-45-resizer"  style="${tdWidthContainer[45] != "undefined" ? tdWidthContainer[45] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-46">
 						<p class="centerizeany mr-tableData">${DY_val}</p>
-						<div class="column-header-46-resizer"></div>
+						<div class="column-header-46-resizer"  style="${tdWidthContainer[46] != "undefined" ? tdWidthContainer[46] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-47">
 						<p class="centerizeany mr-tableData">${DmA}</p>
-						<div class="column-header-47-resizer"></div>
+						<div class="column-header-47-resizer"  style="${tdWidthContainer[47] != "undefined" ? tdWidthContainer[47] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-48">
 						<p class="centerizeany mr-tableData">${DmP}</p>
-						<div class="column-header-48-resizer"></div>
+						<div class="column-header-48-resizer"  style="${tdWidthContainer[48] != "undefined" ? tdWidthContainer[48] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-49">
 						<p class="centerizeany mr-tableData">${DmP_per}</p>
-						<div class="column-header-49-resizer"></div>
+						<div class="column-header-49-resizer"  style="${tdWidthContainer[49] != "undefined" ? tdWidthContainer[49] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-50">
 						<p class="centerizeany mr-tableData">${ID_val}</p>
-						<div class="column-header-50-resizer"></div>
+						<div class="column-header-50-resizer"  style="${tdWidthContainer[50] != "undefined" ? tdWidthContainer[50] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-51">
 						<p class="centerizeany mr-tableData">${LoP_per}</p>
-						<div class="column-header-51-resizer"></div>
+						<div class="column-header-51-resizer"  style="${tdWidthContainer[51] != "undefined" ? tdWidthContainer[51] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-52">
 						<p class="centerizeany mr-tableData">${M_Val}</p>
-						<div class="column-header-52-resizer"></div>
+						<div class="column-header-52-resizer"  style="${tdWidthContainer[52] != "undefined" ? tdWidthContainer[52] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-53">
 						<p class="centerizeany mr-tableData">${MaP_per}</p>
-						<div class="column-header-53-resizer"></div>
+						<div class="column-header-53-resizer"  style="${tdWidthContainer[53] != "undefined" ? tdWidthContainer[53] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-54">
 						<p class="centerizeany mr-tableData">${O_End}</p>
-						<div class="column-header-54-resizer"></div>
+						<div class="column-header-54-resizer"  style="${tdWidthContainer[54] != "undefined" ? tdWidthContainer[54] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-55">
 						<p class="centerizeany mr-tableData">${O_Start}</p>
-						<div class="column-header-55-resizer"></div>
+						<div class="column-header-55-resizer"  style="${tdWidthContainer[55] != "undefined" ? tdWidthContainer[55] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-56">
 						<p class="centerizeany mr-tableData">${SP_val}</p>
-												<div class="column-header-56-resizer"></div>
+						<div class="column-header-56-resizer"  style="${tdWidthContainer[56] != "undefined" ? tdWidthContainer[56] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-57">
 						<p class="mr-tableData">${Time_Frame}</p>
-						<div class="column-header-57-resizer"></div>
+						<div class="column-header-57-resizer"  style="${tdWidthContainer[57] != "undefined" ? tdWidthContainer[57] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-58">
 						<p class="centerizeany mr-tableData">${UmA}</p>
-						<div class="column-header-58-resizer"></div>
+						<div class="column-header-58-resizer"  style="${tdWidthContainer[58] != "undefined" ? tdWidthContainer[58] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-59">
 						<p class="centerizeany mr-tableData">${UmP}</p>
-						<div class="column-header-59-resizer"></div>
+						<div class="column-header-59-resizer"  style="${tdWidthContainer[59] != "undefined" ? tdWidthContainer[59] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-60">
 						<p class="centerizeany mr-tableData">${UmP_per}</p>
-						<div class="column-header-60-resizer"></div>
+						<div class="column-header-60-resizer"  style="${tdWidthContainer[60] != "undefined" ? tdWidthContainer[60] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-61">
 						<p class="centerizeany mr-tableData">${Val2S}</p>
-						<div class="column-header-61-resizer"></div>
+						<div class="column-header-61-resizer"  style="${tdWidthContainer[61] != "undefined" ? tdWidthContainer[61] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-62">
 						<p class="centerizeany mr-tableData">${Val3S}</p>
-												<div class="column-header-62-resizer"></div>
+						<div class="column-header-62-resizer"  style="${tdWidthContainer[62] != "undefined" ? tdWidthContainer[62] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-63">
 						<p class="centerizeany mr-tableData">${Val6}</p>
-						<div class="column-header-63-resizer"></div>
+						<div class="column-header-63-resizer"  style="${tdWidthContainer[63] != "undefined" ? tdWidthContainer[63] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-64">
 						<p class="centerizeany mr-tableData" style="position: relative;left: 55%;top: 25%;">${Description}</p>
-						<div class="column-header-64-resizer"></div>
+						<div class="column-header-64-resizer"  style="${tdWidthContainer[64] != "undefined" ? tdWidthContainer[64] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-65">
 						<p class="mr-tableData">${Details3}</p>
-						<div class="column-header-65-resizer"></div>
+						<div class="column-header-65-resizer"  style="${tdWidthContainer[65] != "undefined" ? tdWidthContainer[65] : ""}" ></div>
 					</td>`
 				);
 				tabDataArr.push(
 					`<td class="col_00 column-header-66">
 						<p class="mr-tableData truncate-data">${Details2}</p>
-						<div class="column-header-66-resizer"></div>
+						<div class="column-header-66-resizer"  style="${tdWidthContainer[66] != "undefined" ? tdWidthContainer[66] : ""}" ></div>
 					</td>`
 				);
 
