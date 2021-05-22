@@ -403,6 +403,31 @@ button:focus {
   background: #ffffff;
 }
 
+.content .tab_2 .box-loading-animation:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  background-image: linear-gradient(to left, transparent, rgba(255,255,255,0.5), transparent);
+  z-index: 2;
+
+  animation: box-loading-animation 1s infinite;
+}
+.content .tab_2 .box-loading-animation:before {
+  z-index: 0 !important;
+  top: 0 !important;
+  background: #d8d8d8 !important;
+}
+@keyframes box-loading-animation{
+  100%{
+      transform: translateX(100%);
+  }
+}
+
+
 .content .tab_2 .option_box .option-content-box {
   display: table-cell;
   vertical-align: middle;

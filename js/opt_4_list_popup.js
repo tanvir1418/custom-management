@@ -67,7 +67,7 @@ for (let i = 1; i <= 29; i++) {
     });
 
     htmlDataModal +=
-    `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="optfourmodala-submodal-div-list-1-${index + 1}">
+      `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="optfourmodala-submodal-div-list-1-${index + 1}">
       ${modallistoptfourmodala_data1}
     </ul>
     <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="optfourmodala-submodal-div-list-2-${index + 1}">
@@ -161,6 +161,10 @@ sub_ul_optfourmodalamodallist.addEventListener("click", function (e) {
   if (target.tagName === "DIV") {
     if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
+
+      let opt4ModalListA_rowName = target.parentNode.childNodes[1].innerHTML;
+      document.querySelector("#delet-optfourmodala-modal .opt4-list1-row-name").innerHTML = opt4ModalListA_rowName;
+
       return;
     }
     target = target.parentNode;
@@ -170,6 +174,10 @@ sub_ul_optfourmodalamodallist.addEventListener("click", function (e) {
     target = target.parentNode;
     if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
+
+      let opt4ModalListA_rowName = target.parentNode.childNodes[1].innerHTML;
+      document.querySelector("#delet-optfourmodala-modal .opt4-list1-row-name").innerHTML = opt4ModalListA_rowName;
+
       return;
     } else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
@@ -190,11 +198,11 @@ function countoptfourmodalaListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-check-box.checkbox_show").length;
   $("#optfourmodala-list-count").html(`${countItem} Items Selected`);
   $("#optfourmodala-list-count").removeClass('hideListDiv');
-  if(countItem > 0){
+  if (countItem > 0) {
     $("#op1-first-skip").addClass('hideListDiv');
     $("#op1-first-check").removeClass('hideListDiv');
     $("#op1-first-fileColor").addClass('fileContainerColor');
-  }else{
+  } else {
     $("#op1-first-skip").removeClass('hideListDiv');
     $("#op1-first-check").addClass('hideListDiv');
     $("#op1-first-fileColor").removeClass('fileContainerColor');
@@ -409,6 +417,10 @@ sub_ul_optfourmodalbmodallist.addEventListener("click", function (e) {
   if (target.tagName === "DIV") {
     if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
+
+      let opt4ModalListB_rowName = target.parentNode.childNodes[1].innerHTML;
+      document.querySelector("#delet-optfourmodalb-modal .opt4-list2-row-name").innerHTML = opt4ModalListB_rowName;
+
       return;
     }
     target = target.parentNode;
@@ -418,6 +430,10 @@ sub_ul_optfourmodalbmodallist.addEventListener("click", function (e) {
     target = target.parentNode;
     if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
+
+      let opt4ModalListB_rowName = target.parentNode.childNodes[1].innerHTML;
+      document.querySelector("#delet-optfourmodalb-modal .opt4-list2-row-name").innerHTML = opt4ModalListB_rowName;
+
       return;
     } else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
@@ -438,11 +454,11 @@ function countoptfourmodalbListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-check-box.checkbox_show").length;
   $("#optfourmodalb-list-count").html(`${countItem} Items Selected`);
   $("#optfourmodalb-list-count").removeClass('hideListDiv');
-  if(countItem > 0){
+  if (countItem > 0) {
     $("#op1-sec-skip").addClass('hideListDiv');
     $("#op1-sec-check").removeClass('hideListDiv');
     $("#op1-sec-fileColor").addClass('fileContainerColor');
-  }else{
+  } else {
     $("#op1-sec-skip").removeClass('hideListDiv');
     $("#op1-sec-check").addClass('hideListDiv');
     $("#op1-sec-fileColor").removeClass('fileContainerColor');
@@ -657,6 +673,10 @@ sub_ul_optfourmodalcmodallist.addEventListener("click", function (e) {
   if (target.tagName === "DIV") {
     if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
+
+      let opt4ModalListC_rowName = target.parentNode.childNodes[1].innerHTML;
+      document.querySelector("#delet-optfourmodalc-modal .opt4-list3-row-name").innerHTML = opt4ModalListC_rowName;
+
       return;
     }
     target = target.parentNode;
@@ -666,6 +686,10 @@ sub_ul_optfourmodalcmodallist.addEventListener("click", function (e) {
     target = target.parentNode;
     if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
+
+      let opt4ModalListC_rowName = target.parentNode.childNodes[1].innerHTML;
+      document.querySelector("#delet-optfourmodalc-modal .opt4-list3-row-name").innerHTML = opt4ModalListC_rowName;
+
       return;
     } else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
@@ -686,11 +710,11 @@ function countoptfourmodalcListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-check-box.checkbox_show").length;
   $("#optfourmodalc-list-count").html(`${countItem} Items Selected`);
   $("#optfourmodalc-list-count").removeClass('hideListDiv');
-  if(countItem > 0){
+  if (countItem > 0) {
     $("#op1-third-skip").addClass('hideListDiv');
     $("#op1-third-check").removeClass('hideListDiv');
     $("#op1-third-fileColor").addClass('fileContainerColor');
-  }else{
+  } else {
     $("#op1-third-skip").removeClass('hideListDiv');
     $("#op1-third-check").addClass('hideListDiv');
     $("#op1-third-fileColor").removeClass('fileContainerColor');
@@ -938,6 +962,10 @@ sub_ul_optfourmodaldmodallist.addEventListener("click", function (e) {
   if (target.tagName === "DIV") {
     if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
+
+      let opt4ModalListD_rowName = target.parentNode.childNodes[1].innerHTML;
+      document.querySelector("#delet-optfourmodald-modal .opt4-list4-row-name").innerHTML = opt4ModalListD_rowName;
+
       return;
     }
     target = target.parentNode;
@@ -947,6 +975,10 @@ sub_ul_optfourmodaldmodallist.addEventListener("click", function (e) {
     target = target.parentNode;
     if (target.className.indexOf("sublist-cancel-box") != -1) {
       deleteListClassName = target.parentNode.classList[0];
+
+      let opt4ModalListD_rowName = target.parentNode.childNodes[1].innerHTML;
+      document.querySelector("#delet-optfourmodald-modal .opt4-list4-row-name").innerHTML = opt4ModalListD_rowName;
+
       return;
     } else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
@@ -967,11 +999,11 @@ function countoptfourmodaldListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-check-box.checkbox_show").length;
   $("#optfourmodald-list-count").html(`${countItem} Items Selected`);
   $("#optfourmodald-list-count").removeClass('hideListDiv');
-  if(countItem > 0){
+  if (countItem > 0) {
     $("#op1-forth-skip").addClass('hideListDiv');
     $("#op1-forth-check").removeClass('hideListDiv');
     $("#op1-forth-fileColor").addClass('fileContainerColor');
-  }else{
+  } else {
     $("#op1-forth-skip").removeClass('hideListDiv');
     $("#op1-forth-check").addClass('hideListDiv');
     $("#op1-forth-fileColor").removeClass('fileContainerColor');

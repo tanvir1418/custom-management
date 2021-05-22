@@ -569,6 +569,8 @@ function windowToForm(e) {
       $("div#myopt1listData button.done-myfo").click();
     }
   }
+  $('#op1FormEditModal').modal('hide');
+  $('#textEditorThankModal').modal('show');
 }
 
 // getting cursor position it returns the node
@@ -1245,6 +1247,8 @@ function windowToFormOp3(e) {
       }
     }
   }
+  $('#op3FormEditModal').modal('hide');
+  $('#textEditorThankModal').modal('show');
 }
 // Opt3 Form by text editor End
 
