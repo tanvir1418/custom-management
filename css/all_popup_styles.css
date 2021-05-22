@@ -430,16 +430,26 @@ table#sub2-editor-table {
 #onlyThankModal .modal-dialog,
 #filterThankYouModal .modal-dialog,
 #universalThankDraftModal .modal-dialog,
+#textEditorThankModal .modal-dialog,
 #saveDraftThankYouModal .modal-dialog,
 #mnAccountThankModal .modal-dialog{
     width: 360px;
     border: 0;
     border-radius: 0 !important;
 }
-
+#textEditorThankModal .modal-dialog{
+    width: 390px;
+    border: 0;
+    border-radius: 0 !important;
+}
+#textEditorThankModal .generate-button-click-popup {
+    width: 388px !important;
+    height: 320px !important;
+}
 #onlyThankModal .modal-content .modal-body,
 #filterThankYouModal .modal-content .modal-body,
 #universalThankDraftModal .modal-content .modal-body,
+#textEditorThankModal .modal-content .modal-body,
 #saveDraftThankYouModal .modal-content .modal-body,
 #mnAccountThankModal .modal-content .modal-body {
     padding: 0;

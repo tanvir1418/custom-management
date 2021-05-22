@@ -1489,3 +1489,9 @@ function gotoContactStatus() {
 		$('#loginRequired').modal('show');
 	}
 }
+
+$('#textEditorThankModal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-open-filter-thanks");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-open-filter-thanks");
+});
