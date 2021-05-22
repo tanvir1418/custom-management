@@ -174,6 +174,10 @@ sub_ul_modallist.addEventListener("click", function (e) {
 	if (target.tagName === "DIV") {
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
+
+			let op1List1_itemName = target.parentNode.childNodes[1].innerHTML;
+			document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = op1List1_itemName;
+
 			return;
 		}
 		target = target.parentNode;
@@ -183,6 +187,10 @@ sub_ul_modallist.addEventListener("click", function (e) {
 		target = target.parentNode;
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
+
+			let op1List1_itemName = target.parentNode.childNodes[1].innerHTML;
+			document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = op1List1_itemName;
+
 			return;
 		} else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
@@ -195,8 +203,13 @@ sub_ul_modallist.addEventListener("click", function (e) {
 });
 
 $("#mng-opt2-delete").click(function () {
-	let delObj = document.querySelector(`.${deleteListClassName}`);
-	delObj.remove();
+	// console.log(`Delete class name: ${deleteListClassName}`);
+	// let delObj = document.querySelector(`.${deleteListClassName}`);
+	// document.querySelector(`.${deleteListClassName}`).remove();
+	$(`.${deleteListClassName}`).remove();
+	// console.log(delObj);
+	// console.dir(delObj);
+	// delObj.remove();
 });
 
 function countOpt1ListModal(e) {
@@ -421,6 +434,10 @@ sub_ul_copytomodallist.addEventListener("click", function (e) {
 	if (target.tagName === "DIV") {
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
+
+			let dataCopyToS1_Itag = target.parentNode.childNodes[1].innerHTML;
+			document.querySelector("#delet-copytolistopt2 .copyToS1-item-name").innerHTML = dataCopyToS1_Itag;
+
 			return;
 		}
 		target = target.parentNode;
@@ -430,9 +447,15 @@ sub_ul_copytomodallist.addEventListener("click", function (e) {
 		target = target.parentNode;
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
+
+			let dataCopyToS1_Itag = target.parentNode.childNodes[1].innerHTML;
+			document.querySelector("#delet-copytolistopt2 .copyToS1-item-name").innerHTML = dataCopyToS1_Itag;
+
 			return;
 		} else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
+
+	let dataCopyToStyle1 = target.childNodes[1].innerHTML;
 
 	// console.log(target);
 	// console.dir(target);
@@ -440,7 +463,7 @@ sub_ul_copytomodallist.addEventListener("click", function (e) {
 	// $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
 
 	copyto_oldLIClassnameModal = target.classList[0];
-	confirmModalCopyMove(target.className);
+	confirmModalCopyMove(target.className, dataCopyToStyle1);
 });
 
 $("#copyto-mng-opt2-delete").click(function () {
@@ -642,6 +665,10 @@ sub_ul_movetomodallist.addEventListener("click", function (e) {
 	if (target.tagName === "DIV") {
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
+
+			let dataMoveToStyle1 = target.parentNode.childNodes[1].innerHTML;
+			document.querySelector("#delet-movetolistopt2 .moveToS1-item-name").innerHTML = dataMoveToStyle1;
+
 			return;
 		}
 		target = target.parentNode;
@@ -651,13 +678,19 @@ sub_ul_movetomodallist.addEventListener("click", function (e) {
 		target = target.parentNode;
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
+
+			let dataMoveToStyle1 = target.parentNode.childNodes[1].innerHTML;
+			document.querySelector("#delet-movetolistopt2 .moveToS1-item-name").innerHTML = dataMoveToStyle1;
+
 			return;
 		} else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
 
+	let dataMoveToStyle1 = target.childNodes[1].innerHTML;
+
 	// $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
 	// $(target).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
-	confirmModalCopyMove(target.className);
+	confirmModalCopyMove(target.className, dataMoveToStyle1);
 	// moveto_oldLIClassnameModal = target.classList[0];
 });
 
