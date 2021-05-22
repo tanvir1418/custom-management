@@ -1828,13 +1828,13 @@ function manTemInpBuild(_id) {
         </div>
         <div class="width-input-group-35">
           <div class="input-section-sample4 right-side-input" onclick="calenderPop(this)">
-            <input class="date-pick-style-sample4 datepicker_mn" type="text"/>
+            <input class="date-pick-style-sample4 datepicker_mn" type="text" id="${_id}_fromDate"/>
             <i class="far fa-calendar-alt icon-sample4 datepicker_mn_Icon"></i>
           </div>
         </div>
         <div class="width-input-group-35">
           <div class="input-section-sample4 left-side-input" onclick="calenderPop(this)">
-            <input class="date-pick-style-sample4 datepicker_mn" type="text"/>
+            <input class="date-pick-style-sample4 datepicker_mn" type="text" id="${_id}_toDate"/>
             <i class="far fa-calendar-alt icon-sample4 datepicker_mn_Icon"></i>
           </div>
         </div>
@@ -1883,8 +1883,57 @@ function manTemInpBuild(_id) {
   });
 
   // Manage Template Sample 4 DATE PICKER START
-  $(".datepicker_mn").datepicker();
-  $(".datepicker_mn").datepicker("option", "dateFormat", "mm/dd/yy");
+  // $(".datepicker_mn").datepicker();
+  // $(".datepicker_mn").datepicker("option", "dateFormat", "mm/dd/yy");
+
+  let dateFormat_mn4 = "mm/dd/yy";
+  let mn_smp4_first_from_date = $("#sam-id-3_fromDate").datepicker({
+    defaultDate: "+1w",
+    numberOfMonths: 1
+  }).on("change", function () {
+    mn_smp4_first_to_date.datepicker("option", "minDate", getDateMnSmp4First(this));
+  });
+
+  let mn_smp4_first_to_date = $("#sam-id-3_toDate").datepicker({
+    defaultDate: "+1w",
+    numberOfMonths: 1
+  }).on("change", function () {
+    mn_smp4_first_from_date.datepicker("option", "maxDate", getDateMnSmp4First(this));
+  });
+
+  function getDateMnSmp4First(element) {
+    let date_mn_sm_first;
+    try {
+      date_mn_sm_first = $.datepicker.parseDate(dateFormat_mn4, element.value);
+    } catch (error) {
+      date_mn_sm_first = null;
+    }
+    return date_mn_sm_first;
+  }
+
+  let mn_smp4_sec_from_date = $("#sam-id-7_fromDate").datepicker({
+    defaultDate: "+1w",
+    numberOfMonths: 1
+  }).on("change", function () {
+    mn_smp4_sec_to_date.datepicker("option", "minDate", getDateMnSmp4Sec(this));
+  });
+
+  let mn_smp4_sec_to_date = $("#sam-id-7_toDate").datepicker({
+    defaultDate: "+1w",
+    numberOfMonths: 1
+  }).on("change", function () {
+    mn_smp4_sec_from_date.datepicker("option", "maxDate", getDateMnSmp4Sec(this));
+  });
+
+  function getDateMnSmp4Sec(element) {
+    let date_mn_sm_sec;
+    try {
+      date_mn_sm_sec = $.datepicker.parseDate(dateFormat_mn4, element.value);
+    } catch (error) {
+      date_mn_sm_sec = null;
+    }
+    return date_mn_sm_sec;
+  }
 
 }
 

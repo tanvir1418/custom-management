@@ -648,11 +648,39 @@ function updateThumbnail(dropZoneElement, file) {
 
 // OPTION 3 DATE PICKER START
 
+// $(function () {
+// 	$("#datepicker-1").datepicker();
+// 	$("#datepicker-1").datepicker("option", "dateFormat", "mm/dd/yy");
+// 	$("#datepicker-2").datepicker();
+// 	$("#datepicker-2").datepicker("option", "dateFormat", "mm/dd/yy");
+// });
+
 $(function () {
-	$("#datepicker-1").datepicker();
-	$("#datepicker-1").datepicker("option", "dateFormat", "mm/dd/yy");
-	$("#datepicker-2").datepicker();
-	$("#datepicker-2").datepicker("option", "dateFormat", "mm/dd/yy");
+	let dateFormat_Opt3 = "mm/dd/yy";
+	let opt3_from_date = $("#datepicker-1").datepicker({
+		defaultDate: "+1w",
+		// changeMonth: true,
+		numberOfMonths: 1
+	}).on("change", function () {
+		opt3_to_date.datepicker("option", "minDate", getDateOpt3(this));
+	});
+	let opt3_to_date = $("#datepicker-2").datepicker({
+		defaultDate: "+1w",
+		// changeMonth: true,
+		numberOfMonths: 1
+	}).on("change", function () {
+		opt3_from_date.datepicker("option", "maxDate", getDateOpt3(this));
+	});
+
+	function getDateOpt3(element) {
+		let date_opt3;
+		try {
+			date_opt3 = $.datepicker.parseDate(dateFormat_Opt3, element.value);
+		} catch (error) {
+			date_opt3 = null;
+		}
+		return date_opt3;
+	}
 });
 
 $("#datePicker1_Icon").click(function () {
