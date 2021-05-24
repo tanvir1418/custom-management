@@ -20,7 +20,9 @@ $(".create_new_temp").click(function (event) {
 });
 
 // CLICK LOAD TEMPLATE TO OPEN SAMPLE START
-
+setTimeout(() => {
+  $(".content .tab_3 .mnTemp-box-loading-animation").removeClass("mnTemp-box-loading-animation");
+}, 4000);
 
 
 // ===/////=== MANAGE TEMP LIST1 ITEM START ===/////===
@@ -2257,10 +2259,30 @@ function formToWindowMS1() {
 }
 // Form by text editor End
 // Manage template Sample 1 End
-$("#datepicker_field_set21").datepicker();
-$("#datepicker_field_set21").datepicker("option", "dateFormat", "mm/dd/yy");
-$("#datepicker_field_set22").datepicker();
-$("#datepicker_field_set22").datepicker("option", "dateFormat", "mm/dd/yy");
+let dateFormat_mn3 = "mm/dd/yy";
+let mn3SecA_from_date = $("#datepicker_field_set21").datepicker({
+  defaultDate: "+1w",
+  numberOfMonths: 1
+}).on("change", function () {
+  mn3SecA_to_date.datepicker("option", "minDate", getDateMnSm3(this));
+});
+
+let mn3SecA_to_date = $("#datepicker_field_set22").datepicker({
+  defaultDate: "+1w",
+  numberOfMonths: 1
+}).on("change", function () {
+  mn3SecA_from_date.datepicker("option", "maxDate", getDateMnSm3(this));
+});
+
+function getDateMnSm3(element) {
+  let date_mn3;
+  try {
+    date_mn3 = $.datepicker.parseDate(dateFormat_mn3, element.value);
+  } catch (error) {
+    date_mn3 = null;
+  }
+  return date_mn3;
+}
 
 
 $("#datepicker_field_set21_icon").click(function () {

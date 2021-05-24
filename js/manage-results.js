@@ -1007,6 +1007,14 @@ $(".style1-box").click(function () {
 
     $("#col8Filter").css('display', 'none');
 
+    $("#resizable554").css("display", "none");
+    $("#loading_table").css("display", "block");
+
+    setTimeout(() => {
+        $("#loading_table").css("display", "none");
+        $("#resizable554").css("display", "block");
+    }, 2000);
+
 });
 
 $(".style2-box").click(function () {
@@ -1036,6 +1044,14 @@ $(".style2-box").click(function () {
     $("#moverowlist").css('display', 'none');
 
     $("#col8Filter").css('display', 'none');
+
+    $("#style2Con #style2_Content").css("display", "none");
+    $("#style2_loading").css("display", "block");
+
+    setTimeout(() => {
+        $("#style2_loading").css("display", "none");
+        $("#style2Con #style2_Content").css("display", "block");
+    }, 2000);
 
 });
 

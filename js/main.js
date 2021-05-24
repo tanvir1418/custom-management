@@ -125,6 +125,18 @@ for (var i = 0; i < li_tabs.length; i++) {
 					$(rotateIcon[i]).removeClass("down-animation-icon");
 				}
 			}
+			if (current_tab_value == "tab_2") {
+				$(".content .tab_2 .option_box").addClass("box-loading-animation");
+				setTimeout(() => {
+					$(".content .tab_2 .box-loading-animation").removeClass("box-loading-animation");
+				}, 2000);
+			}
+			if (current_tab_value == "tab_3") {
+				$(".content .tab_3 .template_box").addClass("mnTemp-box-loading-animation");
+				setTimeout(() => {
+					$(".content .tab_3 .mnTemp-box-loading-animation").removeClass("mnTemp-box-loading-animation");
+				}, 2000);
+			}
 			if (current_tab_value == "tab_4") {
 				$(".content").addClass("sfsf");
 			}
