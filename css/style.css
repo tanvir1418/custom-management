@@ -749,9 +749,10 @@ td {
 }
 
 .mytable1 tbody .records-count p {
-  float: left;
-  margin: 0;
-  margin-left: 30px;
+  /* float: left; */
+  margin: 0 auto;
+  text-align: center;
+  /* margin-left: 30px; */
   text-decoration: underline;
   color: #07ba6c;
 }
@@ -786,7 +787,8 @@ td {
   background: #feffd6;
   color: #000000;
   border-radius: 50px;
-  margin-right: auto;
+  margin-right: 24px;
+  margin-left: auto;
 }
 
 .mytable1 tbody .actions39 .cancel-box {
@@ -798,6 +800,7 @@ td {
   width: 25px;
   border-radius: 50%;
   cursor: pointer;
+  margin-right: auto;
 }
 
 .mytable1 tbody .actions39 .cancel-box i {

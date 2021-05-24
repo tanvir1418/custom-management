@@ -1506,6 +1506,8 @@ function windowToFormAllDS(e) {
       windowToFormDS4(divData, searchData);
     }
   }
+  $('#op4ListFormEditModal').modal('hide');
+  $('#textEditorThankModal').modal('show');
 }
 // All in one(2) End
 

@@ -2555,6 +2555,8 @@ function windowToFormAll(e) {
       windowToFormMS4(divData);
     }
   }
+  $('#mnTempListFormEditModal').modal('hide');
+  $('#textEditorThankModal').modal('show');
 }
 // All in one End
 
