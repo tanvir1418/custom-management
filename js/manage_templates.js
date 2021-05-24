@@ -20,7 +20,9 @@ $(".create_new_temp").click(function (event) {
 });
 
 // CLICK LOAD TEMPLATE TO OPEN SAMPLE START
-
+setTimeout(() => {
+  $(".content .tab_3 .mnTemp-box-loading-animation").removeClass("mnTemp-box-loading-animation");
+}, 4000);
 
 
 // ===/////=== MANAGE TEMP LIST1 ITEM START ===/////===

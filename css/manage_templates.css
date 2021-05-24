@@ -41,6 +41,31 @@
   background: #ffffff;
 }
 
+.content .tab_3 .mnTemp-box-loading-animation:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  background-image: linear-gradient(to left, transparent, rgba(255,255,255,0.5), transparent);
+  z-index: 2;
+
+  animation: mnTemp-box-loading-animation 1s infinite;
+}
+.content .tab_3 .mnTemp-box-loading-animation:before {
+  z-index: 1 !important;
+  top: 0 !important;
+  background: #d8d8d8 !important;
+}
+@keyframes mnTemp-box-loading-animation{
+  100%{
+      transform: translateX(100%);
+  }
+}
+
+
 .tab_3 .template_box{
   position: relative;
 }
