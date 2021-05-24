@@ -24,7 +24,19 @@ setTimeout(() => {
   $(".content .tab_3 .mnTemp-box-loading-animation").removeClass("mnTemp-box-loading-animation");
 }, 4000);
 
+$('.slider_arrow_box.left00a').click(function () {
+  $(".content .tab_3 .template_box").addClass("mnTemp-box-loading-animation");
+  setTimeout(() => {
+    $(".content .tab_3 .mnTemp-box-loading-animation").removeClass("mnTemp-box-loading-animation");
+  }, 3000);
+});
 
+$('.slider_arrow_box.right00a').click(function () {
+  $(".content .tab_3 .template_box").addClass("mnTemp-box-loading-animation");
+  setTimeout(() => {
+    $(".content .tab_3 .mnTemp-box-loading-animation").removeClass("mnTemp-box-loading-animation");
+  }, 3000);
+});
 // ===/////=== MANAGE TEMP LIST1 ITEM START ===/////===
 const managetempa_list = document.querySelector(".managetempa-list");
 // Added by ASHIQ
