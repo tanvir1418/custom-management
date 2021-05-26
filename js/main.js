@@ -1326,12 +1326,15 @@ function universalConfirmModalDelete(globalVariable) {
 	} else if (globalVariable.className.includes("clickViewDetails")) {
 		headerText = "VIEW DETAILS";
 		detailsText = "Confirm to view details?";
+	} else if (globalVariable.className.includes("mnAlertSave")) {
+		headerText = "SAVE DETAILS";
+		detailsText = "Confirm to save details?";
 	}
 
 	$("#universal_confirm_modal #confirm_header p").html(headerText);
 	$("#universal_confirm_modal #confirm_deatis p").html(detailsText);
 	$('#universal_confirm_modal').modal('show');
-	console.dir(globalVariable);
+	// console.dir(globalVariable);
 }
 
 function op1ResetBtnConfirm(resetGlobal) {
