@@ -162,20 +162,23 @@ for (var i = 0; i < li_tabs.length; i++) {
 
 // CHOOSE OPTION SECTION START
 function openOption(evt, optionName) {
-	var i, tabcontent, tablinks;
-	tabcontent = document.getElementsByClassName("option");
-	for (i = 0; i < tabcontent.length; i++) {
-		tabcontent[i].style.display = "none";
+	let targetContentBox = document.querySelector(`#${optionName}_box`).classList.value;
+	if (!targetContentBox.includes("box-loading-animation")) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("option");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("option_box");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(optionName).style.display = "block";
+		document.getElementById("hide559").style.display = "none";
+		document.getElementById("tab_2").style.paddingTop = "0px";
+		document.getElementById("opt-content").style.marginTop = "0px";
+		evt.currentTarget.className += " active";
 	}
-	tablinks = document.getElementsByClassName("option_box");
-	for (i = 0; i < tablinks.length; i++) {
-		tablinks[i].className = tablinks[i].className.replace(" active", "");
-	}
-	document.getElementById(optionName).style.display = "block";
-	document.getElementById("hide559").style.display = "none";
-	document.getElementById("tab_2").style.paddingTop = "0px";
-	document.getElementById("opt-content").style.marginTop = "0px";
-	evt.currentTarget.className += " active";
 }
 // CHOOSE OPTION SECTION END
 
