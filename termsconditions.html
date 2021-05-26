@@ -64,7 +64,7 @@
             <!-- ======== TAB MENU NAVIGATION START ======== -->
             <div class="tabs">
                 <ul id="tabs_ul">
-                    <li data-list="tab_1">
+                    <li data-list="tab_1" data-toggle="modal" data-target="#loginRequired">
                         <div class="tab-box">
                             <div class="svg-box">
                                 <svg viewBox="-21 0 512 512">
@@ -86,7 +86,7 @@
                             </div>
                         </div>
                     </li>
-                    <li data-list="tab_2">
+                    <li data-list="tab_2" data-toggle="modal" data-target="#loginRequired">
                         <div class="tab-box">
                             <div class="svg-box">
                                 <svg viewBox="-21 0 512 512">
@@ -100,7 +100,7 @@
                             </div>
                         </div>
                     </li>
-                    <li data-list="tab_3">
+                    <li data-list="tab_3" data-toggle="modal" data-target="#loginRequired">
                         <div class="tab-box">
                             <div class="svg-box">
                                 <svg viewBox="0 0 24 24">
@@ -148,7 +148,7 @@
                             </div>
                         </div>
                     </li>
-                    <li data-list="tab_4">
+                    <li data-list="tab_4" data-toggle="modal" data-target="#loginRequired">
                         <div class="tab-box">
                             <div class="svg-box">
                                 <svg viewBox="-76 0 512 512">
@@ -162,7 +162,7 @@
                             </div>
                         </div>
                     </li>
-                    <li data-list="tab_5">
+                    <li data-list="tab_5" data-toggle="modal" data-target="#loginRequired">
                         <div class="tab-box">
                             <div class="svg-box">
                                 <svg viewBox="-21 0 512 512">
@@ -275,6 +275,7 @@
             if ($("#agreed-checkBox").prop("checked")) {
                 localStorage.setItem("termsPageCondition", "hideTermsPage");
             }
+            localStorage.setItem("loginStatus", "LOGGED_IN");
             window.location.href = "/main.html";
         });
         $("#terms-decline").click(function (event) {
