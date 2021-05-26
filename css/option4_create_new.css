@@ -1250,13 +1250,27 @@
   text-align: end;
 }
 
+.op4-option-selection .width-tooltip {
+  width: 3%;
+  height: 60px;
+}
+
+.op4-option-selection .width-tooltip .icon-container {
+  padding-top: 10px;
+  padding-left: 5px;
+}
+.op4-option-selection .width-tooltip .icon-container .fas {
+  opacity: 0.2;
+  font-size: 18px;
+}
+
 .op4-option-selection .width-12 {
   width: 13%;
   height: 60px;
 }
 
 .op4-option-selection .width-22 {
-  width: 22%;
+  width: 21%;
   height: 60px;
   padding-right: 5px;
   padding-left: 5px;

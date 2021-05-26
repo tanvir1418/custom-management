@@ -300,12 +300,13 @@
         $("#loginBtn").click(function (event) {
             event.preventDefault();
             localStorage.setItem("currentUser", usernameIndex.value);
-            localStorage.setItem("loginStatus", "LOGGED_IN");
+            // localStorage.setItem("loginStatus", "LOGGED_IN");
             localStorage.setItem("manageTabVisibility", "showData");
             usernameIndex.value = "";
             passwordIndex.value = "";
             if(termsPageCondition == "hideTermsPage"){
                 window.location.href = "/main.html";
+                localStorage.setItem("loginStatus", "LOGGED_IN");
             }else{
                 window.location.href = "/termsconditions.html";
             }

@@ -136,7 +136,7 @@ function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId) {
 					<td class="removenull">
               <div class="reset-save-btn">
                   <button class="reset4" type="button">Reset</button>
-                  <button class="save4" type="button">Save</button>
+                  <button class="save4 mnAlertSave" type="button" onclick="universalConfirmModalDelete(this)">Save</button>
               </div>
               <div class="cross-box-89">
                 <div class="circle_550 plus89">

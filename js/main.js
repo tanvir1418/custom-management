@@ -162,20 +162,23 @@ for (var i = 0; i < li_tabs.length; i++) {
 
 // CHOOSE OPTION SECTION START
 function openOption(evt, optionName) {
-	var i, tabcontent, tablinks;
-	tabcontent = document.getElementsByClassName("option");
-	for (i = 0; i < tabcontent.length; i++) {
-		tabcontent[i].style.display = "none";
+	let targetContentBox = document.querySelector(`#${optionName}_box`).classList.value;
+	if (!targetContentBox.includes("box-loading-animation")) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("option");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("option_box");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(optionName).style.display = "block";
+		document.getElementById("hide559").style.display = "none";
+		document.getElementById("tab_2").style.paddingTop = "0px";
+		document.getElementById("opt-content").style.marginTop = "0px";
+		evt.currentTarget.className += " active";
 	}
-	tablinks = document.getElementsByClassName("option_box");
-	for (i = 0; i < tablinks.length; i++) {
-		tablinks[i].className = tablinks[i].className.replace(" active", "");
-	}
-	document.getElementById(optionName).style.display = "block";
-	document.getElementById("hide559").style.display = "none";
-	document.getElementById("tab_2").style.paddingTop = "0px";
-	document.getElementById("opt-content").style.marginTop = "0px";
-	evt.currentTarget.className += " active";
 }
 // CHOOSE OPTION SECTION END
 
@@ -1323,12 +1326,15 @@ function universalConfirmModalDelete(globalVariable) {
 	} else if (globalVariable.className.includes("clickViewDetails")) {
 		headerText = "VIEW DETAILS";
 		detailsText = "Confirm to view details?";
+	} else if (globalVariable.className.includes("mnAlertSave")) {
+		headerText = "SAVE DETAILS";
+		detailsText = "Confirm to save details?";
 	}
 
 	$("#universal_confirm_modal #confirm_header p").html(headerText);
 	$("#universal_confirm_modal #confirm_deatis p").html(detailsText);
 	$('#universal_confirm_modal').modal('show');
-	console.dir(globalVariable);
+	// console.dir(globalVariable);
 }
 
 function op1ResetBtnConfirm(resetGlobal) {
@@ -1466,6 +1472,7 @@ function showConfirmSample4StartBtn() {
 
 function sample4StartCancelBtn() {
 	$('#mnTemp_saveStart').modal('show');
+	$('body').addClass("modal-force-open-sample4");
 }
 
 function sample4StartConfirmBtn() {
@@ -1475,7 +1482,7 @@ function sample4StartConfirmBtn() {
 }
 
 $('#mnTemp_saveStart').on('show.bs.modal', function (e) {
-	$('body').addClass("modal-force-open-sample4");
+	// $('body').addClass("modal-force-open-sample4");
 }).on('hide.bs.modal', function (e) {
 	$('body').removeClass("modal-force-open-sample4");
 });

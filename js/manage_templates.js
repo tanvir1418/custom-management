@@ -1204,7 +1204,7 @@ function listRenderManTemp(id, name, addNewRow) {
   let ele = `<tr ondblclick="${addNewRow}" onclick="clickAddClassSgl(this)" class="cursor-pointer" id="${id}">
     <td colspan="2">${name}</td>
     <td>
-      <span class="tooltip-container" tooltip="Template ${name}" flow="down">
+      <span class="tooltip-container" tooltip="Temp ${name}" flow="down">
         <i class="fas fa-question-circle"></i>
       </span>
     </td>
@@ -1394,6 +1394,11 @@ function manTemSam2Rend(e, divId) {
     <div class="width-5 align-items-baseline">
       <div class="threebar">
         <span>|||</span>
+      </div>
+    </div>
+    <div class="width-tooltip">
+      <div class="icon-container" tooltip="Temp ${title}" flow="down">
+        <i class="fas fa-question-circle"></i>
       </div>
     </div>
     <div class="width-26">

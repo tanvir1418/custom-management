@@ -461,7 +461,7 @@
                 <!-- ==----=-=-=-=-=-=-=-=-=- CHOOSE OPTIONS SECTION START ==----=-=-=-=-=-=-=-=-=-  -->
                 <div class="row option-box-row">
                     <div class="column">
-                        <div class="option_box box-loading-animation" onclick="openOption(event, 'option_1')">
+                        <div class="option_box box-loading-animation" onclick="openOption(event, 'option_1')" id="option_1_box">
                             <div class="option-content-box">
                                 <img src="./images/option_1.png" alt="">
                                 <p>Option 1</p>
@@ -469,7 +469,7 @@
                         </div>
                     </div>
                     <div class="column">
-                        <div class="option_box box-loading-animation" onclick="openOption(event, 'option_2')">
+                        <div class="option_box box-loading-animation" onclick="openOption(event, 'option_2')" id="option_2_box">
                             <div class="option-content-box">
                                 <img src="./images/option_2.png" alt="">
                                 <p>Option 2</p>
@@ -477,7 +477,7 @@
                         </div>
                     </div>
                     <div class="column">
-                        <div class="option_box box-loading-animation" onclick="openOption(event, 'option_3')">
+                        <div class="option_box box-loading-animation" onclick="openOption(event, 'option_3')" id="option_3_box">
                             <div class="option-content-box">
                                 <img src="./images/option_3.png" alt="">
                                 <p>Option 3</p>
@@ -485,7 +485,7 @@
                         </div>
                     </div>
                     <div class="column">
-                        <div class="option_box box-loading-animation" onclick="openOption(event, 'option_4')">
+                        <div class="option_box box-loading-animation" onclick="openOption(event, 'option_4')" id="option_4_box">
                             <div class="option-content-box">
                                 <img src="./images/option_4.png" alt="">
                                 <p>Option 4</p>
@@ -493,7 +493,7 @@
                         </div>
                     </div>
                     <div class="column">
-                        <div class="option_box box-loading-animation" onclick="openOption(event, 'option_5')">
+                        <div class="option_box box-loading-animation" onclick="openOption(event, 'option_5')" id="option_5_box">
                             <div class="option-content-box">
                                 <img src="./images/option_5.png" alt="">
                                 <p>Option 5</p>
@@ -1691,7 +1691,11 @@
                                             </select>
                                         </div>
                                         <div class="o4yb-title-section-custom2">
-                                            <p>TEXT GOES HERE</p>
+                                            <p>TEXT GOES HERE &nbsp;
+                                                <span class="icon-container" tooltip="TEXT GOES HERE" flow="down">
+                                                    <i class="fas fa-question-circle"></i>
+                                                </span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
