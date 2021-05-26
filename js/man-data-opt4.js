@@ -338,6 +338,11 @@ function opt4Sam2Render(e, divId) {
         <span>|||</span>
       </div>
     </div>
+    <div class="width-tooltip">
+      <div class="icon-container" tooltip="${title}" flow="down">
+        <i class="fas fa-question-circle"></i>
+      </div>
+    </div>
     <div class="width-26">
       <div class="page__toggle">
         <label class="toggle">
