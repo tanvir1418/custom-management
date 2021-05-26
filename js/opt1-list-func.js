@@ -403,7 +403,7 @@ function renderListInputHtml(_id, iCount, title, resetValue, swapSeq) {
       </div>
     </div>
     <div class="width-5">
-      <div class="icon-container" tooltip="Sample text here" flow="down">
+      <div class="icon-container" tooltip="${title}" flow="down">
         <i class="fas fa-question-circle"></i>
       </div>
     </div>
