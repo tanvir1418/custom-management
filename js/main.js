@@ -1472,6 +1472,7 @@ function showConfirmSample4StartBtn() {
 
 function sample4StartCancelBtn() {
 	$('#mnTemp_saveStart').modal('show');
+	$('body').addClass("modal-force-open-sample4");
 }
 
 function sample4StartConfirmBtn() {
@@ -1481,7 +1482,7 @@ function sample4StartConfirmBtn() {
 }
 
 $('#mnTemp_saveStart').on('show.bs.modal', function (e) {
-	$('body').addClass("modal-force-open-sample4");
+	// $('body').addClass("modal-force-open-sample4");
 }).on('hide.bs.modal', function (e) {
 	$('body').removeClass("modal-force-open-sample4");
 });
