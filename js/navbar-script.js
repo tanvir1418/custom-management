@@ -55,17 +55,17 @@ for (var i = 0; i < li_tabs.length; i++) {
 //   On click Tab Set the active tab and content 
 function setAccountTab() {
     localStorage.setItem("manageTabVisibility", "showAccount");
-    window.location.href = "/main.html";
+    window.location.href = "main.html";
 }
 
 function setDataTab() {
     let loginCondition = localStorage.getItem("loginStatus");
     if (loginCondition == "LOGGED_IN") {
         localStorage.setItem("manageTabVisibility", "showData");
-        window.location.href = "/main.html";
+        window.location.href = "main.html";
     } else {
         localStorage.setItem("manageTabVisibility", "showAccount");
-        window.location.href = "/main.html";
+        window.location.href = "main.html";
     }
 }
 
@@ -73,10 +73,10 @@ function setTemplateTab() {
     let loginCondition = localStorage.getItem("loginStatus");
     if (loginCondition == "LOGGED_IN") {
         localStorage.setItem("manageTabVisibility", "showTemplate");
-        window.location.href = "/main.html";
+        window.location.href = "main.html";
     } else {
         localStorage.setItem("manageTabVisibility", "showAccount");
-        window.location.href = "/main.html";
+        window.location.href = "main.html";
     }
 }
 
@@ -84,10 +84,10 @@ function setResultTab() {
     let loginCondition = localStorage.getItem("loginStatus");
     if (loginCondition == "LOGGED_IN") {
         localStorage.setItem("manageTabVisibility", "showResult");
-        window.location.href = "/main.html";
+        window.location.href = "main.html";
     } else {
         localStorage.setItem("manageTabVisibility", "showAccount");
-        window.location.href = "/main.html";
+        window.location.href = "main.html";
     }
 }
 
@@ -95,17 +95,17 @@ function setAlertTab() {
     let loginCondition = localStorage.getItem("loginStatus");
     if (loginCondition == "LOGGED_IN") {
         localStorage.setItem("manageTabVisibility", "showAlert");
-        window.location.href = "/main.html";
+        window.location.href = "main.html";
     } else {
         localStorage.setItem("manageTabVisibility", "showAccount");
-        window.location.href = "/main.html";
+        window.location.href = "main.html";
     }
 }
 
 function checkMailIcon() {
     let loginCondition = localStorage.getItem("loginStatus");
     if (loginCondition == "LOGGED_IN") {
-        window.location.href = "/email.html";
+        window.location.href = "email.html";
     } else {
         $('#loginRequired').modal('show');
     }
@@ -114,7 +114,7 @@ function checkMailIcon() {
 function linkTermsConditions() {
     let loginCondition = localStorage.getItem("loginStatus");
     if (loginCondition == "LOGGED_IN") {
-        window.location.href = "/terms.html";
+        window.location.href = "terms.html";
     } else {
         $('#loginRequired').modal('show');
     }
@@ -123,7 +123,7 @@ function linkTermsConditions() {
 function linkAllServices() {
     let loginCondition = localStorage.getItem("loginStatus");
     if (loginCondition == "LOGGED_IN") {
-        window.location.href = "/allservices.html";
+        window.location.href = "allservices.html";
     } else {
         $('#loginRequired').modal('show');
     }
@@ -132,7 +132,7 @@ function linkAllServices() {
 function linkPolicy() {
     let loginCondition = localStorage.getItem("loginStatus");
     if (loginCondition == "LOGGED_IN") {
-        window.location.href = "/policy.html";
+        window.location.href = "policy.html";
     } else {
         $('#loginRequired').modal('show');
     }
@@ -141,15 +141,15 @@ function linkPolicy() {
 function loggingOut() {
     // let loginCondition = localStorage.setItem("loginStatus", "");
     localStorage.removeItem('loginStatus');
-    window.location.href = "/index.html";
+    window.location.href = "index.html";
 }
 
 function gotoSystemStatus() {
     localStorage.setItem("emailTabShowing", "systemStatus");
-    window.location.href = "/email.html";
+    window.location.href = "email.html";
 }
 
 function gotoContactStatus() {
     localStorage.setItem("emailTabShowing", "contactStatus");
-    window.location.href = "/email.html";
+    window.location.href = "email.html";
 }
