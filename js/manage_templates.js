@@ -13,6 +13,15 @@ $(".template_box").click(function (event) {
   }
 });
 
+
+// Back Btn: Showing the load template tab
+function backToManageTempLoadTemp(){
+	// document.getElementById("load_temp_slider").style.display = "block";
+	// document.getElementById("create_new_mn_temp").style.display = "none";
+	$("#load_temp_slider").removeClass("dispaly_hide");
+	$("#create_new_mn_temp").addClass("dispaly_hide");
+}
+
 $(".create_new_temp").click(function (event) {
   let loadTempWrapper = document.querySelector(".sample_options");
   loadTempWrapper.classList.remove("dispaly_hide");

@@ -195,6 +195,18 @@ $("#back-manage").click(function () {
 	document.getElementById("opt-content").style.marginTop = "50px";
 });
 
+// Back Btn: Return to Select A Data Type To Manage 
+function backToSelectDataType(){
+	document.getElementById("option_1").style.display = "none";
+	document.getElementById("option_2").style.display = "none";
+	document.getElementById("option_3").style.display = "none";
+	document.getElementById("option_4").style.display = "none";
+	document.getElementById("option_5").style.display = "none";
+	document.getElementById("hide559").style.display = "block";
+	document.getElementById("tab_2").style.paddingTop = "60px";
+	document.getElementById("opt-content").style.marginTop = "50px";
+}
+
 // OPTION 5 BACK BTN
 $("#opt5-to-main").click(function () {
 	document.getElementById("option_5").style.display = "none";
