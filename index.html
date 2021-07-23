@@ -263,13 +263,40 @@
                 </div>
                 <div class="enter-verified-email">
                     <input type="email" placeholder="Enter your email address">
-                    <input class="btn btn-success" type="submit" name="" id="" value="Submit">
+                    <input class="btn btn-success" type="submit" name="" id="" value="Submit" data-toggle="modal" data-target="#loginOnlyThankModal">
                     <input class="btn btn-light" type="submit" name="" id="" value="Cancel" data-dismiss="modal">
                 </div>
             </div>
         </div>
     </div>
     <!-- FORGOT PASSWORD MODAL END -->
+
+    <!-- =========JUST THANK Modal Starts========= -->
+    <div class="modal fade" id="loginOnlyThankModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="generate-button-click-popup">
+                        <div class="generate-button-click-popup-wrapper">
+                            <div class="generate-button-popup-header-title">
+                                <p>THANK YOU</p>
+                            </div>
+                            <div class="generate-button-popup-body-wrapper">
+                                <div class="generate-button-popup-body-content">
+                                    <p>Your Request has been Successfully Processed</p>
+                                </div>
+                            </div>
+                            <div class="generate-popup" data-dismiss="modal" onclick="hideForgetModal()">
+                                <input type="button" value="Close" class="gn-close-btn" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =========JUST THANK Modal Ends========= -->
+
     <!-- JS FILES -->
     <script src="js/jquery.js"></script>
     <script>
@@ -313,6 +340,14 @@
             usernameIndex.value = "";
             passwordIndex.value = "";
         });
+
+        $('#loginOnlyThankModal').on('hide.bs.modal', function (e) {
+            $('#forgotPass').modal('hide');
+        });
+
+        function hideForgetModal(){
+            $('#forgotPass').modal('hide');
+        }
     </script>
 
 </body>
