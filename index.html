@@ -262,7 +262,7 @@
                     <p class="enter-pass-text">Enter your user account's verified email address and we will send you a password reset link.</p>
                 </div>
                 <div class="enter-verified-email">
-                    <input type="email" placeholder="Enter your email address">
+                    <input type="email" placeholder="Enter your email address" id="recovery-email">
                     <input class="btn btn-success" type="submit" name="" id="" value="Submit" data-toggle="modal" data-target="#loginOnlyThankModal">
                     <input class="btn btn-light" type="submit" name="" id="" value="Cancel" data-dismiss="modal">
                 </div>
@@ -339,6 +339,10 @@
             event.preventDefault();
             usernameIndex.value = "";
             passwordIndex.value = "";
+        });
+
+        $('#forgotPass').on('hide.bs.modal', function (e) {
+            document.getElementById("recovery-email").value = "";
         });
 
         $('#loginOnlyThankModal').on('hide.bs.modal', function (e) {

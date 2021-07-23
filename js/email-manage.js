@@ -249,15 +249,32 @@ function taskStatusHeadClick(tableId) {
 				</tr>`;
             }
             targetModal.html(tableTr);
-            $("#dropBtnModal .modal-dialog").css({
-                top: e.clientY + 15,
-                left: e.clientX - 240,
+
+            let elementPositionMain = e.target.getBoundingClientRect();
+            $("#dropBtnModal").css('display', 'none');
+            $("#dropBtnModal").css({
+                top: ((elementPositionMain.y) + window.scrollY + 25),
+                left: ((elementPositionMain.x) - 235),
+                position: "absolute"
             });
-            $("#dropBtnModal").modal("toggle");
+            $("#dropBtnModal").css('display', 'block');
+
+            // $("#dropBtnModal .modal-dialog").css({
+            //     top: e.clientY + 15,
+            //     left: e.clientX - 240,
+            // });
+            // $("#dropBtnModal").modal("toggle");
         }
     });
 }
+$("#emailCloseDropBtnModal").click(function () {
+    $("#dropBtnModal").css('display', 'none');
 
+    const rotateIcon = document.querySelectorAll("#mail_option_2 i.fa-caret-down.down-animation-icon");
+    for (let i = 0; i < rotateIcon.length; i++) {
+        $(rotateIcon[i]).removeClass("down-animation-icon");
+    }
+});
 // taskStatusHeadClick("email_task_status_table");
 
 function emailConfirmButton() {

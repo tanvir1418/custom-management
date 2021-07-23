@@ -216,11 +216,21 @@ function alertTableHeadClick(tableId) {
 				</tr>`;
       }
       targetModal.html(tableTr);
-      $("#dropBtnModal .modal-dialog").css({
-        top: e.clientY + 15,
-        left: e.clientX - 240,
+      
+      let elementPositionMain = e.target.getBoundingClientRect();
+      $("#dropBtnModal").css('display', 'none');
+      $("#dropBtnModal").css({
+          top: ((elementPositionMain.y) + window.scrollY + 25),
+          left: ((elementPositionMain.x) - 235),
+          position: "absolute"
       });
-      $("#dropBtnModal").modal("toggle");
+      $("#dropBtnModal").css('display', 'block');
+
+      // $("#dropBtnModal .modal-dialog").css({
+      //   top: e.clientY + 15,
+      //   left: e.clientX - 240,
+      // });
+      // $("#dropBtnModal").modal("toggle");
     }
   });
 }
