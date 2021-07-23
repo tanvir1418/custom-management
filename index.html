@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="./css/all_min.css">
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./css/tooltip.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/login.css">
-    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="css/all_min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/tooltip.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/media.css">
 
     <!-- JS Files  -->
-    <script src="./js/bootstrap.js" defer></script>
+    <script src="js/bootstrap.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" defer></script>
-    <!-- <script src="./js/main.js" defer></script> -->
-    <script src="./js/navbar-index-terms.js" defer></script>
+    <!-- <script src="js/main.js" defer></script> -->
+    <script src="js/navbar-index-terms.js" defer></script>
 </head>
 
 <body>
@@ -224,13 +224,10 @@
     <section id="footer">
         <div class="footer-inner">
             <div class="footer-link">
-                <!-- <a href="terms.html" class="terms">Terms & Conditions</a> -->
                 <span class="terms" onclick="linkTermsConditions()">Terms & Conditions</span>
                 <div class="services">
-                    <!-- <a href="allservices.html">All Services</a> -->
                     <span onclick="linkAllServices()">All Services</span>
                     <p>|</p>
-                    <!-- <a href="policy.html">Policy</a> -->
                     <span onclick="linkPolicy()">Policy</span>
                 </div>
             </div>
@@ -274,7 +271,7 @@
     </div>
     <!-- FORGOT PASSWORD MODAL END -->
     <!-- JS FILES -->
-    <script src="./js/jquery.js"></script>
+    <script src="js/jquery.js"></script>
     <script>
         // localStorage.clear();
         // localStorage.setItem("currentUser", "");
@@ -294,7 +291,7 @@
             localStorage.setItem("currentUser", "");
             localStorage.setItem("loginStatus", "NOT_LOGGED");
             localStorage.setItem("manageTabVisibility", "showAccount");
-            window.location.href = "/main.html";
+            window.location.href = "main.html";
         });
 
         $("#loginBtn").click(function (event) {
@@ -305,10 +302,10 @@
             usernameIndex.value = "";
             passwordIndex.value = "";
             if(termsPageCondition == "hideTermsPage"){
-                window.location.href = "/main.html";
+                window.location.href = "main.html";
                 localStorage.setItem("loginStatus", "LOGGED_IN");
             }else{
-                window.location.href = "/termsconditions.html";
+                window.location.href = "termsconditions.html";
             }
         });
         $("#resetBtn").click(function (event) {

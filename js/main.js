@@ -1500,7 +1500,7 @@ if ($(".tab_4").hasClass("active")) {
 function checkMailIcon() {
 	let loginCondition = localStorage.getItem("loginStatus");
 	if (loginCondition == "LOGGED_IN") {
-		window.location.href = "/email.html";
+		window.location.href = "email.html";
 	} else {
 		$('#loginRequired').modal('show');
 	}
@@ -1534,7 +1534,7 @@ $('#filterThankYouModal').on('show.bs.modal', function (e) {
 });
 
 $('#mnAccountThankModal').on('hide.bs.modal', function (e) {
-	window.location.href = '/index.html';
+	window.location.href = 'index.html';
 });
 
 // Show hide Password Field Icon and text (Manage Account)
@@ -1552,7 +1552,7 @@ $(".toggle-password").click(function () {
 function linkTermsConditions() {
 	let loginCondition = localStorage.getItem("loginStatus");
 	if (loginCondition == "LOGGED_IN") {
-		window.location.href = "/terms.html";
+		window.location.href = "terms.html";
 	} else {
 		$('#loginRequired').modal('show');
 	}
@@ -1561,7 +1561,7 @@ function linkTermsConditions() {
 function linkAllServices() {
 	let loginCondition = localStorage.getItem("loginStatus");
 	if (loginCondition == "LOGGED_IN") {
-		window.location.href = "/allservices.html";
+		window.location.href = "allservices.html";
 	} else {
 		$('#loginRequired').modal('show');
 	}
@@ -1570,7 +1570,7 @@ function linkAllServices() {
 function linkPolicy() {
 	let loginCondition = localStorage.getItem("loginStatus");
 	if (loginCondition == "LOGGED_IN") {
-		window.location.href = "/policy.html";
+		window.location.href = "policy.html";
 	} else {
 		$('#loginRequired').modal('show');
 	}
@@ -1579,14 +1579,14 @@ function linkPolicy() {
 function loggingOut() {
 	// let loginCondition = localStorage.setItem("loginStatus", "");
 	localStorage.removeItem('loginStatus');
-	window.location.href = "/index.html";
+	window.location.href = "index.html";
 }
 
 function gotoSystemStatus() {
 	let loginCondition = localStorage.getItem("loginStatus");
 	if (loginCondition == "LOGGED_IN") {
 		localStorage.setItem("emailTabShowing", "systemStatus");
-		window.location.href = "/email.html";
+		window.location.href = "email.html";
 	} else {
 		$('#loginRequired').modal('show');
 	}
@@ -1597,7 +1597,7 @@ function gotoContactStatus() {
 	let loginCondition = localStorage.getItem("loginStatus");
 	if (loginCondition == "LOGGED_IN") {
 		localStorage.setItem("emailTabShowing", "contactStatus");
-		window.location.href = "/email.html";
+		window.location.href = "email.html";
 	} else {
 		$('#loginRequired').modal('show');
 	}
