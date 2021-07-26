@@ -101,7 +101,7 @@ for (var i = 0; i < li_tabs.length; i++) {
 
 			var current_tab_value = this.getAttribute("data-list");
 			//console.log(current_tab_value);
-			if (current_tab_value == "tab_2" || current_tab_value == "tab_3") {
+			if (current_tab_value == "tab_1" || current_tab_value == "tab_2" || current_tab_value == "tab_3" || current_tab_value == "tab_5") {
 				$("#viewtwo").css("display", "none");
 				$("#rowdetails").css("display", "none");
 				$("#noteswindow").css("display", "none");
@@ -125,6 +125,9 @@ for (var i = 0; i < li_tabs.length; i++) {
 					$(rotateIcon[i]).removeClass("down-animation-icon");
 				}
 			}
+			if (current_tab_value == "tab_1") {
+				$("#dropBtnModal").css('display', 'none');
+			}
 			if (current_tab_value == "tab_2") {
 				$(".content .tab_2 .option_box").addClass("box-loading-animation");
 				setTimeout(() => {
@@ -132,18 +135,21 @@ for (var i = 0; i < li_tabs.length; i++) {
 				}, 2000);
 			}
 			if (current_tab_value == "tab_3") {
+				$("#dropBtnModal").css('display', 'none');
 				$(".content .tab_3 .template_box").addClass("mnTemp-box-loading-animation");
 				setTimeout(() => {
 					$(".content .tab_3 .mnTemp-box-loading-animation").removeClass("mnTemp-box-loading-animation");
 				}, 2000);
 			}
 			if (current_tab_value == "tab_4") {
+				$("#dropBtnModal").css('display', 'none');
 				$(".content").addClass("sfsf");
 			}
 			if (current_tab_value != "tab_4") {
 				$(".content").removeClass("sfsf");
 			}
 			if (current_tab_value == "tab_5") {
+				$("#dropBtnModal").css('display', 'none');
 				$(".content").addClass("tvtv");
 				makeTableHeadAlert("manage-alert-table-exist");
 				alertTableExist("manage-alert-table-exist", 7, "pagination-manage-alert", "manage_alert_data_table", "manage_alert_loading_table");
@@ -162,22 +168,27 @@ for (var i = 0; i < li_tabs.length; i++) {
 
 // CHOOSE OPTION SECTION START
 function openOption(evt, optionName) {
+	let loginStatus = localStorage.getItem("loginStatus");
 	let targetContentBox = document.querySelector(`#${optionName}_box`).classList.value;
-	if (!targetContentBox.includes("box-loading-animation")) {
-		var i, tabcontent, tablinks;
-		tabcontent = document.getElementsByClassName("option");
-		for (i = 0; i < tabcontent.length; i++) {
-			tabcontent[i].style.display = "none";
+	if (loginStatus == "LOGGED_IN") {
+		if (!targetContentBox.includes("box-loading-animation")) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("option");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("option_box");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(optionName).style.display = "block";
+			document.getElementById("hide559").style.display = "none";
+			document.getElementById("tab_2").style.paddingTop = "0px";
+			document.getElementById("opt-content").style.marginTop = "0px";
+			evt.currentTarget.className += " active";
 		}
-		tablinks = document.getElementsByClassName("option_box");
-		for (i = 0; i < tablinks.length; i++) {
-			tablinks[i].className = tablinks[i].className.replace(" active", "");
-		}
-		document.getElementById(optionName).style.display = "block";
-		document.getElementById("hide559").style.display = "none";
-		document.getElementById("tab_2").style.paddingTop = "0px";
-		document.getElementById("opt-content").style.marginTop = "0px";
-		evt.currentTarget.className += " active";
+	} else {
+		$('#loginRequired').modal('show');
 	}
 }
 // CHOOSE OPTION SECTION END
@@ -189,6 +200,18 @@ $("#back-manage").click(function () {
 	document.getElementById("tab_2").style.paddingTop = "60px";
 	document.getElementById("opt-content").style.marginTop = "50px";
 });
+
+// Back Btn: Return to Select A Data Type To Manage 
+function backToSelectDataType(){
+	document.getElementById("option_1").style.display = "none";
+	document.getElementById("option_2").style.display = "none";
+	document.getElementById("option_3").style.display = "none";
+	document.getElementById("option_4").style.display = "none";
+	document.getElementById("option_5").style.display = "none";
+	document.getElementById("hide559").style.display = "block";
+	document.getElementById("tab_2").style.paddingTop = "60px";
+	document.getElementById("opt-content").style.marginTop = "50px";
+}
 
 // OPTION 5 BACK BTN
 $("#opt5-to-main").click(function () {
@@ -204,6 +227,8 @@ $("#opt5-to-main").click(function () {
 
 $(".tab-39").click(function () {
 	$(".mytab-39").removeClass("tab-active-39");
+	
+	$("#dropBtnModal").css('display', 'none');
 
 	let dataId = $(this).attr("data-id");
 	if (dataId == "tab40") {
@@ -234,6 +259,8 @@ $(".pas").click(function () {
 // for option three
 $(".tab-43").click(function () {
 	$(".mytab-43").removeClass("tab-active-43");
+
+	$("#dropBtnModal").css('display', 'none');
 
 	let dataId = $(this).attr("data-id");
 	if (dataId == "tab44") {
@@ -267,6 +294,8 @@ $(".pas43").click(function () {
 $(".tab-45").click(function () {
 	$(".mytab-45").removeClass("tab-active-45");
 
+	$("#dropBtnModal").css('display', 'none');
+
 	let dataId = $(this).attr("data-id");
 	if (dataId == "tab46") {
 		makeTableHead("man-data-opt4-exist");
@@ -297,6 +326,8 @@ $(".pas45").click(function () {
 // for option five
 $(".tab-41").click(function () {
 	$(".mytab-41").removeClass("tab-active-41");
+
+	$("#dropBtnModal").css('display', 'none');
 
 	let dataId = $(this).attr("data-id");
 	if (dataId == "tab42") {
@@ -1110,14 +1141,38 @@ function ExistTableHeadClick(tableId) {
 				</tr>`;
 			}
 			targetModal.html(tableTr);
-			$("#dropBtnModal .modal-dialog").css({
-				top: e.clientY + 15,
-				left: e.clientX - 240,
-			});
-			$("#dropBtnModal").modal("toggle");
+
+			let elementPositionMain = e.target.getBoundingClientRect();
+            $("#dropBtnModal").css('display', 'none');
+            $("#dropBtnModal").css({
+                top: ((elementPositionMain.y) + window.scrollY + 25),
+                left: ((elementPositionMain.x) - 235),
+                position: "absolute"
+            });
+            $("#dropBtnModal").css('display', 'block');
+			// $("#dropBtnModal .modal-dialog").css({
+			// 	top: e.clientY + 15,
+			// 	left: e.clientX - 240,
+			// });
+			// $("#dropBtnModal").modal("toggle");
 		}
 	});
 }
+
+$("#closeDropBtnModal").click(function () {
+    $("#dropBtnModal").css('display', 'none');
+
+    const rotateIcon = document.querySelectorAll("#tab_2 i.fa-caret-down.down-animation-icon");
+    for (let i = 0; i < rotateIcon.length; i++) {
+        $(rotateIcon[i]).removeClass("down-animation-icon");
+    }
+
+	const rotateIconTab5 = document.querySelectorAll("#tab_5 i.fa-caret-down.down-animation-icon");
+    for (let i = 0; i < rotateIconTab5.length; i++) {
+        $(rotateIconTab5[i]).removeClass("down-animation-icon");
+    }
+});
+
 // ExistTableHeadClick("man-data-opt1-exist");
 // ExistTableHeadClick("man-data-opt3-exist");
 // ExistTableHeadClick("man-data-opt4-exist");

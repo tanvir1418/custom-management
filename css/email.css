@@ -511,21 +511,27 @@
 
 /* ========================================== */
 /* pop-up-for-table-header-click style starts */
-#dropBtnModal .modal-content {
+/* #dropBtnModal .modal-content {
     width: 250px;
     border: 0;
     border-radius: 0 !important;
-}
+} */
 
-#dropBtnModal .modal-content .modal-body{
+/* #dropBtnModal .modal-content .modal-body{
   padding: 0;
   border-radius: 0 !important;
-}
+} */
 
 #dropBtnModal .modal-dialog {
   position: absolute;
   min-height: 0;
   margin: 0;
+}
+
+#dropBtnModal{
+    position: absolute;
+    display: none;
+    background-color: #ffffff;
 }
 
 .table-header-click-popup {
@@ -1403,7 +1409,16 @@ i.fa-caret-down.down-animation-icon{
   background-color: #d8d8d8;
   overflow: hidden;
 }
-
+.loading-title{
+  height: 45px;
+  margin: 15px 10%;
+  border-radius: 4px;
+}
+.loading-number{
+  height: 55px;
+  margin: 0 30%;
+  border-radius: 4px;
+}
 .loading-animation.loading{
   height: 100%;
   border-radius: 4px;
@@ -1428,6 +1443,7 @@ i.fa-caret-down.down-animation-icon{
   }
 }
 
+#task_status_loading,
 #task_status_loading_table{
   display: none;
 }

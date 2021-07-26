@@ -512,24 +512,64 @@
             </div>
           </div>
           <div class="task-status-content-wrapper">
-            <div class="task-status-statistics">
-              <div class="stat-box stat-inProgress">
-                <p class="stat-title">Tasks Completed</p>
-                <p class="stat-number">1002</p>
-              </div>
-              <div class="stat-box stat-pending">
-                <p class="stat-title">Tasks Pending</p>
-                <p class="stat-number">202</p>
-              </div>
-              <div class="stat-box stat-cancelled">
-                <p class="stat-title">Tasks Cancelled</p>
-                <p class="stat-number">55</p>
-              </div>
-              <div class="stat-box stat-completed">
-                <p class="stat-title">Total Tasks</p>
-                <p class="stat-number">1259</p>
+            <div id="task_status_loading">
+              <div class="task-status-statistics">
+                <div class="stat-box stat-inProgress">
+                  <div class="loading-title">
+                    <p class="loading-animation loading"></p>
+                  </div>
+                  <div class="loading-number">
+                    <p class="loading-animation loading"></p>
+                  </div>
+                </div>
+                <div class="stat-box stat-pending">
+                  <div class="loading-title">
+                    <p class="loading-animation loading"></p>
+                  </div>
+                  <div class="loading-number">
+                    <p class="loading-animation loading"></p>
+                  </div>
+                </div>
+                <div class="stat-box stat-cancelled">
+                  <div class="loading-title">
+                    <p class="loading-animation loading"></p>
+                  </div>
+                  <div class="loading-number">
+                    <p class="loading-animation loading"></p>
+                  </div>
+                </div>
+                <div class="stat-box stat-completed">
+                  <div class="loading-title">
+                    <p class="loading-animation loading"></p>
+                  </div>
+                  <div class="loading-number">
+                    <p class="loading-animation loading"></p>
+                  </div>
+                </div>
               </div>
             </div>
+            
+            <div id="task_status_counting">
+              <div class="task-status-statistics">
+                <div class="stat-box stat-inProgress">
+                  <p class="stat-title">Tasks Completed</p>
+                  <p class="stat-number">1002</p>
+                </div>
+                <div class="stat-box stat-pending">
+                  <p class="stat-title">Tasks Pending</p>
+                  <p class="stat-number">202</p>
+                </div>
+                <div class="stat-box stat-cancelled">
+                  <p class="stat-title">Tasks Cancelled</p>
+                  <p class="stat-number">55</p>
+                </div>
+                <div class="stat-box stat-completed">
+                  <p class="stat-title">Total Tasks</p>
+                  <p class="stat-number">1259</p>
+                </div>
+              </div>
+            </div>
+
             <div class="task-status-table">
               <div id="task_status_data_table">
                 <table class="table table-responsive-xl table89" id="email_task_status_table">
@@ -988,13 +1028,13 @@
   </section>
 
     <!-- =========Option 5 Plus Button Modal Starts========= -->
-    <div class="modal fade" id="dropBtnModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="dropBtnModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-body">
+          <div class="modal-body"> -->
             <!-- ==================================== -->
             <!-- pop-up-for-table-header-click starts -->
-            <div class="table-header-click-popup">
+            <div class="table-header-click-popup" id="dropBtnModal">
               <div class="table-header-click-popup-wrapper">
                 <div class="table-header-popup-header-title">
                   <p id="mnExistsThPop"></p>
@@ -1021,7 +1061,7 @@
                 </div>
                 <div class="table-header-popup-footer">
                   <div class="button-row">
-                    <input type="button" value="Close" class="close-btn" data-dismiss="modal" />
+                    <input type="button" value="Close" class="close-btn" id="emailCloseDropBtnModal"/>
                     <input type="button" value="Select" class="select-btn" />
                   </div>
                 </div>
@@ -1029,10 +1069,10 @@
             </div>
             <!-- pop-up-for-table-header-click ends -->
             <!-- ==============XXXXXXXXXXX============= -->
-          </div>
+          <!-- </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- =========Option 5 Plus Button Modal Ends========= -->
 
     <!-- ======= Universal Confirm Modal START =========== -->

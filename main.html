@@ -1026,7 +1026,7 @@
 
                         <div class="row btn39">
                             <a href="#">
-                                <div class="mybtns-39 back-btn">
+                                <div class="mybtns-39 back-btn"  onclick="backToSelectDataType()">
                                     <p>Back</p>
                                 </div>
                             </a>
@@ -1247,7 +1247,7 @@
                                     <div class="control-section">
                                         <div class="d-flex">
                                             <div class="back-button">
-                                                <button class="button btn-back">Back</button>
+                                                <button class="button btn-back" onclick="backToSelectDataType()">Back</button>
                                             </div>
                                             <div class="reset-button" onclick="opt3Reset()">
                                                 <button class="button btn-reset">Reset</button>
@@ -1935,7 +1935,7 @@
 
 
                                                 <div class="button-row btn-row-list">
-                                                    <input type="button" value="Back" class="prev-disable">
+                                                    <input type="button" value="Back" class="prev-disable" onclick="backToSelectDataType()">
                                                     <!-- text-edition-form  -->
                                                     <div class="pop-up-yellow-button-wrap">
                                                         <div class="text-edition-form">
@@ -3243,7 +3243,7 @@
                                     </div>
                                     <div class="row btn39">
                                         <a id="back-list">
-                                            <div id="opt5-to-main" class="mybtns-39 back-btn">
+                                            <div id="opt5-to-main" class="mybtns-39 back-btn" onclick="backToSelectDataType()">
                                                 <p>Back</p>
                                             </div>
                                         </a>
@@ -4136,7 +4136,7 @@
 
 
                                 <div class="button-row btn-row-list">
-                                    <input type="button" value="Back" class="prev-disable">
+                                    <input type="button" value="Back" class="prev-disable" onclick="backToManageTempLoadTemp()">
                                     <!-- text-edition-form -->
                                     <div class="pop-up-yellow-button-wrap">
                                         <div class="text-edition-form">
@@ -8867,13 +8867,13 @@
     <!-- xxxxxxxx Manage Template Popup Section ends xxxxxxxx -->
 
     <!-- =========Option 5 Plus Button Modal Starts========= -->
-    <div class="modal fade" id="dropBtnModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="dropBtnModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-body">
+                <div class="modal-body"> -->
                     <!-- ==================================== -->
                     <!-- pop-up-for-table-header-click starts -->
-                    <div class="table-header-click-popup">
+                    <div class="table-header-click-popup" id="dropBtnModal">
                         <div class="table-header-click-popup-wrapper">
                             <div class="table-header-popup-header-title">
                                 <p id="mnExistsThPop"></p>
@@ -8894,20 +8894,6 @@
                                         <div class="checkbox-table-scroll">
                                             <table id="checkbox-table-exist">
                                                 <tbody>
-                                                    <!-- <tr>
-                                                        <td>
-                                                            <div class="popup__checkbox__page__toggle">
-                                                                <label class="popup__checkbox__toggle">
-                                                                    <input class="popup__checkbox__toggle__input"
-                                                                        type="checkbox">
-                                                                    <span class="popup__checkbox__toggle__label">
-                                                                        <span
-                                                                            class="popup__checkbox__toggle__text">1923.73</span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                    </tr> -->
                                                 </tbody>
                                             </table>
                                         </div>
@@ -8916,7 +8902,7 @@
                             </div>
                             <div class="table-header-popup-footer">
                                 <div class="button-row">
-                                    <input type="button" value="Close" class="close-btn" data-dismiss="modal">
+                                    <input type="button" value="Close" class="close-btn" id="closeDropBtnModal">
                                     <input type="button" value="Select" class="select-btn">
                                 </div>
                             </div>
@@ -8924,10 +8910,10 @@
                     </div>
                     <!-- pop-up-for-table-header-click ends -->
                     <!-- ==============XXXXXXXXXXX============= -->
-                </div>
+                <!-- </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- =========Option 5 Plus Button Modal Ends========= -->
 
     <!-- ========= manage template table head arrow Modal Starts========= -->
