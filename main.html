@@ -242,7 +242,155 @@
                             </div>
                         </div>
                     </div>
-                    <div class="account-form-container">
+                    <div class="account-form-container" id="account_form_loading">
+                        <form action="">
+                            <div class="account-form-group company-group">
+                                <div class="ac-width-100">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group name-group">
+                                <div class="ac-width-50">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                                <div class="ac-width-50">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group company-group">
+                                <div class="ac-width-100">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                       
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group address1-group">
+                                <div class="ac-width-100">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group address2-group">
+                                <div class="ac-width-100">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group city-state-group">
+                                <div class="ac-width-50">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                                <div class="ac-width-50">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                       
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group city-state-group">
+                                <div class="ac-width-50">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                                <div class="ac-width-50">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group phone-group">
+                                <div class="ac-width-100">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                       
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group email-group">
+                                <div class="ac-width-100">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                       
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group user-info-group">
+                                <div class="ac-width-33">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                                <div class="ac-width-33">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                                <div class="ac-width-33">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ac-button-row">
+                                <input type="button" value="Reset" class="reset">
+                                <input type="button" value="Save" class="save">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="account-form-container" id="account_form_content">
                         <form action="">
                             <div class="account-form-group company-group">
                                 <div class="ac-width-100">
@@ -8672,6 +8820,12 @@
             let totalTabContent = document.querySelectorAll(".content .tab_content");
 
             if(tabVisibleDecision == "showAccount"){
+
+                setTimeout(() => {
+					$("#account_form_content").css('display', 'block');
+					$("#account_form_loading").css('display', 'none');
+				}, 4000);
+
                 for (let i = 0; i < totalTab.length; i++) {
                     totalTab[i].classList.remove("active");
                     totalTabContent[i].style.display = "none";

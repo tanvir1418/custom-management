@@ -127,6 +127,15 @@ for (var i = 0; i < li_tabs.length; i++) {
 			}
 			if (current_tab_value == "tab_1") {
 				$("#dropBtnModal").css('display', 'none');
+
+				$("#account_form_loading").css('display', 'block');
+				$("#account_form_content").css('display', 'none');
+
+				setTimeout(() => {
+					$("#account_form_loading").css('display', 'none');
+					$("#account_form_content").css('display', 'block');
+				}, 2000);
+
 			}
 			if (current_tab_value == "tab_2") {
 				$(".content .tab_2 .option_box").addClass("box-loading-animation");
