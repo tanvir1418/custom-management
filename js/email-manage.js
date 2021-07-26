@@ -125,11 +125,17 @@ function taskStatusTableExist(tableID, noRow, pagiId) {
         showGoInput: true,
         showGoButton: true,
         callback: function (data, pagination) {
+            
+            $("#task_status_loading").css("display", "block");
+            $("#task_status_counting").css("display", "none");
 
             $("#task_status_data_table").css("display", "none");
             $("#task_status_loading_table").css("display", "block");
 
             setTimeout(() => {
+                $("#task_status_loading").css("display", "none");
+                $("#task_status_counting").css("display", "block");
+
                 $("#task_status_loading_table").css("display", "none");
                 $("#task_status_data_table").css("display", "block");
             }, 2000);
