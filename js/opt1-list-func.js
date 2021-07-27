@@ -1268,3 +1268,19 @@ function replaceSelectedText(replacementText) {
   }
 }
 //Extra End
+
+$("#mnDataOp1FileBox").click(function () {
+  
+  $('#myopt1listData').modal('show');
+
+  // $("#item_loading_op1").css("display", "block");
+  // $(".scroll5564windrow").css("display", "none");
+  // $(".myscrollbtn-op1").css("display", "none");
+
+  setTimeout(() => {
+    $("#item_loading_op1").css("display", "none");
+    $(".scroll5564windrow").css("display", "block");
+    $(".myscrollbtn-op1").css("display", "block");
+  }, 2000);
+
+});

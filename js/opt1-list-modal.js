@@ -100,6 +100,8 @@ let submodal_div_list_id1_old = "",
 	submodal_div_list_id2_old = "",
 	submodal_div_list_id3_old = "";
 
+let oldSelectedListOp1 = "";
+
 function modalitem_click_handle(listClassName) {
 	let level_no = listClassName.match(/\d+/g);
 	if (level_no != null) {
@@ -132,6 +134,17 @@ function modalitem_click_handle(listClassName) {
 			$(submodal_div_list_id3_old).toggleClass("checkbox_hide checkbox_show");
 			submodal_div_list_id3_old = "";
 		}
+
+		if(oldSelectedListOp1 == ""){
+			$("#level_item_loading_op1").css("display", "block");
+			$("#sub-ul-modallist").css("display", "none");
+			oldSelectedListOp1 = "";
+			setTimeout(() => {
+				$("#level_item_loading_op1").css("display", "none");
+				$("#sub-ul-modallist").css("display", "block");
+			}, 1000);
+		}
+		
 	}
 }
 /* New Function End */
@@ -160,6 +173,13 @@ let opt1_left_list = "";
 		// $(target).children(".green-check-box").toggleClass("display-none display-block");
 		$(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
 		$(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
+		
+		if(oldTarget == target){
+			oldSelectedListOp1 = "hideLoadingAnimation";
+		}else{
+			oldSelectedListOp1 = "";
+		}
+
 		oldTarget = target;
 
 		opt1_left_list = target.childNodes[1].innerHTML;
