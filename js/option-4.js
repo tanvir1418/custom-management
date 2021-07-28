@@ -704,3 +704,32 @@ $("#datepicker_field_set11_icon").click(function () {
 $("#datepicker_field_set12_icon").click(function () {
   $("#datepicker_field_set12").focus();
 });
+
+// Option 4 Save Draft Button Controlling (Loading Popup and Thank You Modal)
+function saveDraftLoadingThankOp4(){
+  $('#submitting_Info').modal('show');
+
+  // Option 4 submitting draft information
+  let $targetingTextSubmit = $("#submitting_file_info");
+  $targetingTextSubmit.html("Submitting section 1 information...");
+  let submitFileInfo = [ 
+          "Submitting section 2 information...",
+          "Submitting section 3 information...", 
+          "Submitting section 4 information...",
+          "Submitting section 5 information...",
+          "Finishing..."];
+
+  for (let i = 1; i <= 5; ++i) {
+    (function(index) {
+      setTimeout(function() { 
+        $targetingTextSubmit.html(submitFileInfo[index-1]);
+      }, i * 2000);
+    })(i);
+  }
+
+  setTimeout(function() { 
+    $('#submitting_Info').modal('hide');
+    $('#saveDraftThankYouModal').modal('show');
+  }, 12000);
+
+}

@@ -127,6 +127,15 @@ for (var i = 0; i < li_tabs.length; i++) {
 			}
 			if (current_tab_value == "tab_1") {
 				$("#dropBtnModal").css('display', 'none');
+
+				$("#account_form_loading").css('display', 'block');
+				$("#account_form_content").css('display', 'none');
+
+				setTimeout(() => {
+					$("#account_form_loading").css('display', 'none');
+					$("#account_form_content").css('display', 'block');
+				}, 2000);
+
 			}
 			if (current_tab_value == "tab_2") {
 				$(".content .tab_2 .option_box").addClass("box-loading-animation");
@@ -1663,3 +1672,20 @@ $('#textEditorThankModal').on('show.bs.modal', function (e) {
 }).on('hide.bs.modal', function (e) {
 	$('body').removeClass("modal-open-filter-thanks");
 });
+
+
+$('#saveDraftThankYouModal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-save-draft-thanks");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-save-draft-thanks");
+});
+
+function rotateLoadingBar(selector)
+{
+	$(selector).animate( { left: $('.loading-bar').width() }, 2000, function(){
+		$(selector).css("left", -($(selector).width()) + "px");
+		rotateLoadingBar(selector);
+	});
+}
+
+rotateLoadingBar('.bar-animation');

@@ -242,7 +242,155 @@
                             </div>
                         </div>
                     </div>
-                    <div class="account-form-container">
+                    <div class="account-form-container" id="account_form_loading">
+                        <form action="">
+                            <div class="account-form-group company-group">
+                                <div class="ac-width-100">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group name-group">
+                                <div class="ac-width-50">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                                <div class="ac-width-50">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group company-group">
+                                <div class="ac-width-100">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                       
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group address1-group">
+                                <div class="ac-width-100">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group address2-group">
+                                <div class="ac-width-100">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group city-state-group">
+                                <div class="ac-width-50">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                                <div class="ac-width-50">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                       
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group city-state-group">
+                                <div class="ac-width-50">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                                <div class="ac-width-50">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group phone-group">
+                                <div class="ac-width-100">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                       
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group email-group">
+                                <div class="ac-width-100">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                       
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-form-group user-info-group">
+                                <div class="ac-width-33">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                                <div class="ac-width-33">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                                <div class="ac-width-33">
+                                    <div class="ac-title ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                    <div class="ac-input ac-loading-animation ac-loading">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ac-button-row">
+                                <input type="button" value="Reset" class="reset">
+                                <input type="button" value="Save" class="save">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="account-form-container" id="account_form_content">
                         <form action="">
                             <div class="account-form-group company-group">
                                 <div class="ac-width-100">
@@ -562,8 +710,9 @@
                                         </p>
                                     </div>
                                     <div class="op1-single-list-item-file">
-                                        <div class="op1-single-list-item-file-container" data-toggle="modal"
-                                            data-target="#myopt1listData">
+                                        <div class="op1-single-list-item-file-container" id="mnDataOp1FileBox">
+                                        <!-- <div class="op1-single-list-item-file-container" id="mnDataOp1FileBox" data-toggle="modal"
+                                            data-target="#myopt1listData"> -->
                                             <img src="images/single_paper_icon.png">
                                         </div>
                                     </div>
@@ -2769,7 +2918,7 @@
                                                         required>
                                                 </div>
                                                 <div class="save-draft-wrapper">
-                                                    <button class="option4-below-button btn-save-draft" data-toggle="modal" data-target="#saveDraftThankYouModal">
+                                                    <button class="option4-below-button btn-save-draft" onclick="saveDraftLoadingThankOp4(this)">
                                                         Save Draft
                                                     </button>
                                                 </div>
@@ -4908,7 +5057,7 @@
                                     <input type="text" placeholder="Template Name" autocomplete="off" required>
                                 </div>
                                 <div class="save-draft-wrapper">
-                                    <button class="option4-below-button btn-save-draft" data-toggle="modal" data-target="#saveDraftThankYouModal">Save Draft</button>
+                                    <button class="option4-below-button btn-save-draft" onclick="saveDraftLoadingThankMnTemp(this)">Save Draft</button>
                                 </div>
                                 <div class="save-start-wrapper save-start-class-hide-show-mnTemp"
                                     id="saveStartTarget-mnTemp">
@@ -8672,6 +8821,12 @@
             let totalTabContent = document.querySelectorAll(".content .tab_content");
 
             if(tabVisibleDecision == "showAccount"){
+
+                setTimeout(() => {
+					$("#account_form_content").css('display', 'block');
+					$("#account_form_loading").css('display', 'none');
+				}, 4000);
+
                 for (let i = 0; i < totalTab.length; i++) {
                     totalTab[i].classList.remove("active");
                     totalTabContent[i].style.display = "none";
@@ -9158,11 +9313,115 @@
                         <div class="weapper-list-title">
                             <p>LIST 1</p>
                         </div>
+                        <div class="item-loading-wrapper" id="item_loading_op1">
+                            <ul>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                            </ul> 
+                        </div>
                         <div class="scroll-list-box scrollable-list-op1 scroll5564windrow">
                             <ul class="select-item-main left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
-
+                            <div class="level-item-loading-wrapper" id="level_item_loading_op1">
+                                <ul class="list-one">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-two">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-three">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                            </div>
                             <div id="sub-ul-modallist">
                                 <!-- get checkbox data from opt1-list-modal.JS by ASHIQ... -->
                             </div>
@@ -11705,6 +11964,27 @@
         </div>
     </div>
     <!-- Login is required Modal start -->
+
+    <!-- Submit Draft Info Modal start -->
+    <div class="modal fade submit-draft-info" data-backdrop="static" data-keyboard="false" id="submitting_Info">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="submit-info-container">
+                        <p class="submit-title">Submitting...</p>
+                        <!-- <div class="animation-progress">
+                            <div class="left-to-right"></div>
+                        </div> -->
+                        <div class="loading-bar">
+                            <div class="bar-animation"></div>
+                        </div>
+                        <p id="submitting_file_info"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Submit Draft Info Modal start -->
 
     <!-- JS FILES -->
     <script src="js/jquery.js"></script>
