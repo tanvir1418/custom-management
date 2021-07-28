@@ -1672,3 +1672,20 @@ $('#textEditorThankModal').on('show.bs.modal', function (e) {
 }).on('hide.bs.modal', function (e) {
 	$('body').removeClass("modal-open-filter-thanks");
 });
+
+
+$('#saveDraftThankYouModal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-save-draft-thanks");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-save-draft-thanks");
+});
+
+function rotateLoadingBar(selector)
+{
+	$(selector).animate( { left: $('.loading-bar').width() }, 2000, function(){
+		$(selector).css("left", -($(selector).width()) + "px");
+		rotateLoadingBar(selector);
+	});
+}
+
+rotateLoadingBar('.bar-animation');

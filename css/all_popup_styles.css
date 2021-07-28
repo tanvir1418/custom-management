@@ -2364,6 +2364,7 @@ Bottom codes are added by Tanvir
 .modal-open-filter,
 .modal-open-filter-confirm,
 .modal-open-filter-thanks,
+.modal-save-draft-thanks,
 .modal-force-open-confirm,
 .modal-force-open-sample4{
     overflow:hidden !important;
@@ -2374,6 +2375,7 @@ Bottom codes are added by Tanvir
 .modal-open-filter .modal,
 .modal-open-filter-confirm .modal,
 .modal-open-filter-thanks .modal,
+.modal-save-draft-thanks .modal,
 .modal-force-open-confirm .modal,
 .modal-force-open-sample4 .modal{
     overflow-x:hidden !important;
@@ -2492,4 +2494,79 @@ Bottom codes are added by Tanvir
 .myscrollbtn-op1,
 .scroll5564windrow{
     display: none;
+}
+
+
+/* submitting loading animation  */
+/* .animation-progress {
+    box-shadow: none;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 24px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background-color: #797979;
+  }
+  .animation-progress .left-to-right {
+     background-color: #186E00;
+  }
+  .animation-progress .left-to-right:before {
+    content: "";
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    will-change: left,right;
+    animation: indeterminate 2s cubic-bezier(.65,.815,.735,.395) infinite;
+  }
+  @keyframes indeterminate{
+      0%{
+          left:-35%;
+          right:100%
+    }
+    60%{
+        left:100%;
+        right:-90%
+    }
+    100%{
+        left:100%;
+        right:-90%
+    }
+} */
+
+.loading-bar { 
+    position: relative; 
+    width: 100%; 
+    height: 15px; 
+    background-color: #797979; 
+    overflow: hidden; 
+  }
+  .bar-animation { 
+    position: absolute;
+    width: 15%; 
+    height: 15px; 
+    background-color: #186E00; 
+  } 
+
+.submit-draft-info .modal-dialog{
+    max-width: 700px;
+    height: 350px;
+}
+.submit-draft-info .submit-info-container{
+    margin: 10px 25px;
+}
+.submit-draft-info .submit-title{
+    font-family: gilroy-medium;
+    font-size: 28px;
+    font-weight: 900;
+}
+.submit-draft-info #submitting_file_info{
+    font-family: gilroy-medium;
+    font-size: 20px;
+}
+
+#submitting_Info.modal{
+    background-color: rgb(0, 0, 0, 0.4) !important;
 }

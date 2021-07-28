@@ -2918,7 +2918,7 @@
                                                         required>
                                                 </div>
                                                 <div class="save-draft-wrapper">
-                                                    <button class="option4-below-button btn-save-draft" data-toggle="modal" data-target="#saveDraftThankYouModal">
+                                                    <button class="option4-below-button btn-save-draft" onclick="saveDraftLoadingThankOp4(this)">
                                                         Save Draft
                                                     </button>
                                                 </div>
@@ -5057,7 +5057,7 @@
                                     <input type="text" placeholder="Template Name" autocomplete="off" required>
                                 </div>
                                 <div class="save-draft-wrapper">
-                                    <button class="option4-below-button btn-save-draft" data-toggle="modal" data-target="#saveDraftThankYouModal">Save Draft</button>
+                                    <button class="option4-below-button btn-save-draft" onclick="saveDraftLoadingThankMnTemp(this)">Save Draft</button>
                                 </div>
                                 <div class="save-start-wrapper save-start-class-hide-show-mnTemp"
                                     id="saveStartTarget-mnTemp">
@@ -11964,6 +11964,27 @@
         </div>
     </div>
     <!-- Login is required Modal start -->
+
+    <!-- Submit Draft Info Modal start -->
+    <div class="modal fade submit-draft-info" data-backdrop="static" data-keyboard="false" id="submitting_Info">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="submit-info-container">
+                        <p class="submit-title">Submitting...</p>
+                        <!-- <div class="animation-progress">
+                            <div class="left-to-right"></div>
+                        </div> -->
+                        <div class="loading-bar">
+                            <div class="bar-animation"></div>
+                        </div>
+                        <p id="submitting_file_info"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Submit Draft Info Modal start -->
 
     <!-- JS FILES -->
     <script src="js/jquery.js"></script>
