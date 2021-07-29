@@ -733,3 +733,14 @@ function saveDraftLoadingThankOp4(){
   }, 12000);
 
 }
+
+$(".btn-save-draft").click(function() {
+  let initState = $(this).html();
+  $(this).html('<i class="fa fa-spinner fa-spin"></i> Submitting...');
+  $(this).addClass('disabled');
+  let $this = $(this);
+  setTimeout(function() {
+      $this.removeClass('disabled');
+      $this.html(initState);
+  }, 12000);
+});
