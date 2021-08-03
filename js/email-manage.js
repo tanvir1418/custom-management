@@ -349,6 +349,16 @@ function selectEmailop(evt, optionName) {
     document.getElementById("select_optn").style.paddingBottom = "0px";
     evt.currentTarget.className += " active";
 
+    if (optionName == "mail_option_1") {
+        $("#visual_system_status").css("display", "none");
+        $("#animation_system_status").css("display", "block");
+        
+        setTimeout(function() { 
+            $("#visual_system_status").css("display", "block");
+            $("#animation_system_status").css("display", "none");
+        }, 4000);
+    }
+
     if (optionName == "mail_option_2") {
         taskStatusHead("email_task_status_table");
         taskStatusTableExist("email_task_status_table", 7, "pagination_task_status");
@@ -369,6 +379,14 @@ function showSystemStatus() {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     tablinks[0].className += " active";
+
+    $("#visual_system_status").css("display", "none");
+    $("#animation_system_status").css("display", "block");
+
+    setTimeout(function() { 
+        $("#visual_system_status").css("display", "block");
+        $("#animation_system_status").css("display", "none");
+    }, 4000);
 }
 
 function showContactStatus() {

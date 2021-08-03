@@ -1495,3 +1495,11 @@ i.fa-caret-down.down-animation-icon{
 #loading_submitBtn{
   display: none;
 }
+
+#animation_system_status .status-grid .status-grid-cell{
+  height: 30px;
+}
+
+#visual_system_status{
+  display: none;
+}
