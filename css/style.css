@@ -1609,8 +1609,8 @@ td {
 }
 
 .detail-box .btn39 .mybtns-39 {
-  width: 120px;
-  height: 42px;
+  width: 130px;
+  height: 50px;
 }
 
 .detail-box .btn39 .mybtns-39 p {
@@ -2381,10 +2381,10 @@ td {
 .account-content .account-form-container .ac-button-row .reset,
 .account-content .account-form-container .ac-button-row .save  {
   box-shadow: none;
-  width: 200px;
+  width: 220px;
   height: 100%;
   font-family: gilroy-medium, sans-serif;
-  font-size: 32px;
+  font-size: 28px;
   background: #e9e9e9;
   color: #7b7b7b;
   transition: 150ms;
@@ -2410,6 +2410,18 @@ td {
   color: #7b7b7b;
 }
 
+.mybtns-39.submit-btn.btn-done{
+  color: #ffffff;
+  border: none;
+  /* color: #595959; */
+  font-family: gilroy-bold, sans-serif;
+  font-weight: 600;
+}
+
+.mybtns-39.submit-btn.btn-done:hover{
+  background: #afaaaa;
+  color: #000000;
+}
 /* Terms and Condition STYLE START */
 #tc-section .footer-page{
   margin: 22px 50px;
@@ -2598,4 +2610,8 @@ td {
 
 #account_form_loading .ac-button-row{
   margin-top: 80px;
+}
+
+#loading_acSave{
+  display: none;
 }

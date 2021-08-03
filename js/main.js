@@ -1390,10 +1390,12 @@ function universalConfirmModalDelete(globalVariable) {
 	} else if (globalVariable.className.includes("clickViewDetails")) {
 		headerText = "VIEW DETAILS";
 		detailsText = "Confirm to view details?";
-	} else if (globalVariable.className.includes("mnAlertSave")) {
-		headerText = "SAVE DETAILS";
-		detailsText = "Confirm to save details?";
-	}
+	} 
+	// else if (globalVariable.className.includes("mnAlertSave")) {
+	// 	headerText = "SAVE DETAILS";
+	// 	detailsText = "Confirm to save details?";
+	// 	$('body').addClass("modal-force-mnAlert-extra");
+	// }
 
 	$("#universal_confirm_modal #confirm_header p").html(headerText);
 	$("#universal_confirm_modal #confirm_deatis p").html(detailsText);
@@ -1531,7 +1533,41 @@ function chartDispConfirmButton() {
 }
 
 function showConfirmSample4StartBtn() {
-	$('#sample4SaveStart_confirm_modal').modal('show');
+	$('body').addClass("modal-force-open");
+	$('#submitting_Info').modal('show');
+
+	let initStateBtn = $(".btn-save-start").html();
+	$(".btn-save-start").html('<i class="fa fa-spinner fa-spin"></i> Submitting...');
+	$(".btn-save-start").addClass('disabled');
+	let $thisBtn = $(".btn-save-start");
+	setTimeout(function() {
+		$thisBtn.removeClass('disabled');
+		$thisBtn.html(initStateBtn);
+	}, 10000);
+
+	// Option 4 save start information
+	let $targetingTextSubmit = $("#submitting_file_info");
+	$targetingTextSubmit.html("Saving sample 1 information...");
+	let submitFileInfo = [ 
+			"Saving sample 2 information...",
+			"Saving sample 3 information...", 
+			"Saving sample 4 information...",
+			"Finishing..."];
+  
+	for (let i = 1; i <= 4; ++i) {
+	  (function(index) {
+		setTimeout(function() { 
+		  $targetingTextSubmit.html(submitFileInfo[index-1]);
+		}, i * 2000);
+	  })(i);
+	}
+	
+    setTimeout(function() { 
+        $('#submitting_Info').modal('hide');
+		$('body').removeClass("modal-force-open");
+
+        $('#sample4SaveStart_confirm_modal').modal('show');
+    }, 10000);
 }
 
 function sample4StartCancelBtn() {
@@ -1597,9 +1633,27 @@ $('#filterThankYouModal').on('show.bs.modal', function (e) {
 	$('body').removeClass("modal-open-filter-thanks");
 });
 
-$('#mnAccountThankModal').on('hide.bs.modal', function (e) {
+$('#mnAccountThankModal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-open-filter-thanks");
+}).on('hide.bs.modal', function (e) {
+	$('body').addClass("modal-open-filter-thanks");
 	window.location.href = 'index.html';
 });
+
+function saveAccountInfo(){
+	$("#submitting_file_info").html("Submitting account information");
+	$('#submitting_Info').modal('show');
+	$("#main_acSave").css("display", "none");
+    $("#loading_acSave").css("display", "block");
+
+    setTimeout(function() { 
+        $('#submitting_Info').modal('hide');
+		$("#loading_acSave").css("display", "none");
+    	$("#main_acSave").css("display", "block");
+
+        $('#mnAccountThankModal').modal('show');
+    }, 4000);
+}
 
 // Show hide Password Field Icon and text (Manage Account)
 $(".toggle-password").click(function () {
@@ -1612,6 +1666,21 @@ $(".toggle-password").click(function () {
 	}
 });
 
+function controlGenerateBtn(){
+	$("#submitting_file_info").html("Submitting information...");
+	$('#submitting_Info').modal('show');
+    setTimeout(function() { 
+        $('#submitting_Info').modal('hide');
+
+        $('#onlyThankModal').modal('show');
+    }, 4000);
+}
+
+$('#onlyThankModal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-force-generate-btn");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-force-generate-btn");
+});
 
 function linkTermsConditions() {
 	let loginCondition = localStorage.getItem("loginStatus");
@@ -1689,3 +1758,26 @@ function rotateLoadingBar(selector)
 }
 
 rotateLoadingBar('.bar-animation');
+
+
+$(".btn-generate").click(function() {
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Submitting...');
+	$(this).addClass('disabled');
+	let $this = $(this);
+	setTimeout(function() {
+		$this.removeClass('disabled');
+		$this.html(initState);
+	}, 4000);
+});
+
+$(".btn-done").click(function() {
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Submitting...');
+	$(this).addClass('disabled');
+	let $this = $(this);
+	setTimeout(function() {
+		$this.removeClass('disabled');
+		$this.html(initState);
+	}, 4000);
+});

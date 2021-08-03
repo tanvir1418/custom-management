@@ -1003,8 +1003,10 @@
                 </div>
               </div>
               <div class="sp-button-row">
-                <input type="button" value="Reset" class="reset" onclick="resetContactFormFields()" />
-                <input type="button" value="Submit" class="submit" data-toggle="modal" data-target="#form_submit_modal"/>
+                <input type="button" value="Reset" class="reset" onclick="resetContactFormFields()"/>
+                <!-- <button class="reset" onclick="resetContactFormFields(this)">Reset</button> -->
+                <input type="button" value="Submit" class="submit" id="main_submitBtn" onclick="submitContactEmail(this)"/>
+                <button class="submit submit-contact" id="loading_submitBtn"><i class="fa fa-spinner fa-spin"></i> Submitting...</button>
               </div>
             </form>
           </div>
@@ -1167,6 +1169,23 @@
       </div>
   </div>
   <!-- Login is required Modal start -->
+  <!-- Submit Draft Info Modal start -->
+  <div class="modal fade submit-draft-info" data-backdrop="static" data-keyboard="false" id="submitting_Info">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="submit-info-container">
+                    <p class="submit-title">Submitting...</p>
+                    <div class="loading-bar">
+                        <div class="bar-animation"></div>
+                    </div>
+                    <p id="submitting_file_info">Submitting contact support</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- Submit Draft Info Modal ends -->
 
     <!-- JS FILES -->
     <script src="js/jquery.js"></script>

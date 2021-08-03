@@ -378,3 +378,31 @@ function showContactStatus() {
     }
     tablinks[2].className += " active";
 }
+
+// Submit Button Controlling (Loading Popup and Thank You Modal)
+function submitContactEmail(){
+    $('#submitting_Info').modal('show');
+
+    $("#main_submitBtn").css("display", "none");
+    $("#loading_submitBtn").css("display", "block");
+    
+
+    setTimeout(function() { 
+        $('#submitting_Info').modal('hide');
+        $("#main_submitBtn").css("display", "block");
+        $("#loading_submitBtn").css("display", "none");
+
+        $("#emailThankModal #email_thank_header p").html("THANK YOU");
+        $("#emailThankModal #email_thank_details p").html("Your Request has been Successfully Processed");
+        $('#emailThankModal').modal('show');
+    }, 4000);
+}
+
+function rotateLoadingBar(selector){
+	$(selector).animate( { left: $('.loading-bar').width() }, 2000, function(){
+		$(selector).css("left", -($(selector).width()) + "px");
+		rotateLoadingBar(selector);
+	});
+}
+
+rotateLoadingBar('.bar-animation');
