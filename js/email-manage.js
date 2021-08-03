@@ -310,7 +310,13 @@ $('#emailThankModal').on('show.bs.modal', function (e) {
     $('body').addClass("modal-force-open");
 }).on('hide.bs.modal', function (e) {
     $('body').removeClass("modal-force-open");
-})
+});
+
+$('#form_submit_modal').on('show.bs.modal', function (e) {
+    $('body').addClass("modal-force-open");
+}).on('hide.bs.modal', function (e) {
+    $('body').removeClass("modal-force-open");
+});
 
 // This Function will trigger when col8Filter is closed
 $('#dropBtnModal').on('hidden.bs.modal', function (e) {
@@ -392,9 +398,10 @@ function submitContactEmail(){
         $("#main_submitBtn").css("display", "block");
         $("#loading_submitBtn").css("display", "none");
 
-        $("#emailThankModal #email_thank_header p").html("THANK YOU");
-        $("#emailThankModal #email_thank_details p").html("Your Request has been Successfully Processed");
-        $('#emailThankModal').modal('show');
+        // $("#emailThankModal #email_thank_header p").html("THANK YOU");
+        // $("#emailThankModal #email_thank_details p").html("Your Request has been Successfully Processed");
+        // $('#emailThankModal').modal('show');
+        $('#form_submit_modal').modal('show');
     }, 4000);
 }
 
