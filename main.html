@@ -585,7 +585,8 @@
                             </div>
                             <div class="ac-button-row">
                                 <input type="button" value="Reset" class="reset" onclick="resetAccountFormFields()">
-                                <input type="button" value="Save" class="save" data-toggle="modal" data-target="#mnAccountThankModal">
+                                <input type="button" value="Save" class="save" id="main_acSave" onclick="saveAccountInfo(this)">
+                                <button class="save saveAc-info" id="loading_acSave"><i class="fa fa-spinner fa-spin"></i> Submitting...</button>
                             </div>
                         </form>
                     </div>
@@ -790,7 +791,7 @@
                                                 autocomplete="off" required>
                                         </div>
                                         <div class="generate-button">
-                                            <button class="button btn-generate" data-toggle="modal" data-target="#onlyThankModal">Generate</button>
+                                            <button class="button btn-generate" onclick="controlGenerateBtn(this)">Generate</button>
                                         </div>
                                     </div>
                                 </div>
@@ -1407,7 +1408,7 @@
                                                     required>
                                             </div>
                                             <div class="generate-button">
-                                                <button class="button btn-generate" data-toggle="modal" data-target="#onlyThankModal">Generate</button>
+                                                <button class="button btn-generate" onclick="controlGenerateBtn(this)">Generate</button>
                                             </div>
                                         </div>
                                     </div>
@@ -3401,10 +3402,8 @@
                                                 <p>Reset</p>
                                             </div>
                                         </a>
-                                        <a data-toggle="modal" data-target="#onlyThankModal">
-                                            <div class="mybtns-39 submit-btn">
-                                                <p>Done</p>
-                                            </div>
+                                        <a onclick="controlGenerateBtn(this)">
+                                            <button class="mybtns-39 submit-btn btn-done">Done</button>
                                         </a>
                                     </div>
                                 </div>

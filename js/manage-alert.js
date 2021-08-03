@@ -136,7 +136,7 @@ function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId) {
 					<td class="removenull">
               <div class="reset-save-btn">
                   <button class="reset4" type="button">Reset</button>
-                  <button class="save4 mnAlertSave" type="button" onclick="universalConfirmModalDelete(this)">Save</button>
+                  <button class="save4 mnAlertSave" type="button" onclick="saveManageAlertRow(event)">Save</button>
               </div>
               <div class="cross-box-89">
                 <div class="circle_550 plus89">
@@ -273,3 +273,33 @@ function manageAlertsIconHandling() {
     });
   }
 }
+
+
+function saveManageAlertRow(globalThis){
+
+  $("#submitting_file_info").html("Submitting row details...");
+	$('#submitting_Info').modal('show');
+
+  let targetSaveBtn = globalThis.path[3].id;
+  let initStateRowBtn = $(`#${targetSaveBtn} .reset-save-btn .mnAlertSave`).html();
+	$(`#${targetSaveBtn} .reset-save-btn .mnAlertSave`).html(' <i class="fa fa-spinner fa-spin"></i> ....');
+	$(`#${targetSaveBtn} .reset-save-btn .mnAlertSave`).addClass('disabled');
+	let $thisSaveBtn = $(`#${targetSaveBtn} .reset-save-btn .mnAlertSave`);
+	setTimeout(function() {
+		$thisSaveBtn.removeClass('disabled');
+		$thisSaveBtn.html(initStateRowBtn);
+	}, 4000);
+  
+  setTimeout(function() { 
+      $('#submitting_Info').modal('hide');
+
+      $('body').addClass("modal-force-mnAlert-extra");
+      $("#universal_confirm_modal #confirm_header p").html("SAVE DETAILS");
+      $("#universal_confirm_modal #confirm_deatis p").html("Confirm to save details?");
+      $('#universal_confirm_modal').modal('show');
+  }, 4000);
+}
+
+$('#universal_confirm_modal').on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-force-mnAlert-extra");
+});

@@ -263,7 +263,7 @@
                 </div>
                 <div class="enter-verified-email">
                     <input type="email" placeholder="Enter your email address" id="recovery-email">
-                    <input class="btn btn-success" type="submit" name="" id="" value="Submit" data-toggle="modal" data-target="#loginOnlyThankModal">
+                    <input class="btn btn-success" type="submit" name="" id="" value="Submit" onclick="submitRecoveryEmail(this)">
                     <input class="btn btn-light" type="submit" name="" id="" value="Cancel" data-dismiss="modal">
                 </div>
             </div>
@@ -296,6 +296,24 @@
         </div>
     </div>
     <!-- =========JUST THANK Modal Ends========= -->
+
+    <!-- Submit Draft Info Modal start -->
+    <div class="modal fade submit-draft-info" data-backdrop="static" data-keyboard="false" id="submitting_Info">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="submit-info-container">
+                        <p class="submit-title">Submitting...</p>
+                        <div class="loading-bar">
+                            <div class="bar-animation"></div>
+                        </div>
+                        <p id="submitting_file_info">Submitting email information</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Submit Draft Info Modal ends -->
 
     <!-- JS FILES -->
     <script src="js/jquery.js"></script>
@@ -352,6 +370,32 @@
         function hideForgetModal(){
             $('#forgotPass').modal('hide');
         }
+
+        // Submit Button Controlling (Loading Popup and Thank You Modal)
+        function submitRecoveryEmail(){
+            $('#submitting_Info').modal('show');
+            setTimeout(function() { 
+                $('#submitting_Info').modal('hide');
+
+                $('#loginOnlyThankModal').modal('show');
+            }, 4000);
+        }
+
+        function rotateLoadingBar(selector){
+            $(selector).animate( { left: $('.loading-bar').width() }, 2000, function(){
+                $(selector).css("left", -($(selector).width()) + "px");
+                rotateLoadingBar(selector);
+            });
+        }
+
+        rotateLoadingBar('.bar-animation');
+
+        // $('#submitting_Info').on('show.bs.modal', function (e) {
+	    //     $('body').addClass("modal-force-recovery-email");
+        // }).on('hide.bs.modal', function (e) {
+        //     $('body').removeClass("modal-force-recovery-email");
+        // });
+
     </script>
 
 </body>

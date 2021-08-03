@@ -310,7 +310,13 @@ $('#emailThankModal').on('show.bs.modal', function (e) {
     $('body').addClass("modal-force-open");
 }).on('hide.bs.modal', function (e) {
     $('body').removeClass("modal-force-open");
-})
+});
+
+$('#form_submit_modal').on('show.bs.modal', function (e) {
+    $('body').addClass("modal-force-open");
+}).on('hide.bs.modal', function (e) {
+    $('body').removeClass("modal-force-open");
+});
 
 // This Function will trigger when col8Filter is closed
 $('#dropBtnModal').on('hidden.bs.modal', function (e) {
@@ -343,6 +349,16 @@ function selectEmailop(evt, optionName) {
     document.getElementById("select_optn").style.paddingBottom = "0px";
     evt.currentTarget.className += " active";
 
+    if (optionName == "mail_option_1") {
+        $("#visual_system_status").css("display", "none");
+        $("#animation_system_status").css("display", "block");
+        
+        setTimeout(function() { 
+            $("#visual_system_status").css("display", "block");
+            $("#animation_system_status").css("display", "none");
+        }, 4000);
+    }
+
     if (optionName == "mail_option_2") {
         taskStatusHead("email_task_status_table");
         taskStatusTableExist("email_task_status_table", 7, "pagination_task_status");
@@ -363,6 +379,14 @@ function showSystemStatus() {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     tablinks[0].className += " active";
+
+    $("#visual_system_status").css("display", "none");
+    $("#animation_system_status").css("display", "block");
+
+    setTimeout(function() { 
+        $("#visual_system_status").css("display", "block");
+        $("#animation_system_status").css("display", "none");
+    }, 4000);
 }
 
 function showContactStatus() {
@@ -378,3 +402,32 @@ function showContactStatus() {
     }
     tablinks[2].className += " active";
 }
+
+// Submit Button Controlling (Loading Popup and Thank You Modal)
+function submitContactEmail(){
+    $('#submitting_Info').modal('show');
+
+    $("#main_submitBtn").css("display", "none");
+    $("#loading_submitBtn").css("display", "block");
+    
+
+    setTimeout(function() { 
+        $('#submitting_Info').modal('hide');
+        $("#main_submitBtn").css("display", "block");
+        $("#loading_submitBtn").css("display", "none");
+
+        // $("#emailThankModal #email_thank_header p").html("THANK YOU");
+        // $("#emailThankModal #email_thank_details p").html("Your Request has been Successfully Processed");
+        // $('#emailThankModal').modal('show');
+        $('#form_submit_modal').modal('show');
+    }, 4000);
+}
+
+function rotateLoadingBar(selector){
+	$(selector).animate( { left: $('.loading-bar').width() }, 2000, function(){
+		$(selector).css("left", -($(selector).width()) + "px");
+		rotateLoadingBar(selector);
+	});
+}
+
+rotateLoadingBar('.bar-animation');

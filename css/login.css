@@ -493,3 +493,50 @@ a:visited {
 
 /* thank you pop-up-for-generate button style ends */
 /* ===================XXXXXXXXXXX================= */
+
+/* submitting loading animation  */
+.loading-bar { 
+    position: relative; 
+    width: 100%; 
+    height: 15px; 
+    background-color: #797979; 
+    overflow: hidden; 
+  }
+  .bar-animation { 
+    position: absolute;
+    width: 15%; 
+    height: 15px; 
+    background-color: #186E00; 
+  } 
+  
+  .submit-draft-info .modal-dialog{
+    max-width: 700px;
+    height: 350px;
+  }
+  .submit-draft-info .submit-info-container{
+    margin: 10px 25px;
+  }
+  .submit-draft-info .submit-title{
+    font-family: gilroy-medium;
+    font-size: 28px;
+    font-weight: 900;
+  }
+  .submit-draft-info #submitting_file_info{
+    font-family: gilroy-medium;
+    font-size: 20px;
+  }
+  
+  #submitting_Info.modal{
+    background-color: rgb(0, 0, 0, 0.4) !important;
+  }
+
+
+.modal-force-recovery-email{
+    /* overflow:hidden !important;
+    padding-right: 17px !important; */
+}
+
+.modal-force-recovery-email .modal{
+    /* overflow-x:hidden !important;
+    overflow-y:auto !important; */
+}

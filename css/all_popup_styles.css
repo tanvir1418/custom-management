@@ -2359,22 +2359,27 @@ Bottom codes are added by Tanvir
     background-color: #ffffff;
 }
 
+.modal-force-mnAlert-extra,
 .modal-list-open,
 .modal-force-open,
 .modal-open-filter,
 .modal-open-filter-confirm,
 .modal-open-filter-thanks,
+.modal-force-generate-btn,
 .modal-save-draft-thanks,
 .modal-force-open-confirm,
 .modal-force-open-sample4{
     overflow:hidden !important;
     padding-right: 17px !important;
 }
+
+.modal-force-mnAlert-extra .modal,
 .modal-list-open .modal,
 .modal-force-open .modal,
 .modal-open-filter .modal,
 .modal-open-filter-confirm .modal,
 .modal-open-filter-thanks .modal,
+.modal-force-generate-btn .modal,
 .modal-save-draft-thanks .modal,
 .modal-force-open-confirm .modal,
 .modal-force-open-sample4 .modal{
