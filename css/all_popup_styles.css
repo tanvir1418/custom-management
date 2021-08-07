@@ -2457,6 +2457,38 @@ Bottom codes are added by Tanvir
 .level-item-loading-wrapper ul.list-three{
     margin-left: 900px;
 }
+
+#table-box-404 .level-item-loading-wrapper ul.list-one{
+    margin-left: 380px;
+}
+#table-box-404 .level-item-loading-wrapper ul.list-two{
+    margin-left: 760px;
+}
+#table-box-404 .level-item-loading-wrapper ul.list-three{
+    margin-left: 1140px;
+}
+@media screen and (max-width: 1800px) {
+    #table-box-404 .level-item-loading-wrapper ul.list-one{
+        margin-left: 340px;
+    }
+    #table-box-404 .level-item-loading-wrapper ul.list-two{
+        margin-left: 680px;
+    }
+    #table-box-404 .level-item-loading-wrapper ul.list-three{
+        margin-left: 1020px;
+    }
+}
+@media screen and (max-width: 1460px) {
+    #table-box-404 .level-item-loading-wrapper ul.list-one{
+        margin-left: 300px;
+    }
+    #table-box-404 .level-item-loading-wrapper ul.list-two{
+        margin-left: 600px;
+    }
+    #table-box-404 .level-item-loading-wrapper ul.list-three{
+        margin-left: 900px;
+    }
+}
 .level-item-loading-wrapper ul li{
     position: relative;
     display: flex;
@@ -2494,6 +2526,62 @@ Bottom codes are added by Tanvir
     }
 }
 
+#mnRes_list_level_item_loading,
+#div-sub-ul-li-list,
+#mnRes_scrollDownBtn,
+#mnRes_scrollWindow,
+#copyrow_list_level_item_loading,
+#sub-ul-copyto-modallist,
+.copytoscrollbtn,
+.copytoscrollwindow,
+#copyrowS2_list_level_item_loading,
+#sub-ul-copyto-modallist_style2,
+.copytoscrollbtn_style2,
+.copytoscrollwindow_style2,
+#moverow_list_level_item_loading,
+#sub-ul-moveto-modallist,
+.movetoscrollbtn,
+.movetoscrollwindow,
+#moverowS2_list_level_item_loading,
+#sub-ul-moveto-modallist_style29,
+.movetoscrollbtn_style29,
+.movetoscrollwindow_style29,
+#mnTempd_list_level_item_loading,
+#sub_ul_mnTempd_modallist,
+.managetempd-scroll-btn,
+.managetempd-scroll-window,
+#mnTempc_list_level_item_loading,
+#sub_ul_mnTempc_modallist,
+.managetempc-scroll-btn,
+.managetempc-scroll-window,
+#mnTempb_list_level_item_loading,
+#sub_ul_mnTempb_modallist,
+.managetempb-scroll-btn,
+.managetempb-scroll-window,
+#mnTempa_list_level_item_loading,
+#sub_ul_mnTempa_modallist,
+.managetempa-scroll-btn,
+.managetempa-scroll-window,
+#opt4d_list_level_item_loading,
+#sub_ul_opt4d_modallist,
+.optfourmodald-scroll-btn,
+.optfourmodald-scroll-window,
+#opt4c_list_level_item_loading,
+#sub_ul_opt4c_modallist,
+.optfourmodalc-scroll-btn,
+.optfourmodalc-scroll-window,
+#opt4b_list_level_item_loading,
+#sub_ul_opt4b_modallist,
+.optfourmodalb-scroll-btn,
+.optfourmodalb-scroll-window,
+#opt4a_list_level_item_loading,
+#sub_ul_opt4a_modallist,
+.optfourmodala-scroll-btn,
+.optfourmodala-scroll-window,
+#level_item_loading_op2,
+#sub-ul-list,
+.myscrollbtn-op2,
+.scrollable-list-op2,
 #level_item_loading_op1,
 #sub-ul-modallist,
 .myscrollbtn-op1,

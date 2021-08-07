@@ -1330,6 +1330,15 @@
         localStorage.removeItem("emailTabShowing");
 
       }
+
+      $("#visual_system_status").css("display", "none");
+      $("#animation_system_status").css("display", "block");
+
+      setTimeout(function() { 
+          $("#visual_system_status").css("display", "block");
+          $("#animation_system_status").css("display", "none");
+      }, 4000);
+      
     </script>
 
     <!-- JS FILES -->
