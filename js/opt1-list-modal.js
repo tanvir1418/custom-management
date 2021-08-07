@@ -380,6 +380,8 @@ let copyto_submodal_div_list_id1_old = "",
 	copyto_submodal_div_list_id2_old = "",
 	copyto_submodal_div_list_id3_old = "";
 
+let oldSelectListCopyRow = "";
+
 function copyto_modalitem_click_handle(listClassName) {
 	let level_no = listClassName.match(/\d+/g);
 	if (level_no != null) {
@@ -412,6 +414,17 @@ function copyto_modalitem_click_handle(listClassName) {
 			$(copyto_submodal_div_list_id3_old).toggleClass("checkbox_hide checkbox_show");
 			copyto_submodal_div_list_id3_old = "";
 		}
+
+		if(oldSelectListCopyRow == ""){
+			$("#copyrow_list_level_item_loading").css("display", "block");
+			$("#sub-ul-copyto-modallist").css("display", "none");
+			oldSelectListCopyRow = "";
+			setTimeout(() => {
+				$("#copyrow_list_level_item_loading").css("display", "none");
+				$("#sub-ul-copyto-modallist").css("display", "block");
+			}, 1000);
+		}
+
 	}
 }
 /* New Function End */
@@ -440,6 +453,13 @@ let opt_copyto_left_list = "";
 		$(target).children(".green-check-box").toggleClass("display-none display-block");
 		$(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
 		$(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
+		
+		if(oldTarget == target){
+			oldSelectListCopyRow = "hideLoadingAnimation";
+		}else{
+			oldSelectListCopyRow = "";
+		}
+
 		oldTarget = target;
 
 		opt_copyto_left_list = target.childNodes[1].innerHTML;
@@ -611,6 +631,8 @@ let moveto_submodal_div_list_id1_old = "",
 	moveto_submodal_div_list_id2_old = "",
 	moveto_submodal_div_list_id3_old = "";
 
+let oldSelectListMoveRow = "";
+
 function moveto_modalitem_click_handle(listClassName) {
 	let level_no = listClassName.match(/\d+/g);
 	if (level_no != null) {
@@ -643,6 +665,17 @@ function moveto_modalitem_click_handle(listClassName) {
 			$(moveto_submodal_div_list_id3_old).toggleClass("checkbox_hide checkbox_show");
 			moveto_submodal_div_list_id3_old = "";
 		}
+
+		if(oldSelectListMoveRow == ""){
+			$("#moverow_list_level_item_loading").css("display", "block");
+			$("#sub-ul-moveto-modallist").css("display", "none");
+			oldSelectListMoveRow = "";
+			setTimeout(() => {
+				$("#moverow_list_level_item_loading").css("display", "none");
+				$("#sub-ul-moveto-modallist").css("display", "block");
+			}, 1000);
+		}
+
 	}
 }
 /* New Function End */
@@ -671,6 +704,13 @@ let opt_moveto_left_list = "";
 		$(target).children(".green-check-box").toggleClass("display-none display-block");
 		$(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
 		$(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
+
+		if(oldTarget == target){
+			oldSelectListMoveRow = "hideLoadingAnimation";
+		}else{
+			oldSelectListMoveRow = "";
+		}
+
 		oldTarget = target;
 
 		opt_moveto_left_list = target.childNodes[1].innerHTML;

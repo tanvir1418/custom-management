@@ -1622,6 +1622,16 @@ function IconModalClick() {
                 left: ((elementPositionMain.x) - 10)
             });
 
+            $("#copyrow_list_item_loading").css("display", "block");
+            $(".copytoscrollwindow").css("display", "none");
+            $(".copytoscrollbtn").css("display", "none");
+            
+            setTimeout(() => {
+                $("#copyrow_list_item_loading").css("display", "none");
+                $(".copytoscrollwindow").css("display", "block");
+                $(".copytoscrollbtn").css("display", "block");
+            }, 2000);
+
             $("#copyrowlist").css('display', 'block');
 
         });
@@ -1645,6 +1655,16 @@ function IconModalClick() {
                 top: ((elementPositionMain.y) + window.scrollY + 33),
                 left: ((elementPositionMain.x) - 10)
             });
+
+            $("#moverow_list_item_loading").css("display", "block");
+            $(".movetoscrollwindow").css("display", "none");
+            $(".movetoscrollbtn").css("display", "none");
+            
+            setTimeout(() => {
+                $("#moverow_list_item_loading").css("display", "none");
+                $(".movetoscrollwindow").css("display", "block");
+                $(".movetoscrollbtn").css("display", "block");
+            }, 2000);
 
             $("#moverowlist").css('display', 'block');
 
@@ -1793,6 +1813,16 @@ function IconModalClick() {
                 left: ((elementPositionMain.x) - 804)
             });
 
+            $("#copyrowS2_list_item_loading").css("display", "block");
+            $(".copytoscrollwindow_style2").css("display", "none");
+            $(".copytoscrollbtn_style2").css("display", "none");
+            
+            setTimeout(() => {
+                $("#copyrowS2_list_item_loading").css("display", "none");
+                $(".copytoscrollwindow_style2").css("display", "block");
+                $(".copytoscrollbtn_style2").css("display", "block");
+            }, 2000);
+
             $("#copyrowlist_style2").css('display', 'block');
 
         });
@@ -1816,6 +1846,16 @@ function IconModalClick() {
                 top: ((elementPositionMain.y) + window.scrollY + 62),
                 left: ((elementPositionMain.x) - 804)
             });
+
+            $("#moverowS2_list_item_loading").css("display", "block");
+            $(".movetoscrollwindow_style29").css("display", "none");
+            $(".movetoscrollbtn_style29").css("display", "none");
+            
+            setTimeout(() => {
+                $("#moverowS2_list_item_loading").css("display", "none");
+                $(".movetoscrollwindow_style29").css("display", "block");
+                $(".movetoscrollbtn_style29").css("display", "block");
+            }, 2000);
 
             $("#moverowlist_style2").css('display', 'block');
 

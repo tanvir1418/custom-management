@@ -712,8 +712,6 @@
                                     </div>
                                     <div class="op1-single-list-item-file">
                                         <div class="op1-single-list-item-file-container" id="mnDataOp1FileBox">
-                                        <!-- <div class="op1-single-list-item-file-container" id="mnDataOp1FileBox" data-toggle="modal"
-                                            data-target="#myopt1listData"> -->
                                             <img src="images/single_paper_icon.png">
                                         </div>
                                     </div>
@@ -2030,11 +2028,7 @@
                                                                     <div class="single-list-item-file">
                                                                         <div class="single-list-item-file-container"
                                                                             id="op1-first-fileColor">
-                                                                            <img src="images/single_paper_icon.png"
-                                                                                data-toggle="modal"
-                                                                                data-target="#opt4a-list-modal"
-                                                                                data-backdrop="static"
-                                                                                data-keyboard="false">
+                                                                            <img src="images/single_paper_icon.png" onclick="opt4aListModalClick()">
                                                                         </div>
                                                                     </div>
                                                                     <div class="green-tik-and-skip-link">
@@ -2072,11 +2066,7 @@
                                                                     <div class="single-list-item-file">
                                                                         <div class="single-list-item-file-container"
                                                                             id="op1-sec-fileColor">
-                                                                            <img src="images/single_paper_icon.png"
-                                                                                data-toggle="modal"
-                                                                                data-target="#opt4b-list-modal"
-                                                                                data-backdrop="static"
-                                                                                data-keyboard="false">
+                                                                            <img src="images/single_paper_icon.png"  onclick="opt4bListModalClick()">
                                                                         </div>
                                                                     </div>
                                                                     <div class="green-tik-and-skip-link">
@@ -2114,11 +2104,7 @@
                                                                     <div class="single-list-item-file">
                                                                         <div class="single-list-item-file-container"
                                                                             id="op1-third-fileColor">
-                                                                            <img src="images/single_paper_icon.png"
-                                                                                data-toggle="modal"
-                                                                                data-target="#opt4c-list-modal"
-                                                                                data-backdrop="static"
-                                                                                data-keyboard="false">
+                                                                            <img src="images/single_paper_icon.png" onclick="opt4cListModalClick()">
                                                                         </div>
                                                                     </div>
                                                                     <div class="green-tik-and-skip-link">
@@ -2156,11 +2142,7 @@
                                                                     <div class="single-list-item-file">
                                                                         <div class="single-list-item-file-container"
                                                                             id="op1-forth-fileColor">
-                                                                            <img src="images/single_paper_icon.png"
-                                                                                data-toggle="modal"
-                                                                                data-target="#opt4d-list-modal"
-                                                                                data-backdrop="static"
-                                                                                data-keyboard="false">
+                                                                            <img src="images/single_paper_icon.png" onclick="opt4dListModalClick()">
                                                                         </div>
                                                                     </div>
                                                                     <div class="green-tik-and-skip-link">
@@ -4246,10 +4228,7 @@
                                                     <div class="single-list-item-file">
                                                         <div class="single-list-item-file-container"
                                                             id="temp-first-fileColor">
-                                                            <img src="images/single_paper_icon.png"
-                                                                data-toggle="modal"
-                                                                data-target="#manage-tempa-list-modal"
-                                                                data-backdrop="static" data-keyboard="false">
+                                                            <img src="images/single_paper_icon.png" onclick="mnTempaListModalClick()">
                                                         </div>
                                                     </div>
                                                     <div class="green-tik-and-skip-link">
@@ -4283,10 +4262,7 @@
                                                     <div class="single-list-item-file">
                                                         <div class="single-list-item-file-container"
                                                             id="temp-sec-fileColor">
-                                                            <img src="images/single_paper_icon.png"
-                                                                data-toggle="modal"
-                                                                data-target="#manage-tempb-list-modal"
-                                                                data-backdrop="static" data-keyboard="false">
+                                                            <img src="images/single_paper_icon.png"  onclick="mnTempbListModalClick()">
                                                         </div>
                                                     </div>
                                                     <div class="green-tik-and-skip-link">
@@ -4320,10 +4296,7 @@
                                                     <div class="single-list-item-file">
                                                         <div class="single-list-item-file-container"
                                                             id="temp-third-fileColor">
-                                                            <img src="images/single_paper_icon.png"
-                                                                data-toggle="modal"
-                                                                data-target="#manage-tempc-list-modal"
-                                                                data-backdrop="static" data-keyboard="false">
+                                                            <img src="images/single_paper_icon.png" onclick="mnTempcListModalClick()">
                                                         </div>
                                                     </div>
                                                     <div class="green-tik-and-skip-link">
@@ -4357,10 +4330,7 @@
                                                     <div class="single-list-item-file">
                                                         <div class="single-list-item-file-container"
                                                             id="temp-forth-fileColor">
-                                                            <img src="images/single_paper_icon.png"
-                                                                data-toggle="modal"
-                                                                data-target="#manage-tempd-list-modal"
-                                                                data-backdrop="static" data-keyboard="false">
+                                                            <img src="images/single_paper_icon.png" onclick="mnTempdListModalClick()">
                                                         </div>
                                                     </div>
                                                     <div class="green-tik-and-skip-link">
@@ -9547,10 +9517,7 @@
     <!-- ========== option 1 select items modal END =============== -->
 
     <!-- ========== STYLE 2 COPY TO ROW select items modal START =============== -->
-    <!-- <div class="modal fade listData-modal" id="copyrowlist">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body"> -->
+
     <div class="wrapper-modal-list white-shad-rowing" id="copyrowlist">
         <div class="top-container">
             <div class="copy-arrow-top">
@@ -9562,11 +9529,115 @@
         <div class="weapper-list-title">
             <p>COPY THIS ROW TO</p>
         </div>
+        <div class="item-loading-wrapper" id="copyrow_list_item_loading">
+            <ul>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+            </ul> 
+        </div>
         <div class="scroll-list-box scrollable-list-op1 copytoscrollwindow">
             <ul class="copytorow-list left-list-box">
                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
             </ul>
-
+            <div class="level-item-loading-wrapper" id="copyrow_list_level_item_loading">
+                <ul class="list-one">
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                </ul>
+                <ul class="list-two">
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                </ul>
+                <ul class="list-three">
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                </ul>
+            </div>
             <div id="sub-ul-copyto-modallist">
                 <!-- get checkbox data from opt1-list-modal.JS by ASHIQ... -->
             </div>
@@ -9575,14 +9646,7 @@
             <i class="fas fa-caret-down"></i>
         </div>
     </div>
-    <!-- </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- <div class="modal fade listData-modal" id="copyrowlist_style2">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body"> -->
+
     <div class="wrapper-modal-list white-shad-rowing" id="copyrowlist_style2">
         <div class="top-container">
             <div class="copy-arrow-top">
@@ -9594,11 +9658,115 @@
         <div class="weapper-list-title">
             <p>COPY THIS ROW TO</p>
         </div>
+        <div class="item-loading-wrapper" id="copyrowS2_list_item_loading">
+            <ul>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+            </ul> 
+        </div>
         <div class="scroll-list-box scrollable-list-op1 copytoscrollwindow_style2">
             <ul class="copytorow-list_style2 left-list-box">
                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
             </ul>
-
+            <div class="level-item-loading-wrapper" id="copyrowS2_list_level_item_loading">
+                <ul class="list-one">
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                </ul>
+                <ul class="list-two">
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                </ul>
+                <ul class="list-three">
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                </ul>
+            </div>
             <div id="sub-ul-copyto-modallist_style2">
                 <!-- get checkbox data from opt1-list-modal.JS by ASHIQ... -->
             </div>
@@ -9607,17 +9775,11 @@
             <i class="fas fa-caret-down"></i>
         </div>
     </div>
-    <!-- </div>
-            </div>
-        </div>
-    </div> -->
+
     <!-- ========== STYLE 2 COPY TO ROW select items modal END =============== -->
 
     <!-- ========== STYLE 2 MOVE TO ROW select items modal START =============== -->
-    <!-- <div class="modal fade listData-modal" id="moverowlist">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body"> -->
+
     <div class="wrapper-modal-list white-shad-rowing" id="moverowlist">
         <div class="top-container">
             <div class="move-arrow-top">
@@ -9629,11 +9791,115 @@
         <div class="weapper-list-title">
             <p>MOVE THIS ROW TO</p>
         </div>
+        <div class="item-loading-wrapper" id="moverow_list_item_loading">
+            <ul>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+            </ul> 
+        </div>
         <div class="scroll-list-box scrollable-list-op1 movetoscrollwindow">
             <ul class="movetorow-list left-list-box">
                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
             </ul>
-
+            <div class="level-item-loading-wrapper" id="moverow_list_level_item_loading">
+                <ul class="list-one">
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                </ul>
+                <ul class="list-two">
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                </ul>
+                <ul class="list-three">
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                </ul>
+            </div>
             <div id="sub-ul-moveto-modallist">
                 <!-- get checkbox data from opt1-list-modal.JS by ASHIQ... -->
             </div>
@@ -9642,14 +9908,7 @@
             <i class="fas fa-caret-down"></i>
         </div>
     </div>
-    <!-- </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- <div class="modal fade listData-modal" id="moverowlist_style2">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body"> -->
+
     <div class="wrapper-modal-list white-shad-rowing" id="moverowlist_style2">
         <div class="top-container">
             <div class="move-arrow-top">
@@ -9661,11 +9920,115 @@
         <div class="weapper-list-title">
             <p>MOVE THIS ROW TO</p>
         </div>
+        <div class="item-loading-wrapper" id="moverowS2_list_item_loading">
+            <ul>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+                <li class="item-loading-animation item-loading"></li>
+            </ul> 
+        </div>
         <div class="scroll-list-box scrollable-list-op1 movetoscrollwindow_style29">
             <ul class="movetorow-list_style29 left-list-box">
                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
             </ul>
-
+            <div class="level-item-loading-wrapper" id="moverowS2_list_level_item_loading">
+                <ul class="list-one">
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                </ul>
+                <ul class="list-two">
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                </ul>
+                <ul class="list-three">
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                    <li class="item-loading-animation item-loading"></li>
+                </ul>
+            </div>
             <div id="sub-ul-moveto-modallist_style29">
                 <!-- get checkbox data from opt1-list-modal.JS by ASHIQ... -->
             </div>
@@ -9674,10 +10037,7 @@
             <i class="fas fa-caret-down"></i>
         </div>
     </div>
-    <!-- </div>
-            </div>
-        </div>
-    </div> -->
+
     <!-- ========== STYLE 2 MOVE TO ROW select items modal END =============== -->
 
     <!-- ============= Manage Result ICON Modal Pop-Ups Starts ============= -->
@@ -11141,7 +11501,7 @@
     <!-- ======= STYLE 2 MOVE TO ROW select items delete modal END =========== -->
 
     <!-- ===-=-=-=- MANAGE TEMPLATE LIST1 MODAL START ======-===== -->
-    <div class="modal fade listData-modal" id="manage-tempa-list-modal">
+    <div class="modal fade listData-modal" data-backdrop="static" data-keyboard="false" id="manage-tempa-list-modal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -11152,12 +11512,116 @@
                             </button>
                             <p>LIST 1</p>
                         </div>
+                        <div class="item-loading-wrapper" id="mnTempa_list_item_loading">
+                            <ul>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                            </ul> 
+                        </div>
                         <div class="scroll-list-box scrollable-list-op1 managetempa-scroll-window">
                             <ul class="managetempa-list left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
-
-                            <div class="sub-ul-managetemp-modallist">
+                            <div class="level-item-loading-wrapper" id="mnTempa_list_level_item_loading">
+                                <ul class="list-one">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-two">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-three">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                            </div>
+                            <div class="sub-ul-managetemp-modallist" id="sub_ul_mnTempa_modallist">
                                 <!-- get checkbox data from opt1-list-modal.JS by ASHIQ... -->
                             </div>
                         </div>
@@ -11211,7 +11675,7 @@
     <!-- ======= MANAGE TEMPLATE LIST1 MODA delete modal END =========== -->
 
     <!-- ===-=-=-=- MANAGE TEMPLATE LIST2 MODAL START ======-===== -->
-    <div class="modal fade listData-modal" id="manage-tempb-list-modal">
+    <div class="modal fade listData-modal" data-backdrop="static" data-keyboard="false" id="manage-tempb-list-modal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -11222,12 +11686,116 @@
                             </button>
                             <p>LIST 2</p>
                         </div>
+                        <div class="item-loading-wrapper" id="mnTempb_list_item_loading">
+                            <ul>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                            </ul> 
+                        </div>
                         <div class="scroll-list-box scrollable-list-op1 managetempb-scroll-window">
                             <ul class="managetempb-list left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
-
-                            <div class="sub-ul-managetemp-modallist">
+                            <div class="level-item-loading-wrapper" id="mnTempb_list_level_item_loading">
+                                <ul class="list-one">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-two">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-three">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                            </div>
+                            <div class="sub-ul-managetemp-modallist" id="sub_ul_mnTempb_modallist">
                                 <!-- get checkbox data from opt1-list-modal.JS by ASHIQ... -->
                             </div>
                         </div>
@@ -11281,7 +11849,7 @@
     <!-- ======= MANAGE TEMPLATE LIST2 MODA delete modal END =========== -->
 
     <!-- ===-=-=-=- MANAGE TEMPLATE LIST3 MODAL START ======-===== -->
-    <div class="modal fade listData-modal" id="manage-tempc-list-modal">
+    <div class="modal fade listData-modal" data-backdrop="static" data-keyboard="false" id="manage-tempc-list-modal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -11292,12 +11860,116 @@
                             </button>
                             <p>LIST 3</p>
                         </div>
+                        <div class="item-loading-wrapper" id="mnTempc_list_item_loading">
+                            <ul>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                            </ul> 
+                        </div>
                         <div class="scroll-list-box scrollable-list-op1 managetempc-scroll-window">
                             <ul class="managetempc-list left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
-
-                            <div class="sub-ul-managetemp-modallist">
+                            <div class="level-item-loading-wrapper" id="mnTempc_list_level_item_loading">
+                                <ul class="list-one">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-two">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-three">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                            </div>
+                            <div class="sub-ul-managetemp-modallist" id="sub_ul_mnTempc_modallist">
                                 <!-- get checkbox data from opt1-list-modal.JS by ASHIQ... -->
                             </div>
                         </div>
@@ -11351,7 +12023,7 @@
     <!-- ======= MANAGE TEMPLATE LIST3 MODAl delete modal END =========== -->
 
     <!-- ===-=-=-=- MANAGE TEMPLATE LIST4 MODAL START ======-===== -->
-    <div class="modal fade listData-modal" id="manage-tempd-list-modal">
+    <div class="modal fade listData-modal" data-backdrop="static" data-keyboard="false" id="manage-tempd-list-modal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -11362,12 +12034,116 @@
                             </button>
                             <p>LIST 4</p>
                         </div>
+                        <div class="item-loading-wrapper" id="mnTempd_list_item_loading">
+                            <ul>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                            </ul> 
+                        </div>
                         <div class="scroll-list-box scrollable-list-op1 managetempd-scroll-window">
                             <ul class="managetempd-list left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
-
-                            <div class="sub-ul-managetemp-modallist">
+                            <div class="level-item-loading-wrapper" id="mnTempd_list_level_item_loading">
+                                <ul class="list-one">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-two">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-three">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                            </div>
+                            <div class="sub-ul-managetemp-modallist" id="sub_ul_mnTempd_modallist">
                                 <!-- get checkbox data from opt1-list-modal.JS by ASHIQ... -->
                             </div>
                         </div>
@@ -11580,7 +12356,7 @@
     <!-- =========JUST THANK Modal Ends========= -->
 
     <!-- ===-=-=-=- OPTION 4 LIST1 MODAL START opt4a-list-modal  ======-===== -->
-    <div class="modal fade listData-modal" id="opt4a-list-modal">
+    <div class="modal fade listData-modal" data-backdrop="static" data-keyboard="false" id="opt4a-list-modal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -11591,12 +12367,116 @@
                             </button>
                             <p>LIST 1</p>
                         </div>
+                        <div class="item-loading-wrapper" id="opt4a_list_item_loading">
+                            <ul>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                            </ul> 
+                        </div>
                         <div class="scroll-list-box scrollable-list-op1 optfourmodala-scroll-window">
                             <ul class="optfourmodala-list left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
-
-                            <div class="sub-ul-optfourmodal-modallist">
+                            <div class="level-item-loading-wrapper" id="opt4a_list_level_item_loading">
+                                <ul class="list-one">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-two">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-three">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                            </div>
+                            <div class="sub-ul-optfourmodal-modallist" id="sub_ul_opt4a_modallist">
                                 <!-- get checkbox data from opt1-list-modal.JS by ASHIQ... -->
                             </div>
                         </div>
@@ -11650,7 +12530,7 @@
     <!-- ======= OPTION 4 LIST1 MODAL delete modal END =========== -->
 
     <!-- ===-=-=-=- OPTION 4 LIST2 MODAL START opt4b-list-modal  ======-===== -->
-    <div class="modal fade listData-modal" id="opt4b-list-modal">
+    <div class="modal fade listData-modal" data-backdrop="static" data-keyboard="false" id="opt4b-list-modal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -11661,12 +12541,116 @@
                             </button>
                             <p>LIST 2</p>
                         </div>
+                        <div class="item-loading-wrapper" id="opt4b_list_item_loading">
+                            <ul>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                            </ul> 
+                        </div>
                         <div class="scroll-list-box scrollable-list-op1 optfourmodalb-scroll-window">
                             <ul class="optfourmodalb-list left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
-
-                            <div class="sub-ul-optfourmodal-modallist">
+                            <div class="level-item-loading-wrapper" id="opt4b_list_level_item_loading">
+                                <ul class="list-one">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-two">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-three">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                            </div>
+                            <div class="sub-ul-optfourmodal-modallist" id="sub_ul_opt4b_modallist">
                                 <!-- get checkbox data from opt1-list-modal.JS by ASHIQ... -->
                             </div>
                         </div>
@@ -11719,8 +12703,8 @@
     </div>
     <!-- ======= OPTION 4 LIST2 MODAL delete modal END =========== -->
 
-    <!-- ===-=-=-=- OPTION 4 LIST3 MODAL START opt4a-list-modal  ======-===== -->
-    <div class="modal fade listData-modal" id="opt4c-list-modal">
+    <!-- ===-=-=-=- OPTION 4 LIST3 MODAL START opt4c-list-modal  ======-===== -->
+    <div class="modal fade listData-modal" data-backdrop="static" data-keyboard="false" id="opt4c-list-modal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -11731,12 +12715,116 @@
                             </button>
                             <p>LIST 3</p>
                         </div>
+                        <div class="item-loading-wrapper" id="opt4c_list_item_loading">
+                            <ul>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                            </ul> 
+                        </div>
                         <div class="scroll-list-box scrollable-list-op1 optfourmodalc-scroll-window">
                             <ul class="optfourmodalc-list left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
-
-                            <div class="sub-ul-optfourmodal-modallist">
+                            <div class="level-item-loading-wrapper" id="opt4c_list_level_item_loading">
+                                <ul class="list-one">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-two">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-three">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                            </div>
+                            <div class="sub-ul-optfourmodal-modallist" id="sub_ul_opt4c_modallist">
                                 <!-- get checkbox data from opt1-list-modal.JS by ASHIQ... -->
                             </div>
                         </div>
@@ -11789,8 +12877,8 @@
     </div>
     <!-- ======= OPTION 4 LIST3 MODAL delete modal END =========== -->
 
-    <!-- ===-=-=-=- OPTION 4 LIST4 MODAL START opt4a-list-modal  ======-===== -->
-    <div class="modal fade listData-modal" id="opt4d-list-modal">
+    <!-- ===-=-=-=- OPTION 4 LIST4 MODAL START opt4d-list-modal  ======-===== -->
+    <div class="modal fade listData-modal" data-backdrop="static" data-keyboard="false" id="opt4d-list-modal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -11801,12 +12889,116 @@
                             </button>
                             <p>LIST 4</p>
                         </div>
+                        <div class="item-loading-wrapper" id="opt4d_list_item_loading">
+                            <ul>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                                <li class="item-loading-animation item-loading"></li>
+                            </ul> 
+                        </div>
                         <div class="scroll-list-box scrollable-list-op1 optfourmodald-scroll-window">
                             <ul class="optfourmodald-list left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
-
-                            <div class="sub-ul-optfourmodal-modallist">
+                            <div class="level-item-loading-wrapper" id="opt4d_list_level_item_loading">
+                                <ul class="list-one">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-two">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                                <ul class="list-three">
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                    <li class="item-loading-animation item-loading"></li>
+                                </ul>
+                            </div>
+                            <div class="sub-ul-optfourmodal-modallist" id="sub_ul_opt4d_modallist">
                                 <!-- get checkbox data from opt1-list-modal.JS by ASHIQ... -->
                             </div>
                         </div>

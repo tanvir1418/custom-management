@@ -102,6 +102,8 @@ let copyto_submodal_div_list_id1_style2_old = "",
     copyto_submodal_div_list_id2_style2_old = "",
     copyto_submodal_div_list_id3_style2_old = "";
 
+let oldSelectListCopyRowS2 = "";
+
 function copyto_modalitem_click_handle_style2(listClassName) {
     let level_no = listClassName.match(/\d+/g);
     if (level_no != null) {
@@ -134,6 +136,17 @@ function copyto_modalitem_click_handle_style2(listClassName) {
             $(copyto_submodal_div_list_id3_style2_old).toggleClass("checkbox_hide checkbox_show");
             copyto_submodal_div_list_id3_style2_old = "";
         }
+
+        if(oldSelectListCopyRowS2 == ""){
+			$("#copyrowS2_list_level_item_loading").css("display", "block");
+			$("#sub-ul-copyto-modallist_style2").css("display", "none");
+			oldSelectListCopyRowS2 = "";
+			setTimeout(() => {
+				$("#copyrowS2_list_level_item_loading").css("display", "none");
+				$("#sub-ul-copyto-modallist_style2").css("display", "block");
+			}, 1000);
+		}
+
     }
 }
 /* New Function End */
@@ -162,6 +175,13 @@ let opt_copyto_left_list_style2 = "";
         $(target).children(".green-check-box").toggleClass("display-none display-block");
         $(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
         $(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
+        
+        if(oldTarget == target){
+			oldSelectListCopyRowS2 = "hideLoadingAnimation";
+		}else{
+			oldSelectListCopyRowS2 = "";
+		}
+
         oldTarget = target;
 
         opt_copyto_left_list_style2 = target.childNodes[1].innerHTML;
@@ -332,6 +352,8 @@ let moveto_submodal_div_list_id1_style29_old = "",
     moveto_submodal_div_list_id2_style29_old = "",
     moveto_submodal_div_list_id3_style29_old = "";
 
+let oldSelectListMoveRowS2 = "";
+
 function moveto_modalitem_click_handle_style29(listClassName) {
     let level_no = listClassName.match(/\d+/g);
     if (level_no != null) {
@@ -364,6 +386,17 @@ function moveto_modalitem_click_handle_style29(listClassName) {
             $(moveto_submodal_div_list_id3_style29_old).toggleClass("checkbox_hide checkbox_show");
             moveto_submodal_div_list_id3_style29_old = "";
         }
+
+        if(oldSelectListMoveRowS2 == ""){
+			$("#moverowS2_list_level_item_loading").css("display", "block");
+			$("#sub-ul-moveto-modallist_style29").css("display", "none");
+			oldSelectListMoveRowS2 = "";
+			setTimeout(() => {
+				$("#moverowS2_list_level_item_loading").css("display", "none");
+				$("#sub-ul-moveto-modallist_style29").css("display", "block");
+			}, 1000);
+		}
+
     }
 }
 /* New Function End */
@@ -392,6 +425,13 @@ let opt_moveto_left_list_style29 = "";
         $(target).children(".green-check-box").toggleClass("display-none display-block");
         $(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
         $(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
+        
+        if(oldTarget == target){
+			oldSelectListMoveRowS2 = "hideLoadingAnimation";
+		}else{
+			oldSelectListMoveRowS2 = "";
+		}
+        
         oldTarget = target;
 
         opt_moveto_left_list_style29 = target.childNodes[1].innerHTML;
