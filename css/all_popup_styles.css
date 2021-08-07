@@ -2457,6 +2457,38 @@ Bottom codes are added by Tanvir
 .level-item-loading-wrapper ul.list-three{
     margin-left: 900px;
 }
+
+#table-box-404 .level-item-loading-wrapper ul.list-one{
+    margin-left: 380px;
+}
+#table-box-404 .level-item-loading-wrapper ul.list-two{
+    margin-left: 760px;
+}
+#table-box-404 .level-item-loading-wrapper ul.list-three{
+    margin-left: 1140px;
+}
+@media screen and (max-width: 1800px) {
+    #table-box-404 .level-item-loading-wrapper ul.list-one{
+        margin-left: 340px;
+    }
+    #table-box-404 .level-item-loading-wrapper ul.list-two{
+        margin-left: 680px;
+    }
+    #table-box-404 .level-item-loading-wrapper ul.list-three{
+        margin-left: 1020px;
+    }
+}
+@media screen and (max-width: 1460px) {
+    #table-box-404 .level-item-loading-wrapper ul.list-one{
+        margin-left: 300px;
+    }
+    #table-box-404 .level-item-loading-wrapper ul.list-two{
+        margin-left: 600px;
+    }
+    #table-box-404 .level-item-loading-wrapper ul.list-three{
+        margin-left: 900px;
+    }
+}
 .level-item-loading-wrapper ul li{
     position: relative;
     display: flex;
@@ -2494,6 +2526,10 @@ Bottom codes are added by Tanvir
     }
 }
 
+#mnRes_list_level_item_loading,
+#div-sub-ul-li-list,
+#mnRes_scrollDownBtn,
+#mnRes_scrollWindow,
 #copyrow_list_level_item_loading,
 #sub-ul-copyto-modallist,
 .copytoscrollbtn,

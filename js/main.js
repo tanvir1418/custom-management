@@ -153,6 +153,17 @@ for (var i = 0; i < li_tabs.length; i++) {
 			if (current_tab_value == "tab_4") {
 				$("#dropBtnModal").css('display', 'none');
 				$(".content").addClass("sfsf");
+
+				$("#mnRes_list_item_loading").css("display", "block");
+				$("#mnRes_scrollWindow").css("display", "none");
+				$("#mnRes_scrollDownBtn").css("display", "none");
+				
+				setTimeout(() => {
+					$("#mnRes_list_item_loading").css("display", "none");
+					$("#mnRes_scrollWindow").css("display", "block");
+					$("#mnRes_scrollDownBtn").css("display", "block");
+				}, 2000);
+
 			}
 			if (current_tab_value != "tab_4") {
 				$(".content").removeClass("sfsf");

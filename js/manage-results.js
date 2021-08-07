@@ -109,6 +109,8 @@ let sub_ul_list_id1_old = "",
     sub_ul_list_id2_old = "",
     sub_ul_list_id3_old = "";
 
+let oldSelectListMnRes = "";
+
 function item_li_click_handle(listClassName) {
     let level_no = listClassName.match(/\d+/g)[1];
     if (level_no != null) {
@@ -141,6 +143,17 @@ function item_li_click_handle(listClassName) {
             $(sub_ul_list_id3_old).toggle();
             sub_ul_list_id3_old = "";
         }
+
+        if(oldSelectListMnRes == ""){
+			$("#mnRes_list_level_item_loading").css("display", "block");
+			$("#div-sub-ul-li-list").css("display", "none");
+			oldSelectListMnRes = "";
+			setTimeout(() => {
+				$("#mnRes_list_level_item_loading").css("display", "none");
+				$("#div-sub-ul-li-list").css("display", "block");
+			}, 1000);
+		}
+
     }
 }
 /* New Function End */
@@ -169,6 +182,13 @@ var left_list_data = "";
         $(target).children(".tik-box").toggleClass("display-none display-block");
         $(target).children(".arrow-404").toggleClass("arrow-404-background-color-1 arrow-404-background-color-2");
         $(target).children(".arrow-404").children(".fa-caret-right").toggleClass("arrow-404-i-color-1 arrow-404-i-color-2");
+
+        if(oldTarget == target){
+            oldSelectListMnRes = "hideLoadingAnimation";
+        }else{
+            oldSelectListMnRes = "";
+        }
+
         oldTarget = target;
 
         left_list_data = target.childNodes[1].innerHTML;
@@ -225,6 +245,16 @@ $(document).ready(function () {
 });
 
 /* ================ Scroll Down END ============== */
+
+// $("#mnRes_list_item_loading").css("display", "block");
+// $("#mnRes_scrollWindow").css("display", "none");
+// $("#mnRes_scrollDownBtn").css("display", "none");
+
+setTimeout(() => {
+    $("#mnRes_list_item_loading").css("display", "none");
+    $("#mnRes_scrollWindow").css("display", "block");
+    $("#mnRes_scrollDownBtn").css("display", "block");
+}, 4000);
 
 // MANAGE RESULTS list item end
 
