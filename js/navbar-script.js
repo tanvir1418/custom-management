@@ -139,9 +139,14 @@ function linkPolicy() {
 }
 
 function loggingOut() {
-    // let loginCondition = localStorage.setItem("loginStatus", "");
-    localStorage.removeItem('loginStatus');
-    window.location.href = "index.html";
+    $('#submitting_Info').modal('show');
+	$("#submitting_Info .submit-title").html("Logging out...");
+    $("#submitting_file_info").html("");
+	setTimeout(function() { 
+		$('#submitting_Info').modal('hide');
+		localStorage.removeItem('loginStatus');
+        window.location.href = "index.html";
+	}, 4000);
 }
 
 function gotoSystemStatus() {
