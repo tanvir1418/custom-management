@@ -1738,6 +1738,10 @@ function saveAccountInfo(){
 	$("#main_acSave").css("display", "none");
     $("#loading_acSave").css("display", "block");
 
+	setTimeout(function() { 
+		$("#submitting_file_info").html("Finishing...");
+	}, 2000);
+
     setTimeout(function() { 
         $('#submitting_Info').modal('hide');
 		$("#loading_acSave").css("display", "none");
@@ -1761,6 +1765,9 @@ $(".toggle-password").click(function () {
 function controlGenerateBtn(){
 	$("#submitting_file_info").html("Submitting information...");
 	$('#submitting_Info').modal('show');
+	setTimeout(function() { 
+        $("#submitting_file_info").html("Finishing...");
+    }, 2000);
     setTimeout(function() { 
         $('#submitting_Info').modal('hide');
 

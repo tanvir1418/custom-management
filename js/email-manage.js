@@ -409,6 +409,10 @@ function submitContactEmail(){
 
     $("#main_submitBtn").css("display", "none");
     $("#loading_submitBtn").css("display", "block");
+
+    setTimeout(function() { 
+		$("#submitting_file_info").html("Finishing...");
+	}, 2000);
     
 
     setTimeout(function() { 

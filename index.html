@@ -374,6 +374,11 @@
         // Submit Button Controlling (Loading Popup and Thank You Modal)
         function submitRecoveryEmail(){
             $('#submitting_Info').modal('show');
+            
+            setTimeout(function() { 
+		        $("#submitting_file_info").html("Finishing...");
+	        }, 2000);
+            
             setTimeout(function() { 
                 $('#submitting_Info').modal('hide');
 
