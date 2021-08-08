@@ -274,9 +274,22 @@ function manageAlertsIconHandling() {
   }
 }
 
-
+let targetMnAlertSaveBtn = "";
 function saveManageAlertRow(globalThis){
+  targetMnAlertSaveBtn = globalThis.path[3].id;
+  $("#mnAlert_confirm_modal #mnAlert_confirm_header p").html("SAVE DETAILS");
+  $("#mnAlert_confirm_modal #mnAlert_confirm_deatis p").html("Confirm to save details?");
+  $('#mnAlert_confirm_modal').modal('show');
+}
 
+// $('#universal_confirm_modal').on('hide.bs.modal', function (e) {
+// 	$('body').removeClass("modal-force-mnAlert-extra");
+// });
+
+function manageAlertAfterConfirmBtn(){
+  $('#mnAlert_confirm_modal').modal('hide');
+
+  $('body').addClass("modal-force-mnAlert-extra");
   $("#submitting_file_info").html("Submitting row details...");
 	$('#submitting_Info').modal('show');
 
@@ -284,11 +297,11 @@ function saveManageAlertRow(globalThis){
     $("#submitting_file_info").html("Finishing...");
   }, 2000);
 
-  let targetSaveBtn = globalThis.path[3].id;
-  let initStateRowBtn = $(`#${targetSaveBtn} .reset-save-btn .mnAlertSave`).html();
-	$(`#${targetSaveBtn} .reset-save-btn .mnAlertSave`).html(' <i class="fa fa-spinner fa-spin"></i> ....');
-	$(`#${targetSaveBtn} .reset-save-btn .mnAlertSave`).addClass('disabled');
-	let $thisSaveBtn = $(`#${targetSaveBtn} .reset-save-btn .mnAlertSave`);
+  
+  let initStateRowBtn = $(`#${targetMnAlertSaveBtn} .reset-save-btn .mnAlertSave`).html();
+	$(`#${targetMnAlertSaveBtn} .reset-save-btn .mnAlertSave`).html(' <i class="fa fa-spinner fa-spin"></i> ....');
+	$(`#${targetMnAlertSaveBtn} .reset-save-btn .mnAlertSave`).addClass('disabled');
+	let $thisSaveBtn = $(`#${targetMnAlertSaveBtn} .reset-save-btn .mnAlertSave`);
 	setTimeout(function() {
 		$thisSaveBtn.removeClass('disabled');
 		$thisSaveBtn.html(initStateRowBtn);
@@ -297,13 +310,11 @@ function saveManageAlertRow(globalThis){
   setTimeout(function() { 
       $('#submitting_Info').modal('hide');
 
-      $('body').addClass("modal-force-mnAlert-extra");
-      $("#universal_confirm_modal #confirm_header p").html("SAVE DETAILS");
-      $("#universal_confirm_modal #confirm_deatis p").html("Confirm to save details?");
-      $('#universal_confirm_modal').modal('show');
+      $('body').removeClass("modal-force-mnAlert-extra");
+
+      $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
+	    $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
+	    $('#universalThankDraftModal').modal('show');
+
   }, 4000);
 }
-
-$('#universal_confirm_modal').on('hide.bs.modal', function (e) {
-	$('body').removeClass("modal-force-mnAlert-extra");
-});

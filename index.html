@@ -208,9 +208,11 @@
                             <span toggle="#passwordField" class="fa fa-fw fa-eye password-field-icon toggle-password"></span>
                         </div>
                         <div class="row button-box d-flex">
-                            <a class="reset" href="index.html"id="resetBtn">Reset</a>
-                            <input class="ml-auto login" type="submit" value="LOGIN" id="loginBtn"/>
-                            <input class="ml-auto login" type="submit" value="REGISTER" id="registerBtn" />
+                            <a class="reset" id="resetBtn">Reset</a>
+                            <!-- <input class="ml-auto login" type="submit" value="LOGIN" id="loginBtn"/> -->
+                            <button class="ml-auto login" type="submit" id="loginBtn">LOGIN</button>
+                            <!-- <input class="ml-auto login" type="submit" value="REGISTER" id="registerBtn" /> -->
+                            <button class="ml-auto login" type="submit" id="registerBtn">REGISTER</button>
                         </div>
                         <div class="forget-pass">
                             <span data-toggle="modal" data-target="#forgotPass">Forgot password?</span>
@@ -333,25 +335,29 @@
 
         $("#registerBtn").click(function (event) {
             event.preventDefault();
-            localStorage.setItem("currentUser", "");
-            localStorage.setItem("loginStatus", "NOT_LOGGED");
-            localStorage.setItem("manageTabVisibility", "showAccount");
-            window.location.href = "main.html";
+            setTimeout(function() {
+                localStorage.setItem("currentUser", "");
+                localStorage.setItem("loginStatus", "NOT_LOGGED");
+                localStorage.setItem("manageTabVisibility", "showAccount");
+                window.location.href = "main.html";
+            }, 2000);
         });
 
         $("#loginBtn").click(function (event) {
             event.preventDefault();
-            localStorage.setItem("currentUser", usernameIndex.value);
-            // localStorage.setItem("loginStatus", "LOGGED_IN");
-            localStorage.setItem("manageTabVisibility", "showData");
-            usernameIndex.value = "";
-            passwordIndex.value = "";
-            if(termsPageCondition == "hideTermsPage"){
-                window.location.href = "main.html";
-                localStorage.setItem("loginStatus", "LOGGED_IN");
-            }else{
-                window.location.href = "termsconditions.html";
-            }
+            setTimeout(function() {
+                localStorage.setItem("currentUser", usernameIndex.value);
+                // localStorage.setItem("loginStatus", "LOGGED_IN");
+                localStorage.setItem("manageTabVisibility", "showData");
+                usernameIndex.value = "";
+                passwordIndex.value = "";
+                if(termsPageCondition == "hideTermsPage"){
+                    window.location.href = "main.html";
+                    localStorage.setItem("loginStatus", "LOGGED_IN");
+                }else{
+                    window.location.href = "termsconditions.html";
+                }
+            }, 2000);
         });
         $("#resetBtn").click(function (event) {
             event.preventDefault();
@@ -394,6 +400,28 @@
         }
 
         rotateLoadingBar('.bar-animation');
+
+        $("#loginBtn").click(function() {
+            let initState = $(this).html();
+            $(this).html('<i class="fa fa-spinner fa-spin"></i> LOGIN');
+            $(this).addClass('disabled');
+            let $this = $(this);
+            setTimeout(function() {
+                $this.removeClass('disabled');
+                $this.html(initState);
+            }, 2000);
+        });
+
+        $("#registerBtn").click(function() {
+            let initState = $(this).html();
+            $(this).html('<i class="fa fa-spinner fa-spin"></i> REGISTER');
+            $(this).addClass('disabled');
+            let $this = $(this);
+            setTimeout(function() {
+                $this.removeClass('disabled');
+                $this.html(initState);
+            }, 2000);
+        });
 
         // $('#submitting_Info').on('show.bs.modal', function (e) {
 	    //     $('body').addClass("modal-force-recovery-email");
