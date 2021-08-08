@@ -711,15 +711,14 @@ function saveDraftLoadingThankOp4(){
 
   // Option 4 submitting draft information
   let $targetingTextSubmit = $("#submitting_file_info");
-  $targetingTextSubmit.html("Submitting section 1 information...");
+  $targetingTextSubmit.html("Submitting sample 1 information...");
   let submitFileInfo = [ 
-          "Submitting section 2 information...",
-          "Submitting section 3 information...", 
-          "Submitting section 4 information...",
-          "Submitting section 5 information...",
+          "Submitting sample 2 information...",
+          "Submitting sample 3 information...", 
+          "Submitting sample 4 information...",
           "Finishing..."];
 
-  for (let i = 1; i <= 5; ++i) {
+  for (let i = 1; i <= 4; ++i) {
     (function(index) {
       setTimeout(function() { 
         $targetingTextSubmit.html(submitFileInfo[index-1]);
@@ -730,7 +729,7 @@ function saveDraftLoadingThankOp4(){
   setTimeout(function() { 
     $('#submitting_Info').modal('hide');
     $('#saveDraftThankYouModal').modal('show');
-  }, 12000);
+  }, 10000);
 
 }
 
@@ -742,5 +741,5 @@ $(".btn-save-draft").click(function() {
   setTimeout(function() {
       $this.removeClass('disabled');
       $this.html(initState);
-  }, 12000);
+  }, 10000);
 });

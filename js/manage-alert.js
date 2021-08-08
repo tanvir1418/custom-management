@@ -280,6 +280,10 @@ function saveManageAlertRow(globalThis){
   $("#submitting_file_info").html("Submitting row details...");
 	$('#submitting_Info').modal('show');
 
+  setTimeout(function() { 
+    $("#submitting_file_info").html("Finishing...");
+  }, 2000);
+
   let targetSaveBtn = globalThis.path[3].id;
   let initStateRowBtn = $(`#${targetSaveBtn} .reset-save-btn .mnAlertSave`).html();
 	$(`#${targetSaveBtn} .reset-save-btn .mnAlertSave`).html(' <i class="fa fa-spinner fa-spin"></i> ....');

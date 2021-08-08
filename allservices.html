@@ -37,7 +37,7 @@
                 and scrolls...</p>
         </div>
         <div class="nav-items d-flex">
-            <div class="icon-box other-page45">
+            <div class="icon-box">
                 <span class="msg45" tooltip="Email Options" flow="down">
                     <i class="icon fas fa-envelope" onclick="checkMailIcon()"></i>
                 </span>
@@ -691,6 +691,24 @@
         </div>
     </div>
     <!-- Login is required Modal start -->
+    <!-- Submit Draft Info Modal start -->
+  <div class="modal fade submit-draft-info" data-backdrop="static" data-keyboard="false" id="submitting_Info">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="submit-info-container">
+                    <p class="submit-title">Submitting...</p>
+                    <div class="loading-bar">
+                        <div class="bar-animation"></div>
+                    </div>
+                    <p id="submitting_file_info">Submitting contact support</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- Submit Draft Info Modal ends -->
+
     <script src="js/jquery.js"></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script>

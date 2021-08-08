@@ -2833,15 +2833,14 @@ function saveDraftLoadingThankMnTemp(){
 
   // Option 4 submitting draft information
   let $targetingTextSubmit = $("#submitting_file_info");
-  $targetingTextSubmit.html("Submitting template section 1 information...");
+  $targetingTextSubmit.html("Submitting template sample 1 information...");
   let submitFileInfo = [ 
-          "Submitting template section 2 information...",
-          "Submitting template section 3 information...", 
-          "Submitting template section 4 information...",
-          "Submitting template section 5 information...",
+          "Submitting template sample 2 information...",
+          "Submitting template sample 3 information...", 
+          "Submitting template sample 4 information...",
           "Finishing..."];
 
-  for (let i = 1; i <= 5; ++i) {
+  for (let i = 1; i <= 4; ++i) {
     (function(index) {
       setTimeout(function() { 
         $targetingTextSubmit.html(submitFileInfo[index-1]);
@@ -2852,7 +2851,7 @@ function saveDraftLoadingThankMnTemp(){
   setTimeout(function() { 
     $('#submitting_Info').modal('hide');
     $('#saveDraftThankYouModal').modal('show');
-  }, 12000);
+  }, 10000);
 
 }
 

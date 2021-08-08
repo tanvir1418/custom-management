@@ -1383,6 +1383,16 @@ $("#userAvatar").click(function () {
 
 	$(".content .tab_content").hide();
 	$(".content .tab_content:nth-child(1)").show();
+
+	$("#dropBtnModal").css('display', 'none');
+
+	$("#account_form_loading").css('display', 'block');
+	$("#account_form_content").css('display', 'none');
+
+	setTimeout(() => {
+		$("#account_form_loading").css('display', 'none');
+		$("#account_form_content").css('display', 'block');
+	}, 2000);
 });
 
 // Bootstrap Tooltip Enable Function (Manage Result Table Tooltips)
@@ -1575,6 +1585,50 @@ function chartDispConfirmButton() {
 }
 
 function showConfirmSample4StartBtn() {
+	// $('body').addClass("modal-force-open");
+	// $('#submitting_Info').modal('show');
+
+	// let initStateBtn = $(".btn-save-start").html();
+	// $(".btn-save-start").html('<i class="fa fa-spinner fa-spin"></i> Submitting...');
+	// $(".btn-save-start").addClass('disabled');
+	// let $thisBtn = $(".btn-save-start");
+	// setTimeout(function() {
+	// 	$thisBtn.removeClass('disabled');
+	// 	$thisBtn.html(initStateBtn);
+	// }, 10000);
+
+	// // Option 4 save start information
+	// let $targetingTextSubmit = $("#submitting_file_info");
+	// $targetingTextSubmit.html("Saving sample 1 information...");
+	// let submitFileInfo = [ 
+	// 		"Saving sample 2 information...",
+	// 		"Saving sample 3 information...", 
+	// 		"Saving sample 4 information...",
+	// 		"Finishing..."];
+  
+	// for (let i = 1; i <= 4; ++i) {
+	//   (function(index) {
+	// 	setTimeout(function() { 
+	// 	  $targetingTextSubmit.html(submitFileInfo[index-1]);
+	// 	}, i * 2000);
+	//   })(i);
+	// }
+	
+    // setTimeout(function() { 
+    //     $('#submitting_Info').modal('hide');
+	// 	$('body').removeClass("modal-force-open");
+
+    //     $('#sample4SaveStart_confirm_modal').modal('show');
+    // }, 10000);
+	$('#sample4SaveStart_confirm_modal').modal('show');
+}
+
+function sample4StartCancelBtn() {
+	$('#mnTemp_saveStart').modal('show');
+	$('body').addClass("modal-force-open-sample4");
+}
+
+function sample4StartConfirmBtn() {
 	$('body').addClass("modal-force-open");
 	$('#submitting_Info').modal('show');
 
@@ -1608,19 +1662,15 @@ function showConfirmSample4StartBtn() {
         $('#submitting_Info').modal('hide');
 		$('body').removeClass("modal-force-open");
 
-        $('#sample4SaveStart_confirm_modal').modal('show');
-    }, 10000);
-}
-
-function sample4StartCancelBtn() {
-	$('#mnTemp_saveStart').modal('show');
-	$('body').addClass("modal-force-open-sample4");
-}
-
-function sample4StartConfirmBtn() {
-	$("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
-	$("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
-	$('#universalThankDraftModal').modal('show');
+        $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
+		$("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
+		$('#universalThankDraftModal').modal('show');
+    
+	}, 10000);
+	
+	// $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
+	// $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
+	// $('#universalThankDraftModal').modal('show');
 }
 
 $('#mnTemp_saveStart').on('show.bs.modal', function (e) {
@@ -1688,6 +1738,10 @@ function saveAccountInfo(){
 	$("#main_acSave").css("display", "none");
     $("#loading_acSave").css("display", "block");
 
+	setTimeout(function() { 
+		$("#submitting_file_info").html("Finishing...");
+	}, 2000);
+
     setTimeout(function() { 
         $('#submitting_Info').modal('hide');
 		$("#loading_acSave").css("display", "none");
@@ -1711,6 +1765,9 @@ $(".toggle-password").click(function () {
 function controlGenerateBtn(){
 	$("#submitting_file_info").html("Submitting information...");
 	$('#submitting_Info').modal('show');
+	setTimeout(function() { 
+        $("#submitting_file_info").html("Finishing...");
+    }, 2000);
     setTimeout(function() { 
         $('#submitting_Info').modal('hide');
 
@@ -1752,9 +1809,16 @@ function linkPolicy() {
 }
 
 function loggingOut() {
-	// let loginCondition = localStorage.setItem("loginStatus", "");
-	localStorage.removeItem('loginStatus');
-	window.location.href = "index.html";
+	$('#submitting_Info').modal('show');
+	$("#submitting_Info .submit-title").html("Logging out...");
+	setTimeout(function() { 
+		$('#submitting_Info').modal('hide');
+		localStorage.removeItem('loginStatus');
+		window.location.href = "index.html";
+	}, 4000);
+	
+	// localStorage.removeItem('loginStatus');
+	// window.location.href = "index.html";
 }
 
 function gotoSystemStatus() {
