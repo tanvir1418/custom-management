@@ -103,45 +103,34 @@ button:focus {
 
 /* rightside items start */
 
-.mynav .nav-items {
+.mynav .nav-items:not(:last-child) {
   margin-left: auto;
 }
 
 .mynav .icon-box {
-  margin-top: auto;
-  margin-bottom: auto;
+  /* margin-top: auto;
+  margin-bottom: auto; */
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mynav .icon-box.termscondition-icon {
+  width: 80px;
+}
+.mynav .icon-box.login-icon {
+  width: 80px;
+  margin-right: 36px;
 }
 
 .mynav .icon-box .icon {
   font-size: 26px;
   color: #787878;
 }
-
-.mynav .icon-box .msg45 {
-  margin-right: 32px;
-}
-.mynav .icon-box .moni45 {
-  margin-right: 32px;
-}
-.mynav .icon-box .help45 {
-  margin-right: 32px;
-}
-.ftr-pad{
-  padding-right: 16px !important;
-}
-.mynav .icon-box .user45 {
-  margin-right: 32px;
-}
-.mynav .icon-box .logout45 {
-  margin-right: 22px;
-}
-
-/* FOR Terms page */
-.mynav .icon-box.other-page45 span{
-  margin-right: 16px;
-}
-.mynav .icon-box.other-page45 .logout45 {
-  margin-right: 22px;
+.mynav .icon-box i {
+  font-size: 26px;
+  color: #787878;
+  margin-top: 6px;
 }
 
 .mynav .welcome-box p {
@@ -149,7 +138,7 @@ button:focus {
 }
 
 .mynav .welcome-box{
-  min-width: 80px;
+  width: 110px;
 }
 
 .mynav .welcome-box .welcome {
@@ -170,16 +159,82 @@ button:focus {
   position: relative;
   color: #ffffff;
   margin: 0 auto;
-  width: 70%;
+  width: 75%;
 }
-@media screen and (max-width: 1280px) {
+.marquee.login-marquee{
+  width: 80%;
+}
+.marquee.termscon-marquee{
+  width: 80%;
+}
+
+@media screen and (max-width: 1700px) {
+  .marquee {
+    width: 70%;
+  }
+  .marquee.termscon-marquee{
+    width: 75%;
+  }
+}
+@media screen and (max-width: 1400px) {
   .marquee {
     width: 65%;
   }
+  .marquee.login-marquee{
+    width: 75%;
+  }
+  .marquee.termscon-marquee{
+    width: 70%;
+  }
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
   .marquee {
     width: 60%;
+  }
+  .marquee.termscon-marquee{
+    width: 65%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .mynav .icon-box {
+    width: 180px;
+  }
+  .mynav .icon-box i {
+    font-size: 24px;
+    margin-top: 8px;
+  }
+  .mynav .welcome-box{
+    width: 90px;
+  }
+  .marquee.login-marquee{
+    width: 70%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .marquee {
+    width: 55%;
+  }
+  .marquee.login-marquee{
+    width: 65% !important;
+  }
+  .marquee.termscon-marquee{
+    width: 60%;
+  }
+}
+@media screen and (max-width: 820px) {
+  .marquee {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 720px) {
+  .marquee {
+    width: 40% !important;
+  }
+  .marquee.login-marquee{
+    width: 60% !important;
+  }
+  .marquee.termscon-marquee{
+    width: 55% !important;
   }
 }
 .marquee p {
