@@ -250,18 +250,18 @@
 
 /* ====---------====== CHART PAGE START =====----------==== */
 
-#chartPage {
+.chart-section {
     -webkit-transition: opacity 1000ms, visibility 1000ms;
     transition: opacity 1000ms, visibility 1000ms;
     padding: 0 5%;
     background: #f2f2f2;
 }
 
-#chartPage .chart-title {
+.chart-section .chart-title {
     padding: 50px 0;
 }
 
-#chartPage .chart-title p {
+.chart-section .chart-title p {
     font-family: gilroy-bold, sans-serif;
     font-size: 34px;
     font-weight: 700;
@@ -271,12 +271,12 @@
 
 /* ======= TABS START ====== */
 
-#chartPage .chart-page-tab {
+.chart-section .chart-page-tab {
     margin: 0;
     margin-bottom: 36px !important;
 }
 
-#chartPage .tablink {
+.chart-section .tablink {
     width: 8.8%;
     margin-right: 0.32%;
     background-color: #eeeeee;
@@ -294,12 +294,12 @@
     border-top-right-radius: 5px;
 }
 
-#chartPage .active-tab-81 {
+.chart-section .active-tab-81 {
     background-color: #1d1d1d;
     color: #ffffff;
 }
 
-#chartPage .tablink:last-child {
+.chart-section .tablink:last-child {
     margin-right: 0;
     float: left;
 }
@@ -308,17 +308,17 @@
 
 /* ======= TABS CONTENT START ====== */
 
-#chartPage .tab-disable {
+.chart-section .tab-disable {
     pointer-events: none;
 }
 
-#chartPage .tabcontent {
+.chart-section .tabcontent {
     color: #000000;
     display: none;
 }
 
 /* INNER TAB CONTENT START */
-#chartPage .inner-tablink {
+.chart-section .inner-tablink {
     width: 20%;
     background-color: #fffe5f;
     color: #6a6a56;
@@ -335,17 +335,17 @@
     position: relative;
 }
 
-#chartPage .inner-tablink:last-child {
+.chart-section .inner-tablink:last-child {
     border: none;
 }
 
-#chartPage .inner-tablink i {
+.chart-section .inner-tablink i {
     color: #7f7f2f;
     margin-left: 5px;
     transition: all 0.5s ease;
 }
 
-#chartPage .inner-tablink::after {
+.chart-section .inner-tablink::after {
     padding: 0;
     margin: 0;
     display: block;
@@ -358,7 +358,7 @@
     top: 0;
 }
 
-#chartPage .inner-tablink::before {
+.chart-section .inner-tablink::before {
     padding: 0;
     margin: 0;
     display: block;
@@ -371,24 +371,24 @@
     bottom: 0;
 }
 
-#chartPage .inner-tablink:last-child::after,
-#chartPage .inner-tablink:last-child::before {
+.chart-section .inner-tablink:last-child::after,
+.chart-section .inner-tablink:last-child::before {
     display: none;
 }
 
-#chartPage .inner-active-tab-81 {
+.chart-section .inner-active-tab-81 {
     background-color: #ffff00;
     color: #000000;
     font-weight: 600;
     border: none;
 }
 
-#chartPage .inner-active-tab-81 i {
+.chart-section .inner-active-tab-81 i {
     color: #000000;
     transform: rotate(180deg);
 }
 
-#chartPage .inner-tabcontent {
+.chart-section .inner-tabcontent {
     color: #000000;
     display: none;
     width: 100%;
@@ -2903,7 +2903,7 @@ th[draggable] a {
 
 @media screen and (max-width: 991px) {
     /* display chart font */
-    #chartPage .inner-tablink {
+    .chart-section .inner-tablink {
         padding: 12px 18px;
     }
 
@@ -2985,7 +2985,7 @@ th[draggable] a {
     }
 
     /* display chart font */
-    #chartPage .inner-tablink {
+    .chart-section .inner-tablink {
         padding: 12px 5px;
     }
 
@@ -3062,11 +3062,11 @@ th[draggable] a {
 
 @media screen and (min-width: 1600px) {
     /* display chart font */
-    #chartPage .tablink {
+    .chart-section .tablink {
         font-size: 20px;
     }
 
-    #chartPage .inner-tablink {
+    .chart-section .inner-tablink {
         font-size: 18px;
     }
 
@@ -3119,11 +3119,11 @@ th[draggable] a {
     }
 
     /* display chart font */
-    #chartPage .tablink {
+    .chart-section .tablink {
         font-size: 24px;
     }
 
-    #chartPage .inner-tablink {
+    .chart-section .inner-tablink {
         font-size: 22px;
     }
 
@@ -3160,11 +3160,11 @@ th[draggable] a {
     }
 
     /* display chart font */
-    #chartPage .tablink {
+    .chart-section .tablink {
         font-size: 26px;
     }
 
-    #chartPage .inner-tablink {
+    .chart-section .inner-tablink {
         font-size: 24px;
     }
 

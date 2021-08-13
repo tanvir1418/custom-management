@@ -260,10 +260,9 @@ setTimeout(() => {
 
 // ====== LIST ITEM TO CHART PAGE START ============
 
-const select_table = document.querySelector(".select-item-table");
 const chartPage = document.querySelector("#chartPage");
 chartPage.style.display = "none";
-chartPage.style.opacity = "0";
+// chartPage.style.opacity = "0";
 
 $("#div-sub-ul-li-list").click(function (e) {
     let target = e.target;
@@ -298,11 +297,6 @@ $("#div-sub-ul-li-list").click(function (e) {
     // console.log(dataList);
 
     displayChartManageResult(left_list_data, dataList);
-
-    // document.querySelector("#chartPage .chart-title .left-item").innerHTML = itemTitle;
-    // document.querySelector("#chartPage .chart-title .right-item").innerHTML = itemSubTitle;
-    // document.getElementById("firstOpen").click();
-    // gotoChartPage();
 });
 
 function deleteManageModal(className) {
@@ -320,17 +314,24 @@ function calAngle(obj) {
     return angle;
 }
 
-function gotoChartPage() {
-    select_table.style.display = "none";
-    chartPage.style.display = "block";
-    chartPage.style.opacity = "1";
-    let interval = 50;
+function getRandomIntegerValue(minVal, maxVal) {
+    let min = Math.ceil(minVal);
+    let max = Math.floor(maxVal);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function gotoChartPage(num1, num2, num3, targetChartPage, meterOneId, meterTwoId, meterThreeId) {
+    console.log("Called");
+    $(`#${targetChartPage}`).css("display", "block");
+    // chartPage.style.opacity = "1";
 
     /*============----------ASHIQ----------=============*/
-    let meter1_input = 34;
-    let obj1 = document.getElementById("scorer-meter-1");
+    let interval = 50;
+    // let meter1_input = 34;
+    let meter1_input = num1;
+    let obj1 = document.getElementById(`${meterOneId}`);
     obj1.classList.add("scorer-1-tick-animation");
-    let p_element1 = document.getElementById("value-of-scorer-meter-1");
+    let p_element1 = document.getElementById(`value-of-${meterOneId}`);
     let intervalId1 = window.setInterval(function () {
         try {
             let angle = calAngle(obj1);
@@ -348,10 +349,11 @@ function gotoChartPage() {
         }
     }, interval);
 
-    let meter2_input = 55;
-    let obj2 = document.getElementById("scorer-meter-2");
+    // let meter2_input = 55;
+    let meter2_input = num2;
+    let obj2 = document.getElementById(`${meterTwoId}`);
     obj2.classList.add("scorer-1-tick-animation");
-    let p_element2 = document.getElementById("value-of-scorer-meter-2");
+    let p_element2 = document.getElementById(`value-of-${meterTwoId}`);
     let intervalId2 = window.setInterval(function () {
         try {
             let angle = calAngle(obj2);
@@ -369,10 +371,11 @@ function gotoChartPage() {
         }
     }, interval);
 
-    let meter3_input = 73;
-    let obj3 = document.getElementById("scorer-meter-3");
+    // let meter3_input = 73;
+    let meter3_input = num3;
+    let obj3 = document.getElementById(`${meterThreeId}`);
     obj3.classList.add("scorer-1-tick-animation");
-    let p_element3 = document.getElementById("value-of-scorer-meter-3");
+    let p_element3 = document.getElementById(`value-of-${meterThreeId}`);
     let intervalId3 = window.setInterval(function () {
         try {
             let angle = calAngle(obj3);
@@ -395,7 +398,8 @@ function gotoChartPage() {
 
 // ======= TABS START ======
 
-function openPage(pageName, elmnt) {
+// Controlling Main and Dynamic Tab Creation
+function openTabPage(pageName, elmnt) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -408,11 +412,12 @@ function openPage(pageName, elmnt) {
     document.getElementById(pageName).style.display = "block";
 }
 
-document.getElementById("defaultOpen").click();
+// Force Clicking Main Tab 
+document.getElementById("defaultTabOpen").click();
+$("#defaultTabOpen").addClass("active-tab-81");
 
-$("#defaultOpen").addClass("active-tab-81");
+// Handling Click On Main and Dynamic Tab
 $(".tablink").click(function () {
-
     $(".tablink").removeClass("active-tab-81");
     $(this).addClass("active-tab-81");
 })
@@ -421,7 +426,7 @@ $(".tablink").click(function () {
 
 // ======= INNER TABS START ======
 
-function openPage(innerpageName, elmnt) {
+function openFiveChartTab(mainTabId, innerPageName, elmnt) {
     var j, inner_tabcontent, inner_tablinks;
     inner_tabcontent = document.getElementsByClassName("inner-tabcontent");
     for (j = 0; j < inner_tabcontent.length; j++) {
@@ -431,13 +436,13 @@ function openPage(innerpageName, elmnt) {
     for (j = 0; j < inner_tablinks.length; j++) {
         inner_tablinks[j].style.backgroundColor = "";
     }
-    document.getElementById(innerpageName).style.display = "block";
+    // document.getElementById(innerPageName).style.display = "block";
+    $(`#${mainTabId} .${innerPageName}`).css("display", "block");
 
 }
 
 $("#firstOpen").addClass("inner-active-tab-81");
 $(".inner-tablink").click(function () {
-
     $(".inner-tablink").removeClass("inner-active-tab-81");
     $(this).addClass("inner-active-tab-81");
 })
@@ -472,242 +477,137 @@ function gotoChartPage2() {
 
 // ================ DISPLAY 3 CHART PAGE START ================
 
+function scrollDisplayChartThree(targetedTab){
+    $(`#${targetedTab} .chart_main_box .right-slider5`).click(function () {
+        $(`#${targetedTab} .chartAreaWrapper`).animate({
+            scrollLeft: document.querySelector(`#${targetedTab} .chartAreaWrapper`).scrollLeft + 250,
+        },250);
+    });
+    $(`#${targetedTab} .chart_main_box .left-slider5`).click(function () {
+        $(`#${targetedTab} .chartAreaWrapper`).animate({
+            scrollLeft: document.querySelector(`#${targetedTab} .chartAreaWrapper`).scrollLeft - 250,
+        },250);
+    });   
+}
+
+scrollDisplayChartThree('Main');
+
 // ================ DISPLAY 3 CHART PAGE END ================
 
 
 // ================ DISPLAY 4 TABLE DATA START ================
-var array = [
-    ["2019", "100%", "-58.63%", "15.14%", "54.1%", "-76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-        "-56.54%", "87.45%"
-    ],
-    ["2018", "-100%", "58.63%", "-15.14%", "54.1%", "-76.32%", "24.08%", "-23.64%", "92.86%", "-53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2017", "100%", "-58.63%", "15.14%", "", "76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%", "-56.54%",
-        "87.45%"
-    ],
-    ["2016", "-100%", "58.63%", "-15.14%", "54.1%", "-76.32%", "24.08%", "-23.64%", "", "-53.59%", "49.4%",
-        "-56.54%", "-87.45%"
-    ],
-    ["2015", "100%", "-58.63%", "15.14%", "-54.1%", "76.32%", "-24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2014", "-100%", "58.63%", "-15.14%", "54.1%", "-76.32%", "24.08%", "-23.64%", "92.86%", "-53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2013", "-100%", "-58.63%", "15.14%", "-54.1%", "76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-        "-56.54%", "87.45%"
-    ],
-    ["2012", "", "58.63%", "-15.14%", "-54.1%", "-76.32%", "24.08%", "-23.64%", "92.86%", "-53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2011", "100%", "-58.63%", "-15.14%", "-54.1%", "-76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-        "-56.54%", "87.45%"
-    ],
-    ["2010", "-100%", "-58.63%", "15.14%", "54.1%", "76.32%", "-24.08%", "23.64%", "92.86%", "-53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2009", "100%", "58.63%", "15.14%", "54.1%", "-76.32%", "24.08%", "-23.64%", "-92.86%", "53.59%", "49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2008", "100%", "58.63%", "-15.14%", "54.1%", "76.32%", "-24.08%", "23.64%", "92.86%", "-53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2007", "-100%", "-58.63%", "15.14%", "-54.1%", "76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-        "-56.54%", "87.45%"
-    ],
-    ["2006", "100%", "58.63%", "-15.14%", "54.1%", "-76.32%", "-24.08%", "-23.64%", "-92.86%", "-53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2005", "-100%", "58.63%", "15.14%", "54.1%", "-76.32%", "24.08%", "23.64%", "92.86%", "53.59%", "49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2004", "-100%", "-58.63%", "15.14%", "-54.1%", "76.32%", "-24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-        "-56.54%", "87.45%"
-    ],
-    ["2003", "100%", "58.63%", "-15.14%", "54.1%", "", "-24.08%", "-23.64%", "-92.86%", "-53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2002", "100%", "-58.63%", "", "36.1%", "-76.32%", "24.08%", "23.64%", "92.86%", "53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2001", "-100%", "58.63%", "-15.14%", "-54.1%", "-76.32%", "-24.08%", "-23.64%", "-92.86%", "-53.59%", "49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2000", "-100%", "58.63%", "15.14%", "54.1%", "76.32%", "24.08%", "23.64%", "92.86%", "-53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ]
-],
-    display_data_table = document.getElementById("display-data-table");
 
-for (var dt = 0; dt < array.length; dt++) {
-    // create a new row
-    var newRow = display_data_table.insertRow(display_data_table.length);
-    for (var idt = 0; idt < array[dt].length; idt++) {
-        // create a new cell
-        var cell = newRow.insertCell(idt);
-
-        // add value to the cell
-        cell.innerHTML = array[dt][idt];
+function gotoChartCalender(targetedCalender){
+    var calenderData = new Array(20);
+  
+    for (let i = 0; i < calenderData.length; i++) {
+        calenderData[i] = new Array(13);
     }
+      
+    var calenderYear = 2020;
+    var randomEmptyValue;
+      
+    // Loop to initialize 2D array elements.
+    for (let i = 0; i < 20; i++) {
+        randomEmptyValue = Math.floor(Math.random() * (20 - 1 + 1)) + 1;
+        for (let j = 0; j < 13; j++) {
+          if(j==0){
+            calenderData[i][j] = calenderYear--;
+          }else if(j==randomEmptyValue){
+            calenderData[i][j] = "";
+          }
+          else{
+            calenderData[i][j] = getRandomArbitrary();
+          }
+        }
+    }
+    
+    function getRandomArbitrary() {
+        return `${(Math.random() * (100 + 100) - 100).toFixed(2)}%`;
+    }
+    function getRandomInt() {
+        return Math.floor(Math.random() * (20 - 1 + 1)) + 1;
+    }
+    
+    let display_data_table = document.getElementById(`${targetedCalender}`);
+    
+    for (var dt = 0; dt < calenderData.length; dt++) {
+        // create a new row
+        var newRow = display_data_table.insertRow(display_data_table.length);
+        for (var idt = 0; idt < calenderData[dt].length; idt++) {
+            // create a new cell
+            var cell = newRow.insertCell(idt);
+    
+            // add value to the cell
+            cell.innerHTML = calenderData[dt][idt];
+        }
+    }
+    
+    
+    $(`#${targetedCalender} td`).each(function () {
+    
+        var cell_mainvalue = $(this).html(); //get the value
+        cell_value = parseFloat(cell_mainvalue) / 100.0;
+    
+        if (cell_value < 0) //if then for if value is negative
+            $(this).css({
+                'background': '#FD0000'
+            }); // changes td to red.
+    
+        if (cell_value > 0) //if then for if value is negative
+            $(this).css({
+                'background': '#00B903'
+            }); // changes td to red.
+    
+        if (cell_mainvalue === "") //if then for if value is negative
+            $(this).css({
+                'background': '#B8B8B8'
+            }); // changes td to red.
+    
+        if (cell_mainvalue > 1000)
+            $(this).css({
+                'background': '#FBFBFD'
+            }); // changes td to red.
+    });
 }
-
-var cell = $('#display-data-table td');
-
-cell.each(function () {
-
-    var cell_mainvalue = $(this).html(); //get the value
-    cell_value = parseFloat(cell_mainvalue) / 100.0;
-
-    if (cell_value < 0) //if then for if value is negative
-        $(this).css({
-            'background': '#FD0000'
-        }); // changes td to red.
-
-    if (cell_value > 0) //if then for if value is negative
-        $(this).css({
-            'background': '#00B903'
-        }); // changes td to red.
-
-    if (cell_mainvalue === "") //if then for if value is negative
-        $(this).css({
-            'background': '#B8B8B8'
-        }); // changes td to red.
-
-    if (cell_mainvalue > 1000)
-        $(this).css({
-            'background': '#FBFBFD'
-        }); // changes td to red.
-});
 
 // ================ DISPLAY 4 TABLE DATA END ================
 
 
 // ================ ARROW SCROLL BAR START ================
 
-$(document).ready(function () {
-    const table001122 = document.querySelector("#table001122");
-    $("#Display5 .right-slider5").click(function () {
-        $("#table001122").animate({
-            scrollLeft: table001122.scrollLeft + 250,
-        },
-            250
-        );
+function scrollDisplayChartFive(targetedTab, targetedTable){
+    $(`#${targetedTab} .Display5 .right-slider5`).click(function () {
+        $(`#${targetedTable}`).animate({
+            scrollLeft: document.querySelector(`#${targetedTable}`).scrollLeft + 250,
+        },250);
     });
-    $("#Display5 .left-slider5").click(function () {
-        $("#table001122").animate({
-            scrollLeft: table001122.scrollLeft - 250,
-        },
-            250
-        );
-    });
-});
-
-// ///////////////////////////////////////////
-$(document).ready(function () {
-    const chartAreaWrapper = document.querySelector(".chartAreaWrapper");
-    $(".chart_main_box .right-slider5").click(function () {
-        $(".chartAreaWrapper").animate({
-            scrollLeft: chartAreaWrapper.scrollLeft + 250,
-        },
-            250
-        );
-    });
-    $(".chart_main_box .left-slider5").click(function () {
-        $(".chartAreaWrapper").animate({
-            scrollLeft: chartAreaWrapper.scrollLeft - 250,
-        },
-            250
-        );
-    });
-});
-
-
-// ///////////////////////////////////////////
-function style1TableScroller() {
-    const style1TableScroll = document.querySelector("#style1Table");
-    $("#outer_table_box7 .right-slider5").click(function () {
-        $("#style1Table").animate({
-            scrollLeft: style1TableScroll.scrollLeft + 800,
-        },
-            0
-        );
-        $("#viewtwo").css('display', 'none');
-        $("#rowdetails").css('display', 'none');
-        $("#noteswindow").css('display', 'none');
-        $("#alertswindow").css('display', 'none');
-        $("#copyrowlist").css('display', 'none');
-        $("#moverowlist").css('display', 'none');
-        $("#col8Filter").css('display', 'none');
-        resetDownArrow();
-    }).dblclick(function () {
-        $("#style1Table").animate({
-            scrollLeft: style1TableScroll.scrollLeft + 800,
-        },
-            0
-        );
-        $("#viewtwo").css('display', 'none');
-        $("#rowdetails").css('display', 'none');
-        $("#noteswindow").css('display', 'none');
-        $("#alertswindow").css('display', 'none');
-        $("#copyrowlist").css('display', 'none');
-        $("#moverowlist").css('display', 'none');
-        $("#col8Filter").css('display', 'none');
-        resetDownArrow();
-    });
-
-    $("#outer_table_box7 .left-slider5").click(function () {
-        $("#style1Table").animate({
-            scrollLeft: style1TableScroll.scrollLeft - 800,
-        },
-            0
-        );
-        $("#viewtwo").css('display', 'none');
-        $("#rowdetails").css('display', 'none');
-        $("#noteswindow").css('display', 'none');
-        $("#alertswindow").css('display', 'none');
-        $("#copyrowlist").css('display', 'none');
-        $("#moverowlist").css('display', 'none');
-        $("#col8Filter").css('display', 'none');
-        resetDownArrow();
-    }).dblclick(function () {
-        $("#style1Table").animate({
-            scrollLeft: style1TableScroll.scrollLeft - 800,
-        },
-            0
-        );
-        $("#viewtwo").css('display', 'none');
-        $("#rowdetails").css('display', 'none');
-        $("#noteswindow").css('display', 'none');
-        $("#alertswindow").css('display', 'none');
-        $("#copyrowlist").css('display', 'none');
-        $("#moverowlist").css('display', 'none');
-        $("#col8Filter").css('display', 'none');
-        resetDownArrow();
+    $(`#${targetedTab} .Display5 .left-slider5`).click(function () {
+        $(`#${targetedTable}`).animate({
+            scrollLeft: document.querySelector(`#${targetedTable}`).scrollLeft - 250,
+        },250);
     });
 }
 
-// ================ ARROW SCROLL BAR END ================
+scrollDisplayChartFive('Main','table001122');
 
+// ///////////////////////////////////////////
 // ============== DISPLAY 5 SHOW DATE/TIME START =========
 
-newdate5 = new Date();
-y = newdate5.getFullYear();
-m = newdate5.getMonth() + 1;
-d = newdate5.getDate();
+const dateOfToday = new Date();
+let yearOfNewDate = dateOfToday.getFullYear();
+let monthOfNewDate = dateOfToday.getMonth() + 1;
+let dayOfNewDate = dateOfToday.getDate();
 
-let dis_date = document.querySelectorAll(".dis_date");
+function displayDateForChart5(){
+    let dis_date = document.querySelectorAll(".dis_date");
+    dis_date.forEach((element) => {
+        element.innerHTML = monthOfNewDate + "/" + dayOfNewDate + "/" + yearOfNewDate;
+    });
+}
 
-dis_date.forEach((element) => {
+displayDateForChart5();
 
-    element.innerHTML = m + "/" + d + "/" + y;
-
-});
-
-
-window.onload = function () {
-    DisplayCurrentTime();
-};
 
 function DisplayCurrentTime() {
     var date555 = new Date();
@@ -728,10 +628,13 @@ function DisplayCurrentTime() {
         element.innerHTML = time555;
     });
     dis_time22.forEach((element) => {
-
         element.innerHTML = time222;
     });
 };
+
+// Display the time section in Display Chart Style 5
+DisplayCurrentTime();
+
 // ============== DISPLAY 5 SHOW DATE/TIME END =========
 
 
@@ -994,6 +897,75 @@ document.querySelector(".dis5_neg_value10").style.top = dis5_neg_value10 + "%";
 // ============== DISPLAY 5 PROGRESS END =========
 
 // ============== STYLE 1 STYLE 2 START ==============
+
+
+// ///////////////////////////////////////////
+function style1TableScroller() {
+    const style1TableScroll = document.querySelector("#style1Table");
+    $("#outer_table_box7 .right-slider5").click(function () {
+        $("#style1Table").animate({
+            scrollLeft: style1TableScroll.scrollLeft + 800,
+        },
+            0
+        );
+        $("#viewtwo").css('display', 'none');
+        $("#rowdetails").css('display', 'none');
+        $("#noteswindow").css('display', 'none');
+        $("#alertswindow").css('display', 'none');
+        $("#copyrowlist").css('display', 'none');
+        $("#moverowlist").css('display', 'none');
+        $("#col8Filter").css('display', 'none');
+        resetDownArrow();
+    }).dblclick(function () {
+        $("#style1Table").animate({
+            scrollLeft: style1TableScroll.scrollLeft + 800,
+        },
+            0
+        );
+        $("#viewtwo").css('display', 'none');
+        $("#rowdetails").css('display', 'none');
+        $("#noteswindow").css('display', 'none');
+        $("#alertswindow").css('display', 'none');
+        $("#copyrowlist").css('display', 'none');
+        $("#moverowlist").css('display', 'none');
+        $("#col8Filter").css('display', 'none');
+        resetDownArrow();
+    });
+
+    $("#outer_table_box7 .left-slider5").click(function () {
+        $("#style1Table").animate({
+            scrollLeft: style1TableScroll.scrollLeft - 800,
+        },
+            0
+        );
+        $("#viewtwo").css('display', 'none');
+        $("#rowdetails").css('display', 'none');
+        $("#noteswindow").css('display', 'none');
+        $("#alertswindow").css('display', 'none');
+        $("#copyrowlist").css('display', 'none');
+        $("#moverowlist").css('display', 'none');
+        $("#col8Filter").css('display', 'none');
+        resetDownArrow();
+    }).dblclick(function () {
+        $("#style1Table").animate({
+            scrollLeft: style1TableScroll.scrollLeft - 800,
+        },
+            0
+        );
+        $("#viewtwo").css('display', 'none');
+        $("#rowdetails").css('display', 'none');
+        $("#noteswindow").css('display', 'none');
+        $("#alertswindow").css('display', 'none');
+        $("#copyrowlist").css('display', 'none');
+        $("#moverowlist").css('display', 'none');
+        $("#col8Filter").css('display', 'none');
+        resetDownArrow();
+    });
+}
+
+// ================ ARROW SCROLL BAR END ================
+
+
 
 
 // PROGRESS BAR START
@@ -1541,21 +1513,6 @@ function resetResFilter(e) {
 }
 // ----------- Manage Result Filter End --------------------
 
-// #column-header-3 .drop-filter
-// $("#column-header-3 .drop-filter").click( function(event) {
-//     $("#col8Filter .modal-dialog").css({
-//         top: ((event.clientY) + 15), 
-//         left: ((event.clientX) - 240)
-//     });
-//     // console.log(`Clicked and Top(Page-Y) : ${event.pageY} Left(Page-X) : ${event.pageX} `);
-//     // console.log(`Clicked and Top(client-Y) : ${event.clientY} Left(client-X) : ${event.clientX} `);
-//     // console.log(`Clicked and Top(screen-Y) : ${event.screenY} Left(screen-X) : ${event.screenX} `);
-//     // console.log(`Clicked and Top(offset-Y) : ${event.offsetY} Left(offset-X) : ${event.offsetX} `);
-//     // var x = e.clientX,
-//     // var y = e.clientY;
-//     // console.log("Top: " + top + " and Left: " + left);
-// });
-
 $('table#resizable554').on('scroll', function () {
     $("table#resizable554 > *").width($("table#resizable554").width() + $("table#resizable554").scrollLeft());
 });
@@ -1566,14 +1523,7 @@ function IconModalClick() {
         viewModalList[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
 
-            $("#viewtwo").css("display", "none");
-            $("#rowdetails").css("display", "none");
-            $("#noteswindow").css("display", "none");
-            $("#alertswindow").css("display", "none");
-            $("#copyrowlist").css("display", "none");
-            $("#moverowlist").css("display", "none");
-
-            $("#col8Filter").css('display', 'none');
+            hideStyleOneAllPopup();
 
             $("#viewtwo").css({
                 top: ((elementPositionMain.y) + window.scrollY + 33),
@@ -1590,14 +1540,7 @@ function IconModalClick() {
         rowModalClick[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
 
-            $("#viewtwo").css("display", "none");
-            $("#rowdetails").css("display", "none");
-            $("#noteswindow").css("display", "none");
-            $("#alertswindow").css("display", "none");
-            $("#copyrowlist").css("display", "none");
-            $("#moverowlist").css("display", "none");
-
-            $("#col8Filter").css('display', 'none');
+            hideStyleOneAllPopup();
 
             $("#rowdetails").css({
                 top: ((elementPositionMain.y) + window.scrollY + 33),
@@ -1614,14 +1557,7 @@ function IconModalClick() {
         noteModalClick[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
 
-            $("#viewtwo").css("display", "none");
-            $("#rowdetails").css("display", "none");
-            $("#noteswindow").css("display", "none");
-            $("#alertswindow").css("display", "none");
-            $("#copyrowlist").css("display", "none");
-            $("#moverowlist").css("display", "none");
-
-            $("#col8Filter").css('display', 'none');
+            hideStyleOneAllPopup();
 
             $("#noteswindow").css({
                 top: ((elementPositionMain.y) + window.scrollY + 33),
@@ -1638,14 +1574,7 @@ function IconModalClick() {
         copyModalClick[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
 
-            $("#viewtwo").css("display", "none");
-            $("#rowdetails").css("display", "none");
-            $("#noteswindow").css("display", "none");
-            $("#alertswindow").css("display", "none");
-            $("#copyrowlist").css("display", "none");
-            $("#moverowlist").css("display", "none");
-
-            $("#col8Filter").css('display', 'none');
+            hideStyleOneAllPopup();
 
             $("#copyrowlist").css({
                 top: ((elementPositionMain.y) + window.scrollY + 33),
@@ -1672,14 +1601,7 @@ function IconModalClick() {
         moveModalClick[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
 
-            $("#viewtwo").css("display", "none");
-            $("#rowdetails").css("display", "none");
-            $("#noteswindow").css("display", "none");
-            $("#alertswindow").css("display", "none");
-            $("#copyrowlist").css("display", "none");
-            $("#moverowlist").css("display", "none");
-
-            $("#col8Filter").css('display', 'none');
+            hideStyleOneAllPopup();
 
             $("#moverowlist").css({
                 top: ((elementPositionMain.y) + window.scrollY + 33),
@@ -1706,14 +1628,7 @@ function IconModalClick() {
         alertModalClick[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
 
-            $("#viewtwo").css("display", "none");
-            $("#rowdetails").css("display", "none");
-            $("#noteswindow").css("display", "none");
-            $("#alertswindow").css("display", "none");
-            $("#copyrowlist").css("display", "none");
-            $("#moverowlist").css("display", "none");
-
-            $("#col8Filter").css('display', 'none');
+            hideStyleOneAllPopup();
 
             $("#alertswindow").css({
                 top: ((elementPositionMain.y) + window.scrollY + 33),
@@ -1730,12 +1645,7 @@ function IconModalClick() {
         viewModalListSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
 
-            $("#viewtwo_style2").css("display", "none");
-            $("#rowdetails_style2").css("display", "none");
-            $("#noteswindow_style2").css("display", "none");
-            $("#alertswindow_style2").css("display", "none");
-            $("#copyrowlist_style2").css("display", "none");
-            $("#moverowlist_style2").css("display", "none");
+            hideStyleTwoAllPopup();
 
             $("#col8Filter").css('display', 'none');
 
@@ -1745,34 +1655,7 @@ function IconModalClick() {
             });
 
             $("#viewtwo_style2").css('display', 'block');
-            // console.log(event.target.nodeName);
-            // console.log(event.target.parentElement.nodeName);
-            // console.log(event.target.parentElement.parentElement.nodeName);
-            // console.log(event.target.parentElement.parentElement.parentElement.nodeName);
-
-            // console.log("Bottom value :" + event.target.getBoundingClientRect().bottom);
-            // console.log("Left value :" + event.target.getBoundingClientRect().left);
-
-            // $("#viewtwo_style2 .modal-dialog").css({
-            //     top: ((elementPositionMain.bottom) + 7),
-            //     left: ((elementPositionMain.left) + 2)
-            // });
-
-            // $("#viewtwo_style2 .modal-dialog").css({
-            //     top: ((event.clientY) + 13),
-            //     left: ((event.clientX) - 25)
-            // });
-
-            // $("#viewtwo_style2").css({
-            //     top: ((event.pageY) + event.offsetY),
-            //     left: ((event.pageX) - event.offsetX)
-            // });
-
-            // let targetName = event.target.nodeName;
-            // console.log("Tag Name: " + targetName);
-            // console.log(event.target.getBoundingClientRect());
-            // console.log(window.scrollY);
-            // console.log(event.target.getBoundingClientRect().y + window.scrollY);
+    
         });
     }
 
@@ -1781,12 +1664,7 @@ function IconModalClick() {
         rowModalClickSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
 
-            $("#viewtwo_style2").css("display", "none");
-            $("#rowdetails_style2").css("display", "none");
-            $("#noteswindow_style2").css("display", "none");
-            $("#alertswindow_style2").css("display", "none");
-            $("#copyrowlist_style2").css("display", "none");
-            $("#moverowlist_style2").css("display", "none");
+            hideStyleTwoAllPopup();
 
             $("#col8Filter").css('display', 'none');
 
@@ -1805,12 +1683,7 @@ function IconModalClick() {
         noteModalClickSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
 
-            $("#viewtwo_style2").css("display", "none");
-            $("#rowdetails_style2").css("display", "none");
-            $("#noteswindow_style2").css("display", "none");
-            $("#alertswindow_style2").css("display", "none");
-            $("#copyrowlist_style2").css("display", "none");
-            $("#moverowlist_style2").css("display", "none");
+            hideStyleTwoAllPopup();
 
             $("#col8Filter").css('display', 'none');
 
@@ -1829,12 +1702,7 @@ function IconModalClick() {
         copyModalClickSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
 
-            $("#viewtwo_style2").css("display", "none");
-            $("#rowdetails_style2").css("display", "none");
-            $("#noteswindow_style2").css("display", "none");
-            $("#alertswindow_style2").css("display", "none");
-            $("#copyrowlist_style2").css("display", "none");
-            $("#moverowlist_style2").css("display", "none");
+            hideStyleTwoAllPopup();
 
             $("#col8Filter").css('display', 'none');
 
@@ -1863,12 +1731,7 @@ function IconModalClick() {
         moveModalClickSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
 
-            $("#viewtwo_style2").css("display", "none");
-            $("#rowdetails_style2").css("display", "none");
-            $("#noteswindow_style2").css("display", "none");
-            $("#alertswindow_style2").css("display", "none");
-            $("#copyrowlist_style2").css("display", "none");
-            $("#moverowlist_style2").css("display", "none");
+            hideStyleTwoAllPopup();
 
             $("#col8Filter").css('display', 'none');
 
@@ -1897,12 +1760,7 @@ function IconModalClick() {
         alertModalClickSty2[i].addEventListener("click", function (event) {
             let elementPositionMain = forceEventTargetDiv(event);
 
-            $("#viewtwo_style2").css("display", "none");
-            $("#rowdetails_style2").css("display", "none");
-            $("#noteswindow_style2").css("display", "none");
-            $("#alertswindow_style2").css("display", "none");
-            $("#copyrowlist_style2").css("display", "none");
-            $("#moverowlist_style2").css("display", "none");
+            hideStyleTwoAllPopup();
 
             $("#col8Filter").css('display', 'none');
 
@@ -1922,15 +1780,7 @@ function Style2DropFilterPos() {
     let style2FilterPosition = document.getElementsByClassName('style2-filterPosition');
     for (let i = 0; i < style2FilterPosition.length; i++) {
         style2FilterPosition[i].addEventListener("click", function (event) {
-            // $("#col8Filter .modal-dialog").css({
-            //     top: ((event.clientY) + 20),
-            //     left: ((event.clientX) - 240),
-            //     height: 350
-            // });
-            // $("#col8Filter .modal-dialog .table-header-click-popup").css({
-            //     "margin-top": "-15px"
-            // });
-
+            
             let elementPositionMain = event.target.getBoundingClientRect();
             $("#col8Filter").css('display', 'none');
             $("#col8Filter").css({
@@ -2121,8 +1971,6 @@ window.addEventListener("scroll", (event) => {
         if (arrowShowing == true && filterStyles.display == "block" && headerIndexClick != "") {
             let virtualHeader = document.querySelector('#outer_table_box7 #style1Table .clone-head-table-wrap');
             let compStyles = window.getComputedStyle(virtualHeader);
-            // console.log(compStyles.visibility);
-            // console.log("Index No: " + headerIndexClick);
 
             if (compStyles.visibility == "visible") {
                 $("#col8Filter").css({
@@ -2144,23 +1992,6 @@ window.addEventListener("scroll", (event) => {
     }
 });
 
-
-// function virtualHeaderVisibility(){
-//     let virtualHeader =  document.querySelector('#outer_table_box7 #style1Table .clone-head-table-wrap');
-//     virtualHeader.addEventListener("visibilitychange", function() {
-//         if (virtualHeader.visibilityState === 'visible') {
-//             console.log("Virtual Header Shown");
-//         }
-//         if (virtualHeader.visibilityState === 'hidden') {
-//         console.log("Virtual Header Hidden");
-//         } 
-
-//     });
-// }
-
-// let virtualHeader =  document.querySelector('#outer_table_box7 #style1Table .clone-head-table-wrap');
-// let compStyles = window.getComputedStyle(virtualHeader);
-// compStyles.visibility
 
 $(document).keydown(function (e) {
     let arrowShowing = $("#style_1_box").hasClass("clickstylebg");
@@ -2188,9 +2019,7 @@ $(document).keydown(function (e) {
         resetDownArrow();
         //    return false;
     }
-    // universal_confirm_modal
-    // manageResultChartDisplay_modal
-    // $("#universalThankDraftModal
+
     let universalConfirm = window.getComputedStyle(document.querySelector('#universal_confirm_modal'));
     let mnResDispConfirm = window.getComputedStyle(document.querySelector('#manageResultChartDisplay_modal'));
     let uniThankYou = window.getComputedStyle(document.querySelector('#universalThankDraftModal'));
@@ -2275,4 +2104,24 @@ for (let i = 0; i < mailIconAlert_s2.length; i++) {
 
         }
     });
+}
+
+function hideStyleOneAllPopup(){
+    $("#viewtwo").css("display", "none");
+    $("#rowdetails").css("display", "none");
+    $("#noteswindow").css("display", "none");
+    $("#alertswindow").css("display", "none");
+    $("#copyrowlist").css("display", "none");
+    $("#moverowlist").css("display", "none");
+
+    $("#col8Filter").css('display', 'none');
+}
+function hideStyleTwoAllPopup(){
+    $("#viewtwo_style2").css("display", "none");
+    $("#rowdetails_style2").css("display", "none");
+    $("#noteswindow_style2").css("display", "none");
+    $("#alertswindow_style2").css("display", "none");
+    $("#copyrowlist_style2").css("display", "none");
+    $("#moverowlist_style2").css("display", "none");
+    $("#col8Filter").css('display', 'none');
 }

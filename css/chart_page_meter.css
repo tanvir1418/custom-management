@@ -1,6 +1,6 @@
 /* ========= DISPLAY 1 SPEEDOMETER START ========= */
 
-#Display1 {
+.Display1 {
     padding: 20px 8px 20px 36px;
     overflow: hidden;
 }
@@ -354,7 +354,7 @@
 
 /* ========= DISPLAY 2 SPEEDOMETER START ========= */
 
-#Display2 {
+.Display2 {
     padding: 20px 8px 20px 36px;
     overflow: hidden;
 }
@@ -569,25 +569,25 @@
 
 
 /* ========= DISPLAY 3 WAVES START ========= */
-#Display3.inner-tabcontent {
+.Display3.inner-tabcontent {
     height: 510px !important;
 }
 
-#Display4.inner-tabcontent {
+.Display4.inner-tabcontent {
     height: 466px !important;
 }
 
-#Display5.inner-tabcontent {
+.Display5.inner-tabcontent {
     height: 466px !important;
 }
 
-#Display3 .chart_outer_box {
+.Display3 .chart_outer_box {
     width: 100%;
     height: 100%;
     padding: 66px 20px 20px;
 }
 
-#Display3 .chart_main_box {
+.Display3 .chart_main_box {
     min-width: 100%;
     width: 100%;
     height: 100%;
@@ -597,24 +597,24 @@
     position: relative;
 }
 
-/* #Display3 .chart_compare_box {
+/* .Display3 .chart_compare_box {
     width: 100%;
     height: 100%;
 } */
 
-#Display3 .chart_compare_box form {
+.Display3 .chart_compare_box form {
     width: 100%;
     height: 100%;
 }
 
-#Display3 .chart_compare_box label {
+.Display3 .chart_compare_box label {
     font-family: gilroy-medium, sans-serif;
     font-size: 18px;
     font-weight: 500px;
     color: #000000;
 }
 
-#Display3 .chart_compare_box input {
+.Display3 .chart_compare_box input {
     border: 2px solid #000000;
     border-radius: 5px;
     height: 40px;
@@ -626,26 +626,26 @@
     margin-left: 5px;
 }
 
-#Display3 .chart_compare_box input.input3031 {
+.Display3 .chart_compare_box input.input3031 {
     width: 210px;
 }
 
-#Display3 .chart_compare_box input.input3032 {
+.Display3 .chart_compare_box input.input3032 {
     width: 170px;
 }
 
-#Display3 .chart_compare_box input.input3033 {
+.Display3 .chart_compare_box input.input3033 {
     width: 170px;
     margin-left: 25px;
 }
 
-#Display3 .main_chart_container {
+.Display3 .main_chart_container {
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-#Display3 .chart5-container {
+.Display3 .chart5-container {
     padding: 20px;
     width: 100%;
     height: 100%;
@@ -667,13 +667,13 @@
     overflow-x: scroll;
 }
 
-#axisY-lineChart {
+.axisY-lineChart-style {
     background: #FBFBFD;
 }
 
 /* ARROW STYLE START */
-#Display3 .right-slider5,
-#Display3 .left-slider5 {
+.Display3 .right-slider5,
+.Display3 .left-slider5 {
     width: 32px;
     height: 32px;
     background: #D0D0D0;
@@ -682,13 +682,13 @@
     cursor: pointer;
 }
 
-#Display3 .right-slider5:hover,
-#Display3 .left-slider5:hover {
+.Display3 .right-slider5:hover,
+.Display3 .left-slider5:hover {
     background: #000000;
 }
 
-#Display3 .right-slider5 i,
-#Display3 .left-slider5 i {
+.Display3 .right-slider5 i,
+.Display3 .left-slider5 i {
     color: #ffffff;
     position: absolute;
     left: 50%;
@@ -698,19 +698,19 @@
     z-index: 100;
 }
 
-#Display3 .right-slider5 {
+.Display3 .right-slider5 {
     top: 48%;
     right: -15px;
 }
 
-#Display3 .left-slider5 {
+.Display3 .left-slider5 {
     top: 48%;
     left: -15px;
 }
 
 /* ARROW STYLE END */
 
-#Display3 .x_axis_title{
+.Display3 .x_axis_title{
     margin: 20px 0px 0px;
     text-align: center;
     text-transform: uppercase;
@@ -721,7 +721,7 @@
 }
 
 /* scrollbar customize start */
-#Display3 .chartAreaWrapper::-webkit-scrollbar {
+.Display3 .chartAreaWrapper::-webkit-scrollbar {
     display: none;
 }
 
@@ -729,14 +729,14 @@
 
 /* ========= DISPLAY 4 DATA TABLE START ========= */
 
-#Display4 .data-table-box {
+.Display4 .data-table-box {
     width: 100%;
     height: 100%;
     /* padding: 80px 80px 60px; */
     padding: 66px 20px 20px;
 }
 
-#Display4 .inner_table_box {
+.Display4 .inner_table_box {
     min-width: 100%;
     width: 100%;
     height: 100%;
@@ -746,46 +746,46 @@
     position: relative;
 }
 
-#Display4 .data-table-wrapper {
+.Display4 .data-table-wrapper {
     position: relative;
     overflow: auto;
     height: 100%;
 }
 
-#Display4 .data-table-box table {
+.Display4 .data-table-box table {
     width: 100%;
     height: 1000px;
     position: relative;
 }
 
-#Display4 table th,
-#Display4 table td {
+.Display4 table th,
+.Display4 table td {
     font-size: 16px;
     table-layout: fixed;
     padding: 0;
     margin: 0;
     font-family: gilroy-medium, sans-serif;
     width: 80px !important;
-    height: 32px !important;
+    height: 48px !important;
     border: 1px solid #FBFBFD !important;
     vertical-align: middle;
     text-align: center;
 }
 
-#Display4 table th {
+.Display4 table th {
     position: sticky;
     top: -3px;
 }
 
-#Display4 table th,
-#Display4 table td:first-child {
+.Display4 table th,
+.Display4 table td:first-child {
     font-family: gilroy-medium, sans-serif;
     font-weight: 600;
     color: #000000;
     background: #FBFBFD;
 }
 
-#Display4 table td {
+.Display4 table td {
     font-family: gilroy-medium, sans-serif;
     font-weight: 600;
     font-size: 14px;
@@ -793,18 +793,18 @@
 }
 
 /* scrollbar customize start */
-#Display4 .data-table-wrapper::-webkit-scrollbar {
+.Display4 .data-table-wrapper::-webkit-scrollbar {
     width: 4px;
 }
 
 /* Handle */
-#Display4 .data-table-wrapper::-webkit-scrollbar-thumb {
+.Display4 .data-table-wrapper::-webkit-scrollbar-thumb {
     background: #919191;
     border-radius: 15px;
 }
 
 /* Handle on hover */
-#Display4 .data-table-wrapper::-webkit-scrollbar-thumb:hover {
+.Display4 .data-table-wrapper::-webkit-scrollbar-thumb:hover {
     background: #424242;
 }
 
@@ -817,13 +817,13 @@
 
 /* ========= DISPLAY 5 PROGRESS RANGE START ========= */
 
-#Display5 .sectiondisplay001 {
+.Display5 .sectiondisplay001 {
     width: 100%;
     height: 100%;
     padding: 68px 20px 22px;
 }
 
-#Display5 .progress-range-box {
+.Display5 .progress-range-box {
     min-width: 100%;
     width: 100%;
     height: 100%;
@@ -833,13 +833,13 @@
     position: relative;
 }
 
-#Display5 table {
+.Display5 table {
     width: 100%;
     height: 100%;
     overflow: scroll;
 }
 
-#Display5 table td {
+.Display5 table td {
     border: 1px solid #cacaca !important;
     height: 330px;
     min-width: 200px;
@@ -847,22 +847,22 @@
     padding: 5px 3px;
 }
 
-#Display5 table td .display_date_time {
+.Display5 table td .display_date_time {
     display: flex;
 }
 
-#Display5 table td .from_to {
+.Display5 table td .from_to {
     width: 12%;
     position: relative;
 }
 
-#Display5 table td .separation {
+.Display5 table td .separation {
     width: 10%;
     position: relative;
 }
 
-#Display5 table td .from_to span,
-#Display5 table td .separation span {
+.Display5 table td .from_to span,
+.Display5 table td .separation span {
     color: #89898A;
     margin: 0;
     font-size: 12px;
@@ -873,12 +873,12 @@
     transform: translate(-50%, -50%);
 }
 
-#Display5 table td .value_time {
+.Display5 table td .value_time {
     margin-left: 5px;
 }
 
-#Display5 table td .value_date span,
-#Display5 table td .value_time span {
+.Display5 table td .value_date span,
+.Display5 table td .value_time span {
     font-size: 14px;
     font-family: gilroy-bold, sans-serif;
     font-weight: 500;
@@ -930,8 +930,8 @@
 
 /* PROGRESS BAR END */
 
-#Display5 .right-slider5,
-#Display5 .left-slider5 {
+.Display5 .right-slider5,
+.Display5 .left-slider5 {
     width: 32px;
     height: 32px;
     background: #D0D0D0;
@@ -940,13 +940,13 @@
     cursor: pointer;
 }
 
-#Display5 .right-slider5:hover,
-#Display5 .left-slider5:hover {
+.Display5 .right-slider5:hover,
+.Display5 .left-slider5:hover {
     background: #000000;
 }
 
-#Display5 .right-slider5 i,
-#Display5 .left-slider5 i {
+.Display5 .right-slider5 i,
+.Display5 .left-slider5 i {
     color: #ffffff;
     position: absolute;
     left: 50%;
@@ -956,18 +956,18 @@
     z-index: 100;
 }
 
-#Display5 .right-slider5 {
+.Display5 .right-slider5 {
     top: 48%;
     right: -15px;
 }
 
-#Display5 .left-slider5 {
+.Display5 .left-slider5 {
     top: 48%;
     left: -15px;
 }
 
 /* scrollbar customize start */
-#Display5 table::-webkit-scrollbar {
+.Display5 table::-webkit-scrollbar {
     display: none;
 }
 
@@ -999,18 +999,18 @@
     }
 
     /* DISPLAY 3 */
-    #Display3 .chart_compare_box label{
+    .Display3 .chart_compare_box label{
         font-size: 16px;
     }
-    #Display3 .chart_compare_box input.input3031 {
+    .Display3 .chart_compare_box input.input3031 {
         width: 175px;
     }
     
-    #Display3 .chart_compare_box input.input3032 {
+    .Display3 .chart_compare_box input.input3032 {
         width: 120px;
     }
     
-    #Display3 .chart_compare_box input.input3033 {
+    .Display3 .chart_compare_box input.input3033 {
         width: 120px;
     }
 }
@@ -1028,15 +1028,15 @@
     }
 
     /* DISPLAY 3 */
-    #Display3 .chart_compare_box input.input3031 {
+    .Display3 .chart_compare_box input.input3031 {
         width: 135px;
     }
     
-    #Display3 .chart_compare_box input.input3032 {
+    .Display3 .chart_compare_box input.input3032 {
         width: 80px;
     }
     
-    #Display3 .chart_compare_box input.input3033 {
+    .Display3 .chart_compare_box input.input3033 {
         width: 80px;
     }
 }
@@ -1054,10 +1054,10 @@
     }
 
     /* DISPLAY 3 */
-    #Display3 .chart_compare_box input {
+    .Display3 .chart_compare_box input {
         margin-left: 0;
     }
-    #Display3 .chart_compare_box input.input3033{
+    .Display3 .chart_compare_box input.input3033{
         margin-left: 0;
     }
 }

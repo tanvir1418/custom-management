@@ -1,4 +1,4 @@
-(function gotoLinearChart() {
+function gotoLinearChart(lineChartId, lineChartYAxisId) {
     labels = [];
     data1 = [];
     data2 = [];
@@ -17,11 +17,12 @@
         data6.push(rand());
         data7.push(rand());
     }
-    drawChartCanvas();
-})();
+    drawChartCanvas(lineChartId, lineChartYAxisId);
+}
 
-function drawChartCanvas() {
-    let ctx = document.getElementById("lineChart").getContext("2d");
+function drawChartCanvas(drawlineChartId, drawlineChartYAxisId) {
+    // let ctx = document.getElementById("lineChart").getContext("2d");
+    let ctx = document.getElementById(`${drawlineChartId}`).getContext("2d");
     let flagSet = false;
     let lineChart = new Chart(ctx, {
         type: "line",
@@ -129,7 +130,8 @@ function drawChartCanvas() {
                         let sourceCanvas = lineChart.chart.canvas;
                         let copyWidth = lineChart.scales["y-axis-0"].width - 5;
                         let copyHeight = lineChart.scales["y-axis-0"].height + lineChart.scales["y-axis-0"].top + 5;
-                        let targetCtx = document.getElementById("axisY-lineChart").getContext("2d");
+                        // let targetCtx = document.getElementById("axisY-lineChart").getContext("2d");
+                        let targetCtx = document.getElementById(`${drawlineChartYAxisId}`).getContext("2d");
                         targetCtx.scale(scale, scale);
                         targetCtx.canvas.width = copyWidth * scale;
                         targetCtx.canvas.height = copyHeight * scale;

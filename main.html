@@ -5277,50 +5277,43 @@
             <!-- ===X======= SELECT TABLE ITEMS END =======X===== -->
 
             <!-- ================  CHART PAGE START ================ -->
-            <div id="chartPage">
+            <div class="chart-section" id="chartPage">
                 <div class="chart-title">
                     <p class="left-item">Item 1</p>
                     <p class="right-item">Level 1 - Item 1</p>
                 </div>
                 <div class="chart-page-tab">
-                    <button class="tablink" onclick="openPage('Main', this)" id="defaultOpen">Main</button>
-                    <button class="tablink tab-disable" onclick="openPage('News', this)">Tab 2</button>
-                    <button class="tablink tab-disable" onclick="openPage('Contact', this)">Tab 3</button>
-                    <button class="tablink tab-disable" onclick="openPage('About', this)">Tab 4</button>
-                    <button class="tablink tab-disable" onclick="openPage('News', this)">Tab 5</button>
-                    <button class="tablink tab-disable" onclick="openPage('Contact', this)">Tab 6</button>
-                    <button class="tablink tab-disable" onclick="openPage('About', this)">Tab 7</button>
-                    <button class="tablink tab-disable" onclick="openPage('News', this)">Tab 8</button>
-                    <button class="tablink tab-disable" onclick="openPage('Contact', this)">Tab 9</button>
-                    <button class="tablink tab-disable" onclick="openPage('About', this)">Tab 10</button>
-                    <button class="tablink tab-disable" onclick="openPage('About', this)">Tab 11</button>
+                    <button class="tablink" onclick="openTabPage('Main', this)" id="defaultTabOpen">Main</button>
+                    <button class="tablink tab-disable" onclick="openTabPage('News', this)">Tab 2</button>
+                    <button class="tablink tab-disable" onclick="openTabPage('Contact', this)">Tab 3</button>
+                    <button class="tablink tab-disable" onclick="openTabPage('About', this)">Tab 4</button>
                 </div>
                 <div id="Main" class="tabcontent">
                     <!-- //////////  DISPLAY CHART STYLE START ////////// -->
                     <div class="chart-page-inner-tab">
-                        <button class="inner-tablink" onclick="openPage('Display1', this); gotoChartPage();"
+                        <button class="inner-tablink" onclick="openFiveChartTab('Main', 'Display1', this); gotoChartPage(90, 50, 10, 'chartPage', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');"
                             id="firstOpen">
                             Display Chart Style 1
                             <i class="fas fa-caret-down"></i>
                         </button>
-                        <button class="inner-tablink" onclick="openPage('Display2', this); gotoChartPage2();">
+                        <button class="inner-tablink" onclick="openFiveChartTab('Main', 'Display2', this); gotoChartPage2();">
                             Display Chart Style 2
                             <i class="fas fa-caret-down"></i>
                         </button>
-                        <button class="inner-tablink" onclick="openPage('Display3', this);">
+                        <button class="inner-tablink" onclick="openFiveChartTab('Main', 'Display3', this); gotoLinearChart('lineChart','axisY-lineChart');">
                             Display Chart Style 3
                             <i class="fas fa-caret-down"></i>
                         </button>
-                        <button class="inner-tablink" onclick="openPage('Display4', this)">
+                        <button class="inner-tablink" onclick="openFiveChartTab('Main', 'Display4', this); gotoChartCalender('display-data-table')">
                             Display Chart Style 4
                             <i class="fas fa-caret-down"></i>
                         </button>
-                        <button class="inner-tablink" onclick="openPage('Display5', this)">
+                        <button class="inner-tablink" onclick="openFiveChartTab('Main', 'Display5', this)">
                             Display Chart Style 5
                             <i class="fas fa-caret-down"></i>
                         </button>
                     </div>
-                    <div id="Display1" class="inner-tabcontent">
+                    <div class="inner-tabcontent Display1">
                         <div class="row meter_outer_box">
                             <div class="col-4">
                                 <div class="circleWrapper speedometer1">
@@ -5513,7 +5506,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="Display2" class="inner-tabcontent">
+                    <div class="inner-tabcontent Display2">
                         <div class="row gauge_outer_box">
                             <div class="col-4">
                                 <div class="progressmeter progressmeter1">
@@ -5595,7 +5588,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="Display3" class="inner-tabcontent">
+                    <div class="inner-tabcontent Display3">
                         <div class="chart_outer_box">
                             <div class="chart_main_box">
                                 <div class="chart_compare_box">
@@ -5618,7 +5611,7 @@
                                             <div class="chartAreaWrapper">
                                                 <canvas id="lineChart" height="300" width="5500"></canvas>
                                             </div>
-                                            <canvas id="axisY-lineChart" height="300" width="0"></canvas>
+                                            <canvas id="axisY-lineChart" class="axisY-lineChart-style" height="300" width="0"></canvas>
                                         </div>
                                     </form>
                                 </div>
@@ -5632,7 +5625,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="Display4" class="inner-tabcontent">
+                    <div class="inner-tabcontent Display4">
                         <div class="data-table-box">
                             <div class="inner_table_box">
                                 <div class="data-table-wrapper">
@@ -5658,10 +5651,10 @@
                             </div>
                         </div>
                     </div>
-                    <div id="Display5" class="inner-tabcontent">
+                    <div class="inner-tabcontent Display5">
                         <div class="sectiondisplay001">
                             <div class="progress-range-box">
-                                <table id="table001122" class="table table-responsive">
+                                <table class="table table-responsive" id="table001122">
                                     <tr>
                                         <td>
                                             <div class="display_date_time">
@@ -6260,13 +6253,13 @@
                                         <img src="images/style-2.png" alt="">
                                         <span>Style 2</span>
                                     </div>
-                                    <button class="style12btn-3 ml-auto updateNowBtn" href="#" tooltip="Click to Update" flow="down" onclick="universalConfirmModalDelete(this)">
+                                    <button class="style12btn-3 ml-auto updateNowBtn" tooltip="Click to Update" flow="down" onclick="universalConfirmModalDelete(this)">
                                         <p>Update Now</p>
                                     </button>
-                                    <button class="style12btn-3 clearFilterBtn" href="#" tooltip="Click to Clear Filter" flow="down" onclick="universalConfirmModalDelete(this)">
+                                    <button class="style12btn-3 clearFilterBtn" tooltip="Click to Clear Filter" flow="down" onclick="universalConfirmModalDelete(this)">
                                         <p>Clear Filter</p>
                                     </button>
-                                    <button class="style12btn-3 clearSortingBtn" href="#" tooltip="Click to Clear Sorting" flow="down" onclick="universalConfirmModalDelete(this)">
+                                    <button class="style12btn-3 clearSortingBtn" tooltip="Click to Clear Sorting" flow="down" onclick="universalConfirmModalDelete(this)">
                                         <p>Clear Sorting</p>
                                     </button>
                                     <div class="filtering-style12" data-toggle="modal" data-target="#filter-modal">
