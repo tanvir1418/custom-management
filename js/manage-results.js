@@ -772,10 +772,24 @@ function style1TableScroller() {
 
 
 // PROGRESS BAR START
-var style12_progress = 75;
+function tableProgressBarAnimation(targetedMainTab, progressVal, progWidthTarget, progTextTarget) {
+    var elem = document.querySelector(`#${targetedMainTab} .${progWidthTarget}`);
+    var elemPara = document.querySelector(`#${targetedMainTab} .${progTextTarget}`);
+    var width = 0;
+    var id = setInterval(frame, 100);
+    function frame() {
+      if (width >= progressVal) {
+        clearInterval(id);
+      } else {
+        width++; 
+        elem.style.width = width + '%';
+        elemPara.innerHTML = 'Progress ' + width * 1 + '%';
+      }
+    }
+}
 
-document.querySelector("#syle12_section .inner-progress-style12").style.width = style12_progress + "%";
-document.querySelector(".tab_filter-style12 .progress-style12 p").innerHTML = "Progress " + style12_progress + "%";
+// tableProgressBarAnimation('Main', Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
+
 // PROGRESS BAR END
 
 // CLICL TO TOGGLE STYLE1 & STYLE2 START =====

@@ -1575,8 +1575,9 @@ function chartDispConfirmButton() {
 	document.querySelector("#chartPage .chart-title .right-item").innerHTML = mnResultSubTitle;
 	document.getElementById("firstOpen").click();
 	$(".select-item-table").css("display", "none");
-	// gotoChartPage('chartPage', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
+	
 	gotoChartPage(90, 50, 10, 'chartPage', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
+	tableProgressBarAnimation('Main', Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
 
 	// $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
 	// $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
