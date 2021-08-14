@@ -889,7 +889,7 @@
 
 .dis5_progress {
     width: 90%;
-    height: 75%;
+    height: 80%;
     margin: 10px auto;
     position: relative;
 }
@@ -904,7 +904,7 @@
 /* .dis5_progress_pos */
 .dis5_progress_upbox .allprogress_pos {
     width: 100%;
-    background: #00A803;
+    /* background: #00A803; */
     position: absolute;
     bottom: 0;
 }
@@ -912,7 +912,7 @@
 /* .dis5_progress_neg */
 .dis5_progress_downbox .allprogress_neg {
     width: 100%;
-    background: #FD0000;
+    /* background: #FD0000; */
 }
 
 /* dis5_pos_value dis5_neg_value */

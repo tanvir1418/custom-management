@@ -3585,3 +3585,39 @@ i.fa-caret-down.down-animation-icon{
 #loading_table{
     display: none;
 }
+
+.pos-progress-status {
+    /* width:100px; */
+    width:100%;
+    /* background-color: red; */
+    /* background-color: #00A803; */
+    height:105px;
+    /* height:100%; */
+    position:relative;
+}
+  
+.pos-bar-status {
+    /* width: 100px; */
+    width: 100%;
+    height: 0px;
+    /* background-color: #4CAF50; */
+    background-color: #00A803;
+    text-align: center;
+    color: white;
+    position:absolute;
+    bottom:0px;
+}
+
+.neg-progress-status {
+    width:100%;
+    /* background-color: red; */
+    height:105px;
+  }
+  
+.neg-bar-status {
+    width: 100%;
+    /* background-color: #4CAF50; */
+    background-color: red;
+    text-align: center;
+    color: white;
+  }

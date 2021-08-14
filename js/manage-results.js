@@ -321,7 +321,7 @@ function getRandomIntegerValue(minVal, maxVal) {
 }
 
 function gotoChartPage(num1, num2, num3, targetChartPage, meterOneId, meterTwoId, meterThreeId) {
-    console.log("Called");
+
     $(`#${targetChartPage}`).css("display", "block");
     // chartPage.style.opacity = "1";
 
@@ -517,16 +517,9 @@ function gotoChartCalender(targetedCalender){
             calenderData[i][j] = "";
           }
           else{
-            calenderData[i][j] = getRandomArbitrary();
+            calenderData[i][j] = `${(Math.random() * (100 + 100) - 100).toFixed(2)}%`;
           }
         }
-    }
-    
-    function getRandomArbitrary() {
-        return `${(Math.random() * (100 + 100) - 100).toFixed(2)}%`;
-    }
-    function getRandomInt() {
-        return Math.floor(Math.random() * (20 - 1 + 1)) + 1;
     }
     
     let display_data_table = document.getElementById(`${targetedCalender}`);
@@ -640,259 +633,69 @@ DisplayCurrentTime();
 
 // ============== DISPLAY 5 PROGRESS START =========
 // the range of the value is 30 to -30
-var pos_value_sub1 = 20.17;
-var neg_value_sub1 = 0;
-
-var pos_value_sub2 = 1.09;
-var neg_value_sub2 = 0;
-
-var pos_value_sub3 = 2.4;
-var neg_value_sub3 = 0;
-
-var pos_value_sub4 = 9.31;
-var neg_value_sub4 = 0;
-
-var pos_value_sub5 = 0;
-var neg_value_sub5 = -22.49;
-
-var pos_value_sub6 = 0;
-var neg_value_sub6 = -1.75;
-
-var pos_value_sub7 = 12.5;
-var neg_value_sub7 = 0;
-
-var pos_value_sub8 = 0;
-var neg_value_sub8 = -17.36;
-
-var pos_value_sub9 = 0;
-var neg_value_sub9 = -4.95;
-
-var pos_value_sub10 = 22.55;
-var neg_value_sub10 = 0;
-
-
-
-pos_value1 = pos_value_sub1 * 3.34;
-pos_value2 = pos_value_sub2 * 3.34;
-pos_value3 = pos_value_sub3 * 3.34;
-pos_value4 = pos_value_sub4 * 3.34;
-pos_value5 = pos_value_sub5 * 3.34;
-pos_value6 = pos_value_sub6 * 3.34;
-pos_value7 = pos_value_sub7 * 3.34;
-pos_value8 = pos_value_sub8 * 3.34;
-pos_value9 = pos_value_sub9 * 3.34;
-pos_value10 = pos_value_sub10 * 3.34;
-
-neg_value1 = -neg_value_sub1 * 3.34;
-neg_value2 = -neg_value_sub2 * 3.34;
-neg_value3 = -neg_value_sub3 * 3.34;
-neg_value4 = -neg_value_sub4 * 3.34;
-neg_value5 = -neg_value_sub5 * 3.34;
-neg_value6 = -neg_value_sub6 * 3.34;
-neg_value7 = -neg_value_sub7 * 3.34;
-neg_value8 = -neg_value_sub8 * 3.34;
-neg_value9 = -neg_value_sub9 * 3.34;
-neg_value10 = -neg_value_sub10 * 3.34;
-
-var dis5_pos_value1 = pos_value1 * 0.78;
-var dis5_pos_value2 = pos_value2 * 0.7;
-var dis5_pos_value3 = pos_value3 * 0.7;
-var dis5_pos_value4 = pos_value4 * 0.7;
-var dis5_pos_value5 = pos_value5 * 0.7;
-var dis5_pos_value6 = pos_value6 * 0.7;
-var dis5_pos_value7 = pos_value7 * 0.7;
-var dis5_pos_value8 = pos_value8 * 0.7;
-var dis5_pos_value9 = pos_value9 * 0.7;
-var dis5_pos_value10 = pos_value10 * 0.78;
-
-var dis5_neg_value1 = neg_value1 * 1.11;
-var dis5_neg_value2 = neg_value2 * 1.11;
-var dis5_neg_value3 = neg_value3 * 1.11;
-var dis5_neg_value4 = neg_value4 * 1.11;
-var dis5_neg_value5 = neg_value5 * 1.11;
-var dis5_neg_value6 = neg_value6 * 1.11;
-var dis5_neg_value7 = neg_value7 * 1.11;
-var dis5_neg_value8 = neg_value8 * 1.11;
-var dis5_neg_value9 = neg_value9 * 1.11;
-var dis5_neg_value10 = neg_value10 * 1.11;
-
-if (neg_value_sub1 <= -25) {
-    var dis5_neg_value1 = neg_value1 * .98;
-}
-if (neg_value_sub2 <= -25) {
-    var dis5_neg_value2 = neg_value2 * .98;
-}
-if (neg_value_sub3 <= -25) {
-    var dis5_neg_value3 = neg_value3 * .98;
-}
-if (neg_value_sub4 <= -25) {
-    var dis5_neg_value4 = neg_value4 * .98;
-}
-if (neg_value_sub5 <= -25) {
-    var dis5_neg_value5 = neg_value5 * .98;
-}
-if (neg_value_sub6 <= -25) {
-    var dis5_neg_value6 = neg_value6 * .98;
-}
-if (neg_value_sub7 <= -25) {
-    var dis5_neg_value7 = neg_value7 * .98;
-}
-if (neg_value_sub8 <= -25) {
-    var dis5_neg_value8 = neg_value8 * .98;
-}
-if (neg_value_sub9 <= -25) {
-    var dis5_neg_value9 = neg_value9 * .98;
-}
-if (neg_value_sub10 <= -25) {
-    var dis5_neg_value10 = neg_value10 * .98;
+function animationPositiveDiv(posProgVal, posProgTarget, posTextTarget) {
+    var elem = document.querySelector(`${posProgTarget}`);
+    var elemPara = document.querySelector(`${posTextTarget}`);   
+    var height = 0;
+    var id = setInterval(frame, 100);
+    function frame() {
+      if (height >= posProgVal) {
+        clearInterval(id);
+      } else {
+        height++; 
+        elem.style.height = height + '%';
+        // elemPara.style.bottom = height * 0.85 + 'px';
+        elemPara.innerHTML = height * 1  + '%';
+      }
+    }
 }
 
-// ==============================================
+function animationNegativeDiv(negProgVal, negProgTarget, negTextTarget) {
+    var elem = document.querySelector(`${negProgTarget}`);
+    var elemPara = document.querySelector(`${negTextTarget}`);   
+    var height = 0;
+    var id = setInterval(frame, 100);
+    function frame() {
+      if (height >= negProgVal) {
+        clearInterval(id);
+      } else {
+        height++; 
+        elem.style.height = height + '%';
+        // elemPara.style.top = height * 1.07 + 'px';
+        elemPara.innerHTML = height * -1  + '%';
+      }
+    }
+  }
 
-if (pos_value_sub1 > 0) {
-    document.querySelector(".dis5_pos_value1").innerHTML = pos_value_sub1 + "%";
-} else if (neg_value_sub1 < 0) {
-    document.querySelector(".dis5_neg_value1").innerHTML = neg_value_sub1 + "%";
-} else {
-    document.querySelector(".dis5_pos_value1").innerHTML = "";
-    document.querySelector(".dis5_neg_value1").innerHTML = "";
-}
-// =======================
-if (pos_value_sub2 > 0) {
-    document.querySelector(".dis5_pos_value2").innerHTML = pos_value_sub2 + "%";
-} else if (neg_value_sub2 < 0) {
-    document.querySelector(".dis5_neg_value2").innerHTML = neg_value_sub2 + "%";
-} else {
-    document.querySelector(".dis5_pos_value2").innerHTML = "";
-    document.querySelector(".dis5_neg_value2").innerHTML = "";
-}
-// =======================
-if (pos_value_sub3 > 0) {
-    document.querySelector(".dis5_pos_value3").innerHTML = pos_value_sub3 + "%";
-} else if (neg_value_sub3 < 0) {
-    document.querySelector(".dis5_neg_value3").innerHTML = neg_value_sub3 + "%";
-} else {
-    document.querySelector(".dis5_pos_value3").innerHTML = "";
-    document.querySelector(".dis5_neg_value3").innerHTML = "";
-}
-// =======================
-if (pos_value_sub4 > 0) {
-    document.querySelector(".dis5_pos_value4").innerHTML = pos_value_sub4 + "%";
-} else if (neg_value_sub4 < 0) {
-    document.querySelector(".dis5_neg_value4").innerHTML = neg_value_sub4 + "%";
-} else {
-    document.querySelector(".dis5_pos_value4").innerHTML = "";
-    document.querySelector(".dis5_neg_value4").innerHTML = "";
-}
-// =======================
-if (pos_value_sub5 > 0) {
-    document.querySelector(".dis5_pos_value5").innerHTML = pos_value_sub5 + "%";
-} else if (neg_value_sub5 < 0) {
-    document.querySelector(".dis5_neg_value5").innerHTML = neg_value_sub5 + "%";
-} else {
-    document.querySelector(".dis5_pos_value5").innerHTML = "";
-    document.querySelector(".dis5_neg_value5").innerHTML = "";
-}
-// =======================
-if (pos_value_sub6 > 0) {
-    document.querySelector(".dis5_pos_value6").innerHTML = pos_value_sub6 + "%";
-} else if (neg_value_sub6 < 0) {
-    document.querySelector(".dis5_neg_value6").innerHTML = neg_value_sub6 + "%";
-} else {
-    document.querySelector(".dis5_pos_value6").innerHTML = "";
-    document.querySelector(".dis5_neg_value6").innerHTML = "";
-}
-// =======================
-if (pos_value_sub7 > 0) {
-    document.querySelector(".dis5_pos_value7").innerHTML = pos_value_sub7 + "%";
-} else if (neg_value_sub7 < 0) {
-    document.querySelector(".dis5_neg_value7").innerHTML = neg_value_sub7 + "%";
-} else {
-    document.querySelector(".dis5_pos_value7").innerHTML = "";
-    document.querySelector(".dis5_neg_value7").innerHTML = "";
-}
-// =======================
-if (pos_value_sub8 > 0) {
-    document.querySelector(".dis5_pos_value8").innerHTML = pos_value_sub8 + "%";
-} else if (neg_value_sub8 < 0) {
-    document.querySelector(".dis5_neg_value8").innerHTML = neg_value_sub8 + "%";
-} else {
-    document.querySelector(".dis5_pos_value8").innerHTML = "";
-    document.querySelector(".dis5_neg_value8").innerHTML = "";
-}
-// =======================
-if (pos_value_sub9 > 0) {
-    document.querySelector(".dis5_pos_value9").innerHTML = pos_value_sub9 + "%";
-} else if (neg_value_sub9 < 0) {
-    document.querySelector(".dis5_neg_value9").innerHTML = neg_value_sub9 + "%";
-} else {
-    document.querySelector(".dis5_pos_value9").innerHTML = "";
-    document.querySelector(".dis5_neg_value9").innerHTML = "";
-}
-// =======================
-if (pos_value_sub10 > 0) {
-    document.querySelector(".dis5_pos_value10").innerHTML = pos_value_sub10 + "%";
-} else if (neg_value_sub10 < 0) {
-    document.querySelector(".dis5_neg_value10").innerHTML = neg_value_sub10 + "%";
-} else {
-    document.querySelector(".dis5_pos_value10").innerHTML = "";
-    document.querySelector(".dis5_neg_value10").innerHTML = "";
-}
-// ==================================================
+function gotoChartFive(targetedTab){
 
+    $(`#${targetedTab} .pos-bar-status`).removeAttr("style");
+    $(`#${targetedTab} .allpos_value`).html("");
+    $(`#${targetedTab} .neg-bar-status`).removeAttr("style");
+    $(`#${targetedTab} .allneg_value`).html("");
 
-document.querySelector(".dis5_progress_pos1").style.height = pos_value1 + "%";
-document.querySelector(".dis5_progress_neg1").style.height = neg_value1 + "%";
-document.querySelector(".dis5_pos_value1").style.bottom = dis5_pos_value1 + "%";
-document.querySelector(".dis5_neg_value1").style.top = dis5_neg_value1 + "%";
+    let chartFiveValues = new Array(10);
+    for(let i=0; i<10; i++){
+        chartFiveValues[i] = Math.floor(Math.random() * (100 + 100 + 1)) - 100;
+    }
 
-// ====================
-document.querySelector(".dis5_progress_pos2").style.height = pos_value2 + "%";
-document.querySelector(".dis5_progress_neg2").style.height = neg_value2 + "%";
-document.querySelector(".dis5_pos_value2").style.bottom = dis5_pos_value2 + "%";
-document.querySelector(".dis5_neg_value2").style.top = dis5_neg_value2 + "%";
-// ====================
-document.querySelector(".dis5_progress_pos3").style.height = pos_value3 + "%";
-document.querySelector(".dis5_progress_neg3").style.height = neg_value3 + "%";
-document.querySelector(".dis5_pos_value3").style.bottom = dis5_pos_value3 + "%";
-document.querySelector(".dis5_neg_value3").style.top = dis5_neg_value3 + "%";
-// ====================
-document.querySelector(".dis5_progress_pos4").style.height = pos_value4 + "%";
-document.querySelector(".dis5_progress_neg4").style.height = neg_value4 + "%";
-document.querySelector(".dis5_pos_value4").style.bottom = dis5_pos_value4 + "%";
-document.querySelector(".dis5_neg_value4").style.top = dis5_neg_value4 + "%";
-// ====================
-document.querySelector(".dis5_progress_pos5").style.height = pos_value5 + "%";
-document.querySelector(".dis5_progress_neg5").style.height = neg_value5 + "%";
-document.querySelector(".dis5_pos_value5").style.bottom = dis5_pos_value5 + "%";
-document.querySelector(".dis5_neg_value5").style.top = dis5_neg_value5 + "%";
-// ====================
-document.querySelector(".dis5_progress_pos6").style.height = pos_value6 + "%";
-document.querySelector(".dis5_progress_neg6").style.height = neg_value6 + "%";
-document.querySelector(".dis5_pos_value6").style.bottom = dis5_pos_value6 + "%";
-document.querySelector(".dis5_neg_value6").style.top = dis5_neg_value6 + "%";
-// ====================
-document.querySelector(".dis5_progress_pos7").style.height = pos_value7 + "%";
-document.querySelector(".dis5_progress_neg7").style.height = neg_value7 + "%";
-document.querySelector(".dis5_pos_value7").style.bottom = dis5_pos_value7 + "%";
-document.querySelector(".dis5_neg_value7").style.top = dis5_neg_value7 + "%";
-// ====================
-document.querySelector(".dis5_progress_pos8").style.height = pos_value8 + "%";
-document.querySelector(".dis5_progress_neg8").style.height = neg_value8 + "%";
-document.querySelector(".dis5_pos_value8").style.bottom = dis5_pos_value8 + "%";
-document.querySelector(".dis5_neg_value8").style.top = dis5_neg_value8 + "%";
-// ====================
-document.querySelector(".dis5_progress_pos9").style.height = pos_value9 + "%";
-document.querySelector(".dis5_progress_neg9").style.height = neg_value9 + "%";
-document.querySelector(".dis5_pos_value9").style.bottom = dis5_pos_value9 + "%";
-document.querySelector(".dis5_neg_value9").style.top = dis5_neg_value9 + "%";
-// ====================
-document.querySelector(".dis5_progress_pos10").style.height = pos_value10 + "%";
-document.querySelector(".dis5_progress_neg10").style.height = neg_value10 + "%";
-document.querySelector(".dis5_pos_value10").style.bottom = dis5_pos_value10 + "%";
-document.querySelector(".dis5_neg_value10").style.top = dis5_neg_value10 + "%";
+    for(let j=0; j < chartFiveValues.length; j++){
+        let progValue, progTarget, progText;
+        if(chartFiveValues[j] >= 0){
+            progValue = chartFiveValues[j];
+            progTarget = `#${targetedTab} .dis5_plusProgress_value${j+1}`;
+            progText = `#${targetedTab} .dis5_pos_value${j+1}`;
+            animationPositiveDiv(progValue, progTarget, progText);
+        }else{
+            progValue = chartFiveValues[j] * -1;
+            progTarget = `#${targetedTab} .dis5_minusProgress_value${j+1}`;
+            progText = `#${targetedTab} .dis5_neg_value${j+1}`;
+            animationNegativeDiv(progValue, progTarget, progText);
+        }
+    }
+}
 
-
+// gotoChartFive();
 
 // ============== DISPLAY 5 PROGRESS END =========
 
