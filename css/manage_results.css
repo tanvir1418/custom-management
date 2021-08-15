@@ -831,42 +831,30 @@
 /* RECORDS STYLE 1 STYLE 2 END */
 
 /* ===///=== STYLE 1 TABLE START ===///=== */
-#style1Table {
+.style1-table-wrap {
     width: 100%;
     position: relative;
-    /* border: 2px solid #eff1f7 !important; */
     border: 0px;
 }
 
-/* #style1Table table {
-    width: 100%;
-    height: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
-} */
-
-/* #style1Table .mytablesty12 {
-    border: 2px solid #eff1f7 !important;
-} */
-
-#style1Table .mytablesty12 tbody tr:first-child {
+.style1-table-wrap .mytablesty12 tbody tr:first-child {
     border-top: 2px solid #eff1f7 !important;
 }
-#style1Table .mytablesty12 tbody tr:last-child {
+.style1-table-wrap .mytablesty12 tbody tr:last-child {
     border-bottom: 2px solid #eff1f7 !important;
 }
 
-#style1Table .mytablesty12 thead {
+.style1-table-wrap .mytablesty12 thead {
     border-bottom: 2px solid #eff1f7 !important;
 }
 
-#style1Table th,
+.style1-table-wrap th,
 td {
     border: none !important;
 }
 
-#style1Table .mytablesty12 td,
-#style1Table .mytablesty12 th {
+.style1-table-wrap .mytablesty12 td,
+.style1-table-wrap .mytablesty12 th {
     border-right: 2px solid #eff1f7 !important;
 }
 
@@ -1497,7 +1485,7 @@ td {
 }
 
 /* table data end */
-#style1Table::-webkit-scrollbar {
+.style1-table-wrap::-webkit-scrollbar {
     width: 0px;
 }
 /* SLIDER ARROW START */
@@ -3196,7 +3184,7 @@ th[draggable] a {
     cursor: pointer;
 }
 /* -------------------------------------------- */
-#style1Table{
+.style1-table-wrap{
     overflow-x: scroll;
     overflow-y: hidden;
 }
@@ -3471,7 +3459,7 @@ i.fa-caret-down.down-animation-icon{
     position: relative;
 }
 
-#style1Table .clone-head-table-wrap{
+.style1-table-wrap .clone-head-table-wrap{
     height: 44px !important;
     background-color: #fafafc !important;
 }

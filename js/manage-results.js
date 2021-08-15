@@ -704,9 +704,9 @@ function gotoChartFive(targetedTab){
 
 // ///////////////////////////////////////////
 function style1TableScroller() {
-    const style1TableScroll = document.querySelector("#style1Table");
+    const style1TableScroll = document.querySelector("#Main .style1-table-wrap");
     $("#Main .outer-table-style12-box .right-slider5").click(function () {
-        $("#style1Table").animate({
+        $("#Main .style1-table-wrap").animate({
             scrollLeft: style1TableScroll.scrollLeft + 800,
         },
             0
@@ -714,7 +714,7 @@ function style1TableScroller() {
         hideStyleOneAllPopup();
         resetDownArrow();
     }).dblclick(function () {
-        $("#style1Table").animate({
+        $("#Main .style1-table-wrap").animate({
             scrollLeft: style1TableScroll.scrollLeft + 800,
         },
             0
@@ -724,7 +724,7 @@ function style1TableScroller() {
     });
 
     $("#Main .outer-table-style12-box .left-slider5").click(function () {
-        $("#style1Table").animate({
+        $("#Main .style1-table-wrap").animate({
             scrollLeft: style1TableScroll.scrollLeft - 800,
         },
             0
@@ -732,7 +732,7 @@ function style1TableScroller() {
         hideStyleOneAllPopup();
         resetDownArrow();
     }).dblclick(function () {
-        $("#style1Table").animate({
+        $("#Main .style1-table-wrap").animate({
             scrollLeft: style1TableScroll.scrollLeft - 800,
         },
             0
@@ -775,7 +775,7 @@ $("#Main .style1-box").addClass("clickstylebg");
 $("#Main .style2-box").addClass("clickstylebrdr");
 
 $("#Main .style1-box").click(function () {
-    $("#style1Table").removeClass("displayNone");
+    $("#Main .style1-table-wrap").removeClass("displayNone");
     $("#style2Con").addClass("displayNone");
 
     $("#Main .style1-box").addClass("clickstylebg");
@@ -787,7 +787,7 @@ $("#Main .style1-box").click(function () {
     $("#Main .double-click-style1").removeClass("displayNone");
     $("#Main .double-click-style2").addClass("displayNone");
 
-    let rowNumber = $("#style1Table #resizable554 tbody tr");
+    let rowNumber = $("#Main .style1-table-wrap #resizable554 tbody tr");
     if (rowNumber.length > 0) {
         $("#Main .outer-table-style12-box .right-slider5").css("display", "block");
         $("#Main .outer-table-style12-box .left-slider5").css("display", "block");
@@ -806,7 +806,7 @@ $("#Main .style1-box").click(function () {
 });
 
 $("#Main .style2-box").click(function () {
-    $("#style1Table").addClass("displayNone");
+    $("#Main .style1-table-wrap").addClass("displayNone");
     $("#style2Con").removeClass("displayNone");
 
     $("#Main .style2-box").addClass("clickstylebg");
@@ -818,7 +818,7 @@ $("#Main .style2-box").click(function () {
     $("#Main .double-click-style1").addClass("displayNone");
     $("#Main .double-click-style2").removeClass("displayNone");
 
-    let rowNumber = $("#style1Table #resizable554 tbody tr");
+    let rowNumber = $("#Main .style1-table-wrap #resizable554 tbody tr");
     if (rowNumber.length > 0) {
         $("#Main .outer-table-style12-box .right-slider5").css("display", "none");
         $("#Main .outer-table-style12-box .left-slider5").css("display", "none");
@@ -848,7 +848,7 @@ function headClick(target, index) {
     if (target.tagName === "DIV" && regex.test(target.id)) {
         $(`#resizable554 th:nth-child(${index})`).addClass("th-dis-none");
         $(`#resizable554 td:nth-child(${index})`).addClass("th-dis-none");
-        $(`#Main .outer-table-style12-box #style1Table .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).addClass("th-dis-none");
+        $(`#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).addClass("th-dis-none");
         manResTableRender();
         $("#col8Filter").css('display', 'none');
         resetDownArrow();
@@ -933,7 +933,7 @@ function table1HeadClick() {
 
     });
 
-    $("#Main .outer-table-style12-box #style1Table .clone-head-table-wrap .mytablesty12 th").click(function (e) {
+    $("#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th").click(function (e) {
         let target = e.target;
         let index = $(this).index() + 1;
         if (target.tagName === "I") {
@@ -989,14 +989,14 @@ function dblclickResMove(e) {
         $(e).remove();
         $(`#resizable554 th.column-header-${index}`).removeClass("th-dis-none");
         $(`#resizable554 td.column-header-${index}`).removeClass("th-dis-none");
-        $(`#Main .outer-table-style12-box #style1Table .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).removeClass("th-dis-none");
+        $(`#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).removeClass("th-dis-none");
         manResTableRender();
     }
     else if (_id == "man-res-opt-data-table-right") {
         $(e).remove();
         $(`#resizable554 th.column-header-${index}`).addClass("th-dis-none");
         $(`#resizable554 td.column-header-${index}`).addClass("th-dis-none");
-        $(`#Main .outer-table-style12-box #style1Table .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).addClass("th-dis-none");
+        $(`#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).addClass("th-dis-none");
         manResTableRender();
     }
 }
@@ -1009,7 +1009,7 @@ function moveResLeftToRight() {
         $(tr[i]).remove();
         $(`#resizable554 th.column-header-${index}`).removeClass("th-dis-none");
         $(`#resizable554 td.column-header-${index}`).removeClass("th-dis-none");
-        $(`#Main .outer-table-style12-box #style1Table .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).removeClass("th-dis-none");
+        $(`#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).removeClass("th-dis-none");
         manResTableRender();
     }
 }
@@ -1022,7 +1022,7 @@ function moveResRightToLeft() {
         $(tr[i]).remove();
         $(`#resizable554 th.column-header-${index}`).addClass("th-dis-none");
         $(`#resizable554 td.column-header-${index}`).addClass("th-dis-none");
-        $(`#Main .outer-table-style12-box #style1Table .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).addClass("th-dis-none");
+        $(`#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).addClass("th-dis-none");
         manResTableRender();
     }
 }
@@ -1062,7 +1062,7 @@ function findVisible(element, pos) {
 function columnMove(index, direc) {
     let tHead = $(`#resizable554 th.column-header-${index}`);
     let tBody = $(`#resizable554 td.column-header-${index}`);
-    let tvHead = $(`#Main .outer-table-style12-box #style1Table .clone-head-table-wrap .mytablesty12 th.column-header-${index}`);
+    let tvHead = $(`#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`);
     let len = tBody.length;
     if (direc == "up") {
         let eleH = findVisible(tHead.prev(), "prev");
@@ -1231,7 +1231,7 @@ function resizeWithUi(tQuery, thHeight) {
 function resizableTable1() {
     let thHeight = $("table#resizable554 th:first").height();
     resizeWithUi("table#resizable554 th", thHeight);
-    resizeWithUi("#Main .outer-table-style12-box #style1Table .clone-head-table-wrap .mytablesty12 th", thHeight);
+    resizeWithUi("#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th", thHeight);
 }
 // TABLE RESIZEABLE END ===////////////////===
 
@@ -1747,7 +1747,7 @@ window.addEventListener("scroll", (event) => {
         //console.log(filterStyles.display);
 
         if (arrowShowing == true && filterStyles.display == "block" && headerIndexClick != "") {
-            let virtualHeader = document.querySelector('#Main .outer-table-style12-box #style1Table .clone-head-table-wrap');
+            let virtualHeader = document.querySelector('#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap');
             let compStyles = window.getComputedStyle(virtualHeader);
 
             if (compStyles.visibility == "visible") {

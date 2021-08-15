@@ -868,9 +868,9 @@ function tableHeadSty1() {
 			<div class="column-header-66-sizer"></div>
 		</th>
 	</tr>`;
-	document.querySelector("#style1Table #resizable554 thead").innerHTML = tHeadTr;
+	document.querySelector("#Main .style1-table-wrap #resizable554 thead").innerHTML = tHeadTr;
 
-	$("#style1Table").freezeTable({
+	$("#Main .style1-table-wrap").freezeTable({
 		'freezeColumn': false,
 	});
 }
@@ -2962,10 +2962,10 @@ function manResPagination(noRow) {
 			});
 
 
-			let style1Table = $("#resizable554 tbody");
-			let style2Table = $("#style2Con #style2_Content");
-			style1Table.html(tableTr);
-			style2Table.html(style2TableData);
+			let style1_Table_Html = $("#resizable554 tbody");
+			let style2_Table_Html = $("#style2Con #style2_Content");
+			style1_Table_Html.html(tableTr);
+			style2_Table_Html.html(style2TableData);
 
 			// hide td base on th start
 			disNone.forEach((k) => {
@@ -2976,7 +2976,7 @@ function manResPagination(noRow) {
 			// Truncate the Detail 2 Text (Huge Text)
 			truncateText(450);
 
-			$("#style1Table").css("border", "2px solid #eff1f7");
+			$("#Main .style1-table-wrap").css("border", "2px solid #eff1f7");
 			$("#pagination-man-res-table .width-row-go").css("display", "block");
 			IconModalClick();
 			Style2DropFilterPos();
