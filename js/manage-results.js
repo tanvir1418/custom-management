@@ -820,10 +820,10 @@ $("#Main .style1-box").click(function () {
     hideStyleTwoAllPopup();
 
     $("#resizable554").css("display", "none");
-    $("#loading_table").css("display", "block");
+    $("#Main .loading-style1-table").css("display", "block");
 
     setTimeout(() => {
-        $("#loading_table").css("display", "none");
+        $("#Main .loading-style1-table").css("display", "none");
         $("#resizable554").css("display", "block");
     }, 2000);
 
@@ -851,10 +851,10 @@ $("#Main .style2-box").click(function () {
     hideStyleOneAllPopup();
 
     $("#style2Con #style2_Content").css("display", "none");
-    $("#style2_loading").css("display", "block");
+    $("#Main .loading-style2-table").css("display", "block");
 
     setTimeout(() => {
-        $("#style2_loading").css("display", "none");
+        $("#Main .loading-style2-table").css("display", "none");
         $("#style2Con #style2_Content").css("display", "block");
     }, 2000);
 
@@ -1800,24 +1800,12 @@ $(document).keydown(function (e) {
     let filterTargeting = document.querySelector('#col8Filter');
     let filterStyles = window.getComputedStyle(filterTargeting);
     if (e.which == 37 && arrowShowing == true) {
-        $("#viewtwo").css('display', 'none');
-        $("#rowdetails").css('display', 'none');
-        $("#noteswindow").css('display', 'none');
-        $("#alertswindow").css('display', 'none');
-        $("#copyrowlist").css('display', 'none');
-        $("#moverowlist").css('display', 'none');
-        $("#col8Filter").css('display', 'none');
+        hideStyleOneAllPopup();
         resetDownArrow();
         //    return false;
     }
     if (e.which == 39 && arrowShowing == true) {
-        $("#viewtwo").css('display', 'none');
-        $("#rowdetails").css('display', 'none');
-        $("#noteswindow").css('display', 'none');
-        $("#alertswindow").css('display', 'none');
-        $("#copyrowlist").css('display', 'none');
-        $("#moverowlist").css('display', 'none');
-        $("#col8Filter").css('display', 'none');
+        hideStyleOneAllPopup();
         resetDownArrow();
         //    return false;
     }

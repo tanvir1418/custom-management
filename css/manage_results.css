@@ -3499,25 +3499,25 @@ i.fa-caret-down.down-animation-icon{
 
 
 /* Label Skeleton Loading Animation Starts  */
-#loading_table thead tr th{
+.loading-style1-table thead tr th{
     height: 45px;
 }
 
-#loading_table tbody tr td .loading-row{
+.loading-style1-table tbody tr td .loading-row{
     height: 160px;
     width: 100%;
     background-color: #ffffff;
     padding: 0px;
 }
 
-#style2_loading tbody tr td .loading-row{
+.loading-style2-table tbody tr td .loading-row{
     height: 100%;
     width: 100%;
     background-color: #ffffff;
     padding: 0px;
 }
 
-#style2_loading table tbody tr .dchart_1 {
+.loading-style2-table table tbody tr .dchart_1 {
     padding: 0px !important;
 }
 
@@ -3577,7 +3577,7 @@ i.fa-caret-down.down-animation-icon{
 #mnData-opt4-loadingWrapper,
 #mnData-opt5-loadingWrapper,
 #manage_alert_loading_table,
-#style2_loading,
-#loading_table{
+.loading-style2-table,
+.loading-style1-table{
     display: none;
 }
