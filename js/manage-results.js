@@ -794,22 +794,22 @@ function tableProgressBarAnimation(targetedMainTab, progressVal, progWidthTarget
 
 // CLICL TO TOGGLE STYLE1 & STYLE2 START =====
 $("#style2Con").addClass("displayNone");
-$("#double_click_style2").addClass("displayNone");
-$(".style1-box").addClass("clickstylebg");
-$(".style2-box").addClass("clickstylebrdr");
+$("#Main .double-click-style2").addClass("displayNone");
+$("#Main .style1-box").addClass("clickstylebg");
+$("#Main .style2-box").addClass("clickstylebrdr");
 
-$(".style1-box").click(function () {
+$("#Main .style1-box").click(function () {
     $("#style1Table").removeClass("displayNone");
     $("#style2Con").addClass("displayNone");
 
-    $(".style1-box").addClass("clickstylebg");
-    $(".style1-box").removeClass("clickstylebrdr");
+    $("#Main .style1-box").addClass("clickstylebg");
+    $("#Main .style1-box").removeClass("clickstylebrdr");
 
-    $(".style2-box").addClass("clickstylebrdr");
-    $(".style2-box").removeClass("clickstylebg");
+    $("#Main .style2-box").addClass("clickstylebrdr");
+    $("#Main .style2-box").removeClass("clickstylebg");
 
-    $("#double_click").removeClass("displayNone");
-    $("#double_click_style2").addClass("displayNone");
+    $("#Main .double-click-style1").removeClass("displayNone");
+    $("#Main .double-click-style2").addClass("displayNone");
 
     let rowNumber = $("#style1Table #resizable554 tbody tr");
     if (rowNumber.length > 0) {
@@ -817,14 +817,7 @@ $(".style1-box").click(function () {
         $("#outer_table_box7 .left-slider5").css("display", "block");
     }
 
-    $("#viewtwo_style2").css('display', 'none');
-    $("#rowdetails_style2").css('display', 'none');
-    $("#noteswindow_style2").css('display', 'none');
-    $("#alertswindow_style2").css('display', 'none');
-    $("#copyrowlist_style2").css('display', 'none');
-    $("#moverowlist_style2").css('display', 'none');
-
-    $("#col8Filter").css('display', 'none');
+    hideStyleTwoAllPopup();
 
     $("#resizable554").css("display", "none");
     $("#loading_table").css("display", "block");
@@ -836,18 +829,18 @@ $(".style1-box").click(function () {
 
 });
 
-$(".style2-box").click(function () {
+$("#Main .style2-box").click(function () {
     $("#style1Table").addClass("displayNone");
     $("#style2Con").removeClass("displayNone");
 
-    $(".style2-box").addClass("clickstylebg");
-    $(".style2-box").removeClass("clickstylebrdr");
+    $("#Main .style2-box").addClass("clickstylebg");
+    $("#Main .style2-box").removeClass("clickstylebrdr");
 
-    $(".style1-box").addClass("clickstylebrdr");
-    $(".style1-box").removeClass("clickstylebg");
+    $("#Main .style1-box").addClass("clickstylebrdr");
+    $("#Main .style1-box").removeClass("clickstylebg");
 
-    $("#double_click").addClass("displayNone");
-    $("#double_click_style2").removeClass("displayNone");
+    $("#Main .double-click-style1").addClass("displayNone");
+    $("#Main .double-click-style2").removeClass("displayNone");
 
     let rowNumber = $("#style1Table #resizable554 tbody tr");
     if (rowNumber.length > 0) {
@@ -855,14 +848,7 @@ $(".style2-box").click(function () {
         $("#outer_table_box7 .left-slider5").css("display", "none");
     }
 
-    $("#viewtwo").css('display', 'none');
-    $("#rowdetails").css('display', 'none');
-    $("#noteswindow").css('display', 'none');
-    $("#alertswindow").css('display', 'none');
-    $("#copyrowlist").css('display', 'none');
-    $("#moverowlist").css('display', 'none');
-
-    $("#col8Filter").css('display', 'none');
+    hideStyleOneAllPopup();
 
     $("#style2Con #style2_Content").css("display", "none");
     $("#style2_loading").css("display", "block");
@@ -1767,8 +1753,7 @@ window.addEventListener("scroll", (event) => {
     let scroll = this.scrollY;
     // console.log(scroll);
     if (scroll > 1400) {
-        // if(style_1_box)
-        let arrowShowing = $("#style_1_box").hasClass("clickstylebg");
+        let arrowShowing = $("#Main .style1-box").hasClass("clickstylebg");
         if (arrowShowing) {
             $("#outer_table_box7 .left-slider5").css('display', 'block');
             $("#outer_table_box7 .right-slider5").css('display', 'block');
@@ -1779,7 +1764,7 @@ window.addEventListener("scroll", (event) => {
     }
 
     if (scroll > 1200) {
-        let arrowShowing = $("#style_1_box").hasClass("clickstylebg");
+        let arrowShowing = $("#Main .style1-box").hasClass("clickstylebg");
 
         let filterTargeting = document.querySelector('#col8Filter');
         let filterStyles = window.getComputedStyle(filterTargeting);
@@ -1811,7 +1796,7 @@ window.addEventListener("scroll", (event) => {
 
 
 $(document).keydown(function (e) {
-    let arrowShowing = $("#style_1_box").hasClass("clickstylebg");
+    let arrowShowing = $("#Main .style1-box").hasClass("clickstylebg");
     let filterTargeting = document.querySelector('#col8Filter');
     let filterStyles = window.getComputedStyle(filterTargeting);
     if (e.which == 37 && arrowShowing == true) {

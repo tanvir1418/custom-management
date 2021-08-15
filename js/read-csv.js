@@ -884,25 +884,6 @@ function manResPagination(noRow) {
 		showGoButton: true,
 		callback: function (data, pagination) {
 
-			// for (let columnVNum = 1; columnVNum < 16; columnVNum++) {
-			// 	$(`.clone-head-table-wrap table.mytablesty12 thead tr .column-header-${columnVNum} .column-header-${columnVNum}-sizer`).removeAttr("style");
-			// }
-			// tableHeadSty1();
-			// for (let columnNum = 1; columnNum <= 66; columnNum++) {
-			// 	let sizerWidth = $(`#resizable554 thead tr .column-header-${columnNum} .column-header-${columnNum}-sizer`).attr("style");
-			// 	if (sizerWidth != undefined) {
-			// 		sizerWidth = sizerWidth.replace('width: ', '').replace('px;', '').trim();
-			// 		console.log("Width Value: " + sizerWidth);
-			// 		let totalRow = $(`#resizable554 tbody tr`).length;
-			// 		console.log("Total Row: " + totalRow);
-			// 		for (let rowNum = 1; rowNum <= totalRow; rowNum++) {
-			// 			$(`#resizable554 tbody tr:nth-child(${rowNum}) .column-header-${columnNum} .column-header-${columnNum}-sizer`).css("width", `${sizerWidth}`);
-			// 			console.log("Width Value: " + sizerWidth);
-			// 		}
-			// 	} else {
-			// 		console.log(`Column-header-${columnNum} Undefined Found`);
-			// 	}
-			// }
 			let tdWidthContainer = [];
 			tdWidthContainer.push("undefined");
 
@@ -931,10 +912,10 @@ function manResPagination(noRow) {
 			let dataShowingFrom = ((currentPageNumber - 1) * dataRowPerPage) + 1;
 			let dataShowingTo = ((currentPageNumber * dataRowPerPage) < totalDataRows) ? (currentPageNumber * dataRowPerPage) : totalDataRows;
 
-			$("#current_page").html(currentPageNumber);
-			$("#total_pages").html(totalPageNumber);
-			$("#record_showingFrom").html(dataShowingFrom);
-			$("#record_showingTo").html(dataShowingTo);
+			$("#Main .current_page").html(currentPageNumber);
+			$("#Main .total_pages").html(totalPageNumber);
+			$("#Main .record_showingFrom").html(dataShowingFrom);
+			$("#Main .record_showingTo").html(dataShowingTo);
 
 			let tableTr = "";
 			let style2TableData = "";
@@ -2980,21 +2961,6 @@ function manResPagination(noRow) {
 				</table>`;
 			});
 
-			// if (showSkeleton == "showAnimation") {
-			// 	$("#resizable554").css("display", "none");
-			// 	$("#loading_table").css("display", "block");
-
-			// 	setTimeout(() => {
-			// 		$("#loading_table").css("display", "none");
-			// 		$("#resizable554").css("display", "block");
-			// 	}, 3000);
-
-			// 	showSkeleton = "";
-			// } else {
-			// 	$("#resizable554").css("display", "block");
-			// 	$("#loading_table").css("display", "none");
-			// }
-
 
 			let style1Table = $("#resizable554 tbody");
 			let style2Table = $("#style2Con #style2_Content");
@@ -3010,13 +2976,6 @@ function manResPagination(noRow) {
 			// Truncate the Detail 2 Text (Huge Text)
 			truncateText(450);
 
-			// Code added by Tanvir
-			// let decideDisplay = $(".style2-box").hasClass("clickstylebg");
-			// if(!decideDisplay){
-			// 	$(".right-slider5").css("display", "block");
-			// 	$(".left-slider5").css("display", "block");
-			// }
-
 			$("#style1Table").css("border", "2px solid #eff1f7");
 			$("#pagination-man-res-table .width-row-go").css("display", "block");
 			IconModalClick();
@@ -3027,19 +2986,9 @@ function manResPagination(noRow) {
 			// function for table 2 End
 			style1TableScroller();
 
-			$("#viewtwo").css("display", "none");
-			$("#rowdetails").css("display", "none");
-			$("#noteswindow").css("display", "none");
-			$("#alertswindow").css("display", "none");
-			$("#copyrowlist").css("display", "none");
-			$("#moverowlist").css("display", "none");
+			hideStyleOneAllPopup();
 
-			$("#viewtwo_style2").css("display", "none");
-			$("#rowdetails_style2").css("display", "none");
-			$("#noteswindow_style2").css("display", "none");
-			$("#alertswindow_style2").css("display", "none");
-			$("#copyrowlist_style2").css("display", "none");
-			$("#moverowlist_style2").css("display", "none");
+			hideStyleTwoAllPopup();
 
 			$("#col8Filter").css('display', 'none');
 
@@ -3177,6 +3126,3 @@ function popUpHandlerS2Table(e, indexValue) {
 	targetModal.html(tableTr);
 }
 
-function crossHandlerS2Table(eventCross, crossIndex) {
-	console.log("Style 2 table cross click...");
-}
