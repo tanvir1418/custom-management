@@ -1796,7 +1796,7 @@ td {
 .pagination-table input#row-no3,
 .pagination-table input#row-no4,
 .pagination-table input#row-no5,
-.pagination-table input#res-row-no7,
+.pagination-table input.manRes-pagination-input,
 .pagination-table input#row-mnAlert,
 .pagination-table .paginationjs .paginationjs-go-input input {
   width: 60px;
@@ -1864,7 +1864,7 @@ td {
   .pagination-table input#row-no3,
   .pagination-table input#row-no4,
   .pagination-table input#row-no5,
-  .pagination-table input#res-row-no7,
+  .pagination-table input.manRes-pagination-input,
   .pagination-table input#row-mnAlert,
   .pagination-table .paginationjs .paginationjs-go-input input {
     width: 50px;
@@ -1928,11 +1928,11 @@ td {
   }
 }
 
-.pagination-table #pagination-man-res-table .paginationjs .paginationjs-go-button input {
+.pagination-table .width-pagi-manRes-table .paginationjs .paginationjs-go-button input {
   background-color: #f2f2f2 !important;
 }
 
-#pagination-man-res-table .width-row-go{
+.width-pagi-manRes-table .width-row-go{
   display: none;
 }
 

@@ -2977,7 +2977,7 @@ function manResPagination(noRow) {
 			truncateText(450);
 
 			$("#Main .style1-table-wrap").css("border", "2px solid #eff1f7");
-			$("#pagination-man-res-table .width-row-go").css("display", "block");
+			$("#Main .width-pagi-manRes-table .width-row-go").css("display", "block");
 			IconModalClick();
 			Style2DropFilterPos();
 			// function for table 2 Start
@@ -2995,11 +2995,12 @@ function manResPagination(noRow) {
 			tooltipFunction();
 		},
 	};
-	let container = $("#pagination-man-res-table");
+	let container = $("#Main .width-pagi-manRes-table");
 	container.pagination(options);
 }
 
-$("#res-row-no7").change(function (e) {
+
+$("#Main .manRes-pagination-input").change(function (e) {
 	let noRow = e.target.value;
 	manResPagination(noRow);
 	pagiHideHead();
