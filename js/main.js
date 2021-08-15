@@ -102,24 +102,14 @@ for (var i = 0; i < li_tabs.length; i++) {
 			var current_tab_value = this.getAttribute("data-list");
 			//console.log(current_tab_value);
 			if (current_tab_value == "tab_1" || current_tab_value == "tab_2" || current_tab_value == "tab_3" || current_tab_value == "tab_5") {
-				$("#viewtwo").css("display", "none");
-				$("#rowdetails").css("display", "none");
-				$("#noteswindow").css("display", "none");
-				$("#alertswindow").css("display", "none");
-				$("#copyrowlist").css("display", "none");
-				$("#moverowlist").css("display", "none");
-
-				$("#viewtwo_style2").css("display", "none");
-				$("#rowdetails_style2").css("display", "none");
-				$("#noteswindow_style2").css("display", "none");
-				$("#alertswindow_style2").css("display", "none");
-				$("#copyrowlist_style2").css("display", "none");
-				$("#moverowlist_style2").css("display", "none");
+				
+				hideStyleOneAllPopup();
+				hideStyleTwoAllPopup();
 
 				$("#col8Filter").css("display", "none");
 
 				const rotateIcon = document.querySelectorAll(
-					"#outer_table_box7 i.fa-caret-down.down-animation-icon"
+					"#Main .outer-table-style12-box i.fa-caret-down.down-animation-icon"
 				);
 				for (let i = 0; i < rotateIcon.length; i++) {
 					$(rotateIcon[i]).removeClass("down-animation-icon");
