@@ -1577,19 +1577,19 @@ th[draggable] a {
 
 /* ===///=== STYLE 2 TABLE START ===///=== */
 
-#style2Con {
+.style2-table-wrap {
     padding: 0 16px;
     position: relative;
 }
 
 /* lorem description */
-#style2Con .description-text {
+.style2-table-wrap .description-text {
     padding: 20px 65px;
     background: #ffff00;
     border-radius: 3px;
 }
 
-#style2Con .description-text p {
+.style2-table-wrap .description-text p {
     margin: 0;
     font-family: gilroy-regular, sans-serif;
     font-size: 16px;
@@ -1599,14 +1599,14 @@ th[draggable] a {
 }
 
 /* table top icons */
-#style2Con .icon-box55 {
+.style2-table-wrap .icon-box55 {
     display: flex;
     padding: 38px 0px;
     align-items: center;
     justify-content: center;
 }
 
-#style2Con .icon-box55 .circle2box {
+.style2-table-wrap .icon-box55 .circle2box {
     background: #f5f5f5;
     height: 55px;
     width: 55px;
@@ -1616,11 +1616,11 @@ th[draggable] a {
     cursor: pointer;
 }
 
-#style2Con .icon-box55 .circle2box:hover {
+.style2-table-wrap .icon-box55 .circle2box:hover {
     background: #000000;
 }
 
-#style2Con .icon-box55 .circle2box i {
+.style2-table-wrap .icon-box55 .circle2box i {
     color: #828282;
     position: absolute;
     font-size: 20px;
@@ -1629,11 +1629,11 @@ th[draggable] a {
     transform: translate(-50%, -50%);
 }
 
-#style2Con .icon-box55 .circle2box:hover i {
+.style2-table-wrap .icon-box55 .circle2box:hover i {
     color: #ffffff;
 }
 
-#style2Con .icon-box55 .circle2box svg {
+.style2-table-wrap .icon-box55 .circle2box svg {
     position: absolute;
     max-height: 22px;
     fill: #828282;
@@ -1645,21 +1645,21 @@ th[draggable] a {
     transition: all 0.3s ease;
 }
 
-#style2Con .icon-box55 .circle2box:hover svg {
+.style2-table-wrap .icon-box55 .circle2box:hover svg {
     fill: #ffffff;
 }
 
-#style2Con .icon-box55 .circle2box svg.svg2 {
+.style2-table-wrap .icon-box55 .circle2box svg.svg2 {
     max-height: 25px;
     left: 4px;
 }
 
-#style2Con .icon-box55 .circle2box svg.svg4 {
+.style2-table-wrap .icon-box55 .circle2box svg.svg4 {
     max-height: 20px;
 }
 
 /* table width and table head style */
-#style2Con table {
+.style2-table-wrap table {
     width: 92%;
     border: 2px solid #eff1f7 !important;
     margin: 0px;
@@ -1703,29 +1703,29 @@ th[draggable] a {
 
 /* table head width end */
 
-#style2Con table thead {
+.style2-table-wrap table thead {
     border-bottom: 2px solid #eff1f7 !important;
 }
 
-#style2Con table th,
-#style2Con table td {
+.style2-table-wrap table th,
+.style2-table-wrap table td {
     border: none !important;
 }
 
-#style2Con table td,
-#style2Con table th {
+.style2-table-wrap table td,
+.style2-table-wrap table th {
     border-right: 2px solid #eff1f7 !important;
 }
 
-#style2Con table td {
+.style2-table-wrap table td {
     height: 70px;
 }
-#style2Con table.sty2table3 td{
+.style2-table-wrap table.sty2table3 td{
     min-height: 180px;
     height: 193px;
 }
 /* TABLE HEAD START */
-#style2Con table thead th {
+.style2-table-wrap table thead th {
     font-size: 12px;
     font-family: gilroy-bold, sans-serif;
     font-weight: 600;
@@ -1734,11 +1734,11 @@ th[draggable] a {
     text-align: center;
 }
 
-#style2Con table thead th {
+.style2-table-wrap table thead th {
     position: relative;
 }
 
-#style2Con table thead th .head-filter {
+.style2-table-wrap table thead th .head-filter {
     position: absolute;
     height: 15px;
     width: 15px;
@@ -1748,7 +1748,7 @@ th[draggable] a {
     cursor: pointer;
 }
 
-#style2Con table thead th .head-filter i {
+.style2-table-wrap table thead th .head-filter i {
     color: #9f9f9f;
     font-size: 12px;
     position: absolute;
@@ -1756,7 +1756,7 @@ th[draggable] a {
     top: 2px;
 }
 
-#style2Con table thead th .drop-filter {
+.style2-table-wrap table thead th .drop-filter {
     position: absolute;
     height: 15px;
     width: 15px;
@@ -1766,23 +1766,23 @@ th[draggable] a {
     cursor: pointer;
 }
 
-#style2Con table thead th .drop-filter i {
+.style2-table-wrap table thead th .drop-filter i {
     color: #9f9f9f;
     font-size: 14px;
 }
 
-#style2Con table thead th .head-filter:hover i,
-#style2Con table thead th .drop-filter:hover i {
+.style2-table-wrap table thead th .head-filter:hover i,
+.style2-table-wrap table thead th .drop-filter:hover i {
     color: #000000;
 }
 
 /* table body style START */
 /* TIME */
-#style2Con table .column-time .centerauto {
+.style2-table-wrap table .column-time .centerauto {
     padding: 16px 0;
 }
 
-#style2Con table .column-time span {
+.style2-table-wrap table .column-time span {
     color: #454545;
     font-family: gilroy-medium, sans-serif;
     font-weight: 600;
@@ -1792,12 +1792,12 @@ th[draggable] a {
 }
 
 /* STATUS */
-#style2Con table .status22 {
+.style2-table-wrap table .status22 {
     margin: 0px;
     padding: 0px;
 }
 
-#style2Con table .status22 .inner_con {
+.style2-table-wrap table .status22 .inner_con {
     background: #18a733;
     width: 100%;
     height: 100%;
@@ -1805,11 +1805,11 @@ th[draggable] a {
     padding: 28px 0;
 }
 
-#style2Con table .status22 .status22-centerize {
+.style2-table-wrap table .status22 .status22-centerize {
     width: 100%;
 }
 
-#style2Con table .status22 .inner_con p {
+.style2-table-wrap table .status22 .inner_con p {
     color: #ffffff;
     text-align: center;
     margin: 0;
@@ -1821,11 +1821,11 @@ th[draggable] a {
 }
 
 /* T1163*10 */
-#style2Con table .col_00 {
+.style2-table-wrap table .col_00 {
     position: relative;
 }
 
-#style2Con table .col_00 p {
+.style2-table-wrap table .col_00 p {
     font-size: 16px;
     font-family: gilroy-bold, sans-serif;
     font-weight: 500;
@@ -1833,36 +1833,36 @@ th[draggable] a {
 }
 
 /* CHART 1 */
-#style2Con table .dchart_1 {
+.style2-table-wrap table .dchart_1 {
     height: 193px;
     margin: 0;
     padding: 8px;
 }
 
-#style2Con table .dchart_1 .upper_part_22 {
+.style2-table-wrap table .dchart_1 .upper_part_22 {
     display: flex;
     height: 50%;
     padding: 2px;
 }
 
-#style2Con table .dchart_1 .uddleft {
+.style2-table-wrap table .dchart_1 .uddleft {
     height: 100%;
     width: 63%;
     background: #18a733;
     position: relative;
 }
 
-#style2Con table .dchart_1 .dwnlong .uddleft {
+.style2-table-wrap table .dchart_1 .dwnlong .uddleft {
     background: #ff4141;
 }
 
-#style2Con table .dchart_1 .uddright {
+.style2-table-wrap table .dchart_1 .uddright {
     height: 100%;
     width: 37%;
     position: relative;
 }
 
-#style2Con table .dchart_1 .upper_part_22 p {
+.style2-table-wrap table .dchart_1 .upper_part_22 p {
     margin: 0;
     width: 100%;
     font-size: 16px;
@@ -1870,21 +1870,21 @@ th[draggable] a {
     text-align: center;
 }
 
-#style2Con table .dchart_1 .uddleft p {
+.style2-table-wrap table .dchart_1 .uddleft p {
     font-weight: 500;
     color: #ffffff;
 }
 
-#style2Con table .dchart_1 .uddright p {
+.style2-table-wrap table .dchart_1 .uddright p {
     font-weight: 500;
     color: #19a734;
 }
 
-#style2Con table .dchart_1 .dwnlong .uddright p {
+.style2-table-wrap table .dchart_1 .dwnlong .uddright p {
     color: #ff4949;
 }
 
-#style2Con table .dchart_1 .arrow_bx8 {
+.style2-table-wrap table .dchart_1 .arrow_bx8 {
     width: 32px;
     height: 32px;
     border: 3px solid #ffffff;
@@ -1893,39 +1893,39 @@ th[draggable] a {
     left: 100%;
 }
 
-#style2Con table .dchart_1 .dwnlong .arrow_bx8 {
+.style2-table-wrap table .dchart_1 .dwnlong .arrow_bx8 {
     background: #ffa5a5;
 }
 
-#style2Con table .dchart_1 .arrow_bx8 i {
+.style2-table-wrap table .dchart_1 .arrow_bx8 i {
     color: #1aa834;
 }
 
-#style2Con table .dchart_1 .dwnlong .arrow_bx8 i {
+.style2-table-wrap table .dchart_1 .dwnlong .arrow_bx8 i {
     color: #ff4949;
 }
 
 /* 9TH CHART2 COLUMN */
-#style2Con table .pentagon {
+.style2-table-wrap table .pentagon {
     margin: 0;
     padding: 0;
 }
 
-#style2Con table .pentagon .upper-penta-box {
+.style2-table-wrap table .pentagon .upper-penta-box {
     width: 100%;
     height: 50%;
     border-bottom: 1px solid #dedede;
     position: relative;
 }
 
-#style2Con table .pentagon .lower-penta-box {
+.style2-table-wrap table .pentagon .lower-penta-box {
     width: 100%;
     height: 50%;
     border-top: 1px solid #dedede;
     position: relative;
 }
 
-#style2Con table .shape_penagon {
+.style2-table-wrap table .shape_penagon {
     background: #19a733;
     display: inline-block;
     height: 45px;
@@ -1936,7 +1936,7 @@ th[draggable] a {
     left: 55%;
 }
 
-#style2Con table .upper-penta-box .shape_penagon::after {
+.style2-table-wrap table .upper-penta-box .shape_penagon::after {
     border-bottom: 20px solid #19a733;
     border-left: 31px solid transparent;
     border-right: 31px solid transparent;
@@ -1948,14 +1948,14 @@ th[draggable] a {
     width: 0;
 }
 
-#style2Con table .lower-penta-box .shape_penagon {
+.style2-table-wrap table .lower-penta-box .shape_penagon {
     background: #ff4141;
     top: 0;
     left: 25%;
     position: relative;
 }
 
-#style2Con table .lower-penta-box .shape_penagon::after {
+.style2-table-wrap table .lower-penta-box .shape_penagon::after {
     border-top: 20px solid #ff4141;
     border-left: 31px solid transparent;
     border-right: 31px solid transparent;
@@ -1967,7 +1967,7 @@ th[draggable] a {
     width: 0;
 }
 
-#style2Con table .shape_penagon .top-num p {
+.style2-table-wrap table .shape_penagon .top-num p {
     font-size: 12px;
     font-family: gilroy-bold, sans-serif;
     font-weight: 500;
@@ -1976,14 +1976,14 @@ th[draggable] a {
     text-align: center;
 }
 
-#style2Con table .lower-penta-box .shape_penagon .top-num {
+.style2-table-wrap table .lower-penta-box .shape_penagon .top-num {
     position: absolute;
     bottom: -130%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-#style2Con table .shape_penagon .penta-count p {
+.style2-table-wrap table .shape_penagon .penta-count p {
     margin: 0;
     width: 100%;
     font-size: 12px;
@@ -1993,75 +1993,75 @@ th[draggable] a {
     line-height: 12px;
 }
 
-#style2Con table .lower-penta-box .penta-count p {
+.style2-table-wrap table .lower-penta-box .penta-count p {
     margin-top: 3px;
 }
 
 /*VAL_DATE COLUMN */
-#style2Con table .vall11_datel {
+.style2-table-wrap table .vall11_datel {
     margin: 0px;
     padding: 1px;
 }
 
-#style2Con table .vall11_datel .val11 {
+.style2-table-wrap table .vall11_datel .val11 {
     width: 100%;
     height: 50%;
     background: #18a733;
     position: relative;
 }
 
-#style2Con table .vall11_datel .val11 p {
+.style2-table-wrap table .vall11_datel .val11 p {
     font-size: 16px;
     font-family: gilroy-medium, sans-serif;
     font-weight: 600;
     color: #ffffff;
 }
 
-#style2Con table .vall11_datel .date_reco {
+.style2-table-wrap table .vall11_datel .date_reco {
     width: 100%;
     height: 50%;
     background: #ffffff;
     position: relative;
 }
 
-#style2Con table .vall11_datel .date_reco .date_reco_center {
+.style2-table-wrap table .vall11_datel .date_reco .date_reco_center {
     text-align: center;
 }
 
-#style2Con table .vall11_datel span {
+.style2-table-wrap table .vall11_datel span {
     font-size: 16px;
     font-family: gilroy-bold, sans-serif;
     font-weight: 500;
     color: #454545;
     /* margin-bottom: 5px; */
 }
-#style2Con table .vall11_datel .date_reco_center span {
+.style2-table-wrap table .vall11_datel .date_reco_center span {
     display: block;
 }
-#style2Con table .vall11_datel .date_reco span:first-child {
+.style2-table-wrap table .vall11_datel .date_reco span:first-child {
     margin-bottom: 10px;
 }
 
-#style2Con table .vall11_datel .date_reco span:last-child {
+.style2-table-wrap table .vall11_datel .date_reco span:last-child {
     margin-top: 10px;
 }
 
 /* col1 */
-#style2Con table .vall11_datel .col1table {
+.style2-table-wrap table .vall11_datel .col1table {
     height: 70px;
     text-align: center;
     line-height: 70px;
 }
 
 /* table UPPER BORDER REMOVE */
-/* #style2Con .sty2table2, */
-#style2Con .sty2table3,
-#style2Con .sty2table4,
-#style2Con .sty2table5,
-#style2Con .sty2table6,
-#style2Con .sty2table7,
-#style2Con .sty2table8,
-#style2Con .sty2table9 {
+/* .style2-table-wrap .sty2table2, */
+.style2-table-wrap .sty2table3,
+.style2-table-wrap .sty2table4,
+.style2-table-wrap .sty2table5,
+.style2-table-wrap .sty2table6,
+.style2-table-wrap .sty2table7,
+.style2-table-wrap .sty2table8,
+.style2-table-wrap .sty2table9 {
     border-top: none !important;
 }
 
@@ -3229,8 +3229,8 @@ table#resizable554 {
     margin-top: 0px !important;
 }
 
-#style2Con table .sty2table8 tbody td.vall11_datel,
-#style2Con table .sty2table9 tbody td.vall11_datel{
+.style2-table-wrap table .sty2table8 tbody td.vall11_datel,
+.style2-table-wrap table .sty2table9 tbody td.vall11_datel{
     min-width: 50%;
     height: 120px;
 }
@@ -3263,7 +3263,7 @@ td.s2-value .centerauto{
     line-height: 46px;
 }
 
-#style2Con table .status22 .padding__resize__S2Status{
+.style2-table-wrap table .status22 .padding__resize__S2Status{
     padding: 17px 0 !important;
 }
 

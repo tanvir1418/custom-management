@@ -769,14 +769,14 @@ function tableProgressBarAnimation(targetedMainTab, progressVal, progWidthTarget
 // PROGRESS BAR END
 
 // CLICL TO TOGGLE STYLE1 & STYLE2 START =====
-$("#style2Con").addClass("displayNone");
+$("#Main .style2-table-wrap").addClass("displayNone");
 $("#Main .double-click-style2").addClass("displayNone");
 $("#Main .style1-box").addClass("clickstylebg");
 $("#Main .style2-box").addClass("clickstylebrdr");
 
 $("#Main .style1-box").click(function () {
     $("#Main .style1-table-wrap").removeClass("displayNone");
-    $("#style2Con").addClass("displayNone");
+    $("#Main .style2-table-wrap").addClass("displayNone");
 
     $("#Main .style1-box").addClass("clickstylebg");
     $("#Main .style1-box").removeClass("clickstylebrdr");
@@ -807,7 +807,7 @@ $("#Main .style1-box").click(function () {
 
 $("#Main .style2-box").click(function () {
     $("#Main .style1-table-wrap").addClass("displayNone");
-    $("#style2Con").removeClass("displayNone");
+    $("#Main .style2-table-wrap").removeClass("displayNone");
 
     $("#Main .style2-box").addClass("clickstylebg");
     $("#Main .style2-box").removeClass("clickstylebrdr");
@@ -826,12 +826,12 @@ $("#Main .style2-box").click(function () {
 
     hideStyleOneAllPopup();
 
-    $("#style2Con #style2_Content").css("display", "none");
+    $("#Main .style2-table-wrap .style2-table-content").css("display", "none");
     $("#Main .loading-style2-table").css("display", "block");
 
     setTimeout(() => {
         $("#Main .loading-style2-table").css("display", "none");
-        $("#style2Con #style2_Content").css("display", "block");
+        $("#Main .style2-table-wrap .style2-table-content").css("display", "block");
     }, 2000);
 
 });
@@ -1101,7 +1101,7 @@ function table2HeadClickCall() {
 }
 
 function table2HeadClick(tName) {
-    $(`#style2Con .table.${tName} th`).click(function (e) {
+    $(`#Main .style2-table-wrap .table.${tName} th`).click(function (e) {
         let target = e.target;
         let index = $(this).index() + 1;
         if (target.tagName === "I") {
@@ -1109,8 +1109,8 @@ function table2HeadClick(tName) {
         }
         let regex = /style2_cross\d+/g;
         if (target.tagName === "DIV" && regex.test(target.className)) {
-            $(`#style2Con .table.${tName} th:nth-child(${index})`).addClass("th-dis-none");
-            $(`#style2Con .table.${tName} td:nth-child(${index})`).addClass("th-dis-none");
+            $(`#Main .style2-table-wrap .table.${tName} th:nth-child(${index})`).addClass("th-dis-none");
+            $(`#Main .style2-table-wrap .table.${tName} td:nth-child(${index})`).addClass("th-dis-none");
             allHeadTable2Call();
             $("#col8Filter").css('display', 'none');
         }
@@ -1131,7 +1131,7 @@ function allHeadTable2Call() {
 }
 
 function allHeadTable2(tName) {
-    let head = $(`#style2Con .table.${tName}`)[0];
+    let head = $(`#Main .style2-table-wrap .table.${tName}`)[0];
     let th = $(head).find("th");
     let len = th.length;
     let htmlTableR = "";
@@ -1163,14 +1163,14 @@ function dblclickRes2Move(e) {
     let index = $(e).attr("id").match(/\d+/g)[0];
     if (_id == "style2-man-res-opt-data-table-left") {
         $(e).remove();
-        $(`#style2Con .table th.style-two-head-${index}`).removeClass("th-dis-none");
-        $(`#style2Con .table td.style-two-head-${index}`).removeClass("th-dis-none");
+        $(`#Main .style2-table-wrap .table th.style-two-head-${index}`).removeClass("th-dis-none");
+        $(`#Main .style2-table-wrap .table td.style-two-head-${index}`).removeClass("th-dis-none");
         allHeadTable2Call();
     }
     else if (_id == "style2-man-res-opt-data-table-right") {
         $(e).remove();
-        $(`#style2Con .table th.style-two-head-${index}`).addClass("th-dis-none");
-        $(`#style2Con .table td.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#Main .style2-table-wrap .table th.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#Main .style2-table-wrap .table td.style-two-head-${index}`).addClass("th-dis-none");
         allHeadTable2Call();
     }
 }
@@ -1180,8 +1180,8 @@ function pagiHideHead() {
     let len = tr.length;
     for (let i = 0; i < len; i++) {
         let index = $(tr[i]).attr("id").match(/\d+/g)[0];
-        $(`#style2Con .table th.style-two-head-${index}`).addClass("th-dis-none");
-        $(`#style2Con .table td.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#Main .style2-table-wrap .table th.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#Main .style2-table-wrap .table td.style-two-head-${index}`).addClass("th-dis-none");
     }
 }
 
@@ -1191,8 +1191,8 @@ function moveRes2LeftToRight() {
     for (let i = 0; i < len; i++) {
         let index = $(tr[i]).attr("id").match(/\d+/g)[0];
         $(tr[i]).remove();
-        $(`#style2Con .table th.style-two-head-${index}`).removeClass("th-dis-none");
-        $(`#style2Con .table td.style-two-head-${index}`).removeClass("th-dis-none");
+        $(`#Main .style2-table-wrap .table th.style-two-head-${index}`).removeClass("th-dis-none");
+        $(`#Main .style2-table-wrap .table td.style-two-head-${index}`).removeClass("th-dis-none");
         allHeadTable2Call();
     }
 }
@@ -1203,8 +1203,8 @@ function moveRes2RightToLeft() {
     for (let i = 0; i < len; i++) {
         let index = $(tr[i]).attr("id").match(/\d+/g)[0];
         $(tr[i]).remove();
-        $(`#style2Con .table th.style-two-head-${index}`).addClass("th-dis-none");
-        $(`#style2Con .table td.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#Main .style2-table-wrap .table th.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#Main .style2-table-wrap .table td.style-two-head-${index}`).addClass("th-dis-none");
         allHeadTable2Call();
     }
 }

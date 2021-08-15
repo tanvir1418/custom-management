@@ -894,7 +894,7 @@ function manResPagination(noRow) {
 			$("#resizable554").css("display", "none");
 			$("#Main .loading-style1-table").css("display", "block");
 
-			$("#style2Con #style2_Content").css("display", "none");
+			$("#Main .style2-table-wrap .style2-table-content").css("display", "none");
 			$("#Main .loading-style2-table").css("display", "block");
 
 			setTimeout(() => {
@@ -902,7 +902,7 @@ function manResPagination(noRow) {
 				$("#resizable554").css("display", "block");
 
 				$("#Main .loading-style2-table").css("display", "none");
-				$("#style2Con #style2_Content").css("display", "block");
+				$("#Main .style2-table-wrap .style2-table-content").css("display", "block");
 			}, 3000);
 
 			let currentPageNumber = pagination.pageNumber;
@@ -2963,7 +2963,7 @@ function manResPagination(noRow) {
 
 
 			let style1_Table_Html = $("#resizable554 tbody");
-			let style2_Table_Html = $("#style2Con #style2_Content");
+			let style2_Table_Html = $("#Main .style2-table-wrap .style2-table-content");
 			style1_Table_Html.html(tableTr);
 			style2_Table_Html.html(style2TableData);
 
@@ -3097,8 +3097,8 @@ function popUpHandlerS2Table(e, indexValue) {
 	let targetElementClassList = e.path[5].getAttribute("class");
 	let targetElementClass = targetElementClassList.split(" ");
 
-	let tableTargetHead = $(`#style2Con .${targetElementClass[1]} thead th:nth-child(${indexValue})`);
-	let tableTargetData = $(`#style2Con .${targetElementClass[1]} tbody td:nth-child(${indexValue}) .mr-tableData`);
+	let tableTargetHead = $(`#Main .style2-table-wrap .${targetElementClass[1]} thead th:nth-child(${indexValue})`);
+	let tableTargetData = $(`#Main .style2-table-wrap .${targetElementClass[1]} tbody td:nth-child(${indexValue}) .mr-tableData`);
 	let filterHeading = tableTargetHead[0].textContent;
 
 	$("#col8Filter #tableHeaderPop").html(filterHeading);
