@@ -3090,9 +3090,9 @@ function truncateText(maxLength) {
 	}
 }
 
-$("#resizable554 th").on("drop", function (e) {
-	manResTableRender();
-});
+// $("#resizable554 th").on("drop", function (e) {
+// 	manResTableRender();
+// });
 
 function popUpHandlerS2Table(e, indexValue) {
 	let targetElementClassList = e.path[5].getAttribute("class");

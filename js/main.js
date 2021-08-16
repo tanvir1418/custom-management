@@ -108,9 +108,10 @@ for (var i = 0; i < li_tabs.length; i++) {
 
 				$("#col8Filter").css("display", "none");
 
-				const rotateIcon = document.querySelectorAll(
-					"#Main .outer-table-style12-box i.fa-caret-down.down-animation-icon"
-				);
+				// const rotateIcon = document.querySelectorAll(
+				// 	"#Main .outer-table-style12-box i.fa-caret-down.down-animation-icon"
+				// );
+				const rotateIcon = document.querySelectorAll(".outer-table-style12-box i.fa-caret-down.down-animation-icon");
 				for (let i = 0; i < rotateIcon.length; i++) {
 					$(rotateIcon[i]).removeClass("down-animation-icon");
 				}

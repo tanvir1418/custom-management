@@ -791,17 +791,27 @@ $("#Main .style1-box").click(function () {
     if (rowNumber.length > 0) {
         $("#Main .outer-table-style12-box .right-slider5").css("display", "block");
         $("#Main .outer-table-style12-box .left-slider5").css("display", "block");
+
+        $("#Main .main-table-design").css("display", "none");
+        // $("#resizable554").css("display", "none");
+        $("#Main .loading-style1-table").css("display", "block");
+
+        setTimeout(() => {
+            $("#Main .loading-style1-table").css("display", "none");
+            $("#Main .main-table-design").css("display", "block");
+            // $("#resizable554").css("display", "block");
+        }, 2000);
     }
 
     hideStyleTwoAllPopup();
 
-    $("#resizable554").css("display", "none");
-    $("#Main .loading-style1-table").css("display", "block");
+    // $("#resizable554").css("display", "none");
+    // $("#Main .loading-style1-table").css("display", "block");
 
-    setTimeout(() => {
-        $("#Main .loading-style1-table").css("display", "none");
-        $("#resizable554").css("display", "block");
-    }, 2000);
+    // setTimeout(() => {
+    //     $("#Main .loading-style1-table").css("display", "none");
+    //     $("#resizable554").css("display", "block");
+    // }, 2000);
 
 });
 
@@ -822,17 +832,26 @@ $("#Main .style2-box").click(function () {
     if (rowNumber.length > 0) {
         $("#Main .outer-table-style12-box .right-slider5").css("display", "none");
         $("#Main .outer-table-style12-box .left-slider5").css("display", "none");
+
+
+        $("#Main .style2-table-wrap .style2-table-content").css("display", "none");
+        $("#Main .loading-style2-table").css("display", "block");
+
+        setTimeout(() => {
+            $("#Main .loading-style2-table").css("display", "none");
+            $("#Main .style2-table-wrap .style2-table-content").css("display", "block");
+        }, 2000);
     }
 
     hideStyleOneAllPopup();
 
-    $("#Main .style2-table-wrap .style2-table-content").css("display", "none");
-    $("#Main .loading-style2-table").css("display", "block");
+    // $("#Main .style2-table-wrap .style2-table-content").css("display", "none");
+    // $("#Main .loading-style2-table").css("display", "block");
 
-    setTimeout(() => {
-        $("#Main .loading-style2-table").css("display", "none");
-        $("#Main .style2-table-wrap .style2-table-content").css("display", "block");
-    }, 2000);
+    // setTimeout(() => {
+    //     $("#Main .loading-style2-table").css("display", "none");
+    //     $("#Main .style2-table-wrap .style2-table-content").css("display", "block");
+    // }, 2000);
 
 });
 
@@ -957,6 +976,12 @@ function table1HeadClick() {
 }
 
 // ---------- ======= Double Click to ADD or REMOVE Start ======= -------------
+// Arguments: 
+// 1. Style1 Table ID,
+// 2. Style1 DoubleClick To Display Left List ID
+// 3. Style1 DoubleClick To Remove Right List ID
+// 4. Style1 DoubleClick Every List ID (res-id-table-)
+
 function manResTableRender() {
     let tabHD = $("#resizable554 thead th");
     let len = tabHD.length;
@@ -1252,9 +1277,9 @@ $(document).ready(function () {
 
 
 // TABLE RESIZEABLE END ===////////////////===
-function dragAndDrop() {
-    $("table#resizable554").dragableColumns();
-}
+// function dragAndDrop() {
+//     $("table#resizable554").dragableColumns();
+// }
 // Drag and Drop END
 
 // DRAG AND DROP START FILTER
@@ -1292,9 +1317,9 @@ function resetResFilter(e) {
 }
 // ----------- Manage Result Filter End --------------------
 
-$('table#resizable554').on('scroll', function () {
-    $("table#resizable554 > *").width($("table#resizable554").width() + $("table#resizable554").scrollLeft());
-});
+// $('table#resizable554').on('scroll', function () {
+//     $("table#resizable554 > *").width($("table#resizable554").width() + $("table#resizable554").scrollLeft());
+// });
 
 function IconModalClick() {
     let viewModalList = document.getElementsByClassName('view-modal-click');

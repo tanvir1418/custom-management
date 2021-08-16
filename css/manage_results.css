@@ -3188,34 +3188,23 @@ th[draggable] a {
     overflow-x: scroll;
     overflow-y: hidden;
 }
-table#resizable554 {
+table.main-table-design {
     border-collapse: collapse;
     /* width: 100%; */
     /* overflow-x: scroll; */
     display: block;
   }
   
-#resizable554 thead {
+.main-table-design thead {
     background-color: #EFEFEF;
 }
   
-#resizable554 thead,
-#resizable554 tbody {
+.main-table-design thead,
+.main-table-design tbody {
     display: block;
 }
   
-/* #resizable554 tbody {
-    overflow-y: hidden;
-    overflow-x: hidden;
-    height: 1000px;
-    width: 8000px !important;
-    width: 8263px !important;
-} */
-  
-/* #resizable554 td.col_00{
-    min-width: 100px;
-} */
-#resizable554 th {
+.main-table-design th {
     /* min-width: 100px; */
     height: 50px;
     /* border: dashed 1px lightblue; */
@@ -3290,13 +3279,13 @@ td.s2-value .centerauto{
     margin: 0;
 }
 
-#resizable554 tbody td.column-header-57{
+.main-table-design tbody td.column-header-57{
     padding: 0 12px;
 }
-#resizable554 tbody td.column-header-65{
+.main-table-design tbody td.column-header-65{
     padding: 0 15px;
 }
-#resizable554 tbody td.column-header-66{
+.main-table-design tbody td.column-header-66{
     padding: 0 15px;
 }
 
