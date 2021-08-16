@@ -22,6 +22,13 @@ $("#exelFile").change((e) => {
 });
 
 function tableHeadSty1() {
+	let randomFiveDigit = Math.floor(10000 + Math.random() * 90000);
+
+	let randomCrossIds = [];
+	for (let columnNum = 0; columnNum <= 66; columnNum++) {
+		randomCrossIds.push(randomFiveDigit++);
+	}
+
 	let tHeadTr =
 		`<tr class="dnd-moved">
 		<th class="column-header-1">
@@ -40,7 +47,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header1">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross3" class="head-filter">
+			<div id="cross${randomCrossIds[3]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -53,7 +60,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header2">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross4" class="head-filter">
+			<div id="cross${randomCrossIds[4]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -66,7 +73,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header3">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross5" class="head-filter">
+			<div id="cross${randomCrossIds[5]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -79,7 +86,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header4">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross6" class="head-filter">
+			<div id="cross${randomCrossIds[6]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -92,7 +99,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header5">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross7" class="head-filter">
+			<div id="cross${randomCrossIds[7]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -105,7 +112,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header6">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross8" class="head-filter">
+			<div id="cross${randomCrossIds[8]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -118,7 +125,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header7">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross9" class="head-filter">
+			<div id="cross${randomCrossIds[9]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -131,7 +138,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header8">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross10" class="head-filter">
+			<div id="cross${randomCrossIds[10]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -144,7 +151,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header9">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross11" class="head-filter">
+			<div id="cross${randomCrossIds[11]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -157,7 +164,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header10">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross12" class="head-filter">
+			<div id="cross${randomCrossIds[12]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -170,7 +177,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header11">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross13" class="head-filter">
+			<div id="cross${randomCrossIds[13]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -183,7 +190,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header12">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross14" class="head-filter">
+			<div id="cross${randomCrossIds[14]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -196,7 +203,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header13">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross15" class="head-filter">
+			<div id="cross${randomCrossIds[15]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -209,7 +216,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header14">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross16" class="head-filter">
+			<div id="cross${randomCrossIds[16]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -222,7 +229,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header15">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross17" class="head-filter">
+			<div id="cross${randomCrossIds[17]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -235,7 +242,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header16">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross18" class="head-filter">
+			<div id="cross${randomCrossIds[18]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -248,7 +255,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header17">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross19" class="head-filter">
+			<div id="cross${randomCrossIds[19]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -261,7 +268,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header18">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross20" class="head-filter">
+			<div id="cross${randomCrossIds[20]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -274,7 +281,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header19">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross21" class="head-filter">
+			<div id="cross${randomCrossIds[21]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -287,7 +294,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header20">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross22" class="head-filter">
+			<div id="cross${randomCrossIds[22]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -300,7 +307,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header21">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross23" class="head-filter">
+			<div id="cross${randomCrossIds[23]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -313,7 +320,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header22">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross24" class="head-filter">
+			<div id="cross${randomCrossIds[24]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -326,7 +333,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header23">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross25" class="head-filter">
+			<div id="cross${randomCrossIds[25]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -339,7 +346,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header24">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross26" class="head-filter">
+			<div id="cross${randomCrossIds[26]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -352,7 +359,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header25">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross27" class="head-filter">
+			<div id="cross${randomCrossIds[27]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -365,7 +372,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header26">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross28" class="head-filter">
+			<div id="cross${randomCrossIds[28]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -378,7 +385,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header27">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross29" class="head-filter">
+			<div id="cross${randomCrossIds[29]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -391,7 +398,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header28">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross30" class="head-filter">
+			<div id="cross${randomCrossIds[30]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -404,7 +411,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header29">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross31" class="head-filter">
+			<div id="cross${randomCrossIds[31]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -417,7 +424,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header30">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross32" class="head-filter">
+			<div id="cross${randomCrossIds[32]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -430,7 +437,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header31">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross33" class="head-filter">
+			<div id="cross${randomCrossIds[33]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -443,7 +450,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header32">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross34" class="head-filter">
+			<div id="cross${randomCrossIds[34]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -456,7 +463,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header33">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross35" class="head-filter">
+			<div id="cross${randomCrossIds[35]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -469,7 +476,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header34">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross36" class="head-filter">
+			<div id="cross${randomCrossIds[36]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -482,7 +489,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header35">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross37" class="head-filter">
+			<div id="cross${randomCrossIds[37]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -495,7 +502,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header36">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross38" class="head-filter">
+			<div id="cross${randomCrossIds[38]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -508,7 +515,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header37">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross39" class="head-filter">
+			<div id="cross${randomCrossIds[39]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -521,7 +528,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header38">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross40" class="head-filter">
+			<div id="cross${randomCrossIds[40]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -534,7 +541,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header39">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross41" class="head-filter">
+			<div id="cross${randomCrossIds[41]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -547,7 +554,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header40">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross42" class="head-filter">
+			<div id="cross${randomCrossIds[42]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -560,7 +567,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header41">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross43" class="head-filter">
+			<div id="cross${randomCrossIds[43]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -573,7 +580,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header42">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross44" class="head-filter">
+			<div id="cross${randomCrossIds[44]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -586,7 +593,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header43">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross45" class="head-filter">
+			<div id="cross${randomCrossIds[45]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -599,7 +606,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header44">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross46" class="head-filter">
+			<div id="cross${randomCrossIds[46]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -612,7 +619,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header45">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross47" class="head-filter">
+			<div id="cross${randomCrossIds[47]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -625,7 +632,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header46">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross48" class="head-filter">
+			<div id="cross${randomCrossIds[48]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -638,7 +645,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header47">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross49" class="head-filter">
+			<div id="cross${randomCrossIds[49]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -651,7 +658,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header48">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross50" class="head-filter">
+			<div id="cross${randomCrossIds[50]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -664,7 +671,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header49">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross51" class="head-filter">
+			<div id="cross${randomCrossIds[51]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -677,7 +684,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header50">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross52" class="head-filter">
+			<div id="cross${randomCrossIds[52]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -690,7 +697,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header51">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross53" class="head-filter">
+			<div id="cross${randomCrossIds[53]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -703,7 +710,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header52">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross54" class="head-filter">
+			<div id="cross${randomCrossIds[54]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -716,7 +723,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header53">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross55" class="head-filter">
+			<div id="cross${randomCrossIds[55]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -729,7 +736,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header54">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross56" class="head-filter">
+			<div id="cross${randomCrossIds[56]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -742,7 +749,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header55">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross57" class="head-filter">
+			<div id="cross${randomCrossIds[57]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -755,7 +762,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header56">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross58" class="head-filter">
+			<div id="cross${randomCrossIds[58]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -768,7 +775,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header57">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross59" class="head-filter">
+			<div id="cross${randomCrossIds[59]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -781,7 +788,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header58">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross60" class="head-filter">
+			<div id="cross${randomCrossIds[60]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -794,7 +801,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header59">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross61" class="head-filter">
+			<div id="cross${randomCrossIds[61]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -807,7 +814,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header60">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross62" class="head-filter">
+			<div id="cross${randomCrossIds[62]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -820,7 +827,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header61">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross63" class="head-filter">
+			<div id="cross${randomCrossIds[63]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -833,7 +840,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header62">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross64" class="head-filter">
+			<div id="cross${randomCrossIds[64]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -846,7 +853,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header63">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross65" class="head-filter">
+			<div id="cross${randomCrossIds[65]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
@@ -859,7 +866,7 @@ function tableHeadSty1() {
 			<span data-toggle="tooltip" data-placement="bottom" title="Table Header64">
               <i class="fas fa-question-circle"></i>
             </span>
-			<div id="cross66" class="head-filter">
+			<div id="cross${randomCrossIds[66]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
 			<div class="drop-filter">
