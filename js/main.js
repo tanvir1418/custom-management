@@ -1386,18 +1386,6 @@ $("#userAvatar").click(function () {
 	}, 2000);
 });
 
-// Bootstrap Tooltip Enable Function (Manage Result Table Tooltips)
-function tooltipFunction() {
-	$('[data-toggle="tooltip"]').tooltip(
-		{
-			animation: true,
-			container: 'body',
-			trigger: 'hover',
-			placement: 'bottom',
-			delay: { "show": 10, "hide": 0 }
-		}
-	);
-};
 
 function universalConfirmModalDelete(globalVariable) {
 	let headerText = "DELETE ROW";

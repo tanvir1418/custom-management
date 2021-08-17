@@ -6,6 +6,8 @@
 
 // Header Index Where Click is happened.
 let headerIndexClick = "";
+let mnResultActiveTabID = "Main";
+let mnResultActiveTabSty1TableID = "resizable554";
 
 
 const left_list_404 = document.querySelector(".left-list-404");
@@ -703,10 +705,10 @@ function gotoChartFive(targetedTab){
 
 
 // ///////////////////////////////////////////
-function style1TableScroller() {
-    const style1TableScroll = document.querySelector("#Main .style1-table-wrap");
-    $("#Main .outer-table-style12-box .right-slider5").click(function () {
-        $("#Main .style1-table-wrap").animate({
+function style1TableScroller(selectedTab) {
+    const style1TableScroll = document.querySelector(`#${selectedTab} .style1-table-wrap`);
+    $(`#${selectedTab} .outer-table-style12-box .right-slider5`).click(function () {
+        $(`#${selectedTab} .style1-table-wrap`).animate({
             scrollLeft: style1TableScroll.scrollLeft + 800,
         },
             0
@@ -714,7 +716,7 @@ function style1TableScroller() {
         hideStyleOneAllPopup();
         resetDownArrow();
     }).dblclick(function () {
-        $("#Main .style1-table-wrap").animate({
+        $(`#${selectedTab} .style1-table-wrap`).animate({
             scrollLeft: style1TableScroll.scrollLeft + 800,
         },
             0
@@ -723,8 +725,8 @@ function style1TableScroller() {
         resetDownArrow();
     });
 
-    $("#Main .outer-table-style12-box .left-slider5").click(function () {
-        $("#Main .style1-table-wrap").animate({
+    $(`#${selectedTab} .outer-table-style12-box .left-slider5`).click(function () {
+        $(`#${selectedTab} .style1-table-wrap`).animate({
             scrollLeft: style1TableScroll.scrollLeft - 800,
         },
             0
@@ -732,7 +734,7 @@ function style1TableScroller() {
         hideStyleOneAllPopup();
         resetDownArrow();
     }).dblclick(function () {
-        $("#Main .style1-table-wrap").animate({
+        $(`#${selectedTab} .style1-table-wrap`).animate({
             scrollLeft: style1TableScroll.scrollLeft - 800,
         },
             0
@@ -769,106 +771,100 @@ function tableProgressBarAnimation(targetedMainTab, progressVal, progWidthTarget
 // PROGRESS BAR END
 
 // CLICL TO TOGGLE STYLE1 & STYLE2 START =====
-$("#Main .style2-table-wrap").addClass("displayNone");
-$("#Main .double-click-style2").addClass("displayNone");
-$("#Main .style1-box").addClass("clickstylebg");
-$("#Main .style2-box").addClass("clickstylebrdr");
+function styleIconSwitcherOperation(selectedTab, sty1TableId){
+    $(`#${selectedTab} .style2-table-wrap`).addClass("displayNone");
+    $(`#${selectedTab} .double-click-style2`).addClass("displayNone");
+    $(`#${selectedTab} .style1-box`).addClass("clickstylebg");
+    $(`#${selectedTab} .style2-box`).addClass("clickstylebrdr");
 
-$("#Main .style1-box").click(function () {
-    $("#Main .style1-table-wrap").removeClass("displayNone");
-    $("#Main .style2-table-wrap").addClass("displayNone");
+    $(`#${selectedTab} .style1-box`).click(function () {
+        $(`#${selectedTab} .style1-table-wrap`).removeClass("displayNone");
+        $(`#${selectedTab} .style2-table-wrap`).addClass("displayNone");
 
-    $("#Main .style1-box").addClass("clickstylebg");
-    $("#Main .style1-box").removeClass("clickstylebrdr");
+        $(`#${selectedTab} .style1-box`).addClass("clickstylebg");
+        $(`#${selectedTab} .style1-box`).removeClass("clickstylebrdr");
 
-    $("#Main .style2-box").addClass("clickstylebrdr");
-    $("#Main .style2-box").removeClass("clickstylebg");
+        $(`#${selectedTab} .style2-box`).addClass("clickstylebrdr");
+        $(`#${selectedTab} .style2-box`).removeClass("clickstylebg");
 
-    $("#Main .double-click-style1").removeClass("displayNone");
-    $("#Main .double-click-style2").addClass("displayNone");
+        $(`#${selectedTab} .double-click-style1`).removeClass("displayNone");
+        $(`#${selectedTab} .double-click-style2`).addClass("displayNone");
 
-    let rowNumber = $("#Main .style1-table-wrap #resizable554 tbody tr");
-    if (rowNumber.length > 0) {
-        $("#Main .outer-table-style12-box .right-slider5").css("display", "block");
-        $("#Main .outer-table-style12-box .left-slider5").css("display", "block");
+        let rowNumber = $(`#${selectedTab} .style1-table-wrap #${sty1TableId} tbody tr`);
+        if (rowNumber.length > 0) {
+            $(`#${selectedTab} .outer-table-style12-box .right-slider5`).css("display", "block");
+            $(`#${selectedTab} .outer-table-style12-box .left-slider5`).css("display", "block");
 
-        $("#Main .main-table-design").css("display", "none");
-        // $("#resizable554").css("display", "none");
-        $("#Main .loading-style1-table").css("display", "block");
+            $(`#${selectedTab} .main-table-design`).css("display", "none");
+            $(`#${selectedTab} .loading-style1-table`).css("display", "block");
 
-        setTimeout(() => {
-            $("#Main .loading-style1-table").css("display", "none");
-            $("#Main .main-table-design").css("display", "block");
-            // $("#resizable554").css("display", "block");
-        }, 2000);
-    }
+            setTimeout(() => {
+                $(`#${selectedTab} .loading-style1-table`).css("display", "none");
+                $(`#${selectedTab} .main-table-design`).css("display", "block");
+            }, 2000);
+        }
 
-    hideStyleTwoAllPopup();
+        hideStyleTwoAllPopup();
 
-    // $("#resizable554").css("display", "none");
-    // $("#Main .loading-style1-table").css("display", "block");
+    });
 
-    // setTimeout(() => {
-    //     $("#Main .loading-style1-table").css("display", "none");
-    //     $("#resizable554").css("display", "block");
-    // }, 2000);
+    $(`#${selectedTab} .style2-box`).click(function () {
+        $(`#${selectedTab} .style1-table-wrap`).addClass("displayNone");
+        $(`#${selectedTab} .style2-table-wrap`).removeClass("displayNone");
 
-});
+        $(`#${selectedTab} .style2-box`).addClass("clickstylebg");
+        $(`#${selectedTab} .style2-box`).removeClass("clickstylebrdr");
 
-$("#Main .style2-box").click(function () {
-    $("#Main .style1-table-wrap").addClass("displayNone");
-    $("#Main .style2-table-wrap").removeClass("displayNone");
+        $(`#${selectedTab} .style1-box`).addClass("clickstylebrdr");
+        $(`#${selectedTab} .style1-box`).removeClass("clickstylebg");
 
-    $("#Main .style2-box").addClass("clickstylebg");
-    $("#Main .style2-box").removeClass("clickstylebrdr");
+        $(`#${selectedTab} .double-click-style1`).addClass("displayNone");
+        $(`#${selectedTab} .double-click-style2`).removeClass("displayNone");
 
-    $("#Main .style1-box").addClass("clickstylebrdr");
-    $("#Main .style1-box").removeClass("clickstylebg");
-
-    $("#Main .double-click-style1").addClass("displayNone");
-    $("#Main .double-click-style2").removeClass("displayNone");
-
-    let rowNumber = $("#Main .style1-table-wrap #resizable554 tbody tr");
-    if (rowNumber.length > 0) {
-        $("#Main .outer-table-style12-box .right-slider5").css("display", "none");
-        $("#Main .outer-table-style12-box .left-slider5").css("display", "none");
+        let rowNumber = $(`#${selectedTab} .style1-table-wrap #${sty1TableId} tbody tr`);
+        if (rowNumber.length > 0) {
+            $(`#${selectedTab} .outer-table-style12-box .right-slider5`).css("display", "none");
+            $(`#${selectedTab} .outer-table-style12-box .left-slider5`).css("display", "none");
 
 
-        $("#Main .style2-table-wrap .style2-table-content").css("display", "none");
-        $("#Main .loading-style2-table").css("display", "block");
+            $(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "none");
+            $(`#${selectedTab} .loading-style2-table`).css("display", "block");
 
-        setTimeout(() => {
-            $("#Main .loading-style2-table").css("display", "none");
-            $("#Main .style2-table-wrap .style2-table-content").css("display", "block");
-        }, 2000);
-    }
+            setTimeout(() => {
+                $(`#${selectedTab} .loading-style2-table`).css("display", "none");
+                $(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "block");
+            }, 2000);
+        }
 
-    hideStyleOneAllPopup();
+        hideStyleOneAllPopup();
 
-    // $("#Main .style2-table-wrap .style2-table-content").css("display", "none");
-    // $("#Main .loading-style2-table").css("display", "block");
+    });
+}
 
-    // setTimeout(() => {
-    //     $("#Main .loading-style2-table").css("display", "none");
-    //     $("#Main .style2-table-wrap .style2-table-content").css("display", "block");
-    // }, 2000);
 
-});
-
+styleIconSwitcherOperation("Main", "resizable554");
 
 // CLICL TO TOGGLE STYLE1 & STYLE2 END =====
 
 // ============== STYLE 1 STYLE 2 END ==============
 
 // X CLICK TO REMOVE COLUMN START ==============
-function headClick(target, index) {
+// Arguments (headClick):
+// 1. Selected TAB ID
+// 2. Style1 Table ID
+// Arguments (manResTableRender): 
+// 1. Style1 Table ID,
+// 2. Style1 DoubleClick To Display Left List ID
+// 3. Style1 DoubleClick To Remove Right List ID
+// 4. Style1 DoubleClick Every List ID (res-id-table-)
+function headClick(target, index, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix) {
     let regex = /cross/g;
     let regexD = /drop-filter/g;
     if (target.tagName === "DIV" && regex.test(target.id)) {
-        $(`#resizable554 th:nth-child(${index})`).addClass("th-dis-none");
-        $(`#resizable554 td:nth-child(${index})`).addClass("th-dis-none");
-        $(`#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).addClass("th-dis-none");
-        manResTableRender();
+        $(`#${sty1TableId} th:nth-child(${index})`).addClass("th-dis-none");
+        $(`#${sty1TableId} td:nth-child(${index})`).addClass("th-dis-none");
+        $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).addClass("th-dis-none");
+        manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
         $("#col8Filter").css('display', 'none');
         resetDownArrow();
         return "hidePopup";
@@ -876,12 +872,12 @@ function headClick(target, index) {
     } else if (target.tagName === "DIV" && regexD.test(target.className)) {
 
         headerIndexClick = index;
-        let hideFilterWhenClick = $(`#resizable554 th:nth-child(${index}) .drop-filter .fa-caret-down`).hasClass("down-animation-icon");
+        let hideFilterWhenClick = $(`#${sty1TableId} th:nth-child(${index}) .drop-filter .fa-caret-down`).hasClass("down-animation-icon");
         let filterTargeting = document.querySelector('#col8Filter');
         let filterStyles = window.getComputedStyle(filterTargeting);
 
         if (hideFilterWhenClick == true && filterStyles.display == "block") {
-            const rotateIcon = document.querySelectorAll("#Main .outer-table-style12-box i.fa-caret-down.down-animation-icon");
+            const rotateIcon = document.querySelectorAll(`#${selectedTab} .outer-table-style12-box i.fa-caret-down.down-animation-icon`);
             for (let i = 0; i < rotateIcon.length; i++) {
                 $(rotateIcon[i]).removeClass("down-animation-icon");
             }
@@ -890,16 +886,16 @@ function headClick(target, index) {
             return "hidePopup";
         }
         else {
-            let dataP = $(`#resizable554 td:nth-child(${index}) .mr-tableData`);
-            let headingPop = $(`#resizable554 th:nth-child(${index})`)[0].textContent;
+            let dataP = $(`#${sty1TableId} td:nth-child(${index}) .mr-tableData`);
+            let headingPop = $(`#${sty1TableId} th:nth-child(${index})`)[0].textContent;
 
-            const rotateIcon = document.querySelectorAll("#Main .outer-table-style12-box i.fa-caret-down.down-animation-icon");
+            const rotateIcon = document.querySelectorAll(`#${selectedTab} .outer-table-style12-box i.fa-caret-down.down-animation-icon`);
             for (let i = 0; i < rotateIcon.length; i++) {
                 $(rotateIcon[i]).removeClass("down-animation-icon");
             }
 
             // this code add the down-animation-icon to the drop filter
-            $(`#resizable554 th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
+            $(`#${sty1TableId} th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
             $(`.clone-head-table-wrap .mytablesty12 th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
 
             $("#col8Filter #tableHeaderPop").html(headingPop);
@@ -930,14 +926,19 @@ function headClick(target, index) {
         }
     }
 }
-function table1HeadClick() {
-    $("#resizable554 th").click(function (e) {
+
+
+// Arguments (table1HeadClick):
+// 1. Selected TAB ID
+// 2. Style1 Table ID
+function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix) {
+    $(`#${sty1TableId} th`).click(function (e) {
         let target = e.target;
         let index = $(this).index() + 1;
         if (target.tagName === "I") {
             target = target.parentNode;
         }
-        let popupDecision = headClick(target, index);
+        let popupDecision = headClick(target, index, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
 
         if (target.className == "drop-filter" && popupDecision == "showPopup") {
             let elementPositionMain = e.target.getBoundingClientRect();;
@@ -952,13 +953,13 @@ function table1HeadClick() {
 
     });
 
-    $("#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th").click(function (e) {
+    $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th`).click(function (e) {
         let target = e.target;
         let index = $(this).index() + 1;
         if (target.tagName === "I") {
             target = target.parentNode;
         }
-        let popupDecision = headClick(target, index);
+        let popupDecision = headClick(target, index, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
 
         if (target.className == "drop-filter" && popupDecision == "showPopup") {
             let elementPositionMain = e.target.getBoundingClientRect();;
@@ -976,105 +977,156 @@ function table1HeadClick() {
 }
 
 // ---------- ======= Double Click to ADD or REMOVE Start ======= -------------
-// Arguments: 
+// Arguments (manResTableRender): 
 // 1. Style1 Table ID,
 // 2. Style1 DoubleClick To Display Left List ID
 // 3. Style1 DoubleClick To Remove Right List ID
 // 4. Style1 DoubleClick Every List ID (res-id-table-)
 
-function manResTableRender() {
-    let tabHD = $("#resizable554 thead th");
+function manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix) {
+    
+    let tabHD = $(`#${sty1TableId} thead th`);
     let len = tabHD.length;
     let htmlTableR = "";
     let htmlTableL = "";
     for (let i = 2; i < len; i++) {
         let className = tabHD[i].className.match(/column-header-\d+/g)[0];
         let pos = className.match(/\d+/g)[0];
-        let _id = "res-id-table-" + pos;
+        // let _id = "res-id-table-" + pos;
+        let _id = `${sty1AllListIdPrefix}${pos}`;
         let content = tabHD[i].textContent.trim();
         let regex = /th-dis-none/g;
         if (regex.test(tabHD[i].className)) {
-            htmlTableL += `<tr id="${_id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
+            htmlTableL += `<tr id="${_id}" ondblclick="dblclickResMove(this, '${selectedTab}', '${sty1TableId}', '${sty1dblClickLeftListId}', '${sty1dblClickRightListId}', '${sty1AllListIdPrefix}')" onclick="clickAddClass(this)">
                 <td>${content}</td>
             </tr>`;
         } else {
-            htmlTableR += `<tr id="${_id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
+            htmlTableR += `<tr id="${_id}" ondblclick="dblclickResMove(this, '${selectedTab}', '${sty1TableId}', '${sty1dblClickLeftListId}', '${sty1dblClickRightListId}', '${sty1AllListIdPrefix}')" onclick="clickAddClass(this)">
                 <td>${content}</td>
             </tr>`;
         }
     }
-    $("#man-res-opt-data-table-right").html(htmlTableR);
-    $("#man-res-opt-data-table-left").html(htmlTableL);
+    $(`#${sty1dblClickRightListId}`).html(htmlTableR);
+
+    $(`#${sty1dblClickLeftListId}`).html(htmlTableL);
 }
 
-function dblclickResMove(e) {
+
+// Arguments (dblclickResMove):
+// 1. Style1 Table ID
+// 2. Style1 DoubleClick To Display Left List ID
+// 3. Style1 DoubleClick To Remove Right List ID 
+// 4. Selected TAB ID
+// Arguments (manResTableRender): 
+// 1. Style1 Table ID
+// 2. Style1 DoubleClick To Display Left List ID
+// 3. Style1 DoubleClick To Remove Right List ID
+// 4. Style1 DoubleClick Every List ID (res-id-table-)
+function dblclickResMove(e, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix) {
     let _id = $(e).parent().attr("id");
     let index = $(e).attr("id").match(/\d+/g)[0];
-    if (_id == "man-res-opt-data-table-left") {
+    if (_id == sty1dblClickLeftListId) {
         $(e).remove();
-        $(`#resizable554 th.column-header-${index}`).removeClass("th-dis-none");
-        $(`#resizable554 td.column-header-${index}`).removeClass("th-dis-none");
-        $(`#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).removeClass("th-dis-none");
-        manResTableRender();
+        $(`#${sty1TableId} th.column-header-${index}`).removeClass("th-dis-none");
+        $(`#${sty1TableId} td.column-header-${index}`).removeClass("th-dis-none");
+        $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).removeClass("th-dis-none");
+        manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
     }
-    else if (_id == "man-res-opt-data-table-right") {
+    else if (_id == sty1dblClickRightListId) {
         $(e).remove();
-        $(`#resizable554 th.column-header-${index}`).addClass("th-dis-none");
-        $(`#resizable554 td.column-header-${index}`).addClass("th-dis-none");
-        $(`#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).addClass("th-dis-none");
-        manResTableRender();
+        $(`#${sty1TableId} th.column-header-${index}`).addClass("th-dis-none");
+        $(`#${sty1TableId} td.column-header-${index}`).addClass("th-dis-none");
+        $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).addClass("th-dis-none");
+        manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
     }
 }
 
-function moveResLeftToRight() {
-    let tr = $("#man-res-opt-data-table-left tr.mark-table-data");
+
+// Arguments (moveResLeftToRight):
+// 1. Style1 Table ID
+// 2. Style1 DoubleClick To Display Left List ID 
+// 3. Selected TAB ID
+// Arguments (manResTableRender): 
+// 1. Style1 Table ID,
+// 2. Style1 DoubleClick To Display Left List ID
+// 3. Style1 DoubleClick To Remove Right List ID
+// 4. Style1 DoubleClick Every List ID (res-id-table-)
+function moveResLeftToRight(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix) {
+    let tr = $(`#${sty1dblClickLeftListId} tr.mark-table-data`);
     let len = tr.length;
     for (let i = 0; i < len; i++) {
         let index = $(tr[i]).attr("id").match(/\d+/g)[0];
         $(tr[i]).remove();
-        $(`#resizable554 th.column-header-${index}`).removeClass("th-dis-none");
-        $(`#resizable554 td.column-header-${index}`).removeClass("th-dis-none");
-        $(`#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).removeClass("th-dis-none");
-        manResTableRender();
+        $(`#${sty1TableId} th.column-header-${index}`).removeClass("th-dis-none");
+        $(`#${sty1TableId} td.column-header-${index}`).removeClass("th-dis-none");
+        $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).removeClass("th-dis-none");
+        manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
     }
 }
 
-function moveResRightToLeft() {
-    let tr = $("#man-res-opt-data-table-right tr.mark-table-data");
+
+// Arguments (moveResRightToLeft):
+// 1. Style1 Table ID
+// 2. Style1 DoubleClick To Remove Right List ID 
+// 3. Selected TAB ID
+// Arguments (manResTableRender): 
+// 1. Style1 Table ID,
+// 2. Style1 DoubleClick To Display Left List ID
+// 3. Style1 DoubleClick To Remove Right List ID
+// 4. Style1 DoubleClick Every List ID (res-id-table-)
+function moveResRightToLeft(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix) {
+    let tr = $(`#${sty1dblClickRightListId} tr.mark-table-data`);
     let len = tr.length;
     for (let i = 0; i < len; i++) {
         let index = $(tr[i]).attr("id").match(/\d+/g)[0];
         $(tr[i]).remove();
-        $(`#resizable554 th.column-header-${index}`).addClass("th-dis-none");
-        $(`#resizable554 td.column-header-${index}`).addClass("th-dis-none");
-        $(`#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).addClass("th-dis-none");
-        manResTableRender();
+        $(`#${sty1TableId} th.column-header-${index}`).addClass("th-dis-none");
+        $(`#${sty1TableId} td.column-header-${index}`).addClass("th-dis-none");
+        $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).addClass("th-dis-none");
+        manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
     }
 }
 
-function ResorderUp() {
-    let row = $("#man-res-opt-data-table-right tr.mark-table-data");
-    let rowFirst = $("#man-res-opt-data-table-right tr")[0];
+
+
+// Arguments (ResorderUp): 
+// 1. Style1 DoubleClick To Remove Right List ID
+// Arguments (columnMove): 
+// 1. Style1 Table ID
+// 2. Selected TAB ID
+function ResorderUp(selectedTab, sty1TableId, sty1dblClickRightListId) {
+    let row = $(`#${sty1dblClickRightListId} tr.mark-table-data`);
+    let rowFirst = $(`#${sty1dblClickRightListId} tr`)[0];
     if (rowFirst != row[0]) {
         row.each(function () {
             let rw = $(this).closest("tr.mark-table-data");
             let index = $(rw).attr("id").match(/\d+/g)[0];
             rw.insertBefore(rw.prev());
-            columnMove(index, "up");
+            columnMove(index, "up", selectedTab, sty1TableId);
         });
     }
 }
-function ResorderDown() {
-    let row = $("#man-res-opt-data-table-right tr.mark-table-data");
+
+
+// Arguments (ResorderDown): 
+// 1. Style1 DoubleClick To Remove Right List ID
+// Arguments (columnMove): 
+// 1. Style1 Table ID
+// 2. Selected TAB ID
+function ResorderDown(selectedTab, sty1TableId, sty1dblClickRightListId) {
+    let row = $(`#${sty1dblClickRightListId} tr.mark-table-data`);
     row.each(function () {
         let rw = $(this).closest("tr.mark-table-data");
         let index = $(rw).attr("id").match(/\d+/g)[0];
         for (let i = 0; i < row.length; i++) {
             rw.insertAfter(rw.next());
-            columnMove(index, "down");
+            columnMove(index, "down", selectedTab, sty1TableId);
         }
     });
 }
+
+
+
 function findVisible(element, pos) {
     let regex = /th-dis-none/g;
     if (pos == "prev" && regex.test(element.attr("class"))) {
@@ -1084,10 +1136,15 @@ function findVisible(element, pos) {
     }
     else return element;
 }
-function columnMove(index, direc) {
-    let tHead = $(`#resizable554 th.column-header-${index}`);
-    let tBody = $(`#resizable554 td.column-header-${index}`);
-    let tvHead = $(`#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`);
+
+
+// Arguments (columnMove): 
+// 1. Style1 Table ID
+// 2. Selected TAB ID
+function columnMove(index, direc, selectedTab, sty1TableId) {
+    let tHead = $(`#${sty1TableId} th.column-header-${index}`);
+    let tBody = $(`#${sty1TableId} td.column-header-${index}`);
+    let tvHead = $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`);
     let len = tBody.length;
     if (direc == "up") {
         let eleH = findVisible(tHead.prev(), "prev");
@@ -1114,19 +1171,23 @@ function columnMove(index, direc) {
 // ---------- ======= Double Click to ADD or REMOVE End ======= -------------
 
 // ======== STYLE 2 Table =========
-function table2HeadClickCall() {
-    table2HeadClick("sty2table2");
-    table2HeadClick("sty2table3");
-    table2HeadClick("sty2table4");
-    table2HeadClick("sty2table5");
-    table2HeadClick("sty2table6");
-    table2HeadClick("sty2table7");
-    table2HeadClick("sty2table8");
-    table2HeadClick("sty2table9");
+// Arguments (table2HeadClickCall): 
+// 1. Selected TAB ID
+function table2HeadClickCall(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
+    table2HeadClick("sty2table2", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    table2HeadClick("sty2table3", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    table2HeadClick("sty2table4", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    table2HeadClick("sty2table5", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    table2HeadClick("sty2table6", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    table2HeadClick("sty2table7", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    table2HeadClick("sty2table8", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    table2HeadClick("sty2table9", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
 }
 
-function table2HeadClick(tName) {
-    $(`#Main .style2-table-wrap .table.${tName} th`).click(function (e) {
+// Arguments (table2HeadClick): 
+// 1. Selected TAB ID
+function table2HeadClick(tName, selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
+    $(`#${selectedTab} .style2-table-wrap .table.${tName} th`).click(function (e) {
         let target = e.target;
         let index = $(this).index() + 1;
         if (target.tagName === "I") {
@@ -1134,29 +1195,40 @@ function table2HeadClick(tName) {
         }
         let regex = /style2_cross\d+/g;
         if (target.tagName === "DIV" && regex.test(target.className)) {
-            $(`#Main .style2-table-wrap .table.${tName} th:nth-child(${index})`).addClass("th-dis-none");
-            $(`#Main .style2-table-wrap .table.${tName} td:nth-child(${index})`).addClass("th-dis-none");
-            allHeadTable2Call();
+            $(`#${selectedTab} .style2-table-wrap .table.${tName} th:nth-child(${index})`).addClass("th-dis-none");
+            $(`#${selectedTab} .style2-table-wrap .table.${tName} td:nth-child(${index})`).addClass("th-dis-none");
+            allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
             $("#col8Filter").css('display', 'none');
         }
     });
 }
 
-function allHeadTable2Call() {
-    let { htmlTableL: L2, htmlTableR: R2 } = allHeadTable2("sty2table2");
-    let { htmlTableL: L3, htmlTableR: R3 } = allHeadTable2("sty2table3");
-    let { htmlTableL: L4, htmlTableR: R4 } = allHeadTable2("sty2table4");
-    let { htmlTableL: L5, htmlTableR: R5 } = allHeadTable2("sty2table5");
-    let { htmlTableL: L6, htmlTableR: R6 } = allHeadTable2("sty2table6");
-    let { htmlTableL: L7, htmlTableR: R7 } = allHeadTable2("sty2table7");
-    let { htmlTableL: L8, htmlTableR: R8 } = allHeadTable2("sty2table8");
-    let { htmlTableL: L9, htmlTableR: R9 } = allHeadTable2("sty2table9");
-    $("#style2-man-res-opt-data-table-right").html(R2 + R3 + R4 + R5 + R6 + R7 + R8 + R9);
-    $("#style2-man-res-opt-data-table-left").html(L2 + L3 + L4 + L5 + L6 + L7 + L8 + L9);
+// Arguments (allHeadTable2Call): 
+// 1. Selected TAB ID
+// 2. Style2 DoubleClick To Display Left List ID
+// 3. Style2 DoubleClick To Display Right List ID
+// Arguments (allHeadTable2): 
+// 1. Selected TAB ID
+// 2. Style1 DoubleClick Every List ID (res-table-two-)
+function allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
+    let { htmlTableL: L2, htmlTableR: R2 } = allHeadTable2("sty2table2", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    let { htmlTableL: L3, htmlTableR: R3 } = allHeadTable2("sty2table3", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    let { htmlTableL: L4, htmlTableR: R4 } = allHeadTable2("sty2table4", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    let { htmlTableL: L5, htmlTableR: R5 } = allHeadTable2("sty2table5", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    let { htmlTableL: L6, htmlTableR: R6 } = allHeadTable2("sty2table6", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    let { htmlTableL: L7, htmlTableR: R7 } = allHeadTable2("sty2table7", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    let { htmlTableL: L8, htmlTableR: R8 } = allHeadTable2("sty2table8", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    let { htmlTableL: L9, htmlTableR: R9 } = allHeadTable2("sty2table9", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    $(`#${sty2dblClickRightListId}`).html(R2 + R3 + R4 + R5 + R6 + R7 + R8 + R9);
+    $(`#${sty2dblClickLeftListId}`).html(L2 + L3 + L4 + L5 + L6 + L7 + L8 + L9);
 }
 
-function allHeadTable2(tName) {
-    let head = $(`#Main .style2-table-wrap .table.${tName}`)[0];
+
+// Arguments (allHeadTable2): 
+// 1. Selected TAB ID
+// 2. Style1 DoubleClick Every List ID (res-table-two-)
+function allHeadTable2(tName, selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
+    let head = $(`#${selectedTab} .style2-table-wrap .table.${tName}`)[0];
     let th = $(head).find("th");
     let len = th.length;
     let htmlTableR = "";
@@ -1164,15 +1236,16 @@ function allHeadTable2(tName) {
     for (let i = 0; i < len; i++) {
         let className = th[i].className.match(/style-two-head-\d+/g)[0];
         let pos = className.match(/\d+/g)[0];
-        let _id = "res-table-two-" + pos;
+        // let _id = "res-table-two-" + pos;
+        let _id = `${sty2AllListIdPrefix}${pos}`;
         let content = th[i].textContent.trim();
         let regex = /th-dis-none/g;
         if (regex.test(th[i].className)) {
-            htmlTableL += `<tr id="${_id}" ondblclick="dblclickRes2Move(this)" onclick="clickAddClass(this)">
+            htmlTableL += `<tr id="${_id}" ondblclick="dblclickRes2Move(this, '${selectedTab}', '${sty2dblClickLeftListId}', '${sty2dblClickRightListId}', '${sty2AllListIdPrefix}')" onclick="clickAddClass(this)">
                 <td>${content}</td>
             </tr>`;
         } else {
-            htmlTableR += `<tr id="${_id}" ondblclick="dblclickRes2Move(this)" onclick="clickAddClass(this)">
+            htmlTableR += `<tr id="${_id}" ondblclick="dblclickRes2Move(this, '${selectedTab}', '${sty2dblClickLeftListId}', '${sty2dblClickRightListId}', '${sty2AllListIdPrefix}')" onclick="clickAddClass(this)">
                 <td>${content}</td>
             </tr>`;
         }
@@ -1183,60 +1256,93 @@ function allHeadTable2(tName) {
     }
 }
 
-function dblclickRes2Move(e) {
+
+// Arguments (dblclickRes2Move): 
+// 1. Selected TAB ID
+// 2. Style2 DoubleClick To Display Left List ID
+// 3. Style2 DoubleClick To Display Right List ID
+// Arguments (allHeadTable2Call): 
+// 1. Selected TAB ID
+// 2. Style2 DoubleClick To Display Left List ID
+// 3. Style2 DoubleClick To Display Right List ID
+// Arguments (allHeadTable2): 
+// 1. Selected TAB ID
+// 2. Style1 DoubleClick Every List ID (res-table-two-)
+function dblclickRes2Move(e, selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
     let _id = $(e).parent().attr("id");
     let index = $(e).attr("id").match(/\d+/g)[0];
-    if (_id == "style2-man-res-opt-data-table-left") {
+    if (_id == sty2dblClickLeftListId) {
         $(e).remove();
-        $(`#Main .style2-table-wrap .table th.style-two-head-${index}`).removeClass("th-dis-none");
-        $(`#Main .style2-table-wrap .table td.style-two-head-${index}`).removeClass("th-dis-none");
-        allHeadTable2Call();
+        $(`#${selectedTab} .style2-table-wrap .table th.style-two-head-${index}`).removeClass("th-dis-none");
+        $(`#${selectedTab} .style2-table-wrap .table td.style-two-head-${index}`).removeClass("th-dis-none");
+        allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
     }
-    else if (_id == "style2-man-res-opt-data-table-right") {
+    else if (_id == sty2dblClickRightListId) {
         $(e).remove();
-        $(`#Main .style2-table-wrap .table th.style-two-head-${index}`).addClass("th-dis-none");
-        $(`#Main .style2-table-wrap .table td.style-two-head-${index}`).addClass("th-dis-none");
-        allHeadTable2Call();
+        $(`#${selectedTab} .style2-table-wrap .table th.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#${selectedTab} .style2-table-wrap .table td.style-two-head-${index}`).addClass("th-dis-none");
+        allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
     }
 }
 
-function pagiHideHead() {
-    let tr = $("#style2-man-res-opt-data-table-left tr");
+
+// Arguments (pagiHideHead): 
+// 1. Selected TAB ID
+// 2. Style2 DoubleClick To Display Left List ID
+function pagiHideHead(selectedTab, sty2dblClickLeftListId) {
+    let tr = $(`#${sty2dblClickLeftListId} tr`);
     let len = tr.length;
     for (let i = 0; i < len; i++) {
         let index = $(tr[i]).attr("id").match(/\d+/g)[0];
-        $(`#Main .style2-table-wrap .table th.style-two-head-${index}`).addClass("th-dis-none");
-        $(`#Main .style2-table-wrap .table td.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#${selectedTab} .style2-table-wrap .table th.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#${selectedTab} .style2-table-wrap .table td.style-two-head-${index}`).addClass("th-dis-none");
     }
 }
 
-function moveRes2LeftToRight() {
-    let tr = $("#style2-man-res-opt-data-table-left tr.mark-table-data");
+
+
+// Arguments (moveRes2LeftToRight): 
+// 1. Selected TAB ID
+// 2. Style2 DoubleClick To Display Left List ID
+// Arguments (allHeadTable2Call): 
+// 1. Selected TAB ID
+// 2. Style2 DoubleClick To Display Left List ID
+// 3. Style2 DoubleClick To Display Right List ID
+function moveRes2LeftToRight(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
+    let tr = $(`#${sty2dblClickLeftListId} tr.mark-table-data`);
     let len = tr.length;
     for (let i = 0; i < len; i++) {
         let index = $(tr[i]).attr("id").match(/\d+/g)[0];
         $(tr[i]).remove();
-        $(`#Main .style2-table-wrap .table th.style-two-head-${index}`).removeClass("th-dis-none");
-        $(`#Main .style2-table-wrap .table td.style-two-head-${index}`).removeClass("th-dis-none");
-        allHeadTable2Call();
+        $(`#${selectedTab} .style2-table-wrap .table th.style-two-head-${index}`).removeClass("th-dis-none");
+        $(`#${selectedTab} .style2-table-wrap .table td.style-two-head-${index}`).removeClass("th-dis-none");
+        allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
     }
 }
 
-function moveRes2RightToLeft() {
-    let tr = $("#style2-man-res-opt-data-table-right tr.mark-table-data");
+
+// Arguments (moveRes2RightToLeft): 
+// 1. Selected TAB ID
+// 2. Style2 DoubleClick To Display Right List ID
+// Arguments (allHeadTable2Call): 
+// 1. Selected TAB ID
+// 2. Style2 DoubleClick To Display Left List ID
+// 3. Style2 DoubleClick To Display Right List ID
+function moveRes2RightToLeft(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
+    let tr = $(`#${sty2dblClickRightListId} tr.mark-table-data`);
     let len = tr.length;
     for (let i = 0; i < len; i++) {
         let index = $(tr[i]).attr("id").match(/\d+/g)[0];
         $(tr[i]).remove();
-        $(`#Main .style2-table-wrap .table th.style-two-head-${index}`).addClass("th-dis-none");
-        $(`#Main .style2-table-wrap .table td.style-two-head-${index}`).addClass("th-dis-none");
-        allHeadTable2Call();
+        $(`#${selectedTab} .style2-table-wrap .table th.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#${selectedTab} .style2-table-wrap .table td.style-two-head-${index}`).addClass("th-dis-none");
+        allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
     }
 }
 // X CLICK TO REMOVE COLUMN END ==============
 
 // TABLE RESIZEABLE START ===////////////////===
-function resizeWithUi(tQuery, thHeight) {
+function resizeWithUi(sty1TableId, tQuery, thHeight) {
     $(tQuery).resizable({
         handles: "e",
         minHeight: thHeight,
@@ -1247,42 +1353,34 @@ function resizeWithUi(tQuery, thHeight) {
             let valueSize = ui.size.width;
             $(sizerID).width(valueSize);
             let resizer = event.target.classList[0] + "-resizer";
-            let shrinkWidth = `#resizable554 tbody .${resizer}`;
+            let shrinkWidth = `#${sty1TableId} tbody .${resizer}`;
             let gettingWidth = parseInt($(sizerID).css('width'), 10);
             $(shrinkWidth).width(gettingWidth + "px");
         }
     });
 }
-function resizableTable1() {
-    let thHeight = $("table#resizable554 th:first").height();
-    resizeWithUi("table#resizable554 th", thHeight);
-    resizeWithUi("#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th", thHeight);
+function resizableTable1(selectedTab, sty1TableId) {
+    let thHeight = $(`table#${sty1TableId} th:first`).height();
+    resizeWithUi(sty1TableId, `table#${sty1TableId} th`, thHeight);
+    resizeWithUi(sty1TableId, `#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th`, thHeight);
 }
 // TABLE RESIZEABLE END ===////////////////===
 
 // TABLE RESIZEABLE STYLE 2 START ===////////////////===
-$(document).ready(function () {
-    var thHeight = $("table.cross-table-1 th:first").height();
-    $("table.cross-table-1 th").resizable({
-        handles: "e",
-        minHeight: thHeight,
-        maxHeight: thHeight,
-        minWidth: 40,
-        resize: function (event, ui) {
-            var sizerID = "#" + $(event.target).attr("id") + "-sizer";
-            $(sizerID).width(ui.size.width);
-        }
-    });
-})
+// $(document).ready(function () {
+//     var thHeight = $("table.cross-table-1 th:first").height();
+//     $("table.cross-table-1 th").resizable({
+//         handles: "e",
+//         minHeight: thHeight,
+//         maxHeight: thHeight,
+//         minWidth: 40,
+//         resize: function (event, ui) {
+//             var sizerID = "#" + $(event.target).attr("id") + "-sizer";
+//             $(sizerID).width(ui.size.width);
+//         }
+//     });
+// })
 
-
-// TABLE RESIZEABLE END ===////////////////===
-// function dragAndDrop() {
-//     $("table#resizable554").dragableColumns();
-// }
-// Drag and Drop END
-
-// DRAG AND DROP START FILTER
 //Left side drag
 $(function () {
     $("#my-drag-list").sortable();
@@ -1317,9 +1415,6 @@ function resetResFilter(e) {
 }
 // ----------- Manage Result Filter End --------------------
 
-// $('table#resizable554').on('scroll', function () {
-//     $("table#resizable554 > *").width($("table#resizable554").width() + $("table#resizable554").scrollLeft());
-// });
 
 function IconModalClick() {
     let viewModalList = document.getElementsByClassName('view-modal-click');
@@ -1683,7 +1778,8 @@ $("#moveRow_s2_close").click(function () {
 $("#closeCol8Filter").click(function () {
     $("#col8Filter").css('display', 'none');
 
-    const rotateIcon = document.querySelectorAll("#Main .outer-table-style12-box i.fa-caret-down.down-animation-icon");
+    // const rotateIcon = document.querySelectorAll("#Main .outer-table-style12-box i.fa-caret-down.down-animation-icon");
+    const rotateIcon = document.querySelectorAll(".outer-table-style12-box i.fa-caret-down.down-animation-icon");
     for (let i = 0; i < rotateIcon.length; i++) {
         $(rotateIcon[i]).removeClass("down-animation-icon");
     }
@@ -1754,25 +1850,24 @@ window.addEventListener("scroll", (event) => {
     let scroll = this.scrollY;
     // console.log(scroll);
     if (scroll > 1400) {
-        let arrowShowing = $("#Main .style1-box").hasClass("clickstylebg");
+        let arrowShowing = $(`#${mnResultActiveTabID} .style1-box`).hasClass("clickstylebg");
         if (arrowShowing) {
-            $("#Main .outer-table-style12-box .left-slider5").css('display', 'block');
-            $("#Main .outer-table-style12-box .right-slider5").css('display', 'block');
+            $(`#${mnResultActiveTabID} .outer-table-style12-box .left-slider5`).css('display', 'block');
+            $(`#${mnResultActiveTabID} .outer-table-style12-box .right-slider5`).css('display', 'block');
         }
     } else {
-        $("#Main .outer-table-style12-box .left-slider5").css('display', 'none');
-        $("#Main .outer-table-style12-box .right-slider5").css('display', 'none');
+        $(`#${mnResultActiveTabID} .outer-table-style12-box .left-slider5`).css('display', 'none');
+        $(`#${mnResultActiveTabID} .outer-table-style12-box .right-slider5`).css('display', 'none');
     }
 
     if (scroll > 1200) {
-        let arrowShowing = $("#Main .style1-box").hasClass("clickstylebg");
+        let arrowShowing = $(`#${mnResultActiveTabID} .style1-box`).hasClass("clickstylebg");
 
         let filterTargeting = document.querySelector('#col8Filter');
         let filterStyles = window.getComputedStyle(filterTargeting);
-        //console.log(filterStyles.display);
 
         if (arrowShowing == true && filterStyles.display == "block" && headerIndexClick != "") {
-            let virtualHeader = document.querySelector('#Main .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap');
+            let virtualHeader = document.querySelector(`#${mnResultActiveTabID} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap`);
             let compStyles = window.getComputedStyle(virtualHeader);
 
             if (compStyles.visibility == "visible") {
@@ -1783,8 +1878,8 @@ window.addEventListener("scroll", (event) => {
             }
 
             if (compStyles.visibility == "hidden") {
-                let actualHeaderTarget = document.querySelector(`#resizable554 th:nth-child(${headerIndexClick})`);
-                // $(`#resizable554 th:nth-child(${headerIndexClick})`);
+                // let actualHeaderTarget = document.querySelector(`#resizable554 th:nth-child(${headerIndexClick})`);
+                let actualHeaderTarget = document.querySelector(`#${mnResultActiveTabSty1TableID} th:nth-child(${headerIndexClick})`);
                 let elementPositionMain = actualHeaderTarget.getBoundingClientRect();
                 $("#col8Filter").css({
                     top: ((elementPositionMain.y) + window.scrollY + 55),
@@ -1797,7 +1892,7 @@ window.addEventListener("scroll", (event) => {
 
 
 $(document).keydown(function (e) {
-    let arrowShowing = $("#Main .style1-box").hasClass("clickstylebg");
+    let arrowShowing = $(`#${mnResultActiveTabID} .style1-box`).hasClass("clickstylebg");
     let filterTargeting = document.querySelector('#col8Filter');
     let filterStyles = window.getComputedStyle(filterTargeting);
     if (e.which == 37 && arrowShowing == true) {
@@ -1825,8 +1920,12 @@ $(document).keydown(function (e) {
     }
 });
 
+// Arguments (resetDownArrow):
+// 1. Selected TAB ID
+
 function resetDownArrow() {
-    const rotateIcon = document.querySelectorAll("#Main .outer-table-style12-box i.fa-caret-down.down-animation-icon");
+    // const rotateIcon = document.querySelectorAll("#Main .outer-table-style12-box i.fa-caret-down.down-animation-icon");
+    const rotateIcon = document.querySelectorAll(".outer-table-style12-box i.fa-caret-down.down-animation-icon");
     for (let i = 0; i < rotateIcon.length; i++) {
         $(rotateIcon[i]).removeClass("down-animation-icon");
     }

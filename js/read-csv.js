@@ -1,27 +1,40 @@
 let tableData = [];
-$("#exelFile").change((e) => {
-	let recExelFile = e.target.files[0];
-	if (recExelFile) {
-		const fileReader = new FileReader();
-		fileReader.readAsBinaryString(recExelFile);
-		fileReader.onload = (e) => {
-			let wb = XLSX.read(e.target.result, { type: "binary" });
-			const sheet = wb.SheetNames[0];
-			if (wb && sheet) {
-				tableData = XLSX.utils.sheet_to_json(wb.Sheets[sheet]);
-				tableHeadSty1();
-				manResTableRender();
-				manResPagination(7);
-				resizableTable1();
-				table1HeadClick();
+function loadCSVshowData(csvId, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix){
 
-				allHeadTable2Call();
-			}
-		};
-	}
-});
+	$(`#${csvId}`).change((e) => {
+		let recExelFile = e.target.files[0];
+		if (recExelFile) {
+			const fileReader = new FileReader();
+			fileReader.readAsBinaryString(recExelFile);
+			fileReader.onload = (e) => {
+				let wb = XLSX.read(e.target.result, { type: "binary" });
+				const sheet = wb.SheetNames[0];
+				if (wb && sheet) {
+					// let csvId = "exelFile";
+					// tableData = XLSX.utils.sheet_to_json(wb.Sheets[sheet]);
+					tableData[csvId] = XLSX.utils.sheet_to_json(wb.Sheets[sheet]);
 
-function tableHeadSty1() {
+					tableHeadSty1(selectedTab, sty1TableId);
+					manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
+					manResPagination(7, csvId, selectedTab, sty1TableId, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+					resizableTable1(selectedTab, sty1TableId);
+					table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
+
+					allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+				}
+			};
+		}
+	});
+
+}
+
+loadCSVshowData("exelFile", "Main", "resizable554", "man-res-opt-data-table-left", "man-res-opt-data-table-right", "res-id-table-", "style2-man-res-opt-data-table-left", "style2-man-res-opt-data-table-right", "res-table-two-");
+// Arguments (tableHeadSty1): 
+// 1. Selected TAB ID,
+// 2. Style1 Table ID
+
+// function tableHeadSty1() {
+function tableHeadSty1(selectedTab, sty1TableId) {
 	let randomFiveDigit = Math.floor(10000 + Math.random() * 90000);
 
 	let randomCrossIds = [];
@@ -875,17 +888,23 @@ function tableHeadSty1() {
 			<div class="column-header-66-sizer"></div>
 		</th>
 	</tr>`;
-	document.querySelector("#Main .style1-table-wrap #resizable554 thead").innerHTML = tHeadTr;
+	document.querySelector(`#${selectedTab} .style1-table-wrap #${sty1TableId} thead`).innerHTML = tHeadTr;
 
-	$("#Main .style1-table-wrap").freezeTable({
+	$(`#${selectedTab} .style1-table-wrap`).freezeTable({
 		'freezeColumn': false,
 	});
 }
 
-function manResPagination(noRow) {
+
+// Arguments (manResPagination):
+// 1. Dynamic csvFileId
+// 2. Selected TAB ID
+// 3. Style1 Table ID
+
+function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
 
 	let options = {
-		dataSource: tableData,
+		dataSource: tableData[csvId],
 		pageSize: noRow,
 		showGoInput: true,
 		showGoButton: true,
@@ -895,21 +914,21 @@ function manResPagination(noRow) {
 			tdWidthContainer.push("undefined");
 
 			for (let columnNum = 1; columnNum <= 66; columnNum++) {
-				tdWidthContainer.push($(`#resizable554 thead tr .column-header-${columnNum} .column-header-${columnNum}-sizer`).attr("style"));
+				tdWidthContainer.push($(`#${sty1TableId} thead tr .column-header-${columnNum} .column-header-${columnNum}-sizer`).attr("style"));
 			}
 
-			$("#resizable554").css("display", "none");
-			$("#Main .loading-style1-table").css("display", "block");
+			$(`#${sty1TableId}`).css("display", "none");
+			$(`#${selectedTab} .loading-style1-table`).css("display", "block");
 
-			$("#Main .style2-table-wrap .style2-table-content").css("display", "none");
-			$("#Main .loading-style2-table").css("display", "block");
+			$(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "none");
+			$(`#${selectedTab} .loading-style2-table`).css("display", "block");
 
 			setTimeout(() => {
-				$("#Main .loading-style1-table").css("display", "none");
-				$("#resizable554").css("display", "block");
+				$(`#${selectedTab} .loading-style1-table`).css("display", "none");
+				$(`#${sty1TableId}`).css("display", "block");
 
-				$("#Main .loading-style2-table").css("display", "none");
-				$("#Main .style2-table-wrap .style2-table-content").css("display", "block");
+				$(`#${selectedTab} .loading-style2-table`).css("display", "none");
+				$(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "block");
 			}, 3000);
 
 			let currentPageNumber = pagination.pageNumber;
@@ -919,14 +938,14 @@ function manResPagination(noRow) {
 			let dataShowingFrom = ((currentPageNumber - 1) * dataRowPerPage) + 1;
 			let dataShowingTo = ((currentPageNumber * dataRowPerPage) < totalDataRows) ? (currentPageNumber * dataRowPerPage) : totalDataRows;
 
-			$("#Main .current_page").html(currentPageNumber);
-			$("#Main .total_pages").html(totalPageNumber);
-			$("#Main .record_showingFrom").html(dataShowingFrom);
-			$("#Main .record_showingTo").html(dataShowingTo);
+			$(`#${selectedTab} .current_page`).html(currentPageNumber);
+			$(`#${selectedTab} .total_pages`).html(totalPageNumber);
+			$(`#${selectedTab} .record_showingFrom`).html(dataShowingFrom);
+			$(`#${selectedTab} .record_showingTo`).html(dataShowingTo);
 
 			let tableTr = "";
 			let style2TableData = "";
-			let tableH = $("#resizable554 thead th");
+			let tableH = $(`#${sty1TableId} thead th`);
 			let disNone = [];
 			data.forEach((csvD) => {
 				// Status Column
@@ -1738,7 +1757,7 @@ function manResPagination(noRow) {
 								<div class="head-filter style2_cross01" >
 									<i class="fas fa-times"></i>
 								</div>
-								<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)">
+								<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
 									<i class="fas fa-caret-down"></i>
 								</div>
 							</th>
@@ -1750,7 +1769,7 @@ function manResPagination(noRow) {
 								<div class="head-filter style2_cross02" >
 									<i class="fas fa-times"></i>
 								</div>
-								<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)">
+								<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 2)">
 									<i class="fas fa-caret-down"></i>
 								</div>
 							</th>
@@ -1762,7 +1781,7 @@ function manResPagination(noRow) {
 								<div class="head-filter style2_cross03" >
 									<i class="fas fa-times"></i>
 								</div>
-								<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)">
+								<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 3)">
 									<i class="fas fa-caret-down"></i>
 								</div>
 							</th>
@@ -1809,7 +1828,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross04">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1821,7 +1840,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross05">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 2)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1833,7 +1852,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross06">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 3)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1845,7 +1864,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross07">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 4)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1940,7 +1959,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross08">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1952,7 +1971,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross09">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 2)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1964,7 +1983,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross10">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 3)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1976,7 +1995,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross11">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 4)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -1988,7 +2007,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross12">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 5)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 5)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2000,7 +2019,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross13">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 6)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 6)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2012,7 +2031,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross14">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 7)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 7)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2024,7 +2043,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross15">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 8)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 8)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2036,7 +2055,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross16">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 9)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 9)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2048,7 +2067,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross17">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 10)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 10)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2060,7 +2079,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross18">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 11)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 11)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2072,7 +2091,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross19">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 12)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 12)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2084,7 +2103,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross20">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 13)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 13)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2172,7 +2191,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross21">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2184,7 +2203,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross22">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 2)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2196,7 +2215,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross23">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 3)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2208,7 +2227,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross24">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 4)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2220,7 +2239,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross25">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 5)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 5)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2232,7 +2251,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross26">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 6)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 6)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2244,7 +2263,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross27">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 7)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 7)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2256,7 +2275,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross28">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 8)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 8)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2268,7 +2287,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross29">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 9)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 9)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2280,7 +2299,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross30">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 10)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 10)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2292,7 +2311,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross31">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 11)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 11)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2304,7 +2323,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross32">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 12)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 12)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2316,7 +2335,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross33">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 13)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 13)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2404,7 +2423,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross34">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2416,7 +2435,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross35">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 2)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2428,7 +2447,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross36">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 3)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2440,7 +2459,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross37">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 4)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2452,7 +2471,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross38">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 5)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 5)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2464,7 +2483,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross39">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 6)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 6)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2476,7 +2495,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross40">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 7)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 7)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2488,7 +2507,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross41">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 8)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 8)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2500,7 +2519,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross42">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 9)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 9)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2512,7 +2531,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross43">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 10)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 10)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2524,7 +2543,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross44">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 11)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 11)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2536,7 +2555,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross45">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 12)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 12)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2548,7 +2567,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross46">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 13)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 13)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2560,7 +2579,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross47">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 14)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 14)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2654,7 +2673,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross48">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2666,7 +2685,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross49">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 2)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2678,7 +2697,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross50">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 3)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 3)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2690,7 +2709,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross51">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 4)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 4)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2702,7 +2721,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross52">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 5)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 5)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2714,7 +2733,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross53">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 6)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 6)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2726,7 +2745,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross54">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 7)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 7)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2738,7 +2757,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross55">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 8)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 8)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2750,7 +2769,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross56">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 9)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 9)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2762,7 +2781,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross57">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 10)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 10)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2774,7 +2793,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross58">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 11)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 11)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2786,7 +2805,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross59">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 12)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 12)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2798,7 +2817,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross60">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 13)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 13)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2810,7 +2829,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross61">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 14)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 14)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2904,7 +2923,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross62">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2916,7 +2935,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross63">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 2)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 2)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2950,7 +2969,7 @@ function manResPagination(noRow) {
 												<div class="head-filter style2_cross64">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, 1)">
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -2969,29 +2988,32 @@ function manResPagination(noRow) {
 			});
 
 
-			let style1_Table_Html = $("#resizable554 tbody");
-			let style2_Table_Html = $("#Main .style2-table-wrap .style2-table-content");
+			let style1_Table_Html = $(`#${sty1TableId} tbody`);
+			let style2_Table_Html = $(`#${selectedTab} .style2-table-wrap .style2-table-content`);
 			style1_Table_Html.html(tableTr);
 			style2_Table_Html.html(style2TableData);
 
 			// hide td base on th start
 			disNone.forEach((k) => {
-				$(`#resizable554 td:nth-child(${k})`).addClass("th-dis-none");
+				$(`#${sty1TableId} td:nth-child(${k})`).addClass("th-dis-none");
 			});
 			// hide td base on th end
 
 			// Truncate the Detail 2 Text (Huge Text)
-			truncateText(450);
+			truncateText(600);
 
-			$("#Main .style1-table-wrap").css("border", "2px solid #eff1f7");
-			$("#Main .width-pagi-manRes-table .width-row-go").css("display", "block");
+			$(`#${selectedTab} .style1-table-wrap`).css("border", "2px solid #eff1f7");
+			$(`#${selectedTab} .width-pagi-manRes-table .width-row-go`).css("display", "block");
+
 			IconModalClick();
+			
 			Style2DropFilterPos();
-			// function for table 2 Start
-			pagiHideHead();
-			table2HeadClickCall();
-			// function for table 2 End
-			style1TableScroller();
+			
+			pagiHideHead(selectedTab, sty2dblClickLeftListId);
+			
+			table2HeadClickCall(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+			
+			style1TableScroller(selectedTab);
 
 			hideStyleOneAllPopup();
 
@@ -3002,16 +3024,20 @@ function manResPagination(noRow) {
 			tooltipFunction();
 		},
 	};
-	let container = $("#Main .width-pagi-manRes-table");
+	let container = $(`#${selectedTab} .width-pagi-manRes-table`);
 	container.pagination(options);
 }
 
+function mnResultRowPerPage(csvId, selectedTab, sty1TableId, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix){
+	$(`#${selectedTab} .manRes-pagination-input`).change(function (e) {
+		let noRow = e.target.value;
+		manResPagination(noRow, csvId, selectedTab, sty1TableId, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+		pagiHideHead(selectedTab, sty2dblClickLeftListId);
+	});
+}
 
-$("#Main .manRes-pagination-input").change(function (e) {
-	let noRow = e.target.value;
-	manResPagination(noRow);
-	pagiHideHead();
-});
+mnResultRowPerPage("exelFile", "Main", "resizable554", "style2-man-res-opt-data-table-left", "style2-man-res-opt-data-table-right", "res-table-two-");
+
 
 function fnStatus(sts) {
 	let status = sts.replace("days,", "D :").replace("hours,", "H :").replace("minutes", "M");
@@ -3097,16 +3123,12 @@ function truncateText(maxLength) {
 	}
 }
 
-// $("#resizable554 th").on("drop", function (e) {
-// 	manResTableRender();
-// });
-
-function popUpHandlerS2Table(e, indexValue) {
+function popUpHandlerS2Table(e, selectedTab, indexValue) {
 	let targetElementClassList = e.path[5].getAttribute("class");
 	let targetElementClass = targetElementClassList.split(" ");
 
-	let tableTargetHead = $(`#Main .style2-table-wrap .${targetElementClass[1]} thead th:nth-child(${indexValue})`);
-	let tableTargetData = $(`#Main .style2-table-wrap .${targetElementClass[1]} tbody td:nth-child(${indexValue}) .mr-tableData`);
+	let tableTargetHead = $(`#${selectedTab} .style2-table-wrap .${targetElementClass[1]} thead th:nth-child(${indexValue})`);
+	let tableTargetData = $(`#${selectedTab} .style2-table-wrap .${targetElementClass[1]} tbody td:nth-child(${indexValue}) .mr-tableData`);
 	let filterHeading = tableTargetHead[0].textContent;
 
 	$("#col8Filter #tableHeaderPop").html(filterHeading);
@@ -3134,3 +3156,15 @@ function popUpHandlerS2Table(e, indexValue) {
 	targetModal.html(tableTr);
 }
 
+// Bootstrap Tooltip Enable Function (Manage Result Table Tooltips)
+function tooltipFunction() {
+	$('[data-toggle="tooltip"]').tooltip(
+		{
+			animation: true,
+			container: 'body',
+			trigger: 'hover',
+			placement: 'bottom',
+			delay: { "show": 10, "hide": 0 }
+		}
+	);
+};
