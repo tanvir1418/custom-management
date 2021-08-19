@@ -163,7 +163,7 @@ for (var i = 0; i < li_tabs.length; i++) {
 				$("#dropBtnModal").css('display', 'none');
 				$(".content").addClass("tvtv");
 				makeTableHeadAlert("manage-alert-table-exist");
-				alertTableExist("manage-alert-table-exist", 7, "pagination-manage-alert", "manage_alert_data_table", "manage_alert_loading_table");
+				alertTableExist("manage-alert-table-exist", 7, "pagination-manage-alert", "manage_alert_data_table", "manage_alert_loading_table", "pagination_mnAlert", "loading_pagination_mnAlert");
 				alertTableHeadClick("manage-alert-table-exist");
 			}
 			if (current_tab_value != "tab_5") {
@@ -256,8 +256,8 @@ $(".tab-39").click(function () {
 	let dataId = $(this).attr("data-id");
 	if (dataId == "tab40") {
 		makeTableHead("man-data-opt1-exist");
-		manDtOpt1Exist("man-data-opt1-exist", 7, "pagination-op1-data", `tabChangeOpt1(this)`, "mnData-opt1-dataWrapper", "mnData-opt1-loadingWrapper");
-		ExistTableHeadClick("man-data-opt1-exist");
+		manDtOpt1Exist("man-data-opt1-exist", 7, "pagination-op1-data", `tabChangeOpt1(this)`, "mnData-opt1-dataWrapper", "mnData-opt1-loadingWrapper", "pagination_mnDataOp1", "loading_pagination_mnDataOp1", "table_details_op1");
+		ExistTableHeadClick("man-data-opt1-exist", "mnData-opt1-dataWrapper", "mnData-opt1-loadingWrapper", "pagination_mnDataOp1", "loading_pagination_mnDataOp1", "table_details_op1");
 	}
 
 	$(".mytab-39[data-id='" + $(this).attr("data-id") + "']").addClass("tab-active-39");
@@ -288,8 +288,8 @@ $(".tab-43").click(function () {
 	let dataId = $(this).attr("data-id");
 	if (dataId == "tab44") {
 		makeTableHead("man-data-opt3-exist");
-		manDtOpt1Exist("man-data-opt3-exist", 7, "pagination-op3-data", `tabChangeOpt3(this)`, "mnData-opt3-dataWrapper", "mnData-opt3-loadingWrapper");
-		ExistTableHeadClick("man-data-opt3-exist");
+		manDtOpt1Exist("man-data-opt3-exist", 7, "pagination-op3-data", `tabChangeOpt3(this)`, "mnData-opt3-dataWrapper", "mnData-opt3-loadingWrapper", "pagination_mnDataOp3", "loading_pagination_mnDataOp3", "table_details_op3");
+		ExistTableHeadClick("man-data-opt3-exist", "mnData-opt3-dataWrapper", "mnData-opt3-loadingWrapper", "pagination_mnDataOp3", "loading_pagination_mnDataOp3", "table_details_op3");
 	}
 
 	$(".mytab-43[data-id='" + $(this).attr("data-id") + "']").addClass(
@@ -322,8 +322,8 @@ $(".tab-45").click(function () {
 	let dataId = $(this).attr("data-id");
 	if (dataId == "tab46") {
 		makeTableHead("man-data-opt4-exist");
-		manDtOpt1Exist("man-data-opt4-exist", 7, "pagination-op4-data", `tabChangeOpt4(this)`, "mnData-opt4-dataWrapper", "mnData-opt4-loadingWrapper");
-		ExistTableHeadClick("man-data-opt4-exist");
+		manDtOpt1Exist("man-data-opt4-exist", 7, "pagination-op4-data", `tabChangeOpt4(this)`, "mnData-opt4-dataWrapper", "mnData-opt4-loadingWrapper", "pagination_mnDataOp4", "loading_pagination_mnDataOp4", "table_details_op4");
+		ExistTableHeadClick("man-data-opt4-exist", "mnData-opt4-dataWrapper", "mnData-opt4-loadingWrapper", "pagination_mnDataOp4", "loading_pagination_mnDataOp4", "table_details_op4");
 	}
 
 	$(".mytab-45[data-id='" + $(this).attr("data-id") + "']").addClass(
@@ -355,8 +355,8 @@ $(".tab-41").click(function () {
 	let dataId = $(this).attr("data-id");
 	if (dataId == "tab42") {
 		makeTableHead("man-data-opt5-exist");
-		manDtOpt1Exist("man-data-opt5-exist", 7, "pagination-op5-data", `tabChangeOpt5(this)`, "mnData-opt5-dataWrapper", "mnData-opt5-loadingWrapper");
-		ExistTableHeadClick("man-data-opt5-exist");
+		manDtOpt1Exist("man-data-opt5-exist", 7, "pagination-op5-data", `tabChangeOpt5(this)`, "mnData-opt5-dataWrapper", "mnData-opt5-loadingWrapper", "pagination_mnDataOp5", "loading_pagination_mnDataOp5", "table_details_op5");
+		ExistTableHeadClick("man-data-opt5-exist", "mnData-opt5-dataWrapper", "mnData-opt5-loadingWrapper", "pagination_mnDataOp5", "loading_pagination_mnDataOp5", "table_details_op5");
 	}
 
 	$(".mytab-41[data-id='" + $(this).attr("data-id") + "']").addClass(
@@ -898,10 +898,13 @@ function makeTableHead(tableID) {
 			ROW
 		</th>
 		<th scope="col">
-			RECORDS COUNT
-        <span class="tooltip-container" tooltip="RECORDS COUNT" flow="down">
-          <i class="fas fa-question-circle"></i>
-        </span>
+			<span class="header-title">RECORDS COUNT</span>
+			<span class="tooltip-container" tooltip="RECORDS COUNT" flow="down">
+				<i class="fas fa-question-circle"></i>
+			</span>
+			<span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+				<i class="fas fa-chevron-up"></i>
+            </span>
 			<div class="head-filter cross-exists">
 				<i class="fas fa-times"></i>
 			</div>
@@ -910,10 +913,13 @@ function makeTableHead(tableID) {
 			</div>
 		</th>
 		<th scope="col">
-			SAVED NAME
-      <span class="tooltip-container" tooltip="SAVED NAME" flow="down">
-          <i class="fas fa-question-circle"></i>
-      </span>
+			<span class="header-title">SAVED NAME</span>
+			<span class="tooltip-container" tooltip="SAVED NAME" flow="down">
+				<i class="fas fa-question-circle"></i>
+			</span>
+			<span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+				<i class="fas fa-chevron-up"></i>
+            </span>
 			<div class="head-filter cross-exists">
 				<i class="fas fa-times"></i>
 			</div>
@@ -922,10 +928,13 @@ function makeTableHead(tableID) {
 			</div>
 		</th>
 		<th scope="col">
-			CREATED DATE TIME
-      <span class="tooltip-container" tooltip="CREATED DATE TIME" flow="down">
-          <i class="fas fa-question-circle"></i>
-      </span>
+			<span class="header-title">CREATED DATE TIME</span>
+			<span class="tooltip-container" tooltip="CREATED DATE TIME" flow="down">
+				<i class="fas fa-question-circle"></i>
+			</span>
+			<span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+				<i class="fas fa-chevron-up"></i>
+            </span>
 			<div class="head-filter cross-exists">
 				<i class="fas fa-times"></i>
 			</div>
@@ -934,14 +943,17 @@ function makeTableHead(tableID) {
 			</div>
 		</th>
 		<th scope="col">
-			LAST UPDATE DATE TIME
-      <span class="tooltip-container" tooltip="LAST UPDATE DATE TIME" flow="down">
-          <i class="fas fa-question-circle"></i>
-      </span>
+			<span class="header-title">LAST UPDATE DATE TIME</span>
+			<span class="tooltip-container" tooltip="LAST UPDATE DATE TIME" flow="down">
+				<i class="fas fa-question-circle"></i>
+			</span>
+			<span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+				<i class="fas fa-chevron-up"></i>
+            </span>
 			<div class="head-filter cross-exists">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter" >
+			<div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
 			</div>
 		</th>
@@ -951,7 +963,98 @@ function makeTableHead(tableID) {
 	$(`#${tableID} thead`).html(tableHead);
 }
 
-function manDtOpt1Exist(tableID, noRow, pagiId, tabChange, dataTableId, loadingTableId) {
+
+function ExistTableHeadClick(tableId, dataTableId, loadingTableId, paginationId, loadingPaginationId, tableDetailsId) {
+	$(`#${tableId} th`).click(function (e) {
+		let target = e.target;
+		let index = $(this).index() + 1;
+		if(target.tagName === "SPAN" && target.className === "header-title"){
+            $(`#${tableId} th:nth-child(${index}) .table-head-updown i`).toggleClass("fa-chevron-up fa-chevron-down");
+            
+            $(`#${dataTableId}`).css("display", "none");
+			$(`#${paginationId}`).css("display", "none");
+			$(`#${loadingTableId}`).css("display", "block");
+			$(`#${loadingPaginationId}`).css("display", "block");
+
+			$(`#${tableDetailsId} .table-records-wrap`).css("display", "none");
+			$(`#${tableDetailsId} .table-records-loading`).css("display", "block");
+
+			setTimeout(() => {
+				$(`#${loadingTableId}`).css("display", "none");
+				$(`#${loadingPaginationId}`).css("display", "none");
+				$(`#${dataTableId}`).css("display", "block");
+				$(`#${paginationId}`).css("display", "block");
+
+				$(`#${tableDetailsId} .table-records-wrap`).css("display", "block");
+				$(`#${tableDetailsId} .table-records-loading`).css("display", "none");
+			}, 2000);
+
+        }else{
+
+			if (target.tagName === "I") {
+				target = target.parentNode;
+			}
+			let regex = /cross/g;
+			let regexD = /drop-filter/g;
+			if (target.tagName === "DIV" && regex.test(target.className)) {
+				$(`#${tableId} th:nth-child(${index})`).addClass("th-dis-none");
+				$(`#${tableId} td:nth-child(${index})`).addClass("th-dis-none");
+			} else if (target.tagName === "DIV" && regexD.test(target.className)) {
+				let dataP = $(`#${tableId} td:nth-child(${index}) .mn-exists-data`);
+				// console.log(dataP);
+				let headingPop = $(`#${tableId} th:nth-child(${index})`)[0].textContent;
+				$(
+					`#${tableId} th:nth-child(${index}) .drop-filter .fa-caret-down`
+				).addClass("down-animation-icon");
+
+				$("#dropBtnModal #mnExistsThPop").html(headingPop);
+				let targetModal = $("#dropBtnModal #checkbox-table-exist tbody");
+				const dataC = new Set();
+				for (let i = 0; i < dataP.length; i++) {
+					if (dataP[i].tagName == "INPUT") {
+						dataC.add(dataP[i].value);
+					} else {
+						dataC.add(dataP[i].textContent);
+					}
+					// console.log(dataP[i].tagName);
+				}
+				let tableTr = "";
+				for (const item of dataC) {
+					tableTr += `<tr>
+						<td>
+							<div class="popup__checkbox__page__toggle">
+								<label class="popup__checkbox__toggle">
+									<input class="popup__checkbox__toggle__input" type="checkbox">
+									<span class="popup__checkbox__toggle__label">
+										<span class="popup__checkbox__toggle__text">${item}</span>
+									</span>
+								</label>
+							</div>
+						</td>
+					</tr>`;
+				}
+				targetModal.html(tableTr);
+
+				let elementPositionMain = e.target.getBoundingClientRect();
+				$("#dropBtnModal").css('display', 'none');
+				$("#dropBtnModal").css({
+					top: ((elementPositionMain.y) + window.scrollY + 25),
+					left: ((elementPositionMain.x) - 235),
+					position: "absolute"
+				});
+				$("#dropBtnModal").css('display', 'block');
+				// $("#dropBtnModal .modal-dialog").css({
+				// 	top: e.clientY + 15,
+				// 	left: e.clientX - 240,
+				// });
+				// $("#dropBtnModal").modal("toggle");
+			}
+		}
+	});
+}
+
+
+function manDtOpt1Exist(tableID, noRow, pagiId, tabChange, dataTableId, loadingTableId, paginationId, loadingPaginationId, tableDetailsId) {
 	let options = {
 		dataSource: manExisTable,
 		pageSize: noRow,
@@ -959,12 +1062,35 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange, dataTableId, loadingT
 		showGoButton: true,
 		callback: function (data, pagination) {
 
+			let currentPageNumber = pagination.pageNumber;
+			let dataRowPerPage = pagination.pageSize;
+			let totalDataRows = pagination.totalNumber;
+			let totalPageNumber = Math.ceil(totalDataRows / dataRowPerPage);
+			let dataShowingFrom = ((currentPageNumber - 1) * dataRowPerPage) + 1;
+			let dataShowingTo = ((currentPageNumber * dataRowPerPage) < totalDataRows) ? (currentPageNumber * dataRowPerPage) : totalDataRows;
+
+			$(`#${tableDetailsId} .current_page`).html(currentPageNumber);
+			$(`#${tableDetailsId} .total_pages`).html(totalPageNumber);
+			$(`#${tableDetailsId} .record_showingFrom`).html(dataShowingFrom);
+			$(`#${tableDetailsId} .record_showingTo`).html(dataShowingTo);
+
+
 			$(`#${dataTableId}`).css("display", "none");
+			$(`#${paginationId}`).css("display", "none");
 			$(`#${loadingTableId}`).css("display", "block");
+			$(`#${loadingPaginationId}`).css("display", "block");
+
+			$(`#${tableDetailsId} .table-records-wrap`).css("display", "none");
+			$(`#${tableDetailsId} .table-records-loading`).css("display", "block");
 
 			setTimeout(() => {
 				$(`#${loadingTableId}`).css("display", "none");
+				$(`#${loadingPaginationId}`).css("display", "none");
 				$(`#${dataTableId}`).css("display", "block");
+				$(`#${paginationId}`).css("display", "block");
+
+				$(`#${tableDetailsId} .table-records-wrap`).css("display", "block");
+				$(`#${tableDetailsId} .table-records-loading`).css("display", "none");
 			}, 2000);
 
 			let tableTr = "";
@@ -1090,40 +1216,29 @@ function tabChangeOpt5(e) {
 	createNew.click();
 }
 
-// makeTableHead("man-data-opt1-exist");
-// manDtOpt1Exist("man-data-opt1-exist", 7, "pagination-op1-data", `tabChangeOpt1(this)`, "mnData-opt1-dataWrapper", "mnData-opt1-loadingWrapper");
-
-// makeTableHead("man-data-opt3-exist");
-// manDtOpt1Exist("man-data-opt3-exist", 7, "pagination-op3-data", `tabChangeOpt3(this)`, "mnData-opt3-dataWrapper", "mnData-opt3-loadingWrapper");
-
-// makeTableHead("man-data-opt4-exist");
-// manDtOpt1Exist("man-data-opt4-exist", 7, "pagination-op4-data", `tabChangeOpt4(this)`, "mnData-opt4-dataWrapper", "mnData-opt4-loadingWrapper");
-
-// makeTableHead("man-data-opt5-exist");
-// manDtOpt1Exist("man-data-opt5-exist", 7, "pagination-op5-data", `tabChangeOpt5(this)`, "mnData-opt5-dataWrapper", "mnData-opt5-loadingWrapper");
 
 $("#row-no1").change(function (e) {
 	let noRow = e.target.value;
-	manDtOpt1Exist("man-data-opt1-exist", noRow, "pagination-op1-data", `tabChangeOpt1(this)`, "mnData-opt1-dataWrapper", "mnData-opt1-loadingWrapper");
-	ExistTableHeadClick("man-data-opt1-exist");
+	manDtOpt1Exist("man-data-opt1-exist", noRow, "pagination-op1-data", `tabChangeOpt1(this)`, "mnData-opt1-dataWrapper", "mnData-opt1-loadingWrapper", "pagination_mnDataOp1", "loading_pagination_mnDataOp1", "table_details_op1");
+	ExistTableHeadClick("man-data-opt1-exist", "mnData-opt1-dataWrapper", "mnData-opt1-loadingWrapper", "pagination_mnDataOp1", "loading_pagination_mnDataOp1", "table_details_op1");
 });
 
 $("#row-no3").change(function (e) {
 	let noRow = e.target.value;
-	manDtOpt1Exist("man-data-opt3-exist", noRow, "pagination-op3-data", `tabChangeOpt3(this)`, "mnData-opt3-dataWrapper", "mnData-opt3-loadingWrapper");
-	ExistTableHeadClick("man-data-opt3-exist");
+	manDtOpt1Exist("man-data-opt3-exist", noRow, "pagination-op3-data", `tabChangeOpt3(this)`, "mnData-opt3-dataWrapper", "mnData-opt3-loadingWrapper", "pagination_mnDataOp3", "loading_pagination_mnDataOp3", "table_details_op3");
+	ExistTableHeadClick("man-data-opt3-exist", "mnData-opt3-dataWrapper", "mnData-opt3-loadingWrapper", "pagination_mnDataOp3", "loading_pagination_mnDataOp3", "table_details_op3");
 });
 
 $("#row-no4").change(function (e) {
 	let noRow = e.target.value;
-	manDtOpt1Exist("man-data-opt4-exist", noRow, "pagination-op4-data", `tabChangeOpt4(this)`, "mnData-opt4-dataWrapper", "mnData-opt4-loadingWrapper");
-	ExistTableHeadClick("man-data-opt4-exist");
+	manDtOpt1Exist("man-data-opt4-exist", noRow, "pagination-op4-data", `tabChangeOpt4(this)`, "mnData-opt4-dataWrapper", "mnData-opt4-loadingWrapper", "pagination_mnDataOp4", "loading_pagination_mnDataOp4", "table_details_op4");
+	ExistTableHeadClick("man-data-opt4-exist", "mnData-opt4-dataWrapper", "mnData-opt4-loadingWrapper", "pagination_mnDataOp4", "loading_pagination_mnDataOp4", "table_details_op4");
 });
 
 $("#row-no5").change(function (e) {
 	let noRow = e.target.value;
-	manDtOpt1Exist("man-data-opt5-exist", noRow, "pagination-op5-data", `tabChangeOpt5(this)`, "mnData-opt5-dataWrapper", "mnData-opt5-loadingWrapper");
-	ExistTableHeadClick("man-data-opt5-exist");
+	manDtOpt1Exist("man-data-opt5-exist", noRow, "pagination-op5-data", `tabChangeOpt5(this)`, "mnData-opt5-dataWrapper", "mnData-opt5-loadingWrapper", "pagination_mnDataOp5", "loading_pagination_mnDataOp5", "table_details_op5");
+	ExistTableHeadClick("man-data-opt5-exist", "mnData-opt5-dataWrapper", "mnData-opt5-loadingWrapper", "pagination_mnDataOp5", "loading_pagination_mnDataOp5", "table_details_op5");
 });
 
 // function dropModalFilter(e) {
@@ -1135,71 +1250,6 @@ $("#row-no5").change(function (e) {
 // }
 
 // Manage Data Option 1 Existing Pagination End
-
-function ExistTableHeadClick(tableId) {
-	$(`#${tableId} th`).click(function (e) {
-		let target = e.target;
-		let index = $(this).index() + 1;
-		if (target.tagName === "I") {
-			target = target.parentNode;
-		}
-		let regex = /cross/g;
-		let regexD = /drop-filter/g;
-		if (target.tagName === "DIV" && regex.test(target.className)) {
-			$(`#${tableId} th:nth-child(${index})`).addClass("th-dis-none");
-			$(`#${tableId} td:nth-child(${index})`).addClass("th-dis-none");
-		} else if (target.tagName === "DIV" && regexD.test(target.className)) {
-			let dataP = $(`#${tableId} td:nth-child(${index}) .mn-exists-data`);
-			// console.log(dataP);
-			let headingPop = $(`#${tableId} th:nth-child(${index})`)[0].textContent;
-			$(
-				`#${tableId} th:nth-child(${index}) .drop-filter .fa-caret-down`
-			).addClass("down-animation-icon");
-
-			$("#dropBtnModal #mnExistsThPop").html(headingPop);
-			let targetModal = $("#dropBtnModal #checkbox-table-exist tbody");
-			const dataC = new Set();
-			for (let i = 0; i < dataP.length; i++) {
-				if (dataP[i].tagName == "INPUT") {
-					dataC.add(dataP[i].value);
-				} else {
-					dataC.add(dataP[i].textContent);
-				}
-				// console.log(dataP[i].tagName);
-			}
-			let tableTr = "";
-			for (const item of dataC) {
-				tableTr += `<tr>
-					<td>
-						<div class="popup__checkbox__page__toggle">
-							<label class="popup__checkbox__toggle">
-								<input class="popup__checkbox__toggle__input" type="checkbox">
-								<span class="popup__checkbox__toggle__label">
-									<span class="popup__checkbox__toggle__text">${item}</span>
-								</span>
-							</label>
-						</div>
-					</td>
-				</tr>`;
-			}
-			targetModal.html(tableTr);
-
-			let elementPositionMain = e.target.getBoundingClientRect();
-            $("#dropBtnModal").css('display', 'none');
-            $("#dropBtnModal").css({
-                top: ((elementPositionMain.y) + window.scrollY + 25),
-                left: ((elementPositionMain.x) - 235),
-                position: "absolute"
-            });
-            $("#dropBtnModal").css('display', 'block');
-			// $("#dropBtnModal .modal-dialog").css({
-			// 	top: e.clientY + 15,
-			// 	left: e.clientX - 240,
-			// });
-			// $("#dropBtnModal").modal("toggle");
-		}
-	});
-}
 
 $("#closeDropBtnModal").click(function () {
     $("#dropBtnModal").css('display', 'none');
@@ -1214,11 +1264,6 @@ $("#closeDropBtnModal").click(function () {
         $(rotateIconTab5[i]).removeClass("down-animation-icon");
     }
 });
-
-// ExistTableHeadClick("man-data-opt1-exist");
-// ExistTableHeadClick("man-data-opt3-exist");
-// ExistTableHeadClick("man-data-opt4-exist");
-// ExistTableHeadClick("man-data-opt5-exist");
 
 // modal background
 $('#delet-optfourmodala-modal').on('show.bs.modal', function (e) {

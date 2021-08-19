@@ -13,10 +13,14 @@ for (let i = 1; i <= 100; i++) {
 function makeTableHeadAlert(tableID) {
   let tableHead =
     `<th class="">ROW</th>
-        <th class="">ALERT TYPE
+        <th class="">
+          <span class="header-title">ALERT TYPE</span>
           <span class="tooltip-container" tooltip="Sample text here1" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
+          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+				<i class="fas fa-chevron-up"></i>
+            </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
             </div>
@@ -24,10 +28,14 @@ function makeTableHeadAlert(tableID) {
                 <i class="fas fa-caret-down"></i>
             </div>
         </th>
-        <th class="">ALERT VALUE
+        <th class="">
+          <span class="header-title">ALERT VALUE</span>
           <span class="tooltip-container" tooltip="Sample text here2" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
+          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+				<i class="fas fa-chevron-up"></i>
+            </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
             </div>
@@ -35,10 +43,14 @@ function makeTableHeadAlert(tableID) {
                 <i class="fas fa-caret-down"></i>
             </div>
         </th>
-        <th class="">ALERT FREQUENCY
+        <th class="">
+          <span class="header-title">ALERT FREQUENCY</span>
           <span class="tooltip-container" tooltip="Sample text here3" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
+          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+				<i class="fas fa-chevron-up"></i>
+            </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
             </div>
@@ -46,10 +58,14 @@ function makeTableHeadAlert(tableID) {
                 <i class="fas fa-caret-down"></i>
             </div>
         </th>
-        <th class="">ALERT METHOD
+        <th class="">
+          <span class="header-title">ALERT METHOD</span>
           <span class="tooltip-container" tooltip="Sample text here4" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
+          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+				<i class="fas fa-chevron-up"></i>
+            </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
             </div>
@@ -67,7 +83,7 @@ function makeTableHeadAlert(tableID) {
 
 }
 
-function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId) {
+function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId, paginationId, loadingPaginationId) {
   let options = {
     dataSource: alertExistData,
     pageSize: noRow,
@@ -75,12 +91,34 @@ function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId) {
     showGoButton: true,
     callback: function (data, pagination) {
 
+      let currentPageNumber = pagination.pageNumber;
+			let dataRowPerPage = pagination.pageSize;
+			let totalDataRows = pagination.totalNumber;
+			let totalPageNumber = Math.ceil(totalDataRows / dataRowPerPage);
+			let dataShowingFrom = ((currentPageNumber - 1) * dataRowPerPage) + 1;
+			let dataShowingTo = ((currentPageNumber * dataRowPerPage) < totalDataRows) ? (currentPageNumber * dataRowPerPage) : totalDataRows;
+
+			$(`#table_details_mnAlert .current_page`).html(currentPageNumber);
+			$(`#table_details_mnAlert .total_pages`).html(totalPageNumber);
+			$(`#table_details_mnAlert .record_showingFrom`).html(dataShowingFrom);
+			$(`#table_details_mnAlert .record_showingTo`).html(dataShowingTo);
+
       $(`#${maDataTableId}`).css("display", "none");
+      $(`#${paginationId}`).css("display", "none");
       $(`#${maLoadTableId}`).css("display", "block");
+      $(`#${loadingPaginationId}`).css("display", "block");
+
+      $("#table_details_mnAlert .table-records-wrap").css("display", "none");
+      $("#table_details_mnAlert .table-records-loading").css("display", "block");
 
       setTimeout(() => {
         $(`#${maLoadTableId}`).css("display", "none");
+        $(`#${loadingPaginationId}`).css("display", "none");
         $(`#${maDataTableId}`).css("display", "block");
+        $(`#${paginationId}`).css("display", "block");
+
+        $("#table_details_mnAlert .table-records-wrap").css("display", "block");
+        $("#table_details_mnAlert .table-records-loading").css("display", "none");
       }, 2000);
 
       let tableTr = "";
@@ -162,11 +200,11 @@ function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId) {
 }
 
 makeTableHeadAlert("manage-alert-table-exist");
-alertTableExist("manage-alert-table-exist", 7, "pagination-manage-alert", "manage_alert_data_table", "manage_alert_loading_table");
+alertTableExist("manage-alert-table-exist", 7, "pagination-manage-alert", "manage_alert_data_table", "manage_alert_loading_table", "pagination_mnAlert", "loading_pagination_mnAlert");
 
 $("#row-mnAlert").change(function (e) {
   let noRow = e.target.value;
-  alertTableExist("manage-alert-table-exist", noRow, "pagination-manage-alert", "manage_alert_data_table", "manage_alert_loading_table");
+  alertTableExist("manage-alert-table-exist", noRow, "pagination-manage-alert", "manage_alert_data_table", "manage_alert_loading_table", "pagination_mnAlert", "loading_pagination_mnAlert");
   alertTableHeadClick("manage-alert-table-exist");
 });
 
@@ -175,62 +213,86 @@ function alertTableHeadClick(tableId) {
   $(`#${tableId} th`).click(function (e) {
     let target = e.target;
     let index = $(this).index() + 1;
-    if (target.tagName === "I") {
-      target = target.parentNode;
-    }
-    let regex = /cross/g;
-    let regexD = /drop-filter/g;
-    if (target.tagName === "DIV" && regex.test(target.className)) {
-      $(`#${tableId} th:nth-child(${index})`).addClass("th-dis-none");
-      $(`#${tableId} td:nth-child(${index})`).addClass("th-dis-none");
-    } else if (target.tagName === "DIV" && regexD.test(target.className)) {
-      let dataP = $(`#${tableId} td:nth-child(${index}) .alert-exists-data`);
-      // console.log(dataP);
-      let headingPop = $(`#${tableId} th:nth-child(${index})`)[0].textContent;
-      $(`#${tableId} th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
 
-      $("#dropBtnModal #mnExistsThPop").html(headingPop);
-      let targetModal = $("#dropBtnModal #checkbox-table-exist tbody");
-      const dataC = new Set();
-      for (let i = 0; i < dataP.length; i++) {
-        if (dataP[i].tagName == "INPUT") {
-          dataC.add(dataP[i].value);
-        } else {
-          dataC.add(dataP[i].textContent);
-        }
-        // console.log(dataP[i].tagName);
-      }
-      let tableTr = "";
-      for (const item of dataC) {
-        tableTr += `<tr>
-					<td>
-						<div class="popup__checkbox__page__toggle">
-							<label class="popup__checkbox__toggle">
-								<input class="popup__checkbox__toggle__input" type="checkbox">
-								<span class="popup__checkbox__toggle__label">
-									<span class="popup__checkbox__toggle__text">${item}</span>
-								</span>
-							</label>
-						</div>
-					</td>
-				</tr>`;
-      }
-      targetModal.html(tableTr);
+    if(target.tagName === "SPAN" && target.className === "header-title"){
+      $(`#${tableId} th:nth-child(${index}) .table-head-updown i`).toggleClass("fa-chevron-up fa-chevron-down");
       
-      let elementPositionMain = e.target.getBoundingClientRect();
-      $("#dropBtnModal").css('display', 'none');
-      $("#dropBtnModal").css({
-          top: ((elementPositionMain.y) + window.scrollY + 25),
-          left: ((elementPositionMain.x) - 235),
-          position: "absolute"
-      });
-      $("#dropBtnModal").css('display', 'block');
+      $(`#manage_alert_data_table`).css("display", "none");
+      $(`#pagination_mnAlert`).css("display", "none");
+      $(`#manage_alert_loading_table`).css("display", "block");
+      $(`#loading_pagination_mnAlert`).css("display", "block");
 
-      // $("#dropBtnModal .modal-dialog").css({
-      //   top: e.clientY + 15,
-      //   left: e.clientX - 240,
-      // });
-      // $("#dropBtnModal").modal("toggle");
+      $("#table_details_mnAlert .table-records-wrap").css("display", "none");
+      $("#table_details_mnAlert .table-records-loading").css("display", "block");
+
+      setTimeout(() => {
+        $(`#manage_alert_loading_table`).css("display", "none");
+        $(`#loading_pagination_mnAlert`).css("display", "none");
+        $(`#manage_alert_data_table`).css("display", "block");
+        $(`#pagination_mnAlert`).css("display", "block");
+
+        $("#table_details_mnAlert .table-records-wrap").css("display", "block");
+        $("#table_details_mnAlert .table-records-loading").css("display", "none");
+      }, 2000);
+
+    }else{
+      if (target.tagName === "I") {
+        target = target.parentNode;
+      }
+      let regex = /cross/g;
+      let regexD = /drop-filter/g;
+      if (target.tagName === "DIV" && regex.test(target.className)) {
+        $(`#${tableId} th:nth-child(${index})`).addClass("th-dis-none");
+        $(`#${tableId} td:nth-child(${index})`).addClass("th-dis-none");
+      } else if (target.tagName === "DIV" && regexD.test(target.className)) {
+        let dataP = $(`#${tableId} td:nth-child(${index}) .alert-exists-data`);
+        // console.log(dataP);
+        let headingPop = $(`#${tableId} th:nth-child(${index})`)[0].textContent;
+        $(`#${tableId} th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
+
+        $("#dropBtnModal #mnExistsThPop").html(headingPop);
+        let targetModal = $("#dropBtnModal #checkbox-table-exist tbody");
+        const dataC = new Set();
+        for (let i = 0; i < dataP.length; i++) {
+          if (dataP[i].tagName == "INPUT") {
+            dataC.add(dataP[i].value);
+          } else {
+            dataC.add(dataP[i].textContent);
+          }
+          // console.log(dataP[i].tagName);
+        }
+        let tableTr = "";
+        for (const item of dataC) {
+          tableTr += `<tr>
+            <td>
+              <div class="popup__checkbox__page__toggle">
+                <label class="popup__checkbox__toggle">
+                  <input class="popup__checkbox__toggle__input" type="checkbox">
+                  <span class="popup__checkbox__toggle__label">
+                    <span class="popup__checkbox__toggle__text">${item}</span>
+                  </span>
+                </label>
+              </div>
+            </td>
+          </tr>`;
+        }
+        targetModal.html(tableTr);
+        
+        let elementPositionMain = e.target.getBoundingClientRect();
+        $("#dropBtnModal").css('display', 'none');
+        $("#dropBtnModal").css({
+            top: ((elementPositionMain.y) + window.scrollY + 25),
+            left: ((elementPositionMain.x) - 235),
+            position: "absolute"
+        });
+        $("#dropBtnModal").css('display', 'block');
+
+        // $("#dropBtnModal .modal-dialog").css({
+        //   top: e.clientY + 15,
+        //   left: e.clientX - 240,
+        // });
+        // $("#dropBtnModal").modal("toggle");
+      }
     }
   });
 }

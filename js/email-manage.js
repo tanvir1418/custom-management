@@ -54,10 +54,14 @@ for (let i = 1; i <= 100; i++) {
 
 function taskStatusHead(tableID) {
     let tableHead = `<th class="">ROW</th>
-        <th class="">NAME
+        <th class="">
+            <span class="header-title">NAME</span>
           <span class="tooltip-container" tooltip="Sample text here" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
+          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+				<i class="fas fa-chevron-up"></i>
+            </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
             </div>
@@ -65,10 +69,14 @@ function taskStatusHead(tableID) {
                 <i class="fas fa-caret-down"></i>
             </div>
         </th>
-        <th class="">STATUS
-          <span class="tooltip-container" tooltip="Sample text here" flow="down">
-            <i class="fas fa-question-circle"></i>
-          </span>
+        <th class="">
+            <span class="header-title">STATUS</span>
+            <span class="tooltip-container" tooltip="Sample text here" flow="down">
+                <i class="fas fa-question-circle"></i>
+            </span>
+            <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+				<i class="fas fa-chevron-up"></i>
+            </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
             </div>
@@ -76,10 +84,14 @@ function taskStatusHead(tableID) {
                 <i class="fas fa-caret-down"></i>
             </div>
         </th>
-        <th class="">PROGRESS
-          <span class="tooltip-container" tooltip="Sample text here" flow="down">
-            <i class="fas fa-question-circle"></i>
-          </span>
+        <th class="">
+            <span class="header-title">PROGRESS</span>
+            <span class="tooltip-container" tooltip="Sample text here" flow="down">
+                <i class="fas fa-question-circle"></i>
+            </span>
+            <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+				<i class="fas fa-chevron-up"></i>
+            </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
             </div>
@@ -87,10 +99,14 @@ function taskStatusHead(tableID) {
                 <i class="fas fa-caret-down"></i>
             </div>
         </th>
-        <th class="">START TIME
-          <span class="tooltip-container" tooltip="Sample text here" flow="down">
-            <i class="fas fa-question-circle"></i>
-          </span>
+        <th class="">
+            <span class="header-title">START TIME</span>
+            <span class="tooltip-container" tooltip="Sample text here" flow="down">
+                <i class="fas fa-question-circle"></i>
+            </span>
+            <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+				<i class="fas fa-chevron-up"></i>
+            </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
             </div>
@@ -98,10 +114,14 @@ function taskStatusHead(tableID) {
                 <i class="fas fa-caret-down"></i>
             </div>
         </th>
-        <th class="">END TIME
-          <span class="tooltip-container" tooltip="Sample text here" flow="down">
-            <i class="fas fa-question-circle"></i>
-          </span>
+        <th class="">
+            <span class="header-title">END TIME</span>
+            <span class="tooltip-container" tooltip="Sample text here" flow="down">
+                <i class="fas fa-question-circle"></i>
+            </span>
+            <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+				<i class="fas fa-chevron-up"></i>
+            </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
             </div>
@@ -110,21 +130,33 @@ function taskStatusHead(tableID) {
             </div>
         </th>
         <th class="">ACTIONS
-          <span class="tooltip-container" tooltip="Sample text here" flow="down">
-            <i class="fas fa-question-circle"></i>
-          </span>
-          </th>`;
+            <span class="tooltip-container" tooltip="Sample text here" flow="down">
+                <i class="fas fa-question-circle"></i>
+            </span>
+        </th>`;
 
     $(`#${tableID} thead`).html(tableHead);
 }
 
-function taskStatusTableExist(tableID, noRow, pagiId) {
+function taskStatusTableExist(tableID, noRow, pagiId, paginationId, loadingPaginationId) {
     let options = {
         dataSource: taskStatusData,
         pageSize: noRow,
         showGoInput: true,
         showGoButton: true,
         callback: function (data, pagination) {
+
+            let currentPageNumber = pagination.pageNumber;
+			let dataRowPerPage = pagination.pageSize;
+			let totalDataRows = pagination.totalNumber;
+			let totalPageNumber = Math.ceil(totalDataRows / dataRowPerPage);
+			let dataShowingFrom = ((currentPageNumber - 1) * dataRowPerPage) + 1;
+			let dataShowingTo = ((currentPageNumber * dataRowPerPage) < totalDataRows) ? (currentPageNumber * dataRowPerPage) : totalDataRows;
+
+			$(`#table_details_email .current_page`).html(currentPageNumber);
+			$(`#table_details_email .total_pages`).html(totalPageNumber);
+			$(`#table_details_email .record_showingFrom`).html(dataShowingFrom);
+			$(`#table_details_email .record_showingTo`).html(dataShowingTo);
             
             $("#task_status_loading").css("display", "block");
             $("#task_status_counting").css("display", "none");
@@ -132,12 +164,25 @@ function taskStatusTableExist(tableID, noRow, pagiId) {
             $("#task_status_data_table").css("display", "none");
             $("#task_status_loading_table").css("display", "block");
 
+            $(`#${paginationId}`).css("display", "none");
+            $(`#${loadingPaginationId}`).css("display", "block");
+
+            $("#table_details_email .table-records-wrap").css("display", "none");
+            $("#table_details_email .table-records-loading").css("display", "block");
+
             setTimeout(() => {
                 $("#task_status_loading").css("display", "none");
                 $("#task_status_counting").css("display", "block");
 
                 $("#task_status_loading_table").css("display", "none");
                 $("#task_status_data_table").css("display", "block");
+
+                $(`#${paginationId}`).css("display", "block");
+                $(`#${loadingPaginationId}`).css("display", "none");
+
+                $("#table_details_email .table-records-wrap").css("display", "block");
+                $("#table_details_email .table-records-loading").css("display", "none");
+
             }, 2000);
 
             let tableTr = "";
@@ -200,12 +245,10 @@ function taskStatusTableExist(tableID, noRow, pagiId) {
     container.pagination(options);
 }
 
-// taskStatusHead("email_task_status_table");
-// taskStatusTableExist("email_task_status_table", 7, "pagination_task_status");
 
 $("#row_taskStatus").change(function (e) {
     let noRow = e.target.value;
-    taskStatusTableExist("email_task_status_table", noRow, "pagination_task_status");
+    taskStatusTableExist("email_task_status_table", noRow, "pagination_task_status", "pagination_email", "loading_pagination_email");
     taskStatusHeadClick("email_task_status_table");
 });
 
@@ -214,62 +257,95 @@ function taskStatusHeadClick(tableId) {
     $(`#${tableId} th`).click(function (e) {
         let target = e.target;
         let index = $(this).index() + 1;
-        if (target.tagName === "I") {
-            target = target.parentNode;
-        }
-        let regex = /cross/g;
-        let regexD = /drop-filter/g;
-        if (target.tagName === "DIV" && regex.test(target.className)) {
-            $(`#${tableId} th:nth-child(${index})`).addClass("th-dis-none");
-            $(`#${tableId} td:nth-child(${index})`).addClass("th-dis-none");
-        } else if (target.tagName === "DIV" && regexD.test(target.className)) {
-            let dataP = $(`#${tableId} td:nth-child(${index}) .alert-exists-data`);
-            // console.log(dataP);
-            let headingPop = $(`#${tableId} th:nth-child(${index})`)[0].textContent;
-            $(`#${tableId} th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
 
-            $("#dropBtnModal #mnExistsThPop").html(headingPop);
-            let targetModal = $("#dropBtnModal #checkbox-table-exist tbody");
-            const dataC = new Set();
-            for (let i = 0; i < dataP.length; i++) {
-                if (dataP[i].tagName == "INPUT") {
-                    dataC.add(dataP[i].value);
-                } else {
-                    dataC.add(dataP[i].textContent);
+        if(target.tagName === "SPAN" && target.className === "header-title"){
+            $(`#${tableId} th:nth-child(${index}) .table-head-updown i`).toggleClass("fa-chevron-up fa-chevron-down");
+            
+            $("#task_status_loading").css("display", "block");
+            $("#task_status_counting").css("display", "none");
+
+            $("#task_status_data_table").css("display", "none");
+            $("#task_status_loading_table").css("display", "block");
+
+            $("#pagination_email").css("display", "none");
+            $("#loading_pagination_email").css("display", "block");
+
+            $("#table_details_email .table-records-wrap").css("display", "none");
+            $("#table_details_email .table-records-loading").css("display", "block");
+
+            setTimeout(() => {
+                $("#task_status_loading").css("display", "none");
+                $("#task_status_counting").css("display", "block");
+
+                $("#task_status_loading_table").css("display", "none");
+                $("#task_status_data_table").css("display", "block");
+
+                $("#pagination_email").css("display", "block");
+                $("#loading_pagination_email").css("display", "none");
+
+                $("#table_details_email .table-records-wrap").css("display", "block");
+                $("#table_details_email .table-records-loading").css("display", "none");
+
+            }, 2000);
+
+        }else{
+            if (target.tagName === "I") {
+                target = target.parentNode;
+            }
+            let regex = /cross/g;
+            let regexD = /drop-filter/g;
+            if (target.tagName === "DIV" && regex.test(target.className)) {
+                $(`#${tableId} th:nth-child(${index})`).addClass("th-dis-none");
+                $(`#${tableId} td:nth-child(${index})`).addClass("th-dis-none");
+            } else if (target.tagName === "DIV" && regexD.test(target.className)) {
+                let dataP = $(`#${tableId} td:nth-child(${index}) .alert-exists-data`);
+                // console.log(dataP);
+                let headingPop = $(`#${tableId} th:nth-child(${index})`)[0].textContent;
+                $(`#${tableId} th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
+
+                $("#dropBtnModal #mnExistsThPop").html(headingPop);
+                let targetModal = $("#dropBtnModal #checkbox-table-exist tbody");
+                const dataC = new Set();
+                for (let i = 0; i < dataP.length; i++) {
+                    if (dataP[i].tagName == "INPUT") {
+                        dataC.add(dataP[i].value);
+                    } else {
+                        dataC.add(dataP[i].textContent);
+                    }
+                    // console.log(dataP[i].tagName);
                 }
-                // console.log(dataP[i].tagName);
-            }
-            let tableTr = "";
-            for (const item of dataC) {
-                tableTr += `<tr>
-					<td>
-						<div class="popup__checkbox__page__toggle">
-							<label class="popup__checkbox__toggle">
-								<input class="popup__checkbox__toggle__input" type="checkbox">
-								<span class="popup__checkbox__toggle__label">
-									<span class="popup__checkbox__toggle__text">${item}</span>
-								</span>
-							</label>
-						</div>
-					</td>
-				</tr>`;
-            }
-            targetModal.html(tableTr);
+                let tableTr = "";
+                for (const item of dataC) {
+                    tableTr += `<tr>
+                        <td>
+                            <div class="popup__checkbox__page__toggle">
+                                <label class="popup__checkbox__toggle">
+                                    <input class="popup__checkbox__toggle__input" type="checkbox">
+                                    <span class="popup__checkbox__toggle__label">
+                                        <span class="popup__checkbox__toggle__text">${item}</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>`;
+                }
+                targetModal.html(tableTr);
 
-            let elementPositionMain = e.target.getBoundingClientRect();
-            $("#dropBtnModal").css('display', 'none');
-            $("#dropBtnModal").css({
-                top: ((elementPositionMain.y) + window.scrollY + 25),
-                left: ((elementPositionMain.x) - 235),
-                position: "absolute"
-            });
-            $("#dropBtnModal").css('display', 'block');
+                let elementPositionMain = e.target.getBoundingClientRect();
+                $("#dropBtnModal").css('display', 'none');
+                $("#dropBtnModal").css({
+                    top: ((elementPositionMain.y) + window.scrollY + 25),
+                    left: ((elementPositionMain.x) - 235),
+                    position: "absolute"
+                });
+                $("#dropBtnModal").css('display', 'block');
 
-            // $("#dropBtnModal .modal-dialog").css({
-            //     top: e.clientY + 15,
-            //     left: e.clientX - 240,
-            // });
-            // $("#dropBtnModal").modal("toggle");
+                // $("#dropBtnModal .modal-dialog").css({
+                //     top: e.clientY + 15,
+                //     left: e.clientX - 240,
+                // });
+                // $("#dropBtnModal").modal("toggle");
+            }
         }
     });
 }
@@ -361,7 +437,7 @@ function selectEmailop(evt, optionName) {
 
     if (optionName == "mail_option_2") {
         taskStatusHead("email_task_status_table");
-        taskStatusTableExist("email_task_status_table", 7, "pagination_task_status");
+        taskStatusTableExist("email_task_status_table", 7, "pagination_task_status", "pagination_email", "loading_pagination_email");
         taskStatusHeadClick("email_task_status_table");
     }
 }

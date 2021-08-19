@@ -2602,3 +2602,44 @@ td {
       transform: translateX(100%);
   }
 }
+
+.manage-exist-table-details{
+  padding: 10px 0 5px 20px;
+}
+.table-records-wrap .table-records {
+  display: flex;
+}
+
+.table-records-wrap .table-records p:first-child {
+  font-family: gilroy-medium, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.table-records p:first-child span {
+  margin: 0px 5px;
+}
+
+.table-records-wrap .table-records p:last-child {
+  font-family: gilroy-regular, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.table-records p:last-child span {
+  margin: 0px 5px;
+}
+
+.table-records p:last-child span:last-child {
+  margin: 0;
+  margin-left: 5px;
+}
+
+.table-records-loading{
+  margin-bottom: 15px;
+  height: 20px !important;
+  width: 220px;
+  display: none;
+}

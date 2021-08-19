@@ -673,6 +673,17 @@
             </div>
 
             <div class="task-status-table">
+              <!-- TABLE DETAILS STARTS -->
+              <div class="manage-exist-table-details" id="table_details_email">
+                <div class="table-records-wrap">
+                    <div class="table-records">
+                        <p>Page<span class="current_page">0</span>of<span class="total_pages">0</span></p>
+                        <p>(Records<span class="record_showingFrom">0</span>to<span class="record_showingTo">0</span>)</p>
+                    </div>
+                </div>
+                <div class="table-records-loading loading-animation loading"></div>
+              </div>
+              <!-- TABLE DETAILS ENDS -->
               <div id="task_status_data_table">
                 <table class="table table-responsive-xl table89" id="email_task_status_table">
                   <thead></thead>
@@ -1010,7 +1021,7 @@
               </div>
               <!-- Table Loading Skeleton ends  -->
               <!-- Task Status PAGINATION START -->
-              <div class="pagination-container">
+              <div class="pagination-container" id="pagination_email">
                 <div class="pagination-table">
                   <div class="width-pagination" id="pagination_task_status">
                     <div class="width-row-go">
@@ -1025,6 +1036,30 @@
                 </div>
               </div>
               <!-- Task Status PAGINATION END -->
+               <!-- PEGINATION LOADING STARTS -->
+              <div class="pagination-loading-handler" id="loading_pagination_email">
+                <div class="pagination-loading-container">
+                    <div class="row-per-page">
+                        <div class="row-input pagination-loading-animation pagination-loading"></div>
+                        <p>rows per page</p>
+                    </div>
+                    <div class="number-of-page">
+                        <div class="page-num pagination-loading-animation pagination-loading"></div>
+                        <div class="page-num pagination-loading-animation pagination-loading"></div>
+                        <div class="page-num pagination-loading-animation pagination-loading"></div>
+                        <div class="page-num pagination-loading-animation pagination-loading"></div>
+                        <div class="page-num pagination-loading-animation pagination-loading"></div>
+                        <div class="page-num pagination-loading-animation pagination-loading"></div>
+                        <div class="page-num pagination-loading-animation pagination-loading"></div>
+                        <div class="page-num pagination-loading-animation pagination-loading"></div>
+                    </div>
+                    <div class="goto-page">
+                        <div class="goto-input pagination-loading-animation pagination-loading"></div>
+                        <p><strong>GO</strong></p>
+                    </div>
+                </div>
+            </div>
+            <!-- PEGINATION LOADING END -->
             </div>
           </div>
         </div>
