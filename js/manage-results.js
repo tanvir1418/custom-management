@@ -840,14 +840,20 @@ function styleIconSwitcherOperation(selectedTab, sty1TableId){
 
             $(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "none");
             $(`#${selectedTab} .pagination-container`).css("display", "none");
+            $(`#${selectedTab} .page-number12-wrap`).css("display", "none");
+
             $(`#${selectedTab} .loading-style2-table`).css("display", "block");
             $(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
+            $(`#${selectedTab} .page-number-loading`).css("display", "block");
 
             setTimeout(() => {
                 $(`#${selectedTab} .loading-style2-table`).css("display", "none");
                 $(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
+                $(`#${selectedTab} .page-number-loading`).css("display", "none");
+
                 $(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "block");
                 $(`#${selectedTab} .pagination-container`).css("display", "block");
+                $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
             }, 2000);
         }
 

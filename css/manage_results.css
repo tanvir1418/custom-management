@@ -3467,14 +3467,31 @@ i.fa-caret-down.down-animation-icon{
 .loading-style1-table thead tr th{
     height: 45px;
 }
-
+.loading-style1-table thead tr th .loading-row{
+    height: 31px;
+    width: 100%;
+    padding: 5px 15% 5px 15%;
+}
 .loading-style1-table tbody tr td .loading-row{
     height: 160px;
     width: 100%;
     background-color: #ffffff;
     padding: 0px;
 }
-
+.loading-style2-table thead tr th .loading-row{
+    height: 31px;
+    width: 100%;
+    padding: 5px 15% 5px 15%;
+}
+.loading-style2-table .sty2table2 thead tr th.style-two-head-01 .loading-row{
+    padding: 5px 35% 5px 35%;
+}
+.loading-style2-table .sty2table8 thead tr th .loading-row{
+    padding: 5px 35% 5px 35%;
+}
+.loading-style2-table .sty2table9 thead tr th .loading-row{
+    padding: 5px 40% 5px 40%;
+}
 .loading-style2-table tbody tr td .loading-row{
     height: 100%;
     width: 100%;
@@ -3486,12 +3503,22 @@ i.fa-caret-down.down-animation-icon{
     padding: 0px !important;
 }
 
+#mnData-opt1-loading thead tr th .loading-row,
+#mnData-opt3-loading thead tr th .loading-row,
+#mnData-opt4-loading thead tr th .loading-row,
+#mnData-opt5-loading thead tr th .loading-row,
+#mnAlert-loading thead tr th .loading-row{
+    height: 31px;
+    width: 100%;
+    padding: 5px 15% 5px 15%;
+}
+
 #mnData-opt1-loading tbody tr td .loading-row,
 #mnData-opt3-loading tbody tr td .loading-row,
 #mnData-opt4-loading tbody tr td .loading-row,
 #mnData-opt5-loading tbody tr td .loading-row,
 #mnAlert-loading tbody tr td .loading-row{
-    height: 40px;
+    height: 31px;
     width: 100%;
     background-color: #ffffff;
     padding: 0px;
