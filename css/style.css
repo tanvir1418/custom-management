@@ -1928,14 +1928,6 @@ td {
   }
 }
 
-.pagination-table .width-pagi-manRes-table .paginationjs .paginationjs-go-button input {
-  background-color: #f2f2f2 !important;
-}
-
-.width-pagi-manRes-table .width-row-go{
-  display: none;
-}
-
 
 /*======= Manage Account Style Starts ====== */
 .account-content {
@@ -2530,4 +2522,83 @@ td {
 
 #loading_acSave{
   display: none;
+}
+
+
+/* Pagination animation for all table  */
+.pagination-loading-container{
+  display: flex;
+  height: 45px;
+  margin: 30px 0px;
+}
+.pagination-loading-container .row-per-page{
+  width: 330px;
+  display: flex;
+}
+.pagination-loading-container .row-per-page .row-input{
+  height: 100%;
+  width: 60px;
+}
+.pagination-loading-container .number-of-page{
+  width: calc(100% - 530px);
+  display: flex;
+  justify-content: center;
+}
+.pagination-loading-container .number-of-page .page-num:not(:last-child) {
+  margin: 0 12px;
+}
+.pagination-loading-container .number-of-page .page-num:first-child{
+  margin-right: 40px;
+  margin-left: 0px;
+}
+.pagination-loading-container .number-of-page .page-num:last-child{
+  margin-left: 40px;
+}
+.pagination-loading-container .goto-page{
+  width: 200px;
+  display: flex;
+  justify-content: flex-end;
+}
+.pagination-loading-container .goto-page .goto-input{
+  height: 100%;
+  width: 60px;
+}
+.pagination-loading-container .row-per-page p,
+.pagination-loading-container .goto-page p{
+  margin-left: 10px;
+  margin-top: 12px;
+}
+.pagination-loading{
+  position: relative;
+  background-color: #d8d8d8;
+  overflow: hidden;
+}
+
+.pagination-loading-animation.pagination-loading{
+  height: 100%;
+  border-radius: 4px;
+}
+.pagination-loading-animation.pagination-loading.page-num{
+  height: 100%;
+  width: 45px;
+  border-radius: 50%;
+}
+
+.pagination-loading::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  background-image: linear-gradient(to left, transparent, rgba(255,255,255,0.5), transparent);
+
+  animation: loading-pagination 1s infinite;
+}
+
+@keyframes loading-pagination{
+  100%{
+      transform: translateX(100%);
+  }
 }

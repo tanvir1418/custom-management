@@ -796,11 +796,22 @@ function styleIconSwitcherOperation(selectedTab, sty1TableId){
             $(`#${selectedTab} .outer-table-style12-box .left-slider5`).css("display", "block");
 
             $(`#${selectedTab} .main-table-design`).css("display", "none");
+            $(`#${selectedTab} .pagination-container`).css("display", "none");
+            $(`#${selectedTab} .page-number12-wrap`).css("display", "none");
+
             $(`#${selectedTab} .loading-style1-table`).css("display", "block");
+            $(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
+            $(`#${selectedTab} .page-number-loading`).css("display", "block");
+
 
             setTimeout(() => {
                 $(`#${selectedTab} .loading-style1-table`).css("display", "none");
+                $(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
+                $(`#${selectedTab} .page-number-loading`).css("display", "none");
+
                 $(`#${selectedTab} .main-table-design`).css("display", "block");
+                $(`#${selectedTab} .pagination-container`).css("display", "block");
+                $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
             }, 2000);
         }
 
@@ -828,11 +839,15 @@ function styleIconSwitcherOperation(selectedTab, sty1TableId){
 
 
             $(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "none");
+            $(`#${selectedTab} .pagination-container`).css("display", "none");
             $(`#${selectedTab} .loading-style2-table`).css("display", "block");
+            $(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
 
             setTimeout(() => {
                 $(`#${selectedTab} .loading-style2-table`).css("display", "none");
+                $(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
                 $(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "block");
+                $(`#${selectedTab} .pagination-container`).css("display", "block");
             }, 2000);
         }
 
@@ -935,20 +950,43 @@ function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1d
     $(`#${sty1TableId} th`).click(function (e) {
         let target = e.target;
         let index = $(this).index() + 1;
-        if (target.tagName === "I") {
-            target = target.parentNode;
-        }
-        let popupDecision = headClick(target, index, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
+        if(target.tagName === "SPAN" && target.className === "header-title"){
+            $(`#${sty1TableId} th:nth-child(${index}) .table-head-updown i`).toggleClass("fa-chevron-up fa-chevron-down");
+            $(`#${selectedTab} .clone-head-table-wrap .mytablesty12 th:nth-child(${index}) .table-head-updown i`).toggleClass("fa-chevron-up fa-chevron-down");
+            
+            $(`#${selectedTab} .main-table-design`).css("display", "none");
+            $(`#${selectedTab} .pagination-container`).css("display", "none");
+            $(`#${selectedTab} .page-number12-wrap`).css("display", "none");
 
-        if (target.className == "drop-filter" && popupDecision == "showPopup") {
-            let elementPositionMain = e.target.getBoundingClientRect();;
-            $("#col8Filter").css('display', 'none');
-            $("#col8Filter").css({
-                top: ((elementPositionMain.y) + window.scrollY + 30),
-                left: ((elementPositionMain.x) - 235),
-                position: "absolute"
-            });
-            $("#col8Filter").css('display', 'block');
+            $(`#${selectedTab} .loading-style1-table`).css("display", "block");
+            $(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
+            $(`#${selectedTab} .page-number-loading`).css("display", "block");
+
+            setTimeout(() => {
+                $(`#${selectedTab} .loading-style1-table`).css("display", "none");
+                $(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
+                $(`#${selectedTab} .page-number-loading`).css("display", "none");
+
+                $(`#${selectedTab} .main-table-design`).css("display", "block");
+                $(`#${selectedTab} .pagination-container`).css("display", "block");
+                $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
+            }, 2000);
+        }else{
+            if (target.tagName === "I") {
+                target = target.parentNode;
+            }
+            let popupDecision = headClick(target, index, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
+
+            if (target.className == "drop-filter" && popupDecision == "showPopup") {
+                let elementPositionMain = e.target.getBoundingClientRect();;
+                $("#col8Filter").css('display', 'none');
+                $("#col8Filter").css({
+                    top: ((elementPositionMain.y) + window.scrollY + 30),
+                    left: ((elementPositionMain.x) - 235),
+                    position: "absolute"
+                });
+                $("#col8Filter").css('display', 'block');
+            }
         }
 
     });
@@ -956,21 +994,44 @@ function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1d
     $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th`).click(function (e) {
         let target = e.target;
         let index = $(this).index() + 1;
-        if (target.tagName === "I") {
-            target = target.parentNode;
-        }
-        let popupDecision = headClick(target, index, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
+        if(target.tagName === "SPAN" && target.className === "header-title"){
+            $(`#${sty1TableId} th:nth-child(${index}) .table-head-updown i`).toggleClass("fa-chevron-up fa-chevron-down");
+            $(`#${selectedTab} .clone-head-table-wrap .mytablesty12 th:nth-child(${index}) .table-head-updown i`).toggleClass("fa-chevron-up fa-chevron-down");
+            
+            $(`#${selectedTab} .main-table-design`).css("display", "none");
+            $(`#${selectedTab} .pagination-container`).css("display", "none");
+            $(`#${selectedTab} .page-number12-wrap`).css("display", "none");
 
-        if (target.className == "drop-filter" && popupDecision == "showPopup") {
-            let elementPositionMain = e.target.getBoundingClientRect();;
-            $("#col8Filter").css('display', 'none');
-            $("#col8Filter").css({
-                // top: ((elementPositionMain.y) + window.scrollY + 30),
-                top: (46),
-                left: ((elementPositionMain.x) - 235),
-                position: "fixed"
-            });
-            $("#col8Filter").css('display', 'block');
+            $(`#${selectedTab} .loading-style1-table`).css("display", "block");
+            $(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
+            $(`#${selectedTab} .page-number-loading`).css("display", "block");
+
+            setTimeout(() => {
+                $(`#${selectedTab} .loading-style1-table`).css("display", "none");
+                $(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
+                $(`#${selectedTab} .page-number-loading`).css("display", "none");
+
+                $(`#${selectedTab} .main-table-design`).css("display", "block");
+                $(`#${selectedTab} .pagination-container`).css("display", "block");
+                $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
+            }, 2000);
+        }else{
+            if (target.tagName === "I") {
+                target = target.parentNode;
+            }
+            let popupDecision = headClick(target, index, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
+
+            if (target.className == "drop-filter" && popupDecision == "showPopup") {
+                let elementPositionMain = e.target.getBoundingClientRect();;
+                $("#col8Filter").css('display', 'none');
+                $("#col8Filter").css({
+                    // top: ((elementPositionMain.y) + window.scrollY + 30),
+                    top: (46),
+                    left: ((elementPositionMain.x) - 235),
+                    position: "fixed"
+                });
+                $("#col8Filter").css('display', 'block');
+            }
         }
 
     });
@@ -1849,7 +1910,8 @@ function resetInputFieldAlertStyle2() {
 window.addEventListener("scroll", (event) => {
     let scroll = this.scrollY;
     // console.log(scroll);
-    if (scroll > 1400) {
+    // if (scroll > 1400) {
+    if (scroll > 1000) {
         let arrowShowing = $(`#${mnResultActiveTabID} .style1-box`).hasClass("clickstylebg");
         if (arrowShowing) {
             $(`#${mnResultActiveTabID} .outer-table-style12-box .left-slider5`).css('display', 'block');

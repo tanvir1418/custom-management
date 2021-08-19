@@ -52,13 +52,16 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-1-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-2">
-			ICON
+			<span class="header-title">ICON</span>
 			<div class="column-header-2-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-3">
-			STATUS
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header1">
+			<span class="header-title">STATUS</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header1">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[3]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -69,9 +72,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-3-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-4">
-			Val1
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header2">
+			<span class="header-title">Val1</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header2">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[4]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -82,9 +88,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-4-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-5">
-			Val2
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header3">
+			<span class="header-title">Val2</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header3">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[5]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -95,9 +104,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-5-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-6">
-			VAL11+DATEL
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header4">
+			<span class="header-title">VAL11+DATEL</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header4">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[6]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -108,9 +120,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-6-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-7">
-			VAL12+DATEH
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header5">
+			<span class="header-title">VAL12+DATEH</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header5">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[7]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -121,8 +136,9 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-7-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-8">
+			<!-- <span class="header-title">CHART 1</span> -->
 			CHART 1
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header6">
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header6">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross${randomCrossIds[8]}" class="head-filter">
@@ -134,8 +150,9 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-8-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-9">
-			CHART2
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header7">
+			<!-- <span class="header-title">CHART 2</span> -->
+			CHART 2
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header7">
               <i class="fas fa-question-circle"></i>
             </span>
 			<div id="cross${randomCrossIds[9]}" class="head-filter">
@@ -147,9 +164,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-9-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-10">
-			U_Val
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header8">
+			<span class="header-title">U_Val</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header8">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[10]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -160,9 +180,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-10-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-11">
-			U_%
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header9">
+			<span class="header-title">U_%</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header9">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[11]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -173,9 +196,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-11-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-12">
-			D_Val
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header10">
+			<span class="header-title">D_Val</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header10">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[12]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -186,9 +212,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-12-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-13">
-			D_%
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header11">
+			<span class="header-title">D_%</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header11">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[13]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -199,9 +228,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-13-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-14">
-			N_Val
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header12">
+			<span class="header-title">N_Val</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header12">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[14]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -212,9 +244,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-14-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-15">
-			N_C
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header13">
+			<span class="header-title">N_C</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header13">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[15]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -225,9 +260,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-15-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-16">
-			AM COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header14">
+			<span class="header-title">AM COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header14">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[16]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -238,9 +276,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-16-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-17">
-			AN COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header15">
+			<span class="header-title">AN COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header15">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[17]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -251,9 +292,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-17-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-18">
-			AO COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header16">
+			<span class="header-title">AO COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header16">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[18]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -264,9 +308,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-18-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-19">
-			AP COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header17">
+			<span class="header-title">AP COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header17">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[19]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -277,9 +324,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-19-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-20">
-			AQ COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header18">
+			<span class="header-title">AQ COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header18">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[20]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -290,9 +340,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-20-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-21">
-			AR COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header19">
+			<span class="header-title">AR COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header19">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[21]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -303,9 +356,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-21-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-22">
-			AS COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header20">
+			<span class="header-title">AS COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header20">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[22]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -316,9 +372,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-22-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-23">
-			AT COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header21">
+			<span class="header-title">AT COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header21">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[23]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -329,9 +388,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-23-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-24">
-			AU COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header22">
+			<span class="header-title">AU COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header22">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[24]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -342,9 +404,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-24-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-25">
-			AV COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header23">
+			<span class="header-title">AV COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header23">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[25]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -355,9 +420,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-25-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-26">
-			AW COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header24">
+			<span class="header-title">AW COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header24">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[26]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -368,9 +436,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-26-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-27">
-			AX COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header25">
+			<span class="header-title">AX COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header25">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[27]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -381,9 +452,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-27-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-28">
-			AY COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header26">
+			<span class="header-title">AY COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header26">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[28]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -394,9 +468,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-28-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-29">
-			AZ COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header27">
+			<span class="header-title">AZ COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header27">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[29]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -407,9 +484,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-29-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-30">
-			BA COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header28">
+			<span class="header-title">BA COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header28">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[30]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -420,9 +500,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-30-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-31">
-			BB COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header29">
+			<span class="header-title">BB COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header29">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[31]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -433,9 +516,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-31-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-32">
-			BC COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header30">
+			<span class="header-title">BC COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header30">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[32]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -446,9 +532,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-32-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-33">
-			BD COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header31">
+			<span class="header-title">BD COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header31">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[33]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -459,9 +548,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-33-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-34">
-			BE COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header32">
+			<span class="header-title">BE COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header32">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[34]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -472,9 +564,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-34-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-35">
-			BF COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header33">
+			<span class="header-title">BF COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header33">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[35]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -485,9 +580,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-35-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-36">
-			BG COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header34">
+			<span class="header-title">BG COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header34">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[36]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -498,9 +596,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-36-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-37">
-			BH COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header35">
+			<span class="header-title">BH COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header35">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[37]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -511,9 +612,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-37-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-38">
-			BI COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header36">
+			<span class="header-title">BI COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header36">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[38]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -524,9 +628,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-38-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-39">
-			BJ COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header37">
+			<span class="header-title">BJ COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header37">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[39]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -537,9 +644,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-39-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-40">
-			BK COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header38">
+			<span class="header-title">BK COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header38">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[40]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -550,9 +660,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-40-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-41">
-			BL COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header39">
+			<span class="header-title">BL COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header39">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[41]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -563,9 +676,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-41-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-42">
-			BM COUNT
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header40">
+			<span class="header-title">BM COUNT</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header40">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[42]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -576,9 +692,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-42-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-43">
-			Col2
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header41">
+			<span class="header-title">Col2</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header41">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[43]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -589,9 +708,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-43-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-44">
-			Col3
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header42">
+			<span class="header-title">Col3</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header42">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[44]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -602,9 +724,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-44-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-45">
-			DP
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header43">
+			<span class="header-title">DP</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header43">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[45]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -615,9 +740,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-45-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-46">
-			DY
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header44">
+			<span class="header-title">DY</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header44">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[46]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -628,9 +756,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-46-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-47">
-			DmA
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header45">
+			<span class="header-title">DmA</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header45">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[47]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -641,9 +772,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-47-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-48">
-			DmP
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header46">
+			<span class="header-title">DmP</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header46">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[48]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -654,9 +788,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-48-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-49">
-			DmP%
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header47">
+			<span class="header-title">DmP%</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header47">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[49]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -667,9 +804,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-49-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-50">
-			ID
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header48">
+			<span class="header-title">ID</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header48">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[50]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -680,9 +820,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-50-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-51">
-			LoP%
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header49">
+			<span class="header-title">LoP%</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header49">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[51]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -693,9 +836,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-51-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-52">
-			M_Val
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header50">
+			<span class="header-title">M_Val</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header50">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[52]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -706,9 +852,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-52-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-53">
-			MaP%
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header51">
+			<span class="header-title">MaP%</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header51">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[53]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -719,9 +868,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-53-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-54">
-			O_End
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header52">
+			<span class="header-title">O_End</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header52">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[54]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -732,9 +884,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-54-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-55">
-			O_Start
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header53">
+			<span class="header-title">O_Start</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header53">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[55]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -745,9 +900,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-55-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-56">
-			SP
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header54">
+			<span class="header-title">SP</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header54">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[56]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -758,9 +916,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-56-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-57">
-			Time Frame
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header55">
+			<span class="header-title">Time Frame</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header55">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[57]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -771,9 +932,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-57-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-58">
-			UmA
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header56">
+			<span class="header-title">UmA</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header56">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[58]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -784,9 +948,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-58-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-59">
-			UmP
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header57">
+			<span class="header-title">UmP</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header57">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[59]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -797,9 +964,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-59-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-60">
-			UmP%
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header58">
+			<span class="header-title">UmP%</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header58">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[60]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -810,9 +980,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-60-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-61">
-			Val2S
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header59">
+			<span class="header-title">Val2S</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header59">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[61]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -823,9 +996,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-61-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-62">
-			Val3S
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header60">
+			<span class="header-title">Val3S</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header60">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[62]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -836,9 +1012,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-62-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-63">
-			Val6
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header61">
+			<span class="header-title">Val6</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header61">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[63]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -849,9 +1028,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-63-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-64">
-			Description
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header62">
+			<span class="header-title">Description</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header62">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[64]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -862,9 +1044,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-64-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-65">
-			Details3
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header63">
+			<span class="header-title">Details3</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header63">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[65]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -875,9 +1060,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-65-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-66">
-			Details2
-			<span data-toggle="tooltip" data-placement="bottom" title="Table Header64">
+			<span class="header-title">Details2</span>
+			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header64">
               <i class="fas fa-question-circle"></i>
+            </span>
+			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[66]}" class="head-filter">
 				<i class="fas fa-times"></i>
@@ -918,14 +1106,24 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty2dblClickLe
 			}
 
 			$(`#${sty1TableId}`).css("display", "none");
+			$(`#${selectedTab} .pagination-container`).css("display", "none");
+			$(`#${selectedTab} .page-number12-wrap`).css("display", "none");
+
 			$(`#${selectedTab} .loading-style1-table`).css("display", "block");
+			$(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
+			$(`#${selectedTab} .page-number-loading`).css("display", "block");
 
 			$(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "none");
 			$(`#${selectedTab} .loading-style2-table`).css("display", "block");
 
 			setTimeout(() => {
 				$(`#${selectedTab} .loading-style1-table`).css("display", "none");
+				$(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
+				$(`#${selectedTab} .page-number-loading`).css("display", "none");
+
 				$(`#${sty1TableId}`).css("display", "block");
+				$(`#${selectedTab} .pagination-container`).css("display", "block");
+				$(`#${selectedTab} .page-number12-wrap`).css("display", "block");
 
 				$(`#${selectedTab} .loading-style2-table`).css("display", "none");
 				$(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "block");
@@ -1087,6 +1285,10 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty2dblClickLe
 				let Val6 = parseFloat(csvD.Val6).toFixed(2);
 
 				let Description = csvD["Description"];
+				
+				let dynamicTabTitle = Description.substr(0, 11);
+				console.log(dynamicTabTitle);
+
 				let Details3 = csvD["Details3"];
 				let Details2 = csvD[" Details2"];
 
@@ -1105,7 +1307,7 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty2dblClickLe
 							<div class="circle2box bkmark addToBookMark" tooltip="Click to Add to Bookmarks" flow="down"  onclick="universalConfirmModalDelete(this)">
 								<i class="fas fa-envelope"></i>
 							</div>
-							<div class="circle2box clickViewDetails" tooltip="Click to View Details" flow="down" onclick="universalConfirmModalDelete(this)">
+							<div class="circle2box clickViewDetails" tooltip="Click to View Details" id="${dynamicTabTitle}" flow="down" onclick="universalConfirmModalDelete(this)">
 								<i class="fas fa-pen"></i>
 							</div>
 							<div class="circle2box view-modal-click">
@@ -1671,7 +1873,7 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty2dblClickLe
 					<div class="circle2box addToBookMark" tooltip="Click to Add to Bookmarks" flow="down" onclick="universalConfirmModalDelete(this)">
 						<i class="fas fa-envelope"></i>
 					</div>
-					<div class="circle2box clickViewDetails" tooltip="Click to View Details" flow="down" onclick="universalConfirmModalDelete(this)">
+					<div class="circle2box clickViewDetails" tooltip="Click to View Details" id="${dynamicTabTitle}" flow="down" onclick="universalConfirmModalDelete(this)">
 						<i class="fas fa-pen"></i>
 					</div>
 					<div class="circle2box view-modal-click-style2">

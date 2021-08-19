@@ -866,23 +866,23 @@ td {
     max-width: 154px;
 }
 .column-header-3 {
-    min-width: 130px;
+    min-width: 140px;
 }
 .column-header-4,
 .column-header-5
 {
-    min-width: 77px;
+    min-width: 110px;
 }
 .column-header-6,
 .column-header-7
 {
-    min-width: 120px;
+    min-width: 155px;
 }
 .column-header-8 {
-    min-width: 217px;
+    min-width: 240px;
 }
 .column-header-9 {
-    min-width: 165px;
+    min-width: 180px;
 }
 .column-header-10,
 .column-header-11,
@@ -890,7 +890,7 @@ td {
 .column-header-13,
 .column-header-14,
 .column-header-15{
-    min-width: 77px;
+    min-width: 120px;
 }
 .column-header-16,
 .column-header-17,
@@ -940,11 +940,11 @@ td {
 .column-header-62,
 .column-header-63
 {
-    min-width: 100px;
+    min-width: 145px;
 }
 .column-header-57{
-    min-width: 140px;
-    max-width: 140px;
+    min-width: 150px;
+    max-width: 150px;
 }
 .column-header-64{
     min-width: 450px;
@@ -3543,6 +3543,26 @@ i.fa-caret-down.down-animation-icon{
 #mnData-opt5-loadingWrapper,
 #manage_alert_loading_table,
 .loading-style2-table,
-.loading-style1-table{
+.loading-style1-table,
+.pagination-loading-handler{
+    display: none;
+}
+
+.table-head-tooltip{
+    padding-left: 5px;
+}
+.table-head-updown{
+    padding-left: 2px;
+}
+
+.pagination-table .width-pagi-manRes-table .paginationjs .paginationjs-go-button input {
+    background-color: #f2f2f2 !important;
+}
+.width-pagi-manRes-table .width-row-go{
+    display: none;
+}
+.page-number-loading{
+    height: 20px !important;
+    width: 220px;
     display: none;
 }

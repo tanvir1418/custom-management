@@ -6313,10 +6313,13 @@
                                 </div>
 
                                 <div class="records_style12">
-                                    <div class="page-number12">
-                                        <p>Page<span class="current_page">0</span>of<span class="total_pages">0</span></p>
-                                        <p>(Records<span class="record_showingFrom">0</span>to<span class="record_showingTo">0</span>)</p>
+                                    <div class="page-number12-wrap">
+                                        <div class="page-number12">
+                                            <p>Page<span class="current_page">0</span>of<span class="total_pages">0</span></p>
+                                            <p>(Records<span class="record_showingFrom">0</span>to<span class="record_showingTo">0</span>)</p>
+                                        </div>
                                     </div>
+                                    <div class="page-number-loading loading-animation loading"></div>
                                     <div class="pdf_box54"><span>PDF</span></div>
                                     <input type="file" id="exelFile" accept=".xls, .xlsx, .csv" />
                                     <label for="exelFile">CSV</label>
@@ -8456,7 +8459,30 @@
                             </div>
                         </div>
                         <!-- PEGINATION END -->
-
+                        <!-- PEGINATION LOADING STARTS -->
+                        <div class="pagination-loading-handler">
+                            <div class="pagination-loading-container">
+                                <div class="row-per-page">
+                                    <div class="row-input pagination-loading-animation pagination-loading"></div>
+                                    <p>rows per page</p>
+                                </div>
+                                <div class="number-of-page">
+                                    <div class="page-num pagination-loading-animation pagination-loading"></div>
+                                    <div class="page-num pagination-loading-animation pagination-loading"></div>
+                                    <div class="page-num pagination-loading-animation pagination-loading"></div>
+                                    <div class="page-num pagination-loading-animation pagination-loading"></div>
+                                    <div class="page-num pagination-loading-animation pagination-loading"></div>
+                                    <div class="page-num pagination-loading-animation pagination-loading"></div>
+                                    <div class="page-num pagination-loading-animation pagination-loading"></div>
+                                    <div class="page-num pagination-loading-animation pagination-loading"></div>
+                                </div>
+                                <div class="goto-page">
+                                    <div class="goto-input pagination-loading-animation pagination-loading"></div>
+                                    <p><strong>GO</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PEGINATION LOADING END -->
                     </div>
                     <!-- -----========= STYLE 1 STYLE 2 END -----=========  -->
                 </div>
