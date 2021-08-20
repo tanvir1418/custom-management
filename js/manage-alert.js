@@ -215,6 +215,7 @@ function alertTableHeadClick(tableId) {
     let index = $(this).index() + 1;
 
     if(target.tagName === "SPAN" && target.className === "header-title"){
+      $("#dropBtnModal").css('display', 'none');
       $(`#${tableId} th:nth-child(${index}) .table-head-updown i`).toggleClass("fa-chevron-up fa-chevron-down");
       
       $(`#manage_alert_data_table`).css("display", "none");
@@ -286,6 +287,14 @@ function alertTableHeadClick(tableId) {
             position: "absolute"
         });
         $("#dropBtnModal").css('display', 'block');
+
+        $("#dropBtnModal .checkbox-table-loading").css("display", "block");
+				$("#dropBtnModal .checkbox-table-scroll").css("display", "none");
+
+				setTimeout(() => {
+					$("#dropBtnModal .checkbox-table-loading").css("display", "none");
+					$("#dropBtnModal .checkbox-table-scroll").css("display", "block");
+				}, 2000);
 
         // $("#dropBtnModal .modal-dialog").css({
         //   top: e.clientY + 15,

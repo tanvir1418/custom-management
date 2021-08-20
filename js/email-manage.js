@@ -259,6 +259,7 @@ function taskStatusHeadClick(tableId) {
         let index = $(this).index() + 1;
 
         if(target.tagName === "SPAN" && target.className === "header-title"){
+            $("#dropBtnModal").css('display', 'none');
             $(`#${tableId} th:nth-child(${index}) .table-head-updown i`).toggleClass("fa-chevron-up fa-chevron-down");
             
             $("#task_status_loading").css("display", "block");
@@ -339,6 +340,14 @@ function taskStatusHeadClick(tableId) {
                     position: "absolute"
                 });
                 $("#dropBtnModal").css('display', 'block');
+
+                $("#dropBtnModal .checkbox-table-loading").css("display", "block");
+				$("#dropBtnModal .checkbox-table-scroll").css("display", "none");
+
+				setTimeout(() => {
+					$("#dropBtnModal .checkbox-table-loading").css("display", "none");
+					$("#dropBtnModal .checkbox-table-scroll").css("display", "block");
+				}, 2000);
 
                 // $("#dropBtnModal .modal-dialog").css({
                 //     top: e.clientY + 15,
@@ -511,3 +520,55 @@ function rotateLoadingBar(selector){
 }
 
 rotateLoadingBar('.bar-animation');
+
+$("#dropBtnEmailInput").keyup(function(){
+    $("#dropBtnModal .checkbox-table-loading").css("display", "block");
+    $("#dropBtnModal .checkbox-table-scroll").css("display", "none");
+
+    setTimeout(() => {
+        $("#dropBtnModal .checkbox-table-loading").css("display", "none");
+        $("#dropBtnModal .checkbox-table-scroll").css("display", "block");
+    }, 1000);
+});
+
+$("#dropBtnEmailFind").click(function () {
+    $("#dropBtnModal .checkbox-table-loading").css("display", "block");
+    $("#dropBtnModal .checkbox-table-scroll").css("display", "none");
+
+    setTimeout(() => {
+        $("#dropBtnModal .checkbox-table-loading").css("display", "none");
+        $("#dropBtnModal .checkbox-table-scroll").css("display", "block");
+    }, 1000);
+});
+
+$("#dropBtnSelect").click(function () {
+    $("#dropBtnModal").css("display", "none");
+    $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+    
+    $("#task_status_loading").css("display", "block");
+    $("#task_status_counting").css("display", "none");
+
+    $("#task_status_data_table").css("display", "none");
+    $("#task_status_loading_table").css("display", "block");
+
+    $(`#pagination_email`).css("display", "none");
+    $(`#loading_pagination_email`).css("display", "block");
+
+    $("#table_details_email .table-records-wrap").css("display", "none");
+    $("#table_details_email .table-records-loading").css("display", "block");
+
+    setTimeout(() => {
+        $("#task_status_loading").css("display", "none");
+        $("#task_status_counting").css("display", "block");
+
+        $("#task_status_loading_table").css("display", "none");
+        $("#task_status_data_table").css("display", "block");
+
+        $(`#pagination_email`).css("display", "block");
+        $(`#loading_pagination_email`).css("display", "none");
+
+        $("#table_details_email .table-records-wrap").css("display", "block");
+        $("#table_details_email .table-records-loading").css("display", "none");
+
+    }, 2000);
+});

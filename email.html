@@ -1150,14 +1150,14 @@
             <!-- ==================================== -->
             <!-- pop-up-for-table-header-click starts -->
             <div class="table-header-click-popup" id="dropBtnModal">
-              <div class="table-header-click-popup-wrapper">
+              <div class="table-header-click-popup-wrapper filter-top-arrow">
                 <div class="table-header-popup-header-title">
                   <p id="mnExistsThPop"></p>
                 </div>
                 <div class="table-header-popup-body">
                   <div class="find-sort-wrapper">
                     <div class="find-wrapper">
-                      <div class="find-wrapper-inner"><input type="text" /><input type="submit" value="Find" /></div>
+                      <div class="find-wrapper-inner"><input type="text" id="dropBtnEmailInput"/><input type="submit" value="Find" id="dropBtnEmailFind"/></div>
                     </div>
                     <div class="sort-wrapper">
                       <input type="submit" value="Sort" />
@@ -1171,13 +1171,22 @@
                           </tbody>
                         </table>
                       </div>
+                      <div class="checkbox-table-loading">
+                        <p class="popup-loading-animation popup-loading"></p>
+                        <p class="popup-loading-animation popup-loading"></p>
+                        <p class="popup-loading-animation popup-loading"></p>
+                        <p class="popup-loading-animation popup-loading"></p>
+                        <p class="popup-loading-animation popup-loading"></p>
+                        <p class="popup-loading-animation popup-loading"></p>
+                        <p class="popup-loading-animation popup-loading"></p>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div class="table-header-popup-footer">
                   <div class="button-row">
                     <input type="button" value="Close" class="close-btn" id="emailCloseDropBtnModal"/>
-                    <input type="button" value="Select" class="select-btn" />
+                    <input type="button" value="Select" class="select-btn" id="dropBtnSelect" />
                   </div>
                 </div>
               </div>

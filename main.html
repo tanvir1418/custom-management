@@ -6352,7 +6352,7 @@
                                         <div class="inner-progress-style12">
                                         </div>
                                         <!-- comes from javasctript -->
-                                        <p class="inner-progress-text-style12"></p>
+                                        <p class="inner-progress-text-style12">Progress 75%</p>
                                     </div>
                                 </div>
 
@@ -7108,16 +7108,16 @@
                                     </div>
                                 
                                     <div class="icon-box55">
-                                        <div class="circle2box addToBookMark" tooltip="Click to Add to Bookmarks" flow="down">
+                                        <div class="circle2box addToBookMark">
                                             <i class="fas fa-envelope"></i>
                                         </div>
-                                        <div class="circle2box clickViewDetails" tooltip="Click to View Details" flow="down">
+                                        <div class="circle2box clickViewDetails">
                                             <i class="fas fa-pen"></i>
                                         </div>
                                         <div class="circle2box view-modal-click-style2">
                                             <i class="fas fa-eye"></i>
                                         </div>
-                                        <div class="circle2box deleteRowLayout12" tooltip="Click to Delete" flow="down">
+                                        <div class="circle2box deleteRowLayout12">
                                             <i class="fas fa-trash-alt"></i>
                                         </div>
                                         <div class="circle2box row-modal-click-style2">
@@ -8759,7 +8759,7 @@
                     <!-- ==================================== -->
                     <!-- pop-up-for-table-header-click starts -->
                     <div class="table-header-click-popup" id="dropBtnModal">
-                        <div class="table-header-click-popup-wrapper">
+                        <div class="table-header-click-popup-wrapper filter-top-arrow">
                             <div class="table-header-popup-header-title">
                                 <p id="mnExistsThPop"></p>
                             </div>
@@ -8767,7 +8767,7 @@
                                 <div class="find-sort-wrapper">
                                     <div class="find-wrapper">
                                         <div class="find-wrapper-inner">
-                                            <input type="text"><input type="submit" value="Find">
+                                            <input type="text" id="dropBtnInput"><input type="submit" value="Find" id="dropBtnFind">
                                         </div>
                                     </div>
                                     <div class="sort-wrapper">
@@ -8782,13 +8782,22 @@
                                                 </tbody>
                                             </table>
                                         </div>
+                                        <div class="checkbox-table-loading">
+                                            <p class="popup-loading-animation popup-loading"></p>
+                                            <p class="popup-loading-animation popup-loading"></p>
+                                            <p class="popup-loading-animation popup-loading"></p>
+                                            <p class="popup-loading-animation popup-loading"></p>
+                                            <p class="popup-loading-animation popup-loading"></p>
+                                            <p class="popup-loading-animation popup-loading"></p>
+                                            <p class="popup-loading-animation popup-loading"></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="table-header-popup-footer">
                                 <div class="button-row">
                                     <input type="button" value="Close" class="close-btn" id="closeDropBtnModal">
-                                    <input type="button" value="Select" class="select-btn">
+                                    <input type="button" value="Select" class="select-btn" id="selectDropBtnModal">
                                 </div>
                             </div>
                         </div>
@@ -8809,7 +8818,7 @@
     <!-- ==================================== -->
     <!-- pop-up-for-table-header-click starts -->
     <div class="table-header-click-popup" id="col8Filter">
-        <div class="table-header-click-popup-wrapper">
+        <div class="table-header-click-popup-wrapper filter-top-arrow">
             <div class="table-header-popup-header-title">
                 <p id="tableHeaderPop"></p>
             </div>
@@ -8817,12 +8826,15 @@
                 <div class="find-sort-wrapper">
                     <div class="find-wrapper">
                         <div class="find-wrapper-inner">
-                            <input type="text"><input type="submit" value="Find">
+                            <input type="text" id="col8FilterInput"><input type="submit" value="Find" id="col8FilterFind">
                         </div>
                     </div>
                     <div class="sort-wrapper">
                         <input type="submit" value="Sort">
                     </div>
+                </div>
+                <div class="custom-filter-wrapper">
+                    <button class="custom-filter-btn" onclick="customFilterClick()">ADD A CUSTOM FILTER</button>
                 </div>
                 <div class="checkbox-content-wrapper">
                     <div class="checkbox-table-wrapper">
@@ -8833,13 +8845,22 @@
                                 </tbody>
                             </table>
                         </div>
+                        <div class="checkbox-table-loading">
+                            <p class="popup-loading-animation popup-loading"></p>
+                            <p class="popup-loading-animation popup-loading"></p>
+                            <p class="popup-loading-animation popup-loading"></p>
+                            <p class="popup-loading-animation popup-loading"></p>
+                            <p class="popup-loading-animation popup-loading"></p>
+                            <p class="popup-loading-animation popup-loading"></p>
+                            <p class="popup-loading-animation popup-loading"></p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="table-header-popup-footer">
                 <div class="button-row">
                     <input type="button" value="Close" class="close-btn" id="closeCol8Filter">
-                    <input type="button" value="Select" class="select-btn">
+                    <input type="button" value="Select" class="select-btn" onclick="filterSelectBtnClick()">
                 </div>
             </div>
         </div>

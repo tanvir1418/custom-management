@@ -136,7 +136,6 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-7-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-8">
-			<!-- <span class="header-title">CHART 1</span> -->
 			CHART 1
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header6">
               <i class="fas fa-question-circle"></i>
@@ -144,13 +143,12 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div id="cross${randomCrossIds[8]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter">
+			<!-- <div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
-			</div>
+			</div> -->
 			<div class="column-header-8-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-9">
-			<!-- <span class="header-title">CHART 2</span> -->
 			CHART 2
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header7">
               <i class="fas fa-question-circle"></i>
@@ -158,9 +156,9 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div id="cross${randomCrossIds[9]}" class="head-filter">
 				<i class="fas fa-times"></i>
 			</div>
-			<div class="drop-filter">
+			<!-- <div class="drop-filter">
 				<i class="fas fa-caret-down"></i>
-			</div>
+			</div> -->
 			<div class="column-header-9-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-10">
@@ -2054,9 +2052,9 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty2dblClickLe
 												<div class="head-filter style2_cross06">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 3)">
+												<!-- <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 3)">
 														<i class="fas fa-caret-down"></i>
-												</div>
+												</div> -->
 										</th>
 										<th scope="col" class="style-two-head-07">
 												CHART2
@@ -2066,9 +2064,9 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty2dblClickLe
 												<div class="head-filter style2_cross07">
 														<i class="fas fa-times"></i>
 												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 4)">
+												<!-- <div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 4)">
 														<i class="fas fa-caret-down"></i>
-												</div>
+												</div> -->
 										</th>
 								</tr>
 						</thead>
