@@ -2647,6 +2647,16 @@ td {
 .checkbox-table-loading{
   margin: 4px 0px 0px 4px;
 }
+
+#noteswindow .checkbox-table-loading,
+#noteswindow_style2 .checkbox-table-loading,
+#rowdetails .checkbox-table-loading,
+#rowdetails_style2 .checkbox-table-loading,
+#viewtwo .checkbox-table-loading,
+#viewtwo_style2 .checkbox-table-loading{
+  margin: 0px;
+}
+
 .popup-loading{
   position: relative;
   /* background-color: #b8b8b8; */
@@ -2660,6 +2670,16 @@ td {
   min-height: 23.5px;
   /* height: 100%; */
   /* border-radius: 4px; */
+}
+
+#noteswindow .popup-loading-animation.popup-loading,
+#noteswindow_style2 .popup-loading-animation.popup-loading,
+#rowdetails .popup-loading-animation.popup-loading,
+#rowdetails_style2 .popup-loading-animation.popup-loading,
+#viewtwo .popup-loading-animation.popup-loading,
+#viewtwo_style2 .popup-loading-animation.popup-loading{
+  min-height: 19px;
+  border-radius: 2px;
 }
 
 .popup-loading::after{
