@@ -1099,9 +1099,9 @@ function manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty
             </tr>`;
         }
     }
-    $(`#${sty1dblClickRightListId}`).html(htmlTableR);
+    $(`#${sty1dblClickRightListId} table`).html(htmlTableR);
 
-    $(`#${sty1dblClickLeftListId}`).html(htmlTableL);
+    $(`#${sty1dblClickLeftListId} table`).html(htmlTableL);
 }
 
 
@@ -1116,7 +1116,7 @@ function manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty
 // 3. Style1 DoubleClick To Remove Right List ID
 // 4. Style1 DoubleClick Every List ID (res-id-table-)
 function dblclickResMove(e, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix) {
-    let _id = $(e).parent().attr("id");
+    let _id = $(e).parent().parent().parent().attr("id");
     let index = $(e).attr("id").match(/\d+/g)[0];
     if (_id == sty1dblClickLeftListId) {
         $(e).remove();
@@ -1145,7 +1145,7 @@ function dblclickResMove(e, selectedTab, sty1TableId, sty1dblClickLeftListId, st
 // 3. Style1 DoubleClick To Remove Right List ID
 // 4. Style1 DoubleClick Every List ID (res-id-table-)
 function moveResLeftToRight(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix) {
-    let tr = $(`#${sty1dblClickLeftListId} tr.mark-table-data`);
+    let tr = $(`#${sty1dblClickLeftListId} table tr.mark-table-data`);
     let len = tr.length;
     for (let i = 0; i < len; i++) {
         let index = $(tr[i]).attr("id").match(/\d+/g)[0];
@@ -1168,7 +1168,7 @@ function moveResLeftToRight(selectedTab, sty1TableId, sty1dblClickLeftListId, st
 // 3. Style1 DoubleClick To Remove Right List ID
 // 4. Style1 DoubleClick Every List ID (res-id-table-)
 function moveResRightToLeft(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix) {
-    let tr = $(`#${sty1dblClickRightListId} tr.mark-table-data`);
+    let tr = $(`#${sty1dblClickRightListId} table tr.mark-table-data`);
     let len = tr.length;
     for (let i = 0; i < len; i++) {
         let index = $(tr[i]).attr("id").match(/\d+/g)[0];
@@ -1188,8 +1188,8 @@ function moveResRightToLeft(selectedTab, sty1TableId, sty1dblClickLeftListId, st
 // 1. Style1 Table ID
 // 2. Selected TAB ID
 function ResorderUp(selectedTab, sty1TableId, sty1dblClickRightListId) {
-    let row = $(`#${sty1dblClickRightListId} tr.mark-table-data`);
-    let rowFirst = $(`#${sty1dblClickRightListId} tr`)[0];
+    let row = $(`#${sty1dblClickRightListId} table tr.mark-table-data`);
+    let rowFirst = $(`#${sty1dblClickRightListId} table tr`)[0];
     if (rowFirst != row[0]) {
         row.each(function () {
             let rw = $(this).closest("tr.mark-table-data");
@@ -1207,7 +1207,7 @@ function ResorderUp(selectedTab, sty1TableId, sty1dblClickRightListId) {
 // 1. Style1 Table ID
 // 2. Selected TAB ID
 function ResorderDown(selectedTab, sty1TableId, sty1dblClickRightListId) {
-    let row = $(`#${sty1dblClickRightListId} tr.mark-table-data`);
+    let row = $(`#${sty1dblClickRightListId} table tr.mark-table-data`);
     row.each(function () {
         let rw = $(this).closest("tr.mark-table-data");
         let index = $(rw).attr("id").match(/\d+/g)[0];
@@ -1312,8 +1312,8 @@ function allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRigh
     let { htmlTableL: L7, htmlTableR: R7 } = allHeadTable2("sty2table7", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
     let { htmlTableL: L8, htmlTableR: R8 } = allHeadTable2("sty2table8", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
     let { htmlTableL: L9, htmlTableR: R9 } = allHeadTable2("sty2table9", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
-    $(`#${sty2dblClickRightListId}`).html(R2 + R3 + R4 + R5 + R6 + R7 + R8 + R9);
-    $(`#${sty2dblClickLeftListId}`).html(L2 + L3 + L4 + L5 + L6 + L7 + L8 + L9);
+    $(`#${sty2dblClickRightListId} table`).html(R2 + R3 + R4 + R5 + R6 + R7 + R8 + R9);
+    $(`#${sty2dblClickLeftListId} table`).html(L2 + L3 + L4 + L5 + L6 + L7 + L8 + L9);
 }
 
 
@@ -1362,7 +1362,7 @@ function allHeadTable2(tName, selectedTab, sty2dblClickLeftListId, sty2dblClickR
 // 1. Selected TAB ID
 // 2. Style1 DoubleClick Every List ID (res-table-two-)
 function dblclickRes2Move(e, selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
-    let _id = $(e).parent().attr("id");
+    let _id = $(e).parent().parent().parent().attr("id");
     let index = $(e).attr("id").match(/\d+/g)[0];
     if (_id == sty2dblClickLeftListId) {
         $(e).remove();
@@ -1402,7 +1402,7 @@ function pagiHideHead(selectedTab, sty2dblClickLeftListId) {
 // 2. Style2 DoubleClick To Display Left List ID
 // 3. Style2 DoubleClick To Display Right List ID
 function moveRes2LeftToRight(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
-    let tr = $(`#${sty2dblClickLeftListId} tr.mark-table-data`);
+    let tr = $(`#${sty2dblClickLeftListId} table tr.mark-table-data`);
     let len = tr.length;
     for (let i = 0; i < len; i++) {
         let index = $(tr[i]).attr("id").match(/\d+/g)[0];
@@ -1422,7 +1422,7 @@ function moveRes2LeftToRight(selectedTab, sty2dblClickLeftListId, sty2dblClickRi
 // 2. Style2 DoubleClick To Display Left List ID
 // 3. Style2 DoubleClick To Display Right List ID
 function moveRes2RightToLeft(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
-    let tr = $(`#${sty2dblClickRightListId} tr.mark-table-data`);
+    let tr = $(`#${sty2dblClickRightListId} table tr.mark-table-data`);
     let len = tr.length;
     for (let i = 0; i < len; i++) {
         let index = $(tr[i]).attr("id").match(/\d+/g)[0];
