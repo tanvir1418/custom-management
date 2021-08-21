@@ -2152,6 +2152,74 @@ function resetInputFieldAlert(alertsPopupId) {
 
 }
 
+// Insert Row to Alerts Window
+function insertRowToAlertTable(activeLayout){
+    let alertswindowId = "alertswindow";
+
+    if(activeLayout == "style2"){
+        alertswindowId = "alertswindow_style2";
+    }
+
+    let lastRowNum = $(`#${alertswindowId} .alert-table-wrap .alert-table tbody tr:last-child td:nth-child(1)`).text();
+    lastRowNum = parseInt(lastRowNum.trim()) + 1;
+
+    $(`#${alertswindowId} .alert-table-wrap .alert-table tbody`).append(`<tr>
+            <td>${lastRowNum}</td>
+            <td class="selectaltype">
+                <select name="" id="">
+                    <option value="">Precent Change
+                        Greather...
+                    </option>
+                    <option value="">Precent Change
+                        Greather...
+                    </option>
+                    <option value="">Precent Change
+                        Greather...
+                    </option>
+                    <option value="">Precent Change
+                        Greather...
+                    </option>
+                </select>
+                <div class="selectarrow">
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </td>
+            <td class="inpalertval">
+                <input type="text">
+            </td>
+            <td class="selectalfreq">
+                <select name="" id="">
+                    <option value="">Anytime</option>
+                    <option value="">Anytime</option>
+                    <option value="">Anytime</option>
+                    <option value="">Anytime</option>
+                </select>
+                <div class="selectarrow">
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </td>
+            <td class="inpumail">
+                <div class="mail_enter">
+                    <div class="mail_icons">
+                        <i class="fas fa-envelope iconActive"></i>
+                        <i class="fas fa-phone-alt"></i>
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+                    <input type="email" placeholder="Enter a Email Address">
+                </div>
+            </td>
+            <td class="removenull">
+                <div class="circle_550" onclick="insertRowToAlertTable('${activeLayout}')">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="circle_550 deleteTableRow" onclick="universalConfirmModalDelete(this)">
+                    <i class="fas fa-times"></i>
+                </div>
+            </td>
+        </tr>`);
+    
+        alertWindowIconHandling(alertswindowId);
+}
 
 function hideStyleOneAllPopup(){
     $("#viewtwo").css("display", "none");
