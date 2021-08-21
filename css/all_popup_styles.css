@@ -2701,3 +2701,22 @@ Bottom codes are added by Tanvir
 #submitting_Info.modal{
     background-color: rgb(0, 0, 0, 0.4) !important;
 }
+
+.loading-alert-table-wrap .loading-row{
+    height: 100%;
+}
+.alertswindow-content .loading-alert-table-wrap .alert-table td {
+    padding: 5px;
+    height: 48px !important;
+}
+.alertswindow-content .loading-alert-table-wrap .alert-table th {
+    padding: 14px 10px;
+    height: 50px;
+}
+.alertswindow-content .loading-alert-table-wrap .alert-table thead,
+.alertswindow-content .loading-alert-table-wrap .alert-table tbody {
+    border: 2px solid #eff1f7 !important;
+}
+.alertswindow-content .loading-alert-table-wrap .alert-table .removenull {
+    display: block !important;
+}
