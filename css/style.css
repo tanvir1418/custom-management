@@ -2657,6 +2657,12 @@ td {
   margin: 0px;
 }
 
+.outer_scroll_doubleclick .checkbox-table-loading{
+  margin: 0px;
+  border-radius: 4px;
+  display: none;
+}
+
 .popup-loading{
   position: relative;
   /* background-color: #b8b8b8; */
@@ -2679,6 +2685,12 @@ td {
 #viewtwo .popup-loading-animation.popup-loading,
 #viewtwo_style2 .popup-loading-animation.popup-loading{
   min-height: 19px;
+  border-radius: 2px;
+}
+
+.outer_scroll_doubleclick .popup-loading-animation.popup-loading{
+  min-height: 23px;
+  margin: 2px;
   border-radius: 2px;
 }
 

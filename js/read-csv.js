@@ -16,7 +16,7 @@ function loadCSVshowData(csvId, selectedTab, sty1TableId, sty1dblClickLeftListId
 
 					tableHeadSty1(selectedTab, sty1TableId);
 					manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
-					manResPagination(7, csvId, selectedTab, sty1TableId, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+					manResPagination(7, csvId, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
 					resizableTable1(selectedTab, sty1TableId);
 					table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
 
@@ -1087,7 +1087,7 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 // 2. Selected TAB ID
 // 3. Style1 Table ID
 
-function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
+function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
 
 	let options = {
 		dataSource: tableData[csvId],
@@ -1114,6 +1114,12 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty2dblClickLe
 			$(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "none");
 			$(`#${selectedTab} .loading-style2-table`).css("display", "block");
 
+			// $(`#${sty1dblClickRightListId} .double_click_selection_box`).css('display', 'none');
+            // $(`#${sty1dblClickRightListId} .checkbox-table-loading`).css('display', 'block');
+
+            // $(`#${sty1dblClickLeftListId} .double_click_selection_box`).css('display', 'none');
+            // $(`#${sty1dblClickLeftListId} .checkbox-table-loading`).css('display', 'block');
+
 			setTimeout(() => {
 				$(`#${selectedTab} .loading-style1-table`).css("display", "none");
 				$(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
@@ -1125,6 +1131,12 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty2dblClickLe
 
 				$(`#${selectedTab} .loading-style2-table`).css("display", "none");
 				$(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "block");
+
+				// $(`#${sty1dblClickRightListId} .double_click_selection_box`).css('display', 'block');
+                // $(`#${sty1dblClickRightListId} .checkbox-table-loading`).css('display', 'none');
+
+                // $(`#${sty1dblClickLeftListId} .double_click_selection_box`).css('display', 'block');
+                // $(`#${sty1dblClickLeftListId} .checkbox-table-loading`).css('display', 'none');
 			}, 3000);
 
 			let currentPageNumber = pagination.pageNumber;
@@ -3228,15 +3240,15 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty2dblClickLe
 	container.pagination(options);
 }
 
-function mnResultRowPerPage(csvId, selectedTab, sty1TableId, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix){
+function mnResultRowPerPage(csvId, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix){
 	$(`#${selectedTab} .manRes-pagination-input`).change(function (e) {
 		let noRow = e.target.value;
-		manResPagination(noRow, csvId, selectedTab, sty1TableId, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+		manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
 		pagiHideHead(selectedTab, sty2dblClickLeftListId);
 	});
 }
 
-mnResultRowPerPage("exelFile", "Main", "resizable554", "style2-man-res-opt-data-table-left", "style2-man-res-opt-data-table-right", "res-table-two-");
+mnResultRowPerPage("exelFile", "Main", "resizable554", "man-res-opt-data-table-left", "man-res-opt-data-table-right", "style2-man-res-opt-data-table-left", "style2-man-res-opt-data-table-right", "res-table-two-");
 
 
 function fnStatus(sts) {

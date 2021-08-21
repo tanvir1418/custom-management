@@ -973,6 +973,12 @@ function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1d
             $(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
             $(`#${selectedTab} .page-number-loading`).css("display", "block");
 
+            // $(`#${sty1dblClickRightListId} .double_click_selection_box`).css('display', 'none');
+            // $(`#${sty1dblClickRightListId} .checkbox-table-loading`).css('display', 'block');
+
+            // $(`#${sty1dblClickLeftListId} .double_click_selection_box`).css('display', 'none');
+            // $(`#${sty1dblClickLeftListId} .checkbox-table-loading`).css('display', 'block');
+
             setTimeout(() => {
                 $(`#${selectedTab} .loading-style1-table`).css("display", "none");
                 $(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
@@ -981,7 +987,14 @@ function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1d
                 $(`#${selectedTab} .main-table-design`).css("display", "block");
                 $(`#${selectedTab} .pagination-container`).css("display", "block");
                 $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
+
+                // $(`#${sty1dblClickRightListId} .double_click_selection_box`).css('display', 'block');
+                // $(`#${sty1dblClickRightListId} .checkbox-table-loading`).css('display', 'none');
+
+                // $(`#${sty1dblClickLeftListId} .double_click_selection_box`).css('display', 'block');
+                // $(`#${sty1dblClickLeftListId} .checkbox-table-loading`).css('display', 'none');
             }, 2000);
+
         }else{
             if (target.tagName === "I") {
                 target = target.parentNode;
@@ -1102,6 +1115,20 @@ function manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty
     $(`#${sty1dblClickRightListId} table`).html(htmlTableR);
 
     $(`#${sty1dblClickLeftListId} table`).html(htmlTableL);
+
+    $(`#${sty1dblClickRightListId} .double_click_selection_box`).css('display', 'none');
+    $(`#${sty1dblClickRightListId} .checkbox-table-loading`).css('display', 'block');
+
+	$(`#${sty1dblClickLeftListId} .double_click_selection_box`).css('display', 'none');
+	$(`#${sty1dblClickLeftListId} .checkbox-table-loading`).css('display', 'block');
+
+	setTimeout(() => {
+		$(`#${sty1dblClickRightListId} .double_click_selection_box`).css('display', 'block');
+        $(`#${sty1dblClickRightListId} .checkbox-table-loading`).css('display', 'none');
+
+	    $(`#${sty1dblClickLeftListId} .double_click_selection_box`).css('display', 'block');
+	    $(`#${sty1dblClickLeftListId} .checkbox-table-loading`).css('display', 'none');
+	}, 1000);
 }
 
 
@@ -1314,6 +1341,20 @@ function allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRigh
     let { htmlTableL: L9, htmlTableR: R9 } = allHeadTable2("sty2table9", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
     $(`#${sty2dblClickRightListId} table`).html(R2 + R3 + R4 + R5 + R6 + R7 + R8 + R9);
     $(`#${sty2dblClickLeftListId} table`).html(L2 + L3 + L4 + L5 + L6 + L7 + L8 + L9);
+
+    $(`#${sty2dblClickRightListId} .double_click_selection_box`).css('display', 'none');
+    $(`#${sty2dblClickRightListId} .checkbox-table-loading`).css('display', 'block');
+
+	$(`#${sty2dblClickLeftListId} .double_click_selection_box`).css('display', 'none');
+	$(`#${sty2dblClickLeftListId} .checkbox-table-loading`).css('display', 'block');
+
+	setTimeout(() => {
+		$(`#${sty2dblClickRightListId} .double_click_selection_box`).css('display', 'block');
+        $(`#${sty2dblClickRightListId} .checkbox-table-loading`).css('display', 'none');
+
+	    $(`#${sty2dblClickLeftListId} .double_click_selection_box`).css('display', 'block');
+	    $(`#${sty2dblClickLeftListId} .checkbox-table-loading`).css('display', 'none');
+	}, 1000);
 }
 
 
