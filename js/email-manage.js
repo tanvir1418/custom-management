@@ -35,7 +35,7 @@ for (let i = 1; i <= 100; i++) {
     // console.log(`Status: ${randomStatus}, Progress: ${randomProgress}`);
 
     taskStatusData.push({
-        id: `md-ex-${i}`,
+        id: `email-tableRow-${i}`,
         serial: i,
         name: `Name ${i} Goes Here...`,
         status: randomStatus,
@@ -183,6 +183,22 @@ function taskStatusTableExist(tableID, noRow, pagiId, paginationId, loadingPagin
                 $("#table_details_email .table-records-wrap").css("display", "block");
                 $("#table_details_email .table-records-loading").css("display", "none");
 
+                $(".task-status-statistics .stat-box").each(function () {
+                    let value = $(this).find(".stat-number");
+                    let taskValue = parseInt(value.text());
+                    $({
+                        task: 0
+                    }).animate({
+                        task: taskValue
+                    }, {
+                        duration: 3000,
+                        easing: "swing",
+                        step: function (task) {
+                            value.text(task | 0);
+                        }
+                    });
+                });
+
             }, 2000);
 
             let tableTr = "";
@@ -193,8 +209,12 @@ function taskStatusTableExist(tableID, noRow, pagiId, paginationId, loadingPagin
                 for (let i = 1; i < len - 1; i++) {
                     classList.push(tabHd[i].className);
                 }
+                let idClass = (status == "Completed" || status == "Cancelled") ? "disabled" : "";
+
+                let crossBtnEvent = (status == "Completed" || status == "Cancelled") ? ` class="circle-disable tooltip-container" tooltip="This option is not available, since it is already Completed or Cancelled!" flow="down"` : ` class="deleteTableRow circle_550" data-toggle="modal" data-target="#email_confirm_modal"`;
+                
                 tableTr += `
-                <tr id="${id}">
+                <tr id="${id}" class="${idClass}">
 
 					<th class="row-data" scope="row">${serial}</th>
 
@@ -207,11 +227,10 @@ function taskStatusTableExist(tableID, noRow, pagiId, paginationId, loadingPagin
 					</td>
 
                     <td class="${classList[1]}">
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="${progressValue}"
-                            aria-valuemin="0" aria-valuemax="100" style="width:${progressValue}%">
-                                <span class="alert-exists-data">${progressValue}%</span>
+                        <div class="progress-task">
+                            <div class="inner-progress-task" style="width: 0%;">
                             </div>
+                            <p class="alert-exists-data">0%</p>
                         </div>
 					</td>
 
@@ -229,12 +248,15 @@ function taskStatusTableExist(tableID, noRow, pagiId, paginationId, loadingPagin
 
                     <td class="">
                         <div class="cross-box-89">
-                            <div class="deleteTableRow circle_550" data-toggle="modal" data-target="#email_confirm_modal">
-                            <i class="fas fa-times"></i>
+                            <div ${crossBtnEvent}>
+                                <i class="fas fa-times"></i>
                             </div>
                         </div>
                     </td>
                 </tr>`;
+                setTimeout(() => {
+                    tableProgressBarAnimation(id,progressValue);
+                }, 2000);
             });
 
             $(`#${tableID} tbody`).html(tableTr);
@@ -243,6 +265,22 @@ function taskStatusTableExist(tableID, noRow, pagiId, paginationId, loadingPagin
     };
     let container = $(`#${pagiId}`);
     container.pagination(options);
+}
+
+function tableProgressBarAnimation(idOfRow, progressVal) {
+    var elem = document.querySelector(`#email_task_status_table tbody #${idOfRow} .inner-progress-task`);
+    var elemPara = document.querySelector(`#email_task_status_table tbody #${idOfRow} .progress-task .alert-exists-data`);
+    var width = 0;
+    var id = setInterval(frame, 50);
+    function frame() {
+        if (width >= progressVal) {
+            clearInterval(id);
+        } else {
+            width++; 
+            elem.style.width = width + '%';
+            elemPara.innerHTML = width * 1 + '%';
+        }
+    }
 }
 
 

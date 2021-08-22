@@ -481,6 +481,23 @@
   transform: translate(-50%, -50%);
 }
 
+.task-status-table .table89 .circle-disable {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: #eaeaea;
+  position: relative;
+  cursor: pointer;
+}
+
+.task-status-table .table89 .circle-disable i {
+  position: absolute;
+  color: #707070 !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* RESPONSIVE MANAGE ALERT */
 @media only screen and (max-width: 1250px) {
   /* #mail_option_2 .task-status-table {
@@ -491,36 +508,6 @@
 @media only screen and (min-width: 1500px) {
   
 }
-
-/* @media only screen and (min-width: 1600px) {
-  #mail_option_2 .task-status-table {
-      margin: 0 10%;
-  }
-}
-@media only screen and (min-width: 1800px) {
-  #mail_option_2 .task-status-table {
-      margin: 0 12%;
-  }
-}
-@media only screen and (min-width: 2000px) {
-  #mail_option_2 .task-status-table {
-      margin: 0 14%;
-  }
-} */
-/* ====== EMail Task Status Style Ends ====== */
-
-/* ========================================== */
-/* pop-up-for-table-header-click style starts */
-/* #dropBtnModal .modal-content {
-    width: 250px;
-    border: 0;
-    border-radius: 0 !important;
-} */
-
-/* #dropBtnModal .modal-content .modal-body{
-  padding: 0;
-  border-radius: 0 !important;
-} */
 
 #dropBtnModal .modal-dialog {
   position: absolute;
@@ -1255,23 +1242,6 @@ i.fa-caret-down.down-animation-icon{
     display: none;
 }
 
-.task-status-table .progress {
-  position: relative;
-  height: 28px;
-}
-.task-status-table .progress .progress-bar{
-  background-color: #5cb85c;
-}
-.task-status-table .progress span {
-  position: absolute;
-  display: block;
-  width: 100%;
-  color: black;
-  font-size: 16px;
-  font-family: gilroy-bold, sans-serif;
-  font-weight: 600;
-}
-
 .task-status-table td .st-status{
   width: 100%;
   text-align: center;
@@ -1285,7 +1255,8 @@ i.fa-caret-down.down-animation-icon{
 }
 
 .task-status-table td .st-cancelled{
-  background-color: #F70200;
+  /* background-color: #F70200; */
+  background-color: #c51313;
 }
 .task-status-table td .st-pending{
   background-color: #FFF001;
@@ -1295,7 +1266,8 @@ i.fa-caret-down.down-animation-icon{
   background-color: #5cb85c;
 }
 .task-status-table td .st-completed{
-  background-color: #0A08FE;
+  /* background-color: #0A08FE; */
+  background-color: #181879;
 }
 
 .task-status-content-wrapper .task-status-statistics{
@@ -1518,4 +1490,44 @@ i.fa-caret-down.down-animation-icon{
 
 #visual_system_status{
   display: none;
+}
+
+.task-status-table .progress-task {
+  width: 100%;
+  height: 28px;
+  border-radius: 4px;
+  background: #e9ecef;
+  position: relative;
+  cursor: pointer;
+}
+
+.task-status-table .inner-progress-task {
+  width: 75%;
+  height: 100%;
+  border-radius: 3px;
+  background: #5cb85c;
+}
+
+.task-status-table .progress-task p.alert-exists-data {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  color: black;
+  font-size: 18px;
+  font-family: gilroy-bold, sans-serif;
+  font-weight: 600;
+  top: 0%;
+  left: 0%;
+}
+
+#email_task_status_table tr.disabled {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#email_task_status_table tbody td .cross-box-89 [tooltip]::after {
+  min-width: 236px;
+  min-width: 240px;
+  height: 62px;
+  white-space: normal;
 }
