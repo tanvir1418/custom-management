@@ -752,14 +752,14 @@
     height: 100%;
 }
 
-.Display4 .data-table-box table {
+.Display4 .data-table-box table.data-chart4 {
     width: 100%;
     height: 1000px;
     position: relative;
 }
 
-.Display4 table th,
-.Display4 table td {
+.Display4 table.data-chart4 th,
+.Display4 table.data-chart4 td {
     font-size: 16px;
     table-layout: fixed;
     padding: 0;
@@ -772,20 +772,20 @@
     text-align: center;
 }
 
-.Display4 table th {
+.Display4 table.data-chart4 th {
     position: sticky;
     top: -3px;
 }
 
-.Display4 table th,
-.Display4 table td:first-child {
+.Display4 table.data-chart4 th,
+.Display4 table.data-chart4 td:first-child {
     font-family: gilroy-medium, sans-serif;
     font-weight: 600;
     color: #000000;
     background: #FBFBFD;
 }
 
-.Display4 table td {
+.Display4 table.data-chart4 td {
     font-family: gilroy-medium, sans-serif;
     font-weight: 600;
     font-size: 14px;
@@ -1164,4 +1164,27 @@
     background-color: red;
     text-align: center;
     color: white;
-  }
+}
+
+.Display4 .loading-table-chart4 table{
+    width: 100%;
+}
+.Display4 .loading-table-chart4 th,
+.Display4 .loading-table-chart4 td{
+    height: 48px;
+    width: 100px;
+    padding: 2px;
+}
+.Display4 .loading-table-chart4 th{
+    padding: 6px 20px;
+}
+.Display4 .loading-table-chart4 th .loading-row,
+.Display4 .loading-table-chart4 td .loading-row{
+    height: 100%;
+    width: 100%;
+}
+
+.Display4 .loading-table-chart4 th .loading-row p,
+.Display4 .loading-table-chart4 td .loading-row p{
+    margin: 0px;
+}

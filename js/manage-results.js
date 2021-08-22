@@ -499,7 +499,7 @@ scrollDisplayChartThree('Main');
 
 // ================ DISPLAY 4 TABLE DATA START ================
 
-function gotoChartCalender(targetedCalender){
+function gotoChartCalender(selectedTab, targetedCalender){
     var calenderData = new Array(20);
   
     for (let i = 0; i < calenderData.length; i++) {
@@ -564,6 +564,13 @@ function gotoChartCalender(targetedCalender){
                 'background': '#FBFBFD'
             }); // changes td to red.
     });
+
+    $(`#${selectedTab} .Display4 .data-table-wrapper`).css("display", "none");
+    $(`#${selectedTab} .Display4 .loading-table-chart4`).css("display", "block");
+    setTimeout(() => {
+        $(`#${selectedTab} .Display4 .data-table-wrapper`).css("display", "block");
+        $(`#${selectedTab} .Display4 .loading-table-chart4`).css("display", "none");
+    }, 2000);
 }
 
 // ================ DISPLAY 4 TABLE DATA END ================
