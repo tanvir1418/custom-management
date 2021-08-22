@@ -1596,3 +1596,23 @@ for (let i = 0; i < op4FieldSetDataForms.length; i++) {
     $(`fieldset#${fieldSetId}`).addClass("borderGreen");
   });
 }
+
+function saveDraftCheckEmpty(e) {
+  if (e.value !== "") {
+    $(e).parent().removeClass("border-red");
+    $(e).parent().parent().find(".save-draft-wrapper button").prop("disabled",false);
+    $(e).parent().parent().find(".save-start-wrapper button").prop("disabled",false);
+    $(e).parent().parent().parent().children(".error-message").remove();
+  } else {
+    $(e).parent().addClass("border-red");
+    $(e).parent().parent().find(".save-draft-wrapper button").prop("disabled",true);
+    $(e).parent().parent().find(".save-start-wrapper button").prop("disabled",true);
+    let errorMessage = `<div class="error-message">
+      <p>A value must be entered</p>
+    </div>`;
+    let errPos = $(e).parent().parent().parent();
+    if (!errPos.children("div.error-message").length) {
+      errPos.append(errorMessage);
+    }
+  }
+}

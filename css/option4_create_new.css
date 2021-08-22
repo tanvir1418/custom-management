@@ -2819,8 +2819,19 @@ element.style {
 
 .option4-below-control-section {
   margin: 0px 30px;
-  height: 100px;
+  height: 120px;
   /* padding-bottom: 30px; */
+}
+
+.option4-below-control-section .error-message{
+  margin: 5px 0 0 10px;
+}
+
+.option4-below-control-section .error-message p{
+  font-size: 20px;
+  font-family: gilroy-bold, sans-serif;
+  font-weight: 600;
+  color: red;
 }
 
 .save-draft-wrapper {
@@ -2838,6 +2849,11 @@ element.style {
 .option4-below-control-input {
   height: 80px;
   flex-grow: 1;
+}
+
+.option4-below-control-input.border-red {
+  border: 2px solid red !important;
+  border-radius: 4px !important;
 }
 
 .option4-below-control-input input {
