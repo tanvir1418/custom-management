@@ -968,83 +968,103 @@ td {
 /* /////////// */
 
 /* TABLE HEAD START */
-.mytablesty12 .containerst12 {
-    display: block;
+
+.mytablesty12 .toggle {
+    display: inline-flex;
     position: relative;
-    margin-left: 5px;
-    margin-top: -15px;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    margin-bottom: 0;
 }
-
-/* Hide the browser's default checkbox */
-.mytablesty12 .containerst12 input {
-    position: absolute;
+.mytablesty12 thead .toggle {
+    bottom: -4px;
+    left: 2px;
+}
+.mytablesty12 tbody .toggle {
+    left: 8px;
+}
+/* this hides the main checkbox */
+.mytablesty12 .toggle__input {
+    width: 20px;
+    height: 20px;
     opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+}
+
+.mytablesty12 .toggle__label {
+    display: inline-flex;
+    min-height: 32px;
+    font-size: 20px;
+    padding-left: 35px;
+}
+
+.mytablesty12 .toggle__input:not(:disabled)~.toggle__label {
     cursor: pointer;
-    height: 0;
-    width: 0;
 }
 
-/* Create a custom checkbox */
-.containerst12 .checkmarkHeader {
-    position: absolute;
-    left: 9px;
-    top: 4px;
-    height: 22px;
-    width: 22px;
-    border: 1px solid #f1f3f7;
-    border-radius: 4px;
-    background-color: #ffffff;
-}
-.containerst12 .checkmark {
-    position: absolute;
-    left: 8px;
-    top: 2px;
-    height: 22px;
-    width: 22px;
-    border: 1px solid #f1f3f7;
-    border-radius: 4px;
-    background-color: #ffffff;
-}
-
-/* On mouse-over, add a grey background color */
-.containerst12:hover input ~ .checkmark {
-    background-color: #c6ece4;
-}
-
-/* When the checkbox is checked, add a blue background */
-.containerst12 input:checked ~ .checkmark {
-    background-color: #c6ece4;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.containerst12 .checkmark:after {
+/* this is for box */
+.mytablesty12 .toggle__label::after {
     content: "";
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    font-size: 20px;
+    background-color: #ffffff;
     position: absolute;
-    display: none;
-}
-
-/* Show the checkmark when checked */
-.containerst12 input:checked ~ .checkmark:after {
-    display: block;
-}
-
-/* Style the checkmark/indicator */
-.containerst12 .checkmark:after {
-    left: 8px;
+    left: 4px;
     top: 2px;
-    width: 6px;
-    height: 12px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+    z-index: 2;
 }
+
+.mytablesty12 .toggle__input:checked~.toggle__label::after {
+    background-color: #25d34f;
+    box-shadow: 5px 5px 5px 4px rgba(140, 245, 80, 0.2);
+}
+
+/* this is for tik sign */
+.mytablesty12 .toggle__label::before {
+    content: "";
+    width: 0;
+    height: 0;
+    font-size: 24px;
+
+    border-left-width: 0;
+    border-bottom-width: 0;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-color: #fff;
+
+    position: absolute;
+    top: 15px;
+    left: 8px;
+    z-index: 3;
+
+    transform-origin: left top;
+    transform: rotate(-40deg) skew(10deg);
+}
+
+.clone-head-table-wrap .mytablesty12 .toggle__label::after {
+    z-index: 5;
+}
+
+.clone-head-table-wrap .mytablesty12 .toggle__label::before {
+    z-index: 6;
+}
+
+.mytablesty12 .toggle__input:checked~.toggle__label::before {
+    width: 14px;
+    height: 7px;
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.mytablesty12 .toggle__label::after {
+    border-radius: 4px;
+}
+
+
+/* check mark style ends  */
 
 .mytablesty12 thead th {
     font-size: 12px;
@@ -3447,7 +3467,8 @@ i.fa-caret-down.down-animation-icon{
 
 .style1-table-wrap .clone-head-table-wrap{
     height: 44px !important;
-    background-color: #fafafc !important;
+    background-color: #3a3a4d !important;
+    z-index: 4 !important;
 }
 
 .iconActive{

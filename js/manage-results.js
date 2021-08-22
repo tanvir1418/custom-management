@@ -954,6 +954,7 @@ function headClick(target, index, selectedTab, sty1TableId, sty1dblClickLeftList
 // 2. Style1 Table ID
 function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix) {
     $(`#${sty1TableId} th`).click(function (e) {
+        
         let target = e.target;
         let index = $(this).index() + 1;
         if(target.tagName === "SPAN" && target.className === "header-title"){
@@ -2333,3 +2334,39 @@ $("#col8FilterFind").click(function () {
 });
 
 
+// let targetCheckBox = $("#resizable554 thead th.column-header-1 input[type='checkbox'].toggle__input");
+//   if (targetCheckBox.checked == false) {
+//     targetCheckBox.click();
+//   }
+
+function controlCheckboxOfTableHead(sty1TableId, selectedTab){
+    $(`#${sty1TableId} thead th.column-header-1 input[type='checkbox'].toggle__input`).change(function(){
+        let tableTotalRow = $(`#${sty1TableId} tbody tr`).length;
+        if($(this).prop('checked') === true){
+            for(i=1; i<=tableTotalRow; i++){
+                $(`#${sty1TableId} tbody tr:nth-child(${i}) td.column-header-1 input[type='checkbox'].toggle__input`).prop('checked',true);
+            }
+            $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 thead th.column-header-1 input[type='checkbox'].toggle__input`).prop('checked',true);
+        }else{
+            for(i=1; i<=tableTotalRow; i++){
+                $(`#${sty1TableId} tbody tr:nth-child(${i}) td.column-header-1 input[type='checkbox'].toggle__input`).prop('checked', false);
+            }
+            $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 thead th.column-header-1 input[type='checkbox'].toggle__input`).prop('checked', false);
+        }
+    });
+
+    $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 thead th.column-header-1 input[type='checkbox'].toggle__input`).change(function(){
+        let tableTotalRow = $(`#${sty1TableId} tbody tr`).length;
+        if($(this).prop('checked') === true){
+            for(i=1; i<=tableTotalRow; i++){
+                $(`#${sty1TableId} tbody tr:nth-child(${i}) td.column-header-1 input[type='checkbox'].toggle__input`).prop('checked',true);
+            }
+            $(`#${sty1TableId} thead th.column-header-1 input[type='checkbox'].toggle__input`).prop('checked',true);
+        }else{
+            for(i=1; i<=tableTotalRow; i++){
+                $(`#${sty1TableId} tbody tr:nth-child(${i}) td.column-header-1 input[type='checkbox'].toggle__input`).prop('checked', false);
+            }
+            $(`#${sty1TableId} thead th.column-header-1 input[type='checkbox'].toggle__input`).prop('checked', false);
+        }
+    });
+}

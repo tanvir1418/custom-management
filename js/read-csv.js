@@ -45,14 +45,14 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 	let tHeadTr =
 		`<tr class="dnd-moved">
 		<th class="column-header-1">
-			<label class="containerst12">
-				<input type="checkbox" />
-				<span class="checkmarkHeader"></span>
+			<label class="toggle">
+				<input class="toggle__input" type="checkbox">
+				<span class="toggle__label"></span>
 			</label>
 			<div class="column-header-1-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-2">
-			<span class="header-title">ICON</span>
+			ICON
 			<div class="column-header-2-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-3">
@@ -1305,9 +1305,9 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 				let tabDataArr = [];
 				tabDataArr.push(
 					`<td class="column-header-1">
-						<label class="containerst12">
-							<input type="checkbox" />
-							<span class="checkmark"></span>
+						<label class="toggle">
+							<input class="toggle__input" type="checkbox">
+							<span class="toggle__label"></span>
 						</label>
 					</td>`
 				);
@@ -3234,6 +3234,12 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 			$("#col8Filter").css('display', 'none');
 
 			tooltipFunction();
+
+			controlCheckboxOfTableHead(sty1TableId, selectedTab);
+			$(`#${sty1TableId} thead th.column-header-1 input[type='checkbox'].toggle__input`).prop('checked', false);
+			$(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 thead th.column-header-1 input[type='checkbox'].toggle__input`).prop('checked', false);
+
+
 		},
 	};
 	let container = $(`#${selectedTab} .width-pagi-manRes-table`);
