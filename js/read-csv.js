@@ -1120,6 +1120,8 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
             // $(`#${sty1dblClickLeftListId} .double_click_selection_box`).css('display', 'none');
             // $(`#${sty1dblClickLeftListId} .checkbox-table-loading`).css('display', 'block');
 
+			$(`#${selectedTab} .style12-section .box-style12 .no-result`).css("display", "none");
+
 			setTimeout(() => {
 				$(`#${selectedTab} .loading-style1-table`).css("display", "none");
 				$(`#${selectedTab} .pagination-loading-handler`).css("display", "none");

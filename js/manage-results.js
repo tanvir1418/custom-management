@@ -820,6 +820,11 @@ function styleIconSwitcherOperation(selectedTab, sty1TableId){
                 $(`#${selectedTab} .pagination-container`).css("display", "block");
                 $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
             }, 2000);
+
+        } else {
+
+            $(`#${selectedTab} .style12-section .box-style12 .no-result`).css("display", "block");
+
         }
 
         hideStyleTwoAllPopup();
@@ -862,6 +867,10 @@ function styleIconSwitcherOperation(selectedTab, sty1TableId){
                 $(`#${selectedTab} .pagination-container`).css("display", "block");
                 $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
             }, 2000);
+        } else {
+
+            $(`#${selectedTab} .style12-section .box-style12 .no-result`).css("display", "block");
+            
         }
 
         hideStyleOneAllPopup();
