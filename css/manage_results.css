@@ -2617,8 +2617,10 @@ th[draggable] a {
     height: 440px;
 }
 
-.modal.custom-dual-filter .val-container {
+.modal.custom-dual-filter .left-side-filter .val-container {
     padding: 20px;
+    min-height: 368px;
+    overflow-x: hidden;
 }
 
 .modal.custom-dual-filter .val-container .valdata-box {
@@ -2642,34 +2644,23 @@ th[draggable] a {
     border: 1px solid #969696;
     border-radius: 3px;
     display: flex;
-    padding: 18px 26px;
+    /* padding: 18px 26px; */
     position: relative;
     margin-right: 8px;
     cursor: pointer;
 }
 
-.modal.custom-dual-filter .valinput .arrow-equal span {
-    color: #1d1d1d;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    font-family: gilroy-regular, sans-serif;
-    font-weight: 600;
+.modal.custom-dual-filter .valdata-box .valinput .arrow-equal select {
+    border: 0;
+    outline: 0;
+    width: 70px;
+    border-radius: 3px;
+    font-size: 28px;
+    padding-left: 10px;
 }
-
-.modal.custom-dual-filter .valinput .arrow-equal .arrow7-right {
-    font-size: 24px;
-    top: 50%;
-    left: 30%;
-}
-
-.modal.custom-dual-filter .valinput .arrow-equal .equal7data {
-    font-size: 24px;
-    top: 50%;
-    left: 68%;
-}
-
-.modal.custom-dual-filter .valinput .arrow-equal .middle7 {
-    left: 50%;
+.modal.custom-dual-filter .valdata-box .valinput .arrow-equal select:focus {
+    border: 0;
+    outline: 0;
 }
 
 .modal.custom-dual-filter .valinput input {
@@ -2722,28 +2713,41 @@ th[draggable] a {
 /* scrollbar customize end */
 
 /* FILTER DRAG COLUMN */
-.modal.custom-dual-filter .drag-column .val-container {
-    padding: 10px 0px 20px 8px;
+
+.modal.custom-dual-filter .drag-column .right-side-filter .val-container {
+    padding: 0px;
+    min-height: 368px;
 }
 
-.modal.custom-dual-filter .drag-box-col #my-drag-list {
+.modal.custom-dual-filter .drag-box-col .drag-list-design {
     -moz-column-count: 2;
     -moz-column-gap: 10px;
     -webkit-column-count: 2;
     -webkit-column-gap: 10px;
     column-count: 2;
     column-gap: 10px;
-    margin-right: 8px;
+    border: 1px solid #eee;
+    width: 100%;
+    min-height: 420px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0px 10px 0px 10px;
+    /* float: left; */
 }
 
-.modal.custom-dual-filter #my-drag-list li {
+.modal.custom-dual-filter .drag-list-design li {
     border: 1px solid #969696;
     border-radius: 3px;
-    display: flex;
     margin-bottom: 10px;
+    margin: 0 5px 5px 5px;
+    font-size: 1.2em;
+    width: 100%;
+    display: inline-block;
 }
-
-.modal.custom-dual-filter #my-drag-list li .cursor-box {
+.modal.custom-dual-filter .drag-list-design li .right-list-wrap{
+    display: flex;
+}
+.modal.custom-dual-filter .drag-list-design li .cursor-box {
     background: #ebebeb;
     padding: 5px 8px;
     border-top-left-radius: 3px;
@@ -2751,7 +2755,7 @@ th[draggable] a {
     cursor: grab;
 }
 
-.modal.custom-dual-filter #my-drag-list li .cursor-box span {
+.modal.custom-dual-filter .drag-list-design li .cursor-box span {
     font-size: 24px;
     font-family: gilroy-regular, sans-serif;
     font-weight: 500;
@@ -2759,15 +2763,19 @@ th[draggable] a {
     letter-spacing: -2px;
 }
 
-.modal.custom-dual-filter #my-drag-list li .name-box {
+.modal.custom-dual-filter .drag-list-design li .name-box {
     margin: auto;
 }
 
-.modal.custom-dual-filter #my-drag-list li .name-box span {
+.modal.custom-dual-filter .drag-list-design li .name-box span {
     font-size: 18px;
     font-family: gilroy-regular, sans-serif;
     font-weight: 600;
     color: #1d1d1d;
+}
+
+.hideFilterRow{
+    display: none !important;
 }
 
 /* =====//////// FILTER MODAL END ////////===== */

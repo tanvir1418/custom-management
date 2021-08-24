@@ -1532,36 +1532,111 @@ function resizableTable1(selectedTab, sty1TableId) {
 //     });
 // })
 
-//Left side drag
-$(function () {
-    $("#my-drag-list").sortable();
-    $("#my-drag-list").disableSelection();
-});
 
 //----------====== Manage result filter modal ======--------------------
-let dataFilterModal = [];
-for (let i = 1; i <= 100; i++) {
-    dataFilterModal.push(`Column ${i}`);
-}
-let my_drag_list = document.querySelector("#my-drag-list");
-dataFilterModal.forEach((modalData) => {
-    let modalElement = `<li>
-    <div class="cursor-box">
-        <span>|||</span>
-    </div>
-    <div class="name-box">
-        <span>${modalData}</span>
-    </div>
+let colOfFilterModal = "";
+for (let iCol = 1; iCol <= 66; iCol++) {
+    colOfFilterModal += `
+    <li id="filter_row${iCol}">
+        <div class="right-list-wrap">
+            <div class="cursor-box">
+                <span>|||</span>
+            </div>
+            <div class="name-box">
+                <span>Column ${iCol}</span>
+            </div>
+        </div>
     </li>`;
-    my_drag_list.innerHTML += modalElement;
-})
+}
+document.querySelector("#right_side_filter_lists").innerHTML = colOfFilterModal;
+
+$("#right_side_filter_lists").sortable();
+$("#right_side_filter_lists").disableSelection();
+
+$("#left_side_filter_details").sortable();
+$("#left_side_filter_details").disableSelection();
+
+$( "#right_side_filter_lists" ).droppable({hoverClass : 'droppableStyle'});
+$( "#right_side_filter_lists" ).on('drop',function(event,ui){
+    if($(ui.draggable)[0].tagName == "DIV"){
+        let dataIdOfDiv = $(ui.draggable).attr("data-id");
+        console.log("Data Id: " + dataIdOfDiv);
+        $(`#${dataIdOfDiv}`).removeClass("hideFilterRow");
+        ui.draggable.remove();
+    }
+});
+
+$( "#left_side_filter_details" ).droppable({hoverClass : 'droppableStyle'});
+$( "#left_side_filter_details" ).on('drop',function(event,ui){
+    if($(ui.draggable)[0].tagName === "LI"){
+        let listTarget = $(ui.draggable)[0];
+        let idOfColumnList = $(ui.draggable).attr("id");
+        $("#left_side_filter_details").append(
+            `<div class="valdata-box" id="left_${idOfColumnList}" data-id="${idOfColumnList}">
+                <p class="filter-col-name">${listTarget.querySelector(".name-box span").innerHTML}</p>
+                <div class="valinput">
+                    <div class="arrow-equal">
+                        <select>
+                            <option value="lessThan">&lt;</option>
+                            <option value="greaterThan">&gt;</option>
+                            <option value="greaterEqual">&gt;=</option>
+                            <option value="lessEqual">&lt;=</option>
+                            <option value="equalEqual">==</option>
+                        </select>
+                    </div>
+                    <input type="text" class="myzap-input">
+                    <div class="delete-mydata" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Delete This Filter" onclick="deleteFilterRowMnRes(this, '${idOfColumnList}')">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+            </div>`
+        );
+        ui.draggable.addClass("hideFilterRow");
+        tooltipForFILTERS();
+    }
+});
+
+let filtersTargetColumn = '';
+function deleteFilterRowMnRes(globThis, targetColumn){
+    filtersTargetColumn = targetColumn;
+    let filterDeleteRowName = $(`#left_${targetColumn}`).find(".filter-col-name").html();
+    $("#filters_confirm_modal #filters_confirm_header p").html("DELETE FILTER");
+	$("#filters_confirm_modal #filters_confirm_deatis p").html(`Confirm to delete ${filterDeleteRowName} filter?`);
+	$('#filters_confirm_modal').modal('show');
+    
+}
+
+function filtersConfirmButton(filtersGlob){
+    $(`#left_${filtersTargetColumn}`).remove();
+    $(`#${filtersTargetColumn}`).removeClass("hideFilterRow");
+    $('#filters_confirm_modal').modal('hide');
+}
+
+$('#filters_confirm_modal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-filters-force");
+}).on('hide.bs.modal', function (e) {
+	$('body').addClass("modal-open");
+});
+
+$('#filter-modal').on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-open modal-filters-force");
+});
+
+function tooltipForFILTERS() {
+	$('[data-toggle="tooltip"]').tooltip(
+		{
+			container: 'body',
+			trigger: 'hover',
+			placement: 'bottom'
+		}
+	);
+};
+
 //----------====== Manage result filter modal End ======----------------
 
 // ----------- Manage Result Filter Start ------------------
 function resetResFilter(e) {
-    let inpBox = $(e).parent().parent()
-        .children(".outer-data7")
-        .find("div.valdata-box div.valinput input.myzap-input");
+    let inpBox = $(e).parent().parent().children(".outer-data7").find("div.valdata-box div.valinput input.myzap-input");
     inpBox.val("");
 }
 // ----------- Manage Result Filter End --------------------
@@ -2303,29 +2378,32 @@ function filterSelectBtnClick(){
 function filterThankCloseBtn(){
     $('#filter-modal').modal('hide');
 
-    $(`#${mnResultActiveTabSty1TableID}`).css("display", "none");
-    $(`#${mnResultActiveTabID} .pagination-container`).css("display", "none");
-    $(`#${mnResultActiveTabID} .page-number12-wrap`).css("display", "none");
-
-    $(`#${mnResultActiveTabID} .loading-style1-table`).css("display", "block");
-    $(`#${mnResultActiveTabID} .pagination-loading-handler`).css("display", "block");
-    $(`#${mnResultActiveTabID} .page-number-loading`).css("display", "block");
-
-    $(`#${mnResultActiveTabID} .style2-table-wrap .style2-table-content`).css("display", "none");
-    $(`#${mnResultActiveTabID} .loading-style2-table`).css("display", "block");
-
-    setTimeout(() => {
-        $(`#${mnResultActiveTabID} .loading-style1-table`).css("display", "none");
-        $(`#${mnResultActiveTabID} .pagination-loading-handler`).css("display", "none");
-        $(`#${mnResultActiveTabID} .page-number-loading`).css("display", "none");
-
-        $(`#${mnResultActiveTabSty1TableID}`).css("display", "block");
-        $(`#${mnResultActiveTabID} .pagination-container`).css("display", "block");
-        $(`#${mnResultActiveTabID} .page-number12-wrap`).css("display", "block");
-
-        $(`#${mnResultActiveTabID} .loading-style2-table`).css("display", "none");
-        $(`#${mnResultActiveTabID} .style2-table-wrap .style2-table-content`).css("display", "block");
-    }, 3000);
+    let tableRowNumber = $(`#${mnResultActiveTabID} .style1-table-wrap #${mnResultActiveTabSty1TableID} tbody tr`);
+    if (tableRowNumber.length > 0) {
+        $(`#${mnResultActiveTabSty1TableID}`).css("display", "none");
+        $(`#${mnResultActiveTabID} .pagination-container`).css("display", "none");
+        $(`#${mnResultActiveTabID} .page-number12-wrap`).css("display", "none");
+    
+        $(`#${mnResultActiveTabID} .loading-style1-table`).css("display", "block");
+        $(`#${mnResultActiveTabID} .pagination-loading-handler`).css("display", "block");
+        $(`#${mnResultActiveTabID} .page-number-loading`).css("display", "block");
+    
+        $(`#${mnResultActiveTabID} .style2-table-wrap .style2-table-content`).css("display", "none");
+        $(`#${mnResultActiveTabID} .loading-style2-table`).css("display", "block");
+    
+        setTimeout(() => {
+            $(`#${mnResultActiveTabID} .loading-style1-table`).css("display", "none");
+            $(`#${mnResultActiveTabID} .pagination-loading-handler`).css("display", "none");
+            $(`#${mnResultActiveTabID} .page-number-loading`).css("display", "none");
+    
+            $(`#${mnResultActiveTabSty1TableID}`).css("display", "block");
+            $(`#${mnResultActiveTabID} .pagination-container`).css("display", "block");
+            $(`#${mnResultActiveTabID} .page-number12-wrap`).css("display", "block");
+    
+            $(`#${mnResultActiveTabID} .loading-style2-table`).css("display", "none");
+            $(`#${mnResultActiveTabID} .style2-table-wrap .style2-table-content`).css("display", "block");
+        }, 3000);
+    }
 }
 
 
