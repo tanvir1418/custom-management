@@ -1532,6 +1532,66 @@ function resizableTable1(selectedTab, sty1TableId) {
 //     });
 // })
 
+///// Update Clear-Filter Clear Sorting Button Starts
+
+let headerTextOfSubmitAnimation = '';
+
+function threeBtnConfirmModal(decideSelection){
+    let headerText = "CONFIRM";
+	let detailsText = "Confirm to proceed!";
+
+    if (decideSelection == "updateNowBtn") {
+		headerText = "UPDATE NOW";
+		detailsText = "Confirm to update data?";
+        headerTextOfSubmitAnimation = "Updating";
+	} else if (decideSelection == "clearFilterBtn") {
+		headerText = "CLEAR FILTER";
+		detailsText = "Confirm to clear filter?";
+        headerTextOfSubmitAnimation = "Clearing Filters";
+	} else if (decideSelection == "clearSortingBtn") {
+		headerText = "CLEAR SORTING";
+		detailsText = "Confirm to clear sorting?";
+        headerTextOfSubmitAnimation = "Clearing Sorting";
+	}
+
+    $("#threeBtn_confirm_modal #threeBtn_confirm_header p").html(headerText);
+	$("#threeBtn_confirm_modal #threeBtn_confirm_deatis p").html(detailsText);
+	$('#threeBtn_confirm_modal').modal('show');
+}
+
+function threeBtnConfirmButton(globThreeBtn){
+    $('#threeBtn_confirm_modal').modal('hide');
+
+    $('body').addClass("modal-force-open");
+    $("#submitting_Info .submit-title").html(`${headerTextOfSubmitAnimation}...`);
+	$('#submitting_Info').modal('show');
+
+	let $targetingTextSubmit = $("#submitting_file_info");
+	$targetingTextSubmit.html("Need 5 Second to Finish...");
+	let submitFileInfo = [ 
+			"Need 4 Second to Finish...",
+			"Need 3 Second to Finish...", 
+			"Need 1 Second to Finish...",
+			"Finishing..."];
+  
+	for (let i = 1; i <= 4; ++i) {
+	  (function(index) {
+		setTimeout(function() { 
+		  $targetingTextSubmit.html(submitFileInfo[index-1]);
+		}, i * 2000);
+	  })(i);
+	}
+	
+    setTimeout(function() { 
+        $('#submitting_Info').modal('hide');
+		$('body').removeClass("modal-force-open");
+
+		$('#filterThankYouModal').modal('show');
+    
+	}, 10000);
+}
+
+///// Update Clear-Filter Clear Sorting Button Ends
 
 //----------====== Manage result filter modal ======--------------------
 let colOfFilterModal = "";

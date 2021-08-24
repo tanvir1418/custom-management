@@ -707,6 +707,7 @@ $("#datepicker_field_set12_icon").click(function () {
 
 // Option 4 Save Draft Button Controlling (Loading Popup and Thank You Modal)
 function saveDraftLoadingThankOp4(){
+  $("#submitting_Info .submit-title").html("Submitting...");
   $('#submitting_Info').modal('show');
 
   // Option 4 submitting draft information

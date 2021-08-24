@@ -2829,6 +2829,7 @@ function mnTempConfirmButton() {
 
 // Manage Template Save Draft Button Controlling (Loading Popup and Thank You Modal)
 function saveDraftLoadingThankMnTemp(){
+  $("#submitting_Info .submit-title").html("Submitting...");
   $('#submitting_Info').modal('show');
 
   // Option 4 submitting draft information

@@ -1517,15 +1517,6 @@ function universalConfirmModalDelete(globalVariable) {
 	if (globalVariable.className.includes("deleteTableRow")) {
 		headerText = "DELETE ROW";
 		detailsText = "Remove this item permanently?";
-	} else if (globalVariable.className.includes("updateNowBtn")) {
-		headerText = "UPDATE NOW";
-		detailsText = "Confirm to update data?";
-	} else if (globalVariable.className.includes("clearFilterBtn")) {
-		headerText = "CLEAR FILTER";
-		detailsText = "Confirm to clear filter?";
-	} else if (globalVariable.className.includes("clearSortingBtn")) {
-		headerText = "CLEAR SORTING";
-		detailsText = "Confirm to clear sorting?";
 	} else if (globalVariable.className.includes("mnResFilterSaveBtn")) {
 		headerText = "SAVE FILTER";
 		detailsText = "Confirm to save filter data?";
@@ -1735,6 +1726,7 @@ function sample4StartCancelBtn() {
 
 function sample4StartConfirmBtn() {
 	$('body').addClass("modal-force-open");
+	$("#submitting_Info .submit-title").html("Submitting...");
 	$('#submitting_Info').modal('show');
 
 	let initStateBtn = $(".btn-save-start").html();
@@ -1840,6 +1832,7 @@ $('#mnAccountThankModal').on('show.bs.modal', function (e) {
 
 function saveAccountInfo(){
 	$("#submitting_file_info").html("Submitting account information");
+	$("#submitting_Info .submit-title").html("Submitting...");
 	$('#submitting_Info').modal('show');
 	$("#main_acSave").css("display", "none");
     $("#loading_acSave").css("display", "block");
@@ -1870,6 +1863,7 @@ $(".toggle-password").click(function () {
 
 function controlGenerateBtn(){
 	$("#submitting_file_info").html("Submitting information...");
+	$("#submitting_Info .submit-title").html("Submitting...");
 	$('#submitting_Info').modal('show');
 	setTimeout(function() { 
         $("#submitting_file_info").html("Finishing...");

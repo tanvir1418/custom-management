@@ -362,6 +362,7 @@ function manageAlertAfterConfirmBtn(){
 
   $('body').addClass("modal-force-mnAlert-extra");
   $("#submitting_file_info").html("Submitting row details...");
+  $("#submitting_Info .submit-title").html("Submitting...");
 	$('#submitting_Info').modal('show');
 
   setTimeout(function() { 

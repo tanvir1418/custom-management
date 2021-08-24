@@ -6845,13 +6845,13 @@
                                         <img src="images/style-2.png" alt="">
                                         <span>Style 2</span>
                                     </div>
-                                    <button class="style12btn-3 ml-auto updateNowBtn" tooltip="Click to Update" flow="down" onclick="universalConfirmModalDelete(this)">
+                                    <button class="style12btn-3 ml-auto updateNowBtn" tooltip="Click to Update" flow="down" onclick="threeBtnConfirmModal('updateNowBtn')">
                                         <p>Update Now</p>
                                     </button>
-                                    <button class="style12btn-3 clearFilterBtn" tooltip="Click to Clear Filter" flow="down" onclick="universalConfirmModalDelete(this)">
+                                    <button class="style12btn-3 clearFilterBtn" tooltip="Click to Clear Filter" flow="down" onclick="threeBtnConfirmModal('clearFilterBtn')">
                                         <p>Clear Filter</p>
                                     </button>
-                                    <button class="style12btn-3 clearSortingBtn" tooltip="Click to Clear Sorting" flow="down" onclick="universalConfirmModalDelete(this)">
+                                    <button class="style12btn-3 clearSortingBtn" tooltip="Click to Clear Sorting" flow="down" onclick="threeBtnConfirmModal('clearSortingBtn')">
                                         <p>Clear Sorting</p>
                                     </button>
                                     <div class="filtering-style12" data-toggle="modal" data-target="#filter-modal">
@@ -13783,6 +13783,32 @@
         </div>
     </div>
     <!-- ======= FILTERS (Manage Result) Confirm Modal END =========== -->
+
+    <!-- ======= Update-Now Clear-Filter Clear-Sorting Button (Manage Result) Confirm Modal START =========== -->
+    <div class="modal fade delete-list-item" id="threeBtn_confirm_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" id="threeBtn_confirm_header">
+                    <p class="modal-title"></p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="remove-box">
+                        <div class="question-delete" id="threeBtn_confirm_deatis">
+                            <p></p>
+                        </div>
+                        <div class="comfirm-btn-bx">
+                            <button type="button" class="cancel-list-data" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="confirm-list-data" onclick="threeBtnConfirmButton(this)" id="threeBtn_confirm_modalBtn">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======= Update-Now Clear-Filter Clear-Sorting Button (Manage Result) Confirm Modal END =========== -->
 
     <!-- ======= Manage Alert Confirm Modal START =========== -->
     <div class="modal fade delete-list-item" id="mnAlert_confirm_modal">
