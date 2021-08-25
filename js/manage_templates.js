@@ -2944,7 +2944,6 @@ function renameLoadTemplate(loadTempThis){
   currentSelectedBoxId = loadTempThis.parentElement.parentElement.id;
   let currentName = document.querySelector(`#${currentSelectedBoxId} .load-txt`).textContent;
   document.querySelector(`#loadTemplateRename .plus-button-popup-body-content input`).value = currentName;
-  console.log(currentName);
   $('#loadTemplateRename').modal('show');
 }
 
