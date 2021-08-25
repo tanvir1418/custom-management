@@ -83,7 +83,7 @@
 
 .tab_3 .template_box img,
 .tab_3 .create_new_temp img {
-  width: 70px;
+  width: 65px;
 }
 
 .tab_3 .create_new_temp .plus_box {
@@ -104,6 +104,8 @@
   font-size: 36px;
 }
 
+.tab_3 .template_box .info_box,
+.tab_3 .template_box .pen_box,
 .tab_3 .template_box .minus_box {
   height: 28px;
   width: 28px;
@@ -114,6 +116,15 @@
   right: 3px;
 }
 
+.tab_3 .template_box .pen_box{
+  right: 35px;
+}
+.tab_3 .template_box .info_box{
+  right: 67px;
+}
+
+.tab_3 .template_box .info_box i,
+.tab_3 .template_box .pen_box i,
 .tab_3 .template_box .minus_box i {
   position: absolute;
   top: 50%;
@@ -141,15 +152,11 @@
 
 .tab_3 .template_box .load-txt,
 .tab_3 .create_new_temp .load-txt {
-  margin-top: 32px;
+  margin: 10px 20px 0 20px;
 }
-
-.tab_3 .template_box .temp-txt {
-  margin-top: 16px;
-}
-
-.tab_3 .create_new_temp .temp-txt {
-  margin-top: 10px;
+.tab_3 .template_box .load-txt:hover,
+.tab_3 .create_new_temp .load-txt:hover {
+  text-decoration: underline;
 }
 
 /* carousel control */
@@ -1354,4 +1361,11 @@ fieldset legend.w-auto label.toggle i{
 
 fieldset legend.w-auto label.toggle i:hover{
   cursor: pointer;
+}
+
+#loadTemplateRename .modal-dialog{
+  width: 360px;
+}
+#loadTemplateRename .modal-dialog .modal-body{
+  padding: 0px;
 }

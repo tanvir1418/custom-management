@@ -2775,8 +2775,8 @@ let rowContainerID = "";
 function mnTempConfirmModal(globVariable) {
   $('#mnTemp_confirm_modal').modal('show');
   let loadTempBoxId = globVariable.parentElement.parentElement.id;
-  let templateNum = document.querySelector(`#${loadTempBoxId} .temp-txt .temp-num`).textContent;
-  document.querySelector("#mnTemp_confirm_modal .template-number").textContent = templateNum;
+  let templateName = document.querySelector(`#${loadTempBoxId} .load-txt`).textContent;
+  document.querySelector("#mnTemp_confirm_modal .template-name").textContent = templateName;
 
   targetTempBoxId = globVariable.offsetParent.id;
 
@@ -2911,3 +2911,63 @@ function mnTempdListModalClick(){
     $(".managetempd-scroll-btn").css("display", "block");
   }, 2000);
 }
+
+// Info Tooltip of Manage Template Starts 
+$('.template_box .info_box').tooltip(
+  {
+    container: 'body',
+    trigger: 'manual',
+    placement: 'bottom'
+  }
+).on('click', function () {
+  let loadTempBoxId = this.parentElement.parentElement.id;
+  let templateName = document.querySelector(`#${loadTempBoxId} .load-txt`).textContent;
+  $(this).attr('data-original-title', `${templateName}`);
+  
+  $('.template_box .info_box[data-toggle="tooltip"]').tooltip('hide');
+  $(this).tooltip('show');
+});
+
+$(document).mouseup(function(e) {
+    var infoTooltips = $('.template_box .info_box[data-toggle="tooltip"]');
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!infoTooltips.is(e.target) && infoTooltips.has(e.target).length === 0) {
+      infoTooltips.tooltip('hide');
+    }
+});
+// Info Tooltip of Manage Template Ends
+
+// Pen Tooltip of Manage Template Rename Starts  
+let currentSelectedBoxId = '';
+let newLoadTemplateName = '';
+function renameLoadTemplate(loadTempThis){
+  currentSelectedBoxId = loadTempThis.parentElement.parentElement.id;
+  let currentName = document.querySelector(`#${currentSelectedBoxId} .load-txt`).textContent;
+  document.querySelector(`#loadTemplateRename .plus-button-popup-body-content input`).value = currentName;
+  console.log(currentName);
+  $('#loadTemplateRename').modal('show');
+}
+
+function renamingTemplate(doneThis){
+  newLoadTemplateName = document.querySelector(`#loadTemplateRename .plus-button-popup-body-content input`).value;
+
+  let initState = $(doneThis).html();
+	$(doneThis).html('<i class="fa fa-spinner fa-spin"></i> Done');
+	$(doneThis).addClass('disabled');
+	let $this = $(doneThis);
+	setTimeout(function() {
+    $this.removeClass('disabled');
+		$this.html(initState);
+    $('#loadTemplateRename').modal('hide');
+    $('#thankAfterRename').modal('show');
+  }, 3000);
+}
+
+$('#thankAfterRename').on('show.bs.modal', function (e) {
+  $('body').addClass("modal-force-generate-btn");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-force-generate-btn");
+  document.querySelector(`#${currentSelectedBoxId} .load-txt`).textContent = newLoadTemplateName;
+});
+
+// Pen Tooltip of Manage Template Rename Ends 
