@@ -41,7 +41,7 @@ for (let i = 1; i <= 29; i++) {
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
-      <div class="sublist-cancel-box checkbox_show" data-toggle="modal" data-target="#delet-optfourmodala-modal">
+      <div class="sublist-cancel-box checkbox_show" tooltip="Click to Delete" flow="down" data-toggle="modal" data-target="#delet-optfourmodala-modal">
         <i class="fas fa-times"></i>
       </div>
       </li>`;
@@ -319,7 +319,7 @@ for (let i = 1; i <= 29; i++) {
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
-      <div class="sublist-cancel-box checkbox_show" data-toggle="modal" data-target="#delet-optfourmodalb-modal">
+      <div class="sublist-cancel-box checkbox_show" tooltip="Click to Delete" flow="down" data-toggle="modal" data-target="#delet-optfourmodalb-modal">
         <i class="fas fa-times"></i>
       </div>
       </li>`;
@@ -592,7 +592,7 @@ for (let i = 1; i <= 29; i++) {
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
-      <div class="sublist-cancel-box checkbox_show" data-toggle="modal" data-target="#delet-optfourmodalc-modal">
+      <div class="sublist-cancel-box checkbox_show" tooltip="Click to Delete" flow="down" data-toggle="modal" data-target="#delet-optfourmodalc-modal">
         <i class="fas fa-times"></i>
       </div>
       </li>`;
@@ -899,7 +899,7 @@ function findFileListOpt4(_id, name) {
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
-      <div class="sublist-cancel-box checkbox_show" data-toggle="modal" data-target="#delet-optfourmodald-modal">
+      <div class="sublist-cancel-box checkbox_show" tooltip="Click to Delete" flow="down" data-toggle="modal" data-target="#delet-optfourmodald-modal">
         <i class="fas fa-times"></i>
       </div>
       </li>`;

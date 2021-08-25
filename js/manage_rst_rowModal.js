@@ -56,7 +56,7 @@ const copytolistmodal_style2 = [
 			<div class="sublist-check-box checkbox_hide">
 				<i class="fas fa-check"></i>
 			</div>
-			<div class="sublist-cancel-box checkbox_show" data-toggle="modal" data-target="#delet-copytolistopt2_style2">
+			<div class="sublist-cancel-box checkbox_show" tooltip="Click to Delete" flow="down" data-toggle="modal" data-target="#delet-copytolistopt2_style2">
 				<i class="fas fa-times"></i>
 			</div>
 			</li>`;
@@ -306,7 +306,7 @@ const movetolistmodal_style29 = [
 			<div class="sublist-check-box checkbox_hide">
 				<i class="fas fa-check"></i>
 			</div>
-			<div class="sublist-cancel-box checkbox_show" data-toggle="modal" data-target="#delet-movetolistopt2_style29">
+			<div class="sublist-cancel-box checkbox_show" tooltip="Click to Delete" flow="down" data-toggle="modal" data-target="#delet-movetolistopt2_style29">
 				<i class="fas fa-times"></i>
 			</div>
 			</li>`;
