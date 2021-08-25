@@ -1164,7 +1164,7 @@
                     </div>
 
                     <!-- ====== LIST TABLE START ====== -->
-                    <div class="listing">
+                    <div class="op2-listing-items">
                         <div id="wrapper-list">
                             <div class="weapper-list-title">
                                 <p>LIST 1</p>
@@ -1288,17 +1288,17 @@
                         </div>
 
                         <div class="row btn39">
-                            <a href="#">
+                            <a>
                                 <div class="mybtns-39 back-btn"  onclick="backToSelectDataType()">
                                     <p>Back</p>
                                 </div>
                             </a>
-                            <a href="#">
+                            <a>
                                 <div class="mybtns-39 reset-btn">
                                     <p>Reset</p>
                                 </div>
                             </a>
-                            <a id="submit_list">
+                            <a id="op2NextBtn">
                                 <div class="mybtns-39 submit-btn">
                                     <p>Next</p>
                                 </div>
@@ -1309,7 +1309,7 @@
 
                     <!-- ============= RECORDS FOUND START =============  -->
                     <div class="option-2-records">
-                        <div class="records-data">
+                        <div class="records-data" id="op2_record_data">
                             <div class="records-data-title">
                                 <div class="selected-items d-flex">
                                     <span class="ml-auto" id="opt2-left">Item 2</span>
@@ -1360,8 +1360,24 @@
                             </div>
                         </div>
 
+                        <div class="record-loading" id="records_data_loading">
+                            <div class="records-title-loading">
+                                <p class="header popup-loading-animation popup-loading"></p>
+                                <p class="sub-header popup-loading-animation popup-loading"></p>
+                            </div>
+                            <div class="checkbox-table-loading">
+                                <p class="popup-loading-animation popup-loading"></p>
+                                <p class="popup-loading-animation popup-loading"></p>
+                                <p class="popup-loading-animation popup-loading"></p>
+                                <p class="popup-loading-animation popup-loading"></p>
+                                <p class="popup-loading-animation popup-loading"></p>
+                                <p class="popup-loading-animation popup-loading"></p>
+                                <p class="popup-loading-animation popup-loading"></p>
+                            </div>
+                        </div>
+
                         <div class="row btn39">
-                            <a id="back-list">
+                            <a id="op2BackBtn">
                                 <div class="mybtns-39 back-btn">
                                     <p>Back</p>
                                 </div>
@@ -3464,48 +3480,12 @@
                                                         <option>Option 2</option>
                                                     </select>
                                                 </div>
-                                                <a href="#" data-toggle="modal" data-target="#plusBtnModal"
-                                                    style="color: black">
+                                                <a data-toggle="modal" data-target="#plusBtnModal" style="color: black">
                                                     <div class="plus-box">
                                                         <i class="fas fa-plus"></i>
                                                     </div>
                                                 </a>
-                                                <!-- =========Option 5 Plus Button Modal Starts========= -->
-                                                <div class="modal fade" id="plusBtnModal" tabindex="-1"
-                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered">
-                                                        <div class="modal-content">
-                                                            <div class="modal-body">
-                                                                <!-- =========================================== -->
-                                                                <!-- plus pop-up-for-generate button starts -->
-                                                                <div class="plus-button-click-popup">
-                                                                    <div class="plus-button-click-popup-wrapper">
-                                                                        <div class="plus-button-popup-header-title">
-                                                                            <p style="color: white">Category</p>
-                                                                        </div>
-                                                                        <div class="plus-button-popup-body-wrapper">
-                                                                            <div class="plus-button-popup-body-content">
-                                                                                <input type="text"
-                                                                                    placeholder="New name"
-                                                                                    class="plus-input">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="plus-popup-button-row">
-                                                                            <input data-dismiss="modal" type="button"
-                                                                                value="Done" class="plus-done-btn"
-                                                                                onclick="addCategory(this)">
-                                                                            <input data-dismiss="modal" type="button"
-                                                                                value="Cancel" class="plus-cancel-btn">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- plus pop-up-for-generate button ends -->
-                                                                <!-- ================XXXXXXXXXXX============== -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- =========Option 5 Plus Button Modal Ends========= -->
+                                                
                                             </div>
                                             <!-- SELECT END -->
                                             <p class="input-name">Name</p>
@@ -3524,7 +3504,7 @@
                                         </div>
                                     </div>
                                     <div class="row btn39">
-                                        <a id="back-list">
+                                        <a id="op5BackBtn">
                                             <div id="opt5-to-main" class="mybtns-39 back-btn" onclick="backToSelectDataType()">
                                                 <p>Back</p>
                                             </div>
@@ -8943,6 +8923,34 @@
         </div>
     </section>
     <!-- =========== FOOTER SECTION END =========== -->
+    <!-- =========Option 5 Plus Button Modal Starts========= -->
+    <div class="modal fade" id="plusBtnModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!-- plus pop-up-for-generate button starts -->
+                    <div class="plus-button-click-popup">
+                        <div class="plus-button-click-popup-wrapper">
+                            <div class="plus-button-popup-header-title">
+                                <p style="color: white">Category</p>
+                            </div>
+                            <div class="plus-button-popup-body-wrapper">
+                                <div class="plus-button-popup-body-content">
+                                    <input type="text" placeholder="New name" class="plus-input">
+                                </div>
+                            </div>
+                            <div class="plus-popup-button-row">
+                                <input data-dismiss="modal" type="button" value="Done" class="plus-done-btn" onclick="addCategory(this)">
+                                <input data-dismiss="modal" type="button" value="Cancel" class="plus-cancel-btn">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- plus pop-up-for-generate button ends -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =========Option 5 Plus Button Modal Ends========= -->
     <!-- FILTER MODAL START -->
     <div class="modal fade custom-dual-filter" id="filter-modal">
         <div class="modal-dialog">

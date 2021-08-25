@@ -636,19 +636,27 @@ const arrow_right = document.querySelector(".main-list li .arrow-li-box i");
 
 // NEXT BUTTON CLICK TO OPEN RECORD PAGE OPTION 2 ===START===
 
-const option_2_list = document.querySelector(".listing");
+const option_2_list = document.querySelector(".op2-listing-items");
 const option_2_record = document.querySelector(".option-2-records");
 option_2_record.style.display = "none";
 
-$("#submit_list").click(function () {
+$("#op2NextBtn").click(function () {
 	option_2_record.style.display = "block";
 	option_2_list.style.display = "none";
+
+	$("#op2_record_data").css("display", "none");
+	$("#records_data_loading").css("display", "block");
+	setTimeout(() => {
+		$("#op2_record_data").css("display", "block");
+		$("#records_data_loading").css("display", "none");
+	}, 2000);
 });
 
-$("#back-list").click(function () {
+$("#op2BackBtn").click(function () {
 	option_2_record.style.display = "none";
 	option_2_list.style.display = "block";
 });
+
 
 // NEXT BUTTON CLICK TO OPEN RECORD PAGE OPTION 2 ===END===
 
