@@ -23,6 +23,7 @@ const targetPopUpImg = document.querySelectorAll(".single-list-item-file-contain
 const imageHoverYellow = document.querySelectorAll(".single-list-item-wrapper");
 for (let i = 0; i < targetPopUpImg.length; i++) {
   targetPopUpImg[i].addEventListener("click", function () {
+    $(".single-list-item-design .single-list-item-wrapper").removeClass("imageClickBackground");
     imageHoverYellow[i].classList.add("imageClickBackground");
   });
   targetPopUpImg[i].addEventListener("mouseover", function () {
