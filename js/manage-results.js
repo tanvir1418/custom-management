@@ -3,6 +3,13 @@
 // const sub_ul_list_11 = document.querySelector(".sub-ul-list-11");
 // const sub_ul_list_22 = document.querySelector(".sub-ul-list-22");
 // const sub_ul_list_33 = document.querySelector(".sub-ul-list-33");
+
+// Header Index Where Click is happened.
+let headerIndexClick = "";
+let mnResultActiveTabID = "Main";
+let mnResultActiveTabSty1TableID = "resizable554";
+
+
 const left_list_404 = document.querySelector(".left-list-404");
 
 // Added by ASHIQ
@@ -104,6 +111,8 @@ let sub_ul_list_id1_old = "",
     sub_ul_list_id2_old = "",
     sub_ul_list_id3_old = "";
 
+let oldSelectListMnRes = "";
+
 function item_li_click_handle(listClassName) {
     let level_no = listClassName.match(/\d+/g)[1];
     if (level_no != null) {
@@ -136,6 +145,17 @@ function item_li_click_handle(listClassName) {
             $(sub_ul_list_id3_old).toggle();
             sub_ul_list_id3_old = "";
         }
+
+        if(oldSelectListMnRes == ""){
+			$("#mnRes_list_level_item_loading").css("display", "block");
+			$("#div-sub-ul-li-list").css("display", "none");
+			oldSelectListMnRes = "";
+			setTimeout(() => {
+				$("#mnRes_list_level_item_loading").css("display", "none");
+				$("#div-sub-ul-li-list").css("display", "block");
+			}, 1000);
+		}
+
     }
 }
 /* New Function End */
@@ -164,6 +184,13 @@ var left_list_data = "";
         $(target).children(".tik-box").toggleClass("display-none display-block");
         $(target).children(".arrow-404").toggleClass("arrow-404-background-color-1 arrow-404-background-color-2");
         $(target).children(".arrow-404").children(".fa-caret-right").toggleClass("arrow-404-i-color-1 arrow-404-i-color-2");
+
+        if(oldTarget == target){
+            oldSelectListMnRes = "hideLoadingAnimation";
+        }else{
+            oldSelectListMnRes = "";
+        }
+
         oldTarget = target;
 
         left_list_data = target.childNodes[1].innerHTML;
@@ -221,19 +248,32 @@ $(document).ready(function () {
 
 /* ================ Scroll Down END ============== */
 
+// $("#mnRes_list_item_loading").css("display", "block");
+// $("#mnRes_scrollWindow").css("display", "none");
+// $("#mnRes_scrollDownBtn").css("display", "none");
+
+setTimeout(() => {
+    $("#mnRes_list_item_loading").css("display", "none");
+    $("#mnRes_scrollWindow").css("display", "block");
+    $("#mnRes_scrollDownBtn").css("display", "block");
+}, 4000);
+
 // MANAGE RESULTS list item end
 
 // ====== LIST ITEM TO CHART PAGE START ============
 
-const select_table = document.querySelector(".select-item-table");
 const chartPage = document.querySelector("#chartPage");
 chartPage.style.display = "none";
-chartPage.style.opacity = "0";
+// chartPage.style.opacity = "0";
 
 $("#div-sub-ul-li-list").click(function (e) {
     let target = e.target;
     if (target.tagName === "DIV") {
         if (target.className === "sublist-cancel-box-404") {
+
+            let chart_deleteName = target.parentNode.childNodes[1].innerHTML;
+            document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = chart_deleteName;
+
             deleteManageModal(target.parentNode.classList[0]);
             return;
         }
@@ -243,6 +283,10 @@ $("#div-sub-ul-li-list").click(function (e) {
     } else if (target.tagName === "I") {
         target = target.parentNode;
         if (target.className === "sublist-cancel-box-404") {
+
+            let chart_deleteName = target.parentNode.childNodes[1].innerHTML;
+            document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = chart_deleteName;
+
             deleteManageModal(target.parentNode.classList[0]);
             return;
         }
@@ -250,10 +294,11 @@ $("#div-sub-ul-li-list").click(function (e) {
     } else if (target.tagName !== "LI") return;
 
     let dataList = target.childNodes[1].innerHTML;
-    document.querySelector("#chartPage .chart-title .left-item").innerHTML = left_list_data;
-    document.querySelector("#chartPage .chart-title .right-item").innerHTML = dataList;
-    document.getElementById("firstOpen").click();
-    gotoChartPage();
+
+    // console.log(left_list_data);
+    // console.log(dataList);
+
+    displayChartManageResult(left_list_data, dataList);
 });
 
 function deleteManageModal(className) {
@@ -271,17 +316,24 @@ function calAngle(obj) {
     return angle;
 }
 
-function gotoChartPage() {
-    select_table.style.display = "none";
-    chartPage.style.display = "block";
-    chartPage.style.opacity = "1";
-    let interval = 50;
+function getRandomIntegerValue(minVal, maxVal) {
+    let min = Math.ceil(minVal);
+    let max = Math.floor(maxVal);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function gotoChartPage(num1, num2, num3, targetChartPage, meterOneId, meterTwoId, meterThreeId) {
+
+    $(`#${targetChartPage}`).css("display", "block");
+    // chartPage.style.opacity = "1";
 
     /*============----------ASHIQ----------=============*/
-    let meter1_input = 34;
-    let obj1 = document.getElementById("scorer-meter-1");
+    let interval = 50;
+    // let meter1_input = 34;
+    let meter1_input = num1;
+    let obj1 = document.getElementById(`${meterOneId}`);
     obj1.classList.add("scorer-1-tick-animation");
-    let p_element1 = document.getElementById("value-of-scorer-meter-1");
+    let p_element1 = document.getElementById(`value-of-${meterOneId}`);
     let intervalId1 = window.setInterval(function () {
         try {
             let angle = calAngle(obj1);
@@ -299,10 +351,11 @@ function gotoChartPage() {
         }
     }, interval);
 
-    let meter2_input = 55;
-    let obj2 = document.getElementById("scorer-meter-2");
+    // let meter2_input = 55;
+    let meter2_input = num2;
+    let obj2 = document.getElementById(`${meterTwoId}`);
     obj2.classList.add("scorer-1-tick-animation");
-    let p_element2 = document.getElementById("value-of-scorer-meter-2");
+    let p_element2 = document.getElementById(`value-of-${meterTwoId}`);
     let intervalId2 = window.setInterval(function () {
         try {
             let angle = calAngle(obj2);
@@ -320,10 +373,11 @@ function gotoChartPage() {
         }
     }, interval);
 
-    let meter3_input = 73;
-    let obj3 = document.getElementById("scorer-meter-3");
+    // let meter3_input = 73;
+    let meter3_input = num3;
+    let obj3 = document.getElementById(`${meterThreeId}`);
     obj3.classList.add("scorer-1-tick-animation");
-    let p_element3 = document.getElementById("value-of-scorer-meter-3");
+    let p_element3 = document.getElementById(`value-of-${meterThreeId}`);
     let intervalId3 = window.setInterval(function () {
         try {
             let angle = calAngle(obj3);
@@ -346,7 +400,8 @@ function gotoChartPage() {
 
 // ======= TABS START ======
 
-function openPage(pageName, elmnt) {
+// Controlling Main and Dynamic Tab Creation
+function openTabPage(pageName, elmnt) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -359,11 +414,12 @@ function openPage(pageName, elmnt) {
     document.getElementById(pageName).style.display = "block";
 }
 
-document.getElementById("defaultOpen").click();
+// Force Clicking Main Tab 
+document.getElementById("defaultTabOpen").click();
+$("#defaultTabOpen").addClass("active-tab-81");
 
-$("#defaultOpen").addClass("active-tab-81");
+// Handling Click On Main and Dynamic Tab
 $(".tablink").click(function () {
-
     $(".tablink").removeClass("active-tab-81");
     $(this).addClass("active-tab-81");
 })
@@ -372,7 +428,7 @@ $(".tablink").click(function () {
 
 // ======= INNER TABS START ======
 
-function openPage(innerpageName, elmnt) {
+function openFiveChartTab(mainTabId, innerPageName, elmnt) {
     var j, inner_tabcontent, inner_tablinks;
     inner_tabcontent = document.getElementsByClassName("inner-tabcontent");
     for (j = 0; j < inner_tabcontent.length; j++) {
@@ -382,13 +438,13 @@ function openPage(innerpageName, elmnt) {
     for (j = 0; j < inner_tablinks.length; j++) {
         inner_tablinks[j].style.backgroundColor = "";
     }
-    document.getElementById(innerpageName).style.display = "block";
+    // document.getElementById(innerPageName).style.display = "block";
+    $(`#${mainTabId} .${innerPageName}`).css("display", "block");
 
 }
 
 $("#firstOpen").addClass("inner-active-tab-81");
 $(".inner-tablink").click(function () {
-
     $(".inner-tablink").removeClass("inner-active-tab-81");
     $(this).addClass("inner-active-tab-81");
 })
@@ -423,210 +479,137 @@ function gotoChartPage2() {
 
 // ================ DISPLAY 3 CHART PAGE START ================
 
+function scrollDisplayChartThree(targetedTab){
+    $(`#${targetedTab} .chart_main_box .right-slider5`).click(function () {
+        $(`#${targetedTab} .chartAreaWrapper`).animate({
+            scrollLeft: document.querySelector(`#${targetedTab} .chartAreaWrapper`).scrollLeft + 250,
+        },250);
+    });
+    $(`#${targetedTab} .chart_main_box .left-slider5`).click(function () {
+        $(`#${targetedTab} .chartAreaWrapper`).animate({
+            scrollLeft: document.querySelector(`#${targetedTab} .chartAreaWrapper`).scrollLeft - 250,
+        },250);
+    });   
+}
+
+scrollDisplayChartThree('Main');
+
 // ================ DISPLAY 3 CHART PAGE END ================
 
 
 // ================ DISPLAY 4 TABLE DATA START ================
-var array = [
-    ["2019", "100%", "-58.63%", "15.14%", "54.1%", "-76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-        "-56.54%", "87.45%"
-    ],
-    ["2018", "-100%", "58.63%", "-15.14%", "54.1%", "-76.32%", "24.08%", "-23.64%", "92.86%", "-53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2017", "100%", "-58.63%", "15.14%", "", "76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%", "-56.54%",
-        "87.45%"
-    ],
-    ["2016", "-100%", "58.63%", "-15.14%", "54.1%", "-76.32%", "24.08%", "-23.64%", "", "-53.59%", "49.4%",
-        "-56.54%", "-87.45%"
-    ],
-    ["2015", "100%", "-58.63%", "15.14%", "-54.1%", "76.32%", "-24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2014", "-100%", "58.63%", "-15.14%", "54.1%", "-76.32%", "24.08%", "-23.64%", "92.86%", "-53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2013", "-100%", "-58.63%", "15.14%", "-54.1%", "76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-        "-56.54%", "87.45%"
-    ],
-    ["2012", "", "58.63%", "-15.14%", "-54.1%", "-76.32%", "24.08%", "-23.64%", "92.86%", "-53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2011", "100%", "-58.63%", "-15.14%", "-54.1%", "-76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-        "-56.54%", "87.45%"
-    ],
-    ["2010", "-100%", "-58.63%", "15.14%", "54.1%", "76.32%", "-24.08%", "23.64%", "92.86%", "-53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2009", "100%", "58.63%", "15.14%", "54.1%", "-76.32%", "24.08%", "-23.64%", "-92.86%", "53.59%", "49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2008", "100%", "58.63%", "-15.14%", "54.1%", "76.32%", "-24.08%", "23.64%", "92.86%", "-53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2007", "-100%", "-58.63%", "15.14%", "-54.1%", "76.32%", "24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-        "-56.54%", "87.45%"
-    ],
-    ["2006", "100%", "58.63%", "-15.14%", "54.1%", "-76.32%", "-24.08%", "-23.64%", "-92.86%", "-53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2005", "-100%", "58.63%", "15.14%", "54.1%", "-76.32%", "24.08%", "23.64%", "92.86%", "53.59%", "49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2004", "-100%", "-58.63%", "15.14%", "-54.1%", "76.32%", "-24.08%", "23.64%", "-92.86%", "53.59%", "49.4%",
-        "-56.54%", "87.45%"
-    ],
-    ["2003", "100%", "58.63%", "-15.14%", "54.1%", "", "-24.08%", "-23.64%", "-92.86%", "-53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2002", "100%", "-58.63%", "", "36.1%", "-76.32%", "24.08%", "23.64%", "92.86%", "53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2001", "-100%", "58.63%", "-15.14%", "-54.1%", "-76.32%", "-24.08%", "-23.64%", "-92.86%", "-53.59%", "49.4%",
-        "56.54%", "-87.45%"
-    ],
-    ["2000", "-100%", "58.63%", "15.14%", "54.1%", "76.32%", "24.08%", "23.64%", "92.86%", "-53.59%", "-49.4%",
-        "56.54%", "-87.45%"
-    ]
-],
-    display_data_table = document.getElementById("display-data-table");
 
-for (var dt = 0; dt < array.length; dt++) {
-    // create a new row
-    var newRow = display_data_table.insertRow(display_data_table.length);
-    for (var idt = 0; idt < array[dt].length; idt++) {
-        // create a new cell
-        var cell = newRow.insertCell(idt);
-
-        // add value to the cell
-        cell.innerHTML = array[dt][idt];
+function gotoChartCalender(selectedTab, targetedCalender){
+    var calenderData = new Array(20);
+  
+    for (let i = 0; i < calenderData.length; i++) {
+        calenderData[i] = new Array(13);
     }
+      
+    var calenderYear = 2020;
+    var randomEmptyValue;
+      
+    // Loop to initialize 2D array elements.
+    for (let i = 0; i < 20; i++) {
+        randomEmptyValue = Math.floor(Math.random() * (20 - 1 + 1)) + 1;
+        for (let j = 0; j < 13; j++) {
+          if(j==0){
+            calenderData[i][j] = calenderYear--;
+          }else if(j==randomEmptyValue){
+            calenderData[i][j] = "";
+          }
+          else{
+            calenderData[i][j] = `${(Math.random() * (100 + 100) - 100).toFixed(2)}%`;
+          }
+        }
+    }
+    
+    let display_data_table = document.getElementById(`${targetedCalender}`);
+    
+    for (var dt = 0; dt < calenderData.length; dt++) {
+        // create a new row
+        var newRow = display_data_table.insertRow(display_data_table.length);
+        for (var idt = 0; idt < calenderData[dt].length; idt++) {
+            // create a new cell
+            var cell = newRow.insertCell(idt);
+    
+            // add value to the cell
+            cell.innerHTML = calenderData[dt][idt];
+        }
+    }
+    
+    
+    $(`#${targetedCalender} td`).each(function () {
+    
+        var cell_mainvalue = $(this).html(); //get the value
+        cell_value = parseFloat(cell_mainvalue) / 100.0;
+    
+        if (cell_value < 0) //if then for if value is negative
+            $(this).css({
+                'background': '#FD0000'
+            }); // changes td to red.
+    
+        if (cell_value > 0) //if then for if value is negative
+            $(this).css({
+                'background': '#00B903'
+            }); // changes td to red.
+    
+        if (cell_mainvalue === "") //if then for if value is negative
+            $(this).css({
+                'background': '#B8B8B8'
+            }); // changes td to red.
+    
+        if (cell_mainvalue > 1000)
+            $(this).css({
+                'background': '#FBFBFD'
+            }); // changes td to red.
+    });
+
+    $(`#${selectedTab} .Display4 .data-table-wrapper`).css("display", "none");
+    $(`#${selectedTab} .Display4 .loading-table-chart4`).css("display", "block");
+    setTimeout(() => {
+        $(`#${selectedTab} .Display4 .data-table-wrapper`).css("display", "block");
+        $(`#${selectedTab} .Display4 .loading-table-chart4`).css("display", "none");
+    }, 2000);
 }
-
-var cell = $('#display-data-table td');
-
-cell.each(function () {
-
-    var cell_mainvalue = $(this).html(); //get the value
-    cell_value = parseFloat(cell_mainvalue) / 100.0;
-
-    if (cell_value < 0) //if then for if value is negative
-        $(this).css({
-            'background': '#FD0000'
-        }); // changes td to red.
-
-    if (cell_value > 0) //if then for if value is negative
-        $(this).css({
-            'background': '#00B903'
-        }); // changes td to red.
-
-    if (cell_mainvalue === "") //if then for if value is negative
-        $(this).css({
-            'background': '#B8B8B8'
-        }); // changes td to red.
-
-    if (cell_mainvalue > 1000)
-        $(this).css({
-            'background': '#FBFBFD'
-        }); // changes td to red.
-});
 
 // ================ DISPLAY 4 TABLE DATA END ================
 
 
 // ================ ARROW SCROLL BAR START ================
 
-$(document).ready(function () {
-    const table001122 = document.querySelector("#table001122");
-    $("#Display5 .right-slider5").click(function () {
-        $("#table001122").animate({
-            scrollLeft: table001122.scrollLeft + 250,
-        },
-            250
-        );
+function scrollDisplayChartFive(targetedTab, targetedTable){
+    $(`#${targetedTab} .Display5 .right-slider5`).click(function () {
+        $(`#${targetedTable}`).animate({
+            scrollLeft: document.querySelector(`#${targetedTable}`).scrollLeft + 250,
+        },250);
     });
-    $("#Display5 .left-slider5").click(function () {
-        $("#table001122").animate({
-            scrollLeft: table001122.scrollLeft - 250,
-        },
-            250
-        );
+    $(`#${targetedTab} .Display5 .left-slider5`).click(function () {
+        $(`#${targetedTable}`).animate({
+            scrollLeft: document.querySelector(`#${targetedTable}`).scrollLeft - 250,
+        },250);
     });
-});
+}
+
+scrollDisplayChartFive('Main','table001122');
 
 // ///////////////////////////////////////////
-$(document).ready(function () {
-    const chartAreaWrapper = document.querySelector(".chartAreaWrapper");
-    $(".chart_main_box .right-slider5").click(function () {
-        $(".chartAreaWrapper").animate({
-            scrollLeft: chartAreaWrapper.scrollLeft + 250,
-        },
-            250
-        );
-    });
-    $(".chart_main_box .left-slider5").click(function () {
-        $(".chartAreaWrapper").animate({
-            scrollLeft: chartAreaWrapper.scrollLeft - 250,
-        },
-            250
-        );
-    });
-});
-
-
-// ///////////////////////////////////////////
-$(document).ready(function () {
-    const mytablesty12 = document.querySelector(".mytablesty12");
-    $("#style1Table .right-slider5").click(function () {
-        $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft + 800,
-        },
-            0
-        );
-    }).dblclick(function () {
-        $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft + 800,
-        },
-            0
-        );
-    });
-
-    $("#style1Table .left-slider5").click(function () {
-        $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft - 800,
-        },
-            0
-        );
-    }).dblclick(function () {
-        $(".mytablesty12").animate({
-            scrollLeft: mytablesty12.scrollLeft - 800,
-        },
-            0
-        );
-    });
-});
-
-// ================ ARROW SCROLL BAR END ================
-
 // ============== DISPLAY 5 SHOW DATE/TIME START =========
 
-newdate5 = new Date();
-y = newdate5.getFullYear();
-m = newdate5.getMonth() + 1;
-d = newdate5.getDate();
+const dateOfToday = new Date();
+let yearOfNewDate = dateOfToday.getFullYear();
+let monthOfNewDate = dateOfToday.getMonth() + 1;
+let dayOfNewDate = dateOfToday.getDate();
 
-let dis_date = document.querySelectorAll(".dis_date");
+function displayDateForChart5(){
+    let dis_date = document.querySelectorAll(".dis_date");
+    dis_date.forEach((element) => {
+        element.innerHTML = monthOfNewDate + "/" + dayOfNewDate + "/" + yearOfNewDate;
+    });
+}
 
-dis_date.forEach((element) => {
+displayDateForChart5();
 
-    element.innerHTML = d + "/" + m + "/" + y;
-
-});
-
-
-window.onload = function () {
-    DisplayCurrentTime();
-};
 
 function DisplayCurrentTime() {
     var date555 = new Date();
@@ -647,388 +630,701 @@ function DisplayCurrentTime() {
         element.innerHTML = time555;
     });
     dis_time22.forEach((element) => {
-
         element.innerHTML = time222;
     });
 };
+
+// Display the time section in Display Chart Style 5
+DisplayCurrentTime();
+
 // ============== DISPLAY 5 SHOW DATE/TIME END =========
 
 
 // ============== DISPLAY 5 PROGRESS START =========
 // the range of the value is 30 to -30
-var pos_value_sub1 = 20.17;
-var neg_value_sub1 = 0;
-
-var pos_value_sub2 = 1.09;
-var neg_value_sub2 = 0;
-
-var pos_value_sub3 = 2.4;
-var neg_value_sub3 = 0;
-
-var pos_value_sub4 = 9.31;
-var neg_value_sub4 = 0;
-
-var pos_value_sub5 = 0;
-var neg_value_sub5 = -22.49;
-
-var pos_value_sub6 = 0;
-var neg_value_sub6 = -1.75;
-
-var pos_value_sub7 = 12.5;
-var neg_value_sub7 = 0;
-
-var pos_value_sub8 = 0;
-var neg_value_sub8 = -17.36;
-
-var pos_value_sub9 = 0;
-var neg_value_sub9 = -4.95;
-
-var pos_value_sub10 = 22.55;
-var neg_value_sub10 = 0;
-
-
-
-pos_value1 = pos_value_sub1 * 3.34;
-pos_value2 = pos_value_sub2 * 3.34;
-pos_value3 = pos_value_sub3 * 3.34;
-pos_value4 = pos_value_sub4 * 3.34;
-pos_value5 = pos_value_sub5 * 3.34;
-pos_value6 = pos_value_sub6 * 3.34;
-pos_value7 = pos_value_sub7 * 3.34;
-pos_value8 = pos_value_sub8 * 3.34;
-pos_value9 = pos_value_sub9 * 3.34;
-pos_value10 = pos_value_sub10 * 3.34;
-
-neg_value1 = -neg_value_sub1 * 3.34;
-neg_value2 = -neg_value_sub2 * 3.34;
-neg_value3 = -neg_value_sub3 * 3.34;
-neg_value4 = -neg_value_sub4 * 3.34;
-neg_value5 = -neg_value_sub5 * 3.34;
-neg_value6 = -neg_value_sub6 * 3.34;
-neg_value7 = -neg_value_sub7 * 3.34;
-neg_value8 = -neg_value_sub8 * 3.34;
-neg_value9 = -neg_value_sub9 * 3.34;
-neg_value10 = -neg_value_sub10 * 3.34;
-
-var dis5_pos_value1 = pos_value1 * 0.78;
-var dis5_pos_value2 = pos_value2 * 0.7;
-var dis5_pos_value3 = pos_value3 * 0.7;
-var dis5_pos_value4 = pos_value4 * 0.7;
-var dis5_pos_value5 = pos_value5 * 0.7;
-var dis5_pos_value6 = pos_value6 * 0.7;
-var dis5_pos_value7 = pos_value7 * 0.7;
-var dis5_pos_value8 = pos_value8 * 0.7;
-var dis5_pos_value9 = pos_value9 * 0.7;
-var dis5_pos_value10 = pos_value10 * 0.78;
-
-var dis5_neg_value1 = neg_value1 * 1.11;
-var dis5_neg_value2 = neg_value2 * 1.11;
-var dis5_neg_value3 = neg_value3 * 1.11;
-var dis5_neg_value4 = neg_value4 * 1.11;
-var dis5_neg_value5 = neg_value5 * 1.11;
-var dis5_neg_value6 = neg_value6 * 1.11;
-var dis5_neg_value7 = neg_value7 * 1.11;
-var dis5_neg_value8 = neg_value8 * 1.11;
-var dis5_neg_value9 = neg_value9 * 1.11;
-var dis5_neg_value10 = neg_value10 * 1.11;
-
-if (neg_value_sub1 <= -25) {
-    var dis5_neg_value1 = neg_value1 * .98;
-}
-if (neg_value_sub2 <= -25) {
-    var dis5_neg_value2 = neg_value2 * .98;
-}
-if (neg_value_sub3 <= -25) {
-    var dis5_neg_value3 = neg_value3 * .98;
-}
-if (neg_value_sub4 <= -25) {
-    var dis5_neg_value4 = neg_value4 * .98;
-}
-if (neg_value_sub5 <= -25) {
-    var dis5_neg_value5 = neg_value5 * .98;
-}
-if (neg_value_sub6 <= -25) {
-    var dis5_neg_value6 = neg_value6 * .98;
-}
-if (neg_value_sub7 <= -25) {
-    var dis5_neg_value7 = neg_value7 * .98;
-}
-if (neg_value_sub8 <= -25) {
-    var dis5_neg_value8 = neg_value8 * .98;
-}
-if (neg_value_sub9 <= -25) {
-    var dis5_neg_value9 = neg_value9 * .98;
-}
-if (neg_value_sub10 <= -25) {
-    var dis5_neg_value10 = neg_value10 * .98;
+function animationPositiveDiv(posProgVal, posProgTarget, posTextTarget) {
+    var elem = document.querySelector(`${posProgTarget}`);
+    var elemPara = document.querySelector(`${posTextTarget}`);   
+    var height = 0;
+    var id = setInterval(frame, 100);
+    function frame() {
+      if (height >= posProgVal) {
+        clearInterval(id);
+      } else {
+        height++; 
+        elem.style.height = height + '%';
+        // elemPara.style.bottom = height * 0.85 + 'px';
+        elemPara.innerHTML = height * 1  + '%';
+      }
+    }
 }
 
-// ==============================================
+function animationNegativeDiv(negProgVal, negProgTarget, negTextTarget) {
+    var elem = document.querySelector(`${negProgTarget}`);
+    var elemPara = document.querySelector(`${negTextTarget}`);   
+    var height = 0;
+    var id = setInterval(frame, 100);
+    function frame() {
+      if (height >= negProgVal) {
+        clearInterval(id);
+      } else {
+        height++; 
+        elem.style.height = height + '%';
+        // elemPara.style.top = height * 1.07 + 'px';
+        elemPara.innerHTML = height * -1  + '%';
+      }
+    }
+  }
 
-if (pos_value_sub1 > 0) {
-    document.querySelector(".dis5_pos_value1").innerHTML = pos_value_sub1 + "%";
-} else if (neg_value_sub1 < 0) {
-    document.querySelector(".dis5_neg_value1").innerHTML = neg_value_sub1 + "%";
-} else {
-    document.querySelector(".dis5_pos_value1").innerHTML = "";
-    document.querySelector(".dis5_neg_value1").innerHTML = "";
-}
-// =======================
-if (pos_value_sub2 > 0) {
-    document.querySelector(".dis5_pos_value2").innerHTML = pos_value_sub2 + "%";
-} else if (neg_value_sub2 < 0) {
-    document.querySelector(".dis5_neg_value2").innerHTML = neg_value_sub2 + "%";
-} else {
-    document.querySelector(".dis5_pos_value2").innerHTML = "";
-    document.querySelector(".dis5_neg_value2").innerHTML = "";
-}
-// =======================
-if (pos_value_sub3 > 0) {
-    document.querySelector(".dis5_pos_value3").innerHTML = pos_value_sub3 + "%";
-} else if (neg_value_sub3 < 0) {
-    document.querySelector(".dis5_neg_value3").innerHTML = neg_value_sub3 + "%";
-} else {
-    document.querySelector(".dis5_pos_value3").innerHTML = "";
-    document.querySelector(".dis5_neg_value3").innerHTML = "";
-}
-// =======================
-if (pos_value_sub4 > 0) {
-    document.querySelector(".dis5_pos_value4").innerHTML = pos_value_sub4 + "%";
-} else if (neg_value_sub4 < 0) {
-    document.querySelector(".dis5_neg_value4").innerHTML = neg_value_sub4 + "%";
-} else {
-    document.querySelector(".dis5_pos_value4").innerHTML = "";
-    document.querySelector(".dis5_neg_value4").innerHTML = "";
-}
-// =======================
-if (pos_value_sub5 > 0) {
-    document.querySelector(".dis5_pos_value5").innerHTML = pos_value_sub5 + "%";
-} else if (neg_value_sub5 < 0) {
-    document.querySelector(".dis5_neg_value5").innerHTML = neg_value_sub5 + "%";
-} else {
-    document.querySelector(".dis5_pos_value5").innerHTML = "";
-    document.querySelector(".dis5_neg_value5").innerHTML = "";
-}
-// =======================
-if (pos_value_sub6 > 0) {
-    document.querySelector(".dis5_pos_value6").innerHTML = pos_value_sub6 + "%";
-} else if (neg_value_sub6 < 0) {
-    document.querySelector(".dis5_neg_value6").innerHTML = neg_value_sub6 + "%";
-} else {
-    document.querySelector(".dis5_pos_value6").innerHTML = "";
-    document.querySelector(".dis5_neg_value6").innerHTML = "";
-}
-// =======================
-if (pos_value_sub7 > 0) {
-    document.querySelector(".dis5_pos_value7").innerHTML = pos_value_sub7 + "%";
-} else if (neg_value_sub7 < 0) {
-    document.querySelector(".dis5_neg_value7").innerHTML = neg_value_sub7 + "%";
-} else {
-    document.querySelector(".dis5_pos_value7").innerHTML = "";
-    document.querySelector(".dis5_neg_value7").innerHTML = "";
-}
-// =======================
-if (pos_value_sub8 > 0) {
-    document.querySelector(".dis5_pos_value8").innerHTML = pos_value_sub8 + "%";
-} else if (neg_value_sub8 < 0) {
-    document.querySelector(".dis5_neg_value8").innerHTML = neg_value_sub8 + "%";
-} else {
-    document.querySelector(".dis5_pos_value8").innerHTML = "";
-    document.querySelector(".dis5_neg_value8").innerHTML = "";
-}
-// =======================
-if (pos_value_sub9 > 0) {
-    document.querySelector(".dis5_pos_value9").innerHTML = pos_value_sub9 + "%";
-} else if (neg_value_sub9 < 0) {
-    document.querySelector(".dis5_neg_value9").innerHTML = neg_value_sub9 + "%";
-} else {
-    document.querySelector(".dis5_pos_value9").innerHTML = "";
-    document.querySelector(".dis5_neg_value9").innerHTML = "";
-}
-// =======================
-if (pos_value_sub10 > 0) {
-    document.querySelector(".dis5_pos_value10").innerHTML = pos_value_sub10 + "%";
-} else if (neg_value_sub10 < 0) {
-    document.querySelector(".dis5_neg_value10").innerHTML = neg_value_sub10 + "%";
-} else {
-    document.querySelector(".dis5_pos_value10").innerHTML = "";
-    document.querySelector(".dis5_neg_value10").innerHTML = "";
-}
-// ==================================================
+function gotoChartFive(targetedTab){
 
+    $(`#${targetedTab} .pos-bar-status`).removeAttr("style");
+    $(`#${targetedTab} .allpos_value`).html("");
+    $(`#${targetedTab} .neg-bar-status`).removeAttr("style");
+    $(`#${targetedTab} .allneg_value`).html("");
 
-document.querySelector(".dis5_progress_pos1").style.height = pos_value1 + "%";
-document.querySelector(".dis5_progress_neg1").style.height = neg_value1 + "%";
-document.querySelector(".dis5_pos_value1").style.bottom = dis5_pos_value1 + "%";
-document.querySelector(".dis5_neg_value1").style.top = dis5_neg_value1 + "%";
+    let chartFiveValues = new Array(10);
+    for(let i=0; i<10; i++){
+        chartFiveValues[i] = Math.floor(Math.random() * (100 + 100 + 1)) - 100;
+    }
 
-// ====================
-document.querySelector(".dis5_progress_pos2").style.height = pos_value2 + "%";
-document.querySelector(".dis5_progress_neg2").style.height = neg_value2 + "%";
-document.querySelector(".dis5_pos_value2").style.bottom = dis5_pos_value2 + "%";
-document.querySelector(".dis5_neg_value2").style.top = dis5_neg_value2 + "%";
-// ====================
-document.querySelector(".dis5_progress_pos3").style.height = pos_value3 + "%";
-document.querySelector(".dis5_progress_neg3").style.height = neg_value3 + "%";
-document.querySelector(".dis5_pos_value3").style.bottom = dis5_pos_value3 + "%";
-document.querySelector(".dis5_neg_value3").style.top = dis5_neg_value3 + "%";
-// ====================
-document.querySelector(".dis5_progress_pos4").style.height = pos_value4 + "%";
-document.querySelector(".dis5_progress_neg4").style.height = neg_value4 + "%";
-document.querySelector(".dis5_pos_value4").style.bottom = dis5_pos_value4 + "%";
-document.querySelector(".dis5_neg_value4").style.top = dis5_neg_value4 + "%";
-// ====================
-document.querySelector(".dis5_progress_pos5").style.height = pos_value5 + "%";
-document.querySelector(".dis5_progress_neg5").style.height = neg_value5 + "%";
-document.querySelector(".dis5_pos_value5").style.bottom = dis5_pos_value5 + "%";
-document.querySelector(".dis5_neg_value5").style.top = dis5_neg_value5 + "%";
-// ====================
-document.querySelector(".dis5_progress_pos6").style.height = pos_value6 + "%";
-document.querySelector(".dis5_progress_neg6").style.height = neg_value6 + "%";
-document.querySelector(".dis5_pos_value6").style.bottom = dis5_pos_value6 + "%";
-document.querySelector(".dis5_neg_value6").style.top = dis5_neg_value6 + "%";
-// ====================
-document.querySelector(".dis5_progress_pos7").style.height = pos_value7 + "%";
-document.querySelector(".dis5_progress_neg7").style.height = neg_value7 + "%";
-document.querySelector(".dis5_pos_value7").style.bottom = dis5_pos_value7 + "%";
-document.querySelector(".dis5_neg_value7").style.top = dis5_neg_value7 + "%";
-// ====================
-document.querySelector(".dis5_progress_pos8").style.height = pos_value8 + "%";
-document.querySelector(".dis5_progress_neg8").style.height = neg_value8 + "%";
-document.querySelector(".dis5_pos_value8").style.bottom = dis5_pos_value8 + "%";
-document.querySelector(".dis5_neg_value8").style.top = dis5_neg_value8 + "%";
-// ====================
-document.querySelector(".dis5_progress_pos9").style.height = pos_value9 + "%";
-document.querySelector(".dis5_progress_neg9").style.height = neg_value9 + "%";
-document.querySelector(".dis5_pos_value9").style.bottom = dis5_pos_value9 + "%";
-document.querySelector(".dis5_neg_value9").style.top = dis5_neg_value9 + "%";
-// ====================
-document.querySelector(".dis5_progress_pos10").style.height = pos_value10 + "%";
-document.querySelector(".dis5_progress_neg10").style.height = neg_value10 + "%";
-document.querySelector(".dis5_pos_value10").style.bottom = dis5_pos_value10 + "%";
-document.querySelector(".dis5_neg_value10").style.top = dis5_neg_value10 + "%";
+    for(let j=0; j < chartFiveValues.length; j++){
+        let progValue, progTarget, progText;
+        if(chartFiveValues[j] >= 0){
+            progValue = chartFiveValues[j];
+            progTarget = `#${targetedTab} .dis5_plusProgress_value${j+1}`;
+            progText = `#${targetedTab} .dis5_pos_value${j+1}`;
+            animationPositiveDiv(progValue, progTarget, progText);
+        }else{
+            progValue = chartFiveValues[j] * -1;
+            progTarget = `#${targetedTab} .dis5_minusProgress_value${j+1}`;
+            progText = `#${targetedTab} .dis5_neg_value${j+1}`;
+            animationNegativeDiv(progValue, progTarget, progText);
+        }
+    }
+}
 
-
+// gotoChartFive();
 
 // ============== DISPLAY 5 PROGRESS END =========
 
 // ============== STYLE 1 STYLE 2 START ==============
 
 
-// PROGRESS BAR START
-var style12_progress = 75;
+// ///////////////////////////////////////////
+function style1TableScroller(selectedTab) {
+    const style1TableScroll = document.querySelector(`#${selectedTab} .style1-table-wrap`);
+    $(`#${selectedTab} .outer-table-style12-box .right-slider5`).click(function () {
+        $(`#${selectedTab} .style1-table-wrap`).animate({
+            scrollLeft: style1TableScroll.scrollLeft + 800,
+        },
+            0
+        );
+        hideStyleOneAllPopup();
+        resetDownArrow();
+    }).dblclick(function () {
+        $(`#${selectedTab} .style1-table-wrap`).animate({
+            scrollLeft: style1TableScroll.scrollLeft + 800,
+        },
+            0
+        );
+        hideStyleOneAllPopup();
+        resetDownArrow();
+    });
 
-document.querySelector("#syle12_section .inner-progress-style12").style.width = style12_progress + "%";
-document.querySelector(".tab_filter-style12 .progress-style12 p").innerHTML = "Progress " + style12_progress + "%";
+    $(`#${selectedTab} .outer-table-style12-box .left-slider5`).click(function () {
+        $(`#${selectedTab} .style1-table-wrap`).animate({
+            scrollLeft: style1TableScroll.scrollLeft - 800,
+        },
+            0
+        );
+        hideStyleOneAllPopup();
+        resetDownArrow();
+    }).dblclick(function () {
+        $(`#${selectedTab} .style1-table-wrap`).animate({
+            scrollLeft: style1TableScroll.scrollLeft - 800,
+        },
+            0
+        );
+        hideStyleOneAllPopup();
+        resetDownArrow();
+    });
+}
+
+// ================ ARROW SCROLL BAR END ================
+
+
+
+
+// PROGRESS BAR START
+function tableProgressBarAnimation(targetedMainTab, progressVal, progWidthTarget, progTextTarget) {
+    var elem = document.querySelector(`#${targetedMainTab} .${progWidthTarget}`);
+    var elemPara = document.querySelector(`#${targetedMainTab} .${progTextTarget}`);
+    var width = 0;
+    var id = setInterval(frame, 100);
+    function frame() {
+      if (width >= progressVal) {
+        clearInterval(id);
+      } else {
+        width++; 
+        elem.style.width = width + '%';
+        elemPara.innerHTML = 'Progress ' + width * 1 + '%';
+      }
+    }
+}
+
+// tableProgressBarAnimation('Main', Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
+
 // PROGRESS BAR END
 
 // CLICL TO TOGGLE STYLE1 & STYLE2 START =====
-$("#style2Con").addClass("displayNone");
-$("#double_click_style2").addClass("displayNone");
-$(".style1-box").addClass("clickstylebg");
-$(".style2-box").addClass("clickstylebrdr");
+function styleIconSwitcherOperation(selectedTab, sty1TableId){
+    $(`#${selectedTab} .style2-table-wrap`).addClass("displayNone");
+    $(`#${selectedTab} .double-click-style2`).addClass("displayNone");
+    $(`#${selectedTab} .style1-box`).addClass("clickstylebg");
+    $(`#${selectedTab} .style2-box`).addClass("clickstylebrdr");
 
-$(".style1-box").click(function () {
-    $("#style1Table").removeClass("displayNone");
-    $("#style2Con").addClass("displayNone");
+    $(`#${selectedTab} .style1-box`).click(function () {
+        $(`#${selectedTab} .style1-table-wrap`).removeClass("displayNone");
+        $(`#${selectedTab} .style2-table-wrap`).addClass("displayNone");
 
-    $(".style1-box").addClass("clickstylebg");
-    $(".style1-box").removeClass("clickstylebrdr");
+        $(`#${selectedTab} .style1-box`).addClass("clickstylebg");
+        $(`#${selectedTab} .style1-box`).removeClass("clickstylebrdr");
 
-    $(".style2-box").addClass("clickstylebrdr");
-    $(".style2-box").removeClass("clickstylebg");
+        $(`#${selectedTab} .style2-box`).addClass("clickstylebrdr");
+        $(`#${selectedTab} .style2-box`).removeClass("clickstylebg");
 
-    $("#double_click").removeClass("displayNone");
-    $("#double_click_style2").addClass("displayNone");
-});
+        $(`#${selectedTab} .double-click-style1`).removeClass("displayNone");
+        $(`#${selectedTab} .double-click-style2`).addClass("displayNone");
 
-$(".style2-box").click(function () {
-    $("#style1Table").addClass("displayNone");
-    $("#style2Con").removeClass("displayNone");
+        let rowNumber = $(`#${selectedTab} .style1-table-wrap #${sty1TableId} tbody tr`);
+        if (rowNumber.length > 0) {
+            $(`#${selectedTab} .outer-table-style12-box .right-slider5`).css("display", "block");
+            $(`#${selectedTab} .outer-table-style12-box .left-slider5`).css("display", "block");
 
-    $(".style2-box").addClass("clickstylebg");
-    $(".style2-box").removeClass("clickstylebrdr");
+            $(`#${selectedTab} .main-table-design`).css("display", "none");
+            $(`#${selectedTab} .pagination-container`).css("display", "none");
+            $(`#${selectedTab} .page-number12-wrap`).css("display", "none");
 
-    $(".style1-box").addClass("clickstylebrdr");
-    $(".style1-box").removeClass("clickstylebg");
+            $(`#${selectedTab} .loading-style1-table`).css("display", "block");
+            $(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
+            $(`#${selectedTab} .page-number-loading`).css("display", "block");
 
-    $("#double_click").addClass("displayNone");
-    $("#double_click_style2").removeClass("displayNone");
-});
 
+            setTimeout(() => {
+                $(`#${selectedTab} .loading-style1-table`).css("display", "none");
+                $(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
+                $(`#${selectedTab} .page-number-loading`).css("display", "none");
+
+                $(`#${selectedTab} .main-table-design`).css("display", "block");
+                $(`#${selectedTab} .pagination-container`).css("display", "block");
+                $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
+            }, 2000);
+
+        } else {
+
+            $(`#${selectedTab} .style12-section .box-style12 .no-result`).css("display", "block");
+
+        }
+
+        hideStyleTwoAllPopup();
+
+    });
+
+    $(`#${selectedTab} .style2-box`).click(function () {
+        $(`#${selectedTab} .style1-table-wrap`).addClass("displayNone");
+        $(`#${selectedTab} .style2-table-wrap`).removeClass("displayNone");
+
+        $(`#${selectedTab} .style2-box`).addClass("clickstylebg");
+        $(`#${selectedTab} .style2-box`).removeClass("clickstylebrdr");
+
+        $(`#${selectedTab} .style1-box`).addClass("clickstylebrdr");
+        $(`#${selectedTab} .style1-box`).removeClass("clickstylebg");
+
+        $(`#${selectedTab} .double-click-style1`).addClass("displayNone");
+        $(`#${selectedTab} .double-click-style2`).removeClass("displayNone");
+
+        let rowNumber = $(`#${selectedTab} .style1-table-wrap #${sty1TableId} tbody tr`);
+        if (rowNumber.length > 0) {
+            $(`#${selectedTab} .outer-table-style12-box .right-slider5`).css("display", "none");
+            $(`#${selectedTab} .outer-table-style12-box .left-slider5`).css("display", "none");
+
+
+            $(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "none");
+            $(`#${selectedTab} .pagination-container`).css("display", "none");
+            $(`#${selectedTab} .page-number12-wrap`).css("display", "none");
+
+            $(`#${selectedTab} .loading-style2-table`).css("display", "block");
+            $(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
+            $(`#${selectedTab} .page-number-loading`).css("display", "block");
+
+            setTimeout(() => {
+                $(`#${selectedTab} .loading-style2-table`).css("display", "none");
+                $(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
+                $(`#${selectedTab} .page-number-loading`).css("display", "none");
+
+                $(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "block");
+                $(`#${selectedTab} .pagination-container`).css("display", "block");
+                $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
+            }, 2000);
+        } else {
+
+            $(`#${selectedTab} .style12-section .box-style12 .no-result`).css("display", "block");
+            
+        }
+
+        hideStyleOneAllPopup();
+
+    });
+}
+
+
+styleIconSwitcherOperation("Main", "resizable554");
 
 // CLICL TO TOGGLE STYLE1 & STYLE2 END =====
 
 // ============== STYLE 1 STYLE 2 END ==============
 
 // X CLICK TO REMOVE COLUMN START ==============
-
-$("#resizable554 th").click(function (e) {
-    let target = e.target;
-    let index = $(this).index() + 1;
-    if (target.tagName === "I") {
-        target = target.parentNode;
-    }
+// Arguments (headClick):
+// 1. Selected TAB ID
+// 2. Style1 Table ID
+// Arguments (manResTableRender): 
+// 1. Style1 Table ID,
+// 2. Style1 DoubleClick To Display Left List ID
+// 3. Style1 DoubleClick To Remove Right List ID
+// 4. Style1 DoubleClick Every List ID (res-id-table-)
+function headClick(target, index, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix) {
     let regex = /cross/g;
     let regexD = /drop-filter/g;
     if (target.tagName === "DIV" && regex.test(target.id)) {
-        $(`#resizable554 th:nth-child(${index})`).addClass("th-dis-none");
-        $(`#resizable554 td:nth-child(${index})`).addClass("th-dis-none");
-        manResTableRender();
+        $(`#${sty1TableId} th:nth-child(${index})`).addClass("th-dis-none");
+        $(`#${sty1TableId} td:nth-child(${index})`).addClass("th-dis-none");
+        $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th:nth-child(${index})`).addClass("th-dis-none");
+        manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
+        $("#col8Filter").css('display', 'none');
+        resetDownArrow();
+        return "hidePopup";
+
     } else if (target.tagName === "DIV" && regexD.test(target.className)) {
-        let dataP = $(`#resizable554 td:nth-child(${index}) .mr-tableData`);
-        let headingPop = $(`#resizable554 th:nth-child(${index})`)[0].textContent;
 
-        // this code add the down-animation-icon to the drop filter
-        $(`#resizable554 th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
+        headerIndexClick = index;
+        let hideFilterWhenClick = $(`#${sty1TableId} th:nth-child(${index}) .drop-filter .fa-caret-down`).hasClass("down-animation-icon");
+        let filterTargeting = document.querySelector('#col8Filter');
+        let filterStyles = window.getComputedStyle(filterTargeting);
 
-        $("#col8Filter #tableHeaderPop").html(headingPop);
-        let targetModal = $("#col8Filter #checkbox-table-first tbody");
-        const dataC = new Set();
-        for (let i = 0; i < dataP.length; i++) {
-            dataC.add(dataP[i].textContent);
+        if (hideFilterWhenClick == true && filterStyles.display == "block") {
+            const rotateIcon = document.querySelectorAll(`#${selectedTab} .outer-table-style12-box i.fa-caret-down.down-animation-icon`);
+            for (let i = 0; i < rotateIcon.length; i++) {
+                $(rotateIcon[i]).removeClass("down-animation-icon");
+            }
+            $("#col8Filter").css('display', 'none');
+
+            return "hidePopup";
         }
-        let tableTr = "";
-        for (const item of dataC) {
-            tableTr +=
-                `<tr>
-                <td>
-                    <div class="popup__checkbox__page__toggle">
-                        <label class="popup__checkbox__toggle">
-                            <input class="popup__checkbox__toggle__input" type="checkbox">
-                            <span class="popup__checkbox__toggle__label">
-                                <span class="popup__checkbox__toggle__text">${item}</span>
-                            </span>
-                        </label>
-                    </div>
-                </td>
-            </tr>`;
+        else {
+            let dataP = $(`#${sty1TableId} td:nth-child(${index}) .mr-tableData`);
+            let headingPop = $(`#${sty1TableId} th:nth-child(${index})`)[0].textContent;
+
+            const rotateIcon = document.querySelectorAll(`#${selectedTab} .outer-table-style12-box i.fa-caret-down.down-animation-icon`);
+            for (let i = 0; i < rotateIcon.length; i++) {
+                $(rotateIcon[i]).removeClass("down-animation-icon");
+            }
+
+            // this code add the down-animation-icon to the drop filter
+            $(`#${sty1TableId} th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
+            $(`.clone-head-table-wrap .mytablesty12 th:nth-child(${index}) .drop-filter .fa-caret-down`).addClass("down-animation-icon");
+
+            $("#col8Filter #tableHeaderPop").html(headingPop);
+            let targetModal = $("#col8Filter #checkbox-table-first tbody");
+            const dataC = new Set();
+            for (let i = 0; i < dataP.length; i++) {
+                dataC.add(dataP[i].textContent);
+            }
+            let tableTr = "";
+            for (const item of dataC) {
+                tableTr +=
+                    `<tr>
+                    <td>
+                        <div class="popup__checkbox__page__toggle">
+                            <label class="popup__checkbox__toggle">
+                                <input class="popup__checkbox__toggle__input" type="checkbox">
+                                <span class="popup__checkbox__toggle__label">
+                                    <span class="popup__checkbox__toggle__text">${item}</span>
+                                </span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>`;
+            }
+            targetModal.html(tableTr);
+
+            return "showPopup";
         }
-        targetModal.html(tableTr);
-        $("#col8Filter .modal-dialog").css({
-            top: ((e.clientY) + 20),
-            left: ((e.clientX) - 240)
-        });
-        $("#col8Filter .modal-dialog .table-header-click-popup").css({
-            "margin-top": "0px"
-        });
     }
-});
-
-// ======== STYLE 2 Table =========
-function table2HeadClickCall() {
-    table2HeadClick("sty2table2");
-    table2HeadClick("sty2table3");
-    table2HeadClick("sty2table4");
-    table2HeadClick("sty2table5");
-    table2HeadClick("sty2table6");
-    table2HeadClick("sty2table7");
-    table2HeadClick("sty2table8");
-    table2HeadClick("sty2table9");
 }
 
-function table2HeadClick(tName) {
-    $(`#style2Con .table.${tName} th`).click(function (e) {
+
+// Arguments (table1HeadClick):
+// 1. Selected TAB ID
+// 2. Style1 Table ID
+function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix) {
+    $(`#${sty1TableId} th`).click(function (e) {
+        
+        let target = e.target;
+        let index = $(this).index() + 1;
+        if(target.tagName === "SPAN" && target.className === "header-title"){
+            $("#col8Filter").css('display', 'none');
+            const rotateIcon = document.querySelectorAll(".outer-table-style12-box i.fa-caret-down.down-animation-icon");
+            for (let i = 0; i < rotateIcon.length; i++) {
+                $(rotateIcon[i]).removeClass("down-animation-icon");
+            }
+            $(`#${sty1TableId} th:nth-child(${index}) .table-head-updown i`).toggleClass("fa-chevron-up fa-chevron-down");
+            $(`#${selectedTab} .clone-head-table-wrap .mytablesty12 th:nth-child(${index}) .table-head-updown i`).toggleClass("fa-chevron-up fa-chevron-down");
+            
+            $(`#${selectedTab} .main-table-design`).css("display", "none");
+            $(`#${selectedTab} .pagination-container`).css("display", "none");
+            $(`#${selectedTab} .page-number12-wrap`).css("display", "none");
+
+            $(`#${selectedTab} .loading-style1-table`).css("display", "block");
+            $(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
+            $(`#${selectedTab} .page-number-loading`).css("display", "block");
+
+            // $(`#${sty1dblClickRightListId} .double_click_selection_box`).css('display', 'none');
+            // $(`#${sty1dblClickRightListId} .checkbox-table-loading`).css('display', 'block');
+
+            // $(`#${sty1dblClickLeftListId} .double_click_selection_box`).css('display', 'none');
+            // $(`#${sty1dblClickLeftListId} .checkbox-table-loading`).css('display', 'block');
+
+            setTimeout(() => {
+                $(`#${selectedTab} .loading-style1-table`).css("display", "none");
+                $(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
+                $(`#${selectedTab} .page-number-loading`).css("display", "none");
+
+                $(`#${selectedTab} .main-table-design`).css("display", "block");
+                $(`#${selectedTab} .pagination-container`).css("display", "block");
+                $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
+
+                // $(`#${sty1dblClickRightListId} .double_click_selection_box`).css('display', 'block');
+                // $(`#${sty1dblClickRightListId} .checkbox-table-loading`).css('display', 'none');
+
+                // $(`#${sty1dblClickLeftListId} .double_click_selection_box`).css('display', 'block');
+                // $(`#${sty1dblClickLeftListId} .checkbox-table-loading`).css('display', 'none');
+            }, 2000);
+
+        }else{
+            if (target.tagName === "I") {
+                target = target.parentNode;
+            }
+            let popupDecision = headClick(target, index, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
+
+            if (target.className == "drop-filter" && popupDecision == "showPopup") {
+                let elementPositionMain = e.target.getBoundingClientRect();;
+                $("#col8Filter").css('display', 'none');
+                $("#col8Filter").css({
+                    top: ((elementPositionMain.y) + window.scrollY + 35),
+                    left: ((elementPositionMain.x) - 235),
+                    position: "absolute"
+                });
+                $("#col8Filter").css('display', 'block');
+
+                $("#col8Filter .checkbox-table-loading").css("display", "block");
+                $("#col8Filter .checkbox-table-scroll").css("display", "none");
+
+                setTimeout(() => {
+                    $("#col8Filter .checkbox-table-loading").css("display", "none");
+                    $("#col8Filter .checkbox-table-scroll").css("display", "block");
+                }, 2000);
+            }
+        }
+
+    });
+
+    $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th`).click(function (e) {
+        let target = e.target;
+        let index = $(this).index() + 1;
+        if(target.tagName === "SPAN" && target.className === "header-title"){
+            $("#col8Filter").css('display', 'none');
+            const rotateIcon = document.querySelectorAll(".outer-table-style12-box i.fa-caret-down.down-animation-icon");
+            for (let i = 0; i < rotateIcon.length; i++) {
+                $(rotateIcon[i]).removeClass("down-animation-icon");
+            }
+            $(`#${sty1TableId} th:nth-child(${index}) .table-head-updown i`).toggleClass("fa-chevron-up fa-chevron-down");
+            $(`#${selectedTab} .clone-head-table-wrap .mytablesty12 th:nth-child(${index}) .table-head-updown i`).toggleClass("fa-chevron-up fa-chevron-down");
+            
+            $(`#${selectedTab} .main-table-design`).css("display", "none");
+            $(`#${selectedTab} .pagination-container`).css("display", "none");
+            $(`#${selectedTab} .page-number12-wrap`).css("display", "none");
+
+            $(`#${selectedTab} .loading-style1-table`).css("display", "block");
+            $(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
+            $(`#${selectedTab} .page-number-loading`).css("display", "block");
+
+            setTimeout(() => {
+                $(`#${selectedTab} .loading-style1-table`).css("display", "none");
+                $(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
+                $(`#${selectedTab} .page-number-loading`).css("display", "none");
+
+                $(`#${selectedTab} .main-table-design`).css("display", "block");
+                $(`#${selectedTab} .pagination-container`).css("display", "block");
+                $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
+            }, 2000);
+        }else{
+            if (target.tagName === "I") {
+                target = target.parentNode;
+            }
+            let popupDecision = headClick(target, index, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
+
+            if (target.className == "drop-filter" && popupDecision == "showPopup") {
+                let elementPositionMain = e.target.getBoundingClientRect();;
+                $("#col8Filter").css('display', 'none');
+                $("#col8Filter").css({
+                    // top: ((elementPositionMain.y) + window.scrollY + 30),
+                    top: (51),
+                    left: ((elementPositionMain.x) - 235),
+                    position: "fixed"
+                });
+                $("#col8Filter").css('display', 'block');
+
+                $("#col8Filter .checkbox-table-loading").css("display", "block");
+                $("#col8Filter .checkbox-table-scroll").css("display", "none");
+
+                setTimeout(() => {
+                    $("#col8Filter .checkbox-table-loading").css("display", "none");
+                    $("#col8Filter .checkbox-table-scroll").css("display", "block");
+                }, 2000);
+            }
+        }
+
+    });
+}
+
+// ---------- ======= Double Click to ADD or REMOVE Start ======= -------------
+// Arguments (manResTableRender): 
+// 1. Style1 Table ID,
+// 2. Style1 DoubleClick To Display Left List ID
+// 3. Style1 DoubleClick To Remove Right List ID
+// 4. Style1 DoubleClick Every List ID (res-id-table-)
+
+function manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix) {
+    
+    let tabHD = $(`#${sty1TableId} thead th`);
+    let len = tabHD.length;
+    let htmlTableR = "";
+    let htmlTableL = "";
+    for (let i = 2; i < len; i++) {
+        let className = tabHD[i].className.match(/column-header-\d+/g)[0];
+        let pos = className.match(/\d+/g)[0];
+        // let _id = "res-id-table-" + pos;
+        let _id = `${sty1AllListIdPrefix}${pos}`;
+        let content = tabHD[i].textContent.trim();
+        let regex = /th-dis-none/g;
+        if (regex.test(tabHD[i].className)) {
+            htmlTableL += `<tr id="${_id}" ondblclick="dblclickResMove(this, '${selectedTab}', '${sty1TableId}', '${sty1dblClickLeftListId}', '${sty1dblClickRightListId}', '${sty1AllListIdPrefix}')" onclick="clickAddClass(this)">
+                <td>${content}</td>
+            </tr>`;
+        } else {
+            htmlTableR += `<tr id="${_id}" ondblclick="dblclickResMove(this, '${selectedTab}', '${sty1TableId}', '${sty1dblClickLeftListId}', '${sty1dblClickRightListId}', '${sty1AllListIdPrefix}')" onclick="clickAddClass(this)">
+                <td>${content}</td>
+            </tr>`;
+        }
+    }
+    $(`#${sty1dblClickRightListId} table`).html(htmlTableR);
+
+    $(`#${sty1dblClickLeftListId} table`).html(htmlTableL);
+
+    $(`#${sty1dblClickRightListId} .double_click_selection_box`).css('display', 'none');
+    $(`#${sty1dblClickRightListId} .checkbox-table-loading`).css('display', 'block');
+
+	$(`#${sty1dblClickLeftListId} .double_click_selection_box`).css('display', 'none');
+	$(`#${sty1dblClickLeftListId} .checkbox-table-loading`).css('display', 'block');
+
+	setTimeout(() => {
+		$(`#${sty1dblClickRightListId} .double_click_selection_box`).css('display', 'block');
+        $(`#${sty1dblClickRightListId} .checkbox-table-loading`).css('display', 'none');
+
+	    $(`#${sty1dblClickLeftListId} .double_click_selection_box`).css('display', 'block');
+	    $(`#${sty1dblClickLeftListId} .checkbox-table-loading`).css('display', 'none');
+	}, 1000);
+}
+
+
+// Arguments (dblclickResMove):
+// 1. Style1 Table ID
+// 2. Style1 DoubleClick To Display Left List ID
+// 3. Style1 DoubleClick To Remove Right List ID 
+// 4. Selected TAB ID
+// Arguments (manResTableRender): 
+// 1. Style1 Table ID
+// 2. Style1 DoubleClick To Display Left List ID
+// 3. Style1 DoubleClick To Remove Right List ID
+// 4. Style1 DoubleClick Every List ID (res-id-table-)
+function dblclickResMove(e, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix) {
+    let _id = $(e).parent().parent().parent().attr("id");
+    let index = $(e).attr("id").match(/\d+/g)[0];
+    if (_id == sty1dblClickLeftListId) {
+        $(e).remove();
+        $(`#${sty1TableId} th.column-header-${index}`).removeClass("th-dis-none");
+        $(`#${sty1TableId} td.column-header-${index}`).removeClass("th-dis-none");
+        $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).removeClass("th-dis-none");
+        manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
+    }
+    else if (_id == sty1dblClickRightListId) {
+        $(e).remove();
+        $(`#${sty1TableId} th.column-header-${index}`).addClass("th-dis-none");
+        $(`#${sty1TableId} td.column-header-${index}`).addClass("th-dis-none");
+        $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).addClass("th-dis-none");
+        manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
+    }
+}
+
+
+// Arguments (moveResLeftToRight):
+// 1. Style1 Table ID
+// 2. Style1 DoubleClick To Display Left List ID 
+// 3. Selected TAB ID
+// Arguments (manResTableRender): 
+// 1. Style1 Table ID,
+// 2. Style1 DoubleClick To Display Left List ID
+// 3. Style1 DoubleClick To Remove Right List ID
+// 4. Style1 DoubleClick Every List ID (res-id-table-)
+function moveResLeftToRight(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix) {
+    let tr = $(`#${sty1dblClickLeftListId} table tr.mark-table-data`);
+    let len = tr.length;
+    for (let i = 0; i < len; i++) {
+        let index = $(tr[i]).attr("id").match(/\d+/g)[0];
+        $(tr[i]).remove();
+        $(`#${sty1TableId} th.column-header-${index}`).removeClass("th-dis-none");
+        $(`#${sty1TableId} td.column-header-${index}`).removeClass("th-dis-none");
+        $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).removeClass("th-dis-none");
+        manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
+    }
+}
+
+
+// Arguments (moveResRightToLeft):
+// 1. Style1 Table ID
+// 2. Style1 DoubleClick To Remove Right List ID 
+// 3. Selected TAB ID
+// Arguments (manResTableRender): 
+// 1. Style1 Table ID,
+// 2. Style1 DoubleClick To Display Left List ID
+// 3. Style1 DoubleClick To Remove Right List ID
+// 4. Style1 DoubleClick Every List ID (res-id-table-)
+function moveResRightToLeft(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix) {
+    let tr = $(`#${sty1dblClickRightListId} table tr.mark-table-data`);
+    let len = tr.length;
+    for (let i = 0; i < len; i++) {
+        let index = $(tr[i]).attr("id").match(/\d+/g)[0];
+        $(tr[i]).remove();
+        $(`#${sty1TableId} th.column-header-${index}`).addClass("th-dis-none");
+        $(`#${sty1TableId} td.column-header-${index}`).addClass("th-dis-none");
+        $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`).addClass("th-dis-none");
+        manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
+    }
+}
+
+
+
+// Arguments (ResorderUp): 
+// 1. Style1 DoubleClick To Remove Right List ID
+// Arguments (columnMove): 
+// 1. Style1 Table ID
+// 2. Selected TAB ID
+function ResorderUp(selectedTab, sty1TableId, sty1dblClickRightListId) {
+    let row = $(`#${sty1dblClickRightListId} table tr.mark-table-data`);
+    let rowFirst = $(`#${sty1dblClickRightListId} table tr`)[0];
+    if (rowFirst != row[0]) {
+        row.each(function () {
+            let rw = $(this).closest("tr.mark-table-data");
+            let index = $(rw).attr("id").match(/\d+/g)[0];
+            rw.insertBefore(rw.prev());
+            columnMove(index, "up", selectedTab, sty1TableId);
+        });
+    }
+}
+
+
+// Arguments (ResorderDown): 
+// 1. Style1 DoubleClick To Remove Right List ID
+// Arguments (columnMove): 
+// 1. Style1 Table ID
+// 2. Selected TAB ID
+function ResorderDown(selectedTab, sty1TableId, sty1dblClickRightListId) {
+    let row = $(`#${sty1dblClickRightListId} table tr.mark-table-data`);
+    row.each(function () {
+        let rw = $(this).closest("tr.mark-table-data");
+        let index = $(rw).attr("id").match(/\d+/g)[0];
+        for (let i = 0; i < row.length; i++) {
+            rw.insertAfter(rw.next());
+            columnMove(index, "down", selectedTab, sty1TableId);
+        }
+    });
+}
+
+
+
+function findVisible(element, pos) {
+    let regex = /th-dis-none/g;
+    if (pos == "prev" && regex.test(element.attr("class"))) {
+        return findVisible(element.prev(), "prev");
+    } else if (pos == "next" && regex.test(element.attr("class"))) {
+        return findVisible(element.next(), "next");
+    }
+    else return element;
+}
+
+
+// Arguments (columnMove): 
+// 1. Style1 Table ID
+// 2. Selected TAB ID
+function columnMove(index, direc, selectedTab, sty1TableId) {
+    let tHead = $(`#${sty1TableId} th.column-header-${index}`);
+    let tBody = $(`#${sty1TableId} td.column-header-${index}`);
+    let tvHead = $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`);
+    let len = tBody.length;
+    if (direc == "up") {
+        let eleH = findVisible(tHead.prev(), "prev");
+        tHead.insertBefore(eleH);
+        let eleHV = findVisible(tvHead.prev(), "prev");
+        tvHead.insertBefore(eleHV);
+        for (let i = 0; i < len; i++) {
+            let tbCell = $(tBody[i]);
+            let eleC = findVisible(tbCell.prev(), "prev");
+            tbCell.insertBefore(eleC);
+        }
+    } else if (direc == "down") {
+        let eleH = findVisible(tHead.next(), "next");
+        tHead.insertAfter(eleH);
+        let eleHV = findVisible(tvHead.next(), "next");
+        tvHead.insertAfter(eleHV);
+        for (let i = 0; i < len; i++) {
+            let tbCell = $(tBody[i]);
+            let eleC = findVisible(tbCell.next(), "next");
+            tbCell.insertAfter(eleC);
+        }
+    }
+}
+// ---------- ======= Double Click to ADD or REMOVE End ======= -------------
+
+// ======== STYLE 2 Table =========
+// Arguments (table2HeadClickCall): 
+// 1. Selected TAB ID
+function table2HeadClickCall(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
+    table2HeadClick("sty2table2", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    table2HeadClick("sty2table3", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    table2HeadClick("sty2table4", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    table2HeadClick("sty2table5", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    table2HeadClick("sty2table6", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    table2HeadClick("sty2table7", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    table2HeadClick("sty2table8", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    table2HeadClick("sty2table9", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+}
+
+// Arguments (table2HeadClick): 
+// 1. Selected TAB ID
+function table2HeadClick(tName, selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
+    $(`#${selectedTab} .style2-table-wrap .table.${tName} th`).click(function (e) {
         let target = e.target;
         let index = $(this).index() + 1;
         if (target.tagName === "I") {
@@ -1036,28 +1332,54 @@ function table2HeadClick(tName) {
         }
         let regex = /style2_cross\d+/g;
         if (target.tagName === "DIV" && regex.test(target.className)) {
-            $(`#style2Con .table.${tName} th:nth-child(${index})`).addClass("th-dis-none");
-            $(`#style2Con .table.${tName} td:nth-child(${index})`).addClass("th-dis-none");
-            allHeadTable2Call();
+            $(`#${selectedTab} .style2-table-wrap .table.${tName} th:nth-child(${index})`).addClass("th-dis-none");
+            $(`#${selectedTab} .style2-table-wrap .table.${tName} td:nth-child(${index})`).addClass("th-dis-none");
+            allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+            $("#col8Filter").css('display', 'none');
         }
     });
 }
 
-function allHeadTable2Call() {
-    let { htmlTableL: L2, htmlTableR: R2 } = allHeadTable2("sty2table2");
-    let { htmlTableL: L3, htmlTableR: R3 } = allHeadTable2("sty2table3");
-    let { htmlTableL: L4, htmlTableR: R4 } = allHeadTable2("sty2table4");
-    let { htmlTableL: L5, htmlTableR: R5 } = allHeadTable2("sty2table5");
-    let { htmlTableL: L6, htmlTableR: R6 } = allHeadTable2("sty2table6");
-    let { htmlTableL: L7, htmlTableR: R7 } = allHeadTable2("sty2table7");
-    let { htmlTableL: L8, htmlTableR: R8 } = allHeadTable2("sty2table8");
-    let { htmlTableL: L9, htmlTableR: R9 } = allHeadTable2("sty2table9");
-    $("#style2-man-res-opt-data-table-right").html(R2 + R3 + R4 + R5 + R6 + R7 + R8 + R9);
-    $("#style2-man-res-opt-data-table-left").html(L2 + L3 + L4 + L5 + L6 + L7 + L8 + L9);
+// Arguments (allHeadTable2Call): 
+// 1. Selected TAB ID
+// 2. Style2 DoubleClick To Display Left List ID
+// 3. Style2 DoubleClick To Display Right List ID
+// Arguments (allHeadTable2): 
+// 1. Selected TAB ID
+// 2. Style1 DoubleClick Every List ID (res-table-two-)
+function allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
+    let { htmlTableL: L2, htmlTableR: R2 } = allHeadTable2("sty2table2", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    let { htmlTableL: L3, htmlTableR: R3 } = allHeadTable2("sty2table3", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    let { htmlTableL: L4, htmlTableR: R4 } = allHeadTable2("sty2table4", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    let { htmlTableL: L5, htmlTableR: R5 } = allHeadTable2("sty2table5", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    let { htmlTableL: L6, htmlTableR: R6 } = allHeadTable2("sty2table6", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    let { htmlTableL: L7, htmlTableR: R7 } = allHeadTable2("sty2table7", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    let { htmlTableL: L8, htmlTableR: R8 } = allHeadTable2("sty2table8", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    let { htmlTableL: L9, htmlTableR: R9 } = allHeadTable2("sty2table9", selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
+    $(`#${sty2dblClickRightListId} table`).html(R2 + R3 + R4 + R5 + R6 + R7 + R8 + R9);
+    $(`#${sty2dblClickLeftListId} table`).html(L2 + L3 + L4 + L5 + L6 + L7 + L8 + L9);
+
+    $(`#${sty2dblClickRightListId} .double_click_selection_box`).css('display', 'none');
+    $(`#${sty2dblClickRightListId} .checkbox-table-loading`).css('display', 'block');
+
+	$(`#${sty2dblClickLeftListId} .double_click_selection_box`).css('display', 'none');
+	$(`#${sty2dblClickLeftListId} .checkbox-table-loading`).css('display', 'block');
+
+	setTimeout(() => {
+		$(`#${sty2dblClickRightListId} .double_click_selection_box`).css('display', 'block');
+        $(`#${sty2dblClickRightListId} .checkbox-table-loading`).css('display', 'none');
+
+	    $(`#${sty2dblClickLeftListId} .double_click_selection_box`).css('display', 'block');
+	    $(`#${sty2dblClickLeftListId} .checkbox-table-loading`).css('display', 'none');
+	}, 1000);
 }
 
-function allHeadTable2(tName) {
-    let head = $(`#style2Con .table.${tName}`)[0];
+
+// Arguments (allHeadTable2): 
+// 1. Selected TAB ID
+// 2. Style1 DoubleClick Every List ID (res-table-two-)
+function allHeadTable2(tName, selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
+    let head = $(`#${selectedTab} .style2-table-wrap .table.${tName}`)[0];
     let th = $(head).find("th");
     let len = th.length;
     let htmlTableR = "";
@@ -1065,15 +1387,16 @@ function allHeadTable2(tName) {
     for (let i = 0; i < len; i++) {
         let className = th[i].className.match(/style-two-head-\d+/g)[0];
         let pos = className.match(/\d+/g)[0];
-        let _id = "res-table-two-" + pos;
+        // let _id = "res-table-two-" + pos;
+        let _id = `${sty2AllListIdPrefix}${pos}`;
         let content = th[i].textContent.trim();
         let regex = /th-dis-none/g;
         if (regex.test(th[i].className)) {
-            htmlTableL += `<tr id="${_id}" ondblclick="dblclickRes2Move(this)" onclick="clickAddClass(this)">
+            htmlTableL += `<tr id="${_id}" ondblclick="dblclickRes2Move(this, '${selectedTab}', '${sty2dblClickLeftListId}', '${sty2dblClickRightListId}', '${sty2AllListIdPrefix}')" onclick="clickAddClass(this)">
                 <td>${content}</td>
             </tr>`;
         } else {
-            htmlTableR += `<tr id="${_id}" ondblclick="dblclickRes2Move(this)" onclick="clickAddClass(this)">
+            htmlTableR += `<tr id="${_id}" ondblclick="dblclickRes2Move(this, '${selectedTab}', '${sty2dblClickLeftListId}', '${sty2dblClickRightListId}', '${sty2AllListIdPrefix}')" onclick="clickAddClass(this)">
                 <td>${content}</td>
             </tr>`;
         }
@@ -1084,62 +1407,94 @@ function allHeadTable2(tName) {
     }
 }
 
-function dblclickRes2Move(e) {
-    let _id = $(e).parent().attr("id");
+
+// Arguments (dblclickRes2Move): 
+// 1. Selected TAB ID
+// 2. Style2 DoubleClick To Display Left List ID
+// 3. Style2 DoubleClick To Display Right List ID
+// Arguments (allHeadTable2Call): 
+// 1. Selected TAB ID
+// 2. Style2 DoubleClick To Display Left List ID
+// 3. Style2 DoubleClick To Display Right List ID
+// Arguments (allHeadTable2): 
+// 1. Selected TAB ID
+// 2. Style1 DoubleClick Every List ID (res-table-two-)
+function dblclickRes2Move(e, selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
+    let _id = $(e).parent().parent().parent().attr("id");
     let index = $(e).attr("id").match(/\d+/g)[0];
-    if (_id == "style2-man-res-opt-data-table-left") {
+    if (_id == sty2dblClickLeftListId) {
         $(e).remove();
-        $(`#style2Con .table th.style-two-head-${index}`).removeClass("th-dis-none");
-        $(`#style2Con .table td.style-two-head-${index}`).removeClass("th-dis-none");
-        allHeadTable2Call();
+        $(`#${selectedTab} .style2-table-wrap .table th.style-two-head-${index}`).removeClass("th-dis-none");
+        $(`#${selectedTab} .style2-table-wrap .table td.style-two-head-${index}`).removeClass("th-dis-none");
+        allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
     }
-    else if (_id == "style2-man-res-opt-data-table-right") {
+    else if (_id == sty2dblClickRightListId) {
         $(e).remove();
-        $(`#style2Con .table th.style-two-head-${index}`).addClass("th-dis-none");
-        $(`#style2Con .table td.style-two-head-${index}`).addClass("th-dis-none");
-        allHeadTable2Call();
+        $(`#${selectedTab} .style2-table-wrap .table th.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#${selectedTab} .style2-table-wrap .table td.style-two-head-${index}`).addClass("th-dis-none");
+        allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
     }
 }
 
-function pagiHideHead() {
-    let tr = $("#style2-man-res-opt-data-table-left tr");
+
+// Arguments (pagiHideHead): 
+// 1. Selected TAB ID
+// 2. Style2 DoubleClick To Display Left List ID
+function pagiHideHead(selectedTab, sty2dblClickLeftListId) {
+    let tr = $(`#${sty2dblClickLeftListId} tr`);
     let len = tr.length;
-    for (let i = 0; i < len; i++){
+    for (let i = 0; i < len; i++) {
         let index = $(tr[i]).attr("id").match(/\d+/g)[0];
-        $(`#style2Con .table th.style-two-head-${index}`).addClass("th-dis-none");
-        $(`#style2Con .table td.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#${selectedTab} .style2-table-wrap .table th.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#${selectedTab} .style2-table-wrap .table td.style-two-head-${index}`).addClass("th-dis-none");
     }
 }
 
-function moveRes2LeftToRight() {
-    let tr = $("#style2-man-res-opt-data-table-left tr.mark-table-data");
+
+
+// Arguments (moveRes2LeftToRight): 
+// 1. Selected TAB ID
+// 2. Style2 DoubleClick To Display Left List ID
+// Arguments (allHeadTable2Call): 
+// 1. Selected TAB ID
+// 2. Style2 DoubleClick To Display Left List ID
+// 3. Style2 DoubleClick To Display Right List ID
+function moveRes2LeftToRight(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
+    let tr = $(`#${sty2dblClickLeftListId} table tr.mark-table-data`);
     let len = tr.length;
     for (let i = 0; i < len; i++) {
         let index = $(tr[i]).attr("id").match(/\d+/g)[0];
         $(tr[i]).remove();
-        $(`#style2Con .table th.style-two-head-${index}`).removeClass("th-dis-none");
-        $(`#style2Con .table td.style-two-head-${index}`).removeClass("th-dis-none");
-        allHeadTable2Call();
+        $(`#${selectedTab} .style2-table-wrap .table th.style-two-head-${index}`).removeClass("th-dis-none");
+        $(`#${selectedTab} .style2-table-wrap .table td.style-two-head-${index}`).removeClass("th-dis-none");
+        allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
     }
 }
 
-function moveRes2RightToLeft() {
-    let tr = $("#style2-man-res-opt-data-table-right tr.mark-table-data");
+
+// Arguments (moveRes2RightToLeft): 
+// 1. Selected TAB ID
+// 2. Style2 DoubleClick To Display Right List ID
+// Arguments (allHeadTable2Call): 
+// 1. Selected TAB ID
+// 2. Style2 DoubleClick To Display Left List ID
+// 3. Style2 DoubleClick To Display Right List ID
+function moveRes2RightToLeft(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix) {
+    let tr = $(`#${sty2dblClickRightListId} table tr.mark-table-data`);
     let len = tr.length;
     for (let i = 0; i < len; i++) {
         let index = $(tr[i]).attr("id").match(/\d+/g)[0];
         $(tr[i]).remove();
-        $(`#style2Con .table th.style-two-head-${index}`).addClass("th-dis-none");
-        $(`#style2Con .table td.style-two-head-${index}`).addClass("th-dis-none");
-        allHeadTable2Call();
+        $(`#${selectedTab} .style2-table-wrap .table th.style-two-head-${index}`).addClass("th-dis-none");
+        $(`#${selectedTab} .style2-table-wrap .table td.style-two-head-${index}`).addClass("th-dis-none");
+        allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);
     }
 }
 // X CLICK TO REMOVE COLUMN END ==============
 
 // TABLE RESIZEABLE START ===////////////////===
-$(document).ready(function () {
-    let thHeight = $("table#resizable554 th:first").height();
-    $("table#resizable554 th").resizable({
+function resizeWithUi(sty1TableId, tQuery, thHeight) {
+    $(tQuery).resizable({
         handles: "e",
         minHeight: thHeight,
         maxHeight: thHeight,
@@ -1149,297 +1504,547 @@ $(document).ready(function () {
             let valueSize = ui.size.width;
             $(sizerID).width(valueSize);
             let resizer = event.target.classList[0] + "-resizer";
-            let shrinkWidth = `#resizable554 tbody .${resizer}`;
-            // console.log(shrinkWidth);
-            // $(shrinkWidth).width(valueSize);
-            // // $(shrinkWidth).width(valueSize - 24);
-            // $(shrinkWidth).css({
-            //     "min-width": `${valueSize-20}px`
-            // });
-            var gettingWidth = parseInt($(sizerID).css('width'), 10);
-            // let shrinkWidth = `#resizable554 tbody ${sizerID}`;
+            let shrinkWidth = `#${sty1TableId} tbody .${resizer}`;
+            let gettingWidth = parseInt($(sizerID).css('width'), 10);
             $(shrinkWidth).width(gettingWidth + "px");
-            console.log(shrinkWidth);
-            console.log(gettingWidth);
         }
     });
-})
+}
+function resizableTable1(selectedTab, sty1TableId) {
+    let thHeight = $(`table#${sty1TableId} th:first`).height();
+    resizeWithUi(sty1TableId, `table#${sty1TableId} th`, thHeight);
+    resizeWithUi(sty1TableId, `#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th`, thHeight);
+}
 // TABLE RESIZEABLE END ===////////////////===
 
 // TABLE RESIZEABLE STYLE 2 START ===////////////////===
-$(document).ready(function () {
-    var thHeight = $("table.cross-table-1 th:first").height();
-    $("table.cross-table-1 th").resizable({
-        handles: "e",
-        minHeight: thHeight,
-        maxHeight: thHeight,
-        minWidth: 40,
-        resize: function (event, ui) {
-            var sizerID = "#" + $(event.target).attr("id") + "-sizer";
-            $(sizerID).width(ui.size.width);
-        }
-    });
-})
+// $(document).ready(function () {
+//     var thHeight = $("table.cross-table-1 th:first").height();
+//     $("table.cross-table-1 th").resizable({
+//         handles: "e",
+//         minHeight: thHeight,
+//         maxHeight: thHeight,
+//         minWidth: 40,
+//         resize: function (event, ui) {
+//             var sizerID = "#" + $(event.target).attr("id") + "-sizer";
+//             $(sizerID).width(ui.size.width);
+//         }
+//     });
+// })
 
+///// Update Clear-Filter Clear Sorting Button Starts
 
-// TABLE RESIZEABLE END ===////////////////===
-$("table#resizable554").dragableColumns();
-// Drag and Drop END
+let headerTextOfSubmitAnimation = '';
 
-// DRAG AND DROP START FILTER
-//Left side drag
-$(function () {
-    $("#my-drag-list").sortable();
-    $("#my-drag-list").disableSelection();
-});
+function threeBtnConfirmModal(decideSelection){
+    let headerText = "CONFIRM";
+	let detailsText = "Confirm to proceed!";
+
+    if (decideSelection == "updateNowBtn") {
+		headerText = "UPDATE NOW";
+		detailsText = "Confirm to update data?";
+        headerTextOfSubmitAnimation = "Updating";
+	} else if (decideSelection == "clearFilterBtn") {
+		headerText = "CLEAR FILTER";
+		detailsText = "Confirm to clear filter?";
+        headerTextOfSubmitAnimation = "Clearing Filters";
+	} else if (decideSelection == "clearSortingBtn") {
+		headerText = "CLEAR SORTING";
+		detailsText = "Confirm to clear sorting?";
+        headerTextOfSubmitAnimation = "Clearing Sorting";
+	}
+
+    $("#threeBtn_confirm_modal #threeBtn_confirm_header p").html(headerText);
+	$("#threeBtn_confirm_modal #threeBtn_confirm_deatis p").html(detailsText);
+	$('#threeBtn_confirm_modal').modal('show');
+}
+
+function threeBtnConfirmButton(globThreeBtn){
+    $('#threeBtn_confirm_modal').modal('hide');
+
+    $('body').addClass("modal-force-open");
+    $("#submitting_Info .submit-title").html(`${headerTextOfSubmitAnimation}...`);
+	$('#submitting_Info').modal('show');
+
+	let $targetingTextSubmit = $("#submitting_file_info");
+	$targetingTextSubmit.html("Need 5 Second to Finish...");
+	let submitFileInfo = [ 
+			"Need 4 Second to Finish...",
+			"Need 3 Second to Finish...", 
+			"Need 1 Second to Finish...",
+			"Finishing..."];
+  
+	for (let i = 1; i <= 4; ++i) {
+	  (function(index) {
+		setTimeout(function() { 
+		  $targetingTextSubmit.html(submitFileInfo[index-1]);
+		}, i * 2000);
+	  })(i);
+	}
+	
+    setTimeout(function() { 
+        $('#submitting_Info').modal('hide');
+		$('body').removeClass("modal-force-open");
+
+		$('#filterThankYouModal').modal('show');
+    
+	}, 10000);
+}
+
+///// Update Clear-Filter Clear Sorting Button Ends
 
 //----------====== Manage result filter modal ======--------------------
-let dataFilterModal = [];
-for (let i = 1; i <= 100; i++) {
-    dataFilterModal.push(`Column ${i}`);
-}
-let my_drag_list = document.querySelector("#my-drag-list");
-dataFilterModal.forEach((modalData) => {
-    let modalElement = `<li>
-    <div class="cursor-box">
-        <span>|||</span>
-    </div>
-    <div class="name-box">
-        <span>${modalData}</span>
-    </div>
+let colOfFilterModal = "";
+for (let iCol = 1; iCol <= 66; iCol++) {
+    colOfFilterModal += `
+    <li id="filter_row${iCol}">
+        <div class="right-list-wrap">
+            <div class="cursor-box">
+                <span>|||</span>
+            </div>
+            <div class="name-box">
+                <span>Column ${iCol}</span>
+            </div>
+        </div>
     </li>`;
-    my_drag_list.innerHTML += modalElement;
-})
+}
+document.querySelector("#right_side_filter_lists").innerHTML = colOfFilterModal;
+
+$("#right_side_filter_lists").sortable();
+$("#right_side_filter_lists").disableSelection();
+
+$("#left_side_filter_details").sortable();
+$("#left_side_filter_details").disableSelection();
+
+$( "#right_side_filter_lists" ).droppable({hoverClass : 'droppableStyle'});
+$( "#right_side_filter_lists" ).on('drop',function(event,ui){
+    if($(ui.draggable)[0].tagName == "DIV"){
+        let dataIdOfDiv = $(ui.draggable).attr("data-id");
+        console.log("Data Id: " + dataIdOfDiv);
+        $(`#${dataIdOfDiv}`).removeClass("hideFilterRow");
+        ui.draggable.remove();
+    }
+});
+
+$( "#left_side_filter_details" ).droppable({hoverClass : 'droppableStyle'});
+$( "#left_side_filter_details" ).on('drop',function(event,ui){
+    if($(ui.draggable)[0].tagName === "LI"){
+        let listTarget = $(ui.draggable)[0];
+        let idOfColumnList = $(ui.draggable).attr("id");
+        $("#left_side_filter_details").append(
+            `<div class="valdata-box" id="left_${idOfColumnList}" data-id="${idOfColumnList}">
+                <p class="filter-col-name">${listTarget.querySelector(".name-box span").innerHTML}</p>
+                <div class="valinput">
+                    <div class="arrow-equal">
+                        <select>
+                            <option value="lessThan">&lt;</option>
+                            <option value="greaterThan">&gt;</option>
+                            <option value="greaterEqual">&gt;=</option>
+                            <option value="lessEqual">&lt;=</option>
+                            <option value="equalEqual">==</option>
+                        </select>
+                    </div>
+                    <input type="text" class="myzap-input">
+                    <div class="delete-mydata" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Delete This Filter" onclick="deleteFilterRowMnRes(this, '${idOfColumnList}')">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+            </div>`
+        );
+        ui.draggable.addClass("hideFilterRow");
+        tooltipForFILTERS();
+    }
+});
+
+let filtersTargetColumn = '';
+function deleteFilterRowMnRes(globThis, targetColumn){
+    filtersTargetColumn = targetColumn;
+    let filterDeleteRowName = $(`#left_${targetColumn}`).find(".filter-col-name").html();
+    $("#filters_confirm_modal #filters_confirm_header p").html("DELETE FILTER");
+	$("#filters_confirm_modal #filters_confirm_deatis p").html(`Confirm to delete ${filterDeleteRowName} filter?`);
+	$('#filters_confirm_modal').modal('show');
+    
+}
+
+function filtersConfirmButton(filtersGlob){
+    $(`#left_${filtersTargetColumn}`).remove();
+    $(`#${filtersTargetColumn}`).removeClass("hideFilterRow");
+    $('#filters_confirm_modal').modal('hide');
+}
+
+$('#filters_confirm_modal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-filters-force");
+}).on('hide.bs.modal', function (e) {
+	$('body').addClass("modal-open");
+});
+
+$('#filter-modal').on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-open modal-filters-force");
+});
+
+function tooltipForFILTERS() {
+	$('[data-toggle="tooltip"]').tooltip(
+		{
+			container: 'body',
+			trigger: 'hover',
+			placement: 'bottom'
+		}
+	);
+};
+
 //----------====== Manage result filter modal End ======----------------
-
-// ---------- ======= Double Click to ADD or REMOVE Start ======= -------------
-function manResTableRender() {
-    let tabHD = $("#resizable554 thead th");
-    let len = tabHD.length;
-    let htmlTableR = "";
-    let htmlTableL = "";
-    for (let i = 2; i < len; i++) {
-        let className = tabHD[i].className.match(/column-header-\d+/g)[0];
-        let pos = className.match(/\d+/g)[0];
-        let _id = "res-id-table-" + pos;
-        let content = tabHD[i].textContent.trim();
-        let regex = /th-dis-none/g;
-        if (regex.test(tabHD[i].className)) {
-            htmlTableL += `<tr id="${_id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
-                <td>${content}</td>
-            </tr>`;
-        } else {
-            htmlTableR += `<tr id="${_id}" ondblclick="dblclickResMove(this)" onclick="clickAddClass(this)">
-                <td>${content}</td>
-            </tr>`;
-        }
-    }
-    $("#man-res-opt-data-table-right").html(htmlTableR);
-    $("#man-res-opt-data-table-left").html(htmlTableL);
-}
-manResTableRender();
-
-function dblclickResMove(e) {
-    let _id = $(e).parent().attr("id");
-    let index = $(e).attr("id").match(/\d+/g)[0];
-    if (_id == "man-res-opt-data-table-left") {
-        $(e).remove();
-        $(`#resizable554 th.column-header-${index}`).removeClass("th-dis-none");
-        $(`#resizable554 td.column-header-${index}`).removeClass("th-dis-none");
-        manResTableRender();
-    }
-    else if (_id == "man-res-opt-data-table-right") {
-        $(e).remove();
-        $(`#resizable554 th.column-header-${index}`).addClass("th-dis-none");
-        $(`#resizable554 td.column-header-${index}`).addClass("th-dis-none");
-        manResTableRender();
-    }
-}
-
-function moveResLeftToRight() {
-    let tr = $("#man-res-opt-data-table-left tr.mark-table-data");
-    let len = tr.length;
-    for (let i = 0; i < len; i++) {
-        let index = $(tr[i]).attr("id").match(/\d+/g)[0];
-        $(tr[i]).remove();
-        $(`#resizable554 th.column-header-${index}`).removeClass("th-dis-none");
-        $(`#resizable554 td.column-header-${index}`).removeClass("th-dis-none");
-        manResTableRender();
-    }
-}
-
-function moveResRightToLeft() {
-    let tr = $("#man-res-opt-data-table-right tr.mark-table-data");
-    let len = tr.length;
-    for (let i = 0; i < len; i++) {
-        let index = $(tr[i]).attr("id").match(/\d+/g)[0];
-        $(tr[i]).remove();
-        $(`#resizable554 th.column-header-${index}`).addClass("th-dis-none");
-        $(`#resizable554 td.column-header-${index}`).addClass("th-dis-none");
-        manResTableRender();
-    }
-}
-
-function ResorderUp() {
-    let row = $("#man-res-opt-data-table-right tr.mark-table-data");
-    let rowFirst = $("#man-res-opt-data-table-right tr")[0];
-    if (rowFirst != row[0]) {
-        row.each(function () {
-            let rw = $(this).closest("tr.mark-table-data");
-            let index = $(rw).attr("id").match(/\d+/g)[0];
-            rw.insertBefore(rw.prev());
-            columnMove(index, "up");
-        });
-    }
-}
-function ResorderDown() {
-    let row = $("#man-res-opt-data-table-right tr.mark-table-data");
-    row.each(function () {
-        let rw = $(this).closest("tr.mark-table-data");
-        let index = $(rw).attr("id").match(/\d+/g)[0];
-        for (let i = 0; i < row.length; i++) {
-            rw.insertAfter(rw.next());
-            columnMove(index, "down");
-        }
-    });
-}
-function findVisible(element, pos) {
-    let regex = /th-dis-none/g;
-    if (pos == "prev" && regex.test(element.attr("class"))) {
-        return findVisible(element.prev(), "prev");
-    } else if (pos == "next" && regex.test(element.attr("class"))) {
-        return findVisible(element.next(), "next");
-    }
-    else return element;
-}
-function columnMove(index, direc) {
-    let tHead = $(`#resizable554 th.column-header-${index}`);
-    let tBody = $(`#resizable554 td.column-header-${index}`);
-    let len = tBody.length;
-    if (direc == "up") {
-        let eleH = findVisible(tHead.prev(), "prev");
-        console.log(eleH);
-        tHead.insertBefore(eleH);
-        for (let i = 0; i < len; i++) {
-            let tbCell = $(tBody[i]);
-            let eleC = findVisible(tbCell.prev(), "prev");
-            tbCell.insertBefore(eleC);
-        }
-    } else if (direc == "down") {
-        let eleH = findVisible(tHead.next(), "next");
-        console.log(eleH);
-        tHead.insertAfter(eleH);
-        for (let i = 0; i < len; i++) {
-            let tbCell = $(tBody[i]);
-            let eleC = findVisible(tbCell.next(), "next");
-            tbCell.insertAfter(eleC);
-        }
-    }
-}
-// ---------- ======= Double Click to ADD or REMOVE End ======= -------------
 
 // ----------- Manage Result Filter Start ------------------
 function resetResFilter(e) {
-    let inpBox = $(e).parent().parent()
-        .children(".outer-data7")
-        .find("div.valdata-box div.valinput input.myzap-input");
+    let inpBox = $(e).parent().parent().children(".outer-data7").find("div.valdata-box div.valinput input.myzap-input");
     inpBox.val("");
 }
 // ----------- Manage Result Filter End --------------------
 
-// #column-header-3 .drop-filter
-// $("#column-header-3 .drop-filter").click( function(event) {
-//     $("#col8Filter .modal-dialog").css({
-//         top: ((event.clientY) + 15), 
-//         left: ((event.clientX) - 240)
-//     });
-//     // console.log(`Clicked and Top(Page-Y) : ${event.pageY} Left(Page-X) : ${event.pageX} `);
-//     // console.log(`Clicked and Top(client-Y) : ${event.clientY} Left(client-X) : ${event.clientX} `);
-//     // console.log(`Clicked and Top(screen-Y) : ${event.screenY} Left(screen-X) : ${event.screenX} `);
-//     // console.log(`Clicked and Top(offset-Y) : ${event.offsetY} Left(offset-X) : ${event.offsetX} `);
-//     // var x = e.clientX,
-//     // var y = e.clientY;
-//     // console.log("Top: " + top + " and Left: " + left);
-// });
-
-$('table#resizable554').on('scroll', function () {
-    $("table#resizable554 > *").width($("table#resizable554").width() + $("table#resizable554").scrollLeft());
-});
 
 function IconModalClick() {
     let viewModalList = document.getElementsByClassName('view-modal-click');
     for (let i = 0; i < viewModalList.length; i++) {
         viewModalList[i].addEventListener("click", function (event) {
-            $("#viewtwo .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
-            });
-        });
-    }
+            let elementPositionMain = forceEventTargetDiv(event);
 
-    let viewModalListSty2 = document.getElementsByClassName('view-modal-click-style2');
-    for (let i = 0; i < viewModalListSty2.length; i++) {
-        viewModalListSty2[i].addEventListener("click", function (event) {
-            $("#viewtwo_style2 .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+            hideStyleOneAllPopup();
+
+            $("#viewtwo").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
             });
+
+            $("#viewtwo").css('display', 'block');
+
+            $("#viewtwo .scrollmodal").css('display', 'none');
+            $("#viewtwo .checkbox-table-loading").css('display', 'block');
+            
+            setTimeout(() => {
+                $("#viewtwo .scrollmodal").css('display', 'block');
+                $("#viewtwo .checkbox-table-loading").css('display', 'none');
+            }, 2000);
+
         });
     }
 
     let rowModalClick = document.getElementsByClassName('row-modal-click');
     for (let i = 0; i < rowModalClick.length; i++) {
         rowModalClick[i].addEventListener("click", function (event) {
-            $("#rowdetails .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
-            });
-        });
-    }
+            let elementPositionMain = forceEventTargetDiv(event);
 
-    let rowModalClickSty2 = document.getElementsByClassName('row-modal-click-style2');
-    for (let i = 0; i < rowModalClickSty2.length; i++) {
-        rowModalClickSty2[i].addEventListener("click", function (event) {
-            $("#rowdetails_style2 .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+            hideStyleOneAllPopup();
+
+            $("#rowdetails").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
             });
+
+            $("#rowdetails").css('display', 'block');
+
+            $("#rowdetails .scrollmodal").css('display', 'none');
+            $("#rowdetails .checkbox-table-loading").css('display', 'block');
+            
+            setTimeout(() => {
+                $("#rowdetails .scrollmodal").css('display', 'block');
+                $("#rowdetails .checkbox-table-loading").css('display', 'none');
+            }, 2000);
+
         });
     }
 
     let noteModalClick = document.getElementsByClassName('note-modal-click');
     for (let i = 0; i < noteModalClick.length; i++) {
         noteModalClick[i].addEventListener("click", function (event) {
-            $("#noteswindow .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            hideStyleOneAllPopup();
+
+            $("#noteswindow").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
             });
+
+            $("#noteswindow").css('display', 'block');
+
+            $("#noteswindow .scrollmodal").css('display', 'none');
+            $("#noteswindow .checkbox-table-loading").css('display', 'block');
+            
+            setTimeout(() => {
+                $("#noteswindow .scrollmodal").css('display', 'block');
+                $("#noteswindow .checkbox-table-loading").css('display', 'none');
+            }, 2000);
+
+        });
+    }
+
+    let copyModalClick = document.getElementsByClassName('copyrowlist-modal-click');
+    for (let i = 0; i < copyModalClick.length; i++) {
+        copyModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            hideStyleOneAllPopup();
+
+            $("#copyrowlist").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
+            });
+
+            $("#copyrow_list_item_loading").css("display", "block");
+            $(".copytoscrollwindow").css("display", "none");
+            $(".copytoscrollbtn").css("display", "none");
+            
+            setTimeout(() => {
+                $("#copyrow_list_item_loading").css("display", "none");
+                $(".copytoscrollwindow").css("display", "block");
+                $(".copytoscrollbtn").css("display", "block");
+            }, 2000);
+
+            $("#copyrowlist").css('display', 'block');
+
+        });
+    }
+
+    let moveModalClick = document.getElementsByClassName('moverowlist-modal-click');
+    for (let i = 0; i < moveModalClick.length; i++) {
+        moveModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            hideStyleOneAllPopup();
+
+            $("#moverowlist").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
+            });
+
+            $("#moverow_list_item_loading").css("display", "block");
+            $(".movetoscrollwindow").css("display", "none");
+            $(".movetoscrollbtn").css("display", "none");
+            
+            setTimeout(() => {
+                $("#moverow_list_item_loading").css("display", "none");
+                $(".movetoscrollwindow").css("display", "block");
+                $(".movetoscrollbtn").css("display", "block");
+            }, 2000);
+
+            $("#moverowlist").css('display', 'block');
+
+        });
+    }
+
+    let alertModalClick = document.getElementsByClassName('alertswindow-modal-click');
+    for (let i = 0; i < alertModalClick.length; i++) {
+        alertModalClick[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            hideStyleOneAllPopup();
+
+            $("#alertswindow").css({
+                top: ((elementPositionMain.y) + window.scrollY + 33),
+                left: ((elementPositionMain.x) - 10)
+            });
+
+            $("#alertswindow").css('display', 'block');
+
+            $("#alertswindow .alert-table-wrap").css('display', 'none');
+            $("#alertswindow .loading-alert-table-wrap").css('display', 'block');
+            
+            setTimeout(() => {
+                $("#alertswindow .alert-table-wrap").css('display', 'block');
+                $("#alertswindow .loading-alert-table-wrap").css('display', 'none');
+            }, 2000);
+
+        });
+    }
+
+    let viewModalListSty2 = document.getElementsByClassName('view-modal-click-style2');
+    for (let i = 0; i < viewModalListSty2.length; i++) {
+        viewModalListSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            hideStyleTwoAllPopup();
+
+            $("#col8Filter").css('display', 'none');
+
+            $("#viewtwo_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) + 2)
+            });
+
+            $("#viewtwo_style2").css('display', 'block');
+
+            $("#viewtwo_style2 .scrollmodal").css('display', 'none');
+            $("#viewtwo_style2 .checkbox-table-loading").css('display', 'block');
+            
+            setTimeout(() => {
+                $("#viewtwo_style2 .scrollmodal").css('display', 'block');
+                $("#viewtwo_style2 .checkbox-table-loading").css('display', 'none');
+            }, 2000);
+    
+        });
+    }
+
+    let rowModalClickSty2 = document.getElementsByClassName('row-modal-click-style2');
+    for (let i = 0; i < rowModalClickSty2.length; i++) {
+        rowModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            hideStyleTwoAllPopup();
+
+            $("#col8Filter").css('display', 'none');
+
+            $("#rowdetails_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) + 2)
+            });
+
+            $("#rowdetails_style2").css('display', 'block');
+
+            $("#rowdetails_style2 .scrollmodal").css('display', 'none');
+            $("#rowdetails_style2 .checkbox-table-loading").css('display', 'block');
+            
+            setTimeout(() => {
+                $("#rowdetails_style2 .scrollmodal").css('display', 'block');
+                $("#rowdetails_style2 .checkbox-table-loading").css('display', 'none');
+            }, 2000);
+
         });
     }
 
     let noteModalClickSty2 = document.getElementsByClassName('note-modal-click-style2');
     for (let i = 0; i < noteModalClickSty2.length; i++) {
         noteModalClickSty2[i].addEventListener("click", function (event) {
-            $("#noteswindow_style2 .modal-dialog").css({
-                top: ((event.clientY) + 13),
-                left: ((event.clientX) - 25)
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            hideStyleTwoAllPopup();
+
+            $("#col8Filter").css('display', 'none');
+
+            $("#noteswindow_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) + 2)
             });
+
+            $("#noteswindow_style2").css('display', 'block');
+
+            $("#noteswindow_style2 .scrollmodal").css('display', 'none');
+            $("#noteswindow_style2 .checkbox-table-loading").css('display', 'block');
+            
+            setTimeout(() => {
+                $("#noteswindow_style2 .scrollmodal").css('display', 'block');
+                $("#noteswindow_style2 .checkbox-table-loading").css('display', 'none');
+            }, 2000);
+
         });
     }
+
+    let copyModalClickSty2 = document.getElementsByClassName('copyrowlist-modal-click-style2');
+    for (let i = 0; i < copyModalClickSty2.length; i++) {
+        copyModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            hideStyleTwoAllPopup();
+
+            $("#col8Filter").css('display', 'none');
+
+            $("#copyrowlist_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) - 804)
+            });
+
+            $("#copyrowS2_list_item_loading").css("display", "block");
+            $(".copytoscrollwindow_style2").css("display", "none");
+            $(".copytoscrollbtn_style2").css("display", "none");
+            
+            setTimeout(() => {
+                $("#copyrowS2_list_item_loading").css("display", "none");
+                $(".copytoscrollwindow_style2").css("display", "block");
+                $(".copytoscrollbtn_style2").css("display", "block");
+            }, 2000);
+
+            $("#copyrowlist_style2").css('display', 'block');
+
+        });
+    }
+
+    let moveModalClickSty2 = document.getElementsByClassName('moverowlist-modal-click-style2');
+    for (let i = 0; i < moveModalClickSty2.length; i++) {
+        moveModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            hideStyleTwoAllPopup();
+
+            $("#col8Filter").css('display', 'none');
+
+            $("#moverowlist_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) - 804)
+            });
+
+            $("#moverowS2_list_item_loading").css("display", "block");
+            $(".movetoscrollwindow_style29").css("display", "none");
+            $(".movetoscrollbtn_style29").css("display", "none");
+            
+            setTimeout(() => {
+                $("#moverowS2_list_item_loading").css("display", "none");
+                $(".movetoscrollwindow_style29").css("display", "block");
+                $(".movetoscrollbtn_style29").css("display", "block");
+            }, 2000);
+
+            $("#moverowlist_style2").css('display', 'block');
+
+        });
+    }
+
+    let alertModalClickSty2 = document.getElementsByClassName('alertswindow-modal-click-style2');
+    for (let i = 0; i < alertModalClickSty2.length; i++) {
+        alertModalClickSty2[i].addEventListener("click", function (event) {
+            let elementPositionMain = forceEventTargetDiv(event);
+
+            hideStyleTwoAllPopup();
+
+            $("#col8Filter").css('display', 'none');
+
+            $("#alertswindow_style2").css({
+                top: ((elementPositionMain.y) + window.scrollY + 62),
+                left: ((elementPositionMain.x) - 804)
+            });
+
+            $("#alertswindow_style2").css('display', 'block');
+
+            $("#alertswindow_style2 .alert-table-wrap").css('display', 'none');
+            $("#alertswindow_style2 .loading-alert-table-wrap").css('display', 'block');
+            
+            setTimeout(() => {
+                $("#alertswindow_style2 .alert-table-wrap").css('display', 'block');
+                $("#alertswindow_style2 .loading-alert-table-wrap").css('display', 'none');
+            }, 2000);
+
+        });
+    }
+
 }
 
 function Style2DropFilterPos() {
     let style2FilterPosition = document.getElementsByClassName('style2-filterPosition');
     for (let i = 0; i < style2FilterPosition.length; i++) {
         style2FilterPosition[i].addEventListener("click", function (event) {
-            $("#col8Filter .modal-dialog").css({
-                top: ((event.clientY) + 20),
-                left: ((event.clientX) - 240),
-                height: 350
+            
+            let elementPositionMain = event.target.getBoundingClientRect();
+            $("#col8Filter").css('display', 'none');
+            $("#col8Filter").css({
+                top: ((elementPositionMain.y) + window.scrollY + 30),
+                left: ((elementPositionMain.x) - 235)
             });
-            $("#col8Filter .modal-dialog .table-header-click-popup").css({
-                "margin-top": "-15px"
-            });
+            $("#col8Filter").css('display', 'block');
+
+            $("#col8Filter .checkbox-table-loading").css("display", "block");
+            $("#col8Filter .checkbox-table-scroll").css("display", "none");
+
+            setTimeout(() => {
+                $("#col8Filter .checkbox-table-loading").css("display", "none");
+                $("#col8Filter .checkbox-table-scroll").css("display", "block");
+            }, 2000);
         });
     }
 }
@@ -1451,3 +2056,471 @@ $('#col8Filter').on('hidden.bs.modal', function (e) {
 $('#dropBtnModal').on('hidden.bs.modal', function (e) {
     $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
 });
+
+
+// Forcing Event Target To div for Dynamic PopUp Position 
+function forceEventTargetDiv(e) {
+    let elementPosition = "";
+    let targetName = e.target.nodeName.toLowerCase();
+    //console.log("Tag Name: " + targetName);
+    if (targetName == "i") {
+        elementPosition = e.target.parentElement.getBoundingClientRect();
+    } else {
+        if (targetName == "path") {
+            let pathFinder = e.target.parentElement.nodeName.toLowerCase();
+            if (pathFinder == "g") {
+                elementPosition = e.target.parentElement.parentElement.parentElement.getBoundingClientRect();
+            } else {
+                elementPosition = e.target.parentElement.parentElement.getBoundingClientRect();
+            }
+        }
+        else if (targetName == "g") {
+            elementPosition = e.target.parentElement.parentElement.getBoundingClientRect();
+        }
+        else if (targetName == "svg") {
+            elementPosition = e.target.parentElement.getBoundingClientRect();
+        }
+        else {
+            elementPosition = e.target.getBoundingClientRect();
+        }
+    }
+    return elementPosition;
+}
+
+$("#viewtwo_close").click(function () {
+    $("#viewtwo").css('display', 'none');
+});
+$("#viewtwo_s2_close").click(function () {
+    $("#viewtwo_style2").css('display', 'none');
+});
+
+$("#rowdetails_close").click(function () {
+    $("#rowdetails").css('display', 'none');
+});
+$("#rowdetails_s2_close").click(function () {
+    $("#rowdetails_style2").css('display', 'none');
+});
+
+$("#note_close").click(function () {
+    $("#noteswindow").css('display', 'none');
+});
+$("#note_s2_close").click(function () {
+    $("#noteswindow_style2").css('display', 'none');
+});
+
+$("#alert_close").click(function () {
+    $("#alertswindow").css('display', 'none');
+    resetInputFieldAlert("alertswindow");
+});
+$("#alert_s2_close").click(function () {
+    $("#alertswindow_style2").css('display', 'none');
+    resetInputFieldAlert("alertswindow_style2");
+});
+
+$("#copyRow_close").click(function () {
+    $("#copyrowlist").css('display', 'none');
+});
+$("#copyRow_s2_close").click(function () {
+    $("#copyrowlist_style2").css('display', 'none');
+});
+
+$("#moveRow_close").click(function () {
+    $("#moverowlist").css('display', 'none');
+});
+$("#moveRow_s2_close").click(function () {
+    $("#moverowlist_style2").css('display', 'none');
+});
+
+
+
+$("#closeCol8Filter").click(function () {
+    $("#col8Filter").css('display', 'none');
+
+    // const rotateIcon = document.querySelectorAll("#Main .outer-table-style12-box i.fa-caret-down.down-animation-icon");
+    const rotateIcon = document.querySelectorAll(".outer-table-style12-box i.fa-caret-down.down-animation-icon");
+    for (let i = 0; i < rotateIcon.length; i++) {
+        $(rotateIcon[i]).removeClass("down-animation-icon");
+    }
+});
+
+
+$("#resetAlert").click(function () {
+    resetInputFieldAlert("alertswindow");
+});
+
+$("#resetAlertS2").click(function () {
+    resetInputFieldAlert("alertswindow_style2");
+});
+
+window.addEventListener("scroll", (event) => {
+    let scroll = this.scrollY;
+    // console.log(scroll);
+    // if (scroll > 1400) {
+    if (scroll > 1000) {
+        let arrowShowing = $(`#${mnResultActiveTabID} .style1-box`).hasClass("clickstylebg");
+        if (arrowShowing) {
+            $(`#${mnResultActiveTabID} .outer-table-style12-box .left-slider5`).css('display', 'block');
+            $(`#${mnResultActiveTabID} .outer-table-style12-box .right-slider5`).css('display', 'block');
+        }
+    } else {
+        $(`#${mnResultActiveTabID} .outer-table-style12-box .left-slider5`).css('display', 'none');
+        $(`#${mnResultActiveTabID} .outer-table-style12-box .right-slider5`).css('display', 'none');
+    }
+
+    if (scroll > 1200) {
+        let arrowShowing = $(`#${mnResultActiveTabID} .style1-box`).hasClass("clickstylebg");
+
+        let filterTargeting = document.querySelector('#col8Filter');
+        let filterStyles = window.getComputedStyle(filterTargeting);
+
+        if (arrowShowing == true && filterStyles.display == "block" && headerIndexClick != "") {
+            let virtualHeader = document.querySelector(`#${mnResultActiveTabID} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap`);
+            let compStyles = window.getComputedStyle(virtualHeader);
+
+            if (compStyles.visibility == "visible") {
+                $("#col8Filter").css({
+                    top: (50),
+                    position: "fixed"
+                });
+            }
+
+            if (compStyles.visibility == "hidden") {
+                // let actualHeaderTarget = document.querySelector(`#resizable554 th:nth-child(${headerIndexClick})`);
+                let actualHeaderTarget = document.querySelector(`#${mnResultActiveTabSty1TableID} th:nth-child(${headerIndexClick})`);
+                let elementPositionMain = actualHeaderTarget.getBoundingClientRect();
+                $("#col8Filter").css({
+                    top: ((elementPositionMain.y) + window.scrollY + 60),
+                    position: "absolute"
+                });
+            }
+        }
+    }
+});
+
+
+$(document).keydown(function (e) {
+    let arrowShowing = $(`#${mnResultActiveTabID} .style1-box`).hasClass("clickstylebg");
+    let filterTargeting = document.querySelector('#col8Filter');
+    let filterStyles = window.getComputedStyle(filterTargeting);
+    if (e.which == 37 && arrowShowing == true) {
+        hideStyleOneAllPopup();
+        resetDownArrow();
+        //    return false;
+    }
+    if (e.which == 39 && arrowShowing == true) {
+        hideStyleOneAllPopup();
+        resetDownArrow();
+        //    return false;
+    }
+
+    let universalConfirm = window.getComputedStyle(document.querySelector('#universal_confirm_modal'));
+    let mnResDispConfirm = window.getComputedStyle(document.querySelector('#manageResultChartDisplay_modal'));
+    let uniThankYou = window.getComputedStyle(document.querySelector('#universalThankDraftModal'));
+
+    if (e.which == 27 && (universalConfirm.display == "block" || mnResDispConfirm.display == "block") && uniThankYou.display == "none") {
+        $('#universal_confirm_modal').modal('hide');
+        $('#manageResultChartDisplay_modal').modal('hide');
+
+        $("#universalThankDraftModal #thank_draft_header p").html("CANCELLATION");
+        $("#universalThankDraftModal #thank_draft_details p").html("The Request has been Canceled!");
+        $('#universalThankDraftModal').modal('show');
+    }
+});
+
+// Arguments (resetDownArrow):
+// 1. Selected TAB ID
+
+function resetDownArrow() {
+    // const rotateIcon = document.querySelectorAll("#Main .outer-table-style12-box i.fa-caret-down.down-animation-icon");
+    const rotateIcon = document.querySelectorAll(".outer-table-style12-box i.fa-caret-down.down-animation-icon");
+    for (let i = 0; i < rotateIcon.length; i++) {
+        $(rotateIcon[i]).removeClass("down-animation-icon");
+    }
+}
+
+// Manage Result : Alert PopUps (Changing Placeholder and Icon Color)
+
+function alertWindowIconHandling(alertsPopupId){
+    let mailIconAlert = $(`#${alertsPopupId} .mail_icons`);
+    for (let i = 0; i < mailIconAlert.length; i++) {
+        mailIconAlert[i].addEventListener("click", function (event) {
+            // let elementPositionMain = event.target;
+            if (event.target.nodeName == "I") {
+                let iconClassName = event.target.classList[1];
+                if (iconClassName == "fa-envelope") {
+                    $(mailIconAlert[i].children[0]).addClass("iconActive");
+                    $(mailIconAlert[i].children[1]).removeClass("iconActive");
+                    $(mailIconAlert[i].children[2]).removeClass("iconActive");
+
+                    $(mailIconAlert[i].parentNode.lastElementChild).attr("placeholder", "Enter a Email Address").attr("type", "email");
+                }
+                else if (iconClassName == "fa-phone-alt") {
+                    $(mailIconAlert[i].children[0]).removeClass("iconActive");
+                    $(mailIconAlert[i].children[1]).addClass("iconActive");
+                    $(mailIconAlert[i].children[2]).removeClass("iconActive");
+
+                    $(mailIconAlert[i].parentNode.lastElementChild).attr("placeholder", "Enter a Phone Number").attr("type", "number");
+                }
+                else if (iconClassName == "fa-comment-alt") {
+                    $(mailIconAlert[i].children[0]).removeClass("iconActive");
+                    $(mailIconAlert[i].children[1]).removeClass("iconActive");
+                    $(mailIconAlert[i].children[2]).addClass("iconActive");
+
+                    $(mailIconAlert[i].parentNode.lastElementChild).attr("placeholder", "Enter a Text Message").attr("type", "text");
+                }
+
+            }
+        });
+    }
+}
+
+alertWindowIconHandling("alertswindow");
+alertWindowIconHandling("alertswindow_style2");
+
+// Manage Result : Alert PopUps (Resetting Inputs and Icon Color)
+function resetInputFieldAlert(alertsPopupId) {
+    const inputInterval = document.querySelectorAll(`#${alertsPopupId} td.inpalertval input`);
+    for (let i = 0; i < inputInterval.length; i++) {
+        inputInterval[i].value = "";
+    }
+
+    const inputMail = document.querySelectorAll(`#${alertsPopupId} td.inpumail input`);
+    for (let i = 0; i < inputMail.length; i++) {
+        inputMail[i].value = "";
+        // Resetting the Input Placeholder into default state
+        $(inputMail[i]).attr("placeholder", "Enter a Email Addres").attr("type", "email");
+    }
+
+    // Resetting the icon into default state
+    let emailAlert = $(`#${alertsPopupId} .mail_icons .fa-envelope`);
+    let phoneAlert = $(`#${alertsPopupId} .mail_icons .fa-phone-alt`);
+    let textAlert = $(`#${alertsPopupId} .mail_icons .fa-comment-alt`);
+
+    for (i = 0; i < emailAlert.length; i++) {
+        $(emailAlert[i]).addClass("iconActive");
+        $(phoneAlert[i]).removeClass("iconActive");
+        $(textAlert[i]).removeClass("iconActive");
+    }
+
+}
+
+// Insert Row to Alerts Window
+function insertRowToAlertTable(activeLayout){
+    let alertswindowId = "alertswindow";
+
+    if(activeLayout == "style2"){
+        alertswindowId = "alertswindow_style2";
+    }
+
+    let lastRowNum = $(`#${alertswindowId} .alert-table-wrap .alert-table tbody tr:last-child td:nth-child(1)`).text();
+    lastRowNum = parseInt(lastRowNum.trim()) + 1;
+
+    $(`#${alertswindowId} .alert-table-wrap .alert-table tbody`).append(`<tr>
+            <td>${lastRowNum}</td>
+            <td class="selectaltype">
+                <select name="" id="">
+                    <option value="">Precent Change
+                        Greather...
+                    </option>
+                    <option value="">Precent Change
+                        Greather...
+                    </option>
+                    <option value="">Precent Change
+                        Greather...
+                    </option>
+                    <option value="">Precent Change
+                        Greather...
+                    </option>
+                </select>
+                <div class="selectarrow">
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </td>
+            <td class="inpalertval">
+                <input type="text">
+            </td>
+            <td class="selectalfreq">
+                <select name="" id="">
+                    <option value="">Anytime</option>
+                    <option value="">Anytime</option>
+                    <option value="">Anytime</option>
+                    <option value="">Anytime</option>
+                </select>
+                <div class="selectarrow">
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </td>
+            <td class="inpumail">
+                <div class="mail_enter">
+                    <div class="mail_icons">
+                        <i class="fas fa-envelope iconActive"></i>
+                        <i class="fas fa-phone-alt"></i>
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+                    <input type="email" placeholder="Enter a Email Address">
+                </div>
+            </td>
+            <td class="removenull">
+                <div class="circle_550" onclick="insertRowToAlertTable('${activeLayout}')">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="circle_550 deleteTableRow" onclick="universalConfirmModalDelete(this)">
+                    <i class="fas fa-times"></i>
+                </div>
+            </td>
+        </tr>`);
+    
+        alertWindowIconHandling(alertswindowId);
+}
+
+function hideStyleOneAllPopup(){
+    $("#viewtwo").css("display", "none");
+    $("#rowdetails").css("display", "none");
+    $("#noteswindow").css("display", "none");
+    $("#alertswindow").css("display", "none");
+    $("#copyrowlist").css("display", "none");
+    $("#moverowlist").css("display", "none");
+
+    $("#col8Filter").css('display', 'none');
+}
+function hideStyleTwoAllPopup(){
+    $("#viewtwo_style2").css("display", "none");
+    $("#rowdetails_style2").css("display", "none");
+    $("#noteswindow_style2").css("display", "none");
+    $("#alertswindow_style2").css("display", "none");
+    $("#copyrowlist_style2").css("display", "none");
+    $("#moverowlist_style2").css("display", "none");
+    $("#col8Filter").css('display', 'none');
+}
+
+function customFilterClick(){
+    $("#col8Filter").css('display', 'none');
+    $('#filter-modal').modal('show');
+    const rotateIcon = document.querySelectorAll(".outer-table-style12-box i.fa-caret-down.down-animation-icon");
+    for (let i = 0; i < rotateIcon.length; i++) {
+        $(rotateIcon[i]).removeClass("down-animation-icon");
+    }
+}
+
+function filterSelectBtnClick(){
+    $("#col8Filter").css('display', 'none');
+
+    const rotateIcon = document.querySelectorAll(".outer-table-style12-box i.fa-caret-down.down-animation-icon");
+    for (let i = 0; i < rotateIcon.length; i++) {
+        $(rotateIcon[i]).removeClass("down-animation-icon");
+    }
+
+    $(`#${mnResultActiveTabSty1TableID}`).css("display", "none");
+    $(`#${mnResultActiveTabID} .pagination-container`).css("display", "none");
+    $(`#${mnResultActiveTabID} .page-number12-wrap`).css("display", "none");
+
+    $(`#${mnResultActiveTabID} .loading-style1-table`).css("display", "block");
+    $(`#${mnResultActiveTabID} .pagination-loading-handler`).css("display", "block");
+    $(`#${mnResultActiveTabID} .page-number-loading`).css("display", "block");
+
+    $(`#${mnResultActiveTabID} .style2-table-wrap .style2-table-content`).css("display", "none");
+    $(`#${mnResultActiveTabID} .loading-style2-table`).css("display", "block");
+
+    setTimeout(() => {
+        $(`#${mnResultActiveTabID} .loading-style1-table`).css("display", "none");
+        $(`#${mnResultActiveTabID} .pagination-loading-handler`).css("display", "none");
+        $(`#${mnResultActiveTabID} .page-number-loading`).css("display", "none");
+
+        $(`#${mnResultActiveTabSty1TableID}`).css("display", "block");
+        $(`#${mnResultActiveTabID} .pagination-container`).css("display", "block");
+        $(`#${mnResultActiveTabID} .page-number12-wrap`).css("display", "block");
+
+        $(`#${mnResultActiveTabID} .loading-style2-table`).css("display", "none");
+        $(`#${mnResultActiveTabID} .style2-table-wrap .style2-table-content`).css("display", "block");
+    }, 3000);
+}
+
+function filterThankCloseBtn(){
+    $('#filter-modal').modal('hide');
+
+    let tableRowNumber = $(`#${mnResultActiveTabID} .style1-table-wrap #${mnResultActiveTabSty1TableID} tbody tr`);
+    if (tableRowNumber.length > 0) {
+        $(`#${mnResultActiveTabSty1TableID}`).css("display", "none");
+        $(`#${mnResultActiveTabID} .pagination-container`).css("display", "none");
+        $(`#${mnResultActiveTabID} .page-number12-wrap`).css("display", "none");
+    
+        $(`#${mnResultActiveTabID} .loading-style1-table`).css("display", "block");
+        $(`#${mnResultActiveTabID} .pagination-loading-handler`).css("display", "block");
+        $(`#${mnResultActiveTabID} .page-number-loading`).css("display", "block");
+    
+        $(`#${mnResultActiveTabID} .style2-table-wrap .style2-table-content`).css("display", "none");
+        $(`#${mnResultActiveTabID} .loading-style2-table`).css("display", "block");
+    
+        setTimeout(() => {
+            $(`#${mnResultActiveTabID} .loading-style1-table`).css("display", "none");
+            $(`#${mnResultActiveTabID} .pagination-loading-handler`).css("display", "none");
+            $(`#${mnResultActiveTabID} .page-number-loading`).css("display", "none");
+    
+            $(`#${mnResultActiveTabSty1TableID}`).css("display", "block");
+            $(`#${mnResultActiveTabID} .pagination-container`).css("display", "block");
+            $(`#${mnResultActiveTabID} .page-number12-wrap`).css("display", "block");
+    
+            $(`#${mnResultActiveTabID} .loading-style2-table`).css("display", "none");
+            $(`#${mnResultActiveTabID} .style2-table-wrap .style2-table-content`).css("display", "block");
+        }, 3000);
+    }
+}
+
+
+$("#col8FilterInput").keyup(function(){
+    $("#col8Filter .checkbox-table-loading").css("display", "block");
+    $("#col8Filter .checkbox-table-scroll").css("display", "none");
+
+    setTimeout(() => {
+        $("#col8Filter .checkbox-table-loading").css("display", "none");
+        $("#col8Filter .checkbox-table-scroll").css("display", "block");
+    }, 1000);
+});
+
+$("#col8FilterFind").click(function () {
+    $("#col8Filter .checkbox-table-loading").css("display", "block");
+    $("#col8Filter .checkbox-table-scroll").css("display", "none");
+
+    setTimeout(() => {
+        $("#col8Filter .checkbox-table-loading").css("display", "none");
+        $("#col8Filter .checkbox-table-scroll").css("display", "block");
+    }, 1000);
+});
+
+
+// let targetCheckBox = $("#resizable554 thead th.column-header-1 input[type='checkbox'].toggle__input");
+//   if (targetCheckBox.checked == false) {
+//     targetCheckBox.click();
+//   }
+
+function controlCheckboxOfTableHead(sty1TableId, selectedTab){
+    $(`#${sty1TableId} thead th.column-header-1 input[type='checkbox'].toggle__input`).change(function(){
+        let tableTotalRow = $(`#${sty1TableId} tbody tr`).length;
+        if($(this).prop('checked') === true){
+            for(i=1; i<=tableTotalRow; i++){
+                $(`#${sty1TableId} tbody tr:nth-child(${i}) td.column-header-1 input[type='checkbox'].toggle__input`).prop('checked',true);
+            }
+            $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 thead th.column-header-1 input[type='checkbox'].toggle__input`).prop('checked',true);
+        }else{
+            for(i=1; i<=tableTotalRow; i++){
+                $(`#${sty1TableId} tbody tr:nth-child(${i}) td.column-header-1 input[type='checkbox'].toggle__input`).prop('checked', false);
+            }
+            $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 thead th.column-header-1 input[type='checkbox'].toggle__input`).prop('checked', false);
+        }
+    });
+
+    $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 thead th.column-header-1 input[type='checkbox'].toggle__input`).change(function(){
+        let tableTotalRow = $(`#${sty1TableId} tbody tr`).length;
+        if($(this).prop('checked') === true){
+            for(i=1; i<=tableTotalRow; i++){
+                $(`#${sty1TableId} tbody tr:nth-child(${i}) td.column-header-1 input[type='checkbox'].toggle__input`).prop('checked',true);
+            }
+            $(`#${sty1TableId} thead th.column-header-1 input[type='checkbox'].toggle__input`).prop('checked',true);
+        }else{
+            for(i=1; i<=tableTotalRow; i++){
+                $(`#${sty1TableId} tbody tr:nth-child(${i}) td.column-header-1 input[type='checkbox'].toggle__input`).prop('checked', false);
+            }
+            $(`#${sty1TableId} thead th.column-header-1 input[type='checkbox'].toggle__input`).prop('checked', false);
+        }
+    });
+}

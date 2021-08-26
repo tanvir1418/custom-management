@@ -21,27 +21,34 @@
 }
 
 body {
-    background: #ffffff;
+    background: #f0f0f0;
     font-family: gilroy-regular, sans-serif;
-    overflow: hidden;
+    /* overflow: hidden; */
+}
+
+.wrapper .tabs ul li.active {
+    border-bottom: none;
 }
 
 #login-section {
-    width: 100vw;
-    height: 100vh;
+    width: 95%;
     position: relative;
+    background: #ffffff;
+    margin: 32px auto;
+    padding: 100px 0;
 }
 
 #login-section .login-form {
-    position: absolute;
+    /* position: absolute; */
     width: 600px;
-    height: 315px;
+    /* height: 345px; */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
     background: #f0f0f0;
+    box-shadow: 5px 5px 10px -4px rgb(51 51 51 / 75%);
 }
 
 .login-form .login-title {
@@ -59,11 +66,12 @@ body {
     letter-spacing: 2px;
 }
 
-.login-form .login-input form {
+.login-form .login-input div#loginForm {
     padding-top: 25px;
+    padding-bottom: 10px;
 }
 
-.login-input form .myinput {
+.login-input .myinput {
     width: 500px;
     height: 50px;
     margin-bottom: 25px;
@@ -77,7 +85,7 @@ body {
     font-family: gilroy-regular, sans-serif;
 }
 
-.login-input form input:focus {
+.login-input input:focus {
     outline: none;
 }
 
@@ -119,4 +127,416 @@ a:visited {
     text-align: center;
     text-decoration: none;
 
+}
+
+
+/* ========== PAGE AFTER LOGIN ========== */
+
+#tc-section{
+    width: 95%;
+    position: relative;
+    background: #ffffff;
+    margin: 32px auto;
+    padding: 20px 0 30px 0;
+}
+.terms_conditions .tc-head{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: gilroy-medium, sans-serif;
+    color: #000000;
+}
+
+.terms_conditions .text-box44545{
+    width: 80%;
+    margin: 0 auto;
+}
+.terms_conditions .after-login-text{
+    width: 100%;
+    height: 350px;
+    margin: 16px auto 0;
+    overflow-y: scroll;
+    border: 3px solid #848484;
+    border-radius: 5px;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: gilroy-medium, sans-serif;
+    color: #000000;
+}
+/*  Text box scrollbar customize start */
+.after-login-text::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.after-login-text::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #919191;
+    border-radius: 10px;
+}
+
+/* Handle */
+.after-login-text::-webkit-scrollbar-thumb {
+    background: #919191;
+    border-radius: 15px;
+}
+
+/* Handle on hover */
+.after-login-text::-webkit-scrollbar-thumb:hover {
+    background: #616161;
+}
+
+/* Text box scrollbar customize end */
+
+.terms_conditions .tc-outerbox{
+    width: 80%;
+    height: 350px;
+    margin: 16px auto 0;
+    overflow-y: scroll;
+    border: 3px solid #848484;
+    border-radius: 5px;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: gilroy-medium, sans-serif;
+    color: #000000;
+}
+.terms_conditions .tc-outerbox p{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: gilroy-medium, sans-serif;
+    color: #000000;
+    margin: 0;
+}
+.terms_conditions .tic-box{
+    display: flex;
+    margin: 16px 0;
+    justify-content: center;
+}
+
+.terms_conditions .tic-box input {
+    height: 25px;
+    width: 25px;
+    border: 2px solid #000000;
+    outline: none;
+    transition-duration: 0.3s;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+.terms_conditions .tic-box p{
+    margin: 0;
+    margin-left: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: gilroy-medium, sans-serif;
+    color: #1b1b1b;
+}
+.terms_conditions .accept-btn-box{
+    width: 65%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+}
+
+.terms_conditions .accept-btn-box input{
+    padding: 16px 35px;
+    color: #ffffff;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: gilroy-medium, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 2px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+.terms_conditions .accept-btn-box .decline{
+    background-color: #ff0000;
+}
+.terms_conditions .accept-btn-box .accept{
+    background-color: #558804;
+    margin-left: auto;
+}
+.terms_conditions .accept-btn-box .decline:hover{
+    background-color: #e62424;
+}
+.terms_conditions .accept-btn-box .accept:hover{
+    background-color: #3A5D00;
+}
+
+/* scrollbar customize start */
+.tc-outerbox::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.tc-outerbox::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #919191;
+    border-radius: 10px;
+}
+
+/* Handle */
+.tc-outerbox::-webkit-scrollbar-thumb {
+    background: #919191;
+    border-radius: 15px;
+}
+
+/* Handle on hover */
+.tc-outerbox::-webkit-scrollbar-thumb:hover {
+    background: #616161;
+}
+
+/* scrollbar customize end */
+
+/* FORGER PASSWORD */
+.login-input .forget-pass{
+    margin: 16px 0;
+    cursor: pointer;
+}
+.login-input .forget-pass span{
+    font-size: 16px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+    color: #0366d6;
+}
+
+/* FORGOT PASSWORD MODAL */
+#forgotPass .modal-dialog{
+    min-width: 650px;
+}
+#forgotPass .modal-content{
+    padding: 0px;
+    border-radius: 0;
+}
+#forgotPass .modal-content p{
+    font-size: 16px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+}
+#forgotPass .forgot-title{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    line-height: 40px;
+    background-color: #000000;
+}
+
+#forgotPass .forgot-title p{
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: gilroy, sans-serif;
+    margin: auto;
+    text-transform: uppercase;
+    /* padding: 10px 0; */
+    letter-spacing: 2px;
+}
+#forgotPass .forgot-pass-pera p.enter-pass-text{
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 0;
+}
+
+#forgotPass .forgot-pass-pera{
+    padding-top: 15px;
+}
+
+#forgotPass .forgot-pass-pera,
+#forgotPass .enter-verified-email{
+    margin: 0 30px;
+}
+
+#forgotPass .enter-verified-email{
+    display: flex;
+    margin-top: 15px;
+    margin-bottom:  30px;
+}
+
+#forgotPass .enter-verified-email input{
+    padding: 5px;
+    font-size: 16px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+}
+#forgotPass .enter-verified-email input.btn-success,
+#forgotPass .enter-verified-email input.btn-light{
+    padding: 0 18px;
+    margin-left: 15px;
+}
+
+#forgotPass .enter-verified-email input.btn-light{
+    background-color: #e2e6ea;
+}
+
+#forgotPass .enter-verified-email input.btn-light:hover{
+    background-color: #cfcbcb;
+    color: #000000;
+}
+
+#forgotPass .enter-verified-email input[type=email]{
+    width: 100%;
+    background-color: #f0f0f0;
+    border: 2px solid #000000;
+    border-radius: 3px;
+    padding-left: 15px;
+    font-size: 16px;
+    color: #7d7c7c;
+    font-weight: 600;
+    font-family: gilroy-regular, sans-serif;
+}
+
+
+/* Password eye icon styles  */
+.password-container{
+    position: relative;
+}
+
+.password-container span.password-field-icon{
+    cursor: pointer;
+}
+
+.password-field-icon {
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    z-index: 3;
+    font-size: 22px;
+}
+
+
+/* ================================================ */
+/* thank you pop-up-for-generate button style starts */
+.generate-button-click-popup {
+    width: 358px;
+    height: 265px;
+    /* -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75); */
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    -moz-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+}
+
+.generate-button-popup-header-title {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    height: 65px;
+    width: 100%;
+    line-height: 65px;
+}
+
+.generate-button-popup-header-title p {
+    padding-bottom: 0;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.generate-button-popup-body-content {
+    margin: 15px 25px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid grey;
+    background-color: #f9f9fb;
+}
+
+.generate-button-popup-body-content p {
+    margin: 0;
+    padding: 20px 40px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #787878;
+}
+
+.generate-button-click-popup-wrapper .generate-popup {
+    margin-top: 5px;
+    margin-right: 25px;
+    float: right;
+}
+
+.generate-button-click-popup-wrapper .generate-popup .gn-close-btn {
+    width: 110px;
+    font-size: 18px;
+    background: #e9e9e9;
+    color: black;
+    font-weight: bold;
+    transition: 150ms;
+    outline: none;
+    border: 0 none;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 6px 0px;
+}
+
+.generate-button-click-popup-wrapper .generate-popup .gn-close-btn:hover,
+.generate-button-click-popup-wrapper .generate-popup .gn-close-btn:focus {
+    background: #000000;
+    color: #e6e6e6;
+}
+
+#loginOnlyThankModal .modal-dialog {
+    width: 360px;
+    border: 0;
+    border-radius: 0 !important;
+}
+
+#loginOnlyThankModal .modal-content .modal-body {
+    padding: 0;
+    border-radius: 0 !important;
+}
+
+/* thank you pop-up-for-generate button style ends */
+/* ===================XXXXXXXXXXX================= */
+
+/* submitting loading animation  */
+.loading-bar { 
+    position: relative; 
+    width: 100%; 
+    height: 15px; 
+    background-color: #797979; 
+    overflow: hidden; 
+  }
+  .bar-animation { 
+    position: absolute;
+    width: 15%; 
+    height: 15px; 
+    background-color: #186E00; 
+  } 
+  
+  .submit-draft-info .modal-dialog{
+    max-width: 700px;
+    height: 350px;
+  }
+  .submit-draft-info .submit-info-container{
+    margin: 10px 25px;
+  }
+  .submit-draft-info .submit-title{
+    font-family: gilroy-medium;
+    font-size: 28px;
+    font-weight: 900;
+  }
+  .submit-draft-info #submitting_file_info{
+    font-family: gilroy-medium;
+    font-size: 20px;
+  }
+  
+  #submitting_Info.modal{
+    background-color: rgb(0, 0, 0, 0.4) !important;
+  }
+
+
+.modal-force-recovery-email{
+    /* overflow:hidden !important;
+    padding-right: 17px !important; */
+}
+
+.modal-force-recovery-email .modal{
+    /* overflow-x:hidden !important;
+    overflow-y:auto !important; */
 }

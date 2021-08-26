@@ -1,0 +1,497 @@
+.trial_14 {
+    background: #FEF119;
+    width: 95%;
+    position: relative;
+    margin: 32px auto 0;
+    padding: 32px 0;
+}
+
+.trial_14 p {
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin: 0;
+    line-height: normal;
+    color: #131313;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+#allserv-section {
+    width: 95%;
+    position: relative;
+    background: #ffffff;
+    margin: 0px auto 32px;
+    padding: 20px 0px;
+}
+
+/* plan section */
+#allserv-section .plan-section {
+    display: flex;
+    width: 100%;
+    margin-top: 24px;
+}
+
+#allserv-section .plan-box {
+    border: 3px solid #131313;
+    width: 280px;
+    box-shadow: 5px 5px 10px -4px rgb(51 51 51 / 75%);
+}
+
+#allserv-section .plan-box-1 {
+    margin: 30px 32px 0px auto;
+}
+
+#allserv-section .plan-box-2 {
+    width: 290px;
+}
+
+#allserv-section .plan-box-3 {
+    margin: 30px auto 0px 32px;
+}
+
+#allserv-section .plan_name {
+    background: #FDF018;
+}
+
+#allserv-section .plan_name p {
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin: 0;
+    line-height: normal;
+    color: #131313;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+    text-align: center;
+    padding: 18px 0;
+}
+
+#allserv-section .plan-box-2 .plan_name {
+    position: relative;
+}
+
+/* ==== START DESIGN START ==== */
+#allserv-section .plan-box-2 .plan_name .plan-star {
+    position: absolute;
+    font-size: 136px;
+    color: #0B00FF;
+    top: -22px;
+    right: -16px;
+    transform: rotate(110deg);
+    /* user-select: none; */
+}
+
+.starburst {
+    background: #0B00FF;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    color: #fff;
+}
+
+.starburst,
+.starburst span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.starburst span {
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    transform: rotate(45deg);
+}
+
+.starburst:before,
+.starburst:after,
+.starburst span:before,
+.starburst span:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    z-index: -1;
+    transform: rotate(30deg);
+}
+
+.starburst:after {
+    transform: rotate(-30deg);
+}
+
+.starburst span:after {
+    transform: rotate(30deg);
+}
+
+.starburst span:before {
+    transform: rotate(-30deg);
+}
+
+#allserv-section .plan-box-2 .plan_name .ght8 {
+    margin: 0;
+    position: absolute;
+    transform: rotate(35deg);
+    top: -32px;
+    right: 43px;
+}
+#allserv-section .plan-box-2 .plan_name .textboxgt8{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-33%, 0%);
+    width: 250px;
+}
+#allserv-section .plan-box-2 .plan_name p{
+    margin: 0 auto;
+    padding: 0;
+    color: #ffffff;
+    text-align: center;
+}
+
+#allserv-section .plan-box-2 .plan_name .star-text1 {
+    font-size: 32px;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 900;
+}
+
+#allserv-section .plan-box-2 .plan_name .star-text2 {
+    font-size: 24px;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+}
+
+/* ==== START DESIGN END ==== */
+
+#allserv-section .plan-box-2 .plan_name p {
+    font-weight: 600;
+}
+
+#allserv-section .plan_price {
+    padding: 16px 0;
+    border: 2px solid #131313;
+    border-left: none;
+    border-right: none;
+}
+
+#allserv-section .plan-box-2 .plan_price {
+    padding: 20px 0;
+}
+
+#allserv-section .plan_price p {
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin: 0;
+    line-height: normal;
+    color: #131313;
+    font-family: gilroy-bold, sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+#allserv-section .plan_name p.offer-text{
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin: 0;
+    line-height: normal;
+    color: #131313;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+    text-align: center;
+    padding: 18px 0;
+}
+
+#allserv-section .plan_price.free p {
+    font-size: 24px;
+}
+
+/* services */
+#allserv-section .plan_services {
+    margin: 16px 0;
+}
+
+#allserv-section .plan-box-1 .plan_services {
+    margin-bottom: 34px;
+}
+
+#allserv-section .plan-box-3 .plan_services {
+    margin-bottom: 26px;
+}
+
+#allserv-section .plan-box-2 .plan_services {
+    padding: 16px 0;
+}
+
+#allserv-section .service-name {
+    display: flex;
+}
+
+#allserv-section .service-name i {
+    margin: auto 0 auto auto;
+    font-size: 22px;
+}
+
+#allserv-section .service-name i.fa-check {
+    color: #43a047;
+}
+
+#allserv-section .service-name i.fa-times {
+    color: #e53935;
+}
+
+#allserv-section .service-name p {
+    font-size: 20px;
+    margin: 0;
+    color: #131313;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    margin-right: auto;
+    margin-left: 5px;
+}
+
+#allserv-section .signup-box3 {
+    background: #FDF018;
+}
+
+#allserv-section .signup-box3 p {
+    background: #FDF018;
+    font-size: 32px;
+    margin: 0;
+    color: #131313;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+}
+
+#allserv-section .signup-box3 p:hover {
+    background: #e9dd00;
+}
+
+/* simple use section */
+.simple-use .title-simple-use {
+    margin: 32px 0 16px;
+}
+
+.simple-use .title-simple-use p {
+    font-size: 48px;
+    margin: 0;
+    color: #131313;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 6px;
+}
+
+.simple-use .simple-use-row {
+    display: flex;
+}
+
+.simple-use .simple-use-row .simple-use-box {
+    background: #F1F1F1;
+    padding: 16px 32px;
+}
+
+.simple-use .simple-use-box .simple-use-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #000000;
+    position: relative;
+    margin: 0 auto;
+}
+
+.simple-use .simple-use-box .simple-use-icon img {
+    position: absolute;
+    width: 20px;
+    height: 24px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.simple-use .simple-use-box .simple-use-text p {
+    font-size: 24px;
+    margin: 0;
+    color: #131313;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+.simple-use-row .simple-use-box.box0901 {
+    margin-left: auto;
+}
+
+.simple-use-row .simple-use-box.box0902 {
+    margin: 0 32px;
+}
+
+.simple-use-row .simple-use-box.box0903 {
+    margin-right: auto;
+}
+
+/* question secton */
+.have-a-q .title-have-a-q {
+    margin: 32px 0 0;
+}
+
+.have-a-q .title-have-a-q p {
+    font-size: 48px;
+    margin: 0;
+    color: #131313;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 4px;
+}
+
+.have-a-q .have-a-question-row {
+    display: flex;
+    margin-top: 32px;
+}
+
+.have-a-q .question-box4.phn {
+    margin-left: auto;
+    margin-right: 42px;
+}
+
+.have-a-q .question-box4.e_mail {
+    margin-left: 42px;
+    margin-right: auto;
+}
+
+.have-a-q .question-box4 .icon-social i {
+    font-size: 32px;
+    display: block;
+    text-align: center;
+    color: #4286C9;
+}
+
+.have-a-q .question-box4 .phone-nmb-f p {
+    font-size: 18px;
+    margin: 16px 0 10px;
+    color: #050505;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+.have-a-q .question-box4 .time-box-here p {
+    font-size: 18px;
+    margin: 0;
+    color: #050505;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+.have-a-q .question-box4.e_mail .address-mail {
+    margin: 16px 0;
+}
+
+.have-a-q .question-box4.e_mail p {
+    font-size: 18px;
+    margin: 0;
+    color: #050505;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* FREQUENTLY ASKED QUESTIONS */
+#faq-sercices {
+    margin-top: 36px;
+}
+
+#faq-sercices .faq-title p {
+    font-size: 48px;
+    margin: 0;
+    color: #131313;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 4px;
+}
+
+#faq-sercices .faq-wrapper {
+    display: flex;
+    margin: 32px 150px 0;
+}
+
+#faq-sercices .faq-wrapper .inside-box-faq-left {
+    margin-right: 50px;
+}
+
+#faq-sercices .faq-wrapper .asked-questions {
+    margin-bottom: 20px;
+}
+
+#faq-sercices .zap-title p {
+    font-size: 18px;
+    margin: 0;
+    color: #030303;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+}
+
+#faq-sercices .zap-discription p {
+    font-size: 16px;
+    margin: 0;
+    color: #030303;
+    font-family: gilroy-regular, sans-serif;
+    font-weight: 500;
+}
+
+#faq-sercices .extra-faq {
+    width: 100%;
+}
+
+#faq-sercices .accordion {
+    background-color: #eee;
+    color: #080808;
+    cursor: pointer;
+    padding: 18px;
+    border: none;
+    text-align: center;
+    outline: none;
+    transition: 0.4s;
+    font-size: 22px;
+    color: #030303;
+    font-family: gilroy-medium, sans-serif;
+    font-weight: 600;
+    width: 30%;
+    margin: 0 auto;
+    display: block;
+}
+
+#faq-sercices .active,
+#faq-sercices .accordion:hover {
+    background-color: #ccc;
+}
+
+#faq-sercices .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.extra-faq button i {
+    transform: rotate(0deg);
+    transition: transform 0.3s linear;
+}
+
+.extra-faq button i.open {
+    transform: rotate(180deg);
+    transition: transform 0.3s linear;
+}
+
+#more_faq {
+    margin-top: 0px !important;
+}

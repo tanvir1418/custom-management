@@ -41,6 +41,13 @@
     /* SVG / ICON and TEXT BOX SETTINGS END */
 }
 
+/*  0px to 1250px  */
+@media only screen and (max-width:1299px){
+    .mytable1 tbody .actions39 a {
+        margin-right: 6px;
+      }
+}
+
 /*  0px to 992px  */
 @media only screen and (max-width:992px) {
 

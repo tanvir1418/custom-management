@@ -91,18 +91,18 @@ $("#temp-skip4").click(function () {
 //const preventListStyle = document.querySelectorAll(".single-list-item-file-container");
 // single-list-item-file-container
 //for (let i = 0; i < preventListStyle.length; i++) {
-  // preventListStyle[i].addEventListener("click", function () {
-  //   listSingleLink[i].classList.toggle("hideListDiv");
-  //   listSingleTick[i].classList.toggle("hideListDiv");
-  //   fileBackgroundColor[i].classList.toggle("fileContainerColor");
-    // selectItemText[i].classList.toggle("hideListDiv");
-    // pTopText[i].classList.toggle("hideListDiv");
-      
-    // let modalId = fileBackgroundColor[i].getAttribute("id");
-    // if(!$(`#${modalId}`).hasClass("fileContainerColor")){
-    //   // console.log("File color Class Exists:"+ $(`#${modalId}`).hasClass("fileContainerColor"));
-    //   $(`#${modalId}-modal`).modal('show'); 
-    // }
+// preventListStyle[i].addEventListener("click", function () {
+//   listSingleLink[i].classList.toggle("hideListDiv");
+//   listSingleTick[i].classList.toggle("hideListDiv");
+//   fileBackgroundColor[i].classList.toggle("fileContainerColor");
+// selectItemText[i].classList.toggle("hideListDiv");
+// pTopText[i].classList.toggle("hideListDiv");
+
+// let modalId = fileBackgroundColor[i].getAttribute("id");
+// if(!$(`#${modalId}`).hasClass("fileContainerColor")){
+//   // console.log("File color Class Exists:"+ $(`#${modalId}`).hasClass("fileContainerColor"));
+//   $(`#${modalId}-modal`).modal('show'); 
+// }
 //   });
 // }
 
@@ -161,47 +161,112 @@ $(document).ready(function () {
 var span1 = document.querySelector('span.toggle__select1');
 span1.addEventListener('click', function (e) {
   document.getElementById("fieldset_id1").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id1 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id1 .data-form input")[0].value = "";
+    $("#fieldset_id1 .data-form input")[1].value = "";
+  }
+
 });
 
 var span2 = document.querySelector('span.toggle__select2');
 span2.addEventListener('click', function (e) {
   document.getElementById("fieldset_id2").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id2 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id2 .data-form input")[0].value = "";
+    $("#fieldset_id2 .data-form input")[1].value = "";
+  }
+
 });
 
 var span3 = document.querySelector('span.toggle__select3');
 span3.addEventListener('click', function (e) {
   document.getElementById("fieldset_id3").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id3 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id3 .data-form select")[0].selectedIndex = 0;
+    $("#fieldset_id3 .data-form select")[1].selectedIndex = 0;
+    $("#fieldset_id3 .data-form select")[2].selectedIndex = 0;
+    $("#fieldset_id3 .data-form select")[3].selectedIndex = 0;
+  }
+
 });
 
 
 var span4 = document.querySelector('span.toggle__select4');
 span4.addEventListener('click', function (e) {
   document.getElementById("fieldset_id4").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id4 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id4 .data-form input")[0].value = "";
+    $("#fieldset_id4 .data-form input")[1].value = "";
+  }
+
 });
 
 var span5 = document.querySelector('span.toggle__select5');
 span5.addEventListener('click', function (e) {
   document.getElementById("fieldset_id5").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id5 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id5 .data-form input")[0].value = "";
+    $("#fieldset_id5 .data-form input")[1].value = "";
+  }
+
 });
 
 var span6 = document.querySelector('span.toggle__select6');
 span6.addEventListener('click', function (e) {
   document.getElementById("fieldset_id6").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id6 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id6 .data-form select")[0].selectedIndex = 0;
+    $("#fieldset_id6 .data-form select")[1].selectedIndex = 0;
+  }
+
 });
 
 var span7 = document.querySelector('span.toggle__select7');
 span7.addEventListener('click', function (e) {
   document.getElementById("fieldset_id7").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id7 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id7 .data-form select")[0].selectedIndex = 0;
+    $("#fieldset_id7 .data-form select")[1].selectedIndex = 0;
+  }
+
 });
 
 var span8 = document.querySelector('span.toggle__select8');
 span8.addEventListener('click', function (e) {
   document.getElementById("fieldset_id8").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id8 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id8 .data-form input")[0].value = "";
+    $("#fieldset_id8 .data-form input")[1].value = "";
+  }
+
 });
 
 var span9 = document.querySelector('span.toggle__select9');
 span9.addEventListener('click', function (e) {
   document.getElementById("fieldset_id9").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id9 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id9 .data-form input")[0].value = "";
+    $("#fieldset_id9 .data-form input")[1].value = "";
+  }
+
 });
 
 var span10 = document.querySelector('span.toggle__select10');
@@ -218,47 +283,112 @@ span11.addEventListener('click', function (e) {
 var span21 = document.querySelector('span.toggle__select21');
 span21.addEventListener('click', function (e) {
   document.getElementById("fieldset_id21").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id21 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id21 .data-form input")[0].value = "";
+    $("#fieldset_id21 .data-form input")[1].value = "";
+  }
+
 });
 
 var span22 = document.querySelector('span.toggle__select22');
 span22.addEventListener('click', function (e) {
   document.getElementById("fieldset_id22").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id22 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id22 .data-form input")[0].value = "";
+    $("#fieldset_id22 .data-form input")[1].value = "";
+  }
+
 });
 
 var span23 = document.querySelector('span.toggle__select23');
 span23.addEventListener('click', function (e) {
   document.getElementById("fieldset_id23").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id23 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id23 .data-form select")[0].selectedIndex = 0;
+    $("#fieldset_id23 .data-form select")[1].selectedIndex = 0;
+    $("#fieldset_id23 .data-form select")[2].selectedIndex = 0;
+    $("#fieldset_id23 .data-form select")[3].selectedIndex = 0;
+  }
+
 });
 
 
 var span24 = document.querySelector('span.toggle__select24');
 span24.addEventListener('click', function (e) {
   document.getElementById("fieldset_id24").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id24 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id24 .data-form input")[0].value = "";
+    $("#fieldset_id24 .data-form input")[1].value = "";
+  }
+
 });
 
 var span25 = document.querySelector('span.toggle__select25');
 span25.addEventListener('click', function (e) {
   document.getElementById("fieldset_id25").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id25 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id25 .data-form input")[0].value = "";
+    $("#fieldset_id25 .data-form input")[1].value = "";
+  }
+
 });
 
 var span26 = document.querySelector('span.toggle__select26');
 span26.addEventListener('click', function (e) {
   document.getElementById("fieldset_id26").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id26 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id26 .data-form select")[0].selectedIndex = 0;
+    $("#fieldset_id26 .data-form select")[1].selectedIndex = 0;
+  }
+
 });
 
 var span27 = document.querySelector('span.toggle__select27');
 span27.addEventListener('click', function (e) {
   document.getElementById("fieldset_id27").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id27 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id27 .data-form select")[0].selectedIndex = 0;
+    $("#fieldset_id27 .data-form select")[1].selectedIndex = 0;
+  }
+
 });
 
 var span28 = document.querySelector('span.toggle__select28');
 span28.addEventListener('click', function (e) {
   document.getElementById("fieldset_id28").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id28 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id28 .data-form input")[0].value = "";
+    $("#fieldset_id28 .data-form input")[1].value = "";
+  }
+
 });
 
 var span29 = document.querySelector('span.toggle__select29');
 span29.addEventListener('click', function (e) {
   document.getElementById("fieldset_id29").classList.toggle('borderGreen');
+
+  let resetting = $("fieldset#fieldset_id29 legend input[type=checkbox]").prop("checked");
+  if (resetting) {
+    $("#fieldset_id29 .data-form input")[0].value = "";
+    $("#fieldset_id29 .data-form input")[1].value = "";
+  }
+
 });
 
 var span210 = document.querySelector('span.toggle__select210');
@@ -319,15 +449,6 @@ $("#close-btn").on("click", function () {
   $('#mnTemp_saveStart').modal('hide');
 });
 
-// Manage Template Sample 4 DATE PICKER START
-// $(function () {
-
-//   $("#datepicker_mnTemp1").datepicker();
-//   $("#datepicker_mnTemp1").datepicker("option", "dateFormat", "DD, MM d, yy");
-
-//   $("#datepicker_mnTemp2").datepicker();
-//   $("#datepicker_mnTemp2").datepicker("option", "dateFormat", "DD, MM d, yy");
-// });
 
 // Manage Template Time Picker Icon Click Operation Starts
 $("#time_picker_close-btn").on("click", function () {
@@ -419,7 +540,15 @@ $("#TP_time1").click(function () {
   document.querySelector("#ampmInputValue").value = formatTime.ampm;
   setTimeValue();
   $('.ampm-picker .period').click();
+
+  let divPosition = document.querySelector("#TP_time1").getBoundingClientRect();
+  $("#mnTemp_timePicker .modal-dialog").css({
+    top: ((divPosition.bottom) + 3),
+    left: ((divPosition.left) + 3)
+  });
+
 });
+
 $("#TP_time2").click(function () {
   inputId = "#timepicker_mnTemp2";
   let currentTime = new Date();
@@ -428,6 +557,48 @@ $("#TP_time2").click(function () {
   document.querySelector("#min_input").value = formatTime.minutes;
   setTimeValue();
   $('.ampm-picker .period').click();
+
+  let divPosition = document.querySelector("#TP_time2").getBoundingClientRect();
+  $("#mnTemp_timePicker .modal-dialog").css({
+    top: ((divPosition.bottom) + 3),
+    left: ((divPosition.left) + 3)
+  });
+
+});
+
+$("#TP_time1_mData").click(function () {
+  inputId = "#timepicker_mData1";
+  let currentTime = new Date();
+  let formatTime = formatAMPM(currentTime);
+  document.querySelector("#hour_input").value = formatTime.hours;
+  document.querySelector("#min_input").value = formatTime.minutes;
+  document.querySelector("#ampmInputValue").value = formatTime.ampm;
+  setTimeValue();
+  $('.ampm-picker .period').click();
+
+  let divPosition = document.querySelector("#TP_time1_mData").getBoundingClientRect();
+  $("#mnTemp_timePicker .modal-dialog").css({
+    top: ((divPosition.bottom) + 3),
+    left: ((divPosition.left) + 3)
+  });
+
+});
+
+$("#TP_time2_mData").click(function () {
+  inputId = "#timepicker_mData2";
+  let currentTime = new Date();
+  let formatTime = formatAMPM(currentTime);
+  document.querySelector("#hour_input").value = formatTime.hours;
+  document.querySelector("#min_input").value = formatTime.minutes;
+  setTimeValue();
+  $('.ampm-picker .period').click();
+
+  let divPosition = document.querySelector("#TP_time2_mData").getBoundingClientRect();
+  $("#mnTemp_timePicker .modal-dialog").css({
+    top: ((divPosition.bottom) + 3),
+    left: ((divPosition.left) + 3)
+  });
+
 });
 
 function formatAMPM(date) {
@@ -465,37 +636,6 @@ $('.ampm-picker .period').click(function (e) {
   }
 });
 
-// Form By Text Edit Pop Up Script
-$("td input").click(function (event) {
-  $("#sub__table").css({
-    top: ((event.offsetY) + 160),
-    left: ((event.offsetX) + 100)
-  });
-  $("#sub2__table").css({
-    top: ((event.offsetY) + 180),
-    left: ((event.offsetX) + 100 + 92)
-  });
-  //   $("#sub__table").css( {
-  //     top: ((event.pageY)), 
-  //     left: ((event.pageX))
-  //   }    
-  // );
-  // $("#sub2__table").css( {
-  //     top: ((event.pageY)), 
-  //     left: ((event.pageX) + 92)
-  //   }    
-  // );
-  if (!$("#sub__table").hasClass("dispHideShow")) {
-    $("#sub__table").addClass("dispHideShow");
-  }
-  if (!$("#sub2__table").hasClass("dispHideShow")) {
-    $("#sub2__table").addClass("dispHideShow");
-  }
-
-  var element = document.getElementById("sub__table");
-  element.classList.toggle("dispHideShow");
-
-});
 
 $(".set_select").mouseenter(function (event) {
   var element = document.getElementById("sub2__table");
@@ -515,33 +655,92 @@ $(document).click(function (e) {
 // });
 
 // manage template hide show save start button 
-$("#next-show-save-start-mnTemp").click(function(){
+$("#next-show-save-start-mnTemp").click(function () {
   $('#saveStartTarget-mnTemp').removeClass('save-start-class-hide-show-mnTemp');
 });
 
-$("#prev-hide-save-start-mnTemp").click(function(){
+$("#prev-hide-save-start-mnTemp").click(function () {
   $('#saveStartTarget-mnTemp').addClass('save-start-class-hide-show-mnTemp');
 });
 
 // Manage data Option 4 template hide show save start button 
-$("#next-show-save-start-op4").click(function(){
+$("#next-show-save-start-op4").click(function () {
   $('#saveStartTarget-op4').removeClass('save-start-class-hide-show-op4');
 });
 
-$("#prev-hide-save-start-op4").click(function(){
+$("#prev-hide-save-start-op4").click(function () {
   $('#saveStartTarget-op4').addClass('save-start-class-hide-show-op4');
 });
 
 
-$("#datepicker_field_set11").datepicker();
-$("#datepicker_field_set11").datepicker("option", "dateFormat", "DD - MM d, yy");
-$("#datepicker_field_set12").datepicker();
-$("#datepicker_field_set12").datepicker("option", "dateFormat", "DD - MM d, yy");
+let dateFormat_sm3 = "mm/dd/yy";
+let sm3SecA_from_date = $("#datepicker_field_set11").datepicker({
+  defaultDate: "+1w",
+  numberOfMonths: 1
+}).on("change", function () {
+  sm3SecA_to_date.datepicker("option", "minDate", getDateSm3(this));
+});
 
+let sm3SecA_to_date = $("#datepicker_field_set12").datepicker({
+  defaultDate: "+1w",
+  numberOfMonths: 1
+}).on("change", function () {
+  sm3SecA_from_date.datepicker("option", "maxDate", getDateSm3(this));
+});
+
+function getDateSm3(element) {
+  let date_sm3;
+  try {
+    date_sm3 = $.datepicker.parseDate(dateFormat_sm3, element.value);
+  } catch (error) {
+    date_sm3 = null;
+  }
+  return date_sm3;
+}
 
 $("#datepicker_field_set11_icon").click(function () {
-	$("#datepicker_field_set11").focus();
+  $("#datepicker_field_set11").focus();
 });
 $("#datepicker_field_set12_icon").click(function () {
-	$("#datepicker_field_set12").focus();
+  $("#datepicker_field_set12").focus();
+});
+
+// Option 4 Save Draft Button Controlling (Loading Popup and Thank You Modal)
+function saveDraftLoadingThankOp4(){
+  $("#submitting_Info .submit-title").html("Submitting...");
+  $('#submitting_Info').modal('show');
+
+  // Option 4 submitting draft information
+  let $targetingTextSubmit = $("#submitting_file_info");
+  $targetingTextSubmit.html("Submitting sample 1 information...");
+  let submitFileInfo = [ 
+          "Submitting sample 2 information...",
+          "Submitting sample 3 information...", 
+          "Submitting sample 4 information...",
+          "Finishing..."];
+
+  for (let i = 1; i <= 4; ++i) {
+    (function(index) {
+      setTimeout(function() { 
+        $targetingTextSubmit.html(submitFileInfo[index-1]);
+      }, i * 2000);
+    })(i);
+  }
+
+  setTimeout(function() { 
+    $('#submitting_Info').modal('hide');
+    $('#saveDraftThankYouModal').modal('show');
+  }, 10000);
+
+}
+
+$(".btn-save-draft").click(function() {
+  let initState = $(this).html();
+  $(this).html('<i class="fa fa-spinner fa-spin"></i> Submitting...');
+  $(this).addClass('disabled');
+  let $this = $(this);
+  setTimeout(function() {
+      $this.removeClass('disabled');
+      $this.html(initState);
+  }, 10000);
 });

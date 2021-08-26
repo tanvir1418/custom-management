@@ -381,6 +381,23 @@
   /* left: 40%; */
 }
 
+.form-box .progressBar li .click-circle{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  line-height: 44px;
+  top: -38px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+}
+
+.form-box .progressBar li .click-circle:hover{
+  cursor: pointer;
+}
+
 .progressBar li:after {
   content: "";
   position: absolute;
@@ -439,6 +456,11 @@
     height: 45px;
     line-height: 40px;
     font-size: 22px;
+  }
+  .form-box .progressBar li .click-circle{
+    width: 45px;
+    height: 45px;
+    top: -28px;
   }
   .progressBar li div {
     margin-top: 50px;
@@ -1228,13 +1250,27 @@
   text-align: end;
 }
 
+.op4-option-selection .width-tooltip {
+  width: 3%;
+  height: 60px;
+}
+
+.op4-option-selection .width-tooltip .icon-container {
+  padding-top: 10px;
+  padding-left: 5px;
+}
+.op4-option-selection .width-tooltip .icon-container .fas {
+  opacity: 0.2;
+  font-size: 18px;
+}
+
 .op4-option-selection .width-12 {
   width: 13%;
   height: 60px;
 }
 
 .op4-option-selection .width-22 {
-  width: 22%;
+  width: 21%;
   height: 60px;
   padding-right: 5px;
   padding-left: 5px;
@@ -1922,6 +1958,7 @@ legend {
 } */
 .checkbox-container .page__toggle {
   margin: 0 8px;
+  margin-right: 35px;
 }
 .toggle {
   display: inline-flex;
@@ -2498,7 +2535,8 @@ table#sample4-second td {
 .input-section-sample4 input {
   /* background: #f6f6f6; */
   background-color: white;
-  color: #a5a5a5;
+  /* color: #a5a5a5; */
+  color: black;
   font-weight: 500;
   width: 100%;
   height: 28px;
@@ -2516,7 +2554,8 @@ table#sample4-second td {
 .title-section-sample4 p {
   margin-bottom: 0;
   padding-top: 2px;
-  color: #a5a5a5;
+  /* color: #a5a5a5; */
+  color: black;
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -2536,7 +2575,8 @@ table#sample4-second td {
   /* background: #ddd; */
   /* background: #f6f6f6; */
   background-color: white;
-  color: #a5a5a5;
+  /* color: #a5a5a5; */
+  color: black;
   font-weight: 500;
   outline: 0;
   /* border: 0; */
@@ -2563,7 +2603,7 @@ table#sample4-second td {
 
 .custom-select-sample4 select option {
   background: #f6f6f6;
-  color: #a2a2a2;
+  color: black;
   font-weight: 500;
 }
 
@@ -2600,7 +2640,8 @@ table#sample4-second td {
 input.date-pick-style-sample4 {
   /* background: #f6f6f6; */
   background-color: white;
-  color: #a5a5a5;
+  /* color: #a5a5a5; */
+  color: black;
   font-weight: 500;
   width: 100%;
   height: 28px;
@@ -2652,7 +2693,7 @@ span.min {
   width: 40px;
   text-align: left;
   line-height: 28px;
-  color: #a5a5a5;
+  color: black;
   font-size: 16px;
 }
 
@@ -2661,7 +2702,7 @@ span.max {
   width: 50px;
   text-align: right;
   line-height: 28px;
-  color: #a5a5a5;
+  color: black;
   font-size: 16px;
 }
 
@@ -2778,8 +2819,19 @@ element.style {
 
 .option4-below-control-section {
   margin: 0px 30px;
-  height: 100px;
+  height: 120px;
   /* padding-bottom: 30px; */
+}
+
+.option4-below-control-section .error-message{
+  margin: 5px 0 0 10px;
+}
+
+.option4-below-control-section .error-message p{
+  font-size: 20px;
+  font-family: gilroy-bold, sans-serif;
+  font-weight: 600;
+  color: red;
 }
 
 .save-draft-wrapper {
@@ -2797,6 +2849,11 @@ element.style {
 .option4-below-control-input {
   height: 80px;
   flex-grow: 1;
+}
+
+.option4-below-control-input.border-red {
+  border: 2px solid red !important;
+  border-radius: 4px !important;
 }
 
 .option4-below-control-input input {
@@ -2976,4 +3033,12 @@ element.style {
   /* #create_new_option_four .custom-date-input {
     width: 80%;
   } */
+}
+
+#create_new_option_four .mutistep-form-area .section-name span:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.fa-calendar-alt:hover{
+  cursor: pointer;
 }
