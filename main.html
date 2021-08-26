@@ -8932,78 +8932,103 @@
         
         <script>
             // LOGIN DATA PASS START
-            const currentUser = localStorage.getItem("currentUser");
-            const user_div = document.getElementById("username_div");
-            if (currentUser != null && currentUser != "") {
-                user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
-            }
-            // Working Code starts
-            // $("#tabs_ul li").removeClass("active");
-            // $("#tabs_ul li:nth-child(1)").addClass("active");
-
-            // $(".content .tab_content").hide();
-            // $(".content .tab_content:nth-child(1)").show();
-            // Working Code starts
-            const tabVisibleDecision = localStorage.getItem("manageTabVisibility");
-            let totalTab = document.querySelectorAll("#tabs_ul li");
-            let totalTabContent = document.querySelectorAll(".content .tab_content");
-
-            if(tabVisibleDecision == "showAccount"){
+            let enteringLoginStatus = localStorage.getItem("loginStatus");
+            if(enteringLoginStatus !="LOGGED_IN") {
+                let enteringTotalTab = document.querySelectorAll("#tabs_ul li");
+                let enteringTabContent = document.querySelectorAll(".content .tab_content");
 
                 setTimeout(() => {
-					$("#account_form_content").css('display', 'block');
-					$("#account_form_loading").css('display', 'none');
-				}, 4000);
+                    $("#account_form_content").css('display', 'block');
+                    $("#account_form_loading").css('display', 'none');
+                }, 4000);
 
-                for (let i = 0; i < totalTab.length; i++) {
-                    totalTab[i].classList.remove("active");
-                    totalTabContent[i].style.display = "none";
+                for (let i = 0; i < enteringTotalTab.length; i++) {
+                    enteringTotalTab[i].classList.remove("active");
+                    enteringTabContent[i].style.display = "none";
                 }
-                totalTab[0].classList.add("active");
-                totalTabContent[0].style.display = "block";
+                enteringTotalTab[0].classList.add("active");
+                enteringTabContent[0].style.display = "block";
                 localStorage.setItem("manageTabVisibility", "");
+
+                document.getElementById("triangle").style.display = "none";
+                document.getElementById("collapsemenu").classList.remove("open");
+                document.getElementById("collapsemenu").style.height = "0px";
                 
-                let loginCondition = localStorage.getItem("loginStatus");
-                if (loginCondition != "LOGGED_IN") {
-                    document.getElementById("triangle").style.display = "none";
-                    document.getElementById("collapsemenu").classList.remove("open");
-                    document.getElementById("collapsemenu").style.height = "0px";
+            } else {
+
+                const currentUser = localStorage.getItem("currentUser");
+                const user_div = document.getElementById("username_div");
+                if (currentUser != null && currentUser != "") {
+                    user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
                 }
-                        
-            }else if(tabVisibleDecision == "showData"){
-                for (let i = 0; i < totalTab.length; i++) {
-                    totalTab[i].classList.remove("active");
-                    totalTabContent[i].style.display = "none";
+                // Working Code starts
+                // $("#tabs_ul li").removeClass("active");
+                // $("#tabs_ul li:nth-child(1)").addClass("active");
+
+                // $(".content .tab_content").hide();
+                // $(".content .tab_content:nth-child(1)").show();
+                // Working Code starts
+                const tabVisibleDecision = localStorage.getItem("manageTabVisibility");
+                let totalTab = document.querySelectorAll("#tabs_ul li");
+                let totalTabContent = document.querySelectorAll(".content .tab_content");
+
+                if(tabVisibleDecision == "showAccount"){
+
+                    setTimeout(() => {
+                        $("#account_form_content").css('display', 'block');
+                        $("#account_form_loading").css('display', 'none');
+                    }, 4000);
+
+                    for (let i = 0; i < totalTab.length; i++) {
+                        totalTab[i].classList.remove("active");
+                        totalTabContent[i].style.display = "none";
+                    }
+                    totalTab[0].classList.add("active");
+                    totalTabContent[0].style.display = "block";
+                    localStorage.setItem("manageTabVisibility", "");
+                    
+                    let loginCondition = localStorage.getItem("loginStatus");
+                    if (loginCondition != "LOGGED_IN") {
+                        document.getElementById("triangle").style.display = "none";
+                        document.getElementById("collapsemenu").classList.remove("open");
+                        document.getElementById("collapsemenu").style.height = "0px";
+                    }
+                            
+                }else if(tabVisibleDecision == "showData"){
+                    for (let i = 0; i < totalTab.length; i++) {
+                        totalTab[i].classList.remove("active");
+                        totalTabContent[i].style.display = "none";
+                    }
+                    totalTab[1].classList.add("active");
+                    totalTabContent[1].style.display = "block";
+                    localStorage.setItem("manageTabVisibility", "");
+                }else if(tabVisibleDecision == "showTemplate"){
+                    for (let i = 0; i < totalTab.length; i++) {
+                        totalTab[i].classList.remove("active");
+                        totalTabContent[i].style.display = "none";
+                    }
+                    totalTab[2].classList.add("active");
+                    totalTabContent[2].style.display = "block";
+                    localStorage.setItem("manageTabVisibility", "");
+                }else if(tabVisibleDecision == "showResult"){
+                    for (let i = 0; i < totalTab.length; i++) {
+                        totalTab[i].classList.remove("active");
+                        totalTabContent[i].style.display = "none";
+                    }
+                    totalTab[3].classList.add("active");
+                    totalTabContent[3].style.display = "block";
+                    localStorage.setItem("manageTabVisibility", "");
+                }else if(tabVisibleDecision == "showAlert"){
+                    for (let i = 0; i < totalTab.length; i++) {
+                        totalTab[i].classList.remove("active");
+                        totalTabContent[i].style.display = "none";
+                    }
+                    totalTab[4].classList.add("active");
+                    totalTabContent[4].style.display = "block";
+                    localStorage.setItem("manageTabVisibility", "");
                 }
-                totalTab[1].classList.add("active");
-                totalTabContent[1].style.display = "block";
-                localStorage.setItem("manageTabVisibility", "");
-            }else if(tabVisibleDecision == "showTemplate"){
-                for (let i = 0; i < totalTab.length; i++) {
-                    totalTab[i].classList.remove("active");
-                    totalTabContent[i].style.display = "none";
-                }
-                totalTab[2].classList.add("active");
-                totalTabContent[2].style.display = "block";
-                localStorage.setItem("manageTabVisibility", "");
-            }else if(tabVisibleDecision == "showResult"){
-                for (let i = 0; i < totalTab.length; i++) {
-                    totalTab[i].classList.remove("active");
-                    totalTabContent[i].style.display = "none";
-                }
-                totalTab[3].classList.add("active");
-                totalTabContent[3].style.display = "block";
-                localStorage.setItem("manageTabVisibility", "");
-            }else if(tabVisibleDecision == "showAlert"){
-                for (let i = 0; i < totalTab.length; i++) {
-                    totalTab[i].classList.remove("active");
-                    totalTabContent[i].style.display = "none";
-                }
-                totalTab[4].classList.add("active");
-                totalTabContent[4].style.display = "block";
                 localStorage.setItem("manageTabVisibility", "");
             }
-            localStorage.setItem("manageTabVisibility", "");
 
         </script>
 

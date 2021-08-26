@@ -1142,6 +1142,14 @@
       </div>
   </section>
 
+  <script>
+    // LOGIN DATA PASS START
+    let enteringLoginStatus = localStorage.getItem("loginStatus");
+    if(enteringLoginStatus !="LOGGED_IN") {
+      window.location.href = "main.html";
+    }
+  </script>
+
     <!-- =========Option 5 Plus Button Modal Starts========= -->
     <!-- <div class="modal fade" id="dropBtnModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">

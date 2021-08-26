@@ -42,11 +42,14 @@ var deleteListClassName = "";
 
 // TOGGLE TRIANGLE
 function myFunction() {
-	var x = document.getElementById("triangle");
-	if (x.style.display === "none") {
-		x.style.display = "block";
-	} else {
-		x.style.display = "none";
+	let triangleLoginStatus = localStorage.getItem("loginStatus");
+	if(triangleLoginStatus =="LOGGED_IN"){
+		var x = document.getElementById("triangle");
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
 	}
 }
 
@@ -62,13 +65,19 @@ $(function () {
 	}
 
 	b.click(function () {
-		if (w.hasClass("open")) {
-			w.removeClass("open");
-			w.height(0);
-		} else {
-			w.addClass("open");
-			w.height(l.outerHeight(true));
+		let toggleBtnLoginStatus = localStorage.getItem("loginStatus");
+		if(toggleBtnLoginStatus !="LOGGED_IN"){
+			$('#loginRequired').modal('show');
+		}else{
+			if (w.hasClass("open")) {
+				w.removeClass("open");
+				w.height(0);
+			} else {
+				w.addClass("open");
+				w.height(l.outerHeight(true));
+			}
 		}
+		
 	});
 });
 
