@@ -89,7 +89,7 @@ for (let i = 1; i <= 29; i++) {
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
-      <div class="sublist-cancel-box checkbox_show" data-toggle="modal" data-target="#delet-manage-tempa-list-modal">
+      <div class="sublist-cancel-box checkbox_show" tooltip="Click to Delete" flow="down" data-toggle="modal" data-target="#delet-manage-tempa-list-modal">
         <i class="fas fa-times"></i>
       </div>
       </li>`;
@@ -368,7 +368,7 @@ for (let i = 1; i <= 29; i++) {
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
-      <div class="sublist-cancel-box checkbox_show" data-toggle="modal" data-target="#delet-manage-tempb-list-modal">
+      <div class="sublist-cancel-box checkbox_show" tooltip="Click to Delete" flow="down" data-toggle="modal" data-target="#delet-manage-tempb-list-modal">
         <i class="fas fa-times"></i>
       </div>
       </li>`;
@@ -638,7 +638,7 @@ for (let i = 1; i <= 29; i++) {
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
-      <div class="sublist-cancel-box checkbox_show" data-toggle="modal" data-target="#delet-manage-tempc-list-modal">
+      <div class="sublist-cancel-box checkbox_show" tooltip="Click to Delete" flow="down" data-toggle="modal" data-target="#delet-manage-tempc-list-modal">
         <i class="fas fa-times"></i>
       </div>
       </li>`;
@@ -943,7 +943,7 @@ function findFileListMS1(_id, name) {
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
-      <div class="sublist-cancel-box checkbox_show" data-toggle="modal" data-target="#delet-manage-tempd-list-modal">
+      <div class="sublist-cancel-box checkbox_show" tooltip="Click to Delete" flow="down" data-toggle="modal" data-target="#delet-manage-tempd-list-modal">
         <i class="fas fa-times"></i>
       </div>
       </li>`;

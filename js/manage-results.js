@@ -67,7 +67,7 @@ const listItemData404 = [
             <div class="sublist-check-box-404">
                 <i class="fas fa-check"></i>
             </div>
-            <div class="sublist-cancel-box-404" data-toggle="modal" data-target="#deletlistopt2">
+            <div class="sublist-cancel-box-404" tooltip="Click to Delete" flow="down" data-toggle="modal" data-target="#deletlistopt2">
                 <i class="fas fa-times"></i>
             </div>
             </li>`;

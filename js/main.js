@@ -469,7 +469,7 @@ const listItemData = [
 			<div class="sublist-check-box checkbox_hide">
 				<i class="fas fa-check"></i>
 			</div>
-			<div class="sublist-cancel-box checkbox_show" data-toggle="modal" data-target="#deletlistopt2">
+			<div class="sublist-cancel-box checkbox_show" tooltip="Click to Delete" flow="down" data-toggle="modal" data-target="#deletlistopt2">
 				<i class="fas fa-times"></i>
 			</div>
 			</li>`;
