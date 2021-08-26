@@ -73,6 +73,9 @@ for (let i = 1; i <= 29; i++) {
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
     </div>
+    <div class="grey-times-box display-none">
+			<i class="fas fa-times"></i>
+		</div>
     <div class="arrow-li-box arrow-li-box-background-color-1">
       <i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
     </div>
@@ -86,6 +89,12 @@ for (let i = 1; i <= 29; i++) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
+      <div class="sublist-info-box" data-toggle="tooltip" data-placement="bottom" data-title="Click for Info" onclick="listTooltipClick(this)">
+				<i class="fas fa-info"></i>
+			</div>
+			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+				<i class="fas fa-pen"></i>
+			</div>
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
@@ -200,15 +209,19 @@ let opt_managetempa_left_list = "";
 
     if (oldTarget != "" && oldTarget !== target) {
       $(oldTarget).removeClass("highlight_li");
-      // $(oldTarget).children(".green-check-box").removeClass("display-block");
-      // $(oldTarget).children(".green-check-box").addClass("display-none");
+
+      $(oldTarget).children(".grey-times-box").removeClass("display-block");
+      $(oldTarget).children(".grey-times-box").addClass("display-none");
+
       $(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
       $(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
     }
     $(target).toggleClass("highlight_li");
-    // $(target).children(".green-check-box").toggleClass("display-none display-block");
+
+    $(target).children(".grey-times-box").toggleClass("display-none display-block");
+
     $(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
     $(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
     
@@ -237,7 +250,9 @@ sub_ul_managetempamodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempa-list-modal .mnTemp-list1-row-name").innerHTML = mnTempModalListA_rowName;
 
       return;
-    }
+    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+			return;
+		}
     target = target.parentNode;
   } else if (target.tagName === "P") {
     target = target.parentNode;
@@ -250,7 +265,9 @@ sub_ul_managetempamodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempa-list-modal .mnTemp-list1-row-name").innerHTML = mnTempModalListA_rowName;
 
       return;
-    } else target = target.parentNode;
+    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+			return;
+		} else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
 
   $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
@@ -352,6 +369,9 @@ for (let i = 1; i <= 29; i++) {
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
     </div>
+    <div class="grey-times-box display-none">
+			<i class="fas fa-times"></i>
+		</div>
     <div class="arrow-li-box arrow-li-box-background-color-1">
       <i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
     </div>
@@ -365,6 +385,12 @@ for (let i = 1; i <= 29; i++) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
+      <div class="sublist-info-box" data-toggle="tooltip" data-placement="bottom" data-title="Click for Info" onclick="listTooltipClick(this)">
+				<i class="fas fa-info"></i>
+			</div>
+			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+				<i class="fas fa-pen"></i>
+			</div>
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
@@ -472,15 +498,19 @@ let opt_managetempb_left_list = "";
 
     if (oldTarget != "" && oldTarget !== target) {
       $(oldTarget).removeClass("highlight_li");
-      // $(oldTarget).children(".green-check-box").removeClass("display-block");
-      // $(oldTarget).children(".green-check-box").addClass("display-none");
+
+      $(oldTarget).children(".grey-times-box").removeClass("display-block");
+      $(oldTarget).children(".grey-times-box").addClass("display-none");
+      
       $(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
       $(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
     }
     $(target).toggleClass("highlight_li");
-    // $(target).children(".green-check-box").toggleClass("display-none display-block");
+
+    $(target).children(".grey-times-box").toggleClass("display-none display-block");
+
     $(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
     $(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
     
@@ -509,7 +539,9 @@ sub_ul_managetempbmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempb-list-modal .mnTemp-list2-row-name").innerHTML = mnTempModalListB_rowName;
 
       return;
-    }
+    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+			return;
+		}
     target = target.parentNode;
   } else if (target.tagName === "P") {
     target = target.parentNode;
@@ -522,7 +554,9 @@ sub_ul_managetempbmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempb-list-modal .mnTemp-list2-row-name").innerHTML = mnTempModalListB_rowName;
 
       return;
-    } else target = target.parentNode;
+    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+			return;
+		} else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
 
   $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
@@ -622,6 +656,9 @@ for (let i = 1; i <= 29; i++) {
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
     </div>
+    <div class="grey-times-box display-none">
+			<i class="fas fa-times"></i>
+		</div>
     <div class="arrow-li-box arrow-li-box-background-color-1">
       <i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
     </div>
@@ -635,6 +672,12 @@ for (let i = 1; i <= 29; i++) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
+      <div class="sublist-info-box" data-toggle="tooltip" data-placement="bottom" data-title="Click for Info" onclick="listTooltipClick(this)">
+				<i class="fas fa-info"></i>
+			</div>
+			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+				<i class="fas fa-pen"></i>
+			</div>
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
@@ -743,15 +786,19 @@ let opt_managetempc_left_list = "";
 
     if (oldTarget != "" && oldTarget !== target) {
       $(oldTarget).removeClass("highlight_li");
-      // $(oldTarget).children(".green-check-box").removeClass("display-block");
-      // $(oldTarget).children(".green-check-box").addClass("display-none");
+
+      $(oldTarget).children(".grey-times-box").removeClass("display-block");
+      $(oldTarget).children(".grey-times-box").addClass("display-none");
+
       $(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
       $(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
     }
     $(target).toggleClass("highlight_li");
-    // $(target).children(".green-check-box").toggleClass("display-none display-block");
+
+    $(target).children(".grey-times-box").toggleClass("display-none display-block");
+
     $(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
     $(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
     
@@ -780,7 +827,9 @@ sub_ul_managetempcmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempc-list-modal .mnTemp-list3-row-name").innerHTML = mnTempModalListC_rowName;
 
       return;
-    }
+    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+			return;
+		}
     target = target.parentNode;
   } else if (target.tagName === "P") {
     target = target.parentNode;
@@ -793,7 +842,9 @@ sub_ul_managetempcmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempc-list-modal .mnTemp-list3-row-name").innerHTML = mnTempModalListC_rowName;
 
       return;
-    } else target = target.parentNode;
+    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+			return;
+		} else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
 
 
@@ -927,6 +978,9 @@ function findFileListMS1(_id, name) {
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
     </div>
+    <div class="grey-times-box display-none">
+			<i class="fas fa-times"></i>
+		</div>
     <div class="arrow-li-box arrow-li-box-background-color-1">
       <i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
     </div>
@@ -940,6 +994,12 @@ function findFileListMS1(_id, name) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
+      <div class="sublist-info-box" data-toggle="tooltip" data-placement="bottom" data-title="Click for Info" onclick="listTooltipClick(this)">
+				<i class="fas fa-info"></i>
+			</div>
+			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+				<i class="fas fa-pen"></i>
+			</div>
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
@@ -1048,15 +1108,19 @@ let opt_managetempd_left_list = "";
 
     if (oldTarget != "" && oldTarget !== target) {
       $(oldTarget).removeClass("highlight_li");
-      // $(oldTarget).children(".green-check-box").removeClass("display-block");
-      // $(oldTarget).children(".green-check-box").addClass("display-none");
+
+      $(oldTarget).children(".grey-times-box").removeClass("display-block");
+      $(oldTarget).children(".grey-times-box").addClass("display-none");
+
       $(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
       $(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
     }
     $(target).toggleClass("highlight_li");
-    // $(target).children(".green-check-box").toggleClass("display-none display-block");
+
+    $(target).children(".grey-times-box").toggleClass("display-none display-block");
+
     $(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
     $(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
     
@@ -1085,7 +1149,9 @@ sub_ul_managetempdmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempd-list-modal .mnTemp-list4-row-name").innerHTML = mnTempModalListD_rowName;
 
       return;
-    }
+    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+			return;
+		}
     target = target.parentNode;
   } else if (target.tagName === "P") {
     target = target.parentNode;
@@ -1098,7 +1164,9 @@ sub_ul_managetempdmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempd-list-modal .mnTemp-list4-row-name").innerHTML = mnTempModalListD_rowName;
 
       return;
-    } else target = target.parentNode;
+    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+			return;
+		} else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
 
   $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");

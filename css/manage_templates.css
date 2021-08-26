@@ -1363,9 +1363,13 @@ fieldset legend.w-auto label.toggle i:hover{
   cursor: pointer;
 }
 
+#plusBtnModal .modal-dialog,
+#remaneAllLevelItem .modal-dialog,
 #loadTemplateRename .modal-dialog{
-  width: 360px;
+  width: 342px;
 }
+#plusBtnModal .modal-dialog .modal-body,
+#remaneAllLevelItem .modal-dialog .modal-body,
 #loadTemplateRename .modal-dialog .modal-body{
   padding: 0px;
 }

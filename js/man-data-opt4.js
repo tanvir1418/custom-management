@@ -1616,3 +1616,123 @@ function saveDraftCheckEmpty(e) {
     }
   }
 }
+
+
+
+// Pen Icon, Info Icon Controlling For All LISTS POPUP Starts
+
+let currentLevelItem_LI_Class = '';
+let newLevelItemName = '';
+
+function confirmListName(confThis){
+  currentLevelItem_LI_Class = confThis.parentElement.className;
+  let listCurrentName = confThis.parentElement.firstElementChild.textContent;
+  document.querySelector(`#remaneAllLevelItem .plus-button-popup-body-content input`).value = listCurrentName;
+  $('#remaneAllLevelItem').modal('show');
+}
+
+// $('#remaneAllLevelItem').on('show.bs.modal', function (e) {
+// 	let opt1ListDataStyles = window.getComputedStyle(document.querySelector('#myopt1listData'));
+// 	if (opt1ListDataStyles.display == "block") {
+// 		$('body').addClass("modal-list-open");
+// 	}
+// })
+
+function renamingLevelItem(itemThis){
+  newLevelItemName = document.querySelector(`#remaneAllLevelItem .plus-button-popup-body-content input`).value;
+
+  let initState = $(itemThis).html();
+	$(itemThis).html('<i class="fa fa-spinner fa-spin"></i> Done');
+	$(itemThis).addClass('disabled');
+	let $this = $(itemThis);
+	setTimeout(function() {
+    $this.removeClass('disabled');
+		$this.html(initState);
+    $('#remaneAllLevelItem').modal('hide');
+    $('#thankAfterAllListRename').modal('show');
+  }, 3000);
+}
+
+$('#thankAfterAllListRename').on('show.bs.modal', function (e) {
+  $('body').addClass("modal-force-generate-btn");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-force-generate-btn");
+  document.querySelector(`.${currentLevelItem_LI_Class} p`).textContent = newLevelItemName;
+});
+
+// $('.submodal-list li .sublist-info-box').tooltip(
+//   {
+//     container: 'body',
+//     trigger: 'manual',
+//     placement: 'bottom'
+//   }
+// );
+// .on('click', function () {
+//   let listCurrentName = this.parentElement.firstElementChild.textContent;
+//   $(this).attr('data-original-title', `${listCurrentName}`);
+//   $('.submodal-list li .sublist-info-box[data-toggle="tooltip"]').tooltip('hide');
+//   $(this).tooltip('show');
+// });
+function listTooltipClick(infoThis){
+  // let currentListClassName = infoThis.parentElement.className;
+  // $(`li.${currentListClassName} .sublist-info-box`).tooltip(
+  //     {
+  //       container: 'body',
+  //       trigger: 'manual',
+  //       placement: 'bottom'
+  //     }
+  //   );
+  // let listCurrentName = infoThis.parentElement.firstElementChild.textContent;
+  // $(infoThis).attr('data-original-title', `${listCurrentName}`);
+  // $('.submodal-list li .sublist-info-box[data-toggle="tooltip"]').tooltip('hide');
+  // $(infoThis).tooltip('show');
+}
+
+function listTooltipClickOp2(op2InfoThis){
+  // let currentListClassName = op2InfoThis.parentElement.className;
+  // $(`li.${currentListClassName} .sublist-info-box`).tooltip(
+  //     {
+  //       container: 'body',
+  //       trigger: 'manual',
+  //       placement: 'bottom'
+  //     }
+  //   );
+  // let listCurrentName = op2InfoThis.parentElement.firstElementChild.textContent;
+  // $(op2InfoThis).attr('data-original-title', `${listCurrentName}`);
+  // $('.sub-list li .sublist-info-box[data-toggle="tooltip"]').tooltip('hide');
+  // $(op2InfoThis).tooltip('show');
+}
+
+function listTooltipClickMnRes(mnResInfoThis){
+  // let currentListClassName = mnResInfoThis.parentElement.className;
+  // $(`li.${currentListClassName} .sublist-info-box`).tooltip(
+  //     {
+  //       container: 'body',
+  //       trigger: 'manual',
+  //       placement: 'bottom'
+  //     }
+  //   );
+  // let listCurrentName = mnResInfoThis.parentElement.firstElementChild.textContent;
+  // $(mnResInfoThis).attr('data-original-title', `${listCurrentName}`);
+  // $('.right-list-404 li .sublist-info-box[data-toggle="tooltip"]').tooltip('hide');
+  // $(mnResInfoThis).tooltip('show');
+}
+
+// $(document).mouseup(function(e) {
+//     var infoTooltipsOfLists = $('.submodal-list li .sublist-info-box[data-toggle="tooltip"]');
+//     if (!infoTooltipsOfLists.is(e.target) && infoTooltipsOfLists.has(e.target).length === 0) {
+//       infoTooltipsOfLists.tooltip('hide');
+//     }
+
+//     var infoTooltipsOfOp2Lists = $('.sub-list li .sublist-info-box[data-toggle="tooltip"]');
+//     if (!infoTooltipsOfOp2Lists.is(e.target) && infoTooltipsOfOp2Lists.has(e.target).length === 0) {
+//       infoTooltipsOfOp2Lists.tooltip('hide');
+//     }
+
+//     var infoTooltipsOfMnResLists = $('.right-list-404 li .sublist-info-box[data-toggle="tooltip"]');
+//     if (!infoTooltipsOfMnResLists.is(e.target) && infoTooltipsOfMnResLists.has(e.target).length === 0) {
+//       infoTooltipsOfMnResLists.tooltip('hide');
+//     }
+// });
+
+// Pen Icon, Info Icon Controlling For All LISTS POPUP Ends

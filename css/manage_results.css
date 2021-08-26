@@ -53,13 +53,22 @@
 }
 
 .table-scroll-404 .left-list-404 li .tik-box {
-    height: 16px;
-    width: 16px;
+    height: 18px;
+    width: 18px;
     background: #06e791;
     position: relative;
     margin: auto -58px auto auto;
     border-radius: 50%;
     /* display: none; */
+}
+
+.table-scroll-404 .left-list-404 li .grey-times-box {
+    height: 18px;
+    width: 18px;
+    background: #d3d3d3;
+    position: relative;
+    margin: auto -58px auto auto;
+    border-radius: 50%;
 }
 
 .display-none {
@@ -73,9 +82,19 @@
 .table-scroll-404 .left-list-404 li .tik-box i {
     position: absolute;
     margin: auto;
-    top: 3px;
+    top: 4px;
     bottom: 0;
-    left: 3px;
+    left: 4px;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.table-scroll-404 .left-list-404 li .grey-times-box i {
+    position: absolute;
+    margin: auto;
+    top: 4px;
+    bottom: 0;
+    left: 5px;
     font-size: 10px;
     color: #ffffff;
 }
@@ -169,32 +188,69 @@
 
 .table-scroll-404 .right-list-404 li .sublist-check-box-404 {
     position: relative;
-    margin: auto 8px auto auto;
-    height: 16px;
-    width: 16px;
+    margin: auto 8px auto 8px;
+    height: 18px;
+    width: 18px;
     background: #06e791;
     border-radius: 50%;
     display: none;
 }
 
-.table-scroll-404 .right-list-404 li .sublist-check-box-404 i {
-    position: absolute;
-    margin: auto;
-    top: 3px;
-    bottom: 0;
-    left: 3px;
-    font-size: 10px;
-    color: #ffffff;
+.table-scroll-404 .right-list-404 li .sublist-pen-box {
+    position: relative;
+    margin: auto 8px auto 8px;
+    height: 18px;
+    width: 18px;
+    background: #d3d3d3;
+    border-radius: 50%;
 }
 
-.table-scroll-404 .right-list-404 li .sublist-cancel-box-404 {
+.table-scroll-404 .right-list-404 li .sublist-info-box {
     position: relative;
     margin: auto 8px auto auto;
     height: 18px;
     width: 18px;
     background: #d3d3d3;
     border-radius: 50%;
-    /* display: none; */
+}
+
+.table-scroll-404 .right-list-404 li .sublist-cancel-box-404 {
+    position: relative;
+    margin: auto 8px auto 8px;
+    height: 18px;
+    width: 18px;
+    background: #d3d3d3;
+    border-radius: 50%;
+}
+
+.table-scroll-404 .right-list-404 li .sublist-check-box-404 i {
+    position: absolute;
+    margin: auto;
+    top: 4px;
+    bottom: 0;
+    left: 4px;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.table-scroll-404 .right-list-404 li .sublist-pen-box i {
+    position: absolute;
+    margin: auto;
+    top: 4px;
+    bottom: 0;
+    left: 5px;
+    font-size: 10px;
+    color: #585757;
+}
+
+.table-scroll-404 .right-list-404 li .sublist-info-box i {
+    position: absolute;
+    margin: auto;
+    top: 4px;
+    bottom: 0;
+    left: 7px;
+    font-size: 10px;
+    color: #585757;
 }
 
 .table-scroll-404 .right-list-404 li .sublist-cancel-box-404 i {

@@ -52,6 +52,9 @@ const listItemData404 = [
         <div class="tik-box display-none">
             <i class="fas fa-check"></i>
         </div>
+        <div class="grey-times-box display-none">
+			<i class="fas fa-times"></i>
+		</div>
         <div class="arrow-404 arrow-404-background-color-1">
             <i class="fas fa-caret-right arrow-404-i-color-1"></i>
         </div>
@@ -64,6 +67,12 @@ const listItemData404 = [
         for (let i = 1; i <= length; i++) {
             let elementHtml = `<li class="result-list-${index + 1}-${i}">
             <p>Level ${index + 1} - Item ${i}</p>
+            <div class="sublist-info-box" data-toggle="tooltip" data-placement="bottom" data-title="Click for Info" onclick="listTooltipClickMnRes(this)">
+				<i class="fas fa-info"></i>
+			</div>
+			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+				<i class="fas fa-pen"></i>
+			</div>
             <div class="sublist-check-box-404">
                 <i class="fas fa-check"></i>
             </div>
@@ -173,15 +182,24 @@ var left_list_data = "";
 
         if (oldTarget != "" && oldTarget !== target) {
             $(oldTarget).removeClass("highlight_404");
+
             $(oldTarget).children(".tik-box").removeClass("display-block");
             $(oldTarget).children(".tik-box").addClass("display-none");
+
+            $(oldTarget).children(".grey-times-box").removeClass("display-block");
+            $(oldTarget).children(".grey-times-box").addClass("display-none");
+
             $(oldTarget).children(".arrow-404").removeClass("arrow-404-background-color-2");
             $(oldTarget).children(".arrow-404").addClass("arrow-404-background-color-1");
             $(oldTarget).children(".arrow-404").children(".fa-caret-right").removeClass("arrow-404-i-color-2");
             $(oldTarget).children(".arrow-404").children(".fa-caret-right").addClass("arrow-404-i-color-1");
         }
         $(target).toggleClass("highlight_404");
+
         $(target).children(".tik-box").toggleClass("display-none display-block");
+
+        $(target).children(".grey-times-box").toggleClass("display-none display-block");
+
         $(target).children(".arrow-404").toggleClass("arrow-404-background-color-1 arrow-404-background-color-2");
         $(target).children(".arrow-404").children(".fa-caret-right").toggleClass("arrow-404-i-color-1 arrow-404-i-color-2");
 
@@ -276,7 +294,9 @@ $("#div-sub-ul-li-list").click(function (e) {
 
             deleteManageModal(target.parentNode.classList[0]);
             return;
-        }
+        }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+			return;
+		}
         target = target.parentNode;
     } else if (target.tagName === "P") {
         target = target.parentNode;
@@ -289,7 +309,9 @@ $("#div-sub-ul-li-list").click(function (e) {
 
             deleteManageModal(target.parentNode.classList[0]);
             return;
-        }
+        }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+			return;
+		}
         else target = target.parentNode;
     } else if (target.tagName !== "LI") return;
 
