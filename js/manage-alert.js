@@ -5,6 +5,7 @@ for (let i = 1; i <= 100; i++) {
   alertExistData.push({
     id: `md-ex-${i}`,
     serial: i,
+    alertName: `Level ${i} - Item ${i+100}`,
     alertValue: `Alert Val - ${i}`,
     alertEmail: `alert${i}@gmail.com`
   });
@@ -14,12 +15,27 @@ function makeTableHeadAlert(tableID) {
   let tableHead =
     `<th class="">ROW</th>
         <th class="">
+          <span class="header-title">ALERT NAME</span>
+          <span class="tooltip-container" tooltip="Sample Alert Name" flow="down">
+            <i class="fas fa-question-circle"></i>
+          </span>
+          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+				    <i class="fas fa-chevron-up"></i>
+          </span>
+          <div class="head-filter cross-exists">
+            <i class="fas fa-times"></i>
+          </div>
+          <div class="drop-filter">
+            <i class="fas fa-caret-down"></i>
+          </div>
+        </th>
+        <th class="">
           <span class="header-title">ALERT TYPE</span>
           <span class="tooltip-container" tooltip="Sample text here1" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
           <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
-				<i class="fas fa-chevron-up"></i>
+				  <i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
@@ -122,7 +138,7 @@ function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId, p
       }, 2000);
 
       let tableTr = "";
-      data.forEach(({ id, serial, alertValue, alertEmail }, index) => {
+      data.forEach(({ id, serial, alertName, alertValue, alertEmail }, index) => {
         let tabHd = $(`#${tableID} thead th`);
         let len = tabHd.length;
         let classList = [];
@@ -130,8 +146,11 @@ function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId, p
           classList.push(tabHd[i].className);
         }
         tableTr += `
-          <tr id="${id}">
+        <tr id="${id}">
 					<th class="row-data" scope="row">${serial}</th>
+					<td class="alert-name">
+              <p class="alert-exists-data" onclick="alertToResultDisplay(this)">${alertName}</p>
+          </td>
           <td class="selectaltype ${classList[0]}">
               <select name="" id="">
                   <option class="alert-exists-data" value="">Precent Change Greather...</option>
@@ -173,13 +192,9 @@ function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId, p
 					
 					<td class="removenull">
               <div class="reset-save-btn">
-                  <button class="reset4" type="button">Reset</button>
                   <button class="save4 mnAlertSave" type="button" onclick="saveManageAlertRow(event)">Save</button>
               </div>
               <div class="cross-box-89">
-                <div class="circle_550 plus89">
-                  <i class="fas fa-plus"></i>
-                </div>
                 <div class="deleteTableRow circle_550" onclick="universalConfirmModalDelete(this)">
                   <i class="fas fa-times"></i>
                 </div>
@@ -389,4 +404,25 @@ function manageAlertAfterConfirmBtn(){
 	    $('#universalThankDraftModal').modal('show');
 
   }, 4000);
+}
+
+function alertToResultDisplay(nameThis){
+
+  let enteringTotalTab = document.querySelectorAll("#tabs_ul li");
+  let enteringTabContent = document.querySelectorAll(".content .tab_content");
+
+  for (let i = 0; i < enteringTotalTab.length; i++) {
+      enteringTotalTab[i].classList.remove("active");
+      enteringTabContent[i].style.display = "none";
+  }
+  enteringTotalTab[3].classList.add("active");
+  enteringTabContent[3].style.display = "block";
+  
+  document.querySelector("#chartPage .chart-title .left-item").innerHTML = (nameThis.textContent).split(" - ")[1];
+	document.querySelector("#chartPage .chart-title .right-item").innerHTML = nameThis.textContent;
+	document.getElementById("firstOpen").click();
+	$(".select-item-table").css("display", "none");
+	
+	gotoChartPage(90, 50, 10, 'chartPage', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
+	tableProgressBarAnimation('Main', Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
 }
