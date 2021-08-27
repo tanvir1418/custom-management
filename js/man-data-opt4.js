@@ -1657,9 +1657,17 @@ $('#thankAfterAllListRename').on('show.bs.modal', function (e) {
   $('body').addClass("modal-force-generate-btn");
 }).on('hide.bs.modal', function (e) {
 	$('body').removeClass("modal-force-generate-btn");
+  $(`.${currentLevelItem_LI_Class} .sublist-info-box`).attr("tooltip", `${newLevelItemName}`);
   document.querySelector(`.${currentLevelItem_LI_Class} p`).textContent = newLevelItemName;
 });
 
+// $('.submodal-list li .sublist-info-box[data-toggle="tooltip"]').tooltip(
+//   {
+//     container: 'body',
+//     trigger: 'hover',
+//     placement: 'bottom'
+//   }
+// );
 // $('.submodal-list li .sublist-info-box').tooltip(
 //   {
 //     container: 'body',
@@ -1673,50 +1681,50 @@ $('#thankAfterAllListRename').on('show.bs.modal', function (e) {
 //   $('.submodal-list li .sublist-info-box[data-toggle="tooltip"]').tooltip('hide');
 //   $(this).tooltip('show');
 // });
-function listTooltipClick(infoThis){
-  // let currentListClassName = infoThis.parentElement.className;
-  // $(`li.${currentListClassName} .sublist-info-box`).tooltip(
-  //     {
-  //       container: 'body',
-  //       trigger: 'manual',
-  //       placement: 'bottom'
-  //     }
-  //   );
-  // let listCurrentName = infoThis.parentElement.firstElementChild.textContent;
-  // $(infoThis).attr('data-original-title', `${listCurrentName}`);
-  // $('.submodal-list li .sublist-info-box[data-toggle="tooltip"]').tooltip('hide');
-  // $(infoThis).tooltip('show');
-}
+// function listTooltipClick(infoThis){
+//   let currentListClassName = infoThis.parentElement.className;
+//   $(`li.${currentListClassName} .sublist-info-box`).tooltip(
+//       {
+//         container: 'body',
+//         trigger: 'manual',
+//         placement: 'bottom'
+//       }
+//     );
+//   let listCurrentName = infoThis.parentElement.firstElementChild.textContent;
+//   $(infoThis).attr('data-original-title', `${listCurrentName}`);
+//   $('.submodal-list li .sublist-info-box[data-toggle="tooltip"]').tooltip('hide');
+//   $(infoThis).tooltip('show');
+// }
 
-function listTooltipClickOp2(op2InfoThis){
-  // let currentListClassName = op2InfoThis.parentElement.className;
-  // $(`li.${currentListClassName} .sublist-info-box`).tooltip(
-  //     {
-  //       container: 'body',
-  //       trigger: 'manual',
-  //       placement: 'bottom'
-  //     }
-  //   );
-  // let listCurrentName = op2InfoThis.parentElement.firstElementChild.textContent;
-  // $(op2InfoThis).attr('data-original-title', `${listCurrentName}`);
-  // $('.sub-list li .sublist-info-box[data-toggle="tooltip"]').tooltip('hide');
-  // $(op2InfoThis).tooltip('show');
-}
+// function listTooltipClickOp2(op2InfoThis){
+//   let currentListClassName = op2InfoThis.parentElement.className;
+//   $(`li.${currentListClassName} .sublist-info-box`).tooltip(
+//       {
+//         container: 'body',
+//         trigger: 'manual',
+//         placement: 'bottom'
+//       }
+//     );
+//   let listCurrentName = op2InfoThis.parentElement.firstElementChild.textContent;
+//   $(op2InfoThis).attr('data-original-title', `${listCurrentName}`);
+//   $('.sub-list li .sublist-info-box[data-toggle="tooltip"]').tooltip('hide');
+//   $(op2InfoThis).tooltip('show');
+// }
 
-function listTooltipClickMnRes(mnResInfoThis){
-  // let currentListClassName = mnResInfoThis.parentElement.className;
-  // $(`li.${currentListClassName} .sublist-info-box`).tooltip(
-  //     {
-  //       container: 'body',
-  //       trigger: 'manual',
-  //       placement: 'bottom'
-  //     }
-  //   );
-  // let listCurrentName = mnResInfoThis.parentElement.firstElementChild.textContent;
-  // $(mnResInfoThis).attr('data-original-title', `${listCurrentName}`);
-  // $('.right-list-404 li .sublist-info-box[data-toggle="tooltip"]').tooltip('hide');
-  // $(mnResInfoThis).tooltip('show');
-}
+// function listTooltipClickMnRes(mnResInfoThis){
+//   let currentListClassName = mnResInfoThis.parentElement.className;
+//   $(`li.${currentListClassName} .sublist-info-box`).tooltip(
+//       {
+//         container: 'body',
+//         trigger: 'manual',
+//         placement: 'bottom'
+//       }
+//     );
+//   let listCurrentName = mnResInfoThis.parentElement.firstElementChild.textContent;
+//   $(mnResInfoThis).attr('data-original-title', `${listCurrentName}`);
+//   $('.right-list-404 li .sublist-info-box[data-toggle="tooltip"]').tooltip('hide');
+//   $(mnResInfoThis).tooltip('show');
+// }
 
 // $(document).mouseup(function(e) {
 //     var infoTooltipsOfLists = $('.submodal-list li .sublist-info-box[data-toggle="tooltip"]');

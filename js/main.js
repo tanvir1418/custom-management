@@ -469,7 +469,7 @@ const listItemData = [
 		for (let i = 1; i <= length; i++) {
 			let elementHtml = `<li class="option-list-${index + 1}-${i}">
 			<p>Level ${index + 1} - Item ${i}</p>
-			<div class="sublist-info-box" data-toggle="tooltip" data-placement="bottom" data-title="Click for Info" onclick="listTooltipClickOp2(this)">
+			<div class="sublist-info-box" flow="down" tooltip="Level ${index + 1} - Item ${i}">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -823,8 +823,9 @@ sub_ul_list.addEventListener("click", function (e) {
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
 			return;
-		}else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
+		}
+		else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
 		}
 		target = target.parentNode;
 	} else if (target.tagName === "P") {
@@ -834,9 +835,11 @@ sub_ul_list.addEventListener("click", function (e) {
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
 			return;
-		}else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
-		} else target = target.parentNode;
+		}
+		else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+		else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
 
 	if (oldLIClassname !== "" && oldLIClassname !== target.classList[0]) {

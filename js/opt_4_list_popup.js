@@ -41,7 +41,7 @@ for (let i = 1; i <= 29; i++) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
-      <div class="sublist-info-box" data-toggle="tooltip" data-placement="bottom" data-title="Click for Info" onclick="listTooltipClick(this)">
+      <div class="sublist-info-box" flow="down" tooltip="${item}">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -201,8 +201,9 @@ sub_ul_optfourmodalamodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-optfourmodala-modal .opt4-list1-row-name").innerHTML = opt4ModalListA_rowName;
 
       return;
-    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
 		}
     target = target.parentNode;
   } else if (target.tagName === "P") {
@@ -216,9 +217,11 @@ sub_ul_optfourmodalamodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-optfourmodala-modal .opt4-list1-row-name").innerHTML = opt4ModalListA_rowName;
 
       return;
-    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
-		} else target = target.parentNode;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+    else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
 
   $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
@@ -336,7 +339,7 @@ for (let i = 1; i <= 29; i++) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
 			<p>${item}</p>
-      <div class="sublist-info-box" data-toggle="tooltip" data-placement="bottom" data-title="Click for Info" onclick="listTooltipClick(this)">
+      <div class="sublist-info-box" flow="down" tooltip="${item}">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -491,8 +494,9 @@ sub_ul_optfourmodalbmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-optfourmodalb-modal .opt4-list2-row-name").innerHTML = opt4ModalListB_rowName;
 
       return;
-    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
 		}
     target = target.parentNode;
   } else if (target.tagName === "P") {
@@ -506,9 +510,11 @@ sub_ul_optfourmodalbmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-optfourmodalb-modal .opt4-list2-row-name").innerHTML = opt4ModalListB_rowName;
 
       return;
-    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
-		} else target = target.parentNode;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+    else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
 
   $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
@@ -626,7 +632,7 @@ for (let i = 1; i <= 29; i++) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
 			<p>${item}</p>
-      <div class="sublist-info-box" data-toggle="tooltip" data-placement="bottom" data-title="Click for Info" onclick="listTooltipClick(this)">
+      <div class="sublist-info-box" flow="down" tooltip="${item}">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -782,8 +788,9 @@ sub_ul_optfourmodalcmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-optfourmodalc-modal .opt4-list3-row-name").innerHTML = opt4ModalListC_rowName;
 
       return;
-    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
 		}
     target = target.parentNode;
   } else if (target.tagName === "P") {
@@ -797,9 +804,11 @@ sub_ul_optfourmodalcmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-optfourmodalc-modal .opt4-list3-row-name").innerHTML = opt4ModalListC_rowName;
 
       return;
-    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
-		} else target = target.parentNode;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+    else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
 
   $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
@@ -950,7 +959,7 @@ function findFileListOpt4(_id, name) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
 			<p>${item}</p>
-      <div class="sublist-info-box" data-toggle="tooltip" data-placement="bottom" data-title="Click for Info" onclick="listTooltipClick(this)">
+      <div class="sublist-info-box" flow="down" tooltip="${item}">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -1106,8 +1115,9 @@ sub_ul_optfourmodaldmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-optfourmodald-modal .opt4-list4-row-name").innerHTML = opt4ModalListD_rowName;
 
       return;
-    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
 		}
     target = target.parentNode;
   } else if (target.tagName === "P") {
@@ -1121,9 +1131,11 @@ sub_ul_optfourmodaldmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-optfourmodald-modal .opt4-list4-row-name").innerHTML = opt4ModalListD_rowName;
 
       return;
-    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
-		} else target = target.parentNode;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+    else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
 
   $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");

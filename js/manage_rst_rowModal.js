@@ -56,7 +56,7 @@ const copytolistmodal_style2 = [
         for (let i = 1; i <= length; i++) {
             let elementHtml = `<li class="option-copytomodallist_style2-${index + 1}-${i}">
 			<p>Level ${index + 1} - Item ${i}</p>
-            <div class="sublist-info-box" data-toggle="tooltip" data-placement="bottom" data-title="Click for Info" onclick="listTooltipClick(this)">
+            <div class="sublist-info-box" flow="down" tooltip="Level ${index + 1} - Item ${i}">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -219,8 +219,9 @@ sub_ul_copytomodallist_style2.addEventListener("click", function (e) {
             document.querySelector("#delet-copytolistopt2_style2 .copyToS2-item-name").innerHTML = dataCopyToS2_Itag;
 
             return;
-        }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
+        }
+        else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
 		}
         target = target.parentNode;
     } else if (target.tagName === "P") {
@@ -234,9 +235,11 @@ sub_ul_copytomodallist_style2.addEventListener("click", function (e) {
             document.querySelector("#delet-copytolistopt2_style2 .copyToS2-item-name").innerHTML = dataCopyToS2_Itag;
 
             return;
-        }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
-		} else target = target.parentNode;
+        }
+        else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+        else target = target.parentNode;
     } else if (target.tagName !== "LI") return;
 
     let dataCopyToStyle2 = target.childNodes[1].innerHTML;
@@ -328,7 +331,7 @@ const movetolistmodal_style29 = [
         for (let i = 1; i <= length; i++) {
             let elementHtml = `<li class="option-movetomodallist_style29-${index + 1}-${i}">
 			<p>Level ${index + 1} - Item ${i}</p>
-            <div class="sublist-info-box" data-toggle="tooltip" data-placement="bottom" data-title="Click for Info" onclick="listTooltipClick(this)">
+            <div class="sublist-info-box" flow="down" tooltip="Level ${index + 1} - Item ${i}">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -491,8 +494,9 @@ sub_ul_movetomodallist_style29.addEventListener("click", function (e) {
             document.querySelector("#delet-movetolistopt2_style29 .moveToS2-item-name").innerHTML = dataMoveToStyle2;
 
             return;
-        }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
+        }
+        else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
 		}
         target = target.parentNode;
     } else if (target.tagName === "P") {
@@ -506,9 +510,11 @@ sub_ul_movetomodallist_style29.addEventListener("click", function (e) {
             document.querySelector("#delet-movetolistopt2_style29 .moveToS2-item-name").innerHTML = dataMoveToStyle2;
 
             return;
-        }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
-		} else target = target.parentNode;
+        }
+        else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+        else target = target.parentNode;
     } else if (target.tagName !== "LI") return;
 
 

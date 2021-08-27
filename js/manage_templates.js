@@ -89,7 +89,7 @@ for (let i = 1; i <= 29; i++) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
-      <div class="sublist-info-box" data-toggle="tooltip" data-placement="bottom" data-title="Click for Info" onclick="listTooltipClick(this)">
+      <div class="sublist-info-box" flow="down" tooltip="${item}">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -250,8 +250,9 @@ sub_ul_managetempamodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempa-list-modal .mnTemp-list1-row-name").innerHTML = mnTempModalListA_rowName;
 
       return;
-    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
 		}
     target = target.parentNode;
   } else if (target.tagName === "P") {
@@ -265,9 +266,11 @@ sub_ul_managetempamodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempa-list-modal .mnTemp-list1-row-name").innerHTML = mnTempModalListA_rowName;
 
       return;
-    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
-		} else target = target.parentNode;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+    else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
 
   $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
@@ -385,7 +388,7 @@ for (let i = 1; i <= 29; i++) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
-      <div class="sublist-info-box" data-toggle="tooltip" data-placement="bottom" data-title="Click for Info" onclick="listTooltipClick(this)">
+      <div class="sublist-info-box" flow="down" tooltip="${item}">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -539,8 +542,9 @@ sub_ul_managetempbmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempb-list-modal .mnTemp-list2-row-name").innerHTML = mnTempModalListB_rowName;
 
       return;
-    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
 		}
     target = target.parentNode;
   } else if (target.tagName === "P") {
@@ -554,9 +558,11 @@ sub_ul_managetempbmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempb-list-modal .mnTemp-list2-row-name").innerHTML = mnTempModalListB_rowName;
 
       return;
-    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
-		} else target = target.parentNode;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+    else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
 
   $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
@@ -672,7 +678,7 @@ for (let i = 1; i <= 29; i++) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
-      <div class="sublist-info-box" data-toggle="tooltip" data-placement="bottom" data-title="Click for Info" onclick="listTooltipClick(this)">
+      <div class="sublist-info-box" flow="down" tooltip="${item}">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -827,8 +833,9 @@ sub_ul_managetempcmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempc-list-modal .mnTemp-list3-row-name").innerHTML = mnTempModalListC_rowName;
 
       return;
-    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
 		}
     target = target.parentNode;
   } else if (target.tagName === "P") {
@@ -842,9 +849,11 @@ sub_ul_managetempcmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempc-list-modal .mnTemp-list3-row-name").innerHTML = mnTempModalListC_rowName;
 
       return;
-    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
-		} else target = target.parentNode;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+    else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
 
 
@@ -994,7 +1003,7 @@ function findFileListMS1(_id, name) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
-      <div class="sublist-info-box" data-toggle="tooltip" data-placement="bottom" data-title="Click for Info" onclick="listTooltipClick(this)">
+      <div class="sublist-info-box" flow="down" tooltip="${item}">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -1149,8 +1158,9 @@ sub_ul_managetempdmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempd-list-modal .mnTemp-list4-row-name").innerHTML = mnTempModalListD_rowName;
 
       return;
-    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
 		}
     target = target.parentNode;
   } else if (target.tagName === "P") {
@@ -1164,9 +1174,11 @@ sub_ul_managetempdmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempd-list-modal .mnTemp-list4-row-name").innerHTML = mnTempModalListD_rowName;
 
       return;
-    }else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
-			return;
-		} else target = target.parentNode;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+    else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
 
   $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
