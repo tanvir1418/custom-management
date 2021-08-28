@@ -340,24 +340,12 @@ function calAngle(obj) {
     return angle;
 }
 
-function getRandomIntegerValue(minVal, maxVal) {
-    let min = Math.ceil(minVal);
-    let max = Math.floor(maxVal);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+function maintainRotation(degreeVal, meterId){
 
-function gotoChartPage(num1, num2, num3, targetChartPage, meterOneId, meterTwoId, meterThreeId) {
-
-    $(`#${targetChartPage}`).css("display", "block");
-    // chartPage.style.opacity = "1";
-
-    /*============----------ASHIQ----------=============*/
-    let interval = 50;
-    // let meter1_input = 34;
-    let meter1_input = num1;
-    let obj1 = document.getElementById(`${meterOneId}`);
+    let meter1_input = degreeVal;
+    let obj1 = document.getElementById(`${meterId}`);
     obj1.classList.add("scorer-1-tick-animation");
-    let p_element1 = document.getElementById(`value-of-${meterOneId}`);
+    let p_element1 = document.getElementById(`value-of-${meterId}`);
     let intervalId1 = window.setInterval(function () {
         try {
             let angle = calAngle(obj1);
@@ -373,52 +361,17 @@ function gotoChartPage(num1, num2, num3, targetChartPage, meterOneId, meterTwoId
         } catch (err) {
             clearInterval(intervalId1);
         }
-    }, interval);
+    }, 50);
+}
 
-    // let meter2_input = 55;
-    let meter2_input = num2;
-    let obj2 = document.getElementById(`${meterTwoId}`);
-    obj2.classList.add("scorer-1-tick-animation");
-    let p_element2 = document.getElementById(`value-of-${meterTwoId}`);
-    let intervalId2 = window.setInterval(function () {
-        try {
-            let angle = calAngle(obj2);
-            let percent = parseFloat(angle / 1.8).toFixed(2);
-            p_element2.innerHTML = `${percent}%`;
-            if (percent >= meter2_input) {
-                obj2.classList.remove("scorer-1-tick-animation");
-                obj2.style.transformOrigin = "right center";
-                obj2.style.transform = `rotate(${angle}deg)`;
-                p_element2.innerHTML = `${meter2_input}%`;
-                clearInterval(intervalId2);
-            }
-        } catch (err) {
-            clearInterval(intervalId2);
-        }
-    }, interval);
+function gotoChartPage(targetChartPage, meterOneId, meterTwoId, meterThreeId) {
 
-    // let meter3_input = 73;
-    let meter3_input = num3;
-    let obj3 = document.getElementById(`${meterThreeId}`);
-    obj3.classList.add("scorer-1-tick-animation");
-    let p_element3 = document.getElementById(`value-of-${meterThreeId}`);
-    let intervalId3 = window.setInterval(function () {
-        try {
-            let angle = calAngle(obj3);
-            let percent = parseFloat(angle / 1.8).toFixed(2);
-            p_element3.innerHTML = `${percent}%`;
-            if (percent >= meter3_input) {
-                obj3.classList.remove("scorer-1-tick-animation");
-                obj3.style.transformOrigin = "right center";
-                obj3.style.transform = `rotate(${angle}deg)`;
-                p_element3.innerHTML = `${meter3_input}%`;
-                clearInterval(intervalId3);
-            }
-        } catch (err) {
-            clearInterval(intervalId3);
-        }
-    }, interval);
-    /* --------- END ----------- */
+    $(`#${targetChartPage}`).css("display", "block");
+    // Math.floor(Math.random() * (100 - 1 + 1)) + 1; //Random Integer Value between (1-100)
+    maintainRotation(34, meterOneId);
+    maintainRotation(90, meterTwoId);
+    maintainRotation(55, meterThreeId);
+
 };
 // ====== LIST ITEM TO CHART PAGE END ============
 
@@ -426,16 +379,19 @@ function gotoChartPage(num1, num2, num3, targetChartPage, meterOneId, meterTwoId
 
 // Controlling Main and Dynamic Tab Creation
 function openTabPage(pageName, elmnt) {
-    var i, tabcontent, tablinks;
+    let i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
+    console.log(`Tabcontent Length: ${tabcontent.length}`);
     tablinks = document.getElementsByClassName("tablink");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].style.backgroundColor = "";
     }
+    console.log(`Tablinks Length: ${tablinks.length}`);
     document.getElementById(pageName).style.display = "block";
+    console.log("Click Happened On Button")
 }
 
 // Force Clicking Main Tab 
@@ -443,11 +399,13 @@ document.getElementById("defaultTabOpen").click();
 $("#defaultTabOpen").addClass("active-tab-81");
 
 // Handling Click On Main and Dynamic Tab
-$(".tablink").click(function () {
-    $(".tablink").removeClass("active-tab-81");
-    $(this).addClass("active-tab-81");
-})
-
+function handlingClickOnMainDynamicTab(){
+    $(".tablink").click(function () {
+        $(".tablink").removeClass("active-tab-81");
+        $(this).addClass("active-tab-81");
+    });
+}
+handlingClickOnMainDynamicTab();
 // ======= TABS END ======
 
 // ======= INNER TABS START ======

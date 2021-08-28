@@ -45,6 +45,7 @@
     <script src="js/man-data-opt4.js" defer></script>
     <script src="js/read-csv.js" defer></script>
     <script src="js/manage-alert.js" defer></script>
+    <script src="js/dynamic-tab.js" defer></script>
 </head>
 
 <body>
@@ -5424,14 +5425,13 @@
                 </div>
                 <div class="chart-page-tab">
                     <button class="tablink" onclick="openTabPage('Main', this)" id="defaultTabOpen">Main</button>
-                    <button class="tablink tab-disable" onclick="openTabPage('News', this)">Tab 2</button>
-                    <button class="tablink tab-disable" onclick="openTabPage('Contact', this)">Tab 3</button>
-                    <button class="tablink tab-disable" onclick="openTabPage('About', this)">Tab 4</button>
+                    <!-- <button class="tablink tab-disable" onclick="openTabPage('News', this)">Tab 2</button> -->
                 </div>
+
                 <div id="Main" class="tabcontent">
                     <!-- //////////  DISPLAY CHART STYLE START ////////// -->
                     <div class="chart-page-inner-tab">
-                        <button class="inner-tablink" onclick="openFiveChartTab('Main', 'Display1', this); gotoChartPage(90, 50, 10, 'chartPage', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');"
+                        <button class="inner-tablink" onclick="openFiveChartTab('Main', 'Display1', this); gotoChartPage('chartPage', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');"
                             id="firstOpen">
                             Display Chart Style 1
                             <i class="fas fa-caret-down"></i>

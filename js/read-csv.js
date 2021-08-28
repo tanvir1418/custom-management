@@ -1299,7 +1299,6 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 				let Description = csvD["Description"];
 				
 				let dynamicTabTitle = Description.substr(0, 11);
-				console.log(dynamicTabTitle);
 
 				let Details3 = csvD["Details3"];
 				let Details2 = csvD[" Details2"];
@@ -1319,7 +1318,8 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 							<div class="circle2box bkmark addToBookMark" tooltip="Click to Add to Bookmarks" flow="down"  onclick="universalConfirmModalDelete(this)">
 								<i class="fas fa-envelope"></i>
 							</div>
-							<div class="circle2box clickViewDetails" tooltip="Click to View Details" id="${dynamicTabTitle}" flow="down" onclick="universalConfirmModalDelete(this)">
+							<!-- <div class="circle2box clickViewDetails" tooltip="Click to View Details" flow="down" onclick="universalConfirmModalDelete(this)"> -->
+							<div class="circle2box clickViewDetails" tooltip="Click to View Details" flow="down" id="${dynamicTabTitle}" data-dynamiceTooltip="${Description}" onclick="createDynamicTabRow(this)">
 								<i class="fas fa-pen"></i>
 							</div>
 							<div class="circle2box view-modal-click">
@@ -1885,7 +1885,7 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 					<div class="circle2box addToBookMark" tooltip="Click to Add to Bookmarks" flow="down" onclick="universalConfirmModalDelete(this)">
 						<i class="fas fa-envelope"></i>
 					</div>
-					<div class="circle2box clickViewDetails" tooltip="Click to View Details" id="${dynamicTabTitle}" flow="down" onclick="universalConfirmModalDelete(this)">
+					<div class="circle2box clickViewDetails" tooltip="Click to View Details" flow="down" id="${dynamicTabTitle}" data-dynamiceTooltip="${Description}" onclick="universalConfirmModalDelete(this)">
 						<i class="fas fa-pen"></i>
 					</div>
 					<div class="circle2box view-modal-click-style2">
