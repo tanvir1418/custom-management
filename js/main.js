@@ -2087,3 +2087,86 @@ $(".radio-selection-option input[type = 'radio'][name = 'data-set-radio-button']
 	// 	opt3TableData = opt3TableData2;
 	// }
 });
+
+$(document).mouseup(function(e) {
+	// Manage Template Box Info Tooltip Mouse Up
+    var infoTooltips = $('.template_box .info_box[data-toggle="tooltip"]');
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!infoTooltips.is(e.target) && infoTooltips.has(e.target).length === 0) {
+      infoTooltips.tooltip('hide');
+    }
+
+	// Mouse Up Condition For All The Manage Existing Table FILTER
+    var mainTableFilterModal = $('#dropBtnModal');
+    if (!mainTableFilterModal.is(e.target) && mainTableFilterModal.has(e.target).length === 0) {
+        mainTableFilterModal.css("display", "none");
+        $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+    }
+
+	// Mouse Up Condition For Manage Result Table FILTER
+    var mnResFilterModal = $('#col8Filter');
+    if (!mnResFilterModal.is(e.target) && mnResFilterModal.has(e.target).length === 0) {
+        mnResFilterModal.css("display", "none");
+        const rotateIcon = document.querySelectorAll(".outer-table-style12-box i.fa-caret-down.down-animation-icon");
+    	for (let i = 0; i < rotateIcon.length; i++) {
+        	$(rotateIcon[i]).removeClass("down-animation-icon");
+    	}
+    }
+
+	// Mouse Up Condition For Manage Result ALL POPUPS
+    var mnResViewTwo = $('#viewtwo');
+    var mnResViewTwo_style2 = $('#viewtwo_style2');
+    var mnResRowDetails = $('#rowdetails');
+    var mnResRowDetails_style2 = $('#rowdetails_style2');
+    var mnResNoteWindow = $('#noteswindow');
+    var mnResNoteWindow_style2 = $('#noteswindow_style2');
+    var mnResAlertWindow = $('#alertswindow');
+    var mnResAlertWindow_style2 = $('#alertswindow_style2');
+    var mnResMoveTo = $('#moverowlist');
+    var mnResMoveTo_style2 = $('#moverowlist_style2');
+    var mnResCopyTo = $('#copyrowlist');
+    var mnResCopyTo_style2 = $('#copyrowlist_style2');
+
+    if (!mnResViewTwo.is(e.target) && mnResViewTwo.has(e.target).length === 0) {
+        mnResViewTwo.css("display", "none");
+    }
+
+	if (!mnResViewTwo_style2.is(e.target) && mnResViewTwo_style2.has(e.target).length === 0) {
+        mnResViewTwo_style2.css("display", "none");
+    }
+
+	if (!mnResRowDetails.is(e.target) && mnResRowDetails.has(e.target).length === 0) {
+        mnResRowDetails.css("display", "none");
+    }
+
+	if (!mnResRowDetails_style2.is(e.target) && mnResRowDetails_style2.has(e.target).length === 0) {
+        mnResRowDetails_style2.css("display", "none");
+    }
+
+	if (!mnResNoteWindow.is(e.target) && mnResNoteWindow.has(e.target).length === 0) {
+        mnResNoteWindow.css("display", "none");
+    }
+	if (!mnResNoteWindow_style2.is(e.target) && mnResNoteWindow_style2.has(e.target).length === 0) {
+        mnResNoteWindow_style2.css("display", "none");
+    }
+	if (!mnResAlertWindow.is(e.target) && mnResAlertWindow.has(e.target).length === 0) {
+        mnResAlertWindow.css("display", "none");
+    }
+	if (!mnResAlertWindow_style2.is(e.target) && mnResAlertWindow_style2.has(e.target).length === 0) {
+        mnResAlertWindow_style2.css("display", "none");
+    }
+
+	if (!mnResMoveTo.is(e.target) && mnResMoveTo.has(e.target).length === 0) {
+        mnResMoveTo.css("display", "none");
+    }
+	if (!mnResMoveTo_style2.is(e.target) && mnResMoveTo_style2.has(e.target).length === 0) {
+        mnResMoveTo_style2.css("display", "none");
+    }
+	if (!mnResCopyTo.is(e.target) && mnResCopyTo.has(e.target).length === 0) {
+        mnResCopyTo.css("display", "none");
+    }
+	if (!mnResCopyTo_style2.is(e.target) && mnResCopyTo_style2.has(e.target).length === 0) {
+        mnResCopyTo_style2.css("display", "none");
+    }
+
+});

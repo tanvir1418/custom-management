@@ -442,9 +442,6 @@ $('#form_submit_modal').on('show.bs.modal', function (e) {
 });
 
 // This Function will trigger when col8Filter is closed
-$('#dropBtnModal').on('hidden.bs.modal', function (e) {
-    $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
-});
 
 function formConfirmBtn() {
     $('#form_submit_modal').modal('hide');
@@ -609,4 +606,17 @@ $("#dropBtnSelect").click(function () {
         $("#table_details_email .table-records-loading").css("display", "none");
 
     }, 2000);
+});
+
+$("#emailCloseDropBtnModal").click(function () {
+    $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+});
+
+$(document).mouseup(function(e) {
+    var tableFilterModal = $('#dropBtnModal');
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!tableFilterModal.is(e.target) && tableFilterModal.has(e.target).length === 0) {
+        tableFilterModal.css("display", "none");
+        $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+    }
 });

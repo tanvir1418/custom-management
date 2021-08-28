@@ -434,7 +434,7 @@ td {
 .alert-name p:hover{
     text-decoration: underline;
     cursor: pointer;
-    color: red;
+    color: blue;
 }
 @media only screen and (min-width: 1600px) {
     .alert-window .alert-mytable {

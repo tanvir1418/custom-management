@@ -3008,13 +3008,6 @@ $('.template_box .info_box').tooltip(
   $(this).tooltip('show');
 });
 
-$(document).mouseup(function(e) {
-    var infoTooltips = $('.template_box .info_box[data-toggle="tooltip"]');
-    // if the target of the click isn't the container nor a descendant of the container
-    if (!infoTooltips.is(e.target) && infoTooltips.has(e.target).length === 0) {
-      infoTooltips.tooltip('hide');
-    }
-});
 // Info Tooltip of Manage Template Ends
 
 // Pen Tooltip of Manage Template Rename Starts  
