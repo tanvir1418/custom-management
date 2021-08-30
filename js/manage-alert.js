@@ -422,7 +422,7 @@ function alertToResultDisplay(nameThis){
 	document.querySelector("#chartPage .chart-title .right-item").innerHTML = nameThis.textContent;
 	document.getElementById("firstOpen").click();
 	$(".select-item-table").css("display", "none");
-	
-	gotoChartPage('chartPage', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
+	$(`#chartPage`).css("display", "block");
+	gotoChartPage('scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
 	tableProgressBarAnimation('Main', Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
 }

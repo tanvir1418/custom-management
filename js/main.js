@@ -1717,54 +1717,15 @@ function chartDispConfirmButton() {
 	document.querySelector("#chartPage .chart-title .right-item").innerHTML = mnResultSubTitle;
 	document.getElementById("firstOpen").click();
 	$(".select-item-table").css("display", "none");
-	
-	gotoChartPage('chartPage', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
+	$(`#chartPage`).css("display", "block");
+	gotoChartPage('scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
 	tableProgressBarAnimation('Main', Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
-
-	// $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
-	// $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
-	// $('#universalThankDraftModal').modal('show');
 
 	mnResultTitle = "";
 	mnResultSubTitle = "";
 }
 
 function showConfirmSample4StartBtn() {
-	// $('body').addClass("modal-force-open");
-	// $('#submitting_Info').modal('show');
-
-	// let initStateBtn = $(".btn-save-start").html();
-	// $(".btn-save-start").html('<i class="fa fa-spinner fa-spin"></i> Submitting...');
-	// $(".btn-save-start").addClass('disabled');
-	// let $thisBtn = $(".btn-save-start");
-	// setTimeout(function() {
-	// 	$thisBtn.removeClass('disabled');
-	// 	$thisBtn.html(initStateBtn);
-	// }, 10000);
-
-	// // Option 4 save start information
-	// let $targetingTextSubmit = $("#submitting_file_info");
-	// $targetingTextSubmit.html("Saving sample 1 information...");
-	// let submitFileInfo = [ 
-	// 		"Saving sample 2 information...",
-	// 		"Saving sample 3 information...", 
-	// 		"Saving sample 4 information...",
-	// 		"Finishing..."];
-  
-	// for (let i = 1; i <= 4; ++i) {
-	//   (function(index) {
-	// 	setTimeout(function() { 
-	// 	  $targetingTextSubmit.html(submitFileInfo[index-1]);
-	// 	}, i * 2000);
-	//   })(i);
-	// }
-	
-    // setTimeout(function() { 
-    //     $('#submitting_Info').modal('hide');
-	// 	$('body').removeClass("modal-force-open");
-
-    //     $('#sample4SaveStart_confirm_modal').modal('show');
-    // }, 10000);
 	$('#sample4SaveStart_confirm_modal').modal('show');
 }
 

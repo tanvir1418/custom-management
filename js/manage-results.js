@@ -364,9 +364,7 @@ function maintainRotation(degreeVal, meterId){
     }, 50);
 }
 
-function gotoChartPage(targetChartPage, meterOneId, meterTwoId, meterThreeId) {
-
-    $(`#${targetChartPage}`).css("display", "block");
+function gotoChartPage(meterOneId, meterTwoId, meterThreeId) {
     // Math.floor(Math.random() * (100 - 1 + 1)) + 1; //Random Integer Value between (1-100)
     maintainRotation(34, meterOneId);
     maintainRotation(90, meterTwoId);
@@ -376,9 +374,87 @@ function gotoChartPage(targetChartPage, meterOneId, meterTwoId, meterThreeId) {
 // ====== LIST ITEM TO CHART PAGE END ============
 
 // ======= TABS START ======
+let tabTableIdData = [
+    {
+        "tabId": "Main", 
+        "tableStyle1ID" : "resizable554",
+    }
+];
+
+let tableResizerData = {
+    "column-header-1" : "50px",
+    "column-header-2" : "154px",
+    "column-header-3" : "140px",
+    "column-header-4" : "110px",
+    "column-header-5" : "110px",
+    "column-header-6" : "155px",
+    "column-header-7" : "155px",
+    "column-header-8" : "240px",
+    "column-header-9" : "180px",
+    "column-header-10" : "120px",
+    "column-header-11" : "120px",
+    "column-header-12" : "120px",
+    "column-header-13" : "120px",
+    "column-header-14" : "120px",
+    "column-header-15" : "120px",
+    "column-header-16" : "145px",
+    "column-header-17" : "145px",
+    "column-header-18" : "145px",
+    "column-header-19" : "145px",
+    "column-header-20" : "145px",
+    "column-header-21" : "145px",
+    "column-header-22" : "145px",
+    "column-header-23" : "145px",
+    "column-header-24" : "145px",
+    "column-header-25" : "145px",
+    "column-header-26" : "145px",
+    "column-header-27" : "145px",
+    "column-header-28" : "145px",
+    "column-header-29" : "145px",
+    "column-header-30" : "145px",
+    "column-header-31" : "145px",
+    "column-header-32" : "145px",
+    "column-header-33" : "145px",
+    "column-header-34" : "145px",
+    "column-header-35" : "145px",
+    "column-header-36" : "145px",
+    "column-header-37" : "145px",
+    "column-header-38" : "145px",
+    "column-header-39" : "145px",
+    "column-header-40" : "145px",
+    "column-header-41" : "145px",
+    "column-header-42" : "145px",
+    "column-header-43" : "145px",
+    "column-header-44" : "145px",
+    "column-header-45" : "145px",
+    "column-header-46" : "145px",
+    "column-header-47" : "145px",
+    "column-header-48" : "145px",
+    "column-header-49" : "145px",
+    "column-header-50" : "145px",
+    "column-header-51" : "145px",
+    "column-header-52" : "145px",
+    "column-header-53" : "145px",
+    "column-header-54" : "145px",
+    "column-header-55" : "145px",
+    "column-header-56" : "145px",
+    "column-header-57" : "150px",
+    "column-header-58" : "145px",
+    "column-header-59" : "145px",
+    "column-header-60" : "145px",
+    "column-header-61" : "145px",
+    "column-header-62" : "145px",
+    "column-header-63" : "145px",
+    "column-header-64" : "450px",
+    "column-header-65" : "600px",
+    "column-header-66" : "800px"
+};
 
 // Controlling Main and Dynamic Tab Creation
 function openTabPage(pageName, elmnt) {
+    $(`.outer-table-style12-box .right-slider5`).css("display", "none");
+    $(`.outer-table-style12-box .left-slider5`).css("display", "none");
+
     let i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -391,7 +467,28 @@ function openTabPage(pageName, elmnt) {
     }
     console.log(`Tablinks Length: ${tablinks.length}`);
     document.getElementById(pageName).style.display = "block";
-    console.log("Click Happened On Button")
+    console.log("Click Happened On Button");
+
+    for ( let index=0; index<tabTableIdData.length; index++ ) {
+        if ( tabTableIdData[index].tabId == pageName ) {
+            mnResultActiveTabID = tabTableIdData[index].tabId;
+            mnResultActiveTabSty1TableID = tabTableIdData[index].tableStyle1ID;
+        }
+    }
+
+    let compStyles = window.getComputedStyle(document.querySelector(`#${mnResultActiveTabSty1TableID} thead`));
+    $(`#${pageName} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap`).css({
+        width: compStyles.width,
+        height: "44px"
+    });
+
+    for (let columnNum = 3; columnNum <= 66; columnNum++) {
+        let columnHeaderWidth = tableResizerData[`column-header-${columnNum}`];
+
+        $(`#${mnResultActiveTabSty1TableID} thead tr .column-header-${columnNum} .column-header-${columnNum}-sizer`).attr("style", `width: ${columnHeaderWidth}`);
+        $(`#${mnResultActiveTabSty1TableID} tbody tr td .column-header-${columnNum}-resizer`).attr("style", `width: ${columnHeaderWidth}`);
+        $(`#${mnResultActiveTabID} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 thead tr .column-header-${columnNum} .column-header-${columnNum}-sizer`).attr("style", `width: ${columnHeaderWidth}`);
+    }
 }
 
 // Force Clicking Main Tab 
@@ -412,25 +509,29 @@ handlingClickOnMainDynamicTab();
 
 function openFiveChartTab(mainTabId, innerPageName, elmnt) {
     var j, inner_tabcontent, inner_tablinks;
-    inner_tabcontent = document.getElementsByClassName("inner-tabcontent");
+    
+    inner_tabcontent = document.querySelectorAll(`#${mainTabId} .inner-tabcontent`);
     for (j = 0; j < inner_tabcontent.length; j++) {
         inner_tabcontent[j].style.display = "none";
     }
-    inner_tablinks = document.getElementsByClassName("inner-tablink");
+
+    inner_tablinks = document.querySelectorAll(`#${mainTabId} .inner-tablink`);
     for (j = 0; j < inner_tablinks.length; j++) {
         inner_tablinks[j].style.backgroundColor = "";
     }
-    // document.getElementById(innerPageName).style.display = "block";
+
     $(`#${mainTabId} .${innerPageName}`).css("display", "block");
 
 }
 
 $("#firstOpen").addClass("inner-active-tab-81");
-$(".inner-tablink").click(function () {
-    $(".inner-tablink").removeClass("inner-active-tab-81");
-    $(this).addClass("inner-active-tab-81");
-})
-
+function fiveChartBtnClick(targetedTab){
+    $(`#${targetedTab} .inner-tablink`).click(function () {
+        $(`#${targetedTab} .inner-tablink`).removeClass("inner-active-tab-81");
+        $(this).addClass("inner-active-tab-81");
+    });
+}
+fiveChartBtnClick("Main");
 // ======= INNER TABS END ======
 
 // ============== DISPLAY 2 SPEEDOMETER START ====================
@@ -1489,6 +1590,11 @@ function resizeWithUi(sty1TableId, tQuery, thHeight) {
             let shrinkWidth = `#${sty1TableId} tbody .${resizer}`;
             let gettingWidth = parseInt($(sizerID).css('width'), 10);
             $(shrinkWidth).width(gettingWidth + "px");
+
+            let changedHeaderClass = event.target.classList[0];
+            let changedHeaderWidth = ui.size.width;
+            tableResizerData[changedHeaderClass] = changedHeaderWidth + "px";
+
         }
     });
 }
@@ -1498,22 +1604,6 @@ function resizableTable1(selectedTab, sty1TableId) {
     resizeWithUi(sty1TableId, `#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th`, thHeight);
 }
 // TABLE RESIZEABLE END ===////////////////===
-
-// TABLE RESIZEABLE STYLE 2 START ===////////////////===
-// $(document).ready(function () {
-//     var thHeight = $("table.cross-table-1 th:first").height();
-//     $("table.cross-table-1 th").resizable({
-//         handles: "e",
-//         minHeight: thHeight,
-//         maxHeight: thHeight,
-//         minWidth: 40,
-//         resize: function (event, ui) {
-//             var sizerID = "#" + $(event.target).attr("id") + "-sizer";
-//             $(sizerID).width(ui.size.width);
-//         }
-//     });
-// })
-
 ///// Update Clear-Filter Clear Sorting Button Starts
 
 let headerTextOfSubmitAnimation = '';

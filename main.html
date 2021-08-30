@@ -5431,7 +5431,7 @@
                 <div id="Main" class="tabcontent">
                     <!-- //////////  DISPLAY CHART STYLE START ////////// -->
                     <div class="chart-page-inner-tab">
-                        <button class="inner-tablink" onclick="openFiveChartTab('Main', 'Display1', this); gotoChartPage('chartPage', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');"
+                        <button class="inner-tablink" onclick="openFiveChartTab('Main', 'Display1', this); gotoChartPage('scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');"
                             id="firstOpen">
                             Display Chart Style 1
                             <i class="fas fa-caret-down"></i>
@@ -5506,7 +5506,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="scorer-1-inner-div-5">
+                                    <div class="scorer-1-inner-div-5">
                                         <div class="scorer-1-tick scorer-1-tick-animation" id="scorer-meter-1">
                                             <!-- Add id by ashiq -->
                                         </div>
@@ -5569,7 +5569,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="scorer-1-inner-div-5">
+                                    <div class="scorer-1-inner-div-5">
                                         <div class="scorer-1-tick scorer-1-tick-animation" id="scorer-meter-2">
                                             <!-- Add id by ashiq -->
                                         </div>
@@ -5632,7 +5632,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="scorer-1-inner-div-5">
+                                    <div class="scorer-1-inner-div-5">
                                         <div class="scorer-1-tick scorer-1-tick-animation" id="scorer-meter-3">
                                             <!-- Add id by ashiq -->
                                         </div>
@@ -6789,7 +6789,6 @@
                     <!-- //////////  DISPLAY CHART STYLE END ////////// -->
 
                     <!-- ////////// DOUBLE CLICK COLUMN START ////////// -->
-                    <!-- <div class="double-click-style1" id="double_click"> -->
                     <div class="double-click-style1">
                         <div class="row">
                             <div class="col-6">
@@ -6862,7 +6861,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="double-click-style2" id="double_click_style2"> -->
                     <div class="double-click-style2">
                         <div class="row">
                             <div class="col-6">
@@ -6926,12 +6924,10 @@
                     <!-- ////////// DOUBLE CLICK COLUMN END ////////// -->
 
                     <!-- -----========= STYLE 1 STYLE 2 START -----=========  -->
-                    <!-- <div class="style12-section" id="syle12_section"> -->
                     <div class="style12-section">
                         <div class="box-style12">
                             <div class="head-style12">
                                 <div class="tab_filter-style12">
-                                    <!-- <div class="style1-box" id="style_1_box"> -->
                                     <div class="style1-box">
                                         <img src="images/style-1.png" alt="">
                                         <span>Style 1</span>
@@ -6991,15 +6987,12 @@
                                 </div>
                             </div>
                             <!-- ====//////====== STYLE 1 TABLE START ====//////====== -->
-                            <!-- <div class="outer-table-style12-box" id="outer_table_box7"> -->
                             <div class="outer-table-style12-box">
-                                <!-- <div class="style1-table-wrap" id="style1Table"> -->
                                 <div class="style1-table-wrap">
                                     <table id="resizable554" class="mytablesty12 main-table-design">
                                         <thead></thead>
                                         <tbody></tbody>
                                     </table>
-                                    <!-- <table class="mytablesty12 loading-style1-table" id="loading_table"> -->
                                     <table class="mytablesty12 loading-style1-table">
                                         <thead>
                                             <tr class="dnd-moved">
@@ -7699,13 +7692,9 @@
                                 </div>
                             </div>
                             <!-- ====//////====== STYLE 1 TABLE END ====//////====== -->
-
-                            <!-- <div class="style2-table-wrap" id="style2Con"> -->
                             <div class="style2-table-wrap">
                                 <!-- //////-----//////// LOREM 1 START //////-----////////  -->
-                                <!-- <div class="style2-table-content" id="style2_Content"></div> -->
                                 <div class="style2-table-content"></div>
-                                <!-- <div class="loading-style2-table" id="style2_loading"> -->
                                 <div class="loading-style2-table">
                                     <div class="description-text">
                                         <p>
@@ -8537,12 +8526,10 @@
                         <!-- PEGINATION START -->
                         <div class="pagination-container">
                             <div class="pagination-table">
-                                <!-- <div class="width-pagination width-pagi-manRes-table" id="pagination-man-res-table"> -->
                                 <div class="width-pagination width-pagi-manRes-table">
                                     <div class="width-row-go">
                                         <div class="no-of-rows">
                                             <div class="left-row-no">
-                                                <!-- <input type="number" class="manRes-pagination-input" id="res-row-no7" name="rowNo" value="7"> -->
                                                 <input type="number" class="manRes-pagination-input" name="rowNo" value="7">
                                                 <label for="rowNo">rows per page</label>
                                             </div>
@@ -14272,6 +14259,31 @@
         </div>
     </div>
     <!-- ========= THANK AFTER RENAME Modal Ends========= -->
+    <!-- ======= Update-Now Clear-Filter Clear-Sorting Button (Manage Result) Confirm Modal START =========== -->
+    <div class="modal fade delete-list-item" id="dynamicTabCross_confirm_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title">DELETE TAB</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="remove-box">
+                        <div class="question-delete">
+                            <p></p>
+                        </div>
+                        <div class="comfirm-btn-bx">
+                            <button type="button" class="cancel-list-data" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="confirm-list-data" onclick="dynamicTabCrossConfirmBtn(this)">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======= Update-Now Clear-Filter Clear-Sorting Button (Manage Result) Confirm Modal END =========== -->
 
     <!-- JS FILES -->
     <script src="js/jquery.js"></script>

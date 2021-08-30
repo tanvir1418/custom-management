@@ -333,9 +333,9 @@
 }
 
 .chart-section .tablink {
-    width: 8.8%;
+    min-width: 200px;
     margin-right: 0.32%;
-    background-color: #eeeeee;
+    background-color: #fffe5f;
     color: #33394b;
     float: left;
     border: none;
@@ -348,8 +348,47 @@
     font-size: 18px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    position: relative;
+    text-align: left;
+    padding-left: 15px;
+}
+.chart-section .tablink#defaultTabOpen {
+    text-align: center;
+    padding-left: 0px;
+}
+.chart-section .tablink .tab-info-box {
+    position: absolute;
+    right: 35px;
+    font-size: 13px;
+    height: 20px;
+    width: 20px;
+    background: #d3d3d3;
+    border-radius: 50%;
+}
+.chart-section .tablink .tab-cross-box {
+    position: absolute;
+    right: 10px;
+    font-size: 13px;
+    height: 20px;
+    width: 20px;
+    background: #d3d3d3;
+    border-radius: 50%;
 }
 
+.chart-section .tablink .tab-info-box i,
+.chart-section .tablink .tab-cross-box i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+.chart-section .tablink .tab-info-box[tooltip]::after {
+    min-width: 300px;
+    min-height: 90px;
+    white-space: normal;
+    text-align: left;
+}
 .chart-section .active-tab-81 {
     background-color: #1d1d1d;
     color: #ffffff;
@@ -358,6 +397,10 @@
 .chart-section .tablink:last-child {
     margin-right: 0;
     float: left;
+}
+
+.hideClickToView{
+    display: none !important;
 }
 
 /* ======= TABS END ====== */
@@ -913,6 +956,7 @@ td {
 
 .column-header-1 {
     min-width: 50px;
+    max-width: 50px;
 }
 .column-header-2 {
     min-width: 154px;

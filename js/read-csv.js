@@ -29,11 +29,7 @@ function loadCSVshowData(csvId, selectedTab, sty1TableId, sty1dblClickLeftListId
 }
 
 loadCSVshowData("exelFile", "Main", "resizable554", "man-res-opt-data-table-left", "man-res-opt-data-table-right", "res-id-table-", "style2-man-res-opt-data-table-left", "style2-man-res-opt-data-table-right", "res-table-two-");
-// Arguments (tableHeadSty1): 
-// 1. Selected TAB ID,
-// 2. Style1 Table ID
 
-// function tableHeadSty1() {
 function tableHeadSty1(selectedTab, sty1TableId) {
 	let randomFiveDigit = Math.floor(10000 + Math.random() * 90000);
 
@@ -1319,7 +1315,7 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 								<i class="fas fa-envelope"></i>
 							</div>
 							<!-- <div class="circle2box clickViewDetails" tooltip="Click to View Details" flow="down" onclick="universalConfirmModalDelete(this)"> -->
-							<div class="circle2box clickViewDetails" tooltip="Click to View Details" flow="down" id="${dynamicTabTitle}" data-dynamiceTooltip="${Description}" onclick="createDynamicTabRow(this)">
+							<div class="circle2box clickViewDetails ${selectedTab == "Main" ? "" : "hideClickToView"}" tooltip="Click to View Details" flow="down" id="${dynamicTabTitle}" data-dynamiceTooltip="${Description}" onclick="createDynamicTabRow(this)">
 								<i class="fas fa-pen"></i>
 							</div>
 							<div class="circle2box view-modal-click">
@@ -1885,7 +1881,7 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 					<div class="circle2box addToBookMark" tooltip="Click to Add to Bookmarks" flow="down" onclick="universalConfirmModalDelete(this)">
 						<i class="fas fa-envelope"></i>
 					</div>
-					<div class="circle2box clickViewDetails" tooltip="Click to View Details" flow="down" id="${dynamicTabTitle}" data-dynamiceTooltip="${Description}" onclick="universalConfirmModalDelete(this)">
+					<div class="circle2box clickViewDetails ${selectedTab == "Main" ? "" : "hideClickToView"}" tooltip="Click to View Details" flow="down" id="${dynamicTabTitle}" data-dynamiceTooltip="${Description}" onclick="createDynamicTabRow(this)">
 						<i class="fas fa-pen"></i>
 					</div>
 					<div class="circle2box view-modal-click-style2">
@@ -3383,8 +3379,7 @@ function tooltipFunction() {
 			animation: true,
 			container: 'body',
 			trigger: 'hover',
-			placement: 'bottom',
-			delay: { "show": 10, "hide": 0 }
+			placement: 'bottom'
 		}
 	);
 };
