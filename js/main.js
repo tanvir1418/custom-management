@@ -235,11 +235,23 @@ function openOption(evt, optionName) {
 // CHOOSE OPTION SECTION END
 
 // BACK BTN
-$("#back-manage").click(function () {
-	document.getElementById("option_1").style.display = "none";
-	document.getElementById("hide559").style.display = "block";
-	document.getElementById("tab_2").style.paddingTop = "60px";
-	document.getElementById("opt-content").style.marginTop = "50px";
+$("#back-manage").click(function (event) {
+	event.preventDefault();
+
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Back');
+	$(this).addClass('disabled');
+	let $this = $(this);
+
+	setTimeout(function() {
+		$this.removeClass('disabled');
+		$this.html(initState);
+
+		document.getElementById("option_1").style.display = "none";
+		document.getElementById("hide559").style.display = "block";
+		document.getElementById("tab_2").style.paddingTop = "60px";
+		document.getElementById("opt-content").style.marginTop = "50px";
+	}, 2000);
 });
 
 // Back Btn: Return to Select A Data Type To Manage 
@@ -1607,11 +1619,22 @@ function universalConfirmModalDelete(globalVariable) {
 }
 
 function op1ResetBtnConfirm(resetGlobal) {
+	// event.preventDefault();
+	let initState = $(resetGlobal).html();
+	$(resetGlobal).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(resetGlobal).addClass('disabled');
+	let $this = $(resetGlobal);
 	if (($("#leftSideDrag_op1").html() != "") || ($("#rightSideDrag_op1").html() != "")) {
-		$("#universal_confirm_modal #confirm_header p").html("RESET FIELDS");
-		$("#universal_confirm_modal #confirm_deatis p").html("Confirm to reset input fields?");
-		$('#universal_confirm_modal').modal('show');
+		setTimeout(function() {
+			$("#universal_confirm_modal #confirm_header p").html("RESET FIELDS");
+			$("#universal_confirm_modal #confirm_deatis p").html("Confirm to reset input fields?");
+			$('#universal_confirm_modal').modal('show');
+		}, 2000);
 	}
+	setTimeout(function() {
+		$this.removeClass('disabled');
+		$this.html(initState);
+	}, 2000);
 }
 
 function universalThankDraft(globalThankVar) {

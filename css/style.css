@@ -2801,3 +2801,53 @@ td {
       transform: translateX(100%);
   }
 }
+
+#option_2 .btn39 .back-btn,
+#option_2 .btn39 .reset-btn,
+#option_2 .btn39 .done-btn,
+#option_2 .btn39 .submit-btn{
+  border: none;
+  font-family: gilroy-regular, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #7b7b7b;
+  transition: all 0.3s ease;
+}
+#option_2 .btn39 .back-btn:hover,
+#option_2 .btn39 .reset-btn:hover{
+  background: #b6b6b6;
+  color: black;
+}
+#option_2 .btn39 .done-btn,
+#option_2 .btn39 .submit-btn{
+  margin-left: auto;
+  background-color: black;
+  color: #ffffff;
+}
+#option_2 .btn39 .done-btn{
+  margin-right: 15px;
+}
+#option_2 .btn39 .done-btn:hover,
+#option_2 .btn39 .submit-btn:hover{
+  color: #ffffff;
+  background-color: rgb(47, 45, 45);
+}
+
+#option_5 .row.btn39 .mybtns-39{
+  border: none;
+  width: 160px;
+  height: 60px;
+  font-size: 22px;
+  font-family: gilroy-regular, sans-serif;
+  font-weight: bold;
+}
+#option_5 .row.btn39 .mybtns-39:hover{
+  color: #ffffff;
+}
+#option_5 .row.btn39 .btn-done{
+  margin-left: auto;
+  width: 180px;
+}
+#option_5 .row.btn39 .btn-done:hover{
+  color: #000000;
+}
