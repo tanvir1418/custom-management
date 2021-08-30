@@ -222,11 +222,10 @@
             <div class="tic-box">
                 <input type="checkbox" id="agreed-checkBox">
                 <p>Please do not show this page next time after login</p>
-
             </div>
             <div class="accept-btn-box">
-                <input class="decline" type="submit" value="DECLINE" id="terms-decline" />
-                <input class="accept" type="submit" value="ACCEPT" id="terms-accept" />
+                <button class="decline" type="submit" id="terms-decline">DECLINE</button>
+                <button class="accept" type="submit" id="terms-accept">ACCEPT</button>
             </div>
         </div>
     </div>
@@ -269,15 +268,42 @@
         }
 
         $("#terms-accept").click(function (event) {
-            if ($("#agreed-checkBox").prop("checked")) {
-                localStorage.setItem("termsPageCondition", "hideTermsPage");
-            }
-            localStorage.setItem("loginStatus", "LOGGED_IN");
-            window.location.href = "main.html";
+            event.preventDefault();
+
+            let initState = $(this).html();
+            $(this).html('<i class="fa fa-spinner fa-spin"></i> ACCEPT');
+            $(this).addClass('disabled');
+            let $this = $(this);
+
+            setTimeout(function() {
+                $this.removeClass('disabled');
+                $this.html(initState);
+            
+                if ($("#agreed-checkBox").prop("checked")) {
+                    localStorage.setItem("termsPageCondition", "hideTermsPage");
+                }
+                localStorage.setItem("loginStatus", "LOGGED_IN");
+                window.location.href = "main.html";
+                
+            }, 2000);
         });
+
         $("#terms-decline").click(function (event) {
-            localStorage.setItem("currentUser", "");
-            window.location.href = "index.html";
+            event.preventDefault();
+
+            let initState = $(this).html();
+            $(this).html('<i class="fa fa-spinner fa-spin"></i> DECLINE');
+            $(this).addClass('disabled');
+            let $this = $(this);
+
+            setTimeout(function() {
+                $this.removeClass('disabled');
+                $this.html(initState);
+            
+                localStorage.setItem("currentUser", "");
+                window.location.href = "index.html";
+                
+            }, 2000);
         });
     </script>
     <!-- JS FILES -->

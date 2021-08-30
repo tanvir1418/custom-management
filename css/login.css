@@ -101,8 +101,12 @@ body {
 
 .login-input .button-box .reset {
     background-color: #dddddd;
-    color: #7d7c7c;
-    padding: 12px 35px;
+    color: #272727;
+    padding: 12px 36px;
+    border: none;
+    font-size: 23px;
+    font-weight: 700;
+    font-family: gilroy-medium, sans-serif;
 }
 
 .login-input .button-box .login{
@@ -239,8 +243,9 @@ a:visited {
     display: flex;
 }
 
-.terms_conditions .accept-btn-box input{
-    padding: 16px 35px;
+.terms_conditions .accept-btn-box button{
+    height: 60px;
+    width: 200px;
     color: #ffffff;
     border: none;
     font-size: 18px;
@@ -362,17 +367,17 @@ a:visited {
     font-family: gilroy-medium, sans-serif;
     font-weight: 500;
 }
-#forgotPass .enter-verified-email input.btn-success,
-#forgotPass .enter-verified-email input.btn-light{
+#forgotPass .enter-verified-email .btn-success,
+#forgotPass .enter-verified-email .btn-light{
     padding: 0 18px;
     margin-left: 15px;
 }
 
-#forgotPass .enter-verified-email input.btn-light{
+#forgotPass .enter-verified-email .btn-light{
     background-color: #e2e6ea;
 }
 
-#forgotPass .enter-verified-email input.btn-light:hover{
+#forgotPass .enter-verified-email .btn-light:hover{
     background-color: #cfcbcb;
     color: #000000;
 }

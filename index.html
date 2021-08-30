@@ -208,10 +208,8 @@
                             <span toggle="#passwordField" class="fa fa-fw fa-eye password-field-icon toggle-password"></span>
                         </div>
                         <div class="row button-box d-flex">
-                            <a class="reset" id="resetBtn">Reset</a>
-                            <!-- <input class="ml-auto login" type="submit" value="LOGIN" id="loginBtn"/> -->
+                            <button class="reset" id="resetBtn">RESET</button>
                             <button class="ml-auto login" type="submit" id="loginBtn">LOGIN</button>
-                            <!-- <input class="ml-auto login" type="submit" value="REGISTER" id="registerBtn" /> -->
                             <button class="ml-auto login" type="submit" id="registerBtn">REGISTER</button>
                         </div>
                         <div class="forget-pass">
@@ -265,8 +263,8 @@
                 </div>
                 <div class="enter-verified-email">
                     <input type="email" placeholder="Enter your email address" id="recovery-email">
-                    <input class="btn btn-success" type="submit" name="" id="" value="Submit" onclick="submitRecoveryEmail(this)">
-                    <input class="btn btn-light" type="submit" name="" id="" value="Cancel" data-dismiss="modal">
+                    <button class="btn btn-success" type="submit" onclick="submitRecoveryEmail(this)">Submit</button>
+                    <button class="btn btn-light" type="submit" data-dismiss="modal">Cancel</button>
                 </div>
             </div>
         </div>
@@ -361,8 +359,16 @@
         });
         $("#resetBtn").click(function (event) {
             event.preventDefault();
-            usernameIndex.value = "";
-            passwordIndex.value = "";
+            let initState = $(this).html();
+            $(this).html('<i class="fa fa-spinner fa-spin"></i> RESET');
+            $(this).addClass('disabled');
+            let $this = $(this);
+            setTimeout(function() {
+                $this.removeClass('disabled');
+                $this.html(initState);
+                usernameIndex.value = "";
+                passwordIndex.value = "";
+            }, 2000);
         });
 
         $('#forgotPass').on('hide.bs.modal', function (e) {
@@ -380,8 +386,8 @@
         // Submit Button Controlling (Loading Popup and Thank You Modal)
         function submitRecoveryEmail(){
             $('#submitting_Info').modal('show');
-            
-            setTimeout(function() { 
+
+            setTimeout(function() {
 		        $("#submitting_file_info").html("Finishing...");
 	        }, 2000);
             

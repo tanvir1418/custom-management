@@ -1527,16 +1527,25 @@ function passwordEmptyCheck(e) {
 }
 
 function resetAccountFormFields() {
-	$("#tab_1 .account-form-container .custome-select select")[0].selectedIndex = 0;
-	let formInputContainer = $(".account-form-container .custom-input-only");
-	let formInputs = $(".account-form-container .custom-input-only input");
-	for (i = 0; i < formInputContainer.length; i++) {
-		$(formInputContainer[i])
-			.removeClass("custom-input-danger")
-			.removeClass("custom-input-success");
-		formInputs[i].value = "";
-		$(formInputContainer[i]).parent().children(".error-message").remove();
-	}
+	$(".ac-button-row .reset").html('<i class="fa fa-spinner fa-spin"></i> Resetting');
+	$(".ac-button-row .reset").addClass('disabled');
+	let $thisBtn = $(".ac-button-row .reset");
+
+	setTimeout(function() {
+		$thisBtn.removeClass('disabled');
+		$thisBtn.html("Reset");
+
+		$("#tab_1 .account-form-container .custome-select select")[0].selectedIndex = 0;
+		let formInputContainer = $(".account-form-container .custom-input-only");
+		let formInputs = $(".account-form-container .custom-input-only input");
+		for (i = 0; i < formInputContainer.length; i++) {
+			$(formInputContainer[i])
+				.removeClass("custom-input-danger")
+				.removeClass("custom-input-success");
+			formInputs[i].value = "";
+			$(formInputContainer[i]).parent().children(".error-message").remove();
+		}
+	}, 2000);
 }
 
 // User Icon Click on Navbar Redirect to Manage Account 
