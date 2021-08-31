@@ -1744,13 +1744,13 @@ function filtersConfirmButton(filtersGlob){
     $('#filters_confirm_modal').modal('hide');
 }
 
-$('#filters_confirm_modal').on('show.bs.modal', function (e) {
+$('#filters_confirm_modal').on('shown.bs.modal', function (e) {
 	$('body').addClass("modal-filters-force");
-}).on('hide.bs.modal', function (e) {
-	$('body').addClass("modal-open");
+}).on('hidden.bs.modal', function (e) {
+    $('body').addClass("modal-open");
 });
 
-$('#filter-modal').on('hide.bs.modal', function (e) {
+$('#filter-modal').on('hidden.bs.modal', function (e) {
 	$('body').removeClass("modal-open modal-filters-force");
 });
 
