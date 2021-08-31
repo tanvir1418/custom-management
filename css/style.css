@@ -2851,3 +2851,11 @@ td {
 #option_5 .row.btn39 .btn-done:hover{
   color: #000000;
 }
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999 !important;
+  background-color: #DDD !important;
+  color: #999 !important;
+  pointer-events: none;
+}

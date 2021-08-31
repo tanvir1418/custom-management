@@ -1289,8 +1289,8 @@
                         </div>
 
                         <div class="row btn39">
-                            <button class="mybtns-39 back-btn" onclick="backToSelectDataType()">Back</button>
-                            <button class="mybtns-39 reset-btn">Reset</button>
+                            <button class="mybtns-39 back-btn" onclick="backToSelectDataType(this)">Back</button>
+                            <button class="mybtns-39 reset-btn op3-resetBtn-both">Reset</button>
                             <button class="mybtns-39 submit-btn" id="op2NextBtn">Next</button>
                         </div>
                     </div>
@@ -1367,8 +1367,8 @@
 
                         <div class="row btn39">
                             <button class="mybtns-39 back-btn" id="op2BackBtn">Back</button>
-                            <button class="mybtns-39 reset-btn">Reset</button>
-                            <button class="mybtns-39 done-btn" onclick="backToSelectDataType()">Done</button>
+                            <button class="mybtns-39 reset-btn op3-resetBtn-both">Reset</button>
+                            <button class="mybtns-39 done-btn" id="op2DoneBtn">Done</button>
                         </div>
                     </div>
                     <!-- ============= RECORDS FOUND END =============  -->
@@ -1516,10 +1516,10 @@
                                     <div class="control-section">
                                         <div class="d-flex">
                                             <div class="back-button">
-                                                <button class="button btn-back" onclick="backToSelectDataType()">Back</button>
+                                                <button class="button btn-back" onclick="backToSelectDataType(this)">Back</button>
                                             </div>
                                             <div class="reset-button">
-                                                <button class="button btn-reset" onclick="opt3Reset()">Reset</button>
+                                                <button class="button btn-reset" onclick="opt3Reset(this)">Reset</button>
                                             </div>
                                             <div class="save-result-input">
                                                 <input class="box-search" type="text"
@@ -2199,7 +2199,7 @@
 
 
                                                 <div class="button-row btn-row-list">
-                                                    <input type="button" value="Back" class="prev-disable" onclick="backToSelectDataType()">
+                                                    <button type="button" class="prev-disable" onclick="backToSelectDataType(this)">Back</button>
                                                     <!-- text-edition-form  -->
                                                     <div class="pop-up-yellow-button-wrap">
                                                         <div class="text-edition-form">
@@ -2211,7 +2211,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <input type="button" value="Next" class="next">
+                                                    <button type="button" class="next">Next</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -2296,8 +2296,7 @@
                                                 </div>
 
                                                 <div class="button-row btn-row-leftRight">
-                                                    <input type="button" value="Back" class="previous">
-
+                                                    <button type="button" class="previous">Back</button>
                                                     <!-- text-edition-form -->
                                                     <div class="pop-up-yellow-button-wrap">
                                                         <div class="text-edition-form">
@@ -2309,7 +2308,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <input type="button" value="Next" class="next">
+                                                    <button type="button" class="next">Next</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -2336,7 +2335,6 @@
 
                                             <form action="">
 
-                                                <!-- ============================== -->
                                                 <!-- sample 3 checkbox style starts -->
                                                 <div class="checkbox-container">
                                                     <div class="checkbox-container-inner">
@@ -2888,11 +2886,9 @@
                                                     </div>
                                                 </div>
                                                 <!-- sample 3 checkbox style ends -->
-                                                <!-- ============XXXXXXXX========== -->
 
                                                 <div class="button-row btn-row-checkbox">
-                                                    <input type="button" value="Back" class="previous">
-
+                                                    <button type="button" class="previous">Back</button>
                                                     <!-- text-edition-form -->
                                                     <div class="pop-up-yellow-button-wrap">
                                                         <div class="text-edition-form">
@@ -2904,9 +2900,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
-                                                    <input type="button" value="Next" class="next"
-                                                        id="next-show-save-start-op4">
+                                                    <button type="button" class="next" id="next-show-save-start-op4">Next</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -3008,8 +3002,7 @@
                                             </div>
                                             <!-- XXXXXXXXXXXXX Option 4 Sample 4 ends XXXXXXXXXXXXX -->
                                             <div class="button-row btn-row-dualTable">
-                                                <input type="button" value="Back" class="previous"
-                                                    id="prev-hide-save-start-op4">
+                                                <button type="button" class="previous" id="prev-hide-save-start-op4">Back</button>
                                                 <!-- text-edition-form -->
                                                 <div class="pop-up-yellow-button-wrap">
                                                     <div class="text-edition-form">
@@ -3020,8 +3013,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <input type="button" value="Next" class="next"
-                                                    style="visibility: hidden;">
+                                                <button type="button" class="next" style="visibility: hidden;">Next</button>
                                             </div>
                                         </div>
                                         <!--  -->
@@ -3481,8 +3473,8 @@
                                         </div>
                                     </div>
                                     <div class="row btn39">
-                                        <button class="mybtns-39 back-btn" id="opt5-to-main" onclick="backToSelectDataType()">Back</button>
-                                        <button class="mybtns-39 reset-btn" onclick="opt5ResetBtn(this)">Reset</button>
+                                        <button class="mybtns-39 back-btn" onclick="backToSelectDataType(this)">Back</button>
+                                        <button class="mybtns-39 reset-btn" id="op5ResetBtn" onclick="opt5ResetBtn(this)">Reset</button>
                                         <button class="mybtns-39 submit-btn btn-done" onclick="controlGenerateBtn(this)">Done</button>
                                     </div>
                                 </div>
@@ -4464,7 +4456,7 @@
 
 
                                 <div class="button-row btn-row-list">
-                                    <input type="button" value="Back" class="prev-disable" onclick="backToManageTempLoadTemp()">
+                                    <button type="button" class="prev-disable" onclick="backToManageTempLoadTemp(this)">Back</button>
                                     <!-- text-edition-form -->
                                     <div class="pop-up-yellow-button-wrap">
                                         <div class="text-edition-form">
@@ -4475,8 +4467,7 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <input type="button" value="Next" class="next">
+                                    <button type="button" class="next">Next</button>
                                 </div>
                             </form>
                         </div>
@@ -4561,8 +4552,7 @@
                                 </div>
 
                                 <div class="button-row  btn-row-leftRight">
-                                    <input type="button" value="Back" class="previous">
-
+                                    <button type="button" class="previous">Back</button>
                                     <!-- text-edition-form -->
                                     <div class="pop-up-yellow-button-wrap">
                                         <div class="text-edition-form">
@@ -4573,8 +4563,7 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <input type="button" value="Next" class="next">
+                                    <button type="button" class="next">Next</button>
                                 </div>
                             </form>
                         </div>
@@ -4601,7 +4590,6 @@
 
                             <form action="">
 
-                                <!-- ============================== -->
                                 <!-- sample 3 checkbox style starts -->
                                 <div class="checkbox-container">
                                     <div class="checkbox-container-inner">
@@ -5096,11 +5084,9 @@
                                     </div>
                                 </div>
                                 <!-- sample 3 checkbox style ends -->
-                                <!-- ============XXXXXXXX========== -->
 
                                 <div class="button-row btn-row-checkbox">
-                                    <input type="button" value="Back" class="previous">
-
+                                    <button type="button" class="previous">Back</button>
                                     <!-- text-edition-form -->
                                     <div class="pop-up-yellow-button-wrap">
                                         <div class="text-edition-form">
@@ -5111,8 +5097,7 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <input type="button" value="Next" class="next" id="next-show-save-start-mnTemp">
+                                    <button type="button" class="next" id="next-show-save-start-mnTemp">Next</button>
                                 </div>
                             </form>
                         </div>
@@ -5209,10 +5194,7 @@
                             <!-- XXXXXXXXXXXXX Option 4 Sample 4 ends XXXXXXXXXXXXX -->
 
                             <div class="button-row btn-row-dualTable">
-
-                                <input type="button" value="Back" class="previous" id="prev-hide-save-start-mnTemp">
-
-
+                                <button type="button" class="previous" id="prev-hide-save-start-mnTemp">Back</button>
                                 <!-- text-edition-form -->
                                 <div class="pop-up-yellow-button-wrap">
                                     <div class="text-edition-form">
@@ -5223,8 +5205,7 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <input type="button" value="Next" class="next" style="visibility: hidden;">
+                                <button type="button" class="next" style="visibility: hidden;">Next</button>
                             </div>
                         </div>
                         <!--  -->

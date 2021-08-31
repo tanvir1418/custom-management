@@ -15,11 +15,20 @@ $(".template_box").click(function (event) {
 
 
 // Back Btn: Showing the load template tab
-function backToManageTempLoadTemp(){
-	// document.getElementById("load_temp_slider").style.display = "block";
-	// document.getElementById("create_new_mn_temp").style.display = "none";
-	$("#load_temp_slider").removeClass("dispaly_hide");
-	$("#create_new_mn_temp").addClass("dispaly_hide");
+function backToManageTempLoadTemp(backThis){
+  event.preventDefault();
+  
+  let initState = $(backThis).html();
+	$(backThis).html('<i class="fa fa-spinner fa-spin"></i> Back');
+	$(backThis).prop("disabled", true);
+	let $this = $(backThis);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    $("#load_temp_slider").removeClass("dispaly_hide");
+    $("#create_new_mn_temp").addClass("dispaly_hide");
+	}, 2000);
 }
 
 $(".create_new_temp").click(function (event) {

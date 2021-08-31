@@ -240,11 +240,11 @@ $("#back-manage").click(function (event) {
 
 	let initState = $(this).html();
 	$(this).html('<i class="fa fa-spinner fa-spin"></i> Back');
-	$(this).addClass('disabled');
+	$(this).prop("disabled", true);
 	let $this = $(this);
 
 	setTimeout(function() {
-		$this.removeClass('disabled');
+		$this.prop("disabled", false);
 		$this.html(initState);
 
 		document.getElementById("option_1").style.display = "none";
@@ -255,24 +255,26 @@ $("#back-manage").click(function (event) {
 });
 
 // Back Btn: Return to Select A Data Type To Manage 
-function backToSelectDataType(){
-	document.getElementById("option_1").style.display = "none";
-	document.getElementById("option_2").style.display = "none";
-	document.getElementById("option_3").style.display = "none";
-	document.getElementById("option_4").style.display = "none";
-	document.getElementById("option_5").style.display = "none";
-	document.getElementById("hide559").style.display = "block";
-	document.getElementById("tab_2").style.paddingTop = "60px";
-	document.getElementById("opt-content").style.marginTop = "50px";
-}
+function backToSelectDataType(backThis){
 
-// OPTION 5 BACK BTN
-$("#opt5-to-main").click(function () {
-	document.getElementById("option_5").style.display = "none";
-	document.getElementById("hide559").style.display = "block";
-	document.getElementById("tab_2").style.paddingTop = "60px";
-	document.getElementById("opt-content").style.marginTop = "50px";
-});
+	let initState = $(backThis).html();
+	$(backThis).html('<i class="fa fa-spinner fa-spin"></i> Back');
+	$(backThis).prop("disabled", true);
+	let $this = $(backThis);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		document.getElementById("option_1").style.display = "none";
+		document.getElementById("option_2").style.display = "none";
+		document.getElementById("option_3").style.display = "none";
+		document.getElementById("option_4").style.display = "none";
+		document.getElementById("option_5").style.display = "none";
+		document.getElementById("hide559").style.display = "block";
+		document.getElementById("tab_2").style.paddingTop = "60px";
+		document.getElementById("opt-content").style.marginTop = "50px";
+	}, 2000);
+}
 
 // CREATE & MANAGE TAB START
 
@@ -416,16 +418,6 @@ setTimeout(() => {
 
 
 // CREATE & MANAGE TAB END
-
-// LOGIN DATA PASS START
-// const currentUser = localStorage.getItem("currentUser");
-// const user_div = document.getElementById("username_div");
-// if (currentUser != null && currentUser != "") {
-//   user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
-// } else {
-// }
-
-// LOGIN DATA PASS END
 
 // option 2 list item start
 
@@ -677,24 +669,72 @@ const option_2_list = document.querySelector(".op2-listing-items");
 const option_2_record = document.querySelector(".option-2-records");
 option_2_record.style.display = "none";
 
-$("#op2NextBtn").click(function () {
-	option_2_record.style.display = "block";
-	option_2_list.style.display = "none";
-
-	$("#op2_record_data").css("display", "none");
-	$("#records_data_loading").css("display", "block");
-	setTimeout(() => {
-		$("#op2_record_data").css("display", "block");
-		$("#records_data_loading").css("display", "none");
+$(".op3-resetBtn-both").click(function () {
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
 	}, 2000);
 });
 
-$("#op2BackBtn").click(function () {
-	option_2_record.style.display = "none";
-	option_2_list.style.display = "block";
+$("#op2NextBtn").click(function () {
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Next');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		option_2_record.style.display = "block";
+		option_2_list.style.display = "none";
+		$("#op2_record_data").css("display", "none");
+		$("#records_data_loading").css("display", "block");
+	}, 2000);
+	
+	setTimeout(() => {
+		$("#op2_record_data").css("display", "block");
+		$("#records_data_loading").css("display", "none");
+	}, 4000);
 });
 
+$("#op2BackBtn").click(function () {
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Back');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
 
+		option_2_record.style.display = "none";
+		option_2_list.style.display = "block";
+	}, 2000);
+	
+});
+
+$("#op2DoneBtn").click(function () {
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Done');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		document.getElementById("option_1").style.display = "none";
+		document.getElementById("option_2").style.display = "none";
+		document.getElementById("option_3").style.display = "none";
+		document.getElementById("option_4").style.display = "none";
+		document.getElementById("option_5").style.display = "none";
+		document.getElementById("hide559").style.display = "block";
+		document.getElementById("tab_2").style.paddingTop = "60px";
+		document.getElementById("opt-content").style.marginTop = "50px";
+	}, 2000);
+});
 // NEXT BUTTON CLICK TO OPEN RECORD PAGE OPTION 2 ===END===
 
 /* ================ Scroll Down START ============== */
@@ -789,14 +829,6 @@ function updateThumbnail(dropZoneElement, file) {
 // OPTION 5 DRAG AND DROP END
 
 // OPTION 3 DATE PICKER START
-
-// $(function () {
-// 	$("#datepicker-1").datepicker();
-// 	$("#datepicker-1").datepicker("option", "dateFormat", "mm/dd/yy");
-// 	$("#datepicker-2").datepicker();
-// 	$("#datepicker-2").datepicker("option", "dateFormat", "mm/dd/yy");
-// });
-
 $(function () {
 	let dateFormat_Opt3 = "mm/dd/yy";
 	let opt3_from_date = $("#datepicker-1").datepicker({
@@ -901,26 +933,50 @@ $("#mng-opt2-delete").click(function () {
 });
 
 // Manage Data Option 3 Start
-function opt3Reset() {
-	$("#opt3-textarea-1").val("");
-	$("#datepicker-1").val("");
-	$("#datepicker-2").val("");
+function opt3Reset(op3This) {
+	
+	let initState = $(op3This).html();
+	$(op3This).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(op3This).prop("disabled", true);
+	let $this = $(op3This);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		$("#opt3-textarea-1").val("");
+		$("#datepicker-1").val("");
+		$("#datepicker-2").val("");
+	}, 2000);
 }
 // Manage Data Option 3 End
 
 // Manage Data Option 5 Start
 function opt5ResetBtn(e) {
+	
 	let element = $(e).parent().parent().parent();
-	element.find(".select-plus .custome-select select").val("0");
-	element.find(".col-5").children("input[type=text]").val("");
-	element.find(".col-7 .drop-zone input.drop-zone__input").val("");
-	let fileDrop = element.find(".col-7 .drop-zone .drop-zone__thumb");
-	if (fileDrop.length > 0) {
-		let htmlData = `<p class="drop-zone__prompt">Drag and Drop File Here</p>
-    <p class="drop-zone__formats">Acceptable File Formats <span>txt & csv</span></p>`;
-		fileDrop.remove();
-		element.find(".col-7 .drop-zone .txt-box").html(htmlData);
-	}
+
+	let initState = $("#op5ResetBtn").html();
+	$("#op5ResetBtn").html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$("#op5ResetBtn").prop("disabled", true);
+	let $this = $("#op5ResetBtn");
+
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		element.find(".select-plus .custome-select select").val("0");
+		element.find(".col-5").children("input[type=text]").val("");
+		element.find(".col-7 .drop-zone input.drop-zone__input").val("");
+		let fileDrop = element.find(".col-7 .drop-zone .drop-zone__thumb");
+		if (fileDrop.length > 0) {
+			let htmlData = `<p class="drop-zone__prompt">Drag and Drop File Here</p>
+		<p class="drop-zone__formats">Acceptable File Formats <span>txt & csv</span></p>`;
+			fileDrop.remove();
+			element.find(".col-7 .drop-zone .txt-box").html(htmlData);
+		}
+	}, 2000);
+	
+	
 }
 
 function addCategory(e) {
@@ -1311,14 +1367,6 @@ $("#row-no5").change(function (e) {
 	ExistTableHeadClick("man-data-opt5-exist", "mnData-opt5-dataWrapper", "mnData-opt5-loadingWrapper", "pagination_mnDataOp5", "loading_pagination_mnDataOp5", "table_details_op5");
 });
 
-// function dropModalFilter(e) {
-// 	$("#dropBtnModal").modal('toggle');
-// 	let headerName = $(e).parent()[0].innerText;
-// 	$("#dropBtnModal div.modal-body div.table-header-popup-header-title p").html(headerName);
-// 	let index = $(this).index() + 1;
-// 	console.log(index);
-// }
-
 // Manage Data Option 1 Existing Pagination End
 
 $("#closeDropBtnModal").click(function () {
@@ -1605,24 +1653,16 @@ function universalConfirmModalDelete(globalVariable) {
 	} else if (globalVariable.className.includes("clickViewDetails")) {
 		headerText = "VIEW DETAILS";
 		detailsText = "Confirm to view details?";
-	} 
-	// else if (globalVariable.className.includes("mnAlertSave")) {
-	// 	headerText = "SAVE DETAILS";
-	// 	detailsText = "Confirm to save details?";
-	// 	$('body').addClass("modal-force-mnAlert-extra");
-	// }
-
+	}
 	$("#universal_confirm_modal #confirm_header p").html(headerText);
 	$("#universal_confirm_modal #confirm_deatis p").html(detailsText);
 	$('#universal_confirm_modal').modal('show');
-	// console.dir(globalVariable);
 }
 
 function op1ResetBtnConfirm(resetGlobal) {
-	// event.preventDefault();
 	let initState = $(resetGlobal).html();
 	$(resetGlobal).html('<i class="fa fa-spinner fa-spin"></i> Reset');
-	$(resetGlobal).addClass('disabled');
+	$(resetGlobal).prop("disabled", true);
 	let $this = $(resetGlobal);
 	if (($("#leftSideDrag_op1").html() != "") || ($("#rightSideDrag_op1").html() != "")) {
 		setTimeout(function() {
@@ -1632,7 +1672,7 @@ function op1ResetBtnConfirm(resetGlobal) {
 		}, 2000);
 	}
 	setTimeout(function() {
-		$this.removeClass('disabled');
+		$this.prop("disabled", false);
 		$this.html(initState);
 	}, 2000);
 }
@@ -1652,11 +1692,6 @@ let targetCopyMoveElement = "";
 
 function uniConfirmButton() {
 	$('#universal_confirm_modal').modal('hide');
-	// console.log("Manage Data Tab :" + manageDataTab.display);
-	// console.log("Create New Active :" + createNewActive);
-	// console.log($("#leftSideDrag_op1").html());
-	// console.log($("#rightSideDrag_op1").html());
-	// if(($("#leftSideDrag_op1").html() != "") || ($("#rightSideDrag_op1").html() != "")){}
 	let manageDataTab = window.getComputedStyle(document.querySelector('#tab_2'));
 	let createNewActive = $("#my567").hasClass("createGreen");
 	if (manageDataTab.display == "block" && createNewActive == true) {
@@ -1673,10 +1708,6 @@ function uniConfirmButton() {
 	$("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
 	$("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
 	$('#universalThankDraftModal').modal('show');
-
-	// $('body').addClass("modal-force-open");
-	// $('body').delay(5000).addClass("modal-open");
-
 }
 
 // Universal Thank Draft Modal (on show/hide event)
@@ -1723,8 +1754,6 @@ function confirmModalCopyMove(targetELEMENT, targetRowName) {
 		headerCopyMoveText = "UNCHECK ROW";
 		detailsCopyMoveText = `Confirm to uncheck ${targetRowName} row?`;
 	}
-	// console.log(targetELEMENT);
-	// console.log(unCheckRow);
 
 	$("#universal_confirm_modal #confirm_header p").html(headerCopyMoveText);
 	$("#universal_confirm_modal #confirm_deatis p").html(detailsCopyMoveText);
@@ -1806,10 +1835,6 @@ function sample4StartConfirmBtn() {
 		$('#universalThankDraftModal').modal('show');
     
 	}, 10000);
-	
-	// $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
-	// $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
-	// $('#universalThankDraftModal').modal('show');
 }
 
 $('#mnTemp_saveStart').on('show.bs.modal', function (e) {
@@ -1958,9 +1983,6 @@ function loggingOut() {
 		localStorage.removeItem('loginStatus');
 		window.location.href = "index.html";
 	}, 4000);
-	
-	// localStorage.removeItem('loginStatus');
-	// window.location.href = "index.html";
 }
 
 function gotoSystemStatus() {
