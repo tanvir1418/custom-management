@@ -584,7 +584,7 @@
 .text-edition-form .text-edition-box {
   position: relative;
   height: 85px;
-  width: 380px;
+  width: 400px;
   margin: 0 auto;
   background-color: #fff011;
   border-radius: 4px;
@@ -605,7 +605,7 @@
   right: 12px;
 }
 
-.text-edition-form .text-edition-box input {
+.text-edition-form .text-edition-box button{
   height: 100%;
   width: 100%;
   background-color: inherit;
@@ -663,7 +663,7 @@
     width: 285px;
   }
 
-  .text-edition-form .text-edition-box input {
+  .text-edition-form .text-edition-box button {
     padding-left: 15px;
     font-size: 20px;
   }
@@ -711,7 +711,7 @@
     right: 10px;
   }
 
-  .text-edition-form .text-edition-box input {
+  .text-edition-form .text-edition-box button {
     padding-left: 25px;
     font-size: 18px;
   }
@@ -754,7 +754,7 @@
     right: 8px;
   }
 
-  .text-edition-form .text-edition-box input {
+  .text-edition-form .text-edition-box button {
     padding-left: 15px;
     font-size: 16px;
   }

@@ -929,7 +929,7 @@
     right: 12px;
 }
 
-.text-edition-form .text-edition-box input {
+.text-edition-form .text-edition-box button{
     height: 100%;
     width: 100%;
     background-color: inherit;
@@ -1396,7 +1396,7 @@
         font-size: 20px;
     }
 
-    .text-edition-form .text-edition-box input {
+    .text-edition-form .text-edition-box button {
         padding-left: 25px;
         font-size: 18px;
     }

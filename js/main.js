@@ -2185,3 +2185,17 @@ $(document).mouseup(function(e) {
     }
 
 });
+
+function formByTextEditOpener(formThis, formTarget){
+	let initState = $(formThis).html();
+	$(formThis).html('<i class="fa fa-spinner fa-spin"></i> Form By Text Editor');
+	$(formThis).prop("disabled", true);
+	let $this = $(formThis);
+
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		$(`#${formTarget}`).modal('show');
+	}, 2000);
+}
