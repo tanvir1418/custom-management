@@ -1960,10 +1960,13 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 					<thead>
 						<tr>
 							<th scope="col" class="style-two-head-01">
-								STATUS
+								<span onclick="style2HeaderTitleClick('sty2table2', '${selectedTab}', 1)">STATUS</span>
 								<span data-toggle="tooltip" data-placement="bottom" title="Sample Text1">
              						<i class="fas fa-question-circle"></i>
            						</span>
+								<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+								   <i class="fas fa-chevron-up"></i>
+							   </span>
 								<div class="head-filter style2_cross01" >
 									<i class="fas fa-times"></i>
 								</div>
@@ -1972,10 +1975,13 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 								</div>
 							</th>
 							<th scope="col" class="style-two-head-02">
-								Val1
+								<span onclick="style2HeaderTitleClick('sty2table2', '${selectedTab}', 2)">Val1</span>
 								<span data-toggle="tooltip" data-placement="bottom" title="Sample Text2">
              						<i class="fas fa-question-circle"></i>
            						</span>
+								<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+								   <i class="fas fa-chevron-up"></i>
+							   </span>
 								<div class="head-filter style2_cross02" >
 									<i class="fas fa-times"></i>
 								</div>
@@ -1984,10 +1990,13 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 								</div>
 							</th>
 							<th scope="col" class="style-two-head-03">
-								Val2
+								<span onclick="style2HeaderTitleClick('sty2table2', '${selectedTab}', 3)">Val2</span>
 								<span data-toggle="tooltip" data-placement="bottom" title="Sample Text3">
              						<i class="fas fa-question-circle"></i>
            						</span>
+								<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+								   <i class="fas fa-chevron-up"></i>
+							   </span>
 								<div class="head-filter style2_cross03" >
 									<i class="fas fa-times"></i>
 								</div>
@@ -2031,10 +2040,13 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 						<thead>
 								<tr>
 										<th scope="col" class="style-two-head-04">
-												VAL11+DATEL
+												<span onclick="style2HeaderTitleClick('sty2table3', '${selectedTab}', 1)">VAL11+DATEL</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text4">
              										<i class="fas fa-question-circle"></i>
            										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
 												<div class="head-filter style2_cross04">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2043,10 +2055,13 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-05">
-												VAL12+DATEH
+												<span onclick="style2HeaderTitleClick('sty2table3', '${selectedTab}', 2)">VAL12+DATEH</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text5">
              										<i class="fas fa-question-circle"></i>
            										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
 												<div class="head-filter style2_cross05">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2162,10 +2177,13 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 						<thead>
 								<tr>
 										<th scope="col" class="style-two-head-08">
-												U_Val
+												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 1)">U_Val</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text8">
              										<i class="fas fa-question-circle"></i>
            										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
 												<div class="head-filter style2_cross08">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2174,10 +2192,13 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-09">
-												U_%
+												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 2)">U_%</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text9">
              										<i class="fas fa-question-circle"></i>
            										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
 												<div class="head-filter style2_cross09">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2186,10 +2207,13 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-10">
-												D_Val
+												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 3)">D_Val</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text10">
              										<i class="fas fa-question-circle"></i>
            										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
 												<div class="head-filter style2_cross10">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2198,10 +2222,13 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-11">
-												D_%
+												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 4)">D_%</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text11">
              										<i class="fas fa-question-circle"></i>
            										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
 												<div class="head-filter style2_cross11">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2210,10 +2237,13 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-12">
-												N_Val
+												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 5)">N_Val</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text12">
              										<i class="fas fa-question-circle"></i>
            										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
 												<div class="head-filter style2_cross12">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2222,10 +2252,13 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-13">
-												N_C
+												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 6)">N_C</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text13">
              										<i class="fas fa-question-circle"></i>
            										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
 												<div class="head-filter style2_cross13">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2234,10 +2267,13 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-14">
-												AM COUNT
+												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 7)">AM COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text14">
              										<i class="fas fa-question-circle"></i>
            										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
 												<div class="head-filter style2_cross14">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2246,10 +2282,13 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-15">
-												AN COUNT
+												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 8)">AN COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text15">
              										<i class="fas fa-question-circle"></i>
            										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
 												<div class="head-filter style2_cross15">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2258,10 +2297,13 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-16">
-												AO COUNT
+												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 9)">AO COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text16">
              										<i class="fas fa-question-circle"></i>
            										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
 												<div class="head-filter style2_cross16">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2270,10 +2312,13 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-17">
-												AP COUNT
+												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 10)">AP COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text17">
              										<i class="fas fa-question-circle"></i>
            										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
 												<div class="head-filter style2_cross17">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2282,10 +2327,13 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-18">
-												AQ COUNT
+												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 11)">AQ COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text18">
              										<i class="fas fa-question-circle"></i>
            										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
 												<div class="head-filter style2_cross18">
 														<i class="fas fa-times"></i>
 												</div>
@@ -2293,30 +2341,7 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
-										<th scope="col" class="style-two-head-19">
-												AR COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text19">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross19">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 12)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-20">
-												AS COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text20">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross20">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 13)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
+										
 								</tr>
 						</thead>
 						<tbody>
@@ -2376,6 +2401,169 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 														<span class="mr-tableData">${AQ_COUNT}</span>
 												</div>
 										</td>
+										
+								</tr>
+						</tbody>
+				</table>
+				
+				<table class="table sty2table5 cross-table-4">
+						<thead>
+								<tr>
+										<th scope="col" class="style-two-head-19">
+												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 1)">AR COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text19">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross19">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-20">
+												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 2)">AS COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text20">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross20">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 2)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-21">
+												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 3)">AT COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text21">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross21">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 3)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-22">
+												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 4)">AU COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text22">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross22">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 4)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-23">
+												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 5)">AV COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text23">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross23">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 5)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-24">
+												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 6)">AW COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text24">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross24">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 6)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-25">
+												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 7)">AX COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text25">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross25">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 7)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-26">
+												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 8)">AY COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text26">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross26">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 8)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-27">
+												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 9)">AZ COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text27">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross27">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 9)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-28">
+												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 10)">BA COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text28">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross28">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 10)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										
+								</tr>
+						</thead>
+						<tbody>
+								<tr>
 										<td class="vall11_datel style-two-head-19">
 												<div class="col1table">
 														<span class="mr-tableData">${AR_COUNT}</span>
@@ -2386,173 +2574,6 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 														<span class="mr-tableData">${AS_Count}</span>
 												</div>
 										</td>
-								</tr>
-						</tbody>
-				</table>
-				
-				<table class="table sty2table5 cross-table-4">
-						<thead>
-								<tr>
-										<th scope="col" class="style-two-head-21">
-												AT COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text21">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross21">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-22">
-												AU COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text22">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross22">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 2)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-23">
-												AV COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text23">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross23">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 3)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-24">
-												AW COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text24">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross24">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 4)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-25">
-												AX COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text25">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross25">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 5)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-26">
-												AY COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text26">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross26">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 6)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-27">
-												AZ COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text27">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross27">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 7)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-28">
-												BA COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text28">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross28">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 8)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-29">
-												BB COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text29">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross29">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 9)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-30">
-												BC COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text30">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross30">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 10)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-31">
-												BD COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text31">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross31">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 11)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-32">
-												BE COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text32">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross32">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 12)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-33">
-												BF COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text33">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross33">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 13)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-								</tr>
-						</thead>
-						<tbody>
-								<tr>
 										<td class="vall11_datel style-two-head-21">
 												<div class="col1table">
 														<span class="mr-tableData">${AT_Count}</span>
@@ -2593,6 +2614,169 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 														<span class="mr-tableData">${BA_Count}</span>
 												</div>
 										</td>
+										
+								</tr>
+						</tbody>
+				</table>
+				
+				<table class="table sty2table6 cross-table-4">
+						<thead>
+								<tr>
+										<th scope="col" class="style-two-head-29">
+												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 1)">BB COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text29">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross29">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-30">
+												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 2)">BC COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text30">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross30">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 2)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-31">
+												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 3)">BD COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text31">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross31">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 3)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-32">
+												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 4)">BE COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text32">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross32">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 4)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-33">
+												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 5)">BF COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text33">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross33">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 5)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-34">
+												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 6)">BG COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text34">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross34">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 6)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-35">
+												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 7)">BH COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text35">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross35">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 7)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-36">
+												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 8)">BI COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text36">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross36">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 8)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-37">
+												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 9)">BJ COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text37">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross37">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 9)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-38">
+												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 10)">BK COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text38">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross38">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 10)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										
+								</tr>
+						</thead>
+						<tbody>
+								<tr>
 										<td class="vall11_datel style-two-head-29">
 												<div class="col1table">
 														<span class="mr-tableData">${BB_Count}</span>
@@ -2618,185 +2802,6 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 														<span class="mr-tableData">${BF_COUNT}</span>
 												</div>
 										</td>
-								</tr>
-						</tbody>
-				</table>
-				
-				<table class="table sty2table6 cross-table-4">
-						<thead>
-								<tr>
-										<th scope="col" class="style-two-head-34">
-												BG COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text34">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross34">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-35">
-												BH COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text35">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross35">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 2)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-36">
-												BI COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text36">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross36">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 3)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-37">
-												BJ COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text37">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross37">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 4)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-38">
-												BK COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text38">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross38">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 5)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-39">
-												BL COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text39">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross39">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 6)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-40">
-												BM COUNT
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text40">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross40">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 7)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-41">
-												Col2
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text41">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross41">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 8)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-42">
-												Col3
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text42">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross42">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 9)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-43">
-												DP
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text43">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross43">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 10)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-44">
-												DY
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text44">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross44">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 11)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-45">
-												DmA
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text45">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross45">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 12)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-46">
-												DmP
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text46">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross46">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 13)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-47">
-												DmP%
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text47">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross47">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 14)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-								</tr>
-						</thead>
-						<tbody>
-								<tr>
 										<td class="vall11_datel style-two-head-34">
 												<div class="col1table">
 														<span class="mr-tableData">${BG_COUNT}</span>
@@ -2822,6 +2827,200 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 														<span class="mr-tableData">${BK_COUNT}</span>
 												</div>
 										</td>
+										
+								</tr>
+								
+						</tbody>
+				</table>
+				
+				<table class="table sty2table7 cross-table-4">
+						<thead>
+								<tr>
+										<th scope="col" class="style-two-head-39">
+												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 1)">BL COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text39">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross39">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-40">
+												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 2)">BM COUNT</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text40">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross40">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 2)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-41">
+												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 3)">Col2</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text41">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross41">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 3)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-42">
+												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 4)">Col3</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text42">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross42">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 4)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-43">
+												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 5)">DP</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text43">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross43">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 5)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-44">
+												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 6)">DY</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text44">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross44">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 6)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-45">
+												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 7)">DmA</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text45">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross45">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 7)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-46">
+												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 8)">DmP</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text46">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross46">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 8)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-47">
+												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 9)">DmP%</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text47">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross47">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 9)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-48">
+												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 10)">ID</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text7=48">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross48">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 10)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-49">
+												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 11)">LoP%</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text49">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross49">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 11)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-50">
+												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 12)">M_Val</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text50">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross50">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 12)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										
+								</tr>
+						</thead>
+						<tbody>
+								<tr>
 										<td class="vall11_datel style-two-head-39">
 												<div class="col1table">
 														<span class="mr-tableData">${BL_COUNT}</span>
@@ -2867,186 +3066,6 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 														<span class="mr-tableData">${DmP_per}</span>
 												</div>
 										</td>
-								</tr>
-								
-						</tbody>
-				</table>
-				
-				<table class="table sty2table7 cross-table-4">
-						<thead>
-								<tr>
-										<th scope="col" class="style-two-head-48">
-												ID
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text7=48">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross48">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-49">
-												LoP%
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text49">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross49">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 2)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-50">
-												M_Val
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text50">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross50">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 3)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-51">
-												MaP%
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text51">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross51">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 4)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-52">
-												O_End
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text52">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross52">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 5)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-53">
-												O_Start
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text53">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross53">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 6)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-54">
-												SP
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text54">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross54">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 7)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-55">
-												Time Frame
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text55">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross55">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 8)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-56">
-												UmA
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text56">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross56">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 9)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-57">
-												UmP
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text57">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross57">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 10)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-58">
-												UmP%
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text58">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross58">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 11)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-59">
-												Val2S
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text59">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross59">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 12)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-60">
-												Val3S
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text60">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross60">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 13)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-										<th scope="col" class="style-two-head-61">
-												Val6
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text61">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross61">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 14)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-								</tr>
-						</thead>
-						<tbody>
-								<tr>
 										<td class="vall11_datel style-two-head-48">
 												<div class="col1table">
 														<span class="mr-tableData">${ID_val}</span>
@@ -3062,6 +3081,184 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 														<span class="mr-tableData">${M_Val}</span>
 												</div>
 										</td>
+										
+								</tr>
+								
+						</tbody>
+				</table>
+				
+				<table class="table sty2table8 cross-table-4">
+						<thead>
+								<tr>
+										<th scope="col" class="style-two-head-51">
+												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 1)">MaP%</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text51">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross51">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-52">
+												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 2)">O_End</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text52">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross52">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 2)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-53">
+												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 3)">O_Start</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text53">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross53">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 3)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-54">
+												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 4)">SP</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text54">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross54">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 4)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-55">
+												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 5)">Time Frame</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text55">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross55">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 5)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-56">
+												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 6)">UmA</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text56">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross56">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 6)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-57">
+												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 7)">UmP</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text57">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross57">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 7)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-58">
+												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 8)">UmP%</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text58">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross58">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 8)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-59">
+												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 9)">Val2S</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text59">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross59">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 9)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-60">
+												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 10)">Val3S</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text60">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross60">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 10)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-61">
+												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 11)">Val6</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text61">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross61">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 11)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+								</tr>
+						</thead>
+						<tbody>
+								<tr>
 										<td class="vall11_datel style-two-head-51">
 												<div class="col1table">
 														<span class="mr-tableData">${MaP_per}</span>
@@ -3121,31 +3318,52 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 								
 						</tbody>
 				</table>
-				
-				<table class="table sty2table8 cross-table-4">
+		
+				<table class="table sty2table9 cross-table-4" style="margin-bottom: 50px;">
 						<thead>
 								<tr>
-										<th scope="col" class="style-two-head-62">
-												Description
+									<th scope="col" class="style-two-head-62">
+												<span onclick="style2HeaderTitleClick('sty2table9', '${selectedTab}', 1)">Description</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text62">
              										<i class="fas fa-question-circle"></i>
            										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												   <i class="fas fa-chevron-up"></i>
+											   </span>
 												<div class="head-filter style2_cross62">
 														<i class="fas fa-times"></i>
 												</div>
 												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
 														<i class="fas fa-caret-down"></i>
 												</div>
-										</th>
-										<th scope="col" class="style-two-head-63">
-												Details3
+									</th>
+									<th scope="col" class="style-two-head-63">
+												<span  onclick="style2HeaderTitleClick('sty2table9', '${selectedTab}', 2)">Details3</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text63">
              										<i class="fas fa-question-circle"></i>
            										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
 												<div class="head-filter style2_cross63">
 														<i class="fas fa-times"></i>
 												</div>
 												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 2)">
+														<i class="fas fa-caret-down"></i>
+												</div>
+										</th>
+										<th scope="col" class="style-two-head-64">
+												<span onclick="style2HeaderTitleClick('sty2table9', '${selectedTab}', 3)">Details2</span>
+												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text64">
+             										<i class="fas fa-question-circle"></i>
+           										</span>
+												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+													<i class="fas fa-chevron-up"></i>
+												</span>
+												<div class="head-filter style2_cross64">
+														<i class="fas fa-times"></i>
+												</div>
+												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 3)">
 														<i class="fas fa-caret-down"></i>
 												</div>
 										</th>
@@ -3163,30 +3381,6 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 														<p class="mr-tableData">${Details3}</p>
 												</div>
 										</td>
-								</tr>
-								
-						</tbody>
-				</table>
-		
-				<table class="table sty2table9 cross-table-4" style="margin-bottom: 50px;">
-						<thead>
-								<tr>
-										<th scope="col" class="style-two-head-64">
-												Details2
-												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text64">
-             										<i class="fas fa-question-circle"></i>
-           										</span>
-												<div class="head-filter style2_cross64">
-														<i class="fas fa-times"></i>
-												</div>
-												<div class="drop-filter style2-filterPosition" onclick="popUpHandlerS2Table(event, '${selectedTab}', 1)">
-														<i class="fas fa-caret-down"></i>
-												</div>
-										</th>
-								</tr>
-						</thead>
-						<tbody>
-								<tr>
 										<td class="vall11_datel style-two-head-64">
 												<div class="col1table">
 														<p class="mr-tableData truncate-data">${Details2}</p>
@@ -3342,6 +3536,8 @@ function truncateText(maxLength) {
 function popUpHandlerS2Table(e, selectedTab, indexValue) {
 	let targetElementClassList = e.path[5].getAttribute("class");
 	let targetElementClass = targetElementClassList.split(" ");
+	console.log("targetElementClassList: " + targetElementClassList);
+	console.log("targetElementClass: " + targetElementClass);
 
 	let tableTargetHead = $(`#${selectedTab} .style2-table-wrap .${targetElementClass[1]} thead th:nth-child(${indexValue})`);
 	let tableTargetData = $(`#${selectedTab} .style2-table-wrap .${targetElementClass[1]} tbody td:nth-child(${indexValue}) .mr-tableData`);
@@ -3372,6 +3568,28 @@ function popUpHandlerS2Table(e, selectedTab, indexValue) {
 	targetModal.html(tableTr);
 }
 
+function style2HeaderTitleClick(tableName, selectedTab, indexValue){
+	$(`#${selectedTab} .${tableName} th:nth-child(${indexValue}) .table-head-updown > i`).toggleClass("fa-chevron-up fa-chevron-down");
+	
+	$(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "none");
+	$(`#${selectedTab} .pagination-container`).css("display", "none");
+	$(`#${selectedTab} .page-number12-wrap`).css("display", "none");
+
+	$(`#${selectedTab} .loading-style2-table`).css("display", "block");
+	$(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
+	$(`#${selectedTab} .page-number-loading`).css("display", "block");
+
+	setTimeout(() => {
+		$(`#${selectedTab} .loading-style2-table`).css("display", "none");
+		$(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
+		$(`#${selectedTab} .page-number-loading`).css("display", "none");
+
+		$(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "block");
+		$(`#${selectedTab} .pagination-container`).css("display", "block");
+		$(`#${selectedTab} .page-number12-wrap`).css("display", "block");
+	}, 2000);
+}
+
 // Bootstrap Tooltip Enable Function (Manage Result Table Tooltips)
 function tooltipFunction() {
 	$('[data-toggle="tooltip"]').tooltip(
@@ -3383,3 +3601,6 @@ function tooltipFunction() {
 		}
 	);
 };
+
+
+// $("#Main .sty2table2 th:nth-child(2) .table-head-updown > i");

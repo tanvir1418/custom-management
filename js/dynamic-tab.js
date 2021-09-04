@@ -3168,6 +3168,7 @@ function createDynamicTabRow(dynamicThis){
     // $(`#firstOpen${randomSixDigit}`).click();
     openFiveChartTab(`${dynamicTabContentId}`, 'Display1', this); 
     gotoChartPage(`scorer-meter-1${randomSixDigit}`, `scorer-meter-2${randomSixDigit}`, `scorer-meter-3${randomSixDigit}`);
+    $(`#${dynamicTabContentId} .style12-section .box-style12 .no-result`).css("display", "block");
     
     scrollDisplayChartThree(`${dynamicTabContentId}`);
 	scrollDisplayChartFive(`${dynamicTabContentId}`,`table001122${randomSixDigit}`);

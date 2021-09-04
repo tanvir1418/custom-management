@@ -1777,7 +1777,8 @@ th[draggable] a {
 
 /* table width and table head style */
 .style2-table-wrap table {
-    width: 92%;
+    /* width: 92%; */
+    width: 97%;
     border: 2px solid #eff1f7 !important;
     margin: 0px;
     margin: 0 auto;
@@ -3349,10 +3350,10 @@ table.main-table-design {
     height: 120px;
 }
 .sty2table8 tbody td.vall11_datel .col1table{
-    line-height: 24px !important;
+    line-height: 50px !important;
     word-break: break-word !important;
-    text-align: left !important;
-    height: 100px !important;
+    text-align: center;
+    height: 70px !important;
 }
 .sty2table9 tbody td.vall11_datel .col1table{
     line-height: 24px !important;
@@ -3379,6 +3380,51 @@ td.s2-value .centerauto{
 
 .style2-table-wrap table .status22 .padding__resize__S2Status{
     padding: 17px 0 !important;
+}
+
+.sty2table4 thead tr th.style-two-head-08,
+.sty2table4 thead tr th.style-two-head-09,
+.sty2table4 thead tr th.style-two-head-10,
+.sty2table4 thead tr th.style-two-head-11,
+.sty2table4 thead tr th.style-two-head-12,
+.sty2table4 thead tr th.style-two-head-13{
+    width: 140px;
+}
+
+.sty2table7 thead tr th.style-two-head-39{
+    width: 155px;
+}
+.sty2table7 thead tr th.style-two-head-40{
+    width: 155px;
+}
+.sty2table8 thead tr th.style-two-head-51{
+    min-width: 125px;
+}
+.sty2table8 thead tr th.style-two-head-52{
+    min-width: 150px;
+}
+
+.sty2table8 thead tr th.style-two-head-53{
+    min-width: 140px;
+}
+.sty2table8 thead tr th.style-two-head-54,
+.sty2table8 thead tr th.style-two-head-56,
+.sty2table8 thead tr th.style-two-head-57,
+.sty2table8 thead tr th.style-two-head-58,
+.sty2table8 thead tr th.style-two-head-59,
+.sty2table8 thead tr th.style-two-head-60,
+.sty2table8 thead tr th.style-two-head-61{
+    width: 125px;
+}
+.sty2table8 thead tr th.style-two-head-55{
+    min-width: 140px;
+    max-width: 140px;
+}
+.sty2table9 tbody td.style-two-head-62{
+    width: 350px;
+}
+.sty2table9 tbody td.style-two-head-62{
+    width: 350px;
 }
 
 /* Manage Result Icon Pop-up Dynamic */
