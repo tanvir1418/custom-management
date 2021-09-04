@@ -49,8 +49,8 @@ function makeTableHeadAlert(tableID) {
           <span class="tooltip-container" tooltip="Sample text here2" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
-          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
-				<i class="fas fa-chevron-up"></i>
+            <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+				      <i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
@@ -65,7 +65,7 @@ function makeTableHeadAlert(tableID) {
             <i class="fas fa-question-circle"></i>
           </span>
           <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
-				<i class="fas fa-chevron-up"></i>
+				    <i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
@@ -80,7 +80,7 @@ function makeTableHeadAlert(tableID) {
             <i class="fas fa-question-circle"></i>
           </span>
           <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
-				<i class="fas fa-chevron-up"></i>
+				    <i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
@@ -93,7 +93,7 @@ function makeTableHeadAlert(tableID) {
           <span class="tooltip-container" tooltip="Sample text here5" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
-          </th>`;
+        </th>`;
 
   $(`#${tableID} thead`).html(tableHead);
 
@@ -145,13 +145,14 @@ function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId, p
         for (let i = 1; i < len - 1; i++) {
           classList.push(tabHd[i].className);
         }
+        console.log(classList);
         tableTr += `
         <tr id="${id}">
 					<th class="row-data" scope="row">${serial}</th>
-					<td class="alert-name">
+					<td class="alert-name ${classList[0]}">
               <p class="alert-exists-data" onclick="alertToResultDisplay(this)">${alertName}</p>
           </td>
-          <td class="selectaltype ${classList[0]}">
+          <td class="selectaltype ${classList[1]}">
               <select name="" id="">
                   <option class="alert-exists-data" value="">Precent Change Greather...</option>
                   <option class="alert-exists-data" value="">Precent Change Greather...1</option>
@@ -162,11 +163,11 @@ function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId, p
                   <i class="fas fa-caret-down"></i>
               </div>
           </td>
-					<td class="${classList[1]} inpalertval">
+					<td class="${classList[2]} inpalertval">
             <input type="text" class="alert-exists-data" value="${alertValue}">
 					</td>
 					
-          <td class="${classList[2]} selectalfreq">
+          <td class="${classList[3]} selectalfreq">
               <select name="" id="">
                   <option class="alert-exists-data" value="">Anytime</option>
                   <option class="alert-exists-data" value="">Anytime 1</option>
@@ -178,14 +179,13 @@ function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId, p
               </div>
           </td>
 					
-          <td class="${classList[3]} inpumail">
+          <td class="${classList[4]} inpumail">
               <div class="mail_enter">
                   <div class="mail_icons">
                       <i class="fas fa-envelope iconActive"></i>
                       <i class="fas fa-phone-alt"></i>
                       <i class="fas fa-comment-alt"></i>
                   </div>
-                  <!-- <input type="email" class="alert-exists-data" value="${alertEmail}" placeholder="Enter a Email Address"> -->
                   <input type="email" class="alert-exists-data" value="" placeholder="Enter a Email Address">
               </div>
           </td>
@@ -220,7 +220,6 @@ alertTableExist("manage-alert-table-exist", 7, "pagination-manage-alert", "manag
 $("#row-mnAlert").change(function (e) {
   let noRow = e.target.value;
   alertTableExist("manage-alert-table-exist", noRow, "pagination-manage-alert", "manage_alert_data_table", "manage_alert_loading_table", "pagination_mnAlert", "loading_pagination_mnAlert");
-  alertTableHeadClick("manage-alert-table-exist");
 });
 
 // Manage Alert Table Existing Pagination End

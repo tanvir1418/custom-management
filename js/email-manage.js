@@ -226,7 +226,7 @@ function taskStatusTableExist(tableID, noRow, pagiId, paginationId, loadingPagin
                         <div class="st-status ${statusClass} alert-exists-data">${status}</div>
 					</td>
 
-                    <td class="${classList[1]}">
+                    <td class="${classList[2]}">
                         <div class="progress-task">
                             <div class="inner-progress-task" style="width: 0%;">
                             </div>
@@ -234,13 +234,13 @@ function taskStatusTableExist(tableID, noRow, pagiId, paginationId, loadingPagin
                         </div>
 					</td>
 
-					<td class="${classList[2]}">
+					<td class="${classList[3]}">
 						<div class="create-date-time date-time-39">
 							<p class="alert-exists-data">${startTime.date} ${startTime.time}</p>
 						</div>
 					</td>
 
-					<td class="${classList[3]}">
+					<td class="${classList[4]}">
 						<div class="last-date-time date-time-39">
 							<p class="alert-exists-data">${endTime.date} ${endTime.time}</p>
 						</div>
@@ -287,7 +287,6 @@ function tableProgressBarAnimation(idOfRow, progressVal) {
 $("#row_taskStatus").change(function (e) {
     let noRow = e.target.value;
     taskStatusTableExist("email_task_status_table", noRow, "pagination_task_status", "pagination_email", "loading_pagination_email");
-    taskStatusHeadClick("email_task_status_table");
 });
 
 // Manage Alert Table Existing Pagination End

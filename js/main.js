@@ -1346,25 +1346,21 @@ function tabChangeOpt5(e) {
 $("#row-no1").change(function (e) {
 	let noRow = e.target.value;
 	manDtOpt1Exist("man-data-opt1-exist", noRow, "pagination-op1-data", `tabChangeOpt1(this)`, "mnData-opt1-dataWrapper", "mnData-opt1-loadingWrapper", "pagination_mnDataOp1", "loading_pagination_mnDataOp1", "table_details_op1");
-	ExistTableHeadClick("man-data-opt1-exist", "mnData-opt1-dataWrapper", "mnData-opt1-loadingWrapper", "pagination_mnDataOp1", "loading_pagination_mnDataOp1", "table_details_op1");
 });
 
 $("#row-no3").change(function (e) {
 	let noRow = e.target.value;
 	manDtOpt1Exist("man-data-opt3-exist", noRow, "pagination-op3-data", `tabChangeOpt3(this)`, "mnData-opt3-dataWrapper", "mnData-opt3-loadingWrapper", "pagination_mnDataOp3", "loading_pagination_mnDataOp3", "table_details_op3");
-	ExistTableHeadClick("man-data-opt3-exist", "mnData-opt3-dataWrapper", "mnData-opt3-loadingWrapper", "pagination_mnDataOp3", "loading_pagination_mnDataOp3", "table_details_op3");
 });
 
 $("#row-no4").change(function (e) {
 	let noRow = e.target.value;
 	manDtOpt1Exist("man-data-opt4-exist", noRow, "pagination-op4-data", `tabChangeOpt4(this)`, "mnData-opt4-dataWrapper", "mnData-opt4-loadingWrapper", "pagination_mnDataOp4", "loading_pagination_mnDataOp4", "table_details_op4");
-	ExistTableHeadClick("man-data-opt4-exist", "mnData-opt4-dataWrapper", "mnData-opt4-loadingWrapper", "pagination_mnDataOp4", "loading_pagination_mnDataOp4", "table_details_op4");
 });
 
 $("#row-no5").change(function (e) {
 	let noRow = e.target.value;
 	manDtOpt1Exist("man-data-opt5-exist", noRow, "pagination-op5-data", `tabChangeOpt5(this)`, "mnData-opt5-dataWrapper", "mnData-opt5-loadingWrapper", "pagination_mnDataOp5", "loading_pagination_mnDataOp5", "table_details_op5");
-	ExistTableHeadClick("man-data-opt5-exist", "mnData-opt5-dataWrapper", "mnData-opt5-loadingWrapper", "pagination_mnDataOp5", "loading_pagination_mnDataOp5", "table_details_op5");
 });
 
 // Manage Data Option 1 Existing Pagination End
