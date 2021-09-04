@@ -1130,6 +1130,8 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 				$(`#${selectedTab} .loading-style2-table`).css("display", "none");
 				$(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "block");
 
+				tableProgressBarAnimation(`${selectedTab}`, Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
+
 				// $(`#${sty1dblClickRightListId} .double_click_selection_box`).css('display', 'block');
                 // $(`#${sty1dblClickRightListId} .checkbox-table-loading`).css('display', 'none');
 
