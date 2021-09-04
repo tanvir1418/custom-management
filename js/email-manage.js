@@ -575,6 +575,16 @@ $("#dropBtnEmailFind").click(function () {
     }, 1000);
 });
 
+$("#dropBtnEmailSort").click(function () {
+    $("#dropBtnModal .checkbox-table-loading").css("display", "block");
+    $("#dropBtnModal .checkbox-table-scroll").css("display", "none");
+
+    setTimeout(() => {
+        $("#dropBtnModal .checkbox-table-loading").css("display", "none");
+        $("#dropBtnModal .checkbox-table-scroll").css("display", "block");
+    }, 1000);
+});
+
 $("#dropBtnSelect").click(function () {
     $("#dropBtnModal").css("display", "none");
     $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");

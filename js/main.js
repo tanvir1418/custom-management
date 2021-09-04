@@ -2069,6 +2069,16 @@ $("#dropBtnFind").click(function () {
     }, 1000);
 });
 
+$("#dropBtnSort").click(function () {
+    $("#dropBtnModal .checkbox-table-loading").css("display", "block");
+    $("#dropBtnModal .checkbox-table-scroll").css("display", "none");
+
+    setTimeout(() => {
+        $("#dropBtnModal .checkbox-table-loading").css("display", "none");
+        $("#dropBtnModal .checkbox-table-scroll").css("display", "block");
+    }, 1000);
+});
+
 
 // Manage Data Option 3: Radio Button Click Animation
 $(".radio-selection-option input[type = 'radio'][name = 'data-set-radio-button']").click(function(){

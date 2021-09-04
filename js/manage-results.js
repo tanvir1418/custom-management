@@ -2559,6 +2559,16 @@ $("#col8FilterFind").click(function () {
     }, 1000);
 });
 
+$("#col8FilterSort").click(function () {
+    $("#col8Filter .checkbox-table-loading").css("display", "block");
+    $("#col8Filter .checkbox-table-scroll").css("display", "none");
+
+    setTimeout(() => {
+        $("#col8Filter .checkbox-table-loading").css("display", "none");
+        $("#col8Filter .checkbox-table-scroll").css("display", "block");
+    }, 1000);
+});
+
 
 // let targetCheckBox = $("#resizable554 thead th.column-header-1 input[type='checkbox'].toggle__input");
 //   if (targetCheckBox.checked == false) {
