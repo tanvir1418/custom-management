@@ -1412,7 +1412,7 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 					`<td class="column-header-4 ${classV1}">
 						<div class="column-time">
 							<div class="centerauto">
-								<span class="dis_time22 mr-tableData">${val1}</span>
+								<span class="mr-tableData">${val1}</span>
 							</div>
 						</div>
 						<div class="column-header-4-resizer" style="${tdWidthContainer[4] != "undefined" ? tdWidthContainer[4] : ""}" ></div>
@@ -1422,7 +1422,7 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 					`<td class="column-header-5 ${classV2}">
 						<div class="column-time">
 							<div class="centerauto">
-								<span class="dis_time22 mr-tableData">${val2}</span>
+								<span class="mr-tableData">${val2}</span>
 							</div>
 						</div>
 						<div class="column-header-5-resizer" style="${tdWidthContainer[5] != "undefined" ? tdWidthContainer[5] : ""}" ></div>
