@@ -145,7 +145,6 @@ function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId, p
         for (let i = 1; i < len - 1; i++) {
           classList.push(tabHd[i].className);
         }
-        console.log(classList);
         tableTr += `
         <tr id="${id}">
 					<th class="row-data" scope="row">${serial}</th>
@@ -422,6 +421,6 @@ function alertToResultDisplay(nameThis){
 	document.getElementById("firstOpen").click();
 	$(".select-item-table").css("display", "none");
 	$(`#chartPage`).css("display", "block");
-	gotoChartPage('scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
+	gotoChartPage('Main', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
 	tableProgressBarAnimation('Main', Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
 }

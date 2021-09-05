@@ -3777,3 +3777,12 @@ i.fa-caret-down.down-animation-icon{
     font-weight: 900;
     margin: 50px 0 0 0;
 }
+
+.Display1 .meter_outer_box .loading-chart{
+    height: 100%;
+    display: none;
+}
+.Display1 .meter_outer_box .loading-chart .loading-row{
+    height: 100%;
+    padding: 40px;
+}

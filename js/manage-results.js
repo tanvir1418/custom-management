@@ -364,11 +364,19 @@ function maintainRotation(degreeVal, meterId){
     }, 50);
 }
 
-function gotoChartPage(meterOneId, meterTwoId, meterThreeId) {
+function gotoChartPage(selectedTab, meterOneId, meterTwoId, meterThreeId) {
     // Math.floor(Math.random() * (100 - 1 + 1)) + 1; //Random Integer Value between (1-100)
-    maintainRotation(34, meterOneId);
-    maintainRotation(90, meterTwoId);
-    maintainRotation(55, meterThreeId);
+    $(`#${selectedTab} .Display1 .meter_outer_box .main-chart`).css("display", "none");
+    $(`#${selectedTab} .Display1 .meter_outer_box .loading-chart`).css("display", "block");
+
+    setTimeout(() => {
+        $(`#${selectedTab} .Display1 .meter_outer_box .main-chart`).css("display", "block");
+        $(`#${selectedTab} .Display1 .meter_outer_box .loading-chart`).css("display", "none");
+
+        maintainRotation(34, meterOneId);
+        maintainRotation(90, meterTwoId);
+        maintainRotation(55, meterThreeId);
+    }, 2000);
 
 };
 // ====== LIST ITEM TO CHART PAGE END ============

@@ -3538,8 +3538,6 @@ function truncateText(maxLength) {
 function popUpHandlerS2Table(e, selectedTab, indexValue) {
 	let targetElementClassList = e.path[5].getAttribute("class");
 	let targetElementClass = targetElementClassList.split(" ");
-	console.log("targetElementClassList: " + targetElementClassList);
-	console.log("targetElementClass: " + targetElementClass);
 
 	let tableTargetHead = $(`#${selectedTab} .style2-table-wrap .${targetElementClass[1]} thead th:nth-child(${indexValue})`);
 	let tableTargetData = $(`#${selectedTab} .style2-table-wrap .${targetElementClass[1]} tbody td:nth-child(${indexValue}) .mr-tableData`);

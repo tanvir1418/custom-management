@@ -28,7 +28,7 @@ function createDynamicTabRow(dynamicThis){
     $("#chartPage").append(`
     <div id="${dynamicTabContentId}" class="tabcontent">
         <div class="chart-page-inner-tab">
-            <button class="inner-tablink" onclick="openFiveChartTab('${dynamicTabContentId}', 'Display1', this); gotoChartPage('scorer-meter-1${randomSixDigit}', 'scorer-meter-2${randomSixDigit}', 'scorer-meter-3${randomSixDigit}');"
+            <button class="inner-tablink" onclick="openFiveChartTab('${dynamicTabContentId}', 'Display1', this); gotoChartPage('${dynamicTabContentId}', 'scorer-meter-1${randomSixDigit}', 'scorer-meter-2${randomSixDigit}', 'scorer-meter-3${randomSixDigit}');"
                 id="firstOpen${randomSixDigit}">
                 Display Chart Style 1
                 <i class="fas fa-caret-down"></i>
@@ -52,7 +52,7 @@ function createDynamicTabRow(dynamicThis){
         </div>
         <div class="inner-tabcontent Display1">
             <div class="row meter_outer_box">
-                <div class="col-4">
+                <div class="col-4 main-chart">
                     <div class="circleWrapper speedometer1">
                         <div class="sector-3O sector0"></div>
                         <div class="sector-3O sector10"></div>
@@ -115,7 +115,7 @@ function createDynamicTabRow(dynamicThis){
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-4 main-chart">
                     <div class="circleWrapper speedometer2">
                         <div class="sector-3O sector0"></div>
                         <div class="sector-3O sector10"></div>
@@ -178,7 +178,7 @@ function createDynamicTabRow(dynamicThis){
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-4 main-chart">
                     <div class="circleWrapper speedometer3">
                         <div class="sector-3O sector0"></div>
                         <div class="sector-3O sector10"></div>
@@ -239,6 +239,21 @@ function createDynamicTabRow(dynamicThis){
                             <p id="value-of-scorer-meter-3${randomSixDigit}">00.00%</p>
                             <p>Meter 3</p>
                         </div>
+                    </div>
+                </div>
+                <div class="col-4 loading-chart">
+                    <div class="loading-row">
+                        <p class="loading-animation loading"></p>
+                    </div>
+                </div>
+                <div class="col-4 loading-chart">
+                    <div class="loading-row">
+                        <p class="loading-animation loading"></p>
+                    </div>
+                </div>
+                <div class="col-4 loading-chart">
+                    <div class="loading-row">
+                        <p class="loading-animation loading"></p>
                     </div>
                 </div>
             </div>
@@ -3167,7 +3182,7 @@ function createDynamicTabRow(dynamicThis){
     // $(`#firstOpen${randomSixDigit}`).addClass("inner-active-tab-81");
     // $(`#firstOpen${randomSixDigit}`).click();
     openFiveChartTab(`${dynamicTabContentId}`, 'Display1', this); 
-    gotoChartPage(`scorer-meter-1${randomSixDigit}`, `scorer-meter-2${randomSixDigit}`, `scorer-meter-3${randomSixDigit}`);
+    gotoChartPage(`${dynamicTabContentId}`, `scorer-meter-1${randomSixDigit}`, `scorer-meter-2${randomSixDigit}`, `scorer-meter-3${randomSixDigit}`);
     $(`#${dynamicTabContentId} .style12-section .box-style12 .no-result`).css("display", "block");
     
     scrollDisplayChartThree(`${dynamicTabContentId}`);
