@@ -3919,3 +3919,15 @@ i.fa-caret-down.down-animation-icon{
     margin-left: 10px;
     display: none;
 }
+
+#loading_subitem_title,
+#loading_item_title{
+    height: 22px;
+    width: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+#loading_subitem_title{
+    width: 260px;
+}

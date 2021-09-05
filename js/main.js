@@ -1775,6 +1775,19 @@ function chartDispConfirmButton() {
 	document.getElementById("firstOpen").click();
 	$(".select-item-table").css("display", "none");
 	$(`#chartPage`).css("display", "block");
+
+	$(`#actual_item_title`).css("display", "none");
+	$(`#actual_subitem_title`).css("display", "none");
+	$(`#loading_item_title`).css("display", "block");
+	$(`#loading_subitem_title`).css("display", "block");
+	
+	setTimeout(() => {
+		$(`#actual_item_title`).css("display", "block");
+		$(`#actual_subitem_title`).css("display", "block");
+		$(`#loading_item_title`).css("display", "none");
+		$(`#loading_subitem_title`).css("display", "none");
+	}, 2000);
+
 	gotoChartPage('Main', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
 	tableProgressBarAnimation('Main', Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
 	$(`#Main .style12-section .box-style12 .no-result`).css("display", "block");
