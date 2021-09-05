@@ -33,7 +33,7 @@ function createDynamicTabRow(dynamicThis){
                 Display Chart Style 1
                 <i class="fas fa-caret-down"></i>
             </button>
-            <button class="inner-tablink" onclick="openFiveChartTab('${dynamicTabContentId}', 'Display2', this); gotoChartPage2();">
+            <button class="inner-tablink" onclick="openFiveChartTab('${dynamicTabContentId}', 'Display2', this); gotoChartPage2('${dynamicTabContentId}');">
                 Display Chart Style 2
                 <i class="fas fa-caret-down"></i>
             </button>
@@ -260,7 +260,7 @@ function createDynamicTabRow(dynamicThis){
         </div>
         <div class="inner-tabcontent Display2">
             <div class="row gauge_outer_box">
-                <div class="col-4">
+                <div class="col-4 main-progress">
                     <div class="progressmeter progressmeter1">
                         <div class="barOverflow">
                             <div class="bar"></div>
@@ -286,7 +286,7 @@ function createDynamicTabRow(dynamicThis){
                         <span class="meter-name">Meter 1</span>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-4 main-progress">
                     <div class="progressmeter progressmeter2">
                         <div class="barOverflow">
                             <div class="bar"></div>
@@ -312,7 +312,7 @@ function createDynamicTabRow(dynamicThis){
                         <span class="meter-name">Meter 2</span>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-4 main-progress">
                     <div class="progressmeter progressmeter3">
                         <div class="barOverflow">
                             <div class="bar"></div>
@@ -336,6 +336,21 @@ function createDynamicTabRow(dynamicThis){
                         <span class="min-value">0</span>
                         <span class="max-value">100</span>
                         <span class="meter-name">Meter 3</span>
+                    </div>
+                </div>
+                <div class="col-4 loading-progress">
+                    <div class="loading-row">
+                        <p class="loading-animation loading"></p>
+                    </div>
+                </div>
+                <div class="col-4 loading-progress">
+                    <div class="loading-row">
+                        <p class="loading-animation loading"></p>
+                    </div>
+                </div>
+                <div class="col-4 loading-progress">
+                    <div class="loading-row">
+                        <p class="loading-animation loading"></p>
                     </div>
                 </div>
             </div>

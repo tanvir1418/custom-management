@@ -3786,3 +3786,12 @@ i.fa-caret-down.down-animation-icon{
     height: 100%;
     padding: 40px;
 }
+
+.Display2 .gauge_outer_box .loading-progress{
+    height: 100%;
+    display: none;
+}
+.Display2 .gauge_outer_box .loading-progress .loading-row{
+    height: 100%;
+    padding: 40px;
+}

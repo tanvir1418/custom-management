@@ -543,27 +543,38 @@ fiveChartBtnClick("Main");
 // ======= INNER TABS END ======
 
 // ============== DISPLAY 2 SPEEDOMETER START ====================
-function gotoChartPage2() {
-    $(".progressmeter").each(function () {
-        let $bar = $(this).find(".bar");
-        let $val = $(this).find(".progress-value");
-        let perc = parseInt($val.text());
-        $({
-            p: 0
-        }).animate({
-            p: perc
-        }, {
-            duration: 3000,
-            easing: "swing",
-            step: function (p) {
-                $bar.css({
-                    transform: "rotate(" + (45.00 + (p * 1.8)) + "deg)", // 100%=180° so: ° = % * 1.8
-                    // 45 is to add the needed rotation to have the green borders at the bottom
-                });
-                $val.text(p | 0);
-            }
+function gotoChartPage2(selectedTab) {
+
+    $(`#${selectedTab} .Display2 .gauge_outer_box .main-progress`).css("display", "none");
+    $(`#${selectedTab} .Display2 .gauge_outer_box .loading-progress`).css("display", "block");
+
+    setTimeout(() => {
+        
+        $(`#${selectedTab} .Display2 .gauge_outer_box .main-progress`).css("display", "block");
+        $(`#${selectedTab} .Display2 .gauge_outer_box .loading-progress`).css("display", "none");
+    
+        $(".progressmeter").each(function () {
+            let $bar = $(this).find(".bar");
+            let $val = $(this).find(".progress-value");
+            let perc = parseInt($val.text());
+            $({
+                p: 0
+            }).animate({
+                p: perc
+            }, {
+                duration: 3000,
+                easing: "swing",
+                step: function (p) {
+                    $bar.css({
+                        transform: "rotate(" + (45.00 + (p * 1.8)) + "deg)", // 100%=180° so: ° = % * 1.8
+                        // 45 is to add the needed rotation to have the green borders at the bottom
+                    });
+                    $val.text(p | 0);
+                }
+            });
         });
-    });
+
+    }, 2000);
 }
 
 // ============== DISPLAY 2 SPEEDOMETER END ====================
