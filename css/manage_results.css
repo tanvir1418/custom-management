@@ -3782,10 +3782,72 @@ i.fa-caret-down.down-animation-icon{
     height: 100%;
     display: none;
 }
-.Display1 .meter_outer_box .loading-chart .loading-row{
+
+.half-circle-wrap{
+    position: relative;
     height: 100%;
-    padding: 40px;
 }
+.half-circle-wrap .loading-animation{
+    height: 60px;
+    width: 130px;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10%;
+}
+.half-circle {
+    width: 340px;
+    height: 170px;
+    background-color: #d8d8d8;
+    border-top-left-radius: 170px;
+    border-top-right-radius: 170px;
+    border-bottom: 0;
+    box-sizing: border-box;
+    
+    position: relative;
+    left: 50%;
+    top: 42%;
+    transform: translate(-50%, -50%);
+}
+
+.Display1 .half-circle-wrap.first-circle .half-circle,
+.Display1 .half-circle-wrap.first-circle .loading-animation{
+    left: 42%;   
+}
+.Display1 .half-circle-wrap.third-circle .half-circle,
+.Display1 .half-circle-wrap.third-circle .loading-animation{
+    left: 58%;   
+}
+
+.Display2 .half-circle-wrap.first-circle .half-circle,
+.Display2 .half-circle-wrap.first-circle .loading-animation{
+    left: 34%;   
+}
+.Display2 .half-circle-wrap.third-circle .half-circle,
+.Display2 .half-circle-wrap.third-circle .loading-animation{
+    left: 66%;   
+}
+
+.half-circle::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    background-image: linear-gradient(to left, transparent, rgba(255,255,255,0.5), transparent);
+
+    animation: circle-loading 1s infinite;
+}
+
+@keyframes circle-loading{
+    100%{
+        transform: translateX(100%);
+    }
+}
+
 
 .Display2 .gauge_outer_box .loading-progress{
     height: 100%;

@@ -242,17 +242,23 @@ function createDynamicTabRow(dynamicThis){
                     </div>
                 </div>
                 <div class="col-4 loading-chart">
-                    <div class="loading-row">
+                    <div class="half-circle-wrap first-circle">
+                        <div class="half-circle">
+                        </div>
                         <p class="loading-animation loading"></p>
                     </div>
                 </div>
                 <div class="col-4 loading-chart">
-                    <div class="loading-row">
+                    <div class="half-circle-wrap second-circle">
+                        <div class="half-circle">
+                        </div>
                         <p class="loading-animation loading"></p>
                     </div>
                 </div>
                 <div class="col-4 loading-chart">
-                    <div class="loading-row">
+                    <div class="half-circle-wrap third-circle">
+                        <div class="half-circle">
+                        </div>
                         <p class="loading-animation loading"></p>
                     </div>
                 </div>
@@ -339,17 +345,23 @@ function createDynamicTabRow(dynamicThis){
                     </div>
                 </div>
                 <div class="col-4 loading-progress">
-                    <div class="loading-row">
+                    <div class="half-circle-wrap first-circle">
+                        <div class="half-circle">
+                        </div>
                         <p class="loading-animation loading"></p>
                     </div>
                 </div>
                 <div class="col-4 loading-progress">
-                    <div class="loading-row">
+                    <div class="half-circle-wrap second-circle">
+                        <div class="half-circle">
+                        </div>
                         <p class="loading-animation loading"></p>
                     </div>
                 </div>
                 <div class="col-4 loading-progress">
-                    <div class="loading-row">
+                    <div class="half-circle-wrap third-circle">
+                        <div class="half-circle">
+                        </div>
                         <p class="loading-animation loading"></p>
                     </div>
                 </div>
