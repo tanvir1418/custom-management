@@ -3912,3 +3912,10 @@ i.fa-caret-down.down-animation-icon{
     height: 80%;
     margin: 5px 5px 10px 5px;
 }
+
+.loading_date_time_update{
+    height: 22px;
+    width: 222.5px;
+    margin-left: 10px;
+    display: none;
+}

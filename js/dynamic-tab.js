@@ -1700,19 +1700,24 @@ function createDynamicTabRow(dynamicThis){
                         <div class="pdf_box54"><span>PDF</span></div>
                         <input type="file" id="exelFile${randomSixDigit}" accept=".xls, .xlsx, .csv" />
                         <label for="exelFile${randomSixDigit}">CSV</label>
-                        <div class="style_date_time">
-                            <div class="from_to22">
-                                <span>Last Updated</span>
+                        <div class="style_date_time_wrap">
+                            <div class="style_date_time">
+                                <div class="from_to22">
+                                    <span>Last Updated</span>
+                                </div>
+                                <div class="separation22">
+                                    <span>-</span>
+                                </div>
+                                <div class="value_date22">
+                                    <span class="dis_date"></span>
+                                </div>
+                                <div class="value_time22">
+                                    <span class="dis_time22"></span>
+                                </div>
                             </div>
-                            <div class="separation22">
-                                <span>-</span>
-                            </div>
-                            <div class="value_date22">
-                                <span class="dis_date"></span>
-                            </div>
-                            <div class="value_time22">
-                                <span class="dis_time22"></span>
-                            </div>
+                        </div>
+                        <div class="loading_date_time_update">
+                            <p class="loading-animation loading"></p>
                         </div>
                     </div>
                 </div>

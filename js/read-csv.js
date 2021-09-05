@@ -1102,10 +1102,12 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 			$(`#${sty1TableId}`).css("display", "none");
 			$(`#${selectedTab} .pagination-container`).css("display", "none");
 			$(`#${selectedTab} .page-number12-wrap`).css("display", "none");
+            $(`#${selectedTab} .style_date_time_wrap`).css("display", "none");
 
 			$(`#${selectedTab} .loading-style1-table`).css("display", "block");
 			$(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
 			$(`#${selectedTab} .page-number-loading`).css("display", "block");
+			$(`#${selectedTab} .loading_date_time_update`).css("display", "block");
 
 			$(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "none");
 			$(`#${selectedTab} .loading-style2-table`).css("display", "block");
@@ -1122,10 +1124,12 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 				$(`#${selectedTab} .loading-style1-table`).css("display", "none");
 				$(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
 				$(`#${selectedTab} .page-number-loading`).css("display", "none");
-
+				$(`#${selectedTab} .loading_date_time_update`).css("display", "none");
+				
 				$(`#${sty1TableId}`).css("display", "block");
 				$(`#${selectedTab} .pagination-container`).css("display", "block");
 				$(`#${selectedTab} .page-number12-wrap`).css("display", "block");
+            	$(`#${selectedTab} .style_date_time_wrap`).css("display", "block");
 
 				$(`#${selectedTab} .loading-style2-table`).css("display", "none");
 				$(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "block");
@@ -3574,19 +3578,23 @@ function style2HeaderTitleClick(tableName, selectedTab, indexValue){
 	$(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "none");
 	$(`#${selectedTab} .pagination-container`).css("display", "none");
 	$(`#${selectedTab} .page-number12-wrap`).css("display", "none");
+    $(`#${selectedTab} .style_date_time_wrap`).css("display", "none");
 
 	$(`#${selectedTab} .loading-style2-table`).css("display", "block");
 	$(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
 	$(`#${selectedTab} .page-number-loading`).css("display", "block");
+	$(`#${selectedTab} .loading_date_time_update`).css("display", "block");
 
 	setTimeout(() => {
 		$(`#${selectedTab} .loading-style2-table`).css("display", "none");
 		$(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
 		$(`#${selectedTab} .page-number-loading`).css("display", "none");
-
+		$(`#${selectedTab} .loading_date_time_update`).css("display", "none");
+		
 		$(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "block");
 		$(`#${selectedTab} .pagination-container`).css("display", "block");
 		$(`#${selectedTab} .page-number12-wrap`).css("display", "block");
+        $(`#${selectedTab} .style_date_time_wrap`).css("display", "block");
 	}, 2000);
 }
 
