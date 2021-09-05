@@ -748,7 +748,7 @@ function animationPositiveDiv(posProgVal, posProgTarget, posTextTarget) {
     var elem = document.querySelector(`${posProgTarget}`);
     var elemPara = document.querySelector(`${posTextTarget}`);   
     var height = 0;
-    var id = setInterval(frame, 100);
+    var id = setInterval(frame, 50);
     function frame() {
       if (height >= posProgVal) {
         clearInterval(id);
@@ -765,7 +765,7 @@ function animationNegativeDiv(negProgVal, negProgTarget, negTextTarget) {
     var elem = document.querySelector(`${negProgTarget}`);
     var elemPara = document.querySelector(`${negTextTarget}`);   
     var height = 0;
-    var id = setInterval(frame, 100);
+    var id = setInterval(frame, 50);
     function frame() {
       if (height >= negProgVal) {
         clearInterval(id);
@@ -780,30 +780,39 @@ function animationNegativeDiv(negProgVal, negProgTarget, negTextTarget) {
 
 function gotoChartFive(targetedTab){
 
-    $(`#${targetedTab} .pos-bar-status`).removeAttr("style");
-    $(`#${targetedTab} .allpos_value`).html("");
-    $(`#${targetedTab} .neg-bar-status`).removeAttr("style");
-    $(`#${targetedTab} .allneg_value`).html("");
+    $(`#${targetedTab} .Display5 .progress-range-box`).css("display", "none");
+    $(`#${targetedTab} .Display5 .progress-loading-box`).css("display", "block");
 
-    let chartFiveValues = new Array(10);
-    for(let i=0; i<10; i++){
-        chartFiveValues[i] = Math.floor(Math.random() * (100 + 100 + 1)) - 100;
-    }
+    setTimeout(() => {
+        $(`#${targetedTab} .Display5 .progress-range-box`).css("display", "block");
+        $(`#${targetedTab} .Display5 .progress-loading-box`).css("display", "none");
 
-    for(let j=0; j < chartFiveValues.length; j++){
-        let progValue, progTarget, progText;
-        if(chartFiveValues[j] >= 0){
-            progValue = chartFiveValues[j];
-            progTarget = `#${targetedTab} .dis5_plusProgress_value${j+1}`;
-            progText = `#${targetedTab} .dis5_pos_value${j+1}`;
-            animationPositiveDiv(progValue, progTarget, progText);
-        }else{
-            progValue = chartFiveValues[j] * -1;
-            progTarget = `#${targetedTab} .dis5_minusProgress_value${j+1}`;
-            progText = `#${targetedTab} .dis5_neg_value${j+1}`;
-            animationNegativeDiv(progValue, progTarget, progText);
+        $(`#${targetedTab} .pos-bar-status`).removeAttr("style");
+        $(`#${targetedTab} .allpos_value`).html("");
+        $(`#${targetedTab} .neg-bar-status`).removeAttr("style");
+        $(`#${targetedTab} .allneg_value`).html("");
+
+        let chartFiveValues = new Array(10);
+        for(let i=0; i<10; i++){
+            chartFiveValues[i] = Math.floor(Math.random() * (100 + 100 + 1)) - 100;
         }
-    }
+
+        for(let j=0; j < chartFiveValues.length; j++){
+            let progValue, progTarget, progText;
+            if(chartFiveValues[j] >= 0){
+                progValue = chartFiveValues[j];
+                progTarget = `#${targetedTab} .dis5_plusProgress_value${j+1}`;
+                progText = `#${targetedTab} .dis5_pos_value${j+1}`;
+                animationPositiveDiv(progValue, progTarget, progText);
+            }else{
+                progValue = chartFiveValues[j] * -1;
+                progTarget = `#${targetedTab} .dis5_minusProgress_value${j+1}`;
+                progText = `#${targetedTab} .dis5_neg_value${j+1}`;
+                animationNegativeDiv(progValue, progTarget, progText);
+            }
+        }
+
+    }, 2000);
 }
 
 // gotoChartFive();

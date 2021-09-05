@@ -3795,3 +3795,25 @@ i.fa-caret-down.down-animation-icon{
     height: 100%;
     padding: 40px;
 }
+
+.Display5 .progress-loading-box{
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    background: #FBFBFD;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+
+.Display5 .progress-loading-box .upper-box{
+    height: 13%;
+    margin: 5px 5px 10px 5px;
+}
+
+.Display5 .progress-loading-box .lower-box{
+    height: 80%;
+    margin: 5px 5px 10px 5px;
+}

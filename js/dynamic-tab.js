@@ -1411,6 +1411,76 @@ function createDynamicTabRow(dynamicThis){
                         <i class="fas fa-long-arrow-alt-left"></i>
                     </div>
                 </div>
+                <div class="progress-loading-box">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <div class="loading-row upper-box">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                                <div class="loading-row lower-box">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="loading-row upper-box">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                                <div class="loading-row lower-box">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="loading-row upper-box">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                                <div class="loading-row lower-box">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="loading-row upper-box">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                                <div class="loading-row lower-box">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="loading-row upper-box">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                                <div class="loading-row lower-box">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="loading-row upper-box">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                                <div class="loading-row lower-box">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="loading-row upper-box">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                                <div class="loading-row lower-box">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="loading-row upper-box">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                                <div class="loading-row lower-box">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
         <!-- //////////  DISPLAY CHART STYLE END ////////// -->
