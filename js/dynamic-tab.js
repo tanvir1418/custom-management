@@ -37,7 +37,7 @@ function createDynamicTabRow(dynamicThis){
                 Display Chart Style 2
                 <i class="fas fa-caret-down"></i>
             </button>
-            <button class="inner-tablink" onclick="openFiveChartTab('${dynamicTabContentId}', 'Display3', this); gotoLinearChart('lineChart${randomSixDigit}','axisY-lineChart${randomSixDigit}');">
+            <button class="inner-tablink" onclick="openFiveChartTab('${dynamicTabContentId}', 'Display3', this); gotoLinearChart('${dynamicTabContentId}', 'lineChart${randomSixDigit}','axisY-lineChart${randomSixDigit}');">
                 Display Chart Style 3
                 <i class="fas fa-caret-down"></i>
             </button>
@@ -401,6 +401,27 @@ function createDynamicTabRow(dynamicThis){
                         <i class="fas fa-long-arrow-alt-left"></i>
                     </div>
                     <p class="x_axis_title">NUMBER OF DAYS</p>
+                </div>
+                <div class="chart-loading-box">
+                    <div class="loading-first-section">
+                        <div class="chart-three-input">
+                            <div class="chart-input first">
+                                <p class="loading-animation loading"></p>
+                            </div>
+                            <div class="chart-input second">
+                                <p class="loading-animation loading"></p>
+                            </div>
+                            <div class="chart-input third">
+                                <p class="loading-animation loading"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="loading-graph-section">
+                        <p class="loading-animation loading"></p>
+                    </div>
+                    <div class="loading-last-section">
+                        <p class="loading-animation loading"></p>
+                    </div>
                 </div>
             </div>
         </div>
