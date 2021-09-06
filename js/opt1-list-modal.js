@@ -242,15 +242,6 @@ sub_ul_modallist.addEventListener("click", function (e) {
 	markLeftOnRight(target);
 });
 
-$("#mng-opt2-delete").click(function () {
-	// console.log(`Delete class name: ${deleteListClassName}`);
-	// let delObj = document.querySelector(`.${deleteListClassName}`);
-	// document.querySelector(`.${deleteListClassName}`).remove();
-	$(`.${deleteListClassName}`).remove();
-	// console.log(delObj);
-	// console.dir(delObj);
-	// delObj.remove();
-});
 
 function countOpt1ListModal(e) {
 	event.preventDefault();

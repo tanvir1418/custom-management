@@ -292,7 +292,7 @@ $("#div-sub-ul-li-list").click(function (e) {
             let chart_deleteName = target.parentNode.childNodes[1].innerHTML;
             document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = chart_deleteName;
 
-            deleteManageModal(target.parentNode.classList[0]);
+            manageResultDeleteListClassName = target.parentNode.classList[0];
             return;
         }
         else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
@@ -308,7 +308,7 @@ $("#div-sub-ul-li-list").click(function (e) {
             let chart_deleteName = target.parentNode.childNodes[1].innerHTML;
             document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = chart_deleteName;
 
-            deleteManageModal(target.parentNode.classList[0]);
+            manageResultDeleteListClassName = target.parentNode.classList[0];
             return;
         }
         else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
@@ -325,13 +325,26 @@ $("#div-sub-ul-li-list").click(function (e) {
     displayChartManageResult(left_list_data, dataList);
 });
 
-function deleteManageModal(className) {
-    let mng_opt2_delete = document.querySelector("#mng-opt2-delete");
-    mng_opt2_delete.addEventListener("click", function () {
-        let delObj = document.querySelector(`.${className}`);
-        delObj.remove();
-    });
-}
+
+$("#mng-opt2-delete").click(function () {
+	
+	$(`.${manageResultDeleteListClassName}`).remove();
+
+	// let initState = $(this).html();
+	// $(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	// $(this).prop("disabled", true);
+	// let $this = $(this);
+	// setTimeout(function() {
+	// 	$this.prop("disabled", false);
+	// 	$this.html(initState);
+
+	// 	$(`.${manageResultDeleteListClassName}`).remove();
+
+	// 	$("#deletlistopt2").modal("hide");
+	// }, 2000);
+});
+
+
 // ----------- ASHIQ -------------- 
 function calAngle(obj) {
     let matrix = getComputedStyle(obj).getPropertyValue("transform");

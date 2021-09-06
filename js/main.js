@@ -39,6 +39,7 @@
 
 // Global file for this Site
 var deleteListClassName = "";
+var manageResultDeleteListClassName = "";
 
 // TOGGLE TRIANGLE
 function myFunction() {
@@ -925,11 +926,6 @@ sub_ul_list.addEventListener("click", function (e) {
 	}
 	$("#opt2-left").html(opt2_left_list);
 	$("#opt2-right").html(opt2_right_list);
-});
-
-$("#mng-opt2-delete").click(function () {
-	let delObj = document.querySelector(`.${deleteListClassName}`);
-	delObj.remove();
 });
 
 // Manage Data Option 3 Start
@@ -1820,33 +1816,45 @@ function displayChartManageResult(itemTitle, itemSubTitle) {
 	document.querySelector("#manageResultChartDisplay_modal .question-delete .chart-name").innerHTML = mnResultSubTitle;
 }
 
-function chartDispConfirmButton() {
-	$('#manageResultChartDisplay_modal').modal('hide');
+function chartDispConfirmButton(thisChart) {
 
-	document.querySelector("#chartPage .chart-title .left-item").innerHTML = mnResultTitle;
-	document.querySelector("#chartPage .chart-title .right-item").innerHTML = mnResultSubTitle;
-	document.getElementById("firstOpen").click();
-	$(".select-item-table").css("display", "none");
-	$(`#chartPage`).css("display", "block");
+	let initState = $(thisChart).html();
+	$(thisChart).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(thisChart).prop("disabled", true);
+	let $this = $(thisChart);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
 
-	$(`#actual_item_title`).css("display", "none");
-	$(`#actual_subitem_title`).css("display", "none");
-	$(`#loading_item_title`).css("display", "block");
-	$(`#loading_subitem_title`).css("display", "block");
-	
-	setTimeout(() => {
-		$(`#actual_item_title`).css("display", "block");
-		$(`#actual_subitem_title`).css("display", "block");
-		$(`#loading_item_title`).css("display", "none");
-		$(`#loading_subitem_title`).css("display", "none");
+		$('#manageResultChartDisplay_modal').modal('hide');
+
+		document.querySelector("#chartPage .chart-title .left-item").innerHTML = mnResultTitle;
+		document.querySelector("#chartPage .chart-title .right-item").innerHTML = mnResultSubTitle;
+		document.getElementById("firstOpen").click();
+		$(".select-item-table").css("display", "none");
+		$(`#chartPage`).css("display", "block");
+
+		$(`#actual_item_title`).css("display", "none");
+		$(`#actual_subitem_title`).css("display", "none");
+		$(`#loading_item_title`).css("display", "block");
+		$(`#loading_subitem_title`).css("display", "block");
+		
+		setTimeout(() => {
+			$(`#actual_item_title`).css("display", "block");
+			$(`#actual_subitem_title`).css("display", "block");
+			$(`#loading_item_title`).css("display", "none");
+			$(`#loading_subitem_title`).css("display", "none");
+		}, 2000);
+
+		gotoChartPage('Main', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
+		tableProgressBarAnimation('Main', Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
+		$(`#Main .style12-section .box-style12 .no-result`).css("display", "block");
+
+		mnResultTitle = "";
+		mnResultSubTitle = "";
+
 	}, 2000);
 
-	gotoChartPage('Main', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
-	tableProgressBarAnimation('Main', Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
-	$(`#Main .style12-section .box-style12 .no-result`).css("display", "block");
-
-	mnResultTitle = "";
-	mnResultSubTitle = "";
 }
 
 function mnTempSaveStartBtn(thisStart){
