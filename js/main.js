@@ -1297,10 +1297,10 @@ function tabChangeOpt1(e) {
 
 	let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Click To View/Update');
-	$(e).addClass('disabled');
+	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
-		$this.removeClass('disabled');
+		$this.prop("disabled", false);
 		$this.html(initState);
 
 		createNew.find("div.createpera p").html("View/Update");
@@ -1324,10 +1324,10 @@ function tabChangeOpt3(e) {
 
 	let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Click To View/Update');
-	$(e).addClass('disabled');
+	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
-		$this.removeClass('disabled');
+		$this.prop("disabled", false);
 		$this.html(initState);
 
 		createNew.find("div.createpera p").html("View/Update");
@@ -1351,10 +1351,10 @@ function tabChangeOpt4(e) {
 
 	let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Click To View/Update');
-	$(e).addClass('disabled');
+	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
-		$this.removeClass('disabled');
+		$this.prop("disabled", false);
 		$this.html(initState);
 
 		createNew.find("div.createpera p").html("View/Update");
@@ -1379,10 +1379,10 @@ function tabChangeOpt5(e) {
 
 	let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Click To View/Update');
-	$(e).addClass('disabled');
+	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
-		$this.removeClass('disabled');
+		$this.prop("disabled", false);
 		$this.html(initState);
 
 		createNew.find("div.createpera p").html("View/Update");

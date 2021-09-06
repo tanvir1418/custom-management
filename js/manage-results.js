@@ -1691,35 +1691,47 @@ function threeBtnConfirmModal(decideSelection){
 }
 
 function threeBtnConfirmButton(globThreeBtn){
-    $('#threeBtn_confirm_modal').modal('hide');
 
-    $('body').addClass("modal-force-open");
-    $("#submitting_Info .submit-title").html(`${headerTextOfSubmitAnimation}...`);
-	$('#submitting_Info').modal('show');
+    let initState = $(globThreeBtn).html();
+	$(globThreeBtn).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(globThreeBtn).prop("disabled", true);
+	let $this = $(globThreeBtn);
 
-	let $targetingTextSubmit = $("#submitting_file_info");
-	$targetingTextSubmit.html("Need 5 Second to Finish...");
-	let submitFileInfo = [ 
-			"Need 4 Second to Finish...",
-			"Need 3 Second to Finish...", 
-			"Need 1 Second to Finish...",
-			"Finishing..."];
-  
-	for (let i = 1; i <= 4; ++i) {
-	  (function(index) {
-		setTimeout(function() { 
-		  $targetingTextSubmit.html(submitFileInfo[index-1]);
-		}, i * 2000);
-	  })(i);
-	}
-	
-    setTimeout(function() { 
-        $('#submitting_Info').modal('hide');
-		$('body').removeClass("modal-force-open");
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
 
-		$('#filterThankYouModal').modal('show');
+        $('#threeBtn_confirm_modal').modal('hide');
+
+        $('body').addClass("modal-force-open");
+        $("#submitting_Info .submit-title").html(`${headerTextOfSubmitAnimation}...`);
+        $('#submitting_Info').modal('show');
+
+        let $targetingTextSubmit = $("#submitting_file_info");
+        $targetingTextSubmit.html("Need 5 Second to Finish...");
+        let submitFileInfo = [ 
+                "Need 4 Second to Finish...",
+                "Need 3 Second to Finish...", 
+                "Need 1 Second to Finish...",
+                "Finishing..."];
     
-	}, 10000);
+        for (let i = 1; i <= 4; ++i) {
+        (function(index) {
+            setTimeout(function() { 
+            $targetingTextSubmit.html(submitFileInfo[index-1]);
+            }, i * 2000);
+        })(i);
+        }
+        
+        setTimeout(function() { 
+            $('#submitting_Info').modal('hide');
+            $('body').removeClass("modal-force-open");
+
+            $('#filterThankYouModal').modal('show');
+        
+        }, 10000);
+        
+	}, 2000);
 }
 
 ///// Update Clear-Filter Clear Sorting Button Ends
