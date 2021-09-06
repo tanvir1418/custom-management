@@ -845,15 +845,17 @@ td {
   margin-top: -5px;
 }
 
-.mytable1 tbody .actions39 a {
+.mytable1 tbody .actions39 button {
   font-size: 14px;
-  padding: 5px;
+  padding: 5px 14px;
   background: #feffd6;
   color: #000000;
   border-radius: 50px;
   margin-right: 24px;
   margin-left: auto;
   text-align: center;
+  border: none;
+  outline: none;
 }
 
 .mytable1 tbody .actions39 .cancel-box {
@@ -2855,8 +2857,8 @@ td {
 
 button:disabled,
 button[disabled]{
-  border: 1px solid #999999 !important;
+  /* border: 1px solid #999999 !important;
   background-color: #DDD !important;
-  color: #999 !important;
+  color: #999 !important; */
   pointer-events: none;
 }

@@ -1249,7 +1249,7 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange, dataTableId, loadingT
 					</td>
 					<td>
 						<div class="actions39">
-							<a onclick="${tabChange}">Click To View/Update</a>
+							<button onclick="${tabChange}">Click To View/Update</button>
 							<div class="cancel-box" onclick="universalConfirmModalDelete(this)">
 								<i class="fas fa-times"></i>
 							</div>
@@ -1287,8 +1287,18 @@ function tabChangeOpt1(e) {
 	let createNew = tabMain.find(
 		"div.create-manage-tab div.create-new-content.zas"
 	);
-	createNew.find("div.createpera p").html("View/Update");
-	createNew.click();
+
+	let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Click To View/Update');
+	$(e).addClass('disabled');
+	let $this = $(e);
+	setTimeout(function() {
+		$this.removeClass('disabled');
+		$this.html(initState);
+
+		createNew.find("div.createpera p").html("View/Update");
+		createNew.click();
+	}, 2000);
 }
 
 function tabChangeOpt3(e) {
@@ -1304,8 +1314,18 @@ function tabChangeOpt3(e) {
 	let createNew = tabMain.find(
 		"div.create-manage-tab div.create-new-content.zas43"
 	);
-	createNew.find("div.createpera p").html("View/Update");
-	createNew.click();
+
+	let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Click To View/Update');
+	$(e).addClass('disabled');
+	let $this = $(e);
+	setTimeout(function() {
+		$this.removeClass('disabled');
+		$this.html(initState);
+
+		createNew.find("div.createpera p").html("View/Update");
+		createNew.click();
+	}, 2000);
 }
 
 function tabChangeOpt4(e) {
@@ -1321,8 +1341,19 @@ function tabChangeOpt4(e) {
 	let createNew = tabMain.find(
 		"div.create-manage-tab div.create-new-content.zas45"
 	);
-	createNew.find("div.createpera p").html("View/Update");
-	createNew.click();
+
+	let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Click To View/Update');
+	$(e).addClass('disabled');
+	let $this = $(e);
+	setTimeout(function() {
+		$this.removeClass('disabled');
+		$this.html(initState);
+
+		createNew.find("div.createpera p").html("View/Update");
+		createNew.click();
+	}, 2000);
+
 }
 
 function tabChangeOpt5(e) {
@@ -1338,8 +1369,19 @@ function tabChangeOpt5(e) {
 	let createNew = tabMain.find(
 		"div.create-manage-tab div.create-new-content.zas41"
 	);
-	createNew.find("div.createpera p").html("View/Update");
-	createNew.click();
+
+	let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Click To View/Update');
+	$(e).addClass('disabled');
+	let $this = $(e);
+	setTimeout(function() {
+		$this.removeClass('disabled');
+		$this.html(initState);
+
+		createNew.find("div.createpera p").html("View/Update");
+		createNew.click();
+	}, 2000);
+	
 }
 
 
