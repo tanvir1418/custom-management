@@ -981,11 +981,22 @@ function opt5ResetBtn(e) {
 
 function addCategory(e) {
 	let inpVal = $(e).parent().parent().find("input.plus-input").val();
-	if (inpVal != "") {
-		let selectCat = $("#opt5-select-category");
-		let opt = `<option value="${inpVal}">${inpVal}</option>`;
-		selectCat.append(opt);
-	}
+	
+	let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Done');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+		
+		if (inpVal != "") {
+			let selectCat = $("#opt5-select-category");
+			let opt = `<option value="${inpVal}">${inpVal}</option>`;
+			selectCat.append(opt);
+		}
+		$("#plusBtnModal").modal("hide");
+  	}, 2000);
 }
 // Manage Data Option 5 End
 
