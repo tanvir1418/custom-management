@@ -1849,8 +1849,44 @@ function chartDispConfirmButton() {
 	mnResultSubTitle = "";
 }
 
-function showConfirmSample4StartBtn() {
-	$('#sample4SaveStart_confirm_modal').modal('show');
+function mnTempSaveStartBtn(thisStart){
+	let initState = $(thisStart).html();
+	$(thisStart).html('<i class="fa fa-spinner fa-spin"></i> Save & Start');
+	$(thisStart).prop("disabled", true);
+	let $this = $(thisStart);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		$("#mnTemp_saveStart").modal("show");
+  	}, 2000);
+}
+
+function mnTempSaveStartBackBtn(thisBack){
+	let initState = $(thisBack).html();
+	$(thisBack).html('<i class="fa fa-spinner fa-spin"></i> Back');
+	$(thisBack).prop("disabled", true);
+	let $this = $(thisBack);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		$("#mnTemp_saveStart").modal("hide");
+  	}, 2000);
+}
+
+function showConfirmSample4StartBtn(thisDone) {
+	let initState = $(thisDone).html();
+	$(thisDone).html('<i class="fa fa-spinner fa-spin"></i> Done');
+	$(thisDone).prop("disabled", true);
+	let $this = $(thisDone);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		$('#mnTemp_saveStart').modal('hide');
+		$('#sample4SaveStart_confirm_modal').modal('show');
+  	}, 2000);
 }
 
 function sample4StartCancelBtn() {
