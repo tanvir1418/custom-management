@@ -1373,3 +1373,22 @@ fieldset legend.w-auto label.toggle i:hover{
 #loadTemplateRename .modal-dialog .modal-body{
   padding: 0px;
 }
+
+.listData-modal .managetemp-btn .mybtns-39 {
+  outline: none;
+  border: none;
+  font-size: 24px;
+  font-weight: 900;
+}
+.listData-modal .managetemp-btn .mybtns-39.submit-btn {
+  margin-left: auto;
+  color: white;
+}
+.listData-modal .managetemp-btn .mybtns-39.reset-btn:hover {
+  color: white;
+}
+.listData-modal .managetemp-btn .mybtns-39.submit-btn:hover {
+  color: black;
+  outline: none;
+  border: 1px solid black;
+}

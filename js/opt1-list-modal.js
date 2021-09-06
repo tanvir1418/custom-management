@@ -253,16 +253,41 @@ $("#mng-opt2-delete").click(function () {
 });
 
 function countOpt1ListModal(e) {
+	event.preventDefault();
 	let countItem = $(e).parent().parent().parent().find("#sub-ul-modallist .sublist-check-box.checkbox_show").length;
 	$("#op1-list-item-count").html(`${countItem} Items Selected`);
+
+	let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Done');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		$("#op1-list-item-count").html(`${countItem} Items Selected`);
+		$("#myopt1listData").modal("hide");
+	}, 2000);
+
 }
 
 function resetOpt1ListModal(e) {
 	let checkItem = $(e).parent().parent().parent().find("#sub-ul-modallist .sublist-check-box.checkbox_show");
 	let uncheckItem = $(e).parent().parent().parent().find("#sub-ul-modallist .sublist-cancel-box.checkbox_hide");
-	checkItem.toggleClass("checkbox_show checkbox_hide");
-	uncheckItem.toggleClass("checkbox_show checkbox_hide");
-	$("#op1-list-item-count").html(`0 Items Selected`);
+
+	let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		checkItem.toggleClass("checkbox_show checkbox_hide");
+		uncheckItem.toggleClass("checkbox_show checkbox_hide");
+		$("#op1-list-item-count").html(`0 Items Selected`);
+	}, 2000);
+
 }
 
 function markLeftOnRight(target) {

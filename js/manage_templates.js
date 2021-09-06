@@ -296,29 +296,53 @@ $("#managetempa-mng-opt2-delete").click(function () {
 
 function countTempAListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
-  $("#managetempa-list-count").html(`${countItem} Items Selected`);
-  $("#managetempa-list-count").removeClass('hideListDiv');
-  if (countItem > 0) {
-    $("#temp-first-skip").addClass('hideListDiv');
-    $("#temp-first-check").removeClass('hideListDiv');
-    $("#temp-first-fileColor").addClass('fileContainerColor');
-  } else {
-    $("#temp-first-skip").removeClass('hideListDiv');
-    $("#temp-first-check").addClass('hideListDiv');
-    $("#temp-first-fileColor").removeClass('fileContainerColor');
-  }
-  $("#temp-single-list1").removeClass('imageClickBackground');
-  $("#temp-single-list2").addClass('imageClickBackground');
+  
+  let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    $("#managetempa-list-count").html(`${countItem} Items Selected`);
+    $("#managetempa-list-count").removeClass('hideListDiv');
+    if (countItem > 0) {
+      $("#temp-first-skip").addClass('hideListDiv');
+      $("#temp-first-check").removeClass('hideListDiv');
+      $("#temp-first-fileColor").addClass('fileContainerColor');
+    } else {
+      $("#temp-first-skip").removeClass('hideListDiv');
+      $("#temp-first-check").addClass('hideListDiv');
+      $("#temp-first-fileColor").removeClass('fileContainerColor');
+    }
+    $("#temp-single-list1").removeClass('imageClickBackground');
+    $("#temp-single-list2").addClass('imageClickBackground');
+
+    $("#manage-tempa-list-modal").modal("hide");
+  
+  }, 2000);
 }
 
 function resetTempAListModal(e) {
   let checkItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show");
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
-  checkItem.toggleClass("checkbox_show checkbox_hide");
-  uncheckItem.toggleClass("checkbox_show checkbox_hide");
-  $("#managetempa-list-count").html(`0 Items Selected`);
   let leftItem = $(e).parent().parent().find("ul.managetempa-list li div.green-check-box.display-block");
-  leftItem.toggleClass("display-block display-none");
+  
+  let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    checkItem.toggleClass("checkbox_show checkbox_hide");
+    uncheckItem.toggleClass("checkbox_show checkbox_hide");
+    $("#managetempa-list-count").html(`0 Items Selected`);
+    leftItem.toggleClass("display-block display-none");
+
+  }, 2000);
 }
 
 function manTemALeftOnRight(target) {
@@ -588,29 +612,53 @@ $("#managetempb-mng-opt2-delete").click(function () {
 
 function countTempBListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
-  $("#managetempb-list-count").html(`${countItem} Items Selected`);
-  $("#managetempb-list-count").removeClass('hideListDiv');
-  if (countItem > 0) {
-    $("#temp-sec-skip").addClass('hideListDiv');
-    $("#temp-sec-check").removeClass('hideListDiv');
-    $("#temp-sec-fileColor").addClass('fileContainerColor');
-  } else {
-    $("#temp-sec-skip").removeClass('hideListDiv');
-    $("#temp-sec-check").addClass('hideListDiv');
-    $("#temp-sec-fileColor").removeClass('fileContainerColor');
-  }
-  $("#temp-single-list2").removeClass('imageClickBackground');
-  $("#temp-single-list3").addClass('imageClickBackground');
+  
+  let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    $("#managetempb-list-count").html(`${countItem} Items Selected`);
+    $("#managetempb-list-count").removeClass('hideListDiv');
+    if (countItem > 0) {
+      $("#temp-sec-skip").addClass('hideListDiv');
+      $("#temp-sec-check").removeClass('hideListDiv');
+      $("#temp-sec-fileColor").addClass('fileContainerColor');
+    } else {
+      $("#temp-sec-skip").removeClass('hideListDiv');
+      $("#temp-sec-check").addClass('hideListDiv');
+      $("#temp-sec-fileColor").removeClass('fileContainerColor');
+    }
+    $("#temp-single-list2").removeClass('imageClickBackground');
+    $("#temp-single-list3").addClass('imageClickBackground');
+
+    $("#manage-tempb-list-modal").modal("hide");
+
+  }, 2000);
 }
 
 function resetTempBListModal(e) {
   let checkItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show");
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
-  checkItem.toggleClass("checkbox_show checkbox_hide");
-  uncheckItem.toggleClass("checkbox_show checkbox_hide");
-  $("#managetempb-list-count").html(`0 Items Selected`);
   let leftItem = $(e).parent().parent().find("ul.managetempb-list li div.green-check-box.display-block");
-  leftItem.toggleClass("display-block display-none");
+  
+  let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    checkItem.toggleClass("checkbox_show checkbox_hide");
+    uncheckItem.toggleClass("checkbox_show checkbox_hide");
+    $("#managetempb-list-count").html(`0 Items Selected`);
+    leftItem.toggleClass("display-block display-none");
+
+  }, 2000);
 }
 
 function manTemBLeftOnRight(target) {
@@ -880,29 +928,53 @@ $("#managetempc-mng-opt2-delete").click(function () {
 
 function countTempCListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
-  $("#managetempc-list-count").html(`${countItem} Items Selected`);
-  $("#managetempc-list-count").removeClass('hideListDiv');
-  if (countItem > 0) {
-    $("#temp-third-skip").addClass('hideListDiv');
-    $("#temp-third-check").removeClass('hideListDiv');
-    $("#temp-third-fileColor").addClass('fileContainerColor');
-  } else {
-    $("#temp-third-skip").removeClass('hideListDiv');
-    $("#temp-third-check").addClass('hideListDiv');
-    $("#temp-third-fileColor").removeClass('fileContainerColor');
-  }
-  $("#temp-single-list3").removeClass('imageClickBackground');
-  $("#temp-single-list4").addClass('imageClickBackground');
+  
+  let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    $("#managetempc-list-count").html(`${countItem} Items Selected`);
+    $("#managetempc-list-count").removeClass('hideListDiv');
+    if (countItem > 0) {
+      $("#temp-third-skip").addClass('hideListDiv');
+      $("#temp-third-check").removeClass('hideListDiv');
+      $("#temp-third-fileColor").addClass('fileContainerColor');
+    } else {
+      $("#temp-third-skip").removeClass('hideListDiv');
+      $("#temp-third-check").addClass('hideListDiv');
+      $("#temp-third-fileColor").removeClass('fileContainerColor');
+    }
+    $("#temp-single-list3").removeClass('imageClickBackground');
+    $("#temp-single-list4").addClass('imageClickBackground');
+
+    $("#manage-tempc-list-modal").modal("hide");
+  
+  }, 2000);
 }
 
 function resetTempCListModal(e) {
   let checkItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show");
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
-  checkItem.toggleClass("checkbox_show checkbox_hide");
-  uncheckItem.toggleClass("checkbox_show checkbox_hide");
-  $("#managetempc-list-count").html(`0 Items Selected`);
   let leftItem = $(e).parent().parent().find("ul.managetempc-list li div.green-check-box.display-block");
-  leftItem.toggleClass("display-block display-none");
+  
+  let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+  
+    checkItem.toggleClass("checkbox_show checkbox_hide");
+    uncheckItem.toggleClass("checkbox_show checkbox_hide");
+    $("#managetempc-list-count").html(`0 Items Selected`);
+    leftItem.toggleClass("display-block display-none");
+
+  }, 2000);
 }
 
 function manTemCLeftOnRight(target) {
@@ -1204,28 +1276,52 @@ $("#managetempd-mng-opt2-delete").click(function () {
 
 function countTempDListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
-  $("#managetempd-list-count").html(`${countItem} Items Selected`);
-  $("#managetempd-list-count").removeClass('hideListDiv');
-  if (countItem > 0) {
-    $("#temp-forth-skip").addClass('hideListDiv');
-    $("#temp-forth-check").removeClass('hideListDiv');
-    $("#temp-forth-fileColor").addClass('fileContainerColor');
-  } else {
-    $("#temp-forth-skip").removeClass('hideListDiv');
-    $("#temp-forth-check").addClass('hideListDiv');
-    $("#temp-forth-fileColor").removeClass('fileContainerColor');
-  }
-  $("#temp-single-list4").removeClass('imageClickBackground');
+  
+  let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    $("#managetempd-list-count").html(`${countItem} Items Selected`);
+    $("#managetempd-list-count").removeClass('hideListDiv');
+    if (countItem > 0) {
+      $("#temp-forth-skip").addClass('hideListDiv');
+      $("#temp-forth-check").removeClass('hideListDiv');
+      $("#temp-forth-fileColor").addClass('fileContainerColor');
+    } else {
+      $("#temp-forth-skip").removeClass('hideListDiv');
+      $("#temp-forth-check").addClass('hideListDiv');
+      $("#temp-forth-fileColor").removeClass('fileContainerColor');
+    }
+    $("#temp-single-list4").removeClass('imageClickBackground');
+
+    $("#manage-tempd-list-modal").modal("hide");
+  
+  }, 2000);
 }
 
 function resetTempDListModal(e) {
   let checkItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show");
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
-  checkItem.toggleClass("checkbox_show checkbox_hide");
-  uncheckItem.toggleClass("checkbox_show checkbox_hide");
-  $("#managetempd-list-count").html(`0 Items Selected`);
   let leftItem = $(e).parent().parent().find("ul.managetempd-list li div.green-check-box.display-block");
-  leftItem.toggleClass("display-block display-none");
+  
+  let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    checkItem.toggleClass("checkbox_show checkbox_hide");
+    uncheckItem.toggleClass("checkbox_show checkbox_hide");
+    $("#managetempd-list-count").html(`0 Items Selected`);
+    leftItem.toggleClass("display-block display-none");
+  
+  }, 2000);
 }
 
 function manTemDLeftOnRight(target) {
@@ -2426,7 +2522,7 @@ function windowToFormMS1(divData) {
       markItem.removeClass("display-block");
     }
 
-    $(`div#${id} a#submit_list`).click();
+    $(`div#${id} button#submit_list`).click();
   }
 }
 function formToWindowMS1() {

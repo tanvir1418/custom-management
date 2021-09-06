@@ -1188,7 +1188,7 @@ function windowToFormDS1(divData, searchData) {
         markItem.removeClass("display-block");
       }
 
-      $(`div#${id} a#submit_list`).click();
+      $(`div#${id} button#submit_list`).click();
     }
   }
 }
