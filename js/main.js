@@ -2305,12 +2305,14 @@ $(document).mouseup(function(e) {
 
 function formByTextEditOpener(formThis, formTarget){
 	let initState = $(formThis).html();
-	$(formThis).html('<i class="fa fa-spinner fa-spin"></i> Form By Text Editor');
+	$(formThis).html('<i class="fa fa-spinner fa-spin"></i> Form By Text Editor <span><i class="fas fa-arrow-right" id="arrow-icon"></i></span>');
 	$(formThis).prop("disabled", true);
+	$(formThis).addClass("padding-left-25");
 	let $this = $(formThis);
 
 	setTimeout(function() {
 		$this.prop("disabled", false);
+		$this.removeClass("padding-left-25");
 		$this.html(initState);
 
 		$(`#${formTarget}`).modal('show');

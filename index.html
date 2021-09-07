@@ -333,6 +333,17 @@
 
         $("#registerBtn").click(function (event) {
             event.preventDefault();
+
+            let initState = $(this).html();
+            $(this).html('<i class="fa fa-spinner fa-spin"></i> REGISTER');
+            $(this).addClass('disabled');
+            let $this = $(this);
+
+            setTimeout(function() {
+                $this.removeClass('disabled');
+                $this.html(initState);
+            }, 4000);
+
             setTimeout(function() {
                 localStorage.setItem("currentUser", "");
                 localStorage.setItem("loginStatus", "NOT_LOGGED");
@@ -343,6 +354,17 @@
 
         $("#loginBtn").click(function (event) {
             event.preventDefault();
+
+            let initState = $(this).html();
+            $(this).html('<i class="fa fa-spinner fa-spin"></i> LOGIN');
+            $(this).addClass('disabled');
+            let $this = $(this);
+
+            setTimeout(function() {
+                $this.removeClass('disabled');
+                $this.html(initState);
+            }, 4000);
+
             setTimeout(function() {
                 localStorage.setItem("currentUser", usernameIndex.value);
                 // localStorage.setItem("loginStatus", "LOGGED_IN");
@@ -356,7 +378,9 @@
                     window.location.href = "termsconditions.html";
                 }
             }, 2000);
+
         });
+        
         $("#resetBtn").click(function (event) {
             event.preventDefault();
             let initState = $(this).html();
@@ -406,28 +430,6 @@
         }
 
         rotateLoadingBar('.bar-animation');
-
-        $("#loginBtn").click(function() {
-            let initState = $(this).html();
-            $(this).html('<i class="fa fa-spinner fa-spin"></i> LOGIN');
-            $(this).addClass('disabled');
-            let $this = $(this);
-            setTimeout(function() {
-                $this.removeClass('disabled');
-                $this.html(initState);
-            }, 4000);
-        });
-
-        $("#registerBtn").click(function() {
-            let initState = $(this).html();
-            $(this).html('<i class="fa fa-spinner fa-spin"></i> REGISTER');
-            $(this).addClass('disabled');
-            let $this = $(this);
-            setTimeout(function() {
-                $this.removeClass('disabled');
-                $this.html(initState);
-            }, 4000);
-        });
 
         // $('#submitting_Info').on('show.bs.modal', function (e) {
 	    //     $('body').addClass("modal-force-recovery-email");

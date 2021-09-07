@@ -2863,6 +2863,11 @@ button[disabled]{
   pointer-events: none;
 }
 
+.text-edition-form .text-edition-box button:disabled{
+  background-color: #fff011;
+  color: #000000;
+}
+
 #ui-datepicker-div{
   -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
   -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);

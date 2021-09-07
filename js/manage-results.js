@@ -2368,6 +2368,29 @@ $(document).keydown(function (e) {
         $("#universalThankDraftModal #thank_draft_details p").html("The Request has been Canceled!");
         $('#universalThankDraftModal').modal('show');
     }
+    if (e.which == 27) {
+        $(".delete-list-item").modal("hide");
+        $("#filter-modal").modal("hide");
+
+        $("#myopt1listData").modal("hide");
+        $("#opt4a-list-modal").modal("hide");
+        $("#opt4b-list-modal").modal("hide");
+        $("#opt4c-list-modal").modal("hide");
+        $("#opt4d-list-modal").modal("hide");
+
+        $("#myopt1listData").modal("hide");
+        $("#manage-tempa-list-modal").modal("hide");
+        $("#manage-tempb-list-modal").modal("hide");
+        $("#manage-tempc-list-modal").modal("hide");
+        $("#manage-tempd-list-modal").modal("hide");
+        
+        $("#dropBtnModal").css('display', 'none');
+        hideStyleTwoAllPopup();
+        hideStyleOneAllPopup();
+        resetDownArrow();
+
+        $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+    }
 });
 
 // Arguments (resetDownArrow):

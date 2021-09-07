@@ -903,76 +903,49 @@
 /* control section style ends */
 /* ========================== */
 
-/* ========================== */
-/* text-edition-form starts */
-.text-edition-form .text-edition-box {
-    position: relative;
-    height: 85px;
-    width: 400px;
-    margin: 0 auto;
-    background-color: #fff011;
-    border-radius: 4px;
-    overflow: hidden;
-    filter: drop-shadow(19px 32.909px 16px rgba(210,206,142,0.26));
+/* ======text-edition-form starts====== */
+.text-edition-form .text-edition-box{
+    text-align: center;
 }
-
-.text-edition-form .text-edition-box::after {
-    position: absolute;
-    content: "";
-    font-size: 36px;
-    height: 60px;
-    width: 60px;
-    color: white;
-    background-color: black;
-    border-radius: 2px;
-    top: 12px;
-    right: 12px;
-}
-
 .text-edition-form .text-edition-box button{
-    height: 100%;
-    width: 100%;
-    background-color: inherit;
-    color: inherit;
-    border: 0;
-    outline: 0;
+    width: 340px;
+    height: 65px;
+    position: relative;
     text-align: left;
-    padding-left: 30px;
-    text-transform: uppercase;
-    font-family: gilroy-bold, sans-serif;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background-color: #fff011;
+    filter: drop-shadow(19px 32.909px 16px rgba(210,206,142,0.26));
     font-size: 22px;
-    font-weight: bolder;
-}
-
-.text-edition-form .text-edition-box p {
-    padding: 28px 32px;
-    margin: 0;
-    text-transform: uppercase;
     font-family: gilroy-bold, sans-serif;
-    color: #000000;
-    font-size: 16px;
-    font-weight: 700;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding-left: 45px;
 }
-
-.text-edition-form #arrow-icon {
+.text-edition-form .text-edition-box button.padding-left-25{
+    padding-left: 25px;
+}
+.text-edition-form .text-edition-box button span{
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    display: inline-block;
     position: absolute;
-    color: #e9e9e9;
-    font-size: 40px;
-    top: 22px;
-    right: 25px;
+    right: 13px;
+    top: 13px;
+    border-radius: 2px;
+}
+.text-edition-form .text-edition-box button span i{
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
     transform: rotate(-45deg);
-    z-index: 5;
 }
 
-.text-edition-form .text-edition-box:hover,
-.text-edition-form .text-edition-box:hover::after,
-.text-edition-form #arrow-icon:hover {
-    opacity: 0.9;
-    cursor: pointer;
-}
-
-/* text-edition-form ends */
-/* ========================== */
+/* ======text-edition-form ends====== */
 
 @media screen and (max-width: 1600px) {
     .side-box {
@@ -1110,13 +1083,13 @@
     .control-section .back-button {
         height: 60px;
         width: 15%;
-        padding-right: 15px;
+        padding-right: 10px;
     }
 
     .control-section .reset-button {
         height: 60px;
         width: 15%;
-        padding-left: 15px;
+        padding-left: 10px;
     }
 
     .control-section .save-result-input {
@@ -1128,7 +1101,7 @@
 
     .control-section .generate-button {
         height: 60px;
-        width: 15%;
+        width: 17%;
         padding-left: 0px;
     }
 
@@ -1152,16 +1125,33 @@
     }
 
     /* control section style ends */
-    /* ========================== */
 
-    /* ========================== */
     /* text-edition-form starts */
-    .option1-container-fluid .text-edition-form .text-edition-box {
-        height: 55px;
-        width: 285px;
+
+    .text-edition-form .text-edition-box{
+        text-align: center;
     }
+    .text-edition-form .text-edition-box button{
+        width: 310px;
+        font-size: 20px;
+        padding-left: 38px;
+    }
+    .text-edition-form .text-edition-box button.padding-left-25{
+        padding-left: 20px;
+    }
+    .text-edition-form .text-edition-box button span{
+        width: 35px;
+        height: 35px;
+        right: 14px;
+        top: 16px;
+    }
+    .text-edition-form .text-edition-box button span i{
+        font-size: 25px;
+        right: 5px;
+        top: 5px;
+    }
+
     /* text-edition-form ends */
-    /* ========================== */
 }
 
 @media screen and (max-width: 1450px) {
@@ -1374,40 +1364,8 @@
         color: #7b7b7b;
     }
 
-    /* control section style ends */
-    /* ========================== */
+    /* =====control section style ends===== */
 
-    /* ========================== */
-    /* text-edition-form starts */
-    .option1-container-fluid .text-edition-form .text-edition-box {
-        height: 50px;
-        width: 240px;
-    }
-
-    .text-edition-form .text-edition-box::after {
-        height: 40px;
-        width: 40px;
-        top: 10px;
-        right: 10px;
-    }
-
-    .text-edition-form .text-edition-box p {
-        padding: 14px 14px;
-        font-size: 20px;
-    }
-
-    .text-edition-form .text-edition-box button {
-        padding-left: 25px;
-        font-size: 18px;
-    }
-
-    .text-edition-form #arrow-icon {
-        font-size: 28px;
-        top: 15px;
-        right: 16px;
-    }
-    
-    /* ====text-edition-form ends==== */
 }
 @media screen and (max-width: 820px) {
     .control-section {
@@ -1419,8 +1377,6 @@
     .control-section .button {
         font-size: 16px;
     }
-    .option1-container-fluid .text-edition-form .text-edition-box {
-        width: 235px;
-    }
+
 }
 
