@@ -2873,3 +2873,7 @@ button[disabled]{
   -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
   box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
 }
+
+#tab_2 .option-content-box p:hover{
+  text-decoration: underline;
+}
