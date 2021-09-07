@@ -82,7 +82,7 @@ for (let i = 1; i <= 29; i++) {
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
     </div>
-    <div class="grey-times-box display-none">
+    <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete">
 			<i class="fas fa-times"></i>
 		</div>
     <div class="arrow-li-box arrow-li-box-background-color-1">
@@ -298,7 +298,7 @@ function countTempAListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   
   let initState = $(e).html();
-	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
@@ -405,7 +405,7 @@ for (let i = 1; i <= 29; i++) {
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
     </div>
-    <div class="grey-times-box display-none">
+    <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete">
 			<i class="fas fa-times"></i>
 		</div>
     <div class="arrow-li-box arrow-li-box-background-color-1">
@@ -614,7 +614,7 @@ function countTempBListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   
   let initState = $(e).html();
-	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
@@ -719,7 +719,7 @@ for (let i = 1; i <= 29; i++) {
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
     </div>
-    <div class="grey-times-box display-none">
+    <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete">
 			<i class="fas fa-times"></i>
 		</div>
     <div class="arrow-li-box arrow-li-box-background-color-1">
@@ -930,7 +930,7 @@ function countTempCListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   
   let initState = $(e).html();
-	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
@@ -1068,7 +1068,7 @@ function findFileListMS1(_id, name) {
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
     </div>
-    <div class="grey-times-box display-none">
+    <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete">
 			<i class="fas fa-times"></i>
 		</div>
     <div class="arrow-li-box arrow-li-box-background-color-1">
@@ -1278,7 +1278,7 @@ function countTempDListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   
   let initState = $(e).html();
-	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {

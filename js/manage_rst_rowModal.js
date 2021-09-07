@@ -41,7 +41,7 @@ const copytolistmodal_style2 = [
 		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
 		</div>
-        <div class="grey-times-box display-none">
+        <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete">
 			<i class="fas fa-times"></i>
 		</div>
 		<div class="arrow-li-box arrow-li-box-background-color-1">
@@ -316,7 +316,7 @@ const movetolistmodal_style29 = [
 		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
 		</div>
-        <div class="grey-times-box display-none">
+        <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete">
 			<i class="fas fa-times"></i>
 		</div>
 		<div class="arrow-li-box arrow-li-box-background-color-1">

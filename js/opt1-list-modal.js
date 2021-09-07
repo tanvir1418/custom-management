@@ -37,7 +37,7 @@ function findFileList(_id) {
 		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
 		</div>
-		<div class="grey-times-box display-none">
+		<div class="grey-times-box display-none" flow="down" tooltip="Click to Delete">
 			<i class="fas fa-times"></i>
 		</div>
 		<div class="arrow-li-box arrow-li-box-background-color-1">
@@ -355,7 +355,7 @@ const copytolistmodal = [
 		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
 		</div>
-		<div class="grey-times-box display-none">
+		<div class="grey-times-box display-none" flow="down" tooltip="Click to Delete">
 			<i class="fas fa-times"></i>
 		</div>
 		<div class="arrow-li-box arrow-li-box-background-color-1">
@@ -631,7 +631,7 @@ const movetolistmodal = [
 		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
 		</div>
-		<div class="grey-times-box display-none">
+		<div class="grey-times-box display-none" flow="down" tooltip="Click to Delete">
 			<i class="fas fa-times"></i>
 		</div>
 		<div class="arrow-li-box arrow-li-box-background-color-1">

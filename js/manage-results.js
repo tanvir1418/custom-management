@@ -52,7 +52,7 @@ const listItemData404 = [
         <div class="tik-box display-none">
             <i class="fas fa-check"></i>
         </div>
-        <div class="grey-times-box display-none">
+        <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete">
 			<i class="fas fa-times"></i>
 		</div>
         <div class="arrow-404 arrow-404-background-color-1">
