@@ -324,6 +324,22 @@ function taskStatusHeadClick(tableId) {
                 $("#table_details_email .table-records-wrap").css("display", "block");
                 $("#table_details_email .table-records-loading").css("display", "none");
 
+                $(".task-status-statistics .stat-box").each(function () {
+                    let value = $(this).find(".stat-number");
+                    let taskValue = parseInt(value.text());
+                    $({
+                        task: 0
+                    }).animate({
+                        task: taskValue
+                    }, {
+                        duration: 3000,
+                        easing: "swing",
+                        step: function (task) {
+                            value.text(task | 0);
+                        }
+                    });
+                });
+
             }, 2000);
 
         }else{
@@ -613,6 +629,22 @@ $("#dropBtnSelect").click(function () {
 
         $("#table_details_email .table-records-wrap").css("display", "block");
         $("#table_details_email .table-records-loading").css("display", "none");
+
+        $(".task-status-statistics .stat-box").each(function () {
+            let value = $(this).find(".stat-number");
+            let taskValue = parseInt(value.text());
+            $({
+                task: 0
+            }).animate({
+                task: taskValue
+            }, {
+                duration: 3000,
+                easing: "swing",
+                step: function (task) {
+                    value.text(task | 0);
+                }
+            });
+        });
 
     }, 2000);
 });
