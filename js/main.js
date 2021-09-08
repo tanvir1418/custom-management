@@ -2289,16 +2289,36 @@ $(document).mouseup(function(e) {
     }
 
 	if (!mnResMoveTo.is(e.target) && mnResMoveTo.has(e.target).length === 0) {
-        mnResMoveTo.css("display", "none");
+		let itemRenamePopupStyle = window.getComputedStyle(document.querySelector(`#remaneAllLevelItem`));
+		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
+		
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none")){
+			mnResMoveTo.css("display", "none");
+		}
     }
 	if (!mnResMoveTo_style2.is(e.target) && mnResMoveTo_style2.has(e.target).length === 0) {
-        mnResMoveTo_style2.css("display", "none");
+		let itemRenamePopupStyle = window.getComputedStyle(document.querySelector(`#remaneAllLevelItem`));
+		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
+		
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none")){
+			mnResMoveTo_style2.css("display", "none");
+		}
     }
 	if (!mnResCopyTo.is(e.target) && mnResCopyTo.has(e.target).length === 0) {
-        mnResCopyTo.css("display", "none");
+		let itemRenamePopupStyle = window.getComputedStyle(document.querySelector(`#remaneAllLevelItem`));
+		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
+		
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none")){
+			mnResCopyTo.css("display", "none");
+		}
     }
 	if (!mnResCopyTo_style2.is(e.target) && mnResCopyTo_style2.has(e.target).length === 0) {
-        mnResCopyTo_style2.css("display", "none");
+		let itemRenamePopupStyle = window.getComputedStyle(document.querySelector(`#remaneAllLevelItem`));
+		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
+		
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none")){
+			mnResCopyTo_style2.css("display", "none");
+		}
     }
 
 });
