@@ -115,7 +115,7 @@ for (let i = 1; i <= 29; i++) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
-      <div class="sublist-info-box" flow="down" tooltip="${item}">
+      <div class="sublist-info-box" customTooltip="${item}" onclick="levelInfoTooltipShow(this)">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -438,7 +438,7 @@ for (let i = 1; i <= 29; i++) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
-      <div class="sublist-info-box" flow="down" tooltip="${item}">
+      <div class="sublist-info-box" customTooltip="${item}" onclick="levelInfoTooltipShow(this)">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -752,7 +752,7 @@ for (let i = 1; i <= 29; i++) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
-      <div class="sublist-info-box" flow="down" tooltip="${item}">
+      <div class="sublist-info-box" customTooltip="${item}" onclick="levelInfoTooltipShow(this)">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -1101,7 +1101,7 @@ function findFileListMS1(_id, name) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
-      <div class="sublist-info-box" flow="down" tooltip="${item}">
+      <div class="sublist-info-box" customTooltip="${item}" onclick="levelInfoTooltipShow(this)">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">

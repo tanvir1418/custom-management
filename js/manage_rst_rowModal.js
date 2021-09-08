@@ -56,7 +56,7 @@ const copytolistmodal_style2 = [
         for (let i = 1; i <= length; i++) {
             let elementHtml = `<li class="option-copytomodallist_style2-${index + 1}-${i}">
 			<p>Level ${index + 1} - Item ${i}</p>
-            <div class="sublist-info-box" flow="down" tooltip="Level ${index + 1} - Item ${i}">
+            <div class="sublist-info-box" customTooltip="Level ${index + 1} - Item ${i}" onclick="levelInfoTooltipShow(this, 2)">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -331,7 +331,7 @@ const movetolistmodal_style29 = [
         for (let i = 1; i <= length; i++) {
             let elementHtml = `<li class="option-movetomodallist_style29-${index + 1}-${i}">
 			<p>Level ${index + 1} - Item ${i}</p>
-            <div class="sublist-info-box" flow="down" tooltip="Level ${index + 1} - Item ${i}">
+            <div class="sublist-info-box" customTooltip="Level ${index + 1} - Item ${i}" onclick="levelInfoTooltipShow(this, 2)">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">

@@ -2877,3 +2877,45 @@ button[disabled]{
 #tab_2 .option-content-box p:hover{
   text-decoration: underline;
 }
+
+
+.list-info-tooltip {
+  position: absolute;
+  /* left: 50%; */
+  /* top: 50%; */
+  left: 0;
+  bottom: 0;
+  z-index: 1500;
+  height: fit-content;
+  display: none;
+}
+.list-tooltip-wrap {
+  font-family: gilroy-medium, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  width: 168px;
+  min-height: 72px;
+  overflow: hidden;
+  padding: 3px;
+  border-radius: .3ch;
+  box-shadow: 0 1em 2em -0.5em rgb(0 0 0 / 35%);
+  background: #000000;
+  color: #fff;
+}
+.list-tooltip-arrow-top:after {
+  content: " ";
+  position: absolute;
+  left: 81px;
+  top: -6px;
+  border-top: none;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  border-bottom: 6px solid black;
+}
+.list-tooltip-wrap p{
+  margin-bottom: 0px;
+  width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

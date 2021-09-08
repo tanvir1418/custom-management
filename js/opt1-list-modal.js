@@ -53,7 +53,7 @@ function findFileList(_id) {
 			let i = idx + 1;
 			let elementHtml = `<li class="${_id}">
 			<p>${item}</p>
-			<div class="sublist-info-box" flow="down" tooltip="${item}">
+			<div class="sublist-info-box" customTooltip="${item}" onclick="levelInfoTooltipShow(this)">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -370,7 +370,7 @@ const copytolistmodal = [
 		for (let i = 1; i <= length; i++) {
 			let elementHtml = `<li class="option-copytomodallist-${index + 1}-${i}">
 			<p>Level ${index + 1} - Item ${i}</p>
-			<div class="sublist-info-box" flow="down" tooltip="Level ${index + 1} - Item ${i}">
+			<div class="sublist-info-box" customTooltip="Level ${index + 1} - Item ${i}" onclick="levelInfoTooltipShow(this, 2)">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
@@ -646,7 +646,7 @@ const movetolistmodal = [
 		for (let i = 1; i <= length; i++) {
 			let elementHtml = `<li class="option-movetomodallist-${index + 1}-${i}">
 			<p>Level ${index + 1} - Item ${i}</p>
-			<div class="sublist-info-box" flow="down" tooltip="Level ${index + 1} - Item ${i}">
+			<div class="sublist-info-box" customTooltip="Level ${index + 1} - Item ${i}" onclick="levelInfoTooltipShow(this, 2)">
 				<i class="fas fa-info"></i>
 			</div>
 			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">

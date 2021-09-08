@@ -1650,16 +1650,33 @@ function renamingLevelItem(itemThis){
 		$this.html(initState);
     $('#remaneAllLevelItem').modal('hide');
     $('#thankAfterAllListRename').modal('show');
-  }, 3000);
+  }, 2000);
 }
 
 $('#thankAfterAllListRename').on('show.bs.modal', function (e) {
   $('body').addClass("modal-force-generate-btn");
 }).on('hide.bs.modal', function (e) {
 	$('body').removeClass("modal-force-generate-btn");
-  $(`.${currentLevelItem_LI_Class} .sublist-info-box`).attr("tooltip", `${newLevelItemName}`);
+  $(`.${currentLevelItem_LI_Class} .sublist-info-box`).attr("customTooltip", `${newLevelItemName}`);
   document.querySelector(`.${currentLevelItem_LI_Class} p`).textContent = newLevelItemName;
 });
+
+function levelInfoTooltipShow(listThis, zIndex = 1500){
+  console.log($(listThis).attr("customTooltip"));
+  $(".list-info-tooltip .list-tooltip-wrap .line-1").text($(listThis).attr("customTooltip"));
+  let elementPositionMain = listThis.getBoundingClientRect();
+  $("#list_info_tooltip").css('display', 'none');
+  $("#list_info_tooltip").css({
+      top: ((elementPositionMain.y) + window.scrollY + 27),
+      left: ((elementPositionMain.x) - 78),
+      "z-index" : zIndex
+  });
+  $("#list_info_tooltip").css('display', 'block');
+}
+
+function hideScrollTooltip(){
+  $("#list_info_tooltip").css('display', 'none');
+}
 
 // $('.submodal-list li .sublist-info-box[data-toggle="tooltip"]').tooltip(
 //   {
