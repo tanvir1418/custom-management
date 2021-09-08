@@ -418,7 +418,11 @@ function alertToResultDisplay(nameThis){
   
   document.querySelector("#chartPage .chart-title .left-item").innerHTML = (nameThis.textContent).split(" - ")[1];
 	document.querySelector("#chartPage .chart-title .right-item").innerHTML = nameThis.textContent;
-	document.getElementById("firstOpen").click();
+
+  // Will Remove On Final Implement
+	// document.getElementById("firstOpen").click();
+
+
 	$(".select-item-table").css("display", "none");
 	$(`#chartPage`).css("display", "block");
 
@@ -434,6 +438,10 @@ function alertToResultDisplay(nameThis){
 		$(`#loading_subitem_title`).css("display", "none");
 	}, 2000);
 
-	gotoChartPage('Main', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
+  
+	// Will Remove On Final Implement
+  // gotoChartPage('Main', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
+
+
 	tableProgressBarAnimation('Main', Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
 }

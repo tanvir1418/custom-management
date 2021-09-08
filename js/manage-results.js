@@ -545,7 +545,10 @@ function openFiveChartTab(mainTabId, innerPageName, elmnt) {
 
 }
 
-$("#firstOpen").addClass("inner-active-tab-81");
+// Will Remove On Final Implement
+// $("#firstOpen").addClass("inner-active-tab-81");
+
+
 function fiveChartBtnClick(targetedTab){
     $(`#${targetedTab} .inner-tablink`).click(function () {
         $(`#${targetedTab} .inner-tablink`).removeClass("inner-active-tab-81");
