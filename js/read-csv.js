@@ -1321,7 +1321,7 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 								<i class="fas fa-envelope"></i>
 							</div>
 							<!-- <div class="circle2box clickViewDetails" tooltip="Click to View Details" flow="down" onclick="universalConfirmModalDelete(this)"> -->
-							<div class="circle2box clickViewDetails ${selectedTab == "Main" ? "" : "hideClickToView"}" tooltip="Click to View Details" flow="down" id="${dynamicTabTitle}" data-dynamiceTooltip="${Description}" onclick="createDynamicTabRow(this)">
+							<div class="circle2box clickViewDetails ${selectedTab == "Main" ? "" : "hideClickToView"}" tooltip="Click to View Details" flow="down" tabId="${ID_val}" tabTitle="${dynamicTabTitle}" data-dynamiceTooltip="${Description}" onclick="createDynamicTabRow(this)">
 								<i class="fas fa-pen"></i>
 							</div>
 							<div class="circle2box view-modal-click">
@@ -1887,7 +1887,7 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 					<div class="circle2box addToBookMark" tooltip="Click to Add to Bookmarks" flow="down" onclick="universalConfirmModalDelete(this)">
 						<i class="fas fa-envelope"></i>
 					</div>
-					<div class="circle2box clickViewDetails ${selectedTab == "Main" ? "" : "hideClickToView"}" tooltip="Click to View Details" flow="down" id="${dynamicTabTitle}" data-dynamiceTooltip="${Description}" onclick="createDynamicTabRow(this)">
+					<div class="circle2box clickViewDetails ${selectedTab == "Main" ? "" : "hideClickToView"}" tooltip="Click to View Details" flow="down" tabId="${ID_val}" tabTitle="${dynamicTabTitle}" data-dynamiceTooltip="${Description}" onclick="createDynamicTabRow(this)">
 						<i class="fas fa-pen"></i>
 					</div>
 					<div class="circle2box view-modal-click-style2">
