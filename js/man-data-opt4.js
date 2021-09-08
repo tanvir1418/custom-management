@@ -211,12 +211,12 @@ function opt4Sam2Render(e, divId) {
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)" onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)" onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
     </div>
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)" onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)" onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
     </div>
   </div>`;
 
@@ -295,12 +295,12 @@ function opt4Sam2Render(e, divId) {
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)"  onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)"  onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
     </div>
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)"  onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)"  onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
     </div>
   </div>`;
 
@@ -315,12 +315,12 @@ function opt4Sam2Render(e, divId) {
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="number" onfocus="onFocus(this)" onfocusout="manDatacheckNum(this)" oninput="manDatacheckNum(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)" onfocusout="manDatacheckNum(this)" oninput="manDatacheckNum(this)"/>
     </div>
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="number" onfocus="onFocus(this)" onfocusout="manDatacheckNum(this)" oninput="manDatacheckNum(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)" onfocusout="manDatacheckNum(this)" oninput="manDatacheckNum(this)"/>
     </div>
   </div>`;
 

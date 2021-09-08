@@ -5,11 +5,28 @@ $('.carousel').carousel({
 // CLICK LOAD TEMPLATE TO OPEN SAMPLE START
 
 $(".template_box").click(function (event) {
-  let tempTarget = event.target.classList.value;
-  if (tempTarget == "template_box" || tempTarget == "template-content-box" || tempTarget == "load-image" || tempTarget == "load-txt" || tempTarget == "temp-txt") {
+  let tempTargetClass = event.target.classList.value;
+  console.log(tempTargetClass);
+  if (tempTargetClass == "template_box" || tempTargetClass == "template-content-box" || tempTargetClass == "load-image" || tempTargetClass == "load-txt" || tempTargetClass == "temp-txt") {
     let loadTempWrapper = document.querySelector(".sample_options");
     loadTempWrapper.classList.remove("dispaly_hide");
     $("#load_temp_slider").addClass("dispaly_hide");
+
+    var templateName = ""
+    if(tempTargetClass == "template_box"){
+     templateName = $(event.target).find("p.load-txt").text().trim();
+    }
+    else if(tempTargetClass == "template-content-box"){
+     templateName = $(event.target).find("p.load-txt").text().trim();
+    }
+    else if(tempTargetClass == "load-image"){
+     templateName = $(event.target.parentElement).find("p.load-txt").text().trim();
+    }
+    else if(tempTargetClass == "load-txt"){
+     templateName = event.target.textContent.trim();
+    }
+    $("#template_name_input").val(templateName);
+    
   }
 });
 
@@ -1540,12 +1557,12 @@ function manTemSam2Rend(e, divId) {
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)" onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)" onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
     </div>
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)" onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)" onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
     </div>
   </div>`;
 
@@ -1624,12 +1641,12 @@ function manTemSam2Rend(e, divId) {
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)"  onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)"  onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
     </div>
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)"  onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)"  onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
     </div>
   </div>`;
 
@@ -1644,12 +1661,12 @@ function manTemSam2Rend(e, divId) {
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="number" onfocus="onFocus(this)" onfocusout="manTemcheckNum(this)" oninput="manTemcheckNum(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)" onfocusout="manTemcheckNum(this)" oninput="manTemcheckNum(this)"/>
     </div>
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="number" onfocus="onFocus(this)" onfocusout="manTemcheckNum(this)" oninput="manTemcheckNum(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)" onfocusout="manTemcheckNum(this)" oninput="manTemcheckNum(this)"/>
     </div>
   </div>`;
 
