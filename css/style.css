@@ -2496,7 +2496,7 @@ td {
     text-align: center;
     min-width: 3em;
     max-width: 21em;
-    white-space: nowrap;
+    white-space: pre-wrap;
     overflow: hidden;
     text-overflow: ellipsis;
     padding: .6ch 1.5ch;

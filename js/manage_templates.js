@@ -3107,7 +3107,10 @@ $('.template_box .info_box').tooltip(
 ).on('click', function () {
   let loadTempBoxId = this.parentElement.parentElement.id;
   let templateName = document.querySelector(`#${loadTempBoxId} .load-txt`).textContent;
-  $(this).attr('data-original-title', `${templateName}`);
+  $(this).attr('data-original-title', 
+  `${templateName}
+  Line 2: Sample Text 2
+  Line 3: Sample Text 3`);
   
   $('.template_box .info_box[data-toggle="tooltip"]').tooltip('hide');
   $(this).tooltip('show');
