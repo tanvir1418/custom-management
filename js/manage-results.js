@@ -1,9 +1,5 @@
 // MANAGE RESULTS list item start
 
-// const sub_ul_list_11 = document.querySelector(".sub-ul-list-11");
-// const sub_ul_list_22 = document.querySelector(".sub-ul-list-22");
-// const sub_ul_list_33 = document.querySelector(".sub-ul-list-33");
-
 // Header Index Where Click is happened.
 let headerIndexClick = "";
 let mnResultActiveTabID = "Main";
@@ -60,9 +56,7 @@ const listItemData404 = [
         </div>
         </li>`;
         /* Update this function By Ashiq */
-        let list_data1 = "",
-            list_data2 = "",
-            list_data3 = "",
+        let list_data1 = "";
             length = 60;
         for (let i = 1; i <= length; i++) {
             let elementHtml = `<li class="result-list-${index + 1}-${i}">
@@ -80,54 +74,26 @@ const listItemData404 = [
                 <i class="fas fa-times"></i>
             </div>
             </li>`;
-            if (length < 61) {
-                if (i <= 20) {
-                    list_data1 += elementHtml;
-                } else if (i >= 21 && i <= 40) {
-                    list_data2 += elementHtml;
-                } else {
-                    list_data3 += elementHtml;
-                }
-            } else {
-                let divide = Math.floor(length / 3);
-                let len = divide + (length % 3);
-                if (i <= len) {
-                    list_data1 += elementHtml;
-                } else if (i > len && i <= len + divide) {
-                    list_data2 += elementHtml;
-                } else {
-                    list_data3 += elementHtml;
-                }
-            }
+            list_data1 += elementHtml;
         }
         htmlDataModal +=
             `<ul class="right-list-404 right-list-4041" style=" display: none" id="sub-ul-list-1-${index + 1}">
-        ${list_data1}
-        </ul>
-        <ul class="right-list-404 right-list-4042" style=" display: none" id="sub-ul-list-2-${index + 1}">
-            ${list_data2}
-        </ul>
-        <ul class="right-list-404 right-list-4043" style=" display: none" id="sub-ul-list-3-${index + 1}">
-            ${list_data3}
-        </ul>`;
+                ${list_data1}
+            </ul>`;
     });
     left_list_404.innerHTML = htmllist;
     document.querySelector("#div-sub-ul-li-list").innerHTML = htmlDataModal;
     /* Update End By Ashiq */
 })();
 /* New Function Start */
-let sub_ul_list_id1_old = "",
-    sub_ul_list_id2_old = "",
-    sub_ul_list_id3_old = "";
+let sub_ul_list_id1_old = "";
 
 let oldSelectListMnRes = "";
 
 function item_li_click_handle(listClassName) {
     let level_no = listClassName.match(/\d+/g)[1];
     if (level_no != null) {
-        const sub_ul_list_id1 = "#sub-ul-list-1-" + level_no,
-            sub_ul_list_id2 = "#sub-ul-list-2-" + level_no,
-            sub_ul_list_id3 = "#sub-ul-list-3-" + level_no;
+        const sub_ul_list_id1 = "#sub-ul-list-1-" + level_no;
         if (sub_ul_list_id1 !== sub_ul_list_id1_old) {
             $(sub_ul_list_id1_old).toggle();
             $(sub_ul_list_id1).toggle();
@@ -135,24 +101,6 @@ function item_li_click_handle(listClassName) {
         } else {
             $(sub_ul_list_id1_old).toggle();
             sub_ul_list_id1_old = "";
-        }
-
-        if (sub_ul_list_id2 !== sub_ul_list_id2_old) {
-            $(sub_ul_list_id2_old).toggle();
-            $(sub_ul_list_id2).toggle();
-            sub_ul_list_id2_old = sub_ul_list_id2;
-        } else {
-            $(sub_ul_list_id2_old).toggle();
-            sub_ul_list_id2_old = "";
-        }
-
-        if (sub_ul_list_id3 !== sub_ul_list_id3_old) {
-            $(sub_ul_list_id3_old).toggle();
-            $(sub_ul_list_id3).toggle();
-            sub_ul_list_id3_old = sub_ul_list_id3;
-        } else {
-            $(sub_ul_list_id3_old).toggle();
-            sub_ul_list_id3_old = "";
         }
 
         if(oldSelectListMnRes == ""){
@@ -172,6 +120,9 @@ var left_list_data = "";
 (function resultLeftListControl() {
     let oldTarget = "";
     left_list_404.addEventListener("click", function (e) {
+        
+        $(".mnRes-right-list-wrap").removeClass("scroll-width-zero");
+        
         let target = e.target;
         const elementName = ["DIV", "P"];
         if (elementName.includes(target.tagName)) {
@@ -205,6 +156,7 @@ var left_list_data = "";
 
         if(oldTarget == target){
             oldSelectListMnRes = "hideLoadingAnimation";
+            // $(".mnRes-right-list-wrap").addClass("scroll-width-zero");
         }else{
             oldSelectListMnRes = "";
         }
@@ -223,40 +175,14 @@ const list_left_item_1 = document.querySelector(".list-item-404-1");
 const tik_box = document.querySelector(".tik-box");
 const sublist_check_box_404 = document.querySelector(".right-list-404 .sublist-check-box-404");
 const sublist_cancel_box_404 = document.querySelector(".right-list-404 .sublist-cancel-box-404");
-// const result_list_1 = document.querySelector(".result-list-1");
 const arrow_404 = document.querySelector(".left-list-404 li .arrow-404");
 const arrow_icon = document.querySelector(".left-list-404 li .arrow-404 i");
 
-// sub_ul_list_11.style.display = "none";
-// sub_ul_list_22.style.display = "none";
-// sub_ul_list_33.style.display = "none";
-
-// $(list_left_item_1).click(function () {
-
-//     $(sub_ul_list_11).toggle();
-//     sub_ul_list_11.style.marginLeft = "300px";
-
-//     $(sub_ul_list_22).toggle();
-//     sub_ul_list_22.style.marginLeft = "580px";
-
-//     $(sub_ul_list_33).toggle();
-//     sub_ul_list_33.style.marginLeft = "860px";
-
-// });
-
-// result_list_1.onclick = () => {
-//     sublist_cancel_box_404.style.display = "none";
-//     sublist_check_box_404.style.display = "block";
-//     $(sublist_cancel_box_404).toggle();
-//     $(sublist_check_box_404).toggle();
-// };
-
-
 /* ================ Scroll Down START ============== */
 $(document).ready(function () {
-    $(".results-scroll-down").click(function () {
-        const table_scroll_404 = document.querySelector(".table-scroll-404");
-        $(".table-scroll-404").animate({
+    $("#mnRes_scrollDownBtn").click(function () {
+        const table_scroll_404 = document.querySelector(".mnRes-left-list-wrap");
+        $(".mnRes-left-list-wrap").animate({
             scrollTop: table_scroll_404.scrollTop + 100,
         },
             250
@@ -282,7 +208,6 @@ setTimeout(() => {
 
 const chartPage = document.querySelector("#chartPage");
 chartPage.style.display = "none";
-// chartPage.style.opacity = "0";
 
 $("#div-sub-ul-li-list").click(function (e) {
     let target = e.target;
@@ -318,9 +243,6 @@ $("#div-sub-ul-li-list").click(function (e) {
     } else if (target.tagName !== "LI") return;
 
     let dataList = target.childNodes[1].innerHTML;
-
-    // console.log(left_list_data);
-    // console.log(dataList);
 
     displayChartManageResult(left_list_data, dataList);
 });
