@@ -4,6 +4,7 @@
 let headerIndexClick = "";
 let mnResultActiveTabID = "Main";
 let mnResultActiveTabSty1TableID = "resizable554";
+let randomSixDIGITForId = "";
 
 
 const left_list_404 = document.querySelector(".left-list-404");
@@ -321,6 +322,7 @@ let tabTableIdData = [
     {
         "tabId": "Main", 
         "tableStyle1ID" : "resizable554",
+        "randSixDigit" : "",
     }
 ];
 
@@ -416,6 +418,7 @@ function openTabPage(pageName, elmnt) {
         if ( tabTableIdData[index].tabId == pageName ) {
             mnResultActiveTabID = tabTableIdData[index].tabId;
             mnResultActiveTabSty1TableID = tabTableIdData[index].tableStyle1ID;
+            randomSixDIGITForId = tabTableIdData[index].randSixDigit;
         }
     }
 
@@ -432,6 +435,70 @@ function openTabPage(pageName, elmnt) {
         $(`#${mnResultActiveTabSty1TableID} tbody tr td .column-header-${columnNum}-resizer`).attr("style", `width: ${columnHeaderWidth}`);
         $(`#${mnResultActiveTabID} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 thead tr .column-header-${columnNum} .column-header-${columnNum}-sizer`).attr("style", `width: ${columnHeaderWidth}`);
     }
+
+    $(`#actual_item_title`).css("display", "none");
+    $(`#actual_subitem_title`).css("display", "none");
+    $(`#loading_item_title`).css("display", "block");
+    $(`#loading_subitem_title`).css("display", "block");
+    
+    setTimeout(() => {
+        $(`#actual_item_title`).css("display", "block");
+        $(`#actual_subitem_title`).css("display", "block");
+        $(`#loading_item_title`).css("display", "none");
+        $(`#loading_subitem_title`).css("display", "none");
+    }, 2000);
+
+    if(mnResultActiveTabID != "Main"){
+        gotoChartPage(`${mnResultActiveTabID}`, `scorer-meter-1${randomSixDIGITForId}`, `scorer-meter-2${randomSixDIGITForId}`, `scorer-meter-3${randomSixDIGITForId}`);
+        gotoChartPage2(`${mnResultActiveTabID}`);
+        gotoLinearChart(`${mnResultActiveTabID}`, `lineChart${randomSixDIGITForId}`,`axisY-lineChart${randomSixDIGITForId}`);
+        gotoChartCalender(`${mnResultActiveTabID}`, `display-data-table${randomSixDIGITForId}`);
+        gotoChartFive(`${mnResultActiveTabID}`);
+    }
+
+    let rowNumber = $(`#${mnResultActiveTabID} .style1-table-wrap #${mnResultActiveTabSty1TableID} tbody tr`);
+    if (rowNumber.length > 0) {
+        $(`#${mnResultActiveTabID} .main-table-design`).css("display", "none");
+        $(`#${mnResultActiveTabID} .style2-table-wrap .style2-table-content`).css("display", "none");
+        $(`#${mnResultActiveTabID} .pagination-container`).css("display", "none");
+        $(`#${mnResultActiveTabID} .page-number12-wrap`).css("display", "none");
+        $(`#${mnResultActiveTabID} .style_date_time_wrap`).css("display", "none");
+
+        $(`#${mnResultActiveTabID} .loading-style1-table`).css("display", "block");
+        $(`#${mnResultActiveTabID} .loading-style2-table`).css("display", "block");
+        $(`#${mnResultActiveTabID} .pagination-loading-handler`).css("display", "block");
+        $(`#${mnResultActiveTabID} .page-number-loading`).css("display", "block");
+        $(`#${mnResultActiveTabID} .loading_date_time_update`).css("display", "block");
+
+        $(`#${mnResultActiveTabID} .double_click_selection_box`).css('display', 'none');
+        $(`#${mnResultActiveTabID} .checkbox-table-loading`).css('display', 'block');
+
+        $(`#${mnResultActiveTabID} .double_click_selection_box`).css('display', 'none');
+        $(`#${mnResultActiveTabID} .checkbox-table-loading`).css('display', 'block');
+
+        setTimeout(() => {
+            $(`#${mnResultActiveTabID} .loading-style1-table`).css("display", "none");
+            $(`#${mnResultActiveTabID} .loading-style2-table`).css("display", "none");
+            $(`#${mnResultActiveTabID} .pagination-loading-handler`).css("display", "none");
+            $(`#${mnResultActiveTabID} .page-number-loading`).css("display", "none");
+            $(`#${mnResultActiveTabID} .loading_date_time_update`).css("display", "none");
+
+            $(`#${mnResultActiveTabID} .main-table-design`).css("display", "block");
+            $(`#${mnResultActiveTabID} .style2-table-wrap .style2-table-content`).css("display", "block");
+            $(`#${mnResultActiveTabID} .pagination-container`).css("display", "block");
+            $(`#${mnResultActiveTabID} .page-number12-wrap`).css("display", "block");
+            $(`#${mnResultActiveTabID} .style_date_time_wrap`).css("display", "block");
+
+            $(`#${mnResultActiveTabID} .double_click_selection_box`).css('display', 'block');
+            $(`#${mnResultActiveTabID} .checkbox-table-loading`).css('display', 'none');
+
+            $(`#${mnResultActiveTabID} .double_click_selection_box`).css('display', 'block');
+            $(`#${mnResultActiveTabID} .checkbox-table-loading`).css('display', 'none');
+
+        }, 2000);
+    }
+    
+
 }
 
 // Force Clicking Main Tab 
@@ -2499,6 +2566,14 @@ function filterSelectBtnClick(){
     const rotateIcon = document.querySelectorAll(".outer-table-style12-box i.fa-caret-down.down-animation-icon");
     for (let i = 0; i < rotateIcon.length; i++) {
         $(rotateIcon[i]).removeClass("down-animation-icon");
+    }
+
+    if(mnResultActiveTabID != "Main"){
+        gotoChartPage(`${mnResultActiveTabID}`, `scorer-meter-1${randomSixDIGITForId}`, `scorer-meter-2${randomSixDIGITForId}`, `scorer-meter-3${randomSixDIGITForId}`);
+        gotoChartPage2(`${mnResultActiveTabID}`);
+        gotoLinearChart(`${mnResultActiveTabID}`, `lineChart${randomSixDIGITForId}`,`axisY-lineChart${randomSixDIGITForId}`);
+        gotoChartCalender(`${mnResultActiveTabID}`, `display-data-table${randomSixDIGITForId}`);
+        gotoChartFive(`${mnResultActiveTabID}`);
     }
 
     $(`#${mnResultActiveTabSty1TableID}`).css("display", "none");

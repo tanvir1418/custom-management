@@ -43,7 +43,7 @@ function createDynamicTabRow(dynamicThis){
         
         mnResultActiveTabID = `${dynamicTabContentId}`;
         mnResultActiveTabSty1TableID = `resizable554${randomSixDigit}`;
-        tabTableIdData.push({"tabId": `${dynamicTabContentId}`, "tableStyle1ID" : `resizable554${randomSixDigit}`});
+        tabTableIdData.push({"tabId": `${dynamicTabContentId}`, "tableStyle1ID" : `resizable554${randomSixDigit}`, "randSixDigit":`${randomSixDigit}`});
 
         $("#chartPage .chart-page-tab").append(
             `<button class="tablink" onclick="openTabPage('${dynamicTabContentId}', this)" id="${dynamicTabBtnId}">${dynamicTabTitle} 
@@ -57,7 +57,7 @@ function createDynamicTabRow(dynamicThis){
         $("#chartPage").append(`
         <div id="${dynamicTabContentId}" class="tabcontent">
             <div class="chart-page-inner-tab">
-                <button class="inner-tablink" onclick="openFiveChartTab('${dynamicTabContentId}', 'Display1', this); gotoChartPage('${dynamicTabContentId}', 'scorer-meter-1${randomSixDigit}', 'scorer-meter-2${randomSixDigit}', 'scorer-meter-3${randomSixDigit}');"
+                <button class="inner-tablink inner-active-tab-81" onclick="openFiveChartTab('${dynamicTabContentId}', 'Display1', this); gotoChartPage('${dynamicTabContentId}', 'scorer-meter-1${randomSixDigit}', 'scorer-meter-2${randomSixDigit}', 'scorer-meter-3${randomSixDigit}');"
                     id="firstOpen${randomSixDigit}">
                     Display Chart Style 1
                     <i class="fas fa-caret-down"></i>
