@@ -52,11 +52,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-2-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-3">
-			<span class="header-title">STATUS</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">STATUS</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header1">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[3]}" class="head-filter">
@@ -68,11 +68,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-3-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-4">
-			<span class="header-title">Val1</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">Val1</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header2">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[4]}" class="head-filter">
@@ -84,11 +84,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-4-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-5">
-			<span class="header-title">Val2</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">Val2</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header3">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[5]}" class="head-filter">
@@ -100,11 +100,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-5-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-6">
-			<span class="header-title">VAL11+DATEL</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">VAL11+DATEL</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header4">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[6]}" class="head-filter">
@@ -116,11 +116,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-6-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-7">
-			<span class="header-title">VAL12+DATEH</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">VAL12+DATEH</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header5">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[7]}" class="head-filter">
@@ -158,11 +158,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-9-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-10">
-			<span class="header-title">U_Val</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">U_Val</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header8">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[10]}" class="head-filter">
@@ -174,11 +174,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-10-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-11">
-			<span class="header-title">U_%</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">U_%</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header9">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[11]}" class="head-filter">
@@ -190,11 +190,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-11-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-12">
-			<span class="header-title">D_Val</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">D_Val</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header10">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[12]}" class="head-filter">
@@ -206,11 +206,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-12-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-13">
-			<span class="header-title">D_%</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">D_%</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header11">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[13]}" class="head-filter">
@@ -222,11 +222,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-13-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-14">
-			<span class="header-title">N_Val</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">N_Val</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header12">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[14]}" class="head-filter">
@@ -238,11 +238,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-14-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-15">
-			<span class="header-title">N_C</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">N_C</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header13">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[15]}" class="head-filter">
@@ -254,11 +254,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-15-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-16">
-			<span class="header-title">AM COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">AM COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header14">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[16]}" class="head-filter">
@@ -270,11 +270,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-16-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-17">
-			<span class="header-title">AN COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">AN COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header15">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[17]}" class="head-filter">
@@ -286,11 +286,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-17-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-18">
-			<span class="header-title">AO COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">AO COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header16">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[18]}" class="head-filter">
@@ -302,11 +302,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-18-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-19">
-			<span class="header-title">AP COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">AP COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header17">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[19]}" class="head-filter">
@@ -318,11 +318,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-19-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-20">
-			<span class="header-title">AQ COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">AQ COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header18">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[20]}" class="head-filter">
@@ -334,11 +334,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-20-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-21">
-			<span class="header-title">AR COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">AR COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header19">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[21]}" class="head-filter">
@@ -350,11 +350,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-21-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-22">
-			<span class="header-title">AS COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">AS COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header20">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[22]}" class="head-filter">
@@ -366,11 +366,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-22-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-23">
-			<span class="header-title">AT COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">AT COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header21">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[23]}" class="head-filter">
@@ -382,11 +382,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-23-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-24">
-			<span class="header-title">AU COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">AU COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header22">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[24]}" class="head-filter">
@@ -398,11 +398,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-24-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-25">
-			<span class="header-title">AV COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">AV COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header23">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[25]}" class="head-filter">
@@ -414,11 +414,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-25-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-26">
-			<span class="header-title">AW COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">AW COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header24">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[26]}" class="head-filter">
@@ -430,11 +430,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-26-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-27">
-			<span class="header-title">AX COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">AX COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header25">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[27]}" class="head-filter">
@@ -446,11 +446,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-27-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-28">
-			<span class="header-title">AY COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">AY COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header26">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[28]}" class="head-filter">
@@ -462,11 +462,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-28-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-29">
-			<span class="header-title">AZ COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">AZ COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header27">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[29]}" class="head-filter">
@@ -478,11 +478,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-29-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-30">
-			<span class="header-title">BA COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">BA COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header28">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[30]}" class="head-filter">
@@ -494,11 +494,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-30-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-31">
-			<span class="header-title">BB COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">BB COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header29">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[31]}" class="head-filter">
@@ -510,11 +510,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-31-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-32">
-			<span class="header-title">BC COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">BC COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header30">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[32]}" class="head-filter">
@@ -526,11 +526,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-32-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-33">
-			<span class="header-title">BD COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">BD COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header31">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[33]}" class="head-filter">
@@ -542,11 +542,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-33-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-34">
-			<span class="header-title">BE COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">BE COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header32">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[34]}" class="head-filter">
@@ -558,11 +558,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-34-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-35">
-			<span class="header-title">BF COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">BF COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header33">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[35]}" class="head-filter">
@@ -574,11 +574,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-35-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-36">
-			<span class="header-title">BG COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">BG COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header34">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[36]}" class="head-filter">
@@ -590,11 +590,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-36-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-37">
-			<span class="header-title">BH COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">BH COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header35">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[37]}" class="head-filter">
@@ -606,11 +606,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-37-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-38">
-			<span class="header-title">BI COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">BI COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header36">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[38]}" class="head-filter">
@@ -622,11 +622,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-38-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-39">
-			<span class="header-title">BJ COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">BJ COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header37">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[39]}" class="head-filter">
@@ -638,11 +638,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-39-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-40">
-			<span class="header-title">BK COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">BK COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header38">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[40]}" class="head-filter">
@@ -654,11 +654,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-40-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-41">
-			<span class="header-title">BL COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">BL COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header39">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[41]}" class="head-filter">
@@ -670,11 +670,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-41-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-42">
-			<span class="header-title">BM COUNT</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">BM COUNT</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header40">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[42]}" class="head-filter">
@@ -686,11 +686,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-42-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-43">
-			<span class="header-title">Col2</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">Col2</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header41">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[43]}" class="head-filter">
@@ -702,11 +702,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-43-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-44">
-			<span class="header-title">Col3</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">Col3</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header42">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[44]}" class="head-filter">
@@ -718,11 +718,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-44-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-45">
-			<span class="header-title">DP</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">DP</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header43">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[45]}" class="head-filter">
@@ -734,11 +734,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-45-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-46">
-			<span class="header-title">DY</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">DY</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header44">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[46]}" class="head-filter">
@@ -750,11 +750,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-46-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-47">
-			<span class="header-title">DmA</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">DmA</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header45">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[47]}" class="head-filter">
@@ -766,11 +766,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-47-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-48">
-			<span class="header-title">DmP</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">DmP</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header46">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[48]}" class="head-filter">
@@ -782,11 +782,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-48-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-49">
-			<span class="header-title">DmP%</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">DmP%</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header47">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[49]}" class="head-filter">
@@ -798,11 +798,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-49-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-50">
-			<span class="header-title">ID</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">ID</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header48">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[50]}" class="head-filter">
@@ -814,11 +814,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-50-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-51">
-			<span class="header-title">LoP%</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">LoP%</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header49">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[51]}" class="head-filter">
@@ -830,11 +830,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-51-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-52">
-			<span class="header-title">M_Val</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">M_Val</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header50">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[52]}" class="head-filter">
@@ -846,11 +846,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-52-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-53">
-			<span class="header-title">MaP%</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">MaP%</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header51">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[53]}" class="head-filter">
@@ -862,11 +862,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-53-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-54">
-			<span class="header-title">O_End</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">O_End</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header52">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[54]}" class="head-filter">
@@ -878,11 +878,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-54-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-55">
-			<span class="header-title">O_Start</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">O_Start</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header53">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[55]}" class="head-filter">
@@ -894,11 +894,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-55-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-56">
-			<span class="header-title">SP</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">SP</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header54">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[56]}" class="head-filter">
@@ -910,11 +910,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-56-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-57">
-			<span class="header-title">Time Frame</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">Time Frame</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header55">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[57]}" class="head-filter">
@@ -926,11 +926,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-57-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-58">
-			<span class="header-title">UmA</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">UmA</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header56">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[58]}" class="head-filter">
@@ -942,11 +942,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-58-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-59">
-			<span class="header-title">UmP</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">UmP</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header57">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[59]}" class="head-filter">
@@ -958,11 +958,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-59-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-60">
-			<span class="header-title">UmP%</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">UmP%</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header58">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[60]}" class="head-filter">
@@ -974,11 +974,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-60-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-61">
-			<span class="header-title">Val2S</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">Val2S</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header59">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[61]}" class="head-filter">
@@ -990,11 +990,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-61-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-62">
-			<span class="header-title">Val3S</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">Val3S</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header60">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[62]}" class="head-filter">
@@ -1006,11 +1006,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-62-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-63">
-			<span class="header-title">Val6</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">Val6</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header61">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[63]}" class="head-filter">
@@ -1022,11 +1022,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-63-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-64">
-			<span class="header-title">Description</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">Description</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header62">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[64]}" class="head-filter">
@@ -1038,11 +1038,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-64-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-65">
-			<span class="header-title">Details3</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">Details3</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header63">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[65]}" class="head-filter">
@@ -1054,11 +1054,11 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 			<div class="column-header-65-sizer"></div>
 		</th>
 		<th scope="col" class="column-header-66">
-			<span class="header-title">Details2</span>
+			<span class="header-title" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">Details2</span>
 			<span class="table-head-tooltip" data-toggle="tooltip" data-placement="bottom" title="Table Header64">
               <i class="fas fa-question-circle"></i>
             </span>
-			<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="Click to Sort">
+			<span class="table-head-updown">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div id="cross${randomCrossIds[66]}" class="head-filter">
@@ -1966,11 +1966,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 					<thead>
 						<tr>
 							<th scope="col" class="style-two-head-01">
-								<span onclick="style2HeaderTitleClick('sty2table2', '${selectedTab}', 1)">STATUS</span>
+								<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table2', '${selectedTab}', 1)">STATUS</span>
 								<span data-toggle="tooltip" data-placement="bottom" title="Sample Text1">
              						<i class="fas fa-question-circle"></i>
            						</span>
-								<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+								<span class="table-head-updown">
 								   <i class="fas fa-chevron-up"></i>
 							   </span>
 								<div class="head-filter style2_cross01" >
@@ -1981,11 +1981,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 								</div>
 							</th>
 							<th scope="col" class="style-two-head-02">
-								<span onclick="style2HeaderTitleClick('sty2table2', '${selectedTab}', 2)">Val1</span>
+								<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table2', '${selectedTab}', 2)">Val1</span>
 								<span data-toggle="tooltip" data-placement="bottom" title="Sample Text2">
              						<i class="fas fa-question-circle"></i>
            						</span>
-								<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+								<span class="table-head-updown">
 								   <i class="fas fa-chevron-up"></i>
 							   </span>
 								<div class="head-filter style2_cross02" >
@@ -1996,11 +1996,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 								</div>
 							</th>
 							<th scope="col" class="style-two-head-03">
-								<span onclick="style2HeaderTitleClick('sty2table2', '${selectedTab}', 3)">Val2</span>
+								<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table2', '${selectedTab}', 3)">Val2</span>
 								<span data-toggle="tooltip" data-placement="bottom" title="Sample Text3">
              						<i class="fas fa-question-circle"></i>
            						</span>
-								<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+								<span class="table-head-updown">
 								   <i class="fas fa-chevron-up"></i>
 							   </span>
 								<div class="head-filter style2_cross03" >
@@ -2046,11 +2046,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 						<thead>
 								<tr>
 										<th scope="col" class="style-two-head-04">
-												<span onclick="style2HeaderTitleClick('sty2table3', '${selectedTab}', 1)">VAL11+DATEL</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table3', '${selectedTab}', 1)">VAL11+DATEL</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text4">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross04">
@@ -2061,11 +2061,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-05">
-												<span onclick="style2HeaderTitleClick('sty2table3', '${selectedTab}', 2)">VAL12+DATEH</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table3', '${selectedTab}', 2)">VAL12+DATEH</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text5">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross05">
@@ -2183,11 +2183,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 						<thead>
 								<tr>
 										<th scope="col" class="style-two-head-08">
-												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 1)">U_Val</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 1)">U_Val</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text8">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross08">
@@ -2198,11 +2198,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-09">
-												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 2)">U_%</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 2)">U_%</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text9">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross09">
@@ -2213,11 +2213,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-10">
-												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 3)">D_Val</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 3)">D_Val</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text10">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross10">
@@ -2228,11 +2228,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-11">
-												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 4)">D_%</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 4)">D_%</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text11">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross11">
@@ -2243,11 +2243,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-12">
-												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 5)">N_Val</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 5)">N_Val</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text12">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross12">
@@ -2258,11 +2258,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-13">
-												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 6)">N_C</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 6)">N_C</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text13">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross13">
@@ -2273,11 +2273,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-14">
-												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 7)">AM COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 7)">AM COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text14">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross14">
@@ -2288,11 +2288,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-15">
-												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 8)">AN COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 8)">AN COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text15">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross15">
@@ -2303,11 +2303,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-16">
-												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 9)">AO COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 9)">AO COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text16">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross16">
@@ -2318,11 +2318,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-17">
-												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 10)">AP COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 10)">AP COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text17">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross17">
@@ -2333,11 +2333,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-18">
-												<span onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 11)">AQ COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table4', '${selectedTab}', 11)">AQ COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text18">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross18">
@@ -2416,11 +2416,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 						<thead>
 								<tr>
 										<th scope="col" class="style-two-head-19">
-												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 1)">AR COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 1)">AR COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text19">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross19">
@@ -2431,11 +2431,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-20">
-												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 2)">AS COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 2)">AS COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text20">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross20">
@@ -2446,11 +2446,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-21">
-												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 3)">AT COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 3)">AT COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text21">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross21">
@@ -2461,11 +2461,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-22">
-												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 4)">AU COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 4)">AU COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text22">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross22">
@@ -2476,11 +2476,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-23">
-												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 5)">AV COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 5)">AV COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text23">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross23">
@@ -2491,11 +2491,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-24">
-												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 6)">AW COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 6)">AW COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text24">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross24">
@@ -2506,11 +2506,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-25">
-												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 7)">AX COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 7)">AX COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text25">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross25">
@@ -2521,11 +2521,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-26">
-												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 8)">AY COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 8)">AY COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text26">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross26">
@@ -2536,11 +2536,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-27">
-												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 9)">AZ COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 9)">AZ COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text27">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross27">
@@ -2551,11 +2551,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-28">
-												<span onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 10)">BA COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table5', '${selectedTab}', 10)">BA COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text28">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross28">
@@ -2629,11 +2629,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 						<thead>
 								<tr>
 										<th scope="col" class="style-two-head-29">
-												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 1)">BB COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 1)">BB COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text29">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross29">
@@ -2644,11 +2644,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-30">
-												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 2)">BC COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 2)">BC COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text30">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross30">
@@ -2659,11 +2659,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-31">
-												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 3)">BD COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 3)">BD COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text31">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross31">
@@ -2674,11 +2674,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-32">
-												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 4)">BE COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 4)">BE COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text32">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross32">
@@ -2689,11 +2689,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-33">
-												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 5)">BF COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 5)">BF COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text33">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross33">
@@ -2704,11 +2704,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-34">
-												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 6)">BG COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 6)">BG COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text34">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross34">
@@ -2719,11 +2719,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-35">
-												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 7)">BH COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 7)">BH COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text35">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross35">
@@ -2734,11 +2734,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-36">
-												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 8)">BI COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 8)">BI COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text36">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross36">
@@ -2749,11 +2749,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-37">
-												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 9)">BJ COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 9)">BJ COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text37">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross37">
@@ -2764,11 +2764,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-38">
-												<span onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 10)">BK COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table6', '${selectedTab}', 10)">BK COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text38">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross38">
@@ -2843,11 +2843,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 						<thead>
 								<tr>
 										<th scope="col" class="style-two-head-39">
-												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 1)">BL COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 1)">BL COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text39">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross39">
@@ -2858,11 +2858,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-40">
-												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 2)">BM COUNT</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 2)">BM COUNT</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text40">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross40">
@@ -2873,11 +2873,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-41">
-												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 3)">Col2</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 3)">Col2</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text41">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross41">
@@ -2888,11 +2888,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-42">
-												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 4)">Col3</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 4)">Col3</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text42">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross42">
@@ -2903,11 +2903,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-43">
-												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 5)">DP</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 5)">DP</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text43">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross43">
@@ -2918,11 +2918,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-44">
-												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 6)">DY</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 6)">DY</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text44">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross44">
@@ -2933,11 +2933,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-45">
-												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 7)">DmA</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 7)">DmA</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text45">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross45">
@@ -2948,11 +2948,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-46">
-												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 8)">DmP</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 8)">DmP</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text46">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross46">
@@ -2963,11 +2963,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-47">
-												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 9)">DmP%</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 9)">DmP%</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text47">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross47">
@@ -2978,11 +2978,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-48">
-												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 10)">ID</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 10)">ID</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text7=48">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross48">
@@ -2993,11 +2993,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-49">
-												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 11)">LoP%</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 11)">LoP%</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text49">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross49">
@@ -3008,11 +3008,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-50">
-												<span onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 12)">M_Val</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table7', '${selectedTab}', 12)">M_Val</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text50">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross50">
@@ -3097,11 +3097,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 						<thead>
 								<tr>
 										<th scope="col" class="style-two-head-51">
-												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 1)">MaP%</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 1)">MaP%</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text51">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross51">
@@ -3112,11 +3112,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-52">
-												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 2)">O_End</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 2)">O_End</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text52">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross52">
@@ -3127,11 +3127,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-53">
-												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 3)">O_Start</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 3)">O_Start</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text53">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross53">
@@ -3142,11 +3142,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-54">
-												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 4)">SP</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 4)">SP</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text54">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross54">
@@ -3157,11 +3157,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-55">
-												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 5)">Time Frame</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 5)">Time Frame</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text55">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross55">
@@ -3172,11 +3172,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-56">
-												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 6)">UmA</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 6)">UmA</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text56">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross56">
@@ -3187,11 +3187,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-57">
-												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 7)">UmP</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 7)">UmP</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text57">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross57">
@@ -3202,11 +3202,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-58">
-												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 8)">UmP%</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 8)">UmP%</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text58">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross58">
@@ -3217,11 +3217,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-59">
-												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 9)">Val2S</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 9)">Val2S</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text59">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross59">
@@ -3232,11 +3232,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-60">
-												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 10)">Val3S</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 10)">Val3S</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text60">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross60">
@@ -3247,11 +3247,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-61">
-												<span onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 11)">Val6</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table8', '${selectedTab}', 11)">Val6</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text61">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross61">
@@ -3329,11 +3329,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 						<thead>
 								<tr>
 									<th scope="col" class="style-two-head-62">
-												<span onclick="style2HeaderTitleClick('sty2table9', '${selectedTab}', 1)">Description</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table9', '${selectedTab}', 1)">Description</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text62">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 												   <i class="fas fa-chevron-up"></i>
 											   </span>
 												<div class="head-filter style2_cross62">
@@ -3344,11 +3344,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 									</th>
 									<th scope="col" class="style-two-head-63">
-												<span  onclick="style2HeaderTitleClick('sty2table9', '${selectedTab}', 2)">Details3</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table9', '${selectedTab}', 2)">Details3</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text63">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross63">
@@ -3359,11 +3359,11 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 												</div>
 										</th>
 										<th scope="col" class="style-two-head-64">
-												<span onclick="style2HeaderTitleClick('sty2table9', '${selectedTab}', 3)">Details2</span>
+												<span class="s2-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort" onclick="style2HeaderTitleClick('sty2table9', '${selectedTab}', 3)">Details2</span>
 												<span data-toggle="tooltip" data-placement="bottom" title="Sample Text64">
              										<i class="fas fa-question-circle"></i>
            										</span>
-												<span class="table-head-updown" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to Sort">
+												<span class="table-head-updown">
 													<i class="fas fa-chevron-up"></i>
 												</span>
 												<div class="head-filter style2_cross64">
