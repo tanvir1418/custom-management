@@ -2238,19 +2238,19 @@ $(document).mouseup(function(e) {
 
 	// Mouse Up Condition For All The Manage Existing Table FILTER
     var mainTableFilterModal = $('#dropBtnModal');
-    if (!mainTableFilterModal.is(e.target) && mainTableFilterModal.has(e.target).length === 0) {
+    if (!mainTableFilterModal.is(e.target) && mainTableFilterModal.has(e.target).length === 0 && (e.target != $('html').get(0))) {
         mainTableFilterModal.css("display", "none");
         $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
     }
 
 	// Mouse Up Condition For Manage Result Table FILTER
     var mnResFilterModal = $('#col8Filter');
-    if (!mnResFilterModal.is(e.target) && mnResFilterModal.has(e.target).length === 0) {
-        mnResFilterModal.css("display", "none");
-        const rotateIcon = document.querySelectorAll(".outer-table-style12-box i.fa-caret-down.down-animation-icon");
-    	for (let i = 0; i < rotateIcon.length; i++) {
-        	$(rotateIcon[i]).removeClass("down-animation-icon");
-    	}
+    if (!mnResFilterModal.is(e.target) && mnResFilterModal.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+		mnResFilterModal.css("display", "none");
+		const rotateIcon = document.querySelectorAll(".outer-table-style12-box i.fa-caret-down.down-animation-icon");
+		for (let i = 0; i < rotateIcon.length; i++) {
+			$(rotateIcon[i]).removeClass("down-animation-icon");
+		}
     }
 
 	// Mouse Up Condition For Manage Result ALL POPUPS
@@ -2267,36 +2267,36 @@ $(document).mouseup(function(e) {
     var mnResCopyTo = $('#copyrowlist');
     var mnResCopyTo_style2 = $('#copyrowlist_style2');
 
-    if (!mnResViewTwo.is(e.target) && mnResViewTwo.has(e.target).length === 0) {
+    if (!mnResViewTwo.is(e.target) && mnResViewTwo.has(e.target).length === 0 && (e.target != $('html').get(0))) {
         mnResViewTwo.css("display", "none");
     }
 
-	if (!mnResViewTwo_style2.is(e.target) && mnResViewTwo_style2.has(e.target).length === 0) {
+	if (!mnResViewTwo_style2.is(e.target) && mnResViewTwo_style2.has(e.target).length === 0 && (e.target != $('html').get(0))) {
         mnResViewTwo_style2.css("display", "none");
     }
 
-	if (!mnResRowDetails.is(e.target) && mnResRowDetails.has(e.target).length === 0) {
+	if (!mnResRowDetails.is(e.target) && mnResRowDetails.has(e.target).length === 0 && (e.target != $('html').get(0))) {
         mnResRowDetails.css("display", "none");
     }
 
-	if (!mnResRowDetails_style2.is(e.target) && mnResRowDetails_style2.has(e.target).length === 0) {
+	if (!mnResRowDetails_style2.is(e.target) && mnResRowDetails_style2.has(e.target).length === 0 && (e.target != $('html').get(0))) {
         mnResRowDetails_style2.css("display", "none");
     }
 
-	if (!mnResNoteWindow.is(e.target) && mnResNoteWindow.has(e.target).length === 0) {
+	if (!mnResNoteWindow.is(e.target) && mnResNoteWindow.has(e.target).length === 0 && (e.target != $('html').get(0))) {
         mnResNoteWindow.css("display", "none");
     }
-	if (!mnResNoteWindow_style2.is(e.target) && mnResNoteWindow_style2.has(e.target).length === 0) {
+	if (!mnResNoteWindow_style2.is(e.target) && mnResNoteWindow_style2.has(e.target).length === 0 && (e.target != $('html').get(0))) {
         mnResNoteWindow_style2.css("display", "none");
     }
-	if (!mnResAlertWindow.is(e.target) && mnResAlertWindow.has(e.target).length === 0) {
+	if (!mnResAlertWindow.is(e.target) && mnResAlertWindow.has(e.target).length === 0 && (e.target != $('html').get(0))) {
         mnResAlertWindow.css("display", "none");
     }
-	if (!mnResAlertWindow_style2.is(e.target) && mnResAlertWindow_style2.has(e.target).length === 0) {
+	if (!mnResAlertWindow_style2.is(e.target) && mnResAlertWindow_style2.has(e.target).length === 0 && (e.target != $('html').get(0))) {
         mnResAlertWindow_style2.css("display", "none");
     }
 
-	if (!mnResMoveTo.is(e.target) && mnResMoveTo.has(e.target).length === 0) {
+	if (!mnResMoveTo.is(e.target) && mnResMoveTo.has(e.target).length === 0 && (e.target != $('html').get(0))) {
 		let itemRenamePopupStyle = window.getComputedStyle(document.querySelector(`#remaneAllLevelItem`));
 		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
 		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
@@ -2305,7 +2305,7 @@ $(document).mouseup(function(e) {
 			mnResMoveTo.css("display", "none");
 		}
     }
-	if (!mnResMoveTo_style2.is(e.target) && mnResMoveTo_style2.has(e.target).length === 0) {
+	if (!mnResMoveTo_style2.is(e.target) && mnResMoveTo_style2.has(e.target).length === 0 && (e.target != $('html').get(0))) {
 		let itemRenamePopupStyle = window.getComputedStyle(document.querySelector(`#remaneAllLevelItem`));
 		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
 		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
@@ -2314,7 +2314,7 @@ $(document).mouseup(function(e) {
 			mnResMoveTo_style2.css("display", "none");
 		}
     }
-	if (!mnResCopyTo.is(e.target) && mnResCopyTo.has(e.target).length === 0) {
+	if (!mnResCopyTo.is(e.target) && mnResCopyTo.has(e.target).length === 0 && (e.target != $('html').get(0))) {
 		let itemRenamePopupStyle = window.getComputedStyle(document.querySelector(`#remaneAllLevelItem`));
 		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
 		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
@@ -2323,7 +2323,7 @@ $(document).mouseup(function(e) {
 			mnResCopyTo.css("display", "none");
 		}
     }
-	if (!mnResCopyTo_style2.is(e.target) && mnResCopyTo_style2.has(e.target).length === 0) {
+	if (!mnResCopyTo_style2.is(e.target) && mnResCopyTo_style2.has(e.target).length === 0 && (e.target != $('html').get(0))) {
 		let itemRenamePopupStyle = window.getComputedStyle(document.querySelector(`#remaneAllLevelItem`));
 		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
 		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
@@ -2334,7 +2334,7 @@ $(document).mouseup(function(e) {
     }
 
 	var listInfoTooltip = $('#list_info_tooltip');
-    if (!listInfoTooltip.is(e.target) && listInfoTooltip.has(e.target).length === 0) {
+    if (!listInfoTooltip.is(e.target) && listInfoTooltip.has(e.target).length === 0 && (e.target != $('html').get(0))) {
         listInfoTooltip.css("display", "none");
     }
 
