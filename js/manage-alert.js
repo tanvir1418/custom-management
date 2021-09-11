@@ -15,11 +15,11 @@ function makeTableHeadAlert(tableID) {
   let tableHead =
     `<th class="">ROW</th>
         <th class="">
-          <span class="header-title">ALERT NAME</span>
+          <span class="header-title" tooltip="Click to Sort" flow="down">ALERT NAME</span>
           <span class="tooltip-container" tooltip="Sample Alert Name" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
-          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+          <span class="table-head-updown tooltip-container">
 				    <i class="fas fa-chevron-up"></i>
           </span>
           <div class="head-filter cross-exists">
@@ -30,11 +30,11 @@ function makeTableHeadAlert(tableID) {
           </div>
         </th>
         <th class="">
-          <span class="header-title">ALERT TYPE</span>
+          <span class="header-title" tooltip="Click to Sort" flow="down">ALERT TYPE</span>
           <span class="tooltip-container" tooltip="Sample text here1" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
-          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+          <span class="table-head-updown tooltip-container">
 				  <i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
@@ -45,11 +45,11 @@ function makeTableHeadAlert(tableID) {
             </div>
         </th>
         <th class="">
-          <span class="header-title">ALERT VALUE</span>
+          <span class="header-title" tooltip="Click to Sort" flow="down">ALERT VALUE</span>
           <span class="tooltip-container" tooltip="Sample text here2" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
-            <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+            <span class="table-head-updown tooltip-container">
 				      <i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
@@ -60,11 +60,11 @@ function makeTableHeadAlert(tableID) {
             </div>
         </th>
         <th class="">
-          <span class="header-title">ALERT FREQUENCY</span>
+          <span class="header-title" tooltip="Click to Sort" flow="down">ALERT FREQUENCY</span>
           <span class="tooltip-container" tooltip="Sample text here3" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
-          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+          <span class="table-head-updown tooltip-container">
 				    <i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
@@ -75,11 +75,11 @@ function makeTableHeadAlert(tableID) {
             </div>
         </th>
         <th class="">
-          <span class="header-title">ALERT METHOD</span>
+          <span class="header-title" tooltip="Click to Sort" flow="down">ALERT METHOD</span>
           <span class="tooltip-container" tooltip="Sample text here4" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
-          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+          <span class="table-head-updown tooltip-container">
 				    <i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">

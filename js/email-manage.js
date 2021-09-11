@@ -55,11 +55,11 @@ for (let i = 1; i <= 100; i++) {
 function taskStatusHead(tableID) {
     let tableHead = `<th class="">ROW</th>
         <th class="">
-            <span class="header-title">NAME</span>
+            <span class="header-title" tooltip="Click to Sort" flow="down">NAME</span>
           <span class="tooltip-container" tooltip="Sample text here" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
-          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+          <span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
@@ -70,11 +70,11 @@ function taskStatusHead(tableID) {
             </div>
         </th>
         <th class="">
-            <span class="header-title">STATUS</span>
+            <span class="header-title" tooltip="Click to Sort" flow="down">STATUS</span>
             <span class="tooltip-container" tooltip="Sample text here" flow="down">
                 <i class="fas fa-question-circle"></i>
             </span>
-            <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+            <span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
@@ -85,11 +85,11 @@ function taskStatusHead(tableID) {
             </div>
         </th>
         <th class="">
-            <span class="header-title">PROGRESS</span>
+            <span class="header-title" tooltip="Click to Sort" flow="down">PROGRESS</span>
             <span class="tooltip-container" tooltip="Sample text here" flow="down">
                 <i class="fas fa-question-circle"></i>
             </span>
-            <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+            <span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
@@ -100,11 +100,11 @@ function taskStatusHead(tableID) {
             </div>
         </th>
         <th class="">
-            <span class="header-title">START TIME</span>
+            <span class="header-title" tooltip="Click to Sort" flow="down">START TIME</span>
             <span class="tooltip-container" tooltip="Sample text here" flow="down">
                 <i class="fas fa-question-circle"></i>
             </span>
-            <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+            <span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
@@ -115,11 +115,11 @@ function taskStatusHead(tableID) {
             </div>
         </th>
         <th class="">
-            <span class="header-title">END TIME</span>
+            <span class="header-title" tooltip="Click to Sort" flow="down">END TIME</span>
             <span class="tooltip-container" tooltip="Sample text here" flow="down">
                 <i class="fas fa-question-circle"></i>
             </span>
-            <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+            <span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">

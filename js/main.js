@@ -1020,11 +1020,11 @@ function makeTableHead(tableID) {
 			ROW
 		</th>
 		<th scope="col">
-			<span class="header-title">RECORDS COUNT</span>
+			<span class="header-title" tooltip="Click to Sort" flow="down">RECORDS COUNT</span>
 			<span class="tooltip-container" tooltip="RECORDS COUNT" flow="down">
 				<i class="fas fa-question-circle"></i>
 			</span>
-			<span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+			<span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div class="head-filter cross-exists">
@@ -1035,11 +1035,11 @@ function makeTableHead(tableID) {
 			</div>
 		</th>
 		<th scope="col">
-			<span class="header-title">SAVED NAME</span>
+			<span class="header-title" tooltip="Click to Sort" flow="down">SAVED NAME</span>
 			<span class="tooltip-container" tooltip="SAVED NAME" flow="down">
 				<i class="fas fa-question-circle"></i>
 			</span>
-			<span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+			<span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div class="head-filter cross-exists">
@@ -1050,11 +1050,11 @@ function makeTableHead(tableID) {
 			</div>
 		</th>
 		<th scope="col">
-			<span class="header-title">CREATED DATE TIME</span>
+			<span class="header-title" tooltip="Click to Sort" flow="down">CREATED DATE TIME</span>
 			<span class="tooltip-container" tooltip="CREATED DATE TIME" flow="down">
 				<i class="fas fa-question-circle"></i>
 			</span>
-			<span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+			<span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div class="head-filter cross-exists">
@@ -1065,11 +1065,11 @@ function makeTableHead(tableID) {
 			</div>
 		</th>
 		<th scope="col">
-			<span class="header-title">LAST UPDATE DATE TIME</span>
+			<span class="header-title" tooltip="Click to Sort" flow="down">LAST UPDATE DATE TIME</span>
 			<span class="tooltip-container" tooltip="LAST UPDATE DATE TIME" flow="down">
 				<i class="fas fa-question-circle"></i>
 			</span>
-			<span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+			<span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div class="head-filter cross-exists">
