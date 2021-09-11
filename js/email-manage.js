@@ -271,7 +271,7 @@ function tableProgressBarAnimation(idOfRow, progressVal) {
     var elem = document.querySelector(`#email_task_status_table tbody #${idOfRow} .inner-progress-task`);
     var elemPara = document.querySelector(`#email_task_status_table tbody #${idOfRow} .progress-task .alert-exists-data`);
     var width = 0;
-    var id = setInterval(frame, 50);
+    var id = setInterval(frame, 25);
     function frame() {
         if (width >= progressVal) {
             clearInterval(id);
@@ -339,6 +339,15 @@ function taskStatusHeadClick(tableId) {
                         }
                     });
                 });
+
+                let tableRowNum = $(`#email_task_status_table tbody tr`).length;
+                let tableRowId = "";
+                let tableRowProgVal = "";
+                for(var i=0; i<tableRowNum; i++){
+                    tableRowId = $(`#email_task_status_table tbody tr`)[i].id;
+                    tableRowProgVal = parseInt(document.querySelector(`#email_task_status_table tbody #${tableRowId} .progress-task .alert-exists-data`).textContent.replace("%",""));
+                    tableProgressBarAnimation(tableRowId, tableRowProgVal);
+                }
 
             }, 2000);
 
