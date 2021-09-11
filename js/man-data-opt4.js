@@ -1803,6 +1803,26 @@ function leftItemDeleteClick(thisLeft, modalName){
     ACTIVE_MODAL_NAME = modalName;
     ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modaloptfourmodallist-item-", "").trim());
     targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "mnTempa"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalmanagetemplist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "mnTempb"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalmanagetemplist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "mnTempc"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalmanagetemplist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "mnTempd"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalmanagetemplist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
   }
 
   $(`#delete_leftItem_list .question-delete p`).text(`Confirm to delete ${targetItemName}?`);
@@ -1851,6 +1871,26 @@ function leftItemDeleteConfirm(lfConfirmThis){
       $(`#optfourmodald-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
       $(`#optfourmodald-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
       $(`#optfourmodald-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "mnTempa"){
+      $(`.managetempa-list .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#managetempa-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#managetempa-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#managetempa-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "mnTempb"){
+      $(`.managetempb-list .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#managetempb-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#managetempb-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#managetempb-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "mnTempc"){
+      $(`.managetempc-list .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#managetempc-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#managetempc-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#managetempc-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "mnTempd"){
+      $(`.managetempd-list .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#managetempd-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#managetempd-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#managetempd-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
     }
     $('#delete_leftItem_list').modal('hide');
 	}, 2000);
