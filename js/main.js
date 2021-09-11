@@ -157,12 +157,10 @@ for (var i = 0; i < li_tabs.length; i++) {
 
 				$("#mnRes_list_item_loading").css("display", "block");
 				$("#mnRes_scrollWindow").css("display", "none");
-				$("#mnRes_scrollDownBtn").css("display", "none");
 				
 				setTimeout(() => {
 					$("#mnRes_list_item_loading").css("display", "none");
 					$("#mnRes_scrollWindow").css("display", "block");
-					$("#mnRes_scrollDownBtn").css("display", "block");
 				}, 2000);
 
 			}

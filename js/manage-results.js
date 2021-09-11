@@ -35,11 +35,6 @@ const listItemData404 = [
     "Item 22",
     "Item 23",
     "Item 24",
-    "Item 25",
-    "Item 26",
-    "Item 27",
-    "Item 28",
-    "Item 29",
 ];
 (function listDataMan404() {
     let htmllist = "", htmlDataModal = "";
@@ -179,28 +174,14 @@ const sublist_cancel_box_404 = document.querySelector(".right-list-404 .sublist-
 const arrow_404 = document.querySelector(".left-list-404 li .arrow-404");
 const arrow_icon = document.querySelector(".left-list-404 li .arrow-404 i");
 
-/* ================ Scroll Down START ============== */
-$(document).ready(function () {
-    $("#mnRes_scrollDownBtn").click(function () {
-        const table_scroll_404 = document.querySelector(".mnRes-left-list-wrap");
-        $(".mnRes-left-list-wrap").animate({
-            scrollTop: table_scroll_404.scrollTop + 100,
-        },
-            250
-        );
-    });
-});
 
-/* ================ Scroll Down END ============== */
 
 // $("#mnRes_list_item_loading").css("display", "block");
 // $("#mnRes_scrollWindow").css("display", "none");
-// $("#mnRes_scrollDownBtn").css("display", "none");
 
 setTimeout(() => {
     $("#mnRes_list_item_loading").css("display", "none");
     $("#mnRes_scrollWindow").css("display", "block");
-    $("#mnRes_scrollDownBtn").css("display", "block");
 }, 4000);
 
 // MANAGE RESULTS list item end
