@@ -996,20 +996,18 @@ function createDynamicTabRow(dynamicThis){
                                                 <!-- the percentage values get from manage-result.js -->
                                                 <div class="pos-progress-status">
                                                     <div class="pos-bar-status dis5_plusProgress_value1"></div>
-                                                    <!-- <p class="dis5_pos_value1 allpos_value"></p> -->
+                                                    <p class="dis5_pos_value1 allpos_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_pos_value1 allpos_value"></p>
                                         </div>
                                         <div class="dis5_progress_downbox">
                                             <div class="dis5_progress_neg1 allprogress_neg">
                                                 <!-- the percentage values get from manage-result.js -->
                                                 <div class="neg-progress-status">
                                                     <div class="neg-bar-status dis5_minusProgress_value1"></div>
-                                                    <!-- <p class="dis5_neg_value1 allneg_value"></p> -->
+                                                    <p class="dis5_neg_value1 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_neg_value1 allneg_value"></p>
                                         </div>
                                     </div>
                                     <!-- PROGRESS BAR END -->
@@ -1049,17 +1047,17 @@ function createDynamicTabRow(dynamicThis){
                                             <div class="dis5_progress_pos2 allprogress_pos">
                                                 <div class="pos-progress-status">
                                                     <div class="pos-bar-status dis5_plusProgress_value2"></div>
+                                                    <p class="dis5_pos_value2 allpos_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_pos_value2 allpos_value"></p>
                                         </div>
                                         <div class="dis5_progress_downbox">
                                             <div class="dis5_progress_neg2 allprogress_neg">
                                                 <div class="neg-progress-status">
                                                     <div class="neg-bar-status dis5_minusProgress_value2"></div>
+                                                    <p class="dis5_neg_value2 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_neg_value2 allneg_value"></p>
                                         </div>
                                     </div>
                                     <!-- PROGRESS BAR END -->
@@ -1099,17 +1097,17 @@ function createDynamicTabRow(dynamicThis){
                                             <div class="dis5_progress_pos3 allprogress_pos">
                                                 <div class="pos-progress-status">
                                                     <div class="pos-bar-status dis5_plusProgress_value3"></div>
+                                                    <p class="dis5_pos_value3 allpos_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_pos_value3 allpos_value"></p>
                                         </div>
                                         <div class="dis5_progress_downbox">
                                             <div class="dis5_progress_neg3 allprogress_neg">
                                                 <div class="neg-progress-status">
                                                     <div class="neg-bar-status dis5_minusProgress_value3"></div>
+                                                    <p class="dis5_neg_value3 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_neg_value3 allneg_value"></p>
                                         </div>
                                     </div>
                                     <!-- PROGRESS BAR END -->
@@ -1149,17 +1147,17 @@ function createDynamicTabRow(dynamicThis){
                                             <div class="dis5_progress_pos4 allprogress_pos">
                                                 <div class="pos-progress-status">
                                                     <div class="pos-bar-status dis5_plusProgress_value4"></div>
+                                                    <p class="dis5_pos_value4 allpos_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_pos_value4 allpos_value"></p>
                                         </div>
                                         <div class="dis5_progress_downbox">
                                             <div class="dis5_progress_neg4 allprogress_neg">
                                                 <div class="neg-progress-status">
                                                     <div class="neg-bar-status dis5_minusProgress_value4"></div>
+                                                    <p class="dis5_neg_value4 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_neg_value4 allneg_value"></p>
                                         </div>
                                     </div>
                                     <!-- PROGRESS BAR END -->
@@ -1199,17 +1197,17 @@ function createDynamicTabRow(dynamicThis){
                                             <div class="dis5_progress_pos5 allprogress_pos">
                                                 <div class="pos-progress-status">
                                                     <div class="pos-bar-status dis5_plusProgress_value5"></div>
+                                                    <p class="dis5_pos_value5 allpos_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_pos_value5 allpos_value"></p>
                                         </div>
                                         <div class="dis5_progress_downbox">
                                             <div class="dis5_progress_neg5 allprogress_neg">
                                                 <div class="neg-progress-status">
                                                     <div class="neg-bar-status dis5_minusProgress_value5"></div>
+                                                    <p class="dis5_neg_value5 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_neg_value5 allneg_value"></p>
                                         </div>
                                     </div>
                                     <!-- PROGRESS BAR END -->
@@ -1249,17 +1247,17 @@ function createDynamicTabRow(dynamicThis){
                                             <div class="dis5_progress_pos6 allprogress_pos">
                                                 <div class="pos-progress-status">
                                                     <div class="pos-bar-status dis5_plusProgress_value6"></div>
+                                                    <p class="dis5_pos_value6 allpos_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_pos_value6 allpos_value"></p>
                                         </div>
                                         <div class="dis5_progress_downbox">
                                             <div class="dis5_progress_neg6 allprogress_neg">
                                                 <div class="neg-progress-status">
                                                     <div class="neg-bar-status dis5_minusProgress_value6"></div>
+                                                    <p class="dis5_neg_value6 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_neg_value6 allneg_value"></p>
                                         </div>
                                     </div>
                                     <!-- PROGRESS BAR END -->
@@ -1299,17 +1297,17 @@ function createDynamicTabRow(dynamicThis){
                                             <div class="dis5_progress_pos7 allprogress_pos">
                                                 <div class="pos-progress-status">
                                                     <div class="pos-bar-status dis5_plusProgress_value7"></div>
+                                                    <p class="dis5_pos_value7 allpos_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_pos_value7 allpos_value"></p>
                                         </div>
                                         <div class="dis5_progress_downbox">
                                             <div class="dis5_progress_neg7 allprogress_neg">
                                                 <div class="neg-progress-status">
                                                     <div class="neg-bar-status dis5_minusProgress_value7"></div>
+                                                    <p class="dis5_neg_value7 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_neg_value7 allneg_value"></p>
                                         </div>
                                     </div>
                                     <!-- PROGRESS BAR END -->
@@ -1349,17 +1347,17 @@ function createDynamicTabRow(dynamicThis){
                                             <div class="dis5_progress_pos8 allprogress_pos">
                                                 <div class="pos-progress-status">
                                                     <div class="pos-bar-status dis5_plusProgress_value8"></div>
+                                                    <p class="dis5_pos_value8 allpos_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_pos_value8 allpos_value"></p>
                                         </div>
                                         <div class="dis5_progress_downbox">
                                             <div class="dis5_progress_neg8 allprogress_neg">
                                                 <div class="neg-progress-status">
                                                     <div class="neg-bar-status dis5_minusProgress_value8"></div>
+                                                    <p class="dis5_neg_value8 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_neg_value8 allneg_value"></p>
                                         </div>
                                     </div>
                                     <!-- PROGRESS BAR END -->
@@ -1399,17 +1397,17 @@ function createDynamicTabRow(dynamicThis){
                                             <div class="dis5_progress_pos9 allprogress_pos">
                                                 <div class="pos-progress-status">
                                                     <div class="pos-bar-status dis5_plusProgress_value9"></div>
+                                                    <p class="dis5_pos_value9 allpos_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_pos_value9 allpos_value"></p>
                                         </div>
                                         <div class="dis5_progress_downbox">
                                             <div class="dis5_progress_neg9 allprogress_neg">
                                                 <div class="neg-progress-status">
                                                     <div class="neg-bar-status dis5_minusProgress_value9"></div>
+                                                    <p class="dis5_neg_value9 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_neg_value9 allneg_value"></p>
                                         </div>
                                     </div>
                                     <!-- PROGRESS BAR END -->
@@ -1449,17 +1447,17 @@ function createDynamicTabRow(dynamicThis){
                                             <div class="dis5_progress_pos10 allprogress_pos">
                                                 <div class="pos-progress-status">
                                                     <div class="pos-bar-status dis5_plusProgress_value10"></div>
+                                                    <p class="dis5_pos_value10 allpos_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_pos_value10 allpos_value"></p>
                                         </div>
                                         <div class="dis5_progress_downbox">
                                             <div class="dis5_progress_neg10 allprogress_neg">
                                                 <div class="neg-progress-status">
                                                     <div class="neg-bar-status dis5_minusProgress_value10"></div>
+                                                    <p class="dis5_neg_value10 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <p class="dis5_neg_value10 allneg_value"></p>
                                         </div>
                                     </div>
                                     <!-- PROGRESS BAR END -->

@@ -741,7 +741,7 @@ function animationPositiveDiv(posProgVal, posProgTarget, posTextTarget) {
       } else {
         height++; 
         elem.style.height = height + '%';
-        // elemPara.style.bottom = height * 0.85 + 'px';
+        elemPara.style.bottom = height * 0.85 + 'px';
         elemPara.innerHTML = height * 1  + '%';
       }
     }
@@ -758,7 +758,7 @@ function animationNegativeDiv(negProgVal, negProgTarget, negTextTarget) {
       } else {
         height++; 
         elem.style.height = height + '%';
-        // elemPara.style.top = height * 1.07 + 'px';
+        elemPara.style.top = height * 1.07 + 'px';
         elemPara.innerHTML = height * -1  + '%';
       }
     }
