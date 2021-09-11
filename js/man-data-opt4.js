@@ -1761,3 +1761,57 @@ function hideScrollTooltip(){
 // });
 
 // Pen Icon, Info Icon Controlling For All LISTS POPUP Ends
+
+let LEFT_ITEM_CLASS_TO_DELETE = "";
+let ACTIVE_MODAL_NAME = "";
+let ITEM_NUM_TO_DELETE = "";
+
+function leftItemDeleteClick(thisLeft, modalName){
+  let targetItemName;
+  if(modalName == "op1"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modallist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "op2"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("list-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "mnRes"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("list-item-404-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }
+
+  $(`#delete_leftItem_list .question-delete p`).text(`Confirm to delete ${targetItemName}?`);
+  $('#delete_leftItem_list').modal('show');
+}
+
+function leftItemDeleteConfirm(lfConfirmThis){
+  let initState = $(lfConfirmThis).html();
+	$(lfConfirmThis).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(lfConfirmThis).prop("disabled", true);
+	let $this = $(lfConfirmThis);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    if(ACTIVE_MODAL_NAME == "op1"){
+      $(`.${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "op2"){
+      $(`.${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#sub-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#sub-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#sub-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "mnRes"){
+      $(`.${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#sub-ul-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+    }
+    $('#delete_leftItem_list').modal('hide');
+	}, 2000);
+}

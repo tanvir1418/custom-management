@@ -1191,7 +1191,6 @@
                             </div>
                             <div class="scrollable-list scrollable-list-op2" onscroll="hideScrollTooltip()">
                                 <ul class="main-list">
-                                    <!-- get <li>data</li> from main.JS by ASHIQ... -->
                                 </ul>
                                 <div class="level-item-loading-wrapper" id="level_item_loading_op2">
                                     <ul class="list-one">
@@ -1280,7 +1279,6 @@
                                     </ul>
                                 </div>
                                 <div id="sub-ul-list">
-                                    <!-- get checkbox data from main.JS by ASHIQ... -->
                                 </div>
                             </div>
                             <div class="scroll-down myscrollbtn-op2">
@@ -14210,6 +14208,31 @@
         </div>
     </div>
     <!-- ======= Update-Now Clear-Filter Clear-Sorting Button (Manage Result) Confirm Modal END =========== -->
+    <!-- ======= Filter Confirm Modal START =========== -->
+    <div class="modal fade delete-list-item" id="delete_leftItem_list">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title">SAVE FILTER</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="remove-box">
+                        <div class="question-delete">
+                            <p>Confirm to delete item?</p>
+                        </div>
+                        <div class="comfirm-btn-bx">
+                            <button type="button" class="cancel-list-data" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="confirm-list-data" onclick="leftItemDeleteConfirm(this)">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======= Filter Confirm Modal END =========== -->
 
     <div class="list-info-tooltip" id="list_info_tooltip">
         <div class="list-tooltip-wrap list-tooltip-arrow-top">

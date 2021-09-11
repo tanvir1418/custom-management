@@ -466,7 +466,7 @@ const listItemData = [
 		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
 		</div>
-		<div class="grey-times-box display-none" flow="down" tooltip="Click to Delete">
+		<div class="grey-times-box display-none" flow="down" tooltip="Click to Delete" onclick="leftItemDeleteClick(this, 'op2')">
 			<i class="fas fa-times"></i>
 		</div>
 		<div class="arrow-li-box arrow-li-box-background-color-1">
@@ -591,9 +591,19 @@ var opt2_left_list = "";
 		let target = e.target;
 		const elementName = ["DIV", "P"];
 		if (elementName.includes(target.tagName)) {
-			target = target.parentNode;
+			if(target.className.includes("grey-times-box")){
+				console.log("Div Clicked: Grey Times Box");
+				return;
+			}else {
+				target = target.parentNode;
+			}
 		} else if (target.tagName === "I") {
-			target = target.parentNode.parentNode;
+			if(target.parentNode.className.includes("grey-times-box")){
+				console.log("Icon Clicked: Grey Times Box");
+				return;
+			}else{
+				target = target.parentNode.parentNode;
+			}
 		}
 
 		if (oldTarget != "" && oldTarget !== target) {
