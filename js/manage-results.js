@@ -293,7 +293,7 @@ function gotoChartPage(selectedTab, meterOneId, meterTwoId, meterThreeId) {
         maintainRotation(34, meterOneId);
         maintainRotation(90, meterTwoId);
         maintainRotation(55, meterThreeId);
-    }, 2000);
+    }, 3000);
 
 };
 // ====== LIST ITEM TO CHART PAGE END ============
@@ -427,7 +427,7 @@ function openTabPage(pageName, elmnt) {
         $(`#actual_subitem_title`).css("display", "block");
         $(`#loading_item_title`).css("display", "none");
         $(`#loading_subitem_title`).css("display", "none");
-    }, 2000);
+    }, 3000);
 
     if(mnResultActiveTabID != "Main"){
         gotoChartPage(`${mnResultActiveTabID}`, `scorer-meter-1${randomSixDIGITForId}`, `scorer-meter-2${randomSixDIGITForId}`, `scorer-meter-3${randomSixDIGITForId}`);
@@ -476,7 +476,7 @@ function openTabPage(pageName, elmnt) {
             $(`#${mnResultActiveTabID} .double_click_selection_box`).css('display', 'block');
             $(`#${mnResultActiveTabID} .checkbox-table-loading`).css('display', 'none');
 
-        }, 2000);
+        }, 3000);
     }
     
 
@@ -560,7 +560,7 @@ function gotoChartPage2(selectedTab) {
             });
         });
 
-    }, 2000);
+    }, 3000);
 }
 
 // ============== DISPLAY 2 SPEEDOMETER END ====================
@@ -658,7 +658,7 @@ function gotoChartCalender(selectedTab, targetedCalender){
     setTimeout(() => {
         $(`#${selectedTab} .Display4 .data-table-wrapper`).css("display", "block");
         $(`#${selectedTab} .Display4 .loading-table-chart4`).css("display", "none");
-    }, 2000);
+    }, 3000);
 }
 
 // ================ DISPLAY 4 TABLE DATA END ================
@@ -798,7 +798,7 @@ function gotoChartFive(targetedTab){
             }
         }
 
-    }, 2000);
+    }, 3000);
 }
 
 // gotoChartFive();
@@ -920,7 +920,7 @@ function styleIconSwitcherOperation(selectedTab, sty1TableId){
                 $(`#${selectedTab} .pagination-container`).css("display", "block");
                 $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
                 $(`#${selectedTab} .style_date_time_wrap`).css("display", "block");
-            }, 2000);
+            }, 3000);
 
         } else {
 
@@ -972,7 +972,7 @@ function styleIconSwitcherOperation(selectedTab, sty1TableId){
                 $(`#${selectedTab} .pagination-container`).css("display", "block");
                 $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
                 $(`#${selectedTab} .style_date_time_wrap`).css("display", "block");
-            }, 2000);
+            }, 3000);
         } else {
 
             $(`#${selectedTab} .style12-section .box-style12 .no-result`).css("display", "block");
@@ -1120,7 +1120,7 @@ function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1d
 
                 // $(`#${sty1dblClickLeftListId} .double_click_selection_box`).css('display', 'block');
                 // $(`#${sty1dblClickLeftListId} .checkbox-table-loading`).css('display', 'none');
-            }, 2000);
+            }, 3000);
 
         }else{
             if (target.tagName === "I") {
@@ -1144,7 +1144,7 @@ function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1d
                 setTimeout(() => {
                     $("#col8Filter .checkbox-table-loading").css("display", "none");
                     $("#col8Filter .checkbox-table-scroll").css("display", "block");
-                }, 2000);
+                }, 3000);
             }
         }
 
@@ -1183,7 +1183,7 @@ function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1d
                 $(`#${selectedTab} .pagination-container`).css("display", "block");
                 $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
                 $(`#${selectedTab} .style_date_time_wrap`).css("display", "block");
-            }, 2000);
+            }, 3000);
         }else{
             if (target.tagName === "I") {
                 target = target.parentNode;
@@ -1207,7 +1207,7 @@ function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1d
                 setTimeout(() => {
                     $("#col8Filter .checkbox-table-loading").css("display", "none");
                     $("#col8Filter .checkbox-table-scroll").css("display", "block");
-                }, 2000);
+                }, 3000);
             }
         }
 
@@ -1260,7 +1260,7 @@ function manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty
 
 	    $(`#${sty1dblClickLeftListId} .double_click_selection_box`).css('display', 'block');
 	    $(`#${sty1dblClickLeftListId} .checkbox-table-loading`).css('display', 'none');
-	}, 1000);
+	}, 3000);
 }
 
 
@@ -1486,7 +1486,7 @@ function allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRigh
 
 	    $(`#${sty2dblClickLeftListId} .double_click_selection_box`).css('display', 'block');
 	    $(`#${sty2dblClickLeftListId} .checkbox-table-loading`).css('display', 'none');
-	}, 1000);
+	}, 3000);
 }
 
 
@@ -1839,7 +1839,7 @@ function IconModalClick() {
             setTimeout(() => {
                 $("#viewtwo .scrollmodal").css('display', 'block');
                 $("#viewtwo .checkbox-table-loading").css('display', 'none');
-            }, 2000);
+            }, 3000);
 
         });
     }
@@ -1864,7 +1864,7 @@ function IconModalClick() {
             setTimeout(() => {
                 $("#rowdetails .scrollmodal").css('display', 'block');
                 $("#rowdetails .checkbox-table-loading").css('display', 'none');
-            }, 2000);
+            }, 3000);
 
         });
     }
@@ -1889,7 +1889,7 @@ function IconModalClick() {
             setTimeout(() => {
                 $("#noteswindow .scrollmodal").css('display', 'block');
                 $("#noteswindow .checkbox-table-loading").css('display', 'none');
-            }, 2000);
+            }, 3000);
 
         });
     }
@@ -1914,7 +1914,7 @@ function IconModalClick() {
                 $("#copyrow_list_item_loading").css("display", "none");
                 $(".copytoscrollwindow").css("display", "block");
                 $(".copytoscrollbtn").css("display", "block");
-            }, 2000);
+            }, 3000);
 
             $("#copyrowlist").css('display', 'block');
 
@@ -1941,7 +1941,7 @@ function IconModalClick() {
                 $("#moverow_list_item_loading").css("display", "none");
                 $(".movetoscrollwindow").css("display", "block");
                 $(".movetoscrollbtn").css("display", "block");
-            }, 2000);
+            }, 3000);
 
             $("#moverowlist").css('display', 'block');
 
@@ -1968,7 +1968,7 @@ function IconModalClick() {
             setTimeout(() => {
                 $("#alertswindow .alert-table-wrap").css('display', 'block');
                 $("#alertswindow .loading-alert-table-wrap").css('display', 'none');
-            }, 2000);
+            }, 3000);
 
         });
     }
@@ -1995,7 +1995,7 @@ function IconModalClick() {
             setTimeout(() => {
                 $("#viewtwo_style2 .scrollmodal").css('display', 'block');
                 $("#viewtwo_style2 .checkbox-table-loading").css('display', 'none');
-            }, 2000);
+            }, 3000);
     
         });
     }
@@ -2022,7 +2022,7 @@ function IconModalClick() {
             setTimeout(() => {
                 $("#rowdetails_style2 .scrollmodal").css('display', 'block');
                 $("#rowdetails_style2 .checkbox-table-loading").css('display', 'none');
-            }, 2000);
+            }, 3000);
 
         });
     }
@@ -2049,7 +2049,7 @@ function IconModalClick() {
             setTimeout(() => {
                 $("#noteswindow_style2 .scrollmodal").css('display', 'block');
                 $("#noteswindow_style2 .checkbox-table-loading").css('display', 'none');
-            }, 2000);
+            }, 3000);
 
         });
     }
@@ -2076,7 +2076,7 @@ function IconModalClick() {
                 $("#copyrowS2_list_item_loading").css("display", "none");
                 $(".copytoscrollwindow_style2").css("display", "block");
                 $(".copytoscrollbtn_style2").css("display", "block");
-            }, 2000);
+            }, 3000);
 
             $("#copyrowlist_style2").css('display', 'block');
 
@@ -2105,7 +2105,7 @@ function IconModalClick() {
                 $("#moverowS2_list_item_loading").css("display", "none");
                 $(".movetoscrollwindow_style29").css("display", "block");
                 $(".movetoscrollbtn_style29").css("display", "block");
-            }, 2000);
+            }, 3000);
 
             $("#moverowlist_style2").css('display', 'block');
 
@@ -2134,7 +2134,7 @@ function IconModalClick() {
             setTimeout(() => {
                 $("#alertswindow_style2 .alert-table-wrap").css('display', 'block');
                 $("#alertswindow_style2 .loading-alert-table-wrap").css('display', 'none');
-            }, 2000);
+            }, 3000);
 
         });
     }
@@ -2160,7 +2160,7 @@ function Style2DropFilterPos() {
             setTimeout(() => {
                 $("#col8Filter .checkbox-table-loading").css("display", "none");
                 $("#col8Filter .checkbox-table-scroll").css("display", "block");
-            }, 2000);
+            }, 3000);
         });
     }
 }
@@ -2669,7 +2669,7 @@ $("#col8FilterInput").keyup(function(){
     setTimeout(() => {
         $("#col8Filter .checkbox-table-loading").css("display", "none");
         $("#col8Filter .checkbox-table-scroll").css("display", "block");
-    }, 1000);
+    }, 3000);
 });
 
 $("#col8FilterFind").click(function () {
@@ -2679,7 +2679,7 @@ $("#col8FilterFind").click(function () {
     setTimeout(() => {
         $("#col8Filter .checkbox-table-loading").css("display", "none");
         $("#col8Filter .checkbox-table-scroll").css("display", "block");
-    }, 1000);
+    }, 3000);
 });
 
 $("#col8FilterSort").click(function () {
@@ -2689,7 +2689,7 @@ $("#col8FilterSort").click(function () {
     setTimeout(() => {
         $("#col8Filter .checkbox-table-loading").css("display", "none");
         $("#col8Filter .checkbox-table-scroll").css("display", "block");
-    }, 1000);
+    }, 3000);
 });
 
 

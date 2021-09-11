@@ -26,7 +26,7 @@ function gotoLinearChart(selectedTab, lineChartId, lineChartYAxisId) {
         $(`#${selectedTab} .Display3 .chart-loading-box`).css("display", "none");
 
         drawChartCanvas(lineChartId, lineChartYAxisId);
-    }, 2000);
+    }, 3000);
 }
 
 function drawChartCanvas(drawlineChartId, drawlineChartYAxisId) {

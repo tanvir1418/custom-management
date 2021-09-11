@@ -3595,7 +3595,7 @@ function style2HeaderTitleClick(tableName, selectedTab, indexValue){
 		$(`#${selectedTab} .pagination-container`).css("display", "block");
 		$(`#${selectedTab} .page-number12-wrap`).css("display", "block");
         $(`#${selectedTab} .style_date_time_wrap`).css("display", "block");
-	}, 2000);
+	}, 3000);
 }
 
 // Bootstrap Tooltip Enable Function (Manage Result Table Tooltips)
