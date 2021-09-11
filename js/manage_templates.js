@@ -26,6 +26,11 @@ $(".template_box").click(function (event) {
      templateName = event.target.textContent.trim();
     }
     $("#template_name_input").val(templateName);
+
+    $("#saveDraftTarget-mnTemp").prop("disabled", false);
+    $("#saveStartTarget-mnTemp").prop("disabled", false);
+    $("#mnTemp_belowBtn_container .option4-below-control-input").removeClass("border-red");
+    $("#mnTemp_belowBtn_container .error-message").remove();
     
   }
 });
@@ -52,6 +57,13 @@ $(".create_new_temp").click(function (event) {
   let loadTempWrapper = document.querySelector(".sample_options");
   loadTempWrapper.classList.remove("dispaly_hide");
   $("#load_temp_slider").addClass("dispaly_hide");
+  
+    $("#saveDraftTarget-mnTemp").prop("disabled", true);
+    $("#saveStartTarget-mnTemp").prop("disabled", true);
+    $("#template_name_input").val("");
+    $("#mnTemp_belowBtn_container .option4-below-control-input").removeClass("border-red");
+    $("#mnTemp_belowBtn_container .error-message").remove();
+  
 });
 
 // CLICK LOAD TEMPLATE TO OPEN SAMPLE START
