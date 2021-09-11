@@ -2308,8 +2308,9 @@ $(document).mouseup(function(e) {
 		let itemRenamePopupStyle = window.getComputedStyle(document.querySelector(`#remaneAllLevelItem`));
 		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
 		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
+		let deleteLeftItemList = window.getComputedStyle(document.querySelector(`#delete_leftItem_list`));
 		
-		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none")){
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none")){
 			mnResMoveTo.css("display", "none");
 		}
     }
@@ -2317,8 +2318,9 @@ $(document).mouseup(function(e) {
 		let itemRenamePopupStyle = window.getComputedStyle(document.querySelector(`#remaneAllLevelItem`));
 		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
 		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
+		let deleteLeftItemList = window.getComputedStyle(document.querySelector(`#delete_leftItem_list`));
 		
-		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none")){
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none")){
 			mnResMoveTo_style2.css("display", "none");
 		}
     }
@@ -2326,8 +2328,9 @@ $(document).mouseup(function(e) {
 		let itemRenamePopupStyle = window.getComputedStyle(document.querySelector(`#remaneAllLevelItem`));
 		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
 		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
+		let deleteLeftItemList = window.getComputedStyle(document.querySelector(`#delete_leftItem_list`));
 		
-		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none")){
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none")){
 			mnResCopyTo.css("display", "none");
 		}
     }
@@ -2335,8 +2338,9 @@ $(document).mouseup(function(e) {
 		let itemRenamePopupStyle = window.getComputedStyle(document.querySelector(`#remaneAllLevelItem`));
 		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
 		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
+		let deleteLeftItemList = window.getComputedStyle(document.querySelector(`#delete_leftItem_list`));
 		
-		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none")){
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none")){
 			mnResCopyTo_style2.css("display", "none");
 		}
     }

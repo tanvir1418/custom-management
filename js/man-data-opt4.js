@@ -1823,6 +1823,26 @@ function leftItemDeleteClick(thisLeft, modalName){
     ACTIVE_MODAL_NAME = modalName;
     ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalmanagetemplist-item-", "").trim());
     targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "copyTo"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalcopytolist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "moveTo"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalmovetolist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "copyToS2"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalcopytolist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "moveToS2"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalmovetolist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
   }
 
   $(`#delete_leftItem_list .question-delete p`).text(`Confirm to delete ${targetItemName}?`);
@@ -1891,6 +1911,26 @@ function leftItemDeleteConfirm(lfConfirmThis){
       $(`#managetempd-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
       $(`#managetempd-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
       $(`#managetempd-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "copyTo"){
+      $(`.copytorow-list .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#copyto-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#copyto-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#copyto-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "moveTo"){
+      $(`.movetorow-list .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#moveto-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#moveto-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#moveto-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "copyToS2"){
+      $(`.copytorow-list_style2 .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#copyto-submodal_style2-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#copyto-submodal_style2-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#copyto-submodal_style2-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "moveToS2"){
+      $(`.movetorow-list_style29 .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#moveto-submodal_style29-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#moveto-submodal_style29-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#moveto-submodal_style29-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
     }
     $('#delete_leftItem_list').modal('hide');
 	}, 2000);

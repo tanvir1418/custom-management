@@ -41,7 +41,7 @@ const copytolistmodal_style2 = [
 		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
 		</div>
-        <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete">
+        <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete" onclick="leftItemDeleteClick(this, 'copyToS2')">
 			<i class="fas fa-times"></i>
 		</div>
 		<div class="arrow-li-box arrow-li-box-background-color-1">
@@ -166,10 +166,20 @@ let opt_copyto_left_list_style2 = "";
         let target = e.target;
         const elementName = ["DIV", "P"];
         if (elementName.includes(target.tagName)) {
-            target = target.parentNode;
-        } else if (target.tagName === "I") {
-            target = target.parentNode.parentNode;
-        }
+			if(target.className.includes("grey-times-box")){
+				console.log("Div Clicked: Grey Times Box");
+				return;
+			}else {
+				target = target.parentNode;
+			}
+		} else if (target.tagName === "I") {
+			if(target.parentNode.className.includes("grey-times-box")){
+				console.log("Icon Clicked: Grey Times Box");
+				return;
+			}else{
+				target = target.parentNode.parentNode;
+			}
+		}
 
         if (oldTarget != "" && oldTarget !== target) {
             $(oldTarget).removeClass("highlight_li");
@@ -316,7 +326,7 @@ const movetolistmodal_style29 = [
 		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
 		</div>
-        <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete">
+        <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete" onclick="leftItemDeleteClick(this, 'moveToS2')">
 			<i class="fas fa-times"></i>
 		</div>
 		<div class="arrow-li-box arrow-li-box-background-color-1">
@@ -441,10 +451,20 @@ let opt_moveto_left_list_style29 = "";
         let target = e.target;
         const elementName = ["DIV", "P"];
         if (elementName.includes(target.tagName)) {
-            target = target.parentNode;
-        } else if (target.tagName === "I") {
-            target = target.parentNode.parentNode;
-        }
+			if(target.className.includes("grey-times-box")){
+				console.log("Div Clicked: Grey Times Box");
+				return;
+			}else {
+				target = target.parentNode;
+			}
+		} else if (target.tagName === "I") {
+			if(target.parentNode.className.includes("grey-times-box")){
+				console.log("Icon Clicked: Grey Times Box");
+				return;
+			}else{
+				target = target.parentNode.parentNode;
+			}
+		}
 
         if (oldTarget != "" && oldTarget !== target) {
             $(oldTarget).removeClass("highlight_li");
