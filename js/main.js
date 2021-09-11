@@ -2205,16 +2205,16 @@ $(".radio-selection-option input[type = 'radio'][name = 'data-set-radio-button']
 		$("#op3_table_loading").css("display", "none");
 	}, 2000);
 
-	// let optionSelection = 1;
-	// if($(".radio input[type = 'radio'][name = 'data-set-radio-button']:checked").val() == "Source Option 2"){
-	// 	optionSelection = 2;
-	// }
+	let optionSelection = 1;
+	if($(".radio input[type = 'radio'][name = 'data-set-radio-button']:checked").val() == "Source Option 2"){
+		optionSelection = 2;
+	}
 
-	// let option3TableLength = $("#man-data-op3-table tbody tr").length;
+	let option3TableLength = $("#man-data-op3-table tbody tr").length;
 
-	// for(textNo=0; textNo<option3TableLength; textNo++){
-	// 	$(`#man-data-op3-table tbody tr:nth-child(${textNo+1}) td`).html(`Option ${optionSelection} - Text ${textNo + 1}`);
-	// }
+	for(textNo=0; textNo<option3TableLength; textNo++){
+		$(`#man-data-op3-table tbody tr:nth-child(${textNo+1}) td`).html(`Option ${optionSelection} - Text ${textNo + 1}`);
+	}
 
 	// Ashiq coding (Also exists on the top: 1450 No Line)
 	// if (optionSelection == 1) {
