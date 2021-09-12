@@ -920,6 +920,12 @@ function styleIconSwitcherOperation(selectedTab, sty1TableId){
             $(`#${selectedTab} .loading_date_time_update`).css("display", "block");
 
 
+            let compStyles = window.getComputedStyle(document.querySelector(`#${sty1TableId} thead`));
+            $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap`).css({
+                width: "0px",
+                visibility: "hidden"
+            });
+
             setTimeout(() => {
                 $(`#${selectedTab} .loading-style1-table`).css("display", "none");
                 $(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
@@ -930,6 +936,12 @@ function styleIconSwitcherOperation(selectedTab, sty1TableId){
                 $(`#${selectedTab} .pagination-container`).css("display", "block");
                 $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
                 $(`#${selectedTab} .style_date_time_wrap`).css("display", "block");
+
+                $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap`).css({
+                    width: compStyles.width,
+                    visibility: "hidden"
+                });
+
             }, 3000);
 
         } else {
