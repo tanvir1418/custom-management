@@ -783,6 +783,12 @@
     font-size: 16px;
     padding: 5px 10px;
   }
+  .mn-temp-option-selection .width-tooltip .icon-container {
+    padding-top: 6px;
+  }
+  .mn-temp-option-selection .width-tooltip .icon-container .fas {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 1450px) {
@@ -949,6 +955,12 @@
     width: 10px;
     height: 6px;
   }
+  .mn-temp-option-selection .width-tooltip .icon-container {
+    padding-top: 6px;
+  }
+  .mn-temp-option-selection .width-tooltip .icon-container .fas {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -995,8 +1007,16 @@
   .multistep-container .mutistep-form-area .form-box .btn-row-dualTable {
     margin-bottom: 30px;
   }
+  
 }
-
+@media screen and (max-width: 1350px) {
+  .mn-temp-option-selection .width-tooltip .icon-container {
+    padding-left: 3px;
+  }
+  .mn-temp-option-selection .width-tooltip .icon-container .fas {
+    font-size: 14px;
+  }
+}
 @media screen and (max-width: 992px) {
   .side-box {
     padding: 25px 0px;

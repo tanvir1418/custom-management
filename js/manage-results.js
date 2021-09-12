@@ -2325,7 +2325,7 @@ window.addEventListener("scroll", (event) => {
         }
     }
 
-    if (scroll > 500 && mnResultActiveTabID == "Main") {
+    if (scroll > 600 && mnResultActiveTabID == "Main") {
         let arrowShowing = $(`#${mnResultActiveTabID} .style1-box`).hasClass("clickstylebg");
         if (arrowShowing) {
             $(`#${mnResultActiveTabID} .outer-table-style12-box .left-slider5`).css('display', 'block');
