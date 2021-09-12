@@ -1687,12 +1687,14 @@ function threeBtnConfirmModal(decideSelection){
 
 function threeBtnConfirmButton(globThreeBtn){
 
+    $('#threeBtn_confirm_modal .modal-body').addClass("disable-pointer");
     let initState = $(globThreeBtn).html();
 	$(globThreeBtn).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
 	$(globThreeBtn).prop("disabled", true);
 	let $this = $(globThreeBtn);
 
 	setTimeout(function() {
+        $('#threeBtn_confirm_modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 

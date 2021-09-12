@@ -270,6 +270,7 @@
 
         $("#terms-accept").click(function (event) {
             event.preventDefault();
+            $('body').addClass("disable-pointer");
 
             let initState = $(this).html();
             $(this).html('<i class="fa fa-spinner fa-spin"></i> ACCEPT');
@@ -282,6 +283,7 @@
             }, 4000);
 
             setTimeout(function() {
+                $('body').removeClass("disable-pointer");
                 if ($("#agreed-checkBox").prop("checked")) {
                     localStorage.setItem("termsPageCondition", "hideTermsPage");
                 }
@@ -293,6 +295,7 @@
 
         $("#terms-decline").click(function (event) {
             event.preventDefault();
+            $('body').addClass("disable-pointer");
 
             let initState = $(this).html();
             $(this).html('<i class="fa fa-spinner fa-spin"></i> DECLINE');
@@ -300,6 +303,7 @@
             let $this = $(this);
 
             setTimeout(function() {
+                $('body').removeClass("disable-pointer");
                 $this.removeClass('disabled');
                 $this.html(initState);
                 localStorage.setItem("currentUser", "");

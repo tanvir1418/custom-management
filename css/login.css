@@ -545,3 +545,7 @@ a:visited {
     /* overflow-x:hidden !important;
     overflow-y:auto !important; */
 }
+.disable-pointer{
+    pointer-events: none;
+    cursor: progress;
+}

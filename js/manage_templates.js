@@ -336,11 +336,13 @@ $("#managetempa-mng-opt2-delete").click(function () {
 function countTempAListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   
+  $('#manage-tempa-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('#manage-tempa-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -368,11 +370,13 @@ function resetTempAListModal(e) {
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
   let leftItem = $(e).parent().parent().find("ul.managetempa-list li div.green-check-box.display-block");
   
+  $('#manage-tempa-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('#manage-tempa-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -662,11 +666,13 @@ $("#managetempb-mng-opt2-delete").click(function () {
 function countTempBListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   
+  $('#manage-tempb-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('#manage-tempb-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -694,11 +700,13 @@ function resetTempBListModal(e) {
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
   let leftItem = $(e).parent().parent().find("ul.managetempb-list li div.green-check-box.display-block");
   
+  $('#manage-tempb-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('#manage-tempb-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -988,11 +996,13 @@ $("#managetempc-mng-opt2-delete").click(function () {
 function countTempCListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   
+  $('#manage-tempc-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('#manage-tempc-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -1019,12 +1029,14 @@ function resetTempCListModal(e) {
   let checkItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show");
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
   let leftItem = $(e).parent().parent().find("ul.managetempc-list li div.green-check-box.display-block");
-  
+
+  $('#manage-tempc-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('#manage-tempc-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
   
@@ -1346,11 +1358,13 @@ $("#managetempd-mng-opt2-delete").click(function () {
 function countTempDListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   
+  $('#manage-tempd-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('#manage-tempd-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -1377,11 +1391,13 @@ function resetTempDListModal(e) {
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
   let leftItem = $(e).parent().parent().find("ul.managetempd-list li div.green-check-box.display-block");
   
+  $('#manage-tempd-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('#manage-tempd-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 

@@ -2,12 +2,13 @@
 
 $(".multistep-container .form-box .button-row .next").click(function (event) {
   event.preventDefault();
-
+  $('body').addClass("disable-pointer");
   let initState = $(this).html();
 	$(this).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(this).prop("disabled", true);
 	let $this = $(this);
 	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
     $this.parents(".form-box").hide();
@@ -18,12 +19,13 @@ $(".multistep-container .form-box .button-row .next").click(function (event) {
 
 $(".multistep-container .form-box .button-row .previous").click(function (event) {
   event.preventDefault();
-
+  $('body').addClass("disable-pointer");
   let initState = $(this).html();
 	$(this).html('<i class="fa fa-spinner fa-spin"></i> Back');
   $(this).prop("disabled", true);
 	let $this = $(this);
 	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
     $this.prop("disabled", false);
 		$this.html(initState);
     $this.parents(".form-box").hide();

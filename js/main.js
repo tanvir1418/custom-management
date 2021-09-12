@@ -236,6 +236,7 @@ function openOption(evt, optionName) {
 // BACK BTN
 $("#back-manage").click(function (event) {
 	event.preventDefault();
+	$('body').addClass("disable-pointer");
 
 	let initState = $(this).html();
 	$(this).html('<i class="fa fa-spinner fa-spin"></i> Back');
@@ -243,6 +244,7 @@ $("#back-manage").click(function (event) {
 	let $this = $(this);
 
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -255,12 +257,13 @@ $("#back-manage").click(function (event) {
 
 // Back Btn: Return to Select A Data Type To Manage 
 function backToSelectDataType(backThis){
-
+	$('body').addClass("disable-pointer");
 	let initState = $(backThis).html();
 	$(backThis).html('<i class="fa fa-spinner fa-spin"></i> Back');
 	$(backThis).prop("disabled", true);
 	let $this = $(backThis);
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -679,22 +682,27 @@ const option_2_record = document.querySelector(".option-2-records");
 option_2_record.style.display = "none";
 
 $(".op3-resetBtn-both").click(function () {
+	$('body').addClass("disable-pointer");
 	let initState = $(this).html();
 	$(this).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(this).prop("disabled", true);
 	let $this = $(this);
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 	}, 2000);
 });
 
 $("#op2NextBtn").click(function () {
+	$('body').addClass("disable-pointer");
 	let initState = $(this).html();
 	$(this).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(this).prop("disabled", true);
 	let $this = $(this);
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -711,11 +719,13 @@ $("#op2NextBtn").click(function () {
 });
 
 $("#op2BackBtn").click(function () {
+	$('body').addClass("disable-pointer");
 	let initState = $(this).html();
 	$(this).html('<i class="fa fa-spinner fa-spin"></i> Back');
 	$(this).prop("disabled", true);
 	let $this = $(this);
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -726,11 +736,13 @@ $("#op2BackBtn").click(function () {
 });
 
 $("#op2DoneBtn").click(function () {
+	$('body').addClass("disable-pointer");
 	let initState = $(this).html();
 	$(this).html('<i class="fa fa-spinner fa-spin"></i> Done');
 	$(this).prop("disabled", true);
 	let $this = $(this);
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -938,12 +950,13 @@ sub_ul_list.addEventListener("click", function (e) {
 
 // Manage Data Option 3 Start
 function opt3Reset(op3This) {
-	
+	$('body').addClass("disable-pointer");
 	let initState = $(op3This).html();
 	$(op3This).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(op3This).prop("disabled", true);
 	let $this = $(op3This);
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -956,7 +969,7 @@ function opt3Reset(op3This) {
 
 // Manage Data Option 5 Start
 function opt5ResetBtn(e) {
-	
+	$('body').addClass("disable-pointer");
 	let element = $(e).parent().parent().parent();
 
 	let initState = $("#op5ResetBtn").html();
@@ -965,6 +978,7 @@ function opt5ResetBtn(e) {
 	let $this = $("#op5ResetBtn");
 
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -986,11 +1000,13 @@ function opt5ResetBtn(e) {
 function addCategory(e) {
 	let inpVal = $(e).parent().parent().find("input.plus-input").val();
 	
+	$('#plusBtnModal .modal-body').addClass("disable-pointer");
 	let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Done');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+		$('#plusBtnModal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 		
@@ -1303,11 +1319,13 @@ function tabChangeOpt1(e) {
 		"div.create-manage-tab div.create-new-content.zas"
 	);
 
+	$('body').addClass("disable-pointer");
 	let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Click To View/Update');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -1330,11 +1348,13 @@ function tabChangeOpt3(e) {
 		"div.create-manage-tab div.create-new-content.zas43"
 	);
 
+	$('body').addClass("disable-pointer");
 	let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Click To View/Update');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -1357,11 +1377,13 @@ function tabChangeOpt4(e) {
 		"div.create-manage-tab div.create-new-content.zas45"
 	);
 
+	$('body').addClass("disable-pointer");
 	let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Click To View/Update');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -1384,12 +1406,14 @@ function tabChangeOpt5(e) {
 	let createNew = tabMain.find(
 		"div.create-manage-tab div.create-new-content.zas41"
 	);
-
+	
+	$('body').addClass("disable-pointer");
 	let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Click To View/Update');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -1640,11 +1664,13 @@ function passwordEmptyCheck(e) {
 }
 
 function resetAccountFormFields() {
+	$('body').addClass("disable-pointer");
 	$(".ac-button-row .reset").html('<i class="fa fa-spinner fa-spin"></i> Resetting');
 	$(".ac-button-row .reset").addClass('disabled');
 	let $thisBtn = $(".ac-button-row .reset");
 
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
 		$thisBtn.removeClass('disabled');
 		$thisBtn.html("Reset");
 
@@ -1713,6 +1739,7 @@ function universalConfirmModalDelete(globalVariable) {
 }
 
 function op1ResetBtnConfirm(resetGlobal) {
+	$('body').addClass("disable-pointer");
 	let initState = $(resetGlobal).html();
 	$(resetGlobal).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(resetGlobal).prop("disabled", true);
@@ -1725,6 +1752,7 @@ function op1ResetBtnConfirm(resetGlobal) {
 		}, 2000);
 	}
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 	}, 2000);
@@ -1826,11 +1854,15 @@ function displayChartManageResult(itemTitle, itemSubTitle) {
 
 function chartDispConfirmButton(thisChart) {
 
+	
+	$('#manageResultChartDisplay_modal .modal-body').addClass("disable-pointer");
 	let initState = $(thisChart).html();
 	$(thisChart).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
 	$(thisChart).prop("disabled", true);
 	let $this = $(thisChart);
 	setTimeout(function() {
+		
+		$('#manageResultChartDisplay_modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -1874,11 +1906,13 @@ function chartDispConfirmButton(thisChart) {
 }
 
 function mnTempSaveStartBtn(thisStart){
+	$('body').addClass("disable-pointer");
 	let initState = $(thisStart).html();
 	$(thisStart).html('<i class="fa fa-spinner fa-spin"></i> Save & Start');
 	$(thisStart).prop("disabled", true);
 	let $this = $(thisStart);
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -1887,11 +1921,14 @@ function mnTempSaveStartBtn(thisStart){
 }
 
 function mnTempSaveStartBackBtn(thisBack){
+	$('#mnTemp_saveStart .modal-body').addClass("disable-pointer");
 	let initState = $(thisBack).html();
 	$(thisBack).html('<i class="fa fa-spinner fa-spin"></i> Back');
 	$(thisBack).prop("disabled", true);
 	let $this = $(thisBack);
+
 	setTimeout(function() {
+		$('#mnTemp_saveStart .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -1900,11 +1937,14 @@ function mnTempSaveStartBackBtn(thisBack){
 }
 
 function showConfirmSample4StartBtn(thisDone) {
+	$('#mnTemp_saveStart .modal-body').addClass("disable-pointer");
 	let initState = $(thisDone).html();
 	$(thisDone).html('<i class="fa fa-spinner fa-spin"></i> Done');
 	$(thisDone).prop("disabled", true);
 	let $this = $(thisDone);
+
 	setTimeout(function() {
+		$('#mnTemp_saveStart .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -2354,12 +2394,14 @@ $(document).mouseup(function(e) {
 
 function formByTextEditOpener(formThis, formTarget){
 	let initState = $(formThis).html();
+	$('body').addClass("disable-pointer");
 	$(formThis).html('<i class="fa fa-spinner fa-spin"></i> Form By Text Editor <span><i class="fas fa-arrow-right" id="arrow-icon"></i></span>');
 	$(formThis).prop("disabled", true);
 	$(formThis).addClass("padding-left-25");
 	let $this = $(formThis);
 
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.removeClass("padding-left-25");
 		$this.html(initState);

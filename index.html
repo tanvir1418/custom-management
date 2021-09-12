@@ -333,6 +333,7 @@
 
         $("#registerBtn").click(function (event) {
             event.preventDefault();
+            $('body').addClass("disable-pointer");
 
             let initState = $(this).html();
             $(this).html('<i class="fa fa-spinner fa-spin"></i> REGISTER');
@@ -345,6 +346,7 @@
             }, 4000);
 
             setTimeout(function() {
+                $('body').removeClass("disable-pointer");
                 localStorage.setItem("currentUser", "");
                 localStorage.setItem("loginStatus", "NOT_LOGGED");
                 localStorage.setItem("manageTabVisibility", "showAccount");
@@ -354,6 +356,7 @@
 
         $("#loginBtn").click(function (event) {
             event.preventDefault();
+            $('body').addClass("disable-pointer");
 
             let initState = $(this).html();
             $(this).html('<i class="fa fa-spinner fa-spin"></i> LOGIN');
@@ -366,6 +369,7 @@
             }, 4000);
 
             setTimeout(function() {
+                $('body').removeClass("disable-pointer");
                 localStorage.setItem("currentUser", usernameIndex.value);
                 // localStorage.setItem("loginStatus", "LOGGED_IN");
                 localStorage.setItem("manageTabVisibility", "showData");
@@ -383,11 +387,13 @@
         
         $("#resetBtn").click(function (event) {
             event.preventDefault();
+            $('body').addClass("disable-pointer");
             let initState = $(this).html();
             $(this).html('<i class="fa fa-spinner fa-spin"></i> RESET');
             $(this).addClass('disabled');
             let $this = $(this);
             setTimeout(function() {
+                $('body').removeClass("disable-pointer");
                 $this.removeClass('disabled');
                 $this.html(initState);
                 usernameIndex.value = "";

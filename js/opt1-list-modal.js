@@ -257,12 +257,14 @@ function countOpt1ListModal(e) {
 	event.preventDefault();
 	let countItem = $(e).parent().parent().parent().find("#sub-ul-modallist .sublist-check-box.checkbox_show").length;
 	$("#op1-list-item-count").html(`${countItem} Items Selected`);
-
+	
+	$('#myopt1listData .modal-body').addClass("disable-pointer");
 	let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Done');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+		$('#myopt1listData .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -276,11 +278,13 @@ function resetOpt1ListModal(e) {
 	let checkItem = $(e).parent().parent().parent().find("#sub-ul-modallist .sublist-check-box.checkbox_show");
 	let uncheckItem = $(e).parent().parent().parent().find("#sub-ul-modallist .sublist-cancel-box.checkbox_hide");
 
+	$('#myopt1listData .modal-body').addClass("disable-pointer");
 	let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+		$('#myopt1listData .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 

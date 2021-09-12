@@ -249,11 +249,13 @@ $("#optfourmodala-mng-opt2-delete").click(function () {
 function countoptfourmodalaListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-check-box.checkbox_show").length;
 
+  $('#opt4a-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('#opt4a-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -271,6 +273,7 @@ function countoptfourmodalaListModal(e) {
     $("#op-single-list1").removeClass('imageClickBackground');
     $("#op-single-list2").addClass('imageClickBackground');
 
+    
     $("#opt4a-list-modal").modal("hide");
 
 	}, 2000);
@@ -281,11 +284,13 @@ function resetoptfourmodalaListModal(e) {
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-cancel-box.checkbox_hide");
   let leftItem = $(e).parent().parent().find("ul.optfourmodala-list li div.green-check-box.display-block");
   
+  $('#opt4a-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('#opt4a-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
   
@@ -577,11 +582,13 @@ $("#optfourmodalb-mng-opt2-delete").click(function () {
 function countoptfourmodalbListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-check-box.checkbox_show").length;
   
+  $('#opt4b-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('#opt4b-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -610,11 +617,13 @@ function resetoptfourmodalbListModal(e) {
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-cancel-box.checkbox_hide");
   let leftItem = $(e).parent().parent().find("ul.optfourmodalb-list li div.green-check-box.display-block");
   
+  $('#opt4b-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('#opt4b-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
   
@@ -905,11 +914,13 @@ $("#optfourmodalc-mng-opt2-delete").click(function () {
 function countoptfourmodalcListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-check-box.checkbox_show").length;
   
+  $('#opt4c-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('#opt4c-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -937,11 +948,13 @@ function resetoptfourmodalcListModal(e) {
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-cancel-box.checkbox_hide");
   let leftItem = $(e).parent().parent().find("ul.optfourmodalc-list li div.green-check-box.display-block");
 
+  $('#opt4c-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('#opt4c-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -1265,11 +1278,13 @@ $("#optfourmodald-mng-opt2-delete").click(function () {
 function countoptfourmodaldListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-check-box.checkbox_show").length;
   
+  $('#opt4d-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('#opt4d-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
@@ -1296,11 +1311,13 @@ function resetoptfourmodaldListModal(e) {
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-optfourmodal-modallist .sublist-cancel-box.checkbox_hide");
   let leftItem = $(e).parent().parent().find("ul.optfourmodald-list li div.green-check-box.display-block");
 
+  $('#opt4d-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('#opt4d-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
 
