@@ -1631,13 +1631,6 @@ function confirmListName(confThis){
   $('#remaneAllLevelItem').modal('show');
 }
 
-// $('#remaneAllLevelItem').on('show.bs.modal', function (e) {
-// 	let opt1ListDataStyles = window.getComputedStyle(document.querySelector('#myopt1listData'));
-// 	if (opt1ListDataStyles.display == "block") {
-// 		$('body').addClass("modal-list-open");
-// 	}
-// })
-
 function renamingLevelItem(itemThis){
   newLevelItemName = document.querySelector(`#remaneAllLevelItem .plus-button-popup-body-content input`).value;
 
@@ -1677,88 +1670,6 @@ function levelInfoTooltipShow(listThis, zIndex = 1500){
 function hideScrollTooltip(){
   $("#list_info_tooltip").css('display', 'none');
 }
-
-// $('.submodal-list li .sublist-info-box[data-toggle="tooltip"]').tooltip(
-//   {
-//     container: 'body',
-//     trigger: 'hover',
-//     placement: 'bottom'
-//   }
-// );
-// $('.submodal-list li .sublist-info-box').tooltip(
-//   {
-//     container: 'body',
-//     trigger: 'manual',
-//     placement: 'bottom'
-//   }
-// );
-// .on('click', function () {
-//   let listCurrentName = this.parentElement.firstElementChild.textContent;
-//   $(this).attr('data-original-title', `${listCurrentName}`);
-//   $('.submodal-list li .sublist-info-box[data-toggle="tooltip"]').tooltip('hide');
-//   $(this).tooltip('show');
-// });
-// function listTooltipClick(infoThis){
-//   let currentListClassName = infoThis.parentElement.className;
-//   $(`li.${currentListClassName} .sublist-info-box`).tooltip(
-//       {
-//         container: 'body',
-//         trigger: 'manual',
-//         placement: 'bottom'
-//       }
-//     );
-//   let listCurrentName = infoThis.parentElement.firstElementChild.textContent;
-//   $(infoThis).attr('data-original-title', `${listCurrentName}`);
-//   $('.submodal-list li .sublist-info-box[data-toggle="tooltip"]').tooltip('hide');
-//   $(infoThis).tooltip('show');
-// }
-
-// function listTooltipClickOp2(op2InfoThis){
-//   let currentListClassName = op2InfoThis.parentElement.className;
-//   $(`li.${currentListClassName} .sublist-info-box`).tooltip(
-//       {
-//         container: 'body',
-//         trigger: 'manual',
-//         placement: 'bottom'
-//       }
-//     );
-//   let listCurrentName = op2InfoThis.parentElement.firstElementChild.textContent;
-//   $(op2InfoThis).attr('data-original-title', `${listCurrentName}`);
-//   $('.sub-list li .sublist-info-box[data-toggle="tooltip"]').tooltip('hide');
-//   $(op2InfoThis).tooltip('show');
-// }
-
-// function listTooltipClickMnRes(mnResInfoThis){
-//   let currentListClassName = mnResInfoThis.parentElement.className;
-//   $(`li.${currentListClassName} .sublist-info-box`).tooltip(
-//       {
-//         container: 'body',
-//         trigger: 'manual',
-//         placement: 'bottom'
-//       }
-//     );
-//   let listCurrentName = mnResInfoThis.parentElement.firstElementChild.textContent;
-//   $(mnResInfoThis).attr('data-original-title', `${listCurrentName}`);
-//   $('.right-list-404 li .sublist-info-box[data-toggle="tooltip"]').tooltip('hide');
-//   $(mnResInfoThis).tooltip('show');
-// }
-
-// $(document).mouseup(function(e) {
-//     var infoTooltipsOfLists = $('.submodal-list li .sublist-info-box[data-toggle="tooltip"]');
-//     if (!infoTooltipsOfLists.is(e.target) && infoTooltipsOfLists.has(e.target).length === 0) {
-//       infoTooltipsOfLists.tooltip('hide');
-//     }
-
-//     var infoTooltipsOfOp2Lists = $('.sub-list li .sublist-info-box[data-toggle="tooltip"]');
-//     if (!infoTooltipsOfOp2Lists.is(e.target) && infoTooltipsOfOp2Lists.has(e.target).length === 0) {
-//       infoTooltipsOfOp2Lists.tooltip('hide');
-//     }
-
-//     var infoTooltipsOfMnResLists = $('.right-list-404 li .sublist-info-box[data-toggle="tooltip"]');
-//     if (!infoTooltipsOfMnResLists.is(e.target) && infoTooltipsOfMnResLists.has(e.target).length === 0) {
-//       infoTooltipsOfMnResLists.tooltip('hide');
-//     }
-// });
 
 // Pen Icon, Info Icon Controlling For All LISTS POPUP Ends
 
@@ -1850,13 +1761,13 @@ function leftItemDeleteClick(thisLeft, modalName){
 }
 
 function leftItemDeleteConfirm(lfConfirmThis){
-  let initState = $(lfConfirmThis).html();
-	$(lfConfirmThis).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
-	$(lfConfirmThis).prop("disabled", true);
-	let $this = $(lfConfirmThis);
-	setTimeout(function() {
-		$this.prop("disabled", false);
-		$this.html(initState);
+  // let initState = $(lfConfirmThis).html();
+	// $(lfConfirmThis).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	// $(lfConfirmThis).prop("disabled", true);
+	// let $this = $(lfConfirmThis);
+	// setTimeout(function() {
+	// 	$this.prop("disabled", false);
+	// 	$this.html(initState);
 
     if(ACTIVE_MODAL_NAME == "op1"){
       $(`.${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
@@ -1933,5 +1844,35 @@ function leftItemDeleteConfirm(lfConfirmThis){
       $(`#moveto-submodal_style29-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
     }
     $('#delete_leftItem_list').modal('hide');
-	}, 2000);
+	// }, 2000);
 }
+
+$('#delete_leftItem_list').on('show.bs.modal', function (e) {
+  let op1Modal = window.getComputedStyle(document.querySelector(`#myopt1listData`));
+  let opt4aModal = window.getComputedStyle(document.querySelector(`#opt4a-list-modal`));
+  let opt4bModal = window.getComputedStyle(document.querySelector(`#opt4b-list-modal`));
+  let opt4cModal = window.getComputedStyle(document.querySelector(`#opt4c-list-modal`));
+  let opt4dModal = window.getComputedStyle(document.querySelector(`#opt4d-list-modal`));
+  let mnTempaModal = window.getComputedStyle(document.querySelector(`#manage-tempa-list-modal`));
+  let mnTempbModal = window.getComputedStyle(document.querySelector(`#manage-tempb-list-modal`));
+  let mnTempcModal = window.getComputedStyle(document.querySelector(`#manage-tempc-list-modal`));
+  let mnTempdModal = window.getComputedStyle(document.querySelector(`#manage-tempd-list-modal`));
+  if(op1Modal.display == "block" || opt4aModal.display == "block" || opt4bModal.display == "block" || opt4cModal.display == "block" || opt4dModal.display == "block" || mnTempaModal.display == "block" || mnTempbModal.display == "block" || mnTempcModal.display == "block" || mnTempdModal.display == "block"){
+    $('body').addClass("modal-list-open");
+  }
+})
+
+$('#remaneAllLevelItem').on('show.bs.modal', function (e) {
+	let op1Modal = window.getComputedStyle(document.querySelector(`#myopt1listData`));
+  let opt4aModal = window.getComputedStyle(document.querySelector(`#opt4a-list-modal`));
+  let opt4bModal = window.getComputedStyle(document.querySelector(`#opt4b-list-modal`));
+  let opt4cModal = window.getComputedStyle(document.querySelector(`#opt4c-list-modal`));
+  let opt4dModal = window.getComputedStyle(document.querySelector(`#opt4d-list-modal`));
+  let mnTempaModal = window.getComputedStyle(document.querySelector(`#manage-tempa-list-modal`));
+  let mnTempbModal = window.getComputedStyle(document.querySelector(`#manage-tempb-list-modal`));
+  let mnTempcModal = window.getComputedStyle(document.querySelector(`#manage-tempc-list-modal`));
+  let mnTempdModal = window.getComputedStyle(document.querySelector(`#manage-tempd-list-modal`));
+  if(op1Modal.display == "block" || opt4aModal.display == "block" || opt4bModal.display == "block" || opt4cModal.display == "block" || opt4dModal.display == "block" || mnTempaModal.display == "block" || mnTempbModal.display == "block" || mnTempcModal.display == "block" || mnTempdModal.display == "block"){
+    $('body').addClass("modal-list-open");
+  }
+})

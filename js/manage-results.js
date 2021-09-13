@@ -1418,7 +1418,7 @@ function findVisible(element, pos) {
 function columnMove(index, direc, selectedTab, sty1TableId) {
     let tHead = $(`#${sty1TableId} th.column-header-${index}`);
     let tBody = $(`#${sty1TableId} td.column-header-${index}`);
-    let tvHead = $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`);
+    let tvHead = $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12.main-table-design th.column-header-${index}`);
     let len = tBody.length;
     if (direc == "up") {
         let eleH = findVisible(tHead.prev(), "prev");

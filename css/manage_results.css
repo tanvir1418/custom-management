@@ -3801,7 +3801,7 @@ i.fa-caret-down.down-animation-icon{
 .box-style12 .no-result{
     width: 100%;
     text-align: center;
-    display: none;
+    /* display: none; */
 }
 .box-style12 .no-result p{
     font-family: gilroy-bold, sans-serif;

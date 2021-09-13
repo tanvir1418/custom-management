@@ -436,7 +436,7 @@ function alertToResultDisplay(nameThis){
 		$(`#actual_subitem_title`).css("display", "block");
 		$(`#loading_item_title`).css("display", "none");
 		$(`#loading_subitem_title`).css("display", "none");
-	}, 2000);
+	}, 3000);
 
   
 	// Will Remove On Final Implement
