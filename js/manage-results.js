@@ -241,21 +241,21 @@ $("#div-sub-ul-li-list").click(function (e) {
 
 
 $("#mng-opt2-delete").click(function () {
-	
-	$(`.${manageResultDeleteListClassName}`).remove();
 
-	// let initState = $(this).html();
-	// $(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
-	// $(this).prop("disabled", true);
-	// let $this = $(this);
-	// setTimeout(function() {
-	// 	$this.prop("disabled", false);
-	// 	$this.html(initState);
+    $('#deletlistopt2 .modal-body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+	setTimeout(function() {
+        $('#deletlistopt2 .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
 
-	// 	$(`.${manageResultDeleteListClassName}`).remove();
+		$(`.${manageResultDeleteListClassName}`).remove();
 
-	// 	$("#deletlistopt2").modal("hide");
-	// }, 2000);
+		$("#deletlistopt2").modal("hide");
+	}, 2000);
 });
 
 

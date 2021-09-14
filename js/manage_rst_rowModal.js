@@ -262,8 +262,22 @@ sub_ul_copytomodallist_style2.addEventListener("click", function (e) {
 });
 
 $("#copyto-mng-opt2-delete_style2").click(function () {
-    let delObj_style2 = document.querySelector(`.${deleteListClassName}`);
-    delObj_style2.remove();
+    $('#delet-copytolistopt2_style2 .modal-body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+  
+	setTimeout(function() {
+		$('#delet-copytolistopt2_style2 .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		$(`.${deleteListClassName}`).remove();
+
+		$("#delet-copytolistopt2_style2").modal("hide");
+    
+	}, 2000);
 });
 
 /* ================ Scroll Down START ============== */
@@ -547,8 +561,22 @@ sub_ul_movetomodallist_style29.addEventListener("click", function (e) {
 });
 
 $("#moveto-mng-opt2-delete_style29").click(function () {
-    let delObj_style29 = document.querySelector(`.${deleteListClassName}`);
-    delObj_style29.remove();
+    $('#delet-movetolistopt2_style29 .modal-body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+  
+	setTimeout(function() {
+		$('#delet-movetolistopt2_style29 .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		$(`.${deleteListClassName}`).remove();
+
+		$("#delet-movetolistopt2_style29").modal("hide");
+    
+	}, 2000);
 });
 
 /* ================ Scroll Down START ============== */

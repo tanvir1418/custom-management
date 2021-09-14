@@ -1634,11 +1634,13 @@ function confirmListName(confThis){
 function renamingLevelItem(itemThis){
   newLevelItemName = document.querySelector(`#remaneAllLevelItem .plus-button-popup-body-content input`).value;
 
+  $('#remaneAllLevelItem .modal-body').addClass("disable-pointer");
   let initState = $(itemThis).html();
 	$(itemThis).html('<i class="fa fa-spinner fa-spin"></i> Done');
 	$(itemThis).addClass('disabled');
 	let $this = $(itemThis);
 	setTimeout(function() {
+    $('#remaneAllLevelItem .modal-body').removeClass("disable-pointer");
     $this.removeClass('disabled');
 		$this.html(initState);
     $('#remaneAllLevelItem').modal('hide');
@@ -1761,13 +1763,16 @@ function leftItemDeleteClick(thisLeft, modalName){
 }
 
 function leftItemDeleteConfirm(lfConfirmThis){
-  // let initState = $(lfConfirmThis).html();
-	// $(lfConfirmThis).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
-	// $(lfConfirmThis).prop("disabled", true);
-	// let $this = $(lfConfirmThis);
-	// setTimeout(function() {
-	// 	$this.prop("disabled", false);
-	// 	$this.html(initState);
+
+  $('#delete_leftItem_list .modal-body').addClass("disable-pointer");
+  let initState = $(lfConfirmThis).html();
+	$(lfConfirmThis).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(lfConfirmThis).prop("disabled", true);
+	let $this = $(lfConfirmThis);
+	setTimeout(function() {
+    $('#delete_leftItem_list .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
 
     if(ACTIVE_MODAL_NAME == "op1"){
       $(`.${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
@@ -1844,7 +1849,7 @@ function leftItemDeleteConfirm(lfConfirmThis){
       $(`#moveto-submodal_style29-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
     }
     $('#delete_leftItem_list').modal('hide');
-	// }, 2000);
+	}, 2000);
 }
 
 $('#delete_leftItem_list').on('show.bs.modal', function (e) {

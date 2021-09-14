@@ -895,7 +895,7 @@ sub_ul_list.addEventListener("click", function (e) {
 	let target = e.target;
 	if (target.tagName === "DIV") {
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
-			deleteListClassName = target.parentNode.classList[0];
+			manageResultDeleteListClassName = target.parentNode.classList[0];
 			return;
 		}
 		else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
@@ -907,7 +907,7 @@ sub_ul_list.addEventListener("click", function (e) {
 	} else if (target.tagName === "I") {
 		target = target.parentNode;
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
-			deleteListClassName = target.parentNode.classList[0];
+			manageResultDeleteListClassName = target.parentNode.classList[0];
 			return;
 		}
 		else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
@@ -2349,8 +2349,9 @@ $(document).mouseup(function(e) {
 		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
 		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
 		let deleteLeftItemList = window.getComputedStyle(document.querySelector(`#delete_leftItem_list`));
+		let deleteRightLevelList = window.getComputedStyle(document.querySelector(`#delet-movetolistopt2`));
 		
-		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none")){
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none") && (deleteRightLevelList.display == "none")){
 			mnResMoveTo.css("display", "none");
 		}
     }
@@ -2359,8 +2360,9 @@ $(document).mouseup(function(e) {
 		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
 		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
 		let deleteLeftItemList = window.getComputedStyle(document.querySelector(`#delete_leftItem_list`));
+		let deleteRightLevelList = window.getComputedStyle(document.querySelector(`#delet-movetolistopt2_style29`));
 		
-		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none")){
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none") && (deleteRightLevelList.display == "none")){
 			mnResMoveTo_style2.css("display", "none");
 		}
     }
@@ -2369,8 +2371,10 @@ $(document).mouseup(function(e) {
 		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
 		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
 		let deleteLeftItemList = window.getComputedStyle(document.querySelector(`#delete_leftItem_list`));
+		let deleteRightLevelList = window.getComputedStyle(document.querySelector(`#delet-copytolistopt2`));
 		
-		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none")){
+		
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none") && (deleteRightLevelList.display == "none")){
 			mnResCopyTo.css("display", "none");
 		}
     }
@@ -2379,8 +2383,9 @@ $(document).mouseup(function(e) {
 		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
 		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
 		let deleteLeftItemList = window.getComputedStyle(document.querySelector(`#delete_leftItem_list`));
+		let deleteRightLevelList = window.getComputedStyle(document.querySelector(`#delet-copytolistopt2_style2`));
 		
-		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none")){
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none") && (deleteRightLevelList.display == "none")){
 			mnResCopyTo_style2.css("display", "none");
 		}
     }

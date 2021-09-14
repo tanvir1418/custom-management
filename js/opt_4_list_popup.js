@@ -242,8 +242,22 @@ sub_ul_optfourmodalamodallist.addEventListener("click", function (e) {
 });
 
 $("#optfourmodala-mng-opt2-delete").click(function () {
-  let delObj = document.querySelector(`.${deleteListClassName}`);
-  delObj.remove();
+
+  $('#delet-optfourmodala-modal .modal-body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+
+	setTimeout(function() {
+    $('#delet-optfourmodala-modal .modal-body').removeClass("disable-pointer");
+    $this.prop("disabled", false);
+    $this.html(initState);
+
+    $(`.${deleteListClassName}`).remove();
+
+    $("#delet-optfourmodala-modal").modal("hide");
+	}, 2000);
 });
 
 function countoptfourmodalaListModal(e) {
@@ -575,8 +589,23 @@ sub_ul_optfourmodalbmodallist.addEventListener("click", function (e) {
 });
 
 $("#optfourmodalb-mng-opt2-delete").click(function () {
-  let delObj = document.querySelector(`.${deleteListClassName}`);
-  delObj.remove();
+  
+  $('#delet-optfourmodalb-modal .modal-body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+  
+	setTimeout(function() {
+    $('#delet-optfourmodalb-modal .modal-body').removeClass("disable-pointer");
+    $this.prop("disabled", false);
+    $this.html(initState);
+
+    $(`.${deleteListClassName}`).remove();
+
+    $("#delet-optfourmodalb-modal").modal("hide");
+
+	}, 2000);
 });
 
 function countoptfourmodalbListModal(e) {
@@ -907,8 +936,24 @@ sub_ul_optfourmodalcmodallist.addEventListener("click", function (e) {
 });
 
 $("#optfourmodalc-mng-opt2-delete").click(function () {
-  let delObj = document.querySelector(`.${deleteListClassName}`);
-  delObj.remove();
+
+  $('#delet-optfourmodalc-modal .modal-body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+  
+	setTimeout(function() {
+    $('#delet-optfourmodalc-modal .modal-body').removeClass("disable-pointer");
+    $this.prop("disabled", false);
+    $this.html(initState);
+
+    $(`.${deleteListClassName}`).remove();
+
+    $("#delet-optfourmodalc-modal").modal("hide");
+    
+	}, 2000);
+
 });
 
 function countoptfourmodalcListModal(e) {
@@ -1271,8 +1316,24 @@ sub_ul_optfourmodaldmodallist.addEventListener("click", function (e) {
 });
 
 $("#optfourmodald-mng-opt2-delete").click(function () {
-  let delObj = document.querySelector(`.${deleteListClassName}`);
-  delObj.remove();
+
+  $('#delet-optfourmodald-modal .modal-body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+  
+	setTimeout(function() {
+    $('#delet-optfourmodald-modal .modal-body').removeClass("disable-pointer");
+    $this.prop("disabled", false);
+    $this.html(initState);
+
+    $(`.${deleteListClassName}`).remove();
+
+    $("#delet-optfourmodald-modal").modal("hide");
+    
+	}, 2000);
+  
 });
 
 function countoptfourmodaldListModal(e) {

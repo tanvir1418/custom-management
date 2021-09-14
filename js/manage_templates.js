@@ -329,8 +329,23 @@ sub_ul_managetempamodallist.addEventListener("click", function (e) {
 });
 
 $("#managetempa-mng-opt2-delete").click(function () {
-  let delObj = document.querySelector(`.${deleteListClassName}`);
-  delObj.remove();
+
+  $('#delet-manage-tempa-list-modal .modal-body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+  
+	setTimeout(function() {
+    $('#delet-manage-tempa-list-modal .modal-body').removeClass("disable-pointer");
+    $this.prop("disabled", false);
+    $this.html(initState);
+
+    $(`.${deleteListClassName}`).remove();
+
+    $("#delet-manage-tempa-list-modal").modal("hide");
+    
+	}, 2000);
 });
 
 function countTempAListModal(e) {
@@ -659,8 +674,22 @@ sub_ul_managetempbmodallist.addEventListener("click", function (e) {
 });
 
 $("#managetempb-mng-opt2-delete").click(function () {
-  let delObj = document.querySelector(`.${deleteListClassName}`);
-  delObj.remove();
+  $('#delet-manage-tempb-list-modal .modal-body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+  
+	setTimeout(function() {
+    $('#delet-manage-tempb-list-modal .modal-body').removeClass("disable-pointer");
+    $this.prop("disabled", false);
+    $this.html(initState);
+
+    $(`.${deleteListClassName}`).remove();
+
+    $("#delet-manage-tempb-list-modal").modal("hide");
+    
+	}, 2000);
 });
 
 function countTempBListModal(e) {
@@ -989,8 +1018,22 @@ sub_ul_managetempcmodallist.addEventListener("click", function (e) {
 });
 
 $("#managetempc-mng-opt2-delete").click(function () {
-  let delObj = document.querySelector(`.${deleteListClassName}`);
-  delObj.remove();
+  $('#delet-manage-tempc-list-modal .modal-body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+  
+	setTimeout(function() {
+    $('#delet-manage-tempc-list-modal .modal-body').removeClass("disable-pointer");
+    $this.prop("disabled", false);
+    $this.html(initState);
+
+    $(`.${deleteListClassName}`).remove();
+
+    $("#delet-manage-tempc-list-modal").modal("hide");
+    
+	}, 2000);
 });
 
 function countTempCListModal(e) {
@@ -1351,8 +1394,22 @@ sub_ul_managetempdmodallist.addEventListener("click", function (e) {
 });
 
 $("#managetempd-mng-opt2-delete").click(function () {
-  let delObj = document.querySelector(`.${deleteListClassName}`);
-  delObj.remove();
+  $('#delet-manage-tempd-list-modal .modal-body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+  
+	setTimeout(function() {
+    $('#delet-manage-tempd-list-modal .modal-body').removeClass("disable-pointer");
+    $this.prop("disabled", false);
+    $this.html(initState);
+
+    $(`.${deleteListClassName}`).remove();
+
+    $("#delet-manage-tempd-list-modal").modal("hide");
+    
+	}, 2000);
 });
 
 function countTempDListModal(e) {

@@ -216,7 +216,7 @@ sub_ul_modallist.addEventListener("click", function (e) {
 	let target = e.target;
 	if (target.tagName === "DIV") {
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
-			deleteListClassName = target.parentNode.classList[0];
+			manageResultDeleteListClassName = target.parentNode.classList[0];
 
 			let op1List1_itemName = target.parentNode.childNodes[1].innerHTML;
 			document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = op1List1_itemName;
@@ -232,7 +232,7 @@ sub_ul_modallist.addEventListener("click", function (e) {
 	} else if (target.tagName === "I") {
 		target = target.parentNode;
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
-			deleteListClassName = target.parentNode.classList[0];
+			manageResultDeleteListClassName = target.parentNode.classList[0];
 
 			let op1List1_itemName = target.parentNode.childNodes[1].innerHTML;
 			document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = op1List1_itemName;
@@ -592,8 +592,22 @@ sub_ul_copytomodallist.addEventListener("click", function (e) {
 });
 
 $("#copyto-mng-opt2-delete").click(function () {
-	let delObj = document.querySelector(`.${deleteListClassName}`);
-	delObj.remove();
+	$('#delet-copytolistopt2 .modal-body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+  
+	setTimeout(function() {
+		$('#delet-copytolistopt2 .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		$(`.${deleteListClassName}`).remove();
+
+		$("#delet-copytolistopt2").modal("hide");
+    
+	}, 2000);
 });
 
 /* ================ Scroll Down START ============== */
@@ -875,8 +889,22 @@ sub_ul_movetomodallist.addEventListener("click", function (e) {
 });
 
 $("#moveto-mng-opt2-delete").click(function () {
-	let delObj = document.querySelector(`.${deleteListClassName}`);
-	delObj.remove();
+	$('#delet-movetolistopt2 .modal-body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+  
+	setTimeout(function() {
+		$('#delet-movetolistopt2 .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		$(`.${deleteListClassName}`).remove();
+
+		$("#delet-movetolistopt2").modal("hide");
+    
+	}, 2000);
 });
 
 /* ================ Scroll Down START ============== */
