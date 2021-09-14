@@ -2406,6 +2406,10 @@ $(document).keydown(function (e) {
     if (e.which == 27) {
         $(".delete-list-item").modal("hide");
         $("#filter-modal").modal("hide");
+        $("#onlyThankModal").modal("hide");
+
+        $("#loadTemplateRename").modal("hide");
+        $("#thankAfterRename").modal("hide");
 
         $("#myopt1listData").modal("hide");
         $("#opt4a-list-modal").modal("hide");
@@ -2418,6 +2422,8 @@ $(document).keydown(function (e) {
         $("#manage-tempb-list-modal").modal("hide");
         $("#manage-tempc-list-modal").modal("hide");
         $("#manage-tempd-list-modal").modal("hide");
+
+        $("#loginRequired").modal("hide");
         
         $("#dropBtnModal").css('display', 'none');
         hideStyleTwoAllPopup();

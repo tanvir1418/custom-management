@@ -450,6 +450,10 @@ $(document).keydown(function (e) {
         $("#emailThankModal #email_thank_details p").html("The Request has been Canceled!");
         $('#emailThankModal').modal('show');
     }
+    if (e.which == 27) {
+        $("#dropBtnModal").css('display', 'none');
+        $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+    }
 });
 
 // Universal Thank Draft Modal (on show/hide event)
@@ -667,13 +671,6 @@ $(document).mouseup(function(e) {
     // if the target of the click isn't the container nor a descendant of the container
     if (!tableFilterModal.is(e.target) && tableFilterModal.has(e.target).length === 0 && (e.target != $('html').get(0))) {
         tableFilterModal.css("display", "none");
-        $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
-    }
-});
-
-$(document).keydown(function (e) {
-    if (e.which == 27) {
-        $("#dropBtnModal").css('display', 'none');
         $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
     }
 });

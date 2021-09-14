@@ -1723,7 +1723,33 @@
     height: 6px;
   }
 }
-
+@media screen and (max-width: 1359px) {
+  .op4-option-selection .width-tooltip .icon-container {
+    padding-top: 5px;
+    padding-left: 2px;
+  }
+  .op4-option-selection .width-tooltip .icon-container .fas {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .op4-option-selection .width-tooltip .icon-container {
+    padding-top: 6px;
+    padding-left: 4px;
+  }
+  .op4-option-selection .width-tooltip .icon-container .fas {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .op4-option-selection .width-tooltip .icon-container {
+    padding-top: 10px;
+    padding-left: 5px;
+  }
+  .op4-option-selection .width-tooltip .icon-container .fas {
+    font-size: 18px;
+  }
+}
 @media screen and (max-width: 1200px) {
   .main-side-container {
     padding-top: 160px;

@@ -442,6 +442,13 @@
         // }).on('hide.bs.modal', function (e) {
         //     $('body').removeClass("modal-force-recovery-email");
         // });
+        $(document).keydown(function (e) {
+            if (e.which == 27) {
+                $("#loginRequired").modal("hide");
+                $("#forgotPass").modal("hide");
+                $("#loginOnlyThankModal").modal("hide");
+            }
+        });
 
     </script>
 
