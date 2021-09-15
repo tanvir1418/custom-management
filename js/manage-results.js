@@ -415,8 +415,8 @@ function openTabPage(pageName, elmnt) {
 
     let compStyles = window.getComputedStyle(document.querySelector(`#${mnResultActiveTabSty1TableID} thead`));
     $(`#${pageName} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap`).css({
-        width: compStyles.width,
-        height: "44px"
+        width: "0px",
+        visibility: "hidden"
     });
 
     for (let columnNum = 3; columnNum <= 66; columnNum++) {
@@ -485,6 +485,12 @@ function openTabPage(pageName, elmnt) {
 
             $(`#${mnResultActiveTabID} .double_click_selection_box`).css('display', 'block');
             $(`#${mnResultActiveTabID} .checkbox-table-loading`).css('display', 'none');
+
+            $(`#${pageName} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap`).css({
+                width: compStyles.width,
+                height: "44px",
+                visibility: "hidden"
+            });
 
         }, 3000);
     }

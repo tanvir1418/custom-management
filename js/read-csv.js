@@ -1075,6 +1075,8 @@ function tableHeadSty1(selectedTab, sty1TableId) {
 	$(`#${selectedTab} .style1-table-wrap`).freezeTable({
 		'freezeColumn': false,
 	});
+
+	$(`#${selectedTab} .style1-table-wrap .clone-head-table-wrap .mytablesty12.loading-style1-table`).remove();
 }
 
 
