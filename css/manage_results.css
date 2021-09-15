@@ -3385,13 +3385,13 @@ table.main-table-design {
     line-height: 50px !important;
     word-break: break-word !important;
     text-align: center;
-    height: 70px !important;
+    height: 90px !important;
 }
 .sty2table9 tbody td.vall11_datel .col1table{
     line-height: 24px !important;
     word-break: break-word !important;
     text-align: left !important;
-    height: 150px !important;
+    height: 220px !important;
 }
 .sty2table8 tbody td.vall11_datel .col1table p,
 .sty2table9 tbody td.vall11_datel .col1table p{
@@ -3400,6 +3400,14 @@ table.main-table-design {
     font-family: gilroy-bold, sans-serif !important;
     font-weight: 500 !important;
     color: #454545 !important;
+}
+
+@media screen and (max-width: 1850px) {
+    .sty2table8 tbody td.style-two-head-52 .col1table,
+    .sty2table8 tbody td.style-two-head-53 .col1table,
+    .sty2table8 tbody td.style-two-head-55 .col1table{
+        line-height: 30px !important;
+    }
 }
 
 td.s2-value{
