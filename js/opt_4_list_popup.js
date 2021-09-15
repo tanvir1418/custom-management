@@ -79,10 +79,10 @@ for (let i = 1; i <= 29; i++) {
       `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="optfourmodala-submodal-div-list-1-${index + 1}">
       ${modallistoptfourmodala_data1}
     </ul>
-    <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="optfourmodala-submodal-div-list-2-${index + 1}">
+    <ul class="submodal-list checkbox_hide" style="margin-left: 585px;" id="optfourmodala-submodal-div-list-2-${index + 1}">
       ${modallistoptfourmodala_data2}
     </ul>
-    <ul class="submodal-list checkbox_hide" style="margin-left: 900px;" id="optfourmodala-submodal-div-list-3-${index + 1}">
+    <ul class="submodal-list checkbox_hide" style="margin-left: 870px;" id="optfourmodala-submodal-div-list-3-${index + 1}">
       ${modallistoptfourmodala_data3}
     </ul>`;
     /* Update End By Ashiq */
@@ -431,10 +431,10 @@ for (let i = 1; i <= 29; i++) {
       `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="optfourmodalb-submodal-div-list-1-${index + 1}">
       ${modallistoptfourmodalb_data1}
     </ul>
-    <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="optfourmodalb-submodal-div-list-2-${index + 1}">
+    <ul class="submodal-list checkbox_hide" style="margin-left: 585px;" id="optfourmodalb-submodal-div-list-2-${index + 1}">
       ${modallistoptfourmodalb_data2}
     </ul>
-    <ul class="submodal-list checkbox_hide" style="margin-left: 900px;" id="optfourmodalb-submodal-div-list-3-${index + 1}">
+    <ul class="submodal-list checkbox_hide" style="margin-left: 870px;" id="optfourmodalb-submodal-div-list-3-${index + 1}">
       ${modallistoptfourmodalb_data3}
     </ul>`;
     /* Update End By Ashiq */
@@ -777,10 +777,10 @@ for (let i = 1; i <= 29; i++) {
       `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="optfourmodalc-submodal-div-list-1-${index + 1}">
       ${modallistoptfourmodalc_data1}
     </ul>
-    <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="optfourmodalc-submodal-div-list-2-${index + 1}">
+    <ul class="submodal-list checkbox_hide" style="margin-left: 585px;" id="optfourmodalc-submodal-div-list-2-${index + 1}">
       ${modallistoptfourmodalc_data2}
     </ul>
-    <ul class="submodal-list checkbox_hide" style="margin-left: 900px;" id="optfourmodalc-submodal-div-list-3-${index + 1}">
+    <ul class="submodal-list checkbox_hide" style="margin-left: 870px;" id="optfourmodalc-submodal-div-list-3-${index + 1}">
       ${modallistoptfourmodalc_data3}
     </ul>`;
     /* Update End By Ashiq */
@@ -1157,10 +1157,10 @@ function findFileListOpt4(_id, name) {
       `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="optfourmodald-submodal-div-list-1-${index + 1}">
       ${modallistoptfourmodald_data1}
     </ul>
-    <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="optfourmodald-submodal-div-list-2-${index + 1}">
+    <ul class="submodal-list checkbox_hide" style="margin-left: 585px;" id="optfourmodald-submodal-div-list-2-${index + 1}">
       ${modallistoptfourmodald_data2}
     </ul>
-    <ul class="submodal-list checkbox_hide" style="margin-left: 900px;" id="optfourmodald-submodal-div-list-3-${index + 1}">
+    <ul class="submodal-list checkbox_hide" style="margin-left: 870px;" id="optfourmodald-submodal-div-list-3-${index + 1}">
       ${modallistoptfourmodald_data3}
     </ul>`;
     /* Update End By Ashiq */

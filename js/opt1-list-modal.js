@@ -91,10 +91,10 @@ function findFileList(_id) {
 			`<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="submodal-div-list-1-${index + 1}">
 			${modallist_data1}
 		</ul>
-		<ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="submodal-div-list-2-${index + 1}">
+		<ul class="submodal-list checkbox_hide" style="margin-left: 585px;" id="submodal-div-list-2-${index + 1}">
 			${modallist_data2}
 		</ul>
-		<ul class="submodal-list checkbox_hide" style="margin-left: 900px;" id="submodal-div-list-3-${index + 1}">
+		<ul class="submodal-list checkbox_hide" style="margin-left: 870px;" id="submodal-div-list-3-${index + 1}">
 			${modallist_data3}
 		</ul>`;
 
@@ -422,10 +422,10 @@ const copytolistmodal = [
 			`<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="copyto-submodal-div-list-1-${index + 1}">
 				${modallistcopyto_data1}
 			</ul>
-			<ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="copyto-submodal-div-list-2-${index + 1}">
+			<ul class="submodal-list checkbox_hide" style="margin-left: 585px;" id="copyto-submodal-div-list-2-${index + 1}">
 				${modallistcopyto_data2}
 			</ul>
-			<ul class="submodal-list checkbox_hide" style="margin-left: 900px;" id="copyto-submodal-div-list-3-${index + 1}">
+			<ul class="submodal-list checkbox_hide" style="margin-left: 870px;" id="copyto-submodal-div-list-3-${index + 1}">
 				${modallistcopyto_data3}
 			</ul>`;
 		/* Update End By Ashiq */
@@ -722,10 +722,10 @@ const movetolistmodal = [
 			`<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="moveto-submodal-div-list-1-${index + 1}">
 			${modallistmoveto_data1}
 		</ul>
-		<ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="moveto-submodal-div-list-2-${index + 1}">
+		<ul class="submodal-list checkbox_hide" style="margin-left: 585px;" id="moveto-submodal-div-list-2-${index + 1}">
 			${modallistmoveto_data2}
 		</ul>
-		<ul class="submodal-list checkbox_hide" style="margin-left: 900px;" id="moveto-submodal-div-list-3-${index + 1}">
+		<ul class="submodal-list checkbox_hide" style="margin-left: 870px;" id="moveto-submodal-div-list-3-${index + 1}">
 			${modallistmoveto_data3}
 		</ul>`;
 	});

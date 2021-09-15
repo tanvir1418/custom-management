@@ -161,10 +161,10 @@ for (let i = 1; i <= 29; i++) {
       `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempa-submodal-div-list-1-${index + 1}">
       ${modallistmanagetempa_data1}
     </ul>
-    <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="managetempa-submodal-div-list-2-${index + 1}">
+    <ul class="submodal-list checkbox_hide" style="margin-left: 585px;" id="managetempa-submodal-div-list-2-${index + 1}">
       ${modallistmanagetempa_data2}
     </ul>
-    <ul class="submodal-list checkbox_hide" style="margin-left: 900px;" id="managetempa-submodal-div-list-3-${index + 1}">
+    <ul class="submodal-list checkbox_hide" style="margin-left: 870px;" id="managetempa-submodal-div-list-3-${index + 1}">
       ${modallistmanagetempa_data3}
     </ul>`;
     /* Update End By Ashiq */
@@ -512,10 +512,10 @@ for (let i = 1; i <= 29; i++) {
     <ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempb-submodal-div-list-1-${index + 1}">
       ${modallistmanagetempb_data1}
     </ul>
-    <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="managetempb-submodal-div-list-2-${index + 1}">
+    <ul class="submodal-list checkbox_hide" style="margin-left: 585px;" id="managetempb-submodal-div-list-2-${index + 1}">
       ${modallistmanagetempb_data2}
     </ul>
-    <ul class="submodal-list checkbox_hide" style="margin-left: 900px;" id="managetempb-submodal-div-list-3-${index + 1}">
+    <ul class="submodal-list checkbox_hide" style="margin-left: 870px;" id="managetempb-submodal-div-list-3-${index + 1}">
       ${modallistmanagetempb_data3}
     </ul>`;
   });
@@ -854,10 +854,10 @@ for (let i = 1; i <= 29; i++) {
       `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempc-submodal-div-list-1-${index + 1}">
 			${modallistmanagetempc_data1}
 		</ul>
-		<ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="managetempc-submodal-div-list-2-${index + 1}">
+		<ul class="submodal-list checkbox_hide" style="margin-left: 585px;" id="managetempc-submodal-div-list-2-${index + 1}">
 			${modallistmanagetempc_data2}
 		</ul>
-		<ul class="submodal-list checkbox_hide" style="margin-left: 900px;" id="managetempc-submodal-div-list-3-${index + 1}">
+		<ul class="submodal-list checkbox_hide" style="margin-left: 870px;" id="managetempc-submodal-div-list-3-${index + 1}">
 			${modallistmanagetempc_data3}
 		</ul>`;
   });
@@ -1231,10 +1231,10 @@ function findFileListMS1(_id, name) {
       `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="managetempd-submodal-div-list-1-${index + 1}">
       ${modallistmanagetempd_data1}
     </ul>
-    <ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="managetempd-submodal-div-list-2-${index + 1}">
+    <ul class="submodal-list checkbox_hide" style="margin-left: 585px;" id="managetempd-submodal-div-list-2-${index + 1}">
       ${modallistmanagetempd_data2}
     </ul>
-    <ul class="submodal-list checkbox_hide" style="margin-left: 900px;" id="managetempd-submodal-div-list-3-${index + 1}">
+    <ul class="submodal-list checkbox_hide" style="margin-left: 870px;" id="managetempd-submodal-div-list-3-${index + 1}">
       ${modallistmanagetempd_data3}
     </ul>`;
   });

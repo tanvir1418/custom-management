@@ -94,10 +94,10 @@ const copytolistmodal_style2 = [
             `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="copyto-submodal_style2-div-list-1-${index + 1}">
 				${modallistcopyto_data1_style2}
 			</ul>
-			<ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="copyto-submodal_style2-div-list-2-${index + 1}">
+			<ul class="submodal-list checkbox_hide" style="margin-left: 585px;" id="copyto-submodal_style2-div-list-2-${index + 1}">
 				${modallistcopyto_data2_style2}
 			</ul>
-			<ul class="submodal-list checkbox_hide" style="margin-left: 900px;" id="copyto-submodal_style2-div-list-3-${index + 1}">
+			<ul class="submodal-list checkbox_hide" style="margin-left: 870px;" id="copyto-submodal_style2-div-list-3-${index + 1}">
 				${modallistcopyto_data3_style2}
 			</ul>`;
         /* Update End By Ashiq */
@@ -393,10 +393,10 @@ const movetolistmodal_style29 = [
             `<ul class="submodal-list checkbox_hide" style="margin-left: 300px;" id="moveto-submodal_style29-div-list-1-${index + 1}">
 			${modallistmoveto_data1_style29}
 		</ul>
-		<ul class="submodal-list checkbox_hide" style="margin-left: 600px;" id="moveto-submodal_style29-div-list-2-${index + 1}">
+		<ul class="submodal-list checkbox_hide" style="margin-left: 585px;" id="moveto-submodal_style29-div-list-2-${index + 1}">
 			${modallistmoveto_data2_style29}
 		</ul>
-		<ul class="submodal-list checkbox_hide" style="margin-left: 900px;" id="moveto-submodal_style29-div-list-3-${index + 1}">
+		<ul class="submodal-list checkbox_hide" style="margin-left: 870px;" id="moveto-submodal_style29-div-list-3-${index + 1}">
 			${modallistmoveto_data3_style29}
 		</ul>`;
     });
