@@ -27,8 +27,6 @@ $(".template_box").click(function (event) {
     }
     $("#template_name_input").val(templateName);
 
-    $("#saveDraftTarget-mnTemp").prop("disabled", false);
-    $("#saveStartTarget-mnTemp").prop("disabled", false);
     $("#mnTemp_belowBtn_container .option4-below-control-input").removeClass("border-red");
     $("#mnTemp_belowBtn_container .error-message").remove();
     
@@ -57,12 +55,10 @@ $(".create_new_temp").click(function (event) {
   let loadTempWrapper = document.querySelector(".sample_options");
   loadTempWrapper.classList.remove("dispaly_hide");
   $("#load_temp_slider").addClass("dispaly_hide");
-  
-    $("#saveDraftTarget-mnTemp").prop("disabled", true);
-    $("#saveStartTarget-mnTemp").prop("disabled", true);
-    $("#template_name_input").val("");
-    $("#mnTemp_belowBtn_container .option4-below-control-input").removeClass("border-red");
-    $("#mnTemp_belowBtn_container .error-message").remove();
+    
+  $("#template_name_input").val("");
+  $("#mnTemp_belowBtn_container .option4-below-control-input").removeClass("border-red");
+  $("#mnTemp_belowBtn_container .error-message").remove();
   
 });
 
@@ -3153,35 +3149,6 @@ function mnTempConfirmButton() {
   }
 }
 
-
-// Manage Template Save Draft Button Controlling (Loading Popup and Thank You Modal)
-function saveDraftLoadingThankMnTemp(){
-  $("#submitting_Info .submit-title").html("Submitting...");
-  $('#submitting_Info').modal('show');
-
-  // Option 4 submitting draft information
-  let $targetingTextSubmit = $("#submitting_file_info");
-  $targetingTextSubmit.html("Submitting template sample 1 information...");
-  let submitFileInfo = [ 
-          "Submitting template sample 2 information...",
-          "Submitting template sample 3 information...", 
-          "Submitting template sample 4 information...",
-          "Finishing..."];
-
-  for (let i = 1; i <= 4; ++i) {
-    (function(index) {
-      setTimeout(function() { 
-        $targetingTextSubmit.html(submitFileInfo[index-1]);
-      }, i * 2000);
-    })(i);
-  }
-
-  setTimeout(function() { 
-    $('#submitting_Info').modal('hide');
-    $('#saveDraftThankYouModal').modal('show');
-  }, 10000);
-
-}
 
 function mnTempaListModalClick(){
   $('#manage-tempa-list-modal').modal('show');

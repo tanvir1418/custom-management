@@ -226,6 +226,11 @@ function openOption(evt, optionName) {
 					$("#op3_table_loading").css("display", "none");
 				  }, 2000);
 			}
+			if(optionName == "option_4"){
+				$("#op4_belowBtn_container input").val("");
+				$("#op4_belowBtn_container .option4-below-control-input").removeClass("border-red");
+				$("#op4_belowBtn_container .error-message").remove();
+			}
 		}
 	} else {
 		$('#loginRequired').modal('show');
@@ -1918,19 +1923,52 @@ function chartDispConfirmButton(thisChart) {
 
 }
 
-function mnTempSaveStartBtn(thisStart){
-	$('body').addClass("disable-pointer");
-	let initState = $(thisStart).html();
-	$(thisStart).html('<i class="fa fa-spinner fa-spin"></i> Save & Start');
-	$(thisStart).prop("disabled", true);
-	let $this = $(thisStart);
-	setTimeout(function() {
-		$('body').removeClass("disable-pointer");
-		$this.prop("disabled", false);
-		$this.html(initState);
+function op4SaveStartBtn(thisStart){
+	if($("#op4_belowBtn_container input").val().trim() == ""){
+		$("#op4_belowBtn_container .option4-below-control-input").addClass("border-red");
+		if (!$("#op4_belowBtn_container").children("div.error-message").length) {
+		  $("#op4_belowBtn_container").append(`<div class="error-message">
+			<p>A value must be entered</p>
+		  </div>`);
+		}
+	} else {
+		$('body').addClass("disable-pointer");
+		let initState = $(thisStart).html();
+		$(thisStart).html('<i class="fa fa-spinner fa-spin"></i> Save & Start');
+		$(thisStart).prop("disabled", true);
+		let $this = $(thisStart);
+		setTimeout(function() {
+			$('body').removeClass("disable-pointer");
+			$this.prop("disabled", false);
+			$this.html(initState);
 
-		$("#mnTemp_saveStart").modal("show");
-  	}, 2000);
+			$("#mnTemp_saveStart").modal("show");
+		}, 2000);
+	}
+}
+
+function mnTempSaveStartBtn(thisStart){
+	if($("#mnTemp_belowBtn_container input").val().trim() == ""){
+		$("#mnTemp_belowBtn_container .option4-below-control-input").addClass("border-red");
+		if (!$("#mnTemp_belowBtn_container").children("div.error-message").length) {
+		  $("#mnTemp_belowBtn_container").append(`<div class="error-message">
+			<p>A value must be entered</p>
+		  </div>`);
+		}
+	} else {
+		$('body').addClass("disable-pointer");
+		let initState = $(thisStart).html();
+		$(thisStart).html('<i class="fa fa-spinner fa-spin"></i> Save & Start');
+		$(thisStart).prop("disabled", true);
+		let $this = $(thisStart);
+		setTimeout(function() {
+			$('body').removeClass("disable-pointer");
+			$this.prop("disabled", false);
+			$this.html(initState);
+
+			$("#mnTemp_saveStart").modal("show");
+		}, 2000);
+	}
 }
 
 function mnTempSaveStartBackBtn(thisBack){

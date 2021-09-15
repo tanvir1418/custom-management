@@ -740,41 +740,95 @@ $("#datepicker_field_set12_icon").click(function () {
 });
 
 // Option 4 Save Draft Button Controlling (Loading Popup and Thank You Modal)
-function saveDraftLoadingThankOp4(){
-  $("#submitting_Info .submit-title").html("Submitting...");
-  $('#submitting_Info').modal('show');
+function saveDraftLoadingThankOp4(op4SdThis){
 
-  // Option 4 submitting draft information
-  let $targetingTextSubmit = $("#submitting_file_info");
-  $targetingTextSubmit.html("Submitting sample 1 information...");
-  let submitFileInfo = [ 
-          "Submitting sample 2 information...",
-          "Submitting sample 3 information...", 
-          "Submitting sample 4 information...",
-          "Finishing..."];
+  if($("#op4_belowBtn_container input").val().trim() == ""){
+    $("#op4_belowBtn_container .option4-below-control-input").addClass("border-red");
+    if (!$("#op4_belowBtn_container").children("div.error-message").length) {
+      $("#op4_belowBtn_container").append(`<div class="error-message">
+        <p>A value must be entered</p>
+      </div>`);
+    }
+  } else {
+    let initState = $(op4SdThis).html();
+    $(op4SdThis).html('<i class="fa fa-spinner fa-spin"></i> Submitting...');
+    $(op4SdThis).addClass('disabled');
+    let $this = $(op4SdThis);
 
-  for (let i = 1; i <= 4; ++i) {
-    (function(index) {
-      setTimeout(function() { 
-        $targetingTextSubmit.html(submitFileInfo[index-1]);
-      }, i * 2000);
-    })(i);
+    $("#submitting_Info .submit-title").html("Submitting...");
+    $('#submitting_Info').modal('show');
+
+    // Option 4 submitting draft information
+    let $targetingTextSubmit = $("#submitting_file_info");
+    $targetingTextSubmit.html("Submitting sample 1 information...");
+    let submitFileInfo = [ 
+            "Submitting sample 2 information...",
+            "Submitting sample 3 information...", 
+            "Submitting sample 4 information...",
+            "Finishing..."];
+
+    for (let i = 1; i <= 4; ++i) {
+      (function(index) {
+        setTimeout(function() { 
+          $targetingTextSubmit.html(submitFileInfo[index-1]);
+        }, i * 2000);
+      })(i);
+    }
+
+    setTimeout(function() {
+      $this.removeClass('disabled');
+      $this.html(initState);
+
+      $('#submitting_Info').modal('hide');
+      $('#saveDraftThankYouModal').modal('show');
+    }, 10000);
   }
-
-  setTimeout(function() { 
-    $('#submitting_Info').modal('hide');
-    $('#saveDraftThankYouModal').modal('show');
-  }, 10000);
 
 }
 
-$(".btn-save-draft").click(function() {
-  let initState = $(this).html();
-  $(this).html('<i class="fa fa-spinner fa-spin"></i> Submitting...');
-  $(this).addClass('disabled');
-  let $this = $(this);
-  setTimeout(function() {
+// Manage Template Save Draft Button Controlling (Loading Popup and Thank You Modal)
+function saveDraftLoadingThankMnTemp(tempSdThis){
+
+  if($("#mnTemp_belowBtn_container input").val().trim() == ""){
+    $("#mnTemp_belowBtn_container .option4-below-control-input").addClass("border-red");
+    if (!$("#mnTemp_belowBtn_container").children("div.error-message").length) {
+      $("#mnTemp_belowBtn_container").append(`<div class="error-message">
+        <p>A value must be entered</p>
+      </div>`);
+    }
+  } else {
+
+    let initState = $(tempSdThis).html();
+    $(tempSdThis).html('<i class="fa fa-spinner fa-spin"></i> Submitting...');
+    $(tempSdThis).addClass('disabled');
+    let $this = $(tempSdThis);
+
+    $("#submitting_Info .submit-title").html("Submitting...");
+    $('#submitting_Info').modal('show');
+
+    // Option 4 submitting draft information
+    let $targetingTextSubmit = $("#submitting_file_info");
+    $targetingTextSubmit.html("Submitting template sample 1 information...");
+    let submitFileInfo = [ 
+            "Submitting template sample 2 information...",
+            "Submitting template sample 3 information...", 
+            "Submitting template sample 4 information...",
+            "Finishing..."];
+
+    for (let i = 1; i <= 4; ++i) {
+      (function(index) {
+        setTimeout(function() { 
+          $targetingTextSubmit.html(submitFileInfo[index-1]);
+        }, i * 2000);
+      })(i);
+    }
+
+    setTimeout(function() { 
       $this.removeClass('disabled');
       $this.html(initState);
-  }, 10000);
-});
+
+      $('#submitting_Info').modal('hide');
+      $('#saveDraftThankYouModal').modal('show');
+    }, 10000);
+  }
+}
