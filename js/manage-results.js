@@ -44,7 +44,7 @@ const listItemData404 = [
         <div class="tik-box display-none">
             <i class="fas fa-check"></i>
         </div>
-        <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete" onclick="leftItemDeleteClick(this, 'mnRes')">
+        <div class="grey-times-box display-none" data-toggle="tooltip" data-placement="bottom" data-title="Click to Delete" onclick="leftItemDeleteClick(this, 'mnRes')">
 			<i class="fas fa-times"></i>
 		</div>
         <div class="arrow-404 arrow-404-background-color-1">
@@ -60,13 +60,13 @@ const listItemData404 = [
             <div class="sublist-info-box" customTooltip="Level ${index + 1} - Item ${i}" onclick="levelInfoTooltipShow(this)">
 				<i class="fas fa-info"></i>
 			</div>
-			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+			<div class="sublist-pen-box" data-toggle="tooltip" data-placement="bottom" data-title="Click to Rename" onclick="confirmListName(this)">
 				<i class="fas fa-pen"></i>
 			</div>
             <div class="sublist-check-box-404">
                 <i class="fas fa-check"></i>
             </div>
-            <div class="sublist-cancel-box-404" tooltip="Click to Delete" flow="down" data-toggle="modal" data-target="#deletlistopt2">
+            <div class="sublist-cancel-box-404" data-toggle="tooltip" data-placement="bottom" data-title="Click to Delete" onclick="showDeleteRightListConfirm('deletlistopt2')">
                 <i class="fas fa-times"></i>
             </div>
             </li>`;
@@ -81,6 +81,15 @@ const listItemData404 = [
     document.querySelector("#div-sub-ul-li-list").innerHTML = htmlDataModal;
     /* Update End By Ashiq */
 })();
+
+
+function showDeleteRightListConfirm(confirmTarget){
+    $(`#${confirmTarget}`).modal("show");
+}
+  
+// This function is call for all the right list cross icon tooltipInitialize.
+tooltipForFILTERS();
+
 /* New Function Start */
 let sub_ul_list_id1_old = "";
 
@@ -257,7 +266,6 @@ $("#mng-opt2-delete").click(function () {
 		$("#deletlistopt2").modal("hide");
 	}, 2000);
 });
-
 
 // ----------- ASHIQ -------------- 
 function calAngle(obj) {

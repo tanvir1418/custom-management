@@ -900,6 +900,10 @@ sub_ul_list.addEventListener("click", function (e) {
 	let target = e.target;
 	if (target.tagName === "DIV") {
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
+
+			let chart_deleteName = target.parentNode.childNodes[1].innerHTML;
+            document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = chart_deleteName;
+
 			manageResultDeleteListClassName = target.parentNode.classList[0];
 			return;
 		}
@@ -912,6 +916,10 @@ sub_ul_list.addEventListener("click", function (e) {
 	} else if (target.tagName === "I") {
 		target = target.parentNode;
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
+
+			let chart_deleteName = target.parentNode.childNodes[1].innerHTML;
+            document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = chart_deleteName;
+
 			manageResultDeleteListClassName = target.parentNode.classList[0];
 			return;
 		}
