@@ -5,27 +5,65 @@ $('.carousel').carousel({
 // CLICK LOAD TEMPLATE TO OPEN SAMPLE START
 
 $(".template_box").click(function (event) {
-  let tempTarget = event.target.classList.value;
-  if (tempTarget == "template_box" || tempTarget == "template-content-box" || tempTarget == "load-image" || tempTarget == "load-txt" || tempTarget == "temp-txt") {
+  let tempTargetClass = event.target.classList.value;
+  console.log(tempTargetClass);
+  if (tempTargetClass == "template_box" || tempTargetClass == "template-content-box" || tempTargetClass == "load-image" || tempTargetClass == "load-txt" || tempTargetClass == "temp-txt") {
     let loadTempWrapper = document.querySelector(".sample_options");
     loadTempWrapper.classList.remove("dispaly_hide");
     $("#load_temp_slider").addClass("dispaly_hide");
+
+    var templateName = ""
+    if(tempTargetClass == "template_box"){
+     templateName = $(event.target).find("p.load-txt").text().trim();
+    }
+    else if(tempTargetClass == "template-content-box"){
+     templateName = $(event.target).find("p.load-txt").text().trim();
+    }
+    else if(tempTargetClass == "load-image"){
+     templateName = $(event.target.parentElement).find("p.load-txt").text().trim();
+    }
+    else if(tempTargetClass == "load-txt"){
+     templateName = event.target.textContent.trim();
+    }
+    $("#template_name_input").val(templateName);
+
+    $("#saveDraftTarget-mnTemp").prop("disabled", false);
+    $("#saveStartTarget-mnTemp").prop("disabled", false);
+    $("#mnTemp_belowBtn_container .option4-below-control-input").removeClass("border-red");
+    $("#mnTemp_belowBtn_container .error-message").remove();
+    
   }
 });
 
 
 // Back Btn: Showing the load template tab
-function backToManageTempLoadTemp(){
-	// document.getElementById("load_temp_slider").style.display = "block";
-	// document.getElementById("create_new_mn_temp").style.display = "none";
-	$("#load_temp_slider").removeClass("dispaly_hide");
-	$("#create_new_mn_temp").addClass("dispaly_hide");
+function backToManageTempLoadTemp(backThis){
+  event.preventDefault();
+  
+  let initState = $(backThis).html();
+	$(backThis).html('<i class="fa fa-spinner fa-spin"></i> Back');
+	$(backThis).prop("disabled", true);
+	let $this = $(backThis);
+	setTimeout(function() {
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    $("#load_temp_slider").removeClass("dispaly_hide");
+    $("#create_new_mn_temp").addClass("dispaly_hide");
+	}, 2000);
 }
 
 $(".create_new_temp").click(function (event) {
   let loadTempWrapper = document.querySelector(".sample_options");
   loadTempWrapper.classList.remove("dispaly_hide");
   $("#load_temp_slider").addClass("dispaly_hide");
+  
+    $("#saveDraftTarget-mnTemp").prop("disabled", true);
+    $("#saveStartTarget-mnTemp").prop("disabled", true);
+    $("#template_name_input").val("");
+    $("#mnTemp_belowBtn_container .option4-below-control-input").removeClass("border-red");
+    $("#mnTemp_belowBtn_container .error-message").remove();
+  
 });
 
 // CLICK LOAD TEMPLATE TO OPEN SAMPLE START
@@ -73,6 +111,9 @@ for (let i = 1; i <= 29; i++) {
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
     </div>
+    <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete" onclick="leftItemDeleteClick(this, 'mnTempa')">
+			<i class="fas fa-times"></i>
+		</div>
     <div class="arrow-li-box arrow-li-box-background-color-1">
       <i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
     </div>
@@ -86,6 +127,12 @@ for (let i = 1; i <= 29; i++) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
+      <div class="sublist-info-box" customTooltip="${item}" onclick="levelInfoTooltipShow(this)">
+				<i class="fas fa-info"></i>
+			</div>
+			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+				<i class="fas fa-pen"></i>
+			</div>
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
@@ -193,22 +240,36 @@ let opt_managetempa_left_list = "";
     let target = e.target;
     const elementName = ["DIV", "P"];
     if (elementName.includes(target.tagName)) {
-      target = target.parentNode;
-    } else if (target.tagName === "I") {
-      target = target.parentNode.parentNode;
-    }
+			if(target.className.includes("grey-times-box")){
+				console.log("Div Clicked: Grey Times Box");
+				return;
+			}else {
+				target = target.parentNode;
+			}
+		} else if (target.tagName === "I") {
+			if(target.parentNode.className.includes("grey-times-box")){
+				console.log("Icon Clicked: Grey Times Box");
+				return;
+			}else{
+				target = target.parentNode.parentNode;
+			}
+		}
 
     if (oldTarget != "" && oldTarget !== target) {
       $(oldTarget).removeClass("highlight_li");
-      // $(oldTarget).children(".green-check-box").removeClass("display-block");
-      // $(oldTarget).children(".green-check-box").addClass("display-none");
+
+      $(oldTarget).children(".grey-times-box").removeClass("display-block");
+      $(oldTarget).children(".grey-times-box").addClass("display-none");
+
       $(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
       $(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
     }
     $(target).toggleClass("highlight_li");
-    // $(target).children(".green-check-box").toggleClass("display-none display-block");
+
+    $(target).children(".grey-times-box").toggleClass("display-none display-block");
+
     $(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
     $(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
     
@@ -238,6 +299,9 @@ sub_ul_managetempamodallist.addEventListener("click", function (e) {
 
       return;
     }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		}
     target = target.parentNode;
   } else if (target.tagName === "P") {
     target = target.parentNode;
@@ -250,7 +314,11 @@ sub_ul_managetempamodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempa-list-modal .mnTemp-list1-row-name").innerHTML = mnTempModalListA_rowName;
 
       return;
-    } else target = target.parentNode;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+    else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
 
   $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
@@ -267,29 +335,57 @@ $("#managetempa-mng-opt2-delete").click(function () {
 
 function countTempAListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
-  $("#managetempa-list-count").html(`${countItem} Items Selected`);
-  $("#managetempa-list-count").removeClass('hideListDiv');
-  if (countItem > 0) {
-    $("#temp-first-skip").addClass('hideListDiv');
-    $("#temp-first-check").removeClass('hideListDiv');
-    $("#temp-first-fileColor").addClass('fileContainerColor');
-  } else {
-    $("#temp-first-skip").removeClass('hideListDiv');
-    $("#temp-first-check").addClass('hideListDiv');
-    $("#temp-first-fileColor").removeClass('fileContainerColor');
-  }
-  $("#temp-single-list1").removeClass('imageClickBackground');
-  $("#temp-single-list2").addClass('imageClickBackground');
+  
+  $('#manage-tempa-list-modal .modal-body').addClass("disable-pointer");
+  let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+    $('#manage-tempa-list-modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    $("#managetempa-list-count").html(`${countItem} Items Selected`);
+    $("#managetempa-list-count").removeClass('hideListDiv');
+    if (countItem > 0) {
+      $("#temp-first-skip").addClass('hideListDiv');
+      $("#temp-first-check").removeClass('hideListDiv');
+      $("#temp-first-fileColor").addClass('fileContainerColor');
+    } else {
+      $("#temp-first-skip").removeClass('hideListDiv');
+      $("#temp-first-check").addClass('hideListDiv');
+      $("#temp-first-fileColor").removeClass('fileContainerColor');
+    }
+    $("#temp-single-list1").removeClass('imageClickBackground');
+    $("#temp-single-list2").addClass('imageClickBackground');
+
+    $("#manage-tempa-list-modal").modal("hide");
+  
+  }, 2000);
 }
 
 function resetTempAListModal(e) {
   let checkItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show");
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
-  checkItem.toggleClass("checkbox_show checkbox_hide");
-  uncheckItem.toggleClass("checkbox_show checkbox_hide");
-  $("#managetempa-list-count").html(`0 Items Selected`);
   let leftItem = $(e).parent().parent().find("ul.managetempa-list li div.green-check-box.display-block");
-  leftItem.toggleClass("display-block display-none");
+  
+  $('#manage-tempa-list-modal .modal-body').addClass("disable-pointer");
+  let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+    $('#manage-tempa-list-modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    checkItem.toggleClass("checkbox_show checkbox_hide");
+    uncheckItem.toggleClass("checkbox_show checkbox_hide");
+    $("#managetempa-list-count").html(`0 Items Selected`);
+    leftItem.toggleClass("display-block display-none");
+
+  }, 2000);
 }
 
 function manTemALeftOnRight(target) {
@@ -352,6 +448,9 @@ for (let i = 1; i <= 29; i++) {
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
     </div>
+    <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete" onclick="leftItemDeleteClick(this, 'mnTempb')">
+			<i class="fas fa-times"></i>
+		</div>
     <div class="arrow-li-box arrow-li-box-background-color-1">
       <i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
     </div>
@@ -365,6 +464,12 @@ for (let i = 1; i <= 29; i++) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
+      <div class="sublist-info-box" customTooltip="${item}" onclick="levelInfoTooltipShow(this)">
+				<i class="fas fa-info"></i>
+			</div>
+			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+				<i class="fas fa-pen"></i>
+			</div>
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
@@ -465,22 +570,36 @@ let opt_managetempb_left_list = "";
     let target = e.target;
     const elementName = ["DIV", "P"];
     if (elementName.includes(target.tagName)) {
-      target = target.parentNode;
-    } else if (target.tagName === "I") {
-      target = target.parentNode.parentNode;
-    }
+			if(target.className.includes("grey-times-box")){
+				console.log("Div Clicked: Grey Times Box");
+				return;
+			}else {
+				target = target.parentNode;
+			}
+		} else if (target.tagName === "I") {
+			if(target.parentNode.className.includes("grey-times-box")){
+				console.log("Icon Clicked: Grey Times Box");
+				return;
+			}else{
+				target = target.parentNode.parentNode;
+			}
+		}
 
     if (oldTarget != "" && oldTarget !== target) {
       $(oldTarget).removeClass("highlight_li");
-      // $(oldTarget).children(".green-check-box").removeClass("display-block");
-      // $(oldTarget).children(".green-check-box").addClass("display-none");
+
+      $(oldTarget).children(".grey-times-box").removeClass("display-block");
+      $(oldTarget).children(".grey-times-box").addClass("display-none");
+      
       $(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
       $(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
     }
     $(target).toggleClass("highlight_li");
-    // $(target).children(".green-check-box").toggleClass("display-none display-block");
+
+    $(target).children(".grey-times-box").toggleClass("display-none display-block");
+
     $(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
     $(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
     
@@ -510,6 +629,9 @@ sub_ul_managetempbmodallist.addEventListener("click", function (e) {
 
       return;
     }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		}
     target = target.parentNode;
   } else if (target.tagName === "P") {
     target = target.parentNode;
@@ -522,7 +644,11 @@ sub_ul_managetempbmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempb-list-modal .mnTemp-list2-row-name").innerHTML = mnTempModalListB_rowName;
 
       return;
-    } else target = target.parentNode;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+    else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
 
   $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
@@ -539,29 +665,57 @@ $("#managetempb-mng-opt2-delete").click(function () {
 
 function countTempBListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
-  $("#managetempb-list-count").html(`${countItem} Items Selected`);
-  $("#managetempb-list-count").removeClass('hideListDiv');
-  if (countItem > 0) {
-    $("#temp-sec-skip").addClass('hideListDiv');
-    $("#temp-sec-check").removeClass('hideListDiv');
-    $("#temp-sec-fileColor").addClass('fileContainerColor');
-  } else {
-    $("#temp-sec-skip").removeClass('hideListDiv');
-    $("#temp-sec-check").addClass('hideListDiv');
-    $("#temp-sec-fileColor").removeClass('fileContainerColor');
-  }
-  $("#temp-single-list2").removeClass('imageClickBackground');
-  $("#temp-single-list3").addClass('imageClickBackground');
+  
+  $('#manage-tempb-list-modal .modal-body').addClass("disable-pointer");
+  let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+    $('#manage-tempb-list-modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    $("#managetempb-list-count").html(`${countItem} Items Selected`);
+    $("#managetempb-list-count").removeClass('hideListDiv');
+    if (countItem > 0) {
+      $("#temp-sec-skip").addClass('hideListDiv');
+      $("#temp-sec-check").removeClass('hideListDiv');
+      $("#temp-sec-fileColor").addClass('fileContainerColor');
+    } else {
+      $("#temp-sec-skip").removeClass('hideListDiv');
+      $("#temp-sec-check").addClass('hideListDiv');
+      $("#temp-sec-fileColor").removeClass('fileContainerColor');
+    }
+    $("#temp-single-list2").removeClass('imageClickBackground');
+    $("#temp-single-list3").addClass('imageClickBackground');
+
+    $("#manage-tempb-list-modal").modal("hide");
+
+  }, 2000);
 }
 
 function resetTempBListModal(e) {
   let checkItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show");
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
-  checkItem.toggleClass("checkbox_show checkbox_hide");
-  uncheckItem.toggleClass("checkbox_show checkbox_hide");
-  $("#managetempb-list-count").html(`0 Items Selected`);
   let leftItem = $(e).parent().parent().find("ul.managetempb-list li div.green-check-box.display-block");
-  leftItem.toggleClass("display-block display-none");
+  
+  $('#manage-tempb-list-modal .modal-body').addClass("disable-pointer");
+  let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+    $('#manage-tempb-list-modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    checkItem.toggleClass("checkbox_show checkbox_hide");
+    uncheckItem.toggleClass("checkbox_show checkbox_hide");
+    $("#managetempb-list-count").html(`0 Items Selected`);
+    leftItem.toggleClass("display-block display-none");
+
+  }, 2000);
 }
 
 function manTemBLeftOnRight(target) {
@@ -622,6 +776,9 @@ for (let i = 1; i <= 29; i++) {
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
     </div>
+    <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete" onclick="leftItemDeleteClick(this, 'mnTempc')">
+			<i class="fas fa-times"></i>
+		</div>
     <div class="arrow-li-box arrow-li-box-background-color-1">
       <i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
     </div>
@@ -635,6 +792,12 @@ for (let i = 1; i <= 29; i++) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
+      <div class="sublist-info-box" customTooltip="${item}" onclick="levelInfoTooltipShow(this)">
+				<i class="fas fa-info"></i>
+			</div>
+			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+				<i class="fas fa-pen"></i>
+			</div>
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
@@ -736,22 +899,36 @@ let opt_managetempc_left_list = "";
     let target = e.target;
     const elementName = ["DIV", "P"];
     if (elementName.includes(target.tagName)) {
-      target = target.parentNode;
-    } else if (target.tagName === "I") {
-      target = target.parentNode.parentNode;
-    }
+			if(target.className.includes("grey-times-box")){
+				console.log("Div Clicked: Grey Times Box");
+				return;
+			}else {
+				target = target.parentNode;
+			}
+		} else if (target.tagName === "I") {
+			if(target.parentNode.className.includes("grey-times-box")){
+				console.log("Icon Clicked: Grey Times Box");
+				return;
+			}else{
+				target = target.parentNode.parentNode;
+			}
+		}
 
     if (oldTarget != "" && oldTarget !== target) {
       $(oldTarget).removeClass("highlight_li");
-      // $(oldTarget).children(".green-check-box").removeClass("display-block");
-      // $(oldTarget).children(".green-check-box").addClass("display-none");
+
+      $(oldTarget).children(".grey-times-box").removeClass("display-block");
+      $(oldTarget).children(".grey-times-box").addClass("display-none");
+
       $(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
       $(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
     }
     $(target).toggleClass("highlight_li");
-    // $(target).children(".green-check-box").toggleClass("display-none display-block");
+
+    $(target).children(".grey-times-box").toggleClass("display-none display-block");
+
     $(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
     $(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
     
@@ -781,6 +958,9 @@ sub_ul_managetempcmodallist.addEventListener("click", function (e) {
 
       return;
     }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		}
     target = target.parentNode;
   } else if (target.tagName === "P") {
     target = target.parentNode;
@@ -793,7 +973,11 @@ sub_ul_managetempcmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempc-list-modal .mnTemp-list3-row-name").innerHTML = mnTempModalListC_rowName;
 
       return;
-    } else target = target.parentNode;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+    else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
 
 
@@ -811,29 +995,57 @@ $("#managetempc-mng-opt2-delete").click(function () {
 
 function countTempCListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
-  $("#managetempc-list-count").html(`${countItem} Items Selected`);
-  $("#managetempc-list-count").removeClass('hideListDiv');
-  if (countItem > 0) {
-    $("#temp-third-skip").addClass('hideListDiv');
-    $("#temp-third-check").removeClass('hideListDiv');
-    $("#temp-third-fileColor").addClass('fileContainerColor');
-  } else {
-    $("#temp-third-skip").removeClass('hideListDiv');
-    $("#temp-third-check").addClass('hideListDiv');
-    $("#temp-third-fileColor").removeClass('fileContainerColor');
-  }
-  $("#temp-single-list3").removeClass('imageClickBackground');
-  $("#temp-single-list4").addClass('imageClickBackground');
+  
+  $('#manage-tempc-list-modal .modal-body').addClass("disable-pointer");
+  let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+    $('#manage-tempc-list-modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    $("#managetempc-list-count").html(`${countItem} Items Selected`);
+    $("#managetempc-list-count").removeClass('hideListDiv');
+    if (countItem > 0) {
+      $("#temp-third-skip").addClass('hideListDiv');
+      $("#temp-third-check").removeClass('hideListDiv');
+      $("#temp-third-fileColor").addClass('fileContainerColor');
+    } else {
+      $("#temp-third-skip").removeClass('hideListDiv');
+      $("#temp-third-check").addClass('hideListDiv');
+      $("#temp-third-fileColor").removeClass('fileContainerColor');
+    }
+    $("#temp-single-list3").removeClass('imageClickBackground');
+    $("#temp-single-list4").addClass('imageClickBackground');
+
+    $("#manage-tempc-list-modal").modal("hide");
+  
+  }, 2000);
 }
 
 function resetTempCListModal(e) {
   let checkItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show");
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
-  checkItem.toggleClass("checkbox_show checkbox_hide");
-  uncheckItem.toggleClass("checkbox_show checkbox_hide");
-  $("#managetempc-list-count").html(`0 Items Selected`);
   let leftItem = $(e).parent().parent().find("ul.managetempc-list li div.green-check-box.display-block");
-  leftItem.toggleClass("display-block display-none");
+
+  $('#manage-tempc-list-modal .modal-body').addClass("disable-pointer");
+  let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+    $('#manage-tempc-list-modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+  
+    checkItem.toggleClass("checkbox_show checkbox_hide");
+    uncheckItem.toggleClass("checkbox_show checkbox_hide");
+    $("#managetempc-list-count").html(`0 Items Selected`);
+    leftItem.toggleClass("display-block display-none");
+
+  }, 2000);
 }
 
 function manTemCLeftOnRight(target) {
@@ -927,6 +1139,9 @@ function findFileListMS1(_id, name) {
     <div class="green-check-box display-none">
       <i class="fas fa-check"></i>
     </div>
+    <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete" onclick="leftItemDeleteClick(this, 'mnTempd')">
+			<i class="fas fa-times"></i>
+		</div>
     <div class="arrow-li-box arrow-li-box-background-color-1">
       <i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
     </div>
@@ -940,6 +1155,12 @@ function findFileListMS1(_id, name) {
       let i = idx + 1;
       let elementHtml = `<li class="${_id}">
       <p>${item}</p>
+      <div class="sublist-info-box" customTooltip="${item}" onclick="levelInfoTooltipShow(this)">
+				<i class="fas fa-info"></i>
+			</div>
+			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+				<i class="fas fa-pen"></i>
+			</div>
       <div class="sublist-check-box checkbox_hide">
         <i class="fas fa-check"></i>
       </div>
@@ -1041,22 +1262,36 @@ let opt_managetempd_left_list = "";
     let target = e.target;
     const elementName = ["DIV", "P"];
     if (elementName.includes(target.tagName)) {
-      target = target.parentNode;
-    } else if (target.tagName === "I") {
-      target = target.parentNode.parentNode;
-    }
+			if(target.className.includes("grey-times-box")){
+				console.log("Div Clicked: Grey Times Box");
+				return;
+			}else {
+				target = target.parentNode;
+			}
+		} else if (target.tagName === "I") {
+			if(target.parentNode.className.includes("grey-times-box")){
+				console.log("Icon Clicked: Grey Times Box");
+				return;
+			}else{
+				target = target.parentNode.parentNode;
+			}
+		}
 
     if (oldTarget != "" && oldTarget !== target) {
       $(oldTarget).removeClass("highlight_li");
-      // $(oldTarget).children(".green-check-box").removeClass("display-block");
-      // $(oldTarget).children(".green-check-box").addClass("display-none");
+
+      $(oldTarget).children(".grey-times-box").removeClass("display-block");
+      $(oldTarget).children(".grey-times-box").addClass("display-none");
+
       $(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
       $(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
       $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
     }
     $(target).toggleClass("highlight_li");
-    // $(target).children(".green-check-box").toggleClass("display-none display-block");
+
+    $(target).children(".grey-times-box").toggleClass("display-none display-block");
+
     $(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
     $(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
     
@@ -1086,6 +1321,9 @@ sub_ul_managetempdmodallist.addEventListener("click", function (e) {
 
       return;
     }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		}
     target = target.parentNode;
   } else if (target.tagName === "P") {
     target = target.parentNode;
@@ -1098,7 +1336,11 @@ sub_ul_managetempdmodallist.addEventListener("click", function (e) {
       document.querySelector("#delet-manage-tempd-list-modal .mnTemp-list4-row-name").innerHTML = mnTempModalListD_rowName;
 
       return;
-    } else target = target.parentNode;
+    }
+    else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+    else target = target.parentNode;
   } else if (target.tagName !== "LI") return;
 
   $(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
@@ -1115,28 +1357,56 @@ $("#managetempd-mng-opt2-delete").click(function () {
 
 function countTempDListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
-  $("#managetempd-list-count").html(`${countItem} Items Selected`);
-  $("#managetempd-list-count").removeClass('hideListDiv');
-  if (countItem > 0) {
-    $("#temp-forth-skip").addClass('hideListDiv');
-    $("#temp-forth-check").removeClass('hideListDiv');
-    $("#temp-forth-fileColor").addClass('fileContainerColor');
-  } else {
-    $("#temp-forth-skip").removeClass('hideListDiv');
-    $("#temp-forth-check").addClass('hideListDiv');
-    $("#temp-forth-fileColor").removeClass('fileContainerColor');
-  }
-  $("#temp-single-list4").removeClass('imageClickBackground');
+  
+  $('#manage-tempd-list-modal .modal-body').addClass("disable-pointer");
+  let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+    $('#manage-tempd-list-modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    $("#managetempd-list-count").html(`${countItem} Items Selected`);
+    $("#managetempd-list-count").removeClass('hideListDiv');
+    if (countItem > 0) {
+      $("#temp-forth-skip").addClass('hideListDiv');
+      $("#temp-forth-check").removeClass('hideListDiv');
+      $("#temp-forth-fileColor").addClass('fileContainerColor');
+    } else {
+      $("#temp-forth-skip").removeClass('hideListDiv');
+      $("#temp-forth-check").addClass('hideListDiv');
+      $("#temp-forth-fileColor").removeClass('fileContainerColor');
+    }
+    $("#temp-single-list4").removeClass('imageClickBackground');
+
+    $("#manage-tempd-list-modal").modal("hide");
+  
+  }, 2000);
 }
 
 function resetTempDListModal(e) {
   let checkItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show");
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
-  checkItem.toggleClass("checkbox_show checkbox_hide");
-  uncheckItem.toggleClass("checkbox_show checkbox_hide");
-  $("#managetempd-list-count").html(`0 Items Selected`);
   let leftItem = $(e).parent().parent().find("ul.managetempd-list li div.green-check-box.display-block");
-  leftItem.toggleClass("display-block display-none");
+  
+  $('#manage-tempd-list-modal .modal-body').addClass("disable-pointer");
+  let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+    $('#manage-tempd-list-modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+    checkItem.toggleClass("checkbox_show checkbox_hide");
+    uncheckItem.toggleClass("checkbox_show checkbox_hide");
+    $("#managetempd-list-count").html(`0 Items Selected`);
+    leftItem.toggleClass("display-block display-none");
+  
+  }, 2000);
 }
 
 function manTemDLeftOnRight(target) {
@@ -1355,12 +1625,12 @@ function manTemSam2Rend(e, divId) {
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)" onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)" onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
     </div>
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)" onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)" onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
     </div>
   </div>`;
 
@@ -1439,12 +1709,12 @@ function manTemSam2Rend(e, divId) {
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)"  onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)"  onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
     </div>
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)"  onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)"  onfocusout="manTemcheckEmpty(this)" oninput="manTemcheckEmpty(this)"/>
     </div>
   </div>`;
 
@@ -1459,12 +1729,12 @@ function manTemSam2Rend(e, divId) {
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="number" onfocus="onFocus(this)" onfocusout="manTemcheckNum(this)" oninput="manTemcheckNum(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)" onfocusout="manTemcheckNum(this)" oninput="manTemcheckNum(this)"/>
     </div>
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="number" onfocus="onFocus(this)" onfocusout="manTemcheckNum(this)" oninput="manTemcheckNum(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)" onfocusout="manTemcheckNum(this)" oninput="manTemcheckNum(this)"/>
     </div>
   </div>`;
 
@@ -2337,7 +2607,7 @@ function windowToFormMS1(divData) {
       markItem.removeClass("display-block");
     }
 
-    $(`div#${id} a#submit_list`).click();
+    $(`div#${id} button#submit_list`).click();
   }
 }
 function formToWindowMS1() {
@@ -2922,19 +3192,15 @@ $('.template_box .info_box').tooltip(
 ).on('click', function () {
   let loadTempBoxId = this.parentElement.parentElement.id;
   let templateName = document.querySelector(`#${loadTempBoxId} .load-txt`).textContent;
-  $(this).attr('data-original-title', `${templateName}`);
+  $(this).attr('data-original-title', 
+  `${templateName}
+  Line 2: Sample Text 2
+  Line 3: Sample Text 3`);
   
   $('.template_box .info_box[data-toggle="tooltip"]').tooltip('hide');
   $(this).tooltip('show');
 });
 
-$(document).mouseup(function(e) {
-    var infoTooltips = $('.template_box .info_box[data-toggle="tooltip"]');
-    // if the target of the click isn't the container nor a descendant of the container
-    if (!infoTooltips.is(e.target) && infoTooltips.has(e.target).length === 0) {
-      infoTooltips.tooltip('hide');
-    }
-});
 // Info Tooltip of Manage Template Ends
 
 // Pen Tooltip of Manage Template Rename Starts  

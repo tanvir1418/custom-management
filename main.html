@@ -45,6 +45,7 @@
     <script src="js/man-data-opt4.js" defer></script>
     <script src="js/read-csv.js" defer></script>
     <script src="js/manage-alert.js" defer></script>
+    <script src="js/dynamic-tab.js" defer></script>
 </head>
 
 <body>
@@ -584,7 +585,7 @@
                                 </div>
                             </div>
                             <div class="ac-button-row">
-                                <input type="button" value="Reset" class="reset" onclick="resetAccountFormFields()">
+                                <button type="button" class="reset" onclick="resetAccountFormFields()">Reset</button>
                                 <input type="button" value="Save" class="save" id="main_acSave" onclick="saveAccountInfo(this)">
                                 <button class="save saveAc-info" id="loading_acSave"><i class="fa fa-spinner fa-spin"></i> Submitting...</button>
                             </div>
@@ -793,12 +794,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- text-edition-form -->
+                                
                                 <div class="text-edition-form mb-4">
                                     <div class="text-edition-box">
-                                        <input type="button" value="Form By Text Editor" data-toggle="modal"
-                                            data-target="#op1FormEditModal">
-                                        <i class="fas fa-arrow-right" id="arrow-icon"></i>
+                                        <button type="button" onclick="formByTextEditOpener(this, 'op1FormEditModal')">
+                                            Form By Text Editor <span><i class="fas fa-arrow-right"></i></span>
+                                        </button>
                                     </div>
                                 </div>
 
@@ -1188,9 +1189,8 @@
                                     <li class="item-loading-animation item-loading"></li>
                                 </ul> 
                             </div>
-                            <div class="scrollable-list scrollable-list-op2">
+                            <div class="scrollable-list scrollable-list-op2" onscroll="hideScrollTooltip()">
                                 <ul class="main-list">
-                                    <!-- get <li>data</li> from main.JS by ASHIQ... -->
                                 </ul>
                                 <div class="level-item-loading-wrapper" id="level_item_loading_op2">
                                     <ul class="list-one">
@@ -1279,7 +1279,6 @@
                                     </ul>
                                 </div>
                                 <div id="sub-ul-list">
-                                    <!-- get checkbox data from main.JS by ASHIQ... -->
                                 </div>
                             </div>
                             <div class="scroll-down myscrollbtn-op2">
@@ -1288,21 +1287,9 @@
                         </div>
 
                         <div class="row btn39">
-                            <a>
-                                <div class="mybtns-39 back-btn"  onclick="backToSelectDataType()">
-                                    <p>Back</p>
-                                </div>
-                            </a>
-                            <a>
-                                <div class="mybtns-39 reset-btn">
-                                    <p>Reset</p>
-                                </div>
-                            </a>
-                            <a id="op2NextBtn">
-                                <div class="mybtns-39 submit-btn">
-                                    <p>Next</p>
-                                </div>
-                            </a>
+                            <button class="mybtns-39 back-btn" onclick="backToSelectDataType(this)">Back</button>
+                            <button class="mybtns-39 reset-btn op3-resetBtn-both">Reset</button>
+                            <button class="mybtns-39 submit-btn" id="op2NextBtn">Next</button>
                         </div>
                     </div>
                     <!-- ====== LIST TABLE END ====== -->
@@ -1377,21 +1364,9 @@
                         </div>
 
                         <div class="row btn39">
-                            <a id="op2BackBtn">
-                                <div class="mybtns-39 back-btn">
-                                    <p>Back</p>
-                                </div>
-                            </a>
-                            <a>
-                                <div class="mybtns-39 reset-btn">
-                                    <p>Reset</p>
-                                </div>
-                            </a>
-                            <a>
-                                <div class="mybtns-39 submit-btn" onclick="backToSelectDataType()">
-                                    <p>Done</p>
-                                </div>
-                            </a>
+                            <button class="mybtns-39 back-btn" id="op2BackBtn">Back</button>
+                            <button class="mybtns-39 reset-btn op3-resetBtn-both">Reset</button>
+                            <button class="mybtns-39 done-btn" id="op2DoneBtn">Done</button>
                         </div>
                     </div>
                     <!-- ============= RECORDS FOUND END =============  -->
@@ -1539,10 +1514,10 @@
                                     <div class="control-section">
                                         <div class="d-flex">
                                             <div class="back-button">
-                                                <button class="button btn-back" onclick="backToSelectDataType()">Back</button>
+                                                <button class="button btn-back" onclick="backToSelectDataType(this)">Back</button>
                                             </div>
-                                            <div class="reset-button" onclick="opt3Reset()">
-                                                <button class="button btn-reset">Reset</button>
+                                            <div class="reset-button">
+                                                <button class="button btn-reset" onclick="opt3Reset(this)">Reset</button>
                                             </div>
                                             <div class="save-result-input">
                                                 <input class="box-search" type="text"
@@ -1555,12 +1530,12 @@
                                         </div>
                                     </div>
 
-                                    <!-- text-edition-form -->
+                                    
                                     <div class="text-edition-form mb-4">
                                         <div class="text-edition-box">
-                                            <input type="button" value="Form By Text Editor" data-toggle="modal"
-                                                data-target="#op3FormEditModal">
-                                            <i class="fas fa-arrow-right" id="arrow-icon"></i>
+                                            <button type="button" onclick="formByTextEditOpener(this, 'op3FormEditModal')">
+                                                Form By Text Editor <span><i class="fas fa-arrow-right"></i></span>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -2222,19 +2197,18 @@
 
 
                                                 <div class="button-row btn-row-list">
-                                                    <input type="button" value="Back" class="prev-disable" onclick="backToSelectDataType()">
+                                                    <button type="button" class="prev-disable" onclick="backToSelectDataType(this)">Back</button>
                                                     <!-- text-edition-form  -->
                                                     <div class="pop-up-yellow-button-wrap">
                                                         <div class="text-edition-form">
                                                             <div class="text-edition-box">
-                                                                <input type="button" value="Form By Text Editor"
-                                                                    data-toggle="modal"
-                                                                    data-target="#op4ListFormEditModal">
-                                                                <i class="fas fa-arrow-right" id="arrow-icon"></i>
+                                                                <button type="button" onclick="formByTextEditOpener(this, 'op4ListFormEditModal')">
+                                                                    Form By Text Editor <span><i class="fas fa-arrow-right"></i></span>
+                                                                </button>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <input type="button" value="Next" class="next">
+                                                    <button type="button" class="next">Next</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -2319,20 +2293,18 @@
                                                 </div>
 
                                                 <div class="button-row btn-row-leftRight">
-                                                    <input type="button" value="Back" class="previous">
-
-                                                    <!-- text-edition-form -->
+                                                    <button type="button" class="previous">Back</button>
+                                                    
                                                     <div class="pop-up-yellow-button-wrap">
                                                         <div class="text-edition-form">
                                                             <div class="text-edition-box">
-                                                                <input type="button" value="Form By Text Editor"
-                                                                    data-toggle="modal"
-                                                                    data-target="#op4ListFormEditModal">
-                                                                <i class="fas fa-arrow-right" id="arrow-icon"></i>
+                                                                <button type="button" onclick="formByTextEditOpener(this, 'op4ListFormEditModal')">
+                                                                    Form By Text Editor <span><i class="fas fa-arrow-right"></i></span>
+                                                                </button>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <input type="button" value="Next" class="next">
+                                                    <button type="button" class="next">Next</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -2359,7 +2331,6 @@
 
                                             <form action="">
 
-                                                <!-- ============================== -->
                                                 <!-- sample 3 checkbox style starts -->
                                                 <div class="checkbox-container">
                                                     <div class="checkbox-container-inner">
@@ -2911,25 +2882,20 @@
                                                     </div>
                                                 </div>
                                                 <!-- sample 3 checkbox style ends -->
-                                                <!-- ============XXXXXXXX========== -->
 
                                                 <div class="button-row btn-row-checkbox">
-                                                    <input type="button" value="Back" class="previous">
-
-                                                    <!-- text-edition-form -->
+                                                    <button type="button" class="previous">Back</button>
+                                                    
                                                     <div class="pop-up-yellow-button-wrap">
                                                         <div class="text-edition-form">
                                                             <div class="text-edition-box">
-                                                                <input type="button" value="Form By Text Editor"
-                                                                    data-toggle="modal"
-                                                                    data-target="#op4ListFormEditModal">
-                                                                <i class="fas fa-arrow-right" id="arrow-icon"></i>
+                                                                <button type="button" onclick="formByTextEditOpener(this, 'op4ListFormEditModal')">
+                                                                    Form By Text Editor <span><i class="fas fa-arrow-right"></i></span>
+                                                                </button>
                                                             </div>
                                                         </div>
                                                     </div>
-
-                                                    <input type="button" value="Next" class="next"
-                                                        id="next-show-save-start-op4">
+                                                    <button type="button" class="next" id="next-show-save-start-op4">Next</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -3031,20 +2997,18 @@
                                             </div>
                                             <!-- XXXXXXXXXXXXX Option 4 Sample 4 ends XXXXXXXXXXXXX -->
                                             <div class="button-row btn-row-dualTable">
-                                                <input type="button" value="Back" class="previous"
-                                                    id="prev-hide-save-start-op4">
-                                                <!-- text-edition-form -->
+                                                <button type="button" class="previous" id="prev-hide-save-start-op4">Back</button>
+                                                
                                                 <div class="pop-up-yellow-button-wrap">
                                                     <div class="text-edition-form">
                                                         <div class="text-edition-box">
-                                                            <input type="button" value="Form By Text Editor"
-                                                                data-toggle="modal" data-target="#op4ListFormEditModal">
-                                                            <i class="fas fa-arrow-right" id="arrow-icon"></i>
+                                                            <button type="button" onclick="formByTextEditOpener(this, 'op4ListFormEditModal')">
+                                                                Form By Text Editor <span><i class="fas fa-arrow-right"></i></span>
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <input type="button" value="Next" class="next"
-                                                    style="visibility: hidden;">
+                                                <button type="button" class="next" style="visibility: hidden;">Next</button>
                                             </div>
                                         </div>
                                         <!--  -->
@@ -3060,11 +3024,8 @@
                                                         Save Draft
                                                     </button>
                                                 </div>
-                                                <div class="save-start-wrapper save-start-class-hide-show-op4"
-                                                    id="saveStartTarget-op4">
-                                                    <button class="option4-below-button btn-save-start"
-                                                        data-toggle="modal" data-target="#mnTemp_saveStart" disabled>Save &
-                                                        Start</button>
+                                                <div class="save-start-wrapper save-start-class-hide-show-op4" id="saveStartTarget-op4">
+                                                    <button class="option4-below-button btn-save-start" onclick="mnTempSaveStartBtn(this)" disabled>Save & Start</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -3504,19 +3465,9 @@
                                         </div>
                                     </div>
                                     <div class="row btn39">
-                                        <a id="op5BackBtn">
-                                            <div id="opt5-to-main" class="mybtns-39 back-btn" onclick="backToSelectDataType()">
-                                                <p>Back</p>
-                                            </div>
-                                        </a>
-                                        <a>
-                                            <div class="mybtns-39 reset-btn" onclick="opt5ResetBtn(this)">
-                                                <p>Reset</p>
-                                            </div>
-                                        </a>
-                                        <a onclick="controlGenerateBtn(this)">
-                                            <button class="mybtns-39 submit-btn btn-done">Done</button>
-                                        </a>
+                                        <button class="mybtns-39 back-btn" onclick="backToSelectDataType(this)">Back</button>
+                                        <button class="mybtns-39 reset-btn" id="op5ResetBtn" onclick="opt5ResetBtn(this)">Reset</button>
+                                        <button class="mybtns-39 submit-btn btn-done" onclick="controlGenerateBtn(this)">Done</button>
                                     </div>
                                 </div>
                             </div>
@@ -4497,19 +4448,18 @@
 
 
                                 <div class="button-row btn-row-list">
-                                    <input type="button" value="Back" class="prev-disable" onclick="backToManageTempLoadTemp()">
-                                    <!-- text-edition-form -->
+                                    <button type="button" class="prev-disable" onclick="backToManageTempLoadTemp(this)">Back</button>
+                                    
                                     <div class="pop-up-yellow-button-wrap">
                                         <div class="text-edition-form">
                                             <div class="text-edition-box">
-                                                <input type="button" value="Form By Text Editor" data-toggle="modal"
-                                                    data-target="#mnTempListFormEditModal">
-                                                <i class="fas fa-arrow-right" id="arrow-icon"></i>
+                                                <button type="button" onclick="formByTextEditOpener(this, 'mnTempListFormEditModal')">
+                                                    Form By Text Editor <span><i class="fas fa-arrow-right"></i></span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <input type="button" value="Next" class="next">
+                                    <button type="button" class="next">Next</button>
                                 </div>
                             </form>
                         </div>
@@ -4594,20 +4544,18 @@
                                 </div>
 
                                 <div class="button-row  btn-row-leftRight">
-                                    <input type="button" value="Back" class="previous">
-
-                                    <!-- text-edition-form -->
+                                    <button type="button" class="previous">Back</button>
+                                    
                                     <div class="pop-up-yellow-button-wrap">
                                         <div class="text-edition-form">
                                             <div class="text-edition-box">
-                                                <input type="button" value="Form By Text Editor" data-toggle="modal"
-                                                    data-target="#mnTempListFormEditModal">
-                                                <i class="fas fa-arrow-right" id="arrow-icon"></i>
+                                                <button type="button" onclick="formByTextEditOpener(this, 'mnTempListFormEditModal')">
+                                                    Form By Text Editor <span><i class="fas fa-arrow-right"></i></span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <input type="button" value="Next" class="next">
+                                    <button type="button" class="next">Next</button>
                                 </div>
                             </form>
                         </div>
@@ -4634,7 +4582,6 @@
 
                             <form action="">
 
-                                <!-- ============================== -->
                                 <!-- sample 3 checkbox style starts -->
                                 <div class="checkbox-container">
                                     <div class="checkbox-container-inner">
@@ -5129,23 +5076,20 @@
                                     </div>
                                 </div>
                                 <!-- sample 3 checkbox style ends -->
-                                <!-- ============XXXXXXXX========== -->
 
                                 <div class="button-row btn-row-checkbox">
-                                    <input type="button" value="Back" class="previous">
-
-                                    <!-- text-edition-form -->
+                                    <button type="button" class="previous">Back</button>
+                                    
                                     <div class="pop-up-yellow-button-wrap">
                                         <div class="text-edition-form">
                                             <div class="text-edition-box">
-                                                <input type="button" value="Form By Text Editor" data-toggle="modal"
-                                                    data-target="#mnTempListFormEditModal">
-                                                <i class="fas fa-arrow-right" id="arrow-icon"></i>
+                                                <button type="button" onclick="formByTextEditOpener(this, 'mnTempListFormEditModal')">
+                                                    Form By Text Editor <span><i class="fas fa-arrow-right"></i></span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <input type="button" value="Next" class="next" id="next-show-save-start-mnTemp">
+                                    <button type="button" class="next" id="next-show-save-start-mnTemp">Next</button>
                                 </div>
                             </form>
                         </div>
@@ -5242,40 +5186,33 @@
                             <!-- XXXXXXXXXXXXX Option 4 Sample 4 ends XXXXXXXXXXXXX -->
 
                             <div class="button-row btn-row-dualTable">
-
-                                <input type="button" value="Back" class="previous" id="prev-hide-save-start-mnTemp">
-
-
-                                <!-- text-edition-form -->
+                                <button type="button" class="previous" id="prev-hide-save-start-mnTemp">Back</button>
+                                
                                 <div class="pop-up-yellow-button-wrap">
                                     <div class="text-edition-form">
                                         <div class="text-edition-box">
-                                            <input type="button" value="Form By Text Editor" data-toggle="modal"
-                                                data-target="#mnTempListFormEditModal">
-                                            <i class="fas fa-arrow-right" id="arrow-icon"></i>
+                                            <button type="button" onclick="formByTextEditOpener(this, 'mnTempListFormEditModal')">
+                                                Form By Text Editor <span><i class="fas fa-arrow-right"></i></span>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
-
-                                <input type="button" value="Next" class="next" style="visibility: hidden;">
+                                <button type="button" class="next" style="visibility: hidden;">Next</button>
                             </div>
                         </div>
                         <!--  -->
 
                         <!--====== option4-below-input-button-control-section-starts  ======-->
-                        <div class="option4-below-control-section">
+                        <div class="option4-below-control-section" id="mnTemp_belowBtn_container">
                             <div class="d-flex">
                                 <div class="option4-below-control-input">
-                                    <input type="text" placeholder="Template Name" onfocusout="saveDraftCheckEmpty(this)"
-                                    oninput="saveDraftCheckEmpty(this)">
+                                    <input type="text" placeholder="Template Name" id="template_name_input" onfocusout="saveDraftCheckEmpty(this)" oninput="saveDraftCheckEmpty(this)">
                                 </div>
                                 <div class="save-draft-wrapper">
-                                    <button class="option4-below-button btn-save-draft" onclick="saveDraftLoadingThankMnTemp(this)" disabled>Save Draft</button>
+                                    <button class="option4-below-button btn-save-draft" id="saveDraftTarget-mnTemp" onclick="saveDraftLoadingThankMnTemp(this)">Save Draft</button>
                                 </div>
-                                <div class="save-start-wrapper save-start-class-hide-show-mnTemp"
-                                    id="saveStartTarget-mnTemp">
-                                    <button class="option4-below-button btn-save-start" data-toggle="modal"
-                                        data-target="#mnTemp_saveStart" disabled>Save & Start</button>
+                                <div class="save-start-wrapper save-start-class-hide-show-mnTemp" id="saveStartTarget-mnTemp">
+                                    <button class="option4-below-button btn-save-start" onclick="mnTempSaveStartBtn(this)">Save & Start</button>
                                 </div>
                             </div>
                         </div>
@@ -5312,104 +5249,94 @@
                             <li class="item-loading-animation item-loading"></li>
                             <li class="item-loading-animation item-loading"></li>
                             <li class="item-loading-animation item-loading"></li>
+                            <li class="item-loading-animation item-loading"></li>
+                            <li class="item-loading-animation item-loading"></li>
+                            <li class="item-loading-animation item-loading"></li>
+                            <li class="item-loading-animation item-loading"></li>
+                            <li class="item-loading-animation item-loading"></li>
+                            <li class="item-loading-animation item-loading"></li>
+                            <li class="item-loading-animation item-loading"></li>
+                            <li class="item-loading-animation item-loading"></li>
+                            <li class="item-loading-animation item-loading"></li>
                         </ul> 
                     </div>
                     <div class="table-scroll-404" id="mnRes_scrollWindow">
-                        <ul class="left-list-404">
-                            <!-- get <li>data</li> from manage-result.JS by ASHIQ... -->
-                        </ul>
-                        <div class="level-item-loading-wrapper" id="mnRes_list_level_item_loading">
-                            <ul class="list-one">
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                            </ul>
-                            <ul class="list-two">
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                            </ul>
-                            <ul class="list-three">
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                                <li class="item-loading-animation item-loading"></li>
-                            </ul>
-                        </div>
-                        <div id="div-sub-ul-li-list">
+                        <div class="mnRes-scrollWindow-wrap">
+                            <div class="mnRes-left-list-wrap">
+                                <ul class="left-list-404">
+                                </ul>
+                            </div>
+                            <div class="mnRes-right-list-wrap scroll-width-zero" onscroll="hideScrollTooltip()">
+                            
+                                <div class="level-item-loading-wrapper" id="mnRes_list_level_item_loading">
+                                    <ul class="list-one">
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                        <li class="item-loading-animation item-loading"></li>
+                                    </ul>
+                                </div>
+                                <div id="div-sub-ul-li-list">
 
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="results-scroll-down" id="mnRes_scrollDownBtn">
-                        <i class="fas fa-caret-down"></i>
                     </div>
                 </div>
                 <!-- ====== tab 4 LIST TABLE END ====== -->
@@ -5419,28 +5346,30 @@
             <!-- ================  CHART PAGE START ================ -->
             <div class="chart-section" id="chartPage">
                 <div class="chart-title">
-                    <p class="left-item">Item 1</p>
-                    <p class="right-item">Level 1 - Item 1</p>
+                    <p class="left-item" id="actual_item_title">Item 1</p>
+                    <p class="loading-animation loading" id="loading_item_title"></p>
+                    <p class="right-item" id="actual_subitem_title">Level 1 - Item 1</p>
+                    <p class="loading-animation loading" id="loading_subitem_title"></p>
                 </div>
                 <div class="chart-page-tab">
                     <button class="tablink" onclick="openTabPage('Main', this)" id="defaultTabOpen">Main</button>
-                    <button class="tablink tab-disable" onclick="openTabPage('News', this)">Tab 2</button>
-                    <button class="tablink tab-disable" onclick="openTabPage('Contact', this)">Tab 3</button>
-                    <button class="tablink tab-disable" onclick="openTabPage('About', this)">Tab 4</button>
+                    <!-- <button class="tablink tab-disable" onclick="openTabPage('News', this)">Tab 2</button> -->
                 </div>
+
                 <div id="Main" class="tabcontent">
                     <!-- //////////  DISPLAY CHART STYLE START ////////// -->
+                    <!--
                     <div class="chart-page-inner-tab">
-                        <button class="inner-tablink" onclick="openFiveChartTab('Main', 'Display1', this); gotoChartPage(90, 50, 10, 'chartPage', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');"
+                        <button class="inner-tablink" onclick="openFiveChartTab('Main', 'Display1', this); gotoChartPage('Main', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');"
                             id="firstOpen">
                             Display Chart Style 1
                             <i class="fas fa-caret-down"></i>
                         </button>
-                        <button class="inner-tablink" onclick="openFiveChartTab('Main', 'Display2', this); gotoChartPage2();">
+                        <button class="inner-tablink" onclick="openFiveChartTab('Main', 'Display2', this); gotoChartPage2('Main');">
                             Display Chart Style 2
                             <i class="fas fa-caret-down"></i>
                         </button>
-                        <button class="inner-tablink" onclick="openFiveChartTab('Main', 'Display3', this); gotoLinearChart('lineChart','axisY-lineChart');">
+                        <button class="inner-tablink" onclick="openFiveChartTab('Main', 'Display3', this); gotoLinearChart('Main', 'lineChart','axisY-lineChart');">
                             Display Chart Style 3
                             <i class="fas fa-caret-down"></i>
                         </button>
@@ -5455,7 +5384,7 @@
                     </div>
                     <div class="inner-tabcontent Display1">
                         <div class="row meter_outer_box">
-                            <div class="col-4">
+                            <div class="col-4 main-chart">
                                 <div class="circleWrapper speedometer1">
                                     <div class="sector-3O sector0"></div>
                                     <div class="sector-3O sector10"></div>
@@ -5506,19 +5435,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="scorer-1-inner-div-5">
+                                    <div class="scorer-1-inner-div-5">
                                         <div class="scorer-1-tick scorer-1-tick-animation" id="scorer-meter-1">
-                                            <!-- Add id by ashiq -->
                                         </div>
                                     </div>
                                     <div class="speed-value">
-                                        <!-- Add id by ashiq -->
                                         <p id="value-of-scorer-meter-1">00.00%</p>
                                         <p>Meter 1</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4 main-chart">
                                 <div class="circleWrapper speedometer2">
                                     <div class="sector-3O sector0"></div>
                                     <div class="sector-3O sector10"></div>
@@ -5569,19 +5496,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="scorer-1-inner-div-5">
+                                    <div class="scorer-1-inner-div-5">
                                         <div class="scorer-1-tick scorer-1-tick-animation" id="scorer-meter-2">
-                                            <!-- Add id by ashiq -->
                                         </div>
                                     </div>
                                     <div class="speed-value">
-                                        <!-- Add id by ashiq -->
                                         <p id="value-of-scorer-meter-2">00.00%</p>
                                         <p>Meter 2</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4 main-chart">
                                 <div class="circleWrapper speedometer3">
                                     <div class="sector-3O sector0"></div>
                                     <div class="sector-3O sector10"></div>
@@ -5632,23 +5557,42 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="scorer-1-inner-div-5">
+                                    <div class="scorer-1-inner-div-5">
                                         <div class="scorer-1-tick scorer-1-tick-animation" id="scorer-meter-3">
-                                            <!-- Add id by ashiq -->
                                         </div>
                                     </div>
                                     <div class="speed-value">
-                                        <!-- Add id by ashiq -->
                                         <p id="value-of-scorer-meter-3">00.00%</p>
                                         <p>Meter 3</p>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-4 loading-chart">
+                                <div class="half-circle-wrap first-circle">
+                                    <div class="half-circle">
+                                    </div>
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                            </div>
+                            <div class="col-4 loading-chart">
+                                <div class="half-circle-wrap second-circle">
+                                    <div class="half-circle">
+                                    </div>
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                            </div>
+                            <div class="col-4 loading-chart">
+                                <div class="half-circle-wrap third-circle">
+                                    <div class="half-circle">
+                                    </div>
+                                    <p class="loading-animation loading"></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="inner-tabcontent Display2">
                         <div class="row gauge_outer_box">
-                            <div class="col-4">
+                            <div class="col-4 main-progress">
                                 <div class="progressmeter progressmeter1">
                                     <div class="barOverflow">
                                         <div class="bar"></div>
@@ -5674,7 +5618,7 @@
                                     <span class="meter-name">Meter 1</span>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4 main-progress">
                                 <div class="progressmeter progressmeter2">
                                     <div class="barOverflow">
                                         <div class="bar"></div>
@@ -5700,7 +5644,7 @@
                                     <span class="meter-name">Meter 2</span>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4 main-progress">
                                 <div class="progressmeter progressmeter3">
                                     <div class="barOverflow">
                                         <div class="bar"></div>
@@ -5724,6 +5668,27 @@
                                     <span class="min-value">0</span>
                                     <span class="max-value">100</span>
                                     <span class="meter-name">Meter 3</span>
+                                </div>
+                            </div>
+                            <div class="col-4 loading-progress">
+                                <div class="half-circle-wrap first-circle">
+                                    <div class="half-circle">
+                                    </div>
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                            </div>
+                            <div class="col-4 loading-progress">
+                                <div class="half-circle-wrap second-circle">
+                                    <div class="half-circle">
+                                    </div>
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                            </div>
+                            <div class="col-4 loading-progress">
+                                <div class="half-circle-wrap third-circle">
+                                    <div class="half-circle">
+                                    </div>
+                                    <p class="loading-animation loading"></p>
                                 </div>
                             </div>
                         </div>
@@ -5763,6 +5728,27 @@
                                 </div>
                                 <p class="x_axis_title">NUMBER OF DAYS</p>
                             </div>
+                            <div class="chart-loading-box">
+                                <div class="loading-first-section">
+                                    <div class="chart-three-input">
+                                        <div class="chart-input first">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                        <div class="chart-input second">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                        <div class="chart-input third">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="loading-graph-section">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                                <div class="loading-last-section">
+                                    <p class="loading-animation loading"></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="inner-tabcontent Display4">
@@ -5785,7 +5771,6 @@
                                             <th>NOV</th>
                                             <th>DEC</th>
                                         </tr>
-                                        <!-- all data is arrayed in manage-result.js  -->
                                     </table>
                                 </div>
                                 <div class="loading-table-chart4">
@@ -6300,30 +6285,24 @@
                                                     <span class="dis_time"></span>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR START -->
                                             <div class="dis5_progress">
                                                 <div class="dis5_progress_upbox">
                                                     <div class="dis5_progress_pos1 allprogress_pos">
-                                                        <!-- the percentage values get from manage-result.js -->
                                                         <div class="pos-progress-status">
                                                             <div class="pos-bar-status dis5_plusProgress_value1"></div>
-                                                            <!-- <p class="dis5_pos_value1 allpos_value"></p> -->
+                                                            <p class="dis5_pos_value1 allpos_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_pos_value1 allpos_value"></p>
                                                 </div>
                                                 <div class="dis5_progress_downbox">
                                                     <div class="dis5_progress_neg1 allprogress_neg">
-                                                        <!-- the percentage values get from manage-result.js -->
                                                         <div class="neg-progress-status">
                                                             <div class="neg-bar-status dis5_minusProgress_value1"></div>
-                                                            <!-- <p class="dis5_neg_value1 allneg_value"></p> -->
+                                                            <p class="dis5_neg_value1 allneg_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_neg_value1 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR END -->
                                         </td>
                                         <td>
                                             <div class="display_date_time">
@@ -6354,26 +6333,24 @@
                                                     <span class="dis_time"></span>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR START -->
                                             <div class="dis5_progress">
                                                 <div class="dis5_progress_upbox">
                                                     <div class="dis5_progress_pos2 allprogress_pos">
                                                         <div class="pos-progress-status">
                                                             <div class="pos-bar-status dis5_plusProgress_value2"></div>
+                                                            <p class="dis5_pos_value2 allpos_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_pos_value2 allpos_value"></p>
                                                 </div>
                                                 <div class="dis5_progress_downbox">
                                                     <div class="dis5_progress_neg2 allprogress_neg">
                                                         <div class="neg-progress-status">
                                                             <div class="neg-bar-status dis5_minusProgress_value2"></div>
+                                                            <p class="dis5_neg_value2 allneg_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_neg_value2 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR END -->
                                         </td>
                                         <td>
                                             <div class="display_date_time">
@@ -6404,26 +6381,24 @@
                                                     <span class="dis_time"></span>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR START -->
                                             <div class="dis5_progress">
                                                 <div class="dis5_progress_upbox">
                                                     <div class="dis5_progress_pos3 allprogress_pos">
                                                         <div class="pos-progress-status">
                                                             <div class="pos-bar-status dis5_plusProgress_value3"></div>
+                                                            <p class="dis5_pos_value3 allpos_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_pos_value3 allpos_value"></p>
                                                 </div>
                                                 <div class="dis5_progress_downbox">
                                                     <div class="dis5_progress_neg3 allprogress_neg">
                                                         <div class="neg-progress-status">
                                                             <div class="neg-bar-status dis5_minusProgress_value3"></div>
+                                                            <p class="dis5_neg_value3 allneg_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_neg_value3 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR END -->
                                         </td>
                                         <td>
                                             <div class="display_date_time">
@@ -6454,26 +6429,24 @@
                                                     <span class="dis_time"></span>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR START -->
                                             <div class="dis5_progress">
                                                 <div class="dis5_progress_upbox">
                                                     <div class="dis5_progress_pos4 allprogress_pos">
                                                         <div class="pos-progress-status">
                                                             <div class="pos-bar-status dis5_plusProgress_value4"></div>
+                                                            <p class="dis5_pos_value4 allpos_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_pos_value4 allpos_value"></p>
                                                 </div>
                                                 <div class="dis5_progress_downbox">
                                                     <div class="dis5_progress_neg4 allprogress_neg">
                                                         <div class="neg-progress-status">
                                                             <div class="neg-bar-status dis5_minusProgress_value4"></div>
+                                                            <p class="dis5_neg_value4 allneg_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_neg_value4 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR END -->
                                         </td>
                                         <td>
                                             <div class="display_date_time">
@@ -6504,26 +6477,24 @@
                                                     <span class="dis_time"></span>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR START -->
                                             <div class="dis5_progress">
                                                 <div class="dis5_progress_upbox">
                                                     <div class="dis5_progress_pos5 allprogress_pos">
                                                         <div class="pos-progress-status">
                                                             <div class="pos-bar-status dis5_plusProgress_value5"></div>
+                                                            <p class="dis5_pos_value5 allpos_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_pos_value5 allpos_value"></p>
                                                 </div>
                                                 <div class="dis5_progress_downbox">
                                                     <div class="dis5_progress_neg5 allprogress_neg">
                                                         <div class="neg-progress-status">
                                                             <div class="neg-bar-status dis5_minusProgress_value5"></div>
+                                                            <p class="dis5_neg_value5 allneg_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_neg_value5 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR END -->
                                         </td>
                                         <td>
                                             <div class="display_date_time">
@@ -6554,26 +6525,24 @@
                                                     <span class="dis_time"></span>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR START -->
                                             <div class="dis5_progress">
                                                 <div class="dis5_progress_upbox">
                                                     <div class="dis5_progress_pos6 allprogress_pos">
                                                         <div class="pos-progress-status">
                                                             <div class="pos-bar-status dis5_plusProgress_value6"></div>
+                                                            <p class="dis5_pos_value6 allpos_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_pos_value6 allpos_value"></p>
                                                 </div>
                                                 <div class="dis5_progress_downbox">
                                                     <div class="dis5_progress_neg6 allprogress_neg">
                                                         <div class="neg-progress-status">
                                                             <div class="neg-bar-status dis5_minusProgress_value6"></div>
+                                                            <p class="dis5_neg_value6 allneg_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_neg_value6 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR END -->
                                         </td>
                                         <td>
                                             <div class="display_date_time">
@@ -6604,26 +6573,24 @@
                                                     <span class="dis_time"></span>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR START -->
                                             <div class="dis5_progress">
                                                 <div class="dis5_progress_upbox">
                                                     <div class="dis5_progress_pos7 allprogress_pos">
                                                         <div class="pos-progress-status">
                                                             <div class="pos-bar-status dis5_plusProgress_value7"></div>
+                                                            <p class="dis5_pos_value7 allpos_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_pos_value7 allpos_value"></p>
                                                 </div>
                                                 <div class="dis5_progress_downbox">
                                                     <div class="dis5_progress_neg7 allprogress_neg">
                                                         <div class="neg-progress-status">
                                                             <div class="neg-bar-status dis5_minusProgress_value7"></div>
+                                                            <p class="dis5_neg_value7 allneg_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_neg_value7 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR END -->
                                         </td>
                                         <td>
                                             <div class="display_date_time">
@@ -6654,26 +6621,24 @@
                                                     <span class="dis_time"></span>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR START -->
                                             <div class="dis5_progress">
                                                 <div class="dis5_progress_upbox">
                                                     <div class="dis5_progress_pos8 allprogress_pos">
                                                         <div class="pos-progress-status">
                                                             <div class="pos-bar-status dis5_plusProgress_value8"></div>
+                                                            <p class="dis5_pos_value8 allpos_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_pos_value8 allpos_value"></p>
                                                 </div>
                                                 <div class="dis5_progress_downbox">
                                                     <div class="dis5_progress_neg8 allprogress_neg">
                                                         <div class="neg-progress-status">
                                                             <div class="neg-bar-status dis5_minusProgress_value8"></div>
+                                                            <p class="dis5_neg_value8 allneg_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_neg_value8 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR END -->
                                         </td>
                                         <td>
                                             <div class="display_date_time">
@@ -6704,26 +6669,24 @@
                                                     <span class="dis_time"></span>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR START -->
                                             <div class="dis5_progress">
                                                 <div class="dis5_progress_upbox">
                                                     <div class="dis5_progress_pos9 allprogress_pos">
                                                         <div class="pos-progress-status">
                                                             <div class="pos-bar-status dis5_plusProgress_value9"></div>
+                                                            <p class="dis5_pos_value9 allpos_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_pos_value9 allpos_value"></p>
                                                 </div>
                                                 <div class="dis5_progress_downbox">
                                                     <div class="dis5_progress_neg9 allprogress_neg">
                                                         <div class="neg-progress-status">
                                                             <div class="neg-bar-status dis5_minusProgress_value9"></div>
+                                                            <p class="dis5_neg_value9 allneg_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_neg_value9 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR END -->
                                         </td>
                                         <td>
                                             <div class="display_date_time">
@@ -6754,26 +6717,24 @@
                                                     <span class="dis_time"></span>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR START -->
                                             <div class="dis5_progress">
                                                 <div class="dis5_progress_upbox">
                                                     <div class="dis5_progress_pos10 allprogress_pos">
                                                         <div class="pos-progress-status">
                                                             <div class="pos-bar-status dis5_plusProgress_value10"></div>
+                                                            <p class="dis5_pos_value10 allpos_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_pos_value10 allpos_value"></p>
                                                 </div>
                                                 <div class="dis5_progress_downbox">
                                                     <div class="dis5_progress_neg10 allprogress_neg">
                                                         <div class="neg-progress-status">
                                                             <div class="neg-bar-status dis5_minusProgress_value10"></div>
+                                                            <p class="dis5_neg_value10 allneg_value"></p>
                                                         </div>
                                                     </div>
-                                                    <p class="dis5_neg_value10 allneg_value"></p>
                                                 </div>
                                             </div>
-                                            <!-- PROGRESS BAR END -->
                                         </td>
                                     </tr>
                                 </table>
@@ -6784,12 +6745,82 @@
                                     <i class="fas fa-long-arrow-alt-left"></i>
                                 </div>
                             </div>
+                            <div class="progress-loading-box">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <div class="loading-row upper-box">
+                                                <p class="loading-animation loading"></p>
+                                            </div>
+                                            <div class="loading-row lower-box">
+                                                <p class="loading-animation loading"></p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="loading-row upper-box">
+                                                <p class="loading-animation loading"></p>
+                                            </div>
+                                            <div class="loading-row lower-box">
+                                                <p class="loading-animation loading"></p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="loading-row upper-box">
+                                                <p class="loading-animation loading"></p>
+                                            </div>
+                                            <div class="loading-row lower-box">
+                                                <p class="loading-animation loading"></p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="loading-row upper-box">
+                                                <p class="loading-animation loading"></p>
+                                            </div>
+                                            <div class="loading-row lower-box">
+                                                <p class="loading-animation loading"></p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="loading-row upper-box">
+                                                <p class="loading-animation loading"></p>
+                                            </div>
+                                            <div class="loading-row lower-box">
+                                                <p class="loading-animation loading"></p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="loading-row upper-box">
+                                                <p class="loading-animation loading"></p>
+                                            </div>
+                                            <div class="loading-row lower-box">
+                                                <p class="loading-animation loading"></p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="loading-row upper-box">
+                                                <p class="loading-animation loading"></p>
+                                            </div>
+                                            <div class="loading-row lower-box">
+                                                <p class="loading-animation loading"></p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="loading-row upper-box">
+                                                <p class="loading-animation loading"></p>
+                                            </div>
+                                            <div class="loading-row lower-box">
+                                                <p class="loading-animation loading"></p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
+                    -->
                     <!-- //////////  DISPLAY CHART STYLE END ////////// -->
 
                     <!-- ////////// DOUBLE CLICK COLUMN START ////////// -->
-                    <!-- <div class="double-click-style1" id="double_click"> -->
                     <div class="double-click-style1">
                         <div class="row">
                             <div class="col-6">
@@ -6862,7 +6893,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="double-click-style2" id="double_click_style2"> -->
                     <div class="double-click-style2">
                         <div class="row">
                             <div class="col-6">
@@ -6926,12 +6956,10 @@
                     <!-- ////////// DOUBLE CLICK COLUMN END ////////// -->
 
                     <!-- -----========= STYLE 1 STYLE 2 START -----=========  -->
-                    <!-- <div class="style12-section" id="syle12_section"> -->
                     <div class="style12-section">
                         <div class="box-style12">
                             <div class="head-style12">
                                 <div class="tab_filter-style12">
-                                    <!-- <div class="style1-box" id="style_1_box"> -->
                                     <div class="style1-box">
                                         <img src="images/style-1.png" alt="">
                                         <span>Style 1</span>
@@ -6974,32 +7002,34 @@
                                     <div class="pdf_box54"><span>PDF</span></div>
                                     <input type="file" id="exelFile" accept=".xls, .xlsx, .csv" />
                                     <label for="exelFile">CSV</label>
-                                    <div class="style_date_time">
-                                        <div class="from_to22">
-                                            <span>Last Updated</span>
+                                    <div class="style_date_time_wrap">
+                                        <div class="style_date_time">
+                                            <div class="from_to22">
+                                                <span>Last Updated</span>
+                                            </div>
+                                            <div class="separation22">
+                                                <span>-</span>
+                                            </div>
+                                            <div class="value_date22">
+                                                <span class="dis_date"></span>
+                                            </div>
+                                            <div class="value_time22">
+                                                <span class="dis_time22"></span>
+                                            </div>
                                         </div>
-                                        <div class="separation22">
-                                            <span>-</span>
-                                        </div>
-                                        <div class="value_date22">
-                                            <span class="dis_date"></span>
-                                        </div>
-                                        <div class="value_time22">
-                                            <span class="dis_time22"></span>
-                                        </div>
+                                    </div>
+                                    <div class="loading_date_time_update">
+                                        <p class="loading-animation loading"></p>
                                     </div>
                                 </div>
                             </div>
                             <!-- ====//////====== STYLE 1 TABLE START ====//////====== -->
-                            <!-- <div class="outer-table-style12-box" id="outer_table_box7"> -->
                             <div class="outer-table-style12-box">
-                                <!-- <div class="style1-table-wrap" id="style1Table"> -->
                                 <div class="style1-table-wrap">
                                     <table id="resizable554" class="mytablesty12 main-table-design">
                                         <thead></thead>
                                         <tbody></tbody>
                                     </table>
-                                    <!-- <table class="mytablesty12 loading-style1-table" id="loading_table"> -->
                                     <table class="mytablesty12 loading-style1-table">
                                         <thead>
                                             <tr class="dnd-moved">
@@ -7699,93 +7729,41 @@
                                 </div>
                             </div>
                             <!-- ====//////====== STYLE 1 TABLE END ====//////====== -->
-
-                            <!-- <div class="style2-table-wrap" id="style2Con"> -->
                             <div class="style2-table-wrap">
                                 <!-- //////-----//////// LOREM 1 START //////-----////////  -->
-                                <!-- <div class="style2-table-content" id="style2_Content"></div> -->
                                 <div class="style2-table-content"></div>
-                                <!-- <div class="loading-style2-table" id="style2_loading"> -->
                                 <div class="loading-style2-table">
                                     <div class="description-text">
-                                        <p>
-                                            Lorem ipsum, dolor sit amet conseetur adipisicing elit. Ad, distinctio incidunt molestias beatae nam
-                                            doloribus cute laboriosam necesibus acntium recusandae adipisci.
-                                        </p>
+                                        <p class="loading-animation loading" style="height: 25px;"></p>
                                     </div>
                                 
                                     <div class="icon-box55">
                                         <div class="circle2box addToBookMark">
-                                            <i class="fas fa-envelope"></i>
+                                            <p class="loading-animation loading icon-inside"></p>
                                         </div>
                                         <div class="circle2box clickViewDetails">
-                                            <i class="fas fa-pen"></i>
+                                            <p class="loading-animation loading icon-inside"></p>
                                         </div>
                                         <div class="circle2box view-modal-click-style2">
-                                            <i class="fas fa-eye"></i>
+                                            <p class="loading-animation loading icon-inside"></p>
                                         </div>
                                         <div class="circle2box deleteRowLayout12">
-                                            <i class="fas fa-trash-alt"></i>
+                                            <p class="loading-animation loading icon-inside"></p>
                                         </div>
                                         <div class="circle2box row-modal-click-style2">
-                                            <svg class="svg1" viewBox="-21 0 512 512">
-                                                <g>
-                                                    <path d="M406,60h-30v15c0,24.814-20.186,45-45,45H181c-24.814,0-45-20.186-45-45V60h-30c-24.814,0-45,20.186-45,45v360
-                                                                                        c0,24.814,20.186,47,45,47h300c24.814,0,45-22.186,45-47V105C451,80.186,430.814,60,406,60z M136,450c-8.284,0-15-6.716-15-15
-                                                                                        c0-8.286,6.716-15,15-15s15,6.714,15,15C151,443.284,144.284,450,136,450z M136,360c-8.284,0-15-6.716-15-15
-                                                                                        c0-8.286,6.716-15,15-15s15,6.714,15,15C151,353.284,144.284,360,136,360z M136,270c-8.284,0-15-6.716-15-15
-                                                                                        c0-8.286,6.716-15,15-15s15,6.714,15,15C151,263.284,144.284,270,136,270z M136,180c-8.284,0-15-6.716-15-15
-                                                                                        c0-8.286,6.716-15,15-15s15,6.714,15,15C151,173.284,144.284,180,136,180z M376,450H196c-8.291,0-15-6.709-15-15
-                                                                                        c0-8.291,6.709-15,15-15h180c8.291,0,15,6.709,15,15C391,443.291,384.291,450,376,450z M376,360H196c-8.291,0-15-6.709-15-15
-                                                                                        c0-8.291,6.709-15,15-15h180c8.291,0,15,6.709,15,15C391,353.291,384.291,360,376,360z M376,270H196c-8.291,0-15-6.709-15-15
-                                                                                        c0-8.291,6.709-15,15-15h180c8.291,0,15,6.709,15,15S384.291,270,376,270z M376,180H196c-8.291,0-15-6.709-15-15s6.709-15,15-15
-                                                                                        h180c8.291,0,15,6.709,15,15S384.291,180,376,180z" />
-                                                </g>
-                                                <g>
-                                                    <path
-                                                        d="M316,30h-28.154l-3.545-9.99C280.053,8.042,268.686,0,256,0c-12.686,0-24.053,8.042-28.301,20.01L224.154,30H196
-                                                                                        c-16.569,0-30,13.431-30,30v15c0,8.284,6.716,15,15,15h150c8.284,0,15-6.716,15-15V60C346,43.431,332.569,30,316,30z" />
-                                                </g>
-                                            </svg>
+                                            <p class="loading-animation loading icon-inside"></p>
                                         </div>
                                         <div class="circle2box note-modal-click-style2">
-                                            <svg class="svg2" viewBox="0 0 24 24">
-                                                <path
-                                                    d="m12.25 2h-1.1c-.33-1.15-1.39-2-2.65-2s-2.32.85-2.65 2h-1.1c-.41 0-.75.34-.75.75v1.5c0 .96.79 1.75 1.75 1.75h5.5c.96 0 1.75-.79 1.75-1.75v-1.5c0-.41-.34-.75-.75-.75z" />
-                                                <path
-                                                    d="m14.25 3h-.25v1.25c0 1.52-1.23 2.75-2.75 2.75h-5.5c-1.52 0-2.75-1.23-2.75-2.75v-1.25h-.25c-1.52 0-2.75 1.23-2.75 2.75v12.5c0 1.52 1.23 2.75 2.75 2.75h7.38l.22-1.23c.1-.56.36-1.06.76-1.47l.8-.8h-8.16c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h9.5c.05 0 .09 0 .14.02h.01l3.6-3.6v-6.67c0-1.52-1.23-2.75-2.75-2.75zm-1 11.25h-9.5c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h9.5c.41 0 .75.34.75.75s-.34.75-.75.75zm0-3.25h-9.5c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h9.5c.41 0 .75.34.75.75s-.34.75-.75.75z" />
-                                                <path
-                                                    d="m12.527 24c-.197 0-.389-.078-.53-.22-.173-.173-.251-.419-.208-.661l.53-3.005c.026-.151.1-.291.208-.4l7.425-7.424c.912-.914 1.808-.667 2.298-.177l1.237 1.237c.683.682.683 1.792 0 2.475l-7.425 7.425c-.108.109-.248.182-.4.208l-3.005.53c-.043.008-.087.012-.13.012zm3.005-1.28h.01z" />
-                                            </svg>
+                                            <p class="loading-animation loading icon-inside"></p>
                                         </div>
                                         <div class="circle2box copyrowlist-modal-click-style2">
-                                            <svg class="svg3" viewBox="0 0 24 24">
-                                                <path
-                                                    d="m4 6.75c0-2.619 2.131-4.75 4.75-4.75h9.133c-.329-1.151-1.378-2-2.633-2h-11.5c-1.517 0-2.75 1.233-2.75 2.75v15.5c0 1.517 1.233 2.75 2.75 2.75h.25z" />
-                                                <path
-                                                    d="m20.25 4h-11.5c-1.517 0-2.75 1.233-2.75 2.75v14.5c0 1.517 1.233 2.75 2.75 2.75h11.5c1.517 0 2.75-1.233 2.75-2.75v-14.5c0-1.517-1.233-2.75-2.75-2.75zm-2 17h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75zm0-4h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75zm0-3.5h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75zm0-4h-7.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h7.5c.414 0 .75.336.75.75s-.336.75-.75.75z" />
-                                            </svg>
+                                            <p class="loading-animation loading icon-inside"></p>
                                         </div>
                                         <div class="circle2box moverowlist-modal-click-style2">
-                                            <svg class="svg4" viewBox="0 0 512.007 512.007">
-                                                <g>
-                                                    <path d="m142 143.003h139v-143c-49.379 0-107.674 0-154 0v128c0 8.271 6.729 15 15 15z" />
-                                                    <path d="m345 128.003v-128c-9.97 0-21.461 0-34 0v143h19c8.271 0 15-6.729 15-15z" />
-                                                    <path d="m127 512.003h218v-161h-218z" />
-                                                    <path
-                                                        d="m511.927 126.537c-.279-2.828-1.38-5.667-3.315-8.027-.747-.913 6.893 6.786-114.006-114.113-2.882-2.882-6.794-4.396-10.612-4.394-.789 0-3.925 0-8.995 0v128c0 24.813-20.187 45-45 45-14.028 0-186.064 0-188 0-24.813 0-45-20.187-45-45v-128c-29.589 0-49.82 0-52 0-24.813 0-45 20.187-45 45v422c0 24.813 20.187 45 45 45h52c0-10.815 0-201.797 0-210 0-24.813 20.187-45 45-45h188c24.813 0 45 20.187 45 45v210h92c24.813 0 45-20.187 45-45 .001-364.186.041-339.316-.072-340.466z" />
-                                                    <path d="m330 287.003h-188c-8.271 0-15 6.729-15 15v19h218v-19c0-8.271-6.729-15-15-15z" />
-                                                </g>
-                                            </svg>
+                                            <p class="loading-animation loading icon-inside"></p>
                                         </div>
                                         <div class="circle2box alertswindow-modal-click-style2">
-                                            <svg class="" viewBox="0 0 511.156 511.156">
-                                                <path d="m184.904 465.044c11.999 27.127 39.154 46.112 70.674 46.112s58.674-18.985 70.674-46.112z" />
-                                                <path
-                                                    d="m255.573 48.836c20.8 0 40.772 3.67 59.306 10.389v-2.283c0-31.398-25.544-56.942-56.941-56.942h-4.719c-31.398 0-56.942 25.544-56.942 56.942v2.254c18.524-6.699 38.49-10.36 59.296-10.36z" />
-                                                <path
-                                                    d="m442.747 435.044h-374.338c-7.082 0-13.569-4.776-15.042-11.704-1.458-6.859 1.668-13.629 8.01-16.559 1.505-.976 12.833-8.897 24.174-32.862 20.829-44.01 25.201-106.005 25.201-150.263 0-79.855 64.967-144.82 144.821-144.82 79.665 0 144.512 64.652 144.82 144.245.007.191.011.383.011.575 0 44.258 4.372 106.253 25.201 150.263 11.341 23.965 22.668 31.887 24.174 32.862 6.342 2.93 9.469 9.699 8.01 16.559-1.473 6.927-7.959 11.704-15.042 11.704zm7.2-28.157h.01z" />
-                                            </svg>
+                                            <p class="loading-animation loading icon-inside"></p>
                                         </div>
                                     </div>
                                 
@@ -8537,12 +8515,10 @@
                         <!-- PEGINATION START -->
                         <div class="pagination-container">
                             <div class="pagination-table">
-                                <!-- <div class="width-pagination width-pagi-manRes-table" id="pagination-man-res-table"> -->
                                 <div class="width-pagination width-pagi-manRes-table">
                                     <div class="width-row-go">
                                         <div class="no-of-rows">
                                             <div class="left-row-no">
-                                                <!-- <input type="number" class="manRes-pagination-input" id="res-row-no7" name="rowNo" value="7"> -->
                                                 <input type="number" class="manRes-pagination-input" name="rowNo" value="7">
                                                 <label for="rowNo">rows per page</label>
                                             </div>
@@ -8654,6 +8630,11 @@
                                         <p class="loading-animation loading"></p>
                                     </div>
                                 </th>
+                                <th scope="col">
+                                    <div class="loading-row">
+                                        <p class="loading-animation loading"></p>
+                                    </div>
+                                </th>
                             </thead>
                             <tbody>
                                 <tr>
@@ -8662,33 +8643,6 @@
                                             <p class="loading-animation loading"></p>
                                         </div>
                                     </td>
-                                    <td class="">
-                                        <div class="loading-row">
-                                            <p class="loading-animation loading"></p>
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="loading-row">
-                                            <p class="loading-animation loading"></p>
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="loading-row">
-                                            <p class="loading-animation loading"></p>
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="loading-row">
-                                            <p class="loading-animation loading"></p>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="loading-row">
-                                            <p class="loading-animation loading"></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
                                     <td>
                                         <div class="loading-row">
                                             <p class="loading-animation loading"></p>
@@ -8726,33 +8680,6 @@
                                             <p class="loading-animation loading"></p>
                                         </div>
                                     </td>
-                                    <td class="">
-                                        <div class="loading-row">
-                                            <p class="loading-animation loading"></p>
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="loading-row">
-                                            <p class="loading-animation loading"></p>
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="loading-row">
-                                            <p class="loading-animation loading"></p>
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="loading-row">
-                                            <p class="loading-animation loading"></p>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="loading-row">
-                                            <p class="loading-animation loading"></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
                                     <td>
                                         <div class="loading-row">
                                             <p class="loading-animation loading"></p>
@@ -8790,33 +8717,6 @@
                                             <p class="loading-animation loading"></p>
                                         </div>
                                     </td>
-                                    <td class="">
-                                        <div class="loading-row">
-                                            <p class="loading-animation loading"></p>
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="loading-row">
-                                            <p class="loading-animation loading"></p>
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="loading-row">
-                                            <p class="loading-animation loading"></p>
-                                        </div>
-                                    </td>
-                                    <td class="">
-                                        <div class="loading-row">
-                                            <p class="loading-animation loading"></p>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="loading-row">
-                                            <p class="loading-animation loading"></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
                                     <td>
                                         <div class="loading-row">
                                             <p class="loading-animation loading"></p>
@@ -8849,6 +8749,122 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td>
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="loading-row">
+                                            <p class="loading-animation loading"></p>
+                                        </div>
+                                    </td>
                                     <td>
                                         <div class="loading-row">
                                             <p class="loading-animation loading"></p>
@@ -8932,78 +8948,103 @@
         
         <script>
             // LOGIN DATA PASS START
-            const currentUser = localStorage.getItem("currentUser");
-            const user_div = document.getElementById("username_div");
-            if (currentUser != null && currentUser != "") {
-                user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
-            }
-            // Working Code starts
-            // $("#tabs_ul li").removeClass("active");
-            // $("#tabs_ul li:nth-child(1)").addClass("active");
-
-            // $(".content .tab_content").hide();
-            // $(".content .tab_content:nth-child(1)").show();
-            // Working Code starts
-            const tabVisibleDecision = localStorage.getItem("manageTabVisibility");
-            let totalTab = document.querySelectorAll("#tabs_ul li");
-            let totalTabContent = document.querySelectorAll(".content .tab_content");
-
-            if(tabVisibleDecision == "showAccount"){
+            let enteringLoginStatus = localStorage.getItem("loginStatus");
+            if(enteringLoginStatus !="LOGGED_IN") {
+                let enteringTotalTab = document.querySelectorAll("#tabs_ul li");
+                let enteringTabContent = document.querySelectorAll(".content .tab_content");
 
                 setTimeout(() => {
-					$("#account_form_content").css('display', 'block');
-					$("#account_form_loading").css('display', 'none');
-				}, 4000);
+                    $("#account_form_content").css('display', 'block');
+                    $("#account_form_loading").css('display', 'none');
+                }, 4000);
 
-                for (let i = 0; i < totalTab.length; i++) {
-                    totalTab[i].classList.remove("active");
-                    totalTabContent[i].style.display = "none";
+                for (let i = 0; i < enteringTotalTab.length; i++) {
+                    enteringTotalTab[i].classList.remove("active");
+                    enteringTabContent[i].style.display = "none";
                 }
-                totalTab[0].classList.add("active");
-                totalTabContent[0].style.display = "block";
+                enteringTotalTab[0].classList.add("active");
+                enteringTabContent[0].style.display = "block";
                 localStorage.setItem("manageTabVisibility", "");
+
+                document.getElementById("triangle").style.display = "none";
+                document.getElementById("collapsemenu").classList.remove("open");
+                document.getElementById("collapsemenu").style.height = "0px";
                 
-                let loginCondition = localStorage.getItem("loginStatus");
-                if (loginCondition != "LOGGED_IN") {
-                    document.getElementById("triangle").style.display = "none";
-                    document.getElementById("collapsemenu").classList.remove("open");
-                    document.getElementById("collapsemenu").style.height = "0px";
+            } else {
+
+                const currentUser = localStorage.getItem("currentUser");
+                const user_div = document.getElementById("username_div");
+                if (currentUser != null && currentUser != "") {
+                    user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
                 }
-                        
-            }else if(tabVisibleDecision == "showData"){
-                for (let i = 0; i < totalTab.length; i++) {
-                    totalTab[i].classList.remove("active");
-                    totalTabContent[i].style.display = "none";
+                // Working Code starts
+                // $("#tabs_ul li").removeClass("active");
+                // $("#tabs_ul li:nth-child(1)").addClass("active");
+
+                // $(".content .tab_content").hide();
+                // $(".content .tab_content:nth-child(1)").show();
+                // Working Code starts
+                const tabVisibleDecision = localStorage.getItem("manageTabVisibility");
+                let totalTab = document.querySelectorAll("#tabs_ul li");
+                let totalTabContent = document.querySelectorAll(".content .tab_content");
+
+                if(tabVisibleDecision == "showAccount"){
+
+                    setTimeout(() => {
+                        $("#account_form_content").css('display', 'block');
+                        $("#account_form_loading").css('display', 'none');
+                    }, 4000);
+
+                    for (let i = 0; i < totalTab.length; i++) {
+                        totalTab[i].classList.remove("active");
+                        totalTabContent[i].style.display = "none";
+                    }
+                    totalTab[0].classList.add("active");
+                    totalTabContent[0].style.display = "block";
+                    localStorage.setItem("manageTabVisibility", "");
+                    
+                    let loginCondition = localStorage.getItem("loginStatus");
+                    if (loginCondition != "LOGGED_IN") {
+                        document.getElementById("triangle").style.display = "none";
+                        document.getElementById("collapsemenu").classList.remove("open");
+                        document.getElementById("collapsemenu").style.height = "0px";
+                    }
+                            
+                }else if(tabVisibleDecision == "showData"){
+                    for (let i = 0; i < totalTab.length; i++) {
+                        totalTab[i].classList.remove("active");
+                        totalTabContent[i].style.display = "none";
+                    }
+                    totalTab[1].classList.add("active");
+                    totalTabContent[1].style.display = "block";
+                    localStorage.setItem("manageTabVisibility", "");
+                }else if(tabVisibleDecision == "showTemplate"){
+                    for (let i = 0; i < totalTab.length; i++) {
+                        totalTab[i].classList.remove("active");
+                        totalTabContent[i].style.display = "none";
+                    }
+                    totalTab[2].classList.add("active");
+                    totalTabContent[2].style.display = "block";
+                    localStorage.setItem("manageTabVisibility", "");
+                }else if(tabVisibleDecision == "showResult"){
+                    for (let i = 0; i < totalTab.length; i++) {
+                        totalTab[i].classList.remove("active");
+                        totalTabContent[i].style.display = "none";
+                    }
+                    totalTab[3].classList.add("active");
+                    totalTabContent[3].style.display = "block";
+                    localStorage.setItem("manageTabVisibility", "");
+                }else if(tabVisibleDecision == "showAlert"){
+                    for (let i = 0; i < totalTab.length; i++) {
+                        totalTab[i].classList.remove("active");
+                        totalTabContent[i].style.display = "none";
+                    }
+                    totalTab[4].classList.add("active");
+                    totalTabContent[4].style.display = "block";
+                    localStorage.setItem("manageTabVisibility", "");
                 }
-                totalTab[1].classList.add("active");
-                totalTabContent[1].style.display = "block";
-                localStorage.setItem("manageTabVisibility", "");
-            }else if(tabVisibleDecision == "showTemplate"){
-                for (let i = 0; i < totalTab.length; i++) {
-                    totalTab[i].classList.remove("active");
-                    totalTabContent[i].style.display = "none";
-                }
-                totalTab[2].classList.add("active");
-                totalTabContent[2].style.display = "block";
-                localStorage.setItem("manageTabVisibility", "");
-            }else if(tabVisibleDecision == "showResult"){
-                for (let i = 0; i < totalTab.length; i++) {
-                    totalTab[i].classList.remove("active");
-                    totalTabContent[i].style.display = "none";
-                }
-                totalTab[3].classList.add("active");
-                totalTabContent[3].style.display = "block";
-                localStorage.setItem("manageTabVisibility", "");
-            }else if(tabVisibleDecision == "showAlert"){
-                for (let i = 0; i < totalTab.length; i++) {
-                    totalTab[i].classList.remove("active");
-                    totalTabContent[i].style.display = "none";
-                }
-                totalTab[4].classList.add("active");
-                totalTabContent[4].style.display = "block";
                 localStorage.setItem("manageTabVisibility", "");
             }
-            localStorage.setItem("manageTabVisibility", "");
 
         </script>
 
@@ -9042,7 +9083,7 @@
                                 </div>
                             </div>
                             <div class="plus-popup-button-row">
-                                <input data-dismiss="modal" type="button" value="Done" class="plus-done-btn" onclick="addCategory(this)">
+                                <buton class="plus-done-btn" onclick="addCategory(this)" style="text-align: center;">Done</buton>
                                 <input data-dismiss="modal" type="button" value="Cancel" class="plus-cancel-btn">
                             </div>
                         </div>
@@ -9205,8 +9246,8 @@
                                 </div>
                             </div>
                             <div class="save-start-popup-button-row">
-                                <input data-dismiss="modal" type="button" value="Back" class="save-start-done-btn">
-                                <input type="button" value="Done" class="save-start-cancel-btn" data-dismiss="modal" onclick="showConfirmSample4StartBtn()">
+                                <button class="save-start-done-btn" onclick="mnTempSaveStartBackBtn(this)">Back</button>
+                                <button class="save-start-cancel-btn" onclick="showConfirmSample4StartBtn(this)">Done</button>
                             </div>
                         </div>
                     </div>
@@ -9308,7 +9349,7 @@
                                         </div>
                                     </div>
                                     <div class="sort-wrapper">
-                                        <input type="submit" value="Sort">
+                                        <input type="submit" value="Sort" id="dropBtnSort">
                                     </div>
                                 </div>
                                 <div class="checkbox-content-wrapper">
@@ -9367,7 +9408,7 @@
                         </div>
                     </div>
                     <div class="sort-wrapper">
-                        <input type="submit" value="Sort">
+                        <input type="submit" value="Sort" id="col8FilterSort">
                     </div>
                 </div>
                 <div class="custom-filter-wrapper">
@@ -9620,7 +9661,7 @@
                                 <li class="item-loading-animation item-loading"></li>
                             </ul> 
                         </div>
-                        <div class="scroll-list-box scrollable-list-op1 scroll5564windrow">
+                        <div class="scroll-list-box scrollable-list-op1 scroll5564windrow" onscroll="hideScrollTooltip()">
                             <ul class="select-item-main left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
@@ -9721,8 +9762,7 @@
                     <div class="btn-myfo">
                         <div class="myvote">
                             <button class="reset-myfo" type="button" onclick="resetOpt1ListModal(this)">Reset</button>
-                            <button class="done-myfo" data-dismiss="modal" type="button"
-                                onclick="countOpt1ListModal(this)">Done</button>
+                            <button class="done-myfo" onclick="countOpt1ListModal(this)">Done</button>
                         </div>
                     </div>
                 </div>
@@ -9763,7 +9803,7 @@
                 <li class="item-loading-animation item-loading"></li>
             </ul> 
         </div>
-        <div class="scroll-list-box scrollable-list-op1 copytoscrollwindow">
+        <div class="scroll-list-box scrollable-list-op1 copytoscrollwindow" onscroll="hideScrollTooltip()">
             <ul class="copytorow-list left-list-box">
                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
             </ul>
@@ -9892,7 +9932,7 @@
                 <li class="item-loading-animation item-loading"></li>
             </ul> 
         </div>
-        <div class="scroll-list-box scrollable-list-op1 copytoscrollwindow_style2">
+        <div class="scroll-list-box scrollable-list-op1 copytoscrollwindow_style2" onscroll="hideScrollTooltip()">
             <ul class="copytorow-list_style2 left-list-box">
                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
             </ul>
@@ -10025,7 +10065,7 @@
                 <li class="item-loading-animation item-loading"></li>
             </ul> 
         </div>
-        <div class="scroll-list-box scrollable-list-op1 movetoscrollwindow">
+        <div class="scroll-list-box scrollable-list-op1 movetoscrollwindow" onscroll="hideScrollTooltip()">
             <ul class="movetorow-list left-list-box">
                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
             </ul>
@@ -10154,7 +10194,7 @@
                 <li class="item-loading-animation item-loading"></li>
             </ul> 
         </div>
-        <div class="scroll-list-box scrollable-list-op1 movetoscrollwindow_style29">
+        <div class="scroll-list-box scrollable-list-op1 movetoscrollwindow_style29" onscroll="hideScrollTooltip()">
             <ul class="movetorow-list_style29 left-list-box">
                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
             </ul>
@@ -12328,7 +12368,7 @@
                                 <li class="item-loading-animation item-loading"></li>
                             </ul> 
                         </div>
-                        <div class="scroll-list-box scrollable-list-op1 managetempa-scroll-window">
+                        <div class="scroll-list-box scrollable-list-op1 managetempa-scroll-window" onscroll="hideScrollTooltip()">
                             <ul class="managetempa-list left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
@@ -12427,16 +12467,8 @@
                         </div>
                     </div>
                     <div class="row btn39 managetemp-btn">
-                        <a onclick="resetTempAListModal(this)">
-                            <div class="mybtns-39 reset-btn">
-                                <p>Reset</p>
-                            </div>
-                        </a>
-                        <a id="submit_list" data-dismiss="modal" onclick="countTempAListModal(this)">
-                            <div class="mybtns-39 submit-btn">
-                                <p>Next</p>
-                            </div>
-                        </a>
+                        <button class="mybtns-39 reset-btn" onclick="resetTempAListModal(this)">Reset</button>
+                        <button class="mybtns-39 submit-btn" id="submit_list" onclick="countTempAListModal(this)">Next</button>
                     </div>
                 </div>
             </div>
@@ -12502,7 +12534,7 @@
                                 <li class="item-loading-animation item-loading"></li>
                             </ul> 
                         </div>
-                        <div class="scroll-list-box scrollable-list-op1 managetempb-scroll-window">
+                        <div class="scroll-list-box scrollable-list-op1 managetempb-scroll-window" onscroll="hideScrollTooltip()">
                             <ul class="managetempb-list left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
@@ -12601,16 +12633,8 @@
                         </div>
                     </div>
                     <div class="row btn39 managetemp-btn">
-                        <a onclick="resetTempBListModal(this)">
-                            <div class="mybtns-39 reset-btn">
-                                <p>Reset</p>
-                            </div>
-                        </a>
-                        <a id="submit_list" data-dismiss="modal" onclick="countTempBListModal(this)">
-                            <div class="mybtns-39 submit-btn">
-                                <p>Next</p>
-                            </div>
-                        </a>
+                        <button class="mybtns-39 reset-btn" onclick="resetTempBListModal(this)">Reset</button>
+                        <button class="mybtns-39 submit-btn" id="submit_list" onclick="countTempBListModal(this)">Next</button>
                     </div>
                 </div>
             </div>
@@ -12676,7 +12700,7 @@
                                 <li class="item-loading-animation item-loading"></li>
                             </ul> 
                         </div>
-                        <div class="scroll-list-box scrollable-list-op1 managetempc-scroll-window">
+                        <div class="scroll-list-box scrollable-list-op1 managetempc-scroll-window" onscroll="hideScrollTooltip()">
                             <ul class="managetempc-list left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
@@ -12775,16 +12799,8 @@
                         </div>
                     </div>
                     <div class="row btn39 managetemp-btn">
-                        <a onclick="resetTempCListModal(this)">
-                            <div class="mybtns-39 reset-btn">
-                                <p>Reset</p>
-                            </div>
-                        </a>
-                        <a id="submit_list" data-dismiss="modal" onclick="countTempCListModal(this)">
-                            <div class="mybtns-39 submit-btn">
-                                <p>Next</p>
-                            </div>
-                        </a>
+                        <button class="mybtns-39 reset-btn" onclick="resetTempCListModal(this)">Reset</button>
+                        <button class="mybtns-39 submit-btn" id="submit_list" onclick="countTempCListModal(this)">Next</button>
                     </div>
                 </div>
             </div>
@@ -12850,7 +12866,7 @@
                                 <li class="item-loading-animation item-loading"></li>
                             </ul> 
                         </div>
-                        <div class="scroll-list-box scrollable-list-op1 managetempd-scroll-window">
+                        <div class="scroll-list-box scrollable-list-op1 managetempd-scroll-window" onscroll="hideScrollTooltip()">
                             <ul class="managetempd-list left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
@@ -12949,16 +12965,8 @@
                         </div>
                     </div>
                     <div class="row btn39 managetemp-btn">
-                        <a onclick="resetTempDListModal(this)">
-                            <div class="mybtns-39 reset-btn">
-                                <p>Reset</p>
-                            </div>
-                        </a>
-                        <a id="submit_list" data-dismiss="modal" onclick="countTempDListModal(this)">
-                            <div class="mybtns-39 submit-btn">
-                                <p>Next</p>
-                            </div>
-                        </a>
+                        <button class="mybtns-39 reset-btn" onclick="resetTempDListModal(this)">Reset</button>
+                        <button class="mybtns-39 submit-btn" id="submit_list" onclick="countTempDListModal(this)">Next</button>
                     </div>
                 </div>
             </div>
@@ -13183,7 +13191,7 @@
                                 <li class="item-loading-animation item-loading"></li>
                             </ul> 
                         </div>
-                        <div class="scroll-list-box scrollable-list-op1 optfourmodala-scroll-window">
+                        <div class="scroll-list-box scrollable-list-op1 optfourmodala-scroll-window" onscroll="hideScrollTooltip()">
                             <ul class="optfourmodala-list left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
@@ -13282,16 +13290,8 @@
                         </div>
                     </div>
                     <div class="row btn39 managetemp-btn">
-                        <a onclick="resetoptfourmodalaListModal(this)">
-                            <div class="mybtns-39 reset-btn">
-                                <p>Reset</p>
-                            </div>
-                        </a>
-                        <a id="submit_list" data-dismiss="modal" onclick="countoptfourmodalaListModal(this)">
-                            <div class="mybtns-39 submit-btn">
-                                <p>Next</p>
-                            </div>
-                        </a>
+                        <button class="mybtns-39 reset-btn" onclick="resetoptfourmodalaListModal(this)">Reset</button>
+                        <button class="mybtns-39 submit-btn" id="submit_list" onclick="countoptfourmodalaListModal(this)">Next</button>
                     </div>
                 </div>
             </div>
@@ -13357,7 +13357,7 @@
                                 <li class="item-loading-animation item-loading"></li>
                             </ul> 
                         </div>
-                        <div class="scroll-list-box scrollable-list-op1 optfourmodalb-scroll-window">
+                        <div class="scroll-list-box scrollable-list-op1 optfourmodalb-scroll-window" onscroll="hideScrollTooltip()">
                             <ul class="optfourmodalb-list left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
@@ -13456,16 +13456,8 @@
                         </div>
                     </div>
                     <div class="row btn39 managetemp-btn">
-                        <a onclick="resetoptfourmodalbListModal(this)">
-                            <div class="mybtns-39 reset-btn">
-                                <p>Reset</p>
-                            </div>
-                        </a>
-                        <a id="submit_list" data-dismiss="modal" onclick="countoptfourmodalbListModal(this)">
-                            <div class="mybtns-39 submit-btn">
-                                <p>Next</p>
-                            </div>
-                        </a>
+                        <button class="mybtns-39 reset-btn" onclick="resetoptfourmodalbListModal(this)">Reset</button>
+                        <button class="mybtns-39 submit-btn" id="submit_list" onclick="countoptfourmodalbListModal(this)">Next</button>
                     </div>
                 </div>
             </div>
@@ -13531,7 +13523,7 @@
                                 <li class="item-loading-animation item-loading"></li>
                             </ul> 
                         </div>
-                        <div class="scroll-list-box scrollable-list-op1 optfourmodalc-scroll-window">
+                        <div class="scroll-list-box scrollable-list-op1 optfourmodalc-scroll-window" onscroll="hideScrollTooltip()">
                             <ul class="optfourmodalc-list left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
@@ -13630,16 +13622,8 @@
                         </div>
                     </div>
                     <div class="row btn39 managetemp-btn">
-                        <a onclick="resetoptfourmodalcListModal(this)">
-                            <div class="mybtns-39 reset-btn">
-                                <p>Reset</p>
-                            </div>
-                        </a>
-                        <a id="submit_list" data-dismiss="modal" onclick="countoptfourmodalcListModal(this)">
-                            <div class="mybtns-39 submit-btn">
-                                <p>Next</p>
-                            </div>
-                        </a>
+                        <button class="mybtns-39 reset-btn" onclick="resetoptfourmodalcListModal(this)">Reset</button>
+                        <button class="mybtns-39 submit-btn" id="submit_list" onclick="countoptfourmodalcListModal(this)">Next</button>
                     </div>
                 </div>
             </div>
@@ -13705,7 +13689,7 @@
                                 <li class="item-loading-animation item-loading"></li>
                             </ul> 
                         </div>
-                        <div class="scroll-list-box scrollable-list-op1 optfourmodald-scroll-window">
+                        <div class="scroll-list-box scrollable-list-op1 optfourmodald-scroll-window" onscroll="hideScrollTooltip()">
                             <ul class="optfourmodald-list left-list-box">
                                 <!-- get <li>data</li> from opt1-list-modal.JS by ASHIQ... -->
                             </ul>
@@ -13804,16 +13788,8 @@
                         </div>
                     </div>
                     <div class="row btn39 managetemp-btn">
-                        <a onclick="resetoptfourmodaldListModal(this)">
-                            <div class="mybtns-39 reset-btn">
-                                <p>Reset</p>
-                            </div>
-                        </a>
-                        <a id="submit_list" data-dismiss="modal" onclick="countoptfourmodaldListModal(this)">
-                            <div class="mybtns-39 submit-btn">
-                                <p>Next</p>
-                            </div>
-                        </a>
+                        <button class="mybtns-39 reset-btn" onclick="resetoptfourmodaldListModal(this)">Reset</button>
+                        <button class="mybtns-39 submit-btn" id="submit_list" onclick="countoptfourmodaldListModal(this)">Next</button>
                     </div>
                 </div>
             </div>
@@ -14058,7 +14034,7 @@
                         </div>
                         <div class="comfirm-btn-bx">
                             <button type="button" class="cancel-list-data" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="confirm-list-data" onclick="chartDispConfirmButton(this)" id="chart_display_modalBtn">Confirm</button>
+                            <button type="button" class="confirm-list-data" onclick="chartDispConfirmButton(this)">Confirm</button>
                         </div>
                     </div>
                 </div>
@@ -14155,6 +14131,116 @@
         </div>
     </div>
     <!-- Submit Draft Info Modal start -->
+
+    <!-- =========Rename All LIST ITEMS Modal Starts========= -->
+    <div class="modal fade" id="remaneAllLevelItem" tabindex="-1" aria-labelledby="remaneAllLevelItem" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="plus-button-click-popup">
+                        <div class="plus-button-click-popup-wrapper">
+                            <div class="plus-button-popup-header-title">
+                                <p style="color: white">NAME</p>
+                            </div>
+                            <div class="plus-button-popup-body-wrapper">
+                                <div class="plus-button-popup-body-content">
+                                    <input type="text" placeholder="New name" class="plus-input">
+                                </div>
+                            </div>
+                            <div class="plus-popup-button-row">
+                                <button class="plus-done-btn" onclick="renamingLevelItem(this)">Done</button>
+                                <input data-dismiss="modal" type="button" value="Cancel" class="plus-cancel-btn">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =========Rename All LIST ITEMS Modal Ends========= -->
+    <!-- ========= THANK AFTER RENAME Modal Starts========= -->
+    <div class="modal fade" id="thankAfterAllListRename" tabindex="-1" aria-labelledby="thankAfterAllListRename" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="generate-button-click-popup">
+                        <div class="generate-button-click-popup-wrapper">
+                            <div class="generate-button-popup-header-title">
+                                <p>THANK YOU</p>
+                            </div>
+                            <div class="generate-button-popup-body-wrapper">
+                                <div class="generate-button-popup-body-content">
+                                    <p>Your Request has been Successfully Processed</p>
+                                </div>
+                            </div>
+                            <div class="generate-popup" data-dismiss="modal">
+                                <input type="button" value="Close" class="gn-close-btn" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========= THANK AFTER RENAME Modal Ends========= -->
+    <!-- ======= Update-Now Clear-Filter Clear-Sorting Button (Manage Result) Confirm Modal START =========== -->
+    <div class="modal fade delete-list-item" id="dynamicTabCross_confirm_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title">DELETE TAB</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="remove-box">
+                        <div class="question-delete">
+                            <p></p>
+                        </div>
+                        <div class="comfirm-btn-bx">
+                            <button type="button" class="cancel-list-data" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="confirm-list-data" onclick="dynamicTabCrossConfirmBtn(this)">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======= Update-Now Clear-Filter Clear-Sorting Button (Manage Result) Confirm Modal END =========== -->
+    <!-- ======= Filter Confirm Modal START =========== -->
+    <div class="modal fade delete-list-item" id="delete_leftItem_list">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title">SAVE FILTER</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="remove-box">
+                        <div class="question-delete">
+                            <p>Confirm to delete item?</p>
+                        </div>
+                        <div class="comfirm-btn-bx">
+                            <button type="button" class="cancel-list-data" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="confirm-list-data" onclick="leftItemDeleteConfirm(this)">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======= Filter Confirm Modal END =========== -->
+
+    <div class="list-info-tooltip" id="list_info_tooltip">
+        <div class="list-tooltip-wrap list-tooltip-arrow-top">
+            <p class="line-1">Level 1 - Item 6</p>
+            <p class="line-2">Line Two Info Tooltip</p>
+            <p class="line-3">Line Three Info Tooltip</p>
+        </div>
+    </div>
 
     <!-- JS FILES -->
     <script src="js/jquery.js"></script>

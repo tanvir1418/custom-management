@@ -39,14 +39,18 @@
 
 // Global file for this Site
 var deleteListClassName = "";
+var manageResultDeleteListClassName = "";
 
 // TOGGLE TRIANGLE
 function myFunction() {
-	var x = document.getElementById("triangle");
-	if (x.style.display === "none") {
-		x.style.display = "block";
-	} else {
-		x.style.display = "none";
+	let triangleLoginStatus = localStorage.getItem("loginStatus");
+	if(triangleLoginStatus =="LOGGED_IN"){
+		var x = document.getElementById("triangle");
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
 	}
 }
 
@@ -62,13 +66,19 @@ $(function () {
 	}
 
 	b.click(function () {
-		if (w.hasClass("open")) {
-			w.removeClass("open");
-			w.height(0);
-		} else {
-			w.addClass("open");
-			w.height(l.outerHeight(true));
+		let toggleBtnLoginStatus = localStorage.getItem("loginStatus");
+		if(toggleBtnLoginStatus !="LOGGED_IN"){
+			$('#loginRequired').modal('show');
+		}else{
+			if (w.hasClass("open")) {
+				w.removeClass("open");
+				w.height(0);
+			} else {
+				w.addClass("open");
+				w.height(l.outerHeight(true));
+			}
 		}
+		
 	});
 });
 
@@ -147,12 +157,10 @@ for (var i = 0; i < li_tabs.length; i++) {
 
 				$("#mnRes_list_item_loading").css("display", "block");
 				$("#mnRes_scrollWindow").css("display", "none");
-				$("#mnRes_scrollDownBtn").css("display", "none");
 				
 				setTimeout(() => {
 					$("#mnRes_list_item_loading").css("display", "none");
 					$("#mnRes_scrollWindow").css("display", "block");
-					$("#mnRes_scrollDownBtn").css("display", "block");
 				}, 2000);
 
 			}
@@ -226,32 +234,49 @@ function openOption(evt, optionName) {
 // CHOOSE OPTION SECTION END
 
 // BACK BTN
-$("#back-manage").click(function () {
-	document.getElementById("option_1").style.display = "none";
-	document.getElementById("hide559").style.display = "block";
-	document.getElementById("tab_2").style.paddingTop = "60px";
-	document.getElementById("opt-content").style.marginTop = "50px";
+$("#back-manage").click(function (event) {
+	event.preventDefault();
+	$('body').addClass("disable-pointer");
+
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Back');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		document.getElementById("option_1").style.display = "none";
+		document.getElementById("hide559").style.display = "block";
+		document.getElementById("tab_2").style.paddingTop = "60px";
+		document.getElementById("opt-content").style.marginTop = "50px";
+	}, 2000);
 });
 
 // Back Btn: Return to Select A Data Type To Manage 
-function backToSelectDataType(){
-	document.getElementById("option_1").style.display = "none";
-	document.getElementById("option_2").style.display = "none";
-	document.getElementById("option_3").style.display = "none";
-	document.getElementById("option_4").style.display = "none";
-	document.getElementById("option_5").style.display = "none";
-	document.getElementById("hide559").style.display = "block";
-	document.getElementById("tab_2").style.paddingTop = "60px";
-	document.getElementById("opt-content").style.marginTop = "50px";
-}
+function backToSelectDataType(backThis){
+	$('body').addClass("disable-pointer");
+	let initState = $(backThis).html();
+	$(backThis).html('<i class="fa fa-spinner fa-spin"></i> Back');
+	$(backThis).prop("disabled", true);
+	let $this = $(backThis);
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
 
-// OPTION 5 BACK BTN
-$("#opt5-to-main").click(function () {
-	document.getElementById("option_5").style.display = "none";
-	document.getElementById("hide559").style.display = "block";
-	document.getElementById("tab_2").style.paddingTop = "60px";
-	document.getElementById("opt-content").style.marginTop = "50px";
-});
+		document.getElementById("option_1").style.display = "none";
+		document.getElementById("option_2").style.display = "none";
+		document.getElementById("option_3").style.display = "none";
+		document.getElementById("option_4").style.display = "none";
+		document.getElementById("option_5").style.display = "none";
+		document.getElementById("hide559").style.display = "block";
+		document.getElementById("tab_2").style.paddingTop = "60px";
+		document.getElementById("opt-content").style.marginTop = "50px";
+	}, 2000);
+}
 
 // CREATE & MANAGE TAB START
 
@@ -396,16 +421,6 @@ setTimeout(() => {
 
 // CREATE & MANAGE TAB END
 
-// LOGIN DATA PASS START
-// const currentUser = localStorage.getItem("currentUser");
-// const user_div = document.getElementById("username_div");
-// if (currentUser != null && currentUser != "") {
-//   user_div.innerHTML = `<p class="name m-0">${currentUser}</p>`;
-// } else {
-// }
-
-// LOGIN DATA PASS END
-
 // option 2 list item start
 
 // const sub_ul_list_1 = document.querySelector(".sub-ul-list-1");
@@ -454,6 +469,9 @@ const listItemData = [
 		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
 		</div>
+		<div class="grey-times-box display-none" flow="down" tooltip="Click to Delete" onclick="leftItemDeleteClick(this, 'op2')">
+			<i class="fas fa-times"></i>
+		</div>
 		<div class="arrow-li-box arrow-li-box-background-color-1">
 			<i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
 		</div>
@@ -466,6 +484,12 @@ const listItemData = [
 		for (let i = 1; i <= length; i++) {
 			let elementHtml = `<li class="option-list-${index + 1}-${i}">
 			<p>Level ${index + 1} - Item ${i}</p>
+			<div class="sublist-info-box" customTooltip="Level ${index + 1} - Item ${i}" onclick="levelInfoTooltipShow(this)">
+				<i class="fas fa-info"></i>
+			</div>
+			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+				<i class="fas fa-pen"></i>
+			</div>
 			<div class="sublist-check-box checkbox_hide">
 				<i class="fas fa-check"></i>
 			</div>
@@ -570,15 +594,30 @@ var opt2_left_list = "";
 		let target = e.target;
 		const elementName = ["DIV", "P"];
 		if (elementName.includes(target.tagName)) {
-			target = target.parentNode;
+			if(target.className.includes("grey-times-box")){
+				console.log("Div Clicked: Grey Times Box");
+				return;
+			}else {
+				target = target.parentNode;
+			}
 		} else if (target.tagName === "I") {
-			target = target.parentNode.parentNode;
+			if(target.parentNode.className.includes("grey-times-box")){
+				console.log("Icon Clicked: Grey Times Box");
+				return;
+			}else{
+				target = target.parentNode.parentNode;
+			}
 		}
 
 		if (oldTarget != "" && oldTarget !== target) {
 			$(oldTarget).removeClass("highlight_li");
+
 			$(oldTarget).children(".green-check-box").removeClass("display-block");
 			$(oldTarget).children(".green-check-box").addClass("display-none");
+
+			$(oldTarget).children(".grey-times-box").removeClass("display-block");
+			$(oldTarget).children(".grey-times-box").addClass("display-none");
+
 			$(oldTarget)
 				.children(".arrow-li-box")
 				.removeClass("arrow-li-box-background-color-2");
@@ -595,9 +634,11 @@ var opt2_left_list = "";
 				.addClass("arrow-li-box-i-color-1");
 		}
 		$(target).toggleClass("highlight_li");
-		$(target)
-			.children(".green-check-box")
-			.toggleClass("display-none display-block");
+
+		$(target).children(".green-check-box").toggleClass("display-none display-block");
+
+		$(target).children(".grey-times-box").toggleClass("display-none display-block");
+
 		$(target)
 			.children(".arrow-li-box")
 			.toggleClass(
@@ -640,24 +681,81 @@ const option_2_list = document.querySelector(".op2-listing-items");
 const option_2_record = document.querySelector(".option-2-records");
 option_2_record.style.display = "none";
 
-$("#op2NextBtn").click(function () {
-	option_2_record.style.display = "block";
-	option_2_list.style.display = "none";
-
-	$("#op2_record_data").css("display", "none");
-	$("#records_data_loading").css("display", "block");
-	setTimeout(() => {
-		$("#op2_record_data").css("display", "block");
-		$("#records_data_loading").css("display", "none");
+$(".op3-resetBtn-both").click(function () {
+	$('body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
 	}, 2000);
 });
 
-$("#op2BackBtn").click(function () {
-	option_2_record.style.display = "none";
-	option_2_list.style.display = "block";
+$("#op2NextBtn").click(function () {
+	$('body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Next');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		option_2_record.style.display = "block";
+		option_2_list.style.display = "none";
+		$("#op2_record_data").css("display", "none");
+		$("#records_data_loading").css("display", "block");
+	}, 2000);
+	
+	setTimeout(() => {
+		$("#op2_record_data").css("display", "block");
+		$("#records_data_loading").css("display", "none");
+	}, 4000);
 });
 
+$("#op2BackBtn").click(function () {
+	$('body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Back');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
 
+		option_2_record.style.display = "none";
+		option_2_list.style.display = "block";
+	}, 2000);
+	
+});
+
+$("#op2DoneBtn").click(function () {
+	$('body').addClass("disable-pointer");
+	let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Done');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		document.getElementById("option_1").style.display = "none";
+		document.getElementById("option_2").style.display = "none";
+		document.getElementById("option_3").style.display = "none";
+		document.getElementById("option_4").style.display = "none";
+		document.getElementById("option_5").style.display = "none";
+		document.getElementById("hide559").style.display = "block";
+		document.getElementById("tab_2").style.paddingTop = "60px";
+		document.getElementById("opt-content").style.marginTop = "50px";
+	}, 2000);
+});
 // NEXT BUTTON CLICK TO OPEN RECORD PAGE OPTION 2 ===END===
 
 /* ================ Scroll Down START ============== */
@@ -752,14 +850,6 @@ function updateThumbnail(dropZoneElement, file) {
 // OPTION 5 DRAG AND DROP END
 
 // OPTION 3 DATE PICKER START
-
-// $(function () {
-// 	$("#datepicker-1").datepicker();
-// 	$("#datepicker-1").datepicker("option", "dateFormat", "mm/dd/yy");
-// 	$("#datepicker-2").datepicker();
-// 	$("#datepicker-2").datepicker("option", "dateFormat", "mm/dd/yy");
-// });
-
 $(function () {
 	let dateFormat_Opt3 = "mm/dd/yy";
 	let opt3_from_date = $("#datepicker-1").datepicker({
@@ -808,6 +898,9 @@ sub_ul_list.addEventListener("click", function (e) {
 			deleteListClassName = target.parentNode.classList[0];
 			return;
 		}
+		else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		}
 		target = target.parentNode;
 	} else if (target.tagName === "P") {
 		target = target.parentNode;
@@ -816,7 +909,11 @@ sub_ul_list.addEventListener("click", function (e) {
 		if (target.className.indexOf("sublist-cancel-box") != -1) {
 			deleteListClassName = target.parentNode.classList[0];
 			return;
-		} else target = target.parentNode;
+		}
+		else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+		else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
 
 	if (oldLIClassname !== "" && oldLIClassname !== target.classList[0]) {
@@ -851,41 +948,75 @@ sub_ul_list.addEventListener("click", function (e) {
 	$("#opt2-right").html(opt2_right_list);
 });
 
-$("#mng-opt2-delete").click(function () {
-	let delObj = document.querySelector(`.${deleteListClassName}`);
-	delObj.remove();
-});
-
 // Manage Data Option 3 Start
-function opt3Reset() {
-	$("#opt3-textarea-1").val("");
-	$("#datepicker-1").val("");
-	$("#datepicker-2").val("");
+function opt3Reset(op3This) {
+	$('body').addClass("disable-pointer");
+	let initState = $(op3This).html();
+	$(op3This).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(op3This).prop("disabled", true);
+	let $this = $(op3This);
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		$("#opt3-textarea-1").val("");
+		$("#datepicker-1").val("");
+		$("#datepicker-2").val("");
+	}, 2000);
 }
 // Manage Data Option 3 End
 
 // Manage Data Option 5 Start
 function opt5ResetBtn(e) {
+	$('body').addClass("disable-pointer");
 	let element = $(e).parent().parent().parent();
-	element.find(".select-plus .custome-select select").val("0");
-	element.find(".col-5").children("input[type=text]").val("");
-	element.find(".col-7 .drop-zone input.drop-zone__input").val("");
-	let fileDrop = element.find(".col-7 .drop-zone .drop-zone__thumb");
-	if (fileDrop.length > 0) {
-		let htmlData = `<p class="drop-zone__prompt">Drag and Drop File Here</p>
-    <p class="drop-zone__formats">Acceptable File Formats <span>txt & csv</span></p>`;
-		fileDrop.remove();
-		element.find(".col-7 .drop-zone .txt-box").html(htmlData);
-	}
+
+	let initState = $("#op5ResetBtn").html();
+	$("#op5ResetBtn").html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$("#op5ResetBtn").prop("disabled", true);
+	let $this = $("#op5ResetBtn");
+
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		element.find(".select-plus .custome-select select").val("0");
+		element.find(".col-5").children("input[type=text]").val("");
+		element.find(".col-7 .drop-zone input.drop-zone__input").val("");
+		let fileDrop = element.find(".col-7 .drop-zone .drop-zone__thumb");
+		if (fileDrop.length > 0) {
+			let htmlData = `<p class="drop-zone__prompt">Drag and Drop File Here</p>
+		<p class="drop-zone__formats">Acceptable File Formats <span>txt & csv</span></p>`;
+			fileDrop.remove();
+			element.find(".col-7 .drop-zone .txt-box").html(htmlData);
+		}
+	}, 2000);
+	
+	
 }
 
 function addCategory(e) {
 	let inpVal = $(e).parent().parent().find("input.plus-input").val();
-	if (inpVal != "") {
-		let selectCat = $("#opt5-select-category");
-		let opt = `<option value="${inpVal}">${inpVal}</option>`;
-		selectCat.append(opt);
-	}
+	
+	$('#plusBtnModal .modal-body').addClass("disable-pointer");
+	let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Done');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$('#plusBtnModal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+		
+		if (inpVal != "") {
+			let selectCat = $("#opt5-select-category");
+			let opt = `<option value="${inpVal}">${inpVal}</option>`;
+			selectCat.append(opt);
+		}
+		$("#plusBtnModal").modal("hide");
+  	}, 2000);
 }
 // Manage Data Option 5 End
 
@@ -915,11 +1046,11 @@ function makeTableHead(tableID) {
 			ROW
 		</th>
 		<th scope="col">
-			<span class="header-title">RECORDS COUNT</span>
+			<span class="header-title" tooltip="Click to Sort" flow="down">RECORDS COUNT</span>
 			<span class="tooltip-container" tooltip="RECORDS COUNT" flow="down">
 				<i class="fas fa-question-circle"></i>
 			</span>
-			<span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+			<span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div class="head-filter cross-exists">
@@ -930,11 +1061,11 @@ function makeTableHead(tableID) {
 			</div>
 		</th>
 		<th scope="col">
-			<span class="header-title">SAVED NAME</span>
+			<span class="header-title" tooltip="Click to Sort" flow="down">SAVED NAME</span>
 			<span class="tooltip-container" tooltip="SAVED NAME" flow="down">
 				<i class="fas fa-question-circle"></i>
 			</span>
-			<span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+			<span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div class="head-filter cross-exists">
@@ -945,11 +1076,11 @@ function makeTableHead(tableID) {
 			</div>
 		</th>
 		<th scope="col">
-			<span class="header-title">CREATED DATE TIME</span>
+			<span class="header-title" tooltip="Click to Sort" flow="down">CREATED DATE TIME</span>
 			<span class="tooltip-container" tooltip="CREATED DATE TIME" flow="down">
 				<i class="fas fa-question-circle"></i>
 			</span>
-			<span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+			<span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div class="head-filter cross-exists">
@@ -960,11 +1091,11 @@ function makeTableHead(tableID) {
 			</div>
 		</th>
 		<th scope="col">
-			<span class="header-title">LAST UPDATE DATE TIME</span>
+			<span class="header-title" tooltip="Click to Sort" flow="down">LAST UPDATE DATE TIME</span>
 			<span class="tooltip-container" tooltip="LAST UPDATE DATE TIME" flow="down">
 				<i class="fas fa-question-circle"></i>
 			</span>
-			<span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+			<span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
 			<div class="head-filter cross-exists">
@@ -1149,7 +1280,7 @@ function manDtOpt1Exist(tableID, noRow, pagiId, tabChange, dataTableId, loadingT
 					</td>
 					<td>
 						<div class="actions39">
-							<a onclick="${tabChange}">Click To View/Update</a>
+							<button onclick="${tabChange}">Click To View/Update</button>
 							<div class="cancel-box" onclick="universalConfirmModalDelete(this)">
 								<i class="fas fa-times"></i>
 							</div>
@@ -1187,8 +1318,20 @@ function tabChangeOpt1(e) {
 	let createNew = tabMain.find(
 		"div.create-manage-tab div.create-new-content.zas"
 	);
-	createNew.find("div.createpera p").html("View/Update");
-	createNew.click();
+
+	$('body').addClass("disable-pointer");
+	let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Click To View/Update');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		createNew.find("div.createpera p").html("View/Update");
+		createNew.click();
+	}, 2000);
 }
 
 function tabChangeOpt3(e) {
@@ -1204,8 +1347,20 @@ function tabChangeOpt3(e) {
 	let createNew = tabMain.find(
 		"div.create-manage-tab div.create-new-content.zas43"
 	);
-	createNew.find("div.createpera p").html("View/Update");
-	createNew.click();
+
+	$('body').addClass("disable-pointer");
+	let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Click To View/Update');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		createNew.find("div.createpera p").html("View/Update");
+		createNew.click();
+	}, 2000);
 }
 
 function tabChangeOpt4(e) {
@@ -1221,8 +1376,21 @@ function tabChangeOpt4(e) {
 	let createNew = tabMain.find(
 		"div.create-manage-tab div.create-new-content.zas45"
 	);
-	createNew.find("div.createpera p").html("View/Update");
-	createNew.click();
+
+	$('body').addClass("disable-pointer");
+	let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Click To View/Update');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		createNew.find("div.createpera p").html("View/Update");
+		createNew.click();
+	}, 2000);
+
 }
 
 function tabChangeOpt5(e) {
@@ -1238,42 +1406,43 @@ function tabChangeOpt5(e) {
 	let createNew = tabMain.find(
 		"div.create-manage-tab div.create-new-content.zas41"
 	);
-	createNew.find("div.createpera p").html("View/Update");
-	createNew.click();
+	
+	$('body').addClass("disable-pointer");
+	let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Click To View/Update');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		createNew.find("div.createpera p").html("View/Update");
+		createNew.click();
+	}, 2000);
+	
 }
 
 
 $("#row-no1").change(function (e) {
 	let noRow = e.target.value;
 	manDtOpt1Exist("man-data-opt1-exist", noRow, "pagination-op1-data", `tabChangeOpt1(this)`, "mnData-opt1-dataWrapper", "mnData-opt1-loadingWrapper", "pagination_mnDataOp1", "loading_pagination_mnDataOp1", "table_details_op1");
-	ExistTableHeadClick("man-data-opt1-exist", "mnData-opt1-dataWrapper", "mnData-opt1-loadingWrapper", "pagination_mnDataOp1", "loading_pagination_mnDataOp1", "table_details_op1");
 });
 
 $("#row-no3").change(function (e) {
 	let noRow = e.target.value;
 	manDtOpt1Exist("man-data-opt3-exist", noRow, "pagination-op3-data", `tabChangeOpt3(this)`, "mnData-opt3-dataWrapper", "mnData-opt3-loadingWrapper", "pagination_mnDataOp3", "loading_pagination_mnDataOp3", "table_details_op3");
-	ExistTableHeadClick("man-data-opt3-exist", "mnData-opt3-dataWrapper", "mnData-opt3-loadingWrapper", "pagination_mnDataOp3", "loading_pagination_mnDataOp3", "table_details_op3");
 });
 
 $("#row-no4").change(function (e) {
 	let noRow = e.target.value;
 	manDtOpt1Exist("man-data-opt4-exist", noRow, "pagination-op4-data", `tabChangeOpt4(this)`, "mnData-opt4-dataWrapper", "mnData-opt4-loadingWrapper", "pagination_mnDataOp4", "loading_pagination_mnDataOp4", "table_details_op4");
-	ExistTableHeadClick("man-data-opt4-exist", "mnData-opt4-dataWrapper", "mnData-opt4-loadingWrapper", "pagination_mnDataOp4", "loading_pagination_mnDataOp4", "table_details_op4");
 });
 
 $("#row-no5").change(function (e) {
 	let noRow = e.target.value;
 	manDtOpt1Exist("man-data-opt5-exist", noRow, "pagination-op5-data", `tabChangeOpt5(this)`, "mnData-opt5-dataWrapper", "mnData-opt5-loadingWrapper", "pagination_mnDataOp5", "loading_pagination_mnDataOp5", "table_details_op5");
-	ExistTableHeadClick("man-data-opt5-exist", "mnData-opt5-dataWrapper", "mnData-opt5-loadingWrapper", "pagination_mnDataOp5", "loading_pagination_mnDataOp5", "table_details_op5");
 });
-
-// function dropModalFilter(e) {
-// 	$("#dropBtnModal").modal('toggle');
-// 	let headerName = $(e).parent()[0].innerText;
-// 	$("#dropBtnModal div.modal-body div.table-header-popup-header-title p").html(headerName);
-// 	let index = $(this).index() + 1;
-// 	console.log(index);
-// }
 
 // Manage Data Option 1 Existing Pagination End
 
@@ -1495,16 +1664,27 @@ function passwordEmptyCheck(e) {
 }
 
 function resetAccountFormFields() {
-	$("#tab_1 .account-form-container .custome-select select")[0].selectedIndex = 0;
-	let formInputContainer = $(".account-form-container .custom-input-only");
-	let formInputs = $(".account-form-container .custom-input-only input");
-	for (i = 0; i < formInputContainer.length; i++) {
-		$(formInputContainer[i])
-			.removeClass("custom-input-danger")
-			.removeClass("custom-input-success");
-		formInputs[i].value = "";
-		$(formInputContainer[i]).parent().children(".error-message").remove();
-	}
+	$('body').addClass("disable-pointer");
+	$(".ac-button-row .reset").html('<i class="fa fa-spinner fa-spin"></i> Resetting');
+	$(".ac-button-row .reset").addClass('disabled');
+	let $thisBtn = $(".ac-button-row .reset");
+
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$thisBtn.removeClass('disabled');
+		$thisBtn.html("Reset");
+
+		$("#tab_1 .account-form-container .custome-select select")[0].selectedIndex = 0;
+		let formInputContainer = $(".account-form-container .custom-input-only");
+		let formInputs = $(".account-form-container .custom-input-only input");
+		for (i = 0; i < formInputContainer.length; i++) {
+			$(formInputContainer[i])
+				.removeClass("custom-input-danger")
+				.removeClass("custom-input-success");
+			formInputs[i].value = "";
+			$(formInputContainer[i]).parent().children(".error-message").remove();
+		}
+	}, 2000);
 }
 
 // User Icon Click on Navbar Redirect to Manage Account 
@@ -1552,25 +1732,30 @@ function universalConfirmModalDelete(globalVariable) {
 	} else if (globalVariable.className.includes("clickViewDetails")) {
 		headerText = "VIEW DETAILS";
 		detailsText = "Confirm to view details?";
-	} 
-	// else if (globalVariable.className.includes("mnAlertSave")) {
-	// 	headerText = "SAVE DETAILS";
-	// 	detailsText = "Confirm to save details?";
-	// 	$('body').addClass("modal-force-mnAlert-extra");
-	// }
-
+	}
 	$("#universal_confirm_modal #confirm_header p").html(headerText);
 	$("#universal_confirm_modal #confirm_deatis p").html(detailsText);
 	$('#universal_confirm_modal').modal('show');
-	// console.dir(globalVariable);
 }
 
 function op1ResetBtnConfirm(resetGlobal) {
+	$('body').addClass("disable-pointer");
+	let initState = $(resetGlobal).html();
+	$(resetGlobal).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(resetGlobal).prop("disabled", true);
+	let $this = $(resetGlobal);
 	if (($("#leftSideDrag_op1").html() != "") || ($("#rightSideDrag_op1").html() != "")) {
-		$("#universal_confirm_modal #confirm_header p").html("RESET FIELDS");
-		$("#universal_confirm_modal #confirm_deatis p").html("Confirm to reset input fields?");
-		$('#universal_confirm_modal').modal('show');
+		setTimeout(function() {
+			$("#universal_confirm_modal #confirm_header p").html("RESET FIELDS");
+			$("#universal_confirm_modal #confirm_deatis p").html("Confirm to reset input fields?");
+			$('#universal_confirm_modal').modal('show');
+		}, 2000);
 	}
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+	}, 2000);
 }
 
 function universalThankDraft(globalThankVar) {
@@ -1588,11 +1773,6 @@ let targetCopyMoveElement = "";
 
 function uniConfirmButton() {
 	$('#universal_confirm_modal').modal('hide');
-	// console.log("Manage Data Tab :" + manageDataTab.display);
-	// console.log("Create New Active :" + createNewActive);
-	// console.log($("#leftSideDrag_op1").html());
-	// console.log($("#rightSideDrag_op1").html());
-	// if(($("#leftSideDrag_op1").html() != "") || ($("#rightSideDrag_op1").html() != "")){}
 	let manageDataTab = window.getComputedStyle(document.querySelector('#tab_2'));
 	let createNewActive = $("#my567").hasClass("createGreen");
 	if (manageDataTab.display == "block" && createNewActive == true) {
@@ -1609,10 +1789,6 @@ function uniConfirmButton() {
 	$("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
 	$("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
 	$('#universalThankDraftModal').modal('show');
-
-	// $('body').addClass("modal-force-open");
-	// $('body').delay(5000).addClass("modal-open");
-
 }
 
 // Universal Thank Draft Modal (on show/hide event)
@@ -1659,8 +1835,6 @@ function confirmModalCopyMove(targetELEMENT, targetRowName) {
 		headerCopyMoveText = "UNCHECK ROW";
 		detailsCopyMoveText = `Confirm to uncheck ${targetRowName} row?`;
 	}
-	// console.log(targetELEMENT);
-	// console.log(unCheckRow);
 
 	$("#universal_confirm_modal #confirm_header p").html(headerCopyMoveText);
 	$("#universal_confirm_modal #confirm_deatis p").html(detailsCopyMoveText);
@@ -1678,62 +1852,105 @@ function displayChartManageResult(itemTitle, itemSubTitle) {
 	document.querySelector("#manageResultChartDisplay_modal .question-delete .chart-name").innerHTML = mnResultSubTitle;
 }
 
-function chartDispConfirmButton() {
-	$('#manageResultChartDisplay_modal').modal('hide');
+function chartDispConfirmButton(thisChart) {
 
-	document.querySelector("#chartPage .chart-title .left-item").innerHTML = mnResultTitle;
-	document.querySelector("#chartPage .chart-title .right-item").innerHTML = mnResultSubTitle;
-	document.getElementById("firstOpen").click();
-	$(".select-item-table").css("display", "none");
 	
-	gotoChartPage(90, 50, 10, 'chartPage', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
-	tableProgressBarAnimation('Main', Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
+	$('#manageResultChartDisplay_modal .modal-body').addClass("disable-pointer");
+	let initState = $(thisChart).html();
+	$(thisChart).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(thisChart).prop("disabled", true);
+	let $this = $(thisChart);
+	setTimeout(function() {
+		
+		$('#manageResultChartDisplay_modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
 
-	// $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
-	// $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
-	// $('#universalThankDraftModal').modal('show');
+		$('#manageResultChartDisplay_modal').modal('hide');
 
-	mnResultTitle = "";
-	mnResultSubTitle = "";
+		document.querySelector("#chartPage .chart-title .left-item").innerHTML = mnResultTitle;
+		document.querySelector("#chartPage .chart-title .right-item").innerHTML = mnResultSubTitle;
+
+		// Will Remove On Final Implement
+		// document.getElementById("firstOpen").click();
+		
+		
+		$(".select-item-table").css("display", "none");
+		$(`#chartPage`).css("display", "block");
+
+		$(`#actual_item_title`).css("display", "none");
+		$(`#actual_subitem_title`).css("display", "none");
+		$(`#loading_item_title`).css("display", "block");
+		$(`#loading_subitem_title`).css("display", "block");
+		
+		setTimeout(() => {
+			$(`#actual_item_title`).css("display", "block");
+			$(`#actual_subitem_title`).css("display", "block");
+			$(`#loading_item_title`).css("display", "none");
+			$(`#loading_subitem_title`).css("display", "none");
+		}, 2000);
+
+		
+		// Will Remove On Final Implement
+		// gotoChartPage('Main', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
+
+
+		tableProgressBarAnimation('Main', Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
+		$(`#Main .style12-section .box-style12 .no-result`).css("display", "block");
+
+		mnResultTitle = "";
+		mnResultSubTitle = "";
+
+	}, 2000);
+
 }
 
-function showConfirmSample4StartBtn() {
-	// $('body').addClass("modal-force-open");
-	// $('#submitting_Info').modal('show');
+function mnTempSaveStartBtn(thisStart){
+	$('body').addClass("disable-pointer");
+	let initState = $(thisStart).html();
+	$(thisStart).html('<i class="fa fa-spinner fa-spin"></i> Save & Start');
+	$(thisStart).prop("disabled", true);
+	let $this = $(thisStart);
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
 
-	// let initStateBtn = $(".btn-save-start").html();
-	// $(".btn-save-start").html('<i class="fa fa-spinner fa-spin"></i> Submitting...');
-	// $(".btn-save-start").addClass('disabled');
-	// let $thisBtn = $(".btn-save-start");
-	// setTimeout(function() {
-	// 	$thisBtn.removeClass('disabled');
-	// 	$thisBtn.html(initStateBtn);
-	// }, 10000);
+		$("#mnTemp_saveStart").modal("show");
+  	}, 2000);
+}
 
-	// // Option 4 save start information
-	// let $targetingTextSubmit = $("#submitting_file_info");
-	// $targetingTextSubmit.html("Saving sample 1 information...");
-	// let submitFileInfo = [ 
-	// 		"Saving sample 2 information...",
-	// 		"Saving sample 3 information...", 
-	// 		"Saving sample 4 information...",
-	// 		"Finishing..."];
-  
-	// for (let i = 1; i <= 4; ++i) {
-	//   (function(index) {
-	// 	setTimeout(function() { 
-	// 	  $targetingTextSubmit.html(submitFileInfo[index-1]);
-	// 	}, i * 2000);
-	//   })(i);
-	// }
-	
-    // setTimeout(function() { 
-    //     $('#submitting_Info').modal('hide');
-	// 	$('body').removeClass("modal-force-open");
+function mnTempSaveStartBackBtn(thisBack){
+	$('#mnTemp_saveStart .modal-body').addClass("disable-pointer");
+	let initState = $(thisBack).html();
+	$(thisBack).html('<i class="fa fa-spinner fa-spin"></i> Back');
+	$(thisBack).prop("disabled", true);
+	let $this = $(thisBack);
 
-    //     $('#sample4SaveStart_confirm_modal').modal('show');
-    // }, 10000);
-	$('#sample4SaveStart_confirm_modal').modal('show');
+	setTimeout(function() {
+		$('#mnTemp_saveStart .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		$("#mnTemp_saveStart").modal("hide");
+  	}, 2000);
+}
+
+function showConfirmSample4StartBtn(thisDone) {
+	$('#mnTemp_saveStart .modal-body').addClass("disable-pointer");
+	let initState = $(thisDone).html();
+	$(thisDone).html('<i class="fa fa-spinner fa-spin"></i> Done');
+	$(thisDone).prop("disabled", true);
+	let $this = $(thisDone);
+
+	setTimeout(function() {
+		$('#mnTemp_saveStart .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		$('#mnTemp_saveStart').modal('hide');
+		$('#sample4SaveStart_confirm_modal').modal('show');
+  	}, 2000);
 }
 
 function sample4StartCancelBtn() {
@@ -1781,10 +1998,6 @@ function sample4StartConfirmBtn() {
 		$('#universalThankDraftModal').modal('show');
     
 	}, 10000);
-	
-	// $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
-	// $("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
-	// $('#universalThankDraftModal').modal('show');
 }
 
 $('#mnTemp_saveStart').on('show.bs.modal', function (e) {
@@ -1933,9 +2146,6 @@ function loggingOut() {
 		localStorage.removeItem('loginStatus');
 		window.location.href = "index.html";
 	}, 4000);
-	
-	// localStorage.removeItem('loginStatus');
-	// window.location.href = "index.html";
 }
 
 function gotoSystemStatus() {
@@ -2025,6 +2235,16 @@ $("#dropBtnFind").click(function () {
     }, 1000);
 });
 
+$("#dropBtnSort").click(function () {
+    $("#dropBtnModal .checkbox-table-loading").css("display", "block");
+    $("#dropBtnModal .checkbox-table-scroll").css("display", "none");
+
+    setTimeout(() => {
+        $("#dropBtnModal .checkbox-table-loading").css("display", "none");
+        $("#dropBtnModal .checkbox-table-scroll").css("display", "block");
+    }, 1000);
+});
+
 
 // Manage Data Option 3: Radio Button Click Animation
 $(".radio-selection-option input[type = 'radio'][name = 'data-set-radio-button']").click(function(){
@@ -2035,16 +2255,16 @@ $(".radio-selection-option input[type = 'radio'][name = 'data-set-radio-button']
 		$("#op3_table_loading").css("display", "none");
 	}, 2000);
 
-	// let optionSelection = 1;
-	// if($(".radio input[type = 'radio'][name = 'data-set-radio-button']:checked").val() == "Source Option 2"){
-	// 	optionSelection = 2;
-	// }
+	let optionSelection = 1;
+	if($(".radio input[type = 'radio'][name = 'data-set-radio-button']:checked").val() == "Source Option 2"){
+		optionSelection = 2;
+	}
 
-	// let option3TableLength = $("#man-data-op3-table tbody tr").length;
+	let option3TableLength = $("#man-data-op3-table tbody tr").length;
 
-	// for(textNo=0; textNo<option3TableLength; textNo++){
-	// 	$(`#man-data-op3-table tbody tr:nth-child(${textNo+1}) td`).html(`Option ${optionSelection} - Text ${textNo + 1}`);
-	// }
+	for(textNo=0; textNo<option3TableLength; textNo++){
+		$(`#man-data-op3-table tbody tr:nth-child(${textNo+1}) td`).html(`Option ${optionSelection} - Text ${textNo + 1}`);
+	}
 
 	// Ashiq coding (Also exists on the top: 1450 No Line)
 	// if (optionSelection == 1) {
@@ -2055,3 +2275,137 @@ $(".radio-selection-option input[type = 'radio'][name = 'data-set-radio-button']
 	// 	opt3TableData = opt3TableData2;
 	// }
 });
+
+$(document).mouseup(function(e) {
+	// Manage Template Box Info Tooltip Mouse Up
+    var infoTooltips = $('.template_box .info_box[data-toggle="tooltip"]');
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!infoTooltips.is(e.target) && infoTooltips.has(e.target).length === 0) {
+      infoTooltips.tooltip('hide');
+    }
+
+	// Mouse Up Condition For All The Manage Existing Table FILTER
+    var mainTableFilterModal = $('#dropBtnModal');
+    if (!mainTableFilterModal.is(e.target) && mainTableFilterModal.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+        mainTableFilterModal.css("display", "none");
+        $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+    }
+
+	// Mouse Up Condition For Manage Result Table FILTER
+    var mnResFilterModal = $('#col8Filter');
+    if (!mnResFilterModal.is(e.target) && mnResFilterModal.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+		mnResFilterModal.css("display", "none");
+		const rotateIcon = document.querySelectorAll(".outer-table-style12-box i.fa-caret-down.down-animation-icon");
+		for (let i = 0; i < rotateIcon.length; i++) {
+			$(rotateIcon[i]).removeClass("down-animation-icon");
+		}
+    }
+
+	// Mouse Up Condition For Manage Result ALL POPUPS
+    var mnResViewTwo = $('#viewtwo');
+    var mnResViewTwo_style2 = $('#viewtwo_style2');
+    var mnResRowDetails = $('#rowdetails');
+    var mnResRowDetails_style2 = $('#rowdetails_style2');
+    var mnResNoteWindow = $('#noteswindow');
+    var mnResNoteWindow_style2 = $('#noteswindow_style2');
+    var mnResAlertWindow = $('#alertswindow');
+    var mnResAlertWindow_style2 = $('#alertswindow_style2');
+    var mnResMoveTo = $('#moverowlist');
+    var mnResMoveTo_style2 = $('#moverowlist_style2');
+    var mnResCopyTo = $('#copyrowlist');
+    var mnResCopyTo_style2 = $('#copyrowlist_style2');
+
+    if (!mnResViewTwo.is(e.target) && mnResViewTwo.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+        mnResViewTwo.css("display", "none");
+    }
+
+	if (!mnResViewTwo_style2.is(e.target) && mnResViewTwo_style2.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+        mnResViewTwo_style2.css("display", "none");
+    }
+
+	if (!mnResRowDetails.is(e.target) && mnResRowDetails.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+        mnResRowDetails.css("display", "none");
+    }
+
+	if (!mnResRowDetails_style2.is(e.target) && mnResRowDetails_style2.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+        mnResRowDetails_style2.css("display", "none");
+    }
+
+	if (!mnResNoteWindow.is(e.target) && mnResNoteWindow.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+        mnResNoteWindow.css("display", "none");
+    }
+	if (!mnResNoteWindow_style2.is(e.target) && mnResNoteWindow_style2.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+        mnResNoteWindow_style2.css("display", "none");
+    }
+	if (!mnResAlertWindow.is(e.target) && mnResAlertWindow.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+        mnResAlertWindow.css("display", "none");
+    }
+	if (!mnResAlertWindow_style2.is(e.target) && mnResAlertWindow_style2.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+        mnResAlertWindow_style2.css("display", "none");
+    }
+
+	if (!mnResMoveTo.is(e.target) && mnResMoveTo.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+		let itemRenamePopupStyle = window.getComputedStyle(document.querySelector(`#remaneAllLevelItem`));
+		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
+		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
+		let deleteLeftItemList = window.getComputedStyle(document.querySelector(`#delete_leftItem_list`));
+		
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none")){
+			mnResMoveTo.css("display", "none");
+		}
+    }
+	if (!mnResMoveTo_style2.is(e.target) && mnResMoveTo_style2.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+		let itemRenamePopupStyle = window.getComputedStyle(document.querySelector(`#remaneAllLevelItem`));
+		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
+		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
+		let deleteLeftItemList = window.getComputedStyle(document.querySelector(`#delete_leftItem_list`));
+		
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none")){
+			mnResMoveTo_style2.css("display", "none");
+		}
+    }
+	if (!mnResCopyTo.is(e.target) && mnResCopyTo.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+		let itemRenamePopupStyle = window.getComputedStyle(document.querySelector(`#remaneAllLevelItem`));
+		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
+		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
+		let deleteLeftItemList = window.getComputedStyle(document.querySelector(`#delete_leftItem_list`));
+		
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none")){
+			mnResCopyTo.css("display", "none");
+		}
+    }
+	if (!mnResCopyTo_style2.is(e.target) && mnResCopyTo_style2.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+		let itemRenamePopupStyle = window.getComputedStyle(document.querySelector(`#remaneAllLevelItem`));
+		let itemRenameThank = window.getComputedStyle(document.querySelector(`#thankAfterAllListRename`));
+		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
+		let deleteLeftItemList = window.getComputedStyle(document.querySelector(`#delete_leftItem_list`));
+		
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none")){
+			mnResCopyTo_style2.css("display", "none");
+		}
+    }
+
+	var listInfoTooltip = $('#list_info_tooltip');
+    if (!listInfoTooltip.is(e.target) && listInfoTooltip.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+        listInfoTooltip.css("display", "none");
+    }
+
+});
+
+function formByTextEditOpener(formThis, formTarget){
+	let initState = $(formThis).html();
+	$('body').addClass("disable-pointer");
+	$(formThis).html('<i class="fa fa-spinner fa-spin"></i> Form By Text Editor <span><i class="fas fa-arrow-right" id="arrow-icon"></i></span>');
+	$(formThis).prop("disabled", true);
+	$(formThis).addClass("padding-left-25");
+	let $this = $(formThis);
+
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.removeClass("padding-left-25");
+		$this.html(initState);
+
+		$(`#${formTarget}`).modal('show');
+	}, 2000);
+}

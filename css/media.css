@@ -43,7 +43,7 @@
 
 /*  0px to 1250px  */
 @media only screen and (max-width:1299px){
-    .mytable1 tbody .actions39 a {
+    .mytable1 tbody .actions39 button {
         margin-right: 6px;
       }
 }

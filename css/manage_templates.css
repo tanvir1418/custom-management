@@ -140,8 +140,10 @@
   color: #1d1d1d;
   font-weight: bold;
   font-family: gilroy-bold, sans-serif;
-  /* letter-spacing: 2px; */
   margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 200px;
 }
 
 .tab_3 .create_new_temp p {
@@ -152,7 +154,7 @@
 
 .tab_3 .template_box .load-txt,
 .tab_3 .create_new_temp .load-txt {
-  margin: 10px 20px 0 20px;
+  padding: 10px 20px 0px 20px;
 }
 .tab_3 .template_box .load-txt:hover,
 .tab_3 .create_new_temp .load-txt:hover {
@@ -781,6 +783,12 @@
     font-size: 16px;
     padding: 5px 10px;
   }
+  .mn-temp-option-selection .width-tooltip .icon-container {
+    padding-top: 6px;
+  }
+  .mn-temp-option-selection .width-tooltip .icon-container .fas {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 1450px) {
@@ -947,6 +955,12 @@
     width: 10px;
     height: 6px;
   }
+  .mn-temp-option-selection .width-tooltip .icon-container {
+    padding-top: 6px;
+  }
+  .mn-temp-option-selection .width-tooltip .icon-container .fas {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -993,8 +1007,16 @@
   .multistep-container .mutistep-form-area .form-box .btn-row-dualTable {
     margin-bottom: 30px;
   }
+  
 }
-
+@media screen and (max-width: 1350px) {
+  .mn-temp-option-selection .width-tooltip .icon-container {
+    padding-left: 3px;
+  }
+  .mn-temp-option-selection .width-tooltip .icon-container .fas {
+    font-size: 14px;
+  }
+}
 @media screen and (max-width: 992px) {
   .side-box {
     padding: 25px 0px;
@@ -1248,20 +1270,10 @@ padding: 0 5px;
     width: 60px;
   }
 
-  .tab_3 .template_box p {
-    font-size: 20px;
-  }
-
+  .tab_3 .template_box p,
   .tab_3 .create_new_temp p {
     font-size: 20px;
-  }
-
-  .tab_3 .template_box .temp-txt {
-    margin-top: 10px;
-  }
-
-  .tab_3 .create_new_temp .temp-txt {
-    margin-top: 10px;
+    width: 180px;
   }
 
   /* carousel control */
@@ -1294,6 +1306,12 @@ padding: 0 5px;
     width: 50px;
   }
 
+  .tab_3 .template_box p,
+  .tab_3 .create_new_temp p {
+    width: 150px;
+    font-size: 18px;
+  }
+
   .tab_3 .create_new_temp .plus_box {
     height: 50px;
     width: 50px;
@@ -1301,10 +1319,6 @@ padding: 0 5px;
 
   .tab_3 .create_new_temp .plus_box i {
     font-size: 28px;
-  }
-
-  .tab_3 .template_box .load-txt {
-    margin-top: 20px;
   }
 
   /* carousel control */
@@ -1363,9 +1377,32 @@ fieldset legend.w-auto label.toggle i:hover{
   cursor: pointer;
 }
 
+#plusBtnModal .modal-dialog,
+#remaneAllLevelItem .modal-dialog,
 #loadTemplateRename .modal-dialog{
-  width: 360px;
+  width: 342px;
 }
+#plusBtnModal .modal-dialog .modal-body,
+#remaneAllLevelItem .modal-dialog .modal-body,
 #loadTemplateRename .modal-dialog .modal-body{
   padding: 0px;
+}
+
+.listData-modal .managetemp-btn .mybtns-39 {
+  outline: none;
+  border: none;
+  font-size: 24px;
+  font-weight: 900;
+}
+.listData-modal .managetemp-btn .mybtns-39.submit-btn {
+  margin-left: auto;
+  color: white;
+}
+.listData-modal .managetemp-btn .mybtns-39.reset-btn:hover {
+  color: white;
+}
+.listData-modal .managetemp-btn .mybtns-39.submit-btn:hover {
+  color: black;
+  outline: none;
+  border: 1px solid black;
 }

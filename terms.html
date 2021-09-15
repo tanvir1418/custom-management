@@ -246,6 +246,13 @@
                 earum m accusantium.</p>
         </div>
     </div>
+    <script>
+        // LOGIN DATA PASS START
+        let enteringLoginStatus = localStorage.getItem("loginStatus");
+        if(enteringLoginStatus !="LOGGED_IN") {
+          window.location.href = "main.html";
+        }
+    </script>
     <!-- ============  TERMS AND CONDITION SECTON END =============== -->
     <section id="footer">
         <div class="footer-inner">

@@ -55,11 +55,11 @@ for (let i = 1; i <= 100; i++) {
 function taskStatusHead(tableID) {
     let tableHead = `<th class="">ROW</th>
         <th class="">
-            <span class="header-title">NAME</span>
+            <span class="header-title" tooltip="Click to Sort" flow="down">NAME</span>
           <span class="tooltip-container" tooltip="Sample text here" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
-          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+          <span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
@@ -70,11 +70,11 @@ function taskStatusHead(tableID) {
             </div>
         </th>
         <th class="">
-            <span class="header-title">STATUS</span>
+            <span class="header-title" tooltip="Click to Sort" flow="down">STATUS</span>
             <span class="tooltip-container" tooltip="Sample text here" flow="down">
                 <i class="fas fa-question-circle"></i>
             </span>
-            <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+            <span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
@@ -85,11 +85,11 @@ function taskStatusHead(tableID) {
             </div>
         </th>
         <th class="">
-            <span class="header-title">PROGRESS</span>
+            <span class="header-title" tooltip="Click to Sort" flow="down">PROGRESS</span>
             <span class="tooltip-container" tooltip="Sample text here" flow="down">
                 <i class="fas fa-question-circle"></i>
             </span>
-            <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+            <span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
@@ -100,11 +100,11 @@ function taskStatusHead(tableID) {
             </div>
         </th>
         <th class="">
-            <span class="header-title">START TIME</span>
+            <span class="header-title" tooltip="Click to Sort" flow="down">START TIME</span>
             <span class="tooltip-container" tooltip="Sample text here" flow="down">
                 <i class="fas fa-question-circle"></i>
             </span>
-            <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+            <span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
@@ -115,11 +115,11 @@ function taskStatusHead(tableID) {
             </div>
         </th>
         <th class="">
-            <span class="header-title">END TIME</span>
+            <span class="header-title" tooltip="Click to Sort" flow="down">END TIME</span>
             <span class="tooltip-container" tooltip="Sample text here" flow="down">
                 <i class="fas fa-question-circle"></i>
             </span>
-            <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
+            <span class="table-head-updown tooltip-container">
 				<i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
@@ -226,7 +226,7 @@ function taskStatusTableExist(tableID, noRow, pagiId, paginationId, loadingPagin
                         <div class="st-status ${statusClass} alert-exists-data">${status}</div>
 					</td>
 
-                    <td class="${classList[1]}">
+                    <td class="${classList[2]}">
                         <div class="progress-task">
                             <div class="inner-progress-task" style="width: 0%;">
                             </div>
@@ -234,13 +234,13 @@ function taskStatusTableExist(tableID, noRow, pagiId, paginationId, loadingPagin
                         </div>
 					</td>
 
-					<td class="${classList[2]}">
+					<td class="${classList[3]}">
 						<div class="create-date-time date-time-39">
 							<p class="alert-exists-data">${startTime.date} ${startTime.time}</p>
 						</div>
 					</td>
 
-					<td class="${classList[3]}">
+					<td class="${classList[4]}">
 						<div class="last-date-time date-time-39">
 							<p class="alert-exists-data">${endTime.date} ${endTime.time}</p>
 						</div>
@@ -271,7 +271,7 @@ function tableProgressBarAnimation(idOfRow, progressVal) {
     var elem = document.querySelector(`#email_task_status_table tbody #${idOfRow} .inner-progress-task`);
     var elemPara = document.querySelector(`#email_task_status_table tbody #${idOfRow} .progress-task .alert-exists-data`);
     var width = 0;
-    var id = setInterval(frame, 50);
+    var id = setInterval(frame, 25);
     function frame() {
         if (width >= progressVal) {
             clearInterval(id);
@@ -287,7 +287,6 @@ function tableProgressBarAnimation(idOfRow, progressVal) {
 $("#row_taskStatus").change(function (e) {
     let noRow = e.target.value;
     taskStatusTableExist("email_task_status_table", noRow, "pagination_task_status", "pagination_email", "loading_pagination_email");
-    taskStatusHeadClick("email_task_status_table");
 });
 
 // Manage Alert Table Existing Pagination End
@@ -324,6 +323,31 @@ function taskStatusHeadClick(tableId) {
 
                 $("#table_details_email .table-records-wrap").css("display", "block");
                 $("#table_details_email .table-records-loading").css("display", "none");
+
+                $(".task-status-statistics .stat-box").each(function () {
+                    let value = $(this).find(".stat-number");
+                    let taskValue = parseInt(value.text());
+                    $({
+                        task: 0
+                    }).animate({
+                        task: taskValue
+                    }, {
+                        duration: 3000,
+                        easing: "swing",
+                        step: function (task) {
+                            value.text(task | 0);
+                        }
+                    });
+                });
+
+                let tableRowNum = $(`#email_task_status_table tbody tr`).length;
+                let tableRowId = "";
+                let tableRowProgVal = "";
+                for(var i=0; i<tableRowNum; i++){
+                    tableRowId = $(`#email_task_status_table tbody tr`)[i].id;
+                    tableRowProgVal = parseInt(document.querySelector(`#email_task_status_table tbody #${tableRowId} .progress-task .alert-exists-data`).textContent.replace("%",""));
+                    tableProgressBarAnimation(tableRowId, tableRowProgVal);
+                }
 
             }, 2000);
 
@@ -426,6 +450,10 @@ $(document).keydown(function (e) {
         $("#emailThankModal #email_thank_details p").html("The Request has been Canceled!");
         $('#emailThankModal').modal('show');
     }
+    if (e.which == 27) {
+        $("#dropBtnModal").css('display', 'none');
+        $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+    }
 });
 
 // Universal Thank Draft Modal (on show/hide event)
@@ -442,9 +470,6 @@ $('#form_submit_modal').on('show.bs.modal', function (e) {
 });
 
 // This Function will trigger when col8Filter is closed
-$('#dropBtnModal').on('hidden.bs.modal', function (e) {
-    $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
-});
 
 function formConfirmBtn() {
     $('#form_submit_modal').modal('hide');
@@ -579,6 +604,16 @@ $("#dropBtnEmailFind").click(function () {
     }, 1000);
 });
 
+$("#dropBtnEmailSort").click(function () {
+    $("#dropBtnModal .checkbox-table-loading").css("display", "block");
+    $("#dropBtnModal .checkbox-table-scroll").css("display", "none");
+
+    setTimeout(() => {
+        $("#dropBtnModal .checkbox-table-loading").css("display", "none");
+        $("#dropBtnModal .checkbox-table-scroll").css("display", "block");
+    }, 1000);
+});
+
 $("#dropBtnSelect").click(function () {
     $("#dropBtnModal").css("display", "none");
     $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
@@ -608,5 +643,34 @@ $("#dropBtnSelect").click(function () {
         $("#table_details_email .table-records-wrap").css("display", "block");
         $("#table_details_email .table-records-loading").css("display", "none");
 
+        $(".task-status-statistics .stat-box").each(function () {
+            let value = $(this).find(".stat-number");
+            let taskValue = parseInt(value.text());
+            $({
+                task: 0
+            }).animate({
+                task: taskValue
+            }, {
+                duration: 3000,
+                easing: "swing",
+                step: function (task) {
+                    value.text(task | 0);
+                }
+            });
+        });
+
     }, 2000);
+});
+
+$("#emailCloseDropBtnModal").click(function () {
+    $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+});
+
+$(document).mouseup(function(e) {
+    var tableFilterModal = $('#dropBtnModal');
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!tableFilterModal.is(e.target) && tableFilterModal.has(e.target).length === 0 && (e.target != $('html').get(0))) {
+        tableFilterModal.css("display", "none");
+        $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+    }
 });

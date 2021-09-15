@@ -211,12 +211,12 @@ function opt4Sam2Render(e, divId) {
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)" onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)" onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
     </div>
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)" onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)" onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
     </div>
   </div>`;
 
@@ -295,12 +295,12 @@ function opt4Sam2Render(e, divId) {
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)"  onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)"  onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
     </div>
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="text" onfocus="onFocus(this)"  onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)"  onfocusout="manDatacheckEmpty(this)" oninput="manDatacheckEmpty(this)"/>
     </div>
   </div>`;
 
@@ -315,12 +315,12 @@ function opt4Sam2Render(e, divId) {
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="number" onfocus="onFocus(this)" onfocusout="manDatacheckNum(this)" oninput="manDatacheckNum(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)" onfocusout="manDatacheckNum(this)" oninput="manDatacheckNum(this)"/>
     </div>
   </div>
   <div class="width-22">
     <div class="custom-input-only">
-      <input type="number" onfocus="onFocus(this)" onfocusout="manDatacheckNum(this)" oninput="manDatacheckNum(this)"/>
+      <input type="number" value="1" onfocus="onFocus(this)" onfocusout="manDatacheckNum(this)" oninput="manDatacheckNum(this)"/>
     </div>
   </div>`;
 
@@ -1188,7 +1188,7 @@ function windowToFormDS1(divData, searchData) {
         markItem.removeClass("display-block");
       }
 
-      $(`div#${id} a#submit_list`).click();
+      $(`div#${id} button#submit_list`).click();
     }
   }
 }
@@ -1616,3 +1616,263 @@ function saveDraftCheckEmpty(e) {
     }
   }
 }
+
+
+
+// Pen Icon, Info Icon Controlling For All LISTS POPUP Starts
+
+let currentLevelItem_LI_Class = '';
+let newLevelItemName = '';
+
+function confirmListName(confThis){
+  currentLevelItem_LI_Class = confThis.parentElement.className;
+  let listCurrentName = confThis.parentElement.firstElementChild.textContent;
+  document.querySelector(`#remaneAllLevelItem .plus-button-popup-body-content input`).value = listCurrentName;
+  $('#remaneAllLevelItem').modal('show');
+}
+
+function renamingLevelItem(itemThis){
+  newLevelItemName = document.querySelector(`#remaneAllLevelItem .plus-button-popup-body-content input`).value;
+
+  let initState = $(itemThis).html();
+	$(itemThis).html('<i class="fa fa-spinner fa-spin"></i> Done');
+	$(itemThis).addClass('disabled');
+	let $this = $(itemThis);
+	setTimeout(function() {
+    $this.removeClass('disabled');
+		$this.html(initState);
+    $('#remaneAllLevelItem').modal('hide');
+    $('#thankAfterAllListRename').modal('show');
+  }, 2000);
+}
+
+$('#thankAfterAllListRename').on('show.bs.modal', function (e) {
+  $('body').addClass("modal-force-generate-btn");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-force-generate-btn");
+  $(`.${currentLevelItem_LI_Class} .sublist-info-box`).attr("customTooltip", `${newLevelItemName}`);
+  document.querySelector(`.${currentLevelItem_LI_Class} p`).textContent = newLevelItemName;
+});
+
+function levelInfoTooltipShow(listThis, zIndex = 1500){
+  console.log($(listThis).attr("customTooltip"));
+  $(".list-info-tooltip .list-tooltip-wrap .line-1").text($(listThis).attr("customTooltip"));
+  let elementPositionMain = listThis.getBoundingClientRect();
+  $("#list_info_tooltip").css('display', 'none');
+  $("#list_info_tooltip").css({
+      top: ((elementPositionMain.y) + window.scrollY + 27),
+      left: ((elementPositionMain.x) - 78),
+      "z-index" : zIndex
+  });
+  $("#list_info_tooltip").css('display', 'block');
+}
+
+function hideScrollTooltip(){
+  $("#list_info_tooltip").css('display', 'none');
+}
+
+// Pen Icon, Info Icon Controlling For All LISTS POPUP Ends
+
+let LEFT_ITEM_CLASS_TO_DELETE = "";
+let ACTIVE_MODAL_NAME = "";
+let ITEM_NUM_TO_DELETE = "";
+
+function leftItemDeleteClick(thisLeft, modalName){
+  let targetItemName;
+  if(modalName == "op1"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modallist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "op2"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("list-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "mnRes"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("list-item-404-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "op4Lista"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modaloptfourmodallist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "op4Listb"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modaloptfourmodallist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "op4Listc"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modaloptfourmodallist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "op4Listd"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modaloptfourmodallist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "mnTempa"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalmanagetemplist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "mnTempb"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalmanagetemplist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "mnTempc"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalmanagetemplist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "mnTempd"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalmanagetemplist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "copyTo"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalcopytolist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "moveTo"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalmovetolist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "copyToS2"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalcopytolist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }else if(modalName == "moveToS2"){
+    LEFT_ITEM_CLASS_TO_DELETE = thisLeft.parentElement.classList[0];
+    ACTIVE_MODAL_NAME = modalName;
+    ITEM_NUM_TO_DELETE = parseInt(LEFT_ITEM_CLASS_TO_DELETE.replace("modalmovetolist-item-", "").trim());
+    targetItemName = thisLeft.parentElement.children[0].textContent;
+  }
+
+  $(`#delete_leftItem_list .question-delete p`).text(`Confirm to delete ${targetItemName}?`);
+  $('#delete_leftItem_list').modal('show');
+}
+
+function leftItemDeleteConfirm(lfConfirmThis){
+  // let initState = $(lfConfirmThis).html();
+	// $(lfConfirmThis).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	// $(lfConfirmThis).prop("disabled", true);
+	// let $this = $(lfConfirmThis);
+	// setTimeout(function() {
+	// 	$this.prop("disabled", false);
+	// 	$this.html(initState);
+
+    if(ACTIVE_MODAL_NAME == "op1"){
+      $(`.${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "op2"){
+      $(`.${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#sub-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#sub-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#sub-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "mnRes"){
+      $(`.${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#sub-ul-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "op4Lista"){
+      $(`.optfourmodala-list .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#optfourmodala-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#optfourmodala-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#optfourmodala-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "op4Listb"){
+      $(`.optfourmodalb-list .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#optfourmodalb-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#optfourmodalb-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#optfourmodalb-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "op4Listc"){
+      $(`.optfourmodalc-list .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#optfourmodalc-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#optfourmodalc-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#optfourmodalc-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "op4Listd"){
+      $(`.optfourmodald-list .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#optfourmodald-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#optfourmodald-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#optfourmodald-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "mnTempa"){
+      $(`.managetempa-list .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#managetempa-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#managetempa-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#managetempa-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "mnTempb"){
+      $(`.managetempb-list .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#managetempb-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#managetempb-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#managetempb-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "mnTempc"){
+      $(`.managetempc-list .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#managetempc-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#managetempc-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#managetempc-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "mnTempd"){
+      $(`.managetempd-list .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#managetempd-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#managetempd-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#managetempd-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "copyTo"){
+      $(`.copytorow-list .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#copyto-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#copyto-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#copyto-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "moveTo"){
+      $(`.movetorow-list .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#moveto-submodal-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#moveto-submodal-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#moveto-submodal-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "copyToS2"){
+      $(`.copytorow-list_style2 .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#copyto-submodal_style2-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#copyto-submodal_style2-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#copyto-submodal_style2-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }else if(ACTIVE_MODAL_NAME == "moveToS2"){
+      $(`.movetorow-list_style29 .${LEFT_ITEM_CLASS_TO_DELETE}`).remove();
+      $(`#moveto-submodal_style29-div-list-1-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#moveto-submodal_style29-div-list-2-${ITEM_NUM_TO_DELETE}`).remove();
+      $(`#moveto-submodal_style29-div-list-3-${ITEM_NUM_TO_DELETE}`).remove();
+    }
+    $('#delete_leftItem_list').modal('hide');
+	// }, 2000);
+}
+
+$('#delete_leftItem_list').on('show.bs.modal', function (e) {
+  let op1Modal = window.getComputedStyle(document.querySelector(`#myopt1listData`));
+  let opt4aModal = window.getComputedStyle(document.querySelector(`#opt4a-list-modal`));
+  let opt4bModal = window.getComputedStyle(document.querySelector(`#opt4b-list-modal`));
+  let opt4cModal = window.getComputedStyle(document.querySelector(`#opt4c-list-modal`));
+  let opt4dModal = window.getComputedStyle(document.querySelector(`#opt4d-list-modal`));
+  let mnTempaModal = window.getComputedStyle(document.querySelector(`#manage-tempa-list-modal`));
+  let mnTempbModal = window.getComputedStyle(document.querySelector(`#manage-tempb-list-modal`));
+  let mnTempcModal = window.getComputedStyle(document.querySelector(`#manage-tempc-list-modal`));
+  let mnTempdModal = window.getComputedStyle(document.querySelector(`#manage-tempd-list-modal`));
+  if(op1Modal.display == "block" || opt4aModal.display == "block" || opt4bModal.display == "block" || opt4cModal.display == "block" || opt4dModal.display == "block" || mnTempaModal.display == "block" || mnTempbModal.display == "block" || mnTempcModal.display == "block" || mnTempdModal.display == "block"){
+    $('body').addClass("modal-list-open");
+  }
+})
+
+$('#remaneAllLevelItem').on('show.bs.modal', function (e) {
+	let op1Modal = window.getComputedStyle(document.querySelector(`#myopt1listData`));
+  let opt4aModal = window.getComputedStyle(document.querySelector(`#opt4a-list-modal`));
+  let opt4bModal = window.getComputedStyle(document.querySelector(`#opt4b-list-modal`));
+  let opt4cModal = window.getComputedStyle(document.querySelector(`#opt4c-list-modal`));
+  let opt4dModal = window.getComputedStyle(document.querySelector(`#opt4d-list-modal`));
+  let mnTempaModal = window.getComputedStyle(document.querySelector(`#manage-tempa-list-modal`));
+  let mnTempbModal = window.getComputedStyle(document.querySelector(`#manage-tempb-list-modal`));
+  let mnTempcModal = window.getComputedStyle(document.querySelector(`#manage-tempc-list-modal`));
+  let mnTempdModal = window.getComputedStyle(document.querySelector(`#manage-tempd-list-modal`));
+  if(op1Modal.display == "block" || opt4aModal.display == "block" || opt4bModal.display == "block" || opt4cModal.display == "block" || opt4dModal.display == "block" || mnTempaModal.display == "block" || mnTempbModal.display == "block" || mnTempcModal.display == "block" || mnTempdModal.display == "block"){
+    $('body').addClass("modal-list-open");
+  }
+})

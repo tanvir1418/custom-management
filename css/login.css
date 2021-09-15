@@ -101,8 +101,12 @@ body {
 
 .login-input .button-box .reset {
     background-color: #dddddd;
-    color: #7d7c7c;
-    padding: 12px 35px;
+    color: #272727;
+    padding: 12px 36px;
+    border: none;
+    font-size: 23px;
+    font-weight: 700;
+    font-family: gilroy-medium, sans-serif;
 }
 
 .login-input .button-box .login{
@@ -239,8 +243,9 @@ a:visited {
     display: flex;
 }
 
-.terms_conditions .accept-btn-box input{
-    padding: 16px 35px;
+.terms_conditions .accept-btn-box button{
+    height: 60px;
+    width: 200px;
     color: #ffffff;
     border: none;
     font-size: 18px;
@@ -362,17 +367,17 @@ a:visited {
     font-family: gilroy-medium, sans-serif;
     font-weight: 500;
 }
-#forgotPass .enter-verified-email input.btn-success,
-#forgotPass .enter-verified-email input.btn-light{
+#forgotPass .enter-verified-email .btn-success,
+#forgotPass .enter-verified-email .btn-light{
     padding: 0 18px;
     margin-left: 15px;
 }
 
-#forgotPass .enter-verified-email input.btn-light{
+#forgotPass .enter-verified-email .btn-light{
     background-color: #e2e6ea;
 }
 
-#forgotPass .enter-verified-email input.btn-light:hover{
+#forgotPass .enter-verified-email .btn-light:hover{
     background-color: #cfcbcb;
     color: #000000;
 }
@@ -413,12 +418,12 @@ a:visited {
 .generate-button-click-popup {
     width: 358px;
     height: 265px;
-    /* -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
     -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
-    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75); */
-    -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    /* -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
     -moz-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
-    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1); */
 }
 
 .generate-button-popup-header-title {
@@ -539,4 +544,8 @@ a:visited {
 .modal-force-recovery-email .modal{
     /* overflow-x:hidden !important;
     overflow-y:auto !important; */
+}
+.disable-pointer{
+    pointer-events: none;
+    cursor: progress;
 }

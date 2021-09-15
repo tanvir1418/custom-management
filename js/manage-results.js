@@ -1,13 +1,10 @@
 // MANAGE RESULTS list item start
 
-// const sub_ul_list_11 = document.querySelector(".sub-ul-list-11");
-// const sub_ul_list_22 = document.querySelector(".sub-ul-list-22");
-// const sub_ul_list_33 = document.querySelector(".sub-ul-list-33");
-
 // Header Index Where Click is happened.
 let headerIndexClick = "";
 let mnResultActiveTabID = "Main";
 let mnResultActiveTabSty1TableID = "resizable554";
+let randomSixDIGITForId = "";
 
 
 const left_list_404 = document.querySelector(".left-list-404");
@@ -38,11 +35,6 @@ const listItemData404 = [
     "Item 22",
     "Item 23",
     "Item 24",
-    "Item 25",
-    "Item 26",
-    "Item 27",
-    "Item 28",
-    "Item 29",
 ];
 (function listDataMan404() {
     let htmllist = "", htmlDataModal = "";
@@ -52,18 +44,25 @@ const listItemData404 = [
         <div class="tik-box display-none">
             <i class="fas fa-check"></i>
         </div>
+        <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete" onclick="leftItemDeleteClick(this, 'mnRes')">
+			<i class="fas fa-times"></i>
+		</div>
         <div class="arrow-404 arrow-404-background-color-1">
             <i class="fas fa-caret-right arrow-404-i-color-1"></i>
         </div>
         </li>`;
         /* Update this function By Ashiq */
-        let list_data1 = "",
-            list_data2 = "",
-            list_data3 = "",
+        let list_data1 = "";
             length = 60;
         for (let i = 1; i <= length; i++) {
             let elementHtml = `<li class="result-list-${index + 1}-${i}">
             <p>Level ${index + 1} - Item ${i}</p>
+            <div class="sublist-info-box" customTooltip="Level ${index + 1} - Item ${i}" onclick="levelInfoTooltipShow(this)">
+				<i class="fas fa-info"></i>
+			</div>
+			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+				<i class="fas fa-pen"></i>
+			</div>
             <div class="sublist-check-box-404">
                 <i class="fas fa-check"></i>
             </div>
@@ -71,54 +70,26 @@ const listItemData404 = [
                 <i class="fas fa-times"></i>
             </div>
             </li>`;
-            if (length < 61) {
-                if (i <= 20) {
-                    list_data1 += elementHtml;
-                } else if (i >= 21 && i <= 40) {
-                    list_data2 += elementHtml;
-                } else {
-                    list_data3 += elementHtml;
-                }
-            } else {
-                let divide = Math.floor(length / 3);
-                let len = divide + (length % 3);
-                if (i <= len) {
-                    list_data1 += elementHtml;
-                } else if (i > len && i <= len + divide) {
-                    list_data2 += elementHtml;
-                } else {
-                    list_data3 += elementHtml;
-                }
-            }
+            list_data1 += elementHtml;
         }
         htmlDataModal +=
             `<ul class="right-list-404 right-list-4041" style=" display: none" id="sub-ul-list-1-${index + 1}">
-        ${list_data1}
-        </ul>
-        <ul class="right-list-404 right-list-4042" style=" display: none" id="sub-ul-list-2-${index + 1}">
-            ${list_data2}
-        </ul>
-        <ul class="right-list-404 right-list-4043" style=" display: none" id="sub-ul-list-3-${index + 1}">
-            ${list_data3}
-        </ul>`;
+                ${list_data1}
+            </ul>`;
     });
     left_list_404.innerHTML = htmllist;
     document.querySelector("#div-sub-ul-li-list").innerHTML = htmlDataModal;
     /* Update End By Ashiq */
 })();
 /* New Function Start */
-let sub_ul_list_id1_old = "",
-    sub_ul_list_id2_old = "",
-    sub_ul_list_id3_old = "";
+let sub_ul_list_id1_old = "";
 
 let oldSelectListMnRes = "";
 
 function item_li_click_handle(listClassName) {
     let level_no = listClassName.match(/\d+/g)[1];
     if (level_no != null) {
-        const sub_ul_list_id1 = "#sub-ul-list-1-" + level_no,
-            sub_ul_list_id2 = "#sub-ul-list-2-" + level_no,
-            sub_ul_list_id3 = "#sub-ul-list-3-" + level_no;
+        const sub_ul_list_id1 = "#sub-ul-list-1-" + level_no;
         if (sub_ul_list_id1 !== sub_ul_list_id1_old) {
             $(sub_ul_list_id1_old).toggle();
             $(sub_ul_list_id1).toggle();
@@ -126,24 +97,6 @@ function item_li_click_handle(listClassName) {
         } else {
             $(sub_ul_list_id1_old).toggle();
             sub_ul_list_id1_old = "";
-        }
-
-        if (sub_ul_list_id2 !== sub_ul_list_id2_old) {
-            $(sub_ul_list_id2_old).toggle();
-            $(sub_ul_list_id2).toggle();
-            sub_ul_list_id2_old = sub_ul_list_id2;
-        } else {
-            $(sub_ul_list_id2_old).toggle();
-            sub_ul_list_id2_old = "";
-        }
-
-        if (sub_ul_list_id3 !== sub_ul_list_id3_old) {
-            $(sub_ul_list_id3_old).toggle();
-            $(sub_ul_list_id3).toggle();
-            sub_ul_list_id3_old = sub_ul_list_id3;
-        } else {
-            $(sub_ul_list_id3_old).toggle();
-            sub_ul_list_id3_old = "";
         }
 
         if(oldSelectListMnRes == ""){
@@ -163,30 +116,53 @@ var left_list_data = "";
 (function resultLeftListControl() {
     let oldTarget = "";
     left_list_404.addEventListener("click", function (e) {
+        
+        $(".mnRes-right-list-wrap").removeClass("scroll-width-zero");
+        
         let target = e.target;
         const elementName = ["DIV", "P"];
         if (elementName.includes(target.tagName)) {
-            target = target.parentNode;
-        } else if (target.tagName === "I") {
-            target = target.parentNode.parentNode;
-        }
+			if(target.className.includes("grey-times-box")){
+				console.log("Div Clicked: Grey Times Box");
+				return;
+			}else {
+				target = target.parentNode;
+			}
+		} else if (target.tagName === "I") {
+			if(target.parentNode.className.includes("grey-times-box")){
+				console.log("Icon Clicked: Grey Times Box");
+				return;
+			}else{
+				target = target.parentNode.parentNode;
+			}
+		}
 
         if (oldTarget != "" && oldTarget !== target) {
             $(oldTarget).removeClass("highlight_404");
+
             $(oldTarget).children(".tik-box").removeClass("display-block");
             $(oldTarget).children(".tik-box").addClass("display-none");
+
+            $(oldTarget).children(".grey-times-box").removeClass("display-block");
+            $(oldTarget).children(".grey-times-box").addClass("display-none");
+
             $(oldTarget).children(".arrow-404").removeClass("arrow-404-background-color-2");
             $(oldTarget).children(".arrow-404").addClass("arrow-404-background-color-1");
             $(oldTarget).children(".arrow-404").children(".fa-caret-right").removeClass("arrow-404-i-color-2");
             $(oldTarget).children(".arrow-404").children(".fa-caret-right").addClass("arrow-404-i-color-1");
         }
         $(target).toggleClass("highlight_404");
+
         $(target).children(".tik-box").toggleClass("display-none display-block");
+
+        $(target).children(".grey-times-box").toggleClass("display-none display-block");
+
         $(target).children(".arrow-404").toggleClass("arrow-404-background-color-1 arrow-404-background-color-2");
         $(target).children(".arrow-404").children(".fa-caret-right").toggleClass("arrow-404-i-color-1 arrow-404-i-color-2");
 
         if(oldTarget == target){
             oldSelectListMnRes = "hideLoadingAnimation";
+            // $(".mnRes-right-list-wrap").addClass("scroll-width-zero");
         }else{
             oldSelectListMnRes = "";
         }
@@ -205,57 +181,17 @@ const list_left_item_1 = document.querySelector(".list-item-404-1");
 const tik_box = document.querySelector(".tik-box");
 const sublist_check_box_404 = document.querySelector(".right-list-404 .sublist-check-box-404");
 const sublist_cancel_box_404 = document.querySelector(".right-list-404 .sublist-cancel-box-404");
-// const result_list_1 = document.querySelector(".result-list-1");
 const arrow_404 = document.querySelector(".left-list-404 li .arrow-404");
 const arrow_icon = document.querySelector(".left-list-404 li .arrow-404 i");
 
-// sub_ul_list_11.style.display = "none";
-// sub_ul_list_22.style.display = "none";
-// sub_ul_list_33.style.display = "none";
 
-// $(list_left_item_1).click(function () {
-
-//     $(sub_ul_list_11).toggle();
-//     sub_ul_list_11.style.marginLeft = "300px";
-
-//     $(sub_ul_list_22).toggle();
-//     sub_ul_list_22.style.marginLeft = "580px";
-
-//     $(sub_ul_list_33).toggle();
-//     sub_ul_list_33.style.marginLeft = "860px";
-
-// });
-
-// result_list_1.onclick = () => {
-//     sublist_cancel_box_404.style.display = "none";
-//     sublist_check_box_404.style.display = "block";
-//     $(sublist_cancel_box_404).toggle();
-//     $(sublist_check_box_404).toggle();
-// };
-
-
-/* ================ Scroll Down START ============== */
-$(document).ready(function () {
-    $(".results-scroll-down").click(function () {
-        const table_scroll_404 = document.querySelector(".table-scroll-404");
-        $(".table-scroll-404").animate({
-            scrollTop: table_scroll_404.scrollTop + 100,
-        },
-            250
-        );
-    });
-});
-
-/* ================ Scroll Down END ============== */
 
 // $("#mnRes_list_item_loading").css("display", "block");
 // $("#mnRes_scrollWindow").css("display", "none");
-// $("#mnRes_scrollDownBtn").css("display", "none");
 
 setTimeout(() => {
     $("#mnRes_list_item_loading").css("display", "none");
     $("#mnRes_scrollWindow").css("display", "block");
-    $("#mnRes_scrollDownBtn").css("display", "block");
 }, 4000);
 
 // MANAGE RESULTS list item end
@@ -264,7 +200,6 @@ setTimeout(() => {
 
 const chartPage = document.querySelector("#chartPage");
 chartPage.style.display = "none";
-// chartPage.style.opacity = "0";
 
 $("#div-sub-ul-li-list").click(function (e) {
     let target = e.target;
@@ -274,9 +209,12 @@ $("#div-sub-ul-li-list").click(function (e) {
             let chart_deleteName = target.parentNode.childNodes[1].innerHTML;
             document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = chart_deleteName;
 
-            deleteManageModal(target.parentNode.classList[0]);
+            manageResultDeleteListClassName = target.parentNode.classList[0];
             return;
         }
+        else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		}
         target = target.parentNode;
     } else if (target.tagName === "P") {
         target = target.parentNode;
@@ -287,27 +225,40 @@ $("#div-sub-ul-li-list").click(function (e) {
             let chart_deleteName = target.parentNode.childNodes[1].innerHTML;
             document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = chart_deleteName;
 
-            deleteManageModal(target.parentNode.classList[0]);
+            manageResultDeleteListClassName = target.parentNode.classList[0];
             return;
         }
+        else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		}
         else target = target.parentNode;
     } else if (target.tagName !== "LI") return;
 
     let dataList = target.childNodes[1].innerHTML;
 
-    // console.log(left_list_data);
-    // console.log(dataList);
-
     displayChartManageResult(left_list_data, dataList);
 });
 
-function deleteManageModal(className) {
-    let mng_opt2_delete = document.querySelector("#mng-opt2-delete");
-    mng_opt2_delete.addEventListener("click", function () {
-        let delObj = document.querySelector(`.${className}`);
-        delObj.remove();
-    });
-}
+
+$("#mng-opt2-delete").click(function () {
+	
+	$(`.${manageResultDeleteListClassName}`).remove();
+
+	// let initState = $(this).html();
+	// $(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	// $(this).prop("disabled", true);
+	// let $this = $(this);
+	// setTimeout(function() {
+	// 	$this.prop("disabled", false);
+	// 	$this.html(initState);
+
+	// 	$(`.${manageResultDeleteListClassName}`).remove();
+
+	// 	$("#deletlistopt2").modal("hide");
+	// }, 2000);
+});
+
+
 // ----------- ASHIQ -------------- 
 function calAngle(obj) {
     let matrix = getComputedStyle(obj).getPropertyValue("transform");
@@ -316,24 +267,12 @@ function calAngle(obj) {
     return angle;
 }
 
-function getRandomIntegerValue(minVal, maxVal) {
-    let min = Math.ceil(minVal);
-    let max = Math.floor(maxVal);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+function maintainRotation(degreeVal, meterId){
 
-function gotoChartPage(num1, num2, num3, targetChartPage, meterOneId, meterTwoId, meterThreeId) {
-
-    $(`#${targetChartPage}`).css("display", "block");
-    // chartPage.style.opacity = "1";
-
-    /*============----------ASHIQ----------=============*/
-    let interval = 50;
-    // let meter1_input = 34;
-    let meter1_input = num1;
-    let obj1 = document.getElementById(`${meterOneId}`);
+    let meter1_input = degreeVal;
+    let obj1 = document.getElementById(`${meterId}`);
     obj1.classList.add("scorer-1-tick-animation");
-    let p_element1 = document.getElementById(`value-of-${meterOneId}`);
+    let p_element1 = document.getElementById(`value-of-${meterId}`);
     let intervalId1 = window.setInterval(function () {
         try {
             let angle = calAngle(obj1);
@@ -349,69 +288,208 @@ function gotoChartPage(num1, num2, num3, targetChartPage, meterOneId, meterTwoId
         } catch (err) {
             clearInterval(intervalId1);
         }
-    }, interval);
+    }, 50);
+}
 
-    // let meter2_input = 55;
-    let meter2_input = num2;
-    let obj2 = document.getElementById(`${meterTwoId}`);
-    obj2.classList.add("scorer-1-tick-animation");
-    let p_element2 = document.getElementById(`value-of-${meterTwoId}`);
-    let intervalId2 = window.setInterval(function () {
-        try {
-            let angle = calAngle(obj2);
-            let percent = parseFloat(angle / 1.8).toFixed(2);
-            p_element2.innerHTML = `${percent}%`;
-            if (percent >= meter2_input) {
-                obj2.classList.remove("scorer-1-tick-animation");
-                obj2.style.transformOrigin = "right center";
-                obj2.style.transform = `rotate(${angle}deg)`;
-                p_element2.innerHTML = `${meter2_input}%`;
-                clearInterval(intervalId2);
-            }
-        } catch (err) {
-            clearInterval(intervalId2);
-        }
-    }, interval);
+function gotoChartPage(selectedTab, meterOneId, meterTwoId, meterThreeId) {
+    // Math.floor(Math.random() * (100 - 1 + 1)) + 1; //Random Integer Value between (1-100)
+    $(`#${selectedTab} .Display1 .meter_outer_box .main-chart`).css("display", "none");
+    $(`#${selectedTab} .Display1 .meter_outer_box .loading-chart`).css("display", "block");
 
-    // let meter3_input = 73;
-    let meter3_input = num3;
-    let obj3 = document.getElementById(`${meterThreeId}`);
-    obj3.classList.add("scorer-1-tick-animation");
-    let p_element3 = document.getElementById(`value-of-${meterThreeId}`);
-    let intervalId3 = window.setInterval(function () {
-        try {
-            let angle = calAngle(obj3);
-            let percent = parseFloat(angle / 1.8).toFixed(2);
-            p_element3.innerHTML = `${percent}%`;
-            if (percent >= meter3_input) {
-                obj3.classList.remove("scorer-1-tick-animation");
-                obj3.style.transformOrigin = "right center";
-                obj3.style.transform = `rotate(${angle}deg)`;
-                p_element3.innerHTML = `${meter3_input}%`;
-                clearInterval(intervalId3);
-            }
-        } catch (err) {
-            clearInterval(intervalId3);
-        }
-    }, interval);
-    /* --------- END ----------- */
+    setTimeout(() => {
+        $(`#${selectedTab} .Display1 .meter_outer_box .main-chart`).css("display", "block");
+        $(`#${selectedTab} .Display1 .meter_outer_box .loading-chart`).css("display", "none");
+
+        maintainRotation(34, meterOneId);
+        maintainRotation(90, meterTwoId);
+        maintainRotation(55, meterThreeId);
+    }, 3000);
+
 };
 // ====== LIST ITEM TO CHART PAGE END ============
 
 // ======= TABS START ======
+let tabTableIdData = [
+    {
+        "tabId": "Main", 
+        "tableStyle1ID" : "resizable554",
+        "randSixDigit" : "",
+    }
+];
+
+let tableResizerData = {
+    "column-header-1" : "50px",
+    "column-header-2" : "154px",
+    "column-header-3" : "140px",
+    "column-header-4" : "110px",
+    "column-header-5" : "110px",
+    "column-header-6" : "155px",
+    "column-header-7" : "155px",
+    "column-header-8" : "240px",
+    "column-header-9" : "180px",
+    "column-header-10" : "120px",
+    "column-header-11" : "120px",
+    "column-header-12" : "120px",
+    "column-header-13" : "120px",
+    "column-header-14" : "120px",
+    "column-header-15" : "120px",
+    "column-header-16" : "145px",
+    "column-header-17" : "145px",
+    "column-header-18" : "145px",
+    "column-header-19" : "145px",
+    "column-header-20" : "145px",
+    "column-header-21" : "145px",
+    "column-header-22" : "145px",
+    "column-header-23" : "145px",
+    "column-header-24" : "145px",
+    "column-header-25" : "145px",
+    "column-header-26" : "145px",
+    "column-header-27" : "145px",
+    "column-header-28" : "145px",
+    "column-header-29" : "145px",
+    "column-header-30" : "145px",
+    "column-header-31" : "145px",
+    "column-header-32" : "145px",
+    "column-header-33" : "145px",
+    "column-header-34" : "145px",
+    "column-header-35" : "145px",
+    "column-header-36" : "145px",
+    "column-header-37" : "145px",
+    "column-header-38" : "145px",
+    "column-header-39" : "145px",
+    "column-header-40" : "145px",
+    "column-header-41" : "145px",
+    "column-header-42" : "145px",
+    "column-header-43" : "145px",
+    "column-header-44" : "145px",
+    "column-header-45" : "145px",
+    "column-header-46" : "145px",
+    "column-header-47" : "145px",
+    "column-header-48" : "145px",
+    "column-header-49" : "145px",
+    "column-header-50" : "145px",
+    "column-header-51" : "145px",
+    "column-header-52" : "145px",
+    "column-header-53" : "145px",
+    "column-header-54" : "145px",
+    "column-header-55" : "145px",
+    "column-header-56" : "145px",
+    "column-header-57" : "150px",
+    "column-header-58" : "145px",
+    "column-header-59" : "145px",
+    "column-header-60" : "145px",
+    "column-header-61" : "145px",
+    "column-header-62" : "145px",
+    "column-header-63" : "145px",
+    "column-header-64" : "450px",
+    "column-header-65" : "600px",
+    "column-header-66" : "800px"
+};
 
 // Controlling Main and Dynamic Tab Creation
 function openTabPage(pageName, elmnt) {
-    var i, tabcontent, tablinks;
+    $(`.outer-table-style12-box .right-slider5`).css("display", "none");
+    $(`.outer-table-style12-box .left-slider5`).css("display", "none");
+
+    let i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
+    console.log(`Tabcontent Length: ${tabcontent.length}`);
     tablinks = document.getElementsByClassName("tablink");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].style.backgroundColor = "";
     }
+    console.log(`Tablinks Length: ${tablinks.length}`);
     document.getElementById(pageName).style.display = "block";
+    console.log("Click Happened On Button");
+
+    for ( let index=0; index<tabTableIdData.length; index++ ) {
+        if ( tabTableIdData[index].tabId == pageName ) {
+            mnResultActiveTabID = tabTableIdData[index].tabId;
+            mnResultActiveTabSty1TableID = tabTableIdData[index].tableStyle1ID;
+            randomSixDIGITForId = tabTableIdData[index].randSixDigit;
+        }
+    }
+
+    let compStyles = window.getComputedStyle(document.querySelector(`#${mnResultActiveTabSty1TableID} thead`));
+    $(`#${pageName} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap`).css({
+        width: compStyles.width,
+        height: "44px"
+    });
+
+    for (let columnNum = 3; columnNum <= 66; columnNum++) {
+        let columnHeaderWidth = tableResizerData[`column-header-${columnNum}`];
+
+        $(`#${mnResultActiveTabSty1TableID} thead tr .column-header-${columnNum} .column-header-${columnNum}-sizer`).attr("style", `width: ${columnHeaderWidth}`);
+        $(`#${mnResultActiveTabSty1TableID} tbody tr td .column-header-${columnNum}-resizer`).attr("style", `width: ${columnHeaderWidth}`);
+        $(`#${mnResultActiveTabID} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 thead tr .column-header-${columnNum} .column-header-${columnNum}-sizer`).attr("style", `width: ${columnHeaderWidth}`);
+    }
+
+    $(`#actual_item_title`).css("display", "none");
+    $(`#actual_subitem_title`).css("display", "none");
+    $(`#loading_item_title`).css("display", "block");
+    $(`#loading_subitem_title`).css("display", "block");
+    
+    setTimeout(() => {
+        $(`#actual_item_title`).css("display", "block");
+        $(`#actual_subitem_title`).css("display", "block");
+        $(`#loading_item_title`).css("display", "none");
+        $(`#loading_subitem_title`).css("display", "none");
+    }, 3000);
+
+    if(mnResultActiveTabID != "Main"){
+        gotoChartPage(`${mnResultActiveTabID}`, `scorer-meter-1${randomSixDIGITForId}`, `scorer-meter-2${randomSixDIGITForId}`, `scorer-meter-3${randomSixDIGITForId}`);
+        gotoChartPage2(`${mnResultActiveTabID}`);
+        gotoLinearChart(`${mnResultActiveTabID}`, `lineChart${randomSixDIGITForId}`,`axisY-lineChart${randomSixDIGITForId}`);
+        gotoChartCalender(`${mnResultActiveTabID}`, `display-data-table${randomSixDIGITForId}`);
+        gotoChartFive(`${mnResultActiveTabID}`);
+    }
+
+    let rowNumber = $(`#${mnResultActiveTabID} .style1-table-wrap #${mnResultActiveTabSty1TableID} tbody tr`);
+    if (rowNumber.length > 0) {
+        $(`#${mnResultActiveTabID} .main-table-design`).css("display", "none");
+        $(`#${mnResultActiveTabID} .style2-table-wrap .style2-table-content`).css("display", "none");
+        $(`#${mnResultActiveTabID} .pagination-container`).css("display", "none");
+        $(`#${mnResultActiveTabID} .page-number12-wrap`).css("display", "none");
+        $(`#${mnResultActiveTabID} .style_date_time_wrap`).css("display", "none");
+
+        $(`#${mnResultActiveTabID} .loading-style1-table`).css("display", "block");
+        $(`#${mnResultActiveTabID} .loading-style2-table`).css("display", "block");
+        $(`#${mnResultActiveTabID} .pagination-loading-handler`).css("display", "block");
+        $(`#${mnResultActiveTabID} .page-number-loading`).css("display", "block");
+        $(`#${mnResultActiveTabID} .loading_date_time_update`).css("display", "block");
+
+        $(`#${mnResultActiveTabID} .double_click_selection_box`).css('display', 'none');
+        $(`#${mnResultActiveTabID} .checkbox-table-loading`).css('display', 'block');
+
+        $(`#${mnResultActiveTabID} .double_click_selection_box`).css('display', 'none');
+        $(`#${mnResultActiveTabID} .checkbox-table-loading`).css('display', 'block');
+
+        setTimeout(() => {
+            $(`#${mnResultActiveTabID} .loading-style1-table`).css("display", "none");
+            $(`#${mnResultActiveTabID} .loading-style2-table`).css("display", "none");
+            $(`#${mnResultActiveTabID} .pagination-loading-handler`).css("display", "none");
+            $(`#${mnResultActiveTabID} .page-number-loading`).css("display", "none");
+            $(`#${mnResultActiveTabID} .loading_date_time_update`).css("display", "none");
+
+            $(`#${mnResultActiveTabID} .main-table-design`).css("display", "block");
+            $(`#${mnResultActiveTabID} .style2-table-wrap .style2-table-content`).css("display", "block");
+            $(`#${mnResultActiveTabID} .pagination-container`).css("display", "block");
+            $(`#${mnResultActiveTabID} .page-number12-wrap`).css("display", "block");
+            $(`#${mnResultActiveTabID} .style_date_time_wrap`).css("display", "block");
+
+            $(`#${mnResultActiveTabID} .double_click_selection_box`).css('display', 'block');
+            $(`#${mnResultActiveTabID} .checkbox-table-loading`).css('display', 'none');
+
+            $(`#${mnResultActiveTabID} .double_click_selection_box`).css('display', 'block');
+            $(`#${mnResultActiveTabID} .checkbox-table-loading`).css('display', 'none');
+
+        }, 3000);
+    }
+    
+
 }
 
 // Force Clicking Main Tab 
@@ -419,60 +497,80 @@ document.getElementById("defaultTabOpen").click();
 $("#defaultTabOpen").addClass("active-tab-81");
 
 // Handling Click On Main and Dynamic Tab
-$(".tablink").click(function () {
-    $(".tablink").removeClass("active-tab-81");
-    $(this).addClass("active-tab-81");
-})
-
+function handlingClickOnMainDynamicTab(){
+    $(".tablink").click(function () {
+        $(".tablink").removeClass("active-tab-81");
+        $(this).addClass("active-tab-81");
+    });
+}
+handlingClickOnMainDynamicTab();
 // ======= TABS END ======
 
 // ======= INNER TABS START ======
 
 function openFiveChartTab(mainTabId, innerPageName, elmnt) {
     var j, inner_tabcontent, inner_tablinks;
-    inner_tabcontent = document.getElementsByClassName("inner-tabcontent");
+    
+    inner_tabcontent = document.querySelectorAll(`#${mainTabId} .inner-tabcontent`);
     for (j = 0; j < inner_tabcontent.length; j++) {
         inner_tabcontent[j].style.display = "none";
     }
-    inner_tablinks = document.getElementsByClassName("inner-tablink");
+
+    inner_tablinks = document.querySelectorAll(`#${mainTabId} .inner-tablink`);
     for (j = 0; j < inner_tablinks.length; j++) {
         inner_tablinks[j].style.backgroundColor = "";
     }
-    // document.getElementById(innerPageName).style.display = "block";
+
     $(`#${mainTabId} .${innerPageName}`).css("display", "block");
 
 }
 
-$("#firstOpen").addClass("inner-active-tab-81");
-$(".inner-tablink").click(function () {
-    $(".inner-tablink").removeClass("inner-active-tab-81");
-    $(this).addClass("inner-active-tab-81");
-})
+// Will Remove On Final Implement
+// $("#firstOpen").addClass("inner-active-tab-81");
 
+
+function fiveChartBtnClick(targetedTab){
+    $(`#${targetedTab} .inner-tablink`).click(function () {
+        $(`#${targetedTab} .inner-tablink`).removeClass("inner-active-tab-81");
+        $(this).addClass("inner-active-tab-81");
+    });
+}
+fiveChartBtnClick("Main");
 // ======= INNER TABS END ======
 
 // ============== DISPLAY 2 SPEEDOMETER START ====================
-function gotoChartPage2() {
-    $(".progressmeter").each(function () {
-        let $bar = $(this).find(".bar");
-        let $val = $(this).find(".progress-value");
-        let perc = parseInt($val.text());
-        $({
-            p: 0
-        }).animate({
-            p: perc
-        }, {
-            duration: 3000,
-            easing: "swing",
-            step: function (p) {
-                $bar.css({
-                    transform: "rotate(" + (45.00 + (p * 1.8)) + "deg)", // 100%=180° so: ° = % * 1.8
-                    // 45 is to add the needed rotation to have the green borders at the bottom
-                });
-                $val.text(p | 0);
-            }
+function gotoChartPage2(selectedTab) {
+
+    $(`#${selectedTab} .Display2 .gauge_outer_box .main-progress`).css("display", "none");
+    $(`#${selectedTab} .Display2 .gauge_outer_box .loading-progress`).css("display", "block");
+
+    setTimeout(() => {
+        
+        $(`#${selectedTab} .Display2 .gauge_outer_box .main-progress`).css("display", "block");
+        $(`#${selectedTab} .Display2 .gauge_outer_box .loading-progress`).css("display", "none");
+    
+        $(".progressmeter").each(function () {
+            let $bar = $(this).find(".bar");
+            let $val = $(this).find(".progress-value");
+            let perc = parseInt($val.text());
+            $({
+                p: 0
+            }).animate({
+                p: perc
+            }, {
+                duration: 3000,
+                easing: "swing",
+                step: function (p) {
+                    $bar.css({
+                        transform: "rotate(" + (45.00 + (p * 1.8)) + "deg)", // 100%=180° so: ° = % * 1.8
+                        // 45 is to add the needed rotation to have the green borders at the bottom
+                    });
+                    $val.text(p | 0);
+                }
+            });
         });
-    });
+
+    }, 3000);
 }
 
 // ============== DISPLAY 2 SPEEDOMETER END ====================
@@ -570,7 +668,7 @@ function gotoChartCalender(selectedTab, targetedCalender){
     setTimeout(() => {
         $(`#${selectedTab} .Display4 .data-table-wrapper`).css("display", "block");
         $(`#${selectedTab} .Display4 .loading-table-chart4`).css("display", "none");
-    }, 2000);
+    }, 3000);
 }
 
 // ================ DISPLAY 4 TABLE DATA END ================
@@ -646,14 +744,14 @@ function animationPositiveDiv(posProgVal, posProgTarget, posTextTarget) {
     var elem = document.querySelector(`${posProgTarget}`);
     var elemPara = document.querySelector(`${posTextTarget}`);   
     var height = 0;
-    var id = setInterval(frame, 100);
+    var id = setInterval(frame, 50);
     function frame() {
       if (height >= posProgVal) {
         clearInterval(id);
       } else {
         height++; 
         elem.style.height = height + '%';
-        // elemPara.style.bottom = height * 0.85 + 'px';
+        elemPara.style.bottom = height * 0.85 + 'px';
         elemPara.innerHTML = height * 1  + '%';
       }
     }
@@ -663,14 +761,14 @@ function animationNegativeDiv(negProgVal, negProgTarget, negTextTarget) {
     var elem = document.querySelector(`${negProgTarget}`);
     var elemPara = document.querySelector(`${negTextTarget}`);   
     var height = 0;
-    var id = setInterval(frame, 100);
+    var id = setInterval(frame, 50);
     function frame() {
       if (height >= negProgVal) {
         clearInterval(id);
       } else {
         height++; 
         elem.style.height = height + '%';
-        // elemPara.style.top = height * 1.07 + 'px';
+        elemPara.style.top = height * 1.07 + 'px';
         elemPara.innerHTML = height * -1  + '%';
       }
     }
@@ -678,30 +776,39 @@ function animationNegativeDiv(negProgVal, negProgTarget, negTextTarget) {
 
 function gotoChartFive(targetedTab){
 
-    $(`#${targetedTab} .pos-bar-status`).removeAttr("style");
-    $(`#${targetedTab} .allpos_value`).html("");
-    $(`#${targetedTab} .neg-bar-status`).removeAttr("style");
-    $(`#${targetedTab} .allneg_value`).html("");
+    $(`#${targetedTab} .Display5 .progress-range-box`).css("display", "none");
+    $(`#${targetedTab} .Display5 .progress-loading-box`).css("display", "block");
 
-    let chartFiveValues = new Array(10);
-    for(let i=0; i<10; i++){
-        chartFiveValues[i] = Math.floor(Math.random() * (100 + 100 + 1)) - 100;
-    }
+    setTimeout(() => {
+        $(`#${targetedTab} .Display5 .progress-range-box`).css("display", "block");
+        $(`#${targetedTab} .Display5 .progress-loading-box`).css("display", "none");
 
-    for(let j=0; j < chartFiveValues.length; j++){
-        let progValue, progTarget, progText;
-        if(chartFiveValues[j] >= 0){
-            progValue = chartFiveValues[j];
-            progTarget = `#${targetedTab} .dis5_plusProgress_value${j+1}`;
-            progText = `#${targetedTab} .dis5_pos_value${j+1}`;
-            animationPositiveDiv(progValue, progTarget, progText);
-        }else{
-            progValue = chartFiveValues[j] * -1;
-            progTarget = `#${targetedTab} .dis5_minusProgress_value${j+1}`;
-            progText = `#${targetedTab} .dis5_neg_value${j+1}`;
-            animationNegativeDiv(progValue, progTarget, progText);
+        $(`#${targetedTab} .pos-bar-status`).removeAttr("style");
+        $(`#${targetedTab} .allpos_value`).html("");
+        $(`#${targetedTab} .neg-bar-status`).removeAttr("style");
+        $(`#${targetedTab} .allneg_value`).html("");
+
+        let chartFiveValues = new Array(10);
+        for(let i=0; i<10; i++){
+            chartFiveValues[i] = Math.floor(Math.random() * (100 + 100 + 1)) - 100;
         }
-    }
+
+        for(let j=0; j < chartFiveValues.length; j++){
+            let progValue, progTarget, progText;
+            if(chartFiveValues[j] >= 0){
+                progValue = chartFiveValues[j];
+                progTarget = `#${targetedTab} .dis5_plusProgress_value${j+1}`;
+                progText = `#${targetedTab} .dis5_pos_value${j+1}`;
+                animationPositiveDiv(progValue, progTarget, progText);
+            }else{
+                progValue = chartFiveValues[j] * -1;
+                progTarget = `#${targetedTab} .dis5_minusProgress_value${j+1}`;
+                progText = `#${targetedTab} .dis5_neg_value${j+1}`;
+                animationNegativeDiv(progValue, progTarget, progText);
+            }
+        }
+
+    }, 3000);
 }
 
 // gotoChartFive();
@@ -761,7 +868,7 @@ function tableProgressBarAnimation(targetedMainTab, progressVal, progWidthTarget
     var elem = document.querySelector(`#${targetedMainTab} .${progWidthTarget}`);
     var elemPara = document.querySelector(`#${targetedMainTab} .${progTextTarget}`);
     var width = 0;
-    var id = setInterval(frame, 100);
+    var id = setInterval(frame, 50);
     function frame() {
       if (width >= progressVal) {
         clearInterval(id);
@@ -805,21 +912,37 @@ function styleIconSwitcherOperation(selectedTab, sty1TableId){
             $(`#${selectedTab} .main-table-design`).css("display", "none");
             $(`#${selectedTab} .pagination-container`).css("display", "none");
             $(`#${selectedTab} .page-number12-wrap`).css("display", "none");
+            $(`#${selectedTab} .style_date_time_wrap`).css("display", "none");
 
             $(`#${selectedTab} .loading-style1-table`).css("display", "block");
             $(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
             $(`#${selectedTab} .page-number-loading`).css("display", "block");
+            $(`#${selectedTab} .loading_date_time_update`).css("display", "block");
 
+
+            let compStyles = window.getComputedStyle(document.querySelector(`#${sty1TableId} thead`));
+            $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap`).css({
+                width: "0px",
+                visibility: "hidden"
+            });
 
             setTimeout(() => {
                 $(`#${selectedTab} .loading-style1-table`).css("display", "none");
                 $(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
                 $(`#${selectedTab} .page-number-loading`).css("display", "none");
+                $(`#${selectedTab} .loading_date_time_update`).css("display", "none");
 
                 $(`#${selectedTab} .main-table-design`).css("display", "block");
                 $(`#${selectedTab} .pagination-container`).css("display", "block");
                 $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
-            }, 2000);
+                $(`#${selectedTab} .style_date_time_wrap`).css("display", "block");
+
+                $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap`).css({
+                    width: compStyles.width,
+                    visibility: "hidden"
+                });
+
+            }, 3000);
 
         } else {
 
@@ -853,20 +976,25 @@ function styleIconSwitcherOperation(selectedTab, sty1TableId){
             $(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "none");
             $(`#${selectedTab} .pagination-container`).css("display", "none");
             $(`#${selectedTab} .page-number12-wrap`).css("display", "none");
+            $(`#${selectedTab} .style_date_time_wrap`).css("display", "none");
 
             $(`#${selectedTab} .loading-style2-table`).css("display", "block");
             $(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
             $(`#${selectedTab} .page-number-loading`).css("display", "block");
+            $(`#${selectedTab} .loading_date_time_update`).css("display", "block");
+            
 
             setTimeout(() => {
                 $(`#${selectedTab} .loading-style2-table`).css("display", "none");
                 $(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
                 $(`#${selectedTab} .page-number-loading`).css("display", "none");
+                $(`#${selectedTab} .loading_date_time_update`).css("display", "none");
 
                 $(`#${selectedTab} .style2-table-wrap .style2-table-content`).css("display", "block");
                 $(`#${selectedTab} .pagination-container`).css("display", "block");
                 $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
-            }, 2000);
+                $(`#${selectedTab} .style_date_time_wrap`).css("display", "block");
+            }, 3000);
         } else {
 
             $(`#${selectedTab} .style12-section .box-style12 .no-result`).css("display", "block");
@@ -985,10 +1113,12 @@ function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1d
             $(`#${selectedTab} .main-table-design`).css("display", "none");
             $(`#${selectedTab} .pagination-container`).css("display", "none");
             $(`#${selectedTab} .page-number12-wrap`).css("display", "none");
+            $(`#${selectedTab} .style_date_time_wrap`).css("display", "none");
 
             $(`#${selectedTab} .loading-style1-table`).css("display", "block");
             $(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
             $(`#${selectedTab} .page-number-loading`).css("display", "block");
+            $(`#${selectedTab} .loading_date_time_update`).css("display", "block");
 
             // $(`#${sty1dblClickRightListId} .double_click_selection_box`).css('display', 'none');
             // $(`#${sty1dblClickRightListId} .checkbox-table-loading`).css('display', 'block');
@@ -1000,17 +1130,19 @@ function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1d
                 $(`#${selectedTab} .loading-style1-table`).css("display", "none");
                 $(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
                 $(`#${selectedTab} .page-number-loading`).css("display", "none");
-
+                $(`#${selectedTab} .loading_date_time_update`).css("display", "none");
+                
                 $(`#${selectedTab} .main-table-design`).css("display", "block");
                 $(`#${selectedTab} .pagination-container`).css("display", "block");
                 $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
+                $(`#${selectedTab} .style_date_time_wrap`).css("display", "block");
 
                 // $(`#${sty1dblClickRightListId} .double_click_selection_box`).css('display', 'block');
                 // $(`#${sty1dblClickRightListId} .checkbox-table-loading`).css('display', 'none');
 
                 // $(`#${sty1dblClickLeftListId} .double_click_selection_box`).css('display', 'block');
                 // $(`#${sty1dblClickLeftListId} .checkbox-table-loading`).css('display', 'none');
-            }, 2000);
+            }, 3000);
 
         }else{
             if (target.tagName === "I") {
@@ -1034,7 +1166,7 @@ function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1d
                 setTimeout(() => {
                     $("#col8Filter .checkbox-table-loading").css("display", "none");
                     $("#col8Filter .checkbox-table-scroll").css("display", "block");
-                }, 2000);
+                }, 3000);
             }
         }
 
@@ -1055,20 +1187,25 @@ function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1d
             $(`#${selectedTab} .main-table-design`).css("display", "none");
             $(`#${selectedTab} .pagination-container`).css("display", "none");
             $(`#${selectedTab} .page-number12-wrap`).css("display", "none");
+            $(`#${selectedTab} .style_date_time_wrap`).css("display", "none");
 
             $(`#${selectedTab} .loading-style1-table`).css("display", "block");
             $(`#${selectedTab} .pagination-loading-handler`).css("display", "block");
             $(`#${selectedTab} .page-number-loading`).css("display", "block");
+            $(`#${selectedTab} .loading_date_time_update`).css("display", "block");
 
+            
             setTimeout(() => {
                 $(`#${selectedTab} .loading-style1-table`).css("display", "none");
                 $(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
                 $(`#${selectedTab} .page-number-loading`).css("display", "none");
-
+                $(`#${selectedTab} .loading_date_time_update`).css("display", "none");
+                
                 $(`#${selectedTab} .main-table-design`).css("display", "block");
                 $(`#${selectedTab} .pagination-container`).css("display", "block");
                 $(`#${selectedTab} .page-number12-wrap`).css("display", "block");
-            }, 2000);
+                $(`#${selectedTab} .style_date_time_wrap`).css("display", "block");
+            }, 3000);
         }else{
             if (target.tagName === "I") {
                 target = target.parentNode;
@@ -1092,7 +1229,7 @@ function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1d
                 setTimeout(() => {
                     $("#col8Filter .checkbox-table-loading").css("display", "none");
                     $("#col8Filter .checkbox-table-scroll").css("display", "block");
-                }, 2000);
+                }, 3000);
             }
         }
 
@@ -1145,7 +1282,7 @@ function manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty
 
 	    $(`#${sty1dblClickLeftListId} .double_click_selection_box`).css('display', 'block');
 	    $(`#${sty1dblClickLeftListId} .checkbox-table-loading`).css('display', 'none');
-	}, 1000);
+	}, 3000);
 }
 
 
@@ -1281,7 +1418,7 @@ function findVisible(element, pos) {
 function columnMove(index, direc, selectedTab, sty1TableId) {
     let tHead = $(`#${sty1TableId} th.column-header-${index}`);
     let tBody = $(`#${sty1TableId} td.column-header-${index}`);
-    let tvHead = $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th.column-header-${index}`);
+    let tvHead = $(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12.main-table-design th.column-header-${index}`);
     let len = tBody.length;
     if (direc == "up") {
         let eleH = findVisible(tHead.prev(), "prev");
@@ -1371,7 +1508,7 @@ function allHeadTable2Call(selectedTab, sty2dblClickLeftListId, sty2dblClickRigh
 
 	    $(`#${sty2dblClickLeftListId} .double_click_selection_box`).css('display', 'block');
 	    $(`#${sty2dblClickLeftListId} .checkbox-table-loading`).css('display', 'none');
-	}, 1000);
+	}, 3000);
 }
 
 
@@ -1507,6 +1644,11 @@ function resizeWithUi(sty1TableId, tQuery, thHeight) {
             let shrinkWidth = `#${sty1TableId} tbody .${resizer}`;
             let gettingWidth = parseInt($(sizerID).css('width'), 10);
             $(shrinkWidth).width(gettingWidth + "px");
+
+            let changedHeaderClass = event.target.classList[0];
+            let changedHeaderWidth = ui.size.width;
+            tableResizerData[changedHeaderClass] = changedHeaderWidth + "px";
+
         }
     });
 }
@@ -1516,22 +1658,6 @@ function resizableTable1(selectedTab, sty1TableId) {
     resizeWithUi(sty1TableId, `#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap .mytablesty12 th`, thHeight);
 }
 // TABLE RESIZEABLE END ===////////////////===
-
-// TABLE RESIZEABLE STYLE 2 START ===////////////////===
-// $(document).ready(function () {
-//     var thHeight = $("table.cross-table-1 th:first").height();
-//     $("table.cross-table-1 th").resizable({
-//         handles: "e",
-//         minHeight: thHeight,
-//         maxHeight: thHeight,
-//         minWidth: 40,
-//         resize: function (event, ui) {
-//             var sizerID = "#" + $(event.target).attr("id") + "-sizer";
-//             $(sizerID).width(ui.size.width);
-//         }
-//     });
-// })
-
 ///// Update Clear-Filter Clear Sorting Button Starts
 
 let headerTextOfSubmitAnimation = '';
@@ -1560,35 +1686,49 @@ function threeBtnConfirmModal(decideSelection){
 }
 
 function threeBtnConfirmButton(globThreeBtn){
-    $('#threeBtn_confirm_modal').modal('hide');
 
-    $('body').addClass("modal-force-open");
-    $("#submitting_Info .submit-title").html(`${headerTextOfSubmitAnimation}...`);
-	$('#submitting_Info').modal('show');
+    $('#threeBtn_confirm_modal .modal-body').addClass("disable-pointer");
+    let initState = $(globThreeBtn).html();
+	$(globThreeBtn).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(globThreeBtn).prop("disabled", true);
+	let $this = $(globThreeBtn);
 
-	let $targetingTextSubmit = $("#submitting_file_info");
-	$targetingTextSubmit.html("Need 5 Second to Finish...");
-	let submitFileInfo = [ 
-			"Need 4 Second to Finish...",
-			"Need 3 Second to Finish...", 
-			"Need 1 Second to Finish...",
-			"Finishing..."];
-  
-	for (let i = 1; i <= 4; ++i) {
-	  (function(index) {
-		setTimeout(function() { 
-		  $targetingTextSubmit.html(submitFileInfo[index-1]);
-		}, i * 2000);
-	  })(i);
-	}
-	
-    setTimeout(function() { 
-        $('#submitting_Info').modal('hide');
-		$('body').removeClass("modal-force-open");
+	setTimeout(function() {
+        $('#threeBtn_confirm_modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
 
-		$('#filterThankYouModal').modal('show');
+        $('#threeBtn_confirm_modal').modal('hide');
+
+        $('body').addClass("modal-force-open");
+        $("#submitting_Info .submit-title").html(`${headerTextOfSubmitAnimation}...`);
+        $('#submitting_Info').modal('show');
+
+        let $targetingTextSubmit = $("#submitting_file_info");
+        $targetingTextSubmit.html("Need 5 Second to Finish...");
+        let submitFileInfo = [ 
+                "Need 4 Second to Finish...",
+                "Need 3 Second to Finish...", 
+                "Need 1 Second to Finish...",
+                "Finishing..."];
     
-	}, 10000);
+        for (let i = 1; i <= 4; ++i) {
+        (function(index) {
+            setTimeout(function() { 
+            $targetingTextSubmit.html(submitFileInfo[index-1]);
+            }, i * 2000);
+        })(i);
+        }
+        
+        setTimeout(function() { 
+            $('#submitting_Info').modal('hide');
+            $('body').removeClass("modal-force-open");
+
+            $('#filterThankYouModal').modal('show');
+        
+        }, 10000);
+        
+	}, 2000);
 }
 
 ///// Update Clear-Filter Clear Sorting Button Ends
@@ -1672,13 +1812,13 @@ function filtersConfirmButton(filtersGlob){
     $('#filters_confirm_modal').modal('hide');
 }
 
-$('#filters_confirm_modal').on('show.bs.modal', function (e) {
+$('#filters_confirm_modal').on('shown.bs.modal', function (e) {
 	$('body').addClass("modal-filters-force");
-}).on('hide.bs.modal', function (e) {
-	$('body').addClass("modal-open");
+}).on('hidden.bs.modal', function (e) {
+    $('body').addClass("modal-open");
 });
 
-$('#filter-modal').on('hide.bs.modal', function (e) {
+$('#filter-modal').on('hidden.bs.modal', function (e) {
 	$('body').removeClass("modal-open modal-filters-force");
 });
 
@@ -1723,7 +1863,7 @@ function IconModalClick() {
             setTimeout(() => {
                 $("#viewtwo .scrollmodal").css('display', 'block');
                 $("#viewtwo .checkbox-table-loading").css('display', 'none');
-            }, 2000);
+            }, 3000);
 
         });
     }
@@ -1748,7 +1888,7 @@ function IconModalClick() {
             setTimeout(() => {
                 $("#rowdetails .scrollmodal").css('display', 'block');
                 $("#rowdetails .checkbox-table-loading").css('display', 'none');
-            }, 2000);
+            }, 3000);
 
         });
     }
@@ -1773,7 +1913,7 @@ function IconModalClick() {
             setTimeout(() => {
                 $("#noteswindow .scrollmodal").css('display', 'block');
                 $("#noteswindow .checkbox-table-loading").css('display', 'none');
-            }, 2000);
+            }, 3000);
 
         });
     }
@@ -1798,7 +1938,7 @@ function IconModalClick() {
                 $("#copyrow_list_item_loading").css("display", "none");
                 $(".copytoscrollwindow").css("display", "block");
                 $(".copytoscrollbtn").css("display", "block");
-            }, 2000);
+            }, 3000);
 
             $("#copyrowlist").css('display', 'block');
 
@@ -1825,7 +1965,7 @@ function IconModalClick() {
                 $("#moverow_list_item_loading").css("display", "none");
                 $(".movetoscrollwindow").css("display", "block");
                 $(".movetoscrollbtn").css("display", "block");
-            }, 2000);
+            }, 3000);
 
             $("#moverowlist").css('display', 'block');
 
@@ -1852,7 +1992,7 @@ function IconModalClick() {
             setTimeout(() => {
                 $("#alertswindow .alert-table-wrap").css('display', 'block');
                 $("#alertswindow .loading-alert-table-wrap").css('display', 'none');
-            }, 2000);
+            }, 3000);
 
         });
     }
@@ -1879,7 +2019,7 @@ function IconModalClick() {
             setTimeout(() => {
                 $("#viewtwo_style2 .scrollmodal").css('display', 'block');
                 $("#viewtwo_style2 .checkbox-table-loading").css('display', 'none');
-            }, 2000);
+            }, 3000);
     
         });
     }
@@ -1906,7 +2046,7 @@ function IconModalClick() {
             setTimeout(() => {
                 $("#rowdetails_style2 .scrollmodal").css('display', 'block');
                 $("#rowdetails_style2 .checkbox-table-loading").css('display', 'none');
-            }, 2000);
+            }, 3000);
 
         });
     }
@@ -1933,7 +2073,7 @@ function IconModalClick() {
             setTimeout(() => {
                 $("#noteswindow_style2 .scrollmodal").css('display', 'block');
                 $("#noteswindow_style2 .checkbox-table-loading").css('display', 'none');
-            }, 2000);
+            }, 3000);
 
         });
     }
@@ -1960,7 +2100,7 @@ function IconModalClick() {
                 $("#copyrowS2_list_item_loading").css("display", "none");
                 $(".copytoscrollwindow_style2").css("display", "block");
                 $(".copytoscrollbtn_style2").css("display", "block");
-            }, 2000);
+            }, 3000);
 
             $("#copyrowlist_style2").css('display', 'block');
 
@@ -1989,7 +2129,7 @@ function IconModalClick() {
                 $("#moverowS2_list_item_loading").css("display", "none");
                 $(".movetoscrollwindow_style29").css("display", "block");
                 $(".movetoscrollbtn_style29").css("display", "block");
-            }, 2000);
+            }, 3000);
 
             $("#moverowlist_style2").css('display', 'block');
 
@@ -2018,7 +2158,7 @@ function IconModalClick() {
             setTimeout(() => {
                 $("#alertswindow_style2 .alert-table-wrap").css('display', 'block');
                 $("#alertswindow_style2 .loading-alert-table-wrap").css('display', 'none');
-            }, 2000);
+            }, 3000);
 
         });
     }
@@ -2044,7 +2184,7 @@ function Style2DropFilterPos() {
             setTimeout(() => {
                 $("#col8Filter .checkbox-table-loading").css("display", "none");
                 $("#col8Filter .checkbox-table-scroll").css("display", "block");
-            }, 2000);
+            }, 3000);
         });
     }
 }
@@ -2155,19 +2295,8 @@ $("#resetAlertS2").click(function () {
 window.addEventListener("scroll", (event) => {
     let scroll = this.scrollY;
     // console.log(scroll);
-    // if (scroll > 1400) {
-    if (scroll > 1000) {
-        let arrowShowing = $(`#${mnResultActiveTabID} .style1-box`).hasClass("clickstylebg");
-        if (arrowShowing) {
-            $(`#${mnResultActiveTabID} .outer-table-style12-box .left-slider5`).css('display', 'block');
-            $(`#${mnResultActiveTabID} .outer-table-style12-box .right-slider5`).css('display', 'block');
-        }
-    } else {
-        $(`#${mnResultActiveTabID} .outer-table-style12-box .left-slider5`).css('display', 'none');
-        $(`#${mnResultActiveTabID} .outer-table-style12-box .right-slider5`).css('display', 'none');
-    }
 
-    if (scroll > 1200) {
+    if (scroll > 520 && mnResultActiveTabID == "Main") {
         let arrowShowing = $(`#${mnResultActiveTabID} .style1-box`).hasClass("clickstylebg");
 
         let filterTargeting = document.querySelector('#col8Filter');
@@ -2195,6 +2324,55 @@ window.addEventListener("scroll", (event) => {
             }
         }
     }
+
+    if (scroll > 600 && mnResultActiveTabID == "Main") {
+        let arrowShowing = $(`#${mnResultActiveTabID} .style1-box`).hasClass("clickstylebg");
+        if (arrowShowing) {
+            $(`#${mnResultActiveTabID} .outer-table-style12-box .left-slider5`).css('display', 'block');
+            $(`#${mnResultActiveTabID} .outer-table-style12-box .right-slider5`).css('display', 'block');
+        }
+    }else if (scroll > 1000 && mnResultActiveTabID != "Main") {
+        let arrowShowing = $(`#${mnResultActiveTabID} .style1-box`).hasClass("clickstylebg");
+        if (arrowShowing) {
+            $(`#${mnResultActiveTabID} .outer-table-style12-box .left-slider5`).css('display', 'block');
+            $(`#${mnResultActiveTabID} .outer-table-style12-box .right-slider5`).css('display', 'block');
+        }
+    } else {
+        $(`#${mnResultActiveTabID} .outer-table-style12-box .left-slider5`).css('display', 'none');
+        $(`#${mnResultActiveTabID} .outer-table-style12-box .right-slider5`).css('display', 'none');
+    }
+
+    if (scroll > 1200 && mnResultActiveTabID != "Main") {
+        let arrowShowing = $(`#${mnResultActiveTabID} .style1-box`).hasClass("clickstylebg");
+
+        let filterTargeting = document.querySelector('#col8Filter');
+        let filterStyles = window.getComputedStyle(filterTargeting);
+
+        if (arrowShowing == true && filterStyles.display == "block" && headerIndexClick != "") {
+            let virtualHeader = document.querySelector(`#${mnResultActiveTabID} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap`);
+            let compStyles = window.getComputedStyle(virtualHeader);
+
+            if (compStyles.visibility == "visible") {
+                $("#col8Filter").css({
+                    top: (50),
+                    position: "fixed"
+                });
+            }
+
+            if (compStyles.visibility == "hidden") {
+                // let actualHeaderTarget = document.querySelector(`#resizable554 th:nth-child(${headerIndexClick})`);
+                let actualHeaderTarget = document.querySelector(`#${mnResultActiveTabSty1TableID} th:nth-child(${headerIndexClick})`);
+                let elementPositionMain = actualHeaderTarget.getBoundingClientRect();
+                $("#col8Filter").css({
+                    top: ((elementPositionMain.y) + window.scrollY + 60),
+                    position: "absolute"
+                });
+            }
+        }
+    }
+    
+
+    
 });
 
 
@@ -2224,6 +2402,35 @@ $(document).keydown(function (e) {
         $("#universalThankDraftModal #thank_draft_header p").html("CANCELLATION");
         $("#universalThankDraftModal #thank_draft_details p").html("The Request has been Canceled!");
         $('#universalThankDraftModal').modal('show');
+    }
+    if (e.which == 27) {
+        $(".delete-list-item").modal("hide");
+        $("#filter-modal").modal("hide");
+        $("#onlyThankModal").modal("hide");
+
+        $("#loadTemplateRename").modal("hide");
+        $("#thankAfterRename").modal("hide");
+
+        $("#myopt1listData").modal("hide");
+        $("#opt4a-list-modal").modal("hide");
+        $("#opt4b-list-modal").modal("hide");
+        $("#opt4c-list-modal").modal("hide");
+        $("#opt4d-list-modal").modal("hide");
+
+        $("#myopt1listData").modal("hide");
+        $("#manage-tempa-list-modal").modal("hide");
+        $("#manage-tempb-list-modal").modal("hide");
+        $("#manage-tempc-list-modal").modal("hide");
+        $("#manage-tempd-list-modal").modal("hide");
+
+        $("#loginRequired").modal("hide");
+        
+        $("#dropBtnModal").css('display', 'none');
+        hideStyleTwoAllPopup();
+        hideStyleOneAllPopup();
+        resetDownArrow();
+
+        $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
     }
 });
 
@@ -2410,13 +2617,25 @@ function filterSelectBtnClick(){
         $(rotateIcon[i]).removeClass("down-animation-icon");
     }
 
+    if(mnResultActiveTabID != "Main"){
+        gotoChartPage(`${mnResultActiveTabID}`, `scorer-meter-1${randomSixDIGITForId}`, `scorer-meter-2${randomSixDIGITForId}`, `scorer-meter-3${randomSixDIGITForId}`);
+        gotoChartPage2(`${mnResultActiveTabID}`);
+        gotoLinearChart(`${mnResultActiveTabID}`, `lineChart${randomSixDIGITForId}`,`axisY-lineChart${randomSixDIGITForId}`);
+        gotoChartCalender(`${mnResultActiveTabID}`, `display-data-table${randomSixDIGITForId}`);
+        gotoChartFive(`${mnResultActiveTabID}`);
+    }
+
     $(`#${mnResultActiveTabSty1TableID}`).css("display", "none");
     $(`#${mnResultActiveTabID} .pagination-container`).css("display", "none");
     $(`#${mnResultActiveTabID} .page-number12-wrap`).css("display", "none");
+    $(`#${mnResultActiveTabID} .style_date_time_wrap`).css("display", "none");
 
     $(`#${mnResultActiveTabID} .loading-style1-table`).css("display", "block");
     $(`#${mnResultActiveTabID} .pagination-loading-handler`).css("display", "block");
     $(`#${mnResultActiveTabID} .page-number-loading`).css("display", "block");
+    $(`#${mnResultActiveTabID} .loading_date_time_update`).css("display", "block");
+
+    
 
     $(`#${mnResultActiveTabID} .style2-table-wrap .style2-table-content`).css("display", "none");
     $(`#${mnResultActiveTabID} .loading-style2-table`).css("display", "block");
@@ -2425,10 +2644,12 @@ function filterSelectBtnClick(){
         $(`#${mnResultActiveTabID} .loading-style1-table`).css("display", "none");
         $(`#${mnResultActiveTabID} .pagination-loading-handler`).css("display", "none");
         $(`#${mnResultActiveTabID} .page-number-loading`).css("display", "none");
-
+        $(`#${mnResultActiveTabID} .loading_date_time_update`).css("display", "none");
+        
         $(`#${mnResultActiveTabSty1TableID}`).css("display", "block");
         $(`#${mnResultActiveTabID} .pagination-container`).css("display", "block");
         $(`#${mnResultActiveTabID} .page-number12-wrap`).css("display", "block");
+        $(`#${mnResultActiveTabID} .style_date_time_wrap`).css("display", "block");
 
         $(`#${mnResultActiveTabID} .loading-style2-table`).css("display", "none");
         $(`#${mnResultActiveTabID} .style2-table-wrap .style2-table-content`).css("display", "block");
@@ -2443,10 +2664,12 @@ function filterThankCloseBtn(){
         $(`#${mnResultActiveTabSty1TableID}`).css("display", "none");
         $(`#${mnResultActiveTabID} .pagination-container`).css("display", "none");
         $(`#${mnResultActiveTabID} .page-number12-wrap`).css("display", "none");
+        $(`#${mnResultActiveTabID} .style_date_time_wrap`).css("display", "none");
     
         $(`#${mnResultActiveTabID} .loading-style1-table`).css("display", "block");
         $(`#${mnResultActiveTabID} .pagination-loading-handler`).css("display", "block");
         $(`#${mnResultActiveTabID} .page-number-loading`).css("display", "block");
+        $(`#${mnResultActiveTabID} .loading_date_time_update`).css("display", "block");
     
         $(`#${mnResultActiveTabID} .style2-table-wrap .style2-table-content`).css("display", "none");
         $(`#${mnResultActiveTabID} .loading-style2-table`).css("display", "block");
@@ -2455,10 +2678,12 @@ function filterThankCloseBtn(){
             $(`#${mnResultActiveTabID} .loading-style1-table`).css("display", "none");
             $(`#${mnResultActiveTabID} .pagination-loading-handler`).css("display", "none");
             $(`#${mnResultActiveTabID} .page-number-loading`).css("display", "none");
-    
+            $(`#${mnResultActiveTabID} .loading_date_time_update`).css("display", "none");
+            
             $(`#${mnResultActiveTabSty1TableID}`).css("display", "block");
             $(`#${mnResultActiveTabID} .pagination-container`).css("display", "block");
             $(`#${mnResultActiveTabID} .page-number12-wrap`).css("display", "block");
+            $(`#${mnResultActiveTabID} .style_date_time_wrap`).css("display", "block");
     
             $(`#${mnResultActiveTabID} .loading-style2-table`).css("display", "none");
             $(`#${mnResultActiveTabID} .style2-table-wrap .style2-table-content`).css("display", "block");
@@ -2474,7 +2699,7 @@ $("#col8FilterInput").keyup(function(){
     setTimeout(() => {
         $("#col8Filter .checkbox-table-loading").css("display", "none");
         $("#col8Filter .checkbox-table-scroll").css("display", "block");
-    }, 1000);
+    }, 3000);
 });
 
 $("#col8FilterFind").click(function () {
@@ -2484,7 +2709,17 @@ $("#col8FilterFind").click(function () {
     setTimeout(() => {
         $("#col8Filter .checkbox-table-loading").css("display", "none");
         $("#col8Filter .checkbox-table-scroll").css("display", "block");
-    }, 1000);
+    }, 3000);
+});
+
+$("#col8FilterSort").click(function () {
+    $("#col8Filter .checkbox-table-loading").css("display", "block");
+    $("#col8Filter .checkbox-table-scroll").css("display", "none");
+
+    setTimeout(() => {
+        $("#col8Filter .checkbox-table-loading").css("display", "none");
+        $("#col8Filter .checkbox-table-scroll").css("display", "block");
+    }, 3000);
 });
 
 

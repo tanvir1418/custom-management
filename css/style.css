@@ -845,14 +845,17 @@ td {
   margin-top: -5px;
 }
 
-.mytable1 tbody .actions39 a {
+.mytable1 tbody .actions39 button {
   font-size: 14px;
-  padding: 5px;
+  padding: 5px 14px;
   background: #feffd6;
   color: #000000;
   border-radius: 50px;
   margin-right: 24px;
   margin-left: auto;
+  text-align: center;
+  border: none;
+  outline: none;
 }
 
 .mytable1 tbody .actions39 .cancel-box {
@@ -945,9 +948,19 @@ td {
 }
 
 .scrollable-list .main-list li .green-check-box {
-  height: 16px;
-  width: 16px;
+  height: 18px;
+  width: 18px;
   background: #06e791;
+  position: relative;
+  margin: auto -58px auto auto;
+  border-radius: 50%;
+  /* display: none; */
+}
+
+.scrollable-list-op2 .main-list li .grey-times-box {
+  height: 18px;
+  width: 18px;
+  background: #d3d3d3;
   position: relative;
   margin: auto -58px auto auto;
   border-radius: 50%;
@@ -968,10 +981,20 @@ td {
 .scrollable-list .main-list li .green-check-box i {
   position: absolute;
   margin: auto;
+  top: 4px;
+  bottom: 0;
+  left: 4px;
+  font-size: 10px;
+  color: #ffffff;
+}
+
+.scrollable-list-op2 .main-list li .grey-times-box i {
+  position: absolute;
+  margin: auto;
   top: 3px;
   bottom: 0;
-  left: 3px;
-  font-size: 10px;
+  left: 5px;
+  font-size: 11px;
   color: #ffffff;
 }
 
@@ -1058,10 +1081,28 @@ td {
 
 .scrollable-list .sub-list li .sublist-check-box {
   position: relative;
-  margin: auto 8px auto auto;
-  height: 16px;
-  width: 16px;
+  margin: auto 8px auto 8px;
+  height: 18px;
+  width: 18px;
   background: #06e791;
+  border-radius: 50%;
+  /* display: none; */
+}
+.scrollable-list .sub-list li .sublist-info-box {
+  position: relative;
+  margin: auto 8px auto auto;
+  height: 18px;
+  width: 18px;
+  background: #d3d3d3;
+  border-radius: 50%;
+  /* display: none; */
+}
+.scrollable-list .sub-list li .sublist-pen-box {
+  position: relative;
+  margin: auto 8px auto 8px;
+  height: 18px;
+  width: 18px;
+  background: #d3d3d3;
   border-radius: 50%;
   /* display: none; */
 }
@@ -1069,16 +1110,36 @@ td {
 .scrollable-list .sub-list li .sublist-check-box i {
   position: absolute;
   margin: auto;
-  top: 3px;
+  top: 4px;
   bottom: 0;
-  left: 3px;
+  left: 4px;
   font-size: 10px;
   color: #ffffff;
 }
 
+.scrollable-list .sub-list li .sublist-info-box i {
+  position: absolute;
+  margin: auto;
+  top: 4px;
+  bottom: 0;
+  left: 7px;
+  font-size: 10px;
+  color: #585757;
+}
+
+.scrollable-list .sub-list li .sublist-pen-box i {
+  position: absolute;
+  margin: auto;
+  top: 4px;
+  bottom: 0;
+  left: 4px;
+  font-size: 10px;
+  color: #585757;
+}
+
 .scrollable-list .sub-list li .sublist-cancel-box {
   position: relative;
-  margin: auto 8px auto auto;
+  margin: auto 8px auto 8px;
   height: 18px;
   width: 18px;
   background: #d3d3d3;
@@ -2435,7 +2496,7 @@ td {
     text-align: center;
     min-width: 3em;
     max-width: 21em;
-    white-space: nowrap;
+    white-space: pre-wrap;
     overflow: hidden;
     text-overflow: ellipsis;
     padding: .6ch 1.5ch;
@@ -2742,4 +2803,123 @@ td {
   100%{
       transform: translateX(100%);
   }
+}
+
+#option_2 .btn39 .back-btn,
+#option_2 .btn39 .reset-btn,
+#option_2 .btn39 .done-btn,
+#option_2 .btn39 .submit-btn{
+  border: none;
+  font-family: gilroy-regular, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #7b7b7b;
+  transition: all 0.3s ease;
+}
+#option_2 .btn39 .back-btn:hover,
+#option_2 .btn39 .reset-btn:hover{
+  background: #b6b6b6;
+  color: black;
+}
+#option_2 .btn39 .done-btn,
+#option_2 .btn39 .submit-btn{
+  margin-left: auto;
+  background-color: black;
+  color: #ffffff;
+}
+#option_2 .btn39 .done-btn{
+  margin-right: 15px;
+}
+#option_2 .btn39 .done-btn:hover,
+#option_2 .btn39 .submit-btn:hover{
+  color: #ffffff;
+  background-color: rgb(47, 45, 45);
+}
+
+#option_5 .row.btn39 .mybtns-39{
+  border: none;
+  width: 160px;
+  height: 60px;
+  font-size: 22px;
+  font-family: gilroy-regular, sans-serif;
+  font-weight: bold;
+}
+#option_5 .row.btn39 .mybtns-39:hover{
+  color: #ffffff;
+}
+#option_5 .row.btn39 .btn-done{
+  margin-left: auto;
+  width: 180px;
+}
+#option_5 .row.btn39 .btn-done:hover{
+  color: #000000;
+}
+
+button:disabled,
+button[disabled]{
+  /* border: 1px solid #999999 !important;
+  background-color: #DDD !important;
+  color: #999 !important; */
+  pointer-events: none;
+}
+
+.text-edition-form .text-edition-box button:disabled{
+  background-color: #fff011;
+  color: #000000;
+}
+
+#ui-datepicker-div{
+  -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+  -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+  box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+}
+
+#tab_2 .option-content-box p:hover{
+  text-decoration: underline;
+}
+
+
+.list-info-tooltip {
+  position: absolute;
+  /* left: 50%; */
+  /* top: 50%; */
+  left: 0;
+  bottom: 0;
+  z-index: 1500;
+  height: fit-content;
+  display: none;
+}
+.list-tooltip-wrap {
+  font-family: gilroy-medium, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  width: 168px;
+  min-height: 72px;
+  overflow: hidden;
+  padding: 3px;
+  border-radius: .3ch;
+  box-shadow: 0 1em 2em -0.5em rgb(0 0 0 / 35%);
+  background: #000000;
+  color: #fff;
+}
+.list-tooltip-arrow-top:after {
+  content: " ";
+  position: absolute;
+  left: 81px;
+  top: -6px;
+  border-top: none;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  border-bottom: 6px solid black;
+}
+.list-tooltip-wrap p{
+  margin-bottom: 0px;
+  width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.disable-pointer{
+  pointer-events: none;
+  cursor: progress;
 }

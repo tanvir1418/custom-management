@@ -37,6 +37,9 @@ function findFileList(_id) {
 		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
 		</div>
+		<div class="grey-times-box display-none" flow="down" tooltip="Click to Delete" onclick="leftItemDeleteClick(this, 'op1')">
+			<i class="fas fa-times"></i>
+		</div>
 		<div class="arrow-li-box arrow-li-box-background-color-1">
 			<i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
 		</div>
@@ -50,6 +53,12 @@ function findFileList(_id) {
 			let i = idx + 1;
 			let elementHtml = `<li class="${_id}">
 			<p>${item}</p>
+			<div class="sublist-info-box" customTooltip="${item}" onclick="levelInfoTooltipShow(this)">
+				<i class="fas fa-info"></i>
+			</div>
+			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+				<i class="fas fa-pen"></i>
+			</div>
 			<div class="sublist-check-box checkbox_hide">
 				<i class="fas fa-check"></i>
 			</div>
@@ -155,22 +164,36 @@ let opt1_left_list = "";
 		let target = e.target;
 		const elementName = ["DIV", "P"];
 		if (elementName.includes(target.tagName)) {
-			target = target.parentNode;
+			if(target.className.includes("grey-times-box")){
+				console.log("Div Clicked: Grey Times Box");
+				return;
+			}else {
+				target = target.parentNode;
+			}
 		} else if (target.tagName === "I") {
-			target = target.parentNode.parentNode;
+			if(target.parentNode.className.includes("grey-times-box")){
+				console.log("Icon Clicked: Grey Times Box");
+				return;
+			}else{
+				target = target.parentNode.parentNode;
+			}
 		}
 
 		if (oldTarget != "" && oldTarget !== target) {
 			$(oldTarget).removeClass("highlight_li");
-			// $(oldTarget).children(".green-check-box").removeClass("display-block");
-			// $(oldTarget).children(".green-check-box").addClass("display-none");
+
+			$(oldTarget).children(".grey-times-box").removeClass("display-block");
+			$(oldTarget).children(".grey-times-box").addClass("display-none");
+
 			$(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
 			$(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
 			$(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
 			$(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
 		}
 		$(target).toggleClass("highlight_li");
-		// $(target).children(".green-check-box").toggleClass("display-none display-block");
+
+		$(target).children(".grey-times-box").toggleClass("display-none display-block");
+
 		$(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
 		$(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
 		
@@ -200,6 +223,9 @@ sub_ul_modallist.addEventListener("click", function (e) {
 
 			return;
 		}
+		else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		}
 		target = target.parentNode;
 	} else if (target.tagName === "P") {
 		target = target.parentNode;
@@ -212,7 +238,11 @@ sub_ul_modallist.addEventListener("click", function (e) {
 			document.querySelector("#deletlistopt2 .chart-delete-name").innerHTML = op1List1_itemName;
 
 			return;
-		} else target = target.parentNode;
+		}
+		else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+		else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
 
 	$(target).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
@@ -222,27 +252,47 @@ sub_ul_modallist.addEventListener("click", function (e) {
 	markLeftOnRight(target);
 });
 
-$("#mng-opt2-delete").click(function () {
-	// console.log(`Delete class name: ${deleteListClassName}`);
-	// let delObj = document.querySelector(`.${deleteListClassName}`);
-	// document.querySelector(`.${deleteListClassName}`).remove();
-	$(`.${deleteListClassName}`).remove();
-	// console.log(delObj);
-	// console.dir(delObj);
-	// delObj.remove();
-});
 
 function countOpt1ListModal(e) {
+	event.preventDefault();
 	let countItem = $(e).parent().parent().parent().find("#sub-ul-modallist .sublist-check-box.checkbox_show").length;
 	$("#op1-list-item-count").html(`${countItem} Items Selected`);
+	
+	$('#myopt1listData .modal-body').addClass("disable-pointer");
+	let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Done');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$('#myopt1listData .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		$("#op1-list-item-count").html(`${countItem} Items Selected`);
+		$("#myopt1listData").modal("hide");
+	}, 2000);
+
 }
 
 function resetOpt1ListModal(e) {
 	let checkItem = $(e).parent().parent().parent().find("#sub-ul-modallist .sublist-check-box.checkbox_show");
 	let uncheckItem = $(e).parent().parent().parent().find("#sub-ul-modallist .sublist-cancel-box.checkbox_hide");
-	checkItem.toggleClass("checkbox_show checkbox_hide");
-	uncheckItem.toggleClass("checkbox_show checkbox_hide");
-	$("#op1-list-item-count").html(`0 Items Selected`);
+
+	$('#myopt1listData .modal-body').addClass("disable-pointer");
+	let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+	setTimeout(function() {
+		$('#myopt1listData .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		checkItem.toggleClass("checkbox_show checkbox_hide");
+		uncheckItem.toggleClass("checkbox_show checkbox_hide");
+		$("#op1-list-item-count").html(`0 Items Selected`);
+	}, 2000);
+
 }
 
 function markLeftOnRight(target) {
@@ -319,6 +369,9 @@ const copytolistmodal = [
 		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
 		</div>
+		<div class="grey-times-box display-none" flow="down" tooltip="Click to Delete" onclick="leftItemDeleteClick(this, 'copyTo')">
+			<i class="fas fa-times"></i>
+		</div>
 		<div class="arrow-li-box arrow-li-box-background-color-1">
 			<i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
 		</div>
@@ -331,6 +384,12 @@ const copytolistmodal = [
 		for (let i = 1; i <= length; i++) {
 			let elementHtml = `<li class="option-copytomodallist-${index + 1}-${i}">
 			<p>Level ${index + 1} - Item ${i}</p>
+			<div class="sublist-info-box" customTooltip="Level ${index + 1} - Item ${i}" onclick="levelInfoTooltipShow(this, 2)">
+				<i class="fas fa-info"></i>
+			</div>
+			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+				<i class="fas fa-pen"></i>
+			</div>
 			<div class="sublist-check-box checkbox_hide">
 				<i class="fas fa-check"></i>
 			</div>
@@ -435,22 +494,41 @@ let opt_copyto_left_list = "";
 		let target = e.target;
 		const elementName = ["DIV", "P"];
 		if (elementName.includes(target.tagName)) {
-			target = target.parentNode;
+			if(target.className.includes("grey-times-box")){
+				console.log("Div Clicked: Grey Times Box");
+				return;
+			}else {
+				target = target.parentNode;
+			}
 		} else if (target.tagName === "I") {
-			target = target.parentNode.parentNode;
+			if(target.parentNode.className.includes("grey-times-box")){
+				console.log("Icon Clicked: Grey Times Box");
+				return;
+			}else{
+				target = target.parentNode.parentNode;
+			}
 		}
 
 		if (oldTarget != "" && oldTarget !== target) {
 			$(oldTarget).removeClass("highlight_li");
+
 			$(oldTarget).children(".green-check-box").removeClass("display-block");
 			$(oldTarget).children(".green-check-box").addClass("display-none");
+
+			$(oldTarget).children(".grey-times-box").removeClass("display-block");
+			$(oldTarget).children(".grey-times-box").addClass("display-none");
+
 			$(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
 			$(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
 			$(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
 			$(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
 		}
 		$(target).toggleClass("highlight_li");
+
 		$(target).children(".green-check-box").toggleClass("display-none display-block");
+		
+		$(target).children(".grey-times-box").toggleClass("display-none display-block");
+
 		$(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
 		$(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
 		
@@ -480,6 +558,9 @@ sub_ul_copytomodallist.addEventListener("click", function (e) {
 
 			return;
 		}
+		else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		}
 		target = target.parentNode;
 	} else if (target.tagName === "P") {
 		target = target.parentNode;
@@ -492,7 +573,11 @@ sub_ul_copytomodallist.addEventListener("click", function (e) {
 			document.querySelector("#delet-copytolistopt2 .copyToS1-item-name").innerHTML = dataCopyToS1_Itag;
 
 			return;
-		} else target = target.parentNode;
+		}
+		else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+		else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
 
 	let dataCopyToStyle1 = target.childNodes[1].innerHTML;
@@ -570,6 +655,9 @@ const movetolistmodal = [
 		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
 		</div>
+		<div class="grey-times-box display-none" flow="down" tooltip="Click to Delete" onclick="leftItemDeleteClick(this, 'moveTo')">
+			<i class="fas fa-times"></i>
+		</div>
 		<div class="arrow-li-box arrow-li-box-background-color-1">
 			<i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
 		</div>
@@ -582,6 +670,12 @@ const movetolistmodal = [
 		for (let i = 1; i <= length; i++) {
 			let elementHtml = `<li class="option-movetomodallist-${index + 1}-${i}">
 			<p>Level ${index + 1} - Item ${i}</p>
+			<div class="sublist-info-box" customTooltip="Level ${index + 1} - Item ${i}" onclick="levelInfoTooltipShow(this, 2)">
+				<i class="fas fa-info"></i>
+			</div>
+			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+				<i class="fas fa-pen"></i>
+			</div>
 			<div class="sublist-check-box checkbox_hide">
 				<i class="fas fa-check"></i>
 			</div>
@@ -686,22 +780,41 @@ let opt_moveto_left_list = "";
 		let target = e.target;
 		const elementName = ["DIV", "P"];
 		if (elementName.includes(target.tagName)) {
-			target = target.parentNode;
+			if(target.className.includes("grey-times-box")){
+				console.log("Div Clicked: Grey Times Box");
+				return;
+			}else {
+				target = target.parentNode;
+			}
 		} else if (target.tagName === "I") {
-			target = target.parentNode.parentNode;
+			if(target.parentNode.className.includes("grey-times-box")){
+				console.log("Icon Clicked: Grey Times Box");
+				return;
+			}else{
+				target = target.parentNode.parentNode;
+			}
 		}
 
 		if (oldTarget != "" && oldTarget !== target) {
 			$(oldTarget).removeClass("highlight_li");
+
 			$(oldTarget).children(".green-check-box").removeClass("display-block");
 			$(oldTarget).children(".green-check-box").addClass("display-none");
+
+			$(oldTarget).children(".grey-times-box").removeClass("display-block");
+			$(oldTarget).children(".grey-times-box").addClass("display-none");
+
 			$(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
 			$(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
 			$(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
 			$(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
 		}
 		$(target).toggleClass("highlight_li");
+
 		$(target).children(".green-check-box").toggleClass("display-none display-block");
+
+		$(target).children(".grey-times-box").toggleClass("display-none display-block");
+
 		$(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
 		$(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
 
@@ -731,6 +844,9 @@ sub_ul_movetomodallist.addEventListener("click", function (e) {
 
 			return;
 		}
+		else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		}
 		target = target.parentNode;
 	} else if (target.tagName === "P") {
 		target = target.parentNode;
@@ -743,7 +859,11 @@ sub_ul_movetomodallist.addEventListener("click", function (e) {
 			document.querySelector("#delet-movetolistopt2 .moveToS1-item-name").innerHTML = dataMoveToStyle1;
 
 			return;
-		} else target = target.parentNode;
+		}
+		else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+		else target = target.parentNode;
 	} else if (target.tagName !== "LI") return;
 
 	let dataMoveToStyle1 = target.childNodes[1].innerHTML;

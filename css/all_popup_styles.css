@@ -360,12 +360,12 @@ table#sub2-editor-table {
 .generate-button-click-popup {
     width: 358px;
     height: 265px;
-    /* -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
     -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
-    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75); */
-    -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    /* -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
     -moz-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
-    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1); */
 }
 
 .generate-button-popup-header-title {
@@ -427,6 +427,7 @@ table#sub2-editor-table {
     color: #e6e6e6;
 }
 
+#thankAfterAllListRename .modal-dialog,
 #thankAfterRename .modal-dialog,
 #onlyThankModal .modal-dialog,
 #filterThankYouModal .modal-dialog,
@@ -448,6 +449,7 @@ table#sub2-editor-table {
     height: 320px !important;
 }
 
+#thankAfterAllListRename .modal-content .modal-body,
 #thankAfterRename .modal-content .modal-body,
 #onlyThankModal .modal-content .modal-body,
 #filterThankYouModal .modal-content .modal-body,
@@ -465,8 +467,8 @@ table#sub2-editor-table {
 /* ================================================ */
 /* plus pop-up-for-generate button style starts */
 .plus-button-click-popup {
-    width: 358px;
-    height: 270px;
+    width: 340px;
+    height: 248px;
     -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
     -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
     box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
@@ -479,9 +481,9 @@ table#sub2-editor-table {
     background-color: #000;
     color: #fff;
     text-align: center;
-    height: 80px;
+    height: 66px;
     width: 100%;
-    line-height: 80px;
+    line-height: 66px;
 }
 
 .plus-button-popup-header-title p {
@@ -494,15 +496,12 @@ table#sub2-editor-table {
 
 .plus-button-popup-body-content {
     margin: 25px;
-    /* text-align: center; */
-    /* border-radius: 4px; */
-    /* border: 1px solid grey; */
     background-color: #f9f9fb;
 }
 
 .plus-button-popup-body-content input {
     padding: 12px 15px;
-    border: 1px solid grey;
+    border: 2px solid grey;
     border-radius: 4px;
     outline: 0;
     font-size: 20px;
@@ -512,19 +511,13 @@ table#sub2-editor-table {
 }
 
 .plus-button-click-popup-wrapper .plus-popup-button-row {
-    display: table;
-    margin: auto;
-    margin-top: 30px;
-    /* margin: auto 10px; */
-    /* display: flex;
-  align-items: center;
-  justify-content: center; */
+    margin: 30px 25px 0 25px;
 }
 
 .plus-button-click-popup-wrapper .plus-popup-button-row .plus-done-btn,
 .plus-button-click-popup-wrapper .plus-popup-button-row .plus-cancel-btn {
-    width: 130px;
-    font-size: 18px;
+    width: 115px;
+    font-size: 16px;
     background: #e9e9e9;
     color: black;
     font-weight: bold;
@@ -533,44 +526,24 @@ table#sub2-editor-table {
     border: 0 none;
     border-radius: 2px;
     cursor: pointer;
-    padding: 8px 0px;
+    padding: 7px 0px;
+    float: left;
 }
 
 .plus-button-click-popup-wrapper .plus-popup-button-row .plus-cancel-btn {
     background: #000000;
     color: #e6e6e6;
-}
-
-.plus-popup-button-row .plus-done-btn {
-    margin-right: 10px;
-}
-
-.plus-popup-button-row .plus-cancel-btn {
-    margin-left: 10px;
+    float: right;
 }
 
 .plus-button-click-popup-wrapper .plus-popup-button-row .plus-done-btn:hover,
 .plus-button-click-popup-wrapper .plus-popup-button-row .plus-done-btn:focus {
-    background: #000000;
-    color: #e6e6e6;
+    filter: brightness(0.85);
 }
 
 .plus-button-click-popup-wrapper .plus-popup-button-row .plus-cancel-btn:hover,
 .plus-button-click-popup-wrapper .plus-popup-button-row .plus-cancel-btn:focus {
-    background: #e9e9e9;
-    color: black;
-}
-
-#plusBtnModal .modal-content {
-    width: 360px;
-    border: 0;
-    border-radius: 0 !important;
-    left: 20%;
-}
-
-#plusBtnModal .modal-content .modal-body {
-    padding: 0;
-    border-radius: 0 !important;
+    filter: brightness(1.5);
 }
 
 /* plus pop-up-for-generate button style ends */
@@ -588,12 +561,12 @@ table#sub2-editor-table {
 .table-header-click-popup {
     width: 250px;
     height: 370px;
-    /* -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
     -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
-    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75); */
-    -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    /* -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
     -moz-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
-    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1); */
 }
 .table-header-click-popup .filter-top-arrow:after {
     content: " ";
@@ -931,12 +904,12 @@ table#sub2-editor-table {
 .hyper-text-click-popup {
     width: 360px;
     height: 400px;
-    /* -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
     -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
-    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75); */
-    -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    /* -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
     -moz-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
-    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1); */
 }
 
 .hyper-text-popup-header-title {
@@ -1080,12 +1053,12 @@ Bottom codes are added by Tanvir
 .save-start-button-click-popup {
     width: 420px;
     height: 420px;
-    /* -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
     -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
-    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75); */
-    -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    /* -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
     -moz-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
-    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1); */
 }
 
 .save-start-button-popup-header-title {
@@ -1317,12 +1290,12 @@ Bottom codes are added by Tanvir
 .time-picker-button-click-popup {
     width: 420px;
     height: 335px;
-    /* -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
     -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
-    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75); */
-    -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    /* -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
     -moz-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
-    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1); */
 }
 
 .time-picker-button-popup-header-title {
@@ -1721,6 +1694,16 @@ Bottom codes are added by Tanvir
     /* display: none; */
 }
 
+.scroll-list-box .left-list-box li .grey-times-box {
+    height: 16px;
+    width: 16px;
+    background: #d3d3d3;
+    position: relative;
+    margin: auto -58px auto auto;
+    border-radius: 50%;
+    /* display: none; */
+}
+
 .display-none {
     display: none;
 }
@@ -1737,6 +1720,16 @@ Bottom codes are added by Tanvir
     top: 3px;
     bottom: 0;
     left: 3px;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.scroll-list-box .left-list-box li .grey-times-box i {
+    position: absolute;
+    margin: auto;
+    top: 3px;
+    bottom: 0;
+    left: 4px;
     font-size: 10px;
     color: #ffffff;
 }
@@ -1830,10 +1823,30 @@ Bottom codes are added by Tanvir
 
 .scroll-list-box .submodal-list li .sublist-check-box {
     position: relative;
-    margin: auto 8px auto auto;
-    height: 16px;
-    width: 16px;
+    margin: auto 8px auto 8px;
+    height: 18px;
+    width: 18px;
     background: #06e791;
+    border-radius: 50%;
+    /* display: none; */
+}
+
+.scroll-list-box .submodal-list li .sublist-pen-box {
+    position: relative;
+    margin: auto 8px auto 8px;
+    height: 18px;
+    width: 18px;
+    background: #d3d3d3;
+    border-radius: 50%;
+    /* display: none; */
+}
+
+.scroll-list-box .submodal-list li .sublist-info-box {
+    position: relative;
+    margin: auto 8px auto auto;
+    height: 18px;
+    width: 18px;
+    background: #d3d3d3;
     border-radius: 50%;
     /* display: none; */
 }
@@ -1841,16 +1854,36 @@ Bottom codes are added by Tanvir
 .scroll-list-box .submodal-list li .sublist-check-box i {
     position: absolute;
     margin: auto;
-    top: 3px;
+    top: 4px;
     bottom: 0;
-    left: 3px;
+    left: 5px;
     font-size: 10px;
     color: #ffffff;
 }
 
+.scroll-list-box .submodal-list li .sublist-pen-box i {
+    position: absolute;
+    margin: auto;
+    top: 4px;
+    bottom: 0;
+    left: 5px;
+    font-size: 9px;
+    color: #585757;
+}
+
+.scroll-list-box .submodal-list li .sublist-info-box i {
+    position: absolute;
+    margin: auto;
+    top: 3px;
+    bottom: 0;
+    left: 7px;
+    font-size: 11px;
+    color: #585757;
+}
+
 .scroll-list-box .submodal-list li .sublist-cancel-box {
     position: relative;
-    margin: auto 8px auto auto;
+    margin: auto 8px auto 8px;
     height: 18px;
     width: 18px;
     background: #d3d3d3;
@@ -2047,12 +2080,12 @@ Bottom codes are added by Tanvir
 .delete-list-item .modal-content {
     border: none;
     border-radius: 3px;
-    /* -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
     -moz-box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
-    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75); */
-    -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    box-shadow: 5px 5px 10px -4px rgba(51, 51, 51, 0.75);
+    /* -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
     -moz-box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
-    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 1); */
 }
 
 .delete-list-item .modal-header {
@@ -2571,7 +2604,6 @@ Bottom codes are added by Tanvir
 
 #mnRes_list_level_item_loading,
 #div-sub-ul-li-list,
-#mnRes_scrollDownBtn,
 #mnRes_scrollWindow,
 #copyrow_list_level_item_loading,
 #sub-ul-copyto-modallist,

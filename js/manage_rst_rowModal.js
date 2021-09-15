@@ -41,6 +41,9 @@ const copytolistmodal_style2 = [
 		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
 		</div>
+        <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete" onclick="leftItemDeleteClick(this, 'copyToS2')">
+			<i class="fas fa-times"></i>
+		</div>
 		<div class="arrow-li-box arrow-li-box-background-color-1">
 			<i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
 		</div>
@@ -53,6 +56,12 @@ const copytolistmodal_style2 = [
         for (let i = 1; i <= length; i++) {
             let elementHtml = `<li class="option-copytomodallist_style2-${index + 1}-${i}">
 			<p>Level ${index + 1} - Item ${i}</p>
+            <div class="sublist-info-box" customTooltip="Level ${index + 1} - Item ${i}" onclick="levelInfoTooltipShow(this, 2)">
+				<i class="fas fa-info"></i>
+			</div>
+			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+				<i class="fas fa-pen"></i>
+			</div>
 			<div class="sublist-check-box checkbox_hide">
 				<i class="fas fa-check"></i>
 			</div>
@@ -157,22 +166,41 @@ let opt_copyto_left_list_style2 = "";
         let target = e.target;
         const elementName = ["DIV", "P"];
         if (elementName.includes(target.tagName)) {
-            target = target.parentNode;
-        } else if (target.tagName === "I") {
-            target = target.parentNode.parentNode;
-        }
+			if(target.className.includes("grey-times-box")){
+				console.log("Div Clicked: Grey Times Box");
+				return;
+			}else {
+				target = target.parentNode;
+			}
+		} else if (target.tagName === "I") {
+			if(target.parentNode.className.includes("grey-times-box")){
+				console.log("Icon Clicked: Grey Times Box");
+				return;
+			}else{
+				target = target.parentNode.parentNode;
+			}
+		}
 
         if (oldTarget != "" && oldTarget !== target) {
             $(oldTarget).removeClass("highlight_li");
+
             $(oldTarget).children(".green-check-box").removeClass("display-block");
             $(oldTarget).children(".green-check-box").addClass("display-none");
+
+            $(oldTarget).children(".grey-times-box").removeClass("display-block");
+            $(oldTarget).children(".grey-times-box").addClass("display-none");
+
             $(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
             $(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
             $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
             $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
         }
         $(target).toggleClass("highlight_li");
+
         $(target).children(".green-check-box").toggleClass("display-none display-block");
+        
+        $(target).children(".grey-times-box").toggleClass("display-none display-block");
+
         $(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
         $(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
         
@@ -202,6 +230,9 @@ sub_ul_copytomodallist_style2.addEventListener("click", function (e) {
 
             return;
         }
+        else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		}
         target = target.parentNode;
     } else if (target.tagName === "P") {
         target = target.parentNode;
@@ -214,7 +245,11 @@ sub_ul_copytomodallist_style2.addEventListener("click", function (e) {
             document.querySelector("#delet-copytolistopt2_style2 .copyToS2-item-name").innerHTML = dataCopyToS2_Itag;
 
             return;
-        } else target = target.parentNode;
+        }
+        else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+        else target = target.parentNode;
     } else if (target.tagName !== "LI") return;
 
     let dataCopyToStyle2 = target.childNodes[1].innerHTML;
@@ -291,6 +326,9 @@ const movetolistmodal_style29 = [
 		<div class="green-check-box display-none">
 			<i class="fas fa-check"></i>
 		</div>
+        <div class="grey-times-box display-none" flow="down" tooltip="Click to Delete" onclick="leftItemDeleteClick(this, 'moveToS2')">
+			<i class="fas fa-times"></i>
+		</div>
 		<div class="arrow-li-box arrow-li-box-background-color-1">
 			<i class="fas fa-caret-right arrow-li-box-i-color-1"></i>
 		</div>
@@ -303,6 +341,12 @@ const movetolistmodal_style29 = [
         for (let i = 1; i <= length; i++) {
             let elementHtml = `<li class="option-movetomodallist_style29-${index + 1}-${i}">
 			<p>Level ${index + 1} - Item ${i}</p>
+            <div class="sublist-info-box" customTooltip="Level ${index + 1} - Item ${i}" onclick="levelInfoTooltipShow(this, 2)">
+				<i class="fas fa-info"></i>
+			</div>
+			<div class="sublist-pen-box" tooltip="Click to Rename" flow="down" onclick="confirmListName(this)">
+				<i class="fas fa-pen"></i>
+			</div>
 			<div class="sublist-check-box checkbox_hide">
 				<i class="fas fa-check"></i>
 			</div>
@@ -407,22 +451,41 @@ let opt_moveto_left_list_style29 = "";
         let target = e.target;
         const elementName = ["DIV", "P"];
         if (elementName.includes(target.tagName)) {
-            target = target.parentNode;
-        } else if (target.tagName === "I") {
-            target = target.parentNode.parentNode;
-        }
+			if(target.className.includes("grey-times-box")){
+				console.log("Div Clicked: Grey Times Box");
+				return;
+			}else {
+				target = target.parentNode;
+			}
+		} else if (target.tagName === "I") {
+			if(target.parentNode.className.includes("grey-times-box")){
+				console.log("Icon Clicked: Grey Times Box");
+				return;
+			}else{
+				target = target.parentNode.parentNode;
+			}
+		}
 
         if (oldTarget != "" && oldTarget !== target) {
             $(oldTarget).removeClass("highlight_li");
+
             $(oldTarget).children(".green-check-box").removeClass("display-block");
             $(oldTarget).children(".green-check-box").addClass("display-none");
+
+            $(oldTarget).children(".grey-times-box").removeClass("display-block");
+            $(oldTarget).children(".grey-times-box").addClass("display-none");
+
             $(oldTarget).children(".arrow-li-box").removeClass("arrow-li-box-background-color-2");
             $(oldTarget).children(".arrow-li-box").addClass("arrow-li-box-background-color-1");
             $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").removeClass("arrow-li-box-i-color-2");
             $(oldTarget).children(".arrow-li-box").children(".fa-caret-right").addClass("arrow-li-box-i-color-1");
         }
         $(target).toggleClass("highlight_li");
+
         $(target).children(".green-check-box").toggleClass("display-none display-block");
+
+        $(target).children(".grey-times-box").toggleClass("display-none display-block");
+
         $(target).children(".arrow-li-box").toggleClass("arrow-li-box-background-color-1 arrow-li-box-background-color-2");
         $(target).children(".arrow-li-box").children(".fa-caret-right").toggleClass("arrow-li-box-i-color-1 arrow-li-box-i-color-2");
         
@@ -452,6 +515,9 @@ sub_ul_movetomodallist_style29.addEventListener("click", function (e) {
 
             return;
         }
+        else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		}
         target = target.parentNode;
     } else if (target.tagName === "P") {
         target = target.parentNode;
@@ -464,7 +530,11 @@ sub_ul_movetomodallist_style29.addEventListener("click", function (e) {
             document.querySelector("#delet-movetolistopt2_style29 .moveToS2-item-name").innerHTML = dataMoveToStyle2;
 
             return;
-        } else target = target.parentNode;
+        }
+        else if((target.className.indexOf("sublist-info-box") != -1) || (target.className.indexOf("sublist-pen-box") != -1)){
+		 	return;
+		} 
+        else target = target.parentNode;
     } else if (target.tagName !== "LI") return;
 
 

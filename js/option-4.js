@@ -1,12 +1,37 @@
 /* =======Added by TANVIR (Copy Paste full file)====== */
 
-$(".multistep-container .form-box .button-row .next").click(function () {
-  $(this).parents(".form-box").hide();
-  $(this).parents(".form-box").next().show();
+$(".multistep-container .form-box .button-row .next").click(function (event) {
+  event.preventDefault();
+  $('body').addClass("disable-pointer");
+  let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Next');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+    $this.parents(".form-box").hide();
+    $this.parents(".form-box").next().show();
+	}, 2000);
+
 });
-$(".multistep-container .form-box .button-row .previous").click(function () {
-  $(this).parents(".form-box").hide();
-  $(this).parents(".form-box").prev().show();
+
+$(".multistep-container .form-box .button-row .previous").click(function (event) {
+  event.preventDefault();
+  $('body').addClass("disable-pointer");
+  let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Back');
+  $(this).prop("disabled", true);
+	let $this = $(this);
+	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
+    $this.prop("disabled", false);
+		$this.html(initState);
+    $this.parents(".form-box").hide();
+    $this.parents(".form-box").prev().show();
+	}, 2000);
+
 });
 
 // const listSingle = document.querySelectorAll(".single-list-item-design");
@@ -657,20 +682,28 @@ $(document).click(function (e) {
 
 // manage template hide show save start button 
 $("#next-show-save-start-mnTemp").click(function () {
-  $('#saveStartTarget-mnTemp').removeClass('save-start-class-hide-show-mnTemp');
+  setTimeout(function() {
+    $('#saveStartTarget-mnTemp').removeClass('save-start-class-hide-show-mnTemp');
+  }, 2000);
 });
 
 $("#prev-hide-save-start-mnTemp").click(function () {
-  $('#saveStartTarget-mnTemp').addClass('save-start-class-hide-show-mnTemp');
+  setTimeout(function() {
+    $('#saveStartTarget-mnTemp').addClass('save-start-class-hide-show-mnTemp');
+  }, 2000);
 });
 
 // Manage data Option 4 template hide show save start button 
 $("#next-show-save-start-op4").click(function () {
-  $('#saveStartTarget-op4').removeClass('save-start-class-hide-show-op4');
+  setTimeout(function() {
+    $('#saveStartTarget-op4').removeClass('save-start-class-hide-show-op4');
+  }, 2000);
 });
 
 $("#prev-hide-save-start-op4").click(function () {
-  $('#saveStartTarget-op4').addClass('save-start-class-hide-show-op4');
+  setTimeout(function() {
+    $('#saveStartTarget-op4').addClass('save-start-class-hide-show-op4');
+  }, 2000);
 });
 
 

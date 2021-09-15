@@ -1,4 +1,7 @@
-function gotoLinearChart(lineChartId, lineChartYAxisId) {
+function gotoLinearChart(selectedTab, lineChartId, lineChartYAxisId) {
+    $(`#${selectedTab} .Display3 .chart_main_box`).css("display", "none");
+    $(`#${selectedTab} .Display3 .chart-loading-box`).css("display", "block");
+
     labels = [];
     data1 = [];
     data2 = [];
@@ -17,7 +20,13 @@ function gotoLinearChart(lineChartId, lineChartYAxisId) {
         data6.push(rand());
         data7.push(rand());
     }
-    drawChartCanvas(lineChartId, lineChartYAxisId);
+    
+    setTimeout(() => {
+        $(`#${selectedTab} .Display3 .chart_main_box`).css("display", "block");
+        $(`#${selectedTab} .Display3 .chart-loading-box`).css("display", "none");
+
+        drawChartCanvas(lineChartId, lineChartYAxisId);
+    }, 3000);
 }
 
 function drawChartCanvas(drawlineChartId, drawlineChartYAxisId) {

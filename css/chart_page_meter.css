@@ -265,7 +265,7 @@
 
 /* TICK */
 
-#scorer-1-inner-div-5 {
+.scorer-1-inner-div-5 {
     position: absolute;
     left: 50%;
     top: 46%;
@@ -927,7 +927,13 @@
     transform: translate(-50%, -50%);
     margin: 10px 0;
 }
-
+.dis5_progress_upbox .allpos_value{
+    bottom: 0;
+}
+.dis5_progress_downbox .allneg_value{
+    margin-top: 15px !important;
+    margin-bottom: 0px !important;
+}
 /* PROGRESS BAR END */
 
 .Display5 .right-slider5,

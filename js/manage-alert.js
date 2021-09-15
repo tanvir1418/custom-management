@@ -5,6 +5,7 @@ for (let i = 1; i <= 100; i++) {
   alertExistData.push({
     id: `md-ex-${i}`,
     serial: i,
+    alertName: `Level ${i} - Item ${i+100}`,
     alertValue: `Alert Val - ${i}`,
     alertEmail: `alert${i}@gmail.com`
   });
@@ -14,12 +15,27 @@ function makeTableHeadAlert(tableID) {
   let tableHead =
     `<th class="">ROW</th>
         <th class="">
-          <span class="header-title">ALERT TYPE</span>
+          <span class="header-title" tooltip="Click to Sort" flow="down">ALERT NAME</span>
+          <span class="tooltip-container" tooltip="Sample Alert Name" flow="down">
+            <i class="fas fa-question-circle"></i>
+          </span>
+          <span class="table-head-updown tooltip-container">
+				    <i class="fas fa-chevron-up"></i>
+          </span>
+          <div class="head-filter cross-exists">
+            <i class="fas fa-times"></i>
+          </div>
+          <div class="drop-filter">
+            <i class="fas fa-caret-down"></i>
+          </div>
+        </th>
+        <th class="">
+          <span class="header-title" tooltip="Click to Sort" flow="down">ALERT TYPE</span>
           <span class="tooltip-container" tooltip="Sample text here1" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
-          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
-				<i class="fas fa-chevron-up"></i>
+          <span class="table-head-updown tooltip-container">
+				  <i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
@@ -29,12 +45,12 @@ function makeTableHeadAlert(tableID) {
             </div>
         </th>
         <th class="">
-          <span class="header-title">ALERT VALUE</span>
+          <span class="header-title" tooltip="Click to Sort" flow="down">ALERT VALUE</span>
           <span class="tooltip-container" tooltip="Sample text here2" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
-          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
-				<i class="fas fa-chevron-up"></i>
+            <span class="table-head-updown tooltip-container">
+				      <i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
@@ -44,12 +60,12 @@ function makeTableHeadAlert(tableID) {
             </div>
         </th>
         <th class="">
-          <span class="header-title">ALERT FREQUENCY</span>
+          <span class="header-title" tooltip="Click to Sort" flow="down">ALERT FREQUENCY</span>
           <span class="tooltip-container" tooltip="Sample text here3" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
-          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
-				<i class="fas fa-chevron-up"></i>
+          <span class="table-head-updown tooltip-container">
+				    <i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
@@ -59,12 +75,12 @@ function makeTableHeadAlert(tableID) {
             </div>
         </th>
         <th class="">
-          <span class="header-title">ALERT METHOD</span>
+          <span class="header-title" tooltip="Click to Sort" flow="down">ALERT METHOD</span>
           <span class="tooltip-container" tooltip="Sample text here4" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
-          <span class="table-head-updown tooltip-container" tooltip="Click to Sort" flow="down">
-				<i class="fas fa-chevron-up"></i>
+          <span class="table-head-updown tooltip-container">
+				    <i class="fas fa-chevron-up"></i>
             </span>
             <div class="head-filter cross-exists">
                 <i class="fas fa-times"></i>
@@ -77,7 +93,7 @@ function makeTableHeadAlert(tableID) {
           <span class="tooltip-container" tooltip="Sample text here5" flow="down">
             <i class="fas fa-question-circle"></i>
           </span>
-          </th>`;
+        </th>`;
 
   $(`#${tableID} thead`).html(tableHead);
 
@@ -122,7 +138,7 @@ function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId, p
       }, 2000);
 
       let tableTr = "";
-      data.forEach(({ id, serial, alertValue, alertEmail }, index) => {
+      data.forEach(({ id, serial, alertName, alertValue, alertEmail }, index) => {
         let tabHd = $(`#${tableID} thead th`);
         let len = tabHd.length;
         let classList = [];
@@ -130,9 +146,12 @@ function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId, p
           classList.push(tabHd[i].className);
         }
         tableTr += `
-          <tr id="${id}">
+        <tr id="${id}">
 					<th class="row-data" scope="row">${serial}</th>
-          <td class="selectaltype ${classList[0]}">
+					<td class="alert-name ${classList[0]}">
+              <p class="alert-exists-data" onclick="alertToResultDisplay(this)">${alertName}</p>
+          </td>
+          <td class="selectaltype ${classList[1]}">
               <select name="" id="">
                   <option class="alert-exists-data" value="">Precent Change Greather...</option>
                   <option class="alert-exists-data" value="">Precent Change Greather...1</option>
@@ -143,11 +162,11 @@ function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId, p
                   <i class="fas fa-caret-down"></i>
               </div>
           </td>
-					<td class="${classList[1]} inpalertval">
+					<td class="${classList[2]} inpalertval">
             <input type="text" class="alert-exists-data" value="${alertValue}">
 					</td>
 					
-          <td class="${classList[2]} selectalfreq">
+          <td class="${classList[3]} selectalfreq">
               <select name="" id="">
                   <option class="alert-exists-data" value="">Anytime</option>
                   <option class="alert-exists-data" value="">Anytime 1</option>
@@ -159,27 +178,22 @@ function alertTableExist(tableID, noRow, pagiId, maDataTableId, maLoadTableId, p
               </div>
           </td>
 					
-          <td class="${classList[3]} inpumail">
+          <td class="${classList[4]} inpumail">
               <div class="mail_enter">
                   <div class="mail_icons">
                       <i class="fas fa-envelope iconActive"></i>
                       <i class="fas fa-phone-alt"></i>
                       <i class="fas fa-comment-alt"></i>
                   </div>
-                  <!-- <input type="email" class="alert-exists-data" value="${alertEmail}" placeholder="Enter a Email Address"> -->
                   <input type="email" class="alert-exists-data" value="" placeholder="Enter a Email Address">
               </div>
           </td>
 					
 					<td class="removenull">
               <div class="reset-save-btn">
-                  <button class="reset4" type="button">Reset</button>
                   <button class="save4 mnAlertSave" type="button" onclick="saveManageAlertRow(event)">Save</button>
               </div>
               <div class="cross-box-89">
-                <div class="circle_550 plus89">
-                  <i class="fas fa-plus"></i>
-                </div>
                 <div class="deleteTableRow circle_550" onclick="universalConfirmModalDelete(this)">
                   <i class="fas fa-times"></i>
                 </div>
@@ -205,7 +219,6 @@ alertTableExist("manage-alert-table-exist", 7, "pagination-manage-alert", "manag
 $("#row-mnAlert").change(function (e) {
   let noRow = e.target.value;
   alertTableExist("manage-alert-table-exist", noRow, "pagination-manage-alert", "manage_alert_data_table", "manage_alert_loading_table", "pagination_mnAlert", "loading_pagination_mnAlert");
-  alertTableHeadClick("manage-alert-table-exist");
 });
 
 // Manage Alert Table Existing Pagination End
@@ -389,4 +402,46 @@ function manageAlertAfterConfirmBtn(){
 	    $('#universalThankDraftModal').modal('show');
 
   }, 4000);
+}
+
+function alertToResultDisplay(nameThis){
+
+  let enteringTotalTab = document.querySelectorAll("#tabs_ul li");
+  let enteringTabContent = document.querySelectorAll(".content .tab_content");
+
+  for (let i = 0; i < enteringTotalTab.length; i++) {
+      enteringTotalTab[i].classList.remove("active");
+      enteringTabContent[i].style.display = "none";
+  }
+  enteringTotalTab[3].classList.add("active");
+  enteringTabContent[3].style.display = "block";
+  
+  document.querySelector("#chartPage .chart-title .left-item").innerHTML = (nameThis.textContent).split(" - ")[1];
+	document.querySelector("#chartPage .chart-title .right-item").innerHTML = nameThis.textContent;
+
+  // Will Remove On Final Implement
+	// document.getElementById("firstOpen").click();
+
+
+	$(".select-item-table").css("display", "none");
+	$(`#chartPage`).css("display", "block");
+
+  $(`#actual_item_title`).css("display", "none");
+	$(`#actual_subitem_title`).css("display", "none");
+	$(`#loading_item_title`).css("display", "block");
+	$(`#loading_subitem_title`).css("display", "block");
+	
+  setTimeout(() => {
+		$(`#actual_item_title`).css("display", "block");
+		$(`#actual_subitem_title`).css("display", "block");
+		$(`#loading_item_title`).css("display", "none");
+		$(`#loading_subitem_title`).css("display", "none");
+	}, 3000);
+
+  
+	// Will Remove On Final Implement
+  // gotoChartPage('Main', 'scorer-meter-1', 'scorer-meter-2', 'scorer-meter-3');
+
+
+	tableProgressBarAnimation('Main', Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
 }
