@@ -2419,7 +2419,7 @@ th[draggable] a {
     padding-top: 20px;
 }
 
-.submit-notes input[type="submit"] {
+.submit-notes button {
     font-family: gilroy-regular, sans-serif;
     font-weight: 600;
     color: #1d1d1d;
@@ -2434,7 +2434,7 @@ th[draggable] a {
     transition: all 0.3s ease;
 }
 
-.submit-notes input[type="submit"]:hover {
+.submit-notes button:hover {
     background: #dddddd;
 }
 

@@ -1807,9 +1807,22 @@ function deleteFilterRowMnRes(globThis, targetColumn){
 }
 
 function filtersConfirmButton(filtersGlob){
-    $(`#left_${filtersTargetColumn}`).remove();
-    $(`#${filtersTargetColumn}`).removeClass("hideFilterRow");
-    $('#filters_confirm_modal').modal('hide');
+    $('#filters_confirm_modal .modal-body').addClass("disable-pointer");
+    let initState = $(filtersGlob).html();
+	$(filtersGlob).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(filtersGlob).prop("disabled", true);
+	let $this = $(filtersGlob);
+
+	setTimeout(function() {
+        $('#filters_confirm_modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+        $(`#left_${filtersTargetColumn}`).remove();
+        $(`#${filtersTargetColumn}`).removeClass("hideFilterRow");
+        $('#filters_confirm_modal').modal('hide');
+    }, 2000);
+    
 }
 
 $('#filters_confirm_modal').on('shown.bs.modal', function (e) {
@@ -1837,7 +1850,20 @@ function tooltipForFILTERS() {
 // ----------- Manage Result Filter Start ------------------
 function resetResFilter(e) {
     let inpBox = $(e).parent().parent().children(".outer-data7").find("div.valdata-box div.valinput input.myzap-input");
-    inpBox.val("");
+
+    $('#filter-modal .modal-body').addClass("disable-pointer");
+    let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+
+	setTimeout(function() {
+        $('#filter-modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+        inpBox.val("");
+    }, 2000);
 }
 // ----------- Manage Result Filter End --------------------
 
@@ -2283,14 +2309,73 @@ $("#closeCol8Filter").click(function () {
     }
 });
 
+function alertWindowSaveButton(alSavethis){
+    $('body').addClass("disable-pointer");
+    let initState = $(alSavethis).html();
+	$(alSavethis).html('<i class="fa fa-spinner fa-spin"></i> Save');
+	$(alSavethis).prop("disabled", true);
+	let $this = $(alSavethis);
+
+	setTimeout(function() {
+        $('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+        $("#universal_confirm_modal #confirm_header p").html("SAVE ALERTS");
+        $("#universal_confirm_modal #confirm_deatis p").html("Confirm to save alerts?");
+        $('#universal_confirm_modal').modal('show');
+    }, 2000);
+}
 
 $("#resetAlert").click(function () {
-    resetInputFieldAlert("alertswindow");
+    $('body').addClass("disable-pointer");
+    let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+
+	setTimeout(function() {
+        $('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+        resetInputFieldAlert("alertswindow");
+    }, 2000);
 });
 
 $("#resetAlertS2").click(function () {
-    resetInputFieldAlert("alertswindow_style2");
+    $('body').addClass("disable-pointer");
+    let initState = $(this).html();
+	$(this).html('<i class="fa fa-spinner fa-spin"></i> Reset');
+	$(this).prop("disabled", true);
+	let $this = $(this);
+
+	setTimeout(function() {
+        $('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+        resetInputFieldAlert("alertswindow_style2");
+    }, 2000);
 });
+
+function noteSubmitBtn(noteSubmitThis){
+    $('body').addClass("disable-pointer");
+    let initState = $(noteSubmitThis).html();
+	$(noteSubmitThis).html('<i class="fa fa-spinner fa-spin"></i> Submit');
+	$(noteSubmitThis).prop("disabled", true);
+	let $this = $(noteSubmitThis);
+
+	setTimeout(function() {
+        $('body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+        $("#universal_confirm_modal #confirm_header p").html("SAVE NOTES");
+        $("#universal_confirm_modal #confirm_deatis p").html("Confirm to save notes?");
+        $('#universal_confirm_modal').modal('show');
+    }, 2000);
+}
 
 window.addEventListener("scroll", (event) => {
     let scroll = this.scrollY;

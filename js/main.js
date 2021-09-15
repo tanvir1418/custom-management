@@ -1771,24 +1771,37 @@ function universalThankDraft(globalThankVar) {
 
 let targetCopyMoveElement = "";
 
-function uniConfirmButton() {
-	$('#universal_confirm_modal').modal('hide');
-	let manageDataTab = window.getComputedStyle(document.querySelector('#tab_2'));
-	let createNewActive = $("#my567").hasClass("createGreen");
-	if (manageDataTab.display == "block" && createNewActive == true) {
-		resetLeftRightBox();
-	}
+function uniConfirmButton(uniConfirmThis) {
+	$('#universal_confirm_modal .modal-body').addClass("disable-pointer");
+	let initState = $(uniConfirmThis).html();
+	$(uniConfirmThis).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(uniConfirmThis).prop("disabled", true);
+	let $this = $(uniConfirmThis);
+	setTimeout(function() {
+        $('#universal_confirm_modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+		$('#universal_confirm_modal').modal('hide');
+		let manageDataTab = window.getComputedStyle(document.querySelector('#tab_2'));
+		let createNewActive = $("#my567").hasClass("createGreen");
+		if (manageDataTab.display == "block" && createNewActive == true) {
+			resetLeftRightBox();
+		}
 
 
-	if (targetCopyMoveElement != "") {
-		$(`.${targetCopyMoveElement}`).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
-		$(`.${targetCopyMoveElement}`).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
-		targetCopyMoveElement = "";
-	}
+		if (targetCopyMoveElement != "") {
+			$(`.${targetCopyMoveElement}`).children(".sublist-check-box").toggleClass("checkbox_hide checkbox_show");
+			$(`.${targetCopyMoveElement}`).children(".sublist-cancel-box").toggleClass("checkbox_hide checkbox_show");
+			targetCopyMoveElement = "";
+		}
 
-	$("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
-	$("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
-	$('#universalThankDraftModal').modal('show');
+		$("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
+		$("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
+		$('#universalThankDraftModal').modal('show');
+
+	}, 2000);
+	
 }
 
 // Universal Thank Draft Modal (on show/hide event)
@@ -2025,13 +2038,38 @@ function checkMailIcon() {
 	}
 }
 
-function controlFilterConfirmModal() {
-	$('#filter_confirm_modal').modal('show');
+function controlFilterConfirmModal(filterSaveThis) {
+	
+	$('#filter-modal .modal-body').addClass("disable-pointer");
+    let initState = $(filterSaveThis).html();
+	$(filterSaveThis).html('<i class="fa fa-spinner fa-spin"></i> Save');
+	$(filterSaveThis).prop("disabled", true);
+	let $this = $(filterSaveThis);
+
+	setTimeout(function() {
+        $('#filter-modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+        $('#filter_confirm_modal').modal('show');
+    }, 2000);
 }
 
-function filterThankModal() {
-	$('#filter_confirm_modal').modal('hide');
-	$('#filterThankYouModal').modal('show');
+function filterThankModal(filterTnkThis) {
+	$('#filter_confirm_modal .modal-body').addClass("disable-pointer");
+    let initState = $(filterTnkThis).html();
+	$(filterTnkThis).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(filterTnkThis).prop("disabled", true);
+	let $this = $(filterTnkThis);
+
+	setTimeout(function() {
+        $('#filter_confirm_modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+        $('#filter_confirm_modal').modal('hide');
+		$('#filterThankYouModal').modal('show');
+    }, 2000);
 }
 
 $('#filter-modal').on('show.bs.modal', function (e) {
@@ -2338,10 +2376,19 @@ $(document).mouseup(function(e) {
         mnResNoteWindow_style2.css("display", "none");
     }
 	if (!mnResAlertWindow.is(e.target) && mnResAlertWindow.has(e.target).length === 0 && (e.target != $('html').get(0))) {
-        mnResAlertWindow.css("display", "none");
+		let alertRowDeleteConfirm = window.getComputedStyle(document.querySelector(`#universal_confirm_modal`));
+		let alertRowDeleteThank = window.getComputedStyle(document.querySelector(`#universalThankDraftModal`));
+		if((alertRowDeleteConfirm.display == "none") && (alertRowDeleteThank.display == "none")){
+			mnResAlertWindow.css("display", "none");
+		}
     }
+
 	if (!mnResAlertWindow_style2.is(e.target) && mnResAlertWindow_style2.has(e.target).length === 0 && (e.target != $('html').get(0))) {
-        mnResAlertWindow_style2.css("display", "none");
+		let alertRowDeleteConfirm = window.getComputedStyle(document.querySelector(`#universal_confirm_modal`));
+		let alertRowDeleteThank = window.getComputedStyle(document.querySelector(`#universalThankDraftModal`));
+		if((alertRowDeleteConfirm.display == "none") && (alertRowDeleteThank.display == "none")){
+			mnResAlertWindow_style2.css("display", "none");
+		}
     }
 
 	if (!mnResMoveTo.is(e.target) && mnResMoveTo.has(e.target).length === 0 && (e.target != $('html').get(0))) {
