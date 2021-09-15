@@ -1076,12 +1076,16 @@ td {
   font-weight: 500;
   font-size: 14px;
   color: #000000;
-  margin: auto auto auto 8px;
+  margin: auto 0px auto 8px;
+  width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .scrollable-list .sub-list li .sublist-check-box {
   position: relative;
-  margin: auto 8px auto 8px;
+  margin: auto 6px auto 6px;
   height: 18px;
   width: 18px;
   background: #06e791;
@@ -1090,7 +1094,7 @@ td {
 }
 .scrollable-list .sub-list li .sublist-info-box {
   position: relative;
-  margin: auto 8px auto auto;
+  margin: auto 6px auto auto;
   height: 18px;
   width: 18px;
   background: #d3d3d3;
@@ -1099,7 +1103,7 @@ td {
 }
 .scrollable-list .sub-list li .sublist-pen-box {
   position: relative;
-  margin: auto 8px auto 8px;
+  margin: auto 6px auto 6px;
   height: 18px;
   width: 18px;
   background: #d3d3d3;
@@ -1139,7 +1143,7 @@ td {
 
 .scrollable-list .sub-list li .sublist-cancel-box {
   position: relative;
-  margin: auto 8px auto 8px;
+  margin: auto 6px auto 6px;
   height: 18px;
   width: 18px;
   background: #d3d3d3;

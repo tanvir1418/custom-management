@@ -1818,12 +1818,16 @@ Bottom codes are added by Tanvir
     font-weight: 500;
     font-size: 14px;
     color: #000000;
-    margin: auto auto auto 8px;
+    margin: auto 0px auto 8px;
+    width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .scroll-list-box .submodal-list li .sublist-check-box {
     position: relative;
-    margin: auto 8px auto 8px;
+    margin: auto 6px auto 6px;
     height: 18px;
     width: 18px;
     background: #06e791;
@@ -1833,7 +1837,7 @@ Bottom codes are added by Tanvir
 
 .scroll-list-box .submodal-list li .sublist-pen-box {
     position: relative;
-    margin: auto 8px auto 8px;
+    margin: auto 6px auto 6px;
     height: 18px;
     width: 18px;
     background: #d3d3d3;
@@ -1843,7 +1847,7 @@ Bottom codes are added by Tanvir
 
 .scroll-list-box .submodal-list li .sublist-info-box {
     position: relative;
-    margin: auto 8px auto auto;
+    margin: auto 6px auto auto;
     height: 18px;
     width: 18px;
     background: #d3d3d3;
@@ -1883,7 +1887,7 @@ Bottom codes are added by Tanvir
 
 .scroll-list-box .submodal-list li .sublist-cancel-box {
     position: relative;
-    margin: auto 8px auto 8px;
+    margin: auto 6px auto 6px;
     height: 18px;
     width: 18px;
     background: #d3d3d3;

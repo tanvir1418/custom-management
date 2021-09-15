@@ -212,12 +212,16 @@
     font-weight: 500;
     font-size: 14px;
     color: #000000;
-    margin: auto auto auto 8px;
+    margin: auto 0px auto 8px;
+    width: 145px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .table-scroll-404 .right-list-404 li .sublist-check-box-404 {
     position: relative;
-    margin: auto 8px auto 8px;
+    margin: auto 6px auto 6px;
     height: 18px;
     width: 18px;
     background: #06e791;
@@ -227,7 +231,7 @@
 
 .table-scroll-404 .right-list-404 li .sublist-pen-box {
     position: relative;
-    margin: auto 8px auto 8px;
+    margin: auto 6px auto 6px;
     height: 18px;
     width: 18px;
     background: #d3d3d3;
@@ -236,7 +240,7 @@
 
 .table-scroll-404 .right-list-404 li .sublist-info-box {
     position: relative;
-    margin: auto 8px auto auto;
+    margin: auto 6px auto auto;
     height: 18px;
     width: 18px;
     background: #d3d3d3;
@@ -245,7 +249,7 @@
 
 .table-scroll-404 .right-list-404 li .sublist-cancel-box-404 {
     position: relative;
-    margin: auto 8px auto 8px;
+    margin: auto 6px auto 6px;
     height: 18px;
     width: 18px;
     background: #d3d3d3;
@@ -3152,6 +3156,9 @@ th[draggable] a {
     #table-box-404 .table-scroll-404 .right-list-404 li {
         width: 240px !important;
         height: 30px !important;
+    }
+    #table-box-404 .table-scroll-404 .right-list-404 li p {
+        width: 125px;
     }
     #mnRes_list_level_item_loading ul.list-one li{
         width: 240px !important;
