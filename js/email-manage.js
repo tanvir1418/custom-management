@@ -430,13 +430,23 @@ $("#emailCloseDropBtnModal").click(function () {
 });
 // taskStatusHeadClick("email_task_status_table");
 
-function emailConfirmButton() {
-    $('#email_confirm_modal').modal('hide');
+function emailConfirmButton(emailCrossThis) {
+    $('#email_confirm_modal .modal-body').addClass("disable-pointer");
+	let initState = $(emailCrossThis).html();
+	$(emailCrossThis).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(emailCrossThis).prop("disabled", true);
+	let $this = $(emailCrossThis);
+	setTimeout(function() {
+        $('#email_confirm_modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
 
-    $("#emailThankModal #email_thank_header p").html("THANK YOU");
-    $("#emailThankModal #email_thank_details p").html("Your Request has been Successfully Processed");
-    $('#emailThankModal').modal('show');
+        $('#email_confirm_modal').modal('hide');
 
+        $("#emailThankModal #email_thank_header p").html("THANK YOU");
+        $("#emailThankModal #email_thank_details p").html("Your Request has been Successfully Processed");
+        $('#emailThankModal').modal('show');
+	}, 2000);
 }
 
 $(document).keydown(function (e) {
@@ -658,6 +668,15 @@ $("#dropBtnSelect").click(function () {
                 }
             });
         });
+
+        let tableRowNum = $(`#email_task_status_table tbody tr`).length;
+        let tableRowId = "";
+        let tableRowProgVal = "";
+        for(var i=0; i<tableRowNum; i++){
+            tableRowId = $(`#email_task_status_table tbody tr`)[i].id;
+            tableRowProgVal = parseInt(document.querySelector(`#email_task_status_table tbody #${tableRowId} .progress-task .alert-exists-data`).textContent.replace("%",""));
+            tableProgressBarAnimation(tableRowId, tableRowProgVal);
+        }
 
     }, 2000);
 });
