@@ -2522,6 +2522,8 @@ $(document).keydown(function (e) {
         $("#manage-tempc-list-modal").modal("hide");
         $("#manage-tempd-list-modal").modal("hide");
 
+        $("#list_info_tooltip").css('display', 'none');
+
         $("#loginRequired").modal("hide");
         
         $("#dropBtnModal").css('display', 'none');
