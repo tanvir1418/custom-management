@@ -1122,6 +1122,12 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 
 			$(`#${selectedTab} .style12-section .box-style12 .no-result`).css("display", "none");
 
+			let compStylesSty1TableId = window.getComputedStyle(document.querySelector(`#${sty1TableId} thead`));
+			$(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap`).css({
+				width: "0px",
+				visibility: "hidden"
+			});
+
 			setTimeout(() => {
 				$(`#${selectedTab} .loading-style1-table`).css("display", "none");
 				$(`#${selectedTab} .pagination-loading-handler`).css("display", "none");
@@ -1138,6 +1144,12 @@ function manResPagination(noRow, csvId, selectedTab, sty1TableId, sty1dblClickLe
 
 				tableProgressBarAnimation(`${selectedTab}`, Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
 
+				$(`#${selectedTab} .outer-table-style12-box .style1-table-wrap .clone-head-table-wrap`).css({
+					width: compStylesSty1TableId.width,
+					height: "44px",
+					visibility: "hidden"
+				});
+				
 				// $(`#${sty1dblClickRightListId} .double_click_selection_box`).css('display', 'block');
                 // $(`#${sty1dblClickRightListId} .checkbox-table-loading`).css('display', 'none');
 
