@@ -2443,8 +2443,10 @@ $(document).mouseup(function(e) {
 		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
 		let deleteLeftItemList = window.getComputedStyle(document.querySelector(`#delete_leftItem_list`));
 		let deleteRightLevelList = window.getComputedStyle(document.querySelector(`#delet-movetolistopt2`));
+		let universalConfirmStyle = window.getComputedStyle(document.querySelector(`#universal_confirm_modal`));
+		let universalThank = window.getComputedStyle(document.querySelector(`#universalThankDraftModal`));
 		
-		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none") && (deleteRightLevelList.display == "none")){
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none") && (deleteRightLevelList.display == "none") && (universalConfirmStyle.display == "none") && (universalThank.display == "none")){
 			mnResMoveTo.css("display", "none");
 		}
     }
@@ -2454,8 +2456,10 @@ $(document).mouseup(function(e) {
 		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
 		let deleteLeftItemList = window.getComputedStyle(document.querySelector(`#delete_leftItem_list`));
 		let deleteRightLevelList = window.getComputedStyle(document.querySelector(`#delet-movetolistopt2_style29`));
+		let universalConfirmStyle = window.getComputedStyle(document.querySelector(`#universal_confirm_modal`));
+		let universalThank = window.getComputedStyle(document.querySelector(`#universalThankDraftModal`));
 		
-		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none") && (deleteRightLevelList.display == "none")){
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none") && (deleteRightLevelList.display == "none") && (universalConfirmStyle.display == "none") && (universalThank.display == "none")){
 			mnResMoveTo_style2.css("display", "none");
 		}
     }
@@ -2465,9 +2469,11 @@ $(document).mouseup(function(e) {
 		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
 		let deleteLeftItemList = window.getComputedStyle(document.querySelector(`#delete_leftItem_list`));
 		let deleteRightLevelList = window.getComputedStyle(document.querySelector(`#delet-copytolistopt2`));
+		let universalConfirmStyle = window.getComputedStyle(document.querySelector(`#universal_confirm_modal`));
+		let universalThank = window.getComputedStyle(document.querySelector(`#universalThankDraftModal`));
 		
 		
-		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none") && (deleteRightLevelList.display == "none")){
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none") && (deleteRightLevelList.display == "none") && (universalConfirmStyle.display == "none") && (universalThank.display == "none")){
 			mnResCopyTo.css("display", "none");
 		}
     }
@@ -2477,8 +2483,10 @@ $(document).mouseup(function(e) {
 		let listInfoTooltip = window.getComputedStyle(document.querySelector(`#list_info_tooltip`));
 		let deleteLeftItemList = window.getComputedStyle(document.querySelector(`#delete_leftItem_list`));
 		let deleteRightLevelList = window.getComputedStyle(document.querySelector(`#delet-copytolistopt2_style2`));
+		let universalConfirmStyle = window.getComputedStyle(document.querySelector(`#universal_confirm_modal`));
+		let universalThank = window.getComputedStyle(document.querySelector(`#universalThankDraftModal`));
 		
-		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none") && (deleteRightLevelList.display == "none")){
+		if((itemRenamePopupStyle.display == "none") && (itemRenameThank.display == "none") && (listInfoTooltip.display == "none") && (deleteLeftItemList.display == "none") && (deleteRightLevelList.display == "none") && (universalConfirmStyle.display == "none") && (universalThank.display == "none")){
 			mnResCopyTo_style2.css("display", "none");
 		}
     }
