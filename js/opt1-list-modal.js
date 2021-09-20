@@ -258,12 +258,23 @@ function countOpt1ListModal(e) {
 	let countItem = $(e).parent().parent().parent().find("#sub-ul-modallist .sublist-check-box.checkbox_show").length;
 	$("#op1-list-item-count").html(`${countItem} Items Selected`);
 	
+	$('body').addClass("disable-pointer");
+	$('#myopt1listData').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
 	$('#myopt1listData .modal-body').addClass("disable-pointer");
 	let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Done');
 	$(e).prop("disabled", true);
 	let $this = $(e);
+
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$('#myopt1listData').modal({
+			backdrop:true, 
+			keyboard:true
+		});
 		$('#myopt1listData .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -278,12 +289,23 @@ function resetOpt1ListModal(e) {
 	let checkItem = $(e).parent().parent().parent().find("#sub-ul-modallist .sublist-check-box.checkbox_show");
 	let uncheckItem = $(e).parent().parent().parent().find("#sub-ul-modallist .sublist-cancel-box.checkbox_hide");
 
+	$('body').addClass("disable-pointer");
+	$('#myopt1listData').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
 	$('#myopt1listData .modal-body').addClass("disable-pointer");
 	let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(e).prop("disabled", true);
 	let $this = $(e);
+
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$('#myopt1listData').modal({
+			backdrop:true, 
+			keyboard:true
+		});
 		$('#myopt1listData .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -592,6 +614,11 @@ sub_ul_copytomodallist.addEventListener("click", function (e) {
 });
 
 $("#copyto-mng-opt2-delete").click(function () {
+	$('body').addClass("disable-pointer");
+	$('#delet-copytolistopt2').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
 	$('#delet-copytolistopt2 .modal-body').addClass("disable-pointer");
 	let initState = $(this).html();
 	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
@@ -599,6 +626,11 @@ $("#copyto-mng-opt2-delete").click(function () {
 	let $this = $(this);
   
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$('#delet-copytolistopt2').modal({
+			backdrop:true, 
+			keyboard:true
+		});
 		$('#delet-copytolistopt2 .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -889,6 +921,11 @@ sub_ul_movetomodallist.addEventListener("click", function (e) {
 });
 
 $("#moveto-mng-opt2-delete").click(function () {
+	$('body').addClass("disable-pointer");
+	$('#delet-movetolistopt2').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
 	$('#delet-movetolistopt2 .modal-body').addClass("disable-pointer");
 	let initState = $(this).html();
 	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
@@ -896,6 +933,11 @@ $("#moveto-mng-opt2-delete").click(function () {
 	let $this = $(this);
   
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$('#delet-movetolistopt2').modal({
+			backdrop:true, 
+			keyboard:true
+		});
 		$('#delet-movetolistopt2 .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);

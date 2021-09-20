@@ -325,7 +325,11 @@ sub_ul_managetempamodallist.addEventListener("click", function (e) {
 });
 
 $("#managetempa-mng-opt2-delete").click(function () {
-
+  $('body').addClass("disable-pointer");
+	$('#delet-manage-tempa-list-modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
   $('#delet-manage-tempa-list-modal .modal-body').addClass("disable-pointer");
 	let initState = $(this).html();
 	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
@@ -333,6 +337,11 @@ $("#managetempa-mng-opt2-delete").click(function () {
 	let $this = $(this);
   
 	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
+    $('#delet-manage-tempa-list-modal').modal({
+      backdrop:true, 
+      keyboard:true
+    });
     $('#delet-manage-tempa-list-modal .modal-body').removeClass("disable-pointer");
     $this.prop("disabled", false);
     $this.html(initState);
@@ -347,12 +356,22 @@ $("#managetempa-mng-opt2-delete").click(function () {
 function countTempAListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   
+  $('body').addClass("disable-pointer");
+	$('#manage-tempa-list-modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
   $('#manage-tempa-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
+    $('#manage-tempa-list-modal').modal({
+      backdrop:true, 
+      keyboard:true
+    });
     $('#manage-tempa-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -381,12 +400,22 @@ function resetTempAListModal(e) {
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
   let leftItem = $(e).parent().parent().find("ul.managetempa-list li div.green-check-box.display-block");
   
+  $('body').addClass("disable-pointer");
+	$('#manage-tempa-list-modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
   $('#manage-tempa-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
+    $('#manage-tempa-list-modal').modal({
+      backdrop:true, 
+      keyboard:true
+    });
     $('#manage-tempa-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -670,6 +699,11 @@ sub_ul_managetempbmodallist.addEventListener("click", function (e) {
 });
 
 $("#managetempb-mng-opt2-delete").click(function () {
+  $('body').addClass("disable-pointer");
+	$('#delet-manage-tempb-list-modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
   $('#delet-manage-tempb-list-modal .modal-body').addClass("disable-pointer");
 	let initState = $(this).html();
 	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
@@ -677,6 +711,11 @@ $("#managetempb-mng-opt2-delete").click(function () {
 	let $this = $(this);
   
 	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
+    $('#delet-manage-tempb-list-modal').modal({
+      backdrop:true, 
+      keyboard:true
+    });
     $('#delet-manage-tempb-list-modal .modal-body').removeClass("disable-pointer");
     $this.prop("disabled", false);
     $this.html(initState);
@@ -691,12 +730,23 @@ $("#managetempb-mng-opt2-delete").click(function () {
 function countTempBListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   
+  $('body').addClass("disable-pointer");
+	$('#manage-tempb-list-modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
   $('#manage-tempb-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(e).prop("disabled", true);
 	let $this = $(e);
+
 	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
+    $('#manage-tempb-list-modal').modal({
+      backdrop:true, 
+      keyboard:true
+    });
     $('#manage-tempb-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -725,12 +775,23 @@ function resetTempBListModal(e) {
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
   let leftItem = $(e).parent().parent().find("ul.managetempb-list li div.green-check-box.display-block");
   
+  $('body').addClass("disable-pointer");
+	$('#manage-tempb-list-modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
   $('#manage-tempb-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(e).prop("disabled", true);
 	let $this = $(e);
+
 	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
+    $('#manage-tempb-list-modal').modal({
+      backdrop:true, 
+      keyboard:true
+    });
     $('#manage-tempb-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -1014,6 +1075,11 @@ sub_ul_managetempcmodallist.addEventListener("click", function (e) {
 });
 
 $("#managetempc-mng-opt2-delete").click(function () {
+  $('body').addClass("disable-pointer");
+	$('#delet-manage-tempc-list-modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
   $('#delet-manage-tempc-list-modal .modal-body').addClass("disable-pointer");
 	let initState = $(this).html();
 	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
@@ -1021,6 +1087,11 @@ $("#managetempc-mng-opt2-delete").click(function () {
 	let $this = $(this);
   
 	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
+    $('#delet-manage-tempc-list-modal').modal({
+      backdrop:true, 
+      keyboard:true
+    });
     $('#delet-manage-tempc-list-modal .modal-body').removeClass("disable-pointer");
     $this.prop("disabled", false);
     $this.html(initState);
@@ -1035,12 +1106,22 @@ $("#managetempc-mng-opt2-delete").click(function () {
 function countTempCListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   
+  $('body').addClass("disable-pointer");
+	$('#manage-tempc-list-modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
   $('#manage-tempc-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
+    $('#manage-tempc-list-modal').modal({
+      backdrop:true, 
+      keyboard:true
+    });
     $('#manage-tempc-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -1069,12 +1150,22 @@ function resetTempCListModal(e) {
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
   let leftItem = $(e).parent().parent().find("ul.managetempc-list li div.green-check-box.display-block");
 
+  $('body').addClass("disable-pointer");
+	$('#manage-tempc-list-modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
   $('#manage-tempc-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
+    $('#manage-tempc-list-modal').modal({
+      backdrop:true, 
+      keyboard:true
+    });
     $('#manage-tempc-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -1390,6 +1481,11 @@ sub_ul_managetempdmodallist.addEventListener("click", function (e) {
 });
 
 $("#managetempd-mng-opt2-delete").click(function () {
+  $('body').addClass("disable-pointer");
+	$('#delet-manage-tempd-list-modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
   $('#delet-manage-tempd-list-modal .modal-body').addClass("disable-pointer");
 	let initState = $(this).html();
 	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
@@ -1397,6 +1493,11 @@ $("#managetempd-mng-opt2-delete").click(function () {
 	let $this = $(this);
   
 	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
+    $('#delet-manage-tempd-list-modal').modal({
+      backdrop:true, 
+      keyboard:true
+    });
     $('#delet-manage-tempd-list-modal .modal-body').removeClass("disable-pointer");
     $this.prop("disabled", false);
     $this.html(initState);
@@ -1411,12 +1512,22 @@ $("#managetempd-mng-opt2-delete").click(function () {
 function countTempDListModal(e) {
   let countItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-check-box.checkbox_show").length;
   
+  $('body').addClass("disable-pointer");
+	$('#manage-tempd-list-modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
   $('#manage-tempd-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Next');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
+    $('#manage-tempd-list-modal').modal({
+      backdrop:true, 
+      keyboard:true
+    });
     $('#manage-tempd-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -1444,12 +1555,22 @@ function resetTempDListModal(e) {
   let uncheckItem = $(e).parent().parent().find("div.sub-ul-managetemp-modallist .sublist-cancel-box.checkbox_hide");
   let leftItem = $(e).parent().parent().find("ul.managetempd-list li div.green-check-box.display-block");
   
+  $('body').addClass("disable-pointer");
+	$('#manage-tempd-list-modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
   $('#manage-tempd-list-modal .modal-body').addClass("disable-pointer");
   let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
+    $('#manage-tempd-list-modal').modal({
+      backdrop:true, 
+      keyboard:true
+    });
     $('#manage-tempd-list-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);

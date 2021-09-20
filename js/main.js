@@ -1013,12 +1013,22 @@ function opt5ResetBtn(e) {
 function addCategory(e) {
 	let inpVal = $(e).parent().parent().find("input.plus-input").val();
 	
+	$('body').addClass("disable-pointer");
+	$('#plusBtnModal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
 	$('#plusBtnModal .modal-body').addClass("disable-pointer");
 	let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Done');
 	$(e).prop("disabled", true);
 	let $this = $(e);
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$('#plusBtnModal').modal({
+			backdrop:true, 
+			keyboard:true
+		});
 		$('#plusBtnModal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -1785,12 +1795,22 @@ function universalThankDraft(globalThankVar) {
 let targetCopyMoveElement = "";
 
 function uniConfirmButton(uniConfirmThis) {
+	$('body').addClass("disable-pointer");
+	$('#universal_confirm_modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
 	$('#universal_confirm_modal .modal-body').addClass("disable-pointer");
 	let initState = $(uniConfirmThis).html();
 	$(uniConfirmThis).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
 	$(uniConfirmThis).prop("disabled", true);
 	let $this = $(uniConfirmThis);
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$('#universal_confirm_modal').modal({
+			backdrop:true, 
+			keyboard:true
+		});
         $('#universal_confirm_modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -1880,14 +1900,22 @@ function displayChartManageResult(itemTitle, itemSubTitle) {
 
 function chartDispConfirmButton(thisChart) {
 
-	
+	$('body').addClass("disable-pointer");
+	$('#manageResultChartDisplay_modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
 	$('#manageResultChartDisplay_modal .modal-body').addClass("disable-pointer");
 	let initState = $(thisChart).html();
 	$(thisChart).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
 	$(thisChart).prop("disabled", true);
 	let $this = $(thisChart);
 	setTimeout(function() {
-		
+		$('body').removeClass("disable-pointer");
+		$('#manageResultChartDisplay_modal').modal({
+			backdrop:true, 
+			keyboard:true
+		});
 		$('#manageResultChartDisplay_modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -1980,6 +2008,11 @@ function mnTempSaveStartBtn(thisStart){
 }
 
 function mnTempSaveStartBackBtn(thisBack){
+	$('body').addClass("disable-pointer");
+	$('#mnTemp_saveStart').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
 	$('#mnTemp_saveStart .modal-body').addClass("disable-pointer");
 	let initState = $(thisBack).html();
 	$(thisBack).html('<i class="fa fa-spinner fa-spin"></i> Back');
@@ -1987,6 +2020,11 @@ function mnTempSaveStartBackBtn(thisBack){
 	let $this = $(thisBack);
 
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$('#mnTemp_saveStart').modal({
+			backdrop:true, 
+			keyboard:true
+		});
 		$('#mnTemp_saveStart .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -1996,6 +2034,11 @@ function mnTempSaveStartBackBtn(thisBack){
 }
 
 function showConfirmSample4StartBtn(thisDone) {
+	$('body').addClass("disable-pointer");
+	$('#mnTemp_saveStart').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
 	$('#mnTemp_saveStart .modal-body').addClass("disable-pointer");
 	let initState = $(thisDone).html();
 	$(thisDone).html('<i class="fa fa-spinner fa-spin"></i> Done');
@@ -2003,6 +2046,11 @@ function showConfirmSample4StartBtn(thisDone) {
 	let $this = $(thisDone);
 
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$('#mnTemp_saveStart').modal({
+			backdrop:true, 
+			keyboard:true
+		});
 		$('#mnTemp_saveStart .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -2086,6 +2134,11 @@ function checkMailIcon() {
 
 function controlFilterConfirmModal(filterSaveThis) {
 	
+	$('body').addClass("disable-pointer");
+	$('#filter-modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
 	$('#filter-modal .modal-body').addClass("disable-pointer");
     let initState = $(filterSaveThis).html();
 	$(filterSaveThis).html('<i class="fa fa-spinner fa-spin"></i> Save');
@@ -2093,6 +2146,11 @@ function controlFilterConfirmModal(filterSaveThis) {
 	let $this = $(filterSaveThis);
 
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$('#filter-modal').modal({
+			backdrop:true, 
+			keyboard:true
+		});
         $('#filter-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -2102,6 +2160,11 @@ function controlFilterConfirmModal(filterSaveThis) {
 }
 
 function filterThankModal(filterTnkThis) {
+	$('body').addClass("disable-pointer");
+	$('#filter_confirm_modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
 	$('#filter_confirm_modal .modal-body').addClass("disable-pointer");
     let initState = $(filterTnkThis).html();
 	$(filterTnkThis).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
@@ -2109,6 +2172,11 @@ function filterThankModal(filterTnkThis) {
 	let $this = $(filterTnkThis);
 
 	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$('#filter_confirm_modal').modal({
+			backdrop:true, 
+			keyboard:true
+		});
         $('#filter_confirm_modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);

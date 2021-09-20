@@ -251,12 +251,22 @@ $("#div-sub-ul-li-list").click(function (e) {
 
 $("#mng-opt2-delete").click(function () {
 
+    $('body').addClass("disable-pointer");
+	$('#deletlistopt2').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
     $('#deletlistopt2 .modal-body').addClass("disable-pointer");
 	let initState = $(this).html();
 	$(this).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
 	$(this).prop("disabled", true);
 	let $this = $(this);
 	setTimeout(function() {
+        $('body').removeClass("disable-pointer");
+        $('#deletlistopt2').modal({
+            backdrop:true, 
+            keyboard:true
+        });
         $('#deletlistopt2 .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -1701,6 +1711,11 @@ function threeBtnConfirmModal(decideSelection){
 
 function threeBtnConfirmButton(globThreeBtn){
 
+    $('body').addClass("disable-pointer");
+	$('#threeBtn_confirm_modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
     $('#threeBtn_confirm_modal .modal-body').addClass("disable-pointer");
     let initState = $(globThreeBtn).html();
 	$(globThreeBtn).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
@@ -1708,6 +1723,11 @@ function threeBtnConfirmButton(globThreeBtn){
 	let $this = $(globThreeBtn);
 
 	setTimeout(function() {
+        $('body').removeClass("disable-pointer");
+        $('#threeBtn_confirm_modal').modal({
+            backdrop:true, 
+            keyboard:true
+        });
         $('#threeBtn_confirm_modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -1821,6 +1841,11 @@ function deleteFilterRowMnRes(globThis, targetColumn){
 }
 
 function filtersConfirmButton(filtersGlob){
+    $('body').addClass("disable-pointer");
+	$('#filters_confirm_modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
     $('#filters_confirm_modal .modal-body').addClass("disable-pointer");
     let initState = $(filtersGlob).html();
 	$(filtersGlob).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
@@ -1828,6 +1853,11 @@ function filtersConfirmButton(filtersGlob){
 	let $this = $(filtersGlob);
 
 	setTimeout(function() {
+        $('body').removeClass("disable-pointer");
+        $('#filters_confirm_modal').modal({
+            backdrop:true, 
+            keyboard:true
+        });
         $('#filters_confirm_modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -1865,6 +1895,11 @@ function tooltipForFILTERS() {
 function resetResFilter(e) {
     let inpBox = $(e).parent().parent().children(".outer-data7").find("div.valdata-box div.valinput input.myzap-input");
 
+    $('body').addClass("disable-pointer");
+	$('#filter-modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
     $('#filter-modal .modal-body').addClass("disable-pointer");
     let initState = $(e).html();
 	$(e).html('<i class="fa fa-spinner fa-spin"></i> Reset');
@@ -1872,6 +1907,11 @@ function resetResFilter(e) {
 	let $this = $(e);
 
 	setTimeout(function() {
+        $('body').removeClass("disable-pointer");
+        $('#filter-modal').modal({
+            backdrop:true, 
+            keyboard:true
+        });
         $('#filter-modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -2490,48 +2530,56 @@ $(document).keydown(function (e) {
         //    return false;
     }
 
-    let universalConfirm = window.getComputedStyle(document.querySelector('#universal_confirm_modal'));
-    let mnResDispConfirm = window.getComputedStyle(document.querySelector('#manageResultChartDisplay_modal'));
-    let uniThankYou = window.getComputedStyle(document.querySelector('#universalThankDraftModal'));
+    if(e.which == 27 && $("body").hasClass("disable-pointer") == false){
 
-    if (e.which == 27 && (universalConfirm.display == "block" || mnResDispConfirm.display == "block") && uniThankYou.display == "none") {
-        $('#universal_confirm_modal').modal('hide');
-        $('#manageResultChartDisplay_modal').modal('hide');
+        let universalConfirm = window.getComputedStyle(document.querySelector('#universal_confirm_modal'));
+        let mnResDispConfirm = window.getComputedStyle(document.querySelector('#manageResultChartDisplay_modal'));
+        let uniThankYou = window.getComputedStyle(document.querySelector('#universalThankDraftModal'));
 
-        $("#universalThankDraftModal #thank_draft_header p").html("CANCELLATION");
-        $("#universalThankDraftModal #thank_draft_details p").html("The Request has been Canceled!");
-        $('#universalThankDraftModal').modal('show');
-    }
-    if (e.which == 27) {
-        $(".delete-list-item").modal("hide");
-        $("#filter-modal").modal("hide");
-        $("#onlyThankModal").modal("hide");
+        if (e.which == 27 && (universalConfirm.display == "block" || mnResDispConfirm.display == "block") && uniThankYou.display == "none") {
+            $('#universal_confirm_modal').modal('hide');
+            $('#manageResultChartDisplay_modal').modal('hide');
 
-        $("#loadTemplateRename").modal("hide");
-        $("#thankAfterRename").modal("hide");
+            $("#universalThankDraftModal #thank_draft_header p").html("CANCELLATION");
+            $("#universalThankDraftModal #thank_draft_details p").html("The Request has been Canceled!");
+            $('#universalThankDraftModal').modal('show');
+        }
+        if (e.which == 27) {
+            $("#plusBtnModal").modal("hide");
 
-        $("#myopt1listData").modal("hide");
-        $("#opt4a-list-modal").modal("hide");
-        $("#opt4b-list-modal").modal("hide");
-        $("#opt4c-list-modal").modal("hide");
-        $("#opt4d-list-modal").modal("hide");
+            $(".delete-list-item").modal("hide");
+            $("#filter-modal").modal("hide");
+            $("#onlyThankModal").modal("hide");
 
-        $("#myopt1listData").modal("hide");
-        $("#manage-tempa-list-modal").modal("hide");
-        $("#manage-tempb-list-modal").modal("hide");
-        $("#manage-tempc-list-modal").modal("hide");
-        $("#manage-tempd-list-modal").modal("hide");
+            $("#loadTemplateRename").modal("hide");
+            $("#remaneAllLevelItem").modal("hide");
+            $("#thankAfterRename").modal("hide");
 
-        $("#list_info_tooltip").css('display', 'none');
+            $("#filterThankYouModal").modal("hide");
 
-        $("#loginRequired").modal("hide");
-        
-        $("#dropBtnModal").css('display', 'none');
-        hideStyleTwoAllPopup();
-        hideStyleOneAllPopup();
-        resetDownArrow();
+            $("#myopt1listData").modal("hide");
+            $("#opt4a-list-modal").modal("hide");
+            $("#opt4b-list-modal").modal("hide");
+            $("#opt4c-list-modal").modal("hide");
+            $("#opt4d-list-modal").modal("hide");
 
-        $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+            $("#myopt1listData").modal("hide");
+            $("#manage-tempa-list-modal").modal("hide");
+            $("#manage-tempb-list-modal").modal("hide");
+            $("#manage-tempc-list-modal").modal("hide");
+            $("#manage-tempd-list-modal").modal("hide");
+
+            $("#loginRequired").modal("hide");
+
+            $("#list_info_tooltip").css('display', 'none');
+
+            $("#dropBtnModal").css('display', 'none');
+            hideStyleTwoAllPopup();
+            hideStyleOneAllPopup();
+            resetDownArrow();
+
+            $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+        }
     }
 });
 

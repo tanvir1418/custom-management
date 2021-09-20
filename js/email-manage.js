@@ -431,12 +431,22 @@ $("#emailCloseDropBtnModal").click(function () {
 // taskStatusHeadClick("email_task_status_table");
 
 function emailConfirmButton(emailCrossThis) {
+    $('body').addClass("disable-pointer");
+	$('#email_confirm_modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
     $('#email_confirm_modal .modal-body').addClass("disable-pointer");
 	let initState = $(emailCrossThis).html();
 	$(emailCrossThis).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
 	$(emailCrossThis).prop("disabled", true);
 	let $this = $(emailCrossThis);
 	setTimeout(function() {
+        $('body').removeClass("disable-pointer");
+        $('#email_confirm_modal').modal({
+            backdrop:true, 
+            keyboard:true
+        });
         $('#email_confirm_modal .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
@@ -450,19 +460,21 @@ function emailConfirmButton(emailCrossThis) {
 }
 
 $(document).keydown(function (e) {
-    let emailConfirm = window.getComputedStyle(document.querySelector('#email_confirm_modal'));
-    let emailThankYou = window.getComputedStyle(document.querySelector('#emailThankModal'));
+    if(e.which == 27 && $("body").hasClass("disable-pointer") == false){
+        let emailConfirm = window.getComputedStyle(document.querySelector('#email_confirm_modal'));
+        let emailThankYou = window.getComputedStyle(document.querySelector('#emailThankModal'));
 
-    if (e.which == 27 && emailConfirm.display == "block" && emailThankYou.display == "none") {
-        $('#email_confirm_modal').modal('hide');
+        if (e.which == 27 && emailConfirm.display == "block" && emailThankYou.display == "none") {
+            $('#email_confirm_modal').modal('hide');
 
-        $("#emailThankModal #email_thank_header p").html("CANCELLATION");
-        $("#emailThankModal #email_thank_details p").html("The Request has been Canceled!");
-        $('#emailThankModal').modal('show');
-    }
-    if (e.which == 27) {
-        $("#dropBtnModal").css('display', 'none');
-        $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+            $("#emailThankModal #email_thank_header p").html("CANCELLATION");
+            $("#emailThankModal #email_thank_details p").html("The Request has been Canceled!");
+            $('#emailThankModal').modal('show');
+        }
+        if (e.which == 27) {
+            $("#dropBtnModal").css('display', 'none');
+            $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+        }
     }
 });
 

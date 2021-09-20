@@ -1629,13 +1629,24 @@ function confirmListName(confThis){
 
 function renamingLevelItem(itemThis){
   newLevelItemName = document.querySelector(`#remaneAllLevelItem .plus-button-popup-body-content input`).value;
-
+  
+  $('body').addClass("disable-pointer");
+  $('#remaneAllLevelItem').modal({
+    backdrop:'static', 
+		keyboard:false
+	});
   $('#remaneAllLevelItem .modal-body').addClass("disable-pointer");
   let initState = $(itemThis).html();
 	$(itemThis).html('<i class="fa fa-spinner fa-spin"></i> Done');
 	$(itemThis).addClass('disabled');
 	let $this = $(itemThis);
+
 	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
+    $('#remaneAllLevelItem').modal({
+      backdrop:true, 
+      keyboard:true
+    });
     $('#remaneAllLevelItem .modal-body').removeClass("disable-pointer");
     $this.removeClass('disabled');
 		$this.html(initState);
@@ -1760,12 +1771,23 @@ function leftItemDeleteClick(thisLeft, modalName){
 
 function leftItemDeleteConfirm(lfConfirmThis){
 
+  $('body').addClass("disable-pointer");
+	$('#delete_leftItem_list').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
   $('#delete_leftItem_list .modal-body').addClass("disable-pointer");
   let initState = $(lfConfirmThis).html();
 	$(lfConfirmThis).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
 	$(lfConfirmThis).prop("disabled", true);
 	let $this = $(lfConfirmThis);
+  
 	setTimeout(function() {
+    $('body').removeClass("disable-pointer");
+    $('#delete_leftItem_list').modal({
+      backdrop:true, 
+      keyboard:true
+    });
     $('#delete_leftItem_list .modal-body').removeClass("disable-pointer");
 		$this.prop("disabled", false);
 		$this.html(initState);
