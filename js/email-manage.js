@@ -584,9 +584,60 @@ function showTaskStatus() {
     }
     tablinks[1].className += " active";
 
-    taskStatusHead("email_task_status_table");
-    taskStatusTableExist("email_task_status_table", 7, "pagination_task_status", "pagination_email", "loading_pagination_email");
-    taskStatusHeadClick("email_task_status_table");
+    $("#dropBtnModal").css("display", "none");
+    $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
+    
+    $("#task_status_loading").css("display", "block");
+    $("#task_status_counting").css("display", "none");
+
+    $("#task_status_data_table").css("display", "none");
+    $("#task_status_loading_table").css("display", "block");
+
+    $(`#pagination_email`).css("display", "none");
+    $(`#loading_pagination_email`).css("display", "block");
+
+    $("#table_details_email .table-records-wrap").css("display", "none");
+    $("#table_details_email .table-records-loading").css("display", "block");
+
+    setTimeout(() => {
+        $("#task_status_loading").css("display", "none");
+        $("#task_status_counting").css("display", "block");
+
+        $("#task_status_loading_table").css("display", "none");
+        $("#task_status_data_table").css("display", "block");
+
+        $(`#pagination_email`).css("display", "block");
+        $(`#loading_pagination_email`).css("display", "none");
+
+        $("#table_details_email .table-records-wrap").css("display", "block");
+        $("#table_details_email .table-records-loading").css("display", "none");
+
+        $(".task-status-statistics .stat-box").each(function () {
+            let value = $(this).find(".stat-number");
+            let taskValue = parseInt(value.text());
+            $({
+                task: 0
+            }).animate({
+                task: taskValue
+            }, {
+                duration: 3000,
+                easing: "swing",
+                step: function (task) {
+                    value.text(task | 0);
+                }
+            });
+        });
+
+        let tableRowNum = $(`#email_task_status_table tbody tr`).length;
+        let tableRowId = "";
+        let tableRowProgVal = "";
+        for(var i=0; i<tableRowNum; i++){
+            tableRowId = $(`#email_task_status_table tbody tr`)[i].id;
+            tableRowProgVal = parseInt(document.querySelector(`#email_task_status_table tbody #${tableRowId} .progress-task .alert-exists-data`).textContent.replace("%",""));
+            tableProgressBarAnimation(tableRowId, tableRowProgVal);
+        }
+
+    }, 2000);
     
 }
 
