@@ -1125,7 +1125,7 @@ function table1HeadClick(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1d
         
         let target = e.target;
         let index = $(this).index() + 1;
-        if(target.tagName === "SPAN" && target.className === "header-title"){
+        if((target.tagName === "SPAN" && target.className === "header-title") || (target.tagName === "TH" && index > 2)){
             $("#col8Filter").css('display', 'none');
             const rotateIcon = document.querySelectorAll(".outer-table-style12-box i.fa-caret-down.down-animation-icon");
             for (let i = 0; i < rotateIcon.length; i++) {

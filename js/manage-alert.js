@@ -227,7 +227,7 @@ function alertTableHeadClick(tableId) {
     let target = e.target;
     let index = $(this).index() + 1;
 
-    if(target.tagName === "SPAN" && target.className === "header-title"){
+    if((target.tagName === "SPAN" && target.className === "header-title") || (target.tagName === "TH" && index > 1)){
       $("#dropBtnModal").css('display', 'none');
       $(`#${tableId} th:nth-child(${index}) .table-head-updown i`).toggleClass("fa-chevron-up fa-chevron-down");
       
