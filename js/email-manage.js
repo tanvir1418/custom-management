@@ -420,6 +420,18 @@ function taskStatusHeadClick(tableId) {
         }
     });
 }
+
+const redirectToTaskStatus = localStorage.getItem("emailTabShowing");
+if(redirectToTaskStatus == "taskStatus"){
+    document.getElementById("mail_option_2").style.display = "block";
+    document.getElementById("hide955").style.display = "none";
+    document.getElementById("select_optn").style.paddingBottom = "0px";
+
+    taskStatusHead("email_task_status_table");
+    taskStatusTableExist("email_task_status_table", 7, "pagination_task_status", "pagination_email", "loading_pagination_email");
+    taskStatusHeadClick("email_task_status_table");
+}
+
 $("#emailCloseDropBtnModal").click(function () {
     $("#dropBtnModal").css('display', 'none');
 
@@ -705,3 +717,14 @@ $(document).mouseup(function(e) {
         $("i.fa-caret-down.down-animation-icon").removeClass("down-animation-icon");
     }
 });
+
+// const redirectToTaskStatus = localStorage.getItem("emailTabShowing");
+// if(redirectToTaskStatus == "taskStatus"){
+//     document.getElementById("mail_option_2").style.display = "block";
+//     document.getElementById("hide955").style.display = "none";
+//     document.getElementById("select_optn").style.paddingBottom = "0px";
+
+//     taskStatusHead("email_task_status_table");
+//     taskStatusTableExist("email_task_status_table", 7, "pagination_task_status", "pagination_email", "loading_pagination_email");
+//     taskStatusHeadClick("email_task_status_table");
+// }

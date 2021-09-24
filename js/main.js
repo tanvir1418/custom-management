@@ -2098,9 +2098,7 @@ function sample4StartConfirmBtn() {
         $('#submitting_Info').modal('hide');
 		$('body').removeClass("modal-force-open");
 
-        $("#universalThankDraftModal #thank_draft_header p").html("THANK YOU");
-		$("#universalThankDraftModal #thank_draft_details p").html("Your Request has been Successfully Processed");
-		$('#universalThankDraftModal').modal('show');
+		$('#saveStartThankModal').modal('show');
     
 	}, 10000);
 }
@@ -2115,6 +2113,14 @@ $('#sample4SaveStart_confirm_modal').on('show.bs.modal', function (e) {
 	$('body').addClass("modal-force-open-confirm");
 }).on('hide.bs.modal', function (e) {
 	$('body').removeClass("modal-force-open-confirm");
+});
+
+$('#saveStartThankModal').on('show.bs.modal', function (e) {
+	$('body').addClass("modal-force-open");
+}).on('hide.bs.modal', function (e) {
+	$('body').removeClass("modal-force-open");
+	window.location.href = "email.html";
+	localStorage.setItem("emailTabShowing", "taskStatus");
 });
 
 if ($(".tab_4").hasClass("active")) {
