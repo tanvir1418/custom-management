@@ -718,6 +718,16 @@ $(document).mouseup(function(e) {
     }
 });
 
+function checkEmailIconEmManage() {
+    localStorage.removeItem('emailTabShowing');
+    let loginCondition = localStorage.getItem("loginStatus");
+    if (loginCondition == "LOGGED_IN") {
+        window.location.href = "email.html";
+    } else {
+        $('#loginRequired').modal('show');
+    }
+}
+
 // const redirectToTaskStatus = localStorage.getItem("emailTabShowing");
 // if(redirectToTaskStatus == "taskStatus"){
 //     document.getElementById("mail_option_2").style.display = "block";
