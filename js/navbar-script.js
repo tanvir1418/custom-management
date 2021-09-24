@@ -154,6 +154,11 @@ function gotoSystemStatus() {
     window.location.href = "email.html";
 }
 
+function gotoTaskStatus() {
+    localStorage.setItem("emailTabShowing", "taskStatus");
+    window.location.href = "email.html";
+}
+
 function gotoContactStatus() {
     localStorage.setItem("emailTabShowing", "contactStatus");
     window.location.href = "email.html";

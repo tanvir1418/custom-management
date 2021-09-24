@@ -571,6 +571,25 @@ function showSystemStatus() {
     }, 4000);
 }
 
+function showTaskStatus() {
+    document.getElementById("hide955").style.display = "none";
+    document.getElementById("select_optn").style.paddingBottom = "0px";
+    document.getElementById("mail_option_1").style.display = "none";
+    document.getElementById("mail_option_3").style.display = "none";
+    document.getElementById("mail_option_2").style.display = "block";
+
+    let tablinks = document.getElementsByClassName("option_box");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    tablinks[1].className += " active";
+
+    taskStatusHead("email_task_status_table");
+    taskStatusTableExist("email_task_status_table", 7, "pagination_task_status", "pagination_email", "loading_pagination_email");
+    taskStatusHeadClick("email_task_status_table");
+    
+}
+
 function showContactStatus() {
     document.getElementById("hide955").style.display = "none";
     document.getElementById("select_optn").style.paddingBottom = "0px";

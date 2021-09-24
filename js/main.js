@@ -2315,6 +2315,17 @@ function gotoSystemStatus() {
 
 }
 
+function gotoTaskStatus() {
+	let loginCondition = localStorage.getItem("loginStatus");
+	if (loginCondition == "LOGGED_IN") {
+		localStorage.setItem("emailTabShowing", "taskStatus");
+		window.location.href = "email.html";
+	} else {
+		$('#loginRequired').modal('show');
+	}
+
+}
+
 function gotoContactStatus() {
 	let loginCondition = localStorage.getItem("loginStatus");
 	if (loginCondition == "LOGGED_IN") {
