@@ -1618,7 +1618,7 @@ function createDynamicTabRow(dynamicThis){
                     </div>
                 </div>
             </div>
-            <div class="double-click-style2">
+            <div class="double-click-style2 displayNone">
                 <div class="row">
                     <div class="col-6">
                         <div class="double_click_box mar559">
@@ -1684,35 +1684,37 @@ function createDynamicTabRow(dynamicThis){
             <div class="style12-section">
                 <div class="box-style12">
                     <div class="head-style12">
-                        <div class="tab_filter-style12">
-                            <div class="style1-box">
-                                <img src="images/style-1.png" alt="">
-                                <span>Style 1</span>
-                            </div>
-                            <div class="style2-box">
-                                <img src="images/style-2.png" alt="">
-                                <span>Style 2</span>
-                            </div>
-                            <button class="style12btn-3 ml-auto updateNowBtn" tooltip="Click to Update" flow="down" onclick="threeBtnConfirmModal('updateNowBtn')">
-                                <p>Update Now</p>
-                            </button>
-                            <button class="style12btn-3 clearFilterBtn" tooltip="Click to Clear Filter" flow="down" onclick="threeBtnConfirmModal('clearFilterBtn')">
-                                <p>Clear Filter</p>
-                            </button>
-                            <button class="style12btn-3 clearSortingBtn" tooltip="Click to Clear Sorting" flow="down" onclick="threeBtnConfirmModal('clearSortingBtn')">
-                                <p>Clear Sorting</p>
-                            </button>
-                            <div class="filtering-style12" data-toggle="modal" data-target="#filter-modal">
-                                <i class="fas fa-filter fa-flip-horizontal"></i>
-                            </div>
-                            <div class="editing-style12">
-                                <i class="fas fa-pen"></i>
-                            </div>
-                            <div class="progress-style12" tooltip="Click to Resume" flow="down">
-                                <div class="inner-progress-style12">
+                        <div class="table-operation-style12">
+                            <div class="tab_filter-style12">
+                                <div class="style1-box">
+                                    <img src="images/style-1.png" alt="">
+                                    <span>Style 1</span>
                                 </div>
-                                <!-- comes from javasctript -->
-                                <p class="inner-progress-text-style12">Progress 75%</p>
+                                <div class="style2-box">
+                                    <img src="images/style-2.png" alt="">
+                                    <span>Style 2</span>
+                                </div>
+                                <button class="style12btn-3 ml-auto updateNowBtn" tooltip="Click to Update" flow="down" onclick="threeBtnConfirmModal('updateNowBtn')">
+                                    <p>Update Now</p>
+                                </button>
+                                <button class="style12btn-3 clearFilterBtn" tooltip="Click to Clear Filter" flow="down" onclick="threeBtnConfirmModal('clearFilterBtn')">
+                                    <p>Clear Filter</p>
+                                </button>
+                                <button class="style12btn-3 clearSortingBtn" tooltip="Click to Clear Sorting" flow="down" onclick="threeBtnConfirmModal('clearSortingBtn')">
+                                    <p>Clear Sorting</p>
+                                </button>
+                                <div class="filtering-style12" data-toggle="modal" data-target="#filter-modal">
+                                    <i class="fas fa-filter fa-flip-horizontal"></i>
+                                </div>
+                                <div class="editing-style12">
+                                    <i class="fas fa-pen"></i>
+                                </div>
+                                <div class="progress-style12" tooltip="Click to Resume" flow="down">
+                                    <div class="inner-progress-style12">
+                                    </div>
+                                    <!-- comes from javasctript -->
+                                    <p class="inner-progress-text-style12">Progress 0%</p>
+                                </div>
                             </div>
                         </div>
 
@@ -2454,7 +2456,7 @@ function createDynamicTabRow(dynamicThis){
                         </div>
                     </div>
                     <!-- ====//////====== STYLE 1 TABLE END ====//////====== -->
-                    <div class="style2-table-wrap">
+                    <div class="style2-table-wrap displayNone">
                         <!-- //////-----//////// LOREM 1 START //////-----////////  -->
                         <div class="style2-table-content"></div>
                         <div class="loading-style2-table">
@@ -3288,8 +3290,9 @@ function createDynamicTabRow(dynamicThis){
         scrollDisplayChartFive(`${dynamicTabContentId}`,`table001122${randomSixDigit}`);
         displayDateForChart5();
         DisplayCurrentTime();
-        tableProgressBarAnimation(`${dynamicTabContentId}`, Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
-        styleIconSwitcherOperation(`${dynamicTabContentId}`, `resizable554${randomSixDigit}`);
+
+        // tableProgressBarAnimation(`${dynamicTabContentId}`, Math.floor(Math.random() * (100 - 0 + 1)), 'inner-progress-style12', 'inner-progress-text-style12');
+        // styleIconSwitcherOperation(`${dynamicTabContentId}`, `resizable554${randomSixDigit}`);
 
         loadCSVshowData(`exelFile${randomSixDigit}`, `${dynamicTabContentId}`, `resizable554${randomSixDigit}`, `man-res-opt-data-table-left${randomSixDigit}`, `man-res-opt-data-table-right${randomSixDigit}`, `${randomPrefix}res-id-table-`, `style2-man-res-opt-data-table-left${randomSixDigit}`, `style2-man-res-opt-data-table-right${randomSixDigit}`, `${randomPrefix}res-table-two-`);
 

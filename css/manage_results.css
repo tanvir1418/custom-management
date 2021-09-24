@@ -735,6 +735,10 @@
 }
 
 /* STYLE 1 STYLE 2 BUTTON WITH FILTERING START */
+.table-operation-style12{
+    display: none;
+}
+
 .style12-section .tab_filter-style12 {
     padding: 40px 16px;
     display: flex;
@@ -852,7 +856,7 @@
 }
 
 .tab_filter-style12 .inner-progress-style12 {
-    width: 75%;
+    width: 0%;
     height: 40px;
     border-radius: 3px;
     background: #00a703;

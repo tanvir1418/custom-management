@@ -13,7 +13,8 @@ function loadCSVshowData(csvId, selectedTab, sty1TableId, sty1dblClickLeftListId
 					// let csvId = "exelFile";
 					// tableData = XLSX.utils.sheet_to_json(wb.Sheets[sheet]);
 					tableData[csvId] = XLSX.utils.sheet_to_json(wb.Sheets[sheet]);
-
+					$(`#${selectedTab} .table-operation-style12`).css("display", "block");
+					styleIconSwitcherOperation(selectedTab, sty1TableId);
 					tableHeadSty1(selectedTab, sty1TableId);
 					manResTableRender(selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty1AllListIdPrefix);
 					manResPagination(7, csvId, selectedTab, sty1TableId, sty1dblClickLeftListId, sty1dblClickRightListId, sty2dblClickLeftListId, sty2dblClickRightListId, sty2AllListIdPrefix);

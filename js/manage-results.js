@@ -1031,7 +1031,7 @@ function styleIconSwitcherOperation(selectedTab, sty1TableId){
 }
 
 
-styleIconSwitcherOperation("Main", "resizable554");
+// styleIconSwitcherOperation("Main", "resizable554");
 
 // CLICL TO TOGGLE STYLE1 & STYLE2 END =====
 
