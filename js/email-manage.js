@@ -497,20 +497,8 @@ $('#emailThankModal').on('show.bs.modal', function (e) {
     $('body').removeClass("modal-force-open");
 });
 
-$('#form_submit_modal').on('show.bs.modal', function (e) {
-    $('body').addClass("modal-force-open");
-}).on('hide.bs.modal', function (e) {
-    $('body').removeClass("modal-force-open");
-});
 
 // This Function will trigger when col8Filter is closed
-
-function formConfirmBtn() {
-    $('#form_submit_modal').modal('hide');
-    $("#hide955").css("display", "block");
-    $("#select_optn").css("padding-bottom", "50px");
-    $("#opt-content .option").css("display", "none");
-}
 
 // CHOOSE OPTION SECTION START
 function selectEmailop(evt, optionName) {
@@ -657,27 +645,64 @@ function showContactStatus() {
 
 // Submit Button Controlling (Loading Popup and Thank You Modal)
 function submitContactEmail(){
-    $('#submitting_Info').modal('show');
-
-    $("#main_submitBtn").css("display", "none");
-    $("#loading_submitBtn").css("display", "block");
-
-    setTimeout(function() { 
-		$("#submitting_file_info").html("Finishing...");
-	}, 2000);
-    
-
-    setTimeout(function() { 
-        $('#submitting_Info').modal('hide');
-        $("#main_submitBtn").css("display", "block");
-        $("#loading_submitBtn").css("display", "none");
-
-        // $("#emailThankModal #email_thank_header p").html("THANK YOU");
-        // $("#emailThankModal #email_thank_details p").html("Your Request has been Successfully Processed");
-        // $('#emailThankModal').modal('show');
-        $('#form_submit_modal').modal('show');
-    }, 4000);
+    $('#form_submit_modal').modal('show');
 }
+
+function formConfirmBtn(e) {
+
+    $('body').addClass("disable-pointer");
+	$('#form_submit_modal').modal({
+		backdrop:'static', 
+		keyboard:false
+	});
+	$('#form_submit_modal .modal-body').addClass("disable-pointer");
+	let initState = $(e).html();
+	$(e).html('<i class="fa fa-spinner fa-spin"></i> Confirm');
+	$(e).prop("disabled", true);
+	let $this = $(e);
+
+	setTimeout(function() {
+		$('body').removeClass("disable-pointer");
+		$('#form_submit_modal').modal({
+			backdrop:true, 
+			keyboard:true
+		});
+		$('#form_submit_modal .modal-body').removeClass("disable-pointer");
+		$this.prop("disabled", false);
+		$this.html(initState);
+
+
+        $('#form_submit_modal').modal('hide');
+
+        $('#submitting_Info').modal('show');
+
+        $("#main_submitBtn").css("display", "none");
+        $("#loading_submitBtn").css("display", "block");
+
+        setTimeout(function() { 
+            $("#submitting_file_info").html("Finishing...");
+        }, 2000);
+        
+        setTimeout(function() { 
+            $('#submitting_Info').modal('hide');
+            $("#main_submitBtn").css("display", "block");
+            $("#loading_submitBtn").css("display", "none");
+            
+            $("#hide955").css("display", "block");
+            $("#select_optn").css("padding-bottom", "50px");
+            $("#opt-content .option").css("display", "none");
+        }, 4000);
+
+	}, 2000);
+
+}
+
+$('#submitting_Info').on('show.bs.modal', function (e) {
+    $('body').addClass("modal-force-open");
+}).on('hide.bs.modal', function (e) {
+    $('body').removeClass("modal-force-open");
+});
+
 
 function rotateLoadingBar(selector){
 	$(selector).animate( { left: $('.loading-bar').width() }, 2000, function(){
